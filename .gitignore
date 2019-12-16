@@ -1,0 +1,15 @@
+.DS_Store
+
+node_modules
+
+lib/core/metadata.js
+lib/core/MetadataBlog.js
+
+website/translated_docs
+website/build/
+website/node_modules
+website/i18n/*
+website/package-lock.json
+
+# Ignore checked out models
+docs/models

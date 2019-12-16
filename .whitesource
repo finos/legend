@@ -1,0 +1,11 @@
+{
+  "scanSettings": {
+    "configMode": "LOCAL"
+  },
+  "checkRunSettings": {
+    "vulnerableCheckRunConclusionLevel": "failure"
+  },
+  "issueSettings": {
+    "minSeverityLevel": "LOW"
+  }
+}
