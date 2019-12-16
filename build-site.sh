@@ -12,7 +12,7 @@ mkdir -p ${DOCS_FOLDER}
 for ALLOY_MODEL in ${ALLOY_MODELS}
 do
     rm -rf ${ALLOY_MODEL}
-    git clone https://gitlab.com/finos-foundation/${ALLOY_MODEL}.git
+    git clone https://gitlab.com/finosfoundation/${ALLOY_MODEL}.git
     mkdir -p ${DOCS_FOLDER}/${ALLOY_MODEL}
     cp -Rf ${ALLOY_MODEL}/docs/* ${DOCS_FOLDER}/${ALLOY_MODEL}
 done

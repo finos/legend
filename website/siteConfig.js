@@ -15,8 +15,6 @@ const users = require('./data/users.json');
 const siteConfig = {
   title: 'PURE/Alloy', // Title for your website. THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
   tagline: 'Language and visual platform to generate models for the financial services industry', //THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
-  // TODO - enable when name is confirmed
-  // url: 'https://purealloy.finos.org',
   cname: 'purealloy.finos.org',
   url: 'https://purealloy.finos.org/',
   baseUrl: '/',
