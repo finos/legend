@@ -5,10 +5,17 @@
       "overview/why-purealloy",
       "overview/user-guide"
     ],
-    "Modeling": ["models/purealloy-modeling/modeling-conventions"],
-    "Models": [
-      "models/purealloy-modeling-samples/intro-model-sample",
-      "models/purealloy-modeling-samples/why-model-sample"
+
+    "Modeling": [
+      "models/purealloy-modeling/modeling-conventions",
+      {
+        "type": "subcategory",
+        "label": "Models",
+        "ids": [
+          "models/purealloy-modeling-samples/intro-model-sample",
+          "models/purealloy-modeling-samples/why-model-sample"
+        ]
+      }
     ],
     "Technical Guide": [
       "techdocs/devdocs/alloy-aws-deployment",
