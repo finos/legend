@@ -23,9 +23,9 @@ const siteConfig = {
   organizationName: 'finos',
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'intro', label: 'What is PURE/Alloy'},
-    {doc: 'user-guide', label: 'User Guide'},
-    {doc: 'why-purealloy', label: 'Why PURE/Alloy'}
+    {doc: 'overview/intro', label: 'What is PURE/Alloy'},
+    {doc: 'overview/user-guide', label: 'User Guide'},
+    {doc: 'overview/why-purealloy', label: 'Why PURE/Alloy'}
   ],
 
   twitterUsername: 'finosfoundation',
