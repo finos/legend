@@ -3,7 +3,7 @@ id: intro
 title: Welcome to PURE/Alloy
 sidebar_label: Introduction
 ---
-![PURE/Alloy](assets/purealloy-logo.png)
+
 
 PURE is a modeling language inspired in part by languages such as the Object Constraint Language (OCL) and UML. PURE also has many elements of a functional programming language. Goldman Sachs uses PURE to create and construct internal models for functions such as reporting and clearing. 
 
