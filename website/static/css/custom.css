@@ -23,11 +23,17 @@ header.postHeader:empty + article h1 {
   margin-top: 0;
 }
 
+header.headerWrapper {
+  background-color: #ffffff;
+}
+
 .imageAlignTop .blockImage {
   max-width: 220px;
 }
 
-
+.headerTitle h2 {
+  color: #2d85be;
+}
 
 .productShowcaseSection .logos img {
   width: 200px;
@@ -67,7 +73,8 @@ header.postHeader:empty + article h1 {
 .navigationSlider .slidingNav ul {
     /* DO NOT CHANGE - THIS IS THE NAVIGATION BACKGROUND - SHOULD STAY FINOS BLUE */
   box-sizing: border-box;
-  color: #fff;
+  background: #2D85BE;
+  color: #2D85BE;
   display: flex;
   flex-wrap: nowrap;
   list-style: none;
@@ -76,7 +83,16 @@ header.postHeader:empty + article h1 {
 }
 
 .navigationSlider .slidingNav ul li a:hover {
-  background: #0033A0;  /* DO NOT CHANGE - THIS IS THE NAVIGATION BACKGROUND - SHOULD STAY FINOS BLUE */
+  background: #2D85BE;  /* DO NOT CHANGE - THIS IS THE NAVIGATION BACKGROUND - SHOULD STAY FINOS BLUE */
+  /* background: #ffffff;  /* CHANGE THIS BACK WHEN SITE READY ^^ */
+  color: #2D85BE;
+
+}
+
+.navigationSlider .slidingNav ul li a {
+  /* background: #0033A0;  /* DO NOT CHANGE - THIS IS THE NAVIGATION BACKGROUND - SHOULD STAY FINOS BLUE */
+  color: #2D85BE;  /* DELETE THIS - WILL DEFAULT BACK TO WHITE
+   WHEN SITE READY ^^ */
 
 }
 
@@ -97,11 +113,11 @@ body {
 }
 
 .homeContainer {
-  /* TODO - create backgroun image */
-  /* background-image: url("../img/purealloy-background.png"); CHANGE THIS TO BACKGROUND LOGO PNG - THIS IS A SEMI-TRANSPARENT DOUBLE RENDERING OF THE LOGO ICON */
+  /* TODO - create background image */
+  /*  background-image: url("../img/fdc3-background.png"); CHANGE THIS TO BACKGROUND LOGO PNG - THIS IS A SEMI-TRANSPARENT DOUBLE RENDERING OF THE LOGO ICON */
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #0086BF; /* CHANGE THIS TO PRIMARY PROJECT COLOR */
+  background-color: #2D85BE; /* CHANGE THIS TO PRIMARY PROJECT COLOR */
 }
 
 .homeContainer h2{
@@ -117,7 +133,7 @@ body {
 }
 
 .mainContainer {
-  padding: 40 0;
+  padding: 0 0;
 }
 
 .blockImage img{
@@ -140,20 +156,31 @@ body {
 }
 
 .featureShowcaseSection {
-  background-color: #F7F7F7; /* CHANGE THIS TO PRIMARY PROJECT COLOR */
-  padding-top: 10px;
-  padding-bottom: 40px;
+  /* background-color: #F7F7F7; /* CHANGE THIS TO PRIMARY PROJECT COLOR */
+  background-color: #ffffff; /* CHANGE THIS TO PRIMARY PROJECT COLOR */
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+.surveyBanner .logos img {
+  width: 200px;
+  
+}
+
+.surveyBanner h2{
+  color: #0033A0; /* CHANGE THIS TO PRIMARY PROJECT COLOR */
+  font-size: 30px;
 }
 
 .surveyBanner {
-  background-color: #F7F7F7; /* CHANGE THIS TO PRIMARY PROJECT COLOR */
+  /* background-color: #F7F7F7; /* CHANGE THIS TO PRIMARY PROJECT COLOR */
+  background-color: #ffffff; /* DELETE THIS WHEN SITE READY TO GO BACK TO GRAY BACKGROUND */
   padding-top: 10px;
-  padding-bottom: 40px;
-  display: inline-flex;
-  flex-wrap: nowrap;
-  width: 100%;
-  padding: 20px;
+  /* padding-bottom: 40px; */
+  
 }
+
+
 
 .CTA-image {
   width: 200px;
@@ -185,7 +212,8 @@ article iframe {
 }
 
 .nav-footer {
-  background-color: #0086bf;
+  /* background-color: #0086bf; */
+  background-color: #ffffff;
 }
 
 .nav-footer .sitemap{

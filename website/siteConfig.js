@@ -13,7 +13,7 @@
 const users = require('./data/users.json');
 
 const siteConfig = {
-  title: 'PURE/Alloy', // Title for your website. THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
+  title: ' ', // Title for your website. THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
   tagline: 'Language and visual platform to generate models for the financial services industry', //THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
   cname: 'purealloy.finos.org',
   url: 'https://purealloy.finos.org/',
@@ -40,8 +40,9 @@ const siteConfig = {
 
   /* Colors for website */
   colors: {
-    primaryColor: '#0086bf', /* This changes the top FINOS banner & all links - DO NOT CHANGE */
+    primaryColor: '#2D85BE', /* This changes the top FINOS banner & all links - DO NOT CHANGE */
     secondaryColor: '#0033A0' /* This does net change anything - but keep as the project / program main color */
+
   
   },
 

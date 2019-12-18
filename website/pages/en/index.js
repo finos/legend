@@ -67,10 +67,10 @@ class HomeSplash extends React.Component {
               {/* TODO - set logo here */}
               {/* <img src="img/purealloy-logo-2019.png"></img> */}
               <ProjectTitle siteConfig={siteConfig} />
-              <PromoSection>
+              {/* <PromoSection>
                 <Button href={docUrl('user-guide')}>Get Started</Button>
                 <Button href={repoUrl}>GitHub</Button>
-              </PromoSection>
+              </PromoSection> */}
             </div>
       </SplashContainer>
     );
@@ -103,30 +103,59 @@ class Index extends React.Component {
       <Block background="white" layout="fourColumn">
         {/* TODO - define features block, see https://github.com/finos/FDC3/blob/master/website/pages/en/index.js#L108 as example */}
         {/* {[ ]} */}
+        
+    
+     
       </Block>
     );
 
-    const SurveyBanner = () => (
-      <div className="surveyBanner">
-        <div className="CTA-image">
-          <a href="https://www.finos.org/pure-alloy" target="_blank">
+    {/* const SurveyBanner = () => (
+      <div className="surveyBanner paddingBottom" style={{textAlign: 'center'}}>
+        {/* <div className="CTA-image"> */}
+          {/* <a href="https://www.finos.org/pure-alloy" target="_blank"> */}
             {/* TODO - create logo for pilot */}
             {/* <img style={{width:'150px',height:'150px'}} id="purealloy-pilot" src={`${baseUrl}docs/assets/purealloy-pilot.jpeg`} height='300px' alt="PURE/Alloy pilot" title="PURE/Alloy pilot"/> */}
-            <p>PURE/Alloy pilot</p>
-            </a>
+            {/* <h2>PURE / Alloy Pilot</h2> */}
+            {/* </a> */}
+            {/* </div> */}
           
-        </div>
-        <div class="CTA-text">
+        
+        {/* <div class="CTA-text">
+
+          <h2>PURE / Alloy Pilot</h2>
           <p>Apply to join the PURE/Alloy pilot phase today! You will get access to a "sandbox" instance of Alloy to build shared modeling</p>
           <h3><a href="https://www.finos.org/pure-alloy" target="_blank">Apply Here!</a></h3>
         </div>
       </div>
-    );
+    ); */}
 
     const FeatureCallout = () => (
-      <div  className="featureShowcaseSection  paddingBottom" style={{textAlign: 'center'}}>
-        <h2>Use Cases</h2>
-        <MarkdownBlock>{`Document business [use cases](${docUrl('use-cases')}) that drive PURE/Alloy initiative.`}</MarkdownBlock>
+      <div  className="featureShowcaseSection  paddingTop paddingBottom" style={{textAlign: 'center'}}>
+        {/* <h2>Use Cases</h2>*/}
+        {/* <MarkdownBlock>{`Document business [use cases](${docUrl('use-cases')}) that drive PURE / Alloy initiative.`}</MarkdownBlock>*/}
+        <a href="https://www.finos.org/pure-alloy" target="_blank"><img src="img/under-construction.png"></img></a>
+      </div>
+    );
+
+    const Underconstruction = () => (
+      <div className="surveyBanner " style={{textAlign: 'center'}}>
+        {/* <div className="CTA-image"> */}
+          {/* <a href="https://www.finos.org/pure-alloy" target="_blank"> */}
+            {/* TODO - create logo for pilot */}
+            {/* <img style={{width:'150px',height:'150px'}} id="purealloy-pilot" src={`${baseUrl}docs/assets/purealloy-pilot.jpeg`} height='300px' alt="PURE/Alloy pilot" title="PURE/Alloy pilot"/> */}
+            {/* <h2>PURE / Alloy Pilot</h2> */}
+            {/* </a> */}
+            {/* </div> */}
+          
+        
+        <div class="CTA-text">
+          <h2>Site Under Construction</h2>
+          <p>The FINOS PURE / Alloy site is currently under construction. The maintainers are working to add content right now, so that the pilot will go smoothly for participants.</p>
+  
+          
+          <p>For more information and updates about the FINOS PURE / Alloy Project follow this link:</p>
+          <h2><a href="https://www.finos.org/pure-alloy" target="_blank">PURE / Alloy Updates</a></h2>
+        </div>
       </div>
     );
 
@@ -141,8 +170,8 @@ class Index extends React.Component {
 
       return (
         <div className="userShowcase productShowcaseSection paddingTop paddingBottom">
-          <h2>Who is Using PURE/Alloy?</h2>
-          <p>See below which financial institutions have already joined the PURE/Alloy initiative!</p>
+          <h2>Who is Using PURE / Alloy?</h2>
+          <p>See below which financial institutions have already joined the PURE / Alloy initiative!</p>
           <Showcase users={pinnedUsers} />
         </div>
       );
@@ -150,12 +179,13 @@ class Index extends React.Component {
 
     return (
       <div>
-        <HomeSplash siteConfig={siteConfig} language={language} />
-        <SurveyBanner />
+        {/* <HomeSplash siteConfig={siteConfig} language={language} /> */}
+        {/* <SurveyBanner /> */}
         <div className="mainContainer">
-          <Features />
+          {/* <Features /> */}
+          {/* <Underconstruction/> */}
           <FeatureCallout />
-          <UserShowcase />
+          {/* <UserShowcase />*/}
         </div>
       </div>
     );

@@ -3,7 +3,7 @@ id: user-guide
 title: PURE/Alloy User Guide
 sidebar_label: User Guide
 ---
-![PURE/Alloy](assets/purealloy-logo.png)
+
 
 When added to the PURE/Alloy pilot, you will receive an email to activate your GitLab account, which will also grant you access to Foundry, the Alloy user interface.
 
