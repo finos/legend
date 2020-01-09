@@ -23,6 +23,9 @@ TBD
 TBD
 
 ## Website local run
+In order to run the website, you must have:
+- A Git client installed, to checkout the code from github.com/finos/purealloy (`master` branch); note that the `git` command must be available via command-line, as it's needed to run the `build-site.sh` script
+- [Yarn installed](https://yarnpkg.com/lang/en/docs/install)
 
 ```
 git clone git@github.com:finos/purealloy.git
