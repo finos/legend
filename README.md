@@ -1,6 +1,4 @@
-Badges go here (see [shields.io](https://shields.io/), for examples).
-
-[![Build Status](https://travis-ci.com/finos-admin/purealloy.svg?token=pqqpLyKQyKTy9sWFPywW&branch=master)](https://travis-ci.com/finos-admin/purealloy)
+[![Build Status](https://travis-ci.org/finos/purealloy.svg?branch=master)](https://travis-ci.org/finos/purealloy)
 [![FINOS - Incubating](https://cdn.jsdelivr.net/gh/finos/contrib-toolbox@master/images/badge-incubating.svg)](https://finosfoundation.atlassian.net/wiki/display/FINOS/Incubating)
 
 # PURE/Alloy
