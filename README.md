@@ -29,7 +29,7 @@ In order to run the website, you must have:
 
 ```
 git clone git@github.com:finos/purealloy.git
-./build-site.sh
+cd purealloy ; ./build-site.sh
 cd website ; yarn start
 ```
 This will automatically open a browser, pointing to http://localhost:3000 , where the website will be staged; file changes will be live rendered, which speeds up the editorial workflow.
