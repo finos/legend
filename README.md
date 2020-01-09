@@ -22,6 +22,19 @@ TBD
 ## Development setup
 TBD
 
+## Website local run
+
+```
+git clone git@github.com:finos/purealloy.git
+./build-site.sh
+cd website ; yarn start
+```
+This will automatically open a browser, pointing to http://localhost:3000 , where the website will be staged; file changes will be live rendered, which speeds up the editorial workflow.
+
+The `build-site.sh` script will pull content from other Git repositories, mapping the `docs` folder into `modules/<repository-name>`; for example, all files and folders under https://gitlab.com/finosfoundation/purealloy-modeling-samples/tree/master/docs are available under the `/models/purealloy-modeling-samples` URL suffix.
+
+You can read more about Docusaurus on https://github.com/finos/purealloy/tree/master/website and https://docusaurus.io .
+
 ## Roadmap
 
 - Phase 1 (Q4 2019): Stand-up and deploy external "sandbox" instance of Alloy for shared modeling; Open Source Strategy Forum announcement; internal code evaluation and preparation for open sourcing
