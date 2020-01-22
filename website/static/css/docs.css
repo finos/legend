@@ -1,0 +1,443 @@
+blockquote {
+  color: black;
+  background-color: #ddd;
+  border-left: 8px solid #666;
+  padding: 1.5rem 3rem 1.5rem 1.5rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+header.postHeader:empty {
+  display: none;
+}
+
+header.postHeader:empty + article h1 {
+  margin-top: 0;
+}
+
+header.headerWrapper {
+  background-color: #ffffff;
+}
+
+.imageAlignTop .blockImage {
+  max-width: 22rem;
+}
+
+.headerTitle h2 {
+  color: white;
+}
+
+.productShowcaseSection .logos img {
+  width: 20rem;
+}
+
+.showcaseSection .logos img {
+  width: 25rem;
+}
+
+.showcase {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.showcase img {
+  width: 25rem;
+  max-height: 15rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.userShowcase p {
+  max-width: 60%;
+}
+
+.navigationSlider .slidingNav ul {
+  box-sizing: border-box;
+  background: #2d85be;
+  color: white;
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.navigationSlider .slidingNav ul li a:hover {
+  background: #2d85be;
+  color: white;
+}
+
+.navigationSlider .slidingNav ul li a {
+  color: white;
+}
+
+.inner img {
+  width: 25%;
+}
+
+.homeContainer {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #2d85be;
+}
+
+.homeContainer h2 {
+  color: #ffffff;
+}
+
+.homeContainer a {
+  color: #ffffff;
+}
+
+.button {
+  border: 1px solid #ffffff;
+}
+
+.mainContainer {
+  padding: 0 0;
+}
+
+.blockImage img {
+  fill: #ffffff;
+}
+
+.blockContent h2 {
+  color: #0086bf;
+}
+
+.finos {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  text-align: center;
+}
+
+.finosBanner {
+  background: var(--color-footer-background);
+  margin: 0 auto;
+}
+
+.finosBanner h2 {
+  color: var(--color-light-grey-50);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+article p img,
+FeatureCallout article iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-footer {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.nav-footer .sitemap {
+  margin: 0 auto 1em;
+  display: none;
+}
+
+.copyright {
+  display: none;
+}
+
+.postHeaderTitle {
+  margin-top: 2.5rem !important;
+}
+
+.fixedHeaderContainer {
+  background: var(--color-header-background);
+}
+
+.navPusher {
+  padding-top: 0;
+}
+
+.navPusher,
+.docMainWrapper {
+  background: var(--color-doc-background);
+  color: var(--color-doc-text);
+}
+
+.onPageNav {
+  background: var(--color-pagenav-background);
+  height: 100vh;
+  max-height: 100%;
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  width: 26rem;
+  flex: 0 0 26rem;
+  right: 0;
+  top: 5rem;
+  margin: 0;
+  margin-top: 0;
+}
+
+.onPageNav a {
+  color: var(--color-light-grey-400);
+}
+
+.toc-headings {
+  border-left: none;
+}
+
+.toc-headings * {
+  font-size: 1.3rem;
+  font-family: "Roboto Condensed" !important;
+}
+
+.onPageNav > .toc-headings {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 4.5rem;
+  border-left: none;
+  padding-top: 15rem;
+}
+
+.docsContainer img {
+  border-radius: 0.5rem !important;
+  margin-top: 2rem;
+}
+
+.docMainWrapper h2,
+.docMainWrapper h3 {
+  color: var(--color-primary-0);
+}
+
+.hash-link {
+  margin-left: -2.5rem;
+  padding-right: 1rem;
+}
+
+.hash-link .hash-link-icon path {
+  fill: var(--color-primary-0);
+}
+
+pre code.hljs {
+  white-space: pre-wrap;
+  font-size: 1.4rem;
+}
+
+.hljs {
+  color: var(--color-light-grey-200) !important;
+  background: var(--color-dark-grey-50);
+}
+
+@media only screen {
+  .navBreadcrumb.wrapper > h2 {
+    display: none; /* hide collapsed nav bar header because we only have 1 parent now which is Getting Started*/
+  }
+
+  .docsNavContainer .toc .navBreadcrumb {
+    background-color: var(--color-dark-grey-100);
+    border-bottom: 0.1rem solid var(--color-dark-grey-50);
+  }
+
+  .fixedHeaderContainer {
+    top: 0;
+  }
+
+  .navigationSlider {
+    height: 3.4rem;
+    margin-left: auto;
+    position: relative;
+  }
+
+  .toc .toggleNav .navGroup .navGroupCategoryTitle {
+    display: none;
+  }
+
+  .toc .toggleNav ul li a {
+    text-transform: uppercase;
+    font-size: 1.5rem !important;
+    font-family: "Roboto Condensed" !important;
+  }
+
+  .navToggle .line1,
+  .navToggle .line2,
+  .navToggle .line3 {
+    background-color: var(--color-light-grey-200);
+  }
+  .docsSliderActive .toc section .navGroups {
+    background: var(--color-dark-grey-100);
+  }
+
+  .docsSliderActive .toc .navBreadcrumb,
+  .tocActive .navBreadcrumb {
+    border-bottom: 0.1rem solid var(--color-dark-grey-150);
+  }
+
+  .container.mainContainer.docsContainer {
+    margin: 10rem 5rem;
+  }
+
+  .docsNavContainer + .container.mainContainer.docsContainer {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+
+  .onPageNav {
+    display: none !important;
+  }
+
+  .navigationSlider nav.slidingNav {
+    background: none;
+    height: auto;
+    position: relative;
+    right: auto;
+    top: auto;
+    width: auto;
+  }
+
+  .navigationSlider .slidingNav ul {
+    background: none;
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 0;
+    padding: 0;
+    width: auto;
+  }
+
+  .navigationSlider .slidingNav ul li a {
+    border: 0;
+    color: var(--color-light-grey-300);
+    display: flex;
+    font-size: 16px;
+    font-size: 1em;
+    font-weight: 300;
+    height: 32px;
+    line-height: 1.2em;
+    margin: 0;
+    padding: 0;
+    padding: 6px 10px;
+  }
+
+  .siteNavGroupActive a,
+  .siteNavItemActive a {
+    color: var(--color-primary-0) !important;
+    background-color: transparent !important;
+  }
+
+  .navigationSlider .slidingNav ul li a:hover,
+  .navigationSlider .slidingNav ul li a:focus,
+  .navigationSlider .slidingNav ul li a:active {
+    color: var(--color-light-grey-0);
+    background-color: transparent;
+  }
+
+  .docsNavContainer {
+    top: 5rem;
+  }
+
+  .tocToggler {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .docsNavContainer {
+    display: flex;
+    position: fixed;
+    margin-left: -9999px !important;
+    padding-left: 9999px;
+    height: 100%;
+    background: var(--color-sidebar-background);
+    z-index: 2;
+  }
+
+  .docsNavContainer .toc {
+    text-align: right;
+    height: 100%;
+    padding-top: 2rem;
+  }
+
+  .docsNavContainer .toc * {
+    text-transform: uppercase;
+    font-size: 1.5rem !important;
+    font-family: "Roboto Condensed" !important;
+  }
+
+  .toc .navGroupCategoryTitle {
+    display: none; /* we should put this back when we have more complex hierarchy */
+  }
+
+  .toc .navGroups {
+    padding: 0 1.5rem !important;
+  }
+
+  .toc .toggleNav ul {
+    padding: 0 1.5rem;
+  }
+
+  .separateOnPageNav .wrapper,
+  .separateOnPageNav .headerWrapper.wrapper {
+    max-width: 1400px;
+  }
+
+  .docsNavContainer + .container.mainContainer.docsContainer {
+    margin-left: 20rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container.mainContainer.docsContainer {
+    margin-left: 0rem;
+  }
+
+  .docsNavContainer + .container.mainContainer.docsContainer {
+    margin-left: 23rem;
+    margin-right: 10rem;
+  }
+
+  .onPageNav {
+    display: flex !important;
+  }
+}
+
+.onPageNav ul ul li {
+  padding-bottom: 1rem;
+}
+
+.onPageNav ul ul {
+  padding-top: 1.5rem;
+}
+
+.button {
+  border-radius: 0.3rem;
+  color: var(--color-light-grey-100);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.button:hover {
+  background: var(--color-primary-0);
+  border-color: var(--color-primary-0);
+  color: var(--color-dark-grey-100);
+}
+
+.onPageNav::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+.onPageNav::-webkit-scrollbar-thumb {
+  background: var(--color-dark-shade-100);
+  border-radius: 0.4rem;
+}
+
+.onPageNav::-webkit-scrollbar-thumb:window-inactive {
+  background: var(--color-dark-shade-100);
+}
+
+.onPageNav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.headerTitleWithLogo {
+  display: none !important;
+}

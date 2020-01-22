@@ -1,35 +1,47 @@
 ---
 id: intro
-title: Welcome to PURE/Alloy
-sidebar_label: Introduction
+title: What is Alloy?
+hide_title: true
 ---
 
+What is Alloy?
+-------------------------
 
-PURE is a modeling language inspired in part by languages such as the Object Constraint Language (OCL) and UML. PURE also has many elements of a functional programming language. Goldman Sachs uses PURE to create and construct internal models for functions such as reporting and clearing. 
 
-Alloy is a visual modeling environment and system that creates, maintains, and helps distribute models built in PURE. Alloy uses git, (fellow FINOS member) Gitlab, and standard source control concepts to manage changes to models. Alloy can also generate code in languages and formats such as SQL and JSON (and, internally to Goldman Sachs, SLANG) in order to import and update target systems & infrastructure w/ revised model definitions/extensions.
+Alloy is a flexible platform that offers solutions to explore, define, connect, and integrate data into your business processes. Getting access to timely, accurate, and complete data is becoming increasingly more difficult to achieve. Why?
 
-PURE and Alloy have been developed internally by Goldman Sachs and are in the process of being contributed to FINOS, the FinTech Open Source Foundation, to foster collaboration around object modeling, using the Alloy framework.
+-   The amount, speed, and complexity of information is exploding exponentially.
 
-During the contribution process, https://alloy.finos.org will serve as pilot environment to demo feature and start gathering other FINOS members interest. After the pilot, https://alloy.finos.org will serve FINOS members to collaborate around object modeling, using gitlab.com/finos to host object definitions and enable cross-firm collaboration.
+-   Businesses often operate within data silos limiting opportunities to collaborate, connect, and communicate efficiently.
 
-More info on https://www.finos.org/pure-alloy
+-   Data inventories are not well understood due to a lack of meaningful metrics such as usage and information flow.
 
-## Pilot
+The Alloy platform aims to provide solutions to these challenges. Learn about the different independent feature sets and how they add value to each data-driven organization. 
 
-PURE/Alloy is currently available via alloy.finos.org as pilot project, check https://finos.org/pure-alloy to know more.
+-   [***Alloy Cube***](/docs/getting-started/cube) (Cube) -- **Explore data** from various data stores through Excel-like operations.
 
-For downtimes and other important notifications, the following lists will be notified: gs-alloy-dev@gs.com and purealloy@finos.org
+-   [***Alloy Studio***](/docs/getting-started/studio) (Studio) -- **Describe and connect data** in business terms to create data models. Standardize terms and relationships across the entire organization to foster consistent data vocabulary. Express those data models in diagrams to facilitate the dialog between business and development team.
 
-## Requesting access
+-   [***Alloy Graph***](/docs/getting-started/graph) (Graph) & [***Alloy Services***](/docs/getting-started/services) (Services) -- **Integrate data** in a self-serve manner by first browsing and navigating the data model and by then asking informed questions to the data through queries in [***Graph***](/docs/getting-started/graph). Power users that can register data-driven services (APIs) with a simple click of a button in [***Services***](/docs/getting-started/services) allowing the repeated and controlled usage of the queries. It's easy to build customized user interfaces with those APIs increasing both developer productivity and time to market of your data products. 
 
-You can request access to the pilot via https://www.finos.org/pure-alloy
+The Alloy platform is backed by an [Execution Engine](/docs/getting-started/execution) providing powerful insights and a robust [Change
+Management (SDLC)](/docs/getting-started/sdlc) process that provides detailed operational metrics. What does this mean for you? Use your data models in your live business flows and rapidly transform into a data-driven organization with confidence.
 
-## Alloy high level architecture
-![Alloy Process Diagram](https://github.com/finos-admin/alloy-config/raw/master/docs/alloy-process-diagram.png)
+Alloy Ecosystem
+-------------------------
+![](assets/architecture_dark.svg)
 
-The plan is to distribute the platform both as Jars and Docker images.
+Roadmap
+-------------------------
+The open sourcing of the Alloy platform is happening in 3 phases:
 
-Docker images would be the preferred channel and can therefore run on any platform using Docker - Kubernetes, OpenShift, ECS, DockerCloud, etc. If none of these are suitable, institutions can consume the platform as Jars which will run on any platform, although will require more configuration to set up.
+- **Phase 0** (Q4 2019): Deploy an external instance of Alloy to AWS servers and announce the intention to open source at the FINOS strategy forum.
 
-All the microservices (Cube, Foundry, Exec, SDLC, others to come) include their own Jetty containers in the Jar, so don't need an external Container. They will need a reverse proxy (Contour/NGINX/HAProxy/similar) in front.
+- **Phase 1** (Jan 2020): Open source the Alloy language and Alloy Studio with limited functionality to a group of bank pilot users collaborating on a Derivatives model. In this release, Studio supports the creation of data models, model-to-model mappings, constraints and derivations. Features that are not yet available are model-to-database mappings and the execution of queries as services.
+
+- **Phase 2** (Mid 2020): Open source full feature set of Studio along with the entire Alloy platform. Specifically, Cube, Graph, and Services. This opens up the opportunity to collaborate on even more use cases and the creation of a shared model inventory.
+
+
+![](assets/timeline_dark.svg)
+
+
