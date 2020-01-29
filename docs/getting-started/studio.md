@@ -24,7 +24,7 @@ Select the <code>+</code> next to  `project` and click on <code>Add a new packag
 ### Define a new Class
 A `Class` is used to define a business concept.
 
-Select the <code>+</code> and click on "Add a new class"</code>.  Let's create a class called <code>Person</code>.  Hit `F9` to compile and save the changes.
+Select the <code>+</code> and click on "Add a new class"</code>.  Let's create a class called <code>Person</code>.  
 
 ![](assets/studio_step4.JPG)
 
@@ -35,7 +35,7 @@ Studio displays a visualization of the class and a tabbed list of the possible m
 
 Move to the `Properties` tab and select <code>+</code>.  Type in the name of your property and specify the [data type](/docs/getting-started/language#language-type) and [cardinality](/docs/getting-started/language#language-cardinality).
 
-Let's create a property called `firstName` of type `String` with [cardinality](/docs/getting-started/language#language-cardinality) of 1.  Hit `F9` to compile and save the changes.
+Let's create a property called `firstName` of type `String` with [cardinality](/docs/getting-started/language#language-cardinality) of 1.  
 
 ![](assets/studio_step5.JPG)
 
@@ -44,7 +44,7 @@ Derived Properties are properties defined using functions that can operate on ot
 
 Move to the `Derived Properties` tab and select `+`.  Type in the name of your property, the return [data type](/docs/getting-started/language#language-type) and [cardinality](/docs/getting-started/language#language-cardinality).  Then type in the expression.
 
-Let's add a qualified property called `firstInitial` using the following expression - `$this.name->substring(0,1)`.  Select a return [data type](/docs/getting-started/language#language-type) of `String` and [cardinality](/docs/getting-started/language#language-cardinality) of 1. Hit `F9` to compile and save the changes.
+Let's add a qualified property called `firstInitial` using the following expression - `$this.name->substring(0,1)`.  Select a return [data type](/docs/getting-started/language#language-type) of `String` and [cardinality](/docs/getting-started/language#language-cardinality) of 1. Hit `F9` to compile the expression.
 
 ![](assets/studio_step6.JPG)
 
@@ -53,7 +53,7 @@ Let's add a qualified property called `firstInitial` using the following express
 
 Move to the `Constraints` tab and select `+`.  Type in a name for the constraint and the expression.  
 
-Let's add a constraint called `firstNameNotEmpty` defined by the following expression - `$this.firstName->isNotEmpty()`.  Hit `F9` to compile and save the changes.   
+Let's add a constraint called `firstNameNotEmpty` defined by the following expression - `$this.firstName->isNotEmpty()`.  Hit `F9` to compile the expression.   
 
 ![](assets/studio_step7.JPG)
 
@@ -61,14 +61,14 @@ Let's add a constraint called `firstNameNotEmpty` defined by the following expre
 ### Add a Tagged Value
 One type of tagged value is `doc`.  The `doc` tag provides the ability to describe the `Class`.
 
-Let's add a `doc` to describe the `Person` class. Hit `F9` to compile and save the changes.
+Let's add a `doc` to describe the `Person` class.
 
 ![](assets/studio_step8.JPG)
 
 ### Add a StereoType
 Move to the `StereoType` tab and select `+`.  
 
-Let's add a stereotype of type `access` and a value of `public`. Hit `F9` to compile and save the changes.
+Let's add a stereotype of type `access` and a value of `public`.
 
 ![](assets/studio_step9.JPG)
 
@@ -81,18 +81,18 @@ Let's create a enumeration called `CompanyType` with the values `LLC` and `Corpo
 
 ![](assets/studio_step10.JPG)
 
-Create a new class called `Firm` with a property named `type`.  Select `CompanyType` for the type of property and a cardinality of 1.  Hit `F9` to compile and save the changes.
+Create a new class called `Firm` with a property named `type`.  Select `CompanyType` for the type of property and a [cardinality](/docs/getting-started/language#language-cardinality) of 1. 
 
 ![](assets/studio_step11.JPG)
 
 ### Add a Super Type
 Add a `Super Type` to the model to show a relationship between classes or business concepts.
 
-Let's create a new `Class` called `LegalEntity`.  Hit `F9` to compile and save the changes.
+Let's create a new `Class` called `LegalEntity`.  
 
 ![](assets/studio_step12.JPG)
 
-Moving back to the `Firm` class, go to the `Super Types` tab and select `+`.  Select the `LegalEntity` class from the dropdown. Hit `F9` to compile and save the changes. 
+Moving back to the `Firm` class, go to the `Super Types` tab and select `+`.  Select the `LegalEntity` class from the dropdown. 
 
 The model visualization on the left now shows the `LegalEntity` class as a super type of `Firm`.
 
@@ -108,7 +108,7 @@ In the `Firm` class, create a property of with a name of `employees` of type `Pe
 ## Create a Diagram
 Create a model diagram to show the relationships across the businss concepts.  
 
-Select the `+` on the left hand side and pick `Add a new diagram`.  From the Explorer view, select and drag the `Firm` and `Person` classes at a time to the diagram.  Hit `F9` to compile and save the changes. 
+Select the `+` on the left hand side and pick `Add a new diagram`.  From the Explorer view, select and drag the `Firm` and `Person` classes at a time to the diagram.  
 
 ![](assets/studio_step15.JPG)
 
@@ -124,27 +124,29 @@ Refer to the Alloy [language guide](/docs/getting-started/language) for more inf
 ## Create a Model-to-Model Mapping
 Create a model transformation using a model-to-model mapping.  
 
-Let's create a new class called `NewPerson`.  Add a property called `name` of type `String` and cardinality of 1.  Hit `F9` to compile and save the changes. 
+First, add a property called `lastName` to `Person` of type `String` with a [cardinality](/docs/getting-started/language#language-cardinality) of 1.  Next, create a new class called `NewPerson`.  Add a property to `NewPerson` called `name` of type `String` and a [cardinality](/docs/getting-started/language#language-cardinality) of 1. 
 
->ADD SCREENSHOT
+![](assets/studio_step17.JPG)
 
-Select the `+` on the left hand side and pick `Add a new mapping`.  
+Select the `+` next to project and select `Add a new mapping` to create a new mapping called `NewPersonMapping`.  
 
-To select the target class for the mapping, drag and drop the `NewPerson` class into the `Add a mapping element` section.  Select a mapping element type of `Alloy`.  
+![](assets/studio_step18.JPG)
 
->ADD SCREENSHOT
+To select the target class for the mapping, drag and drop the `NewPerson` class into the `Add a mapping element` section.  Select a mapping element type of `Pure`.  
 
-Next select the target class - click on the `edit` icon and select the `Person` class.
+![](assets/studio_step19.JPG)
 
->ADD SCREENSHOT
+Next select the source class - click on the `edit` icon and select the `Person` class.
 
-Create the following expression for the `names` property - `$src.firstName + ' ' + $src.lastName`.
+![](assets/studio_step20.JPG)
 
->ADD SCREENSHOT
+Add the following expression for the `name` property - `$src.firstName + ' ' + $src.lastName`.
 
-Here is what the text view of the mapping looks like:
+![](assets/studio_step21.JPG)
 
->ADD SCREENSHOT
+See the text view of the mapping:
+
+![](assets/studio_step22.JPG)
 
 
 ## Execute the Mapping

@@ -28,7 +28,7 @@ Create or model a business concept using a <code>Class</code>.  Attributes in a 
 
 The following example creates a class called <code>Firm</code> with an attribute called <code>name</code>.  The attribute <code>name</code> is of type of <code>String</code> with a *cardinality* of 1.
 
-```java
+```alloy
 Class Firm 
 {
   name: String[1];  
@@ -42,7 +42,7 @@ Class Firm
 
 ### Enum
 Create a set of pre-defined, related values using <code>Enum</code>.
-```java
+```alloy
 Enum CompanyType
 {
   Corporation,
@@ -52,7 +52,7 @@ Enum CompanyType
 Leverage this enumeration in a <code>Class</code> to define the type of an attribute.  
 
 For example, create an attribute called <code>companyType</code> with a type of <code>CompanyType</code> to the <code>Firm</code> class created above.  This restricts and defines the set of values that <code>companyType</code> can have.
-```java
+```alloy
 Class Firm 
 {
   name:        String[1];  
@@ -63,20 +63,22 @@ Class Firm
 ## Functions
 A subset of the available functions that can aid in the writing of model constraints, derivations, and model-to-model mappings are described below.  
 
+A full list of supported functions can be found [here](/docs/getting-started/functions).
+
 ### Variable
 The keyword <code>let</code> is used to create and assign a variable.   Use <code>$</code> to reference the variable in subsequent statements.
-```java
+```alloy
 let myVar = 0.75;
 let x = $myVar;
 ```
 ### Arrow notation
 Use the arrow notation to call a function. Reading from left to right, the input (LHS) is being passed into a function (RHS).  
-```java
+```alloy
 $myVar->ceiling();
 ```
 ### Lambda
 A lambda (anonymous) function is written as <code>{parameter | body with operation}</code>.  A <code>{}</code> is only required when there is more than one parameter.
-```java
+```alloy
 myInteger | $myInteger + 33
 ```
 ### If, Map, Filter
@@ -84,7 +86,7 @@ There is no control flow defined in the language.  <code>If</code>, <code>map</c
 
 - **If**\
 Implement an <code>if</code> condition with the following syntax.
-```java
+```alloy
 if ( <<condition>> ,
      | <<resultIfTrue>> ,
      | <<resultIfFalse>>
@@ -92,12 +94,12 @@ if ( <<condition>> ,
 ```
 - **Map**\
 Iterate over a collection using <code>map</code>
-```java
+```alloy
 $myCollection->map( y| $y+1);
 ```
 - **Filter**\
 Define a filter using the following syntax.
-```java
+```alloy
 x | filter($x.name->startsWith('S'))
 ```
 ### All Functions
@@ -107,7 +109,7 @@ A full list of supported functions can be found [here](/docs/getting-started/fun
 Similar to UML, the language supports the following extensions: stereotype, profile and constraint.  The language supports an additional extension called derivation (or qualified property).  A derivation allows defining an attribute in the data model using functions that can operate on other attributes in the data model. 
 
 ### Stereotype
-```java
+```alloy
 Class <<extension.important>> Firm 
 {
   name:        String[1];  
@@ -116,7 +118,7 @@ Class <<extension.important>> Firm
 ```
 
 ### Tagged Value
-```java
+```alloy
 Class <<extension.important>> {doc.doc = 'Represent a company.'} Firm 
 {
   name:        String[1];  
@@ -125,7 +127,7 @@ Class <<extension.important>> {doc.doc = 'Represent a company.'} Firm
 ```
 
 ### Constraint
-```java
+```alloy
 Class <<extension.important>> {doc.doc = 'Represent a company.'} Firm 
 [
   size: $this.companyType == CompanyType.Corporation
@@ -137,7 +139,7 @@ Class <<extension.important>> {doc.doc = 'Represent a company.'} Firm
 ```
 
 ### Derivation
-```java
+```alloy
 Class <<extension.important>> {doc.doc = 'Represent a company.'} Firm 
 [
   size: $this.companyType == CompanyType.Corporation
@@ -145,7 +147,12 @@ Class <<extension.important>> {doc.doc = 'Represent a company.'} Firm
 {
   name:            String[1];  
   companyType:     CompanyType[1];
-  isCorporation(): {if($this.companyType == CompanyType.Corporation ,| true ,| false)}:Boolean[1];
+  isCorporation(): {
+    if($this.companyType == CompanyType.Corporation,
+      | true,
+      | false
+    )
+  }:Boolean[1];
 }
 ```
 
@@ -161,11 +168,13 @@ Class NewFirm
 
 Mapping MyModelToModelMapping
 (
-    NewFirm[newFirmTag] : Kittos
-    {
-     ~src Firm
-     shortenedCompanyType: if($src.companyType == CompanyType.LimitedLiabilityCorporation ,
-                              | 'LLC',
-                              | $src.companyType->toString());
-    }
+  NewFirm[newFirmTag] : Kittos
+  {
+    ~src Firm
+    shortenedCompanyType: if(
+      $src.companyType == CompanyType.LimitedLiabilityCorporation,
+      | 'LLC',
+      | $src.companyType->toString()
+    );
+  }
 )

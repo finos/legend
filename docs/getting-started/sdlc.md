@@ -10,31 +10,38 @@ Alloy is integrated with SDLC (supported by GitLab) enabling changes to be revie
 
 See steps below on how to review and commit a change:
 
-### Review local changes
-The diff view compares the local (un-synced) changes to the workspace.
->ADD SCREENSHOT
-
 ### Sync local changes to workspace
 Sync the local changes to the workspace using the icon in the status bar shown or use `Ctrl+S`.
->ADD SCREENSHOT
+
+![](assets/sdlc_step1.JPG)
+
+### Review changes
+Select the diff view to review the sync'ed changes in workspace.
+
+![](assets/sdlc_step2.JPG)
 
 ### Create a review
-To create a review, click the icon in the activity bar highlighted or hit `Ctrl + Shift + M` to go to the review panel. Review the code in the current workspace vs. the committed code in this view.
+To create a review, click the highlighted icon in the activity bar or hit `Ctrl + Shift + M` to go to the review panel. Review the code in the current workspace vs. the committed code in this view.
 
->ADD SCREENSHOT
+![](assets/sdlc_step3.JPG)
 
 ### Commit the changes
 After the review is approved, click commit. 
->ADD SCREENSHOT
+
+![](assets/sdlc_step4.JPG)
 
 ## Update workspace with latest changes
 
-When the workspace is out of date, hit the update button to bring in the latest chagnes.
+When the workspace is out of date, Studio provides a notification in the status bar on the bottom left. Select the update button to bring in the latest changes.
 
->ADD SCREENSHOT
+![](assets/sdlc_step5.JPG)
 
 ## Resolve a conflict in the workspace
-A workspace update may result in a conflict.  Studio will open a new view to aid in resolving the conflict.  
+A workspace update may result in a conflict.  
+
+Studio will open a new view to aid in resolving the conflict.  
+
+![](assets/sdlc_step6.JPG)
 
 Choose one of the following actions:
 
@@ -42,19 +49,16 @@ Choose one of the following actions:
 
 Choosing `Discard Changes` at this stage, will result in the workspace changes being removed.
 
->ADD SCREENSHOT
+### Review the changes
 
-### Accept and review the changes
-
-Changes in the workspace will be applied on top of the latest version. 
+Chossing `Review changes` will result in a view where the workspace changes will be applied on top of the latest version. 
 
 As the first step, review the changes and compile (with `F9`).
 
->ADD SCREENSHOT
-
 Once the changes compile successfully, either Accept or Discard the changes.
 
->ADD SCREENSHOT
+![](assets/sdlc_step7.JPG)
+
 
 
 

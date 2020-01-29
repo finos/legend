@@ -21,9 +21,11 @@
   opacity: 0;
   z-index: 10;
   transition: opacity 0.6s ease;
+  pointer-events: none;
 }
 
 .home-page__header--visible {
+  pointer-events: initial;
   opacity: 1 !important;
 }
 
@@ -41,15 +43,14 @@
   opacity: 0;
   align-items: center;
   transition: opacity 0.6s ease;
-  pointer-events: none;
-}
-
-.home-page__header--visible .home-page__header__title {
-  pointer-events: initial;
 }
 
 .home-page__header__title--visible {
   opacity: 1 !important;
+}
+
+.home-page__header__title__home-btn {
+  display: flex;
 }
 
 .home-page__header__title__logo {
@@ -236,25 +237,85 @@
 }
 
 .home-page__content__tools__text {
-  min-width: 69rem;
   margin-right: 5rem;
 }
 
 .home-page__content__tools-panel {
   position: relative;
-  min-width: 50rem;
-  padding-left: 5rem;
+  min-width: 52rem;
+  pointer-events: none;
+  user-select: none;
+  border-left: 0.1rem solid var(--color-dark-grey-50);
+  padding: 10rem 0 10rem 5rem;
+}
+
+.home-page__content__tools-panel__text-cursor {
+  position: absolute;
+  width: 0.8rem;
+  height: 9rem;
+  background: var(--color-light-grey-200);
+  border-radius: 0.5rem;
+  top: 9rem;
+  left: 33rem;
+  animation: text-cursor-flicker 1.2s ease infinite;
+}
+
+@keyframes text-cursor-flicker {
+  0% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .home-page__content__tool {
-  font-size: 8rem;
+  font-size: 7.7rem;
   font-family: "Source Code Pro";
-  line-height: 0.95;
+  line-height: 0.9;
 }
 
 .home-page__content__tool span {
   font: inherit;
   display: inline-flex;
+}
+
+.code__letter {
+  color: var(--color-light-grey-200);
+  transition: color 0.5s ease;
+}
+
+.code__letter--white {
+  color: var(--color-light-grey-200);
+}
+
+.code__letter--blue {
+  color: #3075d5;
+}
+
+.code__letter--green {
+  color: #99b765;
+}
+
+.code__letter--yellow {
+  color: #d7ba7d;
+}
+
+.code__letter--red {
+  color: #b25353;
+}
+
+.code__letter--purple {
+  color: #96639a;
+}
+
+.code__letter--orange {
+  color: #ce9178;
 }
 
 .home-page__content__ecosystem {
@@ -290,37 +351,4 @@
 .home-page__footer {
   height: 16rem;
   background: var(--color-footer-background);
-}
-
-.code__letter {
-  color: var(--color-light-grey-200);
-  transition: color 0.5s ease;
-}
-
-.code__letter--white {
-  color: var(--color-light-grey-200);
-}
-
-.code__letter--blue {
-  color: var(--color-blue-100);
-}
-
-.code__letter--green {
-  color: var(--color-green-100);
-}
-
-.code__letter--yellow {
-  color: var(--color-yellow-300);
-}
-
-.code__letter--red {
-  color: var(--color-red-100);
-}
-
-.code__letter--purple {
-  color: var(--color-purple-100);
-}
-
-.code__letter--orange {
-  color: var(--color-orange-100);
 }

@@ -14,18 +14,17 @@ You can save these tests and continue to enhance your data models with the comfo
 
 ### Execute panel
 Drag the panel up from the bottom of the Studio screen.
-![](assets/execute_step_1.jpg)
+![](assets/execute_step1.JPG)
 
 ### Select the target model
-Drag & drop the target class and select the attribute(s) to test.
-![](assets/execute_step_2.jpg)
+Select the edit button to select the `NewPerson` class for testing.  Then select the attribute(s) to test. The source model is auto populated.
 
-### Select the source model
-![](assets/execute_step_3.jpg)
+![](assets/execute_step2.JPG)
 
 ### Execute the mapping and review the results
-![](assets/execute_step_4.jpg)
+![](assets/execute_step3.JPG)
 
 ### Promote the execution to a test
-![](assets/execute_step_5.jpg)
+Save this exection as a test to be run as part of the pipeline.
+![](assets/execute_step4.JPG)
 

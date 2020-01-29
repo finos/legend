@@ -12,7 +12,6 @@
 
 // const users = require('./data/users.json');
 
-const languageHighlighter = require('./languageHighlighter');
 const alloyHighlighter = require('./alloyHighlighter');
 
 const siteConfig = {
@@ -26,7 +25,6 @@ const siteConfig = {
   organizationName: 'finos',
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { doc: 'overview/intro', label: 'Introduction' },
     { doc: 'getting-started/studio', label: 'Docs' },
     { href: "https://github.com/finos/purealloy/", label: "GitHub" }
   ],
@@ -51,10 +49,10 @@ const siteConfig = {
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
-    theme: 'atom-one-dark'
-    // hljs: function(hljsEngine) {
-    //    hljsEngine.registerLanguage('alloy', alloyHighlighter);
-    // },
+    theme: 'atom-one-dark',
+    hljs: function(hljsEngine) {
+       hljsEngine.registerLanguage('alloy', alloyHighlighter);
+    },
   },
 
   stylesheets: [
