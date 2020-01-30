@@ -26,7 +26,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     { doc: 'getting-started/studio', label: 'Docs' },
-    { href: "https://github.com/finos/purealloy/", label: "GitHub" }
+    { href: "https://github.com/finos/purealloy/", label: "GitHub", external: true }
   ],
 
   twitterUsername: 'finosfoundation',
