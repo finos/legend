@@ -30,7 +30,7 @@ class Footer extends React.Component {
         </section>
         <section className="finos finosBanner">
           <a href="https://www.finos.org">
-            <img id="finosicon" src={`https://purealloy.finos.org/img/finos_wordmark.svg`} height='75px' alt="FINOS" title="FINOS"/>
+            <img id="finosicon" src={`https://alloy.finos.org/img/finos_wordmark.svg`} height='75px' alt="FINOS" title="FINOS"/>
           </a>
         </section>
         <section className="copyright">{this.props.config.copyright}</section>
