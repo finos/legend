@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Alloy Studio · alloy</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Getting Started"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Alloy Studio · alloy"/><meta property="og:type" content="website"/><meta property="og:url" content="https://purealloy.finos.org//"/><meta property="og:description" content="## Getting Started"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,500,700,900|Roboto:400,500,700,900|Source+Code+Pro:400,500,700,900&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/alloy.svg" alt="alloy"/><h2 class="headerTitleWithLogo">alloy</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive siteNavItemActive"><a href="/docs/getting-started/studio" target="_self">Docs</a></li><li class=""><a href="https://github.com/finos/purealloy/" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Getting Started</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/getting-started/studio">Studio</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/language">Language</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/execution">Execution</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/sdlc">SDLC</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/cube">Cube</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/graph">Graph</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/services">Services</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Alloy Studio</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="getting-started"></a><a href="#getting-started" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting Started</h2>
+<p>Select an existing GitLab project or select <code>+</code> to start working on a new one.</p>
+<p><img src="/docs/assets/studio_step1.jpg" alt=""></p>
+<p>Once the project is selected or created, create (or choose) a workspace (enabling multiple users to work on the same project). <strong>Click Next.</strong></p>
+<p><img src="/docs/assets/studio_step2.jpg" alt=""></p>
+<h2><a class="anchor" aria-hidden="true" id="create-a-model"></a><a href="#create-a-model" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a model</h2>
+<h3><a class="anchor" aria-hidden="true" id="define-a-model-hierarchy"></a><a href="#define-a-model-hierarchy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Define a model hierarchy</h3>
+<p>Select the <code>+</code> next to  <code>project</code> and click on <code>Add a new package</code> to start a model hierarchy.</p>
+<p><img src="/docs/assets/studio_step3.jpg" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="define-a-new-class"></a><a href="#define-a-new-class" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Define a new Class</h3>
+<p>A <code>Class</code> is used to define a business concept.</p>
+<p>Select the <code>+</code> and click on &quot;Add a new class&quot;</code>.  Let's create a class called <code>Person</code>.</p>
+<p><img src="/docs/assets/studio_step4.JPG" alt=""></p>
+<p>Studio displays a visualization of the class and a tabbed list of the possible model enrichments.</p>
+<h3><a class="anchor" aria-hidden="true" id="add-a-property-primitive-data-type"></a><a href="#add-a-property-primitive-data-type" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add a Property (primitive data type)</h3>
+<p><code>Properties</code> in a class are used to define attributes of the business concept.</p>
+<p>Move to the <code>Properties</code> tab and select <code>+</code>.  Type in the name of your property and specify the <a href="/docs/getting-started/language#language-type">data type</a> and <a href="/docs/getting-started/language#language-cardinality">cardinality</a>.</p>
+<p>Let's create a property called <code>firstName</code> of type <code>String</code> with <a href="/docs/getting-started/language#language-cardinality">cardinality</a> of 1.</p>
+<p><img src="/docs/assets/studio_step5.JPG" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="add-a-derived-property"></a><a href="#add-a-derived-property" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add a Derived Property</h3>
+<p>Derived Properties are properties defined using functions that can operate on other attributes in the data model.</p>
+<p>Move to the <code>Derived Properties</code> tab and select <code>+</code>.  Type in the name of your property, the return <a href="/docs/getting-started/language#language-type">data type</a> and <a href="/docs/getting-started/language#language-cardinality">cardinality</a>.  Then type in the expression.</p>
+<p>Let's add a qualified property called <code>firstInitial</code> using the following expression - <code>$this.name-&gt;substring(0,1)</code>.  Select a return <a href="/docs/getting-started/language#language-type">data type</a> of <code>String</code> and <a href="/docs/getting-started/language#language-cardinality">cardinality</a> of 1. Hit <code>F9</code> to compile the expression.</p>
+<p><img src="/docs/assets/studio_step6.JPG" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="add-a-constraint"></a><a href="#add-a-constraint" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add a Constraint</h3>
+<p><code>Constraints</code> can be used to define a validation or condition on the model that is expected to be met.  The return type for a constraint if <code>Boolean</code>.</p>
+<p>Move to the <code>Constraints</code> tab and select <code>+</code>.  Type in a name for the constraint and the expression.</p>
+<p>Let's add a constraint called <code>firstNameNotEmpty</code> defined by the following expression - <code>$this.firstName-&gt;isNotEmpty()</code>.  Hit <code>F9</code> to compile the expression.</p>
+<p><img src="/docs/assets/studio_step7.JPG" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="add-a-tagged-value"></a><a href="#add-a-tagged-value" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add a Tagged Value</h3>
+<p>One type of tagged value is <code>doc</code>.  The <code>doc</code> tag provides the ability to describe the <code>Class</code>.</p>
+<p>Let's add a <code>doc</code> to describe the <code>Person</code> class.</p>
+<p><img src="/docs/assets/studio_step8.JPG" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="add-a-stereotype"></a><a href="#add-a-stereotype" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add a StereoType</h3>
+<p>Move to the <code>StereoType</code> tab and select <code>+</code>.</p>
+<p>Let's add a stereotype of type <code>access</code> and a value of <code>public</code>.</p>
+<p><img src="/docs/assets/studio_step9.JPG" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="create-and-add-an-enumeration"></a><a href="#create-and-add-an-enumeration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create and add an Enumeration</h3>
+<p>A model attribute that has a finite list of values can be defined with an <code>enumeration</code>.</p>
+<p>Select the <code>+</code> on the left hand side and pick <code>Add an enumeration</code>.</p>
+<p>Let's create a enumeration called <code>CompanyType</code> with the values <code>LLC</code> and <code>Corporation</code>.</p>
+<p><img src="/docs/assets/studio_step10.JPG" alt=""></p>
+<p>Create a new class called <code>Firm</code> with a property named <code>type</code>.  Select <code>CompanyType</code> for the type of property and a <a href="/docs/getting-started/language#language-cardinality">cardinality</a> of 1.</p>
+<p><img src="/docs/assets/studio_step11.JPG" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="add-a-super-type"></a><a href="#add-a-super-type" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add a Super Type</h3>
+<p>Add a <code>Super Type</code> to the model to show a relationship between classes or business concepts.</p>
+<p>Let's create a new <code>Class</code> called <code>LegalEntity</code>.</p>
+<p><img src="/docs/assets/studio_step12.JPG" alt=""></p>
+<p>Moving back to the <code>Firm</code> class, go to the <code>Super Types</code> tab and select <code>+</code>.  Select the <code>LegalEntity</code> class from the dropdown.</p>
+<p>The model visualization on the left now shows the <code>LegalEntity</code> class as a super type of <code>Firm</code>.</p>
+<p><img src="/docs/assets/studio_step13.JPG" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="add-a-property-non-primitive-data-type"></a><a href="#add-a-property-non-primitive-data-type" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add a Property (non-primitive data type)</h3>
+<p>Create a relationship between the <code>Person</code> and <code>Firm</code> classes.</p>
+<p>In the <code>Firm</code> class, create a property of with a name of <code>employees</code> of type <code>Person</code> with cardinality of <code>1..*</code>.</p>
+<p><img src="/docs/assets/studio_step14.JPG" alt=""></p>
+<h2><a class="anchor" aria-hidden="true" id="create-a-diagram"></a><a href="#create-a-diagram" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a Diagram</h2>
+<p>Create a model diagram to show the relationships across the businss concepts.</p>
+<p>Select the <code>+</code> on the left hand side and pick <code>Add a new diagram</code>.  From the Explorer view, select and drag the <code>Firm</code> and <code>Person</code> classes at a time to the diagram.</p>
+<p><img src="/docs/assets/studio_step15.JPG" alt=""></p>
+<p>Share this diagram to describe to share data and it's relationships.</p>
+<h2><a class="anchor" aria-hidden="true" id="edit-the-model-in-alloy-language-text-editor-view"></a><a href="#edit-the-model-in-alloy-language-text-editor-view" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Edit the model in Alloy language text editor view</h2>
+<p>To view the model in the language text editor view, hit <code>F8</code> or select the icon on the far right on the status bar.</p>
+<p>Refer to the Alloy <a href="/docs/getting-started/language">language guide</a> for more information on the Alloy language.</p>
+<p><img src="/docs/assets/studio_step16.JPG" alt=""></p>
+<h2><a class="anchor" aria-hidden="true" id="create-a-model-to-model-mapping"></a><a href="#create-a-model-to-model-mapping" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a Model-to-Model Mapping</h2>
+<p>Create a model transformation using a model-to-model mapping.</p>
+<p>First, add a property called <code>lastName</code> to <code>Person</code> of type <code>String</code> with a <a href="/docs/getting-started/language#language-cardinality">cardinality</a> of 1.  Next, create a new class called <code>NewPerson</code>.  Add a property to <code>NewPerson</code> called <code>name</code> of type <code>String</code> and a <a href="/docs/getting-started/language#language-cardinality">cardinality</a> of 1.</p>
+<p><img src="/docs/assets/studio_step17.JPG" alt=""></p>
+<p>Select the <code>+</code> next to project and select <code>Add a new mapping</code> to create a new mapping called <code>NewPersonMapping</code>.</p>
+<p><img src="/docs/assets/studio_step18.JPG" alt=""></p>
+<p>To select the target class for the mapping, drag and drop the <code>NewPerson</code> class into the <code>Add a mapping element</code> section.  Select a mapping element type of <code>Pure</code>.</p>
+<p><img src="/docs/assets/studio_step19.JPG" alt=""></p>
+<p>Next select the source class - click on the <code>edit</code> icon and select the <code>Person</code> class.</p>
+<p><img src="/docs/assets/studio_step20.JPG" alt=""></p>
+<p>Add the following expression for the <code>name</code> property - <code>$src.firstName + ' ' + $src.lastName</code>.</p>
+<p><img src="/docs/assets/studio_step21.JPG" alt=""></p>
+<p>See the text view of the mapping:</p>
+<p><img src="/docs/assets/studio_step22.JPG" alt=""></p>
+<h2><a class="anchor" aria-hidden="true" id="execute-the-mapping"></a><a href="#execute-the-mapping" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Execute the Mapping</h2>
+<p>Refer to the <a href="/docs/getting-started/execution">execution</a> user guide.</p>
+<h2><a class="anchor" aria-hidden="true" id="commit-model-changes"></a><a href="#commit-model-changes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Commit model changes</h2>
+<p>Refer to the <a href="/docs/getting-started/sdlc">SDLC</a> user guide.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/getting-started/language"><span>Language</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#getting-started">Getting Started</a></li><li><a href="#create-a-model">Create a model</a><ul class="toc-headings"><li><a href="#define-a-model-hierarchy">Define a model hierarchy</a></li><li><a href="#define-a-new-class">Define a new Class</a></li><li><a href="#add-a-property-primitive-data-type">Add a Property (primitive data type)</a></li><li><a href="#add-a-derived-property">Add a Derived Property</a></li><li><a href="#add-a-constraint">Add a Constraint</a></li><li><a href="#add-a-tagged-value">Add a Tagged Value</a></li><li><a href="#add-a-stereotype">Add a StereoType</a></li><li><a href="#create-and-add-an-enumeration">Create and add an Enumeration</a></li><li><a href="#add-a-super-type">Add a Super Type</a></li><li><a href="#add-a-property-non-primitive-data-type">Add a Property (non-primitive data type)</a></li></ul></li><li><a href="#create-a-diagram">Create a Diagram</a></li><li><a href="#edit-the-model-in-alloy-language-text-editor-view">Edit the model in Alloy language text editor view</a></li><li><a href="#create-a-model-to-model-mapping">Create a Model-to-Model Mapping</a></li><li><a href="#execute-the-mapping">Execute the Mapping</a></li><li><a href="#commit-model-changes">Commit model changes</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a></section><section class="finos finosBanner"><a href="https://www.finos.org"><img id="finosicon" src="https://purealloy.finos.org/img/finos_wordmark.svg" height="75px" alt="FINOS" title="FINOS"/></a></section><section class="copyright">Copyright © 2020 PURE/Alloy</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
