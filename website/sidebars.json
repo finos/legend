@@ -1,29 +1,13 @@
 {
   "docs": {
     "Getting Started": [
-      "overview/intro",
-      "overview/why-purealloy",
-      "overview/user-guide"
-    ],
-
-    "Modeling": [
-      "models/purealloy-modeling/modeling-conventions",
-      {
-        "type": "subcategory",
-        "label": "Models",
-        "ids": [
-          "models/purealloy-modeling-samples/intro-model-sample",
-          "models/purealloy-modeling-samples/why-model-sample"
-        ]
-      }
-    ],
-    "Technical Guide": [
-      "techdocs/devdocs/alloy-aws-deployment",
-      "techdocs/devdocs/create-alloy-deployer-box",
-      "techdocs/devdocs/create-eks-cluster-alloy",
-      "techdocs/devdocs/deploy-alloy",
-      "techdocs/devdocs/manage-eks-cluster",
-      "techdocs/devdocs/deploy-gitlab-runners"
+      "getting-started/studio",
+      "getting-started/language",
+      "getting-started/execution",
+      "getting-started/sdlc",
+      "getting-started/cube",
+      "getting-started/graph",
+      "getting-started/services"
     ]
   }
 }

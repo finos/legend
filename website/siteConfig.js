@@ -10,40 +10,38 @@
 
 // List of projects/orgs using your project for the users page.
 
-const users = require('./data/users.json');
+// const users = require('./data/users.json');
+
+const alloyHighlighter = require('./alloyHighlighter');
 
 const siteConfig = {
-  title: ' ', // Title for your website. THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
+  title: 'alloy', // Title for your website. THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
   tagline: 'Language and visual platform to generate models for the financial services industry', //THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
-  cname: 'purealloy.finos.org',
-  url: 'https://purealloy.finos.org/',
+  cname: 'alloy.finos.org',
+  url: 'https://alloy.finos.org/',
   baseUrl: '/',
   // For publishing to GitHub pages
-  projectName: 'purealloy',
+  projectName: 'alloy',
   organizationName: 'finos',
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'overview/intro', label: 'What is PURE/Alloy'},
-    {doc: 'overview/user-guide', label: 'User Guide'},
-    {doc: 'overview/why-purealloy', label: 'Why PURE/Alloy'}
+    { doc: 'getting-started/studio', label: 'Docs' },
+    { href: "https://github.com/finos/purealloy/", label: "GitHub" }
   ],
 
   twitterUsername: 'finosfoundation',
 
   // If you have users set above, you add it here:
-  users,
+  // users,
 
-  /* TODO - path to images for header/footer */
-  // headerIcon: 'img/todo.svg',   /* change to program/project icon logo */
   // footerIcon: 'img/todo.svg',  /* change to program/project icon + wordmark logo */
+  headerIcon: 'img/alloy.svg',
   favicon: 'img/favicon/favicon.ico',  /* change to program/project favicon logo .ico */
 
   /* Colors for website */
   colors: {
-    primaryColor: '#2D85BE', /* This changes the top FINOS banner & all links - DO NOT CHANGE */
-    secondaryColor: '#0033A0' /* This does net change anything - but keep as the project / program main color */
-
-  
+    primaryColor: '#ffa7c4', /* This changes the top FINOS banner & all links - DO NOT CHANGE */
+    secondaryColor: 'white'
   },
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
@@ -51,8 +49,15 @@ const siteConfig = {
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
-    theme: 'default',
+    theme: 'atom-one-dark',
+    hljs: function(hljsEngine) {
+       hljsEngine.registerLanguage('alloy', alloyHighlighter);
+    },
   },
+
+  stylesheets: [
+    "https://fonts.googleapis.com/css?family=Merriweather:400,500,700,900|Roboto:400,500,700,900|Source+Code+Pro:400,500,700,900&display=swap",
+  ],
 
   // Add custom scripts here that would be placed in <script> tags.
   scripts: ['https://buttons.github.io/buttons.js'],
@@ -63,7 +68,7 @@ const siteConfig = {
   cleanUrl: true,
 
   wrapPagesHTML: true,
-  docsSideNavCollapsible: true,
+  docsSideNavCollapsible: false,
 
   // TODO - Open Graph and Twitter card images.
   // ogImage: 'assets/todo-logo.png', /* change to program/project icon + wordmark logo */

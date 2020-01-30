@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font: inherit;
+  font-weight: 400;
+  font-size: 1.4rem;
+  vertical-align: baseline;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+*:focus {
+  outline: none;
+}
+
+button {
+  background: none;
+  cursor: pointer;
+}
+
+button[disabled] {
+  cursor: not-allowed;
+}
+
+html {
+  box-sizing: border-box !important;
+  font-family: "Merriweather", sans-serif !important;
+  font-size: 62.5% !important;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+  min-width: 50rem; /* do not allow shrinking further */
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+li,
+p {
+  font-family: "Merriweather" !important;
+  font-size: 1.6rem;
+  line-height: 1.75;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Merriweather" !important;
+}
+
+code {
+  font-family: "Source Code Pro";
+  font-size: 1.5rem;
+  background: var(--color-dark-grey-150);
+  margin-right: 0.5rem;
+  padding: 0.4rem 1rem;
+}
+
+blockquote {
+  color: var(--color-light-grey-200) !important;
+  background-color: var(--color-dark-grey-50) !important;
+  border-left: 0.8rem solid var(--color-dark-grey-30) !important;
+  padding: 1.5rem 3rem 1.5rem 1.5rem;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  border-radius: 0.3rem;
+}
+
+blockquote code {
+  background: var(--color-dark-grey-30);
+}
