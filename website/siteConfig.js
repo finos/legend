@@ -18,10 +18,10 @@ const siteConfig = {
   title: 'alloy', // Title for your website. THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
   tagline: 'Language and visual platform to generate models for the financial services industry', //THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
   cname: 'alloy.finos.org',
-  url: 'https://alloy.finos.org/',
+  url: 'https://purealloy.finos.org/',
   baseUrl: '/',
   // For publishing to GitHub pages
-  projectName: 'alloy',
+  projectName: 'purealloy',
   organizationName: 'finos',
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
