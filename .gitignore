@@ -1,5 +1,4 @@
 .DS_Store
-yarn.lock
 *.code-workspace
 
 node_modules
