@@ -1,12 +1,11 @@
 ---
-id: contribute
-title: Contribute to PURE/Alloy
-sidebar_label: Contribute
+id: getinvolved
+title: Get Involved with Alloy
+sidebar_label: Get Involved
 ---
 
-# Contributing to Alloy
-## Ways of Contributing 
-### Participate in the Pilot
+# Ways to Get Involved
+## Participate in the Pilot
 In support of the overall roadmap for open sourcing Alloy into FINOS, FINOS is operating a pilot to a group of FINOS members and contributors - "Phase 1" - during Q1 2020. 
 
 The purpose of this pilot is
@@ -20,50 +19,50 @@ The purpose of this pilot is
     * It's anticipated FINOS members and the wider FINOS community will bolster  momentum for shared models developing in Alloy by implementing cooperatively developed models, and in turn effectively driving "standards by convention".
 
 
-#### Shared Modeling in Alloy (**)
+### Shared Modeling in Alloy (**)
 To date the pilot group has identified the following as areas of interest for shared moeling:
 * FX options
 * RFQ
 * ESG
 
-### Suggest Modeling Use Cases
+## Suggest Modeling Use Cases
 A great way to get engaged and contributing to Alloy is by suggesting use cases or functional areas that would be good candidates for modeling. You can do so by sending your idea to the Alloy General List with an email to alloy@finos.org
 
-### Help Build the Documentation
+## Help Build the Documentation
 We could also use 
-#### Suggest Topics
-#### Make Suggested Edits and Adds
+### Suggest Documentation Topics
+### Make Suggested Documentation Edits and Adds
 
 ### Propose Changes (Make Pull Requests) to Underlying PURE and Alloy Code (Phase 2)
 
-## Collaboration
-### Google Group Mailing Lists
+# Collaborate on Alloy
+## Google Group Mailing Lists
 
-### Updates from FINOS
+## Updates from FINOS
 
-### Github Issues and Kanban
+## Github Issues and Kanban
 
-### Meetings
-#### Pilot Project Meetings
+## Meetings
+### Pilot Project Meetings
 
-#### General Meetings
+### General Meetings
 
-### Rules of the Role
-#### FINOS AntiTrust Policy
+## Rules of the Role
+### FINOS AntiTrust Policy
 
-#### Meeting Minutes
+### Meeting Minutes
 [Meeting Minutes Policy](wiki)
 
-#### Using Agenda
+### Using Agenda
 
 
 
-## Making Code (Including Documentation) Changes
+# Making Code (Including Documentation) Changes
 The following section describes some of the key componets to the overall process of contributing code to the repositories of a FINOS project such as Alloy.
 
-### Prerequisites
+## Prerequisites
 In order to contribute code 
-#### Github ID
+### Github ID
 #### FINOS Contributor License Agreement
 A CLA is a document that specifies how a project is allowed to use your
 contribution; they are commonly used in many open source projects.
@@ -72,7 +71,7 @@ _NOTE:_ Commits and pull requests to FINOS project repositories, including Alloy
 
 * Need an ICLA? Unsure if you are covered under an existing CCLA? Email [help@finos.org](mailto:help@finos.org?subject=CLA)
 
-### Overall Code Contribution Workflow
+## Overall Code Contribution Workflow
 
 1. Read our [contribution guidelines](.github/CONTRIBUTING.md) and [Community Code of Conduct](https://www.finos.org/code-of-conduct)
 2. Fork the Alloy repository (<https://github.com/finos/purealloy/fork>)
@@ -83,7 +82,7 @@ _NOTE:_ Commits and pull requests to FINOS project repositories, including Alloy
 6. Optional but Recommeded: Do a build in/from your fork; further evaluate and test
 7. If all looks good, propose a pull request into the [FINOS PURE/Alloy GitHub Repo](github.com/finos/purealloy) from your fork.
 
-#### Proposing and Submitting Pull Requests (Code & Docs)
+### Proposing and Submitting Pull Requests (Code & Docs)
 To make review of PRs easier, please:
 
  * Please make sure your PRs will merge cleanly - PRs that don't are unlikely to be accepted.
@@ -96,7 +95,7 @@ To make review of PRs easier, please:
  * If necessary (e.g. due to 3rd party dependency licensing requirements), update the [NOTICE file](https://github.com/finos/purealloy/blob/master/NOTICE) with any new attribution or other notices
 
 
-#### Commit and PR Messages
+## Commit and PR Messages
 * **Reference issues, wiki pages, and pull requests liberally!**
 * Use the present tense ("Add feature" not "Added feature")
 * Use the imperative mood ("Move button left..." not "Moves button left...")
@@ -105,7 +104,7 @@ To make review of PRs easier, please:
 
 
 
-### Running the Docs Site Locally on Your Machine
+## Running the Docs Site Locally on Your Machine
 In order to make edits to the website itself, you'll probably want to run the website locally, you must have:
 - A Git client installed, to checkout the code from github.com/finos/purealloy (`master` branch); note that the `git` command must be available via command-line, as it's needed to run the `build-site.sh` script
 - [Yarn installed](https://yarnpkg.com/lang/en/docs/install)
@@ -132,8 +131,8 @@ To learn more about Docusaurus see
 * https://docusaurus.io
 
 
-## Contributing Issues
-### Prerequisites
+# Contributing Issues
+## Prerequisites
 
 * [ ] Have you [searched for duplicates](https://github.com/finos/purealloy/issues?utf8=%E2%9C%93&q=)?  A simple search for exception error messages or a summary of the unexpected behaviour should suffice.
 * [ ] Are you running the latest version?
