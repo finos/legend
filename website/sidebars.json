@@ -9,18 +9,8 @@
       "getting-started/graph",
       "getting-started/services"
     ],
-    "About": [
-      "about/timeline",
-      "about/pilot",
-      "about/contribute",
-      "about/collaborate",
-      {
-        "type": "subcategory",
-        "label": "Minutes",
-        "ids": [
-          "meeting-minutes/meeting-minutes-2020129"
-        ]
-      }
+    "Contribute": [
+      "about/contribute"
     ]
   }
 }
