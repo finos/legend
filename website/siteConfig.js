@@ -26,9 +26,9 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     { doc: 'getting-started/studio', label: 'Docs' },
-    { doc: 'about/timeline', label: 'About' },
-    { href: "https://gitlab.alloy.finos.org/", label: "GitLab (Models)", external: true },
-    { href: "https://github.com/finos/purealloy/", label: "GitHub (Source Code for This Site)", external: true }
+    { doc: 'about/contribute', label: 'Contribute' }
+    // { href: "https://gitlab.alloy.finos.org/", label: "GitLab (Models)", external: true },
+    // { href: "https://github.com/finos/purealloy/", label: "GitHub (Source Code for This Site)", external: true }
   ],
 
   twitterUsername: 'finosfoundation',
