@@ -51,7 +51,7 @@ Enum CompanyType
 ```
 Leverage this enumeration in a <code>Class</code> to define the type of an attribute.  
 
-For example, create an attribute called <code>companyType</code> with a type of <code>CompanyType</code> to the <code>Firm</code> class created above.  This restricts and defines the set of values that <code>companyType</code> can have.
+For example, add an attribute called <code>companyType</code> with a type of <code>CompanyType</code> to the <code>Firm</code> class created above.  Using an `Enum` restricts and defines the set of values that <code>companyType</code> attribute can have.
 ```alloy
 Class Firm 
 {
@@ -63,7 +63,7 @@ Class Firm
 ## Functions
 A subset of the available functions that can aid in the writing of model constraints, derivations, and model-to-model mappings are described below.  
 
-A full list of supported functions can be found [here](/docs/getting-started/functions).
+A full list of supported functions in the January release can be found [here](/docs/getting-started/released-functions).
 
 ### Variable
 The keyword <code>let</code> is used to create and assign a variable.   Use <code>$</code> to reference the variable in subsequent statements.
@@ -102,8 +102,6 @@ Define a filter using the following syntax.
 ```alloy
 x | filter($x.name->startsWith('S'))
 ```
-### All Functions
-A full list of supported functions can be found [here](/docs/getting-started/functions).
 
 ## Extensions
 Similar to UML, the language supports the following extensions: stereotype, profile and constraint.  The language supports an additional extension called derivation (or qualified property).  A derivation allows defining an attribute in the data model using functions that can operate on other attributes in the data model. 
@@ -157,7 +155,7 @@ Class <<extension.important>> {doc.doc = 'Represent a company.'} Firm
 ```
 
 ## Mappings
-The language offers a domain-specific language (DSL) that supports model-to-model mappings in the January pilot release,.  Future releases will enable model-to-database mappings.
+The language offers a domain-specific language (DSL) that supports model-to-model mappings in the January pilot release.  Future releases will enable model-to-database mappings.
 
 ### Model-To-Model Mapping
 ```alloy
