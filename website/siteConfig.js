@@ -26,9 +26,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     { doc: 'getting-started/studio', label: 'Docs' },
-    { doc: 'about/getinvolved', label: 'Get Involved' }
-    // { href: "https://gitlab.alloy.finos.org/", label: "GitLab (Models)", external: true },
-    // { href: "https://github.com/finos/purealloy/", label: "GitHub (Source Code for This Site)", external: true }
+    //    { href: "https://github.com/finos/purealloy/", label: "GitHub", external: true }
   ],
 
   twitterUsername: 'finosfoundation',
@@ -51,14 +49,15 @@ const siteConfig = {
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
-    theme: 'atom-one-dark',
+    // theme: 'atom-one-dark',
+    theme: 'tomorrow-night-blue',
     hljs: function(hljsEngine) {
        hljsEngine.registerLanguage('alloy', alloyHighlighter);
     },
   },
 
   stylesheets: [
-    "https://fonts.googleapis.com/css?family=Merriweather:400,500,700,900|Roboto:400,500,700,900|Source+Code+Pro:400,500,700,900&display=swap",
+    "https://fonts.googleapis.com/css?family=Merriweather:400,500,700,900|Roboto+Condensed:400,500,700,900|Source+Code+Pro:400,500,700,900&display=swap",
   ],
 
   // Add custom scripts here that would be placed in <script> tags.

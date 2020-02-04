@@ -3,6 +3,8 @@
     "Getting Started": [
       "getting-started/studio",
       "getting-started/language",
+      "getting-started/released-functions",
+      "getting-started/upcoming-functions",
       "getting-started/execution",
       "getting-started/sdlc",
       "getting-started/cube",
