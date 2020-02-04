@@ -1,0 +1,56 @@
+.pureGrammar-function {
+  padding: 1rem 0 2rem 0;
+}
+
+.pureGrammar-function ul {
+  list-style: none;
+}
+
+.pureGrammar-function > ul {
+  padding-left: 0;
+}
+
+.pureGrammar-function > ul > li > p {
+  background: var(--color-dark-grey-150);
+  padding: 0.5rem 1rem;
+  display: inline-flex;
+}
+
+.pureGrammar-function > ul > li > ul > li {
+  font-family: "Source Code Pro" !important;
+}
+
+.pureGrammar-functionDoc {
+  padding-bottom: 1rem;
+}
+
+.pureGrammar-functionSignature {
+  background: #4d3b3b;
+  padding: 0.5rem 1rem;
+  font-family: Source Code Pro;
+  font-weight: 500;
+}
+
+.pureGrammar-parameterName {
+  background: #ffa7c4;
+  color: var(--color-dark-grey-50);
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  font-weight: 500;
+}
+
+.pureGrammar-genericType {
+  color: var(--color-primary-0);
+}
+
+.pureGrammar-functionName {
+  color: #a1a1ff;
+}
+
+/* return */
+.pureGrammar-function > ul > li:nth-child(2) > ul > li {
+  font-family: "Source Code Pro" !important;
+  padding: 0.5rem 1rem;
+  background: #4d3b3b;
+  display: inline-flex;
+}

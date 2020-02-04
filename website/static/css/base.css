@@ -31,6 +31,7 @@ html {
   box-sizing: border-box !important;
   font-family: "Merriweather", sans-serif !important;
   font-size: 62.5% !important;
+  background: var(--color-header-background);
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -55,6 +56,7 @@ body {
   line-height: 1.5;
   word-wrap: break-word;
   min-width: 50rem; /* do not allow shrinking further */
+  background: var(--color-header-background);
 }
 
 blockquote,
@@ -92,6 +94,7 @@ h5 {
 
 code {
   font-family: "Source Code Pro";
+  font-weight: 500;
   font-size: 1.5rem;
   background: var(--color-dark-grey-150);
   margin-right: 0.5rem;

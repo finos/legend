@@ -37,6 +37,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 1rem;
 }
 
 .home-page__header__title {
@@ -90,7 +91,7 @@
   margin: auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  padding: 0 10rem;
 }
 
 .home-page__content__brand {
@@ -190,19 +191,19 @@
 }
 
 .home-page__content__whatis__title {
-  min-width: 56rem;
+  min-width: 42rem;
   text-align: right;
   margin-right: 5rem;
 }
 
 .home-page__content__whatis__title__pre {
-  font-size: 12rem;
+  font-size: 11rem;
   font-family: "Merriweather";
   line-height: 1;
 }
 
 .home-page__content__whatis__title__logo {
-  width: 36rem;
+  width: 42rem;
 }
 
 .home-page__content__whatis__title__logo path {
@@ -229,7 +230,7 @@
 }
 
 .home-page__content__tools {
-  height: 80rem;
+  height: 85rem;
 }
 
 .home-page__content__tools .home-page__content__container {
@@ -242,21 +243,21 @@
 
 .home-page__content__tools-panel {
   position: relative;
-  min-width: 52rem;
+  min-width: 42rem;
   pointer-events: none;
   user-select: none;
-  border-left: 0.1rem solid var(--color-dark-grey-50);
-  padding: 10rem 0 10rem 5rem;
+  border-left: 0.1rem solid var(--color-dark-grey-150);
+  padding: 20rem 0 20rem 5rem;
 }
 
 .home-page__content__tools-panel__text-cursor {
   position: absolute;
-  width: 0.8rem;
-  height: 9rem;
+  width: 0.5rem;
+  height: 7rem;
   background: var(--color-light-grey-200);
   border-radius: 0.5rem;
-  top: 9rem;
-  left: 33rem;
+  top: 19rem;
+  left: 28rem;
   animation: text-cursor-flicker 1.2s ease infinite;
 }
 
@@ -275,7 +276,7 @@
 }
 
 .home-page__content__tool {
-  font-size: 7.7rem;
+  font-size: 6.1rem;
   font-family: "Source Code Pro";
   line-height: 0.9;
 }
@@ -351,4 +352,65 @@
 .home-page__footer {
   height: 16rem;
   background: var(--color-footer-background);
+}
+
+@media only screen and (max-width: 1199px) {
+  .home-page__content__whatis .home-page__content__container {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .home-page__content__whatis__title {
+    min-width: initial;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-right: 0;
+  }
+
+  .home-page__content__whatis__content {
+    padding: 5rem 0;
+    border-left: none;
+  }
+
+  .home-page__content__whatis__title__pre {
+    display: flex;
+    align-items: flex-end;
+    white-space: nowrap;
+    margin-right: 2rem;
+  }
+
+  .home-page__content__whatis__title__pre {
+    font-size: 9rem;
+  }
+
+  .home-page__content__whatis__title__logo {
+    width: 31rem;
+  }
+
+  .home-page__content__tools .home-page__content__container {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .home-page__content__tools {
+    height: 103rem;
+  }
+
+  .home-page__content__tools__text {
+    margin-right: 0;
+    order: 1;
+    margin-bottom: 5rem;
+  }
+
+  .home-page__content__tools-panel {
+    order: 0;
+    border-left: none;
+    padding: 7rem 0;
+  }
+
+  .home-page__content__tools-panel__text-cursor {
+    top: 6rem;
+    left: 23rem;
+  }
 }
