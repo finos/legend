@@ -88,8 +88,7 @@ The Alloy Pilot website and service located at https//alloy.finos.org/ (the “S
     5.3.1.1. the specific location of the material that FINOS has removed or disabled access to; 
     
     5.3.1.2. your name, address, telephone number, and email address;
-
-
+    
     5.3.1.3. a statement that you consent to the jurisdiction of Federal District Court for the judicial district in which your address is located (or the federal district courts located in San Francisco, California if your address is outside of the United States), and that you will accept service of process from the person who provided the original notification of infringement (or an agent of that person); 
     
     5.3.1.4. this statement: "I swear, under penalty of perjury, that I have a good faith belief that the material was removed or disabled as a result of a mistake or misidentification of the material to be removed or disabled"; and 
