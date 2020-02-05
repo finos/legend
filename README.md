@@ -2,7 +2,6 @@
 [![FINOS - Incubating](https://cdn.jsdelivr.net/gh/finos/contrib-toolbox@master/images/badge-incubating.svg)](https://finosfoundation.atlassian.net/wiki/display/FINOS/Incubating)
 
 # PURE/Alloy
-
 On November 20, 2019, at FINOS' flagship conference, the Open Source Strategy Forum, FINOS Platinum member [Goldman Sachs](https://developer.gs.com/docs/products/) announced its intention to open source two closely related products - its internal logical modeling language internally named "PURE", and a visual modeling platform that generates PURE models known in Goldman Sachs as "Alloy" - into FINOS.
 
 More information about this decision and announcement can be found at https://www.finos.org/alloy. 
@@ -17,21 +16,21 @@ More information about this decision and announcement can be found at https://ww
 For more information about PURE/Alloy, including some of the motivations behind the decision to open source these two products, see the [PURE/Alloy press release](https://www.finos.org/press/goldman-announces-pure-alloy-contribution).
 
 # Documentation Strategy
-## [This Repository - GitHub.com (github.com/finos/purealloy)](github.com/finos/purealloy)
+## [This Repository - GitHub.com (github.com/finos/purealloy)](https://github.com/finos/purealloy)
 
 This repository (github.com/finos/purealloy) hosts:
-* The underling files for the [PURE/Alloy Documenation site](alloy.finos.org) (composed in markdown file format and stored in the `docs/` folder)
+* The underling files for the [PURE/Alloy Documenation site](https://alloy.finos.org) (composed in markdown file format and stored in the `docs/` folder)
     * The [shared issues list](https://github.com/finos/purealloy/issues) used for task management to track project activity around documentation, deployments, and the overall effort associated with open sourcing PURE and AlloyT
 *  These issues are organized in various kanban boards, including the [overall project kanban](https://github.com/orgs/finos/projects/5), will are configued to pull from the repository as well as other FINOS repositories if and as needed. 
 
-## [FINOS Hosted GitLab Repository (gitlab.alloy.finos.org)](gitlab.alloy.finos.org)
+## [FINOS Hosted GitLab Repository (gitlab.alloy.finos.org)](https://gitlab.alloy.finos.org)
 A separate [hosted Gitlab repository, gitlab.alloy.finos.org](gitlab.alloy.finos.org) hosts shared models being developed by the [Alloy project pilot team](https://groups.google.com/a/finos.org/forum/#!forum/alloy-pilot).
 
-## [gitlab.com (gitlab.com/finosfoundation)](gitlab.com/finosfoundation)
-Documentation specific to particular families and groups of models will be created and curated on GitLab.com at [https://gitlab.com/finosfoundation](https://gitlab.com/finosfoundation). In Phase 2 it's expected that the shared model definitions themselves will be migrated from the hosted GitLab instance to Gitlab.com. 
+## [gitlab.com (https://gitlab.com/finosfoundation)](gitlab.com/finosfoundation)
+Documentation specific to particular families and groups of models will be created and curated on GitLab.com at [https://gitlab.com/finosfoundation](https://gitlab.com/finosfoundation). In Phase 2 it's possible that the shared model definitions themselves may be migrated from the hosted GitLab instance to Gitlab.com. 
 
-## [Alloy Documentation Site (alloy.finos.org/)](https://alloy.finos.org/)
-The [documentation site](alloy.finos.org) is built using Docusaurus based on the markdown files in the [`docs`](/docs/) folder. 
+## [Alloy Documentation Site (alloy.finos.org)](https://alloy.finos.org/)
+The [documentation site](https://alloy.finos.org) is built using Docusaurus based on the markdown files in the [`docs`](/docs/) folder. 
 
 # Contributing
 See [CONTRIBUTING.md](.github/CONTRIBUTING.md)

@@ -1,10 +1,10 @@
 # Contributing to Alloy
 ## Ways of Contributing 
 ### Participate in the Pilot
-In Q1 2020 (i.e., now) FINOS is conducting a pilot with organizations interested evaluating PURE/Alloy mostly FINOS bank members. For more information about the pilot and how to more generally get involved with Alloy see the [Alloy page on finos.org](https://www.finos.org/alloy).
+In Q1 2020 (i.e., now) FINOS is conducting a pilot with member organizations interested in evaluating PURE/Alloy. For more information about the pilot and how to generally get involved with Alloy see the [Alloy page on finos.org](https://www.finos.org/alloy).
 
 #### Shared Modeling in Alloy
-During the pilot, modelers will use Alloy to evaluate how shared modeling works using the underlying language and apps like studio. Examples of the types of models that might be modeled during the pilot by pilot project participants include:
+During the pilot, modelers will collaborate using Alloy to build shared models. Examples of the types of models that might be modeled during the pilot include:
 * FX options
 * RFQ
 * ESG Data
@@ -17,7 +17,7 @@ If you have suggestions or ideas for modeling use cases for which Alloy may be a
 Suggesting topics you think should be included in this documentation site is a great, easy way to get involved with Alloy. A good way of a suggesting a topic for the docs site is by [opening an issue in our Github repo](https://github.com/finos/purealloy/issues/new/choose). Ideas are also welcome via the [Alloy General List](alloy@finos.org).
 
 #### Make Suggested Edits and Adds in the Documentation Site
-We welcome help building out the documentation site. The process to make changes to the documentation site is the same as that which is described in the "Making Code (Including Documentation) Changes" section.
+We welcome your help building out the documentation site. The process to make changes to the documentation site is the same as that which is described in the "Making Code (Including Documentation) Changes" section.
 
 ### Propose Changes (Make Pull Requests) to Underlying PURE and Alloy Code (Phase 2)
 In phase 2, once the underlying code to PURE and Alloy have been open sourced into FINOS and source code made available to the public, the project will welcome pull requests to these code bases. 
