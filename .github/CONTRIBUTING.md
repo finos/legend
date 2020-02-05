@@ -17,7 +17,7 @@ If you have suggestions or ideas for modeling use cases for which Alloy may be a
 Suggesting topics you think should be included in this documentation site is a great, easy way to get involved with Alloy. A good way of a suggesting a topic for the docs site is by [opening an issue in our Github repo](https://github.com/finos/purealloy/issues/new/choose). Ideas are also welcome via the [Alloy General List](alloy@finos.org).
 
 #### Make Suggested Edits and Adds in the Documentation Site
-We welcome your help building out the documentation site. The process to make changes to the documentation site is the same as that which is described in the "Making Code (Including Documentation) Changes" section.
+We welcome your help building out the documentation site. The process to make changes to the documentation site is the same as that which is described in the ["Making Code (Including Documentation) Changes" section](CONTRIBUTING.md#making-code-including-documentation-changes).
 
 ### Propose Changes (Make Pull Requests) to Underlying PURE and Alloy Code (Phase 2)
 In phase 2, once the underlying code to PURE and Alloy have been open sourced into FINOS and source code made available to the public, the project will welcome pull requests to these code bases. 
@@ -25,9 +25,10 @@ In phase 2, once the underlying code to PURE and Alloy have been open sourced in
 ## Making Code (Including Documentation) Changes
 ### Prerequisites
 #### Github ID
-#### FINOS Contributor License Agreement
-A CLA is a document that specifies how a project is allowed to use your
-contribution; they are commonly used in many open source projects.
+Alloy makes use of both GitLab and GitHub infrastructure but, consistent with the FINOS infrastructure strategy, uses GitHub accounts as its default for authentication. All committers to FINOS repos, including pilot phase modelers, must have GitHub IDs.
+
+#### FINOS Contributor License Agreement ("CLA")
+A Contributor License Agreement ("CLA") is a document that specifies how a project is allowed to use your contribution; they are commonly used in many open source projects.
 
 _NOTE:_ Commits and pull requests to FINOS project repositories, including Alloy, will only be accepted from those contributors with an active, executed Individual Contributor License Agreement (ICLA) with FINOS OR who are covered under an existing and active Corporate Contribution License Agreement (CCLA) executed with FINOS. See the [Contribute page on the FINOS Wiki for more information](https://finosfoundation.atlassian.net/wiki/spaces/FINOS/pages/83034172/Contribute). Commits from individuals not covered under an ICLA or CCLA will be flagged and blocked by the FINOS ["CLA Bot" tool](https://github.com/finos/cla-bot). Please note that some CCLAs require individuals/employees to be explicitly named on the CCLA. PRs submitted to the purealloy project cannot be accepted until you have a CLA in place with the Foundation. CLAs are also required for modelers participating in the pilot. 
 
@@ -108,3 +109,15 @@ To learn more about Docusaurus see
 * Please use [Markdown formatting](https://help.github.com/categories/writing-on-github/)
 liberally to assist in readability.
   * [Code fences](https://help.github.com/articles/creating-and-highlighting-code-blocks/) for exception stack traces and log entries, for example, massively improve readability.
+
+## On-line Collaboration
+* [Alloy General List](https://groups.google.com/a/finos.org/forum/#!forum/alloy)
+    * Subscribe w/ email to [alloy+subscribe@finos.org](alloy+subscribe@finos.org)
+    * Post with email to [alloy@finos.org](alloy+subscribe@finos.org)
+
+* Github / Gitlab Issues & Kanban
+    * Github Issues (https://github.com/finos/purealloy/issues)
+    * Github Kanban(https://github.com/orgs/finos/projects/5)
+
+* Alloy Updates from FINOS
+    * [Subscribe at https://www.finos.org/alloy](https://www.finos.org/alloy)
