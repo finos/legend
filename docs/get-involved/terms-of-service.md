@@ -29,25 +29,25 @@ The Alloy Pilot website and service located at https//alloy.finos.org/ (the “S
 
     3.1 The following conduct is prohibited on the Services:
 
-        3.1.1. **Illegal activities**, including the promotion or solicitation of illegal acts.
+    3.1.1. **Illegal activities**, including the promotion or solicitation of illegal acts.
 
-        3.1.2. **Malicious activity or content**, such as the transmission of viruses, malware, or any other malicious or destructive code, or activity intended to harm or disrupt the hardware, networks, or infrastructure of FINOS or any third parties.
+    3.1.2. **Malicious activity or content**, such as the transmission of viruses, malware, or any other malicious or destructive code, or activity intended to harm or disrupt the hardware, networks, or infrastructure of FINOS or any third parties.
 
-        3.1.3 **Unauthorized Access**, including accessing or attempting to access any non-public interface, system, or functionality of the Service, or testing the Service for vulnerabilities.
-        
-        3.1.4 **Abuse**, including threats of violence or harassment of a user through repeated unwanted contact.
+    3.1.3 **Unauthorized Access**, including accessing or attempting to access any non-public interface, system, or functionality of the Service, or testing the Service for vulnerabilities.
+    
+    3.1.4 **Abuse**, including threats of violence or harassment of a user through repeated unwanted contact.
 
-        3.1.5 **Posting anyone’s personal or confidential information**, such as social security numbers, credit card numbers, street addresses, phone numbers, confidential ID numbers, or account passwords, without their permission.
+    3.1.5 **Posting anyone’s personal or confidential information**, such as social security numbers, credit card numbers, street addresses, phone numbers, confidential ID numbers, or account passwords, without their permission.
 
-        3.1.6 **Account hijacking**, including any access to or use of another user’s account without their permission.
+    3.1.6 **Account hijacking**, including any access to or use of another user’s account without their permission.
 
-        3.1.7 **Child exploitation**, including any content or activity that exploits or abuses children.
+    3.1.7 **Child exploitation**, including any content or activity that exploits or abuses children.
 
-        3.1.8 **Spam**, including posting unsolicited promotional or commercial content in comments, sending invitations for the purpose of advertising to the recipients, or posting content or links for the purpose of manipulating search or other algorithms.
+    3.1.8 **Spam**, including posting unsolicited promotional or commercial content in comments, sending invitations for the purpose of advertising to the recipients, or posting content or links for the purpose of manipulating search or other algorithms.
 
-        3.1.9 **Intellectual property infringement**, including the infringing use of third party trademarks or the unauthorized and unlawful posting of copyrighted content. We respond to reports of copyright infringement as described in the Copyright section of these Terms.
+    3.1.9 **Intellectual property infringement**, including the infringing use of third party trademarks or the unauthorized and unlawful posting of copyrighted content. We respond to reports of copyright infringement as described in the Copyright section of these Terms.
 
-        3.1.10. **Fraud or impersonation**, including any use of the Services to impersonate or deceive others (but excluding parody).
+    3.1.10. **Fraud or impersonation**, including any use of the Services to impersonate or deceive others (but excluding parody).
 
     3.2 FINOS reserves the right, to the extent permitted by applicable law, to remove or prohibit any User Content and to suspend or terminate any user account, whether for violating these Terms or for any other reason.
 
@@ -65,40 +65,40 @@ The Alloy Pilot website and service located at https//alloy.finos.org/ (the “S
 
     5.2. Reporting copyright infringement
 
-        5.2.1. If you believe that any Content on the Service infringes your copyright, please send us a notice containing the following information: 
+    5.2.1. If you believe that any Content on the Service infringes your copyright, please send us a notice containing the following information: 
 
-            5.2.1.1. identification of the work or material being infringed;
+    5.2.1.1. identification of the work or material being infringed;
 
-            5.2.1.2. identification of the material that is claimed to be infringing, including its location, with sufficient detail so that FINOS is capable of finding it and verifying its existence; 
-            
-            5.2.1.3 your contact information, including name, address, telephone number, and email address; 
-            
-            5.2.1.4. a statement that you have a good faith belief that the material is not authorized by the copyright owner, its agent, or the law;
-            
-            5.2.1.5. a statement made under penalty of perjury that the information provided in the notice is accurate and that you are authorized to make the complaint on behalf of the copyright owner; and
-            
-            5.2.1.6. a physical or electronic signature of a person authorized to act on behalf of the owner of the copyright that has been allegedly infringed.
-            
-        5.2.2. Infringement notices are not confidential. FINOS may provide the information contained in a notice to the user who posted the allegedly infringing Content, or to other parties.
+    5.2.1.2. identification of the material that is claimed to be infringing, including its location, with sufficient detail so that FINOS is capable of finding it and verifying its existence; 
+    
+    5.2.1.3 your contact information, including name, address, telephone number, and email address; 
+    
+    5.2.1.4. a statement that you have a good faith belief that the material is not authorized by the copyright owner, its agent, or the law;
+    
+    5.2.1.5. a statement made under penalty of perjury that the information provided in the notice is accurate and that you are authorized to make the complaint on behalf of the copyright owner; and
+    
+    5.2.1.6. a physical or electronic signature of a person authorized to act on behalf of the owner of the copyright that has been allegedly infringed.
+        
+    5.2.2. Infringement notices are not confidential. FINOS may provide the information contained in a notice to the user who posted the allegedly infringing Content, or to other parties.
         
     5.3. Responding to improper removals
 
-        5.3.1. If you believe that Content you posted was wrongfully removed or disabled as a result of a copyright infringement notice, you may notify FINOS by providing the following information:
+    5.3.1. If you believe that Content you posted was wrongfully removed or disabled as a result of a copyright infringement notice, you may notify FINOS by providing the following information:
 
-            5.3.1.1. the specific location of the material that FINOS has removed or disabled access to; 
-            
-            5.3.1.2. your name, address, telephone number, and email address;
+    5.3.1.1. the specific location of the material that FINOS has removed or disabled access to; 
+    
+    5.3.1.2. your name, address, telephone number, and email address;
 
 
-            5.3.1.3. a statement that you consent to the jurisdiction of Federal District Court for the judicial district in which your address is located (or the federal district courts located in San Francisco, California if your address is outside of the United States), and that you will accept service of process from the person who provided the original notification of infringement (or an agent of that person); 
-            
-            5.3.1.4. this statement: "I swear, under penalty of perjury, that I have a good faith belief that the material was removed or disabled as a result of a mistake or misidentification of the material to be removed or disabled"; and 
-            
-            5.3.1.6. your signature.
+    5.3.1.3. a statement that you consent to the jurisdiction of Federal District Court for the judicial district in which your address is located (or the federal district courts located in San Francisco, California if your address is outside of the United States), and that you will accept service of process from the person who provided the original notification of infringement (or an agent of that person); 
+    
+    5.3.1.4. this statement: "I swear, under penalty of perjury, that I have a good faith belief that the material was removed or disabled as a result of a mistake or misidentification of the material to be removed or disabled"; and 
+    
+    5.3.1.6. your signature.
 
     5.4 Removal and termination for infringement
     
-        5.4.1. FINOS will terminate, under appropriate circumstances, the accounts of users who repeatedly use the Service to infringe copyrights. FINOS also reserves the right, in its sole discretion, to remove allegedly or apparently infringing Content without notice to you.
+    5.4.1. FINOS will terminate, under appropriate circumstances, the accounts of users who repeatedly use the Service to infringe copyrights. FINOS also reserves the right, in its sole discretion, to remove allegedly or apparently infringing Content without notice to you.
 
 6. Termination
 
