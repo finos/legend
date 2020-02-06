@@ -19,7 +19,7 @@ on:
       - 'website/**'
 
 env:
-  # Used by docusaurus publish-site command and comment-on-pr action
+# Used by docusaurus publish-site command and comment-on-pr action
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   REPO_NAME: ${{ github.event.repository.name }}
   PATCH_SCRIPT_URL: https://raw.githubusercontent.com/finos/open-developer-platform/master/scripts/patch-docusaurus-config.sh
@@ -36,6 +36,7 @@ jobs:
       run: npm install --prefix website
     - name: Patch forked version
       run: |
+        # Extract GitHub org/user and patch siteConfig.js only if not "finos"
         REPO="${{ github.repository }}"
         REPO_ORG=${REPO%"/"*}
         if [ "$REPO_ORG" != "finos" ]
@@ -47,19 +48,27 @@ jobs:
         ./build-site.sh
     - name: Publish Website
       run: |
+        # Extract GitHub org/user
         REPO="${{ github.repository }}"
         GIT_USERNAME=${REPO%/*}
-        if [ "$GIT_USERNAME" == "finos" ]
+        # Set git user to finos-admin, if it's a push to a finos repo
+        if [ "$GIT_USERNAME" == "finos" ] && [ "${{github.event_name }}" == "push" ]
+        then GIT_USERNAME="finos-admin"
+        elif [ "$GIT_USERNAME" == "finos" ] && [ "${{github.event_name }}" == "pull_reqeust" ]
         then GIT_USERNAME="${{ github.actor }}"
         fi
-        echo "Using $GIT_USERNAME as Git username"
+        # Configure git client
+        echo "Git repo - $REPO"
+        echo "Git user - $GIT_USERNAME"
         git config --global user.email "$GIT_USERNAME@users.noreply.github.com"
         git config --global user.name "$GIT_USERNAME"
         echo "machine github.com login $GIT_USERNAME password $GITHUB_TOKEN" > ~/.netrc
+        # Run docusaurus-publish
         GIT_USER=$GIT_USERNAME npm run publish-gh-pages --prefix website
-    # TODO Getting 403 as described on https://github.com/danger/danger-js/issues/918
-    # - name: Add comment to PR
-    #   if: github.event_name == 'pull_request'
-    #   uses: unsplash/comment-on-pr@master
-    #   with:
-    #     msg: "Website preview available at https://${{ github.actor }}.github.io/${{ env.REPO_NAME }}"
+
+# TODO Getting 403 as described on https://github.com/danger/danger-js/issues/918
+# - name: Add comment to PR
+#   if: github.event_name == 'pull_request'
+#   uses: unsplash/comment-on-pr@master
+#   with:
+#     msg: "Website preview available at https://${{ github.actor }}.github.io/${{ env.REPO_NAME }}"
