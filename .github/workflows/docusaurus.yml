@@ -43,7 +43,7 @@ jobs:
         fi
     - name: Build Website
       run: |
-        npm run build --prefix website
+        ./build-site.sh
         git checkout website/siteConfig.js
     - name: Publish Website
       run: |
