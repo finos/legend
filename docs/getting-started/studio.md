@@ -49,7 +49,7 @@ Let's add a qualified property called `firstInitial` using the following express
 ![](assets/studio_step6.JPG)
 
 ### Add a Constraint
-`Constraints` can be used to define a validation or condition on the model that is expected to be met.  The return type for a constraint if `Boolean`.  
+`Constraints` can be used to define a validation or condition on the model that is expected to be met.  The return type for a constraint is `Boolean`.  
 
 Move to the `Constraints` tab and select `+`.  Type in a name for the constraint and the expression.  
 
