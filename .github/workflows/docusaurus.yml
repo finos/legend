@@ -50,7 +50,7 @@ jobs:
         REPO="${{ github.repository }}"
         GIT_USERNAME=${REPO%/*}
         if [ "$GIT_USERNAME" == "finos" ]
-        then GIT_USERNAME="${{ github.author }}"
+        then GIT_USERNAME="${{ github.actor }}"
         fi
         echo "Using $GIT_USERNAME as Git username"
         git config --global user.email "$GIT_USERNAME@users.noreply.github.com"
