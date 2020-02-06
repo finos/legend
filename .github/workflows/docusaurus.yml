@@ -1,0 +1,59 @@
+name: Docusaurus-website-build
+
+# Only trigger on:
+# - master branch
+# - PR or Pull Request event types
+# - Docusaurus files: this file, docs/** and website/**
+on:
+  push:
+    branch: master
+    paths:
+      - '.github/workflows/docusaurus.yml'
+      - 'docs/**'
+      - 'website/**'
+  pull_request:
+    paths:
+      - '.github/workflows/docusaurus.yml'
+      - 'docs/**'
+      - 'website/**'
+
+env:
+  # Used by docusaurus publish-site command and comment-on-pr action
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  REPO_NAME: ${{ github.event.repository.name }}
+  PATCH_SCRIPT_URL: https://raw.githubusercontent.com/finos/open-developer-platform/master/scripts/patch-docusaurus-config.sh
+
+jobs:
+  website-build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v1
+    - name: Install Node
+      uses: actions/setup-node@v1
+    - name: Install Website deps
+      run: npm install --prefix website
+    - name: Patch forked version
+      run: |
+        REPO="${{ github.repository }}"
+        REPO_ORG=${REPO%"/"*}
+        if [ "$REPO_ORG" != "finos" ]
+        then echo "Repo organization is '$REPO_ORG', patching docusaurus configuration to work on a forked repo" ; curl ${{ env.PATCH_SCRIPT_URL }} |  bash -s -- ${{ env.REPO_NAME }} $REPO_ORG
+        else echo "Skipping patching, as this is the FINOS Organization"
+        fi
+    - name: Build Website
+      run: |
+        npm run build --prefix website
+        git checkout website/siteConfig.js
+    - name: Publish Website
+      run: |
+        git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+        git config --global user.name "${{ github.actor }}"
+        echo "machine github.com login ${{ github.actor }} password $GITHUB_TOKEN" > ~/.netrc
+        GIT_USER=${{ github.actor }} npm run publish-gh-pages --prefix website
+    # TODO Getting 403 as described on https://github.com/danger/danger-js/issues/918
+    # - name: Add comment to PR
+    #   if: github.event_name == 'pull_request'
+    #   uses: unsplash/comment-on-pr@master
+    #   with:
+    #     msg: "Website preview available at https://${{ github.actor }}.github.io/${{ env.REPO_NAME }}"
