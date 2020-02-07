@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/finos/purealloy.svg?branch=master)](https://travis-ci.org/finos/alloy)
+[![Build Status](https://travis-ci.org/finos/alloy.svg?branch=master)](https://travis-ci.org/finos/alloy)
 [![FINOS - Incubating](https://cdn.jsdelivr.net/gh/finos/contrib-toolbox@master/images/badge-incubating.svg)](https://finosfoundation.atlassian.net/wiki/display/FINOS/Incubating)
 
 # PURE/Alloy
@@ -20,11 +20,11 @@ For more information about PURE/Alloy, including some of the motivations behind 
 ## [Alloy Documentation Site (alloy.finos.org)](https://alloy.finos.org/)
 The [documentation site](https://alloy.finos.org) is built using Docusaurus based on the markdown files in the [`docs`](/docs/) folder. 
 
-## [This Repository - GitHub.com (github.com/finos/purealloy)](https://github.com/finos/purealloy)
+## [This Repository - GitHub.com (github.com/finos/alloy)](https://github.com/finos/alloy)
 
-[This repository (github.com/finos/purealloy)](github.com/finos/purealloy) hosts:
+[This repository (github.com/finos/alloy)](github.com/finos/alloy) hosts:
 * The underling files for the [PURE/Alloy Documenation site](https://alloy.finos.org) (composed in markdown file format and stored in the `docs/` folder)
-* The [shared issues list](https://github.com/finos/purealloy/issues) used for task management to track project activity around documentation, deployments, and the overall effort associated with open sourcing PURE and Alloy
+* The [shared issues list](https://github.com/finos/alloy/issues) used for task management to track project activity around documentation, deployments, and the overall effort associated with open sourcing PURE and Alloy
 *  These issues are organized in various kanban boards, including the [overall project kanban](https://github.com/orgs/finos/projects/5).
 
 ## [FINOS Hosted GitLab Repository (gitlab.alloy.finos.org)](https://gitlab.alloy.finos.org)
