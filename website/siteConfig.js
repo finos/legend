@@ -15,6 +15,8 @@
 const alloyHighlighter = require('./alloyHighlighter');
 
 const siteConfig = {
+  //Google Analytics tracking ID to track page views.
+  gaTrackingId: 'UA-89349362-7',
   title: 'alloy', // Title for your website. THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
   tagline: 'Language and visual platform to generate models for the financial services industry', //THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
   cname: 'alloy.finos.org',
@@ -83,7 +85,7 @@ const siteConfig = {
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-  repoUrl: 'https://github.com/finos-admin/purealloy'
+  repoUrl: 'https://github.com/finos-admin/purealloy' 
 };
 
 module.exports = siteConfig;
