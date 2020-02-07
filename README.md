@@ -23,7 +23,7 @@ The [documentation site](https://alloy.finos.org) is built using Docusaurus base
 ## [This Repository - GitHub.com (github.com/finos/alloy)](https://github.com/finos/alloy)
 
 [This repository (github.com/finos/alloy)](github.com/finos/alloy) hosts:
-* The underling files for the [PURE/Alloy Documenation site](https://alloy.finos.org) (composed in markdown file format and stored in the `docs/` folder)
+* The underling files for the [Alloy Documentation site](https://alloy.finos.org) (composed in markdown file format and stored in the `docs/` folder)
 * The [shared issues list](https://github.com/finos/alloy/issues) used for task management to track project activity around documentation, deployments, and the overall effort associated with open sourcing PURE and Alloy
 *  These issues are organized in various kanban boards, including the [overall project kanban](https://github.com/orgs/finos/projects/5).
 
@@ -36,7 +36,7 @@ Documentation specific to particular families and groups of models will be creat
 
 
 # Contributing
-See [CONTRIBUTING.md](.github/CONTRIBUTING.md)
+See our [CONTRIBUTING.md](.github/CONTRIBUTING.md)
 
 # Installation
 (Coming Soon; Information on running and installing your own instance of Alloy, either on premise or in a cloud provider such as AWS, Azure, OpenShift, Google, etc.)
