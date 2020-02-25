@@ -1,65 +1,54 @@
-[![Build Status](https://travis-ci.org/finos/purealloy.svg?branch=master)](https://travis-ci.org/finos/purealloy)
+[![Build Status](https://travis-ci.org/finos/alloy.svg?branch=master)](https://travis-ci.org/finos/alloy)
 [![FINOS - Incubating](https://cdn.jsdelivr.net/gh/finos/contrib-toolbox@master/images/badge-incubating.svg)](https://finosfoundation.atlassian.net/wiki/display/FINOS/Incubating)
 
 # PURE/Alloy
+On November 20, 2019, at FINOS' flagship conference, the [Open Source Strategy](https://opensourcestrategyforum.org/) Forum, FINOS Platinum member [Goldman Sachs](https://developer.gs.com/docs/products/) announced its intention to open source two closely related products - its internal logical modeling language internally named "PURE", and a visual modeling platform that generates PURE models known in Goldman Sachs as "Alloy" - into FINOS.
 
-On November 20, 2019, at FINOS' flagship conference, the Open Source Strategy Forum, FINOS Platinum member Goldman Sachs announced its intention to open source two products - a modeling language internally named "PURE", and a visual modeling platform that generates PURE models known in Goldman Sachs as "Alloy" - into FINOS.
+More information about this decision and announcement can be found at https://www.finos.org/alloy. 
 
-Read more on https://www.finos.org/pure-alloy.
+# Open Sourcing Roadmap
+- Phase 0 (Q4 2019): Deploy an external instance of Alloy to AWS for Phase 1 shared modeling; announce the intention to open source PURE/Alloy at the [Open Source Strategy Forum](https://opensourcestrategyforum.org/); internal code evaluation and preparation for open sourcing.
 
-This repository currently hosts:
-- PURE/Alloy User Guide (composed in markdown file format and stored in the `docs/` folder)
-- Issue/task management and (threaded) discussions, using GitHub Issues and Projects (Kanban), to track activity around documentation, deployments and questions/support requests.
+- Phase 1 (Q1 2020): Using the external instance of Alloy deployed in phase 0, with a group of bank pilot users, develop common, shared models, licensed under an Apache 2.0 license, written in PURE, likely collaborating first on a derivatives model. In this release, Studio will support the creation of data models, model-to-model mappings constraints and derivations. Continue to prepare code for open sourcing. Develop initial shared roadmap for PURE and Alloy extensions and new features for project developers to work on upon code being open sourced; identify and discuss priority areas for further collaborative model development.
 
-## Installation
-TBD
+- Phase 2 (Mid 2020): Complete technical and legal reviews of code for release per FINOS contribution process; make underlying PURE and Alloy code bases available as open source under an Apache 2.0 license into a FINOS GitLab or GitHub repository. Begin accepting pull requests into PURE and Alloy from developers outside Goldman Sachs.
 
-## Usage example
-TBD
-
-## Development setup
-TBD
-
-## Website local run
-In order to run the website, you must have:
-- A Git client installed, to checkout the code from github.com/finos/purealloy (`master` branch); note that the `git` command must be available via command-line, as it's needed to run the `build-site.sh` script
-- [Yarn installed](https://yarnpkg.com/lang/en/docs/install)
-
-```
-git clone git@github.com:finos/purealloy.git
-cd purealloy ; ./build-site.sh
-cd website ; yarn start
-```
-This will automatically open a browser, pointing to http://localhost:3000 , where the website will be staged; file changes will be live rendered, which speeds up the editorial workflow.
-
-The `build-site.sh` script will pull content from other Git repositories, mapping the `docs` folder into `modules/<repository-name>`; for example, all files and folders under https://gitlab.com/finosfoundation/purealloy-modeling-samples/tree/master/docs are available under the `/models/purealloy-modeling-samples` URL suffix.
-
-You can read more about Docusaurus on https://github.com/finos/purealloy/tree/master/website and https://docusaurus.io .
-
-## Roadmap
-
-- Phase 1 (Q4 2019): Stand-up and deploy external "sandbox" instance of Alloy for shared modeling; Open Source Strategy Forum announcement; internal code evaluation and preparation for open sourcing
-- Phase 2 (Q1 2020): Pilot using the external sandbox instance of Alloy development of common, shared models written in PURE with interested industry participants; continue to prepare code for open sourcing. Develop initial shared roadmap for PURE and Alloy extensions and new features for project developers to work on; identify priority areas for further collaborative model development.
-- Phase 3 (Mid 2020): Complete technical and legal reviews of code for release per FINOS contribution process; make underlying PURE and Alloy code bases available as open source under an Apache 2.0 license in a FINOS GitLab repository. Begin accepting pull requests into PURE and Alloy from developers outside Goldman Sachs.
 For more information about PURE/Alloy, including some of the motivations behind the decision to open source these two products, see the [PURE/Alloy press release](https://www.finos.org/press/goldman-announces-pure-alloy-contribution).
 
-## Contributing
+# Documentation Strategy
 
-1. Fork it (<https://github.com/finos/purealloy/fork>)
-2. Create your feature branch (`git checkout -b feature/fooBar`)
-3. Read our [contribution guidelines](.github/CONTRIBUTING.md) and [Community Code of Conduct](https://www.finos.org/code-of-conduct)
-4. Commit your changes (`git commit -am 'Add some fooBar'`)
-5. Push to the branch (`git push origin feature/fooBar`)
-6. Create a new Pull Request
+## [Alloy Documentation Site (alloy.finos.org)](https://alloy.finos.org/)
+The [documentation site](https://alloy.finos.org) is built using Docusaurus based on the markdown files in the [`docs`](/docs/) folder. 
 
-_NOTE:_ Commits and pull requests to FINOS repositories will only be accepted from those contributors with an active, executed Individual Contributor License Agreement (ICLA) with FINOS OR who are covered under an existing and active Corporate Contribution License Agreement (CCLA) executed with FINOS. Commits from individuals not covered under an ICLA or CCLA will be flagged and blocked by the FINOS Clabot tool. Please note that some CCLAs require individuals/employees to be explicitly named on the CCLA.
+## [This Repository - GitHub.com (github.com/finos/alloy)](https://github.com/finos/alloy)
 
-*Need an ICLA? Unsure if you are covered under an existing CCLA? Email [help@finos.org](mailto:help@finos.org)*
+[This repository (github.com/finos/alloy)](github.com/finos/alloy) hosts:
+* The underling files for the [Alloy Documentation site](https://alloy.finos.org) (composed in markdown file format and stored in the `docs/` folder)
+* The [shared issues list](https://github.com/finos/alloy/issues) used for task management to track project activity around documentation, deployments, and the overall effort associated with open sourcing PURE and Alloy
+*  These issues are organized in various kanban boards, including the [overall project kanban](https://github.com/orgs/finos/projects/5).
+
+## [FINOS Hosted GitLab Repository (gitlab.alloy.finos.org)](https://gitlab.alloy.finos.org)
+A separate [hosted Gitlab repository, gitlab.alloy.finos.org](gitlab.alloy.finos.org) hosts shared models being developed by the [Alloy project pilot team](https://groups.google.com/a/finos.org/forum/#!forum/alloy-pilot).
+
+## [gitlab.com (https://gitlab.com/finosfoundation)](gitlab.com/finosfoundation)
+Documentation specific to particular families and groups of models will be created and curated on GitLab.com at [https://gitlab.com/finosfoundation](https://gitlab.com/finosfoundation). In Phase 2, it's possible that the shared model definitions themselves may be migrated from the hosted GitLab instance to Gitlab.com. 
 
 
-## License
 
-Copyright 2019 Goldman Sachs
+# Contributing
+See our [CONTRIBUTING.md](.github/CONTRIBUTING.md)
+
+# Installation
+(Coming Soon; Information on running and installing your own instance of Alloy, either on premise or in a cloud provider such as AWS, Azure, OpenShift, Google, etc.)
+
+# Usage example
+(Coming Soon)
+
+# Development setup
+(Coming Soon)
+
+# License
+Copyright 2020 Goldman Sachs
 
 Distributed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 

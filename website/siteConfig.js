@@ -18,6 +18,7 @@ const siteConfig = {
   title: 'alloy', // Title for your website. THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
   tagline: 'Language and visual platform to generate models for the financial services industry', //THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
   cname: 'alloy.finos.org',
+  gaTrackingId: 'UA-89349362-7',
   url: 'https://alloy.finos.org/',
   baseUrl: '/',
   // For publishing to GitHub pages
@@ -25,7 +26,8 @@ const siteConfig = {
   organizationName: 'finos',
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { doc: 'getting-started/studio', label: 'Docs' }
+    { doc: 'getting-started/studio', label: 'Docs' },
+    { doc: 'contribute', label: 'Contribute' }
     //    { href: "https://github.com/finos/purealloy/", label: "GitHub", external: true }
   ],
 
