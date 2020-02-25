@@ -1,4 +1,5 @@
 # Contributing to Alloy
+
 ## Ways of Contributing 
 ### Participate in the Pilot
 In Q1 2020 (i.e., now) FINOS is conducting a pilot with member organizations interested in evaluating PURE/Alloy. For more information about the pilot and how to generally get involved with Alloy see the [Alloy page on finos.org](https://www.finos.org/alloy).
