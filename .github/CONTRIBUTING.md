@@ -1,6 +1,6 @@
-# Contributing to purealloy
+# Contributing to Alloy
 
-# Contributor License Agreement (CLA)
+## Contributor License Agreement (CLA)
 A CLA is a document that specifies how a project is allowed to use your
 contribution; they are commonly used in many open source projects.
 
@@ -16,15 +16,15 @@ As a result, PRs submitted to the purealloy project cannot be accepted until you
 
 Need an ICLA? Unsure if you are covered under an existing CCLA? Email [help@finos.org](mailto:help@finos.org?subject=CLA)
 
-# Contributing Issues
+## Contributing Issues
 
-## Prerequisites
+### Prerequisites
 
 * [ ] Have you [searched for duplicates](https://github.com/finos/purealloy/issues?utf8=%E2%9C%93&q=)?  A simple search for exception error messages or a summary of the unexpected behaviour should suffice.
 * [ ] Are you running the latest version?
 * [ ] Are you sure this is a bug or missing capability?
 
-## Raising an Issue
+### Raising an Issue
 * Create your issue [here](https://github.com/finos/purealloy/issues/new).
 * New issues contain two templates in the description: bug report and enhancement request. Please pick the most appropriate for your issue, **then delete the other**.
   * Please also tag the new issue with either "Bug" or "Enhancement".
@@ -32,7 +32,7 @@ Need an ICLA? Unsure if you are covered under an existing CCLA? Email [help@fino
 liberally to assist in readability.
   * [Code fences](https://help.github.com/articles/creating-and-highlighting-code-blocks/) for exception stack traces and log entries, for example, massively improve readability.
 
-# Contributing Pull Requests (Code & Docs)
+## Contributing Pull Requests (Code & Docs)
 To make review of PRs easier, please:
 
  * Please make sure your PRs will merge cleanly - PRs that don't are unlikely to be accepted.
@@ -45,7 +45,7 @@ To make review of PRs easier, please:
  * If necessary (e.g. due to 3rd party dependency licensing requirements), update the [NOTICE file](https://github.com/finos/purealloy/blob/master/NOTICE) with any new attribution or other notices
 
 
-## Commit and PR Messages
+### Commit and PR Messages
 
 * **Reference issues, wiki pages, and pull requests liberally!**
 * Use the present tense ("Add feature" not "Added feature")
