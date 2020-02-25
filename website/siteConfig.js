@@ -26,8 +26,8 @@ const siteConfig = {
   organizationName: 'finos',
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { doc: 'getting-started/studio', label: 'Docs' },
-    { doc: 'contribute', label: 'Contribute' }
+    { doc: 'getting-started/studio', label: 'Docs' }
+    //    { doc: 'contribute', label: 'Contribute' }
     //    { href: "https://github.com/finos/purealloy/", label: "GitHub", external: true }
   ],
 
