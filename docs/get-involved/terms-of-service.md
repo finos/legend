@@ -1,8 +1,11 @@
 ---
 id: terms-of-service
 title: FINOS Alloy Terms of Service
+hide_title: true
 sidebar_label: Terms of Service
 ---
+## FINOS Alloy Terms of Service
+
 
 The Alloy Pilot website and service located at https//alloy.finos.org/ (the “Service”) is operated by the Fintech Open Source Foundation (“FINOS,” “we,” or “us”). By registering for, using, or accessing the Service, you agree to be bound by these terms of service (“Terms”). If you don’t agree to these Terms, you must discontinue use of the Service.  If you have any questions about these terms, please contact us: FINOS, 330 Primrose Road, Burlingame, CA 94010, legal@finos.org.
 
@@ -126,7 +129,7 @@ The Alloy Pilot website and service located at https//alloy.finos.org/ (the “S
 
 10. Miscellaneous Terms
 
-    10.1. Modifications to this Agreement. FINOS may occasionally revise these Terms. You can find the most recent version at https://alloy.finos.org/terms-of-service/. By using the Service after a new version of these Terms becomes effective, you thereby agree to be bound by the revised Terms.
+    10.1. Modifications to this Agreement. FINOS may occasionally revise these Terms. You can find the most recent version at https://alloy.finos.org/terms-of-service. By using the Service after a new version of these Terms becomes effective, you thereby agree to be bound by the revised Terms.
 
     10.2. Choice of Law. These Terms and the relationship between you and FINOS shall be governed by the laws of the State of California without regard to its conflict of law provisions and that any and all claims, causes of action, or disputes (regardless of theory) arising out of or relating to the Service, shall be brought exclusively in the courts located in the county of San Francisco or the U.S. District Court for the Northern District of California. You consent and waive any objection to the jurisdiction of and venue in these courts.
 
