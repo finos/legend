@@ -18,6 +18,22 @@ do
 done
 cd -
 
+# Create contribute.md docs page, from .github/CONTRIBUTING.md
+CONTRIB_MD_PATH=docs/contribute.md
+if [ -f ".github/CONTRIBUTING.md" ]; then
+rm -rf $CONTRIB_MD_PATH
+touch $CONTRIB_MD_PATH
+cat <<EOT >> $CONTRIB_MD_PATH
+---
+id: contribute
+title: Contributing to Alloy
+sidebar_label: Contribute
+---
+EOT
+# Remove title (first line) from MD file content
+sed 1d .github/CONTRIBUTING.md >> $CONTRIB_MD_PATH
+fi
+
 # Where the docusaurus app lives
 cd website
 
