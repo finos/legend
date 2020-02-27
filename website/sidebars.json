@@ -11,7 +11,8 @@
       "getting-started/graph",
       "getting-started/services",
       "get-involved/terms-of-service",
-      "contribute"
+      "contribute",
+      { href: 'https://www.finos.org/privacy-policy', label: 'FINOS Privacy Policy' },
     ]
   }
 }
