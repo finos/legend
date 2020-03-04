@@ -29,9 +29,19 @@ class Footer extends React.Component {
           </a>
         </section>
         <section className="finos finosBanner">
-          <a href="https://www.finos.org">
-            <img id="finosicon" src={`https://alloy.finos.org/img/finos_wordmark.svg`} height='75px' alt="FINOS" title="FINOS"/>
-          </a>
+          <div>
+            <a href="https://www.finos.org"><img id="finosicon"
+                  src="/img/finos_wordmark.svg"
+                  height="75px"
+                  alt="FINOS"
+                  title="FINOS" />
+            </a>
+            <div>
+              <a class="nav-home" href="/">Alloy Documentation</a><br/>
+              <a class="nav-home" href="https://www.finos.org" target="_blank">FINOS website</a><br/>
+              <a class="nav-home" href="https://www.finos.org/privacy-policy" target="_blank">FINOS Privacy Policy</a><br/>
+            </div>
+          </div>
         </section>
         <section className="copyright">{this.props.config.copyright}</section>
       </footer>
