@@ -30,12 +30,7 @@ class Footer extends React.Component {
         </section>
         <section className="finos finosBanner">
           <div>
-            <a href="https://www.finos.org"><img id="finosicon"
-                  src="/img/finos_wordmark.svg"
-                  height="75px"
-                  alt="FINOS"
-                  title="FINOS" />
-            </a>
+            <img id="finosicon" src={`https://alloy.finos.org/img/finos_wordmark.svg`} height='75px' alt="FINOS" title="FINOS"/>
             <div>
               <a class="nav-home" href="/">Alloy Documentation</a><br/>
               <a class="nav-home" href="https://www.finos.org" target="_blank">FINOS website</a><br/>
