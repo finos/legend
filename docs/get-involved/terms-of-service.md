@@ -2,7 +2,7 @@
 id: terms-of-service
 title: FINOS Alloy Terms of Service
 hide_title: true
-sidebar_label: Terms of Service
+sidebar_label: Legal
 ---
 ## FINOS Alloy Terms of Service
 
@@ -202,7 +202,8 @@ This License and the rights granted hereunder will terminate automatically if Yo
 
 This License represents the complete agreement concerning subject matter hereof. If any provision of this License is held to be unenforceable, such provision shall be reformed only to the extent necessary to make it enforceable. This License shall be governed by New York law provisions (except to the extent applicable law, if any, provides otherwise), including its conflict-of-law provisions. With respect to disputes in which at least one party is a citizen of, or an entity chartered or registered to do business in, the United States of America: (a) unless otherwise agreed in writing, all disputes arising under or relating to this License (excepting any dispute relating to copyright, trademark, patent or trade secret rights, which issues must be resolved through judicial action) shall be subject to final and binding arbitration, with the losing party paying all costs of arbitration; (b) any arbitration relating to this Agreement shall be held in New York City, under the auspices of JAMS/End Dispute; and (c) any judicial litigation arising under or relating to this agreement, including the enforcement of any arbitration award, shall be subject to the exclusive  jurisdiction of the United States District Court for the Southern District of New York, or in the absence of that court having subject matter jurisdiction, to the jurisdiction of courts of the State of New York, with venue lying in New York County. The losing party shall be responsible for costs, including without limitation, court costs and reasonable attorney’s fees and expenses. By using ISDA CDM v2.0 under this License you consent to the personal jurisdiction of the foregoing federal and/or New York state courts. The application of the United Nations Convention on Contracts for the International Sale of Goods is expressly excluded. Any law or regulation which provides that the language of a contract shall be construed against the drafter shall not apply to this License.
 
-## EXHIBIT A
+**EXHIBIT A**
+
 * The ISDA CDMTM portions of this document are subject to the ISDA CDMTM License Version 2.0 (the “License”); you may not use the ISDA CDM except in compliance with that License. You may obtain a copy of the License at [http://www.isda.org/isda-cdm-2/](http://www.isda.org/isda-cdm-2/).
 
 * The portions of the ISDA CDMTM distributed under the License are distributed on an “AS IS” basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for the specific language governing rights and limitations under the License. You may obtain a copy of the License at [http://www.isda.org/isda-cdm-2/](http://www.isda.org/isda-cdm-2/).
