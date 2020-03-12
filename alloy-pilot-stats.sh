@@ -1,6 +1,9 @@
 #!/bin/bash
 
 # This script is used by Alloy Pilot Maintainers to extract the number of activities across all modeling projects
+#
+# To know more about the audit events, checkout https://gitlab.alloy.finos.org/admin/audit_logs
+#
 # To run the script, you need to have a GitLab token to invoke APIs
 # Run: GITLAB_TOKEN="<your token here> ./alloy-pilot-stats.sh"
 EVENTS_AFTER="2020-03-01T00:00:00.000Z"
