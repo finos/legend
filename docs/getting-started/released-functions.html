@@ -63,28 +63,6 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Released Functions</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="abs"></a><a href="#abs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>abs</h2>
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">abs</span>(<span class="pureGrammar-functionVariable">float</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
-<div class="pureGrammar-functionDetails">
-<div class="pureGrammar-functionParameters">
-<ul>
-<li><span class="pureGrammar-parametersLabel">Parameters</span>
-<ul>
-<li><span class="pureGrammar-parameterName">float</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
-</ul></li>
-</ul>
-</div>
-<div class="pureGrammar-functionReturns">
-<ul>
-<li><span class="pureGrammar-returnsLabel">Returns</span>
-<ul>
-<li><span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
-</ul></li>
-</ul>
-</div>
-<div class="pureGrammar-functionUsage">
-</div>
-</div>
-</div>
 <div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">abs</span>(<span class="pureGrammar-functionVariable">int</span>: <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
@@ -109,6 +87,28 @@
 </ul>
 <pre><code class="hljs">{|Person-&gt;getAll<span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>project<span class="hljs-function"><span class="hljs-params">({p|$p.firstName}, <span class="hljs-string">'firstName'</span>)</span>-&gt;</span>groupBy<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'firstName'</span>, <span class="hljs-string">'new'</span>-&gt;agg({e|$e}, {y|$y-&gt;count()-&gt;abs()}))</span>}
 </span></code></pre>
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">abs</span>(<span class="pureGrammar-functionVariable">float</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">float</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
 </div>
 </div>
 </div>
@@ -230,13 +230,13 @@
 </div>
 </div>
 </div>
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">average</span>(<span class="pureGrammar-functionVariable">numbers</span>: <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">average</span>(<span class="pureGrammar-functionVariable">numbers</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
 <ul>
 <li><span class="pureGrammar-parametersLabel">Parameters</span>
 <ul>
-<li><span class="pureGrammar-parameterName">numbers</span>: <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">*</span>]</li>
+<li><span class="pureGrammar-parameterName">numbers</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">*</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -252,13 +252,13 @@
 </div>
 </div>
 </div>
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">average</span>(<span class="pureGrammar-functionVariable">numbers</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">average</span>(<span class="pureGrammar-functionVariable">numbers</span>: <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
 <ul>
 <li><span class="pureGrammar-parametersLabel">Parameters</span>
 <ul>
-<li><span class="pureGrammar-parameterName">numbers</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">*</span>]</li>
+<li><span class="pureGrammar-parameterName">numbers</span>: <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">*</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -291,6 +291,30 @@
 <li><span class="pureGrammar-returnsLabel">Returns</span>
 <ul>
 <li><span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">m</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="changerecordfilter"></a><a href="#changerecordfilter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>changeRecordFilter</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">changeRecordFilter</span>&#60;T&#62;(<span class="pureGrammar-functionVariable">input</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">func</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">&#42;</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">input</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">*</span>]</li>
+<li><span class="pureGrammar-parameterName">func</span>: <span class="pureGrammar-genericType">Function&lt;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>]-&gt;<span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]}</span>&lt;</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">*</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -377,6 +401,100 @@
 <li><span class="pureGrammar-parametersLabel">Parameters</span>
 <ul>
 <li><span class="pureGrammar-parameterName">s</span>: <span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">*</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="datediff"></a><a href="#datediff" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>dateDiff</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">dateDiff</span>(<span class="pureGrammar-functionVariable">d1</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">d2</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">du</span>: <span class="pureGrammar-genericType">DurationUnit</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">d1</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">d2</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">du</span>: <span class="pureGrammar-genericType">DurationUnit</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="datepart"></a><a href="#datepart" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>datePart</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">datePart</span>(<span class="pureGrammar-functionVariable">d</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">d</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="dayofmonth"></a><a href="#dayofmonth" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>dayOfMonth</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">dayOfMonth</span>(<span class="pureGrammar-functionVariable">d</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">d</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="dayofweeknumber"></a><a href="#dayofweeknumber" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>dayOfWeekNumber</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">dayOfWeekNumber</span>(<span class="pureGrammar-functionVariable">d</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">d</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -487,6 +605,30 @@
 </div>
 </div>
 </div>
+<h2><a class="anchor" aria-hidden="true" id="eq"></a><a href="#eq" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>eq</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">eq</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
 <h2><a class="anchor" aria-hidden="true" id="equal"></a><a href="#equal" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>equal</h2>
 <div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">equal</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 <div class="pureGrammar-functionDetails">
@@ -582,7 +724,220 @@
 </div>
 </div>
 </div>
+<h2><a class="anchor" aria-hidden="true" id="firstdayofmonth"></a><a href="#firstdayofmonth" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>firstDayOfMonth</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">firstDayOfMonth</span>(<span class="pureGrammar-functionVariable">date</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">date</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="firstdayofquarter"></a><a href="#firstdayofquarter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>firstDayOfQuarter</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">firstDayOfQuarter</span>(<span class="pureGrammar-functionVariable">date</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">StrictDate</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">date</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">StrictDate</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="firstdayofthismonth"></a><a href="#firstdayofthismonth" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>firstDayOfThisMonth</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">firstDayOfThisMonth</span>(): <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="firstdayofthisquarter"></a><a href="#firstdayofthisquarter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>firstDayOfThisQuarter</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">firstDayOfThisQuarter</span>(): <span class="pureGrammar-genericType">StrictDate</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">StrictDate</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="firstdayofthisyear"></a><a href="#firstdayofthisyear" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>firstDayOfThisYear</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">firstDayOfThisYear</span>(): <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="firstdayofweek"></a><a href="#firstdayofweek" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>firstDayOfWeek</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">firstDayOfWeek</span>(<span class="pureGrammar-functionVariable">date</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">date</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="firstdayofyear"></a><a href="#firstdayofyear" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>firstDayOfYear</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">firstDayOfYear</span>(<span class="pureGrammar-functionVariable">date</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">date</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="forall"></a><a href="#forall" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>forAll</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">forAll</span>&#60;T&#62;(<span class="pureGrammar-functionVariable">value</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">func</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">value</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">*</span>]</li>
+<li><span class="pureGrammar-parameterName">func</span>: <span class="pureGrammar-genericType">Function&lt;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>]-&gt;<span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]}</span>&lt;</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
 <h2><a class="anchor" aria-hidden="true" id="greaterthan"></a><a href="#greaterthan" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>greaterThan</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
 <div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
@@ -591,6 +946,190 @@
 <ul>
 <li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
 <li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -630,6 +1169,121 @@
 </div>
 </div>
 <h2><a class="anchor" aria-hidden="true" id="greaterthanequal"></a><a href="#greaterthanequal" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>greaterThanEqual</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
 <div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
@@ -638,6 +1292,75 @@
 <ul>
 <li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
 <li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -669,6 +1392,144 @@
 <li><span class="pureGrammar-returnsLabel">Returns</span>
 <ul>
 <li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">greaterThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="hour"></a><a href="#hour" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>hour</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">hour</span>(<span class="pureGrammar-functionVariable">d</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">d</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -863,16 +1724,13 @@
 </div>
 </div>
 <h2><a class="anchor" aria-hidden="true" id="joinstrings"></a><a href="#joinstrings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>joinStrings</h2>
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">joinStrings</span>(<span class="pureGrammar-functionVariable">strings</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">prefix</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">separator</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">suffix</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">joinStrings</span>(<span class="pureGrammar-functionVariable">strings</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
 <ul>
 <li><span class="pureGrammar-parametersLabel">Parameters</span>
 <ul>
 <li><span class="pureGrammar-parameterName">strings</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">*</span>]</li>
-<li><span class="pureGrammar-parameterName">prefix</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
-<li><span class="pureGrammar-parameterName">separator</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
-<li><span class="pureGrammar-parameterName">suffix</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -888,13 +1746,16 @@
 </div>
 </div>
 </div>
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">joinStrings</span>(<span class="pureGrammar-functionVariable">strings</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">joinStrings</span>(<span class="pureGrammar-functionVariable">strings</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">prefix</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">separator</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">suffix</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
 <ul>
 <li><span class="pureGrammar-parametersLabel">Parameters</span>
 <ul>
 <li><span class="pureGrammar-parameterName">strings</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">*</span>]</li>
+<li><span class="pureGrammar-parameterName">prefix</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">separator</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">suffix</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -962,14 +1823,14 @@
 </div>
 </div>
 <h2><a class="anchor" aria-hidden="true" id="lessthan"></a><a href="#lessthan" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>lessThan</h2>
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
 <ul>
 <li><span class="pureGrammar-parametersLabel">Parameters</span>
 <ul>
-<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
-<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -985,14 +1846,37 @@
 </div>
 </div>
 </div>
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
 <ul>
 <li><span class="pureGrammar-parametersLabel">Parameters</span>
 <ul>
-<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
-<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -1031,8 +1915,53 @@
 </div>
 </div>
 </div>
-<h2><a class="anchor" aria-hidden="true" id="lessthanequal"></a><a href="#lessthanequal" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>lessThanEqual</h2>
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
 <ul>
@@ -1040,6 +1969,145 @@
 <ul>
 <li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
 <li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThan</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="lessthanequal"></a><a href="#lessthanequal" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>lessThanEqual</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -1063,6 +2131,305 @@
 <ul>
 <li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
 <li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">lessThanEqual</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -1126,29 +2493,6 @@
 </div>
 </div>
 </div>
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">map</span>&#60;T, V&#62;(<span class="pureGrammar-functionVariable">value</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">m</span>], <span class="pureGrammar-functionVariable">func</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">1</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">m</span>]</div>
-<div class="pureGrammar-functionDetails">
-<div class="pureGrammar-functionParameters">
-<ul>
-<li><span class="pureGrammar-parametersLabel">Parameters</span>
-<ul>
-<li><span class="pureGrammar-parameterName">value</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">m</span>]</li>
-<li><span class="pureGrammar-parameterName">func</span>: <span class="pureGrammar-genericType">Function&lt;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>]-&gt;<span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">1</span>]}</span>&lt;</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
-</ul></li>
-</ul>
-</div>
-<div class="pureGrammar-functionReturns">
-<ul>
-<li><span class="pureGrammar-returnsLabel">Returns</span>
-<ul>
-<li><span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">m</span>]</li>
-</ul></li>
-</ul>
-</div>
-<div class="pureGrammar-functionUsage">
-</div>
-</div>
-</div>
 <div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">map</span>&#60;T, V&#62;(<span class="pureGrammar-functionVariable">value</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">func</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">0..1</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">0..1</span>]</div>
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
@@ -1172,73 +2516,30 @@
 </div>
 </div>
 </div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">map</span>&#60;T, V&#62;(<span class="pureGrammar-functionVariable">value</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">m</span>], <span class="pureGrammar-functionVariable">func</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">1</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">m</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">value</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">m</span>]</li>
+<li><span class="pureGrammar-parameterName">func</span>: <span class="pureGrammar-genericType">Function&lt;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>]-&gt;<span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">1</span>]}</span>&lt;</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">m</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
 <h2><a class="anchor" aria-hidden="true" id="max"></a><a href="#max" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>max</h2>
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">max</span>(<span class="pureGrammar-functionVariable">ints</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1..&#42;</span>]): <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
-<div class="pureGrammar-functionDetails">
-<div class="pureGrammar-functionParameters">
-<ul>
-<li><span class="pureGrammar-parametersLabel">Parameters</span>
-<ul>
-<li><span class="pureGrammar-parameterName">ints</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1..*</span>]</li>
-</ul></li>
-</ul>
-</div>
-<div class="pureGrammar-functionReturns">
-<ul>
-<li><span class="pureGrammar-returnsLabel">Returns</span>
-<ul>
-<li><span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
-</ul></li>
-</ul>
-</div>
-<div class="pureGrammar-functionUsage">
-</div>
-</div>
-</div>
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">max</span>(<span class="pureGrammar-functionVariable">ints</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">0..1</span>]</div>
-<div class="pureGrammar-functionDetails">
-<div class="pureGrammar-functionParameters">
-<ul>
-<li><span class="pureGrammar-parametersLabel">Parameters</span>
-<ul>
-<li><span class="pureGrammar-parameterName">ints</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">*</span>]</li>
-</ul></li>
-</ul>
-</div>
-<div class="pureGrammar-functionReturns">
-<ul>
-<li><span class="pureGrammar-returnsLabel">Returns</span>
-<ul>
-<li><span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
-</ul></li>
-</ul>
-</div>
-<div class="pureGrammar-functionUsage">
-</div>
-</div>
-</div>
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">max</span>(<span class="pureGrammar-functionVariable">ints</span>: <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1..&#42;</span>]): <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
-<div class="pureGrammar-functionDetails">
-<div class="pureGrammar-functionParameters">
-<ul>
-<li><span class="pureGrammar-parametersLabel">Parameters</span>
-<ul>
-<li><span class="pureGrammar-parameterName">ints</span>: <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1..*</span>]</li>
-</ul></li>
-</ul>
-</div>
-<div class="pureGrammar-functionReturns">
-<ul>
-<li><span class="pureGrammar-returnsLabel">Returns</span>
-<ul>
-<li><span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
-</ul></li>
-</ul>
-</div>
-<div class="pureGrammar-functionUsage">
-</div>
-</div>
-</div>
 <div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">max</span>(<span class="pureGrammar-functionVariable">ints</span>: <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">0..1</span>]</div>
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
@@ -1261,14 +2562,13 @@
 </div>
 </div>
 </div>
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">max</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">max</span>(<span class="pureGrammar-functionVariable">ints</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1..&#42;</span>]): <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
 <ul>
 <li><span class="pureGrammar-parametersLabel">Parameters</span>
 <ul>
-<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
-<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">ints</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1..*</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -1276,7 +2576,7 @@
 <ul>
 <li><span class="pureGrammar-returnsLabel">Returns</span>
 <ul>
-<li><span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -1328,14 +2628,13 @@
 </div>
 </div>
 </div>
-<h2><a class="anchor" aria-hidden="true" id="minus"></a><a href="#minus" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>minus</h2>
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">minus</span>(<span class="pureGrammar-functionVariable">decimal</span>: <span class="pureGrammar-genericType">Decimal</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">Decimal</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">max</span>(<span class="pureGrammar-functionVariable">ints</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">0..1</span>]</div>
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
 <ul>
 <li><span class="pureGrammar-parametersLabel">Parameters</span>
 <ul>
-<li><span class="pureGrammar-parameterName">decimal</span>: <span class="pureGrammar-genericType">Decimal</span>[<span class="pureGrammar-multiplicity">*</span>]</li>
+<li><span class="pureGrammar-parameterName">ints</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">*</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -1343,7 +2642,7 @@
 <ul>
 <li><span class="pureGrammar-returnsLabel">Returns</span>
 <ul>
-<li><span class="pureGrammar-genericType">Decimal</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">0..1</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -1351,6 +2650,52 @@
 </div>
 </div>
 </div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">max</span>(<span class="pureGrammar-functionVariable">ints</span>: <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1..&#42;</span>]): <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">ints</span>: <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1..*</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">max</span>(<span class="pureGrammar-functionVariable">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">left</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">right</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="minus"></a><a href="#minus" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>minus</h2>
 <div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">minus</span>(<span class="pureGrammar-functionVariable">float</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
@@ -1395,6 +2740,28 @@
 </div>
 </div>
 </div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">minus</span>(<span class="pureGrammar-functionVariable">decimal</span>: <span class="pureGrammar-genericType">Decimal</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">Decimal</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">decimal</span>: <span class="pureGrammar-genericType">Decimal</span>[<span class="pureGrammar-multiplicity">*</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Decimal</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
 <div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">minus</span>(<span class="pureGrammar-functionVariable">numbers</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
@@ -1410,6 +2777,100 @@
 <li><span class="pureGrammar-returnsLabel">Returns</span>
 <ul>
 <li><span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="minute"></a><a href="#minute" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>minute</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">minute</span>(<span class="pureGrammar-functionVariable">d</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">d</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="monthnumber"></a><a href="#monthnumber" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>monthNumber</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">monthNumber</span>(<span class="pureGrammar-functionVariable">d</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">d</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="mostrecentdayofweek"></a><a href="#mostrecentdayofweek" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>mostRecentDayOfWeek</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Returns the most recent instance of the given day of the week that is no later than the given date.</div>
+<div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">mostRecentDayOfWeek</span>(<span class="pureGrammar-functionVariable">date</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">day</span>: <span class="pureGrammar-genericType">DayOfWeek</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">date</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">day</span>: <span class="pureGrammar-genericType">DayOfWeek</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Returns the most recent instance of the given day of the week that is no later than today.</div>
+<div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">mostRecentDayOfWeek</span>(<span class="pureGrammar-functionVariable">day</span>: <span class="pureGrammar-genericType">DayOfWeek</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">day</span>: <span class="pureGrammar-genericType">DayOfWeek</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -1503,6 +2964,29 @@
 </div>
 </div>
 </div>
+<h2><a class="anchor" aria-hidden="true" id="parsedate"></a><a href="#parsedate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>parseDate</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">parseDate</span>(<span class="pureGrammar-functionVariable">string</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">string</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
 <h2><a class="anchor" aria-hidden="true" id="parsefloat"></a><a href="#parsefloat" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>parseFloat</h2>
 <div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">parseFloat</span>(<span class="pureGrammar-functionVariable">string</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 <div class="pureGrammar-functionDetails">
@@ -1572,28 +3056,6 @@
 </div>
 </div>
 </div>
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">plus</span>(<span class="pureGrammar-functionVariable">float</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
-<div class="pureGrammar-functionDetails">
-<div class="pureGrammar-functionParameters">
-<ul>
-<li><span class="pureGrammar-parametersLabel">Parameters</span>
-<ul>
-<li><span class="pureGrammar-parameterName">float</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">*</span>]</li>
-</ul></li>
-</ul>
-</div>
-<div class="pureGrammar-functionReturns">
-<ul>
-<li><span class="pureGrammar-returnsLabel">Returns</span>
-<ul>
-<li><span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
-</ul></li>
-</ul>
-</div>
-<div class="pureGrammar-functionUsage">
-</div>
-</div>
-</div>
 <div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">plus</span>(<span class="pureGrammar-functionVariable">ints</span>: <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
@@ -1609,6 +3071,28 @@
 <li><span class="pureGrammar-returnsLabel">Returns</span>
 <ul>
 <li><span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">plus</span>(<span class="pureGrammar-functionVariable">float</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">float</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">*</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -1653,6 +3137,77 @@
 <li><span class="pureGrammar-returnsLabel">Returns</span>
 <ul>
 <li><span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="previousdayofweek"></a><a href="#previousdayofweek" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>previousDayOfWeek</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Returns the most recent instance of the given day of the week that is strictly before the given date.</div>
+<div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">previousDayOfWeek</span>(<span class="pureGrammar-functionVariable">date</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">day</span>: <span class="pureGrammar-genericType">DayOfWeek</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">date</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">day</span>: <span class="pureGrammar-genericType">DayOfWeek</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Returns the most recent instance of the given day of the week that is strictly before today.</div>
+<div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">previousDayOfWeek</span>(<span class="pureGrammar-functionVariable">day</span>: <span class="pureGrammar-genericType">DayOfWeek</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">day</span>: <span class="pureGrammar-genericType">DayOfWeek</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="quarternumber"></a><a href="#quarternumber" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>quarterNumber</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">quarterNumber</span>(<span class="pureGrammar-functionVariable">d</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">d</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -1710,6 +3265,29 @@
 </div>
 </div>
 <h2><a class="anchor" aria-hidden="true" id="round"></a><a href="#round" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>round</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">round</span>(<span class="pureGrammar-functionVariable">decimal</span>: <span class="pureGrammar-genericType">Decimal</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">scale</span>: <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Decimal</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">decimal</span>: <span class="pureGrammar-genericType">Decimal</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">scale</span>: <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Decimal</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
 <div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">round</span>(<span class="pureGrammar-functionVariable">number</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
@@ -1732,14 +3310,14 @@
 </div>
 </div>
 </div>
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">round</span>(<span class="pureGrammar-functionVariable">decimal</span>: <span class="pureGrammar-genericType">Decimal</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">scale</span>: <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Decimal</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<h2><a class="anchor" aria-hidden="true" id="second"></a><a href="#second" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>second</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">second</span>(<span class="pureGrammar-functionVariable">d</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
 <ul>
 <li><span class="pureGrammar-parametersLabel">Parameters</span>
 <ul>
-<li><span class="pureGrammar-parameterName">decimal</span>: <span class="pureGrammar-genericType">Decimal</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
-<li><span class="pureGrammar-parameterName">scale</span>: <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-parameterName">d</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -1747,7 +3325,7 @@
 <ul>
 <li><span class="pureGrammar-returnsLabel">Returns</span>
 <ul>
-<li><span class="pureGrammar-genericType">Decimal</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+<li><span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -1906,28 +3484,6 @@
 </div>
 </div>
 <h2><a class="anchor" aria-hidden="true" id="times"></a><a href="#times" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>times</h2>
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">times</span>(<span class="pureGrammar-functionVariable">ints</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
-<div class="pureGrammar-functionDetails">
-<div class="pureGrammar-functionParameters">
-<ul>
-<li><span class="pureGrammar-parametersLabel">Parameters</span>
-<ul>
-<li><span class="pureGrammar-parameterName">ints</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">*</span>]</li>
-</ul></li>
-</ul>
-</div>
-<div class="pureGrammar-functionReturns">
-<ul>
-<li><span class="pureGrammar-returnsLabel">Returns</span>
-<ul>
-<li><span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
-</ul></li>
-</ul>
-</div>
-<div class="pureGrammar-functionUsage">
-</div>
-</div>
-</div>
 <div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">times</span>(<span class="pureGrammar-functionVariable">ints</span>: <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
@@ -1943,6 +3499,28 @@
 <li><span class="pureGrammar-returnsLabel">Returns</span>
 <ul>
 <li><span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">times</span>(<span class="pureGrammar-functionVariable">ints</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">ints</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">*</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
 </ul></li>
 </ul>
 </div>
@@ -2087,6 +3665,30 @@
 </div>
 </div>
 </div>
+<h2><a class="anchor" aria-hidden="true" id="toupperfirstcharacter"></a><a href="#toupperfirstcharacter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>toUpperFirstCharacter</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Upper cases the first charater of the provided string</div>
+<div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">toUpperFirstCharacter</span>(<span class="pureGrammar-functionVariable">values</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">values</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">*</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">*</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
 <h2><a class="anchor" aria-hidden="true" id="today"></a><a href="#today" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>today</h2>
 <div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">today</span>(): <span class="pureGrammar-genericType">StrictDate</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 <div class="pureGrammar-functionDetails">
@@ -2156,4 +3758,49 @@
 </div>
 </div>
 </div>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/getting-started/language"><span class="arrow-prev">← </span><span>Language</span></a><a class="docs-next button" href="/docs/getting-started/upcoming-functions"><span>Upcoming Functions</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#abs">abs</a></li><li><a href="#adjust">adjust</a></li><li><a href="#and">and</a></li><li><a href="#at">at</a></li><li><a href="#average">average</a></li><li><a href="#cast">cast</a></li><li><a href="#concatenate">concatenate</a></li><li><a href="#contains">contains</a></li><li><a href="#count">count</a></li><li><a href="#distinct">distinct</a></li><li><a href="#divide">divide</a></li><li><a href="#drop">drop</a></li><li><a href="#endswith">endsWith</a></li><li><a href="#equal">equal</a></li><li><a href="#exists">exists</a></li><li><a href="#filter">filter</a></li><li><a href="#first">first</a></li><li><a href="#greaterthan">greaterThan</a></li><li><a href="#greaterthanequal">greaterThanEqual</a></li><li><a href="#if">if</a></li><li><a href="#in">in</a></li><li><a href="#indexof">indexOf</a></li><li><a href="#isempty">isEmpty</a></li><li><a href="#isnotempty">isNotEmpty</a></li><li><a href="#joinstrings">joinStrings</a></li><li><a href="#length">length</a></li><li><a href="#lessthan">lessThan</a></li><li><a href="#lessthanequal">lessThanEqual</a></li><li><a href="#limit">limit</a></li><li><a href="#map">map</a></li><li><a href="#max">max</a></li><li><a href="#minus">minus</a></li><li><a href="#not">not</a></li><li><a href="#now">now</a></li><li><a href="#or">or</a></li><li><a href="#parsefloat">parseFloat</a></li><li><a href="#parseinteger">parseInteger</a></li><li><a href="#plus">plus</a></li><li><a href="#rem">rem</a></li><li><a href="#replace">replace</a></li><li><a href="#round">round</a></li><li><a href="#size">size</a></li><li><a href="#slice">slice</a></li><li><a href="#split">split</a></li><li><a href="#startswith">startsWith</a></li><li><a href="#substring">substring</a></li><li><a href="#take">take</a></li><li><a href="#times">times</a></li><li><a href="#tolower">toLower</a></li><li><a href="#toone">toOne</a></li><li><a href="#toonemany">toOneMany</a></li><li><a href="#tostring">toString</a></li><li><a href="#toupper">toUpper</a></li><li><a href="#today">today</a></li><li><a href="#trim">trim</a></li><li><a href="#union">union</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a></section><section class="finos finosBanner"><a href="https://www.finos.org"><img id="finosicon" src="https://alloy.finos.org/img/finos_wordmark.svg" height="75px" alt="FINOS" title="FINOS"/></a></section><section class="copyright">Copyright © 2020 PURE/Alloy</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
+<h2><a class="anchor" aria-hidden="true" id="weekofyear"></a><a href="#weekofyear" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>weekOfYear</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">weekOfYear</span>(<span class="pureGrammar-functionVariable">d</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">d</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="year"></a><a href="#year" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>year</h2>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">year</span>(<span class="pureGrammar-functionVariable">d</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+<ul>
+<li><span class="pureGrammar-parametersLabel">Parameters</span>
+<ul>
+<li><span class="pureGrammar-parameterName">d</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionReturns">
+<ul>
+<li><span class="pureGrammar-returnsLabel">Returns</span>
+<ul>
+<li><span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="pureGrammar-functionUsage">
+</div>
+</div>
+</div></span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/getting-started/language"><span class="arrow-prev">← </span><span>Language</span></a><a class="docs-next button" href="/docs/getting-started/upcoming-functions"><span>Upcoming Functions</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#abs">abs</a></li><li><a href="#adjust">adjust</a></li><li><a href="#and">and</a></li><li><a href="#at">at</a></li><li><a href="#average">average</a></li><li><a href="#cast">cast</a></li><li><a href="#changerecordfilter">changeRecordFilter</a></li><li><a href="#concatenate">concatenate</a></li><li><a href="#contains">contains</a></li><li><a href="#count">count</a></li><li><a href="#datediff">dateDiff</a></li><li><a href="#datepart">datePart</a></li><li><a href="#dayofmonth">dayOfMonth</a></li><li><a href="#dayofweeknumber">dayOfWeekNumber</a></li><li><a href="#distinct">distinct</a></li><li><a href="#divide">divide</a></li><li><a href="#drop">drop</a></li><li><a href="#endswith">endsWith</a></li><li><a href="#eq">eq</a></li><li><a href="#equal">equal</a></li><li><a href="#exists">exists</a></li><li><a href="#filter">filter</a></li><li><a href="#first">first</a></li><li><a href="#firstdayofmonth">firstDayOfMonth</a></li><li><a href="#firstdayofquarter">firstDayOfQuarter</a></li><li><a href="#firstdayofthismonth">firstDayOfThisMonth</a></li><li><a href="#firstdayofthisquarter">firstDayOfThisQuarter</a></li><li><a href="#firstdayofthisyear">firstDayOfThisYear</a></li><li><a href="#firstdayofweek">firstDayOfWeek</a></li><li><a href="#firstdayofyear">firstDayOfYear</a></li><li><a href="#forall">forAll</a></li><li><a href="#greaterthan">greaterThan</a></li><li><a href="#greaterthanequal">greaterThanEqual</a></li><li><a href="#hour">hour</a></li><li><a href="#if">if</a></li><li><a href="#in">in</a></li><li><a href="#indexof">indexOf</a></li><li><a href="#isempty">isEmpty</a></li><li><a href="#isnotempty">isNotEmpty</a></li><li><a href="#joinstrings">joinStrings</a></li><li><a href="#length">length</a></li><li><a href="#lessthan">lessThan</a></li><li><a href="#lessthanequal">lessThanEqual</a></li><li><a href="#limit">limit</a></li><li><a href="#map">map</a></li><li><a href="#max">max</a></li><li><a href="#minus">minus</a></li><li><a href="#minute">minute</a></li><li><a href="#monthnumber">monthNumber</a></li><li><a href="#mostrecentdayofweek">mostRecentDayOfWeek</a></li><li><a href="#not">not</a></li><li><a href="#now">now</a></li><li><a href="#or">or</a></li><li><a href="#parsedate">parseDate</a></li><li><a href="#parsefloat">parseFloat</a></li><li><a href="#parseinteger">parseInteger</a></li><li><a href="#plus">plus</a></li><li><a href="#previousdayofweek">previousDayOfWeek</a></li><li><a href="#quarternumber">quarterNumber</a></li><li><a href="#rem">rem</a></li><li><a href="#replace">replace</a></li><li><a href="#round">round</a></li><li><a href="#second">second</a></li><li><a href="#size">size</a></li><li><a href="#slice">slice</a></li><li><a href="#split">split</a></li><li><a href="#startswith">startsWith</a></li><li><a href="#substring">substring</a></li><li><a href="#take">take</a></li><li><a href="#times">times</a></li><li><a href="#tolower">toLower</a></li><li><a href="#toone">toOne</a></li><li><a href="#toonemany">toOneMany</a></li><li><a href="#tostring">toString</a></li><li><a href="#toupper">toUpper</a></li><li><a href="#toupperfirstcharacter">toUpperFirstCharacter</a></li><li><a href="#today">today</a></li><li><a href="#trim">trim</a></li><li><a href="#union">union</a></li><li><a href="#weekofyear">weekOfYear</a></li><li><a href="#year">year</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a></section><section class="finos finosBanner"><a href="https://www.finos.org"><img id="finosicon" src="https://alloy.finos.org/img/finos_wordmark.svg" height="75px" alt="FINOS" title="FINOS"/></a></section><section class="privacy finosBanner"><a href="https://www.finos.org/privacy-policy" target="_blank">Privacy Policy</a></section><section class="copyright">Copyright © 2020 PURE/Alloy</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
