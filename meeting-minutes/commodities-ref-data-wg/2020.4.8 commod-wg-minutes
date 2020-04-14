@@ -1,0 +1,18 @@
+attendees: Ffion Wiggins (GS), Shaun Aston (Gs), Manveen Kaur (GS), Jing Wu (GS), Kenneth Poon (GS), Ted Sanborn (ISDA), Paul Brine (DB), Georg Schneider (Digital Assets), Aitana Myohl (FINOS)
+
+We will re-cover the content next week with all participants present but a short summary of the discussion points that may help.
+
+Problem Statement
+•	Not a clear separation of contractual data v reference (price) data in the current FpML construct for Commodities
+•	Current fPML schema restricts the information that you can give around specific commodities and not flexible to cater for new industry data demands/categorisation. 
+•	Want to agree an industry model that can be stored externally to the contractual (transactional) model however there will be dependency between the two on a contractual basis. 
+•	Improve external communication intrabank/regulation
+
+What do we mean by separation
+•	Reference Data – published prices/indices, publication info. 
+
+Nuances of commod swaps v eq return swap
+•	Mulitple leg types dependant on the type of i) transaction and ii) product
+•	Physical legs contain additional information around the physical commodity in question (Example given on the call ‘Pipeline’ is specified for Physical Oil).
+
+Example FpML
