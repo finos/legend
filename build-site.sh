@@ -6,6 +6,10 @@ export ALLOY_MODELS="purealloy-modeling purealloy-modeling-samples"
 # Where the model MD files will be checked out
 export DOCS_FOLDER=${PWD}/docs/models
 
+# At some point we may want to be able to pull in, either directly or indirectly from
+## https://gitlab.alloy.finos.org/alloy-pilot/cdm
+## https://gitlab.alloy.finos.org/alloy-pilot/commonrefdata
+
 # Import docs from modeling projects in gitlab.com/finos-foundation
 cd /tmp
 mkdir -p ${DOCS_FOLDER}
