@@ -4,7 +4,12 @@ title: Alloy SDLC
 sidebar_label: SDLC
 ---
 
-Alloy is integrated with SDLC (supported by GitLab) enabling changes to be reviewed and committed with ease.  
+Alloy is integrated with SDLC (supported by GitLab) enabling changes to be reviewed and committed with ease.
+
+There are three roles related to the submission of changes
+* **Modeler**. The person making the changes
+* **Approvers**. The person or people who review and approve the model changes. Generally these will be people with functional/product knowledge of that which is being modeled (e.g., if, say, an FX Option is being modeled, this would be a person or people with some expertise on how an FX Option works)
+* **Merger**. Also sometimes referred to as a "committer" this is the person with administrative privledges to the GitLab repo with permission to merge and commit the model change. This may be an approver or an adminstrator who merges on the recommendation of approvers. 
 
 ## How to review and commit a change
 
