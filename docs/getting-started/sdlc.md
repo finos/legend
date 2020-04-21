@@ -40,7 +40,8 @@ To create a review, click the highlighted icon in the activity bar or hit `Ctrl 
 ![](assets/sdlc_step3.JPG)
 
 ### Perform review (Approver)
-
+![](assets/sldc_gitlab_approval.svg)
+![](assets/sldc_cla_bot.jpg)
 
 ### Merge the change (Merger)
 
