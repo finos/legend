@@ -40,11 +40,13 @@ To create a review, click the highlighted icon in the activity bar or hit `Ctrl 
 ![](assets/sdlc_step3.JPG)
 
 ### Perform review (Approver)
-![](assets/sldc_gitlab_approval.JPG)
-![](assets/sldc_cla_bot.JPG)
+![](assets/sdlc_gitlab_approval.JPG)
+
+#### CLA Bot Check
+![](assets/sdlc_cla_bot.JPG)
 
 ### Merge the change (Merger)
-![](assets/sldc_merge_button.JPG)
+![](assets/sdlc_merge_button.JPG)
 
 ### Commit the changes
 After the review is approved, click commit.  
