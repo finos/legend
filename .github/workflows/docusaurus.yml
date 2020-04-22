@@ -7,7 +7,7 @@ name: Docusaurus-website-build
 on:
   push:
     branches:
-      - master
+      - feature/rfu009
     paths:
       - '.github/workflows/docusaurus.yml'
       - 'docs/**'
