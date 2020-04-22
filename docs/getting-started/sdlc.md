@@ -46,7 +46,7 @@ To create a review, click the highlighted icon in the activity bar or hit `Ctrl 
 ### Merge the change (Merger)
 
 ### Commit the changes
-After the review is approved, click commit. 
+After the review is approved, click commit.  
 
 ![](assets/sdlc_step4.JPG)
 
