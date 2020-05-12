@@ -15,3 +15,15 @@ _Note About Model Approvals:_ Groups collaborating on a model can choose whateve
 * a consensus model (one or more fellow modelers need to "+1" a change)
 * (a) designated approver(s) (one or people are designated as approvers who must approve changes)
 * or some combination thereof. 
+
+## Review process overview
+
+
+### Perform review (Approver)
+![](assets/sdlc_gitlab_approval.JPG)
+
+#### CLA Bot Check
+![](assets/sdlc_cla_bot.JPG)
+
+### Merge the change (Merger)
+![](assets/sdlc_merge_button.JPG)
