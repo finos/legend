@@ -6,8 +6,8 @@ name: Docusaurus-website-build
 # - Docusaurus files: this file, docs/** and website/**
 on:
   push:
-#    branches:
-#      - feature/master
+    branches:
+      - feature/rfu010
     paths:
       - '.github/workflows/docusaurus.yml'
       - 'docs/**'
