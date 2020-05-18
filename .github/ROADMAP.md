@@ -1,4 +1,8 @@
 ## Phase 0 (Completed)
+### Phase 0 Goals
+* Stand-up and deploy an external instance of Alloy for shared modeling - DONE
+* [Open Source Strategy Forum announcement](https://www.youtube.com/watch?v=fPUYUt9Yr_I) of Goldman Sachs intention to open source Alloy and the associated roadmap for that work (i.e., this doc) - DONE 
+* Commence internal code evaluation and preparation for open sourcing - DONE
 
 
 ## Phase 1 (In Progress)
@@ -22,7 +26,23 @@
     * Support of standards body (ISDA)
     * 
 
-#### Meeting Minutes
+
+### Phase 1 Milestones
+#### Launch Pilot Group
+* StandPilot Kick-off (January 29) - Completed 
+
+#### Open Source Preparations
+##### Code Readiness
+
+##### Build Readiness
+
+##### Developer Readinesss
+
+##### FINOS Hosted Instace Readiness
+
+
+
+### Phase 1 Meeting Minutes
 * Alloy General Monthly Meeting
 * Alloy Pilot Meeting
     
