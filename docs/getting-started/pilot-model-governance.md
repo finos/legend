@@ -18,11 +18,22 @@ _Note About Model Approvals:_ Approvals in GitLab are similar to "likes" or "+1"
 
 
 ## Review process overview within Alloy
+The following are the steps the MODELER, APPROVER, and MERGER take to submit, review, and merge a new change to a model.
 
 ### MODELER submits a change
-#### Synch! (Ctrl-S)
-// link back to SDLC? Or repeat here?
-The synch does the commit in gitlab
+
+As you make changes, Alloy will keep track of changes ("unsynched changes") made locally that need to be synched with SDLC server.
+(assets/pilot_unsynched_changes.JPG)
+
+#### [Synch](sdlc.md#sync-local-changes-to-workspace))
+
+To sumbit your changes [synch](sdlc.md#sync-local-changes-to-workspace) Sync the local changes to the the synch icon in the status bar use keyboard shortcut `Ctrl+S`.
+![](assets/sdlc_step1.JPG)
+
+"Under the hood", within GitLab, these changes will be created as commits:
+![](assets/pilot_gitlab_commit.JPG)
+
+
 
 
 ### APPROVER performs review 
