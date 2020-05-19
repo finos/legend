@@ -24,7 +24,6 @@
     * Stretch goal to submut changed back to respective standards body (ISDA) and, better still, see it accepted into the standard
 * Success Criteria
     * Support of standards body (ISDA)
-    * 
 
 
 ### Phase 1 Milestones
@@ -33,18 +32,29 @@
 
 #### Open Source Preparations
 ##### Code Readiness
+* Milestone 1
+* Milestone 2
 
 ##### Build Readiness
+* [Define GitHub Actions for building and testing Docker images](https://github.com/finos/alloy/issues/93)
+* Milestone 2
 
 ##### Developer Readinesss
+* Milestone 1
+* Milestone 2
 
 ##### FINOS Hosted Instace Readiness
+* Milestone 1
+* Milestone 2
 
+##### Communication and Change Readiness
+* [Training Video Produced and Posted](https://github.com/finos/alloy/issues/26)
+* Press Release Prepared and Embargoed
 
 
 ### Phase 1 Meeting Minutes
-* Alloy General Monthly Meeting
-* Alloy Pilot Meeting
+* [Alloy General Monthly Meeting Minutes]
+* [Alloy Pilot Meeting Minutes]
     
 
 ## Phase 2 Milestone Plan & Roadmap (Tentative)
