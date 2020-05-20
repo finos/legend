@@ -53,8 +53,8 @@
 
 
 ### Phase 1 Meeting Minutes
-* [Alloy General Monthly Meeting Minutes]
-* [Alloy Pilot Meeting Minutes]
+* [Alloy General Monthly Meeting Minutes](https://github.com/finos/alloy/tree/master/meeting-minutes/general-meeting)
+* [Alloy Pilot Meeting Minutes](https://github.com/finos/alloy/tree/master/meeting-minutes/pilot-project-meeting-minutes)
     
 
 ## Phase 2 Milestone Plan & Roadmap (Tentative)
