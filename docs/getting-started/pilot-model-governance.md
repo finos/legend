@@ -65,26 +65,19 @@ Alternatively, the MERGER can do the merge directly in GitLab
 As is visible in GitLab, GitLab and Alloy are configured to make use of the FINOS Open Developer Platform's CLA Bot. The CLA Bot checks that the MODELER who submitted the change is covered under a Contributor License Agreement authorizing him/her to make contributions of code (i.e., models) into FINOS
 ![](assets/sdlc_cla_bot.JPG)
 
-
 ### Step 3. MODELER(s) update their workspaces/branches 
 
-* MODELERs update their workspaces with the latest approved/merged updates (e.g., this came up when the CDN got updated)
-* aka.a "merges FROM master" 
+After new changes are merged into "master" branch of a project, modelers will usually want to pull the latest/greatest changes into the their current Alloy Workspace (their "branch" in GitLab terminology). That there are changes available to be pulled will be indicated by a blue dot on the cloud icon. Modelers will also see this icon, and need to pull down changes, whenever models may be updates from an exteranl source (e.g., the ISDA CDM master)
+![](assets/pilot_workspace_updater_icon.JPG)
 
 
-## Synching Changes Beyond Alloy
-
+## Synching Changes Beyond Alloy (Coming Soon)
+Alloy supports the ability to import updates from external sources and to also extract models as transformations that can be imported. 
 
 ### Change proposed back to standards body
-Alloy supports the ability to extract code .... general 
+(Coming Soon)
 
-
-Coming Soon Documentation ... General Description ... 
-* When working group has a complete set of changes, make a proposal 
-
-
-### Latest changes from standards body pushed back to Alloy
-
-Upon request, the hosted instance can be updated with the latest of the version of the ISDA CDM; ... in the future ... <there is no button to push>
+### Pulling latest changes from standards body back into Alloy
+(Coming Soon)
 
 
