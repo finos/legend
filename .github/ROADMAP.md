@@ -28,11 +28,32 @@
 
 ### Phase 1 Milestones
 #### Launch Pilot Group
-* StandPilot Kick-off (January 29) - Completed 
+* Pilot Kick-off (January 29) - Completed 
+
+#### Modeling
+* Import and ready ISDA CDM in Alloy - Completed
+* Define, organize, and launch modeling working grous
+  * FX Option - Launched
+  * Commodities Reference Data - Launched
+  * Sustainability / Renewable energy Working Group - Proposed
+* Define potential areas of further modeling collaboration after pilot ends
+  * Consider relationship with other FINOS projects like Financial Objects
+  * Additional standards and/or standards bodies to collaborte with
+
+
+##### FX Option Working Group
+* Step 1 (2nd April 2020 - 26th May): Milestone - CDM FX Option Model Change
+  * Products: FX vailla Options, FX Barrier Option
+  * Review FpML FxOption model against CDM 
+* Step 2
+* Step 3 2nd July 2020 - 6th August 2020
+  * Analyze other use cases
+
+  
 
 #### Open Source Preparations
-##### Code Readiness
-* Milestone 1
+##### [Code Readiness](https://github.com/finos/alloy/labels/Code%20Readiness)
+* [Code Modulization](https://github.com/finos/alloy/issues/119)
 * Milestone 2
 
 ##### Build Readiness
