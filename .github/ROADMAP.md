@@ -43,13 +43,74 @@
   * Additional standards and/or standards bodies to collaborte with
 
 
-##### FX Option Working Group
-* Step 1 (2nd April 2020 - 26th May): Milestone - CDM FX Option Model Change
+##### FX Option Working Group - Finos-Alloy Pilot: FX Options WG Plan
+* Stage 1      2nd April 2020 – 28th May 2020 / Milestone: 1 CDM FxOption model change / Outcome [TBC]
+  *  Products: Fx Vanilla Option, Fx Barrier Option
+  * Review FpML FxOption model against CDM and identify relevant vs unused attributes; for relevant attributes review the cardinality and data types
+
+·         Submit and test changes to model in AlloyStudio
+
+·         Add agreed changes to CDM Rosetta for testing and consideration by the CDM Design WG
+
+Phase 2      4th June 2020 – 25th June 2020 / Milestone: 1 CDM Fx lifecycle model change / Outcome [TBC]
+
+·         Analyse the business events and primitive processes for 'Exercise', 'Expire' and any other applicable lifecycle events for Fx Vanilla Option
+
+·         Suggest and review new attributes for the model, considering validations/conditions are in line with CDM principles
+
+·         Submit and test changes to model in AlloyStudio
+
+·         Add agreed changes to CDM Rosetta for testing and consideration by the CDM Design WG
+
+Phase 3      2nd July 2020 – 6th August 2020 / Milestone [TBC] / Outcome [TBC]                        
+
+·         Analyse other use cases e.g. Fx Strategies, Asian features, exotics scenarios etc 
+
+·         Suggest and review new attributes for the model, considering validations/conditions are in line with CDM principles
+
+·         Submit and test changes to model in AlloyStudio
+
+·         Add agreed changes to CDM Rosetta for testing and consideration by the CDM Design WG
+
+ 
+
+
+
+
+* Stage 1 (2nd April 2020 - 26th May): Milestone - CDM FX Option Model Change
   * Products: FX vailla Options, FX Barrier Option
   * Review FpML FxOption model against CDM 
-* Step 2
-* Step 3 2nd July 2020 - 6th August 2020
+* Stage 2
+* Stage 3 2nd July 2020 - 6th August 2020
   * Analyze other use cases
+
+
+
+###### CMD Reference Data WG Plan
+* Stage 1	8th April – 27th May 2020 
+  * Milestone: Commodities Reference Data model proposal merge into Alloy / Outcome: Complete
+Milestone: CDM Payout change to support Commodities vanilla scenario / Outcome	 [TBC]
+Product: WTI Fixed/Float Oil Swap.
+Review FpML and identify relevant v unused attributes; for relevant attributes review the cardinality and data types.
+Determine contractual data points v reference data points and how these two models should interact.
+Identify gaps in existing CDM model and make updates to cover the commodities fixed v float scenario.
+Stage 2	3rd June 2020 – 25th June 2020
+ Milestone: Extend Commodities Reference Data model properties to capture relevant data that can be associated 
+with a product / Outcome [TBC]
+Milestone: Capture extended Commodities use cases in the CDM model in Alloy /Outcome [TBC]
+Agree on Reference Data model structure.
+Identify associated data that is required in the industry associated with a product.
+Review additional Commodities payout scenarios and look to factor into the CDM model in Alloy. 
+Agree on best way to represent Commodities payout in CDM, either as a distinct class, or combined with another existing payout. 
+Stage 3	1st July 2020 – 5th August 2020 
+Milestone: Finalise Reference Data Model construct and agree on next industry steps post pilot phase / Outcome: [TBC]
+Milestone: CDM Payout change to support Commodities vanilla scenario / Outcome	 [TBC]
+Review options and agree on next steps for Reference Data model.
+Finalise Commodities Payout features and merge into Alloy.
+Review required qualifier functions for CDM and agree solution for Commodities.
+Add agreed changes to CDM Rosetta for testing and consideration by the CDM Design WG.
+
+
 
   
 
