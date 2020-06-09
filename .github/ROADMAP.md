@@ -137,10 +137,6 @@
 * Blacklist the GitLab repo
 
 
-
-
-
-
 ### Phase 1 Meeting Minutes
 * [Alloy General Monthly Meeting Minutes](https://github.com/finos/alloy/tree/master/meeting-minutes/general-meeting)
 * [Alloy Pilot Meeting Minutes](https://github.com/finos/alloy/tree/master/meeting-minutes/pilot-project-meeting-minutes)
@@ -157,7 +153,7 @@
   * *Code for SDLC, Execution, Studio, PURE System (tentative scope) made available in GitHub and/or GitLab under Apache 2.0 license**
   * CI build + release process
   * Deploy pipeline from code to demo environement on FINOS infrastructure (alloy.finos.org/studio)
-#### Milestone 2.3 - (More) Documentation
+#### [Milestone 2.3 - More Alloy Documentation](https://github.com/finos/alloy/milestone/8)
   * Video tutorials for Studio
   * Guide to building and deploying
   * Guide to developing in Alloy
