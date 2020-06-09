@@ -106,9 +106,7 @@
 * [Open Source Alloy Execution code](https://github.com/finos/alloy/issues/146)
 * [Open Source Alloy Studio Code](https://github.com/finos/alloy/issues/147)
 * [Open Source PURE Language](https://github.com/finos/alloy/issues/148)
-* [Open Source Services code](https://github.com/finos/alloy/issues/150)
-* [Open Source Cube code](https://github.com/finos/alloy/issues/151)
-* [Open Source Registry code](https://github.com/finos/alloy/issues/152)
+
 * Break into two distinct GitLab repos
 
 ##### [Build Readiness](https://github.com/finos/alloy/labels/Build%20Readiness)
@@ -138,38 +136,10 @@
 
 * Blacklist the GitLab repo
 
-##### Other/unassigned
-* Repoint to new open source repo
-* Deplout from external repo to GS work
-  * Rightnow we have lots of agility 
-  * Critial Success Factor: Maintain same speed and agility as presently wiht internal repor
-    * Bad news --> 
-    * If we need to do a 
-
-* [Define GitHub Actions for building and testing Docker images](https://github.com/finos/alloy/issues/93)
-
-
-##### FINOS Hosted Instance Readiness
-* Do we move the hosted instance to gitlab.com and if so, when?
-* Part of FINOS infrastructure -- part ODP ... hosted instance is available basically and y and all FINOS project that would like to make use to modeling ... 
-* Also a sort of showcase/demo of Alloy and also a sandbox ...
-
-##### Model Readinesss
-* Get one CDM change accepted by ISDA
-* How to do continue ....
-
-
-* How to get CDM into our own instances ... import functionality .... 
-* Model repository ... 
-* How do we share and keep in synch 
-* How do we play with the own internal BitBucket ... go through own fir
-* Ajith --> 
 
 
 
-Move instances to openshift ... 
 
-... then services, cube, and registry ... bottom three ticket 
 
 ### Phase 1 Meeting Minutes
 * [Alloy General Monthly Meeting Minutes](https://github.com/finos/alloy/tree/master/meeting-minutes/general-meeting)
@@ -183,7 +153,7 @@ Move instances to openshift ...
 
 ### Phase 2 Plan
 #### Milestone 2.1 – [Code Uplift](https://github.com/finos/alloy/milestone/5)
-#### Milestone 2.2 – [_**Code Release - 1st Wave (Target Summer - Early Fall 2020)**_.](https://github.com/finos/alloy/issues?q=is%3Aopen+is%3Aissue+label%3A%22Milestone%3A+Code+Open+Sourced+%281st+Wave%29%22)
+#### Milestone 2.2 – [_**Code Release - 1st Wave (Target Summer - Early Fall 2020)**_.](https://github.com/finos/alloy/milestone/6)
   * *Code for SDLC, Execution, Studio, PURE System (tentative scope) made available in GitHub and/or GitLab under Apache 2.0 license**
   * CI build + release process
   * Deploy pipeline from code to demo environement on FINOS infrastructure (alloy.finos.org/studio)
@@ -191,6 +161,10 @@ Move instances to openshift ...
   * Video tutorials for Studio
   * Guide to building and deploying
   * Guide to developing in Alloy
-#### Milestone 2.4 - Second batch of code open sourced
+#### [Milestone 2.4 - Second batch of code open sourced](https://github.com/finos/alloy/milestone/7)
   * Code for Cube, Graph, Services (tentative scope) made available in GitHub and/or Gitlab under Apache 2.0 license
+    * [Open Source Services code](https://github.com/finos/alloy/issues/150)
+    * [Open Source Cube code](https://github.com/finos/alloy/issues/151)
+    * [Open Source Registry code](https://github.com/finos/alloy/issues/152)
   * Deploy demo database in demo environment in FINOS infrastructure to demonstrate execution
+  * Move instances to OpenShift (?)
