@@ -1,11 +1,11 @@
-## Phase 0 (Completed)
+## Alloy Pilot Phase 0 (Completed)
 ### Phase 0 Goals
-* Stand-up and deploy an external instance of Alloy for shared modeling - DONE
-* [Open Source Strategy Forum announcement](https://www.youtube.com/watch?v=fPUYUt9Yr_I) of Goldman Sachs intention to open source Alloy and the associated roadmap for that work (i.e., this doc) - DONE 
-* Commence internal code evaluation and preparation for open sourcing - DONE
+* Stand-up and deploy an external instance of Alloy for shared modeling - *DONE*
+* [Open Source Strategy Forum announcement](https://www.youtube.com/watch?v=fPUYUt9Yr_I) of Goldman Sachs intention to open source Alloy and the associated roadmap for that work (i.e. this doc) - *DONE*
+* Commence internal code evaluation and preparation for open sourcing - *DONE*
 
 
-## Phase 1 (In Progress)
+## Alloy Pilot Phase 1 (*In Progress*)
 ### Phase 1 Goals
 #### Phase 1 Goal 1: Evaluate shared modeling using Alloy and and define collaboration model for further model development
 * Evaluate how shared modeling can work using Alloy and define the best process to work together, by assessing: 
@@ -30,157 +30,129 @@
 
 ### Phase 1 Plan
 #### Launch Pilot Group
-* Pilot Kick-off (January 29) - Completed 
+* Pilot Kick-off (January 29) - *Completed* 
 
 #### Modeling
-* Import and ready ISDA CDM in Alloy - Completed
-* Define, organize, and launch modeling working grous
-  * FX Option - Launched
-  * Commodities Reference Data - Launched
-  * Sustainability / Renewable energy Working Group - Proposed
+* Import and ready ISDA CDM in Alloy - *Completed*
+* Define, organize, and launch modeling working groups
+  * FX Option - *Launched*
+  * Commodities Reference Data - *Launched*
+  * Sustainability / Renewable energy Working Group - *Proposed*
 * Define potential areas of further modeling collaboration after pilot ends
   * Consider relationship with other FINOS projects like Financial Objects
-  * Additional standards and/or standards bodies to collaborte with
+  * Additional standards and/or standards bodies to collaborate with
 
 
-##### FX Option Working Group - Finos-Alloy Pilot: FX Options WG Plan
-* Stage 1      2nd April 2020 – 28th May 2020 / Milestone: 1 CDM FxOption model change / Outcome [TBC]
-  *  Products: Fx Vanilla Option, Fx Barrier Option
-  * Review FpML FxOption model against CDM and identify relevant vs unused attributes; for relevant attributes review the cardinality and data types
+### FX Option Working Group Plan
+#### Stage 1 (4/2 - 5/28/2020)
+#### Milestone: One CDM FxOption model change - Outcome *[TBC]*
+* Products: Fx Vanilla Option, Fx Barrier Option
+* Review FpML FxOption model against CDM and identify relevant vs unused attributes; for relevant attributes review the cardinality and data types
+* Submit and test changes to model in AlloyStudio
+* Add agreed changes to CDM Rosetta for testing and consideration by the CDM Design WG
 
-·         Submit and test changes to model in AlloyStudio
+#### Stage 2 (6/4 - 6/25/2020) 
+#### Milestone: One CDM FX lifecycle model change - Outcome *[TBC]*
+* Analyse the business events and primitive processes for 'Exercise', 'Expire' and any other applicable lifecycle events for Fx Vanilla Option
+* Suggest and review new attributes for the model, considering validations/conditions are in line with CDM principles
+* Submit and test changes to model in AlloyStudio
+* Add agreed changes to CDM Rosetta for testing and consideration by the CDM Design WG
 
-·         Add agreed changes to CDM Rosetta for testing and consideration by the CDM Design WG
-
-Phase 2      4th June 2020 – 25th June 2020 / Milestone: 1 CDM Fx lifecycle model change / Outcome [TBC]
-
-·         Analyse the business events and primitive processes for 'Exercise', 'Expire' and any other applicable lifecycle events for Fx Vanilla Option
-
-·         Suggest and review new attributes for the model, considering validations/conditions are in line with CDM principles
-
-·         Submit and test changes to model in AlloyStudio
-
-·         Add agreed changes to CDM Rosetta for testing and consideration by the CDM Design WG
-
-Phase 3      2nd July 2020 – 6th August 2020 / Milestone [TBC] / Outcome [TBC]                        
-
-·         Analyse other use cases e.g. Fx Strategies, Asian features, exotics scenarios etc 
-
-·         Suggest and review new attributes for the model, considering validations/conditions are in line with CDM principles
-
-·         Submit and test changes to model in AlloyStudio
-
-·         Add agreed changes to CDM Rosetta for testing and consideration by the CDM Design WG
-
- 
+#### Stage 3 (7/2 - 8/6/2020)
+#### Milestone:[TBC] - Outcome *[TBC]*                       
+* Analyse other use cases e.g. Fx Strategies, Asian features, exotics scenarios etc 
+* Suggest and review new attributes for the model, considering validations/conditions are in line with CDM principles
+* Submit and test changes to model in AlloyStudio
+* Add agreed changes to CDM Rosetta for testing and consideration by the CDM Design WG
 
 
+### Commodities Reference Data Working Group Plan
+#### Stage 1 (4/8 - 5/27/2020) 
+#### Milestone: Commodities Reference Data model proposal merge into Alloy / Outcome: *Complete*
+#### Milestone: CDM Payout change to support Commodities vanilla scenario / Outcome: *[TBC]*
+* Product: WTI Fixed/Float Oil Swap.
+* Review FpML and identify relevant v unused attributes; for relevant attributes review the cardinality and data types.
+* Determine contractual data points v reference data points and how these two models should interact.
+* Identify gaps in existing CDM model and make updates to cover the commodities fixed v float scenario.
 
+#### Stage 2 (6/3 - 6/25/2020)
+#### Milestone: Extend Commodities Reference Data model properties to capture relevant data that can be associated with a product / Outcome *[TBC]*
+#### Milestone: Capture extended Commodities use cases in the CDM model in Alloy / Outcome: *[TBC]*
+* Agree on Reference Data model structure.
+* Identify associated data that is required in the industry associated with a product.
+* Review additional Commodities payout scenarios and look to factor into the CDM model in Alloy. 
+* Agree on best way to represent Commodities payout in CDM, either as a distinct class, or combined with another existing payout. 
 
-* Stage 1 (2nd April 2020 - 26th May): Milestone - CDM FX Option Model Change
-  * Products: FX vailla Options, FX Barrier Option
-  * Review FpML FxOption model against CDM 
-* Stage 2
-* Stage 3 2nd July 2020 - 6th August 2020
-  * Analyze other use cases
+#### Stage 3 (7/1 – 8/5/2020)
+#### Milestone #1: Finalise Reference Data Model construct and agree on next industry steps post pilot phase / Outcome: *[TBC]*
+#### Milestone#2: CDM Payout change to support Commodities vanilla scenario / Outcome: *[TBC]*
+* Review options and agree on next steps for Reference Data model.
+* Finalise Commodities Payout features and merge into Alloy.
+* Review required qualifier functions for CDM and agree solution for Commodities.
+* Add agreed changes to CDM Rosetta for testing and consideration by the CDM Design WG.
 
-
-
-###### CMD Reference Data WG Plan
-* Stage 1	8th April – 27th May 2020 
-  * Milestone: Commodities Reference Data model proposal merge into Alloy / Outcome: Complete
-Milestone: CDM Payout change to support Commodities vanilla scenario / Outcome	 [TBC]
-Product: WTI Fixed/Float Oil Swap.
-Review FpML and identify relevant v unused attributes; for relevant attributes review the cardinality and data types.
-Determine contractual data points v reference data points and how these two models should interact.
-Identify gaps in existing CDM model and make updates to cover the commodities fixed v float scenario.
-Stage 2	3rd June 2020 – 25th June 2020
- Milestone: Extend Commodities Reference Data model properties to capture relevant data that can be associated 
-with a product / Outcome [TBC]
-Milestone: Capture extended Commodities use cases in the CDM model in Alloy /Outcome [TBC]
-Agree on Reference Data model structure.
-Identify associated data that is required in the industry associated with a product.
-Review additional Commodities payout scenarios and look to factor into the CDM model in Alloy. 
-Agree on best way to represent Commodities payout in CDM, either as a distinct class, or combined with another existing payout. 
-Stage 3	1st July 2020 – 5th August 2020 
-Milestone: Finalise Reference Data Model construct and agree on next industry steps post pilot phase / Outcome: [TBC]
-Milestone: CDM Payout change to support Commodities vanilla scenario / Outcome	 [TBC]
-Review options and agree on next steps for Reference Data model.
-Finalise Commodities Payout features and merge into Alloy.
-Review required qualifier functions for CDM and agree solution for Commodities.
-Add agreed changes to CDM Rosetta for testing and consideration by the CDM Design WG.
-
-
-
-  
-
-#### Open Source Preparations
+### Open Source Preparations
 
 ##### [Code Readiness](https://github.com/finos/alloy/labels/Code%20Readiness)
 * [Code Modulization](https://github.com/finos/alloy/issues/119)
 * [Refactor Execution code to remove GS connection management](https://github.com/finos/alloy/issues/127) (GS)
-  * Migrate Engine (Execution Server) to Gitlab (from SVN)
-  * Break into two distinct Gitab repos
+* [Migrate Engine to GitLab](https://github.com/finos/alloy/issues/134)
+* [Re-name Alloy in Studio code](https://github.com/finos/alloy/issues/136)
+* [Re-name Alloy to New Name in SDLC code](https://github.com/finos/alloy/issues/139)
+* [Re-name Alloy to New Name in PURE code](https://github.com/finos/alloy/issues/140)
+* [Re-name Alloy to New Name in Engine code](https://github.com/finos/alloy/issues/141)
+* [Extract core PURE System ready for Open Sourcing](https://github.com/finos/alloy/issues/142)
+* [Open Source Alloy SDLC code ](https://github.com/finos/alloy/issues/145)
+* [Open Source Alloy Execution code](https://github.com/finos/alloy/issues/146)
+* [Open Source Alloy Studio Code](https://github.com/finos/alloy/issues/147)
+* [Open Source PURE Language](https://github.com/finos/alloy/issues/148)
+* [Open Source Services code](https://github.com/finos/alloy/issues/150)
+* [Open Source Cube code](https://github.com/finos/alloy/issues/151)
+* [Open Source Registry code](https://github.com/finos/alloy/issues/152)
+* Break into two distinct GitLab repos
 
-##### Build Readiness
-* Define GitHub Actions for building and testing Docker images(https://github.com/finos/alloy/issues/93) (FINOS + GS)
+##### [Build Readiness](https://github.com/finos/alloy/labels/Build%20Readiness)
+* [Define GitHub Actions for building and testing Docker images](https://github.com/finos/alloy/issues/93) (FINOS + GS)
+* [Deploying from external repo to GS works](https://github.com/finos/alloy/issues/144)
+* [Test build and deploy works in open source environment for SDLC](https://github.com/finos/alloy/issues/129)
+* [Build support for all test permutations](https://github.com/finos/alloy/issues/130)
+* [Discuss how to manage GA releases](https://github.com/finos/alloy/issues/131)
+* [Test build and deploy works in open source environment for Studio](https://github.com/finos/alloy/issues/132)
+* [Test build and deploy works in open source environment for Engine](https://github.com/finos/alloy/issues/133)
 
+##### [Developer Readiness](https://github.com/finos/alloy/labels/developer_readiness)
+* [Define new code release process beyond GSOSS](https://github.com/finos/alloy/issues/149)
 
+##### [Communication Readiness](https://github.com/finos/alloy/labels/communication_readiness)
+* Internal-GS
+* Internal-FINOS
+* External
+   * [External Communication Plan for new name](https://github.com/finos/alloy/issues/137)
+   * [Training Video Produced and Posted](https://github.com/finos/alloy/issues/26)
+   * [User guide: how to run your own on premise version](https://github.com/finos/alloy/issues/143)
+   * Press Release Prepared and Embargoed
 
+* Support Plan 
+  * Escalation
+  * Coverage
 
-* Extract core PURE
-* REname Alloyu
+* Blacklist the GitLab repo
 
-* Release Code
-  *Open Source PURE
-
- * Repoint to new open source repor
-
-fda
-
-
-##### Build Readiness
-* Test and build deploits wokr sin open soure in ... (GS / FINOS; Targetted to complete in mid June)
-  * ... SLDC
-  * ... Studio
-  * .... Engine
-
+##### Other/unassigned
+* Repoint to new open source repo
 * Deplout from external repo to GS work
   * Rightnow we have lots of agility 
   * Critial Success Factor: Maintain same speed and agility as presently wiht internal repor
     * Bad news --> 
     * If we need to do a 
 
-
-
 * [Define GitHub Actions for building and testing Docker images](https://github.com/finos/alloy/issues/93)
-* Milestone 2
 
-##### Developer Readinesss
-* Figure out the development process GS-OSS .. going to have to start on GS-OSS ... feel some pain and evolve GS-OSS
-* Milestone 2
 
-##### FINOS Hosted Instace Readiness
-* Do we move the hosted insstance got gitlab.com and if so then?
-* Part of FINOS infrastraucture -- part ODP ... hosted instance is available basically adn y and all FINOS project that would like to make use to modeling ... 
+##### FINOS Hosted Instance Readiness
+* Do we move the hosted instance to gitlab.com and if so, when?
+* Part of FINOS infrastructure -- part ODP ... hosted instance is available basically and y and all FINOS project that would like to make use to modeling ... 
 * Also a sort of showcase/demo of Alloy and also a sandbox ...
-
-##### Communication and Change Readiness -- Organizational and Support Readiness
-  * Internal GS
-  * FINOS
-* Build User Guide for On Premise
-
-
-* Support Plan 
-  * Escalation
-  * Coverage
-
-
-* Blacklist the gitlab repo
-
-* [Training Video Produced and Posted](https://github.com/finos/alloy/issues/26)
-* Press Release Prepared and Embargoed
-
 
 ##### Model Readinesss
 * Get one CDM change accepted by ISDA
@@ -202,23 +174,23 @@ Move instances to openshift ...
 ### Phase 1 Meeting Minutes
 * [Alloy General Monthly Meeting Minutes](https://github.com/finos/alloy/tree/master/meeting-minutes/general-meeting)
 * [Alloy Pilot Meeting Minutes](https://github.com/finos/alloy/tree/master/meeting-minutes/pilot-project-meeting-minutes)
-    
+* [Alloy FX Options WG Meeting Minutes](https://github.com/finos/alloy/tree/master/meeting-minutes/fx-options-wg)
+* [Alloy Commodity Reference Data WG Meeting Minutes](https://github.com/finos/alloy/tree/master/meeting-minutes/commodities-ref-data-wg)
 
-## Phase 2
+
+## Alloy Pilot Phase 2
 ### Phase 2 Goals
-* 
-
 
 ### Phase 2 Plan
-* Milestone 2.1 – [Code Uplift](https://github.com/finos/alloy/milestone/5)
-* Milestone 2.2 – [_**Code Release - 1st Wave (Target Summer - Early Fall 2020)**_.](https://github.com/finos/alloy/issues?q=is%3Aopen+is%3Aissue+label%3A%22Milestone%3A+Code+Open+Sourced+%281st+Wave%29%22)
+#### Milestone 2.1 – [Code Uplift](https://github.com/finos/alloy/milestone/5)
+#### Milestone 2.2 – [_**Code Release - 1st Wave (Target Summer - Early Fall 2020)**_.](https://github.com/finos/alloy/issues?q=is%3Aopen+is%3Aissue+label%3A%22Milestone%3A+Code+Open+Sourced+%281st+Wave%29%22)
   * *Code for SDLC, Execution, Studio, PURE System (tentative scope) made available in GitHub and/or GitLab under Apache 2.0 license**
   * CI build + release process
   * Deploy pipeline from code to demo environement on FINOS infrastructure (alloy.finos.org/studio)
-* Milestone 2.3 - (More) Documentation
+#### Milestone 2.3 - (More) Documentation
   * Video tutorials for Studio
   * Guide to building and deploying
   * Guide to developing in Alloy
-* Milestone 2.4 - Second batch of code open sourced
+#### Milestone 2.4 - Second batch of code open sourced
   * Code for Cube, Graph, Services (tentative scope) made available in GitHub and/or Gitlab under Apache 2.0 license
   * Deploy demo database in demo environment in FINOS infrastructure to demonstrate execution
