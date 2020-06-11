@@ -14,5 +14,6 @@ website/package-lock.json
 # Ignore checked out models
 docs/models
 
-# Ignore auto generated contribute.md file
+# Ignore auto generated contribute.md and roadmap.md file
 docs/contribute.md
+docs/roadmap.md

@@ -34,6 +34,22 @@ EOT
 sed 1d .github/CONTRIBUTING.md >> $CONTRIB_MD_PATH
 fi
 
+# Create roadmap.md docs page, from .github/ROADMAP.md
+ROADMAP_MD_PATH=docs/roadmap.md
+if [ -f ".github/ROADMAP.md" ]; then
+rm -rf $ROADMAP_MD_PATH
+touch $ROADMAP_MD_PATH
+cat <<EOT >> $ROADMAP_MD_PATH
+---
+id: roadmap
+title: Alloy Roadmap
+sidebar_label: Roadmap
+---
+EOT
+# Remove title (first line) from MD file content
+sed 1d .github/ROADMAP.md >> $ROADMAP_MD_PATH
+fi
+
 # Where the docusaurus app lives
 cd website
 
