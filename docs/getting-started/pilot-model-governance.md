@@ -13,7 +13,7 @@ There are three roles involved in the submission of model changes.
 
 In the explanations below, roles are indicated in capitals -- e.g., "MODELER"
 
-_Note About Model Approvals:_ Approvals in GitLab are similar to "likes" or "+1"s in common consumer social media platforms. Anyone in a pilot group - except for the modeler who submitted that particular change - may give their "+1" (approval) of a change. GitLab approvals provide working groups great flexibility on how they might choose to develop an approval policy that works best for them. Options may include:
+_Note About Model Approvals:_ Approvals in GitLab are similar to "likes" or "+1"s in common consumer social media platforms. Anyone in a pilot group - except for the modeler who submitted that particular change - may give their "+1" (approval) of a change. GitLab approvals provide each working group great flexibility on how they might choose to develop an approval policy that works best for them. Options may include:
 * a consensus model (one or more fellow modelers need to "+1" a change)
 * (a) designated approver(s) (one or people are designated as approvers who must approve changes)
 * One specific person plus, say, any two other people within the working group.
@@ -53,7 +53,7 @@ Once a review has been created and shared, others in the working group may revie
 _Tech Note_ In GitLab, the commit will be shown to be awaiting approval. Approvals may be done there alternatively though it's recommended that MODELERS use the Alloy UI. The merge button is grayed out as sufficient approvals have not been reached.
 ![](assets/pilot_gitlab_approve_merge_screen.JPG)
 
-### Step 2.1 a) MERGER merges an approved change
+#### Step 2.1 a) MERGER merges an approved change
 Once a sufficient number of approvals have been received based on the policy of the working group, the MERGER can codify the change by merging it in ("committing the review"). 
 ![](assets/pilot_merge_button.JPG)
 
@@ -67,7 +67,7 @@ As is visible in GitLab, GitLab and Alloy are configured to make use of the FINO
 
 ### Step 3. MODELER(s) update their workspaces/branches 
 
-After new changes are merged into "master" branch of a project, modelers will usually want to pull the latest/greatest changes into the their current Alloy Workspace (their "branch" in GitLab terminology). That there are changes available to be pulled will be indicated by a blue dot on the cloud icon. Modelers will also see this icon, and need to pull down changes, whenever models may be updates from an exteranl source (e.g., the ISDA CDM master)
+After new changes are merged into "master" branch of a project, modelers will usually want to pull the latest/greatest changes into the their current Alloy Workspace (their "branch" in GitLab terminology). That there are changes available to be pulled will be indicated by a blue dot on the cloud icon. Modelers will also see this icon, and need to pull down changes, whenever models may be updates from an external source (e.g., the ISDA CDM master)
 ![](assets/pilot_workspace_updater_icon.JPG)
 
 
