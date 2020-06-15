@@ -22,7 +22,7 @@
 * Find a good use case, with propensity for value creation through shared modeling and data shaping, and then work on (i.e., model) something “production relevant” 
     * Ideally shared models can and should also be contributed back to respective standards bodies such as ISDA for derivatives (e.g., proposed changes to the CDM) 
     * FINOS members and community can provide further momentum by implementing models and supporting standards by convention
-    * Stretch goal to submut changed back to respective standards body (ISDA) and, better still, see it accepted into the standard
+    * Stretch goal to submit changes back to respective standards body (ISDA) and, better still, see it accepted into the standard
 * Success Criteria
     * Support of standards body (ISDA)
 
@@ -49,21 +49,21 @@
 #### Milestone: One CDM FxOption model change - Outcome *[TBC]*
 * Products: Fx Vanilla Option, Fx Barrier Option
 * Review FpML FxOption model against CDM and identify relevant vs unused attributes; for relevant attributes review the cardinality and data types
-* Submit and test changes to model in AlloyStudio
+* Submit and test changes to model in Alloy Studio
 * Add agreed changes to CDM Rosetta for testing and consideration by the CDM Design WG
 
 ### Stage 2 (6/4 - 6/25/2020) 
 #### Milestone: One CDM FX lifecycle model change - Outcome *[TBC]*
-* Analyse the business events and primitive processes for 'Exercise', 'Expire' and any other applicable lifecycle events for Fx Vanilla Option
+* Analyze the business events and primitive processes for 'Exercise', 'Expire' and any other applicable lifecycle events for Fx Vanilla Option
 * Suggest and review new attributes for the model, considering validations/conditions are in line with CDM principles
-* Submit and test changes to model in AlloyStudio
+* Submit and test changes to model in Alloy Studio
 * Add agreed changes to CDM Rosetta for testing and consideration by the CDM Design WG
 
 ### Stage 3 (7/2 - 8/6/2020)
 #### Milestone:[TBC] - Outcome *[TBC]*                       
-* Analyse other use cases e.g. Fx Strategies, Asian features, exotics scenarios etc 
+* Analyze other use cases e.g. Fx Strategies, Asian features, exotics scenarios etc 
 * Suggest and review new attributes for the model, considering validations/conditions are in line with CDM principles
-* Submit and test changes to model in AlloyStudio
+* Submit and test changes to model in Alloy Studio
 * Add agreed changes to CDM Rosetta for testing and consideration by the CDM Design WG
 
 
