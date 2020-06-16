@@ -1,12 +1,12 @@
 
-# Alloy Pilot Phase 0 (Completed)
+# Alloy Pilot Phase 0 (October 2019 - January 2020) - Completed
 ## Phase 0 Goals
 * Stand-up and deploy an external instance of Alloy for shared modeling - *DONE*
 * [Open Source Strategy Forum announcement](https://www.youtube.com/watch?v=fPUYUt9Yr_I) of Goldman Sachs intention to open source Alloy and the associated roadmap for that work (i.e. this doc) - *DONE*
 * Commence internal code evaluation and preparation for open sourcing - *DONE*
 
 
-# Alloy Pilot Phase 1 (*In Progress* - January to September 2020)
+# Alloy Pilot Phase 1 (January to September 2020) - *In Progress* 
 ## Phase 1 Goals
 ### Phase 1 Goal 1: Evaluate shared modeling using Alloy and and define collaboration model for further model development
 * Evaluate how shared modeling can work using Alloy and define the best process to work together, by assessing: 
@@ -29,7 +29,7 @@
 ### Phase 1 Goal 3: Prepare Alloy code base, build system, and stakeholders for open sourcing of code
 
 
-## Phase 1 Plan
+## Phase 1 Plan - Overall
 ### Launch Pilot Group
 * Pilot Kick-off (January 29) - *Completed* 
 
@@ -123,20 +123,14 @@
 * [Define new code release process beyond GSOSS](https://github.com/finos/alloy/issues/149)
 
 ### [Communication Readiness](https://github.com/finos/alloy/labels/communication_readiness)
-* Internal-GS
-* Internal-FINOS
-* External
-   * [External Communication Plan for new name](https://github.com/finos/alloy/issues/137)
-   * [Training Video Produced and Posted](https://github.com/finos/alloy/issues/26)
-   * [User guide: how to run your own on premise version](https://github.com/finos/alloy/issues/143)
-   * Press Release Prepared and Embargoed
+* [External Communication Plan for new name](https://github.com/finos/alloy/issues/137)
+* [Training Video Produced and Posted](https://github.com/finos/alloy/issues/26)
+* [User guide: how to run your own on premise version](https://github.com/finos/alloy/issues/143)
+* Press Release Prepared and Embargoed
 
 * Support Plan 
   * Escalation
-  * Coverage
-
-* Blacklist the GitLab repo
-
+  * Coverage Model
 
 ## Phase 1 Meeting Minutes
 * [Alloy General Monthly Meeting Minutes](https://github.com/finos/alloy/tree/master/meeting-minutes/general-meeting)
@@ -145,7 +139,7 @@
 * [Alloy Commodity Reference Data WG Meeting Minutes](https://github.com/finos/alloy/tree/master/meeting-minutes/commodities-ref-data-wg)
 
 
-# Alloy Pilot Phase 2
+# Alloy Pilot Phase 2 (September 2020 - Early 2021) - Yet to Start
 ## Phase 2 Goals
 * Complete open sourcing of wave 1 of Alloy code
 * Further documentationa and training material
