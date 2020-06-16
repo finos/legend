@@ -120,7 +120,7 @@
 * [Test build and deploy works in open source environment for Engine](https://github.com/finos/alloy/issues/133)
 
 ### [Developer Readiness](https://github.com/finos/alloy/labels/developer_readiness)
-* [Define new code release process beyond GSOSS](https://github.com/finos/alloy/issues/149)
+* [Define new code release process](https://github.com/finos/alloy/issues/149)
 
 ### [Communication Readiness](https://github.com/finos/alloy/labels/communication_readiness)
 * [External Communication Plan for new name](https://github.com/finos/alloy/issues/137)
