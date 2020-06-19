@@ -10,6 +10,7 @@ on:
       - master
     paths:
       - '.github/workflows/docusaurus.yml'
+      - '.github/*.md'
       - 'docs/**'
       - 'website/**'
   pull_request:
