@@ -1,9 +1,9 @@
 ---
 name: "\U0001F91D Alloy Meeting Minutes"
 about: To track Alloy meeting agenda and attendance
-title: 
-labels: 
-assignees: 
+title: ''
+labels: ''
+assignees: ''
 
 ---
 

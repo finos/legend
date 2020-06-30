@@ -1,7 +1,7 @@
 ---
 name: "\U0001F91D Alloy Bi-weekly Pilot Meeting Minutes"
 about: To track the meeting agenda and attendance for the Alloy Biweekly Pilot Meeting
-title: ''
+title: MMM DD YYYY Alloy Bi-weekly Pilot Meeting
 labels: Biweekly Pilot Meeting, meeting
 assignees: ''
 

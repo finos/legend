@@ -2,7 +2,7 @@
 name: "\U0001F91D Alloy FX Options WG Meeting Minutes"
 about: To track the meeting agenda and attendance for the Alloy FX Options Working
   Group
-title: ''
+title: MMM DD YYYY Alloy FX Options WG Meeting
 labels: FX Options WG, meeting
 assignees: Vijayesh-Chandel
 

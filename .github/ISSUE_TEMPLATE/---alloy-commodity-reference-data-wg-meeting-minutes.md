@@ -2,7 +2,7 @@
 name: "\U0001F91D Alloy Commodity Reference Data WG Meeting Minutes"
 about: To track the meeting agenda and attendance for the Alloy Commodities Reference
   Data Working Group
-title: ''
+title: MMM DD YYYY Alloy Commodity Reference Data WG Meeting
 labels: Commodities Reference Data WG, meeting
 assignees: ''
 
