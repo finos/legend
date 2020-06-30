@@ -1,6 +1,9 @@
 ---
-name: 🤗 Support Question
-about: If you have a question about configuration, usage, etc. 💬
+name: "\U0001F917 Support Question"
+about: "If you have a question about configuration, usage, etc. \U0001F4AC"
+title: ''
+labels: ''
+assignees: ''
 
 ---
 
