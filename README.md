@@ -35,8 +35,6 @@ A separate [hosted Gitlab repository, gitlab.alloy.finos.org](gitlab.alloy.finos
 ## [gitlab.com (https://gitlab.com/finosfoundation)](gitlab.com/finosfoundation)
 Documentation specific to particular families and groups of models will be created and curated on GitLab.com at [https://gitlab.com/finosfoundation](https://gitlab.com/finosfoundation). In Phase 2, it's possible that the shared model definitions themselves may be migrated from the hosted GitLab instance to Gitlab.com. 
 
-
-
 # Contributing
 See our [CONTRIBUTING.md](.github/CONTRIBUTING.md)
 
@@ -48,6 +46,22 @@ See our [CONTRIBUTING.md](.github/CONTRIBUTING.md)
 
 # Development setup
 (Coming Soon)
+
+# Training materials
+Thanks for your interest in Alloy. We have been developing training materials and resources since Goldman Sachs announced their intenton to open source Alloy into FINOS in November 2019 and we hope you find them useful. If you have any questions about the project or on how to get started using Alloy, we suggest you follow the below steps
+
+### 1. Review the existing materials
+* [Alloy Demo by Pierre de Belen of Goldman Sachs at OSSF 2019](https://www.youtube.com/watch?v=na4DCgvdDJ4) (video)
+* [Open Source Fundamentals Part I](https://www.finos.org/hubfs/FINOS/2020%20Video%20Uploads/FINOS%20-%20Open%20Source%20Fundamentals%20-%20Part%201%20-%2006%20May%2020.mp4) (video)
+* [Open Source Fundamentals Part II](https://www.finos.org/hubfs/FINOS/2020%20Video%20Uploads/FINOS%20-%20Open%20Source%20Fundamentals%20-%20Part%202%20-%2013%20May%2020.mp4) (video)
+* [Alloy Documentation site](https://alloy.finos.org/)
+* Alloy meeting minutes 
+  * [prior to July 2020](https://github.com/finos/alloy/tree/master/meeting-minutes)
+  * [July 2020 and later](https://github.com/finos/alloy/issues?q=label%3Ameeting)
+  
+### 2. [Raise an issue](https://github.com/finos/alloy/issues)
+
+### 3. Join the Alloy Office Hours _(link to calendar invite coming soon)_
 
 # License
 Copyright 2020 Goldman Sachs
