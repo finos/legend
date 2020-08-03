@@ -4,7 +4,7 @@ about: To track the meeting agenda and attendance for the Alloy FX Options Worki
   Group
 title: MMM DD YYYY Alloy FX Options WG Meeting
 labels: FX Options WG, meeting
-assignees: Vijayesh-Chandel
+assignees: ''
 
 ---
 
