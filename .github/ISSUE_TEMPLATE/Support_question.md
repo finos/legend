@@ -11,4 +11,5 @@ assignees: ''
 
 ...ask your question here.
 
-...be sure to search existing issues since someone might have already asked something similar.
+...be sure to review [existing training materials](https://github.com/finos/alloy#training-materials)
+and to search [existing issues](https://github.com/finos/alloy/issues) since someone might have already asked a similar question.
