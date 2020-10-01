@@ -20,7 +20,7 @@ cd -
 
 # Create contribute.md docs page, from .github/CONTRIBUTING.md
 CONTRIB_MD_PATH=docs/contribute.md
-if [ -f ".github/CONTRIBUTING.md" ]; then
+if [ -f "./CONTRIBUTING.md" ]; then
 rm -rf $CONTRIB_MD_PATH
 touch $CONTRIB_MD_PATH
 cat <<EOT >> $CONTRIB_MD_PATH
@@ -31,7 +31,7 @@ sidebar_label: Contribute
 ---
 EOT
 # Remove title (first line) from MD file content
-sed 1d .github/CONTRIBUTING.md >> $CONTRIB_MD_PATH
+sed 1d ./CONTRIBUTING.md >> $CONTRIB_MD_PATH
 fi
 
 # Create roadmap.md docs page, from .github/ROADMAP.md
