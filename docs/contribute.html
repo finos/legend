@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Contributing to Alloy · alloy</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Ways of Contributing "/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Contributing to Alloy · alloy"/><meta property="og:type" content="website"/><meta property="og:url" content="https://alloy.finos.org//"/><meta property="og:description" content="## Ways of Contributing "/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-blue.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-89349362-7', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,500,700,900|Roboto+Condensed:400,500,700,900|Source+Code+Pro:400,500,700,900&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/alloy.svg" alt="alloy"/><h2 class="headerTitleWithLogo">alloy</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/getting-started/studio" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Getting Started</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/getting-started/studio">Studio</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/language">Language</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/released-functions">Released Functions</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/upcoming-functions">Upcoming Functions</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/execution">Execution</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/sdlc">SDLC</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/pilot-model-governance">Pilot Model Governance</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/cube">Cube</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/graph">Graph</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/services">Services</a></li><li class="navListItem"><a class="navItem" href="/docs/get-involved/terms-of-service">Legal</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/contribute">Contribute</a></li><li class="navListItem"><a class="navItem" href="/docs/roadmap">Roadmap</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Contributing to Alloy</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="ways-of-contributing"></a><a href="#ways-of-contributing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ways of Contributing</h2>
+<h3><a class="anchor" aria-hidden="true" id="participate-in-the-pilot"></a><a href="#participate-in-the-pilot" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Participate in the Pilot</h3>
+<p>In Q1 2020 (i.e., now) FINOS is conducting a pilot with member organizations interested in evaluating PURE/Alloy. For more information about the pilot and how to generally get involved with Alloy see the <a href="https://www.finos.org/alloy">Alloy page on finos.org</a>.</p>
+<h4><a class="anchor" aria-hidden="true" id="shared-modeling-in-alloy"></a><a href="#shared-modeling-in-alloy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Shared Modeling in Alloy</h4>
+<p>During the pilot, modelers will collaborate using Alloy to build shared models. Examples of the types of models that might be modeled during the pilot include:</p>
+<ul>
+<li>FX options</li>
+<li>RFQ</li>
+<li>ESG Data</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="suggest-modeling-use-cases"></a><a href="#suggest-modeling-use-cases" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Suggest Modeling Use Cases</h3>
+<p>If you have suggestions or ideas for modeling use cases for which Alloy may be appropriate, we'd love to hear your ideas -- send a note with your suggestion to the <a href="alloy@finos.org">Alloy General List</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="help-build-the-documentation"></a><a href="#help-build-the-documentation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Help Build the Documentation</h3>
+<h4><a class="anchor" aria-hidden="true" id="suggest-topics"></a><a href="#suggest-topics" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Suggest Topics</h4>
+<p>Suggesting topics you think should be included in this documentation site is a great, easy way to get involved with Alloy. A good way of a suggesting a topic for the docs site is by <a href="https://github.com/finos/purealloy/issues/new/choose">opening an issue in our Github repo</a>. Ideas are also welcome via the <a href="alloy@finos.org">Alloy General List</a>.</p>
+<h4><a class="anchor" aria-hidden="true" id="make-suggested-edits-and-adds-in-the-documentation-site"></a><a href="#make-suggested-edits-and-adds-in-the-documentation-site" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Make Suggested Edits and Adds in the Documentation Site</h4>
+<p>We welcome your help building out the documentation site. The process to make changes to the documentation site is the same as that which is described in the <a href="CONTRIBUTING.md#making-code-including-documentation-changes">&quot;Making Code (Including Documentation) Changes&quot; section</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="propose-changes-make-pull-requests-to-underlying-pure-and-alloy-code-phase-2"></a><a href="#propose-changes-make-pull-requests-to-underlying-pure-and-alloy-code-phase-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Propose Changes (Make Pull Requests) to Underlying PURE and Alloy Code (Phase 2)</h3>
+<p>In phase 2, once the underlying code to PURE and Alloy have been open sourced into FINOS and source code made available to the public, the project will welcome pull requests to these code bases.</p>
+<h2><a class="anchor" aria-hidden="true" id="making-code-including-documentation-changes"></a><a href="#making-code-including-documentation-changes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Making Code (Including Documentation) Changes</h2>
+<h3><a class="anchor" aria-hidden="true" id="prerequisites"></a><a href="#prerequisites" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prerequisites</h3>
+<h4><a class="anchor" aria-hidden="true" id="github-id"></a><a href="#github-id" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Github ID</h4>
+<p>Alloy makes use of both GitLab and GitHub infrastructure but, consistent with the FINOS infrastructure strategy, uses GitHub accounts as its default for authentication. All committers to FINOS repos, including pilot phase modelers, must have GitHub IDs.</p>
+<h4><a class="anchor" aria-hidden="true" id="finos-contributor-license-agreement-cla"></a><a href="#finos-contributor-license-agreement-cla" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>FINOS Contributor License Agreement (&quot;CLA&quot;)</h4>
+<p>A Contributor License Agreement (&quot;CLA&quot;) is a document that specifies how a project is allowed to use your contribution; they are commonly used in many open source projects.</p>
+<p><em>NOTE:</em> Commits and pull requests to FINOS project repositories, including Alloy, will only be accepted from those contributors with an active, executed Individual Contributor License Agreement (ICLA) with FINOS OR who are covered under an existing and active Corporate Contribution License Agreement (CCLA) executed with FINOS. See the <a href="https://finosfoundation.atlassian.net/wiki/spaces/FINOS/pages/83034172/Contribute">Contribute page on the FINOS Wiki for more information</a>. Commits from individuals not covered under an ICLA or CCLA will be flagged and blocked by the FINOS <a href="https://github.com/finos/cla-bot">&quot;CLA Bot&quot; tool</a>. Please note that some CCLAs require individuals/employees to be explicitly named on the CCLA. PRs submitted to the purealloy project cannot be accepted until you have a CLA in place with the Foundation. CLAs are also required for modelers participating in the pilot.</p>
+<ul>
+<li>Need an ICLA? Unsure if you are covered under an existing CCLA? Email <a href="mailto:help@finos.org?subject=CLA">help@finos.org</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="overall-code-contribution-workflow"></a><a href="#overall-code-contribution-workflow" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overall Code Contribution Workflow</h3>
+<ol>
+<li>Read our <a href=".github/CONTRIBUTING.md">contribution guidelines</a> and <a href="https://www.finos.org/code-of-conduct">Community Code of Conduct</a></li>
+<li>Fork the Alloy repository (<a href="https://github.com/finos/purealloy/fork">https://github.com/finos/purealloy/fork</a>)</li>
+<li>Create your feature branch (<code>git checkout -b feature/fooBar</code>)</li>
+<li>Make and test locally your changes</li>
+<li>Add your changes (<code>git add &lt;filename containing fooBar change&gt;</code>)</li>
+<li>Commit your changes (<code>git commit -m 'Add some fooBar'</code>)</li>
+<li>Push to the branch (<code>git push origin feature/fooBar</code>)</li>
+<li>Optional but Recommeded: Do a build in/from your fork; further evaluate and test</li>
+<li>If all looks good, propose a pull request into the <a href="https://github.com/finos/purealloy/pull/new/master">FINOS PURE/Alloy GitHub Repo</a> from your fork.</li>
+</ol>
+<h4><a class="anchor" aria-hidden="true" id="proposing-and-submitting-pull-requests-code--docs"></a><a href="#proposing-and-submitting-pull-requests-code--docs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Proposing and Submitting Pull Requests (Code &amp; Docs)</h4>
+<p>To make review of PRs easier, please:</p>
+<ul>
+<li>Please make sure your PRs will merge cleanly - PRs that don't are unlikely to be accepted.</li>
+<li>For code contributions, follow the existing code layout.</li>
+<li>For documentation contributions, follow the general structure, language, and tone of the <a href="https://github.com/finos/purealloy/wiki">existing docs</a>.</li>
+<li>Keep commits small and cohesive - if you have multiple contributions, please submit them as independent commits (and ideally as independent PRs too).</li>
+<li>Reference issue #s if your PR has anything to do with an issue (even if it doesn't address it).</li>
+<li>Minimise non-functional changes (e.g. whitespace).</li>
+<li>Ensure all new files include a header comment block containing the <a href="http://www.apache.org/licenses/LICENSE-2.0#apply">Apache License v2.0 and your copyright information</a>.</li>
+<li>If necessary (e.g. due to 3rd party dependency licensing requirements), update the <a href="https://github.com/finos/purealloy/blob/master/NOTICE">NOTICE file</a> with any new attribution or other notices</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="commit-and-pr-messages"></a><a href="#commit-and-pr-messages" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Commit and PR Messages</h4>
+<ul>
+<li><strong>Reference issues, wiki pages, and pull requests liberally!</strong></li>
+<li>Use the present tense (&quot;Add feature&quot; not &quot;Added feature&quot;)</li>
+<li>Use the imperative mood (&quot;Move button left...&quot; not &quot;Moves button left...&quot;)</li>
+<li>Limit the first line to 72 characters or less</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="running-the-docs-site-locally-on-your-machine"></a><a href="#running-the-docs-site-locally-on-your-machine" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running the Docs Site Locally on Your Machine</h3>
+<p>In order to make edits to the website itself, you'll probably want to run the website locally, you must have:</p>
+<ul>
+<li>A Git client installed, to checkout the code from github.com/finos/purealloy (<code>master</code> branch); note that the <code>git</code> command must be available via command-line, as it's needed to run the <code>build-site.sh</code> script</li>
+<li><a href="https://yarnpkg.com/lang/en/docs/install">Yarn installed</a></li>
+</ul>
+<pre><code class="hljs">git <span class="hljs-keyword">clone</span> <span class="hljs-title">git</span>@github.com:<span class="hljs-tag">&lt;yourfork&gt;</span>/purealloy.git
+git checkout -b feature/myProposedDocChanges
+cd purealloy ; ./build-site.sh
+cd website ; yarn <span class="hljs-literal">start</span>
+</code></pre>
+<p>This will automatically open a browser, pointing to <a href="http://localhost:3000">http://localhost:3000</a>, where the website will be staged; file changes will be live rendered, which speeds up the editorial workflow.</p>
+<p>Note: The <code>build-site.sh</code> script will pull content from other Git repositories, mapping the <code>docs</code> folder into <code>modules/&lt;repository-name&gt;</code>; for example, all files and folders under <a href="https://gitlab.com/finosfoundation/purealloy-modeling-samples/tree/master/docs">https://gitlab.com/finosfoundation/purealloy-modeling-samples/tree/master/docs</a> are available under the <code>/models/purealloy-modeling-samples</code> URL suffix.</p>
+<p>Once you are satisfied with your documentation changes, commit and propse them in line with the general process described above. Specifically for documentation edits, it might look like:</p>
+<ul>
+<li>Commit your changes <code>git commit -am '&lt;short description of what docs you changed/added&gt;'</code></li>
+<li>Push to the branch to your forked repo on GitHub <code>git push origin myProposedDocChanges</code></li>
+<li>Review and test your changes in your fork</li>
+<li>If you're happy with the documentation changes, propose a pull request into the <a href="github.com/finos/purealloy">FINOS PURE/Alloy GitHub Repo</a> from your fork.</li>
+</ul>
+<p>To learn more about Docusaurus see</p>
+<ul>
+<li><a href="https://github.com/finos/purealloy/tree/master/website">https://github.com/finos/purealloy/tree/master/website</a></li>
+<li><a href="https://finosfoundation.atlassian.net/wiki/spaces/FDX/pages/844759075/Using+Docusaurus+recommended">https://finosfoundation.atlassian.net/wiki/spaces/FDX/pages/844759075/Using+Docusaurus+recommended</a></li>
+<li><a href="https://docusaurus.io">https://docusaurus.io</a></li>
+</ul>
+<p><em>Note</em> <a href="https://github.com/finos/purealloy/blob/master/build-site.sh">The documentation build script</a> can be configued to pull in and include files from GitLab.com repositories housing modeling documentation into the GitHub pages / Docusaurus powered site.</p>
+<h2><a class="anchor" aria-hidden="true" id="contributing-issues"></a><a href="#contributing-issues" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contributing Issues</h2>
+<h3><a class="anchor" aria-hidden="true" id="prerequisites-1"></a><a href="#prerequisites-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prerequisites</h3>
+<ul>
+<li>[ ] Have you <a href="https://github.com/finos/purealloy/issues?utf8=%E2%9C%93&amp;q=">searched for duplicates</a>?  A simple search for exception error messages or a summary of the unexpected behaviour should suffice.</li>
+<li>[ ] Are you running the latest version?</li>
+<li>[ ] Are you sure this is a bug or missing capability?</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="raising-an-issue"></a><a href="#raising-an-issue" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Raising an Issue</h3>
+<ul>
+<li>Create your issue <a href="https://github.com/finos/purealloy/issues/new">here</a>.</li>
+<li>New issues contain two templates in the description: bug report and enhancement request. Please pick the most appropriate for your issue, <strong>then delete the other</strong>.
+<ul>
+<li>Please also tag the new issue with either &quot;Bug&quot; or &quot;Enhancement&quot;.</li>
+</ul></li>
+<li>Please use <a href="https://help.github.com/categories/writing-on-github/">Markdown formatting</a>
+liberally to assist in readability.
+<ul>
+<li><a href="https://help.github.com/articles/creating-and-highlighting-code-blocks/">Code fences</a> for exception stack traces and log entries, for example, massively improve readability.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="on-line-collaboration"></a><a href="#on-line-collaboration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>On-line Collaboration</h2>
+<ul>
+<li><p><a href="https://groups.google.com/a/finos.org/forum/#!forum/alloy">Alloy General List</a></p>
+<ul>
+<li>Subscribe w/ email to <a href="alloy+subscribe@finos.org">alloy+subscribe@finos.org</a></li>
+<li>Post with email to <a href="alloy+subscribe@finos.org">alloy@finos.org</a></li>
+</ul></li>
+<li><p>Github / Gitlab Issues &amp; Kanban</p>
+<ul>
+<li>Github Issues (<a href="https://github.com/finos/purealloy/issues">https://github.com/finos/purealloy/issues</a>)</li>
+<li>Github Kanban(<a href="https://github.com/orgs/finos/projects/5">https://github.com/orgs/finos/projects/5</a>)</li>
+</ul></li>
+<li><p>Alloy Updates from FINOS</p>
+<ul>
+<li><a href="https://www.finos.org/alloy">Subscribe at https://www.finos.org/alloy</a></li>
+</ul></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/get-involved/terms-of-service"><span class="arrow-prev">← </span><span>Legal</span></a><a class="docs-next button" href="/docs/roadmap"><span>Roadmap</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#ways-of-contributing">Ways of Contributing</a><ul class="toc-headings"><li><a href="#participate-in-the-pilot">Participate in the Pilot</a></li><li><a href="#suggest-modeling-use-cases">Suggest Modeling Use Cases</a></li><li><a href="#help-build-the-documentation">Help Build the Documentation</a></li><li><a href="#propose-changes-make-pull-requests-to-underlying-pure-and-alloy-code-phase-2">Propose Changes (Make Pull Requests) to Underlying PURE and Alloy Code (Phase 2)</a></li></ul></li><li><a href="#making-code-including-documentation-changes">Making Code (Including Documentation) Changes</a><ul class="toc-headings"><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#overall-code-contribution-workflow">Overall Code Contribution Workflow</a></li><li><a href="#running-the-docs-site-locally-on-your-machine">Running the Docs Site Locally on Your Machine</a></li></ul></li><li><a href="#contributing-issues">Contributing Issues</a><ul class="toc-headings"><li><a href="#prerequisites-1">Prerequisites</a></li><li><a href="#raising-an-issue">Raising an Issue</a></li></ul></li><li><a href="#on-line-collaboration">On-line Collaboration</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a></section><section class="finos finosBanner"><a href="https://www.finos.org"><img id="finosicon" src="https://alloy.finos.org/img/finos_wordmark.svg" height="75px" alt="FINOS" title="FINOS"/></a></section><section class="privacy finosBanner"><a href="https://www.finos.org/privacy-policy" target="_blank">Privacy Policy</a></section><section class="copyright">Copyright © 2020 PURE/Alloy</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
