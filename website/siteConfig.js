@@ -17,13 +17,13 @@ const alloyHighlighter = require('./alloyHighlighter');
 const siteConfig = {
   title: 'alloy', // Title for your website. THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
   tagline: 'Language and visual platform to generate models for the financial services industry', //THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
-  cname: 'alloy.finos.org',
+  cname: 'nicoalba.github.io',
   gaTrackingId: 'UA-89349362-7',
-  url: 'https://alloy.finos.org/',
-  baseUrl: '/',
+  url: 'https://nicoalba.github.io/alloy',
+  baseUrl: '/alloy/',
   // For publishing to GitHub pages
   projectName: 'alloy',
-  organizationName: 'finos',
+  organizationName: 'nicoalba',
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     { doc: 'getting-started/studio', label: 'Docs' }
