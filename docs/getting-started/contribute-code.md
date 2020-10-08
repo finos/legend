@@ -4,7 +4,7 @@ title: Contribute code
 sidebar_label: Contribute code
 ---
 
-# Contribute code
+# Contribute code!
 
 This page lists the prerequisites and workflow for contributing code changes to Legend.
 
