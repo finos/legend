@@ -6,7 +6,7 @@ sidebar_label: Terms of service
 
 # FINOS Legend terms of service
 
-The Legend Pilot website and service located at https//legend.finos.org/ (the “Service”) is operated by the Fintech Open Source Foundation (“FINOS,” “we,” or “us”). By registering for, using, or accessing the Service, you agree to be bound by these terms of service (“Terms”). If you don’t agree to these Terms, you must discontinue use of the Service.  If you have any questions about these terms, please contact us: FINOS, 330 Primrose Road, Burlingame, CA 94010, legal@finos.org.
+The Legend Pilot website and service located at https//legend.finos.org/ (the “Service”) is operated by FINOS, a project of The Linux Foundation (“FINOS,” “we,” or “us”). By registering for, using, or accessing the Service, you agree to be bound by these terms of service (“Terms”). If you don’t agree to these Terms, you must discontinue use of the Service.  If you have any questions about these terms, please contact us: FINOS, 548 Market St., PMB 57274, San Francisco, California 94104-5401, legal@finos.org.
 
 1. Registration, Personal Information, and Privacy
 
@@ -19,6 +19,7 @@ The Legend Pilot website and service located at https//legend.finos.org/ (the �
     1.4 You understand that the Service includes collaborative features that enable users to disclose information to one another and to modify data provided by other users. FINOS is not responsible if you disclose personal information to other users or for their use of your data.
 
     1.5 The Service is not intended for children under the age of 13. If we learn that any registered user of the Service is under the age of 13, it is our policy to disable the user’s account and to delete any personal information provided by that user.
+
 2. User Content
 
     2.1 All information and content submitted by users of the Service (“User Content”) is the sole responsibility of the person who provides it; FINOS is not responsible for any User Content. FINOS reserves the right, subject to applicable law and its obligations to its customers, to remove User Content for any reason, including that it violates our Acceptable Use Policy. However, FINOS has no obligation to monitor, filter, or disable access to any User Content, and shall not be responsible if you encounter objectionable User Content on the Service.
@@ -63,7 +64,7 @@ The Legend Pilot website and service located at https//legend.finos.org/ (the �
 
 5. Copyright Policy
 
-    5.1. FINOS responds to reports of copyright infringement according to the notice-and-takedown procedure provided by the Digital Millennium Copyright Act ("DMCA"). Our designated agent for copyright infringement notifications and counter-notifications is: Aaron Williamson, c/o Fintech Open Source Foundation, 330 Primrose Road, Burlingame, CA 94010, legal@finos.org.
+    5.1. FINOS responds to reports of copyright infringement according to the notice-and-takedown procedure provided by the Digital Millennium Copyright Act ("DMCA"). Our designated agent for copyright infringement notifications and counter-notifications is: Legal Department, The Linux Foundation, 548 Market St, PMB 57274, San Francisco, California 94104-5401, Phone: 4157239709, Email: legal@linuxfoundation.org.
 
     5.2. Reporting copyright infringement
 
@@ -202,7 +203,7 @@ Effective date of version 2.0: January 31, 2020
 
     This License represents the complete agreement concerning subject matter hereof. If any provision of this License is held to be unenforceable, such provision shall be reformed only to the extent necessary to make it enforceable. This License shall be governed by New York law provisions (except to the extent applicable law, if any, provides otherwise), including its conflict-of-law provisions. With respect to disputes in which at least one party is a citizen of, or an entity chartered or registered to do business in, the United States of America: (a) unless otherwise agreed in writing, all disputes arising under or relating to this License (excepting any dispute relating to copyright, trademark, patent or trade secret rights, which issues must be resolved through judicial action) shall be subject to final and binding arbitration, with the losing party paying all costs of arbitration; (b) any arbitration relating to this Agreement shall be held in New York City, under the auspices of JAMS/End Dispute; and (c) any judicial litigation arising under or relating to this agreement, including the enforcement of any arbitration award, shall be subject to the exclusive  jurisdiction of the United States District Court for the Southern District of New York, or in the absence of that court having subject matter jurisdiction, to the jurisdiction of courts of the State of New York, with venue lying in New York County. The losing party shall be responsible for costs, including without limitation, court costs and reasonable attorney’s fees and expenses. By using ISDA CDM v2.0 under this License you consent to the personal jurisdiction of the foregoing federal and/or New York state courts. The application of the United Nations Convention on Contracts for the International Sale of Goods is expressly excluded. Any law or regulation which provides that the language of a contract shall be construed against the drafter shall not apply to this License.
 
-## EXHIBIT B
+### Exhibit A to ISDA CDM(TM) Version 2.0 Development License
 
 * The ISDA CDMTM portions of this document are subject to the ISDA CDMTM License Version 2.0 (the “License”); you may not use the ISDA CDM except in compliance with that License. You may obtain a copy of the License at [http://www.isda.org/isda-cdm-2/](http://www.isda.org/isda-cdm-2/).
 
