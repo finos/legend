@@ -10,6 +10,7 @@ on:
       - master
     paths:
       - '.github/workflows/docusaurus.yml'
+      - '.github/*.md'
       - 'docs/**'
       - 'website/**'
   pull_request:
@@ -54,8 +55,8 @@ jobs:
         # Set git user to finos-admin, if it's a push to a finos repo
         if [ "$GIT_USERNAME" == "finos" ] && [ "${{github.event_name }}" == "push" ]
         then GIT_USERNAME="finos-admin"
-        elif [ "$GIT_USERNAME" == "finos" ] && [ "${{github.event_name }}" == "pull_reqeust" ]
-        then GIT_USERNAME="${{ github.actor }}"
+        elif [ "$GIT_USERNAME" == "finos" ] && [ "${{github.event_name }}" == "pull_request" ]
+        then echo "Skipping publishing, as it's coming from a PR"; exit 0
         fi
         # Configure git client
         echo "Git repo - $REPO"
@@ -65,10 +66,11 @@ jobs:
         echo "machine github.com login $GIT_USERNAME password $GITHUB_TOKEN" > ~/.netrc
         # Run docusaurus-publish
         GIT_USER=$GIT_USERNAME npm run publish-gh-pages --prefix website
-
-# TODO Getting 403 as described on https://github.com/danger/danger-js/issues/918
-# - name: Add comment to PR
-#   if: github.event_name == 'pull_request'
-#   uses: unsplash/comment-on-pr@master
-#   with:
-#     msg: "Website preview available at https://${{ github.actor }}.github.io/${{ env.REPO_NAME }}"
+# TODO - still failing for some PRs, need more guards and more testing
+#     - name: Create comment
+#       if: github.event_name == 'pull_request'
+#       uses: peter-evans/create-or-update-comment@v1
+#       with:
+#         token: ${{ secrets.GITHUB_TOKEN }}
+#         issue-number: ${{ github.event.number }}
+#         body: Website [preview is available](https://${{ github.actor }}.github.io/${{ env.REPO_NAME }})

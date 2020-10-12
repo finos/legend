@@ -7,11 +7,13 @@
       "getting-started/upcoming-functions",
       "getting-started/execution",
       "getting-started/sdlc",
+      "getting-started/pilot-model-governance",
       "getting-started/cube",
       "getting-started/graph",
       "getting-started/services",
       "get-involved/terms-of-service",
-      "contribute"
+      "contribute",
+      "roadmap"
     ]
   }
 }
