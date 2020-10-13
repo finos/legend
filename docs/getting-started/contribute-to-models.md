@@ -16,6 +16,6 @@ If you have suggestions or ideas for modeling use cases where Legend might be ap
 
 ## Next steps
 
-- [Contribute code](contribute-code.md)
-- [Contribute documentation](contribute-documentation.md)
+- [Contribute to code](contribute-code.md)
+- [Contribute to documentation](contribute-documentation.md)
 - [Report a bug](report-bug.md)
