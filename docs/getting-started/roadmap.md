@@ -14,23 +14,23 @@ sidebar_label: Roadmap
 - [Open Source Strategy Forum announcement](https://www.youtube.com/watch?v=fPUYUt9Yr_I) of Goldman Sachs' intention to open source Legend and the associated roadmap for that work - *DONE*
 - Commence internal code evaluation and preparation for open sourcing - *DONE*
 
-## Legend Pilot Phase 1 (January to September 2020) - *In progress*
+## Legend Pilot Phase 1 (January to September 2020) - *Completed*
 
 ### Phase 1 Goals
 
-- **Goal 1:** Evaluate shared modeling using Legend and and define collaboration model for further model development
-  - Evaluate how shared modeling can work using Legend and define the best process to work together, by assessing:
+- **Goal 1:** Evaluate shared data modeling using Legend and define collaboration model for further model development
+  - Evaluate how shared data modeling can work using Legend and define a framework for collaboration, by assessing:
     - Governance process
     - Collaboration amongst banks
     - Technical solution
   - Success Criteria
     - Basic fluency in Legend by non-GS modelers using Legend
     - Functional areas of interest identified and working groups to model in those areas commenced
-    - Feedback on Legend shared with Goldman development team such that said feedback can be incorporated, as feasible, into the version of Legend released as open source at the start of Phase 2
+    - Feedback on Legend functionality shared with GS development team can be incorporated, as feasible, into the open sourced version of Legend at the start of Phase 2
 
 - **Goal 2:** Using Legend collectively develop a model or model extension
-  - Find a good use case, with propensity for value creation through shared modeling and data shaping, and then work on (i.e., model) something “production relevant”
-    - Ideally shared models can and should also be contributed back to respective standards bodies such as ISDA for derivatives (e.g., proposed changes to the CDM)
+  - Find a good use case, with propensity for value creation through shared modeling and data shaping, and then work on something “production relevant”
+    - Ideally shared models can be contributed back to respective standards bodies such as ISDA for derivatives (such as the proposed changes to the CDM)
     - FINOS members and community can provide further momentum by implementing models and supporting standards by convention
     - Stretch goal to submit changes back to respective standards body (ISDA) and, better still, see it accepted into the standard
   - Success Criteria
@@ -174,8 +174,8 @@ sidebar_label: Roadmap
 ### Phase 2 Goals
 
 - Complete open sourcing of wave 1 of Legend code
-- Further documentationa and training material
-- Prepare for and wave 2 open sourcing of Legend code
+- Further documentation and training material
+- Prepare for wave 2 open sourcing of Legend code
 
 ### Phase 2 Plan
 
