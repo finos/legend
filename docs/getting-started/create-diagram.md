@@ -4,7 +4,7 @@ title: Create a diagram
 sidebar_label: Create a diagram
 ---
 
-# Create an Legend diagram
+# Create a Diagram
 
 Diagrams are visual representations of your models. Create a model diagram to show relationships across business concepts.
 
