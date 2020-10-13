@@ -4,7 +4,7 @@
       "intro-legend",
       "roadmap"
     ],
-    "Getting started":[
+    "Getting started": [
       "create-workspace",
       "create-model",
       "create-diagram",
@@ -13,11 +13,11 @@
       "review-and-commit-changes",
       "get-involved"
     ],
-    "Language":[
+    "Language": [
       "released-functions",
       "upcoming-functions",
     ], 
-    "Contribute":[
+    "Contribute": [
       "contribute-code",
       "contribute-documentation",
       "contribute-to-models"
@@ -26,7 +26,7 @@
       "roles", "review-process",
       "sync-changes-beyond-legend"
     ],
-    "Legal":[
+    "Legal": [
       "Terms of service"
     ]
   }
