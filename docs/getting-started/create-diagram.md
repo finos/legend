@@ -13,7 +13,7 @@ Diagrams are visual representations of your models. Create a model diagram to sh
 
     ![Create a diagram](../assets/create-diagram.JPG)
 
-Share this diagram to share data and its relationships.
+Share this diagram to better visualize and communicate about your data and their relationships.
 
 ## Next steps
 
