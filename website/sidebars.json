@@ -1,6 +1,8 @@
 {
   "docs": {
-    "Getting started": [
+    "type": "subcategory",
+    "label": "Getting started",
+    "ids": [
       "getting-started/create-workspace",
       "getting-started/create-model",
       "getting-started/create-diagram",
@@ -8,24 +10,44 @@
       "getting-started/create-model-to-model-mapping",
       "getting-started/review-and-commit-changes",
       "getting-started/get-involved"
-    ],
-    "Language": [
+    ]
+  }
+  {
+    "type": "subcategory",
+    "label": "Language",
+    "ids": [
       "getting-started/released-functions",
       "getting-started/upcoming-functions"
-    ], 
-    "Contribute": [
+    ]
+  }
+  {
+    "type": "subcategory",
+    "label": "Contribute",
+    "ids": [
       "getting-started/contribute-code",
       "getting-started/contribute-documentation",
       "getting-started/contribute-to-models"
-    ],
-    "Collaborative Modeling Governance": [
+    ]
+  }
+  {
+    "type": "subcategory",
+    "label": "Collaborative Modeling Governance",
+    "ids": [
       "getting-started/roles",
       "getting-started/review-process"
-    ],
-    "Legal": [
+    ]
+  }
+  {
+    "type": "subcategory",
+    "label": "Legal",
+    "ids": [
       "getting-started/terms-of-service"
-    ],
-    "Roadmap": [
+    ]
+  }
+  {
+    "type": "subcategory",
+    "label": "Roadmap",
+    "ids": [
       "getting-started/roadmap"
     ]
   }
