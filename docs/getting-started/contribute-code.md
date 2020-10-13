@@ -4,7 +4,7 @@ title: Contribute code
 sidebar_label: Contribute code
 ---
 
-# Contribute code!
+# Contribute code
 
 This page lists the prerequisites and workflow for contributing code changes to Legend.
 
@@ -12,7 +12,7 @@ This page lists the prerequisites and workflow for contributing code changes to 
 
 ### GitHub ID
 
-Legend uses both GitLab and GitHub infrastructure but, consistent with the FINOS infrastructure strategy, uses GitHub accounts as the default for authentication. All committers to FINOS repos, including pilot phase modelers, must have GitHub IDs.
+Legend uses both GitLab and GitHub infrastructure but, consistent with the FINOS infrastructure strategy, uses GitHub accounts as the default for authentication. All committers to FINOS repos must have GitHub IDs.
 
 ### FINOS Contributor License Agreement (CLA)
 
