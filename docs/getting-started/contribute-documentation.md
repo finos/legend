@@ -10,7 +10,7 @@ sidebar_label: Contribute documentation
 
 You can get involved with Legend by suggesting topics you'd like to see in our documentation. Suggest a topic for our docs by [opening an issue in our GitHub repo](https://github.com/finos/legend/issues/new/choose). Ideas are also welcome through the [Legend General List](mailto:Legend@finos.org).
 
-## Make suggested edits and adds directly in the documentation
+## Edit the documentation site directly
 
 To make edits to the website itself, you need to run the website locally. You must have:
 
