@@ -1,8 +1,7 @@
 {
   "docs": {
     "Introduction": [
-      "getting-started/intro-legend",
-      "getting-started/roadmap"
+      "getting-started/intro-legend"
     ],
     "Getting started": [
       "getting-started/create-workspace",
@@ -24,10 +23,13 @@
     ],
     "Collaborative Modeling Governance": [
       "getting-started/roles",
-      "getting-started/review-process",
+      "getting-started/review-process"
     ],
     "Legal": [
       "getting-started/terms-of-service"
+    ],
+    "Roadmap": [
+      "getting-started/roadmap"
     ]
   }
 }
