@@ -21,7 +21,7 @@ View the prerequisites and steps to report a bug by creating an issue in GitHub.
 3. Tag the new issue with either **Bug** or **Enhancement**.
 4. Use [Markdown formatting](https://help.github.com/categories/writing-on-github/) to improve readability. For example, use [code fences](https://help.github.com/articles/creating-and-highlighting-code-blocks/) for exception stack traces and log entries.
 
-## More info
+## Next steps
 
 - [Contribute to code](contribute-code.md)
 - [Contribute to documentation](contribute-documentation.md)
