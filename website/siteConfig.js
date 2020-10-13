@@ -74,8 +74,8 @@ const siteConfig = {
   docsSideNavCollapsible: false,
 
   // TODO - Open Graph and Twitter card images.
-  // ogImage: 'assets/todo-logo.png', /* change to program/project icon + wordmark logo */
-  // twitterImage: 'assets/todo-logo.png', /* change to program/project icon + wordmark logo */
+  // ogImage: '../assets/todo-logo.png', /* change to program/project icon + wordmark logo */
+  // twitterImage: '../assets/todo-logo.png', /* change to program/project icon + wordmark logo */
 
   // Show documentation's last contributor's name.
   // enableUpdateBy: true,
