@@ -6,7 +6,7 @@ sidebar_label: Create model-to-model mapping
 
 # Create model-to-model mapping
 
-Create a model transformation using model-to-model mapping. Model transofrmations are used to connect different models.
+Create a model transformation using model-to-model mappings. Model transformations are used to connect different models.
 
 1. Add a property to `Person` called `lastName`. Make the property a string with a [cardinality](legend-language.md#class) of 1.
 2. Create a new class called `NewPerson`.
