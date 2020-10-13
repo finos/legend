@@ -10,7 +10,7 @@ Use models to describe your data and how they relate to each other.
 
 ## Define a model hierarchy
 
-Use model hierarchies to group models into packages.
+Use model hierarchies to group models into packages. 
 
 1. Click the **+** icon next to **project**.
 2. Click **Add a new package** to start a model hierarchy.
@@ -108,9 +108,9 @@ A model attribute that has a finite list of values can be defined with an enumer
 
     ![Select property type and cardinality](images/select-property-type-cardinality.JPG)
 
-## Add a super type
+## Add a Super Type
 
-Add a super type to the model to show a relationship between classes or business concepts.
+Add a Super Type to the model to show a relationship between classes or business concepts.
 
 Let's create a new class called **LegalEntity**.  
 
@@ -123,7 +123,7 @@ Let's create a new class called **LegalEntity**.
 
     ![Add a super type](images/add-super-type-2.JPG)
 
-## Add a property (non-primitive data type)
+## Add a Property (non-primitive data type)
 
 Create a relationship between the **Person** and **Firm** classes.
 
