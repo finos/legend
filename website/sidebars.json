@@ -1,27 +1,10 @@
 {
-  "docs": {
-    "Getting Started": [
-      "getting-started/intro-legend",
-      "getting-started/roadmap",
-      "getting-started/create-workspace",
-      "getting-started/create-model",
-      "getting-started/create-diagram",
-      "getting-started/edit-model",
-      "getting-started/create-model-to-model-mapping",
-      "getting-started/legend-language",
-      "getting-started/released-functions",
-      "getting-started/upcoming-functions",
-      "getting-started/execution",
-      "getting-started/review-and-commit-changes",
-      "getting-started/get-involved",
-      "getting-started/roles",
-      "getting-started/review-process",
-      "getting-started/sync-changes-beyond-legend",
-      "getting-started/contribute-to-models",
-      "getting-started/contribute-code",
-      "getting-started/contribute-documentation",
-      "getting-started/report-bug",
-      "getting-started/terms-of-service"
-    ]
+  "Docs": {
+    "Introduction": ["intro-legend", "roadmap"],
+    "Getting started": ["create-workspace", "create-model", "create-diagram", "edit-model", "create-model-to-model-mapping", "review-and-commit-changes", "get-involved"],
+    "Language": ["released-functions", "upcoming-functions"],
+    "Contribute": ["contribute-code", "contribute-documentation", "contribute-to-models"],
+    "Collaborative Modeling Governance": ["roles", "review-process", "sync-changes-beyond-legend"],
+    "Legal": ["Terms of service"],
   }
 }
