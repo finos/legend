@@ -6,5 +6,8 @@
     "Contribute": ["contribute-code", "contribute-documentation", "contribute-to-models"],
     "Collaborative Modeling Governance": ["roles", "review-process", "sync-changes-beyond-legend"],
     "Legal": ["Terms of service"],
+  },
+  ...: {
+
   }
 }
