@@ -1,10 +1,10 @@
 ---
 id: review-process
-title: Review process
-sidebar_label: Review process
+title: Change Review Process
+sidebar_label: Change Review Process
 ---
 
-# Review process
+# Change Review process
 
 The following are the steps the Modeler, Approver, and Merger take to submit, review, and merge a new change to a model within Legend.
 
