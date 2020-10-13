@@ -36,7 +36,7 @@ class Footer extends React.Component {
         <section className="privacy finosBanner">
           <a href="https://www.finos.org/privacy-policy" target="_blank">Privacy Policy</a>
         </section>
-        <section className="copyright">{this.props.config.copyright}</section>
+        {/* <section className="copyright">{this.props.config.copyright}</section> */}
       </footer>
     );
   }

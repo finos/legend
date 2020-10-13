@@ -133,8 +133,9 @@ blockquote {
   }
   
   .nav-footer {
-    padding-bottom: 0;
     padding-top: 0;
+    padding-bottom: 5rem;
+    background: var(--color-footer-background);
   }
   
   .nav-footer .sitemap {
@@ -394,6 +395,7 @@ blockquote {
       margin: 0;
       display: flex;
       justify-content: flex-end;
+      max-width: 22rem;
     }
   
     .subNavGroup ul li::before {
@@ -449,7 +451,7 @@ blockquote {
     }
   
     .docsNavContainer + .container.mainContainer.docsContainer {
-      margin-left: 25rem;
+      margin-left: 37rem;
       margin-right: 10rem;
     }
   
@@ -465,7 +467,7 @@ blockquote {
   .onPageNav ul ul {
     padding-top: 1.5rem;
   }
-  
+
   .button {
     border-radius: 0.3rem;
     color: var(--color-light-grey-100);
@@ -477,7 +479,7 @@ blockquote {
     border-color: var(--color-primary-0);
     color: var(--color-dark-grey-100);
   }
-  
+
   .onPageNav::-webkit-scrollbar {
     width: 0.8rem;
   }
