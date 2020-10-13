@@ -48,8 +48,8 @@ sidebar_label: Roadmap
 
 - Import and ready ISDA CDM in Legend - *Completed*
 - Define, organize, and launch modeling working groups
-  - FX Option - *Launched*
-  - Commodities Reference Data - *Launched*
+  - FX Option - *Completed*
+  - Commodities Reference Data - *Completed*
   - Sustainability / Renewable energy Working Group - *Proposed*
 - Define potential areas of further modeling collaboration after pilot ends
   - Consider relationship with other FINOS projects like Financial Objects
