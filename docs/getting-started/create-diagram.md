@@ -11,7 +11,7 @@ Diagrams are visual representations of your models. Create a model diagram to sh
 1. Click the **+** on the left-hand side and select **Add a new diagram**.
 2. From the explorer view, select and drag the **Firm** and **Person** classes one at a time to the diagram.  
 
-    ![Create a diagram](images/create-diagram.JPG)
+    ![Create a diagram](assets/create-diagram.JPG)
 
 Share this diagram to share data and its relationships.
 
