@@ -2,7 +2,7 @@
   "docs": {
     "Introduction": [
       "intro-legend",
-      "roadmap",
+      "roadmap"
     ],
     "Getting started":[
       "create-workspace",
@@ -11,7 +11,7 @@
       "edit-model",
       "create-model-to-model-mapping",
       "review-and-commit-changes",
-      "get-involved",
+      "get-involved"
     ],
     "Language":[
       "released-functions",
@@ -20,15 +20,14 @@
     "Contribute":[
       "contribute-code",
       "contribute-documentation",
-      "contribute-to-models",
+      "contribute-to-models"
     ],
     "Collaborative Modeling Governance": [
       "roles", "review-process",
       "sync-changes-beyond-legend"
     ],
     "Legal":[
-      "Terms of service",
+      "Terms of service"
     ]
-    ...
   }
 }
