@@ -4,11 +4,11 @@ title: Create a model
 sidebar_label: Create a model
 ---
 
-# Create a model
+# Create a Model
 
 Use models to describe your data and how they relate to each other.
 
-## Define a model hierarchy
+## Define a Model Hierarchy
 
 Use model hierarchies to group models into packages. 
 
@@ -17,7 +17,7 @@ Use model hierarchies to group models into packages.
 
     ![Define a model hierarchy](images/define-model-hierarchy.jpg)
 
-## Define a new class
+## Define a New Class
 
 Use classes to define a business concept.
 
@@ -30,7 +30,7 @@ Use classes to define a business concept.
 
     Studio displays a visualization of the class and a tabbed list of the possible model enrichments.
 
-## Add a property (primitive data type)
+## Add a Property (primitive data type)
 
 Use properties in a class to define attributes of the business concept.
 
@@ -41,7 +41,7 @@ Use properties in a class to define attributes of the business concept.
 
     ![Add a property (primitive data type)](images/add-property-primitive.JPG)
 
-## Add a derived property
+## Add a Derived Property
 
 Derived properties are properties defined using functions that can operate on other attributes in the data model.
 
@@ -56,7 +56,7 @@ Derived properties are properties defined using functions that can operate on ot
 
     ![Add a derived property](images/add-derived-property.JPG)
 
-## Add a constraint
+## Add a Constraint
 
 Use constraints to define a validation or condition on the model that's expected to be met. The return type for a constraint is **Boolean**.  
 
@@ -69,7 +69,7 @@ Use constraints to define a validation or condition on the model that's expected
 
     ![Add a constraint](images/add-constraint.JPG)
 
-## Add a tagged value
+## Add a Tagged Value
 
 Use tagged values to add context and values to your model. One type of tagged value is `doc`. The `doc` tag describes the class.
 
@@ -81,7 +81,7 @@ Use tagged values to add context and values to your model. One type of tagged va
 
     ![Add a tagged value](images/add-tagged-value.JPG)
 
-## Add a stereotype
+## Add a Stereotype
 
 Use stereotypes to extend metadata information about a model. For example, you can annotate your model with labels like *legacy* or *deprecated*.
 
@@ -92,7 +92,7 @@ Use stereotypes to extend metadata information about a model. For example, you c
 
     ![Add a stereotype](images/add-stereotype.JPG)
 
-## Create and add an enumeration
+## Create and Add an Enumeration
 
 A model attribute that has a finite list of values can be defined with an enumeration.
 
