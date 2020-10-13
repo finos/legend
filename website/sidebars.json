@@ -1,8 +1,5 @@
 {
   "docs": {
-    "Introduction": [
-      "getting-started/intro-legend"
-    ],
     "Getting started": [
       "getting-started/create-workspace",
       "getting-started/create-model",
