@@ -4,11 +4,11 @@ title: Create a model
 sidebar_label: Create a model
 ---
 
-# Create a Model
+# Create a Data Model
 
-Use models to describe your data and how they relate to each other.
+Use data models to describe your data and how they relate to each other.
 
-## Define a Model Hierarchy
+## Define a Data Model Hierarchy
 
 Use model hierarchies to group models into packages. 
 
