@@ -56,6 +56,6 @@ To make review of PRs easier:
 
 ## Next steps
 
-- [Report a bug](report-bug.md)
-- [Contribute to models](contribute-to-models.md)
+- [contribute to models](contribute-to-models.md)
 - [Contribute to documentation](contribute-documentation.md)
+- [Report bug](report-bug.md)

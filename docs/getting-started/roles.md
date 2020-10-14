@@ -23,6 +23,6 @@ Approval options include:
 
 ## Next steps
 
-- [Review Process](review-process.md)
-- [Sync changes beyond Legend](sync-changes-beyond-legend.md)
+- [Change review Process](review-process.md)
 - [Terms of service](terms-of-service.md)
+- [Get involved](get-involved.md)

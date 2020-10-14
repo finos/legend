@@ -30,8 +30,8 @@ sidebar_label: Roadmap
 - Uplift documentation and add training material
 - Prepare for wave 2 open sourcing of Legend code (Cube, Query, Services) 
 
-## Next steps
+## More info
 
-- [Create a model](create-model.md)
-- [Create a diagram](create-diagram.md)
-- [Edit a model](edit-model.md)
+- [Contribute code](contribute-code.md)
+- [Contribute to models](contribute-to-models.md)
+- [Conribute documentation](contribute-documentation.md)

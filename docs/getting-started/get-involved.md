@@ -18,5 +18,5 @@ sidebar_label: Get involved
 ## More info
 
 - [Roles](roles.md)
-- [Review process](review-process.md)
-- [Sync changes beyond Legend](sync-changes-beyond-legend.md)
+- [Change review process](review-process.md)
+- [Terms of service](terms-of-service.md)

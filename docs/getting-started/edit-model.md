@@ -15,5 +15,5 @@ Edit models in the Legend language text editor view.
 ## Next steps
 
 - [Create a model-to-model mapping](create-model-to-model-mapping.md)
+- [Execute a model-to-model mapping](execute-model-to-model-mapping.md)
 - [Language](legend-language.md)
-- [Released functions](released-functions.md)

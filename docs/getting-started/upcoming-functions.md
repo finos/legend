@@ -1,6 +1,6 @@
 ---
 id: upcoming-functions
-title: Upcoming Functions
+title: Upcoming functions
 ---
 
 ## abs

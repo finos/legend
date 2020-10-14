@@ -1,7 +1,7 @@
 ---
 id: review-process
 title: Change review Process
-sidebar_label: Change Review Process
+sidebar_label: Change review process
 ---
 
 The following are the steps the Modeler, Approver, and Merger take to submit, review, and merge a new change to a model within Legend.
@@ -84,6 +84,6 @@ The following are the steps the Modeler, Approver, and Merger take to submit, re
 
 ## Next steps
 
-- [Sync changes beyond Legend](sync-changes-beyond-legend.md)
-- [Contribute to models](contribute-to-models.md)
-- [Contribute code](contribute-code.md)
+- [Terms of service](terms-of-service.md)
+- [Roles](roles.md)
+- [Get involved](get-involved.md)

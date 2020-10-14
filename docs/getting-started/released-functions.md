@@ -1,6 +1,6 @@
 ---
 id: released-functions
-title: Released Functions
+title: Released functions
 ---
 
 ## abs

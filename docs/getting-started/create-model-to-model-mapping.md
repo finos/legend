@@ -35,6 +35,6 @@ Create a model transformation using model-to-model mappings. Model transformatio
 
 ## Next steps
 
+- [Execute a model-to-model mapping](execute-model-to-model-mapping.md)
 - [Language](legend-language.md)
 - [Released functions](released-functions.md)
-- [Upcoming functions](upcoming-functions.md)

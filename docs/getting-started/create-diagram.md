@@ -17,4 +17,4 @@ Share this diagram to better visualize and communicate about your data and their
 
 - [Edit a model](edit-model.md)
 - [Create a model-to-model mapping](create-model-to-model-mapping.md)
-- [Language](legend-language.md)
+- [Execute a model-to-model mapping](execute-model-to-model-mapping.md)

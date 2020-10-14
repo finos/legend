@@ -50,6 +50,6 @@ A workspace update may result in a conflict. Studio will open a new view to aid 
 
 ## Next steps
 
-- [Roles](roles.md)
-- [Review Process](review-process.md)
-- [Sync changes beyond Legend](sync-changes-beyond-legend.md)
+- [Released functions](released-functions.md)
+- [Upcoming functions](upcoming-functions.md)
+- [Roadmap](roadmap.md)
