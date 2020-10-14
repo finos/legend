@@ -10,7 +10,7 @@ There are many ways to contribute to Legend, and many of them do not involve wri
 
 2. [Contribute code](contribute-code.md)
 
-3. [Help build out the documentation](contribute-documentation.md). Read through the [Legend documentation site](https://legend.finos.org/docs/contribute). If you find anything that is confusing or can be improved, submit a Pull Request. 
+3. [Help build out the documentation](contribute-documentation.md). Read through the [Legend documentation site](https://legend.finos.org/docs). If you find anything that is confusing or can be improved, submit a Pull Request. 
 
 4. [Contribute issues: identify bugs, suggest new features, and provide feedback on prioritization](contribute-issues). Look through the [open issues](https://github.com/finos/legend/issues?q=is%3Aissue+is%3Aopen+). Provide workarounds, ask for clarification, or suggest labels. If you find an issue you would like to fix, [open a pull request](https://github.com/finos/legend/pulls). Issues tagged as Good first issue are a good place to get started. Take a look at the features requested by others in the community and consider opening a pull request if you see something you want to work on.
 ## Prerequisites 
@@ -44,7 +44,7 @@ _NOTE:_ **Even if you have signed and are covered by a CLA, the [CLA Bot](https:
 
    If you have any issues with the steps above, please email help@finos.org so we can help you resolve before reviewing and accepting your pull request.
 
-* Need an ICLA? Unsure if you are covered under an existing CCLA? Email [help@finos.org](mailto:help@finos.org?subject=CLA)
+Need an ICLA? Unsure if you are covered under an existing CCLA? Email [help@finos.org](mailto:help@finos.org?subject=CLA)
 
 ## 1. Create New Models and Edit Existing Models
 ### Introduction
@@ -52,15 +52,15 @@ FINOS hosts a shared version of Legend Studio in the public cloud, which is avai
 
 Once you have requested access to the modeling instance, follow the instructions in the [Legend Documentation Site](https://legend.finos.org/docs/getting-started/studio#create-a-model) to get started and create a new model or edit existing ones. 
 If you have questions or encounter any issues, please raise an issue at https://github.com/finos/legend/issues.
-### [Roles](roles.md)
+
+### [Installation Guide](installation-guide.md)
 ### [Create a workspace](create-workspace.md)
 ### [Create a model](create-model.md)
 ### [Create a diagram](create-diagram.md)
 ### [Edit a model](edit-model.md)
 ### [Create model to model mapping](create-model-to-model-mapping.md)
+### [Execute model to model mapping](xecute-model-to-model-mapping.md)
 ### [Review and commit changes](review-and-commit-changes.md)
-### [Review process](review-process.md)
-### [Sync changes beyond Legend](sync-changes-beyond-legend.md)
 
 ### Suggest Modeling Use Cases
 If you have suggestions or ideas for modeling use cases for which Legend may be appropriate, we'd love to hear your ideas -- send a note with your suggestion to the [Legend General List](legend@finos.org).
@@ -77,7 +77,7 @@ The source code to Legend-PURE and Legend is available to the public and the pro
 ### [Upcoming Functions](upcoming-functions.md)
 
 ## 3. Build out documentation 
-### [Contribute Documentation](contribute-documentation)
+### [Contribute Documentation](contribute-documentation.md)
 ### [Running the Docs Site Locally on Your Machine](run-docs-site.md)
 
 ## 4. Contribute issues: identify bugs, suggest new features, and provide feedback on prioritization 
