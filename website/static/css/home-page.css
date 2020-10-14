@@ -10,7 +10,7 @@
 }
 
 .home-page__header {
-  background: var(--color-dark-grey-50);
+  background: var(--color-doc-background);
   height: 5rem;
   display: flex;
   align-items: center;
@@ -18,15 +18,7 @@
   width: 100%;
   top: 0;
   margin: 0;
-  opacity: 0;
   z-index: 10;
-  transition: opacity 0.6s ease;
-  pointer-events: none;
-}
-
-.home-page__header--visible {
-  pointer-events: initial;
-  opacity: 1 !important;
 }
 
 .home-page__header__container {
@@ -48,6 +40,10 @@
 
 .home-page__header__title--visible {
   opacity: 1 !important;
+}
+
+.home-page__header--visible {
+    background: var(--color-dark-grey-50) !important;
 }
 
 .home-page__header__title__home-btn {
@@ -73,6 +69,7 @@
   font-size: 1.6rem;
   line-height: 1.2;
   padding: 0 1rem;
+  text-decoration: none;
 }
 
 .home-page__header__nav__item__link-btn:hover {
@@ -129,24 +126,35 @@
   background: transparent;
 }
 
+.home-page__down-arrow {
+  position: absolute;
+  height: 5vh;
+  width: 5vw;
+  bottom: 10vh;
+  left: 45vw;
+  fill: var(--color-light-grey-300);
+}
+
 .home-page__logo {
   height: 60%;
 }
 
-.home-page__logo__A {
+.home-page__logo .logo-st0 {
   transition: 0.7s fill ease;
   fill: #4a7478;
 }
 
-.home-page__logo__L1 {
+.home-page__logo .logo-st1 {
   fill: #454449;
 }
 
-.home-page__logo__L2 {
+.home-page__logo .logo-st2 {
+  transition: 2s fill ease;
   fill: #3e3a3b;
 }
 
-.home-page__logo__O {
+.home-page__logo .logo-st3 {
+  transition: 0.7s fill ease;
   fill: #5c5858;
 }
 
@@ -158,26 +166,52 @@
   + div
   + div
   + .home-page__logo
-  .home-page__logo__A {
+  .logo-st3 {
   fill: #6a784a;
+}
+
+.home-page__content__brand__green-pad:hover
+  + div
+  + div
+  + .home-page__logo
+  .logo-st2 {
+  fill: #704662;
 }
 
 .home-page__content__brand__purple-pad:hover
   + div
   + .home-page__logo
-  .home-page__logo__A {
+  .logo-st3 {
   fill: #704662;
+}
+
+.home-page__content__brand__purple-pad:hover
+  + div
+  + .home-page__logo
+  .logo-st2 {
+  fill: #78694a;
 }
 
 .home-page__content__brand__yellow-pad:hover
   + .home-page__logo
-  .home-page__logo__A {
+  .logo-st3 {
   fill: #78694a;
 }
 
-.home-page__content__brand:hover .home-page__logo__A {
-  fill: #784a4a;
+.home-page__content__brand__yellow-pad:hover
+  + .home-page__logo
+  .logo-st2 {
+  fill: #6a784a;
 }
+
+.home-page__content__brand:hover .logo-st3 {
+  fill: #5c5858;
+}
+
+.home-page__content__brand:hover .logo-st2 {
+  fill: #3e3a3b;
+}
+
 
 .home-page__content__whatis {
   height: 90rem;
@@ -335,6 +369,11 @@
 
 .home-page__content__timeline {
   height: 95rem;
+}
+
+.completed-item {
+    vertical-align: super;
+    color: lightgreen;
 }
 
 .home-page__content__timeline__diagram {

@@ -34,14 +34,11 @@
       const header = document.querySelector('.home-page__header');
       const title = document.querySelector('.home-page__header__title');
       const logo = document.querySelector('.home-page__logo');
-      if (window.scrollY !== 0) {
-        header.classList.add('home-page__header--visible');
-      } else {
-        header.classList.remove('home-page__header--visible');
-      }
       if (window.scrollY >= (logo.parentNode.getBoundingClientRect().y + logo.getBoundingClientRect().y + logo.getBoundingClientRect().height + 2 * window.scrollY - 300)) {
+        header.classList.add('home-page__header--visible');
         title.classList.add('home-page__header__title--visible');
       } else {
+        header.classList.remove('home-page__header--visible');
         title.classList.remove('home-page__header__title--visible');
       }
     })
@@ -50,7 +47,7 @@
   <body>
     <main class="home-page">
       <header class="home-page__header"
-              style="opacity: 0">
+              >
         <div class="home-page__header__container">
           <div class="home-page__header__title">
             <a href="#"
@@ -58,19 +55,32 @@
               <svg class="home-page__header__title__logo"
                    width="100%"
                    height="100%"
-                   viewBox="0 0 220 90"
+                   viewBox="0 0 720 209.1"
                    style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
                 <g>
-                  <path d="M31.3,25.6c1,0 1.4,0.6 1.4,1.5l0,16.4l-2.8,0l0,-16.4c0,-0.9 0.4,-1.5 1.4,-1.5Zm-1.4,58.8l0,-28.7l2.8,0l0,28.8l22.7,0l0,-71.1c0,-4.8 -2.3,-7.7 -7.6,-7.7l-33.2,0c-5.2,0 -7.5,2.9 -7.5,7.7l0,71.1l22.8,-0.1Z"
-                        style="fill-rule:nonzero;" />
-                  <path d="M86.9,84.4l0,-19.8l-5.1,0c-1,0 -1.4,-0.6 -1.4,-1.5l0,-57.4l-22.7,0l0,71.1c0,4.8 2.3,7.7 7.5,7.7l21.7,-0.1Z"
-                        style="fill-rule:nonzero;" />
-                  <path d="M111.7,84.5l-15.3,0c-5.2,0 -7.5,-2.9 -7.5,-7.7l0,-71.1l22.8,0.1l0,58.891l50.5,-0.091l0,19.9l-50.5,0Z"
-                        style="fill-rule:nonzero;" />
-                  <path d="M154.7,5.7c5.2,0 7.5,2.9 7.5,7.7l0,41.2c0,4.8 -2.3,7.7 -7.5,7.7l-33.25,0c-5.2,0 -7.5,-2.9 -7.5,-7.7l0,-41.2c0,-4.8 2.3,-7.7 7.5,-7.7l33.25,0Zm-16.575,17.6l-0.025,0c-1,0 -1.4,0.5 -1.4,1.5l0,18.5c0,0.9 0.4,1.5 1.4,1.5l0.025,0l0.025,0c1,0 1.4,-0.6 1.4,-1.5l0,-18.5c0,-1 -0.4,-1.5 -1.4,-1.5l-0.025,0Z"
-                        style="fill-rule:nonzero;" />
-                  <path d="M164.4,5.7l0,34.4c0,4.8 2.3,7.7 7.5,7.7l18.1,0l0,15.4c0,0.9 -0.4,1.5 -1.4,1.5c-1,0 -1.4,-0.6 -1.4,-1.5l0,-13.1l-22.7,0l0,26.7c0,5.3 2.9,7.6 7.7,7.6l33,0c5.3,0 7.6,-2.9 7.6,-7.7l0,-71l-22.7,0l0,22.3l-1.4,0c-1,0 -1.4,-0.9 -1.4,-1.7l0,-20.6l-22.9,0Z"
-                        style="fill-rule:nonzero;" />
+                  <path class="st0" d="M243.7,137.6h25.1c-5.4,11.6-17.6,17-31.4,17c-21.5,0-36.9-17.4-36.9-39.7c0-22.3,15.5-39.7,36.9-39.7
+		c13.1,0,23.2,2.1,33.3,14.2c0.9,1.1,2.8,2.8,5.4,2.8c7.5,0,30.3,0,33.7,0c3.2,0,4.5-3,3.2-5.8c-17-34.8-38.4-49.2-75.6-49.2
+		c-43.8,0-80.5,34.8-80.5,77.7c0,6.5,0.9,12.9,2.5,18.9l55.7,36.8c2.7,1.8,2.7,4.6,0,6.4l-12.1,8c10.5,4.9,22.1,7.7,34.4,7.7
+		c17.6,0,31.6-6.2,42.3-15.5v7.5c0,3,2.4,5.4,5.4,5.4h24.3c3,0,5.4-2.4,5.4-5.4c0-71.9,0-71.9,0-71.9c0-3-2.4-5.4-5.4-5.4h-65.7
+		c-2.8,0-5.2,2.4-5.2,5.4v19.5C238.5,135.2,240.9,137.6,243.7,137.6L243.7,137.6z"/>
+                  <path class="st0" d="M424.5,153.1h-59.9v-19.8h48.1c2.8,0,5.4-2.4,5.4-5.4v-26.2c0-3-2.6-5.4-5.4-5.4h-48.1V76.6h59.3
+		c2.8,0,5.4-2.4,5.4-5.4V45c0-3-2.6-5.4-5.4-5.4h-98.1c-3,0-5.4,2.4-5.4,5.4v139.6c0,3,2.4,5.4,5.4,5.4h98.8c3,0,5.4-2.4,5.4-5.4
+		v-26.2C429.9,155.4,427.5,153.1,424.5,153.1L424.5,153.1z"/>
+                  <path class="st0" d="M562.8,190c3,0,5.4-2.4,5.4-5.4V45c0-3-2.4-5.4-5.4-5.4h-33.5c-3,0-5.4,2.4-5.4,5.4v71.1
+		c0,0-41.9-62.7-46.4-68.7c-4.5-6-6.9-7.7-12-7.7h-23.2h-1.5c-2.8,0-5.4,2.4-5.4,5.4v139.6c0,3,2.4,5.4,5.4,5.4h33.7
+		c2.8,0,5.4-2.4,5.4-5.4v-72.4l48.1,72.4c2.4,3.4,4.7,5.4,11,5.4C540.7,190,562.8,190,562.8,190L562.8,190z"/>
+                  <path class="st0" d="M633.8,39.7c-0.6,0-54.1,0-54.1,0c-3,0-5.3,2.4-5.3,5.4v139.6c0,3,2.3,5.4,5.3,5.4c0,0,35.1,0,52.4,0
+		c52.8,0,87.9-27.7,87.9-75.4C720,80.3,702.2,39.7,633.8,39.7L633.8,39.7z M637.1,153.1c-2.5,0-11.4,0-19.2,0V76.6c7,0,15,0,19.2,0
+		c29,0,38.7,19.8,38.7,38.4C675.8,135.7,664.2,153.1,637.1,153.1L637.1,153.1z"/>
+                  <path class="st0" d="M141.9,86.5V68.1c0-1.6-1.2-2.9-2.8-2.9H66.5c-1.6,0-2.8,1.3-2.8,2.9v18.4c0,1.6,1.2,2.9,2.8,2.9h72.6
+		C140.7,89.4,141.9,88.1,141.9,86.5L141.9,86.5z"/>
+                  <path class="st0" d="M118.4,116.9V98.5c0-1.6-0.9-2.9-2-2.9H65.7c-1.1,0-2,1.3-2,2.9v18.4c0,1.6,0.9,2.9,2,2.9h50.8
+		C117.6,119.8,118.4,118.6,118.4,116.9L118.4,116.9z"/>
+                  <path class="st0" d="M141.9,147.3V129c0-1.6-1.2-2.9-2.8-2.9H66.5c-1.6,0-2.8,1.3-2.8,2.9v18.4c0,1.6,1.2,2.9,2.8,2.9h72.6
+		C140.7,150.3,141.9,149,141.9,147.3L141.9,147.3z"/>
+                  <path class="st0" d="M205,170.7l-52.3-31.6c-2.7-1.7-5-0.4-5,2.8v16l-91.9,0V59.4h11.4c3.2,0,4.5-2.2,2.8-5L38.4,2.1
+		c-1.7-2.7-4.3-2.7-6,0L0.7,54.4c-1.7,2.7-0.4,5,2.8,5h12.1v126.1c0,3,2.4,5.4,5.4,5.4h126.7v14.8c0,3.2,2.2,4.4,5,2.8l52.3-31.6
+		C207.7,175.1,207.7,172.4,205,170.7L205,170.7z"/>
                 </g>
               </svg>
             </a>
@@ -83,7 +93,7 @@
             </div>
             <!-- <div class="home-page__header__nav__item">
               <a class="home-page__header__nav__item__link-btn"
-                 href="https://github.com/finos/purealloy/"
+                 href="https://github.com/finos/legend/"
                  target="_blank">Github</a>
             </div> -->
           </nav>
@@ -99,25 +109,39 @@
             <svg class="home-page__logo"
                  width="100%"
                  height="100%"
-                 viewBox="0 0 220 90"
+                 viewBox="0 0 720 209.1"
                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
               <g>
-                <path class="home-page__logo__A"
-                      fill="#4a7478"
-                      d="M31.3,25.6c1,0 1.4,0.6 1.4,1.5l0,16.4l-2.8,0l0,-16.4c0,-0.9 0.4,-1.5 1.4,-1.5Zm-1.4,58.8l0,-28.7l2.8,0l0,28.8l22.7,0l0,-71.1c0,-4.8 -2.3,-7.7 -7.6,-7.7l-33.2,0c-5.2,0 -7.5,2.9 -7.5,7.7l0,71.1l22.8,-0.1Z"
-                      style="fill-rule:nonzero;" />
-                <path class="home-page__logo__L1"
-                      d="M86.9,84.4l0,-19.8l-5.1,0c-1,0 -1.4,-0.6 -1.4,-1.5l0,-57.4l-22.7,0l0,71.1c0,4.8 2.3,7.7 7.5,7.7l21.7,-0.1Z"
-                      style="fill-rule:nonzero;" />
-                <path class="home-page__logo__L2"
-                      d="M111.7,84.5l-15.3,0c-5.2,0 -7.5,-2.9 -7.5,-7.7l0,-71.1l22.8,0.1l0,58.891l50.5,-0.091l0,19.9l-50.5,0Z"
-                      style="fill-rule:nonzero;" />
-                <path class="home-page__logo__O"
-                      d="M154.7,5.7c5.2,0 7.5,2.9 7.5,7.7l0,41.2c0,4.8 -2.3,7.7 -7.5,7.7l-33.25,0c-5.2,0 -7.5,-2.9 -7.5,-7.7l0,-41.2c0,-4.8 2.3,-7.7 7.5,-7.7l33.25,0Zm-16.575,17.6l-0.025,0c-1,0 -1.4,0.5 -1.4,1.5l0,18.5c0,0.9 0.4,1.5 1.4,1.5l0.025,0l0.025,0c1,0 1.4,-0.6 1.4,-1.5l0,-18.5c0,-1 -0.4,-1.5 -1.4,-1.5l-0.025,0Z"
-                      style="fill-rule:nonzero;" />
-                <path class="home-page__logo__Y"
-                      d="M164.4,5.7l0,34.4c0,4.8 2.3,7.7 7.5,7.7l18.1,0l0,15.4c0,0.9 -0.4,1.5 -1.4,1.5c-1,0 -1.4,-0.6 -1.4,-1.5l0,-13.1l-22.7,0l0,26.7c0,5.3 2.9,7.6 7.7,7.6l33,0c5.3,0 7.6,-2.9 7.6,-7.7l0,-71l-22.7,0l0,22.3l-1.4,0c-1,0 -1.4,-0.9 -1.4,-1.7l0,-20.6l-22.9,0Z"
-                      style="fill-rule:nonzero;" />
+                <path class="logo-st0" d="M243.7,137.6h25.1c-5.4,11.6-17.6,17-31.4,17c-21.5,0-36.9-17.4-36.9-39.7c0-22.3,15.5-39.7,36.9-39.7
+		c13.1,0,23.2,2.1,33.3,14.2c0.9,1.1,2.8,2.8,5.4,2.8c7.5,0,30.3,0,33.7,0c3.2,0,4.5-3,3.2-5.8c-17-34.8-38.4-49.2-75.6-49.2
+		c-43.8,0-80.5,34.8-80.5,77.7c0,6.5,0.9,12.9,2.5,18.9l55.7,36.8c2.7,1.8,2.7,4.6,0,6.4l-12.1,8c10.5,4.9,22.1,7.7,34.4,7.7
+		c17.6,0,31.6-6.2,42.3-15.5v7.5c0,3,2.4,5.4,5.4,5.4h24.3c3,0,5.4-2.4,5.4-5.4c0-71.9,0-71.9,0-71.9c0-3-2.4-5.4-5.4-5.4h-65.7
+		c-2.8,0-5.2,2.4-5.2,5.4v19.5C238.5,135.2,240.9,137.6,243.7,137.6L243.7,137.6z"/>
+                <path class="logo-st1" d="M424.5,153.1h-59.9v-19.8h48.1c2.8,0,5.4-2.4,5.4-5.4v-26.2c0-3-2.6-5.4-5.4-5.4h-48.1V76.6h59.3
+		c2.8,0,5.4-2.4,5.4-5.4V45c0-3-2.6-5.4-5.4-5.4h-98.1c-3,0-5.4,2.4-5.4,5.4v139.6c0,3,2.4,5.4,5.4,5.4h98.8c3,0,5.4-2.4,5.4-5.4
+		v-26.2C429.9,155.4,427.5,153.1,424.5,153.1L424.5,153.1z"/>
+                <path class="logo-st0" d="M562.8,190c3,0,5.4-2.4,5.4-5.4V45c0-3-2.4-5.4-5.4-5.4h-33.5c-3,0-5.4,2.4-5.4,5.4v71.1
+		c0,0-41.9-62.7-46.4-68.7c-4.5-6-6.9-7.7-12-7.7h-23.2h-1.5c-2.8,0-5.4,2.4-5.4,5.4v139.6c0,3,2.4,5.4,5.4,5.4h33.7
+		c2.8,0,5.4-2.4,5.4-5.4v-72.4l48.1,72.4c2.4,3.4,4.7,5.4,11,5.4C540.7,190,562.8,190,562.8,190L562.8,190z"/>
+                <path class="logo-st2" d="M633.8,39.7c-0.6,0-54.1,0-54.1,0c-3,0-5.3,2.4-5.3,5.4v139.6c0,3,2.3,5.4,5.3,5.4c0,0,35.1,0,52.4,0
+		c52.8,0,87.9-27.7,87.9-75.4C720,80.3,702.2,39.7,633.8,39.7L633.8,39.7z M637.1,153.1c-2.5,0-11.4,0-19.2,0V76.6c7,0,15,0,19.2,0
+		c29,0,38.7,19.8,38.7,38.4C675.8,135.7,664.2,153.1,637.1,153.1L637.1,153.1z"/>
+                <path class="logo-st1" d="M141.9,86.5V68.1c0-1.6-1.2-2.9-2.8-2.9H66.5c-1.6,0-2.8,1.3-2.8,2.9v18.4c0,1.6,1.2,2.9,2.8,2.9h72.6
+		C140.7,89.4,141.9,88.1,141.9,86.5L141.9,86.5z"/>
+                <path class="logo-st1" d="M118.4,116.9V98.5c0-1.6-0.9-2.9-2-2.9H65.7c-1.1,0-2,1.3-2,2.9v18.4c0,1.6,0.9,2.9,2,2.9h50.8
+		C117.6,119.8,118.4,118.6,118.4,116.9L118.4,116.9z"/>
+                <path class="logo-st1" d="M141.9,147.3V129c0-1.7-1.2-2.9-2.8-2.9H66.5c-1.6,0-2.8,1.3-2.8,2.9v18.4c0,1.6,1.2,2.9,2.8,2.9h72.6
+		C140.7,150.3,141.9,149,141.9,147.3L141.9,147.3z"/>
+                <path class="logo-st3" d="M205,170.7l-52.3-31.6c-2.7-1.7-5-0.4-5,2.8v16l-91.9,0V59.4h11.4c3.2,0,4.5-2.2,2.8-5L38.4,2.1
+		c-1.7-2.7-4.3-2.7-6,0L0.7,54.4c-1.7,2.7-0.4,5,2.8,5h12.1v126.1c0,3,2.4,5.4,5.4,5.4h126.7v14.8c0,3.2,2.2,4.4,5,2.8l52.3-31.7
+		C207.7,175.1,207.7,172.4,205,170.7L205,170.7z"/>
+              </g>
+            </svg>
+            <svg class="home-page__down-arrow" viewBox="0 0 960 560">
+              <g>
+                <path d="M480,344.181L268.869,131.889c-15.756-15.859-41.3-15.859-57.054,0c-15.754,15.857-15.754,41.57,0,57.431l237.632,238.937
+		c8.395,8.451,19.562,12.254,30.553,11.698c10.993,0.556,22.159-3.247,30.555-11.698l237.631-238.937
+		c15.756-15.86,15.756-41.571,0-57.431s-41.299-15.859-57.051,0L480,344.181z"/>
               </g>
             </svg>
           </div>
@@ -130,19 +154,32 @@
               <svg class="home-page__content__whatis__title__logo"
                    width="100%"
                    height="100%"
-                   viewBox="0 0 220 90"
+                   viewBox="0 0 720 209.1"
                    style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
                 <g>
-                  <path d="M31.3,25.6c1,0 1.4,0.6 1.4,1.5l0,16.4l-2.8,0l0,-16.4c0,-0.9 0.4,-1.5 1.4,-1.5Zm-1.4,58.8l0,-28.7l2.8,0l0,28.8l22.7,0l0,-71.1c0,-4.8 -2.3,-7.7 -7.6,-7.7l-33.2,0c-5.2,0 -7.5,2.9 -7.5,7.7l0,71.1l22.8,-0.1Z"
-                        style="fill-rule:nonzero;" />
-                  <path d="M86.9,84.4l0,-19.8l-5.1,0c-1,0 -1.4,-0.6 -1.4,-1.5l0,-57.4l-22.7,0l0,71.1c0,4.8 2.3,7.7 7.5,7.7l21.7,-0.1Z"
-                        style="fill-rule:nonzero;" />
-                  <path d="M111.7,84.5l-15.3,0c-5.2,0 -7.5,-2.9 -7.5,-7.7l0,-71.1l22.8,0.1l0,58.891l50.5,-0.091l0,19.9l-50.5,0Z"
-                        style="fill-rule:nonzero;" />
-                  <path d="M154.7,5.7c5.2,0 7.5,2.9 7.5,7.7l0,41.2c0,4.8 -2.3,7.7 -7.5,7.7l-33.25,0c-5.2,0 -7.5,-2.9 -7.5,-7.7l0,-41.2c0,-4.8 2.3,-7.7 7.5,-7.7l33.25,0Zm-16.575,17.6l-0.025,0c-1,0 -1.4,0.5 -1.4,1.5l0,18.5c0,0.9 0.4,1.5 1.4,1.5l0.025,0l0.025,0c1,0 1.4,-0.6 1.4,-1.5l0,-18.5c0,-1 -0.4,-1.5 -1.4,-1.5l-0.025,0Z"
-                        style="fill-rule:nonzero;" />
-                  <path d="M164.4,5.7l0,34.4c0,4.8 2.3,7.7 7.5,7.7l18.1,0l0,15.4c0,0.9 -0.4,1.5 -1.4,1.5c-1,0 -1.4,-0.6 -1.4,-1.5l0,-13.1l-22.7,0l0,26.7c0,5.3 2.9,7.6 7.7,7.6l33,0c5.3,0 7.6,-2.9 7.6,-7.7l0,-71l-22.7,0l0,22.3l-1.4,0c-1,0 -1.4,-0.9 -1.4,-1.7l0,-20.6l-22.9,0Z"
-                        style="fill-rule:nonzero;" />
+                  <path class="st0" d="M243.7,137.6h25.1c-5.4,11.6-17.6,17-31.4,17c-21.5,0-36.9-17.4-36.9-39.7c0-22.3,15.5-39.7,36.9-39.7
+		c13.1,0,23.2,2.1,33.3,14.2c0.9,1.1,2.8,2.8,5.4,2.8c7.5,0,30.3,0,33.7,0c3.2,0,4.5-3,3.2-5.8c-17-34.8-38.4-49.2-75.6-49.2
+		c-43.8,0-80.5,34.8-80.5,77.7c0,6.5,0.9,12.9,2.5,18.9l55.7,36.8c2.7,1.8,2.7,4.6,0,6.4l-12.1,8c10.5,4.9,22.1,7.7,34.4,7.7
+		c17.6,0,31.6-6.2,42.3-15.5v7.5c0,3,2.4,5.4,5.4,5.4h24.3c3,0,5.4-2.4,5.4-5.4c0-71.9,0-71.9,0-71.9c0-3-2.4-5.4-5.4-5.4h-65.7
+		c-2.8,0-5.2,2.4-5.2,5.4v19.5C238.5,135.2,240.9,137.6,243.7,137.6L243.7,137.6z"/>
+                  <path class="st0" d="M424.5,153.1h-59.9v-19.8h48.1c2.8,0,5.4-2.4,5.4-5.4v-26.2c0-3-2.6-5.4-5.4-5.4h-48.1V76.6h59.3
+		c2.8,0,5.4-2.4,5.4-5.4V45c0-3-2.6-5.4-5.4-5.4h-98.1c-3,0-5.4,2.4-5.4,5.4v139.6c0,3,2.4,5.4,5.4,5.4h98.8c3,0,5.4-2.4,5.4-5.4
+		v-26.2C429.9,155.4,427.5,153.1,424.5,153.1L424.5,153.1z"/>
+                  <path class="st0" d="M562.8,190c3,0,5.4-2.4,5.4-5.4V45c0-3-2.4-5.4-5.4-5.4h-33.5c-3,0-5.4,2.4-5.4,5.4v71.1
+		c0,0-41.9-62.7-46.4-68.7c-4.5-6-6.9-7.7-12-7.7h-23.2h-1.5c-2.8,0-5.4,2.4-5.4,5.4v139.6c0,3,2.4,5.4,5.4,5.4h33.7
+		c2.8,0,5.4-2.4,5.4-5.4v-72.4l48.1,72.4c2.4,3.4,4.7,5.4,11,5.4C540.7,190,562.8,190,562.8,190L562.8,190z"/>
+                  <path class="st0" d="M633.8,39.7c-0.6,0-54.1,0-54.1,0c-3,0-5.3,2.4-5.3,5.4v139.6c0,3,2.3,5.4,5.3,5.4c0,0,35.1,0,52.4,0
+		c52.8,0,87.9-27.7,87.9-75.4C720,80.3,702.2,39.7,633.8,39.7L633.8,39.7z M637.1,153.1c-2.5,0-11.4,0-19.2,0V76.6c7,0,15,0,19.2,0
+		c29,0,38.7,19.8,38.7,38.4C675.8,135.7,664.2,153.1,637.1,153.1L637.1,153.1z"/>
+                  <path class="st0" d="M141.9,86.5V68.1c0-1.6-1.2-2.9-2.8-2.9H66.5c-1.6,0-2.8,1.3-2.8,2.9v18.4c0,1.6,1.2,2.9,2.8,2.9h72.6
+		C140.7,89.4,141.9,88.1,141.9,86.5L141.9,86.5z"/>
+                  <path class="st0" d="M118.4,116.9V98.5c0-1.6-0.9-2.9-2-2.9H65.7c-1.1,0-2,1.3-2,2.9v18.4c0,1.6,0.9,2.9,2,2.9h50.8
+		C117.6,119.8,118.4,118.6,118.4,116.9L118.4,116.9z"/>
+                  <path class="st0" d="M141.9,147.3V129c0-1.6-1.2-2.9-2.8-2.9H66.5c-1.6,0-2.8,1.3-2.8,2.9v18.4c0,1.6,1.2,2.9,2.8,2.9h72.6
+		C140.7,150.3,141.9,149,141.9,147.3L141.9,147.3z"/>
+                  <path class="st0" d="M205,170.7l-52.3-31.6c-2.7-1.7-5-0.4-5,2.8v16l-91.9,0V59.4h11.4c3.2,0,4.5-2.2,2.8-5L38.4,2.1
+		c-1.7-2.7-4.3-2.7-6,0L0.7,54.4c-1.7,2.7-0.4,5,2.8,5h12.1v126.1c0,3,2.4,5.4,5.4,5.4h126.7v14.8c0,3.2,2.2,4.4,5,2.8l52.3-31.6
+		C207.7,175.1,207.7,172.4,205,170.7L205,170.7z"/>
                 </g>
               </svg>
             </div>
@@ -251,11 +288,9 @@
                       class="code__letter">c</span>
               </div>
               <div class="home-page__content__tool">
-                &nbsp;<span class="code__letter">e</span><span class="code__letter">x</span><span
-                      class="code__letter">e</span><span class="code__letter">c</span><span
-                      class="code__letter">u</span><span class="code__letter">t</span><span
-                      class="code__letter">i</span><span class="code__letter">o</span><span
-                      class="code__letter">n</span>
+                &nbsp;<span class="code__letter">e</span><span class="code__letter">n</span><span
+                      class="code__letter">g</span><span class="code__letter">i</span><span
+                      class="code__letter">n</span><span class="code__letter">e</span>
               </div>
             </div>
           </div>
@@ -271,12 +306,12 @@
         <article class="home-page__content__timeline">
           <div class="home-page__content__container">
             <div class="home-page__content__timeline__text">
-              <p>The open sourcing of the Legend platform is happening in 3 phases:</p>
+              <p>The open sourcing of the Legend platform is happening in phases:</p>
               <ul>
                 <li>
                   <p><strong>Phase 0</strong> (Dec 2019): Deploy an external instance of Legend to AWS
                     servers and
-                    announce the intention to open source at the FINOS strategy forum.</p>
+                    announce the intention to open source at the FINOS strategy forum.<span class="completed-item">Completed</span></p>
                 </li>
                 <li>
                   <p><strong>Phase 1</strong> (Jan 2020): Make Studio available to a group of bank pilot users collaborating on a Derivatives
@@ -286,7 +321,7 @@
                     models, model-to-model mappings, constraints and derivations.
                     Features that are not yet available include model-to-database mappings and the
                     execution of queries as
-                    services.</p>
+                    services.<span class="completed-item">Completed</span></p>
                 </li>
                 <li>
                   <p><strong>Phase 2</strong> (Sep 2020): Open source <a
@@ -295,14 +330,19 @@
                   </p>
                 </li>
                 <li>
-                  <p><strong>Phase 3</strong> (Dec 2020): Open source the remaining tools - <a
-                          href="docs/getting-started/cube"><strong>Cube</strong></a>, <a
-                          href="docs/getting-started/graph"><strong>Query</strong></a> and <a
-                          href="docs/getting-started/services"><strong>Services</strong></a>.                    This
-                    opens up the
-                    opportunity to
-                    collaborate on even more use cases and the creation of a shared model inventory.
-
+                  <p><strong>Phase 3</strong> (Q1 2021): Open source relational execution via Studio. Also including support for flat data sources like csv.
+                  </p>
+                </li>
+                <li>
+                  <p><strong>Phase 4</strong> (Q3 2021): Open source Cube UI for user-friendly tabular data exploration.
+                  </p>
+                </li>
+                <li>
+                  <p><strong>Phase 5</strong> (Q4 2021): Open source Query UI to search and access modelled data.
+                  </p>
+                </li>
+                <li>
+                  <p><strong>Phase 6</strong> (Q4 2021): Open source Services UI. This will allow management of production services for repeatable and controlled data access.
                   </p>
                 </li>
               </ul>
