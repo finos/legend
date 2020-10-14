@@ -6,7 +6,7 @@
 }
 
 .home-page * {
-  font-family: "Merriweather";
+  font-family: "Roboto Condensed";
 }
 
 .home-page__header {
@@ -69,7 +69,7 @@
 
 .home-page__header__nav__item__link-btn {
   color: var(--color-light-grey-300);
-  font-family: "Merriweather";
+  font-family: "Roboto Condensed";
   font-size: 1.6rem;
   line-height: 1.2;
   padding: 0 1rem;
@@ -198,7 +198,7 @@
 
 .home-page__content__whatis__title__pre {
   font-size: 11rem;
-  font-family: "Merriweather";
+  font-family: "Roboto Condensed";
   line-height: 1;
 }
 
@@ -352,6 +352,10 @@
 .home-page__footer {
   height: 16rem;
   background: var(--color-footer-background);
+}
+
+.home-page__footer .finosBanner {
+  padding-bottom: 5rem;
 }
 
 @media only screen and (max-width: 1199px) {

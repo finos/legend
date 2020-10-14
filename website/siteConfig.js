@@ -59,7 +59,7 @@ const siteConfig = {
   },
 
   stylesheets: [
-    "https://fonts.googleapis.com/css?family=Merriweather:400,500,700,900|Roboto+Condensed:400,500,700,900|Source+Code+Pro:400,500,700,900&display=swap",
+    "https://fonts.googleapis.com/css?family=Roboto+Condensed:400,500,700,900|Source+Code+Pro:400,500,700,900&display=swap",
   ],
 
   // Add custom scripts here that would be placed in <script> tags.
