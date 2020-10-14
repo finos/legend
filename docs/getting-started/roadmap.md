@@ -4,8 +4,6 @@ title: Roadmap
 sidebar_label: Roadmap
 ---
 
-# Roadmap
-
 ## Legend Phase 0 (October 2019 - January 2020) - *Completed*
 
 ### Phase 0 Goals

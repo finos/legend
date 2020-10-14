@@ -4,7 +4,7 @@ title: Terms of service
 sidebar_label: Terms of service
 ---
 
-# FINOS Legend terms of service
+## FINOS Legend terms of service
 
 The Legend Pilot website and service located at https//legend.finos.org/ (the “Service”) is operated by FINOS, a project of The Linux Foundation (“FINOS,” “we,” or “us”). By registering for, using, or accessing the Service, you agree to be bound by these terms of service (“Terms”). If you don’t agree to these Terms, you must discontinue use of the Service.  If you have any questions about these terms, please contact us: FINOS, 548 Market St., PMB 57274, San Francisco, California 94104-5401, legal@finos.org.
 

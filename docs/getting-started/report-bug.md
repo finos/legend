@@ -4,8 +4,6 @@ title: Report bug
 sidebar_label: Report bug
 ---
 
-# Report a bug
-
 View the prerequisites and steps to report a bug by creating an issue in GitHub.
 
 ## Prerequisites

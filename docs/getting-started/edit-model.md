@@ -4,8 +4,6 @@ title: Edit a model
 sidebar_label: Edit a model
 ---
 
-# Edit a Model (with Text Editor)
-
 Edit models in the Legend language text editor view.
 
 1. Press **F** or click the icon on the far-right on the status bar.

@@ -4,8 +4,6 @@ title: Review and commit changes
 sidebar_label: Review and commit changes
 ---
 
-# Review and commit changes
-
 Legend is integrated with the software development lifecycle (SDLC) supported by GitLab, which lets you review and commit changes.
 
 Follow these steps to review and commit a change.

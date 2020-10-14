@@ -4,8 +4,6 @@ title: Contribute documentation
 sidebar_label: Contribute documentation
 ---
 
-# Contribute documentation
-
 ## Suggest topics
 
 You can get involved with Legend by suggesting topics you'd like to see in our documentation. Suggest a topic for our docs by [opening an issue in our GitHub repo](https://github.com/finos/legend/issues/new/choose). Ideas are also welcome through the [Legend General List](mailto:Legend@finos.org).

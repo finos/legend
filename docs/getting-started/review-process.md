@@ -4,8 +4,6 @@ title: Change review Process
 sidebar_label: Change Review Process
 ---
 
-# Change review process
-
 The following are the steps the Modeler, Approver, and Merger take to submit, review, and merge a new change to a model within Legend.
 
 ## Modeler

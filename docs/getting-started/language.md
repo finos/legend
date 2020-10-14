@@ -3,6 +3,7 @@ id: language
 title: Alloy Language
 sidebar_label: Language
 ---
+
 The Alloy language is an immutable functional language based on the Unified Modeling Language (UML) and inspired by Object Constraint Language (OCL).  It provides an accelerated data modeling experience that enables:
 -	Building of logical data models that can help describe business concepts and their data relationships.  
 -	Enrichment of the model with executable constraints, derivations and model-to-model mappings.   

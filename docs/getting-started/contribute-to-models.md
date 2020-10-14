@@ -4,8 +4,6 @@ title: Contribute to models
 sidebar_label: Contribute to models
 ---
 
-# Contribute to models
-
 Use models to define your data and describe how they relate to each other.
 
 <!---Finos to provide conceptual data on open source model contribution here--->

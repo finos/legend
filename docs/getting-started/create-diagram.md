@@ -4,8 +4,6 @@ title: Create a diagram
 sidebar_label: Create a diagram
 ---
 
-# Create a Diagram
-
 Diagrams are visual representations of your models. Create a model diagram to show relationships across business concepts.
 
 1. Click the **+** on the left-hand side and select **Add a new diagram**.

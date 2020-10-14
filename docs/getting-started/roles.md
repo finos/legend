@@ -4,8 +4,6 @@ title: Roles
 sidebar_label: Roles
 ---
 
-# Roles
-
 There are the three roles involved in the submission of model changes:
 
 - **Modeler**: Makes the model changes.

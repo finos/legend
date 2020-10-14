@@ -2,6 +2,7 @@
 id: upcoming-functions
 title: Upcoming Functions
 ---
+
 ## abs
 
 <div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">abs</span>(<span class="pureGrammar-functionVariable">number</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
