@@ -37,7 +37,7 @@ const siteConfig = {
   // users,
 
   // footerIcon: 'img/todo.svg',  /* change to program/project icon + wordmark logo */
-  headerIcon: 'img/alloy.svg',
+  headerIcon: 'img/legend.svg',
   favicon: 'img/favicon/favicon.ico',  /* change to program/project favicon logo .ico */
 
   /* Colors for website */
