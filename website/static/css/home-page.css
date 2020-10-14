@@ -43,7 +43,7 @@
 }
 
 .home-page__header--visible {
-    background: var(--color-dark-grey-50) !important;
+  background: var(--color-dark-grey-50) !important;
 }
 
 .home-page__header__title__home-btn {
@@ -99,6 +99,10 @@
   justify-content: center;
 }
 
+.home-page__content__brand .home-page__content__container {
+  padding: 0 10rem 10rem 10rem;
+}
+
 .home-page__content__brand__green-pad {
   position: absolute;
   height: 60vh;
@@ -132,7 +136,17 @@
   width: 5vw;
   bottom: 10vh;
   left: 45vw;
-  fill: var(--color-light-grey-300);
+  fill: var(--color-dark-grey-200);
+  animation: arrow-bounce 0.5s alternate ease infinite;
+}
+
+@keyframes arrow-bounce {
+  from {
+    transform: translateY(0.3rem);
+  }
+  to {
+    transform: translateY(-0.3rem);
+  }
 }
 
 .home-page__logo {
@@ -192,15 +206,11 @@
   fill: #78694a;
 }
 
-.home-page__content__brand__yellow-pad:hover
-  + .home-page__logo
-  .logo-st3 {
+.home-page__content__brand__yellow-pad:hover + .home-page__logo .logo-st3 {
   fill: #78694a;
 }
 
-.home-page__content__brand__yellow-pad:hover
-  + .home-page__logo
-  .logo-st2 {
+.home-page__content__brand__yellow-pad:hover + .home-page__logo .logo-st2 {
   fill: #6a784a;
 }
 
@@ -211,7 +221,6 @@
 .home-page__content__brand:hover .logo-st2 {
   fill: #3e3a3b;
 }
-
 
 .home-page__content__whatis {
   height: 90rem;
@@ -315,6 +324,11 @@
   line-height: 0.9;
 }
 
+.home-page__content__tool--cube {
+  margin-left: 0.3rem;
+  line-height: 1.1;
+}
+
 .home-page__content__tool span {
   font: inherit;
   display: inline-flex;
@@ -372,8 +386,8 @@
 }
 
 .completed-item {
-    vertical-align: super;
-    color: lightgreen;
+  vertical-align: super;
+  color: lightgreen;
 }
 
 .home-page__content__timeline__diagram {

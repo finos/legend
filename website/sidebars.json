@@ -1,6 +1,6 @@
 {
   "docs": {
-    "Getting started": [
+    "Getting Started": [
       "getting-started/create-workspace",
       "getting-started/create-model",
       "getting-started/create-diagram",
@@ -13,7 +13,7 @@
       "getting-started/legend-language",
       "getting-started/released-functions",
       "getting-started/upcoming-functions"
-    ], 
+    ],
     "Roadmap": [
       "getting-started/roadmap"
     ],
@@ -29,7 +29,7 @@
       "getting-started/review-process"
     ],
     "Legal": [
-    "getting-started/terms-of-service"
+      "getting-started/terms-of-service"
     ]
   }
 }
