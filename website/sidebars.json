@@ -7,25 +7,26 @@
       "getting-started/edit-model",
       "getting-started/create-model-to-model-mapping",
       "getting-started/execute",
-      "getting-started/review-and-commit-changes",
-      "getting-started/get-involved",
-      "getting-started/terms-of-service"
+      "getting-started/review-and-commit-changes"
     ],
     "Language": [
       "getting-started/released-functions",
       "getting-started/upcoming-functions"
     ], 
-    "Roadmap": [
-      "getting-started/roadmap"
-    ],
+    "Roadmap": "getting-started/roadmap",
     "Contribute": [
       "getting-started/contribute-code",
+      "getting-started/contribute-to-models",
       "getting-started/contribute-documentation",
-      "getting-started/contribute-to-models"
+      "getting-started/report-bug",
+      "getting-started/get-involved"
     ],
     "Collaborative Modeling Governance": [
       "getting-started/roles",
       "getting-started/review-process"
+    ],
+    "Legal": [
+    "getting-started/terms-of-service"
     ]
   }
 }
