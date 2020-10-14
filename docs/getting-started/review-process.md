@@ -1,6 +1,6 @@
 ---
 id: review-process
-title: Change review Process
+title: Change review process
 sidebar_label: Change review process
 ---
 
