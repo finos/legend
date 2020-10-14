@@ -81,7 +81,7 @@ The source code to Legend-PURE and Legend is available to the public and the pro
 ### [Running the Docs Site Locally on Your Machine](run-docs-site.md)
 
 ## 4. Contribute issues: identify bugs, suggest new features, and provide feedback on prioritization 
-### [Contribute issues](contribute-issues.md)
+### [Contribute issues](report-bug.md)
 
 # Legend Contribution and Governance Policies
 
