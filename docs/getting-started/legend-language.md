@@ -213,4 +213,4 @@ Mapping MyModelToModelMapping
 
 - [Released functions](released-functions.md)
 - [Upcoming functions](upcoming-functions.md)
-- [Exeuction](execution.md)
+- [Execute model-to-model mapping](execute-model-to-model-mapping.md)

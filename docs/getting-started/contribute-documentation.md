@@ -48,4 +48,4 @@ To learn more about Docusaurus, read the following resources:
 
 - [Contribute code](contribute-code.md)
 - [Report a bug](report-bug.md)
-- [Report to models](contribute-to-models.md)
+- [Contribute to models](contribute-to-models.md)
