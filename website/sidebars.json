@@ -13,7 +13,9 @@
       "getting-started/released-functions",
       "getting-started/upcoming-functions"
     ], 
-    "Roadmap": "getting-started/roadmap",
+    "Roadmap": [
+      "getting-started/roadmap"
+    ],
     "Contribute": [
       "getting-started/contribute-code",
       "getting-started/contribute-to-models",
