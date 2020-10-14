@@ -15,19 +15,12 @@
       "getting-started/released-functions",
       "getting-started/upcoming-functions"
     ],
-    "Roadmap": [
-      "getting-started/roadmap"
-    ],
     "Contribute": [
       "getting-started/contribute-code",
       "getting-started/contribute-to-models",
       "getting-started/contribute-documentation",
       "getting-started/report-bug",
       "getting-started/get-involved"
-    ],
-    "Collaborative Modeling Governance": [
-      "getting-started/roles",
-      "getting-started/review-process"
     ],
     "Legal": [
       "getting-started/terms-of-service"
