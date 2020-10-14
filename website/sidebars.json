@@ -1,6 +1,7 @@
 {
   "docs": {
     "Getting Started": [
+      "getting-started/installation-guide",
       "getting-started/create-workspace",
       "getting-started/create-model",
       "getting-started/create-diagram",
