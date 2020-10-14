@@ -1,7 +1,7 @@
 ---
 id: execute
 title: Execute model-to-model mapping
-sidebar_label: Execute
+sidebar_label: Execute model-to-model mapping
 ---
 
 Legend provides an execution feature to run queries, constraints, and model-to-model/model-to-database transformations. Use live data (pulled from physical data stores) or generated sample data as inputs to the executions and review the results to test your model as you build it.  
