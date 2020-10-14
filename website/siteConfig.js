@@ -71,7 +71,7 @@ const siteConfig = {
   cleanUrl: true,
 
   wrapPagesHTML: true,
-  docsSideNavCollapsible: false,
+  docsSideNavCollapsible: true,
 
   // TODO - Open Graph and Twitter card images.
   // ogImage: '../assets/todo-logo.png', /* change to program/project icon + wordmark logo */

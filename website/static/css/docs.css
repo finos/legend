@@ -192,6 +192,11 @@ FeatureCallout article iframe {
   color: var(--color-light-grey-400);
 }
 
+.onPageNav a:focus,
+.onPageNav a:hover {
+  color: var(--color-light-grey-300);
+}
+
 .toc-headings {
   border-left: none;
 }
@@ -241,6 +246,16 @@ pre code.hljs {
   padding: 2.5rem;
 }
 
+.toc .toggleNav ul li a:hover,
+.toc .toggleNav ul li a:focus {
+  color: var(--color-dark-grey-500);
+}
+
+.toc .toggleNav ul li.navListItemActive a:hover,
+.toc .toggleNav ul li.navListItemActive a:focus {
+  color: #ffa7c4;
+}
+
 @media only screen {
   .navBreadcrumb.wrapper > h2 {
     display: none; /* hide collapsed nav bar header because we only have 1 parent now which is Getting Started*/
@@ -262,14 +277,19 @@ pre code.hljs {
   }
 
   .toc .toggleNav .navGroup .navGroupCategoryTitle {
-    display: none;
+    text-transform: uppercase;
+    max-width: 25rem;
+    cursor: default;
+    user-select: none;
+    color: var(--color-light-grey-400);
+    display: inline-flex;
   }
 
   .navGroupSubcategoryTitle,
   .toc .toggleNav ul li a {
-    text-transform: uppercase;
     font-size: 1.5rem !important;
     font-family: "Roboto Condensed" !important;
+    user-select: none;
   }
 
   .navToggle .line1,
@@ -377,6 +397,18 @@ pre code.hljs {
   }
 }
 
+@media only screen and (max-width: 1023px) {
+  .toc .toggleNav .navGroup .navGroupCategoryTitle {
+    max-width: initial;
+    font-size: 1.4rem !important;
+    margin-bottom: 0.5rem;
+  }
+
+  .toc .toggleNav .navGroup {
+    margin-bottom: 1rem;
+  }
+}
+
 @media only screen and (min-width: 1024px) {
   .docsNavContainer {
     display: flex;
@@ -386,13 +418,15 @@ pre code.hljs {
     height: 100%;
     background: var(--color-sidebar-background);
     z-index: 2;
+    overflow-y: overlay;
+    overflow-x: hidden;
   }
 
   .docsNavContainer .toc {
     text-align: right;
     margin-right: 1.5rem;
     height: 100%;
-    padding-top: 2rem;
+    padding-top: 13rem;
   }
 
   .toc .toggleNav .navGroup .navListItem {
@@ -422,17 +456,23 @@ pre code.hljs {
   }
 
   .docsNavContainer .toc * {
-    text-transform: uppercase;
     font-size: 1.5rem !important;
     font-family: "Roboto Condensed" !important;
+    user-select: none;
   }
 
   .toc .navGroupCategoryTitle {
-    display: none; /* we should put this back when we have more complex hierarchy */
+    text-transform: uppercase;
+    max-width: 25rem;
+    cursor: default;
+    user-select: none;
+    color: var(--color-light-grey-400);
+    display: inline-flex;
+    font-family: "Roboto Condensed" !important;
   }
 
   .toc .navGroups {
-    padding: 0 1.5rem 5rem 1.5rem !important;
+    padding: 0 1.5rem 10rem 1.5rem !important;
   }
 
   .toc .toggleNav ul {
@@ -526,4 +566,13 @@ pre code.hljs {
 /* App scrollbar - Firefox */
 body {
   scrollbar-color: var(--color-dark-shade-100) transparent;
+}
+
+.collapsible .arrow {
+  display: inline-flex;
+  width: 2.4rem;
+  max-width: 2.4rem;
+  height: 2.4rem;
+  max-height: 2.4rem;
+  margin-top: -3px;
 }
