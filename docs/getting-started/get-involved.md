@@ -16,9 +16,3 @@ To get involved with Legend, subscribe to these lists:
 
 * Legend Updates from FINOS
   * [Subscribe at https://www.finos.org/legend](https://www.finos.org/legend)
-
-## More info
-
-- [Roles](roles.md)
-- [Change review process](review-process.md)
-- [Terms of service](terms-of-service.md)
