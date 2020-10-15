@@ -4,7 +4,15 @@ title: Contribute to Legend
 sidebar_label: Contribute to Legend
 ---
 
-This page lists the prerequisites and workflow for contributing to Legend.
+There are many ways to contribute to Legend and many of them don't involve writing any code. Here are a few ideas to get started:
+
+1. [Contribute code](contribute-code.md) to any of the Legend components by submitting a pull request.
+
+2. Start using Legend Studio to provide feedback, and contribute to, existing models. Request access to the modeling instance at https://www.finos.org/legend and go [through our Getting started guide](create-workspace.md). Does everything work as expected? If not, we're always looking for improvements. Let us know by [opening an issue](https://github.com/finos/legend/issues/new/choose).
+
+3. [Help build out the documentation](contribute.md#Contribute-documentation). If you find anything that's confusing or can be improved, submit a pull request. 
+
+4. [Contribute issues: identify bugs, suggest new features, and provide feedback on prioritization](contribute.md#contribute-issue). Look through the [open issues](https://github.com/finos/legend/issues?q=is%3Aissue+is%3Aopen+). Provide workarounds, ask for clarification, or suggest labels. If you find an issue you'd like to fix, [open a pull request](https://github.com/finos/legend/pulls). Start with issues tagged as **Good first issue**. Take a look at the features requested by others in the community and consider opening a pull request if you see something you want to work on.
 
 ## Prerequisites
 
@@ -115,7 +123,7 @@ In January 2020, FINOS launched a pilot with FINOS member organizations interest
 
 If you have suggestions or ideas for modeling use cases where Legend might be appropriate, we'd love to hear your ideas—send a note with your suggestion to the [Legend General List](mailto:legend@finos.org).
 
-## Report issue
+## Contribute issue
 
 View the prerequisites and steps to report an issue in GitHub.
 
