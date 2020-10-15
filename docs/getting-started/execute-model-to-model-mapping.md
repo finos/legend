@@ -23,5 +23,5 @@ You can save these tests and continue to enhance your data models with the comfo
 ## Next steps
 
 - [Review and commit changes](review-and-commit-changes.md)
+- [Legend language](released-functions.md)
 - [Released functions](released-functions.md)
-- [Upcoming functions](upcoming-functions.md)
