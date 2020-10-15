@@ -52,4 +52,4 @@ A workspace update may result in a conflict. Studio will open a new view to aid 
 
 - [Released functions](released-functions.md)
 - [Upcoming functions](upcoming-functions.md)
-- [Roadmap](roadmap.md)
+- [Contribute to Legend](contribute-to-legend.md)
