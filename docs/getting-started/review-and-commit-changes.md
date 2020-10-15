@@ -50,6 +50,6 @@ A workspace update may result in a conflict. Studio will open a new view to aid 
 
 ## Next steps
 
+- [Legend language](legend-language.md)
 - [Released functions](released-functions.md)
 - [Upcoming functions](upcoming-functions.md)
-- [Contribute to Legend](contribute-to-legend.md)
