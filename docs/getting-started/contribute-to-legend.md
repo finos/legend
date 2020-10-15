@@ -12,7 +12,7 @@ There are many ways to contribute to Legend and many of them don't involve writi
 
 3. [Help build out the documentation](contribute-to-legend.md#contribute-documentation). If you find anything that's confusing or can be improved, submit a pull request. 
 
-4. [Contribute issues: identify bugs, suggest new features, and provide feedback on prioritization](contribute-to-legend.md#contribute-issue). Look through the [open issues](https://github.com/finos/legend/issues?q=is%3Aissue+is%3Aopen+). Provide workarounds, ask for clarification, or suggest labels. If you find an issue you'd like to fix, [open a pull request](https://github.com/finos/legend/pulls). Start with issues tagged as **Good first issue**. Take a look at the features requested by others in the community and consider opening a pull request if you see something you want to work on.
+4. [Contribute issues: identify bugs, suggest new features, and provide feedback on prioritization](contribute-to-legend.md#contribute-issues). Look through the [open issues](https://github.com/finos/legend/issues?q=is%3Aissue+is%3Aopen+). Provide workarounds, ask for clarification, or suggest labels. If you find an issue you'd like to fix, [open a pull request](https://github.com/finos/legend/pulls). Start with issues tagged as **Good first issue**. Take a look at the features requested by others in the community and consider opening a pull request if you see something you want to work on.
 
 ## Prerequisites
 
@@ -139,7 +139,7 @@ To learn more about Docusaurus, read the following resources:
 
 **Note:** [The documentation build script](https://github.com/finos/legend/blob/master/build-site.sh) can be configued to pull in and include files from GitLab repositories housing modeling documentation into the GitHub pages/Docusaurus-powered site.
 
-## Contribute issue
+## Contribute issues
 
 View the prerequisites and steps to report an issue in GitHub.
 
