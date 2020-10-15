@@ -6,7 +6,7 @@ sidebar_label: Contribute to Legend
 
 There are many ways to contribute to Legend and many of them don't involve writing any code. Here are a few ideas to get started:
 
-1. [Contribute code](contribute-code.md) to any of the Legend components by submitting a pull request.
+1. [Contribute code](contribute-to-legend.md) to any of the Legend components by submitting a pull request.
 
 2. Start using Legend Studio to provide feedback, and contribute to, existing models. Request access to the modeling instance at https://www.finos.org/legend and go [through our Getting started guide](create-workspace.md). Does everything work as expected? If not, we're always looking for improvements. Let us know by [opening an issue](https://github.com/finos/legend/issues/new/choose).
 
