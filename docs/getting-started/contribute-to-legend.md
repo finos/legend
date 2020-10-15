@@ -16,9 +16,21 @@ There are many ways to contribute to Legend and many of them don't involve writi
 
 ## Prerequisites
 
-### GitHub ID
+To create and/or edit models in the Legend hosted instance or make code contributions, you need to have a GitHub Account. 
 
-Legend uses both GitLab and GitHub infrastructure but, consistent with the FINOS infrastructure strategy, uses GitHub accounts as the default for authentication. All committers to FINOS repos must have GitHub IDs.
+### GitHub account setup
+
+To configure your GitHub access:
+
+1. [Create an account on GitHub.com](https://help.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account).
+2. [Set up a Git client locally](https://help.github.com/en/github/getting-started-with-github/set-up-git).
+3. Ensure that the Git client is configured with your `<username>@users.github.com` email address (you can use the `git config --list | grep user.email` command). If you use a different email address, you may face one of the following issues:
+
+     a) Your corporate firewall blocks Git activity, unless you're signed in with an `@<your company domain>` email address.
+     b) GitHub forces you to set the email address as public, or it would reject push operations with the error `push declined due to email privacy restrictions`.
+     
+*Note:* Email help@finos.org if you encounter any issues while setting up your GitHub account.
+
 
 ### FINOS Contributor License Agreement (CLA)
 
@@ -103,10 +115,6 @@ To learn more about Docusaurus, read the following resources:
 
 ## Contribute to models
 
-Use models to define your data and describe how they relate to each other.
-
-### Create new models and edit existing models
-
 FINOS hosts a shared version of Legend Studio in the public cloud, which is available to prototype collaborative data modeling, at https://legend.finos.org/studio. If you'd like to access the existing models, **request access to the modeling instance** at [finos.org/legend](https://www.finos.org/legend).
 
 Once you've requested access to the modeling instance, you can get started and [create a model](create-model.md).
@@ -118,10 +126,6 @@ If you have suggestions or ideas for modeling use cases for which Legend may be 
 
 ### Background: The Legend Pilot - Shared Modeling in Legend (January - September 2020)
 In January 2020, FINOS launched a pilot with FINOS member organizations interested in evaluating Legend-PURE/Legend. Modeling occurred on the FINOS hosted, shared version of Legend Studio in the public cloud, which was used by FINOS members to collaborate on Legend Studio by building extensions to the [ISDA Common Domain Model (CDM)](https://www.isda.org/2018/11/22/isda-cdm-factsheet/). Modeling occurred in two workstreams: **FX Options** and **Commodities Reference Data**, which concluded their work in September 2020. We expect that further working groups may use Legend for data modeling in these and/or other areas after the first wave of code has been open sourced in October 2020.
-
-### Suggest modeling use cases
-
-If you have suggestions or ideas for modeling use cases where Legend might be appropriate, we'd love to hear your ideas—send a note with your suggestion to the [Legend General List](mailto:legend@finos.org).
 
 ## Contribute issue
 
