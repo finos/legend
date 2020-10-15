@@ -8,7 +8,7 @@ There are many ways to contribute to Legend and many of them don't involve writi
 
 1. [Contribute code](contribute-to-legend.md) to any of the Legend components by submitting a pull request.
 
-2. Start using Legend Studio to provide feedback, and contribute to, existing models. Request access to the modeling instance at https://www.finos.org/legend and go [through our Getting started guide](create-workspace.md). Does everything work as expected? If not, we're always looking for improvements. Let us know by [opening an issue](https://github.com/finos/legend/issues/new/choose).
+2. Start using Legend Studio to provide feedback, and contribute to, existing models. Request access to the modeling instance at https://www.finos.org/legend and go [through our Getting started guide](create-workspace.md). If you encounter an issue, let us know by [opening an issue](https://github.com/finos/legend/issues/new/choose).
 
 3. [Help build out the documentation](contribute.md#Contribute-documentation). If you find anything that's confusing or can be improved, submit a pull request. 
 
@@ -31,14 +31,24 @@ To configure your GitHub access:
      
 *Note:* Email help@finos.org if you encounter any issues while setting up your GitHub account.
 
+### FINOS Contributor License Agreement ("CLA")
 
-### FINOS Contributor License Agreement (CLA)
+A Contributor License Agreement ("CLA") is a document that specifies how a project is allowed to use your contribution; they are commonly used in many open source projects.
 
-A Contributor License Agreement (CLA) is a document that specifies how a project is allowed to use your contribution. They're commonly used in open source projects.
+_NOTE:_ Commits and pull requests to FINOS project repositories, including Legend, will only be accepted from those contributors with an active, executed Individual Contributor License Agreement (ICLA) with FINOS OR who are covered under an existing and active Corporate Contribution License Agreement (CCLA) executed with FINOS. See the [Contribute page on the FINOS Wiki for more information](https://finosfoundation.atlassian.net/wiki/spaces/FINOS/pages/83034172/Contribute). Commits from individuals not covered under an ICLA or CCLA will be flagged and blocked by the FINOS ["CLA Bot" tool](https://github.com/finos/cla-bot). Please note that some CCLAs require individuals/employees to be explicitly named on the CCLA. PRs submitted to the Legend project cannot be accepted until you have a CLA in place with the Foundation. CLAs are also required for modelers participating in the pilot.
 
-**Note:** Commits and pull requests to FINOS project repositories (including Legend) are only accepted from contributors with an active, executed Individual Contributor License Agreement (ICLA) with FINOS *or* who are covered under an existing and active Corporate Contribution License Agreement (CCLA) executed with FINOS. See the [Contribute page on the FINOS Wiki for more information](https://finosfoundation.atlassian.net/wiki/spaces/FINOS/pages/83034172/Contribute). Commits from individuals not covered under an ICLA or CCLA will be flagged and blocked by the FINOS [CLA Bot tool](https://github.com/finos/cla-bot). Some CCLAs require individuals/employees to be explicitly named on the CCLA. PRs submitted to the Legend project can't be accepted until you have a CLA in place with the Foundation. CLAs are also required for modelers participating in the pilot.
+_NOTE:_ **Even if you have signed and are covered by a CLA, the [CLA Bot](https://github.com/finos/cla-bot) may block your Pull Requests if your Git client is configured with an email address other than your `<username>@users.github.com` email address**. (you can use the `git config --list | grep user.email` command to see which email address your git client is configured with). If your git client is not correctly configured, the CLA bot will not be able to parse your GitHub details and identify you, which will block your Pull Request. In order to fix this issue, please follow the instructions below.
 
-Email [help@finos.org](mailto:help@finos.org?subject=CLA) if you need an ICLA or to see if you're covered under an existing CCLA.
+   1. Check your git client is configured with a user email `git config --list | grep email`
+   2. If the user email is missing, run the following command, substituting with your git commit email address `git config --global user.email email@example.com`
+   3. Make sure your git commit email is configured on GitHub by [Setting your Commit Email Address](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address)
+   4. Then, amend the authors in your commit history by using `git commit --amend` to change your last commit.
+
+   Alternatively, use the slightly more complex `git reset --soft` and `git rebase` to checkout your changes, rewrite the commit history locally and (force) push changes to the downstream branch.
+
+   If you have any issues with the steps above, please email help@finos.org so we can help you resolve before reviewing and accepting your pull request.
+
+Need an ICLA? Unsure if you are covered under an existing CCLA? Email [help@finos.org](mailto:help@finos.org?subject=CLA)
 
 ## Contribute code
 
