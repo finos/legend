@@ -92,10 +92,12 @@ Once you've requested access to the modeling instance, you can get started and [
 
 If you have questions or encounter any issues, raise an issue at https://github.com/finos/legend/issues.
 
-### Suggest Modeling Use Cases
+### Suggest modeling use cases
+
 If you have suggestions or ideas for modeling use cases for which Legend may be appropriate, we'd love to hear your ideas -- send a note with your suggestion to the [Legend General List](legend@finos.org).
 
-### Background: The Legend Pilot - Shared Modeling in Legend (January - September 2020)
+### Background: The Legend Pilot—Shared modeling in Legend (January - September 2020)
+
 In January 2020, FINOS launched a pilot with FINOS member organizations interested in evaluating Legend-PURE/Legend. Modeling occurred on the FINOS hosted, shared version of Legend Studio in the public cloud, which was used by FINOS members to collaborate on Legend Studio by building extensions to the [ISDA Common Domain Model (CDM)](https://www.isda.org/2018/11/22/isda-cdm-factsheet/). Modeling occurred in two workstreams: **FX Options** and **Commodities Reference Data**, which concluded their work in September 2020. We expect that further working groups may use Legend for data modeling in these and/or other areas after the first wave of code has been open sourced in October 2020.
 
 ## Contribute documentation
@@ -157,5 +159,5 @@ View the prerequisites and steps to report an issue in GitHub.
 ## More info
 
 - [Get involved](get-involved.md)
-- [Legend language](legend-language.md)
-- [Terms of service](terms-of-service.md)
+- [Installation guide](installation-guide.md)
+- [Create a workspace](create-workspace.md)
