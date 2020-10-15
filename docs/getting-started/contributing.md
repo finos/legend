@@ -1,129 +1,89 @@
-# Contributing to Alloy
+# Contributing to Legend
 
-## Ways of Contributing 
-### Participate in the Pilot
-In Q1 2020 (i.e., now) FINOS is conducting a pilot with member organizations interested in evaluating PURE/Alloy. For more information about the pilot and how to generally get involved with Alloy see the [Alloy page on finos.org](https://www.finos.org/alloy).
+#### *Are you using Legend? Are you planning to deploy, or have you already deployed your own internal instance of Legend?*
+If you already use, or are planning to use Legend at an individual or corporate level, we would like to hear from you: just email the [Legend General List](legend@finos.org) with details about how you are using it. 
 
-#### Shared Modeling in Alloy
-During the pilot, modelers will collaborate using Alloy to build shared models. Examples of the types of models that might be modeled during the pilot include:
-* FX options
-* RFQ
-* ESG Data
+# Get Started
+There are many ways to contribute to Legend, and many of them do not involve writing any code. Here are a few ideas to get started:
 
-### Suggest Modeling Use Cases
-If you have suggestions or ideas for modeling use cases for which Alloy may be appropriate, we'd love to hear your ideas -- send a note with your suggestion to the [Alloy General List](alloy@finos.org).
+1. Start using Legend Studio to provide feedback, and contribute to, existing models. Request access to the modeling instance at https://www.finos.org/legend and go through the [Getting Started](https://legend.finos.org/docs/getting-started/studio#getting-started) guide. Does everything work as expected? If not, we're always looking for improvements. Let us know by [opening an issue](https://github.com/finos/legend/issues/new/choose)
 
-### Help Build the Documentation
-#### Suggest Topics
-Suggesting topics you think should be included in this documentation site is a great, easy way to get involved with Alloy. A good way of a suggesting a topic for the docs site is by [opening an issue in our Github repo](https://github.com/finos/purealloy/issues/new/choose). Ideas are also welcome via the [Alloy General List](alloy@finos.org).
+2. [Contribute code](contribute-code.md)
 
-#### Make Suggested Edits and Adds in the Documentation Site
-We welcome your help building out the documentation site. The process to make changes to the documentation site is the same as that which is described in the ["Making Code (Including Documentation) Changes" section](CONTRIBUTING.md#making-code-including-documentation-changes).
+3. [Help build out the documentation](contribute-documentation.md). Read through the [Legend documentation site](https://legend.finos.org/docs). If you find anything that is confusing or can be improved, submit a Pull Request. 
 
-### Propose Changes (Make Pull Requests) to Underlying PURE and Alloy Code (Phase 2)
-In phase 2, once the underlying code to PURE and Alloy have been open sourced into FINOS and source code made available to the public, the project will welcome pull requests to these code bases. 
+4. [Contribute issues: identify bugs, suggest new features, and provide feedback on prioritization](contribute-issues). Look through the [open issues](https://github.com/finos/legend/issues?q=is%3Aissue+is%3Aopen+). Provide workarounds, ask for clarification, or suggest labels. If you find an issue you would like to fix, [open a pull request](https://github.com/finos/legend/pulls). Issues tagged as Good first issue are a good place to get started. Take a look at the features requested by others in the community and consider opening a pull request if you see something you want to work on.
+## Prerequisites 
+If you would like to create and/or edit models in the Legend hosted instance or make Code contributions, you will need to have a GitHub Account. 
+#### GitHub Account Setup
+In order to configure your GitHub access, you will need to:
 
-## Making Code (Including Documentation) Changes
-### Prerequisites
-#### Github ID
-Alloy makes use of both GitLab and GitHub infrastructure but, consistent with the FINOS infrastructure strategy, uses GitHub accounts as its default for authentication. All committers to FINOS repos, including pilot phase modelers, must have GitHub IDs.
+1. [Create an account on GitHub.com](https://help.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account)
+2. [Set up a Git client locally](https://help.github.com/en/github/getting-started-with-github/set-up-git)
+3. Ensure that the Git client is configured with your `<username>@users.github.com` email address (you can do so using the `git config --list | grep user.email` command). If you use a different email address, you may face one of the following issues:
+
+     a) Your corporate firewall blocks Git activity, unless you are signed in with an `@<your company domain>` email address
+ 
+     b) GitHub forces you to set the email address as public, or it would reject push operations with the error `push declined due to email privacy restrictions`.
+     
+_Please email help@finos.org if you encounter any issues while setting up your GitHub account. The FINOS staff will be happy to assist you._
 
 #### FINOS Contributor License Agreement ("CLA")
 A Contributor License Agreement ("CLA") is a document that specifies how a project is allowed to use your contribution; they are commonly used in many open source projects.
 
-_NOTE:_ Commits and pull requests to FINOS project repositories, including Alloy, will only be accepted from those contributors with an active, executed Individual Contributor License Agreement (ICLA) with FINOS OR who are covered under an existing and active Corporate Contribution License Agreement (CCLA) executed with FINOS. See the [Contribute page on the FINOS Wiki for more information](https://finosfoundation.atlassian.net/wiki/spaces/FINOS/pages/83034172/Contribute). Commits from individuals not covered under an ICLA or CCLA will be flagged and blocked by the FINOS ["CLA Bot" tool](https://github.com/finos/cla-bot). Please note that some CCLAs require individuals/employees to be explicitly named on the CCLA. PRs submitted to the purealloy project cannot be accepted until you have a CLA in place with the Foundation. CLAs are also required for modelers participating in the pilot. 
+_NOTE:_ Commits and pull requests to FINOS project repositories, including Legend, will only be accepted from those contributors with an active, executed Individual Contributor License Agreement (ICLA) with FINOS OR who are covered under an existing and active Corporate Contribution License Agreement (CCLA) executed with FINOS. See the [Contribute page on the FINOS Wiki for more information](https://finosfoundation.atlassian.net/wiki/spaces/FINOS/pages/83034172/Contribute). Commits from individuals not covered under an ICLA or CCLA will be flagged and blocked by the FINOS ["CLA Bot" tool](https://github.com/finos/cla-bot). Please note that some CCLAs require individuals/employees to be explicitly named on the CCLA. PRs submitted to the Legend project cannot be accepted until you have a CLA in place with the Foundation. CLAs are also required for modelers participating in the pilot.
 
-* Need an ICLA? Unsure if you are covered under an existing CCLA? Email [help@finos.org](mailto:help@finos.org?subject=CLA)
+_NOTE:_ **Even if you have signed and are covered by a CLA, the [CLA Bot](https://github.com/finos/cla-bot) may block your Pull Requests if your Git client is configured with an email address other than your `<username>@users.github.com` email address**. (you can use the `git config --list | grep user.email` command to see which email address your git client is configured with). If your git client is not correctly configured, the CLA bot will not be able to parse your GitHub details and identify you, which will block your Pull Request. In order to fix this issue, please follow the instructions below.
 
-### Overall Code Contribution Workflow
+   1. Check your git client is configured with a user email `git config --list | grep email`
+   2. If the user email is missing, run the following command, substituting with your git commit email address `git config --global user.email email@example.com`
+   3. Make sure your git commit email is configured on GitHub by [Setting your Commit Email Address](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address)
+   4. Then, amend the authors in your commit history by using `git commit --amend` to change your last commit.
 
-1. Read our [contribution guidelines](.github/CONTRIBUTING.md) and [Community Code of Conduct](https://www.finos.org/code-of-conduct)
-2. Fork the Alloy repository (<https://github.com/finos/purealloy/fork>)
-3. Create your feature branch (`git checkout -b feature/fooBar`)
-4. Make and test locally your changes
-5. Add your changes (`git add <filename containing fooBar change>`)
-4. Commit your changes (`git commit -m 'Add some fooBar'`)
-5. Push to the branch (`git push origin feature/fooBar`)
-6. Optional but Recommeded: Do a build in/from your fork; further evaluate and test
-7. If all looks good, propose a pull request into the [FINOS PURE/Alloy GitHub Repo](https://github.com/finos/purealloy/pull/new/master) from your fork.
+   Alternatively, use the slightly more complex `git reset --soft` and `git rebase` to checkout your changes, rewrite the commit history locally and (force) push changes to the downstream branch.
 
-#### Proposing and Submitting Pull Requests (Code & Docs)
-To make review of PRs easier, please:
+   If you have any issues with the steps above, please email help@finos.org so we can help you resolve before reviewing and accepting your pull request.
 
- * Please make sure your PRs will merge cleanly - PRs that don't are unlikely to be accepted.
- * For code contributions, follow the existing code layout.
- * For documentation contributions, follow the general structure, language, and tone of the [existing docs](https://github.com/finos/purealloy/wiki).
- * Keep commits small and cohesive - if you have multiple contributions, please submit them as independent commits (and ideally as independent PRs too).
- * Reference issue #s if your PR has anything to do with an issue (even if it doesn't address it).
- * Minimise non-functional changes (e.g. whitespace).
- * Ensure all new files include a header comment block containing the [Apache License v2.0 and your copyright information](http://www.apache.org/licenses/LICENSE-2.0#apply).
- * If necessary (e.g. due to 3rd party dependency licensing requirements), update the [NOTICE file](https://github.com/finos/purealloy/blob/master/NOTICE) with any new attribution or other notices
+Need an ICLA? Unsure if you are covered under an existing CCLA? Email [help@finos.org](mailto:help@finos.org?subject=CLA)
 
+## 1. Create New Models and Edit Existing Models
+### Introduction
+FINOS hosts a shared version of Legend Studio in the public cloud, which is available to prototype collaborative data modeling, at https://legend.finos.org/studio. If you would like to access the existing models, please **request access to the modeling instance** at [finos.org/legend](https://www.finos.org/legend).
 
-#### Commit and PR Messages
-* **Reference issues, wiki pages, and pull requests liberally!**
-* Use the present tense ("Add feature" not "Added feature")
-* Use the imperative mood ("Move button left..." not "Moves button left...")
-* Limit the first line to 72 characters or less
+Once you have requested access to the modeling instance, follow the instructions in the [Legend Documentation Site](https://legend.finos.org/docs/getting-started/studio#create-a-model) to get started and create a new model or edit existing ones. 
+If you have questions or encounter any issues, please raise an issue at https://github.com/finos/legend/issues.
 
+### [Installation Guide](installation-guide.md)
+### [Create a workspace](create-workspace.md)
+### [Create a model](create-model.md)
+### [Create a diagram](create-diagram.md)
+### [Edit a model](edit-model.md)
+### [Create model to model mapping](create-model-to-model-mapping.md)
+### [Execute model to model mapping](xecute-model-to-model-mapping.md)
+### [Review and commit changes](review-and-commit-changes.md)
 
-### Running the Docs Site Locally on Your Machine
-In order to make edits to the website itself, you'll probably want to run the website locally, you must have:
-- A Git client installed, to checkout the code from github.com/finos/purealloy (`master` branch); note that the `git` command must be available via command-line, as it's needed to run the `build-site.sh` script
-- [Yarn installed](https://yarnpkg.com/lang/en/docs/install)
+### Suggest Modeling Use Cases
+If you have suggestions or ideas for modeling use cases for which Legend may be appropriate, we'd love to hear your ideas -- send a note with your suggestion to the [Legend General List](legend@finos.org).
 
-```
-git clone git@github.com:<yourfork>/purealloy.git
-git checkout -b feature/myProposedDocChanges
-cd purealloy ; ./build-site.sh
-cd website ; yarn start
-```
-This will automatically open a browser, pointing to http://localhost:3000, where the website will be staged; file changes will be live rendered, which speeds up the editorial workflow. 
+### Background: The Legend Pilot - Shared Modeling in Legend (January - September 2020)
+In January 2020, FINOS launched a pilot with FINOS member organizations interested in evaluating Legend-PURE/Legend. Modeling occurred on the FINOS hosted, shared version of Legend Studio in the public cloud, which was used by FINOS members to collaborate on Legend Studio by building extensions to the [ISDA Common Domain Model (CDM)](https://www.isda.org/2018/11/22/isda-cdm-factsheet/). Modeling occurred in two workstreams: **FX Options** and **Commodities Reference Data**, which concluded their work in September 2020. We expect that further working groups may use Legend for data modeling in these and/or other areas after the first wave of code has been open sourced in October 2020.
 
-Note: The `build-site.sh` script will pull content from other Git repositories, mapping the `docs` folder into `modules/<repository-name>`; for example, all files and folders under https://gitlab.com/finosfoundation/purealloy-modeling-samples/tree/master/docs are available under the `/models/purealloy-modeling-samples` URL suffix.
+## 2. Contribute Code 
+### Propose Changes (Make Pull Requests) to Underlying Legend-PURE and Legend Code
+The source code to Legend-PURE and Legend is available to the public and the project welcomes pull requests to these code bases.
+### [Overall Code Contribution Workflow](contribute-code.md)
+### [Legend Language](legend-language.md)
+### [Released Functions](released-functions.md)
+### [Upcoming Functions](upcoming-functions.md)
 
-Once you are satisfied with your documentation changes, commit and propse them in line with the general process described above. Specifically for documentation edits, it might look like:
-* Commit your changes `git commit -am '<short description of what docs you changed/added>'`
-* Push to the branch to your forked repo on GitHub `git push origin myProposedDocChanges`
-* Review and test your changes in your fork
-* If you're happy with the documentation changes, propose a pull request into the [FINOS PURE/Alloy GitHub Repo](github.com/finos/purealloy) from your fork.
+## 3. Build out documentation 
+### [Contribute Documentation](contribute-documentation.md)
+### [Running the Docs Site Locally on Your Machine](run-docs-site.md)
 
-To learn more about Docusaurus see
-* https://github.com/finos/purealloy/tree/master/website
-* https://finosfoundation.atlassian.net/wiki/spaces/FDX/pages/844759075/Using+Docusaurus+recommended 
-* https://docusaurus.io
+## 4. Contribute issues: identify bugs, suggest new features, and provide feedback on prioritization 
+### [Contribute issues](report-bug.md)
 
-*Note* [The documentation build script](https://github.com/finos/purealloy/blob/master/build-site.sh) can be configued to pull in and include files from GitLab.com repositories housing modeling documentation into the GitHub pages / Docusaurus powered site.
-
-
-## Contributing Issues
-### Prerequisites
-
-* [ ] Have you [searched for duplicates](https://github.com/finos/purealloy/issues?utf8=%E2%9C%93&q=)?  A simple search for exception error messages or a summary of the unexpected behaviour should suffice.
-* [ ] Are you running the latest version?
-* [ ] Are you sure this is a bug or missing capability?
-
-### Raising an Issue
-* Create your issue [here](https://github.com/finos/purealloy/issues/new).
-* New issues contain two templates in the description: bug report and enhancement request. Please pick the most appropriate for your issue, **then delete the other**.
-  * Please also tag the new issue with either "Bug" or "Enhancement".
-* Please use [Markdown formatting](https://help.github.com/categories/writing-on-github/)
-liberally to assist in readability.
-  * [Code fences](https://help.github.com/articles/creating-and-highlighting-code-blocks/) for exception stack traces and log entries, for example, massively improve readability.
-
-## On-line Collaboration
-* [Alloy General List](https://groups.google.com/a/finos.org/forum/#!forum/alloy)
-    * Subscribe w/ email to [alloy+subscribe@finos.org](alloy+subscribe@finos.org)
-    * Post with email to [alloy@finos.org](alloy+subscribe@finos.org)
-
-* Github / Gitlab Issues & Kanban
-    * Github Issues (https://github.com/finos/purealloy/issues)
-    * Github Kanban(https://github.com/orgs/finos/projects/5)
-
-* Alloy Updates from FINOS
-    * [Subscribe at https://www.finos.org/alloy](https://www.finos.org/alloy)
-
-## Governance
+# Legend Contribution and Governance Policies
 
 ### Roles
 
