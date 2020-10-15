@@ -427,6 +427,7 @@ pre code.hljs {
     margin-right: 1.5rem;
     height: 100%;
     padding-top: 13rem;
+    width: 25rem;
   }
 
   .toc .toggleNav .navGroup .navListItem {
@@ -574,5 +575,6 @@ body {
   max-width: 2.4rem;
   height: 2.4rem;
   max-height: 2.4rem;
-  margin-top: -3px;
+  margin-top: -0.3rem;
+  margin-right: -0.3rem;
 }

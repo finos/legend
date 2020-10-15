@@ -9,6 +9,10 @@
   font-family: "Roboto Condensed";
 }
 
+.home-page__highlight {
+  color: var(--color-primary-0);
+}
+
 .home-page__header {
   background: var(--color-doc-background);
   height: 5rem;
