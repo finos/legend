@@ -4,6 +4,8 @@ title: Get involved
 sidebar_label: Get involved
 ---
 
+To get involved with Legend, subscribe to these lists:
+
 * [Legend General List](https://groups.google.com/a/finos.org/forum/#!forum/legend)
   * Subscribe w/ email to [legend+subscribe@finos.org](legend+subscribe@finos.org)
   * Post with email to [legend@finos.org](legend+subscribe@finos.org)
