@@ -42,7 +42,7 @@ jobs:
         REPO_ORG=${REPO%"/"*}
         if [ "$REPO_ORG" != "finos" ]
         then echo "Repo organization is '$REPO_ORG', patching docusaurus configuration to work on a forked repo" ; curl ${{ env.PATCH_SCRIPT_URL }} |  bash -s -- ${{ env.REPO_NAME }} $REPO_ORG
-        else echo "Skipping patching, as this is the FINOS Organization"
+        else echo "Skipping patching, as this is the finos user on github"
         fi
     - name: Build Website
       run: |
@@ -52,9 +52,9 @@ jobs:
         # Extract GitHub org/user
         REPO="${{ github.repository }}"
         GIT_USERNAME=${REPO%/*}
-        # Set git user to finos-admin, if it's a push to a finos repo
+        # Set git user to finos, if it's a push to a finos repo
         if [ "$GIT_USERNAME" == "finos" ] && [ "${{github.event_name }}" == "push" ]
-        then GIT_USERNAME="finos-admin"
+        then GIT_USERNAME="finos"
         elif [ "$GIT_USERNAME" == "finos" ] && [ "${{github.event_name }}" == "pull_request" ]
         then echo "Skipping publishing, as it's coming from a PR"; exit 0
         fi

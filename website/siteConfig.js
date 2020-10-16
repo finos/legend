@@ -15,18 +15,18 @@
 const alloyHighlighter = require('./alloyHighlighter');
 
 const siteConfig = {
-  title: 'alloy', // Title for your website. THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
+  title: 'Legend', // Title for your website. THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
   tagline: 'Language and visual platform to generate models for the financial services industry', //THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
-  cname: 'alloy.finos.org',
+  cname: 'legend.finos.org',
   gaTrackingId: 'UA-89349362-7',
-  url: 'https://alloy.finos.org/',
+  url: 'https://legend.finos.org',
   baseUrl: '/',
   // For publishing to GitHub pages
-  projectName: 'alloy',
+  projectName: 'legend',
   organizationName: 'finos',
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { doc: 'getting-started/studio', label: 'Docs' }
+    // { doc: 'getting-started/studio', label: 'Docs' }
     //    { doc: 'contribute', label: 'Contribute' }
     //    { href: "https://github.com/finos/purealloy/", label: "GitHub", external: true }
   ],
@@ -37,7 +37,7 @@ const siteConfig = {
   // users,
 
   // footerIcon: 'img/todo.svg',  /* change to program/project icon + wordmark logo */
-  headerIcon: 'img/alloy.svg',
+  headerIcon: 'img/legend.svg',
   favicon: 'img/favicon/favicon.ico',  /* change to program/project favicon logo .ico */
 
   /* Colors for website */
@@ -47,19 +47,19 @@ const siteConfig = {
   },
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} PURE/Alloy`,  /* CHANGE THIS TO PROJECT / PROGRAM NAME */
+  copyright: `Copyright © ${new Date().getFullYear()} Legend`,  /* CHANGE THIS TO PROJECT / PROGRAM NAME */
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
     // theme: 'atom-one-dark',
     theme: 'tomorrow-night-blue',
     hljs: function(hljsEngine) {
-       hljsEngine.registerLanguage('alloy', alloyHighlighter);
+       hljsEngine.registerLanguage('legend', alloyHighlighter);
     },
   },
 
   stylesheets: [
-    "https://fonts.googleapis.com/css?family=Merriweather:400,500,700,900|Roboto+Condensed:400,500,700,900|Source+Code+Pro:400,500,700,900&display=swap",
+    "https://fonts.googleapis.com/css?family=Roboto+Condensed:400,500,700,900|Source+Code+Pro:400,500,700,900&display=swap",
   ],
 
   // Add custom scripts here that would be placed in <script> tags.
@@ -71,11 +71,11 @@ const siteConfig = {
   cleanUrl: true,
 
   wrapPagesHTML: true,
-  docsSideNavCollapsible: false,
+  docsSideNavCollapsible: true,
 
   // TODO - Open Graph and Twitter card images.
-  // ogImage: 'assets/todo-logo.png', /* change to program/project icon + wordmark logo */
-  // twitterImage: 'assets/todo-logo.png', /* change to program/project icon + wordmark logo */
+  // ogImage: '../assets/todo-logo.png', /* change to program/project icon + wordmark logo */
+  // twitterImage: '../assets/todo-logo.png', /* change to program/project icon + wordmark logo */
 
   // Show documentation's last contributor's name.
   // enableUpdateBy: true,
@@ -85,7 +85,7 @@ const siteConfig = {
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-  repoUrl: 'https://github.com/finos-admin/purealloy'
+  repoUrl: 'https://github.com/finos/legend'
 };
 
 module.exports = siteConfig;

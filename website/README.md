@@ -210,7 +210,7 @@ Change "background-color" to your Project's main color (PURE/Alloy is #0033A0)
 
 5. Change the section header titles by changing the website/static/css/custom.css file. Change the h2 tags for .featureShowcaseSection h2 and .productShowcaseSection h2 to your Project's color (PURE/Alloy is #0033A0).
 
-6. Interior Introduction Page - Change logo by on this page (example for PURE/Alloy: docs/user-guide.md) by changing the "(assets/purealloy-logo.png)" to the new logo name.
+6. Interior Introduction Page - Change logo by on this page (example for PURE/Alloy: docs/user-guide.md) by changing the "(../assets/purealloy-logo.png)" to the new logo name.
 
 Note: make sure that you add your new logo to the docs/assets folder first - this is a separate image repository from the "website" part.
 

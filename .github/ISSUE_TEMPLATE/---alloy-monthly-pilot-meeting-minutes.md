@@ -1,7 +1,7 @@
 ---
-name: "\U0001F91D Alloy Monthly Pilot Meeting Minutes"
-about: To track the meeting agenda and attendance for the Alloy Monthly Pilot Meeting
-title: MMM DD YYYY Alloy Monthly Pilot Meeting
+name: "\U0001F91D Legend Monthly Pilot Meeting Minutes"
+about: To track the meeting agenda and attendance for the Legend Monthly Pilot Meeting
+title: MMM DD YYYY Legend Monthly Pilot Meeting
 labels: Biweekly Pilot Meeting, meeting
 assignees: ''
 

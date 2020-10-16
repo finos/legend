@@ -29,7 +29,7 @@ button[disabled] {
 
 html {
   box-sizing: border-box !important;
-  font-family: "Merriweather", sans-serif !important;
+  font-family: "Roboto Condensed", sans-serif !important;
   font-size: 62.5% !important;
   background: var(--color-header-background);
 }
@@ -79,7 +79,7 @@ table {
 
 li,
 p {
-  font-family: "Merriweather" !important;
+  font-family: "Roboto Condensed" !important;
   font-size: 1.6rem;
   line-height: 1.75;
 }
@@ -89,7 +89,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Merriweather" !important;
+  font-family: "Roboto Condensed" !important;
 }
 
 code {

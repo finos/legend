@@ -1,8 +1,8 @@
 ---
-name: "\U0001F91D Alloy FX Options WG Meeting Minutes"
-about: To track the meeting agenda and attendance for the Alloy FX Options Working
+name: "\U0001F91D Legend FX Options WG Meeting Minutes"
+about: To track the meeting agenda and attendance for the Legend FX Options Working
   Group
-title: MMM DD YYYY Alloy FX Options WG Meeting
+title: MMM DD YYYY Legend FX Options WG Meeting
 labels: FX Options WG, meeting
 assignees: ''
 

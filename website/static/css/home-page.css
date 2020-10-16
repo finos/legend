@@ -6,11 +6,15 @@
 }
 
 .home-page * {
-  font-family: "Merriweather";
+  font-family: "Roboto Condensed";
+}
+
+.home-page__highlight {
+  color: var(--color-primary-0);
 }
 
 .home-page__header {
-  background: var(--color-dark-grey-50);
+  background: var(--color-doc-background);
   height: 5rem;
   display: flex;
   align-items: center;
@@ -18,15 +22,7 @@
   width: 100%;
   top: 0;
   margin: 0;
-  opacity: 0;
   z-index: 10;
-  transition: opacity 0.6s ease;
-  pointer-events: none;
-}
-
-.home-page__header--visible {
-  pointer-events: initial;
-  opacity: 1 !important;
 }
 
 .home-page__header__container {
@@ -50,6 +46,10 @@
   opacity: 1 !important;
 }
 
+.home-page__header--visible {
+  background: var(--color-dark-grey-50) !important;
+}
+
 .home-page__header__title__home-btn {
   display: flex;
 }
@@ -69,10 +69,11 @@
 
 .home-page__header__nav__item__link-btn {
   color: var(--color-light-grey-300);
-  font-family: "Merriweather";
+  font-family: "Roboto Condensed";
   font-size: 1.6rem;
   line-height: 1.2;
   padding: 0 1rem;
+  text-decoration: none;
 }
 
 .home-page__header__nav__item__link-btn:hover {
@@ -102,6 +103,10 @@
   justify-content: center;
 }
 
+.home-page__content__brand .home-page__content__container {
+  padding: 0 10rem 10rem 10rem;
+}
+
 .home-page__content__brand__green-pad {
   position: absolute;
   height: 60vh;
@@ -129,24 +134,45 @@
   background: transparent;
 }
 
+.home-page__down-arrow {
+  position: absolute;
+  height: 5vh;
+  width: 5vw;
+  bottom: 10vh;
+  left: 45vw;
+  fill: var(--color-dark-grey-200);
+  animation: arrow-bounce 0.5s alternate ease infinite;
+}
+
+@keyframes arrow-bounce {
+  from {
+    transform: translateY(0.3rem);
+  }
+  to {
+    transform: translateY(-0.3rem);
+  }
+}
+
 .home-page__logo {
   height: 60%;
 }
 
-.home-page__logo__A {
+.home-page__logo .logo-st0 {
   transition: 0.7s fill ease;
   fill: #4a7478;
 }
 
-.home-page__logo__L1 {
+.home-page__logo .logo-st1 {
   fill: #454449;
 }
 
-.home-page__logo__L2 {
+.home-page__logo .logo-st2 {
+  transition: 2s fill ease;
   fill: #3e3a3b;
 }
 
-.home-page__logo__O {
+.home-page__logo .logo-st3 {
+  transition: 0.7s fill ease;
   fill: #5c5858;
 }
 
@@ -158,25 +184,46 @@
   + div
   + div
   + .home-page__logo
-  .home-page__logo__A {
+  .logo-st3 {
   fill: #6a784a;
+}
+
+.home-page__content__brand__green-pad:hover
+  + div
+  + div
+  + .home-page__logo
+  .logo-st2 {
+  fill: #704662;
 }
 
 .home-page__content__brand__purple-pad:hover
   + div
   + .home-page__logo
-  .home-page__logo__A {
+  .logo-st3 {
   fill: #704662;
 }
 
-.home-page__content__brand__yellow-pad:hover
+.home-page__content__brand__purple-pad:hover
+  + div
   + .home-page__logo
-  .home-page__logo__A {
+  .logo-st2 {
   fill: #78694a;
 }
 
-.home-page__content__brand:hover .home-page__logo__A {
-  fill: #784a4a;
+.home-page__content__brand__yellow-pad:hover + .home-page__logo .logo-st3 {
+  fill: #78694a;
+}
+
+.home-page__content__brand__yellow-pad:hover + .home-page__logo .logo-st2 {
+  fill: #6a784a;
+}
+
+.home-page__content__brand:hover .logo-st3 {
+  fill: #5c5858;
+}
+
+.home-page__content__brand:hover .logo-st2 {
+  fill: #3e3a3b;
 }
 
 .home-page__content__whatis {
@@ -198,7 +245,7 @@
 
 .home-page__content__whatis__title__pre {
   font-size: 11rem;
-  font-family: "Merriweather";
+  font-family: "Roboto Condensed";
   line-height: 1;
 }
 
@@ -257,7 +304,7 @@
   background: var(--color-light-grey-200);
   border-radius: 0.5rem;
   top: 19rem;
-  left: 28rem;
+  left: 27.5rem;;
   animation: text-cursor-flicker 1.2s ease infinite;
 }
 
@@ -279,6 +326,11 @@
   font-size: 6.1rem;
   font-family: "Source Code Pro";
   line-height: 0.9;
+}
+
+.home-page__content__tool--cube {
+  margin-left: 0.3rem;
+  line-height: 1.1;
 }
 
 .home-page__content__tool span {
@@ -334,12 +386,24 @@
 }
 
 .home-page__content__timeline {
-  height: 95rem;
+  height: 105rem;
+}
+
+.completed-item {
+  font-size: 1.1rem;
+  text-transform: lowercase;
+  margin-left: 0.5rem;
+  background: var(--color-dark-grey-300);
+  border-radius: 0.3rem;
+  padding: 0.2rem 0.5rem;
+  color: var(--color-light-grey-400);
+  font-weight: 600;
+  cursor: default;
+  user-select: none;
 }
 
 .home-page__content__timeline__diagram {
   margin-top: 3rem;
-  width: 80%;
 }
 
 .home-page__content__timeline .home-page__content__container {
@@ -347,11 +411,17 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding-top: 6rem;
+  padding-bottom: 7rem;
 }
 
 .home-page__footer {
   height: 16rem;
   background: var(--color-footer-background);
+}
+
+.home-page__footer .finosBanner {
+  padding-bottom: 5rem;
 }
 
 @media only screen and (max-width: 1199px) {
