@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define which models to embed in the site
-export ALLOY_MODELS="purealloy-modeling purealloy-modeling-samples"
+export LEGEND_MODELS="legend-modeling legend-modeling-samples"
 
 # Where the model MD files will be checked out
 export DOCS_FOLDER=${PWD}/docs/models
@@ -9,12 +9,12 @@ export DOCS_FOLDER=${PWD}/docs/models
 # Import docs from modeling projects in gitlab.com/finos-foundation
 cd /tmp
 mkdir -p ${DOCS_FOLDER}
-for ALLOY_MODEL in ${ALLOY_MODELS}
+for LEGEND_MODEL in ${LEGEND_MODELS}
 do
-    rm -rf ${ALLOY_MODEL}
-    git clone https://gitlab.com/finosfoundation/${ALLOY_MODEL}.git
-    mkdir -p ${DOCS_FOLDER}/${ALLOY_MODEL}
-    cp -Rf ${ALLOY_MODEL}/docs/* ${DOCS_FOLDER}/${ALLOY_MODEL}
+    rm -rf ${LEGEND_MODEL}
+    git clone https://gitlab.com/finosfoundation/${LEGEND_MODEL}.git
+    mkdir -p ${DOCS_FOLDER}/${LEGEND_MODEL}
+    cp -Rf ${LEGEND_MODEL}/docs/* ${DOCS_FOLDER}/${LEGEND_MODEL}
 done
 cd -
 
