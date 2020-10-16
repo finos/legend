@@ -1,14 +1,14 @@
 [![Build Status](https://travis-ci.org/finos/alloy.svg?branch=master)](https://travis-ci.org/finos/alloy)
 [![FINOS - Incubating](https://cdn.jsdelivr.net/gh/finos/contrib-toolbox@master/images/badge-forming.svg)](https://finosfoundation.atlassian.net/wiki/spaces/FINOS/pages/75530756/Project+Lifecycle)
 
-# Alloy
+# Legend Background
 On November 20, 2019, at FINOS' flagship conference, the [Open Source Strategy](https://opensourcestrategyforum.org/) Forum, FINOS Platinum member [Goldman Sachs](https://developer.gs.com/docs/products/) announced [its intention](https://www.finos.org/press/goldman-announces-pure-alloy-contribution) to open source two closely related products into FINOS:
 * its internal logical modeling language, internally named "PURE"
 * a suite and workbenck of tools, including a visual modeling platform, internally named "Alloy".
 
 Together this language and platform are now named "LEGEND". 
 
-# [Open Sourcing Roadmap](.github/ROADMAP.md)
+# Roadmap
 * Phase 0 (October 2019 - January 2020) - COMPLETED:
   * Deployed an external instance of Alloy to AWS for Phase 1 shared modeling
   * Announced the intention to open source PURE/Alloy (now named Legend) at the [Open Source Strategy Forum](https://opensourcestrategyforum.org/)
@@ -16,8 +16,10 @@ Together this language and platform are now named "LEGEND".
 
 * Phase 1 (January 2020 - September 2020):
   * Using the external instance of Alloy deployed in phase 0, with a group of bank pilot users, develop common, shared models, licensed under an Apache 2.0 license, written in PURE (now "Legend-PURE"), likely collaborating first on a derivatives model. In this release, Studio will support the creation of data models, model-to-model mappings constraints and derivations. Continue to prepare code for open sourcing. Develop initial shared roadmap for PURE and Alloy extensions and new features for project developers to work on upon code being open sourced; identify and discuss priority areas for further collaborative model development.
+  * Complete technical and legal reviews of code for release per FINOS contribution process
+  * Migrate build process for Legend to FINOS infrastructure and hosted GitHub repositories
 
-- Phase 2 (Mid 2020): Complete technical and legal reviews of code for release per FINOS contribution process; make underlying PURE and Alloy code bases available as open source under an Apache 2.0 license into a FINOS GitHub repository (targetted to happen in September 2020). Begin accepting pull requests into Alloy from developers outside Goldman Sachs.
+* Phase 2 (October 2020 -): ; make underlying PURE and Alloy code bases available as open source under an Apache 2.0 license into a FINOS GitHub repository (targetted to happen in September 2020). Begin accepting pull requests into Alloy from developers outside Goldman Sachs.
 
 A more detailed roadmap is availabe in the [ROADMAP.md file](.github/ROADMAP.md)
 

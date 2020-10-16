@@ -120,14 +120,33 @@ cd legend ; ./build-site.sh
 cd website ; yarn start
 ```
 
-**Note:** The `build-site.sh` script pulls content from other Git repositories, mapping the `docs` folder into `modules/<repository-name>`. For example, all files and folders under https://gitlab.com/finosfoundation/purealloy-modeling-samples/tree/master/docs are available under the `/models/purealloy-modeling-samples` URL suffix.
-
 Once you're satisfied with your documentation changes, commit and propose them in line with the general process described above. Specifically for doc edits, it might look like this:
 
 - Commit your changes (`git commit -am <short description of what docs you changed/added>`).
 - Push to the branch to your forked repo on GitHub (`git push origin myProposedDocChanges`).
 - Review and test the changes in your fork.
 - If all looks good, propose a pull request into the [FINOS PURE/Legend GitHub Repo](github.com/finos/legend) from your fork.
+
+
+#### Importing Model Documentation (Advanced Feature)
+**Note:** The following is an advanced documentation feature not yet used by modeling teams, but configured and ready to go for those who choose to use it.
+
+This documenation site is configured such that modeling teams that choose to "keep their documentation close to their code" and write documentation about their models directly in the corresponding GitLab repository such that documentation will also be imported and included as part of this documentation site. 
+
+To set this up, modeling teams, and especially those documenting models, should:
+- Describe and document models in markdown (.md) files into a `docs` folder within the respective GitLab repository that contains the models
+- Send a note to help@finos.org to advise the FINOS infrastructure team that model documentation has been created and should be configured to be injested into the documentation site. The infrastructure team will make the appropriate changes to the `build-site.sh` script.
+
+##### How Modeling Documentation Imports Work Under the Hood
+Behind the sceens the `build-site.sh` script pulls content from GitLab repositories that contain Legend models by mapping the `docs` folder (required) of each repository specified in the line that begins `export LEGEND_MODELS=` in `build-site.sh` script into [`modules/<repository-name>`](https://github.com/finos/alloy/tree/gh-pages/docs/models). 
+
+* Illustration
+   * All files and folders under https://gitlab.com/finosfoundation/purealloy-modeling-samples/tree/master/docs would be available under the `/models/purealloy-modeling-samples` URL suffix within the documentation site
+   * See [example](https://legend.finos.org/docs/models/purealloy-modeling-samples/intro-model-sample/index.html)
+      * [The model documentation at https://gitlab.com/finosfoundation/purealloy-modeling-samples/-/blob/master/docs/intro.md](https://gitlab.com/finosfoundation/purealloy-modeling-samples/-/blob/master/docs/intro.md) renders to ...
+      * [... this page on the documentation site, https://legend.finos.org/docs/models/purealloy-modeling-samples/intro-model-sample/index.html](https://legend.finos.org/docs/models/purealloy-modeling-samples/intro-model-sample/index.html)
+
+
 
 ### Docusaurus
 
