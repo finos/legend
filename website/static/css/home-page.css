@@ -304,7 +304,7 @@
   background: var(--color-light-grey-200);
   border-radius: 0.5rem;
   top: 19rem;
-  left: 28rem;
+  left: 27.5rem;;
   animation: text-cursor-flicker 1.2s ease infinite;
 }
 
@@ -386,17 +386,24 @@
 }
 
 .home-page__content__timeline {
-  height: 95rem;
+  height: 105rem;
 }
 
 .completed-item {
-  vertical-align: super;
-  color: lightgreen;
+  font-size: 1.1rem;
+  text-transform: lowercase;
+  margin-left: 0.5rem;
+  background: var(--color-dark-grey-300);
+  border-radius: 0.3rem;
+  padding: 0.2rem 0.5rem;
+  color: var(--color-light-grey-400);
+  font-weight: 600;
+  cursor: default;
+  user-select: none;
 }
 
 .home-page__content__timeline__diagram {
   margin-top: 3rem;
-  width: 80%;
 }
 
 .home-page__content__timeline .home-page__content__container {
@@ -404,6 +411,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding-top: 6rem;
+  padding-bottom: 7rem;
 }
 
 .home-page__footer {
