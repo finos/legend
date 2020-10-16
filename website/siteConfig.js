@@ -22,7 +22,7 @@ const siteConfig = {
   url: 'https://legend.finos.org',
   baseUrl: '/',
   // For publishing to GitHub pages
-  projectName: 'legend',
+  projectName: 'alloy',
   organizationName: 'finos',
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
