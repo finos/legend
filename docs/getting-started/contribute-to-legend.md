@@ -114,9 +114,9 @@ To make edits to the website itself, you need to run the website locally. You mu
 The following code automatically launches a browser and takes you to the staging website, located at http://localhost:3000. File changes are live rendered, speeding up the editorial workflow.
 
 ```git
-git clone git@github.com:<yourfork>/purealloy.git
+git clone git@github.com:<yourfork>/legend.git
 git checkout -b feature/myProposedDocChanges
-cd purealloy ; ./build-site.sh
+cd legend ; ./build-site.sh
 cd website ; yarn start
 ```
 

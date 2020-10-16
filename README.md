@@ -22,11 +22,11 @@ And for more information about PURE/Alloy, including some of the motivations beh
 ## [Alloy Documentation Site (alloy.finos.org)](https://alloy.finos.org/)
 The [documentation site](https://alloy.finos.org) is built using Docusaurus based on the markdown files in the [`docs`](/docs/) folder. 
 
-## [This Repository - GitHub.com (github.com/finos/alloy)](https://github.com/finos/alloy)
+## [This Repository - GitHub.com (github.com/finos/alloy)](https://github.com/finos/legend)
 
 [This repository (github.com/finos/alloy)](github.com/finos/alloy) hosts:
 * The underling files for the [Alloy Documentation site](https://alloy.finos.org) (composed in markdown file format and stored in the `docs/` folder)
-* The [shared issues list](https://github.com/finos/alloy/issues) used for task management to track project activity around documentation, deployments, and the overall effort associated with open sourcing PURE and Alloy
+* The [shared issues list](https://github.com/finos/legend/issues) used for task management to track project activity around documentation, deployments, and the overall effort associated with open sourcing PURE and Alloy
 *  These issues are organized in various kanban boards, including the [overall project kanban](https://github.com/orgs/finos/projects/5).
 
 ## [FINOS Hosted GitLab Repository (gitlab.alloy.finos.org)](https://gitlab.alloy.finos.org)
@@ -56,11 +56,11 @@ Thanks for your interest in Alloy. We have been developing training materials an
 * [Replay from May 20th Alloy Pilot Call Presentation - Part 2 of Open Source Fundamentals & Concepts for Alloy Modeling](https://www.finos.org/hubfs/FINOS/2020%20Video%20Uploads/FINOS%20-%20Open%20Source%20Fundamentals%20-%20Part%202%20-%2013%20May%2020.mp4) (video)
 * [Alloy Documentation site](https://alloy.finos.org/)
 * Alloy meeting minutes:
-  * [prior to July 2020](https://github.com/finos/alloy/tree/master/meeting-minutes)
-  * [July 2020 and later](https://github.com/finos/alloy/issues?q=label%3Ameeting)
+  * [prior to July 2020](https://github.com/finos/legend/tree/master/meeting-minutes)
+  * [July 2020 and later](https://github.com/finos/legend/issues?q=label%3Ameeting)
   
-#### 2. [Raise an issue](https://github.com/finos/alloy/issues)
-* If you cannot find the answer to your question in the above materials, please raise an issue at https://github.com/finos/alloy/issues
+#### 2. [Raise an issue](https://github.com/finos/legend/issues)
+* If you cannot find the answer to your question in the above materials, please raise an issue at https://github.com/finos/legend/issues
 
 #### 3. Join the Alloy team for Office Hours _(more information coming soon)_
 
