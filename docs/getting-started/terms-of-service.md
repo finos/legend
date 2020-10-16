@@ -129,7 +129,7 @@ The Legend Pilot website and service located at https//legend.finos.org/ (the â€
 
 10. Miscellaneous Terms
 
-    10.1. Modifications to this Agreement. FINOS may occasionally revise these Terms. You can find the most recent version at https://legend.finos.org/terms-of-service. By using the Service after a new version of these Terms becomes effective, you thereby agree to be bound by the revised Terms.
+    10.1. Modifications to this Agreement. FINOS may occasionally revise these Terms. You can find the most recent version at https://legend.finos.org/docs/getting-started/terms-of-service. By using the Service after a new version of these Terms becomes effective, you thereby agree to be bound by the revised Terms.
 
     10.2. Choice of Law. These Terms and the relationship between you and FINOS shall be governed by the laws of the State of California without regard to its conflict of law provisions and that any and all claims, causes of action, or disputes (regardless of theory) arising out of or relating to the Service, shall be brought exclusively in the courts located in the county of San Francisco or the U.S. District Court for the Northern District of California. You consent and waive any objection to the jurisdiction of and venue in these courts.
 
