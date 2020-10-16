@@ -37,12 +37,12 @@ jobs:
       run: npm install --prefix website
     - name: Patch forked version
       run: |
-        # Extract GitHub org/user and patch siteConfig.js only if not "nicoalba"
+        # Extract GitHub org/user and patch siteConfig.js only if not "finos"
         REPO="${{ github.repository }}"
         REPO_ORG=${REPO%"/"*}
-        if [ "$REPO_ORG" != "nicoalba" ]
+        if [ "$REPO_ORG" != "finos" ]
         then echo "Repo organization is '$REPO_ORG', patching docusaurus configuration to work on a forked repo" ; curl ${{ env.PATCH_SCRIPT_URL }} |  bash -s -- ${{ env.REPO_NAME }} $REPO_ORG
-        else echo "Skipping patching, as this is the nicoalba user on github"
+        else echo "Skipping patching, as this is the finos user on github"
         fi
     - name: Build Website
       run: |
@@ -52,10 +52,10 @@ jobs:
         # Extract GitHub org/user
         REPO="${{ github.repository }}"
         GIT_USERNAME=${REPO%/*}
-        # Set git user to nicoalba, if it's a push to a nicoalba repo
-        if [ "$GIT_USERNAME" == "nicoalba" ] && [ "${{github.event_name }}" == "push" ]
-        then GIT_USERNAME="nicoalba"
-        elif [ "$GIT_USERNAME" == "nicoalba" ] && [ "${{github.event_name }}" == "pull_request" ]
+        # Set git user to finos, if it's a push to a finos repo
+        if [ "$GIT_USERNAME" == "finos" ] && [ "${{github.event_name }}" == "push" ]
+        then GIT_USERNAME="finos"
+        elif [ "$GIT_USERNAME" == "finos" ] && [ "${{github.event_name }}" == "pull_request" ]
         then echo "Skipping publishing, as it's coming from a PR"; exit 0
         fi
         # Configure git client
