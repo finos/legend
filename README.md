@@ -2,7 +2,7 @@
 [![FINOS - Incubating](https://cdn.jsdelivr.net/gh/finos/contrib-toolbox@master/images/badge-forming.svg)](https://finosfoundation.atlassian.net/wiki/spaces/FINOS/pages/75530756/Project+Lifecycle)
 
 # Legend Background
-On November 20, 2019, at FINOS' flagship conference, the [Open Source Strategy FOrum](https://opensourcestrategyforum.org/), FINOS Platinum member [Goldman Sachs](https://developer.gs.com/docs/products/) announced [its intention](https://www.finos.org/press/goldman-announces-pure-alloy-contribution) to open source two closely related products into FINOS:
+On November 20, 2019, at FINOS' flagship conference, the [Open Source Strategy Forum](https://opensourcestrategyforum.org/), FINOS Platinum member [Goldman Sachs](https://developer.gs.com/docs/products/) announced [its intention](https://www.finos.org/press/goldman-announces-pure-alloy-contribution) to open source two closely related products into FINOS:
 * Its internally developed logical modeling language, referred to within the bank as "PURE", and
 * A suite and workbench of tools, including a visual modeling platform, collectively referred to as "Alloy", used to build, design, and execute PURE models
 
@@ -40,7 +40,20 @@ Other areas that the pilot group have discussed as potential areas to model toge
   * Made underlying code bases to 5 Legend modile available as open source under an Apache 2.0 license
 
 
-# Documentation Strategy
+
+# Contributing
+See our [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
+# Installation
+(Coming Soon; Information on running and installing your own instance of Legend, either on premise or in a cloud provider such as AWS, Azure, OpenShift, Google, etc.)
+
+# Usage example
+(Coming Soon)
+
+# Development setup
+(Coming Soon)
+
+# Documentation 
 ## [Legend Documentation Site (legend.finos.org)](https://legend.finos.org/)
 The [documentation site](https://legend.finos.org) is built using Docusaurus based on the markdown files in the [`docs`](/docs/) folder. 
 
@@ -57,19 +70,6 @@ A separate [hosted Gitlab repository, gitlab.legend.finos.org](gitlab.legend.fin
 ## [gitlab.com (https://gitlab.com/finosfoundation)](gitlab.com/finosfoundation) [Not Yet Used]
 In the future we intend to migrate the models repositories from the hosted GitLab repository to [https://gitlab.com/finosfoundation](https://gitlab.com/finosfoundation). For now, this is unused but will eventually be the long-term home for public models built uysing Legend.
 
-
-# Contributing
-See our [CONTRIBUTING.md](CONTRIBUTING.md) file.
-
-# Installation
-(Coming Soon; Information on running and installing your own instance of Legend, either on premise or in a cloud provider such as AWS, Azure, OpenShift, Google, etc.)
-
-# Usage example
-(Coming Soon)
-
-# Development setup
-(Coming Soon)
-
 # Find out more
 
 ## Review the existing materials
@@ -84,7 +84,7 @@ See our [CONTRIBUTING.md](CONTRIBUTING.md) file.
 ## [Raise an issue](https://github.com/finos/legend/issues)
 * If you cannot find the answer to your question in the above materials, please raise an issue at https://github.com/finos/legend/issues
 
-## 3. Join Legend Office Hours _(more information coming soon)_
+## Join Legend Office Hours _(more information coming soon)_
 
 # License
 Copyright 2020 Goldman Sachs
