@@ -494,6 +494,13 @@
 }
 
 @media only screen and (max-width: 850px) {
+  .home-page__down-arrow__container {
+    /* NOTE: on iOS, in landscape mode, the browser header is shown leading to a shorter height about 5-10vh
+     * as such, we want to take bump the bottom distance up a little bit
+     */
+    bottom: 20vh;
+  }
+
   .home-page__content__whatis {
     height: 120rem;
     width: 100%;
@@ -514,9 +521,17 @@
     height: 140rem;
   }
 
+  .home-page__content__tools-panel__text-cursor {
+    left: 22.5rem;
+  }
+
   .home-page__content__ecosystem {
     height: 80rem;
     clip-path: polygon(0 5rem, 100% 0, 100% 80rem, 0 75rem);
+  }
+
+  .home-page__content__timeline {
+    height: 130rem;
   }
 
   .home-page__content__timeline__diagram {
@@ -534,7 +549,7 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .home-page__down-arrow {
     height: 5rem;
     width: 5rem;
