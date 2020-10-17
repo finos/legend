@@ -16,6 +16,18 @@ To request an account on the shared instance, use the form at the bottom of http
 Note that the features available in the shared instance within FINOS infrastructure largely map to the five modules open sourced to date. Features that are not yet available include model-to-database mappings and the execution of queries as services. As more modules are open sourced, more features will be activated in the shared instance. 
 
 # Code (and Model) Repositories
+## GitHub and GitLab
+The Legend platform and project make use of both Github.
+### GitHub
+* GitHub, specifically the [FINOS GitHub organization](https://github.com/finos/), is the distributed version control and source code management for Legend code
+  * The Legend GitHub repos, like all FINOS repos, is configured to make use of the FINOS [Open Developer Platform](https://odp.finos.org/) tooling.
+* GitHub infrastructure is what's used to do Legend builds (E.g., JARS, which are then distributed through Maven Central)
+### GitLab
+* GitLab is used for source control of models "under the hood" of the Legend SDLC module. As such the models, written in the Legend language, are stored in GitLab.
+
+
+## Repositores
+### Code Repositories (GitHub)
 [This repository (finos/legend)](www.github.com/finos/legend) is the parent repository for the project. It is used principally for documentation and issue tracking. The code itself for the 5 modules open sourced thusfar can be found in the following 5 child repositories:
 * [Shared Module](https://github.com/finos/legend-shared): https://github.com/finos/legend-shared
 * [SDLC Module](https://github.com/finos/legend-sdlc): https://github.com/finos/legend-sdlc
@@ -23,6 +35,7 @@ Note that the features available in the shared instance within FINOS infrastruct
 * [Engine Module](https://github.com/finos/legend-engine): https://github.com/finos/legend-engine
 * [Legend Language](https://github.com/finos/legend-pure): https://github.com/finos/legend-pure
 
+### Model Repositories (GitLab)
 Additionally, the shared Legend models developed during the Phase 1 pilot (described below) are themselves open sourced code and available in the following GitLab repositories:
 * FX Options extensions to the CDM: https://gitlab.legend.finos.org/alloy-pilot/cdm
 * Commodities Reference Data: https://gitlab.legend.finos.org/alloy-pilot/commonrefdata
@@ -55,7 +68,7 @@ To learn more about how to get involved with Legend and contribute to it, see th
 
 ## Phase 3 (Q1 2021)
 * Make additional functionality available in Studio, including relational execution, support for flat data sources (e.g., csv) and automated code generation (e.g., JSON schema, Protobuf, AVRO).
-* Transition shared model repositories from hosted instances (gitlab.legend.finos.org) to gitlab.com.
+* Transition shared model repositories from hosted GitLab instance (gitlab.legend.finos.org) to gitlab.com.
 
 ## Phase 4 (Q3 2021)
 * Open source Cube UI for user-friendly tabular data exploration.
@@ -89,7 +102,7 @@ The [documentation site](https://legend.finos.org) is built using Docusaurus bas
 A separate [hosted Gitlab repository, gitlab.legend.finos.org](gitlab.legend.finos.org) hosts shared models that were developed by the [Legend project pilot team](https://groups.google.com/a/finos.org/forum/#!forum/legend-pilot).
 
 ## [gitlab.com (https://gitlab.com/finosfoundation)](https://gitlab.com/finosfoundation) [Not Yet Used]
-In the future we intend to migrate the models repositories from the hosted GitLab repository to [https://gitlab.com/finosfoundation](https://gitlab.com/finosfoundation). For now, this is unused but will eventually be the long-term home for public models built uysing Legend.
+In the future we intend to migrate the models repositories from the hosted GitLab repository to [https://gitlab.com/finosfoundation](https://gitlab.com/finosfoundation). For now, this is unused but will eventually be the long-term home for public models built using Legend.
 
 # Find out more
 
