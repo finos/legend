@@ -15,6 +15,7 @@
   --color-dark-grey-30: #111111;
   --color-dark-grey-50: #1e1e1e;
   --color-dark-grey-100: #2d2d2d;
+  --color-dark-grey-120: #292929;
   --color-dark-grey-150: #252525;
   --color-dark-grey-200: #353535;
   --color-dark-grey-250: #3e3e3e;
@@ -110,6 +111,7 @@
   --color-secondary-50: var(--color-yellow-TEMP-3);
   --color-footer-background: var(--color-dark-grey-50);
   --color-header-background: var(--color-dark-grey-50);
+  --color-home-page__header-background: var(--color-dark-grey-120);
   --color-doc-background: var(--color-dark-grey-100);
   --color-sidebar-background: var(--color-dark-grey-150);
   --color-pagenav-background: var(--color-dark-grey-200);
