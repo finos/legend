@@ -29,6 +29,9 @@ Additionally, the shared Legend models developed during the Phase 1 pilot (descr
 
 Note: To access (and fork, etc.) these GitLab model repositories directly, you will need an account on the Legend shared instance (also required to model and access these models through the Studio UI). An account may requested through the account request form at the bottom of https://www.finos.org/legend. (In the future we plan to migrate these repositories to public repos on GitLab.com, after which an account will no longer be needed to access the repositories that contain the models.)
 
+# Contributing
+To learn more about how to get involved with Legend and contribute to it, see the [CONTRIBUTING.md](CONTRIBUTING.md) file or the [Contribute section of the docs site](https://legend.finos.org/docs/getting-started/contribute-to-legend). 
+
 # Roadmap
 ## Phase 0 (October 2019 - January 2020) - COMPLETED
 * Announced the intention to open source PURE/Alloy (now named Legend) at the [Open Source Strategy Forum](https://opensourcestrategyforum.org/)
@@ -51,8 +54,7 @@ Note: To access (and fork, etc.) these GitLab model repositories directly, you w
   * Conduct office hours for external developers interested in getting involved with Legend
 
 
-# Contributing
-See our [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
 
 # Installation and Running a Legend Instance of One's Own
 ([Coming Soon](https://github.com/finos/alloy/issues/143); Information on running and installing your own instance of Legend, either on premise or in a cloud provider such as AWS, Azure, OpenShift, Google, etc.)
