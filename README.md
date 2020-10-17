@@ -57,9 +57,6 @@ See our [CONTRIBUTING.md](CONTRIBUTING.md) file.
 # Installation and Running a Legend Instance of One's Own
 ([Coming Soon](https://github.com/finos/alloy/issues/143); Information on running and installing your own instance of Legend, either on premise or in a cloud provider such as AWS, Azure, OpenShift, Google, etc.)
 
-# Usage example
-(Coming Soon)
-
 # Development setup
 (Coming Soon)
 
