@@ -23,8 +23,8 @@ The following primitive data types are supported. Perform typical arithmetic and
 - Boolean
 - Date (StrictDate, DateTime)
   - The date type is an abstract class with two subtypes: `StrictDate` and `DateTime`. A date is automatically cast into one of these two types.
-  - The syntax for `StrictDate` is `\%\<YYYY\>\-\<MM\>\-\<DD\>`
-  - The syntax for `DateTime` is `\%\<YYYY\>\-\<MM\>\-\<DD\>T\<HH\>\:\<MM\>\:\<SS\>`
+  - The syntax for `StrictDate` is `%YYYY-MM-DD`
+  - The syntax for `DateTime` is `%YYYY-MM-DD'T'HH:MM:SS`
 
 ### Class
 
@@ -197,7 +197,7 @@ Class NewFirm
 
 Mapping MyModelToModelMapping
 (
-  NewFirm[newFirmTag] : Kittos
+  NewFirm[newFirmTag] : FirmX
   {
     ~src Firm
     shortenedCompanyType: if(
