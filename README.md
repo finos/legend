@@ -36,7 +36,7 @@ Note: To access (and fork, etc) these GitLab models repositories directly, you w
 
 Other areas that the pilot group have discussed as potential areas to model together in Legend include Environmental, Social and Governance (ESG) data as well as potentially continuing some of the work started by the FINOS Financial Objects program on RFQ in the context of interest rate swaps.
 
-* Phase 2 (October 2020 -):
+## Phase 2 (October 2020 -):
   * On 2020.10.19 made underlying code bases to five Legend modules available as open source under an Apache 2.0 license
   * Announced new name (Legend) and rebranded
   * Identify "good first issues" for developers new to Legend
