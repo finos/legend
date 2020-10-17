@@ -9,35 +9,37 @@ On November 20, 2019, at FINOS' flagship conference, the [Open Source Strategy F
 The [PURE language](https://github.com/finos/legend-pure), together with four modules - [Studio](https://github.com/finos/legend-studio), [SDLC](https://github.com/finos/legend-sdlc), [Engine](https://github.com/finos/legend-engine), and [Shared](https://github.com/finos/legend-shared) - were open sourced into FINOS on October 19, 2020. Collectively they have also were given a new, unified name, "Legend", which reflects how for Goldman Sachs this language and platform have been a guide - a legend – for its data strategy.
 
 # Code (and Model) Repositories
-[This repository (finos/legend)](www.github.com/finos/legend) is the "parent" repository for the project and is used principly for documentation and issue tracking. The code itself for the 5 modules thusfar open sourced can found in the following 5 "child repositories"
+[This repository (finos/legend)](www.github.com/finos/legend) is the parent repository for the project and is used principly for documentation and issue tracking. The code itself for the 5 modules thusfar open sourced can found in the following 5 child repositories:
 * [Shared Module](https://github.com/finos/legend-shared): https://github.com/finos/legend-shared
 * [SDLC Module](https://github.com/finos/legend-sdlc): https://github.com/finos/legend-sdlc
 * [Studio Module](https://github.com/finos/legend-studio): https://github.com/finos/legend-studio
 * [Engine Module](https://github.com/finos/legend-engine): https://github.com/finos/legend-engine
 * [Legend Language](https://github.com/finos/legend-pure): https://github.com/finos/legend-pure
 
-Additionally, the Legend models developed during the Phase 1 pilot (described below) are themselves open source code and available in the following GitLab repositories:
+Additionally, the Legend models developed during the Phase 1 pilot (described below) are themselves open sourced code and available in the following GitLab repositories:
 * FX Options extensions to the CDM: https://gitlab.legend.finos.org/alloy-pilot/cdm
 * Commodities Reference Data: https://gitlab.legend.finos.org/alloy-pilot/commonrefdata
 
-To access these GitLab models repositories directly, you will need an account on the Legend shared instance, which can be requested on the form at the bottom of https://www.finos.org/legend. (In the future we plan to migrate these repositories to public repos on GitLab.com, after which an account will no longer be needed to access the repositories that contain the models.)
+Note: To access (and fork, etc) these GitLab models repositories directly, you will need an account on the Legend shared instance, which can be requested on the form at the bottom of https://www.finos.org/legend. (In the future we plan to migrate these repositories to public repos on GitLab.com, after which an account will no longer be needed to access the repositories that contain the models.)
 
 # Roadmap
-## Phase 0 (October 2019 - January 2020) - COMPLETED:
+## Phase 0 (October 2019 - January 2020) - COMPLETED
   * Deployed an external instance of Legend to AWS for Phase 1 shared modeling
   * Announced the intention to open source PURE/Alloy (now named Legend) at the [Open Source Strategy Forum](https://opensourcestrategyforum.org/)
   * Internal code evaluation and preparation for open sourcing
 
-## Phase 1 (January 2020 - September 2020):
+## Phase 1 (January 2020 - September 2020) - COMPLETED
 During the pilot phase, modelers collaborated on Legend to build shared models. Modeling occurred in two work streams: 
 
-* Using the FX Option in the Common Domain Model (CDM), developed by the International Swaps and Derivatives Association (ISDA) as a starting point, extended and expanded the FX Option model, specifically the Averaging Modeling. The extensions built during the pilot have since been proposed and accepted by the ISDA Architecture Review Committee into the CDM.
+* Using the FX Option in the Common Domain Model (CDM), developed by the International Swaps and Derivatives Association (ISDA), as a starting point, extended and expanded the FX Option model, specifically the Averaging Modeling. The extensions built during the pilot have since been proposed and accepted by the ISDA Architecture Review Committee into the CDM.
 * Commodity Reference Data, especially in the context of a Fixed vs Float swap, including defining a payout model to be proposed into the CDM.
 
 Other areas that the pilot group have discussed as potential areas to model together in Legend include Environmental, Social and Governance (ESG) data as well as potentially continuing some of the work started by the FINOS Financial Objects program on RFQ in the context of interest rate swaps.
 
 * Phase 2 (October 2020 -):
-  * Made underlying code bases to 5 Legend modile available as open source under an Apache 2.0 license
+  * On 2020.10.19 made underlying code bases to 5 Legend modile available as open source under an Apache 2.0 license
+  * Identify "good first issues" and other 
+  * Conduct office hours for external developers interesting in getting involved with Legend
 
 
 
