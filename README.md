@@ -47,12 +47,24 @@ To learn more about how to get involved with Legend and contribute to it, see th
 * Performed code readiness work to extract Legend code from GS infrastructure, and sufficiently abstract and generalize code base as needed. Revised code base to reflect new name (note that some references to old "PURE" and "Alloy" name still exist). GS Engineering, together with FINOS and Linux Foundation DevOps teams, performed code scanning and remediations. Moved Goldman Sachs's daily production builds of Legend to FINOS infrastructure and public GitHub repos.
 
 ## Phase 2 (October 2020 -):
-  * On 2020.10.19 made underlying code bases to five Legend modules available as open source under an Apache 2.0 license
-  * Announced new name (Legend) and rebranded
-  * Identify "good first issues" for developers new to Legend
-  * Begin accepting pull requests of code from external (non-GS) developers.
-  * Conduct office hours for external developers interested in getting involved with Legend
+* On 2020.10.19 made underlying code bases to five Legend modules available as open source under an Apache 2.0 license
+* Announced new name (Legend) and rebranded
+* Identify "good first issues" for developers new to Legend
+* Begin accepting pull requests of code from external (non-GS) developers.
+* Conduct office hours for external developers interested in getting involved with Legend
 
+## Phase 3 (Q1 2021)
+* Make additional functionality available in Studio, including relational execution, support for flat data sources (e.g., csv) and automated code generation (e.g., JSON schema, Protobuf, AVRO).
+* Transition shared model repositories from hosted instances (gitlab.legend.finos.org) to gitlab.com.
+
+## Phase 4 (Q3 2021)
+* Open source Cube UI for user-friendly tabular data exploration.
+
+## Phase 5 (Q4 2021)
+* Open source Query UI to search and access modeled data.
+
+## Phase 6 (Q4 2021)
+* Open source Services UI. This will allow managing of production data services (APIs) for repeatable and controlled data access.
 
 
 
@@ -96,7 +108,14 @@ In the future we intend to migrate the models repositories from the hosted GitLa
 ## [Raise an issue](https://github.com/finos/legend/issues)
 * If you cannot find the answer to your question in the above materials, please raise an issue at https://github.com/finos/legend/issues
 
-## Join Legend Office Hours _(more information coming soon)_
+## Join the Monthly Legend General Meeting
+Legend general meetings are your opportunity to get updates on Legend, provide feedback on the product and the roadmap, see demos, and ask questions. General meetings happen the third Thursday of each month at 9am ET / 2pm BST. The next such general meeting is [scheduled for November 19, 2020](https://calendar.google.com/calendar/u/0/r/day/2020/11/19?eid=bzQ5ZXVpN2J1OHYyZTJjYm91Z3Q1OHU2MzlfMjAyMDExMTlUMTQwMDAwWiBmaW5vcy5vcmdfZmFjOG1vMXJmYzZlaHNjZzBkODBmaThqaWdAZw&ctz=America/New_York&sf=true). 
+
+## Join Legend Office Hours 
+* [Thursday, October 29, 11am ET](https://calendar.google.com/calendar/event?eid=MmxpMmRhY3FxODM2cmt1ZTN0aWYwbTFqdWRfMjAyMDEwMjlUMTUwMDAwWiBmaW5vcy5vcmdfZmFjOG1vMXJmYzZlaHNjZzBkODBmaThqaWdAZw&ctz=America/New_York)
+  * WebEx: https://finos.webex.com/finos/j.php?MTID=m58790a7ebaa830f785f3e0934603372b
+  * Meeting number (access code): 127 301 6315
+  * Email legend-inquiries@finos.org to RSVP and receive the meeting password
 
 # License
 Copyright 2020 Goldman Sachs
