@@ -29,25 +29,26 @@ Note: To access (and fork, etc) these GitLab models repositories directly, you w
   * Internal code evaluation and preparation for open sourcing
 
 ## Phase 1 (January 2020 - September 2020) - COMPLETED
-During the pilot phase, modelers collaborated on Legend to build shared models. Modeling occurred in two work streams: 
-
-* Using the FX Option in the Common Domain Model (CDM), developed by the International Swaps and Derivatives Association (ISDA), as a starting point, extended and expanded the FX Option model, specifically the Averaging Modeling. The extensions built during the pilot have since been proposed and accepted by the ISDA Architecture Review Committee into the CDM.
-* Commodity Reference Data, especially in the context of a Fixed vs Float swap, including defining a payout model to be proposed into the CDM.
+* Made Studio available to a group of financial institution pilot users collaborating on a derivatives model. In this release, Studio supported a limited set of functionality, including the creation of data models, model-to-model mappings, constraints and derivations
+* During the pilot phase, modelers collaborated on Legend to build shared models. Modeling occurred in two work streams: 
+  * Using the FX Option in the Common Domain Model (CDM), developed by the International Swaps and Derivatives Association (ISDA), as a starting point, extended and expanded the FX Option model, specifically the Averaging Modeling. The extensions built during the pilot have since been proposed and accepted by the ISDA Architecture Review Committee into the CDM.
+  * Commodity Reference Data, especially in the context of a Fixed vs Float swap, including defining a payout model to be proposed into the CDM.
 
 Other areas that the pilot group have discussed as potential areas to model together in Legend include Environmental, Social and Governance (ESG) data as well as potentially continuing some of the work started by the FINOS Financial Objects program on RFQ in the context of interest rate swaps.
 
 * Phase 2 (October 2020 -):
-  * On 2020.10.19 made underlying code bases to 5 Legend modile available as open source under an Apache 2.0 license
-  * Identify "good first issues" and other 
-  * Conduct office hours for external developers interesting in getting involved with Legend
-
+  * On 2020.10.19 made underlying code bases to five Legend modules available as open source under an Apache 2.0 license
+  * Announced new name (Legend) and rebranded
+  * Identify "good first issues" for developers new to Legend
+  * Begin accepting pull requests of code from external (non-GS) developers.
+  * Conduct office hours for external developers interested in getting involved with Legend
 
 
 # Contributing
 See our [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
-# Installation
-(Coming Soon; Information on running and installing your own instance of Legend, either on premise or in a cloud provider such as AWS, Azure, OpenShift, Google, etc.)
+# Installation and Running a Legend Instance of One's Own
+([Coming Soon](https://github.com/finos/alloy/issues/143); Information on running and installing your own instance of Legend, either on premise or in a cloud provider such as AWS, Azure, OpenShift, Google, etc.)
 
 # Usage example
 (Coming Soon)
