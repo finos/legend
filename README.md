@@ -36,12 +36,12 @@ Note: To access (and fork, etc.) these GitLab model repositories directly, you w
 * Commenced internal code evaluation and preparation for open sourcing
 
 ## Phase 1 (January 2020 - September 2020) - COMPLETED
-* Using the [external instance of Legend](legend.finos.org/) ade Studio available to a group of financial institution pilot users collaborating on a derivatives model. In this release, Studio supported a limited set of functionality, including the creation of data models, model-to-model mappings, constraints and derivations
+* Using the [external instance of Legend](legend.finos.org/) made Studio available to a pilot group of financial institutions, composed of FINOS members plus several other institutions that expressed an interest in participating in the pilot, for them, together with Goldman Sachs and FINOS, to evaluate the use of Legend to do shared, collaborative modeling. In this release, Studio supported a limited set of functionality, including the creation of data models, model-to-model mappings, constraints and derivations
 * During the pilot phase, modelers collaborated on Legend to build shared models. Modeling occurred in two work streams: 
   * Using the FX Option in the Common Domain Model (CDM), developed by the International Swaps and Derivatives Association (ISDA), as a starting point, extended and expanded the FX Option model, specifically the Averaging Modeling. The extensions built during the pilot have since been proposed and accepted by the ISDA Architecture Review Committee into the CDM.
   * Commodity Reference Data, especially in the context of a Fixed vs Float swap, including defining a payout model to be proposed into the CDM.
-
-Other areas that the pilot group have discussed as potential areas to model together in Legend include Environmental, Social and Governance (ESG) data as well as potentially continuing some of the work started by the FINOS Financial Objects program on RFQ in the context of interest rate swaps.
+  Other areas that the pilot group have discussed as potential areas to model together in Legend include Environmental, Social and Governance (ESG) data as well as potentially continuing some of the work started by the FINOS Financial Objects program on RFQ in the context of interest rate swaps.
+* Performed code readiness work to extract Legend code from GS infrastructure, and sufficiently abstract and generalize code base as needed. Revised code base to reflect new name (note that some references to old "PURE" and "Alloy" name still exist). GS Engineering, together with FINOS and Linux Foundation DevOps teams, performed code scanning and remediations. Moved Goldman Sachs's daily production builds of Legend to FINOS infrastructure and public GitHub repos.
 
 ## Phase 2 (October 2020 -):
   * On 2020.10.19 made underlying code bases to five Legend modules available as open source under an Apache 2.0 license
