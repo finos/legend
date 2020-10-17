@@ -65,7 +65,7 @@ To learn more about how to get involved with Legend and contribute to it, see th
   Other areas that the pilot group have discussed as potential areas to model together in Legend include Environmental, Social and Governance (ESG) data as well as potentially continuing some of the work started by the FINOS Financial Objects program on RFQ in the context of interest rate swaps.
 * Performed code readiness work to extract Legend code from GS infrastructure, and sufficiently abstract and generalize code base as needed. Revised code base to reflect new name (note that some references to old "PURE" and "Alloy" name still exist). GS Engineering, together with FINOS and Linux Foundation DevOps teams, performed code scanning and remediations. Moved Goldman Sachs's daily production builds of Legend to FINOS infrastructure and public GitHub repos.
 
-## Phase 2 (October 2020 -):
+## Phase 2 (October 2020 - December 2020)
 * On 2020.10.19 made underlying code bases to five Legend modules available as open source under an Apache 2.0 license
 * Announced new name (Legend) and rebranded
 * Identify "good first issues" for developers new to Legend
