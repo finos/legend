@@ -24,7 +24,7 @@ The Legend platform and project make use of both GitHub and GitLab.
 ### GitHub
 * GitHub, specifically the [FINOS GitHub organization](https://github.com/finos/), is the distributed version control and source code management system used for Legend code
   * The Legend GitHub repos, like all FINOS repos, are configured to make use of the FINOS [Open Developer Platform](https://odp.finos.org/) tooling.
-* GitHub infrastructure is what's used to do Legend builds (E.g., JARS, which are then distributed through Maven Central)
+* GitHub infrastructure is what's used to do Legend builds (e.g., of [Legend JARS, which are then distributed through Maven Central](https://search.maven.org/search?q=g:org.finos.legend))
 ### GitLab
 * GitLab is used for source control of models "under the hood" within the Legend SDLC module. As such the models, written in the Legend language, are stored in GitLab.
 
