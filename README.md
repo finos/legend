@@ -16,7 +16,7 @@ To request an account on the shared instance, use the form at the bottom of http
 Note that the features available in the shared instance within FINOS infrastructure largely map to the five modules open sourced to date. Features that are not yet available include model-to-database mappings and the execution of queries as services. As more modules are open sourced, more features will be activated in the shared instance. 
 
 # Code (and Model) Repositories
-[This repository (finos/legend)](www.github.com/finos/legend) is the parent repository for the project. It is used principly for documentation and issue tracking. The code itself for the 5 modules open sourced thusfar can be found in the following 5 child repositories:
+[This repository (finos/legend)](www.github.com/finos/legend) is the parent repository for the project. It is used principally for documentation and issue tracking. The code itself for the 5 modules open sourced thusfar can be found in the following 5 child repositories:
 * [Shared Module](https://github.com/finos/legend-shared): https://github.com/finos/legend-shared
 * [SDLC Module](https://github.com/finos/legend-sdlc): https://github.com/finos/legend-sdlc
 * [Studio Module](https://github.com/finos/legend-studio): https://github.com/finos/legend-studio
@@ -32,11 +32,11 @@ Note: To access (and fork, etc.) these GitLab model repositories directly, you w
 # Roadmap
 ## Phase 0 (October 2019 - January 2020) - COMPLETED
 * Announced the intention to open source PURE/Alloy (now named Legend) at the [Open Source Strategy Forum](https://opensourcestrategyforum.org/)
-* Deployed an external instance of Legend to AWS for Phase 1 shared modeling
+* Deployed an [external instance of Legend](legend.finos.org/studio) to AWS within FINOS infrastructure, initially for use in Phase 1 (see below) for pilot participants to use to do shared modeling.
 * Commenced internal code evaluation and preparation for open sourcing
 
 ## Phase 1 (January 2020 - September 2020) - COMPLETED
-* Using the [external instance of Legend](legend.finos.org/) made Studio available to a pilot group of financial institutions, composed of FINOS members plus several other institutions that expressed an interest in participating in the pilot, for them, together with Goldman Sachs and FINOS, to evaluate the use of Legend to do shared, collaborative modeling. In this release, Studio supported a limited set of functionality, including the creation of data models, model-to-model mappings, constraints and derivations
+* Opened the [external instance of Legend](legend.finos.org/studio) Studio deployed in Phase 0 to a pilot group of financial institutions, composed of FINOS members plus several other institutions that expressed an interest in participating in the pilot, for them together with Goldman Sachs and FINOS to evaluate the use of Legend to do shared, collaborative modeling. In this release, Studio supported a limited set of functionality, including the creation of data models, model-to-model mappings, constraints and derivations
 * During the pilot phase, modelers collaborated on Legend to build shared models. Modeling occurred in two work streams: 
   * Using the FX Option in the Common Domain Model (CDM), developed by the International Swaps and Derivatives Association (ISDA), as a starting point, extended and expanded the FX Option model, specifically the Averaging Modeling. The extensions built during the pilot have since been proposed and accepted by the ISDA Architecture Review Committee into the CDM.
   * Commodity Reference Data, especially in the context of a Fixed vs Float swap, including defining a payout model to be proposed into the CDM.
