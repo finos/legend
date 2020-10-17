@@ -88,8 +88,8 @@ The [documentation site](https://legend.finos.org) is built using Docusaurus bas
 ## [FINOS Hosted GitLab Repository (gitlab.legend.finos.org)](https://gitlab.legend.finos.org)
 A separate [hosted Gitlab repository, gitlab.legend.finos.org](gitlab.legend.finos.org) hosts shared models that were developed by the [Legend project pilot team](https://groups.google.com/a/finos.org/forum/#!forum/legend-pilot).
 
-## [gitlab.com (https://gitlab.com/finosfoundation)](gitlab.com/finosfoundation) [Not Yet Used]
-In the future we intend to migrate the models repositories from the hosted GitLab repository to [https://gitlab.com/finosfoundation](https://gitlab.com/finosfoundation). For now, this is unused but will eventually be the long-term home for public models built using Legend.
+## [gitlab.com (https://gitlab.com/finosfoundation)](https://gitlab.com/finosfoundation) [Not Yet Used]
+In the future we intend to migrate the models repositories from the hosted GitLab repository to [https://gitlab.com/finosfoundation](https://gitlab.com/finosfoundation). For now, this is unused but will eventually be the long-term home for public models built uysing Legend.
 
 # Find out more
 
