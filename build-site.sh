@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Define which models to embed in the site
-export LEGEND_MODELS="legend-modeling legend-modeling-samples"
+# Define which models to embed in the site. Blank for now
+export LEGEND_MODELS=""
 
 # Where the model MD files will be checked out
 export DOCS_FOLDER=${PWD}/docs/models
