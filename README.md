@@ -14,7 +14,7 @@ To request an account on the shared instance, use the form at the bottom of http
 
 Note that the features available in the shared, external Legend instance within FINOS infrastructure largely map to the five modules open sourced to date. Features that are not yet available include model-to-database mappings and the execution of queries as services. As more modules are open sourced, more features will be activated in the shared instance. 
 
-# Installation | Running a Legend Instance Locally | Deploying an Instace of Legend
+# Installation | Running a Legend Instance Locally | Deploying an Instance of Legend
 ([Coming Soon](https://github.com/finos/alloy/issues/143); Information on running and installing your own instance of Legend, locallly, on premise, or in a cloud provider such as AWS, Azure, OpenShift, Google, etc.)
 
 # Code (and Model) Repositories
