@@ -41,8 +41,8 @@ Module specific issues are opened, maintained, and prioritized within the module
 
 ### Model Repositories (GitLab)
 Legend models developed on [the external shared instance](https://legend.finos.org/studio), including those built during the Phase 1 pilot described below, are themselves open sourced code and available in the following GitLab repositories:
-* FX Options extensions to the CDM: https://gitlab.legend.finos.org/alloy-pilot/cdm
-* Commodities Reference Data: https://gitlab.legend.finos.org/alloy-pilot/commonrefdata
+* FX Options extensions to the CDM: https://gitlab.legend.finos.org/legend-pilot/cdm
+* Commodities Reference Data: https://gitlab.legend.finos.org/legend-pilot/commonrefdata
 
 **Note on model access in GitLab** Currently to access (and fork, etc.) these GitLab model repositories directly, you will need an account on the Legend shared instance (an account is also required to model and access these models through the Studio UI). An account may be requested through the account request form at the bottom of https://www.finos.org/legend. In the future we plan to [migrate these model repositories](https://github.com/finos/alloy/issues/177) to public repos on GitLab.com, after which an account will no longer be needed to access and contain the repositories that contain the models.
 
