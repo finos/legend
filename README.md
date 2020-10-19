@@ -5,7 +5,7 @@
 # Legend Background
 On November 20, 2019, at FINOS' flagship conference, the [Open Source Strategy Forum](https://opensourcestrategyforum.org/), FINOS Platinum member [Goldman Sachs](https://developer.gs.com/docs/products/) announced [its intention](https://www.finos.org/press/goldman-announces-pure-alloy-contribution) to open source two closely related products into FINOS:
 * Its internally developed logical modeling language, referred to within the bank as "PURE", and
-* A workbench of tools, including a visual modeling platform, collectively referred to as "Alloy", created and used within Goldman Sachs to build, design, and execute PURE models
+* A workbench of tools, including a visual modeling platform, collectively referred to as "Alloy", created and used within Goldman Sachs to build, design, and execute PURE models.
 
 The [PURE language](https://github.com/finos/legend-pure), together with four modules - [Studio](https://github.com/finos/legend-studio), [SDLC](https://github.com/finos/legend-sdlc), [Engine](https://github.com/finos/legend-engine), and [Shared](https://github.com/finos/legend-shared) - were open sourced into FINOS on October 19, 2020. Concurrent to their open sourcing, they were collectively given a new, unified name - "Legend". The choice of the Legend name reflects how for Goldman Sachs the language and platform have been a guide - a legend - for the bank's data strategy.
 
