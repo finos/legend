@@ -32,7 +32,7 @@ The Legend platform and project makes use of both GitHub and GitLab.
 
 ## Repositores
 ### Code Repositories (GitHub)
-[This repository (finos/legend)](www.github.com/finos/legend) is the parent repository for the project. It is used principally for overall Legend documentation and issue tracking. The code itself for the 5 modules open sourced thusfar can be found in the following 5 child repositories:
+[This repository (finos/legend)](https://www.github.com/finos/legend) is the parent repository for the project. It is used principally for overall Legend documentation and issue tracking. The code itself for the 5 modules open sourced thusfar can be found in the following 5 child repositories:
 * [Shared Module](https://github.com/finos/legend-shared): https://github.com/finos/legend-shared
 * [SDLC Module](https://github.com/finos/legend-sdlc): https://github.com/finos/legend-sdlc
 * [Studio Module](https://github.com/finos/legend-studio): https://github.com/finos/legend-studio
