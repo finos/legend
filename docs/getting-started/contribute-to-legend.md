@@ -91,10 +91,9 @@ FINOS hosts a shared version of Legend Studio in the public cloud, which is avai
 Once you've requested access to the modeling instance, you can get started and [create a model](create-model.md).
 
 If you have questions or encounter any issues, raise an issue at https://github.com/finos/legend/issues.
+ 
 
-### Suggest modeling use cases
-
-If you have suggestions or ideas for modeling use cases for which Legend may be appropriate, we'd love to hear your ideas -- send a note with your suggestion to the [Legend General List](legend@finos.org).
+If you have suggestions or ideas for modeling use cases for which Legend may be appropriate, we'd love to hear your ideas -- send a note with your suggestion to the [Legend General List](mailto:legend@finos.org).
 
 ### Background: The Legend Pilot—Shared modeling in Legend (January - September 2020)
 
@@ -125,7 +124,7 @@ Once you're satisfied with your documentation changes, commit and propose them i
 - Commit your changes (`git commit -am <short description of what docs you changed/added>`).
 - Push to the branch to your forked repo on GitHub (`git push origin myProposedDocChanges`).
 - Review and test the changes in your fork.
-- If all looks good, propose a pull request into the [FINOS Legend GitHub Repo](github.com/finos/legend) from your fork.
+- If all looks good, propose a pull request into the [FINOS Legend GitHub Repo](https://github.com/finos/legend) from your fork.
 
 ### Docusaurus
 
