@@ -10,13 +10,14 @@ If you already use, or are planning to use Legend at an individual or corporate 
 # Get Started
 There are many ways to contribute to Legend, and many of them do not involve writing any code. Here are a few ideas to get started:
 
-1. Start using Legend Studio to provide feedback, and contribute to, existing models. Request access to the modeling instance at https://www.finos.org/legend and go through the [Getting Started](https://legend.finos.org/docs/getting-started/studio#getting-started) guide. Does everything work as expected? If not, we're always looking for improvements. Let us know by [opening an issue](https://github.com/finos/legend/issues/new/choose)
+1. **Start using Legend Studio to provide feedback, and contribute to, existing models**. Request access to the modeling instance at https://www.finos.org/legend and go through the [Getting Started](https://legend.finos.org/docs/getting-started/studio#getting-started) guide. Does everything work as expected? If not, we're always looking for improvements. Let us know by [opening an issue](https://github.com/finos/legend/issues/new/choose)
 
-2. [Contribute code](contribute-code.md)
+2. **Contribute code**
 
-3. [Help build out the documentation](contribute-documentation.md). Read through the [Legend documentation site](https://legend.finos.org/docs). If you find anything that is confusing or can be improved, submit a Pull Request. 
+3. **Help build out the documentation.** Read through the [Legend documentation site](https://legend.finos.org/docs). If you find anything that is confusing or can be improved, submit a Pull Request. 
 
-4. [Contribute issues: identify bugs, suggest new features, and provide feedback on prioritization](contribute-issues). Look through the [open issues](https://github.com/finos/legend/issues?q=is%3Aissue+is%3Aopen+). Provide workarounds, ask for clarification, or suggest labels. If you find an issue you would like to fix, [open a pull request](https://github.com/finos/legend/pulls). Issues tagged as Good first issue are a good place to get started. Take a look at the features requested by others in the community and consider opening a pull request if you see something you want to work on.
+4. **Contribute issues: identify bugs, suggest new features, and provide feedback on prioritization.** Look through the [open issues](https://github.com/finos/legend/issues?q=is%3Aissue+is%3Aopen+). Provide workarounds, ask for clarification, or suggest labels. If you find an issue you would like to fix, [open a pull request](https://github.com/finos/legend/pulls). Issues tagged as Good first issue are a good place to get started. Take a look at the features requested by others in the community and consider opening a pull request if you see something you want to work on.
+
 ## Prerequisites 
 If you would like to create and/or edit models in the Legend hosted instance or make Code contributions, you will need to have a GitHub Account. 
 #### GitHub Account Setup
@@ -57,15 +58,6 @@ FINOS hosts a shared version of Legend Studio in the public cloud, which is avai
 Once you have requested access to the modeling instance, follow the instructions in the [Legend Documentation Site](https://legend.finos.org/docs/getting-started/studio#create-a-model) to get started and create a new model or edit existing ones. 
 If you have questions or encounter any issues, please raise an issue at https://github.com/finos/legend/issues.
 
-### [Installation Guide](installation-guide.md)
-### [Create a workspace](create-workspace.md)
-### [Create a model](create-model.md)
-### [Create a diagram](create-diagram.md)
-### [Edit a model](edit-model.md)
-### [Create model to model mapping](create-model-to-model-mapping.md)
-### [Execute model to model mapping](xecute-model-to-model-mapping.md)
-### [Review and commit changes](review-and-commit-changes.md)
-
 ### Suggest Modeling Use Cases
 If you have suggestions or ideas for modeling use cases for which Legend may be appropriate, we'd love to hear your ideas -- send a note with your suggestion to the [Legend General List](legend@finos.org).
 
@@ -73,19 +65,83 @@ If you have suggestions or ideas for modeling use cases for which Legend may be 
 In January 2020, FINOS launched a pilot with FINOS member organizations interested in evaluating Legend-PURE/Legend. Modeling occurred on the FINOS hosted, shared version of Legend Studio in the public cloud, which was used by FINOS members to collaborate on Legend Studio by building extensions to the [ISDA Common Domain Model (CDM)](https://www.isda.org/2018/11/22/isda-cdm-factsheet/). Modeling occurred in two workstreams: **FX Options** and **Commodities Reference Data**, which concluded their work in September 2020. We expect that further working groups may use Legend for data modeling in these and/or other areas after the first wave of code has been open sourced in October 2020.
 
 ## 2. Contribute Code 
-### Propose Changes (Make Pull Requests) to Underlying Legend-PURE and Legend Code
-The source code to Legend-PURE and Legend is available to the public and the project welcomes pull requests to these code bases.
-### [Overall Code Contribution Workflow](contribute-code.md)
-### [Legend Language](legend-language.md)
-### [Released Functions](released-functions.md)
-### [Upcoming Functions](upcoming-functions.md)
+The following list is a high-level overview of the code contribution workflow.
 
-## 3. Build out documentation 
-### [Contribute Documentation](contribute-documentation.md)
-### [Running the Docs Site Locally on Your Machine](run-docs-site.md)
+1. Read our [Community Code of Conduct](https://www.finos.org/code-of-conduct).
+2. Fork the Legend repository (<https://github.com/finos/legend/fork>).
+3. Create your feature branch (`git checkout -b feature/fooBar`).
+4. Make and test your changes locally.
+5. Add your changes (`git add <filename containing fooBar change>`).
+6. Commit your changes (`git commit -m 'Add some fooBar'`).
+7. Push to the branch (`git push origin feature/fooBar`).
+8. Optional but recommeded: Do a build in/from your fork; further evaluate and test it.
+9. If all looks good, propose a pull request into the [Legend GitHub repo](https://github.com/finos/legend/pull/new/master) from your fork.
+
+### Propose and submit pull requests
+
+To make review of PRs easier:
+
+- Confirm your PRs will merge cleanly—PRs that don't won't be accepted.
+- For code contributions, follow the existing code layout.
+- For doc contributions, follow the general structure, language, and tone of the [existing docs](https://github.com/finos/legend/wiki).
+- Keep commits small and cohesive. If you have multiple contributions, submit them as independent commits (and ideally as independent PRs, too).
+- Reference issue #s if your PR has anything to do with an issue (even if it doesn't address it).
+- Minimise non-functional changes (like whitespace).
+- Confirm all new files include a header comment block containing the [Apache License v2.0 and your copyright information](http://www.apache.org/licenses/LICENSE-2.0#apply).
+- If necessary (due to 3rd party dependency licensing requirements), update the [NOTICE file](https://github.com/finos/legend/blob/master/NOTICE) with any new attribution or other notices.
+
+## 3. Contribute documentation 
+You can get involved with Legend by suggesting topics you'd like to see in our documentation. Suggest a topic for our docs by [opening an issue in our GitHub repo](https://github.com/finos/legend/issues/new/choose). Ideas are also welcome through the [Legend General List](mailto:legend@finos.org).
+
+### Edit the documentation site directly
+
+To make edits to the website itself, you need to run the website locally. You must have:
+
+- A Git client installed to checkout the code from github.com/finos/legend (`master` branch). The `git` command must be available via command-line, as it's needed to run the `build-site.sh` script.
+- [Yarn installed](https://yarnpkg.com/lang/en/docs/install).
+
+The following code automatically launches a browser and takes you to the staging website, located at http://localhost:3000. File changes are live rendered, speeding up the editorial workflow.
+
+```git
+git clone git@github.com:<yourfork>/legend.git
+git checkout -b feature/myProposedDocChanges
+cd legend ; ./build-site.sh
+cd website ; yarn start
+```
+
+Once you're satisfied with your documentation changes, commit and propose them in line with the general process described above. Specifically for doc edits, it might look like this:
+
+- Commit your changes (`git commit -am <short description of what docs you changed/added>`).
+- Push to the branch to your forked repo on GitHub (`git push origin myProposedDocChanges`).
+- Review and test the changes in your fork.
+- If all looks good, propose a pull request into the [FINOS Legend GitHub Repo](https://github.com/finos/legend) from your fork.
+
+### Docusaurus
+
+To learn more about Docusaurus, read the following resources:
+
+- https://github.com/finos/legend/tree/master/website
+- https://finosfoundation.atlassian.net/wiki/spaces/FDX/pages/844759075/Using+Docusaurus+recommended 
+- https://docusaurus.io
+
+**Note:** [The documentation build script](https://github.com/finos/legend/blob/master/build-site.sh) can be configured to pull in and include files from GitLab repositories housing modeling documentation into the GitHub pages/Docusaurus-powered site.
+
 
 ## 4. Contribute issues: identify bugs, suggest new features, and provide feedback on prioritization 
-### [Contribute issues](report-bug.md)
+iew the prerequisites and steps to report an issue in GitHub.
+
+### Prerequisites
+
+- [Search for duplicates](https://github.com/finos/legend/issues?utf8=%E2%9C%93&q=). A search for exception error messages or a summary of the unexpected behaviour is enough.
+- Are you running the latest version?
+- Are you sure this is a bug or missing capability?
+
+### Create an issue in GitHub
+
+1. Create your issue [in GitHub](https://github.com/finos/legend/issues/new).
+2. New issues contain two templates in the description: bug report and enhancement request. Select the most appropriate for your issue, *then delete the other*.
+3. Tag the new issue with either **Bug** or **Enhancement**.
+4. Use [Markdown formatting](https://help.github.com/categories/writing-on-github/) to improve readability. For example, use [code fences](https://help.github.com/articles/creating-and-highlighting-code-blocks/) for exception stack traces and log entries.
 
 # Legend Contribution and Governance Policies
 
