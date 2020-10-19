@@ -1,68 +1,133 @@
-[![Build Status](https://travis-ci.org/finos/alloy.svg?branch=master)](https://travis-ci.org/finos/alloy)
-[![FINOS - Incubating](https://cdn.jsdelivr.net/gh/finos/contrib-toolbox@master/images/badge-forming.svg)](https://finosfoundation.atlassian.net/wiki/spaces/FINOS/pages/75530756/Project+Lifecycle)
+[![FINOS - Incubating](https://cdn.jsdelivr.net/gh/finos/contrib-toolbox@master/images/badge-incubating.svg)](https://finosfoundation.atlassian.net/wiki/display/FINOS/Incubating)
 
-# Alloy
-On November 20, 2019, at FINOS' flagship conference, the [Open Source Strategy](https://opensourcestrategyforum.org/) Forum, FINOS Platinum member [Goldman Sachs](https://developer.gs.com/docs/products/) announced its intention to open source two closely related products - its internal logical modeling language internally named "PURE", and a visual modeling platform that generates PURE models known in Goldman Sachs as "Alloy" - into FINOS.
 
-More information about this decision and announcement can be found at https://www.finos.org/alloy. 
 
-# [Open Sourcing Roadmap](.github/ROADMAP.md)
-- Phase 0 (Q4 2019): Deploy an external instance of Alloy to AWS for Phase 1 shared modeling; announce the intention to open source PURE/Alloy at the [Open Source Strategy Forum](https://opensourcestrategyforum.org/); internal code evaluation and preparation for open sourcing.
+# Legend Background
+On November 20, 2019, at FINOS' flagship conference, the [Open Source Strategy Forum](https://opensourcestrategyforum.org/), FINOS Platinum member [Goldman Sachs](https://developer.gs.com/docs/products/) announced [its intention](https://www.finos.org/press/goldman-announces-pure-alloy-contribution) to open source two closely related products into FINOS:
+* Its internally developed logical modeling language, referred to within the bank as "PURE", and
+* A workbench of tools, including a visual modeling platform, collectively referred to as "Alloy", created and use within Goldman Sachs to build, design, and execute PURE models
 
-- Phase 1 (Q1 2020): Using the external instance of Alloy deployed in phase 0, with a group of bank pilot users, develop common, shared models, licensed under an Apache 2.0 license, written in PURE, likely collaborating first on a derivatives model. In this release, Studio will support the creation of data models, model-to-model mappings constraints and derivations. Continue to prepare code for open sourcing. Develop initial shared roadmap for PURE and Alloy extensions and new features for project developers to work on upon code being open sourced; identify and discuss priority areas for further collaborative model development.
+The [PURE language](https://github.com/finos/legend-pure), together with four modules - [Studio](https://github.com/finos/legend-studio), [SDLC](https://github.com/finos/legend-sdlc), [Engine](https://github.com/finos/legend-engine), and [Shared](https://github.com/finos/legend-shared) - were open sourced into FINOS on October 19, 2020. Concurrently and collectively they have also were given a new, unified name - "Legend". The choice of the Legend name reflects how for Goldman Sachs the language and platform have been a guide - a legend - for the bank's data strategy.
 
-- Phase 2 (Mid 2020): Complete technical and legal reviews of code for release per FINOS contribution process; make underlying PURE and Alloy code bases available as open source under an Apache 2.0 license into a FINOS GitHub repository (targetted to happen in September 2020). Begin accepting pull requests into Alloy from developers outside Goldman Sachs.
+# Shared Public Instance of Legend
+A shared, external instance of Legend deployed on AWS within FINOS' infrastructure is available at [https://legend.finos.org/studio](https://legend.finos.org/studio). The primary purpose of this instance is to provide a shared modeling environment for the FINOS community and its projects. An additional purpose of this instance is to provide a place where people can try out Legend for themselves, check out its tools and features, and see what a Legend model looks like. This instance of Legend was the same instance that was used by the pilot group to model in Phase 1 (see [Roadmap](#Roadmap) section below for more info on our phases).
 
-A more detailed roadmap is availabe in the [ROADMAP.md file](.github/ROADMAP.md)
+To request an account on the shared instance, use the form at the bottom of https://www.finos.org/legend. You will need a GitHub account and, if want to be able to create and edit models, be covered by a [Contributor License Agreement](https://finosfoundation.atlassian.net/wiki/spaces/FINOS/pages/75530375/Contribution+Compliance+Requirements#ContributionComplianceRequirements-ContributorLicenseAgreement) with FINOS (otherwise a read-only account will be created).
 
-And for more information about PURE/Alloy, including some of the motivations behind the decision to open source these two products, see the [Alloy press release](https://www.finos.org/press/goldman-announces-pure-alloy-contribution).
+Note that the features available in the shared, external Legend instance within FINOS infrastructure largely map to the five modules open sourced to date. Features that are not yet available include model-to-database mappings and the execution of queries as services. As more modules are open sourced, more features will be activated in the shared instance. 
 
-# Documentation Strategy
+# Installation | Running a Legend Instance Locally | Deploying an Instance of Legend
+([Coming Soon](https://github.com/finos/alloy/issues/143); Information on running and installing your own instance of Legend, locallly, on premise, or in a cloud provider such as AWS, Azure, OpenShift, Google, etc.)
 
-## [Alloy Documentation Site (alloy.finos.org)](https://alloy.finos.org/)
-The [documentation site](https://alloy.finos.org) is built using Docusaurus based on the markdown files in the [`docs`](/docs/) folder. 
+# Code (and Model) Repositories
+## GitHub and GitLab
+The Legend platform and project makes use of both GitHub and GitLab.
+### GitHub
+* GitHub, specifically the [FINOS GitHub organization](https://github.com/finos/), is the distributed source and version control management system used for Legend code.
+  * The Legend GitHub repos, like all FINOS repos, are configured to make use of the FINOS [Open Developer Platform](https://odp.finos.org/) tooling.
+* GitHub infrastructure is what's used to do Legend builds (e.g., of [Legend JARS, which are then distributed through Maven Central](https://search.maven.org/search?q=g:org.finos.legend))
+### GitLab
+* GitLab is used for source control of models "under the hood" within the Legend SDLC module. As such the models, written in the Legend language, are stored in GitLab repositories.
 
-## [This Repository - GitHub.com (github.com/finos/alloy)](https://github.com/finos/legend)
 
-[This repository (github.com/finos/alloy)](github.com/finos/alloy) hosts:
-* The underling files for the [Alloy Documentation site](https://alloy.finos.org) (composed in markdown file format and stored in the `docs/` folder)
-* The [shared issues list](https://github.com/finos/legend/issues) used for task management to track project activity around documentation, deployments, and the overall effort associated with open sourcing PURE and Alloy
-*  These issues are organized in various kanban boards, including the [overall project kanban](https://github.com/orgs/finos/projects/5).
+## Repositores
+### Code Repositories (GitHub)
+[This repository (finos/legend)](www.github.com/finos/legend) is the parent repository for the project. It is used principally for overall Legend documentation and issue tracking. The code itself for the 5 modules open sourced thusfar can be found in the following 5 child repositories:
+* [Shared Module](https://github.com/finos/legend-shared): https://github.com/finos/legend-shared
+* [SDLC Module](https://github.com/finos/legend-sdlc): https://github.com/finos/legend-sdlc
+* [Studio Module](https://github.com/finos/legend-studio): https://github.com/finos/legend-studio
+* [Engine Module](https://github.com/finos/legend-engine): https://github.com/finos/legend-engine
+* [Legend Language](https://github.com/finos/legend-pure): https://github.com/finos/legend-pure
+#### Module Specific Issues
+Module specific issues are opened, maintained, and prioritized within the modules specific issue list (e.g., [https://github.com/finos/legend-studio/issues](https://github.com/finos/legend-studio/issues) for Legend Studio). Issues can be aggregated from multiple reposistories as needed through [FINOS organization level GitHub kanban boards("Projects")](https://github.com/orgs/finos/projects).
 
-## [FINOS Hosted GitLab Repository (gitlab.alloy.finos.org)](https://gitlab.alloy.finos.org)
-A separate [hosted Gitlab repository, gitlab.alloy.finos.org](gitlab.alloy.finos.org) hosts shared models being developed by the [Alloy project pilot team](https://groups.google.com/a/finos.org/forum/#!forum/alloy-pilot).
+### Model Repositories (GitLab)
+Legend models developed on [the external shared instance](https://legend.finos.org/studio), including those built during the Phase 1 pilot described below, are themselves open sourced code and available in the following GitLab repositories:
+* FX Options extensions to the CDM: https://gitlab.legend.finos.org/legend-pilot/cdm
+* Commodities Reference Data: https://gitlab.legend.finos.org/legend-pilot/commonrefdata
 
-## [gitlab.com (https://gitlab.com/finosfoundation)](gitlab.com/finosfoundation)
-Documentation specific to particular families and groups of models will be created and curated on GitLab.com at [https://gitlab.com/finosfoundation](https://gitlab.com/finosfoundation). In Phase 2, it's possible that the shared model definitions themselves may be migrated from the hosted GitLab instance to Gitlab.com. 
+**Note on model access in GitLab** Currently to access (and fork, etc.) these GitLab model repositories directly, you will need an account on the Legend shared instance (an account is also required to model and access these models through the Studio UI). An account may be requested through the account request form at the bottom of https://www.finos.org/legend. In the future we plan to [migrate these model repositories](https://github.com/finos/alloy/issues/177) to public repos on GitLab.com, after which an account will no longer be needed to access and contain the repositories that contain the models.
 
 # Contributing
-See our [CONTRIBUTING.md](.github/CONTRIBUTING.md)
-
-# Installation
-(Coming Soon; Information on running and installing your own instance of Alloy, either on premise or in a cloud provider such as AWS, Azure, OpenShift, Google, etc.)
-
-# Usage example
-(Coming Soon)
+To learn more about how to get involved with Legend and contribute to it, see the [CONTRIBUTING.md](CONTRIBUTING.md) file or the [Contribute section of the docs site](https://legend.finos.org/docs/getting-started/contribute-to-legend). 
 
 # Development setup
 (Coming Soon)
 
-# Training materials
-Thanks for your interest in Alloy. We have been developing training materials and resources since Goldman Sachs [announced their intenton to open source Alloy into FINOS](https://www.cnbc.com/2019/11/20/goldman-sachs-is-giving-away-software-to-wall-street-for-free.html#:~:text=Finance-,Goldman%20Sachs%20is%20planning%20on%20giving%20some%20of%20its%20most,to%20Wall%20Street%20for%20free&text=%E2%80%9CWe're%20using%20Alloy%20because,chief%20data%20officer%2C%20Jeff%20Wecker.) in November 2019. If you have any questions on how to get started using Alloy, please follow the below steps:
+# Roadmap
+## Phase 0 (October 2019 - January 2020) - COMPLETED
+* Announced the intention to open source PURE/Alloy (now named Legend) at the [Open Source Strategy Forum](https://opensourcestrategyforum.org/)
+* Deployed an [external instance of Legend](legend.finos.org/studio) to AWS within FINOS infrastructure, initially for use in Phase 1 (see below) for pilot participants to use to do shared modeling.
+* Commenced internal code evaluation and preparation for open sourcing
 
-#### 1. Review the existing materials
-* [Alloy Demo by Pierre de Belen of Goldman Sachs at OSSF 2019](https://www.youtube.com/watch?v=na4DCgvdDJ4) (video)
-* [Replay from May 6th Alloy Pilot Call Presentation - Part 1 of Open Source Fundamentals & Concepts for Alloy Modeling](https://www.finos.org/hubfs/FINOS/2020%20Video%20Uploads/FINOS%20-%20Open%20Source%20Fundamentals%20-%20Part%201%20-%2006%20May%2020.mp4) (video)
-* [Replay from May 20th Alloy Pilot Call Presentation - Part 2 of Open Source Fundamentals & Concepts for Alloy Modeling](https://www.finos.org/hubfs/FINOS/2020%20Video%20Uploads/FINOS%20-%20Open%20Source%20Fundamentals%20-%20Part%202%20-%2013%20May%2020.mp4) (video)
-* [Alloy Documentation site](https://alloy.finos.org/)
-* Alloy meeting minutes:
+## Phase 1 (January 2020 - September 2020) - COMPLETED
+* Opened the [external instance of Legend](legend.finos.org/studio) Studio deployed in Phase 0 to a pilot group of financial institutions, composed of FINOS members plus several other institutions that expressed an interest in participating in the pilot, for them together with Goldman Sachs and FINOS to evaluate the use of Legend to do shared, collaborative modeling. In this release, Studio supported a limited set of functionality, including the creation of data models, model-to-model mappings, constraints and derivations
+* During the pilot phase, modelers collaborated on the [Legend external instance](https://legend.finos.org/studio) to build shared models. Modeling occurred in two work streams: 
+  * [An FX workstream of the the pilot group](https://github.com/finos/legend/tree/master/meeting-minutes/fx-options-wg) extended and expanded the FX Option model of the Common Domain Model (CDM), developed by the International Swaps and Derivatives Association (ISDA). The Averaging Model developed during the pilot has since been approved by the ISDA Architecture Review Committee and [released in the CDM (see 2.82.8)](https://docs.rosetta-technology.io/cdm/releases/all.html).
+  * The pilot group also created a [Commodity Reference Data workstream](https://github.com/finos/legend/tree/master/meeting-minutes/commodities-ref-data-wg), to work on commodities data, especially in the context of a Fixed vs Float swap, including defining a payout model to be proposed into the CDM.
+  
+  Other areas that the pilot group have discussed as potential areas to model together in Legend include Environmental, Social and Governance (ESG) data as well as potentially continuing some of the work started by the [FINOS Financial Objects program on RFQ](https://fo.finos.org/docs/objects/rfq) in the context of interest rate swaps.
+
+* Performed code readiness work to extract Legend code from GS infrastructure, and sufficiently abstract and generalize code base as needed. Revised code base to reflect new name (note that some references to old "PURE" and "Alloy" name still exist). GS Engineering, together with FINOS and Linux Foundation DevOps teams, performed code scanning and remediations. Moved Goldman Sachs's daily production builds of Legend to FINOS infrastructure and public GitHub repos.
+
+## Phase 2 (October 2020 - December 2020)
+* On 2020.10.19 made underlying code bases to five Legend modules available as open source under an Apache 2.0 license
+* Announced new name (Legend) and rebranded
+* Identify "good first issues" for developers new to Legend
+* Begin accepting pull requests of code from external (non-GS) developers.
+* Conduct office hours for external developers interested in getting involved with Legend
+
+## Phase 3 (Q1 2021)
+* Make additional functionality available in Studio, including relational execution, support for flat data sources (e.g., csv) and automated code generation (e.g., JSON schema, Protobuf, AVRO).
+* Transition shared model repositories from hosted GitLab instance (gitlab.legend.finos.org) to gitlab.com.
+
+## Phase 4 (Q3 2021)
+* Open source Cube UI for user-friendly tabular data exploration.
+
+## Phase 5 (Q4 2021)
+* Open source Query UI to search and access modeled data.
+
+## Phase 6 (Q4 2021)
+* Open source Services UI. This will allow managing of production data services (APIs) for repeatable and controlled data access.
+
+# Documentation 
+## [Legend Documentation Site (legend.finos.org)](https://legend.finos.org/)
+The [documentation site](https://legend.finos.org) is built using Docusaurus based on the markdown files in the [`docs`](/docs/) folder. 
+
+## [This Repository - GitHub.com (github.com/finos/legend)](https://github.com/finos/legend)
+
+[This repository (github.com/finos/legend)](github.com/finos/legend) hosts:
+* The underling files for the [Legend Documentation site](https://legend.finos.org) (composed in markdown file format and stored in the `docs/` folder)
+* The [shared issues list](https://github.com/finos/legend/issues) used for task management to track project activity around documentation, deployments, and the overall effort associated with open sourcing Legend
+*  These issues are organized in various kanban boards, including the [overall project kanban](https://github.com/orgs/finos/projects/5).
+
+## [FINOS Hosted GitLab Repository (gitlab.legend.finos.org)](https://gitlab.legend.finos.org)
+A separate [hosted Gitlab repository, gitlab.legend.finos.org](gitlab.legend.finos.org) hosts shared models that were developed by the [Legend project pilot team](https://groups.google.com/a/finos.org/forum/#!forum/legend-pilot).
+
+## [gitlab.com (https://gitlab.com/finosfoundation)](https://gitlab.com/finosfoundation) [Not Yet Used]
+In the future we intend to migrate the models repositories from the hosted GitLab repository to [https://gitlab.com/finosfoundation](https://gitlab.com/finosfoundation). For now, this is unused but will eventually be the long-term home for public models built using Legend.
+
+# Find out more
+## Review the existing materials
+* [Legend Demo by Pierre de Belen of Goldman Sachs at OSSF 2019](https://www.youtube.com/watch?v=na4DCgvdDJ4) (video)
+* [Replay from May 6th Legend Pilot Call Presentation - Part 1 of Open Source Fundamentals & Concepts for Legend Modeling](https://www.finos.org/hubfs/FINOS/2020%20Video%20Uploads/FINOS%20-%20Open%20Source%20Fundamentals%20-%20Part%201%20-%2006%20May%2020.mp4) (video)
+* [Replay from May 20th Legend Pilot Call Presentation - Part 2 of Open Source Fundamentals & Concepts for Legend Modeling](https://www.finos.org/hubfs/FINOS/2020%20Video%20Uploads/FINOS%20-%20Open%20Source%20Fundamentals%20-%20Part%202%20-%2013%20May%2020.mp4) (video)
+* [Legend Documentation site](https://legend.finos.org/)
+* Legend meeting minutes:
   * [prior to July 2020](https://github.com/finos/legend/tree/master/meeting-minutes)
   * [July 2020 and later](https://github.com/finos/legend/issues?q=label%3Ameeting)
   
-#### 2. [Raise an issue](https://github.com/finos/legend/issues)
+## [Raise an issue](https://github.com/finos/legend/issues)
 * If you cannot find the answer to your question in the above materials, please raise an issue at https://github.com/finos/legend/issues
 
-#### 3. Join the Alloy team for Office Hours _(more information coming soon)_
+## Join the Monthly Legend General Meeting
+Legend general meetings are your opportunity to get updates on Legend, provide feedback on the product and the roadmap, see demos, and ask questions. General meetings happen the third Thursday of each month at 9am ET / 2pm BST. The next such general meeting is [scheduled for November 19, 2020](https://calendar.google.com/calendar/u/0/r/day/2020/11/19?eid=bzQ5ZXVpN2J1OHYyZTJjYm91Z3Q1OHU2MzlfMjAyMDExMTlUMTQwMDAwWiBmaW5vcy5vcmdfZmFjOG1vMXJmYzZlaHNjZzBkODBmaThqaWdAZw&ctz=America/New_York&sf=true). 
+
+## Join Legend Office Hours 
+* [Thursday, October 29, 11am ET](https://calendar.google.com/calendar/event?eid=MmxpMmRhY3FxODM2cmt1ZTN0aWYwbTFqdWRfMjAyMDEwMjlUMTUwMDAwWiBmaW5vcy5vcmdfZmFjOG1vMXJmYzZlaHNjZzBkODBmaThqaWdAZw&ctz=America/New_York)
+  * WebEx: https://finos.webex.com/finos/j.php?MTID=m58790a7ebaa830f785f3e0934603372b
+  * Meeting number (access code): 127 301 6315
+  * Email legend-inquiries@finos.org to RSVP and receive the meeting password
 
 # License
 Copyright 2020 Goldman Sachs
