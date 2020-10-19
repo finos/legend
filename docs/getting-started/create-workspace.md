@@ -4,7 +4,7 @@ title: Create a workspace
 sidebar_label: Create a workspace
 ---
 
-Start working on your data model by creating a workspace. Workspaces let users collaborate on the same project. A Workspace is a copy of a project (and, under the hood, a branch in GitLab) which can be later merged back into the main project (i.e., the master branch in GitLab). To create a workspace:
+Start working on your data model by creating a workspace. Workspaces let users collaborate on the same project. A Workspace is a copy of a project which can be later merged back into the main project. To create a workspace:
 
 1. Select an existing GitLab project or select **+** to start working on a new one.  
 
