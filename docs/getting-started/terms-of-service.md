@@ -205,8 +205,8 @@ Effective date of version 2.0: January 31, 2020
 
 ### Exhibit A to ISDA CDM(TM) Version 2.0 Development License
 
-* The ISDA CDMTM portions of this document are subject to the ISDA CDMTM License Version 2.0 (the “License”); you may not use the ISDA CDM except in compliance with that License. You may obtain a copy of the License at [http://www.isda.org/isda-cdm-2/](http://www.isda.org/isda-cdm-2/).
+* The ISDA CDMTM portions of this document are subject to the ISDA CDMTM License Version 2.0 (the “License”); you may not use the ISDA CDM except in compliance with that License. You may obtain a copy of the License at [https://www.isda.org/2018/11/22/isda-cdm-factsheet/](https://www.isda.org/2018/11/22/isda-cdm-factsheet/).
 
-* The portions of the ISDA CDMTM distributed under the License are distributed on an “AS IS” basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for the specific language governing rights and limitations under the License. You may obtain a copy of the License at [http://www.isda.org/isda-cdm-2/](http://www.isda.org/isda-cdm-2/).
+* The portions of the ISDA CDMTM distributed under the License are distributed on an “AS IS” basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for the specific language governing rights and limitations under the License. You may obtain a copy of the License at [https://www.isda.org/2018/11/22/isda-cdm-factsheet/](https://www.isda.org/2018/11/22/isda-cdm-factsheet/).
 
 * The Licensor of the ISDA CDM is the International Swaps and Derivatives Association, Inc., 10 East 53rd Street, 9th Floor, New York, NY 10022, ATTN: Office of the General Counsel. All Rights Reserved.
