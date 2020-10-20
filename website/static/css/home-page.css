@@ -60,7 +60,7 @@
 }
 
 .home-page__header__title__logo path {
-  fill: var(--color-light-grey-150);
+  fill: var(--color-light-grey-300);
 }
 
 .home-page__header__nav {
@@ -108,33 +108,6 @@
   padding: 0 10rem 10rem 10rem;
 }
 
-.home-page__content__brand__green-pad {
-  position: absolute;
-  height: 60vh;
-  width: 20vw;
-  top: 0;
-  right: 20vh;
-  background: transparent;
-}
-
-.home-page__content__brand__purple-pad {
-  position: absolute;
-  height: 40vh;
-  width: 30vw;
-  top: 10vh;
-  left: 20vh;
-  background: transparent;
-}
-
-.home-page__content__brand__yellow-pad {
-  position: absolute;
-  height: 30vh;
-  width: 45vw;
-  bottom: 10vh;
-  left: 20vh;
-  background: transparent;
-}
-
 .home-page__down-arrow__container {
   width: calc(100% - 20rem);
   position: absolute;
@@ -162,76 +135,49 @@
 }
 
 .home-page__logo {
-  height: 60%;
+  height: 45%;
 }
 
-.home-page__logo .logo-st0 {
-  transition: 0.7s fill ease;
-  fill: #4a7478;
+.home-page__logo .main-logo:hover {
+  animation: arrow-bounce 0.5s alternate ease infinite;
 }
 
-.home-page__logo .logo-st1 {
-  fill: #454449;
+@keyframes arrow-bounce {
+  from {
+    transform: translateY(0.3rem);
+  }
+  to {
+    transform: translateY(-0.3rem);
+  }
 }
 
-.home-page__logo .logo-st2 {
-  transition: 2s fill ease;
-  fill: #3e3a3b;
-}
-
-.home-page__logo .logo-st3 {
-  transition: 0.7s fill ease;
-  fill: #5c5858;
-}
-
-.home-page__logo__Y {
+.home-page__logo .main-logo.main-logo-st0 {
+  /* transition: 0.7s fill ease; */
   fill: #404040;
 }
 
-.home-page__content__brand__green-pad:hover
-  + div
-  + div
-  + .home-page__logo
-  .logo-st3 {
-  fill: #6a784a;
+.home-page__logo .main-logo.main-logo-st1 {
+  fill: #717171;
 }
 
-.home-page__content__brand__green-pad:hover
-  + div
-  + div
-  + .home-page__logo
-  .logo-st2 {
-  fill: #704662;
-}
-
-.home-page__content__brand__purple-pad:hover
-  + div
-  + .home-page__logo
-  .logo-st3 {
-  fill: #704662;
-}
-
-.home-page__content__brand__purple-pad:hover
-  + div
-  + .home-page__logo
-  .logo-st2 {
-  fill: #78694a;
-}
-
-.home-page__content__brand__yellow-pad:hover + .home-page__logo .logo-st3 {
-  fill: #78694a;
-}
-
-.home-page__content__brand__yellow-pad:hover + .home-page__logo .logo-st2 {
-  fill: #6a784a;
-}
-
-.home-page__content__brand:hover .logo-st3 {
-  fill: #5c5858;
-}
-
-.home-page__content__brand:hover .logo-st2 {
+.home-page__logo .main-logo.main-logo-st2 {
+  /* transition: 2s fill ease; */
   fill: #3e3a3b;
+}
+
+.home-page__logo .main-logo.main-logo-st3 {
+  /* transition: 0.7s fill ease; */
+  fill: #3e3737;
+}
+
+.home-page__logo .main-logo.main-logo-st4 {
+  /* transition: 0.7s fill ease; */
+  fill: #3b3330;
+}
+
+.home-page__logo .main-logo.main-logo-st5 {
+  /* transition: 0.7s fill ease; */
+  fill: #3c3731;
 }
 
 .home-page__content__whatis {
