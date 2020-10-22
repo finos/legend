@@ -10,7 +10,7 @@ If you already use, or are planning to use Legend at an individual or corporate 
 # Get Started
 There are many ways to contribute to Legend, and many of them do not involve writing any code. Here are a few ideas to get started:
 
-1. **Start using Legend Studio to provide feedback, and contribute to, existing models**. Request access to the modeling instance at https://www.finos.org/legend and go through the [Getting Started](https://legend.finos.org/docs/getting-started/studio#getting-started) guide. Does everything work as expected? If not, we're always looking for improvements. Let us know by [opening an issue](https://github.com/finos/legend/issues/new/choose)
+1. **Start using Legend Studio to provide feedback, and contribute to, existing models**. Request access to the modeling instance at https://www.finos.org/legend and go through the [Getting Started](https://legend.finos.org/docs/getting-started/installation-guide) guide. Does everything work as expected? If not, we're always looking for improvements. Let us know by [opening an issue](https://github.com/finos/legend/issues/new/choose)
 
 2. **Contribute code**
 
@@ -55,7 +55,7 @@ Need an ICLA? Unsure if you are covered under an existing CCLA? Email [help@fino
 ### Introduction
 FINOS hosts a shared version of Legend Studio in the public cloud, which is available to prototype collaborative data modeling, at https://legend.finos.org/studio. If you would like to access the existing models, please **request access to the modeling instance** at [finos.org/legend](https://www.finos.org/legend).
 
-Once you have requested access to the modeling instance, follow the instructions in the [Legend Documentation Site](https://legend.finos.org/docs/getting-started/studio#create-a-model) to get started and create a new model or edit existing ones. 
+Once you have requested access to the modeling instance, follow the instructions in the [Legend Documentation Site](https://legend.finos.org/docs/getting-started/create-model) to get started and create a new model or edit existing ones. 
 If you have questions or encounter any issues, please raise an issue at https://github.com/finos/legend/issues.
 
 ### Suggest Modeling Use Cases
