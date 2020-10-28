@@ -279,7 +279,7 @@ pre code.hljs {
   .toc .toggleNav .navGroup .navGroupCategoryTitle {
     text-transform: uppercase;
     max-width: 25rem;
-    cursor: default;
+    cursor: pointer;
     user-select: none;
     color: var(--color-light-grey-400);
     display: inline-flex;

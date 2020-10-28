@@ -1,0 +1,19 @@
+.home-page__content__under-construction {
+  position: relative;
+  height: calc(100vh - 24rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #171717;
+}
+
+.home-page__content__under-construction__text {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  user-select: none;
+  cursor: default;
+}
