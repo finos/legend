@@ -134,8 +134,8 @@ The Legend platform has five components. The minimum required to run Legend are 
 
 4. (Optional) If you want to alter the fundamentals of the language or the server, install **legend-pure** and **legend-shared**. Run `mvn install` and recompile legend-pure and legend-shared after installation.
 
-## More information
+## Next steps
 
-- [Legend roadmap](roadmap.md)
-- [Contribute to Legend](contribute-to-legend.md)
-- [Terms of service](terms-of-service.md)
+- [Create a workspace](create-workspace.md)
+- [Create a model](create-model.md)
+- [Create a diagram](create-diagram.md)
