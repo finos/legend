@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Installation guide · Legend</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Installation guide: **Coming soon**"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Installation guide · Legend"/><meta property="og:type" content="website"/><meta property="og:url" content="https://legend.finos.org/"/><meta property="og:description" content="Installation guide: **Coming soon**"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-blue.min.css"/><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Installation guide · Legend</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="The Legend platform has five components. The minimum required to run Legend are Engine, SDLC, and Studio. The five components are:"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Installation guide · Legend"/><meta property="og:type" content="website"/><meta property="og:url" content="https://legend.finos.org/"/><meta property="og:description" content="The Legend platform has five components. The minimum required to run Legend are Engine, SDLC, and Studio. The five components are:"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-blue.min.css"/><script>
               (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
               (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
               m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -62,11 +62,131 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Installation guide</h1></header><article><div><span><p>Installation guide: <strong>Coming soon</strong></p>
-<h2><a class="anchor" aria-hidden="true" id="next-steps"></a><a href="#next-steps" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Next steps</h2>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Installation guide</h1></header><article><div><span><p>The Legend platform has five components. The minimum required to run Legend are Engine, SDLC, and Studio. The five components are:</p>
 <ul>
-<li><a href="/docs/getting-started/create-workspace">Create a workspace</a></li>
-<li><a href="/docs/getting-started/create-model">Create a model</a></li>
-<li><a href="/docs/getting-started/create-diagram">Create a diagram</a></li>
+<li><strong>Engine</strong>: Provides a Pure parser and compiler that executes plans when provided with a Pure function, a mapping, and a runtime. It's also an access point for model transformers written using the Legend language.</li>
+<li><strong>SDLC</strong>: Provides a rich REST API letting users manage metadata. Most SDLCs are file and text-centric, but the Legend SDLC is model-centric, meaning users interact with model entities rather than with files and folders. The Legend SDLC enables:
+<ul>
+<li>Users to develop with tools designed for editing models (rather than files or code).</li>
+<li>Users to view changes with tools designed for viewing model-level changes (rather than text changes).</li>
+<li>Clients to create their own tools for their own use cases.</li>
+</ul></li>
+<li><strong>Studio</strong>: Lets you describe and connect data in business terms to create data models.</li>
+<li><strong>Pure</strong>: Lets you alter Pure, the underlying language for Legend.</li>
+<li><strong>Shared</strong>: Provides shared code used across Legend apps for universal server-side functionality, like hosting static files, performing authentication, and so on.</li>
 </ul>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/getting-started/create-workspace"><span>Create a workspace</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#next-steps">Next steps</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a></section><section class="finos finosBanner"><a href="https://www.finos.org"><img id="finosicon" src="https://legend.finos.org/img/finos_wordmark.svg" height="75px" alt="FINOS" title="FINOS"/></a></section><section class="privacy finosBanner"><a href="https://www.finos.org/privacy-policy" target="_blank">Privacy Policy</a></section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
+<h2><a class="anchor" aria-hidden="true" id="prerequisites"></a><a href="#prerequisites" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prerequisites</h2>
+<ul>
+<li>A GitLab.com account or your own GitLab server.
+<ul>
+<li>Create an <em>Application</em> by going to <strong>profile settings &gt; applications</strong>.</li>
+</ul></li>
+<li>Java Development Kit (JDK) 8 or later.</li>
+<li>Maven 3.6 or later.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="installation-steps"></a><a href="#installation-steps" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation steps</h2>
+<ol>
+<li><p>Install <strong>legend-engine</strong>.</p>
+<ol>
+<li>Run <code>mvn install</code> to compile.</li>
+<li>To start the server, use the Main class <code>org.finos.legend.engine.server.Server</code> with the parameters: <code>server legend-engine-server/src/test/resources/org/finos/legend/engine/server/test/userTestConfig.json</code>.</li>
+<li>Test by going to <a href="http://127.0.0.1:9090">http://127.0.0.1:9090</a> in a browser. The Swagger page can be accessed at <a href="http://127.0.0.1:9090/api/swagger">http://127.0.0.1:9090/api/swagger</a>.</li>
+</ol></li>
+<li><p>Install <strong>legend-sdlc</strong>.</p>
+<ol>
+<li><p>Run <code>mvn install</code> to compile.</p></li>
+<li><p>Create a configuration file based on your particular environment. This can be JSON or YAML.</p>
+<p>A <a href="https://github.com/finos/legend-sdlc/blob/master/legend-sdlc-server/src/test/resources/config-sample.yaml">sample configuration file</a> is included to help you get started. You need to supply some information, like the host your server is running on.</p></li>
+<li><p>On GitLab, create an <em>Application</em>, which is used for authorization so that the SDLC Server can act on behalf of users.</p>
+<p>For more information, see <a href="https://docs.gitlab.com/ee/api/oauth2.html">GitLab's documentation</a>. Include information about the GitLab instance and your app in the configuration file.</p></li>
+<li><p>To start the server, use the Main class <code>org.finos.legend.sdlc.server.Server</code> with the parameters: <code>server legend-sdlc-server/src/test/resources/org/finos/legend/sdlc/server/test/userTestConfig.json</code>.</p></li>
+<li><p>Test by going to these URLS in a browser:</p>
+<ul>
+<li><a href="http://127.0.0.1:7075/api/info">http://127.0.0.1:7075/api/info</a> — the page should return information, like the start time.</li>
+<li><a href="http://127.0.0.1:7075/api/swagger">http://127.0.0.1:7075/api/swagger</a> — the Swagger page.</li>
+<li><a href="http://127.0.0.1:7075/api/projects">http://127.0.0.1:7075/api/projects</a> — a list of projects, which may be empty.</li>
+</ul></li>
+</ol></li>
+<li><p>Install <strong>legend-studio</strong>.</p>
+<ol>
+<li><p>To compile, run:</p>
+<pre><code class="hljs css language-bash">  npm install
+  npm run setup
+  npm start
+</code></pre></li>
+<li><p>Custom DEV server config:</p>
+<p>Depending on your developer environment, you might have customizations for the dev server. For example, if your environment has a different host for <code>localhost</code> and that host requires special signed certficates and keys, you need to provide those in <code>server/https</code>. See sample below:</p>
+<pre><code class="hljs css language-jsonc">{
+  <span class="hljs-attr">"host"</span>: <span class="hljs-string">"localhost"</span>,
+  <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> the path must be relative to `webpack.config.js`</span>
+  <span class="hljs-attr">"key"</span>: <span class="hljs-string">"./dev/server/localhost.key.pem"</span>,
+  <span class="hljs-attr">"cert"</span>: <span class="hljs-string">"./dev/server/localhost.cert.pem"</span>,
+  <span class="hljs-attr">"ca"</span>: <span class="hljs-string">"./dev/server/ca.cert.pem"</span>
+}
+</code></pre>
+<p>The configs specified in this file will override those in <code>webpack.config.js</code>. See <code>dev/scripts/start.js</code> and setting <code>SERVER_CONFIG_PATH</code> for more information.</p></li>
+<li><p>IDE: If you use VSCode, install <code>Prettier</code> and <code>ESLint</code> plugins, then configue your workspace settings in <code>./.vscode/settings.json</code> like this:</p>
+<pre><code class="hljs css language-jsonc">{
+  <span class="hljs-attr">"editor.tabSize"</span>: <span class="hljs-number">2</span>,
+  <span class="hljs-attr">"eslint.validate"</span>: [
+    <span class="hljs-string">"javascript"</span>,
+    <span class="hljs-string">"javascriptreact"</span>,
+    <span class="hljs-string">"typescript"</span>,
+    <span class="hljs-string">"typescriptreact"</span>
+  ],
+  <span class="hljs-attr">"eslint.options"</span>: {
+    <span class="hljs-comment">// use advanced ESLint rules for development</span>
+    <span class="hljs-attr">"configFile"</span>: <span class="hljs-string">"./.eslintrc-advanced.js"</span>,
+    <span class="hljs-attr">"rulePaths"</span>: [<span class="hljs-string">"./dev/eslint_rules"</span>]
+  },
+  <span class="hljs-attr">"search.exclude"</span>: {
+    <span class="hljs-attr">"**/node_modules"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"**/package-lock.json"</span>: <span class="hljs-literal">true</span>
+  },
+  <span class="hljs-comment">// This is useful when we want to use a different version of Typescript</span>
+  <span class="hljs-comment">// "typescript.tsdk": "./node_modules/typescript/lib"</span>
+  <span class="hljs-attr">"[css]"</span>: {
+    <span class="hljs-attr">"editor.defaultFormatter"</span>: <span class="hljs-string">"esbenp.prettier-vscode"</span>
+  },
+  <span class="hljs-attr">"[scss]"</span>: {
+    <span class="hljs-attr">"editor.defaultFormatter"</span>: <span class="hljs-string">"esbenp.prettier-vscode"</span>
+  },
+  <span class="hljs-attr">"[html]"</span>: {
+    <span class="hljs-attr">"editor.defaultFormatter"</span>: <span class="hljs-string">"vscode.html-language-features"</span>
+  },
+  <span class="hljs-attr">"[json]"</span>: {
+    <span class="hljs-attr">"editor.defaultFormatter"</span>: <span class="hljs-string">"esbenp.prettier-vscode"</span>
+  },
+  <span class="hljs-attr">"[jsonc]"</span>: {
+    <span class="hljs-attr">"editor.defaultFormatter"</span>: <span class="hljs-string">"esbenp.prettier-vscode"</span>
+  },
+  <span class="hljs-attr">"[javascript]"</span>: {
+    <span class="hljs-attr">"editor.defaultFormatter"</span>: <span class="hljs-string">"vscode.typescript-language-features"</span>
+  },
+  <span class="hljs-attr">"[typescript]"</span>: {
+    <span class="hljs-attr">"editor.defaultFormatter"</span>: <span class="hljs-string">"vscode.typescript-language-features"</span>
+  },
+  <span class="hljs-attr">"[typescriptreact]"</span>: {
+    <span class="hljs-attr">"editor.defaultFormatter"</span>: <span class="hljs-string">"vscode.typescript-language-features"</span>
+  },
+  <span class="hljs-attr">"prettier.singleQuote"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"prettier.trailingComma"</span>: <span class="hljs-string">"es5"</span>,
+  <span class="hljs-attr">"editor.formatOnSave"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"editor.codeActionsOnSave"</span>: {
+    <span class="hljs-attr">"source.fixAll.eslint"</span>: <span class="hljs-literal">true</span>
+  },
+  <span class="hljs-attr">"javascript.preferences.importModuleSpecifier"</span>: <span class="hljs-string">"non-relative"</span>,
+  <span class="hljs-attr">"typescript.preferences.importModuleSpecifier"</span>: <span class="hljs-string">"non-relative"</span>
+}
+</code></pre>
+<p>If succesful, your browser will open the local Studio.</p></li>
+</ol></li>
+<li><p>(Optional) If you want to alter the fundamentals of the language or the server, install <strong>legend-pure</strong> and <strong>legend-shared</strong>. Run <code>mvn install</code> and recompile legend-pure and legend-shared after installation.</p></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="more-information"></a><a href="#more-information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>More information</h2>
+<ul>
+<li><a href="roadmap.md">Legend roadmap</a></li>
+<li><a href="/docs/getting-started/contribute-to-legend">Contribute to Legend</a></li>
+<li><a href="/docs/getting-started/terms-of-service">Terms of service</a></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/getting-started/create-workspace"><span>Create a workspace</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#installation-steps">Installation steps</a></li><li><a href="#more-information">More information</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a></section><section class="finos finosBanner"><a href="https://www.finos.org"><img id="finosicon" src="https://legend.finos.org/img/finos_wordmark.svg" height="75px" alt="FINOS" title="FINOS"/></a></section><section class="privacy finosBanner"><a href="https://www.finos.org/privacy-policy" target="_blank">Privacy Policy</a></section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
