@@ -1,7 +1,7 @@
 /*
  * Language: Alloy
  * Author: James Bracegirdle <james.bracegirdle@gs.com>
- * Website: https://alloy.finos.org
+ * Website: https://legend.finos.org
  */
 function alloyHighlighter(hljs) {
   const KEYWORDS =

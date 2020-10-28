@@ -129,7 +129,7 @@ The Legend Pilot website and service located at https//legend.finos.org/ (the �
 
 10. Miscellaneous Terms
 
-    10.1. Modifications to this Agreement. FINOS may occasionally revise these Terms. You can find the most recent version at https://legend.finos.org/terms-of-service. By using the Service after a new version of these Terms becomes effective, you thereby agree to be bound by the revised Terms.
+    10.1. Modifications to this Agreement. FINOS may occasionally revise these Terms. You can find the most recent version at https://legend.finos.org/docs/getting-started/terms-of-service. By using the Service after a new version of these Terms becomes effective, you thereby agree to be bound by the revised Terms.
 
     10.2. Choice of Law. These Terms and the relationship between you and FINOS shall be governed by the laws of the State of California without regard to its conflict of law provisions and that any and all claims, causes of action, or disputes (regardless of theory) arising out of or relating to the Service, shall be brought exclusively in the courts located in the county of San Francisco or the U.S. District Court for the Northern District of California. You consent and waive any objection to the jurisdiction of and venue in these courts.
 
@@ -205,8 +205,8 @@ Effective date of version 2.0: January 31, 2020
 
 ### Exhibit A to ISDA CDM(TM) Version 2.0 Development License
 
-* The ISDA CDMTM portions of this document are subject to the ISDA CDMTM License Version 2.0 (the “License”); you may not use the ISDA CDM except in compliance with that License. You may obtain a copy of the License at [http://www.isda.org/isda-cdm-2/](http://www.isda.org/isda-cdm-2/).
+* The ISDA CDMTM portions of this document are subject to the ISDA CDMTM License Version 2.0 (the “License”); you may not use the ISDA CDM except in compliance with that License. You may obtain a copy of the License at [https://www.isda.org/2018/11/22/isda-cdm-factsheet/](https://www.isda.org/2018/11/22/isda-cdm-factsheet/).
 
-* The portions of the ISDA CDMTM distributed under the License are distributed on an “AS IS” basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for the specific language governing rights and limitations under the License. You may obtain a copy of the License at [http://www.isda.org/isda-cdm-2/](http://www.isda.org/isda-cdm-2/).
+* The portions of the ISDA CDMTM distributed under the License are distributed on an “AS IS” basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for the specific language governing rights and limitations under the License. You may obtain a copy of the License at [https://www.isda.org/2018/11/22/isda-cdm-factsheet/](https://www.isda.org/2018/11/22/isda-cdm-factsheet/).
 
 * The Licensor of the ISDA CDM is the International Swaps and Derivatives Association, Inc., 10 East 53rd Street, 9th Floor, New York, NY 10022, ATTN: Office of the General Counsel. All Rights Reserved.

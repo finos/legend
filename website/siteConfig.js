@@ -15,15 +15,15 @@
 const alloyHighlighter = require('./alloyHighlighter');
 
 const siteConfig = {
-  title: 'alloy', // Title for your website. THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
+  title: 'Legend', // Title for your website. THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
   tagline: 'Language and visual platform to generate models for the financial services industry', //THIS CHANGES THE TITLE TAGS FOR THE WEBSITE (LOOK IN BROWSER TAB AT TOP)
-  cname: 'nicoalba.github.io',
+  cname: 'legend.finos.org',
   gaTrackingId: 'UA-89349362-7',
-  url: 'https://nicoalba.github.io/alloy',
-  baseUrl: '/alloy/',
+  url: 'https://legend.finos.org',
+  baseUrl: '/',
   // For publishing to GitHub pages
-  projectName: 'alloy',
-  organizationName: 'nicoalba',
+  projectName: 'legend',
+  organizationName: 'finos',
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     // { doc: 'getting-started/studio', label: 'Docs' }
@@ -47,14 +47,14 @@ const siteConfig = {
   },
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} PURE/Alloy`,  /* CHANGE THIS TO PROJECT / PROGRAM NAME */
+  copyright: `Copyright © ${new Date().getFullYear()} Legend`,  /* CHANGE THIS TO PROJECT / PROGRAM NAME */
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
     // theme: 'atom-one-dark',
     theme: 'tomorrow-night-blue',
     hljs: function(hljsEngine) {
-       hljsEngine.registerLanguage('alloy', alloyHighlighter);
+       hljsEngine.registerLanguage('legend', alloyHighlighter);
     },
   },
 
@@ -85,7 +85,7 @@ const siteConfig = {
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-  repoUrl: 'https://github.com/finos-admin/purealloy'
+  repoUrl: 'https://github.com/finos/legend'
 };
 
 module.exports = siteConfig;

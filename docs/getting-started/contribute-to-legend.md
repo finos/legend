@@ -91,18 +91,17 @@ FINOS hosts a shared version of Legend Studio in the public cloud, which is avai
 Once you've requested access to the modeling instance, you can get started and [create a model](create-model.md).
 
 If you have questions or encounter any issues, raise an issue at https://github.com/finos/legend/issues.
+ 
 
-### Suggest modeling use cases
-
-If you have suggestions or ideas for modeling use cases for which Legend may be appropriate, we'd love to hear your ideas -- send a note with your suggestion to the [Legend General List](legend@finos.org).
+If you have suggestions or ideas for modeling use cases for which Legend may be appropriate, we'd love to hear your ideas -- send a note with your suggestion to the [Legend General List](mailto:legend@finos.org).
 
 ### Background: The Legend Pilot—Shared modeling in Legend (January - September 2020)
 
-In January 2020, FINOS launched a pilot with FINOS member organizations interested in evaluating Legend-PURE/Legend. Modeling occurred on the FINOS hosted, shared version of Legend Studio in the public cloud, which was used by FINOS members to collaborate on Legend Studio by building extensions to the [ISDA Common Domain Model (CDM)](https://www.isda.org/2018/11/22/isda-cdm-factsheet/). Modeling occurred in two workstreams: **FX Options** and **Commodities Reference Data**, which concluded their work in September 2020. We expect that further working groups may use Legend for data modeling in these and/or other areas after the first wave of code has been open sourced in October 2020.
+In January 2020, FINOS launched a pilot with FINOS member organizations interested in evaluating Legend. Modeling occurred on the FINOS hosted, shared version of Legend Studio in the public cloud, which was used by FINOS members to collaborate on Legend Studio by building extensions to the [ISDA Common Domain Model (CDM)](https://www.isda.org/2018/11/22/isda-cdm-factsheet/). Modeling occurred in two workstreams: **FX Options** and **Commodities Reference Data**, which concluded their work in September 2020. We expect that further working groups may use Legend for data modeling in these and/or other areas after the first wave of code has been open sourced in October 2020.
 
 ## Contribute documentation
 
-You can get involved with Legend by suggesting topics you'd like to see in our documentation. Suggest a topic for our docs by [opening an issue in our GitHub repo](https://github.com/finos/legend/issues/new/choose). Ideas are also welcome through the [Legend General List](mailto:Legend@finos.org).
+You can get involved with Legend by suggesting topics you'd like to see in our documentation. Suggest a topic for our docs by [opening an issue in our GitHub repo](https://github.com/finos/legend/issues/new/choose). Ideas are also welcome through the [Legend General List](mailto:legend@finos.org).
 
 ### Edit the documentation site directly
 
@@ -120,14 +119,12 @@ cd legend ; ./build-site.sh
 cd website ; yarn start
 ```
 
-**Note:** The `build-site.sh` script pulls content from other Git repositories, mapping the `docs` folder into `modules/<repository-name>`. For example, all files and folders under https://gitlab.com/finosfoundation/purealloy-modeling-samples/tree/master/docs are available under the `/models/purealloy-modeling-samples` URL suffix.
-
 Once you're satisfied with your documentation changes, commit and propose them in line with the general process described above. Specifically for doc edits, it might look like this:
 
 - Commit your changes (`git commit -am <short description of what docs you changed/added>`).
 - Push to the branch to your forked repo on GitHub (`git push origin myProposedDocChanges`).
 - Review and test the changes in your fork.
-- If all looks good, propose a pull request into the [FINOS PURE/Legend GitHub Repo](github.com/finos/legend) from your fork.
+- If all looks good, propose a pull request into the [FINOS Legend GitHub Repo](https://github.com/finos/legend) from your fork.
 
 ### Docusaurus
 
@@ -137,7 +134,7 @@ To learn more about Docusaurus, read the following resources:
 - https://finosfoundation.atlassian.net/wiki/spaces/FDX/pages/844759075/Using+Docusaurus+recommended 
 - https://docusaurus.io
 
-**Note:** [The documentation build script](https://github.com/finos/legend/blob/master/build-site.sh) can be configued to pull in and include files from GitLab repositories housing modeling documentation into the GitHub pages/Docusaurus-powered site.
+**Note:** [The documentation build script](https://github.com/finos/legend/blob/master/build-site.sh) can be configured to pull in and include files from GitLab repositories housing modeling documentation into the GitHub pages/Docusaurus-powered site.
 
 ## Contribute issues
 
