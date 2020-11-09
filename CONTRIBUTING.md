@@ -25,7 +25,7 @@ In order to configure your GitHub access, you will need to:
 
 1. [Create an account on GitHub.com](https://help.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account)
 2. [Set up a Git client locally](https://help.github.com/en/github/getting-started-with-github/set-up-git)
-3. Ensure that the Git client is configured with your `<username>@users.github.com` email address (you can do so using the `git config --list | grep user.email` command). If you use a different email address, you may face one of the following issues:
+3. Ensure that the Git client is configured with your `<ID+username>@users.noreply.github.com` email address (you can do so using the `git config user.email` command). If you use a different email address, you may face one of the following issues:
 
      a) Your corporate firewall blocks Git activity, unless you are signed in with an `@<your company domain>` email address
  
@@ -38,10 +38,10 @@ A Contributor License Agreement ("CLA") is a document that specifies how a proje
 
 _NOTE:_ Commits and pull requests to FINOS project repositories, including Legend, will only be accepted from those contributors with an active, executed Individual Contributor License Agreement (ICLA) with FINOS OR who are covered under an existing and active Corporate Contribution License Agreement (CCLA) executed with FINOS. See the [Contribute page on the FINOS Wiki for more information](https://finosfoundation.atlassian.net/wiki/spaces/FINOS/pages/83034172/Contribute). Commits from individuals not covered under an ICLA or CCLA will be flagged and blocked by the FINOS ["CLA Bot" tool](https://github.com/finos/cla-bot). Please note that some CCLAs require individuals/employees to be explicitly named on the CCLA. PRs submitted to the Legend project cannot be accepted until you have a CLA in place with the Foundation. CLAs are also required for modelers participating in the pilot.
 
-_NOTE:_ **Even if you have signed and are covered by a CLA, the [CLA Bot](https://github.com/finos/cla-bot) may block your Pull Requests if your Git client is configured with an email address other than your `<username>@users.github.com` email address**. (you can use the `git config --list | grep user.email` command to see which email address your git client is configured with). If your git client is not correctly configured, the CLA bot will not be able to parse your GitHub details and identify you, which will block your Pull Request. In order to fix this issue, please follow the instructions below.
+_NOTE:_ **Even if you have signed and are covered by a CLA, the [CLA Bot](https://github.com/finos/cla-bot) may block your Pull Requests if your Git client is configured with an email address other than your `<ID+username>@users.noreply.github.com` email address**. (you can use the `git config user.email` command to see which email address your git client is configured with). If your git client is not correctly configured, the CLA bot will not be able to parse your GitHub details and identify you, which will block your Pull Request. In order to fix this issue, please follow the instructions below.
 
-   1. Check your git client is configured with a user email `git config --list | grep email`
-   2. If the user email is missing, run the following command, substituting with your git commit email address `git config --global user.email email@example.com`
+   1. Check your git client is configured with a user email `git config user.email`
+   2. If the user email is missing, run the following command, substituting with your git commit email address `git config --global user.email ID+myusername@users.noreply.githubcom`
    3. Make sure your git commit email is configured on GitHub by [Setting your Commit Email Address](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address)
    4. Then, amend the authors in your commit history by using `git commit --amend` to change your last commit.
 
