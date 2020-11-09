@@ -41,7 +41,7 @@ _NOTE:_ Commits and pull requests to FINOS project repositories, including Legen
 _NOTE:_ **Even if you have signed and are covered by a CLA, the [CLA Bot](https://github.com/finos/cla-bot) may block your Pull Requests if your Git client is configured with an email address other than your `<ID+username>@users.noreply.github.com` email address**. (you can use the `git config user.email` command to see which email address your git client is configured with). If your git client is not correctly configured, the CLA bot will not be able to parse your GitHub details and identify you, which will block your Pull Request. In order to fix this issue, please follow the instructions below.
 
    1. Check your git client is configured with a user email `git config user.email`
-   2. If the user email is missing, run the following command, substituting with your git commit email address `git config --global user.email ID+myusername@users.noreply.githubcom`
+   2. If the user email is missing, run the following command, substituting with your git commit email address `git config --global user.email ID+myusername@users.noreply.github.com`
    3. Make sure your git commit email is configured on GitHub by [Setting your Commit Email Address](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address)
    4. Then, amend the authors in your commit history by using `git commit --amend` to change your last commit.
 
