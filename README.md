@@ -110,8 +110,6 @@ In the future we intend to migrate the models repositories from the hosted GitLa
 # Find out more
 ## Review the existing materials
 * [Legend Demo by Pierre de Belen of Goldman Sachs at OSSF 2019](https://www.youtube.com/watch?v=na4DCgvdDJ4) (video)
-* [Replay from May 6th Legend Pilot Call Presentation - Part 1 of Open Source Fundamentals & Concepts for Legend Modeling](https://www.finos.org/hubfs/FINOS/2020%20Video%20Uploads/FINOS%20-%20Open%20Source%20Fundamentals%20-%20Part%201%20-%2006%20May%2020.mp4) (video)
-* [Replay from May 20th Legend Pilot Call Presentation - Part 2 of Open Source Fundamentals & Concepts for Legend Modeling](https://www.finos.org/hubfs/FINOS/2020%20Video%20Uploads/FINOS%20-%20Open%20Source%20Fundamentals%20-%20Part%202%20-%2013%20May%2020.mp4) (video)
 * [Legend Documentation site](https://legend.finos.org/)
 * Legend meeting minutes:
   * [prior to July 2020](https://github.com/finos/legend/tree/master/meeting-minutes)
