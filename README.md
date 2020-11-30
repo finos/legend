@@ -112,8 +112,9 @@ In the future we intend to migrate the models repositories from the hosted GitLa
 # Find out more
 ## Review the existing materials
 * [Legend Demo by Pierre de Belen of Goldman Sachs at OSSF 2019](https://www.youtube.com/watch?v=na4DCgvdDJ4) (video)
-* [Replay from May 6th Legend Pilot Call Presentation - Part 1 of Open Source Fundamentals & Concepts for Legend Modeling](https://www.finos.org/hubfs/FINOS/2020%20Video%20Uploads/FINOS%20-%20Open%20Source%20Fundamentals%20-%20Part%201%20-%2006%20May%2020.mp4) (video)
-* [Replay from May 20th Legend Pilot Call Presentation - Part 2 of Open Source Fundamentals & Concepts for Legend Modeling](https://www.finos.org/hubfs/FINOS/2020%20Video%20Uploads/FINOS%20-%20Open%20Source%20Fundamentals%20-%20Part%202%20-%2013%20May%2020.mp4) (video)
+* [Keynote: Open Sourcing Legend: The Flagship of Goldman Sachs’s Data Strategy – and Now Yours? - Pierre de Belen, Managing Director, Goldman Sachs
+ at OSSF 2020](https://www.finos.org/hubfs/FINOS/2020%20OSSF%20VIDEO%20FILES/OSSF%202020%20-%20Keynote%20-%20Open%20Sourcing%20Legend%20-%20The%20Flagship%20of%20Goldman%20Sachs%20Data%20Strategy%20-%20And%20Now%20Yours.mp4)
+* [Why Open Sourced Data Models Revolutionize the Financial Industry - Pierre de Belen & Ffion Acland, Goldman Sachs at OSSF 2020](https://www.finos.org/hubfs/FINOS/2020%20OSSF%20VIDEO%20FILES/OSSF%202020%20-%20Why%20Open%20Sourced%20Data%20Models%20Revolutionize%20the%20Financial%20Industry.mp4) 
 * [Legend Documentation site](https://legend.finos.org/)
 * Legend meeting minutes:
   * [prior to July 2020](https://github.com/finos/legend/tree/master/meeting-minutes)
@@ -122,14 +123,14 @@ In the future we intend to migrate the models repositories from the hosted GitLa
 ## [Raise an issue](https://github.com/finos/legend/issues)
 * If you cannot find the answer to your question in the above materials, please raise an issue at https://github.com/finos/legend/issues
 
-## Join the Monthly Legend General Meeting
-Legend general meetings are your opportunity to get updates on Legend, provide feedback on the product and the roadmap, see demos, and ask questions. General meetings happen the third Thursday of each month at 9am ET / 2pm BST. The next such general meeting is [scheduled for November 19, 2020](https://calendar.google.com/calendar/u/0/r/day/2020/11/19?eid=bzQ5ZXVpN2J1OHYyZTJjYm91Z3Q1OHU2MzlfMjAyMDExMTlUMTQwMDAwWiBmaW5vcy5vcmdfZmFjOG1vMXJmYzZlaHNjZzBkODBmaThqaWdAZw&ctz=America/New_York&sf=true). 
+## Join the upcoming Legend meetings 
 
-## Join Legend Office Hours 
-* [Thursday, October 29, 11am ET](https://calendar.google.com/calendar/event?eid=MmxpMmRhY3FxODM2cmt1ZTN0aWYwbTFqdWRfMjAyMDEwMjlUMTUwMDAwWiBmaW5vcy5vcmdfZmFjOG1vMXJmYzZlaHNjZzBkODBmaThqaWdAZw&ctz=America/New_York)
-  * WebEx: https://finos.webex.com/finos/j.php?MTID=m58790a7ebaa830f785f3e0934603372b
-  * Meeting number (access code): 127 301 6315
-  * Email legend-inquiries@finos.org to RSVP and receive the meeting password
+### Legend Office Hours 
+Legend Office Hours are hosted by experts from Goldman's Securities and Engineering divisions to answer the Community's questions about Legend. The next Office Hours are scheduled for [Thursday, December 10th, 11:30am ET](https://calendar.google.com/calendar/u/0/r/week/2020/12/10?eid=NzhrYmNlZHBlZmtmM2dtY2kyNXY3OG8ybzIgZmlub3Mub3JnX2ZhYzhtbzFyZmM2ZWhzY2cwZDgwZmk4amlnQGc&ctz=America/New_York&sf=true).
+
+### Legend General Meeting in January 2021
+Legend General meetings are your opportunity to get updates on Legend, provide feedback on the product and the roadmap, see demos, and ask questions. The next general meeting is [scheduled for January 28, 2021](https://calendar.google.com/calendar/u/0/r/week/2021/1/28?eid=bGdwM2F0NmFob2kxdTQ0dGo2YjB2b3RkbTMgZmlub3Mub3JnX2ZhYzhtbzFyZmM2ZWhzY2cwZDgwZmk4amlnQGc&ctz=America/New_York&sf=true). 
+
 
 # License
 Copyright 2020 Goldman Sachs
