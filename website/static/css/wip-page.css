@@ -6,7 +6,7 @@
 }
 
 .wip-page * {
-  font-family: "Merriweather";
+  font-family: "Roboto Condensed";
 }
 
 .wip-page__header {
@@ -54,7 +54,7 @@
 
 .wip-page__header__nav__item__link-btn {
   color: var(--color-light-grey-300);
-  font-family: "Merriweather";
+  font-family: "Roboto Condensed";
   font-size: 1.6rem;
   line-height: 1.2;
   padding: 0 1rem;

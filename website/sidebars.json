@@ -1,19 +1,26 @@
 {
   "docs": {
     "Getting Started": [
-      "getting-started/studio",
-      "getting-started/language",
+      "getting-started/installation-guide",
+      "getting-started/create-workspace",
+      "getting-started/create-model",
+      "getting-started/create-diagram",
+      "getting-started/edit-model",
+      "getting-started/create-model-to-model-mapping",
+      "getting-started/execute",
+      "getting-started/review-and-commit-changes"
+    ],
+    "Language": [
+      "getting-started/legend-language",
       "getting-started/released-functions",
-      "getting-started/upcoming-functions",
-      "getting-started/execution",
-      "getting-started/sdlc",
-      "getting-started/pilot-model-governance",
-      "getting-started/cube",
-      "getting-started/graph",
-      "getting-started/services",
-      "get-involved/terms-of-service",
-      "contribute",
-      "roadmap"
+      "getting-started/upcoming-functions"
+    ],
+    "Contribute": [
+      "getting-started/contribute-to-legend",
+      "getting-started/get-involved"
+    ],
+    "Legal": [
+      "getting-started/terms-of-service"
     ]
   }
 }

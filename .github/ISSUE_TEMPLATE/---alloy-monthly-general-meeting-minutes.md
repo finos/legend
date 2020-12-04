@@ -1,7 +1,7 @@
 ---
-name: "\U0001F91D Alloy Monthly General Meeting Minutes"
-about: To track the meeting agenda and attendance for the Alloy Monthly General Meeting.
-title: MMM DD YYYY Alloy Monthly General Meeting
+name: "\U0001F91D Legend Monthly General Meeting Minutes"
+about: To track the meeting agenda and attendance for the Legend Monthly General Meeting.
+title: MMM DD YYYY Legend Monthly General Meeting
 labels: Monthly General Meeting, meeting
 assignees: ''
 
