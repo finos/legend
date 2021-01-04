@@ -30,9 +30,9 @@ The Legend platform and project makes use of both GitHub and GitLab.
 * GitLab is used for source control of models "under the hood" within the Legend SDLC module. As such the models, written in the Legend language, are stored in GitLab repositories.
 
 
-## Repositores
+## Repositories
 ### Code Repositories (GitHub)
-[This repository (finos/legend)](https://www.github.com/finos/legend) is the parent repository for the project. It is used principally for overall Legend documentation and issue tracking. The code itself for the 5 modules open sourced thusfar can be found in the following 5 child repositories:
+[This repository (finos/legend)](https://www.github.com/finos/legend) is the parent repository for the project. It is used principally for overall Legend documentation and issue tracking. The code itself for the 5 modules open sourced thus far can be found in the following 5 child repositories:
 * [Shared Module](https://github.com/finos/legend-shared): https://github.com/finos/legend-shared
 * [SDLC Module](https://github.com/finos/legend-sdlc): https://github.com/finos/legend-sdlc
 * [Studio Module](https://github.com/finos/legend-studio): https://github.com/finos/legend-studio
@@ -111,11 +111,12 @@ In the future we intend to migrate the models repositories from the hosted GitLa
 
 # Find out more
 ## Review the existing materials
-* [Legend Demo by Pierre de Belen of Goldman Sachs at OSSF 2019](https://www.youtube.com/watch?v=na4DCgvdDJ4) (video)
+* 
 * [Keynote: Open Sourcing Legend: The Flagship of Goldman Sachs’s Data Strategy – and Now Yours? - Pierre de Belen, Managing Director, Goldman Sachs
- at OSSF 2020](https://www.finos.org/hubfs/FINOS/2020%20OSSF%20VIDEO%20FILES/OSSF%202020%20-%20Keynote%20-%20Open%20Sourcing%20Legend%20-%20The%20Flagship%20of%20Goldman%20Sachs%20Data%20Strategy%20-%20And%20Now%20Yours.mp4)
-* [Why Open Sourced Data Models Revolutionize the Financial Industry - Pierre de Belen & Ffion Acland, Goldman Sachs at OSSF 2020](https://www.finos.org/hubfs/FINOS/2020%20OSSF%20VIDEO%20FILES/OSSF%202020%20-%20Why%20Open%20Sourced%20Data%20Models%20Revolutionize%20the%20Financial%20Industry.mp4) 
+ at OSSF 2020](https://www.youtube.com/watch?v=93c966jNzYo&feature=youtu.be)
+* [Why Open Sourced Data Models Revolutionize the Financial Industry - Pierre de Belen & Ffion Acland, Goldman Sachs at OSSF 2020](https://www.youtube.com/watch?v=6rUm7dN9pfU&feature=youtu.be) 
 * [Legend Documentation site](https://legend.finos.org/)
+* [Legend Demo by Pierre de Belen of Goldman Sachs at OSSF 2019](https://www.youtube.com/watch?v=na4DCgvdDJ4) (video)
 * Legend meeting minutes:
   * [prior to July 2020](https://github.com/finos/legend/tree/master/meeting-minutes)
   * [July 2020 and later](https://github.com/finos/legend/issues?q=label%3Ameeting)
@@ -125,8 +126,7 @@ In the future we intend to migrate the models repositories from the hosted GitLa
 
 ## Join the upcoming Legend meetings 
 
-### Legend Office Hours 
-Legend Office Hours are hosted by experts from Goldman's Securities and Engineering divisions to answer the Community's questions about Legend. The next Office Hours are scheduled for [Thursday, December 10th, 11:30am ET](https://calendar.google.com/calendar/u/0/r/week/2020/12/10?eid=NzhrYmNlZHBlZmtmM2dtY2kyNXY3OG8ybzIgZmlub3Mub3JnX2ZhYzhtbzFyZmM2ZWhzY2cwZDgwZmk4amlnQGc&ctz=America/New_York&sf=true).
+### Legend Office Hours (Completed)
 
 ### Legend General Meeting in January 2021
 Legend General meetings are your opportunity to get updates on Legend, provide feedback on the product and the roadmap, see demos, and ask questions. The next general meeting is [scheduled for January 28, 2021](https://calendar.google.com/calendar/u/0/r/week/2021/1/28?eid=bGdwM2F0NmFob2kxdTQ0dGo2YjB2b3RkbTMgZmlub3Mub3JnX2ZhYzhtbzFyZmM2ZWhzY2cwZDgwZmk4amlnQGc&ctz=America/New_York&sf=true). 
