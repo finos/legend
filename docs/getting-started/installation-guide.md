@@ -27,7 +27,7 @@ The Legend platform has five components. The minimum required to run Legend are 
 1. Install **legend-engine**.
 
     1. Run `mvn install` to compile.
-    2. To start the server, use the Main class `org.finos.legend.engine.server.Server` with the parameters: `server legend-engine-server/src/test/resources/org/finos/legend/engine/server/test/userTestConfig.json`.
+    2. To start the server, run the following command from the root of the legend-engine repo on your local machine `java -cp legend-engine-server/target/*-shaded.jar org.finos.legend.engine.server.Server server legend-engine-server/src/test/resources/org/finos/legend/engine/server/test/userTestConfig.json`
     3. Test by going to http://127.0.0.1:9090 in a browser. The Swagger page can be accessed at http://127.0.0.1:9090/api/swagger.
 
 2. Install **legend-sdlc**.
