@@ -89,7 +89,7 @@
 <li><p>Install <strong>legend-engine</strong>.</p>
 <ol>
 <li>Run <code>mvn install</code> to compile.</li>
-<li>To start the server, use the Main class <code>org.finos.legend.engine.server.Server</code> with the parameters: <code>server legend-engine-server/src/test/resources/org/finos/legend/engine/server/test/userTestConfig.json</code>.</li>
+<li>To start the server, run the following command from the root of the legend-engine repo on your local machine: <code>java -cp legend-engine-server/target/*-shaded.jar org.finos.legend.engine.server.Server server legend-engine-server/src/test/resources/org/finos/legend/engine/server/test/userTestConfig.json</code>.</li>
 <li>Test by going to <a href="http://127.0.0.1:9090">http://127.0.0.1:9090</a> in a browser. The Swagger page can be accessed at <a href="http://127.0.0.1:9090/api/swagger">http://127.0.0.1:9090/api/swagger</a>.</li>
 </ol></li>
 <li><p>Install <strong>legend-sdlc</strong>.</p>
