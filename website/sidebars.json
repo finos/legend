@@ -17,8 +17,10 @@
     ],
     "Contribute": [
       "getting-started/contribute-to-legend",
-      "getting-started/get-involved"
-    ],
+      "getting-started/get-involved" 
+  ],
+    "Videos": "videos",
+    
     "Legal": [
       "getting-started/terms-of-service"
     ]
