@@ -111,7 +111,6 @@ In the future we intend to migrate the models repositories from the hosted GitLa
 
 # Find out more
 ## Review the existing materials
-* 
 * [Keynote: Open Sourcing Legend: The Flagship of Goldman Sachs’s Data Strategy – and Now Yours? - Pierre de Belen, Managing Director, Goldman Sachs
  at OSSF 2020](https://www.youtube.com/watch?v=93c966jNzYo&feature=youtu.be)
 * [Why Open Sourced Data Models Revolutionize the Financial Industry - Pierre de Belen & Ffion Acland, Goldman Sachs at OSSF 2020](https://www.youtube.com/watch?v=6rUm7dN9pfU&feature=youtu.be) 
