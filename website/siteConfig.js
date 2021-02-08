@@ -73,18 +73,6 @@ const siteConfig = {
   wrapPagesHTML: true,
   docsSideNavCollapsible: true,
 
-  // TODO - Open Graph and Twitter card images.
-  // ogImage: '../assets/todo-logo.png', /* change to program/project icon + wordmark logo */
-  // twitterImage: '../assets/todo-logo.png', /* change to program/project icon + wordmark logo */
-
-  // Show documentation's last contributor's name.
-  // enableUpdateBy: true,
-
-  // Show documentation's last update time.
-  // enableUpdateTime: true,
-
-  // You may provide arbitrary config keys to be used as needed by your
-  // template. For example, if you need your repo's URL...
   repoUrl: 'https://github.com/finos/legend'
 };
 
