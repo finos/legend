@@ -1,7 +1,7 @@
 ---
 id: get-involved
-title: Get involved
-sidebar_label: Get involved
+title: How to get involved
+sidebar_label: How to get involved
 ---
 
 To get involved with Legend, subscribe to these lists:

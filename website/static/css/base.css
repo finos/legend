@@ -114,3 +114,7 @@ blockquote {
 blockquote code {
   background: var(--color-dark-grey-30);
 }
+
+table tr:nth-child(2n) {
+  background-color: transparent;
+}
