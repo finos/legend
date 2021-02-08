@@ -6,63 +6,7 @@
 
               ga('create', 'UA-89349362-7', 'auto');
               ga('send', 'pageview');
-            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,500,700,900|Source+Code+Pro:400,500,700,900&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/legend.svg" alt="Legend"/><h2 class="headerTitleWithLogo">Legend</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"></ul></nav></div></header></div></div><div class="navPusher singleRowMobileNav"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Language</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started/installation-guide">Installation guide</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/create-workspace">Create a workspace</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/create-model">Create a model</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/create-diagram">Create a diagram</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/edit-model">Edit a model</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/create-model-to-model-mapping">Create model-to-model mapping</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/execute">Execute model-to-model mapping</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/review-and-commit-changes">Review and commit changes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Language<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/docs/getting-started/legend-language">Legend language</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/released-functions">Released functions</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/upcoming-functions">Upcoming functions</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Contribute<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started/contribute-to-legend">Contribute to Legend</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/get-involved">Get involved</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Legal<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started/terms-of-service">Terms of service</a></li></ul></div></div></section></div><script>
-            var coll = document.getElementsByClassName('collapsible');
-            var checkActiveCategory = true;
-            for (var i = 0; i < coll.length; i++) {
-              var links = coll[i].nextElementSibling.getElementsByTagName('*');
-              if (checkActiveCategory){
-                for (var j = 0; j < links.length; j++) {
-                  if (links[j].classList.contains('navListItemActive')){
-                    coll[i].nextElementSibling.classList.toggle('hide');
-                    coll[i].childNodes[1].classList.toggle('rotate');
-                    checkActiveCategory = false;
-                    break;
-                  }
-                }
-              }
-
-              coll[i].addEventListener('click', function() {
-                var arrow = this.childNodes[1];
-                arrow.classList.toggle('rotate');
-                var content = this.nextElementSibling;
-                content.classList.toggle('hide');
-              });
-            }
-
-            document.addEventListener('DOMContentLoaded', function() {
-              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
-              createToggler('#tocToggler', 'body', 'tocActive');
-
-              var headings = document.querySelector('.toc-headings');
-              headings && headings.addEventListener('click', function(event) {
-                var el = event.target;
-                while(el !== headings){
-                  if (el.tagName === 'A') {
-                    document.body.classList.remove('tocActive');
-                    break;
-                  } else{
-                    el = el.parentNode;
-                  }
-                }
-              }, false);
-
-              function createToggler(togglerSelector, targetSelector, className) {
-                var toggler = document.querySelector(togglerSelector);
-                var target = document.querySelector(targetSelector);
-
-                if (!toggler) {
-                  return;
-                }
-
-                toggler.onclick = function(event) {
-                  event.preventDefault();
-
-                  target.classList.toggle(className);
-                };
-              }
-            });
-        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Legend language</h1></header><article><div><span><p>The Legend language is an an immutable functional language based on the Unified Modeling Language (UML) and inspired by Object Constraint Language (OCL). It provides an accelerated data modeling experience that enables:</p>
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,500,700,900|Source+Code+Pro:400,500,700,900&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/legend.svg" alt="Legend"/><h2 class="headerTitleWithLogo">Legend</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"></ul></nav></div></header></div></div><div class="navPusher singleRowMobileNav"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Legend language</h1></header><article><div><span><p>The Legend language is an an immutable functional language based on the Unified Modeling Language (UML) and inspired by Object Constraint Language (OCL). It provides an accelerated data modeling experience that enables:</p>
 <ul>
 <li>Building of logical data models that can help describe business concepts and their data relationships.</li>
 <li>Enrichment of the model with executable constraints, derivations, and model-to-model mappings.</li>
@@ -210,6 +154,6 @@ let x = <span class="hljs-variable">$myVar</span>;
 <ul>
 <li><a href="/docs/getting-started/released-functions">Released functions</a></li>
 <li><a href="/docs/getting-started/upcoming-functions">Upcoming functions</a></li>
-<li><a href="/docs/getting-started/contribute-to-legend">Contribute to Legend</a></li>
+<li><a href="contribute-to-legend.md">Contribute to Legend</a></li>
 </ul>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/getting-started/review-and-commit-changes"><span class="arrow-prev">← </span><span>Review and commit changes</span></a><a class="docs-next button" href="/docs/getting-started/released-functions"><span>Released functions</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#types">Types</a><ul class="toc-headings"><li><a href="#primitive-types">Primitive types</a></li><li><a href="#class">Class</a></li><li><a href="#enum">Enum</a></li></ul></li><li><a href="#functions">Functions</a><ul class="toc-headings"><li><a href="#variable">Variable</a></li><li><a href="#arrow-notation">Arrow notation</a></li><li><a href="#lambda">Lambda</a></li><li><a href="#if-map-and-filter">If, map, and filter</a></li></ul></li><li><a href="#extensions">Extensions</a><ul class="toc-headings"><li><a href="#stereotype">Stereotype</a></li><li><a href="#tagged-value">Tagged value</a></li><li><a href="#constraint">Constraint</a></li><li><a href="#derivation">Derivation</a></li></ul></li><li><a href="#mappings">Mappings</a><ul class="toc-headings"><li><a href="#model-to-model-mapping">Model-to-model mapping</a></li></ul></li><li><a href="#next-steps">Next steps</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a></section><section class="finos finosBanner"><a href="https://www.finos.org"><img id="finosicon" src="https://legend.finos.org/img/finos_wordmark.svg" height="75px" alt="FINOS" title="FINOS"/></a></section><section class="privacy finosBanner"><a href="https://www.finos.org/privacy-policy" target="_blank">Privacy Policy</a></section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#types">Types</a><ul class="toc-headings"><li><a href="#primitive-types">Primitive types</a></li><li><a href="#class">Class</a></li><li><a href="#enum">Enum</a></li></ul></li><li><a href="#functions">Functions</a><ul class="toc-headings"><li><a href="#variable">Variable</a></li><li><a href="#arrow-notation">Arrow notation</a></li><li><a href="#lambda">Lambda</a></li><li><a href="#if-map-and-filter">If, map, and filter</a></li></ul></li><li><a href="#extensions">Extensions</a><ul class="toc-headings"><li><a href="#stereotype">Stereotype</a></li><li><a href="#tagged-value">Tagged value</a></li><li><a href="#constraint">Constraint</a></li><li><a href="#derivation">Derivation</a></li></ul></li><li><a href="#mappings">Mappings</a><ul class="toc-headings"><li><a href="#model-to-model-mapping">Model-to-model mapping</a></li></ul></li><li><a href="#next-steps">Next steps</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a></section><section class="finos finosBanner"><a href="https://www.finos.org"><img id="finosicon" src="https://legend.finos.org/img/finos_wordmark.svg" height="75px" alt="FINOS" title="FINOS"/></a></section><section class="privacy finosBanner"><a href="https://www.finos.org/privacy-policy" target="_blank">Privacy Policy</a></section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
