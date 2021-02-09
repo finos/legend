@@ -20,4 +20,4 @@ This is a guide to install a minimal instance of the Legend platform, which cons
 
 ## Installation steps
 
-See [Docker installation instructions](https://github.com/legend/tree/master/installers/aws-docker).
+See [Docker installation instructions](https://github.com/finos/legend/tree/master/installers/aws-docker).
