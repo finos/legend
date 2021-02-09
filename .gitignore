@@ -17,3 +17,4 @@ docs/models
 # Ignore auto generated contribute.md and roadmap.md file
 docs/contribute.md
 docs/roadmap.md
+/.idea/
