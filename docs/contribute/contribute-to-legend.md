@@ -8,7 +8,7 @@ There are many ways to contribute to Legend and many of them don't involve writi
 
 1. [Contribute code](contribute-to-legend.md#contribute-code) to any of the Legend components by submitting a pull request.
 
-2. Start using Legend Studio to provide feedback, [and contribute to, existing models](contribute-to-legend.md#contribute-to-models). Request access to the modeling instance at https://www.finos.org/legend and go [through our Getting started guide](create-workspace.md). If you encounter an issue, let us know by [opening an issue](https://github.com/finos/legend/issues/new/choose).
+2. Start using Legend Studio to provide feedback, [and contribute to, existing models](contribute-to-legend.md#contribute-to-models). Request access to the modeling instance at https://www.finos.org/legend and go [through our Getting started guide](../getting-started/studio/create-workspace.md). If you encounter an issue, let us know by [opening an issue](https://github.com/finos/legend/issues/new/choose).
 
 3. [Help build out the documentation](contribute-to-legend.md#contribute-documentation). If you find anything that's confusing or can be improved, submit a pull request. 
 
@@ -88,7 +88,7 @@ To make review of PRs easier:
 
 FINOS hosts a shared version of Legend Studio in the public cloud, which is available to prototype collaborative data modeling, at https://legend.finos.org/studio. If you'd like to access the existing models, **request access to the modeling instance** at [finos.org/legend](https://www.finos.org/legend).
 
-Once you've requested access to the modeling instance, you can get started and [create a model](create-model.md).
+Once you've requested access to the modeling instance, you can get started and [create a model](../getting-started/studio/create-model.md).
 
 If you have questions or encounter any issues, raise an issue at https://github.com/finos/legend/issues.
  
@@ -155,6 +155,6 @@ View the prerequisites and steps to report an issue in GitHub.
 
 ## More info
 
-- [Get involved](get-involved.md)
-- [Installation guide](installation-guide.md)
-- [Create a workspace](create-workspace.md)
+- [Get involved](how-to-get-involved.md)
+- [Installation guide](../getting-started/installation/installation-guide.md)
+- [Create a workspace](../getting-started/studio/create-workspace.md)

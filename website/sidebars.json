@@ -1,14 +1,18 @@
 {
   "docs": {
     "Getting Started": [
-      "getting-started/installation-guide",
-      "getting-started/create-workspace",
-      "getting-started/create-model",
-      "getting-started/create-diagram",
-      "getting-started/edit-model",
-      "getting-started/create-model-to-model-mapping",
-      "getting-started/execute",
-      "getting-started/review-and-commit-changes"
+      "getting-started/installation/installation-guide",
+      "getting-started/installation/maven-install-guide",
+      "getting-started/installation/aws-docker-guide"
+    ],
+    "Studio": [
+      "getting-started/studio/create-workspace",
+      "getting-started/studio/create-model",
+      "getting-started/studio/create-diagram",
+      "getting-started/studio/edit-model",
+      "getting-started/studio/create-model-to-model-mapping",
+      "getting-started/studio/execute",
+      "getting-started/studio/review-and-commit-changes"
     ],
     "Language": [
       "language/legend-language",

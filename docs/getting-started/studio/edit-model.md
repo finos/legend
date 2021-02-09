@@ -10,7 +10,7 @@ Edit models in the Legend language text editor view.
 
     ![Edit a model](../assets/edit-model.JPG)
 
-2. Review the [language guide](legend-language.md) for more information on the Legend language and how to use it to edit models.
+2. Review the [language guide](../../language/legend-language.md) for more information on the Legend language and how to use it to edit models.
 
 ## Next steps
 
