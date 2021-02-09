@@ -18,7 +18,7 @@ You can save these tests and continue to enhance your data models with the comfo
 
 4. Save this exection as a test to run as part of the pipeline.
 
-    ![Save execution as a test](../../assets/execution.gif)
+    ![Save execution as a test](../assets/execution.gif)
 
 ## Next steps
 

@@ -8,11 +8,11 @@ Start working on your data model by creating a workspace. Workspaces let users c
 
 1. Select an existing GitLab project or select **+** to start working on a new one.  
 
-    ![Create a workspace—select GitLab project](../../assets/select-gitlab-project.jpg)
+    ![Create a workspace—select GitLab project](../assets/select-gitlab-project.jpg)
 
 2. Create (or choose) a workspace.
 
-    ![Create a workspace—click next](../../assets/create-workspace-click-next.jpg)
+    ![Create a workspace—click next](../assets/create-workspace-click-next.jpg)
 
 3. Click **Next.**
 
