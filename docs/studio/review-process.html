@@ -11,22 +11,22 @@
 <ol>
 <li><p>Modeler submits a change.</p>
 <p>When a Modeler makes model changes in Legend, Legend keeps track of the changes made locally (known as unsynced changes). These changes need to be synced to the SDLC server in order for the Modeler to subsequently submit them for approval.</p>
-<p><img src="../../assets/unsynced-changes.JPG" alt="Unsycned changes in Legend"></p></li>
+<p><img src="../assets/unsynced-changes.JPG" alt="Unsycned changes in Legend"></p></li>
 <li><p>Modeler syncs their local changes to the SDLC server.</p>
 <p>To submit changes that a Modeler wants to merge, the Modeler needs to <a href="/docs/studio/review-and-commit-changes">sync</a> their local changes to the SDLC server. A Modeler can do this by pressing the sync icon in the status bar or by pressing <code>Ctrl+S</code>.</p>
-<p><img src="../../assets/sync-local-changes.JPG" alt="Sync local changes to SDLC server"></p>
+<p><img src="../assets/sync-local-changes.JPG" alt="Sync local changes to SDLC server"></p>
 <p><strong>Note:</strong> In GitLab, these changes are created as commits. The changes themselves are actually changes to the underlying model code as represented in JSON.</p>
-<p><img src="../../assets/sync-local-changes.gitlab.JPG" alt="Sync local changes in GitLab"></p></li>
+<p><img src="../assets/sync-local-changes.gitlab.JPG" alt="Sync local changes in GitLab"></p></li>
 <li><p>Modeler reviews changes, creates a review, and shares review.</p>
 <ol>
 <li><p>Review the pending change (the commit) using the Review tool.</p>
 <p><img src="/docs/assets/review-pending-change.JPG" alt="Review pending change"></p></li>
 <li><p>Create a review by giving it a name and clicking the <strong>+</strong> icon.</p>
-<p><img src="../../assets/create-review.JPG" alt="Create a review"></p>
+<p><img src="../assets/create-review.JPG" alt="Create a review"></p>
 <p>A small diagonal arrow icon appears:</p>
-<p><img src="../../assets/review-created-arrow.JPG" alt="Review created arrow"></p></li>
+<p><img src="../assets/review-created-arrow.JPG" alt="Review created arrow"></p></li>
 <li><p>Press the arrow to open the newly created review in a new tab where the URL of the review can be copied.</p>
-<p><img src="../../assets/get-review-url.JPG" alt="Get review URL"></p></li>
+<p><img src="../assets/get-review-url.JPG" alt="Get review URL"></p></li>
 <li><p>Paste the URL into an email the Modeler might send to the working group requesting one or more participants in the working group to review and add their approval (their &quot;+1&quot; in support of merging).</p></li>
 </ol></li>
 </ol>
@@ -34,24 +34,24 @@
 <ol>
 <li><p>Approver reviews and approves the change.</p>
 <p>Once a review has been created and shared, others in the working group can review a proposed change and add their approval by clicking the checkmark icon.</p>
-<p><img src="../../assets/approval-checkmark.JPG" alt="Approval checkmark"></p>
+<p><img src="../assets/approval-checkmark.JPG" alt="Approval checkmark"></p>
 <p><strong>Note:</strong> In GitLab, the commit is shown as awaiting approval. Approvals can be done there alternatively, but it's recommended that Modelers use the Legend UI. The merge button is grayed out as sufficient approvals haven't been reached.</p>
-<p><img src="../../assets/gitlab-approve-merge.JPG" alt="GitLab approve merge"></p></li>
+<p><img src="../assets/gitlab-approve-merge.JPG" alt="GitLab approve merge"></p></li>
 </ol>
 <h2><a class="anchor" aria-hidden="true" id="merger"></a><a href="#merger" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Merger</h2>
 <ol>
 <li><p>Merger merges an approved change.</p>
 <p>Once enough approvals have been received based on the policy of the working group, the Merger can codify the change by merging it in (committing the review).</p>
-<p><img src="../../assets/merge-approved-change.JPG" alt="Merge an approved change"></p></li>
+<p><img src="../assets/merge-approved-change.JPG" alt="Merge an approved change"></p></li>
 <li><p>(Optional) Merge in GitLab.</p>
 <p>Alternatively, the Merger can do the merge directly in GitLab.</p>
-<p><img src="../../assets/merge-gitlab.JPG" alt="Merge in GitLab"></p></li>
+<p><img src="../assets/merge-gitlab.JPG" alt="Merge in GitLab"></p></li>
 <li><p>Use the CLA Bot check.</p>
 <p>GitLab and Legend are configured to make use of the FINOS Open Developer Platform's CLA Bot. The CLA Bot checks that the Modeler who submitted the change is covered under a Contributor License Agreement (CLA) authorizing them to make code contributions (like models) into FINOS.</p>
-<p><img src="../../assets/sdlc-cla-bot.JPG" alt="CLA bot check"></p></li>
+<p><img src="../assets/sdlc-cla-bot.JPG" alt="CLA bot check"></p></li>
 <li><p>Once you're done, make sure the Modeler updates their workspaces/branches.</p>
 <p>After new changes are merged into the master branch of a project, Modelers can pull the latest changes into the their current Legend workspace/branch. The blue dot on the cloud icon indicates that there are changes available to be pulled. Modelers will also see this icon and need to pull down changes whenever models are updated from an external source (like the ISDA CDM master).</p>
-<p><img src="../../assets/update-workspace.JPG" alt="Update ypur workspace and branches"></p></li>
+<p><img src="../assets/update-workspace.JPG" alt="Update ypur workspace and branches"></p></li>
 </ol>
 <h2><a class="anchor" aria-hidden="true" id="next-steps"></a><a href="#next-steps" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Next steps</h2>
 <ul>
