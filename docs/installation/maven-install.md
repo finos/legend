@@ -1,7 +1,7 @@
 ---
-id: installation-guide
-title: Installation guide
-sidebar_label: Installation guide
+id: maven-install-guide
+title: Maven Install Guide
+sidebar_label: Maven Install Guide
 ---
 
 The Legend platform has five components. The minimum required to run Legend are Engine, SDLC, and Studio. The five components are:
@@ -133,9 +133,3 @@ The Legend platform has five components. The minimum required to run Legend are 
         If succesful, your browser will open the local Studio.
 
 4. (Optional) If you want to alter the fundamentals of the language or the server, install **legend-pure** and **legend-shared**. Run `mvn install` and recompile legend-pure and legend-shared after installation.
-
-## Next steps
-
-- [Create a workspace](create-workspace.md)
-- [Create a model](create-model.md)
-- [Create a diagram](create-diagram.md)

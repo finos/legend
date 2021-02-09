@@ -1,0 +1,12 @@
+ {
+    "appName": "studio",
+    "realm" : "QA",
+    "execServer": "__LEGEND_ENGINE_URL__",
+    "sdlcServer": "__LEGEND_SDLC_URL__/api",
+    "tracerServer" : "/tracer",
+    "documentation": {
+	"fullDocUrl": "https://legend.finos.org/"
+    },
+    "features": []
+  }
+
