@@ -33,9 +33,9 @@ Use classes to define a business concept.
 Use properties in a class to define attributes of the business concept.
 
 1. Go to the **Properties** tab and click the **+** icon.
-2. Type in the name of your property and specify the [data type](../../language/legend-language.md#primitive-types) and [cardinality](../../language/legend-language.md#class).
+2. Type in the name of your property and specify the [data type](../language/legend-language.md#primitive-types) and [cardinality](../language/legend-language.md#class).
 
-    Let's create a property called `firstName` of type `String` with [cardinality](../../language/legend-language.md#class) of 1.  
+    Let's create a property called `firstName` of type `String` with [cardinality](../language/legend-language.md#class) of 1.  
 
     ![Add a property (primitive data type)](../../assets/add-property-primitive.JPG)
 
@@ -44,12 +44,12 @@ Use properties in a class to define attributes of the business concept.
 Derived properties are properties defined using functions that can operate on other attributes in the data model.
 
 1. Go to the **Derived Properties** tab and click the **+** icon.
-2. Type in the name of your property and specify the [data type](../../language/legend-language.md#primitive-types) and [cardinality](../../language/legend-language.md#class).
+2. Type in the name of your property and specify the [data type](../language/legend-language.md#primitive-types) and [cardinality](../language/legend-language.md#class).
 3. Type in the expression.
 
     Let's add a qualified property called `firstInitial` using the following expression: `$this.name->substring(0,1)`.
 
-4. Select a return [data type](../../language/legend-language.md#primitive-types) of `String` and [cardinality](../../language/legend-language.md#class) of 1.
+4. Select a return [data type](../language/legend-language.md#primitive-types) of `String` and [cardinality](../language/legend-language.md#class) of 1.
 5. Press **F9** to compile the expression.
 
     ![Add a derived property](../../assets/add-derived-property.JPG)
@@ -102,7 +102,7 @@ A model attribute that has a finite list of values can be defined with an enumer
     ![Create and add an enumeration](../../assets/create-and-add-enumeration.JPG)
 
 3. Create a new class called **Firm** with a property named **type**.
-4. Select **CompanyType** for the property type and a [cardinality](../../language/legend-language.md#class) of 1.
+4. Select **CompanyType** for the property type and a [cardinality](../language/legend-language.md#class) of 1.
 
     ![Select property type and cardinality](../../assets/select-property-type-cardinality.JPG)
 

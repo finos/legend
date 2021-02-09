@@ -50,6 +50,6 @@ A workspace update may result in a conflict. Studio will open a new view to aid 
 
 ## Next steps
 
-- [Legend language](../../language/legend-language.md)
-- [Released functions](../../language/released-functions.md)
-- [Upcoming functions](../../language/upcoming-functions.md)
+- [Legend language](../language/legend-language.md)
+- [Released functions](../language/released-functions.md)
+- [Upcoming functions](../language/upcoming-functions.md)

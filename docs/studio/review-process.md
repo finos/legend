@@ -84,6 +84,6 @@ The following are the steps the Modeler, Approver, and Merger take to submit, re
 
 ## Next steps
 
-- [Terms of service](../../contribute/terms-of-service.md)
-- [Roles](../../contribute/roles.md)
-- [Get involved](../../contribute/how-to-get-involved.md)
+- [Terms of service](../contribute/terms-of-service.md)
+- [Roles](../contribute/roles.md)
+- [Get involved](../contribute/how-to-get-involved.md)
