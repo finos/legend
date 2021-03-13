@@ -1,9 +1,12 @@
 #!/bin/bash
 
-pwd=`readlink -f $(dirname $0)`
+if [ $SCRIPT_ENV == "mac" ]; then
+	pwd="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+else
+	pwd=$(readlink -f $(dirname $0))
+fi
 
 . $pwd/env.sh
-
 
 start()
 {
@@ -27,4 +30,3 @@ restart()
 }
 
 $*
-
