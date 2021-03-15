@@ -1,10 +1,6 @@
 #!/bin/bash
 
-if [ $SCRIPT_ENV == "mac" ]; then
-	pwd="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
-else
-	pwd=$(readlink -f $(dirname $0))
-fi
+pwd="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 . $pwd/env.sh
 
@@ -17,6 +13,7 @@ gen_secrets() {
 	# generate random strings. remove slash
 	openssl rand -base64 8 | sed 's:/::g' >$WORK_DIR/mongo.pwd
 	openssl rand -base64 8 | sed 's:/::g' >$WORK_DIR/gitlab.pwd
+	openssl rand -base64 8 | sed 's:/::g' >$WORK_DIR/gitlab.token
 }
 
 gen_config() {
@@ -33,13 +30,7 @@ print() {
 print_secrets() {
 	echo "MONGO ROOT PWD : $(cat $WORK_DIR/mongo.pwd)"
 	echo "GITLAB ROOT PWD : $(cat $WORK_DIR/gitlab.pwd)"
-}
-
-print_oauth() {
-	echo $LEGEND_ENGINE_URL/callback
-	echo $LEGEND_SDLC_URL/api/auth/callback
-	echo $LEGEND_SDLC_URL/api/pac4j/login/callback
-	echo $LEGEND_STUDIO_URL/log.in/callback
+	echo "GITLAB ROOT PRIVATE TOKEN : $(cat $WORK_DIR/gitlab.token)"
 }
 
 $*

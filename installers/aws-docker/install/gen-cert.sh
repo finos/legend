@@ -2,11 +2,7 @@
 
 # https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs
 
-if [ $SCRIPT_ENV == "mac" ]; then
-  pwd="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
-else
-  pwd=$(readlink -f $(dirname $0))
-fi
+pwd="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 . $pwd/env.sh
 

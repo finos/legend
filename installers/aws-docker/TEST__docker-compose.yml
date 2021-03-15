@@ -1,0 +1,20 @@
+version: '3.6'
+services:
+  helloworld_1:
+    image: strm/helloworld-http
+    restart: unless-stopped
+    ports:
+      - "27017:80"
+    networks:
+      - gitlab
+
+  helloworld_2:
+    image: strm/helloworld-http
+    restart: unless-stopped
+    ports:
+      - "27018:80"
+    networks:
+      - gitlab
+
+networks:
+  gitlab: {}

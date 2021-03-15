@@ -1,10 +1,6 @@
 #!/bin/bash
 
-if [ $SCRIPT_ENV == "mac" ]; then
-	pwd="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
-else
-	pwd=$(readlink -f $(dirname $0))
-fi
+pwd="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 ##########################################
 ## Fill in these values (OPTIONAL)
@@ -32,8 +28,8 @@ if [ $SCRIPT_ENV == "ec2" ]; then
 	HOST_DNS_NAME=$(curl -s http://169.254.169.254/latest/meta-data/public-hostname)
 	HOST_PUBLIC_IP=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4)
 elif [ $SCRIPT_ENV == "mac" ]; then
-	HOST_DNS_NAME="127.0.0.1"
-	HOST_PUBLIC_IP=$(curl --silent ipconfig.me)
+	HOST_DNS_NAME="localhost" # Check your Network in Mac
+	HOST_PUBLIC_IP=$(curl --silent https://ifconfig.me)
 else
 	HOST_DNS_NAME=$(hostname)
 	HOST_PUBLIC_IP=$(hostname -i)
@@ -48,6 +44,11 @@ fi
 GITLAB_ROOT_PASSWORD=""
 if [ -e $WORK_DIR/gitlab.pwd ]; then
 	GITLAB_ROOT_PASSWORD=$(cat $WORK_DIR/gitlab.pwd)
+fi
+
+GITLAB_ROOT_PRIVATE_TOKEN=""
+if [ -e $WORK_DIR/gitlab.token ]; then
+	GITLAB_ROOT_PRIVATE_TOKEN=$(cat $WORK_DIR/gitlab.token)
 fi
 
 # Certs

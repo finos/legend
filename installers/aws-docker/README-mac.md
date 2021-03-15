@@ -54,34 +54,11 @@ The container is run in the foreground to help with troubleshooting.
 ./run-gitlab.sh restart
 ```
 
-## 6. Configure Gitlab Oauth (Terminal 2 + Browser)
-
-Access the locally running Gitlab via a browser.
+## 6. Configure Gitlab Oauth (Terminal 2)
 
 ```sh
-./deploy.sh print | grep GITLAB_PUBLIC_URL
+./setup-gitlab.sh
 ```
-
-> Note: Since we use a self signed SSL certificate for running Gitlab, the browser flags this as a insecure website. Click 'Advanced' and continue. Chrome seems to disallow this so we acutally need to use Firefox to access the Gitlab site.
-
-Login to Gitlab as the `root` user. The password for the root user can be obtained from
-
-```sh
-./deploy.sh print_secrets
-```
-
-The OpenID and OAuth configuration requires a Gitlab application to be registered. Navigate to `User Settings > Applications` and create an application with the following parameters :
-
-- Name - Legend Demo
-- Redirect URI - Add the following redirect URIs
-
-```sh
-./deploy.sh print_oauth (Terminal 2)
-```
-
-- Enable the "Confidential" check box
-- Enable these scopes : openid, profile, api
-- Finally, "Save Application"
 
 ## 7. Generate configurations (Terminal 2)
 
@@ -96,7 +73,7 @@ The Legend SDLC, Engine and Studio servers require Gitlab Oauth configuration.
 The container is run in the foreground to help with troubleshooting.
 
 ```sh
-sudo ./run-engine.sh restart
+./run-engine.sh restart
 ```
 
 ## 9. Install Legend SDLC (Terminal 4)
@@ -104,7 +81,7 @@ sudo ./run-engine.sh restart
 The container is run in the foreground to help with troubleshooting.
 
 ```sh
-sudo ./run-sdlc.sh restart
+./run-sdlc.sh restart
 ```
 
 ## 10. Install Legend Studio (Terminal 5)
@@ -112,7 +89,7 @@ sudo ./run-sdlc.sh restart
 The container is run in the foreground to help with troubleshooting.
 
 ```sh
-sudo ./run-studio.sh restart
+./run-studio.sh restart
 ```
 
 ## 11. Access studio
