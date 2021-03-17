@@ -20,20 +20,21 @@
       "collection": "userSessions"
     }
   },
-    "html5Router": true,
-    "routerExemptPaths": [
-        "/editor.worker.js",
-        "/json.worker.js",
-        "/editor.worker.js.map",
-        "/json.worker.js.map",
-        "/version.json",
-        "/config.json",
-        "/favicon.ico",
-        "/static"
-    ],
-    "localAssetPaths": {
-        "/studio/config.json" : "/config/uiConfig.json"
-    },
+  "html5Router": true,
+  "routerExemptPaths": [
+      "/editor.worker.js",
+      "/json.worker.js",
+      "/editor.worker.js.map",
+      "/json.worker.js.map",
+      "/version.json",
+      "/config.json",
+      "/favicon.ico",
+      "/static"
+  ],
+  "localAssetPaths": {
+      "/studio/config.json" : "/config/uiConfig.json"
+  },
+  "uiPath": "/studio",
   "server": {
     "type": "simple",
     "applicationContextPath": "/",
