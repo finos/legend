@@ -1,0 +1,21 @@
+{
+  "appName": "studio",
+  "env": "test",
+  "sdlc": {
+    "url": "__LEGEND_SDLC_URL__/api"
+  },
+  "engine": {
+    "url": "__LEGEND_ENGINE_URL__/api"
+  },
+  "documentation": {
+    "url": "https://legend.finos.org"
+  },
+  "options": {
+    "core": {
+      "TEMPORARY__disableSDLCProjectStructureSupport": true,
+      "TEMPORARY__disableSDLCProjectCreation": true,
+      "TEMPORARY__disableNonModelStoreSupports": true,
+      "TEMPORARY__disableServiceRegistration": true
+    }
+  }
+}

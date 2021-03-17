@@ -1,0 +1,15 @@
+[ req ]
+default_bits                  = 2048
+distinguished_name            = req_distinguished_name
+req_extensions                = req_ext
+[ req_distinguished_name ]
+countryName                   = US
+stateOrProvinceName           = NY
+localityName                  = NY
+organizationName              = XX
+commonName                    = __HOST_DNS_NAME__
+[ req_ext ]
+subjectAltName                = @alt_names
+[alt_names]
+DNS.1                         = __GITLAB_SERVICE_NAME__
+IP.1                          = __HOST_DNS__

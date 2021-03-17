@@ -18,3 +18,5 @@ docs/models
 docs/contribute.md
 docs/roadmap.md
 /.idea/
+
+installers/docker-compose/build
