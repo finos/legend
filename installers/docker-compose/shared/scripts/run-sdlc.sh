@@ -26,11 +26,9 @@ for f in $(find /config -type f); do
   sed -i 's/__MONGO_PASSWORD__/'$MONGO_PASSWORD'/g' $f
   sed -i 's/__HOST_PUBLIC_IP__/'$HOST_PUBLIC_IP'/g' $f
   sed -i 's/__GITLAB_SERVICE_NAME__/'$GITLAB_SERVICE_NAME'/g' $f
+  sed -i 's~__GITLAB_URL__~'$GITLAB_URL'~g' $f
   sed -i 's/__GITLAB_OAUTH_CLIENT_ID__/'$GITLAB_OAUTH_CLIENT_ID'/g' $f
   sed -i 's/__GITLAB_OAUTH_SECRET__/'$GITLAB_OAUTH_SECRET'/g' $f
-  sed -i 's/__GITLAB_HOST__/'$GITLAB_HOST'/g' $f
-  sed -i 's/__GITLAB_PORT__/'$GITLAB_PORT'/g' $f
-  sed -i 's~__GITLAB_URL__~'$GITLAB_URL'~g' $f
 done
 
 DURATION=$(($(date +%s) - $START_TIME))

@@ -15,4 +15,4 @@ docker-compose --env-file ~/legend-temp/.env up --detach
 docker-compose --env-file ~/legend-temp/.env down
 ```
 
-> After setting up, check your build/temp directory for the file `.env`, it will contain all the passwords and secrets.
+> After setting up, check your build/temp directory for the file `.env`, it will contain all the passwords and secrets. This is useful if you don't specify them in the config and have us auto-generated them.

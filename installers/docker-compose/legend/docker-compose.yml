@@ -30,7 +30,7 @@ services:
       GITLAB_POST_RECONFIGURE_SCRIPT: /scripts/setup-gitlab.sh
       # Add any other gitlab.rb configuration here, each on its own line
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'https://$GITLAB_HOST:$GITLAB_PORT'
+        external_url 'https://$GITLAB_URL'
         gitlab_rails['lfs_enabled'] = true
         nginx['listen_port'] = 443
         nginx['ssl_certificate'] = '$GITLAB_CERT_FILE'

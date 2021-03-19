@@ -53,7 +53,7 @@ pac4j:
         name: gitlab
         clientId: __GITLAB_OAUTH_CLIENT_ID__
         secret: __GITLAB_OAUTH_SECRET__
-        discoveryUri: __GITLAB_URL__/.well-known/openid-configuration
+        discoveryUri: https://__GITLAB_URL__/.well-known/openid-configuration
         scope: openid profile api
   mongoSession:
       enabled: true
@@ -67,7 +67,7 @@ gitLab:
   prod:
     server:
       scheme: https
-      host: __GITLAB_HOST__:__GITLAB_PORT__
+      host: __GITLAB_URL__
     app:
       id: __GITLAB_OAUTH_CLIENT_ID__
       secret: __GITLAB_OAUTH_SECRET__
@@ -75,7 +75,7 @@ gitLab:
   uat:
     server:
       scheme: https
-      host: __GITLAB_HOST__:__GITLAB_PORT__
+      host: __GITLAB_URL__
     app:
       id: __GITLAB_OAUTH_CLIENT_ID__
       secret: __GITLAB_OAUTH_SECRET__
