@@ -121,7 +121,10 @@ HOST_DER_FILE=$BUILD_DIR/ssl/$HOST_DNS_NAME".der"
 TRUST_STORE=$BUILD_DIR/ssl/truststore.jks
 
 # Generate secrets and passwords
-MONGO_PASSWORD=$(openssl rand -base64 8 | sed 's:/::g')
+MONGO_PASSWORD=$(echo $(grep -v '^#' $CONFIG_FILE | grep -e "MONGO_PASSWORD" | sed -e 's/.*=//'))
+if [ -z "$MONGO_PASSWORD" ]; then
+  MONGO_PASSWORD=$(openssl rand -base64 8 | sed 's:/::g')
+fi
 
 # Generate and convert certificate
 # See https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs

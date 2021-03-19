@@ -32,8 +32,14 @@ GITLAB_KEY_FILE=/etc/gitlab/ssl/$HOST_DNS_NAME".key"
 GITLAB_CERT_FILE=/etc/gitlab/ssl/$HOST_DNS_NAME".crt"
 
 # Generate secrets and passwords
-GITLAB_ROOT_PASSWORD=$(openssl rand -base64 8 | sed 's:/::g')
-GITLAB_PRIVATE_ACCESS_TOKEN=$(openssl rand -base64 8 | sed 's:/::g')
+GITLAB_ROOT_PASSWORD=$(echo $(grep -v '^#' $CONFIG_FILE | grep -e "GITLAB_ROOT_PASSWORD" | sed -e 's/.*=//'))
+if [ -z "$GITLAB_ROOT_PASSWORD" ]; then
+  GITLAB_ROOT_PASSWORD=$(openssl rand -base64 8 | sed 's:/::g')
+fi
+GITLAB_PRIVATE_ACCESS_TOKEN=$(echo $(grep -v '^#' $CONFIG_FILE | grep -e "GITLAB_PRIVATE_ACCESS_TOKEN" | sed -e 's/.*=//'))
+if [ -z "$GITLAB_ROOT_PASSWORD" ]; then
+  GITLAB_PRIVATE_ACCESS_TOKEN=$(openssl rand -base64 8 | sed 's:/::g')
+fi
 
 # Copy certificates over for gitlab
 
