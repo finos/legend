@@ -52,11 +52,11 @@ services:
       - $BUILD_DIR/ssl:/ssl
       - $BUILD_DIR/generated-configs/sdlc:/config
       - $BUILD_DIR/generated-configs/gitlab:/gitlab-config
-      - ./scripts/run-sdlc.sh:/scripts/run-sdlc.sh
-      - ./templates/sdlc:/templates
+      - ../shared/scripts/run-sdlc.sh:/scripts/run-sdlc.sh
+      - ../shared/templates/sdlc:/templates
     env_file:
       - $BUILD_DIR/.env
-    entrypoint: bin/bash
+    entrypoint: /bin/bash
     command: /scripts/run-sdlc.sh
 
   engine:
@@ -73,11 +73,11 @@ services:
       - $BUILD_DIR/ssl:/ssl
       - $BUILD_DIR/generated-configs/engine:/config
       - $BUILD_DIR/generated-configs/gitlab:/gitlab-config
-      - ./scripts/run-engine.sh:/scripts/run-engine.sh
-      - ./templates/engine:/templates
+      - ../shared/scripts/run-engine.sh:/scripts/run-engine.sh
+      - ../shared/templates/engine:/templates
     env_file:
       - $BUILD_DIR/.env
-    entrypoint: bin/bash
+    entrypoint: /bin/bash
     command: /scripts/run-engine.sh
 
   studio:
@@ -94,11 +94,11 @@ services:
       - $BUILD_DIR/ssl:/ssl
       - $BUILD_DIR/generated-configs/studio:/config
       - $BUILD_DIR/generated-configs/gitlab:/gitlab-config
-      - ./scripts/run-studio.sh:/scripts/run-studio.sh
-      - ./templates/studio:/templates
+      - ../shared/scripts/run-studio.sh:/scripts/run-studio.sh
+      - ../shared/templates/studio:/templates
     env_file:
       - $BUILD_DIR/.env
-    entrypoint: bin/bash
+    entrypoint: /bin/bash
     command: /scripts/run-studio.sh
 
 networks:

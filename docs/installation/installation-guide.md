@@ -12,7 +12,7 @@ This is the easiest option as it does not require any install. Instructions can 
 
 __Note : This is a shared instance which might not be appropriate for proprietary data models.__
 
-## Maven Install 
+## Maven Install
 
 This option is for software developers who want to build and run Legend from source. Instructions can be found [here](maven-install.md).
 
@@ -30,4 +30,3 @@ This includes but is not limited to :
 * Configuring authentication using an identity provider
 
 We are happy to help develop installation instructions to meet your particular deployment environment.
-

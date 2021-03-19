@@ -11,5 +11,4 @@ commonName                    = __HOST_DNS_NAME__
 [ req_ext ]
 subjectAltName                = @alt_names
 [alt_names]
-DNS.1                         = __GITLAB_SERVICE_NAME__
-IP.1                          = __HOST_DNS__
+__SAN_CONFIG_LINE__
