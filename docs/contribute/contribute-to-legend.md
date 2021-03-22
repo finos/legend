@@ -84,6 +84,14 @@ To make review of PRs easier:
 - Use the imperative mood ("Move button left..." not "Moves button left...").
 - Limit the first line to 72 characters or less.
 
+### Contribute to good first issues
+
+Consider browsing through issues labeled as "good first issue" in the respective Legend repositories. Those are usually issues that do not require in-depth knowledge about the Legend code but can still have a great impact on the project. You can find those here:
+
+- Legend docs & main repo [good first issues](https://github.com/finos/legend/labels/good%20first%20issue).
+- Legend Studio [good first issues](https://github.com/finos/legend-studio/labels/good%20first%20issue).
+- Legend SDLC [good first issues](https://github.com/finos/legend-sdlc/labels/good%20first%20issue).
+
 ## Contribute to models
 
 FINOS hosts a shared version of Legend Studio in the public cloud, which is available to prototype collaborative data modeling, at https://legend.finos.org/studio. If you'd like to access the existing models, **request access to the modeling instance** at [finos.org/legend](https://www.finos.org/legend).
