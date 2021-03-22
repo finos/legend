@@ -25,9 +25,7 @@ You'd probably run into this issue when running in browsers like Chrome because 
 
 ## Getting `Unauthorized` and 401 call to SDLC after logging into Gitlab and being redirected to Studio
 
-Follow the workaround for the issue with [non private connection in Chromium-based browser](#getting-your-connection-is-not-private-in-chromium-based-browsers).
-
-> This is a [known issue](https://github.com/finos/legend-studio/issues/28) with the new `SameSite` cookie policy that Chromium-based browser has on our `LegendSSO` token. The fix involves setting `SameSite=None; Secure` on all cookies, which poses as a challenge since it requires us to serve every Legend endpoints with HTTPS. We might consider doing that for this Docker compose.
+Clear all cookies for the site (including SDLC, engine, and Studio) and try to refresh. As a quick try, you can open Studio in a incognito window.
 
 ## Gitlab container takes a really long time to start
 

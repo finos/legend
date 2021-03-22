@@ -64,14 +64,6 @@ pac4j:
 gitLab:
   newProjectVisibility: public
   projectTag: legend
-  prod:
-    server:
-      scheme: https
-      host: __GITLAB_URL__
-    app:
-      id: __GITLAB_OAUTH_CLIENT_ID__
-      secret: __GITLAB_OAUTH_SECRET__
-      redirectURI: __LEGEND_SDLC_PUBLIC_URL__/api/auth/callback
   uat:
     server:
       scheme: https

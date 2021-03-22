@@ -122,3 +122,17 @@ GITLAB_PORT=$(echo $(grep -v '^#' $DOTENV_FILE | grep -e "GITLAB_PORT" | sed -e 
 GITLAB_URL=$HOST_ADDRESS:$GITLAB_PORT
 
 SED_CMD 's~__GITLAB_URL__~'$GITLAB_URL'~g' $DOTENV_FILE
+
+##########################################
+# 	Print out secrets/passwords
+##########################################
+
+# This is not safe, should only be used purely for non-production/demo
+
+GITLAB_ROOT_USER=$(echo $(grep -v '^#' $DOTENV_TEMPLATE_FILE | grep -e "GITLAB_ROOT_USER" | sed -e 's/.*=//'))
+
+echo ""
+echo "Gitlab credentials (for non-production use only!):"
+echo "username: $GITLAB_ROOT_USER"
+echo "password: $GITLAB_ROOT_PASSWORD"
+echo "access token: $GITLAB_PRIVATE_ACCESS_TOKEN"
