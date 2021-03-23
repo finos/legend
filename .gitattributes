@@ -1,0 +1,12 @@
+# This line does two things:
+# - enable git's CRLF -> LF modification
+# - tell git to guess whether files are text or binary
+*                       text=auto eol=lf
+
+# Mark as binary to prevent git from trying to merge it
+*.ico                   binary
+*.png                   binary
+*.jpg                   binary
+
+# Hide .yarn and docs from GitHub's language detection
+/docs/**                linguist-documentation
