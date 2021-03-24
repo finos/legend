@@ -52,7 +52,7 @@ BUILD_DIR=$(echo $(grep -v '^#' $CONFIG_FILE | grep -e "BUILD_DIR" | sed -e 's/.
 
 if [ -z "$BUILD_DIR" ]; then
   echo "BUILD_DIR is not specified, default to use ~/legend-temp"
-  BUILD_DIR=~/legend-temp
+  BUILD_DIR=$HOME/legend-temp
 fi
 
 HOST_DNS_NAME=$(echo $(grep -v '^#' $CONFIG_FILE | grep -e "HOST_DNS_NAME" | sed -e 's/.*=//'))
