@@ -33,7 +33,7 @@ docker-compose --env-file ~/legend-temp/.env --profile all up --detach
 
 4. Run the application
 
-After starting the project, you can go to your browser at `http://${HOST_ADDRESS}:8080/studio` to launch Studio. This should redirect you to Gitlab, after logging-in you would be redirected back to Studio.
+After starting the project, you can go to your browser at [http://`HOST_ADDRESS`:8080/studio]() to launch Studio. This should redirect you to Gitlab, after logging-in you would be redirected back to Studio.
 
 5. Stop the Docker compose project
 
