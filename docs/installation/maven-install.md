@@ -31,7 +31,7 @@ http://localhost:7070/api/auth/callback
 http://localhost:7070/api/pac4j/login/callback
 ```
 
-- Java Development Kit (JDK) 8 or later.
+- Java Development Kit (JDK) 11 or later.
 - Maven 3.6 or later.
 
 ## Installation steps
