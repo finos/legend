@@ -91,6 +91,7 @@ Consider browsing through issues labeled as "good first issue" in the respective
 - Legend docs & main repo [good first issues](https://github.com/finos/legend/labels/good%20first%20issue).
 - Legend Studio [good first issues](https://github.com/finos/legend-studio/labels/good%20first%20issue).
 - Legend SDLC [good first issues](https://github.com/finos/legend-sdlc/labels/good%20first%20issue).
+- Legend Engine [good first issues](https://github.com/finos/legend-engine/labels/good%20first%20issue).
 
 ## Contribute to models
 
