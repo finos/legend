@@ -8,128 +8,73 @@ The Legend platform has five components. The minimum required to run Legend are 
 
 - **Engine**: Provides a Pure parser and compiler that executes plans when provided with a Pure function, a mapping, and a runtime. It's also an access point for model transformers written using the Legend language.
 - **SDLC**: Provides a rich REST API letting users manage metadata. Most SDLCs are file and text-centric, but the Legend SDLC is model-centric, meaning users interact with model entities rather than with files and folders. The Legend SDLC enables:
-    - Users to develop with tools designed for editing models (rather than files or code).
-    - Users to view changes with tools designed for viewing model-level changes (rather than text changes).
-    - Clients to create their own tools for their own use cases.
-- **Studio**: Lets you describe and connect data in business terms to create data models.
-- **Pure**: Lets you alter Pure, the underlying language for Legend.
+  - Users to develop with tools designed for editing models (rather than files or code).
+  - Users to view changes with tools designed for viewing model-level changes (rather than text changes).
+  - Clients to create their own tools for their own use cases.
+- **Studio**: Provides a way to describe and connect data in business terms to create data models.
+- **Pure**: Provides a way to alter Pure, the underlying language for Legend.
 - **Shared**: Provides shared code used across Legend apps for universal server-side functionality, like hosting static files, performing authentication, and so on.
 
 ## Prerequisites
 
 - A GitLab.com account or your own GitLab server.
-  - Create an *Application* by going to **profile settings > applications**.
+
+  Create an _Application_ by navigating to `User Settings > Applications` and create an application with the following parameters:
+
+  - Name: Legend Demo
+  - Enable the "Confidential" check box
+  - Enable these scopes: openid, profile, api
+  - Redirect URI: Add the followings:
+
+```sh
+http://localhost:7070/api/auth/callback
+http://localhost:7070/api/pac4j/login/callback
+```
+
 - Java Development Kit (JDK) 8 or later.
 - Maven 3.6 or later.
 
 ## Installation steps
 
-1. Install **legend-engine**.
+### Setup **legend-engine**.
 
-    1. Run `mvn install` to compile.
-    2. To start the server, run the following command from the root of the legend-engine repo on your local machine: `java -cp legend-engine-server/target/*-shaded.jar org.finos.legend.engine.server.Server server legend-engine-server/src/test/resources/org/finos/legend/engine/server/test/userTestConfig.json`.
-    3. Test by going to http://127.0.0.1:9090 in a browser. The Swagger page can be accessed at http://127.0.0.1:9090/api/swagger.
+From the root directory of the `legend-engine` repo, follow the steps below in order:
 
-2. Install **legend-sdlc**.
+```sh
+mvn install [-DskipTests]
+```
 
-    1. Run `mvn install` to compile.
-    2. Create a configuration file based on your particular environment. This can be JSON or YAML.
+```sh
+java -cp legend-engine-server/target/*-shaded.jar org.finos.legend.engine.server.Server server legend-engine-server/src/test/resources/org/finos/legend/engine/server/test/userTestConfig.json
+```
 
-        A [sample configuration file](https://github.com/finos/legend-sdlc/blob/master/legend-sdlc-server/src/test/resources/config-sample.yaml) is included to help you get started. You need to supply some information, like the host your server is running on.
+Test by going to http://localhost:6060 in a browser. The Swagger page can be accessed at http://localhost:6060/api/swagger.
 
-    3. On GitLab, create an *Application*, which is used for authorization so that the SDLC Server can act on behalf of users.
+### Setup **legend-sdlc**.
 
-        For more information, see [GitLab's documentation](https://docs.gitlab.com/ee/api/oauth2.html). Include information about the GitLab instance and your app in the configuration file.
+Create a configuration file based on your particular environment. This can be JSON or YAML.
 
-    4. To start the server, use the Main class `org.finos.legend.sdlc.server.Server` with the parameters: `server legend-sdlc-server/src/test/resources/org/finos/legend/sdlc/server/test/userTestConfig.json`.
-    5. Test by going to these URLS in a browser:
-        - http://127.0.0.1:7075/api/info — the page should return information, like the start time.
-        - http://127.0.0.1:7075/api/swagger — the Swagger page.
-        - http://127.0.0.1:7075/api/projects — a list of projects, which may be empty.
+A [sample configuration file](https://github.com/finos/legend-sdlc/blob/master/legend-sdlc-server/src/test/resources/config-sample.yaml) is included to help you get started. You need to supply some information, like the host your server is running on and Gitlab instance your SDLC server is pointing at.
 
-3. Install **legend-studio**.
+From the root directory of the `legend-sdlc` repo, follow the steps below in order:
 
-    1. To compile, run:
+```sh
+mvn install [-DskipTests]
+```
 
-        ```bash
-          npm install
-          npm run setup
-          npm start
-        ```
+```sh
+# Make sure to replace <path-to-config>
+java -cp legend-sdlc-server/target/*-shaded.jar org.finos.legend.sdlc.server.Server server <path-to-config>
+```
 
-    2. Custom DEV server config:
+Test by going to http://localhost:7070/api/info in the browser. The page should return basic server information.
 
-        Depending on your developer environment, you might have customizations for the dev server. For example, if your environment has a different host for `localhost` and that host requires special signed certficates and keys, you need to provide those in `server/https`. See sample below:
+Visit http://localhost:7070/api/auth/authorize in your browser, you might get redirected to the Gitlab login page or a Gitlab page that askes you to authorize Legend application. After you authenticate/authorize you should be redirected back to SDLC.
 
-        ```jsonc
-        {
-          "host": "localhost",
-          // NOTE: the path must be relative to `webpack.config.js`
-          "key": "./dev/server/localhost.key.pem",
-          "cert": "./dev/server/localhost.cert.pem",
-          "ca": "./dev/server/ca.cert.pem"
-        }
-        ```
+### Setup **legend-sdlc**.
 
-        The configs specified in this file will override those in `webpack.config.js`. See `dev/scripts/start.js` and setting `SERVER_CONFIG_PATH` for more information.
+Follow this [guide](https://github.com/finos/legend-studio/blob/master/README.md#getting-started) on how to start local Studio.
 
-    3. IDE: If you use VSCode, install `Prettier` and `ESLint` plugins, then configue your workspace settings in `./.vscode/settings.json` like this:
+### You're all set :tada:
 
-        ```jsonc
-        {
-          "editor.tabSize": 2,
-          "eslint.validate": [
-            "javascript",
-            "javascriptreact",
-            "typescript",
-            "typescriptreact"
-          ],
-          "eslint.options": {
-            // use advanced ESLint rules for development
-            "configFile": "./.eslintrc-advanced.js",
-            "rulePaths": ["./dev/eslint_rules"]
-          },
-          "search.exclude": {
-            "**/node_modules": true,
-            "**/package-lock.json": true
-          },
-          // This is useful when we want to use a different version of Typescript
-          // "typescript.tsdk": "./node_modules/typescript/lib"
-          "[css]": {
-            "editor.defaultFormatter": "esbenp.prettier-vscode"
-          },
-          "[scss]": {
-            "editor.defaultFormatter": "esbenp.prettier-vscode"
-          },
-          "[html]": {
-            "editor.defaultFormatter": "vscode.html-language-features"
-          },
-          "[json]": {
-            "editor.defaultFormatter": "esbenp.prettier-vscode"
-          },
-          "[jsonc]": {
-            "editor.defaultFormatter": "esbenp.prettier-vscode"
-          },
-          "[javascript]": {
-            "editor.defaultFormatter": "vscode.typescript-language-features"
-          },
-          "[typescript]": {
-            "editor.defaultFormatter": "vscode.typescript-language-features"
-          },
-          "[typescriptreact]": {
-            "editor.defaultFormatter": "vscode.typescript-language-features"
-          },
-          "prettier.singleQuote": true,
-          "prettier.trailingComma": "es5",
-          "editor.formatOnSave": true,
-          "editor.codeActionsOnSave": {
-            "source.fixAll.eslint": true
-          },
-          "javascript.preferences.importModuleSpecifier": "non-relative",
-          "typescript.preferences.importModuleSpecifier": "non-relative"
-        }
-        ```
-
-        If succesful, your browser will open the local Studio.
-
-4. (Optional) If you want to alter the fundamentals of the language or the server, install **legend-pure** and **legend-shared**. Run `mvn install` and recompile legend-pure and legend-shared after installation.
+Visit http://localhost:8080/studio and start hacking!
