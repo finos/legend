@@ -1,22 +1,8 @@
 version: "3.8"
 services:
-  mongod:
-    container_name: $MONGO_SERVICE_NAME
-    image: mongo:$MONGO_IMAGE_VERSION
-    ports:
-      - $MONGO_PORT:$MONGO_PORT
-    networks:
-      - legend
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: $MONGO_USER
-      MONGO_INITDB_ROOT_PASSWORD: $MONGO_PASSWORD
-    command: --auth
-
   sdlc:
     container_name: $LEGEND_SDLC_SERVICE_NAME
     image: finos/legend-sdlc-server:$LEGEND_SDLC_IMAGE_VERSION
-    depends_on:
-      - mongod
     ports:
       - $LEGEND_SDLC_PORT:$LEGEND_SDLC_PORT
     networks:
@@ -27,7 +13,7 @@ services:
       - $BUILD_DIR/generated-configs/gitlab:/gitlab-config
       - ./scripts/run-sdlc.sh:/scripts/run-sdlc.sh
       - ../shared/scripts/gen-config.sh:/scripts/gen-config.sh
-      - ../shared/templates/sdlc:/templates
+      - ../shared/templates/sdlc/dev-config.yml:/templates/config.yml
     env_file:
       - $BUILD_DIR/.env
     command: /scripts/run-sdlc.sh
@@ -35,8 +21,6 @@ services:
   engine:
     container_name: $LEGEND_ENGINE_SERVICE_NAME
     image: finos/legend-engine-server:$LEGEND_ENGINE_IMAGE_VERSION
-    depends_on:
-      - mongod
     ports:
       - $LEGEND_ENGINE_PORT:$LEGEND_ENGINE_PORT
     networks:
@@ -47,32 +31,10 @@ services:
       - $BUILD_DIR/generated-configs/gitlab:/gitlab-config
       - ./scripts/run-engine.sh:/scripts/run-engine.sh
       - ../shared/scripts/gen-config.sh:/scripts/gen-config.sh
-      - ../shared/templates/engine:/templates
+      - ../shared/templates/engine/dev-config.json:/templates/config.json
     env_file:
       - $BUILD_DIR/.env
     command: /scripts/run-engine.sh
-
-  studio:
-    container_name: $LEGEND_STUDIO_SERVICE_NAME
-    image: finos/legend-studio:$LEGEND_STUDIO_IMAGE_VERSION
-    depends_on:
-      - mongod
-      - sdlc
-      - engine
-    ports:
-      - $LEGEND_STUDIO_PORT:$LEGEND_STUDIO_PORT
-    networks:
-      - legend
-    volumes:
-      - $BUILD_DIR/ssl:/ssl
-      - $BUILD_DIR/generated-configs/studio:/config
-      - $BUILD_DIR/generated-configs/gitlab:/gitlab-config
-      - ./scripts/run-studio.sh:/scripts/run-studio.sh
-      - ../shared/scripts/gen-config.sh:/scripts/gen-config.sh
-      - ../shared/templates/studio:/templates
-    env_file:
-      - $BUILD_DIR/.env
-    command: /scripts/run-studio.sh
 
 networks:
   legend: {}

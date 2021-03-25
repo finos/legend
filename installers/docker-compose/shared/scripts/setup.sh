@@ -112,17 +112,6 @@ mkdir -p $BUILD_DIR/generated-configs/studio
 
 
 ##########################################
-# 	Generate certificates and secrets
-##########################################
-
-# Generate secrets and passwords
-MONGO_PASSWORD=$(echo $(grep -v '^#' $CONFIG_FILE | grep -e "MONGO_PASSWORD" | sed -e 's/.*=//'))
-if [ -z "$MONGO_PASSWORD" ]; then
-  MONGO_PASSWORD=$(openssl rand -base64 8 | sed 's:/::g')
-fi
-
-
-##########################################
 # 	Generate .env from template
 ##########################################
 
@@ -132,8 +121,10 @@ DOTENV_FILE=$BUILD_DIR/.env
 [ -e $DOTENV_FILE ] && rm $DOTENV_FILE
 cp -r $DOTENV_TEMPLATE_FILE $DOTENV_FILE
 
+echo '' >> $DOTENV_FILE
+cat $PWD/../../dependencies.env >> $DOTENV_FILE
+
 SED_CMD 's~__BUILD_DIR__~'$BUILD_DIR'~g' $DOTENV_FILE
-SED_CMD 's/__MONGO_PASSWORD__/'$MONGO_PASSWORD'/g' $DOTENV_FILE
 
 LEGEND_SDLC_PORT=$(echo $(grep -v '^#' $DOTENV_FILE | grep -e "LEGEND_SDLC_PORT" | sed -e 's/.*=//'))
 LEGEND_SDLC_PUBLIC_URL=http://$HOST_ADDRESS:$LEGEND_SDLC_PORT
