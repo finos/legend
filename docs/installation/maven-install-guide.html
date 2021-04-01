@@ -108,7 +108,7 @@ http://localhost:7070/api/pac4j/login/callback
 <pre><code class="hljs css language-sh">mvn install [-DskipTests]
 </code></pre>
 <pre><code class="hljs css language-sh"><span class="hljs-comment"># Make sure to replace &lt;path-to-config&gt;</span>
-java -cp legend-sdlc-server/target/*-shaded.jar org.finos.legend.sdlc.server.Server server &lt;path-to-config&gt;
+java -cp legend-sdlc-server/target/*-shaded.jar org.finos.legend.sdlc.server.LegendSDLCServer server &lt;path-to-config&gt;
 </code></pre>
 <p>Test by going to <a href="http://localhost:7070/api/info">http://localhost:7070/api/info</a> in the browser. The page should return basic server information.</p>
 <p>Visit <a href="http://localhost:7070/api/auth/authorize">http://localhost:7070/api/auth/authorize</a> in your browser, you might get redirected to the Gitlab login page or a Gitlab page that askes you to authorize Legend application. After you authenticate/authorize you should be redirected back to SDLC.</p>
