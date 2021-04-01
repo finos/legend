@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-applicationName: Legend LEGEND_SDLC
+applicationName: Legend SDLC
 
 server:
   applicationConnectors:
@@ -46,40 +46,27 @@ filterPriorities:
 
 pac4j:
   callbackPrefix: /api/pac4j/login
-  mongoUri: mongodb://__MONGO_USER__:__MONGO_PASSWORD__@__MONGO_HOST_PORT__
-  mongoDb: legend
   clients:
     - org.finos.legend.server.pac4j.gitlab.GitlabClient:
         name: gitlab
         clientId: __GITLAB_OAUTH_CLIENT_ID__
         secret: __GITLAB_OAUTH_SECRET__
-        discoveryUri: __GITLAB_PUBLIC_URL__/.well-known/openid-configuration
+        discoveryUri: https://__GITLAB_URL__/.well-known/openid-configuration
         scope: openid profile api
-  mongoSession:
-      enabled: true
-      collection: userSessions
   bypassPaths:
     - /api/info
 
 gitLab:
   newProjectVisibility: public
   projectTag: legend
-  prod:
-    server:
-      scheme: https
-      host: __GITLAB_HOST__:__GITLAB_PORT__
-    app:
-      id: __GITLAB_OAUTH_CLIENT_ID__
-      secret: __GITLAB_OAUTH_SECRET__
-      redirectURI: __LEGEND_SDLC_URL__/api/auth/callback
   uat:
     server:
       scheme: https
-      host: __GITLAB_HOST__:__GITLAB_PORT__
+      host: __GITLAB_URL__
     app:
       id: __GITLAB_OAUTH_CLIENT_ID__
       secret: __GITLAB_OAUTH_SECRET__
-      redirectURI: __LEGEND_SDLC_URL__/api/auth/callback
+      redirectURI: __LEGEND_SDLC_PUBLIC_URL__/api/auth/callback
 
 
 logging:
@@ -91,6 +78,6 @@ logging:
 
 swagger:
   resourcePackage: org.finos.legend.sdlc.server.resources
-  title: Legend LEGEND_SDLC
+  title: Legend SDLC
   version: local-snapshot
   schemes: []

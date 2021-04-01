@@ -46,6 +46,10 @@ GITLAB_CERT_FILE=/etc/gitlab/ssl/$HOST_DNS_NAME".crt"
 TRUST_STORE=$BUILD_DIR/ssl/truststore.jks
 
 # Generate secrets and passwords
+MONGO_PASSWORD=$(echo $(grep -v '^#' $CONFIG_FILE | grep -e "MONGO_PASSWORD" | sed -e 's/.*=//'))
+if [ -z "$MONGO_PASSWORD" ]; then
+  MONGO_PASSWORD=$(openssl rand -base64 8 | sed 's:/::g')
+fi
 GITLAB_ROOT_PASSWORD=$(echo $(grep -v '^#' $CONFIG_FILE | grep -e "GITLAB_ROOT_PASSWORD" | sed -e 's/.*=//'))
 if [ -z "$GITLAB_ROOT_PASSWORD" ]; then
   GITLAB_ROOT_PASSWORD=$(openssl rand -base64 8 | sed 's:/::g')
@@ -110,6 +114,8 @@ keytool -import -noprompt -alias $HOST_DNS_NAME -keystore $TRUST_STORE -file $HO
 # Generate .env file
 
 DOTENV_FILE=$BUILD_DIR/.env
+
+SED_CMD 's/__MONGO_PASSWORD__/'$MONGO_PASSWORD'/g' $DOTENV_FILE
 
 SED_CMD 's/__GITLAB_HOST__/'$HOST_ADDRESS'/g' $DOTENV_FILE
 SED_CMD 's/__GITLAB_HOST_NAME__/'$HOST_DNS_NAME'/g' $DOTENV_FILE

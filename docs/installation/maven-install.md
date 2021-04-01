@@ -64,7 +64,7 @@ mvn install [-DskipTests]
 
 ```sh
 # Make sure to replace <path-to-config>
-java -cp legend-sdlc-server/target/*-shaded.jar org.finos.legend.sdlc.server.Server server <path-to-config>
+java -cp legend-sdlc-server/target/*-shaded.jar org.finos.legend.sdlc.server.LegendSDLCServer server <path-to-config>
 ```
 
 Test by going to http://localhost:7070/api/info in the browser. The page should return basic server information.

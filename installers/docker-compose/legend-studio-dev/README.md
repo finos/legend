@@ -21,6 +21,10 @@ http://192.168.1.100:6060/callback
 http://192.168.1.100:7070/api/auth/callback
 http://192.168.1.100:7070/api/pac4j/login/callback
 http://192.168.1.100:8080/studio/log.in/callback
+http://localhost:6060/callback
+http://localhost:7070/api/auth/callback
+http://localhost:7070/api/pac4j/login/callback
+http://localhost:8080/studio/log.in/callback
 ```
 
 3. Run the Docker compose project
@@ -31,7 +35,11 @@ docker-compose --env-file ~/legend-temp/.env up --detach
 
 4. Run the application
 
-After starting the project, you can go to your browser at [http://`HOST_ADDRESS`:8080/studio]() to launch Studio. This should redirect you to Gitlab, after logging-in you would be redirected back to Studio.
+Visit http://localhost:7070/api/auth/authorize in your browser, you might get redirected to the Gitlab login page or a Gitlab page that askes you to authorize Legend application. After you authenticate/authorize you should be redirected back to SDLC.
+
+Next, go to [http://`HOST_ADDRESS`:8080/studio]() to launch Studio.
+
+> Since starting Studio in development mode using the ad-hoc dev server would not get the benefit of OAuth redirection, we would need to manually go to the SDLC server to get the OAuth token.
 
 5. Stop the Docker compose project
 

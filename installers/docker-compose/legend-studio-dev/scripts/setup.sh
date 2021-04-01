@@ -46,22 +46,10 @@ fi
 
 
 ##########################################
-# 	Generate certificates and secrets
-##########################################
-
-MONGO_PASSWORD=$(echo $(grep -v '^#' $CONFIG_FILE | grep -e "MONGO_PASSWORD" | sed -e 's/.*=//'))
-if [ -z "$MONGO_PASSWORD" ]; then
-  MONGO_PASSWORD=$(openssl rand -base64 8 | sed 's:/::g')
-fi
-
-
-##########################################
 # 	Generate .env from template
 ##########################################
 
 DOTENV_FILE=$BUILD_DIR/.env
-
-SED_CMD 's/__MONGO_PASSWORD__/'$MONGO_PASSWORD'/g' $DOTENV_FILE
 
 SED_CMD 's~__GITLAB_URL__~'$GITLAB_URL'~g' $DOTENV_FILE
 
@@ -87,3 +75,7 @@ echo "$LEGEND_ENGINE_PUBLIC_URL/callback"
 echo "$LEGEND_SDLC_PUBLIC_URL/api/auth/callback"
 echo "$LEGEND_SDLC_PUBLIC_URL/api/pac4j/login/callback"
 echo "$LEGEND_STUDIO_PUBLIC_URL/studio/log.in/callback"
+echo "http://localhost:$LEGEND_ENGINE_PORT/callback"
+echo "http://localhost:$LEGEND_SDLC_PORT/api/auth/callback"
+echo "http://localhost:$LEGEND_SDLC_PORT/api/pac4j/login/callback"
+echo "http://localhost:$LEGEND_STUDIO_PORT/studio/log.in/callback"
