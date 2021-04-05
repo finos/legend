@@ -1,7 +1,21 @@
-.DS_Store
+# OS
+.DS_STORE
+*.swp
+*~
+[Dd]esktop.ini
+Thumbs.db
 
-node_modules
+# IDE
+/.idea/
 
+# Dependencies
+**/node_modules
+
+# Temp
+/temp
+installers/docker-compose/*/build
+
+# Generated contents
 lib/core/metadata.js
 lib/core/MetadataBlog.js
 
@@ -11,10 +25,9 @@ website/node_modules
 website/i18n/*
 website/package-lock.json
 
-# Ignore checked out models
-docs/models
-
 # Ignore auto generated contribute.md and roadmap.md file
 docs/contribute.md
 docs/roadmap.md
-/.idea/
+
+# Ignore checked out models
+docs/models
