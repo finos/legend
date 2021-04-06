@@ -56,7 +56,7 @@ GitLab is used for source control of models within the Legend SDLC module. The m
 FINOS hosts a shared instance of Legend Studio at [https://legend.finos.org/studio](https://legend.finos.org/studio). The purpose of this instance is to (1) provide a shared modeling environment for the FINOS community and its projects, and to (2) provide a place where people can try out Legend Studio. 
 This instance was used by participants in the [FINOS Legend Studio pilot (April-September 2020)](https://www.finos.org/press/goldman-sachs-open-sources-its-data-modeling-platform-through-finos). 
 
-Legend models developed on [the FINOS hosted shared instance of Legend Studio](https://legend.finos.org/studio), are open source and available at https://gitlab.legend.finos.org/. 
+Legend models developed on [the FINOS hosted shared instance of Legend Studio](https://legend.finos.org/studio), are open source and available at https://gitlab.legend.finos.org/. Every project on the FINOS hosted instance of Legend Studio maps to a GitLab project.
 
 To request an account on the shared instance, use the form at the bottom of [https://www.finos.org/legend](https://www.finos.org/legend).
 
@@ -68,9 +68,6 @@ On November 20, 2019, at FINOS' flagship conference, the [Open Source Strategy F
 See Pierre de Belen's [Legend Demo at OSSF 2019](https://www.youtube.com/watch?v=na4DCgvdDJ4).
 
 The [PURE language](https://github.com/finos/legend-pure), together with four modules - [Studio](https://github.com/finos/legend-studio), [SDLC](https://github.com/finos/legend-sdlc), [Engine](https://github.com/finos/legend-engine), and [Shared](https://github.com/finos/legend-shared) - were open sourced into FINOS on October 19, 2020. Concurrent to their open sourcing, they were collectively given a new, unified name - "Legend". The choice of the Legend name reflects how for Goldman Sachs the language and platform have been a guide - a legend - for the bank's data strategy.
-
-
-
 
 # License
 Copyright 2020 Goldman Sachs
