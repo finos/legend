@@ -53,7 +53,7 @@ Module specific issues are opened, maintained, and prioritized within the module
 GitLab is used for source control of models within the Legend SDLC module. The models, written in the Legend language, are stored in GitLab repositories.
 
 #### Shared Public Instance of Legend Studio
-FINOS hosts a shared instance of Legend Studio at [https://legend.finos.org/studio](https://legend.finos.org/studio). The purpose of this instance is to (1) provide a shared modeling environment for the FINOS community and its projects, and to (2) provide a place where people can try out Legend Studio. 
+FINOS hosts a shared instance of Legend Studio at [https://legend.finos.org/studio](https://legend.finos.org/studio). The shared instance of Legend Studio is provided free-of-charge and as-is. It is primarily intended to be used for shared modeling efforts conducted by FINOS members and other non-member community participants as part of [FINOS hosted projects or initiatives](https://landscape.finos.org/). 
 This instance was used by participants in the [FINOS Legend Studio pilot (April-September 2020)](https://www.finos.org/press/goldman-sachs-open-sources-its-data-modeling-platform-through-finos). 
 
 Legend models developed on [the FINOS hosted shared instance of Legend Studio](https://legend.finos.org/studio), are open source and available at https://gitlab.legend.finos.org/. Every project on the FINOS hosted instance of Legend Studio maps to a GitLab project.
