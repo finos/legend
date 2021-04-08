@@ -14,6 +14,13 @@
 
 applicationName: Legend SDLC
 
+# For the dev setup, since we don't run Mongo for handling session
+# we will fall back to rely on Jetty session, which uses the cookie JSESSIONID
+# but this gets reset in between the calls to `engine` and `sdlc`, causing failure
+# Hence, we must make the session cookie name in SDLC distinctive
+# See https://stackoverflow.com/questions/16789495/two-applications-on-the-same-server-use-the-same-jsessionid
+sessionCookie: LEGEND_SDLC_JSESSIONID
+
 server:
   applicationConnectors:
     - type: http
