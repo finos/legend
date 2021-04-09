@@ -11,6 +11,7 @@ DOTENV_TEMPLATE_FILE=$PWD/../templates/.env
 
 . $PWD/../../shared/scripts/setup.sh $1
 
+PWD="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 ##########################################
 # 	Parse config file
@@ -87,3 +88,12 @@ echo "$LEGEND_ENGINE_PUBLIC_URL/callback"
 echo "$LEGEND_SDLC_PUBLIC_URL/api/auth/callback"
 echo "$LEGEND_SDLC_PUBLIC_URL/api/pac4j/login/callback"
 echo "$LEGEND_STUDIO_PUBLIC_URL/studio/log.in/callback"
+
+
+##########################################
+# 	Copy over templates and scripts
+##########################################
+
+cp -r $PWD $BUILD_DIR/scripts
+cp -r $PWD/../../shared/scripts/ $BUILD_DIR/scripts
+cp -r $PWD/../../shared/templates $BUILD_DIR/templates
