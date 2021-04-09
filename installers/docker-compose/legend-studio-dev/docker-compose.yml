@@ -11,9 +11,8 @@ services:
       - $BUILD_DIR/ssl:/ssl
       - $BUILD_DIR/generated-configs/sdlc:/config
       - $BUILD_DIR/generated-configs/gitlab:/gitlab-config
-      - ./scripts/run-sdlc.sh:/scripts/run-sdlc.sh
-      - ../shared/scripts/gen-config.sh:/scripts/gen-config.sh
-      - ../shared/templates/sdlc/dev-config.yml:/templates/config.yml
+      - $BUILD_DIR/scripts:/scripts
+      - $BUILD_DIR/templates/sdlc:/templates
     env_file:
       - $BUILD_DIR/.env
     command: /scripts/run-sdlc.sh
@@ -29,9 +28,8 @@ services:
       - $BUILD_DIR/ssl:/ssl
       - $BUILD_DIR/generated-configs/engine:/config
       - $BUILD_DIR/generated-configs/gitlab:/gitlab-config
-      - ./scripts/run-engine.sh:/scripts/run-engine.sh
-      - ../shared/scripts/gen-config.sh:/scripts/gen-config.sh
-      - ../shared/templates/engine/dev-config.json:/templates/config.json
+      - $BUILD_DIR/scripts:/scripts
+      - $BUILD_DIR/templates/engine:/templates
     env_file:
       - $BUILD_DIR/.env
     command: /scripts/run-engine.sh

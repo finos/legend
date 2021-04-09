@@ -23,7 +23,7 @@ services:
     volumes:
       - $BUILD_DIR/container-data/gitlab:/etc/gitlab
       - $BUILD_DIR/generated-configs/gitlab:/config
-      - ./scripts/setup-gitlab.sh:/scripts/setup-gitlab.sh
+      - $BUILD_DIR/scripts:/scripts
     env_file:
       - $BUILD_DIR/.env
     environment:
@@ -52,9 +52,8 @@ services:
       - $BUILD_DIR/ssl:/ssl
       - $BUILD_DIR/generated-configs/sdlc:/config
       - $BUILD_DIR/generated-configs/gitlab:/gitlab-config
-      - ./scripts/run-sdlc.sh:/scripts/run-sdlc.sh
-      - ../shared/scripts/gen-config.sh:/scripts/gen-config.sh
-      - ../shared/templates/sdlc:/templates
+      - $BUILD_DIR/scripts:/scripts
+      - $BUILD_DIR/templates/sdlc:/templates
     env_file:
       - $BUILD_DIR/.env
     command: /scripts/run-sdlc.sh
@@ -73,9 +72,8 @@ services:
       - $BUILD_DIR/ssl:/ssl
       - $BUILD_DIR/generated-configs/engine:/config
       - $BUILD_DIR/generated-configs/gitlab:/gitlab-config
-      - ./scripts/run-engine.sh:/scripts/run-engine.sh
-      - ../shared/scripts/gen-config.sh:/scripts/gen-config.sh
-      - ../shared/templates/engine:/templates
+      - $BUILD_DIR/scripts:/scripts
+      - $BUILD_DIR/templates/engine:/templates
     env_file:
       - $BUILD_DIR/.env
     command: /scripts/run-engine.sh
@@ -94,9 +92,8 @@ services:
       - $BUILD_DIR/ssl:/ssl
       - $BUILD_DIR/generated-configs/studio:/config
       - $BUILD_DIR/generated-configs/gitlab:/gitlab-config
-      - ./scripts/run-studio.sh:/scripts/run-studio.sh
-      - ../shared/scripts/gen-config.sh:/scripts/gen-config.sh
-      - ../shared/templates/studio:/templates
+      - $BUILD_DIR/scripts:/scripts
+      - $BUILD_DIR/templates/studio:/templates
     env_file:
       - $BUILD_DIR/.env
     command: /scripts/run-studio.sh

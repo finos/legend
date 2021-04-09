@@ -142,3 +142,12 @@ echo "Gitlab credentials (for non-production use only!):"
 echo "username: $GITLAB_ROOT_USER"
 echo "password: $GITLAB_ROOT_PASSWORD"
 echo "access token: $GITLAB_PRIVATE_ACCESS_TOKEN"
+
+
+##########################################
+# 	Copy over templates and scripts
+##########################################
+
+cp -r $PWD $BUILD_DIR/scripts
+cp -r $PWD/../../shared/scripts/ $BUILD_DIR/scripts
+cp -r $PWD/../../shared/templates $BUILD_DIR/templates
