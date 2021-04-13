@@ -99,10 +99,12 @@ FINOS hosts a shared version of Legend Studio in the public cloud, which is avai
 
 Once you've requested access to the modeling instance, you can get started and [create a model](../studio/create-model.md).
 
+**Important Note:** The shared instance of [Legend Studio](https://legend.finos.org/studio) should only be used for public modeling initiatives. Every Studio project maps to a GitLab project in which the data model code could be reviewed by the general public.
+
 If you have questions or encounter any issues, raise an issue at https://github.com/finos/legend/issues.
  
+If you have suggestions or ideas for modeling use cases for which Legend may be appropriate, we'd love to hear your ideas -- send a note with your suggestion to the [Legend General List](mailto:legend@finos.org) or raise a GitHub issue in the [Financial Objects Repository](https://github.com/finos/finos-fo/issues/new?assignees=&labels=&template=Support_question.md) with your proposal and the FINOS team will gauge interest from the community.
 
-If you have suggestions or ideas for modeling use cases for which Legend may be appropriate, we'd love to hear your ideas -- send a note with your suggestion to the [Legend General List](mailto:legend@finos.org).
 
 ### Background: The Legend Pilot—Shared modeling in Legend (January - September 2020)
 
