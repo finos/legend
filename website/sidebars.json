@@ -1,8 +1,6 @@
 {
   "docs": {
-    "Getting Started": [
-	"getting-started/getting-started-guide"
-    ],
+    "Getting Started": ["getting-started/getting-started-guide"],
     "Installation": [
       "installation/installation-guide",
       "installation/maven-install-guide",
@@ -26,9 +24,6 @@
       "contribute/contribute-to-legend",
       "contribute/how-to-get-involved",
       "contribute/terms-of-service"
-    ],
-    "Advanced": [
-      "advanced/legend-docker-image"
     ]
   }
 }
