@@ -32,11 +32,13 @@ _Feel free to suggest areas for documentation improvement by raising an [issue](
 To learn about contributing to Legend, see the [CONTRIBUTING.md](CONTRIBUTING.md) file or the ["contribute to Legend"](https://legend.finos.org/docs/getting-started/contribute-to-legend) section of the Legend documentation site.
 
 ## Contribute to FINOS projects that use Legend as a data modeling tool
-Several FINOS projects are leveraging Legend for data modeling efforts. These are organized within the [FINOS Financial Object Special Interest Group](https://github.com/finos/financial-objects) umbrella.
+Several FINOS projects are leveraging Legend for data modeling efforts under the [FINOS Financial Object Special Interest Group](https://github.com/finos/financial-objects) umbrella. Get involved by [joining the next Financial Objects SIG meeting](https://github.com/finos/financial-objects/issues?q=label%3Ameeting) or by emailing the Financial Objects community at [fo@finos.org](mailto:fo@finos.org).
 
 ### Shared Public Instance of Legend Studio
 FINOS hosts a shared instance of Legend Studio at [https://legend.finos.org/studio](https://legend.finos.org/studio). The shared instance of Legend Studio is provided free-of-charge and as-is. It is primarily intended to be used for shared modeling efforts conducted by FINOS members and other non-member community participants as part of [FINOS hosted projects or initiatives](https://landscape.finos.org/). 
-This instance was used by participants in the [FINOS Legend Studio pilot (April-September 2020)](https://www.finos.org/hubfs/FINOS/assets/FINOS%20Legend%20Case%20Study%202021.pdf?hsLang=en-us) and is continued to be used as part of the [FINOS Financial Object Special Interest Group](https://github.com/finos/financial-objects).
+This instance was used by participants in the [FINOS Legend Studio pilot (April-September 2020)](https://www.finos.org/hubfs/FINOS/assets/FINOS%20Legend%20Case%20Study%202021.pdf?hsLang=en-us) and is continued to be used as part of the [FINOS Financial Object Special Interest Group (SIG)](https://github.com/finos/financial-objects). 
+
+The goal of the Financial Objects SIG is to provide a neutral forum for individuals across the financial services industry to collectively identify the need for new, open, financial objects standards as well as modifications to existing ones. The Financial Objects SIG also aims to promote adoption of financial object definitions and models that support common industry workflows and use cases.
 
 Legend models developed in [the FINOS hosted shared instance of Legend Studio](https://legend.finos.org/studio), are open source and available at https://gitlab.legend.finos.org/. Every project in the FINOS hosted instance of Legend Studio maps to a GitLab project.
 
