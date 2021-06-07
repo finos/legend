@@ -16,7 +16,6 @@
   "options": {
     "core": {
       "TEMPORARY__disableSDLCProjectStructureSupport": true,
-      "TEMPORARY__disableNonModelStoreSupports": true,
       "TEMPORARY__disableServiceRegistration": true
     }
   }
