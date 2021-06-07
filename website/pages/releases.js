@@ -54,12 +54,12 @@ function Releases(props) {
                   </a>
                 </th>
                 <th>
-                  <a href="https://hub.docker.com/r/finos/legend-engine">
+                  <a href="https://hub.docker.com/r/finos/legend-engine-server">
                     Legend Engine
                   </a>
                 </th>
                 <th>
-                  <a href="https://hub.docker.com/r/finos/legend-sdlc">
+                  <a href="https://hub.docker.com/r/finos/legend-sdlc-server">
                     Legend SDLC
                   </a>
                 </th>

@@ -1,4 +1,5 @@
 {
+  "version": "2021-02-09",
   "core": {
     "finos/legend-studio": "0.1.1",
     "finos/legend-engine-server": "2.11.0",
