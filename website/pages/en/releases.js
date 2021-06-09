@@ -4,7 +4,7 @@ const fs = require("fs");
 
 // NOTE: since the page will be built and stored at `node_modules/docusaurus/lib/pages`, we need to add `../../../`
 // to the intended path.
-const getPath = (relPath) => path.resolve(__dirname, `../../../${relPath}`);
+const getPath = (relPath) => path.resolve(__dirname, `../../../../${relPath}`);
 
 /**
  * NOTE: due to the limitation of Docusaurus@1.x, we cannot really natively create page in React and
