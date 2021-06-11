@@ -19,10 +19,7 @@ function Releases(props) {
       if (!fs.lstatSync(fullDir).isDirectory()) {
         return undefined;
       }
-      return {
-        version: dir,
-        manifest: require(`${fullDir}/manifest.json`),
-      };
+      return require(`${fullDir}/manifest.json`);
     })
     .filter(Boolean);
   return (
@@ -66,23 +63,25 @@ function Releases(props) {
               </tr>
             </thead>
             <tbody>
-              {releases.map((release) => (
-                <tr key={release.version}>
-                  <td>{release.version}</td>
-                  <td>
-                    finos/legend-studio:
-                    {release.manifest.core["finos/legend-studio"]}
-                  </td>
-                  <td>
-                    finos/legend-engine-server:
-                    {release.manifest.core["finos/legend-engine-server"]}
-                  </td>
-                  <td>
-                    finos/legend-sdlc-server:
-                    {release.manifest.core["finos/legend-engine-server"]}
-                  </td>
-                </tr>
-              ))}
+              {releases
+                .sort((a, b) => b.timestamp - a.timestamp)
+                .map((release) => (
+                  <tr key={release.version}>
+                    <td>{release.version}</td>
+                    <td>
+                      finos/legend-studio:
+                      {release.core["finos/legend-studio"]}
+                    </td>
+                    <td>
+                      finos/legend-engine-server:
+                      {release.core["finos/legend-engine-server"]}
+                    </td>
+                    <td>
+                      finos/legend-sdlc-server:
+                      {release.core["finos/legend-sdlc-server"]}
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         </div>
