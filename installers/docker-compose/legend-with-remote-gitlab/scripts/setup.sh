@@ -94,6 +94,7 @@ echo "$LEGEND_STUDIO_PUBLIC_URL/studio/log.in/callback"
 # 	Copy over templates and scripts
 ##########################################
 
-cp -r $PWD $BUILD_DIR/scripts
-cp -r $PWD/../../shared/scripts/ $BUILD_DIR/scripts
+mkdir -p $BUILD_DIR/scripts
+cp -r $PWD/run* $BUILD_DIR/scripts
+cp $PWD/../../shared/scripts/gen* $BUILD_DIR/scripts
 cp -r $PWD/../../shared/templates $BUILD_DIR/templates
