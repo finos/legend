@@ -1,26 +1,29 @@
 name: Docusaurus-website-build
 
-# Only trigger on:
-# - master branch
-# - PR or Pull Request event types
-# - Docusaurus files: this file, docs/** and website/**
+# Only trigger on documentation content changes:
+# - Docusaurus files
+# - docs/**
+# - website/**
+# - releases/**
 on:
   push:
     branches:
       - master
     paths:
-      - '.github/workflows/docusaurus.yml'
-      - '.github/*.md'
-      - 'docs/**'
-      - 'website/**'
+      - ".github/workflows/docusaurus.yml"
+      - ".github/*.md"
+      - "docs/**"
+      - "website/**"
+      - "releases/**"
   pull_request:
     paths:
-      - '.github/workflows/docusaurus.yml'
-      - 'docs/**'
-      - 'website/**'
+      - ".github/workflows/docusaurus.yml"
+      - "docs/**"
+      - "website/**"
+      - "releases/**"
 
 env:
-# Used by docusaurus publish-site command and comment-on-pr action
+  # Used by docusaurus `publish-site` step
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   REPO_NAME: ${{ github.event.repository.name }}
   PATCH_SCRIPT_URL: https://raw.githubusercontent.com/finos/open-developer-platform/master/scripts/patch-docusaurus-config.sh
@@ -29,48 +32,40 @@ jobs:
   website-build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v1
-    - name: Install Node
-      uses: actions/setup-node@v1
-    - name: Install Website deps
-      run: npm install --prefix website
-    - name: Patch forked version
-      run: |
-        # Extract GitHub org/user and patch siteConfig.js only if not "finos"
-        REPO="${{ github.repository }}"
-        REPO_ORG=${REPO%"/"*}
-        if [ "$REPO_ORG" != "finos" ]
-        then echo "Repo organization is '$REPO_ORG', patching docusaurus configuration to work on a forked repo" ; curl ${{ env.PATCH_SCRIPT_URL }} |  bash -s -- ${{ env.REPO_NAME }} $REPO_ORG
-        else echo "Skipping patching, as this is the finos user on github"
-        fi
-    - name: Build Website
-      run: |
-        ./build-site.sh
-    - name: Publish Website
-      run: |
-        # Extract GitHub org/user
-        REPO="${{ github.repository }}"
-        GIT_USERNAME=${REPO%/*}
-        # Set git user to finos, if it's a push to a finos repo
-        if [ "$GIT_USERNAME" == "finos" ] && [ "${{github.event_name }}" == "push" ]
-        then GIT_USERNAME="finos"
-        elif [ "$GIT_USERNAME" == "finos" ] && [ "${{github.event_name }}" == "pull_request" ]
-        then echo "Skipping publishing, as it's coming from a PR"; exit 0
-        fi
-        # Configure git client
-        echo "Git repo - $REPO"
-        echo "Git user - $GIT_USERNAME"
-        git config --global user.email "$GIT_USERNAME@users.noreply.github.com"
-        git config --global user.name "$GIT_USERNAME"
-        echo "machine github.com login $GIT_USERNAME password $GITHUB_TOKEN" > ~/.netrc
-        # Run docusaurus-publish
-        GIT_USER=$GIT_USERNAME npm run publish-gh-pages --prefix website
-# TODO - still failing for some PRs, need more guards and more testing
-#     - name: Create comment
-#       if: github.event_name == 'pull_request'
-#       uses: peter-evans/create-or-update-comment@v1
-#       with:
-#         token: ${{ secrets.GITHUB_TOKEN }}
-#         issue-number: ${{ github.event.number }}
-#         body: Website [preview is available](https://${{ github.actor }}.github.io/${{ env.REPO_NAME }})
+      - name: Checkout repo
+        uses: actions/checkout@v1
+      - name: Install Node
+        uses: actions/setup-node@v1
+      - name: Install Website deps
+        run: npm install --prefix website
+      - name: Patch forked version
+        run: |
+          # Extract GitHub org/user and patch siteConfig.js only if not "finos"
+          REPO="${{ github.repository }}"
+          REPO_ORG=${REPO%"/"*}
+          if [ "$REPO_ORG" != "finos" ]
+          then echo "Repo organization is '$REPO_ORG', patching docusaurus configuration to work on a forked repo" ; curl ${{ env.PATCH_SCRIPT_URL }} |  bash -s -- ${{ env.REPO_NAME }} $REPO_ORG
+          else echo "Skipping patching, as this is the finos user on github"
+          fi
+      - name: Build Website
+        run: |
+          ./build-site.sh
+      - name: Publish Website
+        run: |
+          # Extract GitHub org/user
+          REPO="${{ github.repository }}"
+          GIT_USERNAME=${REPO%/*}
+          # Set git user to finos, if it's a push to a finos repo
+          if [ "$GIT_USERNAME" == "finos" ] && [ "${{github.event_name }}" == "push" ]
+          then GIT_USERNAME="finos"
+          elif [ "$GIT_USERNAME" == "finos" ] && [ "${{github.event_name }}" == "pull_request" ]
+          then echo "Skipping publishing, as it's coming from a PR"; exit 0
+          fi
+          # Configure git client
+          echo "Git repo - $REPO"
+          echo "Git user - $GIT_USERNAME"
+          git config --global user.email "$GIT_USERNAME@users.noreply.github.com"
+          git config --global user.name "$GIT_USERNAME"
+          echo "machine github.com login $GIT_USERNAME password $GITHUB_TOKEN" > ~/.netrc
+          # Run docusaurus-publish
+          GIT_USER=$GIT_USERNAME npm run publish-gh-pages --prefix website
