@@ -75,6 +75,9 @@ gitLab:
       secret: __GITLAB_OAUTH_SECRET__
       redirectURI: __LEGEND_SDLC_PUBLIC_URL__/api/auth/callback
 
+projectStructure:
+  extensionProvider:
+    org.finos.legend.sdlc.server.gitlab.finos.FinosGitlabProjectStructureExtensionProvider: {}
 
 logging:
   # Change this to affect library class logging

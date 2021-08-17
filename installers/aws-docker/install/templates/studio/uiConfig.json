@@ -15,7 +15,6 @@
   },
   "options": {
     "core": {
-      "TEMPORARY__disableSDLCProjectStructureSupport": true,
       "TEMPORARY__disableServiceRegistration": true
     }
   }
