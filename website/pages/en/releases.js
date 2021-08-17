@@ -60,6 +60,7 @@ function Releases(props) {
                     Legend SDLC
                   </a>
                 </th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -79,6 +80,19 @@ function Releases(props) {
                     <td>
                       finos/legend-sdlc-server:
                       {release.core["finos/legend-sdlc-server"]}
+                    </td>
+                    <td style={{ width: "14rem" }}>
+                      {Boolean(release.releaseNotesUrl) ? (
+                        <center>
+                          <a
+                            href={release.releaseNotesUrl}
+                            target="-blank"
+                            rel="noopener noreferrer"
+                          >
+                            Release Notes
+                          </a>
+                        </center>
+                      ) : null}
                     </td>
                   </tr>
                 ))}
