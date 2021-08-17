@@ -1,6 +1,7 @@
 {
   "version": "2021-03-22",
   "timestamp": 1616414400000,
+  "releaseNotesUrl": "",
   "core": {
     "finos/legend-studio": "0.2.11",
     "finos/legend-engine-server": "2.20.0",
