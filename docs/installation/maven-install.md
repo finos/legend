@@ -71,7 +71,7 @@ Test by going to http://localhost:7070/api/info in the browser. The page should 
 
 Visit http://localhost:7070/api/auth/authorize in your browser, you might get redirected to the Gitlab login page or a Gitlab page that askes you to authorize Legend application. After you authenticate/authorize you should be redirected back to SDLC.
 
-### Setup **legend-sdlc**.
+### Setup **legend-studio**.
 
 Follow this [guide](https://github.com/finos/legend-studio/blob/master/README.md#getting-started) on how to start local Studio.
 
