@@ -54,7 +54,7 @@ Test by going to http://localhost:6060 in a browser. The Swagger page can be acc
 
 Create a configuration file based on your particular environment. This can be JSON or YAML.
 
-A [sample configuration file](https://github.com/finos/legend-sdlc/blob/master/legend-sdlc-server/src/test/resources/config-sample.yaml) is included to help you get started. You need to supply some information, like the host your server is running on and Gitlab instance your SDLC server is pointing at.
+A [sample configuration file](https://github.com/finos/legend-sdlc/blob/master/legend-sdlc-server/src/test/resources/config-sample.yaml) is included to help you get started. You need to supply some information by replacing the placeholders which start with `$`.
 
 From the root directory of the `legend-sdlc` repo, follow the steps below in order:
 
