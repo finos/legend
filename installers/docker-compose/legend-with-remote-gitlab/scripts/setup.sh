@@ -95,5 +95,5 @@ echo "$LEGEND_STUDIO_PUBLIC_URL/studio/log.in/callback"
 ##########################################
 
 cp -r $PWD $BUILD_DIR/scripts
-cp -r $PWD/../../shared/scripts/ $BUILD_DIR/scripts
-cp -r $PWD/../../shared/templates $BUILD_DIR/templates
+cp -r $PWD/../../shared/scripts $BUILD_DIR
+cp -r $PWD/../../shared/templates $BUILD_DIR
