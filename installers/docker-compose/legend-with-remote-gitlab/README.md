@@ -1,4 +1,4 @@
-# Docker Compose for Legend with remote instance of Gitlab
+# Docker Compose for full Legend stack with remote instance of Gitlab
 
 1. Modify the config file (you can use the template `config.properties`):
 

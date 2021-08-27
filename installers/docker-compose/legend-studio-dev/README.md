@@ -1,4 +1,4 @@
-# Docker Compose for Legend with remote instance of Gitlab
+# Docker Compose for Legend (SDLC + Engine) with remote instance of Gitlab
 
 1. Modify the config file (you can use the template `config.properties`):
 
