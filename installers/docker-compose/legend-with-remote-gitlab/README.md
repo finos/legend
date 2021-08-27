@@ -26,6 +26,7 @@ http://192.168.1.100:8080/studio/log.in/callback
 3. Run the Docker compose project
 
 ```sh
+# NOTE: this assumes that '~/legend-temp' was set as the BUILD_DIR at step #1:
 docker-compose --env-file ~/legend-temp/.env up --detach
 ```
 
@@ -36,6 +37,7 @@ After starting the project, you can go to your browser at [http://`HOST_ADDRESS`
 5. Stop the Docker compose project
 
 ```sh
+# NOTE: this assumes that '~/legend-temp' was set as the BUILD_DIR at step #1:
 docker-compose --env-file ~/legend-temp/.env down
 ```
 

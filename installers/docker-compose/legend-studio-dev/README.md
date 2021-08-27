@@ -30,6 +30,7 @@ http://localhost:8080/studio/log.in/callback
 3. Run the Docker compose project
 
 ```sh
+# NOTE: this assumes that '~/legend-temp' was set as the BUILD_DIR at step #1:
 docker-compose --env-file ~/legend-temp/.env up --detach
 ```
 
@@ -44,6 +45,7 @@ Next, go to [http://`HOST_ADDRESS`:8080/studio]() to launch Studio.
 5. Stop the Docker compose project
 
 ```sh
+# NOTE: this assumes that '~/legend-temp' was set as the BUILD_DIR at step #1:
 docker-compose --env-file ~/legend-temp/.env down
 ```
 
