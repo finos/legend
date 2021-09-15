@@ -149,5 +149,5 @@ echo "access token: $GITLAB_PRIVATE_ACCESS_TOKEN"
 ##########################################
 
 cp -r $PWD $BUILD_DIR/scripts
-cp -r $PWD/../../shared/scripts/ $BUILD_DIR/scripts
-cp -r $PWD/../../shared/templates $BUILD_DIR/templates
+cp -r $PWD/../../shared/scripts $BUILD_DIR
+cp -r $PWD/../../shared/templates $BUILD_DIR
