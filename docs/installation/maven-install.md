@@ -73,7 +73,7 @@ Visit http://localhost:7070/api/auth/authorize in your browser, you might get re
 
 ### Setup **legend-depot**.
 
-Follow this [guide](https://github.com/finos/legend-depot/blob/master/README.md#getting-started) on how to start local Studio.
+Follow this [guide](https://github.com/finos/legend-depot/blob/master/README.md#getting-started) on how to start local Depot.
 
 ### Setup **legend-studio**.
 
