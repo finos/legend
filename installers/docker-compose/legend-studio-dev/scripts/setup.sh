@@ -88,5 +88,5 @@ echo "http://localhost:$LEGEND_STUDIO_PORT/studio/log.in/callback"
 ##########################################
 
 cp -r $PWD $BUILD_DIR/scripts
-cp -r $PWD/../../shared/scripts/ $BUILD_DIR/scripts
+cp -r $PWD/../../shared/scripts/* $BUILD_DIR/scripts
 cp -r $PWD/../../shared/templates $BUILD_DIR/templates
