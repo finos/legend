@@ -71,7 +71,8 @@ In Juju terms, "bootstrap" means "install a Juju controller", which is the is th
 
 To install the Juju controller in your cloud, simply run
 ``` bash
-juju bootstrap <cloud_name> <controller_name>`. 
+juju bootstrap <cloud_name> <controller_name> 
+```
 
 If you are following this tutorial with Microk8s, run
 ``` bash
@@ -107,8 +108,9 @@ juju deploy finos-legend-bundle
 ```
 
 In another terminal window, you can see the applications being deployed and the integration code running
-
-`watch --color juju status --color`
+``` bash
+watch --color juju status --color
+```
 
 After a couple of minutes, you'll notice that your applications looks like this
 
@@ -129,7 +131,7 @@ The process to do that will depend on your GitLab instance. We will show options
 
 If you are using your already existing GitLab instance or one deployed with docker compose, you can follow the steps below to inform the Legend stack about your access token. 
 
-Convert the certificate ('*.der') into base64: 
+Convert the certificate (`*.der`) into base64: 
 ``` bash
 CERT=`base64 -w 0 /path/to/certfile.der
 ```
@@ -199,7 +201,7 @@ juju status
 ``` 
 Enter `<legend_ip>:8080` and authorise the GitLab application to talk to Studio. 
 
-Do the same for `sdlc` at `<ip_studio>:7070/api/auth/aautorize.`. 
+Do the same for `sdlc` at `<ip_studio>:7070/api/auth/aautorize`. 
 
 ## Accessing the studio dashboard
 
