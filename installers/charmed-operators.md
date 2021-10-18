@@ -1,23 +1,22 @@
-#Overview
+# Overview
 
 This tutorial will cover how to use Juju and Charmed Operators to deploy an instance of the Legend stack on Kubernetes. You can use either gitlab.com or a hosted version of GitLab. 
 
 The applications stack will be deployed as a *bundle* in the same cloud. Juju allows, however, for you to deploy each application on a different cloud and then integrate the stack across your estate. 
 
-#Pre-requisites
+# Pre-requisites
 If you have all the pre-requistes in your system, you can skip to step [1. Deploying Legend](#deploying-legend-heading).
 * Linux box. 
   * This guide was tested on Ubuntu 20.04.
 * Internet connection. 
   * You can also [deploy charmed operators offline](https://juju.is/docs/olm/working-offline). 
-* Access to a Kubernetes cluster
-  * If you don't have a kubernetes cluster at hand, we will show you how to use [Microk8s](https://microk8s.io/) in your laptop. 
+* [Access to a Kubernetes cluster](#kubernetes-cluster-heading)
+  * If you don't have a kubernetes cluster at hand, we will show you how to use Microk8s in your laptop. 
 * A gitlab.com account or a private instance and rights to create an application. 
   * If you don't have access to a GitLab local instance, you can follow [this tutorial](TODO) to get one up and running. 
-* Juju CLI
-  * You can find instruction on how to install Juju CLI [here](https://juju.is/docs/olm/installing-juju). 
+* Juju (CLI)[#juju-heading]
 
-##Kubernetes cluster
+## Kubernetes cluster
 Juju will bootstrap to most Kubernetes clusters (regardless of the vendor) and you can use your own for the rest of this tutorial. If you don't have access to a cluster, you can follow the Kubernetes installation instructions [here](https://microk8s.io/docs). You can customise the intallation for this tutorial as follows: 
 
 Add an alias for `kubectl`:
@@ -50,7 +49,7 @@ You will need application creation rights on a GitLab public or private instance
   * *Redirect URI:* set it to http://localhost:8080/callback
 **Save the Client ID and Secret for later**
 
-##Juju
+## Juju
 You can follow the instructions [here](https://juju.is/docs/olm/installing-juju) or simply install a Juju with
 ``` bash
 snap install juju --classic
@@ -58,7 +57,7 @@ snap install juju --classic
 
 If you are *not* using Microk8s, you can add the credentials to your cloud as described [here](https://juju.is/docs/olm/clouds). 
 
-##Deploying Legend
+## Deploy Legend
 
 Up until now, we've been preparing our system to host Legend. In the next steps, we will
 1. Bootstrap Juju to your cluster
@@ -131,13 +130,13 @@ The process to do that will depend on your GitLab instance. We will show options
 If you are using your already existing GitLab instance or one deployed with docker compose, you can follow the steps below to inform the Legend stack about your access token. 
 
 Convert the certificate ('*.der') into base64: 
-```
-$ CERT=`base64 -w 0 /path/to/certfile.der
+``` bash
+CERT=`base64 -w 0 /path/to/certfile.der
 ```
 
 Configure the finos-legend-gitlab-integrator charm with your GitLab credentials. The default `gitlab-host` value for GitLab deployed via `docker-compose` is `172.18.0.2`.
 
-```
+``` bash
 juju config finos-legend-gitlab-integrator-k8s \
      gitlab-host= <gitlab-host> gitlab-host-der-b64="$CERT" gitlab-port=443 \
      access-token="<access-token>"
@@ -192,7 +191,7 @@ Run `juju status` to see the applications reacting to this configuration change.
 
 Once all the applications have become active, you can go to [5. Authorise the user and application](#authorise-the-user-and-application-heading).
 
-## Authorizing the user and application
+## 5. Authorise the user and application
 
 Get the ip of the pod where Legend Studio is running with
 ``` bash
@@ -204,6 +203,4 @@ Do the same for `sdlc` at `<ip_studio>:7070/api/auth/aautorize.`.
 
 ## Accessing the studio dashboard
 
-You should now be able to access the Legend Studio dashboard at:
-
-`<studio_ip>:8080/studio`
+You should now be able to access the Legend Studio dashboard at `<studio_ip>:8080/studio`
