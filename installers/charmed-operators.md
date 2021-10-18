@@ -5,16 +5,16 @@ This tutorial will cover how to use Juju and Charmed Operators to deploy an inst
 The applications stack will be deployed as a *bundle* in the same cloud. Juju allows, however, for you to deploy each application on a different cloud and then integrate the stack across your estate. 
 
 # Pre-requisites
-If you have all the pre-requistes in your system, you can skip to step [1. Deploying Legend](#deploying-legend-heading).
+If you have all the pre-requistes in your system, you can skip to step [1. Deploying Legend](#deploying-legend).
 * Linux box. 
   * This guide was tested on Ubuntu 20.04.
 * Internet connection. 
   * You can also [deploy charmed operators offline](https://juju.is/docs/olm/working-offline). 
-* [Access to a Kubernetes cluster](#kubernetes-cluster-heading)
+* [Access to a Kubernetes cluster](#kubernetes-cluster)
   * If you don't have a kubernetes cluster at hand, we will show you how to use Microk8s in your laptop. 
 * A gitlab.com account or a private instance and rights to create an application. 
   * If you don't have access to a GitLab local instance, you can follow [this tutorial](TODO) to get one up and running. 
-* Juju [CLI](#juju-heading)
+* Juju [CLI](#juju)
 
 ## Kubernetes cluster
 Juju will bootstrap to most Kubernetes clusters (regardless of the vendor) and you can use your own for the rest of this tutorial. If you don't have access to a cluster, you can follow the Kubernetes installation instructions [here](https://microk8s.io/docs). You can customise the intallation for this tutorial as follows: 
@@ -36,7 +36,7 @@ The command above will take a few moment to complete. You can check the status w
 microk8s status --wait-ready
 ```
 
-##GitLab Application
+## GitLab Application
 
 You will need application creation rights on a GitLab public or private instance
 
@@ -144,7 +144,7 @@ juju config finos-legend-gitlab-integrator-k8s \
 
 Run `juju status` to see the applications reacting to this configuration change. 
 
-Once all the applications have become active, you can go to [5. Authorise the user and application](#authorise-the-user-and-application-heading).
+Once all the applications have become active, you can go to [5. Authorise the user and application](#authorise-the-user-and-application).
 
 ### gitlab.com
 
@@ -189,7 +189,7 @@ You can now enter these URIs into GitLab:
   
 Run `juju status` to see the applications reacting to this configuration change. 
 
-Once all the applications have become active, you can go to [5. Authorise the user and application](#authorise-the-user-and-application-heading).
+Once all the applications have become active, you can go to [5. Authorise the user and application](#authorise-the-user-and-application).
 
 ## 5. Authorise the user and application
 
