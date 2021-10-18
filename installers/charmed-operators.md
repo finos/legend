@@ -14,7 +14,7 @@ If you have all the pre-requistes in your system, you can skip to step [1. Deplo
   * If you don't have a kubernetes cluster at hand, we will show you how to use Microk8s in your laptop. 
 * A gitlab.com account or a private instance and rights to create an application. 
   * If you don't have access to a GitLab local instance, you can follow [this tutorial](TODO) to get one up and running. 
-* Juju (CLI)[#juju-heading]
+* Juju [CLI](#juju-heading)
 
 ## Kubernetes cluster
 Juju will bootstrap to most Kubernetes clusters (regardless of the vendor) and you can use your own for the rest of this tutorial. If you don't have access to a cluster, you can follow the Kubernetes installation instructions [here](https://microk8s.io/docs). You can customise the intallation for this tutorial as follows: 
