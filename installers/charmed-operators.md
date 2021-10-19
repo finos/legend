@@ -5,7 +5,8 @@ This tutorial will cover how to use Juju and Charmed Operators to deploy an inst
 The applications stack will be deployed as a *bundle* in the same cloud. Juju allows, however, for you to deploy each application on a different cloud and then integrate the stack across your estate. 
 
 # Prerequisites
-If you have all the prerequistes in your system, you can skip to step [1. Deploying Legend](#deploying-legend).
+
+If you have all the prerequisites in your system, you can skip to step [1. Deploying Legend](#deploying-legend).
 * Linux box. 
   * This guide was tested on Ubuntu 20.04.
 * Internet connection. 
