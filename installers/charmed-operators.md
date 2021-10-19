@@ -225,7 +225,7 @@ juju status
 ``` 
 Enter `<legend_ip>:8080` and authorise the GitLab application to talk to Studio. 
 
-Do the same for `sdlc` at `<ip_studio>:7070/api/auth/aautorize`. 
+Do the same for `sdlc` at `<ip_studio>:7070/api/auth/authorize`.
 
 ## Accessing the studio dashboard
 
