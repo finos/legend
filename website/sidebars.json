@@ -20,6 +20,7 @@
       "language/released-functions",
       "language/upcoming-functions"
     ],
+    "Release": ["release/release-2021-10-18"],
     "Contribute": [
       "contribute/contribute-to-legend",
       "contribute/how-to-get-involved",
