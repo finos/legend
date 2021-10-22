@@ -1,7 +1,7 @@
 {
   "version": "2021-10-18",
   "timestamp": 1634599077493,
-  "releaseNotesUrl": "https://github.com/finos/legend/tree/master/releases/2021-10-18/release-notes.md",
+  "releaseNotesUrl": "https://legend.finos.org/docs/release/release-2021-10-18",
   "core": {
     "finos/legend-studio": "0.10.0",
     "finos/legend-engine-server": "2.48.0",
