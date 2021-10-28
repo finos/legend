@@ -1,8 +1,8 @@
 ---
-name: "\U0001F91D Legend General Meeting Minutes"
-about: To track the meeting agenda and attendance for the Legend General Meeting.
-title: MMM DD YYYY Legend General Meeting
-labels: Monthly General Meeting, meeting
+name: "\U0001F91D Legend Community Meeting Minutes"
+about: To track the meeting agenda and attendance for the Legend Community Meetings.
+title: MMM DD YYYY Legend Community Meeting
+labels:  meeting
 assignees: ''
 
 ---
