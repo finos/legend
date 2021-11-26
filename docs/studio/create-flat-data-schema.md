@@ -251,8 +251,8 @@ A `Record` definition must not be specified.
 * `scope` required property that specifies the scope of the section. 
   Options are:
   * `scope.default;` use this unless you want a specific alternative
-  * `scope.forNumberOfLines = n;` if the section spans an exact number of lines
-  * `scope.untilLineEquals = 'END';` if the section spans until a marker line of the specified text
+  * `scope.forNumberOfLines: n;` if the section spans an exact number of lines
+  * `scope.untilLineEquals: 'END';` if the section spans until a marker line of the specified text
   * `scope.untilEof;` if the section spans for the remainder of the data
 
 ### Common Data Properties
