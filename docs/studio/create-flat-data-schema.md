@@ -4,7 +4,7 @@ title: Create a Flat Data schema
 sidebar_label: Create a Flat Data schema
 ---
 
-Flat Data is a feature of the External Formats support within Legend. It covers simple file formats like CSVs and simple custom formats. More
+Flat Data is a feature of the external formats support within Legend. It covers simple file formats like CSVs and simple custom formats. More
 sophisticated structured formats, that are described by well-defined schemas, such as XML (schema XSD) and JSON (schema JSON Schema) are
 handled by other features of the External Formats framework.
 
