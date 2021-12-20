@@ -4,8 +4,8 @@
   "sdlc": {
     "url": "__LEGEND_SDLC_URL__/api"
   },
-  "metadata": {
-    "url": "__LEGEND_DEPOT_URL__/api"
+  "depot": {
+    "url": "https://legend.finos.org/unused"
   },
   "engine": {
     "url": "__LEGEND_ENGINE_URL__/api"
