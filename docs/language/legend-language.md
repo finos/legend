@@ -156,7 +156,7 @@ Class <<extension.important>> {doc.doc = 'Represent a company.'} Firm
 ```Legend
 Class <<extension.important>> {doc.doc = 'Represent a company.'} Firm
 [
-  size: $this.companyType == CompanyType.Corporation
+  isCorporation: $this.companyType == CompanyType.Corporation
 ]
 {
   name:        String[1];  
@@ -169,7 +169,7 @@ Class <<extension.important>> {doc.doc = 'Represent a company.'} Firm
 ```Legend
 Class <<extension.important>> {doc.doc = 'Represent a company.'} Firm
 [
-  size: $this.companyType == CompanyType.Corporation
+  isCorporation: $this.companyType == CompanyType.Corporation
 ]
 {
   name:            String[1];  
