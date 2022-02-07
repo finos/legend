@@ -6,11 +6,18 @@ sidebar_label: Getting Started
 
 # Introductory Videos
 
-Pierre DeBelen, the creator of Legend, delivered the [keynote speech at 2020 Open Source Strategy Forum](https://www.youtube.com/watch?v=93c966jNzYo). Pierre provides a broad survey of the challenges of data management and how Legend can help in addressing them.
+There are a few videos to check out in order to get started with Legend.
 
-Ffion Acland from Goldman Sachs also presented at the 2020 Open Source Strategy Forum, where she discussed [why open source data models revolutionize the financial industry](https://www.youtube.com/watch?v=6rUm7dN9pfU). 
+First, Pierre de Belen, the creator of Legend, delivered the [keynote speech at 2020 Open Source Strategy Forum](https://www.youtube.com/watch?v=93c966jNzYo). Pierre provides a broad survey of the challenges of data management and how Legend can help in addressing them.
 
-Both these videos are highly recommended.
+Second, Beeke-Marie Nelke and Ffion Acland from Goldman Sachs presented at the 2021 Open Source Strategy Forum, where they discussed Legend in the context of data quality. [An Open-sourced Solution to Data Governance? How Legend may be the Answer to Data Quality Concerns in the Financial Industry](https://www.youtube.com/watch?v=9qIq0mHKQeY)
+
+Lastly, Beeke-Marie Nelke hosted two sessions for the FINOS Open Source Community.
+
+* [Legend 101](https://www.youtube.com/watch?v=Mruhx5hnLzQ). Learn the basics of data modeling in Legend Studio.
+* [Legend New Feature Deep Dive](https://www.youtube.com/watch?v=7lJoik3r38k). Learn how to create mappings and query your data.
+
+All these videos are highly recommended.
 
 # Hosted FINOS Legend Instance 
 

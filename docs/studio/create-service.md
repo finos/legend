@@ -40,9 +40,3 @@ This feature is not yet supported.
 ### See features in action
 
 ![Create a service](../assets/create-a-service.gif)
-
-## Next steps
-
-- [Create a model](create-model.md)
-- [Create a diagram](create-diagram.md)
-- [Edit a model](edit-model.md)

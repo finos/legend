@@ -1,20 +1,19 @@
 ---
-id: create-model
-title: Create a model
-sidebar_label: Create a model
+id: create-data-model
+title: Create a data model
+sidebar_label: Create a data model
 ---
 
-Use data models to describe your data and how they relate to each other.
+Use data models to describe your data and data relationships.
 
-## Define a data model hierarchy
+## Define a new model package
 
-Use model hierarchies to group models into packages. 
+Create a package to start defining model hierarchies to group models into logical concepts.
 
 1. Click the **+** icon next to **project**.
 2. Click **Add a new package** to start a model hierarchy.
 
-    ![Define a model hierarchy](../assets/define-model-hierarchy.jpg)
-
+![create package](../assets/create-hierarchy.gif)
 ## Define a new class
 
 Use classes to define a business concept.
@@ -22,13 +21,12 @@ Use classes to define a business concept.
 1. Click the **+** icon.
 2. Click **Add a new Class**.
 
-    Let's create a class called `Person`.  
-
-    ![Define a new class](../assets/define-new-class.JPG)
+    Let's create a class called `Person`.
 
     Studio displays a visualization of the class and a tabbed list of the possible model enrichments.
 
-## Add a property (primitive data type)
+![create class](../assets/create-class.gif)
+# Add a property (primitive data type)
 
 Use properties in a class to define attributes of the business concept.
 
@@ -37,8 +35,7 @@ Use properties in a class to define attributes of the business concept.
 
     Let's create a property called `firstName` of type `String` with [cardinality](../language/legend-language.md#class) of 1.  
 
-    ![Add a property (primitive data type)](../assets/add-property-primitive.JPG)
-
+![add property](../assets/add-property.gif)
 ## Add a derived property
 
 Derived properties are properties defined using functions that can operate on other attributes in the data model.
@@ -47,48 +44,74 @@ Derived properties are properties defined using functions that can operate on ot
 2. Type in the name of your property and specify the [data type](../language/legend-language.md#primitive-types) and [cardinality](../language/legend-language.md#class).
 3. Type in the expression.
 
-    Let's add a qualified property called `firstInitial` using the following expression: `$this.name->substring(0,1)`.
+    Let's add a derived property called `employeeCount` using the following expression: `$this.employees->count()`.
 
-4. Select a return [data type](../language/legend-language.md#primitive-types) of `String` and [cardinality](../language/legend-language.md#class) of 1.
+4. Select a return [data type](../language/legend-language.md#primitive-types) of `Integer` and [cardinality](../language/legend-language.md#class) of 1.
 5. Press **F9** to compile the expression.
 
-    ![Add a derived property](../assets/add-derived-property.JPG)
+![add derived property](../assets/add-derived-property.gif)
 
-## Add a constraint
+# Add a constraint
 
 Use constraints to define a validation or condition on the model that's expected to be met. The return type for a constraint is **Boolean**.  
 
 1. Go to the **Constraints** tab and click the **+** icon.
 2. Type in a name for the constraint and the expression.  
 
-    Let's add a constraint called `firstNameNotEmpty` using the following expression: `$this.firstName->isNotEmpty()`.
+    Let's add a constraint called `nameNotEmpty` using the following expression: `$this.name->isNotEmpty()`.
 
 3. Press **F9** to compile the expression.
 
-    ![Add a constraint](../assets/add-constraint.JPG)
+![add constraint](../assets/add-constraint.gif)
 
-## Add a tagged value
+## Create a Profile
 
-Use tagged values to add context and values to your model. One type of tagged value is `doc`. The `doc` tag describes the class.
+Capture additional information (metadata) about the data model by creating a Profile. Profiles store and manage tagged values and stereotypes.
 
-1. Go to the **Tagged Values** tab and click the **+** icon.
+1. Click the **+** icon.
 
-2. Select the tagged value to add.
+2. Click **New Profile**.
+### Create a tagged value
 
-    Let's add a `doc` tag to describe the **Person** class.
+Use tagged values to add context to your data model. For example, we can add the tagged value `alias` to our `Firm` class to make it easier for others to navigate our data model.
 
-    ![Add a tagged value](../assets/add-tagged-value.JPG)
+1. In the Profile editor, go to the **Tags** tab and click the **+** icon.
 
-## Add a stereotype
+2. Type in `alias`.
+
+### Add a tagged value to a class
+
+1. Select the `Firm` class
+
+2. Go to the **Tagged Values** tab
+
+3. Drag and drop the **Profile** element into the Tagged Value tab OR hit the **+** icon.
+
+4. Select `alias`.
+
+5. Type in `Organization`.
+
+The `Firm` class now shows the additional context.
+
+### Create a stereotype
 
 Use stereotypes to extend metadata information about a model. For example, you can annotate your model with labels like *legacy* or *deprecated*.
 
-1. Go to the **Stereotypes** tab and click the **+** icon.  
-2. Select the sterotype class.
+1. In the Profile editor, go to the **Stereotypes** tab and click the **+** icon.
 
-    Let's add a stereotype of type **access** and a value of **public**.
+2. Type in `deprecated`.
 
-    ![Add a stereotype](../assets/add-stereotype.JPG)
+### Add a stereotype to a class
+
+1. Select the `Firm` class
+
+2. Go to the **Stereoptypes** tab
+
+3. Drag and drop the **Profile** element into the Stereotypes tab OR hit the **+** icon.
+
+4. Select `deprecated`.
+
+The `Firm` class now shows the additional metadata information.
 
 ## Create and add an enumeration
 
@@ -129,11 +152,3 @@ Create a relationship between the **Person** and **Firm** classes.
     - Name: **employees**
     - Type: **Person**
     - Cardinality: **1..**
-
-    ![Add a Property (non-primitive data type)](../assets/add-property-non-primitive.JPG)
-
-## Next steps
-
-- [Create a diagram](create-diagram.md)
-- [Edit a model](edit-model.md)
-- [Create a model-to-model mapping](create-model-to-model-mapping.md)

@@ -6,7 +6,7 @@ sidebar_label: Create a diagram
 
 ## Create a diagram
 
-Diagrams are visual representations of your models to better visualize and communicate about data and their relationships.
+Diagrams are visual representations of your models to better visualize and communicate about data and their relationships. **Important to note** is that Diagrams are not auto-generated based on the created model. Instead, diagrams should be intentionally created to best represent the data being described.
 
 To get started, click the **+** to open the **New Element** drop down menu on the left-hand side and select **Add a new diagram**.
 
@@ -52,9 +52,3 @@ Right click on the diagram element in the explorer view and select **delete**.
 ### See features in action
 
 ![diagram editor](../assets/diagram-editor.gif)
-
-## Next steps
-
-- [Edit a model](edit-model.md)
-- [Create a model-to-model mapping](create-model-to-model-mapping.md)
-- [Execute a model-to-model mapping](execute-model-to-model-mapping.md)

@@ -8,10 +8,10 @@
     ],
     "Studio": [
       "studio/create-workspace",
-      "studio/create-model",
+      "studio/create-data-model",
       "studio/create-diagram",
-      "studio/edit-model",
       "studio/create-model-to-model-mapping",
+      "studio/connect-data-to-model",
       "studio/execute",
       "studio/create-service",
       "studio/consume-service",

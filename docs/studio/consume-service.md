@@ -32,15 +32,7 @@ See below steps how to create and locate an executable JAR file for consumption 
 
 The executable JAR file can be used as a dependency to execute your service. 
 
-1. Unzip the JAR file to review its content.
-
-2. List the JAR file as a dependency in the Java application. For production use cases, the recommendation is to fetch the JAR file from a published repository (such as the public Maven repo).
+List the JAR file as a dependency in the Java application. For production use cases, the recommendation is to fetch the JAR file from a published repository (such as the public Maven repo).
 
 ## See features in action
 ![consume a service](../assets/consume-service.gif)
-
-## Next steps
-
-- [Create a model](create-model.md)
-- [Create a diagram](create-diagram.md)
-- [Edit a model](edit-model.md)

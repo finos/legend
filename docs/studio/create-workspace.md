@@ -21,9 +21,3 @@ There is also the option to create a **group workspace** which allows collaborat
 2. Check the **Group Workspace** check box.
 
 ![Create a group workspace](../assets/create-a-group-workspace.gif)
-
-## Next steps
-
-- [Create a model](create-model.md)
-- [Create a diagram](create-diagram.md)
-- [Edit a model](edit-model.md)

@@ -47,9 +47,3 @@ A workspace update may result in a conflict. Studio will open a new view to aid 
 3. Once the changes compile successfully, either accept or discard the changes.
 
     ![Accept or discard changes](../assets/accept-or-discard-changes.JPG)
-
-## Next steps
-
-- [Legend language](../language/legend-language.md)
-- [Released functions](../language/released-functions.md)
-- [Upcoming functions](../language/upcoming-functions.md)
