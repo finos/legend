@@ -13,6 +13,8 @@
       "studio/edit-model",
       "studio/create-model-to-model-mapping",
       "studio/execute",
+      "studio/create-service",
+      "studio/consume-service",
       "studio/create-flat-data-schema",
       "studio/review-and-commit-changes"
     ],
