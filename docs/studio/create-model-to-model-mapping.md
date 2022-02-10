@@ -33,8 +33,3 @@ Create a model transformation using model-to-model mappings. Model transformatio
 
     ![Text view of the mapping](../assets/text-view-mapping.JPG)
 
-## Next steps
-
-- [Execute a model-to-model mapping](execute-model-to-model-mapping.md)
-- [Review and commit changes](review-and-commit-changes.md)
-- [Language](../language/legend-language.md)
