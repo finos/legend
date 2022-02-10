@@ -1,0 +1,210 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Connect data to model · Legend</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Connect data to a data model to start querying data leveraging the business-friendly terms and data relationships defined in the data model."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Connect data to model · Legend"/><meta property="og:type" content="website"/><meta property="og:url" content="https://legend.finos.org/"/><meta property="og:description" content="Connect data to a data model to start querying data leveraging the business-friendly terms and data relationships defined in the data model."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-blue.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-89349362-7', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,500,700,900|Source+Code+Pro:400,500,700,900&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/legend.svg" alt="Legend"/><h2 class="headerTitleWithLogo">Legend</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/getting-started/getting-started-guide" target="_self">Docs</a></li><li class=""><a href="https://legend.finos.org/releases" target="_blank">Releases</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Studio</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started/getting-started-guide">Getting Started</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Installation<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/installation/installation-guide">Installation guide</a></li><li class="navListItem"><a class="navItem" href="/docs/installation/maven-install-guide">Maven Install Guide</a></li><li class="navListItem"><a class="navItem" href="/docs/installation/aws-docker-guide">AWS Docker Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Studio<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/studio/create-workspace">Create a workspace</a></li><li class="navListItem"><a class="navItem" href="/docs/studio/create-data-model">Create a data model</a></li><li class="navListItem"><a class="navItem" href="/docs/studio/create-diagram">Create a diagram</a></li><li class="navListItem"><a class="navItem" href="/docs/studio/create-model-to-model-mapping">Create model-to-model mapping</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/studio/connect-data-to-model">Connect data to a data model</a></li><li class="navListItem"><a class="navItem" href="/docs/studio/execute">Execute model-to-model mapping</a></li><li class="navListItem"><a class="navItem" href="/docs/studio/create-service">Create a service</a></li><li class="navListItem"><a class="navItem" href="/docs/studio/consume-service">Consume a service</a></li><li class="navListItem"><a class="navItem" href="/docs/studio/create-flat-data-schema">Create a Flat Data schema</a></li><li class="navListItem"><a class="navItem" href="/docs/studio/review-and-commit-changes">Review and commit changes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Language<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/language/legend-language">Legend language</a></li><li class="navListItem"><a class="navItem" href="/docs/language/released-functions">Released functions</a></li><li class="navListItem"><a class="navItem" href="/docs/language/upcoming-functions">Upcoming functions</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Release<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/release/release-2021-10-18">Release 2021-10-18</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Contribute<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/contribute/contribute-to-legend">Contribute to Legend</a></li><li class="navListItem"><a class="navItem" href="/docs/contribute/terms-of-service">Terms of service</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Connect data to model</h1></header><article><div><span><p>Connect data to a data model to start querying data leveraging the business-friendly terms and data relationships defined in the data model.</p>
+<h2><a class="anchor" aria-hidden="true" id="create-a-relational-database"></a><a href="#create-a-relational-database" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a Relational Database</h2>
+<p>Define the schema definition of the relational database you wish to connect to the data model.</p>
+<ol>
+<li>Hit the <strong>+</strong> icon.</li>
+<li>Select <strong>New Relational Database</strong></li>
+<li>Enter the name of the Database, for example <strong>H2DemoDataBase</strong></li>
+</ol>
+<p>The Studio form mode currently does not support defining the Relational Database schema. Please select <strong>Edit in text mode</strong> to continue.</p>
+<ol start="4">
+<li>Define the database by adding tables, columns and joins.</li>
+</ol>
+<p>Please refer to below sample SQL snippet to set up a in-memory H2 demo database.</p>
+<p>###Relational
+Database demo::H2DemoDataBase
+(
+Table FirmTable
+(
+id INTEGER PRIMARY KEY,
+legal_name VARCHAR(200)
+)
+Table EmployeeTable
+(
+id INTEGER PRIMARY KEY,
+firm_id INTEGER,
+full_name VARCHAR(200),
+country_id INTEGER
+)
+Table CountryTable
+(
+id INTEGER PRIMARY KEY,
+country_name VARCHAR(200)
+)</p>
+<p>Join FirmEmployee(EmployeeTable.firm_id = FirmTable.id)
+Join EmployeeCountry(EmployeeTable.country_id = CountryTable.id)
+)</p>
+<h2><a class="anchor" aria-hidden="true" id="create-a-relational-mapping"></a><a href="#create-a-relational-mapping" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a Relational Mapping</h2>
+<p>Map the columns of your relational tables to the properties defined in the data model.</p>
+<h3><a class="anchor" aria-hidden="true" id="define-the-relational-mapping"></a><a href="#define-the-relational-mapping" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Define the Relational Mapping</h3>
+<ol>
+<li>Hit the <strong>+</strong> icon.</li>
+<li>Select <strong>New Mapping</strong></li>
+<li>Enter the name of the Mapping, for example <strong>DemoRelationalMapping</strong></li>
+<li>Define the mapping target: Drag a class into the editor where it says <strong>Add a mapping element</strong>, for example the <code>Firm</code> class. Then select <strong>Create</strong>.</li>
+<li>Define the mapping source: Drag the <strong>H2DemoDataBase</strong> Relational Database in the editor where it says <strong>Choose a source</strong>.</li>
+<li>Choose the table specified in the Relational Database schema that contains the columns you wish to map to your data model properties. Let's choose the <strong>FirmTable</strong>.</li>
+<li>Map the column names on the left-hand side to the property names in the center of the editor screen. Let's map the <strong>legal_name</strong> column to the <strong>legalName</strong> property.</li>
+</ol>
+<h4><a class="anchor" aria-hidden="true" id="execute-the-relational-mapping"></a><a href="#execute-the-relational-mapping" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Execute the Relational Mapping</h4>
+<p>To ensure that the mapping has been done correctly and the desired data is actually returned, let's execute the relational mapping.</p>
+<ol>
+<li>Right click on the class you wish to test execution for. Let's aim to query Firm data by right-clicking on the <code>Firm</code> class and selecting <strong>Execute</strong>.</li>
+<li>Hit the <strong>Edit Query</strong> button to define your test query.</li>
+<li>Create test data either from SQL or csv.</li>
+<li>Hit the <strong>Execute</strong> button to test execution.</li>
+</ol>
+<h4><a class="anchor" aria-hidden="true" id="create-relational-mapping-test"></a><a href="#create-relational-mapping-test" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create Relational Mapping Test</h4>
+<p>It is good practice to define tests for each of your relational mappings. That way, changes to the model and mappings can be performed more safely.</p>
+<ol>
+<li>Right click on the class you wish to set up the test for. Let's set up a test for the <code>Firm</code> class by right-clicking on it and selecting <strong>Test</strong>.</li>
+<li>Alternatively, you can select the <strong>+</strong> icon where it says <strong>Let's add some tests!</strong>. Select the class from the dropdown you wish to create the test for.</li>
+<li>Hit the <strong>Edit Query</strong> button to define your test query.</li>
+<li>Create test data either from SQL or csv.</li>
+<li>Hit the <strong>Execute</strong> button to test execution.</li>
+</ol>
+<p>You can test all the queries and relational mappings at once by hitting the <strong>Run All Tests</strong> button.</p>
+<h2><a class="anchor" aria-hidden="true" id="create-a-connection"></a><a href="#create-a-connection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a Connection</h2>
+<p>Define the Connection details between the relational database and the data model.</p>
+<ol>
+<li>Hit the <strong>+</strong> icon.</li>
+<li>Select <strong>New Connection</strong></li>
+<li>Enter the name of the Connection, for example <strong>H2DemoConnection</strong></li>
+<li>Select <strong>Relational</strong> Model Connection</li>
+</ol>
+<p>Start entering the Connection details in the <strong>General</strong> tab. First, choose the <strong>Database type</strong>.</p>
+<h3><a class="anchor" aria-hidden="true" id="database-type"></a><a href="#database-type" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Database type</h3>
+<p>Specify the type of relational database you wish to connect to. Studio currently supports:</p>
+<ul>
+<li>H2 (in-memory test database)</li>
+<li>Snowflake</li>
+<li>BigQuery</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="datasource"></a><a href="#datasource" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Datasource</h3>
+<p>Specify the connection details of your selected database type.</p>
+<h4><a class="anchor" aria-hidden="true" id="h2"></a><a href="#h2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>H2</h4>
+<p>To execute against an in-memory H2 test data base, you would need to define test data by adding SQL to <strong>Test data setup SQL</strong></p>
+<h4><a class="anchor" aria-hidden="true" id="h2-embedded"></a><a href="#h2-embedded" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>H2 Embedded</h4>
+<p><em>Coming soon</em></p>
+<h4><a class="anchor" aria-hidden="true" id="static"></a><a href="#static" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Static</h4>
+<p><em>More details coming soon</em></p>
+<p>Specify Static connection details by adding the below details.</p>
+<ul>
+<li>Host</li>
+<li>port</li>
+<li>Database</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="snowflake"></a><a href="#snowflake" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Snowflake</h4>
+<p><em>More details coming soon</em></p>
+<p>Specify Snowflake connection details by adding the below details.</p>
+<ul>
+<li>Account</li>
+<li>Region</li>
+<li>Warehouse</li>
+<li>Database</li>
+<li>Cloud type</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="bigquery"></a><a href="#bigquery" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>BigQuery</h4>
+<p><em>More details coming soon</em></p>
+<p>Specify BigQuery connection details by adding the below details.</p>
+<ul>
+<li>Project id</li>
+<li>Default dataset</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="authentication"></a><a href="#authentication" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Authentication</h3>
+<p>Define how access to the database should be authenticated in the <strong>Authentication</strong> specifications.</p>
+<h4><a class="anchor" aria-hidden="true" id="h2-default"></a><a href="#h2-default" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>H2 Default</h4>
+<p>No further input needed if you select the <strong>H2 Default</strong> authentication specifications.</p>
+<h4><a class="anchor" aria-hidden="true" id="delegated-kerberos"></a><a href="#delegated-kerberos" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Delegated Kerberos</h4>
+<p><em>More details coming soon</em></p>
+<p>Specify <strong>Delegated Kerberos</strong> authentication details by adding the below details.</p>
+<ul>
+<li>Server principal</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="snowflake-public"></a><a href="#snowflake-public" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Snowflake Public</h4>
+<p><em>More details coming soon</em></p>
+<p>Specify <strong>Snowflake</strong> authentication details by adding the below details.</p>
+<ul>
+<li>Private key vault reference</li>
+<li>Pass phrase vault reference</li>
+<li>Public user name</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="gcp-application-default-credentials"></a><a href="#gcp-application-default-credentials" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Gcp Application Default Credentials</h4>
+<p><em>More details coming soon</em></p>
+<p>Specify <strong>GCP</strong> authentication details.</p>
+<h4><a class="anchor" aria-hidden="true" id="username-password"></a><a href="#username-password" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Username password</h4>
+<p><em>More details coming soon</em></p>
+<p>Specify <strong>Username password</strong> authentication details.</p>
+<h2><a class="anchor" aria-hidden="true" id="create-a-runtime"></a><a href="#create-a-runtime" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a Runtime</h2>
+<p>The combination of the relational mapping and the connection details are specified in the <strong>Runtime</strong>.</p>
+<ol>
+<li>Hit the <strong>+</strong> icon.</li>
+<li>Select <strong>New Runtime</strong></li>
+<li>Enter the name of the Connection, for example <strong>H2DemoRuntime</strong></li>
+<li>Select the <strong>relational mapping</strong> you want to specify for your runtime, for example <strong>DemoRelationalMapping</strong></li>
+</ol>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/studio/create-model-to-model-mapping"><span class="arrow-prev">← </span><span>Create model-to-model mapping</span></a><a class="docs-next button" href="/docs/studio/execute"><span>Execute model-to-model mapping</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#create-a-relational-database">Create a Relational Database</a></li><li><a href="#create-a-relational-mapping">Create a Relational Mapping</a><ul class="toc-headings"><li><a href="#define-the-relational-mapping">Define the Relational Mapping</a></li></ul></li><li><a href="#create-a-connection">Create a Connection</a><ul class="toc-headings"><li><a href="#database-type">Database type</a></li><li><a href="#datasource">Datasource</a></li><li><a href="#authentication">Authentication</a></li></ul></li><li><a href="#create-a-runtime">Create a Runtime</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a></section><section class="finos finosBanner"><a href="https://www.finos.org"><img id="finosicon" src="https://legend.finos.org/img/finos_wordmark.svg" height="75px" alt="FINOS" title="FINOS"/></a></section><section class="privacy finosBanner"><a href="https://www.finos.org/privacy-policy" target="_blank">Privacy Policy</a></section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
