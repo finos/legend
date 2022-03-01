@@ -29,7 +29,7 @@ _Feel free to suggest areas for documentation improvement by raising an [issue](
 # Contribute
 
 ## Contribute to Legend
-To learn about contributing to Legend, see the [CONTRIBUTING.md](CONTRIBUTING.md) file or the ["contribute to Legend"](https://legend.finos.org/docs/getting-started/contribute-to-legend) section of the Legend documentation site.
+To learn about contributing to Legend, see the [CONTRIBUTING.md](CONTRIBUTING.md) file or the ["contribute to Legend"](https://legend.finos.org/docs/contribute/contribute-to-legend) section of the Legend documentation site.
 
 ## Contribute to FINOS projects that use Legend as a data modeling tool
 Several FINOS projects are leveraging Legend for data modeling efforts under the [FINOS Financial Object Special Interest Group](https://github.com/finos/financial-objects) umbrella. Get involved by [joining the next Financial Objects SIG meeting](https://github.com/finos/financial-objects/issues?q=label%3Ameeting) or by emailing the Financial Objects community at [fo@finos.org](mailto:fo@finos.org).
