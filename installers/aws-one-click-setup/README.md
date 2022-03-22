@@ -76,15 +76,15 @@ Note: If you are going to use CLI, you can create an user using: https://docs.aw
 
 1. Create an account in gitlab.com (if you do not have one already)
 2. If you don't already have a Gitlab OAuth application, first, navigate to User Settings > Applications and create an application with the following parameters:
-    Name: Legend Demo
-    Redirect URI:
-    http://aws.amazon.com/engine/callback
-    http://aws.amazon.com/sdlc/api/auth/callback
-    http://aws.amazon.com/sdlc/api/pac4j/login/callback
-    http://aws.amazon.com/studio/login/callback
-    Enable the "Confidential" check box
-    Enable these scopes: openid, profile, api
-    Finally, "Save Application"
+    Name: Legend Demo \
+    Redirect URI: \
+    http://aws.amazon.com/engine/callback \
+    http://aws.amazon.com/sdlc/api/auth/callback \
+    http://aws.amazon.com/sdlc/api/pac4j/login/callback \
+    http://aws.amazon.com/studio/login/callback \
+    Enable the "Confidential" check box \
+    Enable these scopes: openid, profile, api \
+    Finally, "Save Application" 
 3. Create an environment variable (local or pipeline) TF_VAR_GITLAB_OAUTH_CLIENT_ID, set the value to "Application ID" value from step 2
 4. Create an environment variable (local or pipeline) TF_VAR_GITLAB_OAUTH_SECRET, set the value to "Secret" value from step 2
 5. Go to Terraform/legend folder and do\
@@ -101,15 +101,14 @@ http://{loadbalancer-endpoint}/sdlc/api/auth/callback
 http://{loadbalancer-endpoint}/sdlc/api/pac4j/login/callback
 
 
-
 ## Verification
 
-Access legend studio ui using the http://{studio-loadbalancer-endoint}/studio
+Access legend studio ui using the http://{studio-loadbalancer-endoint}/studio. Wait for about 5 minutes for the LoadBalancer to be provisioned.
  - if prompted with gitlab.com screen, login with your gitlab.com credentials and authorize redirects.
 
 ## Steps to update Legend after install:
 
-1. Go to Terraform/legend folder and do\
+1. Go to Terraform/legend folder and run\
     terraform init\
     terraform plan\
     terraform apply
@@ -118,6 +117,7 @@ Access legend studio ui using the http://{studio-loadbalancer-endoint}/studio
 
 ## Insfrastructure cleanup
 NOTE: This will destroy all the Legend AWS infrastructure components, please be sure before you run this.
+      There should be two separate destroy runs. First run the destroy for Terraform/legend and then for Terraform/tfbackend. But before running destroy for tfbackend, bucket must be emptied. The s3 bucket contains tf state files. Steps to delete objects from versioned bucket [here](https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectVersions.html)
 
 1. Go to Terraform/legend folder and do\
     terraform destroy

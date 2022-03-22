@@ -5,6 +5,7 @@ resource "kubernetes_namespace" "cm" {
 }
 resource "helm_release" "cm" {
   name             = "cm"
+  depends_on       = [resource.kubernetes_namespace.cm]
   namespace        = kubernetes_namespace.cm.metadata[0].name
   create_namespace = false
   chart            = "cert-manager"
