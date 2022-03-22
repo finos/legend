@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "legend.fullname" . }}-sdlc
+  labels:
+    app: sdlc
+    {{- include "legend.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.sdlc.type }}
+  ports:
+    - port: {{ .Values.sdlc.port }}
+      targetPort: {{ .Values.sdlc.port }}
+      protocol: TCP
+      name: sdlc
+  selector:
+    app: sdlc

@@ -1,0 +1,54 @@
+variables:
+  AWS_REGION: us-east-1
+  PHASE: BUILD
+
+before_script:
+  - apk add --no-cache curl jq python2 py-pip git
+  - pip install awscli
+  - aws configure set region ${AWS_REGION}
+  - export AWS_ACCESS_KEY=${AWS_ACCESS_KEY_ID}
+  - export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+
+stages:
+  - plan
+  - deploy
+
+Plan:
+  image:
+    name: hashicorp/terraform:latest
+    entrypoint: [""]
+  stage: plan
+  artifacts:
+  script:
+    - cd Terraform
+    - terraform --version
+    - terraform init
+    - terraform plan -input=false -out=plan.bin
+  only:
+    variables:
+      - $PHASE == "BUILD"
+
+Apply:
+  image:
+    name: hashicorp/terraform:latest
+    entrypoint: [""]
+  when: manual
+  stage: deploy
+  script:
+    - terraform init
+    - terraform apply -auto-approve -input=false plan.bin
+  only:
+    variables:
+      - $PHASE == "BUILD"
+
+Destroy:
+  image:
+    name: hashicorp/terraform:latest
+    entrypoint: [""]
+  stage: deploy
+  script:
+    - terraform init
+    - terraform destroy -auto-approve
+  only:
+    variables:
+      - $PHASE == "DESTROY"

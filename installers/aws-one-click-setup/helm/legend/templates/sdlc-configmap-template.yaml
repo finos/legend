@@ -1,0 +1,100 @@
+apiVersion: v1
+data:
+  config.yml: |
+    # Copyright 2020 Goldman Sachs
+    #
+    # Licensed under the Apache License, Version 2.0 (the "License");
+    # you may not use this file except in compliance with the License.
+    # You may obtain a copy of the License at
+    #
+    #      http://www.apache.org/licenses/LICENSE-2.0
+    #
+    # Unless required by applicable law or agreed to in writing, software
+    # distributed under the License is distributed on an "AS IS" BASIS,
+    # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    # See the License for the specific language governing permissions and
+    # limitations under the License.
+
+    applicationName: Legend SDLC
+
+    server:
+      applicationConnectors:
+        - type: http
+          port: __LEGEND_SDLC_PORT__
+          maxRequestHeaderSize: 128KiB
+      adminConnectors:
+        - type: http
+          port: 7076
+      gzip:
+        includedMethods:
+          - GET
+          - POST
+      requestLog:
+        type: classic
+        level: OFF
+        appenders:
+          - type: console
+            logFormat: "OFF"
+      rootPath: /sdlc/api
+
+    projectStructure:
+      projectCreation:
+        groupIdPattern: ^org\.finos\.legend\..+
+
+    filterPriorities:
+      GitLab: 1
+      org.pac4j.j2e.filter.CallbackFilter: 2
+      org.pac4j.j2e.filter.SecurityFilter: 3
+      CORS: 4
+
+    pac4j:
+      callbackPrefix: /sdlc/api/pac4j/login
+      mongoUri: mongodb://__MONGO_USER__:__MONGO_PASSWORD__@__MONGO_HOST__:__MONGO_PORT__
+      mongoDb: legend
+      clients:
+        - org.finos.legend.server.pac4j.gitlab.GitlabClient:
+            name: gitlab
+            clientId: __GITLAB_OAUTH_CLIENT_ID__
+            secret: __GITLAB_OAUTH_SECRET__
+            discoveryUri: https://__GITLAB_URL__/.well-known/openid-configuration
+            scope: openid profile api
+      mongoSession:
+          enabled: true
+          collection: userSessions
+      bypassPaths:
+        - /sdlc/api/info
+
+    gitLab:
+      newProjectVisibility: public
+      projectTag: legend
+      uat:
+        server:
+          scheme: https
+          host: __GITLAB_URL__
+        app:
+          id: __GITLAB_OAUTH_CLIENT_ID__
+          secret: __GITLAB_OAUTH_SECRET__
+          redirectURI: __LEGEND_SDLC_PUBLIC_URL__/sdlc/api/auth/callback
+
+    projectStructure:
+      extensionProvider:
+        org.finos.legend.sdlc.server.gitlab.finos.FinosGitlabProjectStructureExtensionProvider: {}
+
+    logging:
+      # Change this to affect library class logging
+      level: INFO
+      appenders:
+        - type: console
+          logFormat: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%thread] %c - %m%n"
+
+    swagger:
+      resourcePackage: org.finos.legend.sdlc.server.resources
+      title: Legend SDLC
+      version: local-snapshot
+      schemes: []
+kind: ConfigMap
+metadata:
+  labels:
+    app: sdlc
+    {{- include "legend.labels" . | nindent 4 }}
+  name: {{ include "legend.fullname" . }}-sdlc-template

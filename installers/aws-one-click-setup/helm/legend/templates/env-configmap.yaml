@@ -1,0 +1,23 @@
+apiVersion: v1
+data:
+  MONGO_SERVICE_NAME: "{{ include "legend.fullname" . }}-mongo.{{ .Release.Namespace }}.{{ .Values.clusterdns}}"
+  MONGO_PORT: "{{ .Values.mongo.port }}"
+  MONGO_USER: "{{ .Values.mongo.env.MONGO_USER }}"
+  MONGO_PASSWORD: "{{ .Values.mongo.env.MONGO_PASSWORD }}"
+  GITLAB_URL: "{{ .Values.env.GITLAB_URL }}"
+  LEGEND_SDLC_SERVICE_NAME: "sdlc"
+  LEGEND_SDLC_PORT: "{{ .Values.sdlc.port }}"
+  LEGEND_SDLC_PUBLIC_URL: "{{ .Values.env.HTTP_MODE }}://{{ .Values.env.LEGEND_HOST }}/sdlc"
+  LEGEND_ENGINE_SERVICE_NAME: "engine"
+  LEGEND_ENGINE_PORT: "{{ .Values.engine.port }}"
+  LEGEND_ENGINE_PUBLIC_URL: "{{ .Values.env.HTTP_MODE }}//{{ .Values.env.LEGEND_HOST }}/engine"
+  LEGEND_STUDIO_SERVICE_NAME: "studio"
+  LEGEND_STUDIO_PORT: "{{ .Values.studio.port }}"
+  LEGEND_STUDIO_PUBLIC_URL: "{{ .Values.env.HTTP_MODE }}//{{ .Values.env.LEGEND_HOST }}"
+
+kind: ConfigMap
+metadata:
+  labels:
+    app: gitlab
+    {{- include "legend.labels" . | nindent 4 }}
+  name: {{ include "legend.fullname" . }}-env

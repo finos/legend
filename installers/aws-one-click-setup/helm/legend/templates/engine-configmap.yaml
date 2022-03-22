@@ -1,0 +1,89 @@
+apiVersion: v1
+data:
+  config.json: |
+    {
+      "deployment": {
+        "mode": "TEST_IGNORE_FUNCTION_MATCH"
+      },
+      "logging": {
+        "level": "info",
+        "loggers": {
+          "root": {
+            "level": "info"
+          },
+          "org.pac4j": {
+            "level": "debug"
+          }
+        },
+        "appenders": [
+          {
+            "type": "console",
+            "logFormat": "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%thread] %c - %m%n"
+          }
+        ]
+      },
+      "pac4j": {
+        "callbackPrefix": "",
+        "mongoUri": "mongodb://{{ .Values.mongo.env.MONGO_USER }}:{{ .Values.mongo.env.MONGO_PASSWORD}}@{{ include "legend.fullname" . }}-mongo.{{ .Release.Namespace }}.{{ .Values.clusterdns}}:{{ .Values.mongo.port }}",
+        "mongoDb": "legend",
+        "bypassPaths": [
+          "/api/server/v1/info"
+        ],
+        "clients": [
+          {
+            "org.finos.legend.server.pac4j.gitlab.GitlabClient": {
+              "name": "gitlab",
+              "clientId": "{{ .Values.env.GITLAB_OAUTH_CLIENT_ID }}",
+              "secret": "{{ .Values.env.GITLAB_OAUTH_SECRET }}",
+              "discoveryUri": "https://{{ .Values.env.GITLAB_URL }}/.well-known/openid-configuration",
+              "scope": "openid profile api"
+            }
+          }
+        ],
+        "mongoSession": {
+          "enabled": true,
+          "collection": "userSessions"
+        }
+      },
+      "opentracing": {
+        "elastic": "",
+        "zipkin": "",
+        "uri": "",
+        "authenticator": {
+          "principal": "",
+          "keytab": ""
+        }
+      },
+      "swagger": {
+        "title": "Legend Execution REST Services",
+        "resourcePackage": "org.finos.legend",
+        "uriPrefix": "/api"
+      },
+      "server": {
+        "type": "simple",
+        "applicationContextPath": "/engine",
+        "adminContextPath": "/admin",
+        "connector": {
+          "maxRequestHeaderSize": "32KiB",
+          "type": "http",
+          "port": 6060
+        },
+        "requestLog": {
+          "appenders": [
+          ]
+        }
+      },
+      "metadataserver": {
+        "pure": {
+          "host": "127.0.0.1",
+          "port": 8090
+        }
+      },
+      "vaults": []
+    }
+kind: ConfigMap
+metadata:
+  labels:
+    app: engine
+    {{- include "legend.labels" . | nindent 4 }}
+  name: {{ include "legend.fullname" . }}-engine
