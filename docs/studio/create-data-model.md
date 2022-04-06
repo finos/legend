@@ -127,7 +127,7 @@ A model attribute that has a finite list of values can be defined with an enumer
 3. Let's navigate back to our `Firm` class and add a property named **firmType**.
 4. Select **CompanyType** for the property type and a [cardinality](../language/legend-language.md#class) of 1.
 
-    ![Select property type and cardinality](../assets/add-enum.GIF)
+![Select property type and cardinality](../assets/add-enum.gif)
 
 ## Add a super type
 
@@ -140,7 +140,7 @@ Let's create a new class called `LegalEntity`.
 
     The model visualization on the left now shows the **LegalEntity** class as a super type of **Firm**.
 
-    ![Add a super type](../assets/add-super-type.GIF)
+![Add a super type](../assets/add-super-type.gif)
 
 ## Add a property (non-primitive data type)
 
@@ -152,4 +152,4 @@ Create a relationship between the **Person** and **Firm** classes.
     - Type: **Person**
     - Cardinality: **0..**
 
-![Add a super type](../assets/add-non-primitive-data-type.GIF)
+![Add a super type](../assets/add-non-primitive-data-type.gif)
