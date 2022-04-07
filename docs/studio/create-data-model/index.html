@@ -149,21 +149,21 @@
 <h2><a class="anchor" aria-hidden="true" id="create-and-add-an-enumeration"></a><a href="#create-and-add-an-enumeration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create and add an enumeration</h2>
 <p>A model attribute that has a finite list of values can be defined with an enumeration.</p>
 <ol>
-<li><p>Click the <strong>+</strong> icon on the left-hand side and select <strong>Add an enumeration</strong>.</p></li>
-<li><p>Let's create an enumeration called <strong>CompanyType</strong> with the values <strong>LLC</strong> and <strong>Corporation</strong>.</p></li>
-<li><p>Let's navigate back to our <code>Firm</code> class and add a property named <strong>firmType</strong>.</p></li>
-<li><p>Select <strong>CompanyType</strong> for the property type and a <a href="/docs/language/legend-language#class">cardinality</a> of 1.</p>
-<p><img src="../assets/add-enum.GIF" alt="Select property type and cardinality"></p></li>
+<li>Click the <strong>+</strong> icon on the left-hand side and select <strong>Add an enumeration</strong>.</li>
+<li>Let's create an enumeration called <strong>CompanyType</strong> with the values <strong>LLC</strong> and <strong>Corporation</strong>.</li>
+<li>Let's navigate back to our <code>Firm</code> class and add a property named <strong>firmType</strong>.</li>
+<li>Select <strong>CompanyType</strong> for the property type and a <a href="/docs/language/legend-language#class">cardinality</a> of 1.</li>
 </ol>
+<p><img src="../assets/add-enum.gif" alt="Select property type and cardinality"></p>
 <h2><a class="anchor" aria-hidden="true" id="add-a-super-type"></a><a href="#add-a-super-type" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add a super type</h2>
 <p>Add a Super Type to the model to show a hierarchical relationship between classes or business concepts.</p>
 <p>Let's create a new class called <code>LegalEntity</code>.</p>
 <ol>
 <li><p>Moving back to the <code>Firm</code> class, go to the <strong>Super Types</strong> tab and click the <strong>+</strong> icon.</p></li>
 <li><p>Select the <code>LegalEntity</code> class from the dropdown.</p>
-<p>The model visualization on the left now shows the <strong>LegalEntity</strong> class as a super type of <strong>Firm</strong>.</p>
-<p><img src="../assets/add-super-type.GIF" alt="Add a super type"></p></li>
+<p>The model visualization on the left now shows the <strong>LegalEntity</strong> class as a super type of <strong>Firm</strong>.</p></li>
 </ol>
+<p><img src="../assets/add-super-type.gif" alt="Add a super type"></p>
 <h2><a class="anchor" aria-hidden="true" id="add-a-property-non-primitive-data-type"></a><a href="#add-a-property-non-primitive-data-type" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add a property (non-primitive data type)</h2>
 <p>Create a relationship between the <strong>Person</strong> and <strong>Firm</strong> classes.</p>
 <ol>
@@ -175,5 +175,5 @@
 <li>Cardinality: <strong>0..</strong></li>
 </ul></li>
 </ol>
-<p><img src="../assets/add-non-primitive-data-type.GIF" alt="Add a super type"></p>
+<p><img src="../assets/add-non-primitive-data-type.gif" alt="Add a super type"></p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/studio/create-workspace"><span class="arrow-prev">← </span><span>Create a workspace</span></a><a class="docs-next button" href="/docs/studio/create-diagram"><span>Create a diagram</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#define-a-new-model-package">Define a new model package</a></li><li><a href="#define-a-new-class">Define a new class</a></li><li><a href="#add-a-property-primitive-data-type">Add a property (primitive data type)</a></li><li><a href="#add-a-derived-property">Add a derived property</a></li><li><a href="#add-a-constraint">Add a constraint</a></li><li><a href="#create-a-profile">Create a Profile</a><ul class="toc-headings"><li><a href="#create-a-tag-in-your-profile">Create a tag in your Profile</a></li><li><a href="#add-a-tagged-value-to-a-class">Add a tagged value to a class</a></li><li><a href="#create-a-stereotype-in-your-profile">Create a stereotype in your Profile</a></li><li><a href="#add-a-stereotype-to-a-class">Add a stereotype to a class</a></li></ul></li><li><a href="#create-and-add-an-enumeration">Create and add an enumeration</a></li><li><a href="#add-a-super-type">Add a super type</a></li><li><a href="#add-a-property-non-primitive-data-type">Add a property (non-primitive data type)</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a></section><section class="finos finosBanner"><a href="https://www.finos.org"><img id="finosicon" src="https://legend.finos.org/img/finos_wordmark.svg" height="75px" alt="FINOS" title="FINOS"/></a></section><section class="privacy finosBanner"><a href="https://www.finos.org/privacy-policy" target="_blank">Privacy Policy</a></section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>

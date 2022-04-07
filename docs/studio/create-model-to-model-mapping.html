@@ -63,21 +63,61 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Create model-to-model mapping</h1></header><article><div><span><p>Create a model transformation using model-to-model mappings. Model transformations are used to connect different models.</p>
+<h2><a class="anchor" aria-hidden="true" id="create-a-mapping-between-source-and-target-class"></a><a href="#create-a-mapping-between-source-and-target-class" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a Mapping between source and target class</h2>
+<p>Let's start by defining the target class, for which we would like to create the mapping for.</p>
 <ol>
-<li><p>Add a property to <code>Person</code> called <code>lastName</code>. Make the property a string with a <a href="/docs/language/legend-language#class">cardinality</a> of 1.</p></li>
-<li><p>Create a new class called <code>NewPerson</code>.</p></li>
-<li><p>Add a property to <code>NewPerson</code> called <code>name</code>. Make the property a string with a <a href="/docs/language/legend-language#class">cardinality</a> of 1.</p>
-<p><img src="../assets/create-model-to-model-mapping.JPG" alt="Create model-to-model mapping"></p></li>
-<li><p>Click the <strong>+</strong> icon next to project and select <strong>Add a new mapping</strong> to create a new mapping called <strong>NewPersonMapping</strong>.</p>
-<p><img src="../assets/add-new-mapping.JPG" alt="Add new mapping"></p></li>
-<li><p>Drag and drop the <strong>NewPerson</strong> class into the <strong>Add a mapping element</strong> section.</p></li>
-<li><p>Select a mapping element type of <strong>Pure</strong>.</p>
-<p><img src="../assets/create-new-mapping.JPG" alt="Create new mapping"></p></li>
-<li><p>Click on the <strong>edit</strong> icon and select the <strong>Person</strong> class.</p>
-<p><img src="../assets/select-source-class.JPG" alt="Select the source class"></p></li>
-<li><p>Add the following expression for the <code>name</code> property: <code>$src.firstName + ' ' + $src.lastName</code>.</p>
-<p><img src="../assets/add-expression-to-property.JPG" alt="Add expression to property"></p></li>
-<li><p>Review the text view of the mapping:</p>
-<p><img src="../assets/text-view-mapping.JPG" alt="Text view of the mapping"></p></li>
+<li>Create a new class called <code>NewPerson</code>.</li>
+<li>Add a property to <code>NewPerson</code> called <strong>name</strong>. Make the property a string with a <a href="/docs/language/legend-language#class">cardinality</a> of 1.</li>
+<li>Let's also add a property to our existing <code>Person</code> class called <strong>lastName</strong>. Make the property a string with a <a href="/docs/language/legend-language#class">cardinality</a> of 1.</li>
+<li>Click the <strong>+</strong> icon and select <strong>New Mapping</strong> to create a new mapping called <strong>NewPersonMapping</strong>.</li>
+<li>Drag and drop the <strong>NewPerson</strong> target class into the <strong>Add a mapping element</strong> section on the left.</li>
+<li>Hit the <strong>create</strong> button using the default setting.</li>
 </ol>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/studio/create-diagram"><span class="arrow-prev">← </span><span>Create a diagram</span></a><a class="docs-next button" href="/docs/studio/connect-data-to-model"><span>Connect data to a data model</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a></section><section class="finos finosBanner"><a href="https://www.finos.org"><img id="finosicon" src="https://legend.finos.org/img/finos_wordmark.svg" height="75px" alt="FINOS" title="FINOS"/></a></section><section class="privacy finosBanner"><a href="https://www.finos.org/privacy-policy" target="_blank">Privacy Policy</a></section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
+<p>Let's define the source class for our mapping and specifiy the transformation.</p>
+<ol start="7">
+<li>Drag and drop the  <code>Person</code> source class into the <strong>choose a source</strong> section on the right.</li>
+<li>To specify the transformation add the following expression for the <strong>name</strong> property: <code>$src.firstName + ' ' + $src.lastName</code>. You can also drag and drop the <strong>firstName</strong> and <strong>lastName</strong> properties from the <code>Person</code> source class into the function panel.</li>
+</ol>
+<p><img src="../assets/create-M2M.gif" alt="Create model-to-model"></p>
+<h2><a class="anchor" aria-hidden="true" id="add-a-mapping-test"></a><a href="#add-a-mapping-test" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add a Mapping Test</h2>
+<p>It is good practice to add test to any mapping that you specifiy. Let's create one.</p>
+<ol>
+<li>Right click on the <code>NewPerson</code> class and select <strong>Test</strong>. Alternatively, you can click on the <strong>+</strong> icon in the bottom left panel to add a test.</li>
+</ol>
+<p>We now need to create a sample query to test if our model-to-model mapping executes correctly.</p>
+<ol start="2">
+<li>Click on the <strong>pencil</strong> icon to edit your query.</li>
+<li>Let's create a very simple query. First, let's make sure to select the <strong>Graph Fetch</strong> option for model-to-model queries. Studio does not currently support Projection queries on top of model-to-model mappings. Let's drag and drop the <strong>name</strong> property from the explorer panel into the fetch structure panel.</li>
+<li>Hit the <strong>Save Query</strong> button.</li>
+</ol>
+<p><em>Please refer to our create a query section of the docs for more detailed information about the <strong>Query Editor</strong> (coming soon!).</em></p>
+<p>Studio is generating sample input data for your defined query. You can also modify it if you want.</p>
+<ol start="5">
+<li>Hit the <strong>generate Result</strong> icon.</li>
+<li>Congrats! You now have a mapping test and can run it any time to validate the execution of your model-to-model mapping.</li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="execute-a-model-to-model-mapping"></a><a href="#execute-a-model-to-model-mapping" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Execute a Model-to-Model Mapping</h2>
+<p>You can also execute a model-to-model mapping directly.</p>
+<ol>
+<li>Right click on the <code>NewPerson</code> class and select <strong>Execute</strong></li>
+<li>Create a sample query by clicking on the <strong>pencil</strong> icon.</li>
+<li>Drag and drop the <strong>name</strong> property from the explorer panel into the fetch structure panel.</li>
+<li>Select <strong>Check graph fetch</strong></li>
+<li>Hit the <strong>Save Query</strong> button</li>
+<li>Hit the <strong>Execute button</strong> to execute the defined query using the auto-generated data from Studio</li>
+</ol>
+<p>You can promote this ad hoc execution to a test by clicking on the <strong>beaker</strong> icon.</p>
+<h3><a class="anchor" aria-hidden="true" id="execute-a-model-to-model-mapping-with-constraints"></a><a href="#execute-a-model-to-model-mapping-with-constraints" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Execute a Model-to-Model Mapping with Constraints</h3>
+<p>Remember that we can add a <a href="../studio/create-data-model#add-a-constraint">constraint</a> on classes? We can can also execute model-to-model mappings with constraints to check if the constraint criteria are violated.</p>
+<p>Let's create a constraint on the <code>NewPerson</code> class that checksq if the name value is empty <code>$this.name-&gt; == ''</code></p>
+<ol>
+<li>Right click on the <code>NewPerson</code> class and select <strong>Execute</strong></li>
+<li>Create a sample query by clicking on the <strong>pencil</strong> icon</li>
+<li>Drag and drop the <strong>name</strong> property from the explorer panel into the fetch structure panel</li>
+<li>Select <strong>Check graph fetch</strong></li>
+<li>Hit the <strong>Save Query</strong> button</li>
+<li>Let's remove the <strong>firstName</strong> test data to intentionally violate the constraint criteria that we specified on our <code>NewPerson</code> class</li>
+<li>Hit the <strong>Execute button</strong> to execute the defined query</li>
+</ol>
+<p>Studio will show a <strong>defect</strong> with the details about the violated constraint. Constraints can be both on source and target class.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/studio/create-diagram"><span class="arrow-prev">← </span><span>Create a diagram</span></a><a class="docs-next button" href="/docs/studio/connect-data-to-model"><span>Connect data to a data model</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#create-a-mapping-between-source-and-target-class">Create a Mapping between source and target class</a></li><li><a href="#add-a-mapping-test">Add a Mapping Test</a></li><li><a href="#execute-a-model-to-model-mapping">Execute a Model-to-Model Mapping</a><ul class="toc-headings"><li><a href="#execute-a-model-to-model-mapping-with-constraints">Execute a Model-to-Model Mapping with Constraints</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a></section><section class="finos finosBanner"><a href="https://www.finos.org"><img id="finosicon" src="https://legend.finos.org/img/finos_wordmark.svg" height="75px" alt="FINOS" title="FINOS"/></a></section><section class="privacy finosBanner"><a href="https://www.finos.org/privacy-policy" target="_blank">Privacy Policy</a></section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
