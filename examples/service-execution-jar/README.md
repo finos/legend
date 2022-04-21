@@ -6,8 +6,8 @@ This example demonstrates the creation and use of a Legend service execution lib
 
 A "service execution" jar is a Java library generated from a Legend model.
 
-Consider the service model below. It is a grouping of a data access query with a mapping to 
-a physical (relational store) and specific database connection.
+Consider the service model below. It is a grouping of a data access query, a mapping to 
+a physical (relational) store and a specific database connection.
 ```
 Service service::persons
 {
@@ -38,8 +38,9 @@ To generate a service execution jar using Legend SDLC
 
 * Create a Legend Studio project https://legend.finos.org/studio. 
 * Use Legend Studio to create a Legend model. This model should include a service definition as shown above
-* Use Legend Studio SDLC controls and/or native Gitlab controls to merge your model to the master branch
-* Once merged, the Gitlab pipeline configured by Legend SDLC, runs various code generation plugins which generate a service execution jar.
+* Use Legend Studio SDLC controls or native Gitlab controls to merge your model to the master branch
+* Once merged, the Gitlab pipeline configured by Legend SDLC runs a code generation plugin which generate a service execution jar
+* The Gitlab pipeline also publishes the generated jar to a Gitlab Maven registry.
 
 As a concrete example 
 * Legend Studio Project https://legend.finos.org/studio/-/view/UAT-29500652
