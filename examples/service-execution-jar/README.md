@@ -50,5 +50,8 @@ As a concrete example
 
 Once a jar has been created it can be consumed like any other jar in a Java application.
 
-See 
+See https://github.com/finos/legend/blob/service-exec-jar-example/examples/service-execution-jar/legend-application/src/main/java/org/finos/legend/demo/app/LegendApplication.java 
 
+See https://github.com/finos/legend/blob/service-exec-jar-example/examples/service-execution-jar/legend-application/src/test/java/org/finos/legend/demo/app/LegendApplicationTest.java
+
+See https://github.com/finos/legend/blob/service-exec-jar-example/examples/service-execution-jar/legend-application/src/test/java/org/finos/legend/demo/app/LegendExecutionPlanTest.java
