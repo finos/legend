@@ -1,0 +1,12 @@
+{
+  "version": "2022-05-05",
+  "timestamp": 1651783722829,
+  "releaseNotesUrl": "https://legend.finos.org/docs/release/release-2022-05-05",
+  "core": {
+    "finos/legend-studio": "5.0.0",
+    "finos/legend-engine-server": "3.1.0",
+    "finos/legend-sdlc-server": "0.75.0",
+    "gitlab/gitlab-ce": "13.9.3-ce.0",
+    "mongo": "4.0"
+  }
+}
