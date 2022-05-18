@@ -3,29 +3,6 @@ id: upcoming-functions
 title: Upcoming functions
 ---
 
-## abs
-
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">abs</span>(<span class="pureGrammar-functionVariable">number</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
-
-<div class="pureGrammar-functionDetails">
-<div class="pureGrammar-functionParameters">
-
-- <span class="pureGrammar-parametersLabel">Parameters</span>
-  - <span class="pureGrammar-parameterName">number</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]
-
-</div>
-<div class="pureGrammar-functionReturns">
-
-- <span class="pureGrammar-returnsLabel">Returns</span>
-  - <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]
-
-</div>
-<div class="pureGrammar-functionUsage">
-
-</div>
-</div>
-</div>
-
 ## acos
 
 <div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">acos</span>(<span class="pureGrammar-functionVariable">number</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
@@ -119,29 +96,6 @@ title: Upcoming functions
 </div>
 </div>
 
-## ceiling
-
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">ceiling</span>(<span class="pureGrammar-functionVariable">number</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
-
-<div class="pureGrammar-functionDetails">
-<div class="pureGrammar-functionParameters">
-
-- <span class="pureGrammar-parametersLabel">Parameters</span>
-  - <span class="pureGrammar-parameterName">number</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]
-
-</div>
-<div class="pureGrammar-functionReturns">
-
-- <span class="pureGrammar-returnsLabel">Returns</span>
-  - <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]
-
-</div>
-<div class="pureGrammar-functionUsage">
-
-</div>
-</div>
-</div>
-
 ## columnProjectionsFromRoot
 
 <div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">columnProjectionsFromRoot</span>(<span class="pureGrammar-functionVariable">a</span>: <span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">relation</span>: <span class="pureGrammar-genericType">NamedRelation</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">columnNames</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">distinct</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">0..1</span>], <span class="pureGrammar-functionVariable">limit</span>: <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">RelationData</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
@@ -187,53 +141,6 @@ title: Upcoming functions
 
 - <span class="pureGrammar-returnsLabel">Returns</span>
   - <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
-
-</div>
-<div class="pureGrammar-functionUsage">
-
-</div>
-</div>
-</div>
-
-## cos
-
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">cos</span>(<span class="pureGrammar-functionVariable">number</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
-
-<div class="pureGrammar-functionDetails">
-<div class="pureGrammar-functionParameters">
-
-- <span class="pureGrammar-parametersLabel">Parameters</span>
-  - <span class="pureGrammar-parameterName">number</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]
-
-</div>
-<div class="pureGrammar-functionReturns">
-
-- <span class="pureGrammar-returnsLabel">Returns</span>
-  - <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]
-
-</div>
-<div class="pureGrammar-functionUsage">
-
-</div>
-</div>
-</div>
-
-## deepFetchGetAll
-
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">deepFetchGetAll</span>&#60;T&#62;(<span class="pureGrammar-functionVariable">type</span>: <span class="pureGrammar-genericType">Class&#60;<span class="pureGrammar-genericType">T</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">dfTT</span>: <span class="pureGrammar-genericType">DeepFetchTempTable</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">&#42;</span>]</div>
-
-<div class="pureGrammar-functionDetails">
-<div class="pureGrammar-functionParameters">
-
-- <span class="pureGrammar-parametersLabel">Parameters</span>
-  - <span class="pureGrammar-parameterName">type</span>: <span class="pureGrammar-genericType">Class&#60;<span class="pureGrammar-genericType">T</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]
-  - <span class="pureGrammar-parameterName">dfTT</span>: <span class="pureGrammar-genericType">DeepFetchTempTable</span>[<span class="pureGrammar-multiplicity">1</span>]
-
-</div>
-<div class="pureGrammar-functionReturns">
-
-- <span class="pureGrammar-returnsLabel">Returns</span>
-  - <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
 
 </div>
 <div class="pureGrammar-functionUsage">
@@ -295,13 +202,14 @@ title: Upcoming functions
 
 ## eval
 
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">eval</span>&#60;V&#62;(<span class="pureGrammar-functionVariable">func</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{-><span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">m</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">m</span>]</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">eval</span>&#60;T, V&#62;(<span class="pureGrammar-functionVariable">func</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">n</span>]-><span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">m</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">param</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">n</span>]): <span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">m</span>]</div>
 
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
 
 - <span class="pureGrammar-parametersLabel">Parameters</span>
-  - <span class="pureGrammar-parameterName">func</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{-><span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">m</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]
+  - <span class="pureGrammar-parameterName">func</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">n</span>]-><span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">m</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]
+  - <span class="pureGrammar-parameterName">param</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">n</span>]
 
 </div>
 <div class="pureGrammar-functionReturns">
@@ -316,14 +224,13 @@ title: Upcoming functions
 </div>
 </div>
 
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">eval</span>&#60;T, V&#62;(<span class="pureGrammar-functionVariable">func</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">n</span>]-><span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">m</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">param</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">n</span>]): <span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">m</span>]</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">eval</span>&#60;V&#62;(<span class="pureGrammar-functionVariable">func</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{-><span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">m</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">m</span>]</div>
 
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
 
 - <span class="pureGrammar-parametersLabel">Parameters</span>
-  - <span class="pureGrammar-parameterName">func</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">n</span>]-><span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">m</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]
-  - <span class="pureGrammar-parameterName">param</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">n</span>]
+  - <span class="pureGrammar-parameterName">func</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{-><span class="pureGrammar-genericType">V</span>[<span class="pureGrammar-multiplicity">m</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]
 
 </div>
 <div class="pureGrammar-functionReturns">
@@ -387,30 +294,6 @@ title: Upcoming functions
 </div>
 </div>
 
-## extractEnumValue
-
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">extractEnumValue</span>&#60;T&#62;(<span class="pureGrammar-functionVariable">enum</span>: <span class="pureGrammar-genericType">Enumeration&#60;<span class="pureGrammar-genericType">T</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">value</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
-
-<div class="pureGrammar-functionDetails">
-<div class="pureGrammar-functionParameters">
-
-- <span class="pureGrammar-parametersLabel">Parameters</span>
-  - <span class="pureGrammar-parameterName">enum</span>: <span class="pureGrammar-genericType">Enumeration&#60;<span class="pureGrammar-genericType">T</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]
-  - <span class="pureGrammar-parameterName">value</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]
-
-</div>
-<div class="pureGrammar-functionReturns">
-
-- <span class="pureGrammar-returnsLabel">Returns</span>
-  - <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>]
-
-</div>
-<div class="pureGrammar-functionUsage">
-
-</div>
-</div>
-</div>
-
 ## filter
 
 <div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Reduce the number of rows in the provided TDS, selecting the set of rows that match the provided filter function</div>
@@ -429,29 +312,6 @@ title: Upcoming functions
 
 - <span class="pureGrammar-returnsLabel">Returns</span>
   - <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
-
-</div>
-<div class="pureGrammar-functionUsage">
-
-</div>
-</div>
-</div>
-
-## floor
-
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">floor</span>(<span class="pureGrammar-functionVariable">number</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
-
-<div class="pureGrammar-functionDetails">
-<div class="pureGrammar-functionParameters">
-
-- <span class="pureGrammar-parametersLabel">Parameters</span>
-  - <span class="pureGrammar-parameterName">number</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]
-
-</div>
-<div class="pureGrammar-functionReturns">
-
-- <span class="pureGrammar-returnsLabel">Returns</span>
-  - <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]
 
 </div>
 <div class="pureGrammar-functionUsage">
@@ -514,6 +374,30 @@ title: Upcoming functions
 - <span class="pureGrammar-parametersLabel">Parameters</span>
   - <span class="pureGrammar-parameterName">type</span>: <span class="pureGrammar-genericType">Class&#60;<span class="pureGrammar-genericType">T</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]
   - <span class="pureGrammar-parameterName">milestoningDate</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">1</span>]
+
+</div>
+<div class="pureGrammar-functionReturns">
+
+- <span class="pureGrammar-returnsLabel">Returns</span>
+  - <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
+
+</div>
+<div class="pureGrammar-functionUsage">
+
+</div>
+</div>
+</div>
+
+## getAllForEachDate
+
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">getAllForEachDate</span>&#60;T&#62;(<span class="pureGrammar-functionVariable">type</span>: <span class="pureGrammar-genericType">Class&#60;<span class="pureGrammar-genericType">T</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">dates</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">&#42;</span>]</div>
+
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+
+- <span class="pureGrammar-parametersLabel">Parameters</span>
+  - <span class="pureGrammar-parameterName">type</span>: <span class="pureGrammar-genericType">Class&#60;<span class="pureGrammar-genericType">T</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]
+  - <span class="pureGrammar-parameterName">dates</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
 
 </div>
 <div class="pureGrammar-functionReturns">
@@ -623,24 +507,22 @@ title: Upcoming functions
 </div>
 </div>
 
-## groupBy
+## graphFetchChecked
 
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">groupBy</span>&#60;K, V, U&#62;(<span class="pureGrammar-functionVariable">set</span>: <span class="pureGrammar-genericType">K</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">functions</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">K</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">&#42;</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">aggValues</span>: <span class="pureGrammar-genericType">AggregateValue&#60;<span class="pureGrammar-genericType">K</span>,<span class="pureGrammar-genericType">V</span>,<span class="pureGrammar-genericType">U</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">ids</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">graphFetchChecked</span>&#60;T&#62;(<span class="pureGrammar-functionVariable">collection</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">graphFetchTree</span>: <span class="pureGrammar-genericType">RootGraphFetchTree&#60;<span class="pureGrammar-genericType">T</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Checked&#60;<span class="pureGrammar-genericType">T</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>]</div>
 
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
 
 - <span class="pureGrammar-parametersLabel">Parameters</span>
-  - <span class="pureGrammar-parameterName">set</span>: <span class="pureGrammar-genericType">K</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
-  - <span class="pureGrammar-parameterName">functions</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">K</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">&#42;</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
-  - <span class="pureGrammar-parameterName">aggValues</span>: <span class="pureGrammar-genericType">AggregateValue&#60;<span class="pureGrammar-genericType">K</span>,<span class="pureGrammar-genericType">V</span>,<span class="pureGrammar-genericType">U</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
-  - <span class="pureGrammar-parameterName">ids</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
+  - <span class="pureGrammar-parameterName">collection</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
+  - <span class="pureGrammar-parameterName">graphFetchTree</span>: <span class="pureGrammar-genericType">RootGraphFetchTree&#60;<span class="pureGrammar-genericType">T</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]
 
 </div>
 <div class="pureGrammar-functionReturns">
 
 - <span class="pureGrammar-returnsLabel">Returns</span>
-  - <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
+  - <span class="pureGrammar-genericType">Checked&#60;<span class="pureGrammar-genericType">T</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
 
 </div>
 <div class="pureGrammar-functionUsage">
@@ -648,6 +530,8 @@ title: Upcoming functions
 </div>
 </div>
 </div>
+
+## groupBy
 
 <div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Aggregate the data within the provided TDS using the specified groupings and aggregation functions</div>
 
@@ -674,6 +558,30 @@ title: Upcoming functions
 ```
 {|Person->getAll()->project({p|$p.firstName}, 'firstName')->groupBy('firstName', 'new'->agg({e|$e}, {y|$y->count()}))}
 ```
+
+</div>
+</div>
+</div>
+
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">groupBy</span>&#60;K, V, U&#62;(<span class="pureGrammar-functionVariable">set</span>: <span class="pureGrammar-genericType">K</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">functions</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">K</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">&#42;</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">aggValues</span>: <span class="pureGrammar-genericType">AggregateValue&#60;<span class="pureGrammar-genericType">K</span>,<span class="pureGrammar-genericType">V</span>,<span class="pureGrammar-genericType">U</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">ids</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+
+- <span class="pureGrammar-parametersLabel">Parameters</span>
+  - <span class="pureGrammar-parameterName">set</span>: <span class="pureGrammar-genericType">K</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
+  - <span class="pureGrammar-parameterName">functions</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">K</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">&#42;</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
+  - <span class="pureGrammar-parameterName">aggValues</span>: <span class="pureGrammar-genericType">AggregateValue&#60;<span class="pureGrammar-genericType">K</span>,<span class="pureGrammar-genericType">V</span>,<span class="pureGrammar-genericType">U</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
+  - <span class="pureGrammar-parameterName">ids</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
+
+</div>
+<div class="pureGrammar-functionReturns">
+
+- <span class="pureGrammar-returnsLabel">Returns</span>
+  - <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
+
+</div>
+<div class="pureGrammar-functionUsage">
 
 </div>
 </div>
@@ -707,21 +615,45 @@ title: Upcoming functions
 </div>
 </div>
 
-## join
+## isAlphaNumeric
 
-<div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Join the two provided TDSs using the specified join type using the specified columns as keys</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Return whether string non-empty and composed entirely of digits or letters.</div>
 
-<div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">join</span>(<span class="pureGrammar-functionVariable">leftTds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">rightTds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">type</span>: <span class="pureGrammar-genericType">JoinType</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">leftTdsCols</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1..&#42;</span>], <span class="pureGrammar-functionVariable">rightTdsCols</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1..&#42;</span>]): <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">isAlphaNumeric</span>(<span class="pureGrammar-functionVariable">string</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
 
 - <span class="pureGrammar-parametersLabel">Parameters</span>
-  - <span class="pureGrammar-parameterName">leftTds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
-  - <span class="pureGrammar-parameterName">rightTds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
+  - <span class="pureGrammar-parameterName">string</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]
+
+</div>
+<div class="pureGrammar-functionReturns">
+
+- <span class="pureGrammar-returnsLabel">Returns</span>
+  - <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]
+
+</div>
+<div class="pureGrammar-functionUsage">
+
+</div>
+</div>
+</div>
+
+## join
+
+<div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Join the two provided TDSs using the specified join type and condition</div>
+
+<div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">join</span>(<span class="pureGrammar-functionVariable">tds1</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">tds2</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">type</span>: <span class="pureGrammar-genericType">JoinType</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">joinCondition</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">TDSRow</span>[<span class="pureGrammar-multiplicity">1</span>],<span class="pureGrammar-genericType">TDSRow</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+
+- <span class="pureGrammar-parametersLabel">Parameters</span>
+  - <span class="pureGrammar-parameterName">tds1</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
+  - <span class="pureGrammar-parameterName">tds2</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
   - <span class="pureGrammar-parameterName">type</span>: <span class="pureGrammar-genericType">JoinType</span>[<span class="pureGrammar-multiplicity">1</span>]
-  - <span class="pureGrammar-parameterName">leftTdsCols</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1..&#42;</span>]
-  - <span class="pureGrammar-parameterName">rightTdsCols</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1..&#42;</span>]
+  - <span class="pureGrammar-parameterName">joinCondition</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">TDSRow</span>[<span class="pureGrammar-multiplicity">1</span>],<span class="pureGrammar-genericType">TDSRow</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]
 
 </div>
 <div class="pureGrammar-functionReturns">
@@ -736,18 +668,19 @@ title: Upcoming functions
 </div>
 </div>
 
-<div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Join the two provided TDSs using the specified join type and condition</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Join the two provided TDSs using the specified join type using the specified columns as keys</div>
 
-<div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">join</span>(<span class="pureGrammar-functionVariable">tds1</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">tds2</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">type</span>: <span class="pureGrammar-genericType">JoinType</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">joinCondition</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">TDSRow</span>[<span class="pureGrammar-multiplicity">1</span>],<span class="pureGrammar-genericType">TDSRow</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">join</span>(<span class="pureGrammar-functionVariable">leftTds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">rightTds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">type</span>: <span class="pureGrammar-genericType">JoinType</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">leftTdsCols</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1..&#42;</span>], <span class="pureGrammar-functionVariable">rightTdsCols</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1..&#42;</span>]): <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
 
 - <span class="pureGrammar-parametersLabel">Parameters</span>
-  - <span class="pureGrammar-parameterName">tds1</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
-  - <span class="pureGrammar-parameterName">tds2</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
+  - <span class="pureGrammar-parameterName">leftTds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
+  - <span class="pureGrammar-parameterName">rightTds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
   - <span class="pureGrammar-parameterName">type</span>: <span class="pureGrammar-genericType">JoinType</span>[<span class="pureGrammar-multiplicity">1</span>]
-  - <span class="pureGrammar-parameterName">joinCondition</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">TDSRow</span>[<span class="pureGrammar-multiplicity">1</span>],<span class="pureGrammar-genericType">TDSRow</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]
+  - <span class="pureGrammar-parameterName">leftTdsCols</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1..&#42;</span>]
+  - <span class="pureGrammar-parameterName">rightTdsCols</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1..&#42;</span>]
 
 </div>
 <div class="pureGrammar-functionReturns">
@@ -835,6 +768,50 @@ title: Upcoming functions
 </div>
 </div>
 
+## max
+
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">max</span>(<span class="pureGrammar-functionVariable">dates</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">0..1</span>]</div>
+
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+
+- <span class="pureGrammar-parametersLabel">Parameters</span>
+  - <span class="pureGrammar-parameterName">dates</span>: <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
+
+</div>
+<div class="pureGrammar-functionReturns">
+
+- <span class="pureGrammar-returnsLabel">Returns</span>
+  - <span class="pureGrammar-genericType">Date</span>[<span class="pureGrammar-multiplicity">0..1</span>]
+
+</div>
+<div class="pureGrammar-functionUsage">
+
+</div>
+</div>
+</div>
+
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">max</span>(<span class="pureGrammar-functionVariable">dates</span>: <span class="pureGrammar-genericType">StrictDate</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">StrictDate</span>[<span class="pureGrammar-multiplicity">0..1</span>]</div>
+
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+
+- <span class="pureGrammar-parametersLabel">Parameters</span>
+  - <span class="pureGrammar-parameterName">dates</span>: <span class="pureGrammar-genericType">StrictDate</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
+
+</div>
+<div class="pureGrammar-functionReturns">
+
+- <span class="pureGrammar-returnsLabel">Returns</span>
+  - <span class="pureGrammar-genericType">StrictDate</span>[<span class="pureGrammar-multiplicity">0..1</span>]
+
+</div>
+<div class="pureGrammar-functionUsage">
+
+</div>
+</div>
+</div>
+
 ## mod
 
 <div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">mod</span>(<span class="pureGrammar-functionVariable">dividend</span>: <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">divisor</span>: <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
@@ -859,6 +836,30 @@ title: Upcoming functions
 </div>
 </div>
 
+## objectReferenceIn
+
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">objectReferenceIn</span>(<span class="pureGrammar-functionVariable">value</span>: <span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">collection</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+
+- <span class="pureGrammar-parametersLabel">Parameters</span>
+  - <span class="pureGrammar-parameterName">value</span>: <span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">1</span>]
+  - <span class="pureGrammar-parameterName">collection</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
+
+</div>
+<div class="pureGrammar-functionReturns">
+
+- <span class="pureGrammar-returnsLabel">Returns</span>
+  - <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]
+
+</div>
+<div class="pureGrammar-functionUsage">
+
+</div>
+</div>
+</div>
+
 ## olapGroupBy
 
 <div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">olapGroupBy</span>&#60;T&#62;(<span class="pureGrammar-functionVariable">tds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">operation</span>: <span class="pureGrammar-genericType">OlapOperation&#60;<span class="pureGrammar-genericType">T</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">columnName</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
@@ -868,30 +869,6 @@ title: Upcoming functions
 
 - <span class="pureGrammar-parametersLabel">Parameters</span>
   - <span class="pureGrammar-parameterName">tds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
-  - <span class="pureGrammar-parameterName">operation</span>: <span class="pureGrammar-genericType">OlapOperation&#60;<span class="pureGrammar-genericType">T</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]
-  - <span class="pureGrammar-parameterName">columnName</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]
-
-</div>
-<div class="pureGrammar-functionReturns">
-
-- <span class="pureGrammar-returnsLabel">Returns</span>
-  - <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
-
-</div>
-<div class="pureGrammar-functionUsage">
-
-</div>
-</div>
-</div>
-
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">olapGroupBy</span>&#60;T&#62;(<span class="pureGrammar-functionVariable">tds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">columns</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">operation</span>: <span class="pureGrammar-genericType">OlapOperation&#60;<span class="pureGrammar-genericType">T</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">columnName</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
-
-<div class="pureGrammar-functionDetails">
-<div class="pureGrammar-functionParameters">
-
-- <span class="pureGrammar-parametersLabel">Parameters</span>
-  - <span class="pureGrammar-parameterName">tds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
-  - <span class="pureGrammar-parameterName">columns</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
   - <span class="pureGrammar-parameterName">operation</span>: <span class="pureGrammar-genericType">OlapOperation&#60;<span class="pureGrammar-genericType">T</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]
   - <span class="pureGrammar-parameterName">columnName</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]
 
@@ -957,6 +934,78 @@ title: Upcoming functions
 </div>
 </div>
 
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">olapGroupBy</span>&#60;T&#62;(<span class="pureGrammar-functionVariable">tds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">columns</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">operation</span>: <span class="pureGrammar-genericType">OlapOperation&#60;<span class="pureGrammar-genericType">T</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">columnName</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+
+- <span class="pureGrammar-parametersLabel">Parameters</span>
+  - <span class="pureGrammar-parameterName">tds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
+  - <span class="pureGrammar-parameterName">columns</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
+  - <span class="pureGrammar-parameterName">operation</span>: <span class="pureGrammar-genericType">OlapOperation&#60;<span class="pureGrammar-genericType">T</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]
+  - <span class="pureGrammar-parameterName">columnName</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">1</span>]
+
+</div>
+<div class="pureGrammar-functionReturns">
+
+- <span class="pureGrammar-returnsLabel">Returns</span>
+  - <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
+
+</div>
+<div class="pureGrammar-functionUsage">
+
+</div>
+</div>
+</div>
+
+## percentile
+
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">percentile</span>(<span class="pureGrammar-functionVariable">numbers</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">percentile</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">ascending</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">continuous</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]</div>
+
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+
+- <span class="pureGrammar-parametersLabel">Parameters</span>
+  - <span class="pureGrammar-parameterName">numbers</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
+  - <span class="pureGrammar-parameterName">percentile</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]
+  - <span class="pureGrammar-parameterName">ascending</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]
+  - <span class="pureGrammar-parameterName">continuous</span>: <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]
+
+</div>
+<div class="pureGrammar-functionReturns">
+
+- <span class="pureGrammar-returnsLabel">Returns</span>
+  - <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]
+
+</div>
+<div class="pureGrammar-functionUsage">
+
+</div>
+</div>
+</div>
+
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">percentile</span>(<span class="pureGrammar-functionVariable">numbers</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">percentile</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]</div>
+
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+
+- <span class="pureGrammar-parametersLabel">Parameters</span>
+  - <span class="pureGrammar-parameterName">numbers</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
+  - <span class="pureGrammar-parameterName">percentile</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]
+
+</div>
+<div class="pureGrammar-functionReturns">
+
+- <span class="pureGrammar-returnsLabel">Returns</span>
+  - <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">0..1</span>]
+
+</div>
+<div class="pureGrammar-functionUsage">
+
+</div>
+</div>
+</div>
+
 ## pow
 
 <div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">pow</span>(<span class="pureGrammar-functionVariable">base</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">exponent</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
@@ -1007,41 +1056,16 @@ title: Upcoming functions
 </div>
 </div>
 
-<div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Project the values from the property paths specified to create a new TDS</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Project the specified calculated columns from the provided TDS.  This is similar to extend, but rather than adding the columns it replaces all of the existing ones </div>
 
-<div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">project</span>&#60;T&#62;(<span class="pureGrammar-functionVariable">set</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">paths</span>: <span class="pureGrammar-genericType">Path&#60;<span class="pureGrammar-genericType">T</span>,<span class="pureGrammar-genericType">Any</span>|<span class="pureGrammar-multiplicity">&#42;</span>&#62;</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
-
-<div class="pureGrammar-functionDetails">
-<div class="pureGrammar-functionParameters">
-
-- <span class="pureGrammar-parametersLabel">Parameters</span>
-  - <span class="pureGrammar-parameterName">set</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
-  - <span class="pureGrammar-parameterName">paths</span>: <span class="pureGrammar-genericType">Path&#60;<span class="pureGrammar-genericType">T</span>,<span class="pureGrammar-genericType">Any</span>|<span class="pureGrammar-multiplicity">&#42;</span>&#62;</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
-
-</div>
-<div class="pureGrammar-functionReturns">
-
-- <span class="pureGrammar-returnsLabel">Returns</span>
-  - <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
-
-</div>
-<div class="pureGrammar-functionUsage">
-
-</div>
-</div>
-</div>
-
-<div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Project the values from the lambda functions specified to create a new TDS</div>
-
-<div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">project</span>&#60;K&#62;(<span class="pureGrammar-functionVariable">set</span>: <span class="pureGrammar-genericType">K</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">functions</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">K</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">&#42;</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">ids</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">project</span>(<span class="pureGrammar-functionVariable">tds</span>: <span class="pureGrammar-genericType">TableTDS</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">columnFunctions</span>: <span class="pureGrammar-genericType">ColumnSpecification&#60;<span class="pureGrammar-genericType">TDSRow</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
 
 - <span class="pureGrammar-parametersLabel">Parameters</span>
-  - <span class="pureGrammar-parameterName">set</span>: <span class="pureGrammar-genericType">K</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
-  - <span class="pureGrammar-parameterName">functions</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">K</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">&#42;</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
-  - <span class="pureGrammar-parameterName">ids</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
+  - <span class="pureGrammar-parameterName">tds</span>: <span class="pureGrammar-genericType">TableTDS</span>[<span class="pureGrammar-multiplicity">1</span>]
+  - <span class="pureGrammar-parameterName">columnFunctions</span>: <span class="pureGrammar-genericType">ColumnSpecification&#60;<span class="pureGrammar-genericType">TDSRow</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
 
 </div>
 <div class="pureGrammar-functionReturns">
@@ -1080,16 +1104,41 @@ title: Upcoming functions
 </div>
 </div>
 
-<div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Project the specified calculated columns from the provided TDS.  This is similar to extend, but rather than adding the columns it replaces all of the existing ones </div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Project the values from the property paths specified to create a new TDS</div>
 
-<div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">project</span>(<span class="pureGrammar-functionVariable">tds</span>: <span class="pureGrammar-genericType">TableTDS</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">columnFunctions</span>: <span class="pureGrammar-genericType">ColumnSpecification&#60;<span class="pureGrammar-genericType">TDSRow</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">project</span>&#60;T&#62;(<span class="pureGrammar-functionVariable">set</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">paths</span>: <span class="pureGrammar-genericType">Path&#60;<span class="pureGrammar-genericType">T</span>,<span class="pureGrammar-genericType">Any</span>|<span class="pureGrammar-multiplicity">&#42;</span>&#62;</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
 
 - <span class="pureGrammar-parametersLabel">Parameters</span>
-  - <span class="pureGrammar-parameterName">tds</span>: <span class="pureGrammar-genericType">TableTDS</span>[<span class="pureGrammar-multiplicity">1</span>]
-  - <span class="pureGrammar-parameterName">columnFunctions</span>: <span class="pureGrammar-genericType">ColumnSpecification&#60;<span class="pureGrammar-genericType">TDSRow</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
+  - <span class="pureGrammar-parameterName">set</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
+  - <span class="pureGrammar-parameterName">paths</span>: <span class="pureGrammar-genericType">Path&#60;<span class="pureGrammar-genericType">T</span>,<span class="pureGrammar-genericType">Any</span>|<span class="pureGrammar-multiplicity">&#42;</span>&#62;</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
+
+</div>
+<div class="pureGrammar-functionReturns">
+
+- <span class="pureGrammar-returnsLabel">Returns</span>
+  - <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
+
+</div>
+<div class="pureGrammar-functionUsage">
+
+</div>
+</div>
+</div>
+
+<div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Project the values from the lambda functions specified to create a new TDS</div>
+
+<div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">project</span>&#60;K&#62;(<span class="pureGrammar-functionVariable">set</span>: <span class="pureGrammar-genericType">K</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">functions</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">K</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">&#42;</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">ids</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+
+- <span class="pureGrammar-parametersLabel">Parameters</span>
+  - <span class="pureGrammar-parameterName">set</span>: <span class="pureGrammar-genericType">K</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
+  - <span class="pureGrammar-parameterName">functions</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">K</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">&#42;</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
+  - <span class="pureGrammar-parameterName">ids</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
 
 </div>
 <div class="pureGrammar-functionReturns">
@@ -1179,53 +1228,6 @@ title: Upcoming functions
 </div>
 </div>
 
-## reportDelta
-
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">reportDelta</span>&#60;T&#62;(<span class="pureGrammar-functionVariable">input</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">m</span>], <span class="pureGrammar-functionVariable">strategy</span>: <span class="pureGrammar-genericType">ReportDeltaStrategy</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">m</span>]</div>
-
-<div class="pureGrammar-functionDetails">
-<div class="pureGrammar-functionParameters">
-
-- <span class="pureGrammar-parametersLabel">Parameters</span>
-  - <span class="pureGrammar-parameterName">input</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">m</span>]
-  - <span class="pureGrammar-parameterName">strategy</span>: <span class="pureGrammar-genericType">ReportDeltaStrategy</span>[<span class="pureGrammar-multiplicity">1</span>]
-
-</div>
-<div class="pureGrammar-functionReturns">
-
-- <span class="pureGrammar-returnsLabel">Returns</span>
-  - <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">m</span>]
-
-</div>
-<div class="pureGrammar-functionUsage">
-
-</div>
-</div>
-</div>
-
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">reportDelta</span>&#60;T&#62;(<span class="pureGrammar-functionVariable">input</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">m</span>], <span class="pureGrammar-functionVariable">strategy</span>: <span class="pureGrammar-genericType">ReportDeltaStrategy</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">crs</span>: <span class="pureGrammar-genericType">ChangeRecord</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">m</span>]</div>
-
-<div class="pureGrammar-functionDetails">
-<div class="pureGrammar-functionParameters">
-
-- <span class="pureGrammar-parametersLabel">Parameters</span>
-  - <span class="pureGrammar-parameterName">input</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">m</span>]
-  - <span class="pureGrammar-parameterName">strategy</span>: <span class="pureGrammar-genericType">ReportDeltaStrategy</span>[<span class="pureGrammar-multiplicity">1</span>]
-  - <span class="pureGrammar-parameterName">crs</span>: <span class="pureGrammar-genericType">ChangeRecord</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
-
-</div>
-<div class="pureGrammar-functionReturns">
-
-- <span class="pureGrammar-returnsLabel">Returns</span>
-  - <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">m</span>]
-
-</div>
-<div class="pureGrammar-functionUsage">
-
-</div>
-</div>
-</div>
-
 ## restrict
 
 <div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Restrict / reduce the columns from within the provided TDS</div>
@@ -1252,15 +1254,16 @@ title: Upcoming functions
 </div>
 </div>
 
-## sin
+## round
 
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">sin</span>(<span class="pureGrammar-functionVariable">number</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">round</span>(<span class="pureGrammar-functionVariable">float</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">scale</span>: <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
 
 - <span class="pureGrammar-parametersLabel">Parameters</span>
-  - <span class="pureGrammar-parameterName">number</span>: <span class="pureGrammar-genericType">Number</span>[<span class="pureGrammar-multiplicity">1</span>]
+  - <span class="pureGrammar-parameterName">float</span>: <span class="pureGrammar-genericType">Float</span>[<span class="pureGrammar-multiplicity">1</span>]
+  - <span class="pureGrammar-parameterName">scale</span>: <span class="pureGrammar-genericType">Integer</span>[<span class="pureGrammar-multiplicity">1</span>]
 
 </div>
 <div class="pureGrammar-functionReturns">
@@ -1303,30 +1306,6 @@ title: Upcoming functions
 </div>
 
 ## sort
-
-<div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Sort the provided TDS based on the specified information (sorting is based on order of the sort information)</div>
-
-<div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">sort</span>(<span class="pureGrammar-functionVariable">tds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">sortInfo</span>: <span class="pureGrammar-genericType">SortInformation</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
-
-<div class="pureGrammar-functionDetails">
-<div class="pureGrammar-functionParameters">
-
-- <span class="pureGrammar-parametersLabel">Parameters</span>
-  - <span class="pureGrammar-parameterName">tds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
-  - <span class="pureGrammar-parameterName">sortInfo</span>: <span class="pureGrammar-genericType">SortInformation</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
-
-</div>
-<div class="pureGrammar-functionReturns">
-
-- <span class="pureGrammar-returnsLabel">Returns</span>
-  - <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
-
-</div>
-<div class="pureGrammar-functionUsage">
-
-</div>
-</div>
-</div>
 
 <div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Sort the provided TDS based on the specified column & direction</div>
 
@@ -1377,22 +1356,22 @@ title: Upcoming functions
 </div>
 </div>
 
-## sortBy
+<div class="pureGrammar-function"><div class="pureGrammar-functionDoc">Sort the provided TDS based on the specified information (sorting is based on order of the sort information)</div>
 
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">sortBy</span>&#60;T, U&#62;(<span class="pureGrammar-functionVariable">col</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">m</span>], <span class="pureGrammar-functionVariable">key</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">U</span>[<span class="pureGrammar-multiplicity">1</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">0..1</span>]): <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">m</span>]</div>
+<div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">sort</span>(<span class="pureGrammar-functionVariable">tds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">sortInfo</span>: <span class="pureGrammar-genericType">SortInformation</span>[<span class="pureGrammar-multiplicity">&#42;</span>]): <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
 
 - <span class="pureGrammar-parametersLabel">Parameters</span>
-  - <span class="pureGrammar-parameterName">col</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">m</span>]
-  - <span class="pureGrammar-parameterName">key</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">U</span>[<span class="pureGrammar-multiplicity">1</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">0..1</span>]
+  - <span class="pureGrammar-parameterName">tds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
+  - <span class="pureGrammar-parameterName">sortInfo</span>: <span class="pureGrammar-genericType">SortInformation</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
 
 </div>
 <div class="pureGrammar-functionReturns">
 
 - <span class="pureGrammar-returnsLabel">Returns</span>
-  - <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">m</span>]
+  - <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
 
 </div>
 <div class="pureGrammar-functionUsage">
@@ -1573,7 +1552,7 @@ title: Upcoming functions
 
 ## tdsContains
 
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">tdsContains</span>&#60;T&#62;(<span class="pureGrammar-functionVariable">object</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">functions</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">0..1</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">tds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">tdsContains</span>&#60;T&#62;(<span class="pureGrammar-functionVariable">object</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">functions</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">0..1</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">ids</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">tds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">crossOperation</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">TDSRow</span>[<span class="pureGrammar-multiplicity">1</span>],<span class="pureGrammar-genericType">TDSRow</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
@@ -1581,7 +1560,9 @@ title: Upcoming functions
 - <span class="pureGrammar-parametersLabel">Parameters</span>
   - <span class="pureGrammar-parameterName">object</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>]
   - <span class="pureGrammar-parameterName">functions</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">0..1</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
+  - <span class="pureGrammar-parameterName">ids</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
   - <span class="pureGrammar-parameterName">tds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
+  - <span class="pureGrammar-parameterName">crossOperation</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">TDSRow</span>[<span class="pureGrammar-multiplicity">1</span>],<span class="pureGrammar-genericType">TDSRow</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]
 
 </div>
 <div class="pureGrammar-functionReturns">
@@ -1596,7 +1577,7 @@ title: Upcoming functions
 </div>
 </div>
 
-<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">tdsContains</span>&#60;T&#62;(<span class="pureGrammar-functionVariable">object</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">functions</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">0..1</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">ids</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">tds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">crossOperation</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">TDSRow</span>[<span class="pureGrammar-multiplicity">1</span>],<span class="pureGrammar-genericType">TDSRow</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">tdsContains</span>&#60;T&#62;(<span class="pureGrammar-functionVariable">object</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>], <span class="pureGrammar-functionVariable">functions</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">0..1</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>], <span class="pureGrammar-functionVariable">tds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
 
 <div class="pureGrammar-functionDetails">
 <div class="pureGrammar-functionParameters">
@@ -1604,9 +1585,7 @@ title: Upcoming functions
 - <span class="pureGrammar-parametersLabel">Parameters</span>
   - <span class="pureGrammar-parameterName">object</span>: <span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>]
   - <span class="pureGrammar-parameterName">functions</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">T</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Any</span>[<span class="pureGrammar-multiplicity">0..1</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
-  - <span class="pureGrammar-parameterName">ids</span>: <span class="pureGrammar-genericType">String</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
   - <span class="pureGrammar-parameterName">tds</span>: <span class="pureGrammar-genericType">TabularDataSet</span>[<span class="pureGrammar-multiplicity">1</span>]
-  - <span class="pureGrammar-parameterName">crossOperation</span>: <span class="pureGrammar-genericType">Function&#60;<span class="pureGrammar-genericType">{<span class="pureGrammar-genericType">TDSRow</span>[<span class="pureGrammar-multiplicity">1</span>],<span class="pureGrammar-genericType">TDSRow</span>[<span class="pureGrammar-multiplicity">1</span>]-><span class="pureGrammar-genericType">Boolean</span>[<span class="pureGrammar-multiplicity">1</span>]}</span>&#60;</span>[<span class="pureGrammar-multiplicity">1</span>]
 
 </div>
 <div class="pureGrammar-functionReturns">
@@ -1636,6 +1615,29 @@ title: Upcoming functions
 
 - <span class="pureGrammar-returnsLabel">Returns</span>
   - <span class="pureGrammar-genericType">TDSRow</span>[<span class="pureGrammar-multiplicity">&#42;</span>]
+
+</div>
+<div class="pureGrammar-functionUsage">
+
+</div>
+</div>
+</div>
+
+## viewToTDS
+
+<div class="pureGrammar-function"><div class="pureGrammar-functionSignature"><span class="pureGrammar-functionName">viewToTDS</span>(<span class="pureGrammar-functionVariable">view</span>: <span class="pureGrammar-genericType">View</span>[<span class="pureGrammar-multiplicity">1</span>]): <span class="pureGrammar-genericType">TableTDS</span>[<span class="pureGrammar-multiplicity">1</span>]</div>
+
+<div class="pureGrammar-functionDetails">
+<div class="pureGrammar-functionParameters">
+
+- <span class="pureGrammar-parametersLabel">Parameters</span>
+  - <span class="pureGrammar-parameterName">view</span>: <span class="pureGrammar-genericType">View</span>[<span class="pureGrammar-multiplicity">1</span>]
+
+</div>
+<div class="pureGrammar-functionReturns">
+
+- <span class="pureGrammar-returnsLabel">Returns</span>
+  - <span class="pureGrammar-genericType">TableTDS</span>[<span class="pureGrammar-multiplicity">1</span>]
 
 </div>
 <div class="pureGrammar-functionUsage">
