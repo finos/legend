@@ -1,12 +1,13 @@
 {
   "docs": {
-    "Getting Started": ["getting-started/getting-started-guide"],
-    "Installation": [
+    "Overview": ["overview/legend-overview"],
+    "Getting Started": [
+      "getting-started/getting-started-guide",
       "installation/installation-guide",
       "installation/maven-install-guide",
       "installation/aws-docker-guide"
     ],
-    "Studio": [
+    "Tutorials": [
       "studio/create-workspace",
       "studio/create-data-model",
       "studio/create-diagram",
@@ -18,19 +19,32 @@
       "studio/create-flat-data-schema",
       "studio/review-and-commit-changes"
     ],
-    "Language": [
+    "Support": ["support/support"],
+    "Concepts": [
+      "concepts/workspaces",
+      "concepts/data-model",
+      "concepts/data-model-editor",
+      "concepts/grammar-mode",
+      "concepts/configuration-editor",
+      "concepts/relational-database-mapping",
+      "concepts/constraints"
+    ],
+    "Reference": [
       "language/legend-language",
       "language/released-functions",
       "language/upcoming-functions"
     ],
+    "Case studies": ["case-studies/legend-case-studies"],
     "Release": [
       "release/release-2022-05-05",
       "release/release-2022-04-26",
       "release/release-2021-10-18"
     ],
-    "Contribute": [
-      "contribute/contribute-to-legend",
-      "contribute/how-to-get-involved",
+    "Community": [
+      "community/contribute-to-legend",
+      "community/how-to-get-involved",
+      "community/legend-roadmap",
+      "community/legend-media",
       "contribute/terms-of-service"
     ]
   }
