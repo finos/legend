@@ -108,7 +108,7 @@ If you have suggestions or ideas for modeling use cases for which Legend may be 
 
 ### Background: The Legend Pilot—Shared modeling in Legend (January - September 2020)
 
-In January 2020, FINOS launched a pilot with FINOS member organizations interested in evaluating Legend. Modeling occurred on the FINOS hosted, shared version of Legend Studio in the public cloud, which was used by FINOS members to collaborate on Legend Studio by building extensions to the [ISDA Common Domain Model (CDM)](https://www.isda.org/2018/11/22/isda-cdm-factsheet/). Modeling occurred in two workstreams: **FX Options** and **Commodities Reference Data**, which concluded their work in September 2020. We expect that further working groups may use Legend for data modeling in these and/or other areas after the first wave of code has been open sourced in October 2020.
+In January 2020, FINOS launched a pilot with FINOS member organizations interested in evaluating Legend. Modeling occurred on the FINOS hosted, shared version of Legend Studio in the public cloud, which was used by FINOS members to collaborate on Legend Studio by building extensions to the [ISDA Common Domain Model (CDM)](https://www.isda.org/2018/11/22/isda-cdm-factsheet/). Modeling occurred in two workstreams: **FX Options** and **Commodities Reference Data**, which concluded their work in September 2020. Read the FINOS Legend Pilot Case Study [here](https://www.finos.org/hubfs/FINOS/assets/FINOS%20Legend%20Case%20Study%202021.pdf). Further working groups are using Legend for data modeling within the [Financial Objects Special Interest Group](https://github.com/finos/financial-objects).
 
 ## Contribute documentation
 

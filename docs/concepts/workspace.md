@@ -1,10 +1,8 @@
 ---
-id: workspaces
-title: Workspaces
-sidebar_label: Workspaces
+id: workspace
+title: Workspace
+sidebar_label: Workspace
 ---
-
-# Workspaces
 
 A workspace is where you create your data models. It's a copy (also known as a branch) of a project which can be later merged back into the main project and shared with other users.
 

@@ -1,8 +1,13 @@
-# Blog posts
+---
+id: legend-media
+title: Legend in the News
+sidebar_label: Legend in the News
+---
+## Media Coverage
 
-# Media Coverage
+## Awards
 
-# Awards
+## Talks & Podcasts
 
-# Talks
+## Blog posts
 

@@ -16,25 +16,15 @@ Legend makes it fast, easy, and safe for data teams to make informed, data-drive
 
 ## Benefits
 
-**Easy**
+**Easy** navigation and data discovery.
 
-Navigation and data discovery.
+**Access** business intelligence for collaboration and analytics.
 
-**Access**
+**Self-service** Data models for standardization and sharing.
 
-Business intelligence for collaboration and analytics.
+**Fast and reliable** data collection and delivery.
 
-**Self-service**
-
-Data models for standardization and sharing.
-
-**Fast and reliable**
-
-Data collection and delivery.
-
-**Trust and confidence**
-
-The data has embedded governance.
+**Trust and confidence** (the with embedded governance).
 
 # Who is the user?
 - **Business users** who need to a share data with Engineering teams in business terms they understand.

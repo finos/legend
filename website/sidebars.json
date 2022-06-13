@@ -6,20 +6,12 @@
       "getting-started/installation-guide"
     ],
     "Tutorials": [
-      "studio/create-workspace",
-      "studio/create-data-model",
-      "studio/create-diagram",
-      "studio/create-model-to-model-mapping",
-      "studio/connect-data-to-model",
-      "studio/execute",
-      "studio/create-service",
-      "studio/consume-service",
-      "studio/create-flat-data-schema",
-      "studio/review-and-commit-changes"
+      "tutorials/studio-tutorials",
+      "tutorials/query-tutorials"
     ],
     "Support": ["support/support"],
     "Concepts": [
-      "concepts/workspaces",
+      "concepts/workspace",
       "concepts/data-model",
       "concepts/data-model-editor",
       "concepts/grammar-mode",
@@ -27,11 +19,12 @@
       "concepts/relational-database-mapping",
       "concepts/constraints"
     ],
-    "Reference": [
+    "Reference: Technical Documentation": [
       "language/legend-language",
       "language/released-functions",
       "language/upcoming-functions"
     ],
+    "Legend in the Media": ["community/legend-media"],
     "Case studies": ["case-studies/legend-case-studies"],
     "Release": [
       "release/release-2022-05-05",
@@ -42,8 +35,8 @@
       "community/contribute-to-legend",
       "community/how-to-get-involved",
       "community/legend-roadmap",
-      "community/legend-media",
-      "contribute/terms-of-service"
+      "community/industry-working-groups",
+      "community/terms-of-service"
     ]
   }
 }
