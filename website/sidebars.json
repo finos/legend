@@ -2,8 +2,8 @@
   "docs": {
     "Overview": [
       "overview/legend-overview",
-      "getting-started/use-cases",
-      "getting-started/architecture"
+      "overview/use-cases",
+      "overview/architecture"
     ],
     "Getting Started": [
       "getting-started/getting-started-guide",
