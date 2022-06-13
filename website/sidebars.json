@@ -3,9 +3,7 @@
     "Overview": ["overview/legend-overview"],
     "Getting Started": [
       "getting-started/getting-started-guide",
-      "installation/installation-guide",
-      "installation/maven-install-guide",
-      "installation/aws-docker-guide"
+      "getting-started/installation-guide"
     ],
     "Tutorials": [
       "studio/create-workspace",
