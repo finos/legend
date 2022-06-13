@@ -1,11 +1,13 @@
 {
   "docs": {
-    "Overview": ["overview/legend-overview"],
-    "Getting Started": [
-      "getting-started/getting-started-guide",
-      "getting-started/installation-guide",
+    "Overview": [
+      "overview/legend-overview",
       "getting-started/use-cases",
       "getting-started/architecture"
+    ],
+    "Getting Started": [
+      "getting-started/getting-started-guide",
+      "getting-started/installation-guide"
     ],
     "Tutorials": [
       "tutorials/studio-tutorials",
