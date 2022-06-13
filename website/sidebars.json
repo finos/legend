@@ -24,7 +24,12 @@
       "language/released-functions",
       "language/upcoming-functions"
     ],
-    "Legend in the Media": ["community/legend-media"],
+    "Legend Media": [
+      "community/legend-media",
+      "community/talks-and-podcasts",
+      "community/blog posts",
+      "community/awards"
+    ],
     "Case studies": ["case-studies/legend-case-studies"],
     "Release": [
       "release/release-2022-05-05",

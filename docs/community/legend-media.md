@@ -1,13 +1,5 @@
 ---
 id: legend-media
-title: Legend in the News
-sidebar_label: Legend in the News
+title: Media Coverage
+sidebar_label: Media Coverage
 ---
-## Media Coverage
-
-## Awards
-
-## Talks & Podcasts
-
-## Blog posts
-

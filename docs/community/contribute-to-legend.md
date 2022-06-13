@@ -1,7 +1,7 @@
 ---
 id: contribute-to-legend
-title: Contribute to Legend
-sidebar_label: Contribute to Legend
+title: Contribute
+sidebar_label: Contribute
 ---
 
 There are many ways to contribute to Legend and many of them don't involve writing any code. Here are a few ideas to get started:
