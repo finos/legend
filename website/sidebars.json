@@ -3,7 +3,9 @@
     "Overview": ["overview/legend-overview"],
     "Getting Started": [
       "getting-started/getting-started-guide",
-      "getting-started/installation-guide"
+      "getting-started/installation-guide",
+      "getting-started/use-cases",
+      "getting-started/architecture"
     ],
     "Tutorials": [
       "tutorials/studio-tutorials",
