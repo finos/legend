@@ -19,7 +19,7 @@
       "concepts/relational-database-mapping",
       "concepts/constraints"
     ],
-    "Reference: Technical Documentation": [
+    "Reference Documentation": [
       "language/legend-language",
       "language/released-functions",
       "language/upcoming-functions"
@@ -31,7 +31,7 @@
       "community/awards"
     ],
     "Case studies": ["case-studies/legend-case-studies"],
-    "Release": [
+    "Release Notes": [
       "release/release-2022-05-05",
       "release/release-2022-04-26",
       "release/release-2021-10-18"
