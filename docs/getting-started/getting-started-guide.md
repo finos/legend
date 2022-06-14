@@ -5,7 +5,7 @@ sidebar_label: Legend 101
 ---
 
 ## Introductory Videos
-In order to get started with Legend, check out the following videos.
+In order to get started with Legend, check out the following videos
 
 First, Pierre de Belen, the creator of Legend, delivered the [keynote speech at 2020 Open Source Strategy Forum](https://www.youtube.com/watch?v=93c966jNzYo). Pierre provides a broad survey of the challenges of data management and how Legend can help in addressing them.
 
@@ -18,14 +18,16 @@ Lastly, Beeke-Marie Nelke hosted two sessions for the FINOS Open Source Communit
 
 All these videos are highly recommended.
 
-## Hosted FINOS Legend Instance 
+## Start Using Legend Today
+
+### Hosted FINOS Legend Instance 
 
 A good way to experiment with Legend is to try data modeling. The FINOS Foundation (https://finos.org) hosts a shared instance of Legend.
 
 Request free access to the FINOS-hosted instance on the [FINOS page](https://www.finos.org/legend).
 
-## Install your own Legend
+### Install your own Legend
 
 We are actively working on making it easy to install Legend on-premises or in the cloud.
 
-Installation instructions can be found [here](../getting-started/installation-guide.md).
+See the [Installation Guide](../getting-started/installation-guide.md) for details.

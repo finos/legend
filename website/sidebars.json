@@ -21,7 +21,10 @@
     "Reference Documentation": [
       "reference/legend-language",
       "reference/released-functions",
-      "reference/upcoming-functions"
+      "reference/upcoming-functions",
+      "reference/stores",
+      "reference/bindings",
+      "reference/query-protocol"
     ],
     "Release Notes": [
       "release/release-2022-05-05",

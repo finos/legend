@@ -3,6 +3,7 @@ id: use-cases
 title: Use Cases
 sidebar_label: Use Cases
 ---
+# User stories
 
 ## Data Governance
 _COMING SOON_
