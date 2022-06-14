@@ -1,5 +1,5 @@
 ---
-id: legend-studio-pilot
+id: legend-case-studies
 title: Legend Studio Pilot Case Study
 sidebar_label: Legend Studio Pilot Case Study
 ---

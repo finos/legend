@@ -1,7 +1,7 @@
 ---
-id: support
-title: Legend Support
-sidebar_label: Legend Support
+id: get-help-from-community
+title: Get Help from the Legend Community
+sidebar_label: Get Help
 ---
 
 ## Support

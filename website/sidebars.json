@@ -13,38 +13,27 @@
       "tutorials/studio-tutorials",
       "tutorials/query-tutorials"
     ],
-    "Support": ["support/support"],
     "Concepts": [
-      "concepts/workspace",
-      "concepts/data-model",
-      "concepts/data-model-editor",
-      "concepts/grammar-mode",
-      "concepts/configuration-editor",
-      "concepts/relational-database-mapping",
-      "concepts/constraints"
+      "concepts/legend-features",
+      "concepts/data-modelling-concepts",
+      "concepts/relational-database-mapping"
     ],
     "Reference Documentation": [
-      "language/legend-language",
-      "language/released-functions",
-      "language/upcoming-functions"
+      "reference/legend-language",
+      "reference/released-functions",
+      "reference/upcoming-functions"
     ],
-    "Legend Media": [
-      "community/legend-media",
-      "community/talks-and-podcasts",
-      "community/blogposts",
-      "community/awards"
-    ],
-    "Case studies": ["case-studies/legend-case-studies"],
     "Release Notes": [
       "release/release-2022-05-05",
       "release/release-2022-04-26",
       "release/release-2021-10-18"
     ],
+    "Case studies": ["case-studies/legend-case-studies"],
     "Community": [
       "community/contribute-to-legend",
       "community/how-to-get-involved",
       "community/legend-roadmap",
-      "community/industry-working-groups",
+      "community/get-help-from-community",
       "community/terms-of-service"
     ]
   }
