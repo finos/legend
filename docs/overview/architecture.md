@@ -5,6 +5,7 @@ sidebar_label: Architecture
 ---
 
 ## Metamodel Environment
+_COMING SOON_
 
 ### Diagram
 _COMING SOON_

@@ -1,12 +1,10 @@
 ---
-id: data-modelling-concepts
-title: Data Modelling Concepts
-sidebar_label: Data Modelling Concepts
+id: data-modeling-concepts
+title: Elements of a Data Model
+sidebar_label: Data Modeling Concepts
 ---
 
-# Elements of a Data Model 
-
-Use data models to describe your data and data relationships. 
+Data models allow you to describe your data and data relationships. 
 
 ## Classes
 
@@ -29,8 +27,7 @@ Tagged values allow you to add context to your data model. Tagged values can be 
 Stereotypes allow you to extend metadata information about a model.
 
 ## Enumeration
-
-A model attribute that has a finite list of values can be defined with an enumeration.
+An enumeration is a model attribute that has a finite list of values.
 
 ## Constraints
 
@@ -51,10 +48,6 @@ To create a class, enumeration or profile:
 ## Quality controls
 
 Quality controls are added onto properties. Properties are attributes of classes. For example, if you have a class called "Name", you might have two properties called "firstName" and "lastName"
-
-## Enumerations
-
-An enumeration is a model attribute that has a finite list of values.
 
 ## Super types
 

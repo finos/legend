@@ -1,7 +1,7 @@
 ---
-id: legend-features
-title: Legend Studio Concepts
-sidebar_label: Legend Studio Concepts
+id: legend-concepts
+title: Legend Concepts
+sidebar_label: Legend Concepts
 ---
 
 ## Workspace

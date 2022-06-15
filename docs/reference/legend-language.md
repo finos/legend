@@ -213,4 +213,4 @@ Mapping MyModelToModelMapping
 
 - [Released functions](released-functions.md)
 - [Upcoming functions](upcoming-functions.md)
-- [Contribute to Legend](../contribute/contribute-to-legend.md)
+- [Contribute to Legend](../community/contribute-to-legend.md)

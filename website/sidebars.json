@@ -10,13 +10,12 @@
       "getting-started/installation-guide"
     ],
     "Tutorials": [
-      "tutorials/studio-tutorials",
-      "tutorials/query-tutorials"
+      "tutorials/studio-tutorial",
+      "tutorials/query-tutorial"
     ],
     "Concepts": [
-      "concepts/legend-studio-concepts",
-      "concepts/data-modelling-concepts",
-      "concepts/relational-database-mapping"
+      "concepts/legend-concepts",
+      "concepts/data-modeling-concepts"
     ],
     "Reference Documentation": [
       "reference/legend-language",

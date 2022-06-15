@@ -7,13 +7,23 @@ Data is at the core of today's business processes. It must be seamlessly exchang
 
 Legend offers an entire suite of end-to-end data management products as a service including discovery/analysis, governed design and execution, and data movement (pipelines) making it easy for both engineers and business users to get what they need out of their data.
 
-## Components
+## Legend Components
 
-### Studio
-_COMING SOON_
+### Legend Studio
 
-### Query
-_COMING SOON_
+Legend Studio is a data model editor that allows you to describe, connect, and visualize your data in business terms. In its simplest form, data modeling is thinking about the meaning of your data an its relationship to other data, and then writing that down in a formal way.
+
+These data models enable users to standardize terms and relationships to foster a consistent data vocabulary. Once modeled, data can be expressed in diagrams to facilitate dialog between business users and development teams.
+
+Use Legend Studio to break down data silos and the historical business-engineering divide by creating a shared understanding of your data. Legend Studio will increase your engineering productivity, reduce your time to market, and create commercial opportunities for your team.
+
+### Legend Query
+
+Legend Query enables users to ask informed questions about Legend Studio data models, using a hosted graphical, drag-and-drop, self-service UI. Queries saved in Legend Studio can also be quickly turned into hosted Legend Service APIs, increasing both developer productivity and time to market for data products.
+
+### Legend Engine
+
+Legend Engine is the execution engine for Legend.
 
 ## Why Legend?
 
