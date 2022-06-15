@@ -53,8 +53,12 @@ _COMING SOON_
 ## Edit project overview
 _COMING SOON_
 
-## Define a new class
+## Create a class, enumeration or profile
+To create a class, enumeration or profile:
+1. Right-click any package on the left side of the panel, or click the `+` near the name of your project.
+2. Under `Class view`, you'll see a list of class forms as well as a diagram view of your class. You can add tags, stereotypes, properties, constraints, qualified properties, and super types to your model.
 
+## Define a new class
 1. Click the **+** icon (make sure your **demo** package is selected).
 2. Click **New Class**.
 

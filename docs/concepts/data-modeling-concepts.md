@@ -41,10 +41,6 @@ Quality controls can be used to monitor all sorts of data qualities, such as:
 
 Constraints don't block data - they only raise exceptions.
 
-To create a class, enumeration or profile:
-1. Right-click any package on the left side of the panel, or click the `+` near the name of your project.
-2. Under `Class view`, you'll see a list of class forms as well as a diagram view of your class. You can add tags, stereotypes, properties, constraints, qualified properties, and super types to your model.
-
 ## Quality controls
 
 Quality controls are added onto properties. Properties are attributes of classes. For example, if you have a class called "Name", you might have two properties called "firstName" and "lastName"
