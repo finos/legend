@@ -16,7 +16,7 @@ There are many ways to contribute to Legend and many of them don't involve writi
 
 ## Prerequisites
 
-To create and/or edit models in the Legend hosted instance or make code contributions, you need to have a GitHub Account. 
+To create and/or edit models in the Legend hosted instance or to make code contributions, you need to have a GitHub Account. 
 
 ### GitHub account setup
 

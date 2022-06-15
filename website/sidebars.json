@@ -6,7 +6,7 @@
       "overview/architecture"
     ],
     "Getting Started": [
-      "getting-started/getting-started-guide",
+      "getting-started/legend-101",
       "getting-started/installation-guide"
     ],
     "Tutorials": [
@@ -14,7 +14,7 @@
       "tutorials/query-tutorials"
     ],
     "Concepts": [
-      "concepts/legend-features",
+      "concepts/legend-studio-concepts",
       "concepts/data-modelling-concepts",
       "concepts/relational-database-mapping"
     ],
@@ -34,8 +34,8 @@
     "Case studies": ["case-studies/legend-case-studies"],
     "Community": [
       "community/contribute-to-legend",
-      "community/how-to-get-involved",
       "community/legend-roadmap",
+      "community/get-involved",
       "community/get-help-from-community",
       "community/terms-of-service"
     ]

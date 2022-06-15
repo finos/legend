@@ -6,16 +6,6 @@ sidebar_label: Installation guide
 
 There are a few different options to install and use Legend. They are listed below in increasing order of integration and installation complexity.
 
-## Hosted FINOS
-
-This is the easiest way to get started with Legend as it does not involve any installation steps.
-
-The FINOS foundation hosts a free instance of Legend to be used for shared modeling efforts.
-
-Instructions to sign up and use this instance can be found on the [FINOS page](https://www.finos.org/legend).
-
-**Note: This is a shared instance which might not be appropriate for proprietary data models.**
-
 ## Maven Install
 
 This option is for software developers who want to build and run Legend from source. Instructions can be found [here](maven-install.md).

@@ -15,7 +15,6 @@ Start working on your data model by creating a workspace. A workspace is a copy 
     ![Create a workspace](../assets/create-a-workspace.gif)
 
 ## Create a group workspace
-There is also the option to create a **group workspace** which allows collaboration on the same workspace. Changes made in this workspace are visible to other users without the need to merge to master.
 
 1. Follow steps above to create a workspace
 
@@ -23,8 +22,21 @@ There is also the option to create a **group workspace** which allows collaborat
 
 ![Create a group workspace](../assets/create-a-group-workspace.gif)
 
+## Access Text Mode
+
+_[TODO: add screenshot]_
+
+To access or exit Text mode: Press `F8` or the hacker icon on the bottom right corner of your scrreen. The bar should change when you open or close Text mode. 
+
+To compile your code: Press `F9`
+
 ## Create a data model
-Use data models to describe your data and data relationships.
+
+### Create a model diagram
+_COMING SOON_
+
+### Use a diagram to create a data model
+_COMING SOON_
 
 ### Define a new model package
 
@@ -34,9 +46,14 @@ Create a package to start defining model hierarchies to group models into logica
 2. Click **New package** to start a model hierarchy. Let's call this package **demo**.
 
 ![create package](../assets/create-hierarchy.gif)
-### Define a new class
 
-Use classes to define a business concept.
+## Define a data model hierarchy
+_COMING SOON_
+
+## Edit project overview
+_COMING SOON_
+
+## Define a new class
 
 1. Click the **+** icon (make sure your **demo** package is selected).
 2. Click **New Class**.
@@ -46,9 +63,8 @@ Use classes to define a business concept.
     Studio displays a visualization of the class and a tabbed list of the possible model enrichments.
 
 ![create class](../assets/create-class.gif)
-### Add a property (primitive data type)
 
-Use properties in a class to define attributes of the business concept.
+## Add a property (primitive data type)
 
 1. Select the `Person` and `Firm` class respectively.
 2. Go to the **Properties** tab and click the **+** icon.
@@ -57,9 +73,8 @@ Use properties in a class to define attributes of the business concept.
     For our `Person` class, let's create a property called `firstName` of type `String` with [cardinality](../language/legend-language.md#class) of 1. Let's add the property `id` of type `String` with the [cardinality](../language/legend-language.md#class) of 1 in our `Firm` class.
 
 ![add property](../assets/add-property.gif)
-### Add a derived property
 
-Derived properties are properties using functions that can operate on other attributes in the data model.
+## Add a derived property
 
 1. Select the `Person` class.
 2. Go to the **Derived Properties** tab and click the **+** icon.
@@ -73,9 +88,7 @@ Derived properties are properties using functions that can operate on other attr
 
 ![add derived property](../assets/add-derived-property2.gif)
 
-### Add a constraint
-
-Use constraints to define a validation or condition on the model that's expected to be met.
+## Add a constraint
 
 1. Select the `Person` class.
 2. Go to the **Constraints** tab and click the **+** icon.
@@ -87,13 +100,31 @@ Use constraints to define a validation or condition on the model that's expected
 
 ![add constraint](../assets/add-constraint2.gif)
 
-### Create a Profile
+## Add a quality control to a property
 
-Capture additional information (metadata) about the data model by creating a Profile. Profiles store and manage tagged values and stereotypes.
+### Type as a quality control
+_COMING SOON_
+
+### Multiplicity as a quality control
+_COMING SOON_
+
+### Enumeration as a quality control
+_COMING SOON_
+
+### Constraints as a quality control
+_COMING SOON_
+
+### Model constraint feedback
+When typing constraints and qualified properties, you'll get immediate parsing feedback. You can compile your code by pressing `F9`.
+
+_ADD SCREENSHOT_
+
+### Create a Profile
 
 1. Click the **+** icon.
 
 2. Click **New Profile**.
+
 #### Create a tag in your Profile
 
 Use tagged values to add context to your data model. For example, we can add the tagged value **alias** to our `Firm` class to make it easier for others to navigate our data model.
@@ -118,7 +149,7 @@ The `Firm` class now shows the additional context.
 
 #### Create a stereotype in your Profile
 
-Use stereotypes to extend metadata information about a model. For example, you can annotate your model with labels like *legacy* or *deprecated*.
+Annotate your model with labels like *legacy* or *deprecated*:
 
 1. In the Profile editor, go to the **Stereotypes** tab and click the **+** icon.
 
@@ -140,8 +171,6 @@ The `Firm` class now shows the additional metadata information.
 
 ### Create and add an enumeration
 
-A model attribute that has a finite list of values can be defined with an enumeration.
-
 1. Click the **+** icon on the left-hand side and select **Add an enumeration**.
 2. Let's create an enumeration called **CompanyType** with the values **LLC** and **Corporation**.
 3. Let's navigate back to our `Firm` class and add a property named **firmType**.
@@ -149,9 +178,7 @@ A model attribute that has a finite list of values can be defined with an enumer
 
 ![Select property type and cardinality](../assets/add-enum.gif)
 
-### Add a super type
-
-Add a Super Type to the model to show a hierarchical relationship between classes or business concepts. 
+### Add a supertype
 
 Let's create a new class called `LegalEntity`. 
 
@@ -175,8 +202,6 @@ Create a relationship between the **Person** and **Firm** classes.
 ![Add a super type](../assets/add-non-primitive-data-type.gif)
 
 ## Create a Diagram
-
-Diagrams are visual representations of your models to better visualize and communicate about data and their relationships. **Important to note** is that Diagrams are not auto-generated based on the created model. Instead, diagrams should be intentionally created to best represent the data being described.
 
 To get started, click the **+** to open the **New Element** drop down menu on the left-hand side and select **Add a new diagram**.
 
@@ -293,7 +318,6 @@ Let's create a constraint on the `NewPerson` class that checksq if the name valu
 7. Hit the **Execute button** to execute the defined query
 
 Studio will show a **defect** with the details about the violated constraint. Constraints can be both on source and target class.
-
 
 ## Connect Data to a Data Model
 
@@ -502,6 +526,7 @@ You can save these tests and continue to enhance your data models with the comfo
     ![Save execution as a test](../assets/execution.gif)
 
 ## Create a new service (beta)
+
 Build services on top of data queries to consume modeled data systematically. To create a service select **New Service** from the drop down menu to launch the **Service Editor**. Please note that the Service Editor is still in beta state and some features may not be fully available yet.
 
 ### General Tab
@@ -539,6 +564,7 @@ This feature is not yet supported.
 ![Create a service](../assets/create-a-service.gif)
 
 ## Consume a Service
+
 Consume data services via **executable service JAR files**. As part of the project build, an executable JAR file is generated for each service defined in the project. The executable service JAR file will be published in the Gitlab project that stores the data model code. The JAR file can be consumed by any Java application.
 
 ## Creating and Consuming a service execution JAR file
@@ -572,18 +598,7 @@ List the JAR file as a dependency in the Java application. For production use ca
 ## See features in action
 ![consume a service](../assets/consume-service.gif)
 
-
 ## Create a Flat Data Schema
-Flat Data is a feature of the external formats support within Legend. It covers simple file formats like CSVs and simple custom formats. More
-sophisticated structured formats, that are described by well-defined schemas, such as XML (schema XSD) and JSON (schema JSON Schema) are
-handled by other features of the External Formats framework.
-
-The Flat Data feature is extensible so that support can be added for more file formats, for example as new data providers are onboarded. This guide
-covers the configuration options for the core supported formats.
-
-The Flat Data grammar is used to describe a particular file format so that data in that format can be read and/or written by Services defined in Legend.
-
-### Steps to Create
 
 1. Click the **+** on the left-hand side and select **New SchemaSet**.
 2. Enter a name for the SchemaSet
@@ -927,3 +942,18 @@ A workspace update may result in a conflict. Studio will open a new view to aid 
 3. Once the changes compile successfully, either accept or discard the changes.
 
     ![Accept or discard changes](../assets/accept-or-discard-changes.JPG)
+
+## Define project dependencies
+When you add a dependency, all its dependencies are included as well. For example, if model $A$ creates a dependency on "Listed Product", and "Listed Product" depends upon the "Foundation" model, you _do not_ need to add a separate dependency to Foundation for model $A$ to depend on it. The dependency is already included in your dependency to other projects.
+
+### Dependency version control
+_COMING SOON_
+
+### Frequently Asked questions
+_COMING SOON_
+
+## File Generation
+File generation lets you generate your models in other codes or schemas.
+
+### Creating a File Generation
+_COMING SOON_

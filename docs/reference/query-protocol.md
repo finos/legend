@@ -4,9 +4,6 @@ title: Query Protocol
 sidebar_label: Query Protocol
 ---
 
-## Query
-_COMING SOON_
-
 ## SQL
 _COMING SOON_
 

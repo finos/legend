@@ -3,38 +3,38 @@ id: data-modelling-concepts
 title: Data Modelling Concepts
 sidebar_label: Data Modelling Concepts
 ---
-## Data Model
-After you set up your Alloy Studio project, you can leverage Alloy Studio's various development tools to create data models. 
 
-# Elements of a data model
-[TODO: add content]
+# Elements of a Data Model 
 
-## Define a data model hierarchy
-[TODO: add content]
+Use data models to describe your data and data relationships. 
 
 ## Classes
-[TODO: add content]
+
+Classes define a business concept.
 
 ## Properties
-[TODO: add content]
+
+Properties are components of classes that define the attributes of a business concept. Properties can be both primitives (like strings or integers) or other properties. Use properties in a class to define attributes of the business concept.
 
 ## Derived properties
-[TODO: add content]
+
+Derived properties use functions to operate on other attributes in the data model.
 
 ## Tagged values
-[TODO: add content]
 
-## Class: add a description or tagged value
-[TODO: add content]
-
-## Property: add a description or tagged value
-[TODO: add content]
+Tagged values allow you to add context to your data model. Tagged values can be added at the class level and at the property level.
 
 ## Stereotypes
-[TODO: add content]
+
+Stereotypes allow you to extend metadata information about a model.
+
+## Enumeration
+
+A model attribute that has a finite list of values can be defined with an enumeration.
 
 ## Constraints
-A data model has built-in governance features, called _data quality controls_. You create data quality controls every time you define a model. Constraints are governance tools added on top of quality controls.
+
+A data model has built-in governance features, called _data quality controls_. You create data quality controls every time you define a model. Constraints are governance tools added on top of quality controls. Use constraints to define a validation or condition on the model that's expected to be met.
 
 Quality controls can be used to monitor all sorts of data qualities, such as:
 - **Type**: ensures that the data is in the form of a string, integer, date, or other data type.
@@ -48,41 +48,21 @@ To create a class, enumeration or profile:
 1. Right-click any package on the left side of the panel, or click the `+` near the name of your project.
 2. Under `Class view`, you'll see a list of class forms as well as a diagram view of your class. You can add tags, stereotypes, properties, constraints, qualified properties, and super types to your model.
 
-# Add a quality control to a property
-[TODO: add content]
+## Quality controls
 
-## Type as a quality control
-[TODO: add content]
-
-## Multiplicity as a quality control
-[TODO: add content]
-
-## Enumeration as a quality control
-[TODO: add content]
-
-## Constraints as a quality control
-[TODO: add content]
-
-## Model constraint feedback
-[TODO: add content]
-
-## Further language and training resources
-[TODO: add content]
-
-## More info
-[TODO: add content]
+Quality controls are added onto properties. Properties are attributes of classes. For example, if you have a class called "Name", you might have two properties called "firstName" and "lastName"
 
 ## Enumerations
-[TODO: add content]
 
-## Supertypes
-[TODO: add content]
+An enumeration is a model attribute that has a finite list of values.
 
-# Functions
-[TODO: add content]
+## Super types
 
-# Save changes: sync and compile
-[TODO: add content]
+Super types show a relationship between classes or business concepts within a model. Add a super type to the model to show a hierarchical relationship between classes or business concepts. 
 
-# More info
-[TODO: add content]
+## Functions
+
+Functions are used to derive new values from existing values using various operations. 
+
+## Data Types 
+_COMING SOON_

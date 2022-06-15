@@ -1,5 +1,5 @@
 ---
-id: getting-started-guide
+id: legend-101
 title: Legend 101 
 sidebar_label: Legend 101
 ---
@@ -20,14 +20,16 @@ All these videos are highly recommended.
 
 ## Start Using Legend Today
 
-### Hosted FINOS Legend Instance 
+### Legend Studio
 
-A good way to experiment with Legend is to try data modeling. The FINOS Foundation (https://finos.org) hosts a shared instance of Legend.
+This is the easiest way to get started with Legend as it does not involve any installation steps.
 
-Request free access to the FINOS-hosted instance on the [FINOS page](https://www.finos.org/legend).
+The FINOS foundation hosts a free instance of Legend to be used for shared modeling efforts.
+
+Instructions to sign up and use this instance can be found on the [FINOS page](https://www.finos.org/legend).
+
+**Note: This is a shared instance which might not be appropriate for proprietary data models.**
 
 ### Install your own Legend
-
-We are actively working on making it easy to install Legend on-premises or in the cloud.
 
 See the [Installation Guide](../getting-started/installation-guide.md) for details.
