@@ -164,8 +164,24 @@ View the prerequisites and steps to report an issue in GitHub.
 3. Tag the new issue with either **Bug** or **Enhancement**.
 4. Use [Markdown formatting](https://help.github.com/categories/writing-on-github/) to improve readability. For example, use [code fences](https://help.github.com/articles/creating-and-highlighting-code-blocks/) for exception stack traces and log entries.
 
+## Stay up to date
+To receive updates on Legend, subscribe to these lists:
+
+* Star and Watch the [Legend repository on GitHub](https://github.com/finos/legend)
+* [Legend General List](https://groups.google.com/a/finos.org/forum/#!forum/legend)
+  * Subscribe w/ email to [legend+subscribe@finos.org](mailto:legend+subscribe@finos.org)
+  * Post with email to [legend@finos.org](mailto:legend@finos.org)
+
+* GitHub / GitLab Issues & Kanban
+  * GitHub Issues (https://github.com/finos/legend/issues)
+  * GitHub Kanban (https://github.com/orgs/finos/projects/5)
+
+* Legend Updates from FINOS
+  * [Subscribe at https://www.finos.org/legend](https://www.finos.org/legend)
+
+
 ## More info
 
-- [Get involved](how-to-get-involved.md)
-- [Installation guide](../installation/installation-guide.md)
-- [Create a workspace](../studio/create-workspace.md)
+- [Installation guide](../getting-started/installation-guide.md)
+- [Legend Studio Tutorial](../tutorials/studio-tutorial.md)
+- [Legend Query Tutorial](../tutorials/studio-tutorial.md)
