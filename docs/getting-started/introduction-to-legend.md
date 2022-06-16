@@ -1,7 +1,7 @@
 ---
-id: legend-101
-title: Legend 101 
-sidebar_label: Legend 101
+id: introduction-to-legend
+title: Introduction to Legend 
+sidebar_label: Introduction to Legend
 ---
 
 ## Introductory Videos
@@ -17,6 +17,9 @@ Lastly, Beeke-Marie Nelke hosted two sessions for the FINOS Open Source Communit
 * [Legend New Feature Deep Dive](https://www.youtube.com/watch?v=7lJoik3r38k). Learn how to create mappings and query your data.
 
 All these videos are highly recommended.
+
+## Tutorials
+See step by step tutorials are available for [Legend Studio](../tutorials/studio-tutorial.md) and [Legend Query](../tutorials/query-tutorial.md).
 
 ## Start Using Legend Today
 

@@ -6,7 +6,7 @@
       "overview/architecture"
     ],
     "Getting Started": [
-      "getting-started/legend-101",
+      "getting-started/introduction-to-legend",
       "getting-started/installation-guide"
     ],
     "Tutorials": [
@@ -35,6 +35,7 @@
       "community/contribute-to-legend",
       "community/legend-roadmap",
       "community/get-help-from-community",
+      "community/",
       "community/terms-of-service"
     ]
   }

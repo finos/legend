@@ -178,10 +178,3 @@ To receive updates on Legend, subscribe to these lists:
 
 * Legend Updates from FINOS
   * [Subscribe at https://www.finos.org/legend](https://www.finos.org/legend)
-
-
-## More info
-
-- [Installation guide](../getting-started/installation-guide.md)
-- [Legend Studio Tutorial](../tutorials/studio-tutorial.md)
-- [Legend Query Tutorial](../tutorials/studio-tutorial.md)

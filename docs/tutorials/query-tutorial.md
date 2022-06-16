@@ -1,5 +1,5 @@
 ---
-id: query-tutorials
+id: query-tutorial
 title: Legend Query Tutorial
 sidebar_label: Query 
 ---

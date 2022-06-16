@@ -1,5 +1,5 @@
 ---
-id: studio-tutorials
+id: studio-tutorial
 title: Legend Studio Tutorial
 sidebar_label: Studio
 ---
