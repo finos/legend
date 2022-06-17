@@ -6,8 +6,8 @@ sidebar_label: Legend in the Media
 
 ## Legend in the News
 
-- [Goldman Sachs is giving away software to Wall Street for free](https://www.cnbc.com/2019/11/20/goldman-sachs-is-giving-away-software-to-wall-street-for-free.html) - CNBC  (October 19th, 2020)
-- [The code for Goldman Sachs' internal data platform is now open for anyone to use](https://www.businessinsider.com/code-for-goldmans-data-platform-legend-open-sharing-github-2020-10?r=US&IR=T) - Business Insider (October 19th, 2019)
+- ["Goldman Sachs is giving away software to Wall Street for free"](https://www.cnbc.com/2019/11/20/goldman-sachs-is-giving-away-software-to-wall-street-for-free.html) - CNBC  (October 19th, 2020)
+- ["The code for Goldman Sachs' internal data platform is now open for anyone to use"](https://www.businessinsider.com/code-for-goldmans-data-platform-legend-open-sharing-github-2020-10?r=US&IR=T) - Business Insider (October 19th, 2019)
 
 
 ## Blog posts
