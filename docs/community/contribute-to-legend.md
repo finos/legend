@@ -1,7 +1,7 @@
 ---
 id: contribute-to-legend
-title: Contribute to Legend
-sidebar_label: Contribute to Legend
+title: Contribute
+sidebar_label: Contribute
 ---
 
 There are many ways to contribute to Legend and many of them don't involve writing any code. Here are a few ideas to get started:
@@ -16,7 +16,7 @@ There are many ways to contribute to Legend and many of them don't involve writi
 
 ## Prerequisites
 
-To create and/or edit models in the Legend hosted instance or make code contributions, you need to have a GitHub Account. 
+To create and/or edit models in the Legend hosted instance or to make code contributions, you need to have a GitHub Account. 
 
 ### GitHub account setup
 
@@ -108,7 +108,7 @@ If you have suggestions or ideas for modeling use cases for which Legend may be 
 
 ### Background: The Legend Pilot—Shared modeling in Legend (January - September 2020)
 
-In January 2020, FINOS launched a pilot with FINOS member organizations interested in evaluating Legend. Modeling occurred on the FINOS hosted, shared version of Legend Studio in the public cloud, which was used by FINOS members to collaborate on Legend Studio by building extensions to the [ISDA Common Domain Model (CDM)](https://www.isda.org/2018/11/22/isda-cdm-factsheet/). Modeling occurred in two workstreams: **FX Options** and **Commodities Reference Data**, which concluded their work in September 2020. We expect that further working groups may use Legend for data modeling in these and/or other areas after the first wave of code has been open sourced in October 2020.
+In January 2020, FINOS launched a pilot with FINOS member organizations interested in evaluating Legend. Modeling occurred on the FINOS hosted, shared version of Legend Studio in the public cloud, which was used by FINOS members to collaborate on Legend Studio by building extensions to the [ISDA Common Domain Model (CDM)](https://www.isda.org/2018/11/22/isda-cdm-factsheet/). Modeling occurred in two workstreams: **FX Options** and **Commodities Reference Data**, which concluded their work in September 2020. Read the FINOS Legend Pilot Case Study [here](https://www.finos.org/hubfs/FINOS/assets/FINOS%20Legend%20Case%20Study%202021.pdf). Further working groups are using Legend for data modeling within the [Financial Objects Special Interest Group](https://github.com/finos/financial-objects).
 
 ## Contribute documentation
 
@@ -164,8 +164,17 @@ View the prerequisites and steps to report an issue in GitHub.
 3. Tag the new issue with either **Bug** or **Enhancement**.
 4. Use [Markdown formatting](https://help.github.com/categories/writing-on-github/) to improve readability. For example, use [code fences](https://help.github.com/articles/creating-and-highlighting-code-blocks/) for exception stack traces and log entries.
 
-## More info
+## Stay up to date
+To receive updates on Legend, subscribe to these lists:
 
-- [Get involved](how-to-get-involved.md)
-- [Installation guide](../installation/installation-guide.md)
-- [Create a workspace](../studio/create-workspace.md)
+* Star and Watch the [Legend repository on GitHub](https://github.com/finos/legend)
+* [Legend General List](https://groups.google.com/a/finos.org/forum/#!forum/legend)
+  * Subscribe w/ email to [legend+subscribe@finos.org](mailto:legend+subscribe@finos.org)
+  * Post with email to [legend@finos.org](mailto:legend@finos.org)
+
+* GitHub / GitLab Issues & Kanban
+  * GitHub Issues (https://github.com/finos/legend/issues)
+  * GitHub Kanban (https://github.com/orgs/finos/projects/5)
+
+* Legend Updates from FINOS
+  * [Subscribe at https://www.finos.org/legend](https://www.finos.org/legend)

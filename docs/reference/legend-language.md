@@ -1,7 +1,7 @@
 ---
 id: legend-language
-title: Legend language
-sidebar_label: Legend language
+title: Legend Language
+sidebar_label: Legend Language
 ---
 
 The Legend language is an an immutable functional language based on the Unified Modeling Language (UML) and inspired by Object Constraint Language (OCL). It provides an accelerated data modeling experience that enables:
@@ -213,4 +213,4 @@ Mapping MyModelToModelMapping
 
 - [Released functions](released-functions.md)
 - [Upcoming functions](upcoming-functions.md)
-- [Contribute to Legend](../contribute/contribute-to-legend.md)
+- [Contribute to Legend](../community/contribute-to-legend.md)

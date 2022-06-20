@@ -1,9 +1,16 @@
 ---
-id: maven-install-guide
-title: Maven Install Guide
-sidebar_label: Maven Install Guide
+id: installation-guide
+title: Installation guide
+sidebar_label: Installation Guide
 ---
 
+There are a few different options to install and use Legend. They are listed below in increasing order of integration and installation complexity.
+
+## Maven Install
+
+This option is for software developers who want to build and run Legend from source. Instructions can be found [here](maven-install.md).
+
+### Installation Guide 
 The Legend platform has five components. The minimum required to run Legend are Engine, SDLC, and Studio. The five components are:
 
 - **Engine**: Provides a Pure parser and compiler that executes plans when provided with a Pure function, a mapping, and a runtime. It's also an access point for model transformers written using the Legend language.
@@ -15,7 +22,7 @@ The Legend platform has five components. The minimum required to run Legend are 
 - **Pure**: Provides a way to alter Pure, the underlying language for Legend.
 - **Shared**: Provides shared code used across Legend apps for universal server-side functionality, like hosting static files, performing authentication, and so on.
 
-## Prerequisites
+#### Prerequisites
 
 - A GitLab.com account or your own GitLab server.
 
@@ -34,9 +41,9 @@ http://localhost:7070/api/pac4j/login/callback
 - Java Development Kit (JDK) 11 or later.
 - Maven 3.6 or later.
 
-## Installation steps
+### Installation steps
 
-### Setup **legend-engine**.
+#### Setup **legend-engine**.
 
 From the root directory of the `legend-engine` repo, follow the steps below in order:
 
@@ -50,7 +57,7 @@ java -cp legend-engine-server/target/*-shaded.jar org.finos.legend.engine.server
 
 Test by going to http://localhost:6060 in a browser. The Swagger page can be accessed at http://localhost:6060/api/swagger.
 
-### Setup **legend-sdlc**.
+#### Setup **legend-sdlc**.
 
 Create a configuration file based on your particular environment. This can be JSON or YAML.
 
@@ -71,15 +78,55 @@ Test by going to http://localhost:7070/api/info in the browser. The page should 
 
 Visit http://localhost:7070/api/auth/authorize in your browser, you might get redirected to the Gitlab login page or a Gitlab page that askes you to authorize Legend application. After you authenticate/authorize you should be redirected back to SDLC.
 
-### Setup **legend-depot**.
+#### Setup **legend-depot**.
 
 Follow this [guide](https://github.com/finos/legend-depot/blob/master/README.md#getting-started) on how to start local Depot.
 
-### Setup **legend-studio**.
+#### Setup **legend-studio**.
 
 Follow this [guide](https://github.com/finos/legend-studio/blob/master/README.md#getting-started) on how to start local Studio.
 
 
-### You're all set :tada:
+#### You're all set :tada:
 
-Visit http://localhost:8080/studio and start hacking!
+Visit http://localhost:8080/studio and start hacking
+
+
+## AWS Docker Install
+
+This option is for software developers who want to run the Legend Docker images on AWS for running a proof of concept. Instructions can be found [here](aws-docker.md).
+
+### Installation Guide
+This is a guide to install a minimal instance of the Legend platform, which consists of the following running on a single box :
+* An instance of the Legend Engine Server
+* An instance of the Legend SDLC Server 
+* An instance of the Legend Studio Server 
+* An instance of Mongodb 
+* An instance of Gitlab
+
+#### Prerequisites
+
+* A Linux box. This guide was tested on an AWS EC2 box.
+* Docker service (and sudo privileges)
+* Internet connectivity 
+* Internet connectivity to Gitlab.com 
+
+### Installation steps
+
+See [Docker installation instructions](https://github.com/finos/legend/tree/master/installers/aws-docker).
+
+## Docker Compose
+
+This option is a more automated process to start Legend Docker images for running a proof of concept. Instructions can be found [here](https://github.com/finos/legend/tree/master/installers/docker-compose).
+
+## Production Install
+
+A production install will have to be adjusted to match your specific deployment environment. We publish Docker images, but some additional setup is required.
+
+This includes but is not limited to:
+
+- Configuring SSL Certificates
+- Configuring OAuth on Gitlab
+- Configuring authentication using an identity provider
+
+We are happy to help develop installation instructions to meet your particular deployment environment.
