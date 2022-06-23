@@ -128,7 +128,7 @@ To learn more about Docusaurus, read the following resources:
 
 
 ## 4. Contribute issues: identify bugs, suggest new features, and provide feedback on prioritization 
-iew the prerequisites and steps to report an issue in GitHub.
+View the prerequisites and steps to report an issue in GitHub.
 
 ### Prerequisites
 
@@ -160,7 +160,7 @@ Anyone is welcome to submit a contribution to the project. The rules below apply
 * All pull requests SHOULD be reviewed by a Maintainer (other than the Contributor) before being merged.
 * Pull requests for non-trivial contributions SHOULD remain open for a review period sufficient to give all Maintainers a sufficient opportunity to review and comment on them.
 * After the review period, if no Maintainer has an objection to the pull request, any Maintainer MAY merge it.
-* If any Maintainer objects to a pull request, the Maintainers SHOULD try to come to consensus through discussion. If not consensus can be reached, any Maintainer MAY call for a vote on the contribution.
+* If any Maintainer objects to a pull request, the Maintainers SHOULD try to come to consensus through discussion. If no consensus can be reached, any Maintainer MAY call for a vote on the contribution.
 
 ### Maintainer Voting
 
