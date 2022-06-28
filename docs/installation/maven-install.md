@@ -4,7 +4,7 @@ title: Maven Install Guide
 sidebar_label: Maven Install Guide
 ---
 
-The Legend platform has several components. The minimum required to run Legend are `Engine`, `SDLC`, and `Studio`. These components include:
+The Legend platform has five components. The minimum required to run Legend are Engine, SDLC, and Studio. The five components are:
 
 - **Engine**: Provides a Pure parser and compiler that executes plans when provided with a Pure function, a mapping, and a runtime. It's also an access point for model transformers written using the Legend language.
 - **SDLC**: Provides a rich REST API letting users manage metadata. Most SDLCs are file and text-centric, but the Legend SDLC is model-centric, meaning users interact with model entities rather than with files and folders. The Legend SDLC enables:
@@ -13,7 +13,7 @@ The Legend platform has several components. The minimum required to run Legend a
   - Clients to create their own tools for their own use cases.
 - **Studio**: Provides a way to describe and connect data in business terms to create data models.
 - **Pure**: Provides a way to alter Pure, the underlying language for Legend.
-- **Shared**: Provides shared code used across Legend apps for generic server-side functionality, such as serving static files, performing authentication, and so on.
+- **Shared**: Provides shared code used across Legend apps for universal server-side functionality, like hosting static files, performing authentication, and so on.
 
 ## Prerequisites
 
@@ -54,7 +54,7 @@ Test by going to http://localhost:6060 in a browser. The Swagger page can be acc
 
 Create a configuration file based on your particular environment. This can be JSON or YAML.
 
-A [sample configuration file](https://github.com/finos/legend-sdlc/blob/master/legend-sdlc-server/src/test/resources/config-sample.yaml) is included to help you get started. You will need to replace some `placeholders`, such as Gitlab instance your SDLC server is pointing at.
+A [sample configuration file](https://github.com/finos/legend-sdlc/blob/master/legend-sdlc-server/src/test/resources/config-sample.yaml) is included to help you get started. You need to supply some information, like the host your server is running on and Gitlab instance your SDLC server is pointing at.
 
 From the root directory of the `legend-sdlc` repo, follow the steps below in order:
 
