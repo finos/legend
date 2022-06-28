@@ -5,7 +5,7 @@
         "value": "Core `Pure` (coressponding to `###Pure` section in `Pure`) concerns with fundamental modelling concepts, such as, classes (data models), enumerations, associations, functions, etc."
       },
       "title": "What is core Pure about?",
-      "url": "https://legend.finos.org/docs/language/legend-language"
+      "url": "https://legend.finos.org/docs/reference/legend-language"
     },
     "dsl-mapping.grammar.parser": {
       "markdownText": {
@@ -171,23 +171,23 @@
     },
     "question.what-is-basic-pure-language": {
       "title": "What are the basics of Pure language?",
-      "url": "https://legend.finos.org/docs/language/legend-language"
+      "url": "https://legend.finos.org/docs/reference/legend-language"
     },
     "question.how-to-write-pure-lambda": {
       "title": "How do I write a lambda function in Pure?",
-      "url": "https://legend.finos.org/docs/language/legend-language#lambda"
+      "url": "https://legend.finos.org/docs/reference/legend-language#lambda"
     },
     "question.how-to-define-a-class": {
       "title": "How do I define a class?",
-      "url": "https://legend.finos.org/docs/studio/create-data-model#define-a-new-class"
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#define-a-new-class"
     },
     "question.how-to-define-a-class-property": {
       "title": "How do I define a class property?",
-      "url": "https://legend.finos.org/docs/studio/create-data-model#add-a-property-primitive-data-type"
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#add-a-property-primitive-data-type"
     },
     "question.how-to-define-a-class-derivation": {
       "title": "How do I define a class derivation (derived property)?",
-      "url": "https://legend.finos.org/docs/studio/create-data-model#add-a-derived-property"
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#add-a-derived-property"
     },
     "question.how-to-write-a-class-derivation-lambda": {
       "related": [
@@ -195,11 +195,11 @@
         "question.what-is-basic-pure-language"
       ],
       "title": "How to write a derived property lambda in Pure?",
-      "url": "https://legend.finos.org/docs/language/legend-language#derivation"
+      "url": "https://legend.finos.org/docs/reference/legend-language#derivation"
     },
     "question.how-to-define-a-class-constraint": {
       "title": "How do I put constraint on a class?",
-      "url": "https://legend.finos.org/docs/studio/create-data-model#add-a-constraint"
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#add-a-constraint"
     },
     "question.how-to-write-a-class-constraint-lambda": {
       "related": [
@@ -207,11 +207,11 @@
         "question.what-is-basic-pure-language"
       ],
       "title": "How to write a constraint lambda in Pure?",
-      "url": "https://legend.finos.org/docs/language/legend-language#constraint"
+      "url": "https://legend.finos.org/docs/reference/legend-language#constraint"
     },
     "question.how-to-specify-a-class-supertype": {
       "title": "How do I specify a supertype of a class?",
-      "url": "https://legend.finos.org/docs/studio/create-data-model#add-a-super-type"
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#add-a-super-type"
     },
     "context.class-editor": {
       "related": [
