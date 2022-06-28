@@ -122,4 +122,4 @@ $ ./deploy.sh print | grep LEGEND_STUDIO_URL
 
 Now, you can start using Legend Studio. 
 
-Studio usage instructions can be found here : https://legend.finos.org/docs/getting-started/create-workspace
+Studio usage instructions can be found here: https://legend.finos.org/docs/getting-started/create-workspace.
