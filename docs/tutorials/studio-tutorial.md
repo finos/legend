@@ -5,14 +5,15 @@ sidebar_label: Studio
 ---
 
 ## Create a workspace
+
 Start working on your data model by creating a workspace. A workspace is a copy of a project which can be later merged back into the main project. It represents a branch in the underlying GitLab project. To create a workspace:
 
-1. Select an existing (GitLab) project or select **+** to start working on a new one. Please note that the FINOS hosted version of [Legend Studio](https://legend.finos.org/studio/-/setup) does **not** support creating a new project at this time. 
+1. Select an existing (GitLab) project or select **+** to start working on a new one. Please note that the FINOS hosted version of [Legend Studio](https://legend.finos.org/studio/-/setup) does **not** support creating a new project at this time.
 
 2. Create a workspace.
 
 3. Click **Next.**
-    ![Create a workspace](../assets/create-a-workspace.gif)
+   ![Create a workspace](../assets/create-a-workspace.gif)
 
 ## Create a group workspace
 
@@ -26,16 +27,18 @@ Start working on your data model by creating a workspace. A workspace is a copy 
 
 _[TODO: add screenshot]_
 
-To access or exit Text mode: Press `F8` or the hacker icon on the bottom right corner of your scrreen. The bar should change when you open or close Text mode. 
+To access or exit Text mode: Press `F8` or the hacker icon on the bottom right corner of your scrreen. The bar should change when you open or close Text mode.
 
 To compile your code: Press `F9`
 
 ## Create a data model
 
 ### Create a model diagram
+
 _COMING SOON_
 
 ### Use a diagram to create a data model
+
 _COMING SOON_
 
 ### Define a new model package
@@ -48,23 +51,28 @@ Create a package to start defining model hierarchies to group models into logica
 ![create package](../assets/create-hierarchy.gif)
 
 ## Define a data model hierarchy
+
 _COMING SOON_
 
 ## Edit project overview
+
 _COMING SOON_
 
 ## Create a class, enumeration or profile
+
 To create a class, enumeration or profile:
+
 1. Right-click any package on the left side of the panel, or click the `+` near the name of your project.
 2. Under `Class view`, you'll see a list of class forms as well as a diagram view of your class. You can add tags, stereotypes, properties, constraints, qualified properties, and super types to your model.
 
 ## Define a new class
+
 1. Click the **+** icon (make sure your **demo** package is selected).
 2. Click **New Class**.
 
-    Let's create 2 classes. One that is called `Person` and another one that is called `Firm`.
+   Let's create 2 classes. One that is called `Person` and another one that is called `Firm`.
 
-    Studio displays a visualization of the class and a tabbed list of the possible model enrichments.
+   Studio displays a visualization of the class and a tabbed list of the possible model enrichments.
 
 ![create class](../assets/create-class.gif)
 
@@ -72,9 +80,9 @@ To create a class, enumeration or profile:
 
 1. Select the `Person` and `Firm` class respectively.
 2. Go to the **Properties** tab and click the **+** icon.
-3. Type in the name of your property and specify the [data type](../language/legend-language.md#primitive-types) and [cardinality](../language/legend-language.md#class).
+3. Type in the name of your property and specify the [data type](../reference/legend-language.md#primitive-types) and [cardinality](../reference/legend-language.md#class).
 
-    For our `Person` class, let's create a property called `firstName` of type `String` with [cardinality](../language/legend-language.md#class) of 1. Let's add the property `id` of type `String` with the [cardinality](../language/legend-language.md#class) of 1 in our `Firm` class.
+   For our `Person` class, let's create a property called `firstName` of type `String` with [cardinality](../reference/legend-language.md#class) of 1. Let's add the property `id` of type `String` with the [cardinality](../reference/legend-language.md#class) of 1 in our `Firm` class.
 
 ![add property](../assets/add-property.gif)
 
@@ -82,13 +90,13 @@ To create a class, enumeration or profile:
 
 1. Select the `Person` class.
 2. Go to the **Derived Properties** tab and click the **+** icon.
-3. Type in the name of your property and specify the [data type](../language/legend-language.md#primitive-types) and [cardinality](../language/legend-language.md#class).
+3. Type in the name of your property and specify the [data type](../reference/legend-language.md#primitive-types) and [cardinality](../reference/legend-language.md#class).
 4. Type in the expression.
 
-    Let's add a derived property called `firstNameCount` using the following expression: `$this.firstName->count()`.
+   Let's add a derived property called `firstNameCount` using the following expression: `$this.firstName->count()`.
 
-4. Select a return [data type](../language/legend-language.md#primitive-types) of `Integer` and [cardinality](../language/legend-language.md#class) of 1.
-5. Press **F9** to compile the expression.
+5. Select a return [data type](../reference/legend-language.md#primitive-types) of `Integer` and [cardinality](../reference/legend-language.md#class) of 1.
+6. Press **F9** to compile the expression.
 
 ![add derived property](../assets/add-derived-property2.gif)
 
@@ -96,29 +104,34 @@ To create a class, enumeration or profile:
 
 1. Select the `Person` class.
 2. Go to the **Constraints** tab and click the **+** icon.
-3. Type in a name for the constraint and the expression.  
+3. Type in a name for the constraint and the expression.
 
-    Let's add a constraint called `firstNameNotEmpty` using the following expression: `$this.firstName->isNotEmpty()`.
+   Let's add a constraint called `firstNameNotEmpty` using the following expression: `$this.firstName->isNotEmpty()`.
 
-3. Press **F9** to compile the expression.
+4. Press **F9** to compile the expression.
 
 ![add constraint](../assets/add-constraint2.gif)
 
 ## Add a quality control to a property
 
 ### Type as a quality control
+
 _COMING SOON_
 
 ### Multiplicity as a quality control
+
 _COMING SOON_
 
 ### Enumeration as a quality control
+
 _COMING SOON_
 
 ### Constraints as a quality control
+
 _COMING SOON_
 
 ### Model constraint feedback
+
 When typing constraints and qualified properties, you'll get immediate parsing feedback. You can compile your code by pressing `F9`.
 
 _ADD SCREENSHOT_
@@ -153,7 +166,7 @@ The `Firm` class now shows the additional context.
 
 #### Create a stereotype in your Profile
 
-Annotate your model with labels like *legacy* or *deprecated*:
+Annotate your model with labels like _legacy_ or _deprecated_:
 
 1. In the Profile editor, go to the **Stereotypes** tab and click the **+** icon.
 
@@ -178,18 +191,18 @@ The `Firm` class now shows the additional metadata information.
 1. Click the **+** icon on the left-hand side and select **Add an enumeration**.
 2. Let's create an enumeration called **CompanyType** with the values **LLC** and **Corporation**.
 3. Let's navigate back to our `Firm` class and add a property named **firmType**.
-4. Select **CompanyType** for the property type and a [cardinality](../language/legend-language.md#class) of 1.
+4. Select **CompanyType** for the property type and a [cardinality](../reference/legend-language.md#class) of 1.
 
 ![Select property type and cardinality](../assets/add-enum.gif)
 
 ### Add a supertype
 
-Let's create a new class called `LegalEntity`. 
+Let's create a new class called `LegalEntity`.
 
 1. Moving back to the `Firm` class, go to the **Super Types** tab and click the **+** icon.
 2. Select the `LegalEntity` class from the dropdown.
 
-    The model visualization on the left now shows the **LegalEntity** class as a super type of **Firm**.
+   The model visualization on the left now shows the **LegalEntity** class as a super type of **Firm**.
 
 ![Add a super type](../assets/add-super-type.gif)
 
@@ -197,11 +210,11 @@ Let's create a new class called `LegalEntity`.
 
 Create a relationship between the **Person** and **Firm** classes.
 
-1. Select the `Firm` class, 
+1. Select the `Firm` class,
 2. Create property with the following values:
-    - Name: **employees**
-    - Type: **Person**
-    - Cardinality: **0..**
+   - Name: **employees**
+   - Type: **Person**
+   - Cardinality: **0..**
 
 ![Add a super type](../assets/add-non-primitive-data-type.gif)
 
@@ -213,7 +226,7 @@ To get started, click the **+** to open the **New Element** drop down menu on th
 
 There are three ways to add classes to the diagram
 
-1. Select and drag existing classes from the explorer view to the diagram one at a time.  
+1. Select and drag existing classes from the explorer view to the diagram one at a time.
 
 2. Double click in an empty space in the diagram editor, define a class name and hit enter.
 
@@ -227,7 +240,7 @@ To add **properties** to classes in the diagram, select the class and hit <kbd>A
 
 There are two ways how to define data relationships in the diagram editor.
 
-1. Select the **Property Tool** or hit **P** to connect classes. 
+1. Select the **Property Tool** or hit **P** to connect classes.
 
 2. Select the **Inheritance Tool** or hit **I** to define a supertype relationship.
 
@@ -262,15 +275,15 @@ Create a model transformation using model-to-model mappings. Model transformatio
 Let's start by defining the target class, for which we would like to create the mapping for.
 
 1. Create a new class called `NewPerson`.
-2. Add a property to `NewPerson` called **name**. Make the property a string with a [cardinality](../language/legend-language.md#class) of 1.
-3. Let's also add a property to our existing `Person` class called **lastName**. Make the property a string with a [cardinality](../language/legend-language.md#class) of 1.
-4. Click the **+** icon and select **New Mapping** to create a new mapping called **NewPersonMapping**.  
+2. Add a property to `NewPerson` called **name**. Make the property a string with a [cardinality](../reference/legend-language.md#class) of 1.
+3. Let's also add a property to our existing `Person` class called **lastName**. Make the property a string with a [cardinality](../reference/legend-language.md#class) of 1.
+4. Click the **+** icon and select **New Mapping** to create a new mapping called **NewPersonMapping**.
 5. Drag and drop the **NewPerson** target class into the **Add a mapping element** section on the left.
-6. Hit the **create** button using the default setting. 
+6. Hit the **create** button using the default setting.
 
 Let's define the source class for our mapping and specifiy the transformation.
 
-7. Drag and drop the  `Person` source class into the **choose a source** section on the right.
+7. Drag and drop the `Person` source class into the **choose a source** section on the right.
 8. To specify the transformation add the following expression for the **name** property: `$src.firstName + ' ' + $src.lastName`. You can also drag and drop the **firstName** and **lastName** properties from the `Person` source class into the function panel.
 
 ![Create model-to-model](../assets/create-M2M.gif)
@@ -284,10 +297,10 @@ It is good practice to add test to any mapping that you specifiy. Let's create o
 We now need to create a sample query to test if our model-to-model mapping executes correctly.
 
 2. Click on the **pencil** icon to edit your query.
-3. Let's create a very simple query. First, let's make sure to select the **Graph Fetch** option for model-to-model queries. Studio does not currently support Projection queries on top of model-to-model mappings. Let's drag and drop the **name** property from the explorer panel into the fetch structure panel. 
-4. Hit the **Save Query** button. 
+3. Let's create a very simple query. First, let's make sure to select the **Graph Fetch** option for model-to-model queries. Studio does not currently support Projection queries on top of model-to-model mappings. Let's drag and drop the **name** property from the explorer panel into the fetch structure panel.
+4. Hit the **Save Query** button.
 
-*Please refer to our create a query section of the docs for more detailed information about the **Query Editor** (coming soon!).*
+_Please refer to our create a query section of the docs for more detailed information about the **Query Editor** (coming soon!)._
 
 Studio is generating sample input data for your defined query. You can also modify it if you want.
 
@@ -296,10 +309,10 @@ Studio is generating sample input data for your defined query. You can also modi
 
 ## Execute a Model-to-Model Mapping
 
-You can also execute a model-to-model mapping directly. 
+You can also execute a model-to-model mapping directly.
 
 1. Right click on the `NewPerson` class and select **Execute**
-2. Create a sample query by clicking on the **pencil** icon. 
+2. Create a sample query by clicking on the **pencil** icon.
 3. Drag and drop the **name** property from the explorer panel into the fetch structure panel.
 4. Select **Check graph fetch**
 5. Hit the **Save Query** button
@@ -309,7 +322,7 @@ You can promote this ad hoc execution to a test by clicking on the **beaker** ic
 
 ### Execute a Model-to-Model Mapping with Constraints
 
-Remember that we can add a [constraint](../studio/create-data-model#add-a-constraint) on classes? We can can also execute model-to-model mappings with constraints to check if the constraint criteria are violated.
+Remember that we can add a [constraint](../tutorials/studio-tutorial#add-a-constraint) on classes? We can can also execute model-to-model mappings with constraints to check if the constraint criteria are violated.
 
 Let's create a constraint on the `NewPerson` class that checksq if the name value is empty `$this.name-> == ''`
 
@@ -344,31 +357,31 @@ Please refer to below sample SQL snippet to set up a in-memory H2 demo database.
 ###Relational
 Database demo::H2DemoDataBase
 (
-  Table FirmTable
-  (
-    id INTEGER PRIMARY KEY,
-    legal_name VARCHAR(200)
-  )
-  Table EmployeeTable
-  (
-    id INTEGER PRIMARY KEY,
-    firm_id INTEGER,
-    full_name VARCHAR(200),
-    country_id INTEGER
-  )
-  Table CountryTable
-  (
-    id INTEGER PRIMARY KEY,
-    country_name VARCHAR(200)
-  )
+Table FirmTable
+(
+id INTEGER PRIMARY KEY,
+legal_name VARCHAR(200)
+)
+Table EmployeeTable
+(
+id INTEGER PRIMARY KEY,
+firm_id INTEGER,
+full_name VARCHAR(200),
+country_id INTEGER
+)
+Table CountryTable
+(
+id INTEGER PRIMARY KEY,
+country_name VARCHAR(200)
+)
 
-  Join FirmEmployee(EmployeeTable.firm_id = FirmTable.id)
-  Join EmployeeCountry(EmployeeTable.country_id = CountryTable.id)
+Join FirmEmployee(EmployeeTable.firm_id = FirmTable.id)
+Join EmployeeCountry(EmployeeTable.country_id = CountryTable.id)
 )
 
 ## Create a Relational Mapping
 
-Map the columns of your relational tables to the properties defined in the data model. 
+Map the columns of your relational tables to the properties defined in the data model.
 
 ### Define the Relational Mapping
 
@@ -385,7 +398,7 @@ Map the columns of your relational tables to the properties defined in the data 
 To ensure that the mapping has been done correctly and the desired data is actually returned, let's execute the relational mapping.
 
 1. Right click on the class you wish to test execution for. Let's aim to query Firm data by right-clicking on the `Firm` class and selecting **Execute**.
-2. Hit the **Edit Query** button to define your test query. 
+2. Hit the **Edit Query** button to define your test query.
 3. Create test data either from SQL or csv.
 4. Hit the **Execute** button to test execution.
 
@@ -395,15 +408,15 @@ It is good practice to define tests for each of your relational mappings. That w
 
 1. Right click on the class you wish to set up the test for. Let's set up a test for the `Firm` class by right-clicking on it and selecting **Test**.
 2. Alternatively, you can select the **+** icon where it says **Let's add some tests!**. Select the class from the dropdown you wish to create the test for.
-2. Hit the **Edit Query** button to define your test query. 
-3. Create test data either from SQL or csv.
-4. Hit the **Execute** button to test execution.
+3. Hit the **Edit Query** button to define your test query.
+4. Create test data either from SQL or csv.
+5. Hit the **Execute** button to test execution.
 
 You can test all the queries and relational mappings at once by hitting the **Run All Tests** button.
 
 ## Create a Connection
 
-Define the Connection details between the relational database and the data model. 
+Define the Connection details between the relational database and the data model.
 
 1. Hit the **+** icon.
 2. Select **New Connection**
@@ -415,54 +428,53 @@ Start entering the Connection details in the **General** tab. First, choose the 
 ### Database type
 
 Specify the type of relational database you wish to connect to. Studio currently supports:
- * H2 (in-memory test database)
- * Snowflake
- * BigQuery
 
- ### Datasource
+- H2 (in-memory test database)
+- Snowflake
+- BigQuery
 
- Specify the connection details of your selected database type. 
+### Datasource
 
- #### H2
+Specify the connection details of your selected database type.
 
- To execute against an in-memory H2 test data base, you would need to define test data by adding SQL to **Test data setup SQL**
+#### H2
 
- #### H2 Embedded
+To execute against an in-memory H2 test data base, you would need to define test data by adding SQL to **Test data setup SQL**
 
- *Coming soon*
+#### H2 Embedded
 
- #### Static
+_Coming soon_
 
- *More details coming soon*
+#### Static
 
- Specify Static connection details by adding the below details.
+_More details coming soon_
 
-* Host
-* port 
-* Database
+Specify Static connection details by adding the below details.
 
- #### Snowflake
+- Host
+- port
+- Database
 
- *More details coming soon*
+#### Snowflake
 
- Specify Snowflake connection details by adding the below details.
+_More details coming soon_
 
- * Account
- * Region
- * Warehouse
- * Database
- * Cloud type
+Specify Snowflake connection details by adding the below details.
 
+- Account
+- Region
+- Warehouse
+- Database
+- Cloud type
 
- #### BigQuery
+#### BigQuery
 
-*More details coming soon*
+_More details coming soon_
 
- Specify BigQuery connection details by adding the below details.
+Specify BigQuery connection details by adding the below details.
 
- * Project id
- * Default dataset
-
+- Project id
+- Default dataset
 
 ### Authentication
 
@@ -474,37 +486,37 @@ No further input needed if you select the **H2 Default** authentication specific
 
 #### Delegated Kerberos
 
-*More details coming soon*
+_More details coming soon_
 
- Specify **Delegated Kerberos** authentication details by adding the below details.
+Specify **Delegated Kerberos** authentication details by adding the below details.
 
- * Server principal
+- Server principal
 
- #### Snowflake Public
+#### Snowflake Public
 
- *More details coming soon*
+_More details coming soon_
 
- Specify **Snowflake** authentication details by adding the below details.
+Specify **Snowflake** authentication details by adding the below details.
 
- * Private key vault reference
- * Pass phrase vault reference
- * Public user name
+- Private key vault reference
+- Pass phrase vault reference
+- Public user name
 
- #### Gcp Application Default Credentials
+#### Gcp Application Default Credentials
 
- *More details coming soon*
+_More details coming soon_
 
- Specify **GCP** authentication details.
+Specify **GCP** authentication details.
 
- #### Username password
+#### Username password
 
-*More details coming soon*
+_More details coming soon_
 
- Specify **Username password** authentication details. 
+Specify **Username password** authentication details.
 
- ## Create a Runtime
+## Create a Runtime
 
- The combination of the relational mapping and the connection details are specified in the **Runtime**. 
+The combination of the relational mapping and the connection details are specified in the **Runtime**.
 
 1. Hit the **+** icon.
 2. Select **New Runtime**
@@ -513,9 +525,9 @@ No further input needed if you select the **H2 Default** authentication specific
 
 ## Execute Model-to-Model Mapping
 
-Legend provides an execution feature to run queries, constraints, and model-to-model/model-to-database transformations. Use live data (pulled from physical data stores) or generated sample data as inputs to the executions and review the results to test your model as you build it.  
+Legend provides an execution feature to run queries, constraints, and model-to-model/model-to-database transformations. Use live data (pulled from physical data stores) or generated sample data as inputs to the executions and review the results to test your model as you build it.
 
-You can save these tests and continue to enhance your data models with the comfort that your changes can be tested against expected results.  
+You can save these tests and continue to enhance your data models with the comfort that your changes can be tested against expected results.
 
 ### Steps to execute a model-to-model mapping
 
@@ -527,7 +539,7 @@ You can save these tests and continue to enhance your data models with the comfo
 
 4. Save this exection as a test to run as part of the pipeline.
 
-    ![Save execution as a test](../assets/execution.gif)
+   ![Save execution as a test](../assets/execution.gif)
 
 ## Create a new service (beta)
 
@@ -543,7 +555,7 @@ In the execution tab, users can create and edit the service query. By hitting th
 
 #### Mapping & Runtime
 
-Specify Mapping and Runtime for the service. 
+Specify Mapping and Runtime for the service.
 
 #### Tests
 
@@ -587,19 +599,20 @@ See below steps how to create and locate an executable JAR file for consumption 
 
 5. Expand the generated workflow build to view the workflow details and click on **verify snapshot** to open the associated Gitlab pipeline.
 
-7. In Gitlab, click on **Browse** under the Job artifacts.
+6. In Gitlab, click on **Browse** under the Job artifacts.
 
-8. Click on **artifacts**.
+7. Click on **artifacts**.
 
-9. Locate the execution jar file and download it.
+8. Locate the execution jar file and download it.
 
 ## Deploy JAR file
 
-The executable JAR file can be used as a dependency to execute your service. 
+The executable JAR file can be used as a dependency to execute your service.
 
 List the JAR file as a dependency in the Java application. For production use cases, the recommendation is to fetch the JAR file from a published repository (such as the public Maven repo).
 
 ## See features in action
+
 ![consume a service](../assets/consume-service.gif)
 
 ## Create a Flat Data Schema
@@ -607,16 +620,16 @@ List the JAR file as a dependency in the Java application. For production use ca
 1. Click the **+** on the left-hand side and select **New SchemaSet**.
 2. Enter a name for the SchemaSet
 3. Ensure the type (top left) is selected as **FlatData**
-4. Click the **+** next to the type to add a schema.  For FlatData only a single schema should be added to a SchemaSet.
+4. Click the **+** next to the type to add a schema. For FlatData only a single schema should be added to a SchemaSet.
 5. For FlatData the **Id** and **Location** can be left blank
 6. Define the format of the file by entering the [Flat Data Grammar](#flat-data-grammar)
-
 
    ![Edit a SchemaSet](../assets/edit-schemaset.JPG)
 
 ### Flat Data Grammar
 
 #### Sections
+
 Each file format is defined by a schema (a single entry in a Legend SchemaSet). Each schema consists of one or more sections. A section is defined in
 grammar as:
 
@@ -635,9 +648,10 @@ The `driver_type` defines the type of data contained in the section. See below f
 The `properties` are specific to the driver type and are detailed below. Each property is specified either as a name or as a name and value. Each
 property specified is terminated by a semicolon (`;`). See example below.
 
-A `record_definition` may be given for driver types that support one. 
+A `record_definition` may be given for driver types that support one.
 
 #### Record definitions
+
 A record definition is specified as:
 
 ```Legend
@@ -648,13 +662,17 @@ Record
 ```
 
 Where a `record_field` is:
+
 ```Legend
 field_name: data_type(arguments)
 ```
+
 or
+
 ```Legend
 field_name {address}: data_type(arguments)
 ```
+
 dependent on whether the driver type is self-describing (without address) or not (with address).
 
 The `field_name` is the field's name. For self-describing drivers this will be the name of the field exactly as it appears in the file (for example the heading of the
@@ -667,200 +685,225 @@ within the data. The `address` is thus driver specific, it is always given withi
 The valid `data_types` are given below. All data types can take arguments; when none are used the parentheses (`()`) are omitted. Arguments consist of
 the single word `optional` or are a specified as `argument=value`. Multiple arguments are comma (`,`) separated.
 
-* [STRING](#string)
-* [BOOLEAN](#boolean)
-* [INTEGER](#integer)
-* [DECIMAL](#decimal)
-* [DATE](#date)
-* [DATETIME](#datetime)
+- [STRING](#string)
+- [BOOLEAN](#boolean)
+- [INTEGER](#integer)
+- [DECIMAL](#decimal)
+- [DATE](#date)
+- [DATETIME](#datetime)
 
 ##### STRING
 
-Allowable Options: 
-* `optional`
+Allowable Options:
+
+- `optional`
 
 Examples:
-* `STRING`
-* `STRING(optional)`
+
+- `STRING`
+- `STRING(optional)`
 
 ##### BOOLEAN
 
 Allowable Options:
-* `optional`
-* `trueString`
-* `falseString`
+
+- `optional`
+- `trueString`
+- `falseString`
 
 Examples:
-* `BOOLEAN`
-* `BOOLEAN(optional, trueString='Yes')`
-* `BOOLEAN(trueString='Y',falseString='N')`
+
+- `BOOLEAN`
+- `BOOLEAN(optional, trueString='Yes')`
+- `BOOLEAN(trueString='Y',falseString='N')`
 
 Notes:
-* If no `trueString` or `falseString` is specified then `true` (case insensitive) is taken to be true and any other value is considered false.
-* If only a `trueString` is specified then its value (case insensitive) is taken to be true and any other value is considered  false.
-* If only a `falseString` is specified then its value (case insensitive) is taken to be false and any other value is considered  true.
-* If both a `trueString` and a `falseString` are specified their values (case insensitive) are taken to be true/false  respectively and any other value is considered an error.
-* The properties `defaultTrueString` and `defaultFalseString` can be used to specify behaviour for all BOOLEAN  fields in a section.
+
+- If no `trueString` or `falseString` is specified then `true` (case insensitive) is taken to be true and any other value is considered false.
+- If only a `trueString` is specified then its value (case insensitive) is taken to be true and any other value is considered false.
+- If only a `falseString` is specified then its value (case insensitive) is taken to be false and any other value is considered true.
+- If both a `trueString` and a `falseString` are specified their values (case insensitive) are taken to be true/false respectively and any other value is considered an error.
+- The properties `defaultTrueString` and `defaultFalseString` can be used to specify behaviour for all BOOLEAN fields in a section.
 
 ##### INTEGER
 
 Allowable Options:
-* `optional`
-* `format`
+
+- `optional`
+- `format`
 
 Examples
-* `INTEGER`
-* `INTEGER(optional, format='#,##0')`
+
+- `INTEGER`
+- `INTEGER(optional, format='#,##0')`
 
 Notes:
-* Valid format strings are per Java's [DecimalFormat](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/DecimalFormat.html) (as used for integer-only strings).
-* The format for all `INTEGER` fields in a section can be specified using the defaultIntegerFormat property.
+
+- Valid format strings are per Java's [DecimalFormat](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/DecimalFormat.html) (as used for integer-only strings).
+- The format for all `INTEGER` fields in a section can be specified using the defaultIntegerFormat property.
 
 ##### DECIMAL
 
 Allowable Options:
-* `optional`
-* `format`
+
+- `optional`
+- `format`
 
 Examples
-* `DECIMAL`
-* `DECIMAL(optional, format='#,##0.0')`
+
+- `DECIMAL`
+- `DECIMAL(optional, format='#,##0.0')`
 
 Notes:
-* Valid format strings are per Java's [DecimalFormat](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/DecimalFormat.html) (as used for integer-only strings).
-* The format for all `DECIMAL` fields in a section can be specified using the defaultDecimalFormat property.
+
+- Valid format strings are per Java's [DecimalFormat](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/DecimalFormat.html) (as used for integer-only strings).
+- The format for all `DECIMAL` fields in a section can be specified using the defaultDecimalFormat property.
 
 ##### DATE
 
 Allowable Options:
-* `optional`
-* `format`
+
+- `optional`
+- `format`
 
 Examples
-* `DATE`
-* `DATE(optional, format='dd/MM/yyyy')`
+
+- `DATE`
+- `DATE(optional, format='dd/MM/yyyy')`
 
 Notes:
-* Valid format strings are per Java's [DateTimeFormatter](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/format/DateTimeFormatter.html) (as used for date-only strings).
-* The format for all `DATE` fields in a section can be specified using the `defaultDateFormat` property.
-* If a format is not specified, dates are expected to be in ISO 8601 format for dates only (`yyyy-MM-dd`).
+
+- Valid format strings are per Java's [DateTimeFormatter](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/format/DateTimeFormatter.html) (as used for date-only strings).
+- The format for all `DATE` fields in a section can be specified using the `defaultDateFormat` property.
+- If a format is not specified, dates are expected to be in ISO 8601 format for dates only (`yyyy-MM-dd`).
 
 ##### DATETIME
 
 Allowable Options:
-* `optional`
-* `format`
-* `timeZone`
+
+- `optional`
+- `format`
+- `timeZone`
 
 Examples
-* `DATETIME`
-* `DATETIME(optional, format='dd/MM/yyyy HH:mm')`
-* `DATETIME(timeZone='EST')`
+
+- `DATETIME`
+- `DATETIME(optional, format='dd/MM/yyyy HH:mm')`
+- `DATETIME(timeZone='EST')`
 
 Notes:
-* Valid format strings are per Java's [DateTimeFormatter](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/format/DateTimeFormatter.html).
-* The format for all `DATETIME` fields in a section can be specified using the `defaultDateTimeFormat` property. 
-* If a format is not specified, datetimes are expected to be in ISO 8601 format.
-* If the datetime data does not include time zone information the time zone will be set according to the arguments/properties specified. 
-* Valid timeZone values are per Java's [ZoneId](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/ZoneId.html) including [SHORT_IDS](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/ZoneId.html#SHORT_IDS). 
-* The default time zone for all `DATETIME` fields in a section can be specified using the `defaultTimeZone` property.
-* When no time zone information is specified it is assumes to be UTC.
+
+- Valid format strings are per Java's [DateTimeFormatter](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/format/DateTimeFormatter.html).
+- The format for all `DATETIME` fields in a section can be specified using the `defaultDateTimeFormat` property.
+- If a format is not specified, datetimes are expected to be in ISO 8601 format.
+- If the datetime data does not include time zone information the time zone will be set according to the arguments/properties specified.
+- Valid timeZone values are per Java's [ZoneId](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/ZoneId.html) including [SHORT_IDS](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/ZoneId.html#SHORT_IDS).
+- The default time zone for all `DATETIME` fields in a section can be specified using the `defaultTimeZone` property.
+- When no time zone information is specified it is assumes to be UTC.
 
 #### Driver: DelimitedWithHeadings
+
 This driver reads data rows in which columns of data are separated by a delimiter. The first row specifies the headings for each column and hence defines
 the order of data. A classic CSV file is an example of this.
 
 ##### Properties
-* [Common Streaming Properties](#common-streaming-properties).
-* [Common Delimited Properties](#common-delimited-properties).
-* [Common Data Properties](#common-data-properties).
-* `modelledColumnsMustBePresent` optional property which can be added as an option to assert that all fields specified in the Record must be present
-in the column headings row regardless of whether the field is optional.
-* `onlyModelledColumnsAllowed` optional property which can be added as an option to prohibit any fields not specified in the Record from being
-present in the column headings row.
+
+- [Common Streaming Properties](#common-streaming-properties).
+- [Common Delimited Properties](#common-delimited-properties).
+- [Common Data Properties](#common-data-properties).
+- `modelledColumnsMustBePresent` optional property which can be added as an option to assert that all fields specified in the Record must be present
+  in the column headings row regardless of whether the field is optional.
+- `onlyModelledColumnsAllowed` optional property which can be added as an option to prohibit any fields not specified in the Record from being
+  present in the column headings row.
 
 ##### Record
+
 A `Record` definition is expected for this driver and its fields must not specify address values.
 
 #### Driver: DelimitedWithoutHeadings
+
 This driver reads data rows in which columns of data are separated by a delimiter and where no headings row is present.
 
 ##### Properties
-* [Common Streaming Properties](#common-streaming-properties).
-* [Common Delimited Properties](#common-delimited-properties).
-* [Common Data Properties](#common-data-properties).
+
+- [Common Streaming Properties](#common-streaming-properties).
+- [Common Delimited Properties](#common-delimited-properties).
+- [Common Data Properties](#common-data-properties).
 
 ##### Record
-A `Record` definition is expected for this driver and its fields must specify address values. 
+
+A `Record` definition is expected for this driver and its fields must specify address values.
 The addresses are the one-based column positions of the data within the file.
 
 #### Driver: ImmaterialLines
+
 This driver is used to skip unnecessary lines of data.
 
 ##### Properties
-* [Common Streaming Properties](#common-streaming-properties).
+
+- [Common Streaming Properties](#common-streaming-properties).
 
 ##### Record
+
 A `Record` definition must not be specified.
 
 #### Common Delimited Properties
-* `delimiter` mandatory property which specifies the column separator character(s).
 
+- `delimiter` mandatory property which specifies the column separator character(s).
 
-* `quoteChar` optional property which defines the character used for quoting strings within the file rows so that they can include delimiters and/or ends-of-lines.
+- `quoteChar` optional property which defines the character used for quoting strings within the file rows so that they can include delimiters and/or ends-of-lines.
 
   When quoting is used a quote character within a quoted string can be escaped by repeating it (for example the text 'It''s OK', where `quoteChar: '\'';` has been specified, equates to the value It's OK).
 
-
-* `escapingChar` optional property which defines the character used to escape other characters. 
+- `escapingChar` optional property which defines the character used to escape other characters.
   Escaping can be used both within and outside quoted text.
 
   Inside a quoted string the above example could have been `'It\'s OK'`, where `quoteChar: \'';` and `escapingChar: '\\'`; have been specified, also equates to the value It's OK.
 
   Outside it can be used to escape delimiters such that the text `Hello\, World, Goodbye`, where `delimiter: ',';` and `escapingChar: '\\';` have been specified, equates to two column values of `Hello, World` and `Goodbye`.
 
-
-* `nullString` - optional property defining the text which equates to a null (missing) value. 
-  When this property is not specified the value is considered to be always present thus two delimiters in succession is interpreted as an empty string. 
-  To treat that as a null value you need to specify `nullString: '';`. 
+- `nullString` - optional property defining the text which equates to a null (missing) value.
+  When this property is not specified the value is considered to be always present thus two delimiters in succession is interpreted as an empty string.
+  To treat that as a null value you need to specify `nullString: '';`.
 
   Multiple `nullString` properties can be used to specify more that one value.
 
 #### Common Streaming Properties
-* `recordSeparator` optional property that defines the character(s) used to separate records within the file. 
+
+- `recordSeparator` optional property that defines the character(s) used to separate records within the file.
   This is commonly the end-of-line character(s).
 
-  If this option is not specified the file will be separated using any of the commonly used line endings (`\n`, `\r\n` and `\r`); 
+  If this option is not specified the file will be separated using any of the commonly used line endings (`\n`, `\r\n` and `\r`);
   **this is usually the best option to alleviate issues with data being copied between different computers with different operating systems.**
 
+- `mayContainBlankLines` optional property which can be added as an option to specify that blank lines within the file should be ignored.
 
-* `mayContainBlankLines` optional property which can be added as an option to specify that blank lines within the file should be ignored.
-
-
-* `scope` required property that specifies the scope of the section. 
+- `scope` required property that specifies the scope of the section.
   Options are:
-  * `scope.default;` use this unless you want a specific alternative
-  * `scope.forNumberOfLines = n;` if the section spans an exact number of lines
-  * `scope.untilLineEquals = 'END';` if the section spans until a marker line of the specified text
-  * `scope.untilEof;` if the section spans for the remainder of the data
+  - `scope.default;` use this unless you want a specific alternative
+  - `scope.forNumberOfLines = n;` if the section spans an exact number of lines
+  - `scope.untilLineEquals = 'END';` if the section spans until a marker line of the specified text
+  - `scope.untilEof;` if the section spans for the remainder of the data
 
 #### Common Data Properties
-* `defaultIntegerFormat`
-* `defaultDecimalFormat`
-* `defaultTrueString`
-* `defaultFalseString`
-* `defaultDateFormat`
-* `defaultDateTimeFormat`
-* `defaultTimeZone`
+
+- `defaultIntegerFormat`
+- `defaultDecimalFormat`
+- `defaultTrueString`
+- `defaultFalseString`
+- `defaultDateFormat`
+- `defaultDateTimeFormat`
+- `defaultTimeZone`
 
 See [Data Types](#data-types) for usage.
 
 #### Examples
 
 This example defines a CSV file with:
-* an ignored header row
-* a column headings row
-* data rows
+
+- an ignored header row
+- a column headings row
+- data rows
 
 ```Legend
 section header: ImmaterialLines
@@ -884,7 +927,7 @@ section data: DelimitedWithHeadings
 }
 ```
 
-This example defines a pipe-delimited file without headers. 
+This example defines a pipe-delimited file without headers.
 Columns are therefore addressed positionally:
 
 ```Legend
@@ -903,25 +946,26 @@ section data: DelimitedWithoutHeadings
 ```
 
 ## Review and Commit Changes
+
 Legend is integrated with the software development lifecycle (SDLC) supported by GitLab, which lets you review and commit changes.
 
 Follow these steps to review and commit a change.
 
 1. Press `Ctrl+S` to sync the local changes to the workspace.
 
-    ![Sync local changes to workspace](../assets/sync-local-changes.JPG)
+   ![Sync local changes to workspace](../assets/sync-local-changes.JPG)
 
 2. Select the diff view to review the synced changes in workspace.
 
-    ![Review changes](../assets/review-changes.JPG)
+   ![Review changes](../assets/review-changes.JPG)
 
 3. To create a review, click the highlighted icon in the activity bar or press `Ctrl + Shift + M` to go to the review panel. Here you can review the code in the current workspace vs. the committed code.
 
-    ![Create a review](../assets/create-review.JPG)
+   ![Create a review](../assets/create-review.JPG)
 
 4. After the review is approved, click **Commit**.
 
-    ![Commit the changes](../assets/commit-changes.JPG)
+   ![Commit the changes](../assets/commit-changes.JPG)
 
 ## Update workspace with latest changes
 
@@ -931,33 +975,38 @@ When the workspace is out of date, Studio provides a notification in the status 
 
 ## Resolve a conflict in the workspace
 
-A workspace update may result in a conflict. Studio will open a new view to aid in resolving the conflict.  
+A workspace update may result in a conflict. Studio will open a new view to aid in resolving the conflict.
 
 1. Choose one of the following actions:
 
-    - **Discard the changes**: the workspace changes are removed.
+   - **Discard the changes**: the workspace changes are removed.
 
-    - **Review the changes**: the workspace changes will be applied on top of the latest version.
+   - **Review the changes**: the workspace changes will be applied on top of the latest version.
 
-    ![Discard or review changes](../assets/discard-or-remove-changes.JPG)
+   ![Discard or review changes](../assets/discard-or-remove-changes.JPG)
 
 2. If you chooose to review changes, review and press `F9` to compile.
 
 3. Once the changes compile successfully, either accept or discard the changes.
 
-    ![Accept or discard changes](../assets/accept-or-discard-changes.JPG)
+   ![Accept or discard changes](../assets/accept-or-discard-changes.JPG)
 
 ## Define project dependencies
+
 When you add a dependency, all its dependencies are included as well. For example, if model $A$ creates a dependency on "Listed Product", and "Listed Product" depends upon the "Foundation" model, you _do not_ need to add a separate dependency to Foundation for model $A$ to depend on it. The dependency is already included in your dependency to other projects.
 
 ### Dependency version control
+
 _COMING SOON_
 
 ### Frequently Asked questions
+
 _COMING SOON_
 
 ## File Generation
+
 File generation lets you generate your models in other codes or schemas.
 
 ### Creating a File Generation
+
 _COMING SOON_
