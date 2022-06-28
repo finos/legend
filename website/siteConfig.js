@@ -13,7 +13,11 @@ const siteConfig = {
   organizationName: "finos",
   headerLinks: [
     { doc: "overview/legend-overview", label: "Docs" },
-    { href: "https://legend.finos.org/releases", label: "Releases", external: true },
+    {
+      href: "https://legend.finos.org/releases",
+      label: "Releases",
+      external: true,
+    },
   ],
 
   twitterUsername: "finosfoundation",

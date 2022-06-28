@@ -10,8 +10,9 @@ There are a few different options to install and use Legend. They are listed bel
 
 This option is for software developers who want to build and run Legend from source. Instructions can be found [here](maven-install.md).
 
-### Installation Guide 
-The Legend platform has five components. The minimum required to run Legend are Engine, SDLC, and Studio. The five components are:
+### Installation Guide
+
+The Legend platform has several components. The minimum required to run Legend are `Engine`, `SDLC`, and `Studio`. These components include:
 
 - **Engine**: Provides a Pure parser and compiler that executes plans when provided with a Pure function, a mapping, and a runtime. It's also an access point for model transformers written using the Legend language.
 - **SDLC**: Provides a rich REST API letting users manage metadata. Most SDLCs are file and text-centric, but the Legend SDLC is model-centric, meaning users interact with model entities rather than with files and folders. The Legend SDLC enables:
@@ -20,7 +21,8 @@ The Legend platform has five components. The minimum required to run Legend are 
   - Clients to create their own tools for their own use cases.
 - **Studio**: Provides a way to describe and connect data in business terms to create data models.
 - **Pure**: Provides a way to alter Pure, the underlying language for Legend.
-- **Shared**: Provides shared code used across Legend apps for universal server-side functionality, like hosting static files, performing authentication, and so on.
+- **Depot**: Provides a metadata registry to support project dependencies and artifact publishing.
+- **Shared**: Provides shared code used across Legend apps for generic server-side functionality, such as serving static files, performing authentication, and so on.
 
 #### Prerequisites
 
@@ -61,7 +63,7 @@ Test by going to http://localhost:6060 in a browser. The Swagger page can be acc
 
 Create a configuration file based on your particular environment. This can be JSON or YAML.
 
-A [sample configuration file](https://github.com/finos/legend-sdlc/blob/master/legend-sdlc-server/src/test/resources/config-sample.yaml) is included to help you get started. You need to supply some information, like the host your server is running on and Gitlab instance your SDLC server is pointing at.
+A [sample configuration file](https://github.com/finos/legend-sdlc/blob/master/legend-sdlc-server/src/test/resources/config-sample.yaml) is included to help you get started. You will need to replace some `placeholders`, such as Gitlab instance your SDLC server is pointing at.
 
 From the root directory of the `legend-sdlc` repo, follow the steps below in order:
 
@@ -86,30 +88,32 @@ Follow this [guide](https://github.com/finos/legend-depot/blob/master/README.md#
 
 Follow this [guide](https://github.com/finos/legend-studio/blob/master/README.md#getting-started) on how to start local Studio.
 
+<<<<<<< Updated upstream:docs/getting-started/installation-guide.md
 
 #### You're all set :tada:
 
 Visit http://localhost:8080/studio and start hacking
-
 
 ## AWS Docker Install
 
 This option is for software developers who want to run the Legend Docker images on AWS for running a proof of concept. Instructions can be found [here](aws-docker.md).
 
 ### Installation Guide
+
 This is a guide to install a minimal instance of the Legend platform, which consists of the following running on a single box :
-* An instance of the Legend Engine Server
-* An instance of the Legend SDLC Server 
-* An instance of the Legend Studio Server 
-* An instance of Mongodb 
-* An instance of Gitlab
+
+- An instance of the Legend Engine Server
+- An instance of the Legend SDLC Server
+- An instance of the Legend Studio Server
+- An instance of Mongodb
+- An instance of Gitlab
 
 #### Prerequisites
 
-* A Linux box. This guide was tested on an AWS EC2 box.
-* Docker service (and sudo privileges)
-* Internet connectivity 
-* Internet connectivity to Gitlab.com 
+- A Linux box. This guide was tested on an AWS EC2 box.
+- Docker service (and sudo privileges)
+- Internet connectivity
+- Internet connectivity to Gitlab.com
 
 ### Installation steps
 
