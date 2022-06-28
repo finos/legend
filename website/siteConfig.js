@@ -12,7 +12,7 @@ const siteConfig = {
   projectName: "legend",
   organizationName: "finos",
   headerLinks: [
-    { doc: "getting-started/getting-started-guide", label: "Docs" },
+    { doc: "overview/legend-overview", label: "Docs" },
     { href: "https://legend.finos.org/releases", label: "Releases", external: true },
   ],
 
