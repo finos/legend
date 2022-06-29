@@ -37,6 +37,12 @@
       },
       "title": "What is Service DSL about?"
     },
+    "dsl-external-format.grammar.parser": {
+      "title": "What is External Format DSL about?",
+      "markdownText": {
+        "value": "`External Format DSL` (coressponding to `###ExternalFormat` section in `Pure`) concerns with the serialization between data models and external formats like CSV, JSON, etc."
+      }
+    },
     "dsl-generation-specification.grammar.parser": {
       "markdownText": {
         "value": "`Generation Specification DSL` (coressponding to `###GenerationSpecification` section in `Pure`) concerns with organization of generation pipeline"
@@ -120,6 +126,18 @@
         "value": "A `Connection` specifies access to data store(s) including data store specifications and authentication strategies"
       },
       "title": "What is a connection element?"
+    },
+    "dsl-external-format.grammar.element.binding": {
+      "title": "What is a binding element?",
+      "markdownText": {
+        "value": "A `Binding` element specifies the association between a set of models and their corresponding schemas in external formats (e.g. JSON, CSV, etc.) to ensure the models and schemas always kept in-sync"
+      }
+    },
+    "dsl-external-format.grammar.element.schema-set": {
+      "title": "What is a schema-set element?",
+      "markdownText": {
+        "value": "A `Schema-set` element specifies schemas in external formats (e.g. JSON, CSV, etc.), from which Pure models can be generated"
+      }
     },
     "dsl-generation-specification.grammar.element.generation-specification": {
       "markdownText": {
