@@ -254,7 +254,7 @@
     },
     "dsl-diagram.grammar.parser": {
       "markdownText": {
-        "value": "`Diagram DSL`  (coressponding to `###Diagram` section in `Pure`) concerns with visualizing data models and their relationship"
+        "value": "`Diagram DSL`  (corresponding to `###Diagram` section in `Pure`) concerns with visualizing data models and their relationship"
       },
       "title": "What is Diagram DSL about?"
     },
@@ -278,19 +278,25 @@
     },
     "dsl-persistence.grammar.parser": {
       "markdownText": {
-        "value": "`Persistence DSL` (coressponding to `###Persistence` section in `Pure`) concerns with data pipelines which enable writing/persisting data"
+        "value": "`Persistence DSL` (corresponding to `###Persistence` section in `Pure`) provides specifications for persisting the result of a service invocation into a target data store"
       },
       "title": "What is Persistence DSL about?"
     },
     "dsl-persistence.grammar.element.persistence": {
       "markdownText": {
-        "value": "A `Persistence` element specifies a data pipeline"
+        "value": "A `Persistence` element consists of a trigger to initiate persistence, a service to source and transform data, and a persister describing how to write to the target (e.g. ingest mode [snapshot | delta | append-only], temporality [non-temporal | unitemporal | bitemporal], and transactional semantics)"
       },
       "title": "What is a persistence element?"
     },
+    "dsl-persistence.grammar.element.persistence-context": {
+      "markdownText": {
+        "value": "A `PersistenceContext` element refers to a `Persistence` element, defines the runtime platform for persistence (e.g. AWS Glue), and may include additional runtime platform and environment details necessary for execution (e.g. data source connections, authentication strategies, and service input parameters)"
+      },
+      "title": "What is a persistence context element?"
+    },
     "es-service.grammar.parser": {
       "markdownText": {
-        "value": "`External Store Service DSL` (coressponding to `###ServiceStore` section in `Pure`) concerns with data store specifications which enable accessing  data from API endpoints"
+        "value": "`External Store Service DSL` (corresponding to `###ServiceStore` section in `Pure`) concerns with data store specifications which enable accessing data from API endpoints"
       },
       "title": "What is External Store Service DSL about?"
     },
