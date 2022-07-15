@@ -551,19 +551,40 @@ In the **General** tab of the Service Editor, users can specify metadata of thei
 
 ### Execution Tab
 
-In the execution tab, users can create and edit the service query. By hitting the "Edit Query" button, users can edit the query using the **Query Editor**. Users can make changes to the query either in the user-friendly form mode or in text mode.
+In the execution tab, users can create and edit the service query. By hitting the "Edit Query" button, users can edit the query using the **Query Editor**. Users can make changes to the query either in the user-friendly form mode or in text mode. 
 
-#### Mapping & Runtime
+Additonally the bottom panel lets you define your execution context which represents the mapping and runtime used when executing your query, 
 
-Specify Mapping and Runtime for the service.
+**Multi** Executions lets you use a service parameter to decide what execution context (mapping, runtime) to use. You can switch between multi and single using the top right icon on the context panel. 
 
-#### Tests
+### Tests Tab
 
-Auto-generating test data for the service and testing its execution, is **not** yet supported.
+This panel lets you define tests for the services you write by specifying test data, serialization format of your test and the assertions. 
 
-### Review the SQL generated from the service
+### See features in action
 
-This feature is **not** yet supported.
+#### Create a Service
+![Create a service](../assets/create-a-service.gif)
+
+#### Create a multi execution service
+![Create a multi execution service](../assets/create-a-service-multi-execution.gif)
+
+
+## Create a Service Test 
+
+### Relational
+
+![Create a service test - Relational](../assets/create-a-service-test-relational.gif)
+
+### Model to Model
+
+![Create a service test - M2M](../assets/create-a-service-test-m2m.gif)
+
+
+### With Parameters
+![Create a service test - Parameters](../assets/create-a-service-test-parameters.gif)
+
+
 
 ## Promote a model-to-model mapping query to a service
 
@@ -575,9 +596,7 @@ This feature is **not** yet supported.
 
 This feature is not yet supported.
 
-### See features in action
 
-![Create a service](../assets/create-a-service.gif)
 
 ## Consume a Service
 

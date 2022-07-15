@@ -231,6 +231,21 @@
       "title": "How do I specify a supertype of a class?",
       "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#add-a-super-type"
     },
+    "question.how-to-write-a-service-test": {
+      "title": "How do I specify a service test?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-a-service-test"
+    },
+    "question.how-to-write-a-service-test-with-parameters": {
+      "title": "How do I specify a service test with parameters?",
+      "related": [
+        "question.how-to-write-a-service-test"
+      ],
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#with-parameters"
+    },
+    "question.how-to-write-a-service-multi-execution": {
+      "title": "How do I specify a service with multi executions?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-a-multi-execution-service"
+    },
     "context.class-editor": {
       "related": [
         "question.how-to-define-a-class",
