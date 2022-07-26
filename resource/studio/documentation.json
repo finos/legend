@@ -242,6 +242,13 @@
       ],
       "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#with-parameters"
     },
+    "question.how-to-write-a-service-test-with-data-element": {
+      "title": "How do I use data element in service test?",
+      "related": [
+        "question.how-to-write-a-service-test"
+      ],
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#with-data-element"
+    },
     "question.how-to-write-a-service-multi-execution": {
       "title": "How do I specify a service with multi executions?",
       "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-a-multi-execution-service"
