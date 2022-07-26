@@ -580,6 +580,13 @@ This panel lets you define tests for the services you write by specifying test d
 
 ![Create a service test - M2M](../assets/create-a-service-test-m2m.gif)
 
+### Service Store
+
+![Create a service test - ServiceStore](../assets/create-a-service-test-servicestore.gif)
+
+### With Data Element
+
+![Create a service test - DataElement](../assets/create-a-service-test-servicestore.gif)
 
 ### With Parameters
 ![Create a service test - Parameters](../assets/create-a-service-test-parameters.gif)
