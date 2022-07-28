@@ -1,0 +1,69 @@
+{
+  "deployment": {
+    "mode": "TEST_IGNORE_FUNCTION_MATCH"
+  },
+  "logging": {
+    "level": "INFO",
+    "appenders": [
+      {
+        "type": "console",
+        "logFormat": "%msg\r\n"
+      }
+    ]
+  },
+  "pac4j": {
+    "bypassPaths": ["/api/server/v1/info"],
+    "clients": [
+      {
+        "org.pac4j.core.client.direct.AnonymousClient": {}
+      }
+    ],
+    "mongoSession": {
+      "enabled": false
+    }
+  },
+  "opentracing": {
+    "elastic": "",
+    "zipkin": "",
+    "uri": "",
+    "authenticator": {
+      "principal": "",
+      "keytab": ""
+    }
+  },
+  "swagger": {
+    "title": "Legend Engine",
+    "resourcePackage": "org.finos.legend",
+    "uriPrefix": "/api"
+  },
+  "server": {
+    "type": "simple",
+    "applicationContextPath": "/",
+    "adminContextPath": "/admin",
+    "connector": {
+      "maxRequestHeaderSize": "32KiB",
+      "type": "http",
+      "port": 6060
+    },
+    "requestLog": {
+      "appenders": []
+    }
+  },
+  "metadataserver": {
+    "pure": {
+      "host": "127.0.0.1",
+      "port": 8090
+    },
+    "alloy": {
+      "host": "127.0.0.1",
+      "port": 8090,
+      "prefix": "/depot/api"
+    }
+  },
+  "temporarytestdb": {
+    "port": 9092
+  },
+  "relationalexecution": {
+    "tempPath": "/tmp/"
+  }
+}

@@ -1,0 +1,23 @@
+name: Legend Stack Docker Integration Tests
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *' # runs every day on default/base branch
+
+jobs:
+  standalone-engine-docker-test:
+    name: Run engine docker container
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Run engine server
+        working-directory: ./integration-tests/legend-docker-setup/standalone-engine
+        run: docker compose --file=docker-compose.yml up --detach
+      - name: Run engine tests
+        run: ./integration-tests/legend-docker-setup/standalone-engine/test-engine.sh
+        shell: bash
+      - name: Shut down engine server
+        working-directory: ./integration-tests/legend-docker-setup/standalone-engine
+        run: docker compose --file=docker-compose.yml down
