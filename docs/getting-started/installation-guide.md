@@ -8,7 +8,7 @@ There are a few different options to install and use Legend. They are listed bel
 
 ## Maven Install
 
-This option is for software developers who want to build and run Legend from source. Instructions can be found [here](maven-install.md).
+This option is for software developers who want to build and run Legend from source.
 
 ### Installation Guide
 
