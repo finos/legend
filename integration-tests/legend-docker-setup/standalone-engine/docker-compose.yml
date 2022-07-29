@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  engine:
+    container_name: engine
+    image: finos/legend-engine-server:snapshot
+    ports:
+      - 6060:6060
+    networks:
+      - legend
+    volumes:
+      - ./config:/config
+    # NOTE: the Java CLI wildcard must be wrapped by quotes
+    # See https://stackoverflow.com/questions/14722657/java-classpath-wildcard-behaviour/14722763
+    command: >
+      java
+      -cp /app/bin/"*"
+      org.finos.legend.engine.server.Server
+      server /config/engine-config.json
+
+networks:
+  legend: {}
