@@ -1,0 +1,106 @@
+# Copyright 2020 Goldman Sachs
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+applicationName: Legend SDLC
+
+sessionCookie: LEGEND_SDLC_JSESSIONID
+
+server:
+  applicationConnectors:
+    - type: http
+      port: 7070
+      maxRequestHeaderSize: 128KiB
+  adminConnectors:
+    - type: http
+      port: 7076
+  gzip:
+    includedMethods:
+      - GET
+      - POST
+  requestLog:
+    type: classic
+    appenders:
+      - type: file
+        currentLogFilename: ./logs/access.log
+        threshold: ALL
+        archive: true
+        archivedLogFilenamePattern: ./logs/access-%d.log
+        archivedFileCount: 5
+        timeZone: UTC
+  rootPath: /api
+
+filterPriorities:
+  GitLab: 1
+  org.pac4j.j2e.filter.CallbackFilter: 2
+  org.pac4j.j2e.filter.SecurityFilter: 3
+  CORS: 4
+
+pac4j:
+  callbackPrefix: /api/pac4j/login
+  clients:
+    - org.finos.legend.server.pac4j.gitlab.GitlabClient:
+        name: gitlab
+        clientId: $appId
+        secret: $secret
+        discoveryUri: https://gitlab.com/.well-known/openid-configuration
+        scope: openid profile api
+  bypassPaths:
+    - /api/info
+
+gitLab:
+  newProjectVisibility: public
+  projectTag: pure
+  uat:
+    server:
+      scheme: https
+      host: gitlab.com
+    app:
+      id: $appId
+      secret: $secretId
+      redirectURI: http://127.0.0.1:7070/api/auth/callback
+
+projectStructure:
+  projectCreation:
+    groupIdPattern: ^org\.finos\.legend\..+
+  extensionProvider:
+    org.finos.legend.sdlc.server.gitlab.finos.FinosGitlabProjectStructureExtensionProvider: {}
+
+features:
+  canCreateProject: true
+  canCreateVersion: true
+
+
+logging:
+  # Change this to affect library class logging
+  level: INFO
+  loggers:
+    # Change this to affect application class logging
+    org.finos.legend.sdlc: INFO
+  appenders:
+    - type: file
+      logFormat: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%thread] %c - %m%n"
+      currentLogFilename: ./logs/service.log
+      threshold: ALL
+      archive: true
+      archivedLogFilenamePattern: ./logs/service-%d.log
+      archivedFileCount: 5
+      timeZone: UTC
+    - type: console
+      logFormat: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%thread] %c - %m%n"
+
+swagger:
+  resourcePackage: org.finos.legend.sdlc.server.resources
+  title: Legend SDLC
+  schemes: []
+
