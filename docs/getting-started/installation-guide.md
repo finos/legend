@@ -96,7 +96,7 @@ Visit http://localhost:8080/studio and start hacking
 
 ## AWS Docker Install
 
-This option is for software developers who want to run the Legend Docker images on AWS for running a proof of concept. Instructions can be found [here](aws-docker.md).
+This option is for software developers who want to run the Legend Docker images on AWS for running a proof of concept. Instructions can be found [here](https://github.com/finos/legend/tree/master/installers/aws-docker).
 
 ### Installation Guide
 
