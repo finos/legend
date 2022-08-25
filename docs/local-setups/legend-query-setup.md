@@ -116,9 +116,20 @@ Open Project you plan to run this POC with. There are some issues with the gitla
 - repo: https://github.com/finos/legend-studio
 
 # Build Setup
-1. if you have already built studio in the first step, all you have to run is `yarn dev:query`. This will bring up stand alone query 
-2. config will be auto generated and will be placed in directory  packages\legend-application-query-deployment\dev\config.json. See [sample](./sample-legend-studio-config.json).
-3. Upon home page click `create new query` (last option). You choudl see the groupId, artifact ids for any projects you have published entities for. If you have projects with mapping/runtime, they will show up there so you can query from there.
+1. create a file named queries.properties under legend-engine-server/src/test/resources/org/finos/legend/engine/server/test. Use sample [queries.properties](./queries.properties)
+2. add the following to userTestConfig.json in Legend Engine
+```
+  "vaults" :
+  [
+    {
+      "_type" : "property",
+      "location" : "legend-engine-server/src/test/resources/org/finos/legend/engine/server/test/query.properties"
+    }
+  ]
+```
+3. if you have already built studio in the first step, all you have to run is `yarn dev:query`. This will bring up stand alone query 
+4. config will be auto generated and will be placed in directory  packages\legend-application-query-deployment\dev\config.json. See [sample](./sample-legend-studio-config.json).
+5. Upon home page click `create new query` (last option). You choudl see the groupId, artifact ids for any projects you have published entities for. If you have projects with mapping/runtime, they will show up there so you can query from there.
 
 
 
