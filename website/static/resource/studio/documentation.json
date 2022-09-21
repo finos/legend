@@ -195,6 +195,12 @@
       "title": "How do I write a lambda function in Pure?",
       "url": "https://legend.finos.org/docs/reference/legend-language#lambda"
     },
+    "question.how-to-use-search-bar": {
+      "markdownText": {
+        "value": "Our search is not case sensitive, and searches for similar results by default, allowing for typos.\n \n `'person` will search for results that include _person_.\n\n`=person` will search for results that exactly match _person_\n\n`!person` will search for any result that does not include _person_\n\nNote that white space simply means the AND operator. If you were trying to search for \"person firm\" in that specific order, put **double quotes** around the phrase you would like to combine.In this case, `'\"person firm\"` will search for results that include _person firm_.\n\nOur normal search mode uses all these options to allow you to combine prefixes for advanced words. For example, the search phrase `'person !firm first` will search for results that specifically include _person_ but does not include firm and also includes a word that is similar to first.\n\nThere are additional options that can narrow down your search results which are not addressed here, and further documentation for the search engine we use is [available here](https://fusejs.io/examples.html#extended-search)."
+      },
+      "title": "How do I use search?"
+    },
     "question.how-to-define-a-class": {
       "title": "How do I define a class?",
       "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#define-a-new-class"
