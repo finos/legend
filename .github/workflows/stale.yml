@@ -12,12 +12,11 @@ on:
 
 jobs:
   stale:
-
+    if: github.repository == 'finos/legend' # we should not run this workflow in forks
     runs-on: ubuntu-latest
     permissions:
       issues: write
       pull-requests: write
-
     steps:
     - uses: actions/stale@v5
       with:
