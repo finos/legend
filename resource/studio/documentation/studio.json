@@ -323,6 +323,12 @@
         "value": "A service store element specifies API endpoints as data source"
       },
       "title": "What is a service store element?"
+    },
+    "dsl-service.setup.productionize-query": {
+      "title": "What does it mean to productionize a query?",
+      "markdownText": {
+        "value": "To `productionize` a query is to turn it into a `service`. This service will need to be injected into a **SDLC** project, so it can be reviewed, committed, released, and deployed to production environment"
+      }
     }
   }
 }
