@@ -9,7 +9,7 @@ sleep_secs=30
 echo -e "+ Wait for container init. Sleeping for $sleep_secs secs "
 sleep $sleep_secs
 
-engine_url=http://localhost:6060/api/server/v1/info
+engine_url=http://localhost:6000/api/server/v1/info
 echo "+ Testing engine server at url $engine_url"
 
 curl -v $engine_url > /tmp/engine.json

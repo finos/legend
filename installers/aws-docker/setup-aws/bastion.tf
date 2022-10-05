@@ -70,24 +70,24 @@ resource "aws_security_group" "bastion" {
 
   ingress {
     protocol    = "tcp"
-    from_port   = 6060
-    to_port     = 6060
+    from_port   = 6000
+    to_port     = 6000
     cidr_blocks = ["${var.inbound_ip1}"]
     description = "inbound engine"
   }
 
   ingress {
     protocol    = "tcp"
-    from_port   = 7070
-    to_port     = 7070
+    from_port   = 6100
+    to_port     = 6100
     cidr_blocks = ["${var.inbound_ip1}"]
     description = "inbound sdlc"
   }
 
   ingress {
     protocol    = "tcp"
-    from_port   = 8080
-    to_port     = 8080
+    from_port   = 9000
+    to_port     = 9000
     cidr_blocks = ["${var.inbound_ip1}"]
     description = "inbound studio"
   }
