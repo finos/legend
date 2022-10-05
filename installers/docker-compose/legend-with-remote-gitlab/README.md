@@ -17,10 +17,10 @@
 
 ```sh
 # This is just an example, subjected to change
-http://192.168.1.100:6060/callback
-http://192.168.1.100:7070/api/auth/callback
-http://192.168.1.100:7070/api/pac4j/login/callback
-http://192.168.1.100:8080/studio/log.in/callback
+http://192.168.1.100:6000/callback
+http://192.168.1.100:6100/api/auth/callback
+http://192.168.1.100:6100/api/pac4j/login/callback
+http://192.168.1.100:9000/studio/log.in/callback
 ```
 
 3. Run the Docker compose project
@@ -31,7 +31,7 @@ docker-compose --env-file ~/legend-temp/.env up --detach
 
 4. Run the application
 
-After starting the project, you can go to your browser at [http://`HOST_ADDRESS`:8080/studio]() to launch Studio. This should redirect you to Gitlab, after logging-in you would be redirected back to Studio.
+After starting the project, you can go to your browser at [http://`HOST_ADDRESS`:9000/studio]() to launch Studio. This should redirect you to Gitlab, after logging-in you would be redirected back to Studio.
 
 5. Stop the Docker compose project
 

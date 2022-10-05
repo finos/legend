@@ -43,7 +43,7 @@
     "connector": {
       "maxRequestHeaderSize": "32KiB",
       "type": "http",
-      "port": 6060
+      "port": 6000
     },
     "requestLog": {
       "appenders": []
@@ -56,7 +56,7 @@
     },
     "alloy": {
       "host": "127.0.0.1",
-      "port": 8090,
+      "port": 6200,
       "prefix": "/depot/api"
     }
   },

@@ -21,7 +21,7 @@ server:
       maxRequestHeaderSize: 128KiB
   adminConnectors:
     - type: http
-      port: 7076
+      port: 6101
   gzip:
     includedMethods:
       - GET
