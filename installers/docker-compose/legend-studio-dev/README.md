@@ -17,11 +17,11 @@
 
 ```sh
 # This is just an example, subjected to change
-http://192.168.1.100:6000/callback
+http://192.168.1.100:6300/callback
 http://192.168.1.100:6100/api/auth/callback
 http://192.168.1.100:6100/api/pac4j/login/callback
 http://192.168.1.100:9000/studio/log.in/callback
-http://localhost:6000/callback
+http://localhost:6300/callback
 http://localhost:6100/api/auth/callback
 http://localhost:6100/api/pac4j/login/callback
 http://localhost:9000/studio/log.in/callback
