@@ -70,8 +70,8 @@ resource "aws_security_group" "bastion" {
 
   ingress {
     protocol    = "tcp"
-    from_port   = 6000
-    to_port     = 6000
+    from_port   = 6300
+    to_port     = 6300
     cidr_blocks = ["${var.inbound_ip1}"]
     description = "inbound engine"
   }

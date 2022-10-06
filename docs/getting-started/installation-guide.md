@@ -57,7 +57,7 @@ mvn install [-DskipTests]
 java -cp legend-engine-server/target/*-shaded.jar org.finos.legend.engine.server.Server server legend-engine-server/src/test/resources/org/finos/legend/engine/server/test/userTestConfig.json
 ```
 
-Test by going to http://localhost:6000 in a browser. The Swagger page can be accessed at http://localhost:6000/api/swagger.
+Test by going to http://localhost:6300 in a browser. The Swagger page can be accessed at http://localhost:6300/api/swagger.
 
 #### Setup **legend-sdlc**.
 
