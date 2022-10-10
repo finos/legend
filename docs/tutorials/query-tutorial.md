@@ -10,6 +10,7 @@ You can build a query directly in Alloy Studio using its drag-and-drop environme
 _COMING SOON_
 
 ### Basic Queries
+_COMING SOON_
 
 #### Filter a query
 _COMING SOON_
