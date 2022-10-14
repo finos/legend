@@ -1,0 +1,87 @@
+{
+  "applicationName": "Legend Depot API",
+  "deployment": "DEV",
+  "sessionCookie": "LEGEND_DEPOT_JSESSIONID",
+  "server": {
+    "type": "simple",
+    "applicationContextPath": "/",
+    "adminContextPath": "/admin",
+    "connector": {
+      "type": "http",
+      "port": ${DEPOT_PORT},
+      "maxRequestHeaderSize": "32KiB"
+    },
+    "gzip": {
+      "includedMethods": [
+        "GET",
+        "POST"
+      ]
+    },
+    "requestLog": {
+      "appenders": [
+        {
+          "type": "console",
+          "filterFactories": [
+            {
+              "type": "healthcheck-filter-factory"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "mongo": {
+    "url": "${MONGODB_URI}",
+    "database": "depot"
+  },
+  "openTracing": {
+    "openTracingUri": "URL here",
+    "serviceName": "legend-depot-server",
+    "enabled": false
+  },
+  "logging": {
+    "level": "INFO",
+    "loggers": {
+      "com.gs": "INFO",
+      "Legend Depot Server": {
+        "level": "INFO",
+        "appenders": [
+          {
+            "type": "console",
+            "logFormat": "%msg\r\n"
+          }
+        ]
+      }
+    }
+  },
+  "swagger": {
+    "resourcePackage": "org.finos.legend.depot.server",
+    "title": "Legend Depot server",
+    "uriPrefix": "/depot/api"
+  },
+  "pac4j": {
+    "callbackPrefix": "/depot",
+    "bypassPaths": [
+      "/depot/api/info"
+    ],
+    "clients": [
+      {
+        "org.pac4j.core.client.direct.AnonymousClient": {
+        }
+      }
+    ],
+    "mongoUri": "${MONGODB_URI}",
+    "mongoDb": "${MONGODB_NAME}",
+    "mongoSession": {
+      "enabled": "${MONGO_SESSION_ENABLED}",
+      "collection": "userSessions"
+    }
+  },
+  "filterPriorities": {
+    "Username": 1,
+    "OpenTracingFilter": 2,
+    "org.pac4j.j2e.filter.SecurityFilter": 3,
+    "org.pac4j.j2e.filter.CallbackFilter": 4,
+    "CORS": 5
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "appName": "query",
+  "env": "prod",
+  "engine": {
+    "url": "http://${ENGINE_HOST}:${ENGINE_PORT}/api"
+  },
+  "depot": {
+    "url": "http://${DEPOT_HOST}:${DEPOT_PORT}/depot/api"
+  },
+  "studio": {
+    "url": "http://${STUDIO_HOST}:${STUDIO_PORT}/studio",
+    "instances": [
+      {
+        "sdlcProjectIDPrefix": "PROD",
+        "url": "http://${STUDIO_HOST}:${STUDIO_PORT}/studio"
+      }
+    ]
+  },
+  "documentation": {
+    "url": "https://legend.finos.org"
+  }
+}

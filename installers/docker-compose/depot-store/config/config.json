@@ -1,0 +1,108 @@
+{
+  "applicationName": "Depot Store Manager API",
+  "deployment": "DEV",
+  "sessionCookie": "LEGEND_DEPOT_STORE_JSESSIONID",
+  "server": {
+    "type": "simple",
+    "applicationContextPath": "/",
+    "adminContextPath": "/admin",
+    "connector": {
+      "type": "http",
+      "port": ${DEPOT_STORE_PORT},
+      "maxRequestHeaderSize": "32KiB"
+    },
+    "gzip": {
+      "includedMethods": [
+        "GET",
+        "POST"
+      ]
+    },
+    "requestLog": {
+      "appenders": [
+        {
+          "type": "console",
+          "filterFactories": [
+            {
+              "type": "healthcheck-filter-factory"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "mongo": {
+    "url": "${MONGODB_URI}",
+    "database": "depot"
+  },
+  "openTracing": {
+    "openTracingUri": "your URL here",
+    "serviceName": "legend-depot-store",
+    "enabled": false
+  },
+  "logging": {
+    "level": "INFO",
+    "loggers": {
+      "org.jboss.shrinkwrap.resolver": "off",
+      "org.eclipse.aether": "off",
+      "Legend Depot Store Manager": {
+        "level": "info",
+        "appenders": [
+          {
+            "type": "console",
+            "logFormat": "%msg\r\n"
+          }
+        ]
+      }
+    }
+  },
+  "swagger": {
+    "resourcePackage": "org.finos.legend.depot.store",
+    "title": "Legend Depot Store Manager",
+    "uriPrefix": "/depot-store/api"
+  },
+  "pac4j": {
+    "callbackPrefix": "/depot-store",
+    "bypassPaths": [
+      "/depot-store/api/info"
+    ],
+    "bypassBranches": [
+      "/depot-store/api/queue"
+    ],
+    "clients": [
+      {
+        "org.finos.legend.server.pac4j.gitlab.GitlabClient": {
+          "name": "gitlab",
+          "clientId": "${GITLAB_APP_ID}",
+          "secret": "${GITLAB_APP_SECRET}",
+          "discoveryUri": "https://${GITLAB_HOST}/.well-known/openid-configuration",
+          "scope": "openid profile api"
+        }
+      }
+    ],
+    "mongoUri": "${MONGODB_URI}",
+    "mongoDb": "${MONGODB_NAME}",
+    "mongoSession": {
+      "enabled": "${MONGO_SESSION_ENABLED}",
+      "collection": "userSessions"
+    }
+  },
+  "filterPriorities": {
+    "Username": 1,
+    "OpenTracingFilter": 2,
+    "org.pac4j.j2e.filter.SecurityFilter": 3,
+    "org.pac4j.j2e.filter.CallbackFilter": 4,
+    "CORS": 5
+  },
+  "artifactRepositoryProviderConfiguration": {
+
+    "org.finos.legend.depot.artifacts.repository.maven.impl.MavenArtifactRepositoryConfiguration": {
+      "settingsLocation": "/config/settings.xml",
+      "versionsUpdateIntervalInMillis": 3600000,
+      "latestUpdateIntervalInMillis": 3600000
+    }
+  },
+  "includeProjectPropertiesConfiguration": {
+    "properties": []
+  },
+  "queue-interval": 30
+}
