@@ -1,0 +1,189 @@
+###Diagram
+Diagram diagram::all
+{
+  classView 0dee659c-6d6d-41d0-a326-dd0e63250732
+  {
+    class: domain::Firm;
+    position: (639.0,202.0);
+    rectangle: (134.32373046875,58.0);
+  }
+  classView 860aafab-2ae2-4714-8f4e-7d8924c6cec8
+  {
+    class: domain::Person;
+    position: (644.0,327.0);
+    rectangle: (124.521484375,58.0);
+  }
+  propertyView
+  {
+    property: domain::Person.firm;
+    source: 860aafab-2ae2-4714-8f4e-7d8924c6cec8;
+    target: 0dee659c-6d6d-41d0-a326-dd0e63250732;
+    points: [(706.2607421875,356.0),(706.161865234375,231.0)];
+  }
+  propertyView
+  {
+    property: domain::Firm.employees;
+    source: 0dee659c-6d6d-41d0-a326-dd0e63250732;
+    target: 860aafab-2ae2-4714-8f4e-7d8924c6cec8;
+    points: [(706.161865234375,231.0),(706.2607421875,356.0)];
+  }
+}
+
+
+###Relational
+Database database::h2
+(
+  Table PERSON
+  (
+    ID INTEGER PRIMARY KEY,
+    FIRMID INTEGER,
+    FIRST_NAME VARCHAR(200),
+    LAST_NAME VARCHAR(200)
+  )
+  Table FIRM
+  (
+    ID INTEGER PRIMARY KEY,
+    LEGAL_NAME VARCHAR(200)
+  )
+
+  Join Firm_Person(PERSON.FIRMID = FIRM.ID)
+)
+
+
+###Pure
+Class domain::Person
+{
+  firstName: String[1];
+  lastName: String[1];
+}
+
+Class domain::S_Person
+{
+  fullName: String[1];
+}
+
+Class domain::Firm
+{
+  legalName: String[1];
+}
+
+Class domain::S_Firm
+{
+  legalName: String[1];
+}
+
+Association domain::Firm_Person
+{
+  firm: domain::Firm[1];
+  employees: domain::Person[*];
+}
+
+Association domain::S_Firm_S_Person
+{
+  firm: domain::S_Firm[1];
+  employees: domain::S_Person[*];
+}
+
+
+###Mapping
+Mapping mapping::m2m::Firm_Person
+(
+  domain::Person: Pure
+  {
+    ~src domain::S_Person
+    firstName: $src.fullName->substring(0, $src.fullName->indexOf(' ')),
+    lastName: $src.fullName->substring($src.fullName->indexOf(' ') + 1, $src.fullName->length())
+  }
+  domain::Firm: Pure
+  {
+    ~src domain::S_Firm
+    legalName: $src.legalName,
+    employees[domain_Person]: $src.employees
+  }
+
+  MappingTests
+  [
+    test_1
+    (
+      query: |domain::Firm.all()->graphFetch(#{domain::Firm{legalName,employees{firstName,lastName}}}#)->serialize(#{domain::Firm{legalName,employees{firstName,lastName}}}#);
+      data:
+      [
+        <Object, JSON, domain::S_Firm, '[{"employees":[{"fullName":"Road Runner"},{"fullName":"Wile Coyote"}],"legalName":"ACME Corp."},{"employees":[{"fullName":"Jake Sullivan"},{"fullName":"Mike Wazwoski"}],"legalName":"Monsters Inc."}]'>
+      ];
+      assert: '[{"legalName":"ACME Corp.","employees":[{"firstName":"Road","lastName":"Runner"},{"firstName":"Wile","lastName":"Coyote"}]},{"legalName":"Monsters Inc.","employees":[{"firstName":"Jake","lastName":"Sullivan"},{"firstName":"Mike","lastName":"Wazwoski"}]}]';
+    )
+  ]
+)
+
+Mapping mapping::relational::Firm_Person
+(
+  domain::Person: Relational
+  {
+    ~primaryKey
+    (
+      [database::h2]PERSON.ID
+    )
+    ~mainTable [database::h2]PERSON
+    firstName: [database::h2]PERSON.FIRST_NAME,
+    lastName: [database::h2]PERSON.LAST_NAME
+  }
+  domain::Firm: Relational
+  {
+    ~primaryKey
+    (
+      [database::h2]FIRM.ID
+    )
+    ~mainTable [database::h2]FIRM
+    legalName: [database::h2]FIRM.LEGAL_NAME,
+    employees[domain_Person]: [database::h2]@Firm_Person
+  }
+
+  MappingTests
+  [
+    test_1
+    (
+      query: |domain::Firm.all()->project([x|$x.legalName, x|$x.employees.firstName, x|$x.employees.lastName], ['Legal Name', 'Employees/First Name', 'Employees/Last Name']);
+      data:
+      [
+        <Relational, SQL, database::h2, 
+          'drop table if exists FIRM;\n'+
+          'create table FIRM(ID INTEGER, LEGAL_NAME VARCHAR(200));\n'+
+          'insert into FIRM(ID, LEGAL_NAME) values(100, \'ACME Corp.\');\n'+
+          'insert into FIRM(ID, LEGAL_NAME) values(200, \'Monsters Inc.\');\n'+
+          'drop table if exists PERSON;\n'+
+          'create table PERSON(ID INTEGER, FIRMID INTEGER, FIRST_NAME VARCHAR(200), LAST_NAME VARCHAR(200));\n'+
+          'insert into PERSON(ID, FIRMID, FIRST_NAME, LAST_NAME) values(1, 100, \'Road\', \'Runner\');\n'+
+          'insert into PERSON(ID, FIRMID, FIRST_NAME, LAST_NAME) values(2, 100, \'Wile\', \'Coyote\');\n'+
+          'insert into PERSON(ID, FIRMID, FIRST_NAME, LAST_NAME) values(3, 200, \'Jake\', \'Sullivan\');\n'+
+          'insert into PERSON(ID, FIRMID, FIRST_NAME, LAST_NAME) values(4, 200, \'Mike\', \'Wazwoski\');\n'
+        >
+      ];
+      assert: '[{"values":["ACME Corp.","Road","Runner"]},{"values":["ACME Corp.","Wile","Coyote"]},{"values":["Monsters Inc.","Jake","Sullivan"]},{"values":["Monsters Inc.","Mike","Wazwoski"]}]';
+    )
+  ]
+)
+
+
+###Connection
+RelationalDatabaseConnection connection::h2
+{
+  store: database::h2;
+  type: H2;
+  specification: LocalH2
+  {
+    testDataSetupSqls: [
+      'drop table if exists FIRM',
+      'create table FIRM(ID INTEGER, LEGAL_NAME VARCHAR(200))',
+      'insert into FIRM(ID, LEGAL_NAME) values(100, \'ACME Corp.\')',
+      'insert into FIRM(ID, LEGAL_NAME) values(200, \'Monsters Inc.\')',
+      'drop table if exists PERSON;',
+      'create table PERSON(ID INTEGER, FIRMID INTEGER, FIRST_NAME VARCHAR(200), LAST_NAME VARCHAR(200))',
+      'insert into PERSON(ID, FIRMID, FIRST_NAME, LAST_NAME) values(1, 100, \'Road\', \'Runner\')',
+      'insert into PERSON(ID, FIRMID, FIRST_NAME, LAST_NAME) values(2, 100, \'Wile\', \'Coyote\')',
+      'insert into PERSON(ID, FIRMID, FIRST_NAME, LAST_NAME) values(3, 200, \'Jake\', \'Sullivan\')',
+      'insert into PERSON(ID, FIRMID, FIRST_NAME, LAST_NAME) values(4, 200, \'Mike\', \'Wazwoski\')'
+      ];
+  };
+  auth: DefaultH2;
+}
+

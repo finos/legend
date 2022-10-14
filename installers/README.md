@@ -6,6 +6,3 @@ This directory contains "installers" for installing Legend on various platforms.
 
 **Many are meant for quick installation of Legend for prototyping and running proofs of concept.**
 
-- [Docker on AWS](aws-docker/README.md)
-
-- [Docker Compose](docker-compose/README.md)

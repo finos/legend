@@ -1,0 +1,87 @@
+
+{
+  "deployment": {
+    "mode": "TEST_IGNORE_FUNCTION_MATCH"
+  },
+  "logging": {
+    "level": "INFO",
+    "appenders": [
+      {
+        "type": "console",
+        "logFormat": "%msg\r\n"
+      }
+    ]
+  },
+  "pac4j": {
+    "bypassPaths": ["/api/server/v1/info"],
+    "callbackPrefix": "",
+    "mongoUri": "${MONGODB_URI}",
+    "mongoDb": "${MONGODB_NAME}",
+    "clients": [
+      {
+        "org.finos.legend.server.pac4j.gitlab.GitlabClient": {
+          "name": "gitlab",
+          "clientId": "${GITLAB_APP_ID}",
+          "secret": "${GITLAB_APP_SECRET}",
+          "discoveryUri": "https://${GITLAB_HOST}/.well-known/openid-configuration",
+          "scope": "openid profile api"
+        }
+      }
+    ],
+    "mongoSession": {
+      "enabled": "${MONGO_SESSION_ENABLED}",
+      "collection": "userSessions"
+    }
+  },
+  "opentracing": {
+    "elastic": "",
+    "zipkin": "",
+    "uri": "",
+    "authenticator": {
+      "principal": "",
+      "keytab": ""
+    }
+  },
+  "swagger": {
+    "title": "Legend Engine",
+    "resourcePackage": "org.finos.legend",
+    "uriPrefix": "/api"
+  },
+  "server": {
+    "type": "simple",
+    "applicationContextPath": "/",
+    "adminContextPath": "/admin",
+    "connector": {
+      "maxRequestHeaderSize": "32KiB",
+      "type": "http",
+      "port": "${ENGINE_PORT}"
+    },
+    "requestLog": {
+      "appenders": []
+    }
+  },
+  "metadataserver": {
+    "pure": {
+      "host": "${METADATA_PURE_HOST}",
+      "port": ${METADATA_PURE_PORT}
+    },
+    "alloy": {
+      "host": "${METADATA_ALLOY_HOST}",
+      "port": ${METADATA_ALLOY_PORT},
+      "prefix": "/depot/api"
+    }
+  },
+  "temporarytestdb": {
+    "port": ${TEMP_DB_PORT}
+  },
+  "relationalexecution": {
+    "tempPath": "/tmp/"
+  },
+  "vaults": [
+     {
+       "_type":"property",
+        "location": "/config/vault.properties"
+     }
+  ]
+}
+
