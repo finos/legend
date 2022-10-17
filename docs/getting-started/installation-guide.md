@@ -94,31 +94,6 @@ Follow this [guide](https://github.com/finos/legend-studio/blob/master/README.md
 
 Visit http://localhost:9000/studio and start hacking
 
-## AWS Docker Install
-
-This option is for software developers who want to run the Legend Docker images on AWS for running a proof of concept. Instructions can be found [here](aws-docker.md).
-
-### Installation Guide
-
-This is a guide to install a minimal instance of the Legend platform, which consists of the following running on a single box :
-
-- An instance of the Legend Engine Server
-- An instance of the Legend SDLC Server
-- An instance of the Legend Studio Server
-- An instance of Mongodb
-- An instance of Gitlab
-
-#### Prerequisites
-
-- A Linux box. This guide was tested on an AWS EC2 box.
-- Docker service (and sudo privileges)
-- Internet connectivity
-- Internet connectivity to Gitlab.com
-
-### Installation steps
-
-See [Docker installation instructions](https://github.com/finos/legend/tree/master/installers/aws-docker).
-
 ## Docker Compose
 
 This option is a more automated process to start Legend Docker images for running a proof of concept. Instructions can be found [here](https://github.com/finos/legend/tree/master/installers/docker-compose).
