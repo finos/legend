@@ -16,7 +16,7 @@ When providing allowed Callback URLs, use the following:
 
 ```
 https://legend.<your domain name>:6060/callback
-https://legend.<your domain name>:7070/api/callback
+https://legend.<your domain name>:7070/api/auth/callback
 https://legend.<your domain name>:7070/api/pac4j/login/callback
 https://legend.<your domain name>:8080/studio/log.in/callback 
 ```
