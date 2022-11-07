@@ -8,6 +8,7 @@ import * as ecr from 'aws-cdk-lib/aws-ecr';
 import { aws_servicediscovery as service } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 
+
 export enum ContainerHost {
   DockerHub,
   ECR,
@@ -97,5 +98,6 @@ export class LegendServiceStack extends cdk.Stack {
       );
       this.taskDefinition = taskDefinition;
       this.service = service;
+
     }
   };

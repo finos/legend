@@ -21,7 +21,7 @@ class LegendApp extends Construct{
     super(scope, id);
     const legendEnginePort = 6060;
     const legendSdlcPort = 7070;
-    const legendStudioPort = 8080;
+    const legendStudioPort = 443;
     const mongoDbPort = 27017;
 
     const providedDomainName = this.node.tryGetContext('domainName');
@@ -71,7 +71,7 @@ class LegendApp extends Construct{
       namespace: legendEcsStack.legendNamespace,
       healthCheckPath: '/api/server/v1/info',
       vpc: legendVpcStack.legendVpc,
-      certificate: legendVpcStack.legendCertificate
+      certificate: legendVpcStack.legendCertificate,
     });
     const legendEngineConnections = legendEngineStack.service.connections;
 
