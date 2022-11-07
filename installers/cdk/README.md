@@ -18,7 +18,7 @@ When providing allowed Callback URLs, use the following:
 https://legend.<your domain name>:6060/callback
 https://legend.<your domain name>:7070/api/auth/callback
 https://legend.<your domain name>:7070/api/pac4j/login/callback
-https://legend.<your domain name>:8080/studio/log.in/callback 
+https://legend.<your domain name>/studio/log.in/callback 
 ```
 
 ### CDK Setup
@@ -59,4 +59,4 @@ cdk deploy --all \
 
 ## Accessing Studio
 
-Once the deployment is finished, you should be able to access Legend Studio at: `https://legend.<your domain name>:8080/studio`
+Once the deployment is finished, you should be able to access Legend Studio at: `https://legend.<your domain name>/studio`
