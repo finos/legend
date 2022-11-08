@@ -91,7 +91,7 @@ In the opening page of Studio, select the "Legend Installer Demo" project or nav
 
 Run Query as follows :
 ```
-./docker-compose.sh --profile studio query -d
+./docker-compose.sh --profile query -d
 ```
 
 After a few minutes, the containers should pass their health checks and be marked as healthy.
