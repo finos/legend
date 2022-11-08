@@ -343,7 +343,7 @@
 .home-page__content__ecosystem {
   height: 140rem;
   background: var(--color-dark-grey-150);
-  clip-path: polygon(0 9rem, 100% 0, 100% 140rem, 0 129rem);
+  clip-path: polygon(0 9rem, 100% 0, 100% 140rem, 0 100%);
 }
 
 .home-page__content__ecosystem__diagram {
@@ -488,7 +488,7 @@
 
   .home-page__content__ecosystem {
     height: 80rem;
-    clip-path: polygon(0 5rem, 100% 0, 100% 80rem, 0 75rem);
+    clip-path: polygon(0 5rem, 100% 0, 100% 80rem, 0 100%);
   }
 
   .home-page__content__timeline {
@@ -537,7 +537,7 @@
 
   .home-page__content__ecosystem {
     height: 70rem;
-    clip-path: polygon(0 7rem, 100% 0, 100% 70rem, 0 65rem);
+    clip-path: polygon(0 7rem, 100% 0, 100% 70rem, 0 100%);
   }
 
   .home-page__content__timeline {
