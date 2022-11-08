@@ -13,6 +13,16 @@ The core component of the **Legend Platform** is [Legend Studio](https://github.
 
 The [Legend-Pure language](https://github.com/finos/legend-pure) is an immutable functional language based on the Unified Modeling Language (UML) and inspired by the Object Constraint Language (OCL).
 
+## Components
+
+Legend stack comprises several key components. Component-specific issues are opened, maintained, and prioritized within the component specific issue list. These usually involve new feature requests, bug reports or technical, tool-specific questions.
+
+- [Legend Studio](https://github.com/finos/legend-studio/issues)
+- [Legend Engine](https://github.com/finos/legend-engine/issues)
+- [Legend SDLC](https://github.com/finos/legend-sdlc/issues)
+- [Legend Depot](https://github.com/finos/legend-depot/issues)
+- [Legend PURE](https://github.com/finos/legend-pure/issues)
+
 # Installation
 
 Find installation instructions [here](https://legend.finos.org/docs/getting-started/installation-guide).
@@ -55,15 +65,6 @@ If you have questions about Legend, check out the list of previously asked [ques
 ## Join the mailing list
 
 The Legend community uses the legend@finos.org mailing list to communicate with each other and to share relevant project updates. See the [mailing list archive](https://groups.google.com/a/finos.org/g/legend) for background, and **subscribe to the mailing list by sending an email to [legend+subscribe@finos.org](mailto:legend+subscribe@finos.org).**
-
-## Component specific issues
-
-Component specific issues are opened, maintained, and prioritized within the component specific issue list. These usually involve new feature requests, bug reports or technical, tool-specific questions.
-
-- [Legend-Studio](https://github.com/finos/legend-studio/issues)
-- [Legend-Engine](https://github.com/finos/legend-engine/issues)
-- [Legend-SDLC](https://github.com/finos/legend-sdlc/issues)
-- [Legend-PURE](https://github.com/finos/legend-pure/issues)
 
 # Roadmap
 
