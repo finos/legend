@@ -53,7 +53,7 @@ _COMING SOON_
 
 ## Talks and Conferences
 
-### ["Consuming Legend Data Models & Services Using BI, Python/ML & other Tools"](https://www.youtube.com/watch?v=9qIq0mHKQeY)
+### ["Consuming Legend Data Models & Services Using BI, Python/ML & other Tools"](https://www.youtube.com/watch?v=rm-mAohz6NQ)
 Andrew Ormerod & John Pentelow, Goldman Sachs (July 2022)
 
 ### ["An open-sourced solution to Data Governance? How Legend may be the Answer to Data Quality concerns in the Financial Industry"](https://www.youtube.com/watch?v=9qIq0mHKQeY)
