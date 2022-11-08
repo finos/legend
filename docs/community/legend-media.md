@@ -11,12 +11,25 @@ sidebar_label: Legend in the Media
 
 
 ## Blog posts
+### ["Sustainability in Action: Diving into ESG Data Engineering at Goldman Sachs"](https://developer.gs.com/blog/posts/sustainability-in-action-diving-into-esg-data-engineering) 
+GS Developer Blog Post (September 29th, 2022)
+
+### ["How Legend has Empowered Global Markets Engineering at Goldman Sachs and the Derivatives Industry as a Whole"](https://developer.gs.com/blog/posts/how-legend-has-empowered-global-markets-engineering) 
+GS Developer Blog Post (September 20th, 2022)
+
+### ["Legend + Snowflake Native Apps = Fast, Easy, Secure Access to Data"](https://developer.gs.com/blog/posts/legend-plus-snowflake-native-apps) 
+GS Developer Blog Post (July 28th, 2022)
 
 ### ["Q&A with Pierre de Belen"](https://developer.gs.com/blog/posts/q-and-a-with-pierre-legend) 
 GS Developer Blog Post (November 27th, 2021)
 
-## Awards
+### ["Building Platforms for Data Engineering"](https://developer.gs.com/blog/posts/legend_data_engineering_platforms) 
+GS Developer Blog Post (September 23rd, 2021)
 
+
+## Awards
+### Celent Model Awards (March 2022)
+Won ["Celent Model Sell Side 2022 Award for Data, Analytics, and AI Innovation"](https://www.celent.com/insights/163262822)
 ### Fintech Futures Banking Tech Awards (November 2021)
 Won ["Best Fintech Partnership"](https://www.fintechfutures.com/2021/11/congratulations-to-this-years-banking-tech-awards-winners/) for Legend collaboration with Fintech Open Source Foundation (FINOS).
 
@@ -39,6 +52,10 @@ Won ["Best Collaboration Initiative"](https://www.aftas.org/past-winners) for pa
 _COMING SOON_
 
 ## Talks and Conferences
+
+### ["Consuming Legend Data Models & Services Using BI, Python/ML & other Tools"](https://www.youtube.com/watch?v=rm-mAohz6NQ)
+Andrew Ormerod & John Pentelow, Goldman Sachs (July 2022)
+
 ### ["An open-sourced solution to Data Governance? How Legend may be the Answer to Data Quality concerns in the Financial Industry"](https://www.youtube.com/watch?v=9qIq0mHKQeY)
 Ffion Acland & Beeke-Marie Nelke, Goldman Sachs (November 2021)
 

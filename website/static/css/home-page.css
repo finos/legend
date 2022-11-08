@@ -129,6 +129,7 @@
   from {
     transform: translateY(0.3rem);
   }
+
   to {
     transform: translateY(-0.3rem);
   }
@@ -146,6 +147,7 @@
   from {
     transform: translateY(0.3rem);
   }
+
   to {
     transform: translateY(-0.3rem);
   }
@@ -198,13 +200,13 @@
 }
 
 .home-page__content__whatis__title__pre {
-  font-size: 11rem;
+  font-size: 9rem;
   font-family: "Roboto Condensed";
   line-height: 1;
 }
 
 .home-page__content__whatis__title__logo {
-  width: 42rem;
+  width: 39rem;
 }
 
 .home-page__content__whatis__title__logo path {
@@ -222,6 +224,13 @@
   margin-top: 2rem;
 }
 
+.home-page__extra__spacing {
+  padding-top:100px;
+}
+
+.home-page__content__whatis__text{
+  font-size: 2rem;
+}
 .home-page__content__whatis__text__question {
   color: var(--color-primary-0);
 }
@@ -231,7 +240,7 @@
 }
 
 .home-page__content__tools {
-  height: 85rem;
+  height: 75rem;
 }
 
 .home-page__content__tools .home-page__content__container {
@@ -240,6 +249,12 @@
 
 .home-page__content__tools__text {
   margin-right: 5rem;
+}
+
+.home-page__content__summary__text {
+  width: 50%;
+  margin: 25px;
+  height: 100vh;
 }
 
 .home-page__content__tools-panel {
