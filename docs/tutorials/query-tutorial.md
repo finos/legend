@@ -10,45 +10,82 @@ You can build a query directly in Alloy Studio using its drag-and-drop environme
 
 _COMING SOON_
 
-### Basic Queries
-
-#### Filter a query
+## Core Features
 _COMING SOON_
 
-#### Query calculations
+
+### Class Explorer 
 _COMING SOON_
 
-#### Preview data and get type info
+
+### Milestoning 
+
+
+### Function Explorer
+The function explorer shows you all the functions you have defined and lets you drag and drop to selected panels in the query builder including the derviation projection columns.  
+
+![Function Explorer](../assets/query-builder/function-explorer.gif)
+
+### Parameters 
 _COMING SOON_
 
-## Customize a Query
+
+### Constants
 _COMING SOON_
 
-### Queries with custom logic
+
+
+### Filter
 _COMING SOON_
 
-#### Query derivations: add details to a class
+### Watermark
 _COMING SOON_
 
-#### Complex query logic: edit in text mode
+
+
+## Fetch Structure - Tabular Data Structure 
+
+
+## Projection Columns
+
+_COMING SOON_
+
+
+
+### Post Filter
+_COMING SOON_
+
+### OLAP
+
+_COMING SOON_
+
+## Result Modifiers
+
+
+
+_COMING SOON_
+
+
+
+
+
+## Fetch Structure - Graph Fetch 
+
 _COMING SOON_
 
 ### Use Graph Fetch to return query output in graph or JSON format
 _COMING SOON_
 
-## Query Services 
-_COMING SOON_
 
-### Promote your query to a service
-_COMING SOON_
 
-## Service Editor
+## Executing Queries
 
-### Edit a Service
-_COMING SOON_
 
-### Make Changes to a query or service
-_COMING SOON_
+### Export Data
 
-### Add parameters to a query or service
-_COMING SOON_
+once you are content with your data, you can also export to other types. For now we support exporting your query results to `CSV`.
+
+
+![Export CSV](../assets/query-builder/export-csv.gif)
+
+![Export CSV](../assets/query-builder/export-csv-params.gif)
