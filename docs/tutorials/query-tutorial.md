@@ -20,6 +20,7 @@ _COMING SOON_
 
 ### Milestoning 
 
+![Milestoning](../assets/query-builder/milestoning.gif)
 
 ### Function Explorer
 The function explorer shows you all the functions you have defined and lets you drag and drop to selected panels in the query builder including the derviation projection columns.  
@@ -39,8 +40,10 @@ _COMING SOON_
 _COMING SOON_
 
 ### Watermark
-_COMING SOON_
 
+You can add a watermark to your query through the advanced options tab. If a watermark is present, a waterdrop icon will appear on the top left of your query and you can also edit your watermark by clicking that icon. 
+
+![Watermark](../assets/query-builder/watermark.gif)
 
 
 ## Fetch Structure - Tabular Data Structure 
@@ -83,7 +86,7 @@ _COMING SOON_
 
 ### Export Data
 
-once you are content with your data, you can also export to other types. For now we support exporting your query results to `CSV`.
+Once you are content with your data, you can also export to other types. For now we support exporting your query results to `CSV`.
 
 
 ![Export CSV](../assets/query-builder/export-csv.gif)
