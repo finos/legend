@@ -27,12 +27,13 @@ The function explorer shows you all the functions you have defined and lets you 
 ![Function Explorer](../assets/query-builder/function-explorer.gif)
 
 ### Parameters 
-_COMING SOON_
+Parameters are variables assigned to your query. They are dynamic in nature and can change for each execution.
+
+![Add a parameter](../assets/query-builder/params.gif)
 
 
 ### Constants
-_COMING SOON_
-
+Constants are static values set to a variable name that can be leveraged within your query. They remain the same for ALL executions.
 
 
 ### Filter
@@ -53,11 +54,25 @@ _COMING SOON_
 
 
 ### Post Filter
-_COMING SOON_
+You may add a filter that will be applied to your Tabular Data Structure Columns that were defined through the projection panel by adding a post-filter.
+
+
+![Post Filter](../assets/query-builder/post-filter-simple.gif)
+![Post Filter on aggregation](../assets/query-builder/post-filter-aggregation.gif)
+![OLAP with Post Filter](../assets/query-builder/post-filter-derived.gif)
 
 ### OLAP
+Olap let you add [window](https://mode.com/sql-tutorial/sql-window-functions/) columns to your query. 
+See: 
 
-_COMING SOON_
+![Create Simple OLAP](../assets/query-builder/olap-simple.gif)
+![OLAP Modal](../assets/query-builder/olap-create-modal.gif)
+![OLAP with Post Filter](../assets/query-builder/olap-post-filter.gif)
+
+
+
+
+
 
 ## Result Modifiers
 
@@ -79,6 +94,11 @@ _COMING SOON_
 
 
 ## Executing Queries
+
+### Execute With Parameters
+
+![Execute Params](../assets/query-builder/execute-params.gif)
+![Export Params With Enums](../assets/query-builder/execute-params-enums.gif)
 
 
 ### Export Data
