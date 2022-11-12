@@ -11,16 +11,13 @@ You can build a query directly in Alloy Studio using its drag-and-drop environme
 _COMING SOON_
 
 ## Core Features
-_COMING SOON_
 
 
 ### Class Explorer 
 _COMING SOON_
 
 
-### Milestoning 
 
-![Milestoning](../assets/query-builder/milestoning.gif)
 
 ### Function Explorer
 The function explorer shows you all the functions you have defined and lets you drag and drop to selected panels in the query builder including the derviation projection columns.  
@@ -40,6 +37,9 @@ Constants are static values set to a variable name that can be leveraged within 
 ### Filter
 _COMING SOON_
 
+### Milestoning 
+
+![Milestoning](../assets/query-builder/milestoning.gif)
 ### Watermark
 
 You can add a watermark to your query through the advanced options tab. If a watermark is present, a waterdrop icon will appear on the top left of your query and you can also edit your watermark by clicking that icon. 
@@ -50,7 +50,7 @@ You can add a watermark to your query through the advanced options tab. If a wat
 ## Fetch Structure - Tabular Data Structure 
 
 
-## Projection Columns
+### Projection Columns
 
 _COMING SOON_
 
@@ -77,7 +77,7 @@ See:
 
 
 
-## Result Modifiers
+### Result Modifiers
 
 
 
@@ -90,10 +90,6 @@ _COMING SOON_
 ## Fetch Structure - Graph Fetch 
 
 _COMING SOON_
-
-### Use Graph Fetch to return query output in graph or JSON format
-_COMING SOON_
-
 
 
 ## Executing Queries
