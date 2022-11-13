@@ -17,6 +17,20 @@ const env = {
 };
 
 class LegendApp extends Construct{
+
+  validateEnv(name: string, value: string)
+  {
+    if (value == undefined)
+    {
+      throw new Error("Parameter '" + name + "' has not been defined in the cdk context/env");
+    }
+
+    if (value.trim().length == 0)
+    {
+      throw new Error("Parameter '" + name + "' is an empty string in the cdk context/env");
+    }
+  }
+
   constructor(scope: cdk.App, id: string){
     super(scope, id);
     const legendEnginePort = 6060;
@@ -28,6 +42,10 @@ class LegendApp extends Construct{
     const gitlabAppId = this.node.tryGetContext('gitlabAppId');
     const gitlabAppSecret = this.node.tryGetContext('gitlabAppSecret');
 
+    this.validateEnv("domainName", providedDomainName);
+    this.validateEnv("gitlabAppId", gitlabAppId);
+    this.validateEnv("gitlabAppSecret", gitlabAppSecret);
+  
     const legendStorageStack = new StorageStack(this, 'storage-stack', {
       env: env,
     });
