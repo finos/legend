@@ -48,6 +48,10 @@ Verify that the ECR repository now shows a 'latest' image.
 
 Once all of the above requirements are ready, you should be set to run the cdk deploy commands to install.
 
+```
+Note : Make sure that CDK has been bootstrapped for the account and region in which you are deploying Legend.
+```
+
 ### Commands
 
 ```
@@ -57,6 +61,12 @@ cdk deploy --all \
   -c domainName=${LEGEND_DOMAIN}
 ```
 
+```
+Note : The CDK deploy command will prompt you many times to approve changes to your account. You can provide a CLI flag to the deploy command to customize the approval behavior. See "Security-related changes" at https://docs.aws.amazon.com/cdk/v2/guide/cli.html 
+
+```
+
 ## Accessing Studio
 
 Once the deployment is finished, you should be able to access Legend Studio at: `https://legend.<your domain name>/studio`
+yy
