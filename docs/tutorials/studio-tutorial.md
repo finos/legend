@@ -541,21 +541,27 @@ You can save these tests and continue to enhance your data models with the comfo
 
    ![Save execution as a test](../assets/execution.gif)
 
-## Create a new service (beta)
+## Create a Service
 
-Build services on top of data queries to consume modeled data systematically. To create a service select **New Service** from the drop down menu to launch the **Service Editor**. Please note that the Service Editor is still in beta state and some features may not be fully available yet.
+Build services on top of data queries to consume modeled data systematically. To create a service select **New Service** from the drop down menu to launch the **Service Editor**.
 
 ### General Tab
 
-In the **General** tab of the Service Editor, users can specify metadata of their service including URL, documentation and owners. URL parameters can be directly defined within the {} sytnax.
+In the **General** tab of the Service Editor, users can specify metadata of their service including the service URL, documentation and owners. URL parameters can be directly defined within the {} sytnax.
+
+   ![Service Editor - General](../assets/service-editor-general.JPG)
+
 
 ### Execution Tab
 
-In the execution tab, users can create and edit the service query. By hitting the "Edit Query" button, users can edit the query using the **Query Editor**. Users can make changes to the query either in the user-friendly form mode or in text mode. 
+In the execution tab, users can create and edit their service query. By hitting the pencil icon button, users can edit the query using the [Query Builder](./query-tutorial.md). Users can make changes to the query either in the user-friendly form mode or in text mode. 
 
 Additonally the bottom panel lets you define your execution context which represents the mapping and runtime used when executing your query, 
 
 **Multi** Executions lets you use a service parameter to decide what execution context (mapping, runtime) to use. You can switch between multi and single using the top right icon on the context panel. 
+
+   ![Service Editor - Execution](../assets/service-editor-execution.JPG)
+
 
 ### Tests Tab
 
@@ -564,7 +570,7 @@ This panel lets you define tests for the services you write by specifying test d
 ### See features in action
 
 #### Create a Service
-![Create a service](../assets/create-a-service.gif)
+![Create a Service](../assets/create-a-service.gif)
 
 #### Create a multi execution service
 ![Create a multi execution service](../assets/create-a-service-multi-execution.gif)
