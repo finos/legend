@@ -231,6 +231,28 @@
       "title": "How do I specify a supertype of a class?",
       "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#add-a-super-type"
     },
+    "question.how-to-create-a-service": {
+      "title": "How do I create a Service?",
+      "related": [
+        "question.how-to-edit-a-service-url",
+        "question.how-to-add-owners-to-service",
+        "question.how-to-edit-a-service-query",
+        "question.how-to-write-a-service-test"
+      ],
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-a-service"
+    },
+    "question.how-to-edit-a-service-url": {
+      "title": "How do I edit my Service URL?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#general-tab"
+    },
+    "question.how-to-add-owners-to-service": {
+      "title": "How do I add owners to my Service?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#execution-tab"
+    },
+    "question.how-to-edit-a-service-query": {
+      "title": "How do I edit my Service Query?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-a-service-test"
+    },
     "question.how-to-write-a-service-test": {
       "title": "How do I specify a service test?",
       "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-a-service-test"
@@ -248,6 +270,14 @@
     "question.how-to-write-a-service-multi-execution": {
       "title": "How do I specify a service with multi executions?",
       "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-a-multi-execution-service"
+    },
+    "question.how-to-add-parameters-to-query": {
+      "title": "How do I add parameters to my Query?",
+      "url": "https://legend.finos.org/docs/tutorials/query-tutorial#parameters"
+    },
+    "question.how-to-add-constants-to-query": {
+      "title": "How do I add constants to my Query?",
+      "url": "https://legend.finos.org/docs/tutorials/query-tutorial#constants"
     },
     "context.class-editor": {
       "related": [

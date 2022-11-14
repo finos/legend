@@ -33,6 +33,10 @@ Parameters are variables assigned to your query. They are dynamic in nature and 
 ### Constants
 Constants are static values set to a variable name that can be leveraged within your query. They remain the same for ALL executions.
 
+![Add a constant](../assets/query-builder/constants-simple.gif)
+
+![Add a constant for milestone value](../assets/query-builder/constants-milestoning.gif)
+
 
 ### Filter
 _COMING SOON_
