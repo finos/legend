@@ -222,19 +222,19 @@ Create a relationship between the **Person** and **Firm** classes.
 Data Elements are top level elements that define test data for store/external formats. They are useful for sharing test data among different tests.
 ### Relational
 Test data for relational is defined through csv values for each table, which is to be used when a user is sourcing data from relational databases. The name of the schema, the table, and the related CSV values must all be specified. Besides, the primary keys have to be distinct.
-![relational data element](../assets/relational_db.png)
-![relational data element](../assets/relational_element.png)
-![relational data element](../assets/relational_element1.png)
+![data-element-relational-sample-database](../assets/create-a-data-element-relational-sample-database.png)
+![data-element-relational-person-table](../assets/create-a-data-element-relational-person-table.png)
+![data-element-relational-firm-table](../assets/create-a-data-element-relational-firm-table.png)
 
 ### External Format(m2m)
 Test data for model to model could be defined through external format. Provide test data for properties of source classes that are being used in the mapping.
-![external format m2m](../assets/create-an-external-format.gif)
+![[data-element-external-format-m2m](../assets/create-a-data-element-external-format-m2m.gif)
 
 ### Service Store
 `UrlPath` in `Service Request Pattern` = Root path defined in the `Service Group` of `Service Store` and the path specified in the service for which this data element is created.
 In `Service Response Definition` panel, provide test data for all used properties in the chosen format. 
 Please check the demo video below for futher information.
-![service store](../assets/create-a-service-store-data-element.gif)
+![[data-element-service-store](../assets/create-a-service-store-data-element.gif)
 
 
 ## Create a Diagram
