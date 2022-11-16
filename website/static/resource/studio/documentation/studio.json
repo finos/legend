@@ -282,6 +282,10 @@
       ],
       "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#with-data-element"
     },
+    "question.how-to-create-a-data-element": {
+      "title": "How do I create a data element?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-a-data-element"
+    },
     "question.how-to-write-a-service-multi-execution": {
       "title": "How do I specify a service with multi executions?",
       "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-a-multi-execution-service"
@@ -309,6 +313,11 @@
         "question.how-to-write-a-service-test-with-parameters",
         "question.how-to-write-a-service-test-with-data-element",
         "question.how-to-write-service-connection-test-data"
+      ]
+    },
+    "context.data-element-editor": {
+      "related": [
+        "question.how-to-create-a-data-element"
       ]
     },
     "dsl-text.grammar.parser": {
