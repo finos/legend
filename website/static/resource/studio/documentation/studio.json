@@ -257,14 +257,29 @@
       "title": "How do I specify a service test?",
       "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-a-service-test"
     },
+    "question.how-to-write-test-data": {
+      "title": "How do I create test data?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-test-data"
+    },
+    "question.how-to-write-service-connection-test-data": {
+      "title": "How do I specify service connection test data?",
+      "related": [
+        "question.how-to-write-a-service-test"
+      ],
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-connection-test-data"
+    },
     "question.how-to-write-a-service-test-with-parameters": {
       "title": "How do I specify a service test with parameters?",
-      "related": ["question.how-to-write-a-service-test"],
+      "related": [
+        "question.how-to-write-a-service-test"
+      ],
       "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#with-parameters"
     },
     "question.how-to-write-a-service-test-with-data-element": {
       "title": "How do I use data element in service test?",
-      "related": ["question.how-to-write-a-service-test"],
+      "related": [
+        "question.how-to-write-a-service-test"
+      ],
       "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#with-data-element"
     },
     "question.how-to-write-a-service-multi-execution": {
@@ -286,6 +301,14 @@
         "question.how-to-define-a-class-derivation",
         "question.how-to-define-a-class-constraint",
         "question.how-to-specify-a-class-supertype"
+      ]
+    },
+    "context.service-editor.test": {
+      "related": [
+        "question.how-to-write-a-service-test",
+        "question.how-to-write-a-service-test-with-parameters",
+        "question.how-to-write-a-service-test-with-data-element",
+        "question.how-to-write-service-connection-test-data"
       ]
     },
     "dsl-text.grammar.parser": {

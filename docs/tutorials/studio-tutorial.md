@@ -218,8 +218,26 @@ Create a relationship between the **Person** and **Firm** classes.
 
 ![Add a super type](../assets/add-non-primitive-data-type.gif)
 
-## Create a Diagram
+## Create a Data Element
+Data Elements are top level elements that define test data for store/external formats. They are useful for sharing test data among different tests.
+### Relational
+Test data for relational is defined through csv values for each table, which is to be used when a user is sourcing data from relational databases. The name of the schema, the table, and the related CSV values must all be specified. Besides, the primary keys have to be distinct.
+![relational data element](../assets/relational_db.png)
+![relational data element](../assets/relational_element.png)
+![relational data element](../assets/relational_element1.png)
 
+### External Format(m2m)
+Test data for model to model could be defined through external format. Provide test data for properties of source classes that are being used in the mapping.
+![external format m2m](../assets/create-an-external-format.gif)
+
+### Service Store
+`UrlPath` in `Service Request Pattern` = Root path defined in the `Service Group` of `Service Store` and the path specified in the service for which this data element is created.
+In `Service Response Definition` panel, provide test data for all used properties in the chosen format. 
+Please check the demo video below for futher information.
+![service store](../assets/create-a-service-store-data-element.gif)
+
+
+## Create a Diagram
 To get started, click the **+** to open the **New Element** drop down menu on the left-hand side and select **Add a new diagram**.
 
 ### Add classes to the diagram
@@ -575,8 +593,25 @@ This panel lets you define tests for the services you write by specifying test d
 #### Create a multi execution service
 ![Create a multi execution service](../assets/create-a-service-multi-execution.gif)
 
-
 ## Create a Service Test 
+### Create connection test data
+Click the `generate` button to automatically generate test data if possible. Otherwise, please manually create test data.
+#### Relational
+Add relational data tables based on databases to which the service's mapping connects. 
+It's unnecessary to provide all columns with test data.
+The columns used in the service, however, require test data. Besides, the primary keys have to be distinct.
+![Create connections test data - Relational](../assets/create-a-relational-service-connection-test-data.gif)
+#### External Format (M2M)
+Click the `generate` button to automatically generate test data if possible. Otherwise, kindly manually provide test data for the source class's properties that serve as 
+the foundation for the properties used in the service. e.g. As shown in the video, _Firm's name is used in the service, which comes from Firm's legalName. Therefore, manually providing test data for legalName will be sufficient if the `generate` button is not working.
+![Create connections test data - Relational](../assets/create-a-service-connection-test-data-with-external-format.gif)
+
+#### Data element
+More examples of different types of Data element creation could be found [here](#create-a-data-element).
+![Create connections test data - Data Element](../assets/create-a-service-connection-test-with-data-element.gif)
+
+#### Service Store
+![Create connections test data - Data Element](../assets/create-a-service-connection-test-data-with-service-store.gif)
 
 ### Relational
 
@@ -608,8 +643,6 @@ This panel lets you define tests for the services you write by specifying test d
 ## Promote a relational-to-model query to a service
 
 This feature is not yet supported.
-
-
 
 ## Consume a Service
 
