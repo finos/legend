@@ -54,7 +54,7 @@ export GITLAB_APP_SECRET=<add your app secret>
 
 ## Studio 
 
-Start Stduio as follows. 
+Start Studio as follows. 
 
 ```
 ./docker-compose.sh --profile studio up -d
@@ -91,7 +91,7 @@ In the opening page of Studio, select the "Legend Installer Demo" project or nav
 
 Run Query as follows :
 ```
-./docker-compose.sh --profile query -d
+./docker-compose.sh --profile query up -d
 ```
 
 After a few minutes, the containers should pass their health checks and be marked as healthy.
