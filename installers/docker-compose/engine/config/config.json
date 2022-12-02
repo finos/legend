@@ -75,7 +75,14 @@
     "port": ${TEMP_DB_PORT}
   },
   "relationalexecution": {
-    "tempPath": "/tmp/"
+    "temporarytestdb": {
+      "port": ${TEMP_DB_PORT}
+    },
+    "tempPath": "/tmp/",
+    "flowProviderClass": "org.finos.legend.engine.authentication.LegendDefaultDatabaseAuthenticationFlowProvider",
+    "flowProviderConfiguration": {
+        "_type": "legendDefault"
+    }
   },
   "vaults": [
      {

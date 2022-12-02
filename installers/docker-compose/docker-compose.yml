@@ -4,7 +4,7 @@ services:
   # The current dir on the host is mounted into the container as a writable volume. Any writes by the setup script are now visible on the host
   # To avoid the files generated inside the container from being owned as root, the container is started with the user/group id of the current user (on the host)
   setup:
-    profiles: ["setup", "query", "studio"]
+    profiles: ["setup", "query", "studio", "postgres"]
     container_name: "setup"
     image: finos/legend-engine-server:${ENGINE_IMAGE_VERSION}
     user: ${U_ID}:${G_ID}
@@ -279,5 +279,31 @@ services:
         ]
       start_period: 20s
       interval: 5s
+  postgres:
+    profiles: ["studio", "query", "postgres"]
+    depends_on:
+      - setup
+    container_name: "postgres"
+    image: postgres:${POSTGRES_IMAGE_VERSION}
+    env_file: .env
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST_AUTH_METHOD=password
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+    networks:
+      - legend
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "pg_isready"
+        ]
+      start_period: 20s
+      interval: 5s
+
 networks:
   legend: {}
