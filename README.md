@@ -41,7 +41,7 @@ _Feel free to suggest areas for documentation improvement by raising an [issue](
 
 ## Contribute to Legend
 
-To learn about contributing to Legend, see the [CONTRIBUTING.md](CONTRIBUTING.md) file or the ["Community/Contribute"](https://legend.finos.org/docs/community/contribute-to-legend) section of the Legend documentation site.
+To learn about contributing to Legend, see the [CONTRIBUTING.md](CONTRIBUTING.md) file or the [Contribute](https://legend.finos.org/docs/community/contribute-to-legend) page in the Community section of the Legend documentation site.
 
 ## Contribute to FINOS projects that use Legend as a data modeling tool
 
