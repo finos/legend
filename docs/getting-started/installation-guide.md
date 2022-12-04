@@ -88,8 +88,6 @@ Follow this [guide](https://github.com/finos/legend-depot/blob/master/README.md#
 
 Follow this [guide](https://github.com/finos/legend-studio/blob/master/README.md#getting-started) on how to start local Studio.
 
-<<<<<<< Updated upstream:docs/getting-started/installation-guide.md
-
 #### You're all set :tada:
 
 Visit http://localhost:9000/studio and start hacking
