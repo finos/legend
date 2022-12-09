@@ -4,7 +4,7 @@ title: Use Cases
 sidebar_label: Use Cases
 ---
 
-Check out our [blog posts](http://localhost:3001/docs/community/legend-media#blog-posts) to learn more about Legend use cases and review the content below.
+Check out our [blog posts](https://legend.finos.org/docs/community/legend-media#blog-posts) to learn more about Legend use cases and review the content below.
 ## Data Governance
 _COMING SOON_
 
