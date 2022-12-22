@@ -40,7 +40,7 @@ From the AWS Console, locate the ECR repository you have just created. From the 
 
 Open a terminal session in the `cdk` directory of this repository (the directory where this README is located).
 
-From the "View Push Commands" interface, copy each of the commands into your terminal session and run it.
+From the "View Push Commands" interface, copy each of the commands into your terminal session and run it. This will build and deploy the docker image needed for this example.
 
 Verify that the ECR repository now shows a 'latest' image.
 
@@ -69,4 +69,3 @@ Note : The CDK deploy command will prompt you many times to approve changes to y
 ## Accessing Studio
 
 Once the deployment is finished, you should be able to access Legend Studio at: `https://legend.<your domain name>/studio`
-yy

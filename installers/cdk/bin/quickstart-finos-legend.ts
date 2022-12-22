@@ -3,7 +3,6 @@ import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
 
-
 import { Construct } from 'constructs';
 import { VpcStack } from '../lib/vpc-stack';
 import { EcsStack } from '../lib/ecs-stack';
@@ -41,7 +40,7 @@ class LegendApp extends Construct{
     const providedDomainName = this.node.tryGetContext('domainName');
     const gitlabAppId = this.node.tryGetContext('gitlabAppId');
     const gitlabAppSecret = this.node.tryGetContext('gitlabAppSecret');
-
+    
     this.validateEnv("domainName", providedDomainName);
     this.validateEnv("gitlabAppId", gitlabAppId);
     this.validateEnv("gitlabAppSecret", gitlabAppSecret);
@@ -60,18 +59,23 @@ class LegendApp extends Construct{
       storageBucket: legendStorageStack.configBucket,
       domainName: providedDomainName,
     });
+    legendVpcStack.node.addDependency(legendStorageStack);
     
     const legendEcsStack = new EcsStack(this, 'ecs-stack', {
       env: env,
       vpc: legendVpcStack.legendVpc,
     });
+    legendEcsStack.node.addDependency(legendVpcStack);
 
     const legendMongoStack = new MongoDbStack(this, 'mongo-stack', {
       env: env,
       ecsCluster: legendEcsStack.legendCluster,
       legendNamespace: legendEcsStack.legendNamespace,
       mongoDbPort: mongoDbPort,
+      mongoDbUsername: legendVpcStack.mongoDbUsername,
+      mongoDbPassword: legendVpcStack.mongoDbPassword,
     });
+    legendMongoStack.node.addDependency(legendEcsStack);
     const mongoConnections = legendMongoStack.service.connections;
 
     

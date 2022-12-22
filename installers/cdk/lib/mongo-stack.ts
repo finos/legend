@@ -8,6 +8,8 @@ export interface MongoDbStackProps extends cdk.StackProps {
     ecsCluster: ecs.Cluster,
     mongoDbPort: number,
     legendNamespace: service.PrivateDnsNamespace,
+    mongoDbUsername: string,
+    mongoDbPassword: string,
 };
 
 export class MongoDbStack extends cdk.Stack{
@@ -18,11 +20,12 @@ export class MongoDbStack extends cdk.Stack{
             cpu: 512,
             memoryLimitMiB: 1024,
         });
+
         const legendMongoContainer = legendMongoTaskDefinition.addContainer('legendMongo', {
             image: ecs.ContainerImage.fromRegistry('mongo:4.2'),
             environment: {
-                "MONGO_INITDB_ROOT_USERNAME": "admin",
-                "MONGO_INITDB_ROOT_PASSWORD": "password"
+                "MONGO_INITDB_ROOT_USERNAME": props.mongoDbUsername,
+                "MONGO_INITDB_ROOT_PASSWORD": props.mongoDbPassword,
             },
             logging: ecs.LogDrivers.awsLogs({
                 streamPrefix: "legend-mongodb",

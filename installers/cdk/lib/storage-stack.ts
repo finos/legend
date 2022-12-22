@@ -6,6 +6,7 @@ import { Construct } from 'constructs';
 
 export class StorageStack extends cdk.Stack{
     public configBucket: s3.Bucket;
+
     constructor(scope: Construct, id: string, props: cdk.StackProps) {
         super(scope, id, props);
             
@@ -14,5 +15,6 @@ export class StorageStack extends cdk.Stack{
         });
         const legendStudioEcrRepository = ecr.Repository.fromRepositoryName(this, 'legendStudioEcrRepository', 'legend-studio-repo');
         this.configBucket = legendConfigurationBucket;
+
     };
 };

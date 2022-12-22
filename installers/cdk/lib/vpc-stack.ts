@@ -28,9 +28,15 @@ export class VpcStack extends cdk.Stack {
     public legendFargateEnvironment: {[key: string]:string};
     public loadBalancerDnsName: string;
     public legendCertificate: acm.Certificate;
+    public mongoDbUsername: string;
+    public mongoDbPassword: string;
+
     constructor(scope: Construct, id: string, props: VpcStackProps) {
         super (scope, id, props);
-
+        const mongoDbUsername = 'admin';
+        this.mongoDbUsername = mongoDbUsername;
+        const mongoDbPassword = Math.random().toString(36).substring(2,20);
+        this.mongoDbPassword = mongoDbPassword;
         const legendVpc = new ec2.Vpc(this, 'legendVpc', {
             enableDnsHostnames: true,
             enableDnsSupport: true,
@@ -78,7 +84,7 @@ export class VpcStack extends cdk.Stack {
                     "pac4j": {
                         "callbackPrefix": "/studio/log.in",
                         "bypassPaths": ["/studio/admin/healthcheck"],
-                        "mongoUri": "mongodb://admin:password@legend-mongodb.legend:" + props.mongoDbPort,
+                        "mongoUri": "mongodb://" + mongoDbUsername + ":" + mongoDbPassword + "@legend-mongodb.legend:" + props.mongoDbPort,
                         "mongoDb": "legend",
                         "clients": [
                             {
@@ -162,9 +168,9 @@ export class VpcStack extends cdk.Stack {
         const legendFargateEnvironment = {
             "CONFIGURATION_URL_UICONFIG": props.storageBucket.urlForObject('config/uiConfig.json'),
             "CONFIGURATION_URL_HTTPCONFIG": props.storageBucket.urlForObject('config/httpConfig.json'),
-            "MONGODB_URI": "mongodb://admin:password@legend-mongodb.legend:" + props.mongoDbPort,
-            "MONGODB_USERNAME": "admin",
-            "MONGODB_PASSWORD": "password",
+            "MONGODB_URI": "mongodb://" + mongoDbUsername + ":" + mongoDbPassword + "@legend-mongodb.legend:" + props.mongoDbPort,
+            "MONGODB_USERNAME": mongoDbUsername,
+            "MONGODB_PASSWORD": mongoDbPassword,
             "MONGODB_PORT": props.mongoDbPort.toString(),
             "MONGODB_NAME": "legend",
             "MONGO_SESSION_ENABLED": "true",
