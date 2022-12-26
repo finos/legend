@@ -1,0 +1,12 @@
+1. The FINOS Legend with Remote Gitlab has been deployed.
+2. If you don't already have a Gitlab OAuth application, first, navigate to User Settings > Applications and create an application with the following parameters:
+    Name: Legend Demo
+    Redirect URI:
+    {{ .Values.env.HTTP_MODE }}://{{ .Values.env.LEGEND_HOST }}/engine/callback
+    {{ .Values.env.HTTP_MODE }}://{{ .Values.env.LEGEND_HOST }}/sdlc/api/auth/callback
+    {{ .Values.env.HTTP_MODE }}://{{ .Values.env.LEGEND_HOST }}/sdlc/api/pac4j/login/callback
+    {{ .Values.env.HTTP_MODE }}://{{ .Values.env.LEGEND_HOST }}/studio/log.in/callback
+    Enable the "Confidential" check box
+    Enable these scopes: openid, profile, api
+    Finally, "Save Application"
+

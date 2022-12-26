@@ -1,0 +1,38 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "legend.fullname" . }}
+  labels:
+    {{- include "legend.labels" . | nindent 4 }}
+spec:
+  {{ if eq .Values.env.HTTP_MODE "https"}}
+  tls:
+  - hosts:
+      - "{{ .Values.env.LEGEND_HOST }}"
+    secretName: {{ .Values.env.TLS_SECRET }}
+  {{ end }}
+  rules:
+  - host: "{{ .Values.env.LEGEND_HOST }}"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ include "legend.fullname" . }}-studio
+            port:
+              number: {{ .Values.studio.port }}
+      - path: /engine
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ include "legend.fullname" . }}-engine
+            port:
+              number: {{ .Values.engine.port }}
+      - path: /sdlc
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ include "legend.fullname" . }}-sdlc
+            port:
+              number: {{ .Values.sdlc.port }}

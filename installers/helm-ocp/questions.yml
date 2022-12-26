@@ -1,0 +1,100 @@
+namespace: legend-system
+questions:
+- variable: env.LEGEND_HOST
+  label: Legend URL
+  description: "DNS that will be used for legend. You can use ngrok/sslip for local clusters."
+  group: "Legend Settings"
+  type: string
+  default: ""
+  required: true
+- variable: env.GITLAB_URL
+  label: Gitlab URL
+  description: "URL of gitlab. By default gitlab.com will be used."
+  group: "Legend Settings"
+  type: string
+  default: "gitlab.com"
+- variable: env.GITLAB_OAUTH_CLIENT_ID
+  label: Gitlab OAuth Client ID
+  description: "Gitlab OAuth Client ID, check Readme for instructions"
+  group: "Legend Settings"
+  type: string
+  default: ""
+  required: true
+- variable: env.GITLAB_OAUTH_SECRET
+  label: Gitlab OAuth Secret
+  description: "Gitlab OAuth Secret, check Readme for instructions"
+  group: "Legend Settings"
+  type: string
+  default: ""
+  required: true
+- variable: env.HTTP_MODE
+  default: "http"
+  description: "Enable SSL"
+  label: Use Default Images
+  type: string
+  show_subquestion_if: https
+  group: "Legend Settings"
+  subquestions:
+  - variable: env.TLS_SECRET
+    default: ""
+    description: "Specify TLS Secret, create before installing chart."
+    type: string
+    label: TLS Secret
+    group: "Legend Settings"
+    required: true
+- variable: image.defaultImage
+  default: "true"
+  description: "Use default Legend images"
+  label: Use Default Images
+  type: boolean
+  show_subquestion_if: false
+  group: "Legend Images"
+  subquestions:
+  - variable: sdlc.repository
+    default: finos/legend-sdlc-server
+    description: "Specify SDLC Server Image Repository"
+    type: string
+    label: SDLC Server Image Repository
+    group: "Legend Images Settings"
+  - variable: sdlc.tag
+    default: 0.45.0
+    description: "Specify SDLC Server Image Tag"
+    type: string
+    label: SDLC Server Image Tag
+    group: "Legend Images Settings"
+  - variable: engine.repository
+    default: finos/legend-engine-server
+    description: "Specify Engine Server Image Repository"
+    type: string
+    label: Engine Server Image Repository
+    group: "Legend Images Settings"
+  - variable: engine.tag
+    default: 2.39.0
+    description: "Specify Engine Server Image Tag"
+    type: string
+    label: Engine Server Image Tag
+    group: "Legend Images Settings"
+  - variable: studio.repository
+    default: finos/legend-studio
+    description: "Specify Studio Image Repository"
+    type: string
+    label: Studio Image Repository
+    group: "Legend Images Settings"
+  - variable: studio.tag
+    default: 0.2.5
+    description: "Specify Studio Image Tag"
+    type: string
+    label: Studio Image Tag
+    group: "Legend Images Settings"
+  - variable: mongo.repository
+    default: mongo
+    description: "Mongo Image Repository"
+    type: string
+    label: Mongo Image Repository
+    group: "Legend Images Settings"
+  - variable: mongo.tag
+    default: 4.0
+    description: "Specify Mongo Image Tag"
+    type: string
+    label: Mongo Image Tag
+    group: "Legend Images Settings"

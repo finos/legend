@@ -1,0 +1,187 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "legend.fullname" . }}-engine
+  labels:
+    app: engine
+    {{- include "legend.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      app: engine
+      {{- include "legend.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        app: engine
+        {{- include "legend.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "legend.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      initContainers:
+      - name: copy-templates
+        image: busybox
+        command: ['sh', '-c', 'cp /tmp-templates/* /templates/']
+        volumeMounts:
+          - mountPath: /tmp-templates/config.json
+            name: template
+            subPath: config.json
+          - name: templates
+            mountPath: /templates
+      - name: copy-config
+        image: busybox
+        command: ['sh', '-c', 'cp /tmp-config/* /config/']
+        volumeMounts:
+          - name: config
+            mountPath: /config
+          - mountPath: /tmp-config/config.json
+            name: config-json
+            subPath: config.json
+      - name: copy-scripts
+        image: busybox
+        command: ['sh', '-c', 'cp /tmp-scripts/* /scripts/']
+        volumeMounts:
+          - mountPath: /gitlab-config/gitlab.env
+            name: gitlab
+            subPath: gitlab.env
+          - mountPath: /tmp-scripts/gen-config.sh
+            name: gen-config
+            subPath: gen-config.sh
+          - mountPath: /tmp-scripts/run-engine.sh
+            name: run-engine
+            subPath: run-engine.sh
+          - mountPath: /tmp-scripts/run-sdlc.sh
+            name: run-sdlc  
+            subPath: run-sdlc.sh
+          - mountPath: /tmp-scripts/run-studio.sh
+            name: run-studio
+            subPath: run-studio.sh
+          - mountPath: /tmp-scriptsx/setup.sh
+            name: setup
+            subPath: setup.sh
+          - name: scripts
+            mountPath: /scripts
+      containers:
+        - name: engine
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.engine.repository }}:{{ .Values.engine.tag }}"
+          imagePullPolicy: {{ .Values.engine.pullPolicy }}
+          command: ["/scripts/run-engine.sh"]
+          # command: ["sleep"]
+          # args: ["1000"]
+          envFrom:
+          - configMapRef:
+              name: {{ include "legend.fullname" . }}-env
+          # command: ["java"]
+          # args: ["-XX:+ExitOnOutOfMemoryError","-Xss4M","-XX:MaxRAMPercentage=60","-Dfile.encoding=UTF8","-cp","/app/bin/*.jar","org.finos.legend.sdlc.server.LegendSDLCServer","server","/config/config.yml"]
+          ports:
+            - name: engine
+              containerPort: {{ .Values.engine.port }}
+              protocol: TCP
+          volumeMounts:
+            - mountPath: /gitlab-config/gitlab.env
+              name: gitlab
+              subPath: gitlab.env
+            - name: scripts
+              mountPath: /scripts
+            - name: templates
+              mountPath: /templates
+            - name: config
+              mountPath: /config
+          livenessProbe:
+            tcpSocket:
+              port: {{ .Values.engine.port }}
+            initialDelaySeconds: 30
+            periodSeconds: 20
+          readinessProbe:
+            tcpSocket:
+              port: {{ .Values.engine.port }}
+            initialDelaySeconds: 5
+            periodSeconds: 20
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+      - name: config
+        emptyDir: {}
+      - name: scripts
+        emptyDir: {}
+      - name: templates
+        emptyDir: {}
+      - configMap:
+          items:
+          - key: config.json
+            path: config.json
+          name: {{ include "legend.fullname" . }}-engine
+        name: config-json
+      - configMap:
+          items:
+          - key: config.json
+            path: config.json
+          name: {{ include "legend.fullname" . }}-engine-template
+        name: template
+      - configMap:
+          items:
+          - key: gitlab.env
+            path: gitlab.env
+          name: {{ include "legend.fullname" . }}-gitlab
+        name: gitlab
+      - configMap:
+          items:
+          - key: gen-config.sh
+            path: gen-config.sh
+          name: {{ include "legend.fullname" . }}-scripts
+          defaultMode: 0755
+        name: gen-config
+      - configMap:
+          items:
+          - key: run-engine.sh
+            path: run-engine.sh
+          name: {{ include "legend.fullname" . }}-scripts
+          defaultMode: 0755
+        name: run-engine
+      - configMap:
+          items:
+          - key: run-sdlc.sh
+            path: run-sdlc.sh
+          name: {{ include "legend.fullname" . }}-scripts
+          defaultMode: 0755
+        name: run-sdlc
+      - configMap:
+          items:
+          - key: run-studio.sh
+            path: run-studio.sh
+          name: {{ include "legend.fullname" . }}-scripts
+          defaultMode: 0755
+        name: run-studio
+      - configMap:
+          items:
+          - key: setup.sh
+            path: setup.sh
+          name: {{ include "legend.fullname" . }}-scripts
+          defaultMode: 0755
+        name: setup
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

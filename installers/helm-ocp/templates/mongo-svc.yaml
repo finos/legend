@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "legend.fullname" . }}-mongo
+  labels:
+    app: mongo
+    {{- include "legend.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.mongo.type }}
+  ports:
+    - port: {{ .Values.mongo.port }}
+      targetPort: {{ .Values.mongo.port }}
+      protocol: TCP
+      name: mongo
+  selector:
+    app: mongo

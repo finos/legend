@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  gitlab.env: |
+    GITLAB_OAUTH_CLIENT_ID={{ .Values.env.GITLAB_OAUTH_CLIENT_ID }}
+    GITLAB_OAUTH_SECRET={{ .Values.env.GITLAB_OAUTH_SECRET }}
+kind: ConfigMap
+metadata:
+  labels:
+    app: gitlab
+    {{- include "legend.labels" . | nindent 4 }}
+  name: {{ include "legend.fullname" . }}-gitlab
