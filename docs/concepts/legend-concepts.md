@@ -38,20 +38,20 @@ Data models allow you to describe your data and data relationships.
 
 [Create a data model](../tutorials/studio-create-model.md).
 
-## Data Types 
+## Data types 
 _Coming soon._
-
-## Derived property
-
-Derived properties use functions to operate on other attributes in the data model.
-
-[Create a derived property](../tutorials/studio-create-model.md/#derived-property).
 
 ## Dataspace
 
 A dataspace is a block of code that groups together a default mapping, runtime and diagram in a Studio project to enable easy query capabilities. Dataspaces help users intuitively find and query the data models they're interested in.
 
 [Create a dataspace](../tutorials/query-create-dataspace).
+
+## Derived property
+
+Derived properties use functions to operate on other attributes in the data model.
+
+[Create a derived property](../tutorials/studio-create-model.md/#derived-property).
 
 ## Diagram
  
@@ -71,10 +71,6 @@ File Generations lets you generate your models in other codes or schemas.
 
 [Create a File Generation](../tutorials/studio-file-generation.md)
 
-## Flat Data Store
-
-_Coming soon._
-
 ## Flat Data Schema
 
 Flat Data is a feature of the external formats support within Legend. It covers simple file formats like CSVs and simple custom formats. More
@@ -88,6 +84,10 @@ The Flat Data grammar is used to describe a particular file format so that data 
 
 [Create flat data schema](../tutorials/studio-create-flat-data-schema.md).
 
+## Flat Data Store
+
+_Coming soon._
+
 ## Form mode
 
 _Coming soon._
@@ -96,18 +96,19 @@ _Coming soon._
 
 Functions are used to derive new values from existing values using various operations.
 
-### Customized Function
+### Customized function
 
 Defining a customized function allows you to re-use transformation logic as part of your mappings or services.
 
 [Define a function](../tutorials/studio-define-function.md).
 
 ### Function editor
+
 _Coming soon._
 
-## Generation specification
+## Generation Specification
 
-Generation specification lets you specify the file and model generation elements that you want to run as part of your build.
+Generation Specification lets you specify the file and model generation elements that you want to run as part of your build.
 
 [Generate models and files](../tutorials/studio-file-generation.md)
 
@@ -117,29 +118,23 @@ There is also the option to create a **group workspace** which allows collaborat
 
 [Create a group workspace](../tutorials/studio-create-model.md/#group-workspace).
 
-## Mapping Editor
+## Mapping editor
 
 The mapping editor lets you construct mapping elements and test them through mapping tests.
-
-## Model-to-Model Mapping
-
-Model-to-model mappings are used to create model transformations. Model transformations are used to connect different models.
-
-[Create model-to-model mappings](../tutorials/studio-m2m-mapping.md).
 
 ## Measure
 
 _Coming soon._
 
+## Model-to-model mapping
+
+Model-to-model mappings are used to create model transformations. Model transformations are used to connect different models.
+
+[Create model-to-model mappings](../tutorials/studio-m2m-mapping.md).
+
 ## Persistence
 
 _Coming soon._
-
-## Project dependencies
-
-You can configure a project to depend on another project. In other words, you can leverage the features defined in another data model to run your own data model.  
-
-[Define project dependencies](../tutorials/studio-project-dependencies.md)
 
 ## Profile
 
@@ -147,21 +142,27 @@ Capture additional information (metadata) about the data model by creating a Pro
 
 [Create and edit profiles](../tutorials/studio-create-model.md/#profile).
 
+## Project dependencies
+
+You can configure a project to depend on another project. In other words, you can leverage the features defined in another data model to run your own data model.  
+
+[Define project dependencies](../tutorials/studio-project-dependencies.md)
+
 ## Property
 
 Properties are components of classes that define the attributes of a business concept. Properties can be both primitives (like strings or integers) or other properties. Use properties in a class to define attributes of the business concept.
 
 [Create a property](../tutorials/studio-create-model.md/#property---non-primitive-data-type).
 
-## Query Builder
+## Query builder
 
 _Coming soon._
 
-## Relational Database
+## Relational database
 
 _Coming soon._
 
-## Relational Mapping
+## Relational mapping
 
 Connect data to a data model to start querying data leveraging the business-friendly terms and data relationships defined in the data model.
 
@@ -179,7 +180,7 @@ _Coming soon._
 
 _Coming soon._
 
-## Service Editor
+## Service editor
 
 The service editor has two main panels: general and execution. The general panel has basic metadata about your service. The execution panel has queries, and the ability to edit queries using the query builder. From there, you can also execute and register the service.
 
@@ -213,13 +214,14 @@ Tagged values allow you to add context to your data model. Tagged values can be 
 
 ## Text Mode
 
-Text mode allows you to see the entirety of your workplace's code and edit your elements with ASCII text (as opposed to an interactive editor)
+Text Mode allows you to see the entirety of your workplace's code and edit your elements with ASCII text (as opposed to an interactive editor)
 
-Text mode will also parse and compile your code. If the code compiles, your GUI graph will be updated and the changes will be updated in your forms.
+Text Mode will also parse and compile your code. If the code compiles, your GUI graph will be updated and the changes will be updated in your forms.
 
 [Access or exit text mode](../tutorials/studio-create-model.md/#text-mode).
 
 ## Workspace
+
 A workspace is where you create your data models. It's a copy (also known as a branch) of a project which can be later merged back into the main project and shared with other users.
 
 [Create a workspace](../tutorials/studio-create-model.md/#workspace).
