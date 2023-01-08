@@ -10,7 +10,7 @@ When you add a [project dependency](../concepts/legend-studio-concepts.md/#proje
 
 ## Dependency version control
 
-_Coming soon._
+_Tutorial coming soon._
 
 ## More
 - [Legend concepts](../concepts/legend-concepts)

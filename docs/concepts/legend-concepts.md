@@ -1,7 +1,7 @@
 ---
 id: legend-concepts
 title: Generic Data Modeling and Legend-specific Concepts
-sidebar_label: Data Modeling/Legend Concepts
+sidebar_label: Data Modeling & Legend Concepts
 ---
 
 ## Association
@@ -60,9 +60,16 @@ Diagrams are visual representations of your models to better visualize and commu
 [Create a diagram](../tutorials/studio-create-diagram.md).
 
 ## Enumeration
+
 An enumeration is a model attribute that has a finite list of values.
 
 [Create an enumeration](../tutorials/studio-create-model.md/#enumeration).
+
+## File Generation
+
+File Generations lets you generate your models in other codes or schemas. 
+
+[Create a File Generation](../tutorials/studio-file-generation.md)
 
 ## Flat Data Store
 
@@ -85,7 +92,9 @@ The Flat Data grammar is used to describe a particular file format so that data 
 
 _Coming soon._
 
-## Function
+## Functions
+
+Functions are used to derive new values from existing values using various operations.
 
 ### Customized Function
 
@@ -96,19 +105,21 @@ Defining a customized function allows you to re-use transformation logic as part
 ### Function editor
 _Coming soon._
 
-## File Generation
-
-_Coming soon._
-
 ## Generation specification
 
-_Coming soon._
+Generation specification lets you specify the file and model generation elements that you want to run as part of your build.
+
+[Generate models and files](../tutorials/studio-file-generation.md)
 
 ## Group workspace
 
 There is also the option to create a **group workspace** which allows collaboration on the same workspace. Changes made in this workspace are visible to other users without the need to merge to master. 
 
 [Create a group workspace](../tutorials/studio-create-model.md/#group-workspace).
+
+## Mapping Editor
+
+The mapping editor lets you construct mapping elements and test them through mapping tests.
 
 ## Model-to-Model Mapping
 

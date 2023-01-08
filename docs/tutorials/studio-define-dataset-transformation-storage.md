@@ -1,7 +1,7 @@
 ---
 id: studio-define-dataset-transformation-storage
 title: Define how your Datasets are Transformed and Stored
-sidebar_label: Transform and Store Datasets
+sidebar_label: Transform/Store Datasets
 ---
 
 _Tutorial coming soon._

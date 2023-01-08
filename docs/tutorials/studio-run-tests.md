@@ -6,7 +6,7 @@ sidebar_label: Run Tests
 
 ## Run all your tests globally across the project
 
-_Coming soon._
+_Tutorial coming soon._
 
 ## More
 - [Legend concepts](../concepts/legend-concepts)
