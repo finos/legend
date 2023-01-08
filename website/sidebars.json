@@ -40,8 +40,7 @@
     ],
     "Query Tutorial": [
       "tutorials/query-tutorial",
-      "tutorials/create-dataspace"
-
+      "tutorials/query-create-dataspace"
     ],
     "Concepts": [
       "concepts/legend-concepts"
