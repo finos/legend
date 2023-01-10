@@ -27,4 +27,4 @@ Test data for model to model can be defined through external format. Provides te
 
 ## More
 - [Legend concepts](../concepts/legend-concepts)
-- [Reference documentation](../reference/)
+- [Reference documentation](../reference/legend-language)

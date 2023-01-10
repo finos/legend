@@ -185,4 +185,4 @@ The combination of the relational mapping and the connection details are specifi
 
 ## More
 - [Legend concepts](../concepts/legend-concepts)
-- [Reference documentation](../reference/)
+- [Reference documentation](../reference/legend-language)

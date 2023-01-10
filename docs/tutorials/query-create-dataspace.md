@@ -9,4 +9,4 @@ _Tutorial coming soon._
 ## More
 - [What is a Dataspace](../concepts/legend-studio-concepts.md/#dataspace)?
 - [Legend concepts](../concepts/legend-concepts)
-- [Reference documentation](../reference/)
+- [Reference documentation](../reference/legend-language)

@@ -98,4 +98,4 @@ Once you are content with your data, you can also export to other types. For now
 
 ## More
 - [Legend concepts](../concepts/legend-concepts)
-- [Reference documentation](../reference/)
+- [Reference documentation](../reference/legend-language)

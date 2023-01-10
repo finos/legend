@@ -218,7 +218,7 @@ Text Mode allows you to see the entirety of your workplace's code and edit your 
 
 Text Mode will also parse and compile your code. If the code compiles, your GUI graph will be updated and the changes will be updated in your forms.
 
-[Access or exit text mode](../tutorials/studio-create-model.md/#text-mode).
+[Access or exit Text Mode](../tutorials/studio-create-model.md/#text-mode).
 
 ## Workspace
 

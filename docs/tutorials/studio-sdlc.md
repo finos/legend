@@ -74,4 +74,4 @@ _Tutorial coming soon._
 
 ## More
 - [Legend concepts](../concepts/legend-concepts)
-- [Reference documentation](../reference/)
+- [Reference documentation](../reference/legend-language)

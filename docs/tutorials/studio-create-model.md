@@ -227,5 +227,5 @@ To create a [supertype](../concepts/legend-concepts.md/#supertype), let's create
 
 ## More
 - [Legend concepts](../concepts/legend-concepts)
-- [Reference documentation](../reference/)
+- [Reference documentation](../reference/legend-language)
 

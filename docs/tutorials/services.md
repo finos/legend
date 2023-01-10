@@ -127,4 +127,4 @@ List the JAR file as a dependency in the Java application. For production use ca
 
 ## More
 - [Legend concepts](../concepts/legend-concepts)
-- [Reference documentation](../reference/)
+- [Reference documentation](../reference/legend-language)

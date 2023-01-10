@@ -52,4 +52,4 @@ Right click on the diagram element in the explorer view and select **delete**.
 
 ## More
 - [Legend concepts](../concepts/legend-concepts)
-- [Reference documentation](../reference/)
+- [Reference documentation](../reference/legend-language)

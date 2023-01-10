@@ -77,4 +77,4 @@ Studio will show a **defect** with the details about the violated constraint. Co
 
 ## More
 - [Legend concepts](../concepts/legend-concepts)
-- [Reference documentation](../reference/)
+- [Reference documentation](../reference/legend-language)

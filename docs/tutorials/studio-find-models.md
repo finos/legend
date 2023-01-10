@@ -21,4 +21,4 @@ _Tutorial coming soon._
 - What is a [project dependency](../concepts/legend-concepts#project-dependencies)?
 - What is a [dataspace](../concepts/legend-concepts.md/#dataspace)?
 - [Project dependency tutorial](../tutorials/studio-project-dependencies.md)
-- [Reference documentation](../reference/)
+- [Reference documentation](../reference/legend-language)
