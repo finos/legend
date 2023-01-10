@@ -1,7 +1,7 @@
 ---
 id: studio-create-service
 title: Create a Service
-sidebar_label: Create a Service 
+sidebar_label: Create Service 
 ---
 
 Build services on top of data queries to consume modeled data systematically. To create a service select <kbd>New Service</kbd> from the drop down menu to launch the [Service Editor](../concepts/legend-studio-concepts.md/#service-editor)

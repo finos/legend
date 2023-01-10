@@ -1,5 +1,5 @@
 ---
-id: studio-define-customized-function
+id: studio-define-function
 title: Define a Customized Function
 sidebar_label: Define Functions 
 ---
