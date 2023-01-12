@@ -50,6 +50,6 @@ See the [SDLC tutorial](../tutorials/studio-sdlc/#troubleshoot-issues-with-your-
 
 ## More
 - [Legend Tutorials](../tutorials/studio-create-model.md) 
-- [Legend Concepts](../concepts/legend-studio-concepts.md)
+- [Legend Concepts](../concepts/legend-concepts.md)
 
 

@@ -42,4 +42,4 @@ See the [service metadata retrieval](../tutorials/services-retrieve-service-meta
 
 ## More
 - [Legend Tutorials](../tutorials/studio-create-model.md) 
-- [Legend Concepts](../concepts/legend-studio-concepts.md)
+- [Legend Concepts](../concepts/legend-concepts.md)

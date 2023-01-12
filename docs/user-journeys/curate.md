@@ -33,4 +33,4 @@ See the [model information and workspace management](../tutorials/studio-manage-
 
 ## More
 - [Legend Tutorials](../tutorials/studio-create-model.md) 
-- [Legend Concepts](../concepts/legend-studio-concepts.md)
+- [Legend Concepts](../concepts/legend-concepts.md)

@@ -52,4 +52,4 @@ See the [function definition](../tutorials/studio-define-function.md) tutorial.
 
 ## More
 - [Legend Tutorials](../tutorials/studio-create-model.md) 
-- [Legend Concepts](../concepts/legend-studio-concepts.md)
+- [Legend Concepts](../concepts/legend-concepts.md)
