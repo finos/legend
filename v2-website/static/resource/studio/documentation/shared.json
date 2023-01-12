@@ -1,0 +1,10 @@
+{
+  "entries": {
+    "question.how-to-use-advanced-search-syntax": {
+      "markdownText": {
+        "value": "By default, the search is not case sensitive and fuzzy, tolerating typos. Users can also use our [query syntax](https://fusejs.io/examples.html#extended-search) to achieve more advanced searching. Following are some basic and useful examples: \n- include-match operator `'`: search results for 'person must include the word `person`.\n- exact-match operator `=`: search results for =person must match exactly `person`\n- exclusion-match operator `!`: search results for `!person` must not contain the word `person`\n\nIn general, white space means the AND operator. If you were trying to search for `\"person firm\"` in that specific order (treating the phrase as one word), put double-quotes around the phrase you would like to combine. In this case, search results for `'\"person firm\"` must include the phrase person firm.\n\nLast but not least, users can combine operators to achieve fairly sophisticated search. For example, search results for 'person !firm first will include person but not firm and also include a word fuzzily similar to first."
+      },
+      "title": "How do I use the advanced search syntax?"
+    }
+  }
+}
