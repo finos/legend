@@ -3,12 +3,11 @@ id: legend-language
 title: Legend Language
 sidebar_label: Legend Language
 ---
-
 The Legend language is an an immutable functional language based on the Unified Modeling Language (UML) and inspired by Object Constraint Language (OCL). It provides an accelerated data modeling experience that enables:
 
-- Building of logical data models that can help describe business concepts and their data relationships.  
-- Enrichment of the model with executable constraints, derivations, and model-to-model mappings.
-- Execution of model queries in various environments (the Legend language can be transformed into other languages).
+-   Building of logical data models that can help describe business concepts and their data relationships.  
+-   Enrichment of the model with executable constraints, derivations, and model-to-model mappings.
+-   Execution of model queries in various environments (the Legend language can be transformed into other languages).
 
 ## Types
 
@@ -18,25 +17,27 @@ The type system for the Legend language is described below. Generics are support
 
 The following primitive data types are supported. Perform typical arithmetic and logical operations on them for use in writing constraints, derivations, and transformations. Use them to express the data types of attributes in a data model.
 
-- Number (integer, float)
-- String
-- Boolean
-- Date (StrictDate, DateTime)
-  - The date type is an abstract class with two subtypes: `StrictDate` and `DateTime`. A date is automatically cast into one of these two types.
-  - The syntax for `StrictDate` is `%YYYY-MM-DD`
-  - The syntax for `DateTime` is `%YYYY-MM-DD'T'HH:MM:SS`
+-   Number (integer, float)
+-   String
+-   Boolean
+-   Date (StrictDate, DateTime)
+    -   The date type is an abstract class with two subtypes: `StrictDate` and `DateTime`. A date is automatically cast into one of these two types.
+    -   The syntax for `StrictDate` is `%YYYY-MM-DD`
+    -   The syntax for `DateTime` is `%YYYY-MM-DD'T'HH:MM:SS`
 
 ### Class
 
 Create or model a business concept using a `class`. Attributes in a `class` can be described using the primitive types above.  
 
-The following example creates a `class` called `Firm` with an attribute called `name`. The attribute `name` is a string with a *cardinality* of 1.
+The following example creates a `class` called `Firm` with an attribute called `name`. The attribute `name` is a string with a _cardinality_ of 1.
 
 ```Legend
+
 Class Firm
 {
   name: String[1];  
 }
+
 ```
 
 **Cardinality** (or multiplicity) indicates the range in the size of the set. In the example above, the `[1]` indicates that the `name` attribute must always be of size 1. It _does not_ indicate the length of the string. Cardinality can also be defined as a range. For example, `[0..1]` to show nullability of an attribute, or `[2..*]` to show a required minimum size of 2 and an unlimited max.
@@ -46,11 +47,13 @@ Class Firm
 Create a set of pre-defined, related values using `enum`.
 
 ```Legend
+
 Enum CompanyType
 {
   Corporation,
   LimitedLiabilityCorporation
 }
+
 ```
 
 Leverage this enumeration in a `class` to define the type of an attribute.  
@@ -58,11 +61,13 @@ Leverage this enumeration in a `class` to define the type of an attribute.
 For example, add an attribute called `companyType` with a type of `CompanyType` to the `firm` class created above. Using an `enum` restricts and defines the set of values that `companyType` attribute can have.
 
 ```Legend
+
 Class Firm
 {
   name:        String[1];  
   companyType: CompanyType[1];
 }
+
 ```
 
 ## Functions
@@ -76,8 +81,10 @@ A full list of supported functions can be found at [Released functions](released
 The keyword `let` is used to create and assign a variable. Use `$` to reference the variable in subsequent statements.
 
 ```Legend
+
 let myVar = 0.75;
 let x = $myVar;
+
 ```
 
 ### Arrow notation
@@ -85,7 +92,9 @@ let x = $myVar;
 Use the arrow notation to call a function. Reading from left to right, the input (LHS) is being passed into a function (RHS).
 
 ```Legend
+
 $myVar->ceiling();
+
 ```
 
 ### Lambda
@@ -93,39 +102,47 @@ $myVar->ceiling();
 A lambda (anonymous) function is written as `{parameter | body with operation}`. A `{}` is only required when there's more than one parameter.
 
 ```Legend
+
 myInteger | $myInteger + 33
+
 ```
 
 ### If, map, and filter
 
 There's no control flow defined in the language. `If`, `map` and `filter` are implemented as functions. `Fold` is also available but not supported for data modeling since it's not easy to translate `fold` to other languages.
 
-- **If**
-  
-  Implement an `if` condition with the following syntax.
+-   **If**
 
-  ```Legend
-  if ( <<condition>> ,
-      | <<resultIfTrue>> ,
-      | <<resultIfFalse>>
-    );
-  ```
+    Implement an `if` condition with the following syntax.
 
-- **Map**
+    ```Legend
 
-  Iterate over a collection using `map`.
+    if ( <!condition>> ,
+        | <!resultIfTrue>> ,
+        | <!resultIfFalse>>
+      );
 
-  ```Legend
-  $myCollection->map( y| $y+1);
-  ```
+    ```
 
-- **Filter**
+-   **Map**
 
-  Define a filter using the following syntax.
+    Iterate over a collection using `map`.
 
-  ```Legend
-  x | filter($x.name->startsWith('S'))
-  ```
+    ```Legend
+
+    $myCollection->map( y| $y+1);
+
+    ```
+
+-   **Filter**
+
+    Define a filter using the following syntax.
+
+    ```Legend
+
+    x | filter($x.name->startsWith('S'))
+
+    ```
 
 ## Extensions
 
@@ -134,27 +151,32 @@ Like UML, the Legend language supports the following extensions: stereotype, pro
 ### Stereotype
 
 ```Legend
-Class <<extension.important>> Firm
+
+Class <!extension.important>> Firm
 {
   name:        String[1];  
   companyType: CompanyType[1];
 }
+
 ```
 
 ### Tagged value
 
 ```Legend
-Class <<extension.important>> {doc.doc = 'Represent a company.'} Firm
+
+Class <!extension.important>> {doc.doc = 'Represent a company.'} Firm
 {
   name:        String[1];  
   companyType: CompanyType[1];
 }
+
 ```
 
 ### Constraint
 
 ```Legend
-Class <<extension.important>> {doc.doc = 'Represent a company.'} Firm
+
+Class <!extension.important>> {doc.doc = 'Represent a company.'} Firm
 [
   isCorporation: $this.companyType == CompanyType.Corporation
 ]
@@ -162,12 +184,14 @@ Class <<extension.important>> {doc.doc = 'Represent a company.'} Firm
   name:        String[1];  
   companyType: CompanyType[1];
 }
+
 ```
 
 ### Derivation
 
 ```Legend
-Class <<extension.important>> {doc.doc = 'Represent a company.'} Firm
+
+Class <!extension.important>> {doc.doc = 'Represent a company.'} Firm
 [
   isCorporation: $this.companyType == CompanyType.Corporation
 ]
@@ -181,6 +205,7 @@ Class <<extension.important>> {doc.doc = 'Represent a company.'} Firm
     )
   }:Boolean[1];
 }
+
 ```
 
 ## Mappings
@@ -190,6 +215,7 @@ The language offers a domain-specific language (DSL) that supports model-to-mode
 ### Model-to-model mapping
 
 ```Legend
+
 Class NewFirm
 {
   shortenedCompanyType: String[1];  
@@ -207,10 +233,11 @@ Mapping MyModelToModelMapping
     );
   }
 )
+
 ```
 
 ## Next steps
 
-- [Released functions](released-functions.md)
-- [Upcoming functions](upcoming-functions.md)
-- [Contribute to Legend](../community/contribute-to-legend.md)
+-   [Released functions](released-functions.md)
+-   [Upcoming functions](upcoming-functions.md)
+-   [Contribute to Legend](../community/contribute-to-legend.md)

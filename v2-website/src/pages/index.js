@@ -517,8 +517,7 @@ function AdditionalScripts() {
     setInterval(updateCodeLettersColor, 3000);
   }
 
-  const location = isBrowser ? window.location.href : "fetching location...";
-  return <span>{location}</span>;
+  return <span></span>;
 }
 
 export default Home;

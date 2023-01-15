@@ -1,0 +1,27 @@
+{
+  "unversionedId": "reference/legend-language",
+  "id": "reference/legend-language",
+  "title": "Legend Language",
+  "description": "The Legend language is an an immutable functional language based on the Unified Modeling Language (UML) and inspired by Object Constraint Language (OCL). It provides an accelerated data modeling experience that enables:",
+  "source": "@site/../docs/reference/legend-language.md",
+  "sourceDirName": "reference",
+  "slug": "/reference/legend-language",
+  "permalink": "/docs/reference/legend-language",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "legend-language",
+    "title": "Legend Language",
+    "sidebar_label": "Legend Language"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Data Modeling Concepts",
+    "permalink": "/docs/concepts/data-modeling-concepts"
+  },
+  "next": {
+    "title": "Released functions",
+    "permalink": "/docs/reference/released-functions"
+  }
+}

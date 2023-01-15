@@ -18,4 +18,3 @@ FINOS the American Financial Technology Award 2020 for Best
 Collaboration initiative.
 
 Read more in the the [FINOS Legend Studio Pilot Case Study](https://www.finos.org/hubfs/FINOS/assets/FINOS%20Legend%20Case%20Study%202021.pdf).
-

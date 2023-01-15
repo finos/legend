@@ -1,8 +1,8 @@
 {
   "scripts": {
     "examples": "docusaurus-examples",
-    "start": "node scripts/script.js && docusaurus start",
-    "build": "node scripts/script.js && docusaurus build",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
     "publish-gh-pages": "docusaurus-publish",
     "write-translations": "docusaurus-write-translations",
     "version": "docusaurus-version",

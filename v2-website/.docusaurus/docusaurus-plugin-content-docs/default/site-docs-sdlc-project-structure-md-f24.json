@@ -1,0 +1,14 @@
+{
+  "unversionedId": "sdlc/project-structure",
+  "id": "sdlc/project-structure",
+  "title": "Project Structure",
+  "description": "The Project Structure of a project is the file and directory structure of the project which revolves around the entity files. It contains the required maven poms and maven plugins to run the build for that project.",
+  "source": "@site/../docs/sdlc/project-structure.md",
+  "sourceDirName": "sdlc",
+  "slug": "/sdlc/project-structure",
+  "permalink": "/docs/sdlc/project-structure",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

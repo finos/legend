@@ -46,8 +46,48 @@ module.exports = {
       },
     ],
   ],
-  plugins: [],
+  plugins: [
+    async function myPlugin(context, options) {
+      // ...
+      return {
+        name: "docusaurus-releases-plugin",
+        async loadContent() {
+          const path = require("path");
+          const fs = require("fs");
+          const getPath = (relPath) =>
+            path.resolve(__dirname, `${relPath}`);
+          const releases = fs
+            .readdirSync(getPath("static/releases"))
+            .map((dir) => {
+              const fullDir = getPath(`static/releases/${dir}`);
+              if (!fs.lstatSync(fullDir).isDirectory()) {
+                return undefined;
+              }
+              return require(`${fullDir}/manifest.json`);
+            })
+            .filter(Boolean);
+            return releases;
+        },
 
+        async contentLoaded({ content, actions }) {
+          const { createData, addRoute } = actions;
+          const releaseJSONPath = await createData(
+            "releasesData.json",
+            JSON.stringify(content)
+          );
+          // Add the '/releases' routes, and ensure it receives the releases props
+          addRoute({
+            path: "/releases",
+            component: "@site/src/components/releases.js",
+            modules: {
+              releasesData: releaseJSONPath,
+            },
+            exact: true,
+          });
+        },
+      };
+    },
+  ],
   themeConfig: {
     // prism: {
     //   theme: require("prism-react-renderer/themes/github"),

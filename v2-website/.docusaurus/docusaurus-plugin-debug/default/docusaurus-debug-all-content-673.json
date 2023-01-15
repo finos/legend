@@ -1,0 +1,1151 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "loadedVersions": [
+        {
+          "versionName": "current",
+          "label": "Next",
+          "banner": null,
+          "badge": false,
+          "noIndex": false,
+          "className": "docs-version-current",
+          "path": "/docs",
+          "tagsPath": "/docs/tags",
+          "isLast": true,
+          "routePriority": -1,
+          "sidebarFilePath": "/Users/shoe/Documents/Github/legend/v2-website/sidebars.json",
+          "contentPath": "/Users/shoe/Documents/Github/legend/docs",
+          "contentPathLocalized": "/Users/shoe/Documents/Github/legend/v2-website/i18n/en/docusaurus-plugin-content-docs/current",
+          "docs": [
+            {
+              "unversionedId": "case-studies/legend-case-studies",
+              "id": "case-studies/legend-case-studies",
+              "title": "Case Studies",
+              "description": "Legend Studio Pilot Case Study",
+              "source": "@site/../docs/case-studies/legend-case-studies.md",
+              "sourceDirName": "case-studies",
+              "slug": "/case-studies/legend-case-studies",
+              "permalink": "/docs/case-studies/legend-case-studies",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "legend-case-studies",
+                "title": "Case Studies",
+                "sidebar_label": "Case Studies"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Release 2021-10-18",
+                "permalink": "/docs/release/release-2021-10-18"
+              },
+              "next": {
+                "title": "Contribute",
+                "permalink": "/docs/community/contribute-to-legend"
+              }
+            },
+            {
+              "unversionedId": "community/contribute-to-legend",
+              "id": "community/contribute-to-legend",
+              "title": "Contribute",
+              "description": "There are many ways to contribute to Legend and many of them don't involve writing any code. Here are a few ideas to get started:",
+              "source": "@site/../docs/community/contribute-to-legend.md",
+              "sourceDirName": "community",
+              "slug": "/community/contribute-to-legend",
+              "permalink": "/docs/community/contribute-to-legend",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "contribute-to-legend",
+                "title": "Contribute",
+                "sidebar_label": "Contribute"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Case Studies",
+                "permalink": "/docs/case-studies/legend-case-studies"
+              },
+              "next": {
+                "title": "Roadmap",
+                "permalink": "/docs/community/legend-roadmap"
+              }
+            },
+            {
+              "unversionedId": "community/get-help-from-community",
+              "id": "community/get-help-from-community",
+              "title": "Get Help from the Legend Community",
+              "description": "Get Help",
+              "source": "@site/../docs/community/get-help-from-community.md",
+              "sourceDirName": "community",
+              "slug": "/community/get-help-from-community",
+              "permalink": "/docs/community/get-help-from-community",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "get-help-from-community",
+                "title": "Get Help from the Legend Community",
+                "sidebar_label": "Get Help"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Roadmap",
+                "permalink": "/docs/community/legend-roadmap"
+              },
+              "next": {
+                "title": "Legend in the Media",
+                "permalink": "/docs/community/legend-media"
+              }
+            },
+            {
+              "unversionedId": "community/legend-media",
+              "id": "community/legend-media",
+              "title": "Legend in the Media",
+              "description": "Legend in the News",
+              "source": "@site/../docs/community/legend-media.md",
+              "sourceDirName": "community",
+              "slug": "/community/legend-media",
+              "permalink": "/docs/community/legend-media",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "legend-media",
+                "title": "Legend in the Media",
+                "sidebar_label": "Legend in the Media"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Get Help",
+                "permalink": "/docs/community/get-help-from-community"
+              },
+              "next": {
+                "title": "Terms of service",
+                "permalink": "/docs/community/terms-of-service"
+              }
+            },
+            {
+              "unversionedId": "community/legend-roadmap",
+              "id": "community/legend-roadmap",
+              "title": "Roadmap",
+              "description": "COMING SOON",
+              "source": "@site/../docs/community/legend-roadmap.md",
+              "sourceDirName": "community",
+              "slug": "/community/legend-roadmap",
+              "permalink": "/docs/community/legend-roadmap",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "legend-roadmap",
+                "title": "Roadmap",
+                "sidebar_label": "Roadmap"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Contribute",
+                "permalink": "/docs/community/contribute-to-legend"
+              },
+              "next": {
+                "title": "Get Help",
+                "permalink": "/docs/community/get-help-from-community"
+              }
+            },
+            {
+              "unversionedId": "community/terms-of-service",
+              "id": "community/terms-of-service",
+              "title": "Terms of service",
+              "description": "FINOS Legend terms of service",
+              "source": "@site/../docs/community/terms-of-service.md",
+              "sourceDirName": "community",
+              "slug": "/community/terms-of-service",
+              "permalink": "/docs/community/terms-of-service",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "terms-of-service",
+                "title": "Terms of service",
+                "sidebar_label": "Terms of service"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Legend in the Media",
+                "permalink": "/docs/community/legend-media"
+              }
+            },
+            {
+              "unversionedId": "concepts/data-modeling-concepts",
+              "id": "concepts/data-modeling-concepts",
+              "title": "Elements of a Data Model",
+              "description": "Data models allow you to describe your data and data relationships.",
+              "source": "@site/../docs/concepts/data-modeling-concepts.md",
+              "sourceDirName": "concepts",
+              "slug": "/concepts/data-modeling-concepts",
+              "permalink": "/docs/concepts/data-modeling-concepts",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "data-modeling-concepts",
+                "title": "Elements of a Data Model",
+                "sidebar_label": "Data Modeling Concepts"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Legend Concepts",
+                "permalink": "/docs/concepts/legend-concepts"
+              },
+              "next": {
+                "title": "Legend Language",
+                "permalink": "/docs/reference/legend-language"
+              }
+            },
+            {
+              "unversionedId": "concepts/legend-concepts",
+              "id": "concepts/legend-concepts",
+              "title": "Legend Concepts",
+              "description": "Workspace",
+              "source": "@site/../docs/concepts/legend-studio-concepts.md",
+              "sourceDirName": "concepts",
+              "slug": "/concepts/legend-concepts",
+              "permalink": "/docs/concepts/legend-concepts",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "legend-concepts",
+                "title": "Legend Concepts",
+                "sidebar_label": "Legend Concepts"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Query",
+                "permalink": "/docs/tutorials/query-tutorial"
+              },
+              "next": {
+                "title": "Data Modeling Concepts",
+                "permalink": "/docs/concepts/data-modeling-concepts"
+              }
+            },
+            {
+              "unversionedId": "getting-started/installation-guide",
+              "id": "getting-started/installation-guide",
+              "title": "Installation guide",
+              "description": "There are a few different options to install and use Legend. They are listed below in increasing order of integration and installation complexity.",
+              "source": "@site/../docs/getting-started/installation-guide.md",
+              "sourceDirName": "getting-started",
+              "slug": "/getting-started/installation-guide",
+              "permalink": "/docs/getting-started/installation-guide",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "installation-guide",
+                "title": "Installation guide",
+                "sidebar_label": "Installation Guide"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Introduction to Legend",
+                "permalink": "/docs/getting-started/introduction-to-legend"
+              },
+              "next": {
+                "title": "Studio",
+                "permalink": "/docs/tutorials/studio-tutorial"
+              }
+            },
+            {
+              "unversionedId": "getting-started/introduction-to-legend",
+              "id": "getting-started/introduction-to-legend",
+              "title": "Introduction to Legend",
+              "description": "Introductory Videos",
+              "source": "@site/../docs/getting-started/introduction-to-legend.md",
+              "sourceDirName": "getting-started",
+              "slug": "/getting-started/introduction-to-legend",
+              "permalink": "/docs/getting-started/introduction-to-legend",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "introduction-to-legend",
+                "title": "Introduction to Legend",
+                "sidebar_label": "Introduction to Legend"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Architecture",
+                "permalink": "/docs/overview/architecture"
+              },
+              "next": {
+                "title": "Installation Guide",
+                "permalink": "/docs/getting-started/installation-guide"
+              }
+            },
+            {
+              "unversionedId": "overview/architecture",
+              "id": "overview/architecture",
+              "title": "How is Legend built?",
+              "description": "Metamodel Environment",
+              "source": "@site/../docs/overview/architecture.md",
+              "sourceDirName": "overview",
+              "slug": "/overview/architecture",
+              "permalink": "/docs/overview/architecture",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "architecture",
+                "title": "How is Legend built?",
+                "sidebar_label": "Architecture"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Use Cases",
+                "permalink": "/docs/overview/use-cases"
+              },
+              "next": {
+                "title": "Introduction to Legend",
+                "permalink": "/docs/getting-started/introduction-to-legend"
+              }
+            },
+            {
+              "unversionedId": "overview/legend-overview",
+              "id": "overview/legend-overview",
+              "title": "What is Legend?",
+              "description": "Legend is a data platform that provides a single place to access all data via APIs or self-service queries, with built-in governance!",
+              "source": "@site/../docs/overview/legend-overview.md",
+              "sourceDirName": "overview",
+              "slug": "/overview/legend-overview",
+              "permalink": "/docs/overview/legend-overview",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "legend-overview",
+                "title": "What is Legend?",
+                "sidebar_label": "What is Legend?"
+              },
+              "sidebar": "docs",
+              "next": {
+                "title": "Use Cases",
+                "permalink": "/docs/overview/use-cases"
+              }
+            },
+            {
+              "unversionedId": "overview/use-cases",
+              "id": "overview/use-cases",
+              "title": "Use Cases",
+              "description": "Check out our blog posts to learn more about Legend use cases and review the content below.",
+              "source": "@site/../docs/overview/use-cases.md",
+              "sourceDirName": "overview",
+              "slug": "/overview/use-cases",
+              "permalink": "/docs/overview/use-cases",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "use-cases",
+                "title": "Use Cases",
+                "sidebar_label": "Use Cases"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "What is Legend?",
+                "permalink": "/docs/overview/legend-overview"
+              },
+              "next": {
+                "title": "Architecture",
+                "permalink": "/docs/overview/architecture"
+              }
+            },
+            {
+              "unversionedId": "reference/bindings",
+              "id": "reference/bindings",
+              "title": "Bindings",
+              "description": "Protobuf",
+              "source": "@site/../docs/reference/bindings.md",
+              "sourceDirName": "reference",
+              "slug": "/reference/bindings",
+              "permalink": "/docs/reference/bindings",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "bindings",
+                "title": "Bindings",
+                "sidebar_label": "Bindings"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Stores",
+                "permalink": "/docs/reference/stores"
+              },
+              "next": {
+                "title": "Query Protocol",
+                "permalink": "/docs/reference/query-protocol"
+              }
+            },
+            {
+              "unversionedId": "reference/legend-language",
+              "id": "reference/legend-language",
+              "title": "Legend Language",
+              "description": "The Legend language is an an immutable functional language based on the Unified Modeling Language (UML) and inspired by Object Constraint Language (OCL). It provides an accelerated data modeling experience that enables:",
+              "source": "@site/../docs/reference/legend-language.md",
+              "sourceDirName": "reference",
+              "slug": "/reference/legend-language",
+              "permalink": "/docs/reference/legend-language",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "legend-language",
+                "title": "Legend Language",
+                "sidebar_label": "Legend Language"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Data Modeling Concepts",
+                "permalink": "/docs/concepts/data-modeling-concepts"
+              },
+              "next": {
+                "title": "Released functions",
+                "permalink": "/docs/reference/released-functions"
+              }
+            },
+            {
+              "unversionedId": "reference/query-protocol",
+              "id": "reference/query-protocol",
+              "title": "Query Protocol",
+              "description": "SQL",
+              "source": "@site/../docs/reference/query-protocol.md",
+              "sourceDirName": "reference",
+              "slug": "/reference/query-protocol",
+              "permalink": "/docs/reference/query-protocol",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "query-protocol",
+                "title": "Query Protocol",
+                "sidebar_label": "Query Protocol"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Bindings",
+                "permalink": "/docs/reference/bindings"
+              },
+              "next": {
+                "title": "Release 2022-05-05",
+                "permalink": "/docs/release/release-2022-05-05"
+              }
+            },
+            {
+              "unversionedId": "reference/released-functions",
+              "id": "reference/released-functions",
+              "title": "Released functions",
+              "description": "abs",
+              "source": "@site/../docs/reference/released-functions.md",
+              "sourceDirName": "reference",
+              "slug": "/reference/released-functions",
+              "permalink": "/docs/reference/released-functions",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "released-functions",
+                "title": "Released functions"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Legend Language",
+                "permalink": "/docs/reference/legend-language"
+              },
+              "next": {
+                "title": "Upcoming functions",
+                "permalink": "/docs/reference/upcoming-functions"
+              }
+            },
+            {
+              "unversionedId": "reference/stores",
+              "id": "reference/stores",
+              "title": "Stores",
+              "description": "Service Stores",
+              "source": "@site/../docs/reference/stores.md",
+              "sourceDirName": "reference",
+              "slug": "/reference/stores",
+              "permalink": "/docs/reference/stores",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "stores",
+                "title": "Stores",
+                "sidebar_label": "Stores"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Upcoming functions",
+                "permalink": "/docs/reference/upcoming-functions"
+              },
+              "next": {
+                "title": "Bindings",
+                "permalink": "/docs/reference/bindings"
+              }
+            },
+            {
+              "unversionedId": "reference/upcoming-functions",
+              "id": "reference/upcoming-functions",
+              "title": "Upcoming functions",
+              "description": "acos",
+              "source": "@site/../docs/reference/upcoming-functions.md",
+              "sourceDirName": "reference",
+              "slug": "/reference/upcoming-functions",
+              "permalink": "/docs/reference/upcoming-functions",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "upcoming-functions",
+                "title": "Upcoming functions"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Released functions",
+                "permalink": "/docs/reference/released-functions"
+              },
+              "next": {
+                "title": "Stores",
+                "permalink": "/docs/reference/stores"
+              }
+            },
+            {
+              "unversionedId": "release/release-2021-10-18",
+              "id": "release/release-2021-10-18",
+              "title": "Release 2021-10-18",
+              "description": "Released Features",
+              "source": "@site/../docs/release/2021-10-18.md",
+              "sourceDirName": "release",
+              "slug": "/release/release-2021-10-18",
+              "permalink": "/docs/release/release-2021-10-18",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "release-2021-10-18",
+                "title": "Release 2021-10-18",
+                "sidebar_label": "Release 2021-10-18"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Release 2022-04-26",
+                "permalink": "/docs/release/release-2022-04-26"
+              },
+              "next": {
+                "title": "Case Studies",
+                "permalink": "/docs/case-studies/legend-case-studies"
+              }
+            },
+            {
+              "unversionedId": "release/release-2022-04-26",
+              "id": "release/release-2022-04-26",
+              "title": "Release 2022-04-26",
+              "description": "Released Features",
+              "source": "@site/../docs/release/2022-04-26.md",
+              "sourceDirName": "release",
+              "slug": "/release/release-2022-04-26",
+              "permalink": "/docs/release/release-2022-04-26",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "release-2022-04-26",
+                "title": "Release 2022-04-26",
+                "sidebar_label": "Release 2022-04-26"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Release 2022-05-05",
+                "permalink": "/docs/release/release-2022-05-05"
+              },
+              "next": {
+                "title": "Release 2021-10-18",
+                "permalink": "/docs/release/release-2021-10-18"
+              }
+            },
+            {
+              "unversionedId": "release/release-2022-05-05",
+              "id": "release/release-2022-05-05",
+              "title": "Release 2022-05-05",
+              "description": "Released Features",
+              "source": "@site/../docs/release/2022-05-05.md",
+              "sourceDirName": "release",
+              "slug": "/release/release-2022-05-05",
+              "permalink": "/docs/release/release-2022-05-05",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "release-2022-05-05",
+                "title": "Release 2022-05-05",
+                "sidebar_label": "Release 2022-05-05"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Query Protocol",
+                "permalink": "/docs/reference/query-protocol"
+              },
+              "next": {
+                "title": "Release 2022-04-26",
+                "permalink": "/docs/release/release-2022-04-26"
+              }
+            },
+            {
+              "unversionedId": "sdlc/project-structure",
+              "id": "sdlc/project-structure",
+              "title": "Project Structure",
+              "description": "The Project Structure of a project is the file and directory structure of the project which revolves around the entity files. It contains the required maven poms and maven plugins to run the build for that project.",
+              "source": "@site/../docs/sdlc/project-structure.md",
+              "sourceDirName": "sdlc",
+              "slug": "/sdlc/project-structure",
+              "permalink": "/docs/sdlc/project-structure",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {}
+            },
+            {
+              "unversionedId": "showcases/LogicalModellingBasic",
+              "id": "showcases/LogicalModellingBasic",
+              "title": "ShowCase Project : Logical Modelling Basic",
+              "description": "This showcase project shows a basic Product-Account-Trade model.",
+              "source": "@site/../docs/showcases/LogicalModellingBasic.md",
+              "sourceDirName": "showcases",
+              "slug": "/showcases/LogicalModellingBasic",
+              "permalink": "/docs/showcases/LogicalModellingBasic",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {}
+            },
+            {
+              "unversionedId": "tour/tour",
+              "id": "tour/tour",
+              "title": "A (mini) tour of Legend",
+              "description": "The Legend platform consists of many products, features and integrations. The goal of this tour is to provide a feel and flavor for what is possible with Legend.",
+              "source": "@site/../docs/tour/tour.md",
+              "sourceDirName": "tour",
+              "slug": "/tour/",
+              "permalink": "/docs/tour/",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {}
+            },
+            {
+              "unversionedId": "tutorials/query-tutorial",
+              "id": "tutorials/query-tutorial",
+              "title": "Legend Query Tutorial",
+              "description": "Query Builder",
+              "source": "@site/../docs/tutorials/query-tutorial.md",
+              "sourceDirName": "tutorials",
+              "slug": "/tutorials/query-tutorial",
+              "permalink": "/docs/tutorials/query-tutorial",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "query-tutorial",
+                "title": "Legend Query Tutorial",
+                "sidebar_label": "Query"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Studio",
+                "permalink": "/docs/tutorials/studio-tutorial"
+              },
+              "next": {
+                "title": "Legend Concepts",
+                "permalink": "/docs/concepts/legend-concepts"
+              }
+            },
+            {
+              "unversionedId": "tutorials/studio-tutorial",
+              "id": "tutorials/studio-tutorial",
+              "title": "Legend Studio Tutorial",
+              "description": "Create a workspace",
+              "source": "@site/../docs/tutorials/studio-tutorial.md",
+              "sourceDirName": "tutorials",
+              "slug": "/tutorials/studio-tutorial",
+              "permalink": "/docs/tutorials/studio-tutorial",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "studio-tutorial",
+                "title": "Legend Studio Tutorial",
+                "sidebar_label": "Studio"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Installation Guide",
+                "permalink": "/docs/getting-started/installation-guide"
+              },
+              "next": {
+                "title": "Query",
+                "permalink": "/docs/tutorials/query-tutorial"
+              }
+            }
+          ],
+          "drafts": [],
+          "sidebars": {
+            "docs": [
+              {
+                "type": "category",
+                "label": "Overview",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "overview/legend-overview"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "overview/use-cases"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "overview/architecture"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Getting Started",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "getting-started/introduction-to-legend"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "getting-started/installation-guide"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Tutorials",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "tutorials/studio-tutorial"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorials/query-tutorial"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Concepts",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "concepts/legend-concepts"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "concepts/data-modeling-concepts"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Reference Documentation",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "reference/legend-language"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "reference/released-functions"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "reference/upcoming-functions"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "reference/stores"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "reference/bindings"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "reference/query-protocol"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Release Notes",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "release/release-2022-05-05"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "release/release-2022-04-26"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "release/release-2021-10-18"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Case studies",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "case-studies/legend-case-studies"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Community",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "community/contribute-to-legend"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "community/legend-roadmap"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "community/get-help-from-community"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "community/legend-media"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "community/terms-of-service"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "docusaurus-plugin-content-blog": {
+    "default": {
+      "blogSidebarTitle": "Recent posts",
+      "blogPosts": [],
+      "blogListPaginated": [],
+      "blogTags": {},
+      "blogTagsListPath": "/blog/tags",
+      "blogTagsPaginated": []
+    }
+  },
+  "docusaurus-plugin-content-pages": {
+    "default": [
+      {
+        "type": "jsx",
+        "permalink": "/",
+        "source": "@site/src/pages/index.js"
+      }
+    ]
+  },
+  "docusaurus-plugin-google-analytics": {},
+  "docusaurus-plugin-debug": {},
+  "docusaurus-theme-classic": {},
+  "docusaurus-theme-search-algolia": {},
+  "docusaurus-releases-plugin": {
+    "default": [
+      {
+        "version": "2021-02-03",
+        "timestamp": 1612353600000,
+        "releaseNotesUrl": "",
+        "core": {
+          "finos/legend-studio": "0.1.0",
+          "finos/legend-engine-server": "2.10.0",
+          "finos/legend-sdlc-server": "0.14.0",
+          "gitlab/gitlab-ce": "13.9.3-ce.0",
+          "mongo": "4.0"
+        }
+      },
+      {
+        "version": "2021-02-08",
+        "timestamp": 1612785600000,
+        "releaseNotesUrl": "",
+        "core": {
+          "finos/legend-studio": "0.1.1",
+          "finos/legend-engine-server": "2.10.1",
+          "finos/legend-sdlc-server": "0.14.1",
+          "gitlab/gitlab-ce": "13.9.3-ce.0",
+          "mongo": "4.0"
+        }
+      },
+      {
+        "version": "2021-02-09",
+        "timestamp": 1612872000000,
+        "releaseNotesUrl": "",
+        "core": {
+          "finos/legend-studio": "0.1.1",
+          "finos/legend-engine-server": "2.11.0",
+          "finos/legend-sdlc-server": "0.15.0",
+          "gitlab/gitlab-ce": "13.9.3-ce.0",
+          "mongo": "4.0"
+        }
+      },
+      {
+        "version": "2021-02-12",
+        "timestamp": 1613131200000,
+        "releaseNotesUrl": "",
+        "core": {
+          "finos/legend-studio": "0.1.1",
+          "finos/legend-engine-server": "2.12.0",
+          "finos/legend-sdlc-server": "0.16.0",
+          "gitlab/gitlab-ce": "13.9.3-ce.0",
+          "mongo": "4.0"
+        }
+      },
+      {
+        "version": "2021-02-17",
+        "timestamp": 1613563200000,
+        "releaseNotesUrl": "",
+        "core": {
+          "finos/legend-studio": "0.1.1",
+          "finos/legend-engine-server": "2.13.0",
+          "finos/legend-sdlc-server": "0.17.0",
+          "gitlab/gitlab-ce": "13.9.3-ce.0",
+          "mongo": "4.0"
+        }
+      },
+      {
+        "version": "2021-02-18",
+        "timestamp": 1613649600000,
+        "releaseNotesUrl": "",
+        "core": {
+          "finos/legend-studio": "0.1.1",
+          "finos/legend-engine-server": "2.14.0",
+          "finos/legend-sdlc-server": "0.18.0",
+          "gitlab/gitlab-ce": "13.9.3-ce.0",
+          "mongo": "4.0"
+        }
+      },
+      {
+        "version": "2021-03-03",
+        "timestamp": 1614772800000,
+        "releaseNotesUrl": "",
+        "core": {
+          "finos/legend-studio": "0.1.1",
+          "finos/legend-engine-server": "2.16.0",
+          "finos/legend-sdlc-server": "0.19.0",
+          "gitlab/gitlab-ce": "13.9.3-ce.0",
+          "mongo": "4.0"
+        }
+      },
+      {
+        "version": "2021-03-09",
+        "timestamp": 1615291200000,
+        "releaseNotesUrl": "",
+        "core": {
+          "finos/legend-studio": "0.1.1",
+          "finos/legend-engine-server": "2.17.0",
+          "finos/legend-sdlc-server": "0.20.0",
+          "gitlab/gitlab-ce": "13.9.3-ce.0",
+          "mongo": "4.0"
+        }
+      },
+      {
+        "version": "2021-03-12",
+        "timestamp": 1615550400000,
+        "releaseNotesUrl": "",
+        "core": {
+          "finos/legend-studio": "0.1.1",
+          "finos/legend-engine-server": "2.18.0",
+          "finos/legend-sdlc-server": "0.21.0",
+          "gitlab/gitlab-ce": "13.9.3-ce.0",
+          "mongo": "4.0"
+        }
+      },
+      {
+        "version": "2021-03-15",
+        "timestamp": 1615809600000,
+        "releaseNotesUrl": "",
+        "core": {
+          "finos/legend-studio": "0.1.1",
+          "finos/legend-engine-server": "2.18.0",
+          "finos/legend-sdlc-server": "0.22.0",
+          "gitlab/gitlab-ce": "13.9.3-ce.0",
+          "mongo": "4.0"
+        }
+      },
+      {
+        "version": "2021-03-16",
+        "timestamp": 1615896000000,
+        "releaseNotesUrl": "",
+        "core": {
+          "finos/legend-studio": "0.1.1",
+          "finos/legend-engine-server": "2.18.0",
+          "finos/legend-sdlc-server": "0.22.1",
+          "gitlab/gitlab-ce": "13.9.3-ce.0",
+          "mongo": "4.0"
+        }
+      },
+      {
+        "version": "2021-03-18",
+        "timestamp": 1616068800000,
+        "releaseNotesUrl": "",
+        "core": {
+          "finos/legend-studio": "0.1.1",
+          "finos/legend-engine-server": "2.20.0",
+          "finos/legend-sdlc-server": "0.23.0",
+          "gitlab/gitlab-ce": "13.9.3-ce.0",
+          "mongo": "4.0"
+        }
+      },
+      {
+        "version": "2021-03-22",
+        "timestamp": 1616414400000,
+        "releaseNotesUrl": "",
+        "core": {
+          "finos/legend-studio": "0.2.11",
+          "finos/legend-engine-server": "2.20.0",
+          "finos/legend-sdlc-server": "0.23.0",
+          "gitlab/gitlab-ce": "13.9.3-ce.0",
+          "mongo": "4.0"
+        }
+      },
+      {
+        "version": "2021-03-24",
+        "timestamp": 1616587200000,
+        "releaseNotesUrl": "",
+        "core": {
+          "finos/legend-studio": "0.2.15",
+          "finos/legend-engine-server": "2.20.0",
+          "finos/legend-sdlc-server": "0.23.0",
+          "gitlab/gitlab-ce": "13.9.3-ce.0",
+          "mongo": "4.0"
+        }
+      },
+      {
+        "version": "2021-03-26",
+        "timestamp": 1616760000000,
+        "releaseNotesUrl": "",
+        "core": {
+          "finos/legend-studio": "0.2.16",
+          "finos/legend-engine-server": "2.20.0",
+          "finos/legend-sdlc-server": "0.23.0",
+          "gitlab/gitlab-ce": "13.9.3-ce.0",
+          "mongo": "4.0"
+        }
+      },
+      {
+        "version": "2021-03-31",
+        "timestamp": 1617192000000,
+        "releaseNotesUrl": "",
+        "core": {
+          "finos/legend-studio": "0.2.16",
+          "finos/legend-engine-server": "2.21.0",
+          "finos/legend-sdlc-server": "0.24.0",
+          "gitlab/gitlab-ce": "13.9.3-ce.0",
+          "mongo": "4.0"
+        }
+      },
+      {
+        "version": "2021-06-09",
+        "timestamp": 1623268599213,
+        "releaseNotesUrl": "",
+        "core": {
+          "finos/legend-studio": "0.2.38",
+          "finos/legend-engine-server": "2.32.0",
+          "finos/legend-sdlc-server": "0.36.0",
+          "gitlab/gitlab-ce": "13.9.3-ce.0",
+          "mongo": "4.0"
+        }
+      },
+      {
+        "version": "2021-07-08",
+        "timestamp": 1625754648359,
+        "releaseNotesUrl": "",
+        "core": {
+          "finos/legend-studio": "0.2.39",
+          "finos/legend-engine-server": "2.34.0",
+          "finos/legend-sdlc-server": "0.39.0",
+          "gitlab/gitlab-ce": "13.9.3-ce.0",
+          "mongo": "4.0"
+        }
+      },
+      {
+        "version": "2021-10-18",
+        "timestamp": 1634599077493,
+        "releaseNotesUrl": "https://legend.finos.org/docs/release/release-2021-10-18",
+        "core": {
+          "finos/legend-studio": "0.10.0",
+          "finos/legend-engine-server": "2.48.0",
+          "finos/legend-sdlc-server": "0.57.0",
+          "gitlab/gitlab-ce": "13.9.3-ce.0",
+          "mongo": "4.0"
+        }
+      },
+      {
+        "version": "2022-04-26",
+        "timestamp": 1650993265059,
+        "releaseNotesUrl": "https://legend.finos.org/docs/release/release-2022-04-26",
+        "core": {
+          "finos/legend-studio": "4.19.0",
+          "finos/legend-engine-server": "3.0.0",
+          "finos/legend-sdlc-server": "0.74.0",
+          "gitlab/gitlab-ce": "13.9.3-ce.0",
+          "mongo": "4.0"
+        }
+      },
+      {
+        "version": "2022-05-05",
+        "timestamp": 1651783722829,
+        "releaseNotesUrl": "https://legend.finos.org/docs/release/release-2022-05-05",
+        "core": {
+          "finos/legend-studio": "poipoipipoip5.0.0",
+          "finos/legend-engine-server": "3.1.0",
+          "finos/legend-sdlc-server": "0.75.0",
+          "gitlab/gitlab-ce": "13.9.3-ce.0",
+          "mongo": "4.0"
+        }
+      }
+    ]
+  },
+  "docusaurus-bootstrap-plugin": {},
+  "docusaurus-mdx-fallback-plugin": {}
+}

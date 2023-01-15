@@ -1,0 +1,26 @@
+{
+  "unversionedId": "reference/released-functions",
+  "id": "reference/released-functions",
+  "title": "Released functions",
+  "description": "abs",
+  "source": "@site/../docs/reference/released-functions.md",
+  "sourceDirName": "reference",
+  "slug": "/reference/released-functions",
+  "permalink": "/docs/reference/released-functions",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "released-functions",
+    "title": "Released functions"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Legend Language",
+    "permalink": "/docs/reference/legend-language"
+  },
+  "next": {
+    "title": "Upcoming functions",
+    "permalink": "/docs/reference/upcoming-functions"
+  }
+}

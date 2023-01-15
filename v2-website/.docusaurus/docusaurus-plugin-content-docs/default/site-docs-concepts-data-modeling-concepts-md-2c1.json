@@ -1,0 +1,27 @@
+{
+  "unversionedId": "concepts/data-modeling-concepts",
+  "id": "concepts/data-modeling-concepts",
+  "title": "Elements of a Data Model",
+  "description": "Data models allow you to describe your data and data relationships.",
+  "source": "@site/../docs/concepts/data-modeling-concepts.md",
+  "sourceDirName": "concepts",
+  "slug": "/concepts/data-modeling-concepts",
+  "permalink": "/docs/concepts/data-modeling-concepts",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "data-modeling-concepts",
+    "title": "Elements of a Data Model",
+    "sidebar_label": "Data Modeling Concepts"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Legend Concepts",
+    "permalink": "/docs/concepts/legend-concepts"
+  },
+  "next": {
+    "title": "Legend Language",
+    "permalink": "/docs/reference/legend-language"
+  }
+}

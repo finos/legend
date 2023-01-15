@@ -1,0 +1,27 @@
+{
+  "unversionedId": "release/release-2022-05-05",
+  "id": "release/release-2022-05-05",
+  "title": "Release 2022-05-05",
+  "description": "Released Features",
+  "source": "@site/../docs/release/2022-05-05.md",
+  "sourceDirName": "release",
+  "slug": "/release/release-2022-05-05",
+  "permalink": "/docs/release/release-2022-05-05",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "release-2022-05-05",
+    "title": "Release 2022-05-05",
+    "sidebar_label": "Release 2022-05-05"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Query Protocol",
+    "permalink": "/docs/reference/query-protocol"
+  },
+  "next": {
+    "title": "Release 2022-04-26",
+    "permalink": "/docs/release/release-2022-04-26"
+  }
+}

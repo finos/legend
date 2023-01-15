@@ -1,0 +1,137 @@
+{
+  "/releases-676": {
+    "__comp": "47afc8a9",
+    "__context": {
+      "plugin": "2a1534f2"
+    },
+    "releasesData": "3dc03d92"
+  },
+  "/search-6c1": {
+    "__comp": "1a4e3797",
+    "__context": {
+      "plugin": "f960ed69"
+    }
+  },
+  "/docs-cfa": {
+    "__comp": "1be78505",
+    "__context": {
+      "plugin": "701cb8de"
+    },
+    "versionMetadata": "935f2afb"
+  },
+  "/docs/case-studies/legend-case-studies-a8c": {
+    "__comp": "17896441",
+    "content": "d62b5714"
+  },
+  "/docs/community/contribute-to-legend-7fa": {
+    "__comp": "17896441",
+    "content": "9e8a2dfb"
+  },
+  "/docs/community/get-help-from-community-d27": {
+    "__comp": "17896441",
+    "content": "52169905"
+  },
+  "/docs/community/legend-media-08d": {
+    "__comp": "17896441",
+    "content": "884d520b"
+  },
+  "/docs/community/legend-roadmap-835": {
+    "__comp": "17896441",
+    "content": "8337b193"
+  },
+  "/docs/community/terms-of-service-563": {
+    "__comp": "17896441",
+    "content": "35dfdd81"
+  },
+  "/docs/concepts/data-modeling-concepts-942": {
+    "__comp": "17896441",
+    "content": "2c11b665"
+  },
+  "/docs/concepts/legend-concepts-63e": {
+    "__comp": "17896441",
+    "content": "c3b98402"
+  },
+  "/docs/getting-started/installation-guide-85c": {
+    "__comp": "17896441",
+    "content": "2a2202f5"
+  },
+  "/docs/getting-started/introduction-to-legend-fd6": {
+    "__comp": "17896441",
+    "content": "eb85b0a8"
+  },
+  "/docs/overview/architecture-3e6": {
+    "__comp": "17896441",
+    "content": "8755b0ef"
+  },
+  "/docs/overview/legend-overview-88f": {
+    "__comp": "17896441",
+    "content": "9b7a070a"
+  },
+  "/docs/overview/use-cases-b0b": {
+    "__comp": "17896441",
+    "content": "32da7b89"
+  },
+  "/docs/reference/bindings-68b": {
+    "__comp": "17896441",
+    "content": "ae56af04"
+  },
+  "/docs/reference/legend-language-45a": {
+    "__comp": "17896441",
+    "content": "dacd0b11"
+  },
+  "/docs/reference/query-protocol-68e": {
+    "__comp": "17896441",
+    "content": "8405b3f9"
+  },
+  "/docs/reference/released-functions-d81": {
+    "__comp": "17896441",
+    "content": "c68ec7a1"
+  },
+  "/docs/reference/stores-bff": {
+    "__comp": "17896441",
+    "content": "d9c23846"
+  },
+  "/docs/reference/upcoming-functions-ceb": {
+    "__comp": "17896441",
+    "content": "bb63b5ae"
+  },
+  "/docs/release/release-2021-10-18-619": {
+    "__comp": "17896441",
+    "content": "d21da430"
+  },
+  "/docs/release/release-2022-04-26-856": {
+    "__comp": "17896441",
+    "content": "1920a685"
+  },
+  "/docs/release/release-2022-05-05-d40": {
+    "__comp": "17896441",
+    "content": "3c8dc8cf"
+  },
+  "/docs/sdlc/project-structure-7f5": {
+    "__comp": "17896441",
+    "content": "f24dbf84"
+  },
+  "/docs/showcases/LogicalModellingBasic-cff": {
+    "__comp": "17896441",
+    "content": "ff8c3a28"
+  },
+  "/docs/tour/-657": {
+    "__comp": "17896441",
+    "content": "0444c2b7"
+  },
+  "/docs/tutorials/query-tutorial-898": {
+    "__comp": "17896441",
+    "content": "d6b4db89"
+  },
+  "/docs/tutorials/studio-tutorial-785": {
+    "__comp": "17896441",
+    "content": "3fdbd59e"
+  },
+  "/-65c": {
+    "__comp": "c4f5d8e4",
+    "__context": {
+      "plugin": "60d273c6"
+    },
+    "config": "5e9f5e1a"
+  }
+}

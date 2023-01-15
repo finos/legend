@@ -1,0 +1,27 @@
+{
+  "unversionedId": "tutorials/studio-tutorial",
+  "id": "tutorials/studio-tutorial",
+  "title": "Legend Studio Tutorial",
+  "description": "Create a workspace",
+  "source": "@site/../docs/tutorials/studio-tutorial.md",
+  "sourceDirName": "tutorials",
+  "slug": "/tutorials/studio-tutorial",
+  "permalink": "/docs/tutorials/studio-tutorial",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "studio-tutorial",
+    "title": "Legend Studio Tutorial",
+    "sidebar_label": "Studio"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Installation Guide",
+    "permalink": "/docs/getting-started/installation-guide"
+  },
+  "next": {
+    "title": "Query",
+    "permalink": "/docs/tutorials/query-tutorial"
+  }
+}

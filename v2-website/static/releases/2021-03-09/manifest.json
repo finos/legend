@@ -1,0 +1,12 @@
+{
+  "version": "2021-03-09",
+  "timestamp": 1615291200000,
+  "releaseNotesUrl": "",
+  "core": {
+    "finos/legend-studio": "0.1.1",
+    "finos/legend-engine-server": "2.17.0",
+    "finos/legend-sdlc-server": "0.20.0",
+    "gitlab/gitlab-ce": "13.9.3-ce.0",
+    "mongo": "4.0"
+  }
+}
