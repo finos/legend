@@ -1,7 +1,7 @@
 ---
 id: describe-data
-title: Describe Business Concepts & Relationships
-sidebar_label: Describe Business Concepts & Relationships
+title: Create a Data Model to Describe Business Concepts and Relationships
+sidebar_label: Describe Concepts/Relationships
 ---
 
 ## Overview 

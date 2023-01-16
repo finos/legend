@@ -8,9 +8,8 @@
     "User Journeys": [
       "user-journeys/describe-data",
       "user-journeys/discover-reuse-share",
-      "user-journeys/connect-model-data",
+      "user-journeys/consume-transform-data",
       "user-journeys/query-data",
-      "user-journeys/consume-transform-datasets",
       "user-journeys/send-receive-data",
       "user-journeys/analyze-data",
       "user-journeys/test-troubleshoot",

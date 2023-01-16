@@ -1,10 +1,10 @@
 ---
-id: connect-model-data
-title: Connect Your Model to Data
-sidebar_label: Connect Model to Data
+id: consume-transform-data
+title: Consume and Transform Data
+sidebar_label: Consume/Transform Data
 ---
 
-## Overview 
+## Connect Data Models to Data 
 
 TODO: add image or diagram representing user journey flow
 
@@ -14,6 +14,9 @@ TODO: describe user journey, what you can do with Legend + hyperlink to tutorial
 - Connect your data model to a relational data store
 - Connect your data to a semi-structured file
 - Connect your data model to an API (Service store)
+- Define how your datasets are transformed and stored
+- Apply operations, transformations, and calculations to your datasets in the Query Editor
+- Import a database schema and model it in Studio (?)
 
 ### Relevant tutorials
 - [relational mapping](../tutorials/studio-relational-mapping.md) and [relational test data](../tutorials/studio-create-test-data.md/#relational) tutorials
@@ -29,6 +32,7 @@ TODO: describe user journey, what you can do with Legend + hyperlink to tutorial
 - Relational Database
 - Data
 - Binding (?)
+- Persistence (?)
 
 ## Showcase project
 - TODO: add link to showcase project

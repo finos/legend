@@ -1,7 +1,7 @@
 ---
 id: send-receive-data
 title: Send and Receive Data from Multiple Sources
-sidebar_label: Send & Receive Data
+sidebar_label: Send/Receive Data
 ---
 
 ## Overview 
