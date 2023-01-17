@@ -1,7 +1,7 @@
 ---
 id: query-data
 title: Query Data
-sidebar_label: Query Data
+sidebar_label: Query Data Sources
 ---
 
 ## Overview 
