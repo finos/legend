@@ -8,7 +8,7 @@
     "User Journeys": [
       "user-journeys/describe-data",
       "user-journeys/discover-reuse-share",
-      "user-journeys/consume-transform-data",
+      "user-journeys/connect-datasources",
       "user-journeys/query-data",
       "user-journeys/send-receive-data",
       "user-journeys/analyze-data",
@@ -56,6 +56,9 @@
       "tutorials/query-fetch-structure",
       "tutorials/query-filter",
       "tutorials/query-export"
+    ],
+    "Showcase Projects": [
+      "showcase/showcase-projects"
     ],
     "Reference Docs": [
       "reference/legend-language",

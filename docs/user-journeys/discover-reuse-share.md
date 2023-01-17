@@ -43,6 +43,7 @@ Discover, access and re-use existing models, classes, mappings, runtimes, functi
 - Function
 - File Generation
 - Generation Specification
+- Persistence (?)
 
 ## Showcase project
 - TODO: add link to showcase project

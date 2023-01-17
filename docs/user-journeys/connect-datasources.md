@@ -1,16 +1,18 @@
 ---
-id: consume-transform-data
-title: Consume and Transform Data
-sidebar_label: Consume/Transform Data
+id: connect-datasources
+title: Connect Data Models to Data Sources
+sidebar_label: Consume to Data Sources
 ---
 
-## Connect Data Models to Data 
+## Connect Data Models to Data Sources
 
-TODO: add image or diagram representing user journey flow
+_TODO: add image or diagram representing user journey flow
 
 TODO: describe user journey, what you can do with Legend + hyperlink to tutorials + why this user journey is relevant/impactful
 
-- Connect your data model to data.
+- Connect your data model to data sources
+- Stores & Mappings
+- External formats & Bindings
 - Connect your data model to a relational data store
 - Connect your data to a semi-structured file
 - Connect your data model to an API (Service store)
@@ -31,8 +33,8 @@ TODO: describe user journey, what you can do with Legend + hyperlink to tutorial
 - Flat-Data Store
 - Relational Database
 - Data
-- Binding (?)
-- Persistence (?)
+- External Format 
+- Binding
 
 ## Showcase project
 - TODO: add link to showcase project
