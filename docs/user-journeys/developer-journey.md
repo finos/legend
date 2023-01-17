@@ -1,7 +1,7 @@
 ---
 id: developer-journey
-title: Developer
-sidebar_label: Developer
+title: Develop Legend
+sidebar_label: Develop Legend
 ---
 
 ## Overview

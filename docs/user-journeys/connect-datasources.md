@@ -1,7 +1,7 @@
 ---
 id: connect-datasources
 title: Connect Data Models to Data Sources
-sidebar_label: Connect to Data Sources
+sidebar_label: Connect Data Sources
 ---
 
 ## Connect Data Models to Data Sources

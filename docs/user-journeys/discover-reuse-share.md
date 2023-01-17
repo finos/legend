@@ -1,7 +1,7 @@
 ---
 id: discover-reuse-share
 title: Discover, Re-use, and Share Models
-sidebar_label: Re-use: Discover/Share Models
+sidebar_label: Re-use Data Models
 ---
 
 ## Overview 
