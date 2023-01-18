@@ -7,7 +7,7 @@ module.exports = {
   url: "https://legend.finos.org",
   baseUrl: "/",
   organizationName: "finos",
-  deploymentBranch: "",
+  deploymentBranch: "gh-pages",
   trailingSlash: false,
   projectName: "legend",
   scripts: ["https://buttons.github.io/buttons.js"],
