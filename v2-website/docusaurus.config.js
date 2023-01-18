@@ -7,6 +7,8 @@ module.exports = {
   url: "https://legend.finos.org",
   baseUrl: "/",
   organizationName: "finos",
+  deploymentBranch: "",
+  trailingSlash: false,
   projectName: "legend",
   scripts: ["https://buttons.github.io/buttons.js"],
   stylesheets: [
