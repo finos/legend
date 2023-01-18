@@ -1,137 +1,180 @@
 {
-  "/releases-676": {
-    "__comp": "47afc8a9",
+  "/__docusaurus/debug-aff": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "2a1534f2"
+      "plugin": "plugin---docusaurus-debug-37-d-ec7"
+    }
+  },
+  "/__docusaurus/debug/config-471": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-debug-37-d-ec7"
+    }
+  },
+  "/__docusaurus/debug/content-e97": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---docusaurus-debug-37-d-ec7"
     },
-    "releasesData": "3dc03d92"
+    "allContent": "allContent---docusaurus-debug-content-246-9aa"
+  },
+  "/__docusaurus/debug/globalData-fd8": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---docusaurus-debug-37-d-ec7"
+    }
+  },
+  "/__docusaurus/debug/metadata-f31": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---docusaurus-debug-37-d-ec7"
+    }
+  },
+  "/__docusaurus/debug/registry-1ac": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---docusaurus-debug-37-d-ec7"
+    }
+  },
+  "/__docusaurus/debug/routes-de7": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---docusaurus-debug-37-d-ec7"
+    }
+  },
+  "/releases-676": {
+    "__comp": "__comp---site-src-components-releases-js-47-a-d1a",
+    "__context": {
+      "plugin": "plugin---releases-2-a-1-869"
+    },
+    "releasesData": "releasesData---releases-3-dc-d36"
   },
   "/search-6c1": {
-    "__comp": "1a4e3797",
+    "__comp": "__comp---theme-search-page-1-a-4-d6f",
     "__context": {
-      "plugin": "f960ed69"
+      "plugin": "plugin---searchf-96-cc7"
     }
   },
   "/docs-cfa": {
-    "__comp": "1be78505",
+    "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
-      "plugin": "701cb8de"
+      "plugin": "plugin---docs-701-0db"
     },
-    "versionMetadata": "935f2afb"
+    "versionMetadata": "versionMetadata---docs-935-398"
   },
   "/docs/case-studies/legend-case-studies-a8c": {
-    "__comp": "17896441",
-    "content": "d62b5714"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-case-studies-legend-case-studiesd-62-9b1"
   },
   "/docs/community/contribute-to-legend-7fa": {
-    "__comp": "17896441",
-    "content": "9e8a2dfb"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-community-contribute-to-legend-9-e-8-873"
   },
   "/docs/community/get-help-from-community-d27": {
-    "__comp": "17896441",
-    "content": "52169905"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-community-get-help-from-community-521-f9e"
   },
   "/docs/community/legend-media-08d": {
-    "__comp": "17896441",
-    "content": "884d520b"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-community-legend-media-884-48f"
   },
   "/docs/community/legend-roadmap-835": {
-    "__comp": "17896441",
-    "content": "8337b193"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-community-legend-roadmap-833-504"
   },
   "/docs/community/terms-of-service-563": {
-    "__comp": "17896441",
-    "content": "35dfdd81"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-community-terms-of-service-35-d-5d9"
   },
   "/docs/concepts/data-modeling-concepts-942": {
-    "__comp": "17896441",
-    "content": "2c11b665"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-concepts-data-modeling-concepts-2-c-1-f40"
   },
   "/docs/concepts/legend-concepts-63e": {
-    "__comp": "17896441",
-    "content": "c3b98402"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-concepts-legend-conceptsc-3-b-728"
   },
   "/docs/getting-started/installation-guide-85c": {
-    "__comp": "17896441",
-    "content": "2a2202f5"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-getting-started-installation-guide-2-a-2-733"
   },
   "/docs/getting-started/introduction-to-legend-fd6": {
-    "__comp": "17896441",
-    "content": "eb85b0a8"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-getting-started-introduction-to-legendeb-8-d71"
   },
   "/docs/overview/architecture-3e6": {
-    "__comp": "17896441",
-    "content": "8755b0ef"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-overview-architecture-875-624"
   },
   "/docs/overview/legend-overview-88f": {
-    "__comp": "17896441",
-    "content": "9b7a070a"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-overview-legend-overview-9-b-7-827"
   },
   "/docs/overview/use-cases-b0b": {
-    "__comp": "17896441",
-    "content": "32da7b89"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-overview-use-cases-32-d-b57"
   },
   "/docs/reference/bindings-68b": {
-    "__comp": "17896441",
-    "content": "ae56af04"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-reference-bindingsae-5-44e"
   },
   "/docs/reference/legend-language-45a": {
-    "__comp": "17896441",
-    "content": "dacd0b11"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-reference-legend-languagedac-a15"
   },
   "/docs/reference/query-protocol-68e": {
-    "__comp": "17896441",
-    "content": "8405b3f9"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-reference-query-protocol-840-afc"
   },
   "/docs/reference/released-functions-d81": {
-    "__comp": "17896441",
-    "content": "c68ec7a1"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-reference-released-functionsc-68-32e"
   },
   "/docs/reference/stores-bff": {
-    "__comp": "17896441",
-    "content": "d9c23846"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-reference-storesd-9-c-ab4"
   },
   "/docs/reference/upcoming-functions-ceb": {
-    "__comp": "17896441",
-    "content": "bb63b5ae"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-reference-upcoming-functionsbb-6-6b2"
   },
   "/docs/release/release-2021-10-18-619": {
-    "__comp": "17896441",
-    "content": "d21da430"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-release-release-2021-10-18-d-21-31e"
   },
   "/docs/release/release-2022-04-26-856": {
-    "__comp": "17896441",
-    "content": "1920a685"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-release-release-2022-04-26192-c41"
   },
   "/docs/release/release-2022-05-05-d40": {
-    "__comp": "17896441",
-    "content": "3c8dc8cf"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-release-release-2022-05-053-c-8-2a5"
   },
   "/docs/sdlc/project-structure-7f5": {
-    "__comp": "17896441",
-    "content": "f24dbf84"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-sdlc-project-structuref-24-7b3"
   },
   "/docs/showcases/LogicalModellingBasic-cff": {
-    "__comp": "17896441",
-    "content": "ff8c3a28"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-showcases-logical-modelling-basicff-8-79c"
   },
   "/docs/tour/-657": {
-    "__comp": "17896441",
-    "content": "0444c2b7"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-tour-044-bf6"
   },
   "/docs/tutorials/query-tutorial-898": {
-    "__comp": "17896441",
-    "content": "d6b4db89"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-tutorials-query-tutoriald-6-b-dd7"
   },
   "/docs/tutorials/studio-tutorial-785": {
-    "__comp": "17896441",
-    "content": "3fdbd59e"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-tutorials-studio-tutorial-3-fd-649"
   },
   "/-65c": {
-    "__comp": "c4f5d8e4",
+    "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
     "__context": {
-      "plugin": "60d273c6"
+      "plugin": "plugin---60-d-5e7"
     },
-    "config": "5e9f5e1a"
+    "config": "config---5-e-9-4f3"
   }
 }

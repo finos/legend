@@ -741,6 +741,10 @@ but may be changed https://docusaurus.io/docs/styling-layout */
   font-size: 1.5rem !important;
 }
 
+.menu__link--sublist-caret:after {
+  margin-left: 5px;
+}
+
 .menu__link:not(.menu__link--active):not(.menu__link--sublist) {
   color: #717171;
 }
