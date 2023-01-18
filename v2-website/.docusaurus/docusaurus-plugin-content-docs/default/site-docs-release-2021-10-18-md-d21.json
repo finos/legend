@@ -1,0 +1,27 @@
+{
+  "unversionedId": "release/release-2021-10-18",
+  "id": "release/release-2021-10-18",
+  "title": "Release 2021-10-18",
+  "description": "Released Features",
+  "source": "@site/../docs/release/2021-10-18.md",
+  "sourceDirName": "release",
+  "slug": "/release/release-2021-10-18",
+  "permalink": "/docs/release/release-2021-10-18",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "release-2021-10-18",
+    "title": "Release 2021-10-18",
+    "sidebar_label": "Release 2021-10-18"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Release 2022-04-26",
+    "permalink": "/docs/release/release-2022-04-26"
+  },
+  "next": {
+    "title": "Case Studies",
+    "permalink": "/docs/case-studies/legend-case-studies"
+  }
+}

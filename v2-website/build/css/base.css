@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font: inherit;
+  font-weight: 400;
+  /* font-size: 1.4rem; */
+  vertical-align: baseline;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+*:focus {
+  outline: none;
+}
+
+button {
+  background: none;
+  cursor: pointer;
+}
+
+button[disabled] {
+  cursor: not-allowed;
+}
+
+html {
+  box-sizing: border-box !important;
+  font-family: "Roboto Condensed", sans-serif !important;
+  font-size: 62.5% !important;
+  background: var(--color-header-background);
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+  min-width: 50rem; /* do not allow shrinking further */
+  background: var(--color-header-background);
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+li,
+p {
+  font-family: "Roboto Condensed" !important;
+  font-size: 1.6rem;
+  line-height: 1.75;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Roboto Condensed" !important;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 13.6px;
+}
+
+code {
+  font-family: "Source Code Pro";
+  font-weight: 500;
+  font-size: 1.5rem;
+  background: var(--color-dark-grey-150);
+  margin-right: 0.5rem;
+  padding: 0.4rem 1rem;
+}
+
+blockquote {
+  color: var(--color-light-grey-200) !important;
+  background-color: var(--color-dark-grey-50) !important;
+  border-left: 0.8rem solid var(--color-dark-grey-30) !important;
+  padding: 1.5rem 3rem 1.5rem 1.5rem;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  border-radius: 0.3rem;
+}
+
+blockquote code {
+  background: var(--color-dark-grey-30);
+}
+
+table tr:nth-child(2n) {
+  background-color: transparent;
+}

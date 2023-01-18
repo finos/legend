@@ -1,0 +1,27 @@
+{
+  "unversionedId": "tutorials/query-tutorial",
+  "id": "tutorials/query-tutorial",
+  "title": "Legend Query Tutorial",
+  "description": "Query Builder",
+  "source": "@site/../docs/tutorials/query-tutorial.md",
+  "sourceDirName": "tutorials",
+  "slug": "/tutorials/query-tutorial",
+  "permalink": "/docs/tutorials/query-tutorial",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "query-tutorial",
+    "title": "Legend Query Tutorial",
+    "sidebar_label": "Query"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Studio",
+    "permalink": "/docs/tutorials/studio-tutorial"
+  },
+  "next": {
+    "title": "Legend Concepts",
+    "permalink": "/docs/concepts/legend-concepts"
+  }
+}

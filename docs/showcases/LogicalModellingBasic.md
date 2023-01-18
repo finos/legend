@@ -1,17 +1,21 @@
-# ShowCase Project : Logical Modelling Basic 
+---
+
+---
+# ShowCase Project : Logical Modelling Basic
 
 This showcase project shows a basic Product-Account-Trade model.
-https://legend-acct.finos.org/studio/view/UAT-40953672
+https:
 
 In this showcase, we will show the following:
-* [Create a new Doc](#create-a-new-doc)
-* [Create a new Diagram](#create-a-new-diagram)
-* [Create a new Class, define properties and multiplicity](#create-a-new-class)
-* [Create a new Enumeration](#create-a-new-enumeration)
-* [Define an association](#define-an-association)
-* [Defining relationships in diagram](#define-relationship-in-diagram)
 
-<a name="create-a-new-doc"/>
+-   [Create a new Doc](#create-a-new-doc)
+-   [Create a new Diagram](#create-a-new-diagram)
+-   [Create a new Class, define properties and multiplicity](#create-a-new-class)
+-   [Create a new Enumeration](#create-a-new-enumeration)
+-   [Define an association](#define-an-association)
+-   [Defining relationships in diagram](#define-relationship-in-diagram)
+
+
 
 # Create a new Doc
 
@@ -21,7 +25,7 @@ Provide a meaningful name to your text and then choose it to be either PlainText
 
 In our Showcase, README is a text element.
 
-<a name="create-a-new-diagram"/>
+
 
 # Create a new Diagram
 
@@ -35,7 +39,7 @@ In our showcase, TradeAccountDiagram is the diagram which shows the model.
 
 ![Product Account Trade Model Diagram](images/trade-acoount-diagram.png).
 
-<a name="create-a-new-class"/>
+
 
 # Create a new Class
 
@@ -47,15 +51,15 @@ Class properties define attributes of a business concept.
 To add class properties, open the class and click on + button as shown in the image below.
 Define the property Name, it's type and Multiplicity.
 
-- The data type can be both primitives (like String or integers) or other Classes. 
-- Multiplicity defines the number of instances that property can have within the class.
-- There are other concepts like derived Properties, Constraints which will be covered in the next Showcase for advanced modelling.  
+-   The data type can be both primitives (like String or integers) or other Classes. 
+-   Multiplicity defines the number of instances that property can have within the class.
+-   There are other concepts like derived Properties, Constraints which will be covered in the next Showcase for advanced modelling.  
 
 In our showcase, Account, Product, Trade etc all these are classes. Take some time to look at their properties, multiplicity etc.
 
 ![Create a new Class](images/new-class.png).
 
-<a name="create-a-new-enumeration"/>
+
 
 # Create a new Enumeration
 
@@ -70,7 +74,6 @@ In our showcase, ProductSynonymType is an enumeration.
 ![Create a new Enumeration](images/enum.png).
 
 
-<a name="define-an-association"/>
 
 # Define an Association
 
@@ -84,7 +87,7 @@ In our showcase ProdSynonym is an Association. Note that it shows that 1 product
 
 ![Define an Association](images/association.png).
 
-<a name="define-relationship-in-diagram"/>
+
 
 # Define relationship in diagram
 
@@ -97,7 +100,6 @@ In the image below it shows one account can have many trades attached to it.
 
 ![Define relationship in diagram](images/relationship.png).
 
-
 ### Join us
 
-Join us at https://github.com/finos/legend
+Join us at 

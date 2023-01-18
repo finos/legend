@@ -1,0 +1,14 @@
+{
+  "unversionedId": "tour/tour",
+  "id": "tour/tour",
+  "title": "A (mini) tour of Legend",
+  "description": "The Legend platform consists of many products, features and integrations. The goal of this tour is to provide a feel and flavor for what is possible with Legend.",
+  "source": "@site/../docs/tour/tour.md",
+  "sourceDirName": "tour",
+  "slug": "/tour/",
+  "permalink": "/docs/tour/",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

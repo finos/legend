@@ -1,0 +1,27 @@
+{
+  "unversionedId": "community/legend-media",
+  "id": "community/legend-media",
+  "title": "Legend in the Media",
+  "description": "Legend in the News",
+  "source": "@site/../docs/community/legend-media.md",
+  "sourceDirName": "community",
+  "slug": "/community/legend-media",
+  "permalink": "/docs/community/legend-media",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "legend-media",
+    "title": "Legend in the Media",
+    "sidebar_label": "Legend in the Media"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Get Help",
+    "permalink": "/docs/community/get-help-from-community"
+  },
+  "next": {
+    "title": "Terms of service",
+    "permalink": "/docs/community/terms-of-service"
+  }
+}

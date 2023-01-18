@@ -3,15 +3,16 @@ id: legend-concepts
 title: Legend Concepts
 sidebar_label: Legend Concepts
 ---
-
 ## Workspace
+
 A workspace is where you create your data models. It's a copy (also known as a branch) of a project which can be later merged back into the main project and shared with other users.
 
 ### Group workspace
+
 There is also the option to create a **group workspace** which allows collaboration on the same workspace. Changes made in this workspace are visible to other users without the need to merge to master. 
 
 ## Diagram
- 
+
 Diagrams are visual representations of your models to better visualize and communicate about data and their relationships. **Important to note** is that Diagrams are not auto-generated based on the created model. Instead, diagrams should be intentionally created to best represent the data being described.
 
 ## Text Mode
@@ -42,6 +43,3 @@ You can configure a project to depend on another project. In other words, you ca
 ## Service Editor
 
 The service editor has two main panels: general and execution. The general panel has basic metadata about your service. The execution panel has queries, and the ability to edit queries using the query builder. From there, you can also execute and register the service.
-
-
-

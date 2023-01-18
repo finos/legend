@@ -1,0 +1,23 @@
+{
+  "unversionedId": "community/terms-of-service",
+  "id": "community/terms-of-service",
+  "title": "Terms of service",
+  "description": "FINOS Legend terms of service",
+  "source": "@site/../docs/community/terms-of-service.md",
+  "sourceDirName": "community",
+  "slug": "/community/terms-of-service",
+  "permalink": "/docs/community/terms-of-service",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "terms-of-service",
+    "title": "Terms of service",
+    "sidebar_label": "Terms of service"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Legend in the Media",
+    "permalink": "/docs/community/legend-media"
+  }
+}

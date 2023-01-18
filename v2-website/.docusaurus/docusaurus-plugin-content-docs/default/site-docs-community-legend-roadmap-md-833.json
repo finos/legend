@@ -1,0 +1,27 @@
+{
+  "unversionedId": "community/legend-roadmap",
+  "id": "community/legend-roadmap",
+  "title": "Roadmap",
+  "description": "COMING SOON",
+  "source": "@site/../docs/community/legend-roadmap.md",
+  "sourceDirName": "community",
+  "slug": "/community/legend-roadmap",
+  "permalink": "/docs/community/legend-roadmap",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "legend-roadmap",
+    "title": "Roadmap",
+    "sidebar_label": "Roadmap"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Contribute",
+    "permalink": "/docs/community/contribute-to-legend"
+  },
+  "next": {
+    "title": "Get Help",
+    "permalink": "/docs/community/get-help-from-community"
+  }
+}

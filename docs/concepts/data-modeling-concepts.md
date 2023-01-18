@@ -3,7 +3,6 @@ id: data-modeling-concepts
 title: Elements of a Data Model
 sidebar_label: Data Modeling Concepts
 ---
-
 Data models allow you to describe your data and data relationships. 
 
 ## Classes
@@ -27,6 +26,7 @@ Tagged values allow you to add context to your data model. Tagged values can be 
 Stereotypes allow you to extend metadata information about a model.
 
 ## Enumeration
+
 An enumeration is a model attribute that has a finite list of values.
 
 ## Constraints
@@ -37,5 +37,6 @@ A data model has built-in governance features, called _data quality controls_. Y
 
 Super types show a relationship between classes or business concepts within a model. Add a super type to the model to show a hierarchical relationship between classes or business concepts. 
 
-## Data Types 
+## Data Types
+
 _COMING SOON_

@@ -1,0 +1,27 @@
+{
+  "unversionedId": "getting-started/installation-guide",
+  "id": "getting-started/installation-guide",
+  "title": "Installation guide",
+  "description": "There are a few different options to install and use Legend. They are listed below in increasing order of integration and installation complexity.",
+  "source": "@site/../docs/getting-started/installation-guide.md",
+  "sourceDirName": "getting-started",
+  "slug": "/getting-started/installation-guide",
+  "permalink": "/docs/getting-started/installation-guide",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "installation-guide",
+    "title": "Installation guide",
+    "sidebar_label": "Installation Guide"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Introduction to Legend",
+    "permalink": "/docs/getting-started/introduction-to-legend"
+  },
+  "next": {
+    "title": "Studio",
+    "permalink": "/docs/tutorials/studio-tutorial"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "unversionedId": "overview/architecture",
+  "id": "overview/architecture",
+  "title": "How is Legend built?",
+  "description": "Metamodel Environment",
+  "source": "@site/../docs/overview/architecture.md",
+  "sourceDirName": "overview",
+  "slug": "/overview/architecture",
+  "permalink": "/docs/overview/architecture",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "architecture",
+    "title": "How is Legend built?",
+    "sidebar_label": "Architecture"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Use Cases",
+    "permalink": "/docs/overview/use-cases"
+  },
+  "next": {
+    "title": "Introduction to Legend",
+    "permalink": "/docs/getting-started/introduction-to-legend"
+  }
+}

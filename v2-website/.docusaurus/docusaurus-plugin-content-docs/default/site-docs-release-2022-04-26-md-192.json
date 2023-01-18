@@ -1,0 +1,27 @@
+{
+  "unversionedId": "release/release-2022-04-26",
+  "id": "release/release-2022-04-26",
+  "title": "Release 2022-04-26",
+  "description": "Released Features",
+  "source": "@site/../docs/release/2022-04-26.md",
+  "sourceDirName": "release",
+  "slug": "/release/release-2022-04-26",
+  "permalink": "/docs/release/release-2022-04-26",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "release-2022-04-26",
+    "title": "Release 2022-04-26",
+    "sidebar_label": "Release 2022-04-26"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Release 2022-05-05",
+    "permalink": "/docs/release/release-2022-05-05"
+  },
+  "next": {
+    "title": "Release 2021-10-18",
+    "permalink": "/docs/release/release-2021-10-18"
+  }
+}

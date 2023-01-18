@@ -1,0 +1,39 @@
+@import url("../../static/css/404.css");
+@import url("../../static/css/base.css");
+@import url("../../static/css/docs.css");
+@import url("../../static/css/home-page.css");
+@import url("../../static/css/variables.css");
+@import url("../../static/css/function.css");
+@import url("../../static/css/wip-page.css");
+@import url("../../static/css/releases.css");
+
+:root {
+  --ifm-color-primary-lightest: #ffffff;
+  --ifm-color-primary-lighter: #ffe6ee;
+  --ifm-color-primary-light: #ffd1e0;
+  --ifm-color-primary: #ffa7c4;
+  --ifm-color-primary-dark: #ff7da8;
+  --ifm-color-primary-darker: #ff689a;
+  --ifm-color-primary-darkest: #ff286f;
+
+  --ifm-menu-color-background-active: none;
+}
+
+[data-theme="dark"] .DocSearch {
+  --docsearch-text-color: var(--ifm-font-color-base);
+  --docsearch-muted-color: var(--ifm-color-secondary-darkest);
+  --docsearch-container-background: rgba(47, 55, 69, 0.7);
+  /* Modal */
+  --docsearch-modal-background: var(--ifm-background-color);
+  /* Search box */
+  --docsearch-searchbox-background: #2e2e2e;
+  --docsearch-searchbox-focus-background: #1b1b1b;
+  /* Hit */
+  --docsearch-hit-color: var(--ifm-font-color-base);
+  --docsearch-hit-active-color: var(--ifm-color-white);
+  --docsearch-hit-background: var(--ifm-color-emphasis-100);
+  /* Footer */
+  --docsearch-footer-background: var(--ifm-background-surface-color);
+  --docsearch-key-gradient: var(--ifm-color-emphasis-200);
+  --docsearch-key-shadow: none;
+}
