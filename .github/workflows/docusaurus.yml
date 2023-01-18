@@ -32,7 +32,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v1
       - name: Install Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
       - name: Install Website deps
         run: npm install --prefix v2-website
       - name: Patch forked version
@@ -64,5 +64,5 @@ jobs:
           git config --global user.email "$GIT_USERNAME@users.noreply.github.com"
           git config --global user.name "$GIT_USERNAME"
           echo "machine github.com login $GIT_USERNAME password $GITHUB_TOKEN" > ~/.netrc
-          # Run docusaurus-publish
-          GIT_USER=$GIT_USERNAME npm run publish-gh-pages --prefix v2-website
+          # Run docusaurus deploy
+          GIT_USER=$GIT_USERNAME npm run deploy --prefix v2-website
