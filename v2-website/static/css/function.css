@@ -12,7 +12,7 @@
 .pureGrammar-parametersLabel,
 .pureGrammar-returnsLabel,
 .pureGrammar-usageLabel {
-  background: var(--color-dark-grey-150);
+  background: var(--color-code);
   padding: 0.5rem 1rem;
   /* display: inline-flex; */
   margin: 1rem 0;
@@ -36,7 +36,7 @@
 }
 
 .pureGrammar-functionSignature {
-  background: #4d3b3b;
+  background: var(--color-code-highlight);
   padding: 0.5rem 1rem;
   font-family: Source Code Pro;
   font-weight: 500;
@@ -55,12 +55,12 @@
 }
 
 .pureGrammar-functionName {
-  color: #a1a1ff;
+  color: var(--color-code-function-name);
 }
 
 .pureGrammar-functionReturns ul ul li {
   font-family: "Source Code Pro" !important;
   padding: 0.5rem 1rem;
-  background: #4d3b3b;
+  background: var(--color-code-highlight);
   display: inline-flex;
 }

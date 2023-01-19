@@ -15,8 +15,22 @@
   --ifm-color-primary-dark: #ff7da8;
   --ifm-color-primary-darker: #ff689a;
   --ifm-color-primary-darkest: #ff286f;
-
   --ifm-menu-color-background-active: none;
+}
+
+[data-theme="light"] {
+  --ifm-menu-color-active: var(--ifm-color-primary-darker);
+}
+
+.DocSearch {
+  --docsearch-key-shadow: none;
+  /* Hit */
+  --docsearch-hit-color: var(--ifm-font-color-base);
+  --docsearch-hit-active-color: var(--ifm-color-white);
+  --docsearch-hit-background: var(--ifm-color-emphasis-100);
+  /* Footer */
+  --docsearch-footer-background: var(--ifm-background-surface-color);
+  --docsearch-key-gradient: var(--ifm-color-emphasis-200);
 }
 
 [data-theme="dark"] .DocSearch {
@@ -35,5 +49,4 @@
   /* Footer */
   --docsearch-footer-background: var(--ifm-background-surface-color);
   --docsearch-key-gradient: var(--ifm-color-emphasis-200);
-  --docsearch-key-shadow: none;
 }
