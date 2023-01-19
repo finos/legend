@@ -5,6 +5,16 @@
   color: var(--color-doc-text);
 }
 
+body {
+  overflow: hidden !important;
+}
+
+.body-wrapper {
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
+}
+
 .home-page * {
   font-family: "Roboto Condensed";
 }
@@ -530,18 +540,13 @@
   }
 }
 
-
-
 /**
  * NOTE: V2
  */
 
-
- .navbar__brand {
-  margin-left:25px;
- }
- .navbar__logo {
-  min-height:35px;
- }
-
- 
+.navbar__brand {
+  margin-left: 25px;
+}
+.navbar__logo {
+  min-height: 35px;
+}

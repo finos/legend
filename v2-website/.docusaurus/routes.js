@@ -49,7 +49,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'cfa'),
+    component: ComponentCreator('/docs', 'd48'),
     routes: [
       {
         path: '/docs/case-studies/legend-case-studies',
@@ -194,8 +194,8 @@ export default [
         exact: true
       },
       {
-        path: '/docs/tour/',
-        component: ComponentCreator('/docs/tour/', '657'),
+        path: '/docs/tour',
+        component: ComponentCreator('/docs/tour', 'ae2'),
         exact: true
       },
       {

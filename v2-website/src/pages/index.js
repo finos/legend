@@ -483,11 +483,19 @@ function AdditionalScripts() {
           2 * window.scrollY -
           300
       ) {
-        header.classList.add("home-page__header--visible");
-        title.classList.add("home-page__header__title--visible");
+        if (header.classList !== null) {
+          header.classList.add("home-page__header--visible");
+        }
+        if (title.classList !== null) {
+          title.classList.add("home-page__header__title--visible");
+        }
       } else {
-        header.classList.remove("home-page__header--visible");
-        title.classList.remove("home-page__header__title--visible");
+        if (header.classList !== null) {
+          header.classList.remove("home-page__header--visible");
+        }
+        if (title.classList !== null) {
+          title.classList.remove("home-page__header__title--visible");
+        }
       }
     });
 
