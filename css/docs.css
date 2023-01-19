@@ -7,6 +7,10 @@ blockquote {
   margin-right: 4rem;
 }
 
+#__docusaurus {
+  overflow: scroll;
+  height: 100%;
+}
 header.postHeader:empty {
   display: none;
 }
@@ -315,7 +319,7 @@ pre code.hljs {
     max-width: 25rem;
     cursor: pointer;
     user-select: none;
-    color: var(--color-light-grey-400);
+    color: var(--color-toc-content);
     display: inline-flex;
   }
 
@@ -526,7 +530,8 @@ pre code.hljs {
     display: flex;
     position: fixed;
     align-items: flex-end;
-    width: 22% !important;
+    /* width: 22% !important; */
+    width: var(--doc-sidebar-width);
     height: 100%;
     z-index: 2;
     overflow-y: overlay;
@@ -610,7 +615,7 @@ pre code.hljs {
     max-width: 25rem;
     cursor: default;
     user-select: none;
-    color: var(--color-light-grey-400);
+    color: var(--color-toc-content);
     display: inline-flex;
     font-family: "Roboto Condensed" !important;
   }
@@ -712,6 +717,23 @@ pre code.hljs {
   background: var(--color-sidebar-background) !important;
 }
 
+html[data-theme="light"] ::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:window-inactive {
+  background: var(--color-light-shade-100) !important;
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-track {
+  background: var(--color-sidebar-background) !important;
+}
+
+html[data-theme="light"] .onPageNav::-webkit-scrollbar-thumb {
+  background: var(--color-light-shade-100) !important;
+}
+
+html[data-theme="light"] .onPageNav::-webkit-scrollbar-thumb:window-inactive {
+  background: var(--color-light-shade-100) !important;
+}
+
 /* App scrollbar - Firefox */
 body {
   scrollbar-color: var(--color-dark-shade-100) transparent !important;
@@ -732,7 +754,7 @@ but may be changed https://docusaurus.io/docs/styling-layout */
 
 .table-of-contents__link {
   font-size: 1.3rem;
-  color: var(--color-light-grey-400);
+  color: var(--color-toc-content);
 }
 
 .menu__link {
@@ -751,9 +773,14 @@ but may be changed https://docusaurus.io/docs/styling-layout */
 .menu__list-item-collapsible .menu__link--active {
   color: var(--ifm-menu-color);
 }
+
 .table-of-contents__link--active {
   font-weight: 600;
   color: var(--ifm-color-primary);
+}
+
+[data-theme="light"] .table-of-contents__link--active {
+  color: var(--ifm-color-primary-dark);
 }
 
 .pagination-nav__label {
@@ -766,10 +793,10 @@ but may be changed https://docusaurus.io/docs/styling-layout */
 .pagination-nav__link--prev {
   width: fit-content;
   border-radius: 0.3rem;
-  border: 1px solid #ffffff;
+  border: 1px solid var(--color-pagenav-border);
   justify-content: flex-end;
   border-radius: 0.3rem;
-  color: var(--color-light-grey-100);
+  color: var(--color-pagenav-border);
   text-decoration: none !important;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
 }

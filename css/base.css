@@ -120,7 +120,7 @@ code {
   font-family: "Source Code Pro";
   font-weight: 500;
   font-size: 1.5rem;
-  background: var(--color-dark-grey-150);
+  background: var(--color-code);
   margin-right: 0.5rem;
   padding: 0.4rem 1rem;
 }
