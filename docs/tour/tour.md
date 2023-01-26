@@ -1,6 +1,6 @@
 ---
-
 ---
+
 # A (mini) tour of Legend
 
 The Legend platform consists of many products, features and integrations. The goal of this tour is to provide a feel and flavor for what is possible with Legend.
@@ -27,13 +27,13 @@ One way to create a data model in Legend is to use Legend Studio. Studio is a br
 
 ## Firm-Employee model
 
-Let's say we are trying to model a Firm and its Employees 
+Let's say we are trying to model a Firm and its Employees
 
--   A Firm has a legal name.
--   A Firm has many employees.
--   An Employee has a first and last name. 
+- A Firm has a legal name.
+- A Firm has many employees.
+- An Employee has a first and last name.
 
-The above description, while simple is not complete. For e.g. how many employees can a firm have ? 
+The above description, while simple is not complete. For e.g. how many employees can a firm have ?
 
 The Legend platform's Pure language provides a systematic way to describe this model as follows :
 
@@ -54,11 +54,11 @@ Association domain::Firm_Person
 {
   firm: domain::Firm[1];
   employees: domain::Person[*];
-} 
+}
 
 ```
 
-You can see the full model in the ["Legend Showcase - Guided Tour" Studio project](https://legend.finos.org/studio/view/UAT-38029096/entity/domain::Firm)   
+You can see the full model in the ["Legend Showcase - Guided Tour" Studio project](https://legend.finos.org/studio/view/UAT-38029096/entity/domain::Firm)
 
 </a><a name="why-models">
 
@@ -66,7 +66,7 @@ You can see the full model in the ["Legend Showcase - Guided Tour" Studio projec
 
 This question deserves its own blog post/article. But in brief, a data model allows all participants in a data flow to have the same view of the data. This includes concepts, relationships, attributes etc.
 
-This common understanding prevents/reduces data corruption/inconsistencies, allows teams to communicate more transparently and efficiently about data and increase efficiency of data management. 
+This common understanding prevents/reduces data corruption/inconsistencies, allows teams to communicate more transparently and efficiently about data and increase efficiency of data management.
 
 To learn more about the benefits of data modeling, check out [Pierre DeBelen's keynote at the 2020 Open Source Strategy Forum](https://www.youtube.com/watch?v=93c966jNzYo).
 
@@ -81,7 +81,7 @@ previous step
 
 ![Firm Person Model Diagram](images/diagram.png).
 
-You can navigate to the live diagram by following this link - https: 
+You can navigate to the live diagram by following this [link](https://legend.finos.org/studio/view/UAT-38029096/entity/diagram:all).
 
 </a><a name="model-transformation">
 
@@ -95,7 +95,7 @@ We have a model of the shape the data should be in, the target model. We have a 
 
 Once these rules have been defined, Legend can automatically execute the mapping or data transformation.
 
-You can navigate to the live mapping by following this link - https:
+You can navigate to the live mapping by following this [https://legend.finos.org/studio/view/UAT-38029096/entity/mapping::m2m::Firm_Person](link)
 
 </a><a name="model-testing">
 
@@ -121,7 +121,7 @@ Studio also supports the notion of user and group workspaces. These are implemen
 
 While Legend currently only supports Gitlab, support for other source control systems can be added. This allows organizations to implement a model evolution workflow that integrates seamlessly with their own internal change management, software management systems.
 
-The Gitlab project for the "Legend Showcase - Guided Tour" project can be found here - https:
+The Gitlab project for the "Legend Showcase - Guided Tour" project can be found here - [https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project-guided-tour](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project-guided-tour).
 
 </a><a name="model-execution">
 
@@ -141,7 +141,7 @@ Once all these of have been defined, Legend generates an execution plan. This ex
 
 Continuing with our goal of integrating with user's change management systems, the pipeline to generate this Java jar is implemented as a Gitlab pipeline. The pipeline generates and publishes the Jar to a repository such as Maven Central or the Gitlab project's registry.
 
-The Gitlab pipeline definition can be found here - https:
+The Gitlab pipeline definition can be found here - [https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project-guided-tour/-/tree/master](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project-guided-tour/-/tree/master).
 
 Execution is then just a question of downloading and executing this jar.
 
@@ -151,7 +151,7 @@ Execution is then just a question of downloading and executing this jar.
 
 ```
 
-An example Maven Java project that uses a service execution jar can be found here - 
+An example Maven Java project that uses a service execution jar can be found here [https://github.com/finos/legend/tree/master/examples/service-execution-jar/legend-guided-tour-application](https://github.com/finos/legend/tree/master/examples/service-execution-jar/legend-guided-tour-application).
 
 </a><a name="connect-databases">
 
@@ -165,9 +165,9 @@ In other words the model allows users to say "My Firm class has a legal name att
 
 ![Model To Model Diagram](images/relationalmapping.png).
 
-You can navigate to the live mapping by following this link - https:
+You can navigate to the live mapping by following this [link](https://legend.finos.org/studio/view/UAT-38029096/entity/mapping::m2m::Firm_Person)
 
-Continuing with our test first approach, Legend supports "in-memory test databases". The Legend tests can define an in memory database along with test data.  During test execution, Legend spins up an in-memory database with the test data before executing the plan.
+Continuing with our test first approach, Legend supports "in-memory test databases". The Legend tests can define an in memory database along with test data. During test execution, Legend spins up an in-memory database with the test data before executing the plan.
 
 </a><a name="connect-apis">
 
@@ -205,17 +205,18 @@ Here are a few suggestions to get started  :
 
 ### Explore showcase projects
 
-Explore the various Legend showcase projects for a deep dive into various platform features. https: 
+Explore the various Legend showcase projects for a deep dive into various platform features. [https://github.com/finos/legend/wiki/Legend-Showcase](https://github.com/finos/legend/wiki/Legend-Showcase).
 
 ### Explore Legend documentation
 
-The Legend documentation site has links to tutorials and other documentation. 
+The Legend documentation site has links to tutorials and other documentation.
+[https://legend.finos.org/docs/overview/legend-overview](https://legend.finos.org/docs/overview/legend-overview).
 
 ### Install Legend and take it for a spin
 
-The Legend documentation site has links to tutorials and other documentation.  
+The Legend documentation site has links to tutorials and other documentation.[https://github.com/finos/legend/tree/master/installers](https://github.com/finos/legend/tree/master/installers).
 
 ### Join us
 
-Join us at  
+Join us at [https://github.com/finos/legend](https://github.com/finos/legend).
 </a>
