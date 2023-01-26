@@ -12,12 +12,12 @@ on:
       - ".github/workflows/docusaurus.yml"
       - ".github/*.md"
       - "docs/**"
-      - "v2-website/**"
+      - "website/**"
   pull_request:
     paths:
       - ".github/workflows/docusaurus.yml"
       - "docs/**"
-      - "v2-website/**"
+      - "website/**"
 
 env:
   # Used by docusaurus `publish-site` step
@@ -34,7 +34,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v3
       - name: Install Website deps
-        run: npm install --prefix v2-website
+        run: npm install --prefix website
       - name: Patch forked version
         run: |
           # Extract GitHub org/user and patch siteConfig.js only if not "finos"
@@ -65,4 +65,4 @@ jobs:
           git config --global user.name "$GIT_USERNAME"
           echo "machine github.com login $GIT_USERNAME password $GITHUB_TOKEN" > ~/.netrc
           # Run docusaurus deploy
-          GIT_USER=$GIT_USERNAME npm run deploy --prefix v2-website
+          GIT_USER=$GIT_USERNAME npm run deploy --prefix website
