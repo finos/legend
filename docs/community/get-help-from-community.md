@@ -5,8 +5,8 @@ sidebar_label: Get Help
 ---
 ## Get Help
 
-Report a bug, ask a question or propose a feature at https:
+Report a bug, ask a question or propose a feature at [https://github.com/finos/legend#component-specific-issues](https://github.com/finos/legend#component-specific-issues)
 
 ## FAQs
 
-See .
+See [https://github.com/finos/legend/wiki/Legend-FAQs](https://github.com/finos/legend/wiki/Legend-FAQs).
