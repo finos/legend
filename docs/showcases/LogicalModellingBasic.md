@@ -102,4 +102,5 @@ In the image below it shows one account can have many trades attached to it.
 
 ### Join us
 
-Join us at 
+Join us at [https://github.com/finos/legend](https://github.com/finos/legend).
+
