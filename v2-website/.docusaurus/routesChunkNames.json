@@ -1,174 +1,174 @@
 {
-  "/__docusaurus/debug-aff": {
+  "/__docusaurus/debug/-6cf": {
     "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-37-d-ec7"
+      "plugin": "plugin---docusaurus-debug-37-d-be2"
     }
   },
-  "/__docusaurus/debug/config-471": {
+  "/__docusaurus/debug/config/-10e": {
     "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-37-d-ec7"
+      "plugin": "plugin---docusaurus-debug-37-d-be2"
     }
   },
-  "/__docusaurus/debug/content-e97": {
+  "/__docusaurus/debug/content/-2d5": {
     "__comp": "__comp---theme-debug-contentba-8-ce7",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-37-d-ec7"
+      "plugin": "plugin---docusaurus-debug-37-d-be2"
     },
-    "allContent": "allContent---docusaurus-debug-content-246-9aa"
+    "allContent": "allContent---docusaurus-debug-content-246-d88"
   },
-  "/__docusaurus/debug/globalData-fd8": {
+  "/__docusaurus/debug/globalData/-975": {
     "__comp": "__comp---theme-debug-global-dataede-0fa",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-37-d-ec7"
+      "plugin": "plugin---docusaurus-debug-37-d-be2"
     }
   },
-  "/__docusaurus/debug/metadata-f31": {
+  "/__docusaurus/debug/metadata/-270": {
     "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-37-d-ec7"
+      "plugin": "plugin---docusaurus-debug-37-d-be2"
     }
   },
-  "/__docusaurus/debug/registry-1ac": {
+  "/__docusaurus/debug/registry/-d26": {
     "__comp": "__comp---theme-debug-registry-679-501",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-37-d-ec7"
+      "plugin": "plugin---docusaurus-debug-37-d-be2"
     }
   },
-  "/__docusaurus/debug/routes-de7": {
+  "/__docusaurus/debug/routes/-a58": {
     "__comp": "__comp---theme-debug-routes-946-699",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-37-d-ec7"
+      "plugin": "plugin---docusaurus-debug-37-d-be2"
     }
   },
-  "/releases-676": {
+  "/releases/-8fa": {
     "__comp": "__comp---site-src-components-releases-js-47-a-d1a",
     "__context": {
-      "plugin": "plugin---releases-2-a-1-869"
+      "plugin": "plugin---releases-2-a-1-bf4"
     },
-    "releasesData": "releasesData---releases-3-dc-d36"
+    "releasesData": "releasesData---releases-3-dc-dbb"
   },
-  "/search-6c1": {
+  "/search/-27a": {
     "__comp": "__comp---theme-search-page-1-a-4-d6f",
     "__context": {
-      "plugin": "plugin---searchf-96-cc7"
+      "plugin": "plugin---search-f-96-bd2"
     }
   },
-  "/docs-d48": {
+  "/docs/-ef4": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
-      "plugin": "plugin---docs-701-0db"
+      "plugin": "plugin---docs-701-887"
     },
-    "versionMetadata": "versionMetadata---docs-935-398"
+    "versionMetadata": "versionMetadata---docs-935-739"
   },
-  "/docs/case-studies/legend-case-studies-a8c": {
+  "/docs/case-studies/legend-case-studies/-53f": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-case-studies-legend-case-studiesd-62-9b1"
+    "content": "content---docs-case-studies-legend-case-studies-d-62-f4a"
   },
-  "/docs/community/contribute-to-legend-7fa": {
+  "/docs/community/contribute-to-legend/-95d": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-community-contribute-to-legend-9-e-8-873"
+    "content": "content---docs-community-contribute-to-legend-9-e-8-eab"
   },
-  "/docs/community/get-help-from-community-d27": {
+  "/docs/community/get-help-from-community/-934": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-community-get-help-from-community-521-f9e"
+    "content": "content---docs-community-get-help-from-community-521-407"
   },
-  "/docs/community/legend-media-08d": {
+  "/docs/community/legend-media/-83a": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-community-legend-media-884-48f"
+    "content": "content---docs-community-legend-media-884-958"
   },
-  "/docs/community/legend-roadmap-835": {
+  "/docs/community/legend-roadmap/-1b7": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-community-legend-roadmap-833-504"
+    "content": "content---docs-community-legend-roadmap-833-58b"
   },
-  "/docs/community/terms-of-service-563": {
+  "/docs/community/terms-of-service/-d29": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-community-terms-of-service-35-d-5d9"
+    "content": "content---docs-community-terms-of-service-35-d-a1e"
   },
-  "/docs/concepts/data-modeling-concepts-942": {
+  "/docs/concepts/data-modeling-concepts/-c7e": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-concepts-data-modeling-concepts-2-c-1-f40"
+    "content": "content---docs-concepts-data-modeling-concepts-2-c-1-f5b"
   },
-  "/docs/concepts/legend-concepts-63e": {
+  "/docs/concepts/legend-concepts/-b55": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-concepts-legend-conceptsc-3-b-728"
+    "content": "content---docs-concepts-legend-concepts-c-3-b-71b"
   },
-  "/docs/getting-started/installation-guide-85c": {
+  "/docs/getting-started/installation-guide/-cff": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-getting-started-installation-guide-2-a-2-733"
+    "content": "content---docs-getting-started-installation-guide-2-a-2-acc"
   },
-  "/docs/getting-started/introduction-to-legend-fd6": {
+  "/docs/getting-started/introduction-to-legend/-5f7": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-getting-started-introduction-to-legendeb-8-d71"
+    "content": "content---docs-getting-started-introduction-to-legend-eb-8-edb"
   },
-  "/docs/overview/architecture-3e6": {
+  "/docs/overview/architecture/-173": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-overview-architecture-875-624"
+    "content": "content---docs-overview-architecture-875-8f1"
   },
-  "/docs/overview/legend-overview-88f": {
+  "/docs/overview/legend-overview/-c36": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-overview-legend-overview-9-b-7-827"
+    "content": "content---docs-overview-legend-overview-9-b-7-9bf"
   },
-  "/docs/overview/use-cases-b0b": {
+  "/docs/overview/use-cases/-62a": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-overview-use-cases-32-d-b57"
+    "content": "content---docs-overview-use-cases-32-d-b81"
   },
-  "/docs/reference/bindings-68b": {
+  "/docs/reference/bindings/-496": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-reference-bindingsae-5-44e"
+    "content": "content---docs-reference-bindings-ae-5-38a"
   },
-  "/docs/reference/legend-language-45a": {
+  "/docs/reference/legend-language/-93d": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-reference-legend-languagedac-a15"
+    "content": "content---docs-reference-legend-language-dac-044"
   },
-  "/docs/reference/query-protocol-68e": {
+  "/docs/reference/query-protocol/-fa8": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-reference-query-protocol-840-afc"
+    "content": "content---docs-reference-query-protocol-840-edd"
   },
-  "/docs/reference/released-functions-d81": {
+  "/docs/reference/released-functions/-44d": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-reference-released-functionsc-68-32e"
+    "content": "content---docs-reference-released-functions-c-68-759"
   },
-  "/docs/reference/stores-bff": {
+  "/docs/reference/stores/-438": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-reference-storesd-9-c-ab4"
+    "content": "content---docs-reference-stores-d-9-c-823"
   },
-  "/docs/reference/upcoming-functions-ceb": {
+  "/docs/reference/upcoming-functions/-be4": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-reference-upcoming-functionsbb-6-6b2"
+    "content": "content---docs-reference-upcoming-functions-bb-6-a51"
   },
-  "/docs/release/release-2021-10-18-619": {
+  "/docs/release/release-2021-10-18/-3a1": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-release-release-2021-10-18-d-21-31e"
+    "content": "content---docs-release-release-2021-10-18-d-21-63d"
   },
-  "/docs/release/release-2022-04-26-856": {
+  "/docs/release/release-2022-04-26/-0e0": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-release-release-2022-04-26192-c41"
+    "content": "content---docs-release-release-2022-04-26-192-1f9"
   },
-  "/docs/release/release-2022-05-05-d40": {
+  "/docs/release/release-2022-05-05/-96f": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-release-release-2022-05-053-c-8-2a5"
+    "content": "content---docs-release-release-2022-05-05-3-c-8-b6b"
   },
-  "/docs/sdlc/project-structure-7f5": {
+  "/docs/sdlc/project-structure/-d5a": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-sdlc-project-structuref-24-7b3"
+    "content": "content---docs-sdlc-project-structure-f-24-4d3"
   },
-  "/docs/showcases/LogicalModellingBasic-cff": {
+  "/docs/showcases/LogicalModellingBasic/-b40": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-showcases-logical-modelling-basicff-8-79c"
+    "content": "content---docs-showcases-logical-modelling-basic-ff-8-2f5"
   },
-  "/docs/tour-ae2": {
+  "/docs/tour/-657": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-tour-044-001"
+    "content": "content---docs-tour-044-bf6"
   },
-  "/docs/tutorials/query-tutorial-898": {
+  "/docs/tutorials/query-tutorial/-278": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-tutorials-query-tutoriald-6-b-dd7"
+    "content": "content---docs-tutorials-query-tutorial-d-6-b-978"
   },
-  "/docs/tutorials/studio-tutorial-785": {
+  "/docs/tutorials/studio-tutorial/-2c8": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-tutorials-studio-tutorial-3-fd-649"
+    "content": "content---docs-tutorials-studio-tutorial-3-fd-525"
   },
   "/-65c": {
     "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",

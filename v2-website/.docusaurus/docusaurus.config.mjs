@@ -10,7 +10,7 @@ export default {
   "baseUrl": "/",
   "organizationName": "finos",
   "deploymentBranch": "gh-pages",
-  "trailingSlash": false,
+  "trailingSlash": true,
   "projectName": "legend",
   "scripts": [
     "https://buttons.github.io/buttons.js"
