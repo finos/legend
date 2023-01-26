@@ -97,61 +97,61 @@
       },
       "title": "What is a function element?"
     },
-    "dsl-mapping.grammar.element.mapping": {
+    "dsl-mapping.concept.element.mapping": {
       "markdownText": {
         "value": "A `Mapping` specifies a transformation between models, including model-to-model, store-to-model, enumeration-to-model, etc."
       },
       "title": "What is a mapping element?"
     },
-    "es-relational.grammar.element.database": {
+    "es-relational.concept.element.database": {
       "markdownText": {
         "value": "A `Database` specifies the structure (schema, table, view) and joins of a relational database"
       },
       "title": "What is a database element?"
     },
-    "dsl-service.grammar.element.service": {
+    "dsl-service.concept.element.service": {
       "markdownText": {
         "value": "A `Service` specifies query execution and deployment information so the it can be productionized: e.g. exposing it via API endpoints"
       },
       "title": "What is a service element?"
     },
-    "dsl-mapping.grammar.element.runtime": {
+    "dsl-mapping.concept.element.runtime": {
       "markdownText": {
         "value": "A `Runtime` specifies a logical grouping of connections which can be used for query execution"
       },
       "title": "What is a runtime element?"
     },
-    "dsl-mapping.grammar.element.connection": {
+    "dsl-mapping.concept.element.connection": {
       "markdownText": {
         "value": "A `Connection` specifies access to data store(s) including data store specifications and authentication strategies"
       },
       "title": "What is a connection element?"
     },
-    "dsl-external-format.grammar.element.binding": {
+    "dsl-external-format.concept.element.binding": {
       "title": "What is a binding element?",
       "markdownText": {
         "value": "A `Binding` element specifies the association between a set of models and their corresponding schemas in external formats (e.g. JSON, CSV, etc.) to ensure the models and schemas always kept in-sync"
       }
     },
-    "dsl-external-format.grammar.element.schema-set": {
+    "dsl-external-format.concept.element.schema-set": {
       "title": "What is a schema-set element?",
       "markdownText": {
         "value": "A `Schema-set` element specifies schemas in external formats (e.g. JSON, CSV, etc.), from which Pure models can be generated"
       }
     },
-    "dsl-generation-specification.grammar.element.generation-specification": {
+    "dsl-generation-specification.concept.element.generation-specification": {
       "markdownText": {
         "value": "A `Generation Specification` provides the pipeline for all generations"
       },
       "title": "What is a generation specification element?"
     },
-    "dsl-file-generation.grammar.element.file-generation-specification": {
+    "dsl-file-generation.concept.element.file-generation-specification": {
       "markdownText": {
         "value": "A `File Generation Specification` specifies the generation of external format from Pure models"
       },
       "title": "What is a file generation specification element?"
     },
-    "dsl-data.grammar.element.data": {
+    "dsl-data.concept.element.data": {
       "markdownText": {
         "value": "A `Data` element stores data which can be used for various purposes, including testing"
       },
@@ -231,9 +231,40 @@
       "title": "How do I specify a supertype of a class?",
       "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#add-a-super-type"
     },
+    "question.how-to-create-a-service": {
+      "title": "How do I create a Service?",
+      "related": [
+        "question.how-to-edit-a-service-url",
+        "question.how-to-add-owners-to-service",
+        "question.how-to-edit-a-service-query",
+        "question.how-to-write-a-service-test"
+      ],
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-a-service"
+    },
+    "question.how-to-edit-a-service-url": {
+      "title": "How do I edit my Service URL?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#general-tab"
+    },
+    "question.how-to-add-owners-to-service": {
+      "title": "How do I add owners to my Service?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#execution-tab"
+    },
+    "question.how-to-edit-a-service-query": {
+      "title": "How do I edit my Service Query?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-a-service-test"
+    },
     "question.how-to-write-a-service-test": {
       "title": "How do I specify a service test?",
       "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-a-service-test"
+    },
+    "question.how-to-write-test-data": {
+      "title": "How do I create test data?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-test-data"
+    },
+    "question.how-to-write-service-connection-test-data": {
+      "title": "How do I specify service connection test data?",
+      "related": ["question.how-to-write-a-service-test"],
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-connection-test-data"
     },
     "question.how-to-write-a-service-test-with-parameters": {
       "title": "How do I specify a service test with parameters?",
@@ -245,9 +276,21 @@
       "related": ["question.how-to-write-a-service-test"],
       "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#with-data-element"
     },
+    "question.how-to-create-a-data-element": {
+      "title": "How do I create a data element?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-a-data-element"
+    },
     "question.how-to-write-a-service-multi-execution": {
       "title": "How do I specify a service with multi executions?",
       "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-a-multi-execution-service"
+    },
+    "question.how-to-add-parameters-to-query": {
+      "title": "How do I add parameters to my Query?",
+      "url": "https://legend.finos.org/docs/tutorials/query-tutorial#parameters"
+    },
+    "question.how-to-add-constants-to-query": {
+      "title": "How do I add constants to my Query?",
+      "url": "https://legend.finos.org/docs/tutorials/query-tutorial#constants"
     },
     "context.class-editor": {
       "related": [
@@ -258,13 +301,24 @@
         "question.how-to-specify-a-class-supertype"
       ]
     },
+    "context.service-editor.test": {
+      "related": [
+        "question.how-to-write-a-service-test",
+        "question.how-to-write-a-service-test-with-parameters",
+        "question.how-to-write-a-service-test-with-data-element",
+        "question.how-to-write-service-connection-test-data"
+      ]
+    },
+    "context.data-element-editor": {
+      "related": ["question.how-to-create-a-data-element"]
+    },
     "dsl-text.grammar.parser": {
       "markdownText": {
         "value": "`Text DSL` (corresponding to header `###DataSpace` section in `Pure`) concerns with storing data in plain-text"
       },
       "title": "What is Text DSL about?"
     },
-    "dsl-text.grammar.element.text": {
+    "dsl-text.concept.element.text": {
       "markdownText": {
         "value": "A `Text` element stores plain-text content with a specified content-type, which can be used for formatting, syntax-highlighting"
       },
@@ -276,7 +330,7 @@
       },
       "title": "What is Diagram DSL about?"
     },
-    "dsl-diagram.grammar.element.diagram": {
+    "dsl-diagram.concept.element.diagram": {
       "markdownText": {
         "value": "A `Diagram` element specifies the visualization/rendering of data models and their relationship"
       },
@@ -288,7 +342,7 @@
       },
       "title": "What is DataSpace DSL about?"
     },
-    "dsl-dataspace.grammar.element.data-space": {
+    "dsl-dataspace.concept.element.data-space": {
       "markdownText": {
         "value": "A `Data-space` element specifies a grouping of model diagrams, execution context (mapping, runtime), test data, and so on to help communicate about the _meaning_, _usage_, and relationships of data models and to help users quickly explore and understand the models"
       },
@@ -300,13 +354,13 @@
       },
       "title": "What is Persistence DSL about?"
     },
-    "dsl-persistence.grammar.element.persistence": {
+    "dsl-persistence.concept.element.persistence": {
       "markdownText": {
         "value": "A `Persistence` element consists of a trigger to initiate persistence, a service to source and transform data, and a persister describing how to write to the target (e.g. ingest mode [snapshot | delta | append-only], temporality [non-temporal | unitemporal | bitemporal], and transactional semantics)"
       },
       "title": "What is a persistence element?"
     },
-    "dsl-persistence.grammar.element.persistence-context": {
+    "dsl-persistence.concept.element.persistence-context": {
       "markdownText": {
         "value": "A `PersistenceContext` element refers to a `Persistence` element, defines the runtime platform for persistence (e.g. AWS Glue), and may include additional runtime platform and environment details necessary for execution (e.g. data source connections, authentication strategies, and service input parameters)"
       },
@@ -318,11 +372,17 @@
       },
       "title": "What is External Store Service DSL about?"
     },
-    "es-service.grammar.element.service-store": {
+    "es-service.concept.element.service-store": {
       "markdownText": {
         "value": "A service store element specifies API endpoints as data source"
       },
       "title": "What is a service store element?"
+    },
+    "question.when-to-configure-project-platform-dependencies-versions": {
+      "markdownText": {
+        "value": "Your SDLC project pipeline could rely on various platform dependencies (e.g. `engine`, `sdlc`, etc.). By default, these platform dependencies' versions are not specfied, meaning that when the CI pipeline is running, the versions to be used will be derived from the latest version of `sdlc`. This means your pipeline effectively operates on progressing/moving platforms. The upside of this is the project automatically gets the benefit of newer releases (bug fixes, new features, etc.), but it could once in a while yield unexpected results.\n\n Sometimes, this might be less desirable; for example, your pipeline produces artifacts that you need to depend on so you would like to stabilize these artifacts. In these cases, freezing the platform dependencies' versions would be a sound approach. Otherwise, we highly recommend you not to fix these dependencies' versions."
+      },
+      "title": "When should I configure the versions of project platform dependencies"
     },
     "dsl-service.setup.productionize-query": {
       "title": "What does it mean to productionize a query?",
@@ -335,12 +395,6 @@
       "markdownText": {
         "value": "While `productionizing` a query, it is recommended that you should ensure that the service created will not break compilation. As such, we support `auto-configuration` for the workspace: this is our best effort to ensure the workspace has adequate and appropriate metadata (e.g. dependencies, models, mappings, runtimes, etc.) to make the service _just work_\n\nUsually, if the chosen project is the same as the query's project, no further configuration is needed, hence, it's safe to opt-out of `auto-configuration`; otherwise it's almost always safer to use `auto-configuration`"
       }
-    },
-    "question.when-to-configure-project-platform-dependencies-versions": {
-      "markdownText": {
-        "value": "Your SDLC project pipeline could rely on various platform dependencies (e.g. `engine`, `sdlc`, etc.). By default, these platform dependencies' versions are not specfied, meaning that when the CI pipeline is running, the versions to be used will be derived from the latest version of `sdlc`. This means your pipeline effectively operates on progressing/moving platforms. The upside of this is the project automatically gets the benefit of newer releases (bug fixes, new features, etc.), but it could once in a while yield unexpected results.\n\n Sometimes, this might be less desirable; for example, your pipeline produces artifacts that you need to depend on so you would like to stabilize these artifacts. In these cases, freezing the platform dependencies' versions would be a sound approach. Otherwise, we highly recommend you not to fix these dependencies' versions."
-      },
-      "title": "When should I configure the versions of project platform dependencies"
     }
   }
 }

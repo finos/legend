@@ -1,0 +1,12 @@
+{
+  "entries": {
+    "question.how-to-add-parameters-to-query": {
+      "title": "How do I add parameters to my Query?",
+      "url": "https://legend.finos.org/docs/tutorials/query-tutorial#parameters"
+    },
+    "question.how-to-add-constants-to-query": {
+      "title": "How do I add constants to my Query?",
+      "url": "https://legend.finos.org/docs/tutorials/query-tutorial#constants"
+    }
+  }
+}
