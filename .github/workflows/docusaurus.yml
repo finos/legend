@@ -64,5 +64,7 @@ jobs:
           git config --global user.email "$GIT_USERNAME@users.noreply.github.com"
           git config --global user.name "$GIT_USERNAME"
           echo "machine github.com login $GIT_USERNAME password $GITHUB_TOKEN" > ~/.netrc
-          # Run docusaurus deploy
-          GIT_USER=$GIT_USERNAME npm run deploy --prefix website
+          # Run docusaurus deploy (v2)
+          # GIT_USER=$GIT_USERNAME npm run deploy --prefix v2-website
+          # Run docusaurus-publish (v1)
+          GIT_USER=$GIT_USERNAME npm run publish-gh-pages --prefix website
