@@ -394,6 +394,9 @@
       "title": "When should I enable auto-configuration while productionizing query?",
       "markdownText": {
         "value": "While `productionizing` a query, it is recommended that you should ensure that the service created will not break compilation. As such, we support `auto-configuration` for the workspace: this is our best effort to ensure the workspace has adequate and appropriate metadata (e.g. dependencies, models, mappings, runtimes, etc.) to make the service _just work_\n\nUsually, if the chosen project is the same as the query's project, no further configuration is needed, hence, it's safe to opt-out of `auto-configuration`; otherwise it's almost always safer to use `auto-configuration`"
+      },
+      "tutorial.query.builder": {
+        "url": "https://legend.finos.org/docs/tutorials/query-tutorial"
       }
     }
   }
