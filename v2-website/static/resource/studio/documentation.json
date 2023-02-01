@@ -249,6 +249,12 @@
       "title": "How do I specify a service with multi executions?",
       "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-a-multi-execution-service"
     },
+    "question.why-do-i-see-error-with-association-property-type": {
+      "markdownText": {
+        "value": "Association can't be done between system elements. This would lead to the modification of immutable elements. Hence this is not supported"
+      },
+      "title": "Why do I see an error with association property type?"  
+    },
     "context.class-editor": {
       "related": [
         "question.how-to-define-a-class",
