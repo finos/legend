@@ -125,6 +125,11 @@
   --color-code-highlight: #4d3b3b;
   --color-code-function-name: #a1a1ff;
 
+  /*--- HOME PAGE --- */
+  --color-home-page__second-background: var(--color-dark-grey-150);
+  --color-home-page__third-background: var(--color-dark-grey-150);
+  --color-home-page__nav__text: var(--color-light-grey-300);
+  --color-home-page__nav__text--hover: var(--color-light-grey-0);
 }
 
 .container {
@@ -158,7 +163,11 @@
   --color-code-highlight: #f6d3d3;
   --color-code-function-name: #6e6ed2;
 
-
+  /*--- HOME PAGE --- */
+  --color-home-page__second-background: var(--color-light-grey-150);
+  --color-home-page__third-background: var(--color-light-grey-300);
+  --color-home-page__nav__text: var(--color-dark-grey-50);
+  --color-home-page__nav__text--hover: var(--color-dark-grey-300);
 }
 
 html[data-theme="light"] .navbar .navbar__logo {
