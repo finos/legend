@@ -1,0 +1,66 @@
+.pureGrammar-function {
+  padding: 1rem 0 2rem 0;
+}
+
+.pureGrammar-function ul {
+  list-style: none;
+}
+
+.pureGrammar-functionDetails {
+  margin-top: 1rem;
+}
+.pureGrammar-parametersLabel,
+.pureGrammar-returnsLabel,
+.pureGrammar-usageLabel {
+  background: var(--color-code);
+  padding: 0.5rem 1rem;
+  /* display: inline-flex; */
+  margin: 1rem 0;
+  display: block;
+  width: fit-content;
+}
+
+.pureGrammar-functionParameters > ul,
+.pureGrammar-functionReturns > ul,
+.pureGrammar-functionUsage > ul {
+  padding-left: 0;
+}
+
+.pureGrammar-functionParameters ul ul li {
+  font-family: "Source Code Pro" !important;
+  background: transparent;
+}
+
+.pureGrammar-functionDoc {
+  padding-bottom: 1rem;
+}
+
+.pureGrammar-functionSignature {
+  background: var(--color-code-highlight);
+  padding: 0.5rem 1rem;
+  font-family: Source Code Pro;
+  font-weight: 500;
+}
+
+.pureGrammar-parameterName {
+  background: #ffa7c4;
+  color: var(--color-dark-grey-50);
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  font-weight: 500;
+}
+
+.pureGrammar-genericType {
+  color: var(--color-primary-0);
+}
+
+.pureGrammar-functionName {
+  color: var(--color-code-function-name);
+}
+
+.pureGrammar-functionReturns ul ul li {
+  font-family: "Source Code Pro" !important;
+  padding: 0.5rem 1rem;
+  background: var(--color-code-highlight);
+  display: inline-flex;
+}
