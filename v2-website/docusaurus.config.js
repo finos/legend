@@ -4,11 +4,11 @@ module.exports = {
   title: "Legend",
   tagline:
     "Language and visual platform to generate models for the financial services industry",
-  url: "https://legend.finos.org",
+  url: "https://legend.finos.org/",
   baseUrl: "/",
   organizationName: "finos",
   deploymentBranch: "gh-pages",
-  trailingSlash: true,
+  trailingSlash: false,
   projectName: "legend",
   scripts: ["https://buttons.github.io/buttons.js"],
   stylesheets: [
@@ -17,7 +17,7 @@ module.exports = {
   favicon: "img/favicon/favicon.ico",
   customFields: {
     wrapPagesHTML: true,
-    repoUrl: "https://github.com/finos/legend",
+    repoUrl: "https://github.com/finos/legend/",
     highlight: {
       theme: "tomorrow-night-blue",
       hljs: function (hljsEngine) {

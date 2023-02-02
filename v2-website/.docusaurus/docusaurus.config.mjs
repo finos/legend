@@ -21,7 +21,7 @@ export default {
   "favicon": "img/favicon/favicon.ico",
   "customFields": {
     "wrapPagesHTML": true,
-    "repoUrl": "https://github.com/finos/legend",
+    "repoUrl": "https://github.com/finos/legend/",
     "highlight": {
       "theme": "tomorrow-night-blue"
     }
