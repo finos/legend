@@ -56,8 +56,7 @@ module.exports = {
         async loadContent() {
           const path = require("path");
           const fs = require("fs");
-          const getPath = (relPath) =>
-            path.resolve(__dirname, `${relPath}`);
+          const getPath = (relPath) => path.resolve(__dirname, `${relPath}`);
           const releases = fs
             .readdirSync(getPath("static/releases"))
             .map((dir) => {
@@ -68,7 +67,7 @@ module.exports = {
               return require(`${fullDir}/manifest.json`);
             })
             .filter(Boolean);
-            return releases;
+          return releases;
         },
 
         async contentLoaded({ content, actions }) {
@@ -97,18 +96,9 @@ module.exports = {
     algolia: {
       // The application ID provided by Algolia
       appId: "X69JR631XX",
-
-      // Public API key: it is safe to commit it
-      //86ec4b2b02b99254ba236724fe4fef6b
       apiKey: "b8ea4fa1535a60bc9385193ba58dcd69",
-
       indexName: "legend-finos",
-
-      // Optional: see doc section below
-      contextualSearch: false,
-      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-      // externalUrlRegex: "external\\.com|domain\\.com",
-      // Optional: Algolia search parameters
+      contextualSearch: true,
       // searchParameters: {},
       searchPagePath: "search",
     },
