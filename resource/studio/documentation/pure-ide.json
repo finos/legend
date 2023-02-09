@@ -1,0 +1,111 @@
+{
+  "entries": {
+    "grammar.parser.pure": {
+      "markdownText": {
+        "value": "Core `Pure` (coressponding to `###Pure` section in `Pure`) concerns with fundamental modelling concepts, such as, classes (data models), enumerations, associations, functions, etc."
+      },
+      "title": "What is core Pure about?",
+      "url": "https://legend.finos.org/docs/reference/legend-language"
+    },
+    "dsl-mapping.grammar.parser": {
+      "markdownText": {
+        "value": "`Mapping DSL` (coressponding to `###Mapping` section in `Pure`) concerns with data transformation specifications: this includes model-to-model transformation, store specification to model transformation, etc."
+      },
+      "title": "What is Mapping DSL about?"
+    },
+    "es-relational.grammar.parser": {
+      "markdownText": {
+        "value": "`External Store Relational DSL` (coressponding to `###Relational` section in `Pure`) concerns with mappings, connections, and specifications for relational databases"
+      },
+      "title": "What is External Store Relational DSL about?"
+    },
+    "grammar.class": {
+      "markdownText": {
+        "value": "A `Class` specifies a data model's structure, inheritance, and constraints"
+      },
+      "title": "What is a class element?"
+    },
+    "grammar.profile": {
+      "markdownText": {
+        "value": "A `Profile` provides a generic extension mechanism for customizing existing data models; some of its uses include documentating and classifying data models"
+      },
+      "title": "What is a profile element?"
+    },
+    "grammar.enumeration": {
+      "markdownText": {
+        "value": "An `Enumeration` specifies the complete list of value that a given type may acquire"
+      },
+      "title": "What is an enumeration element?"
+    },
+    "grammar.association": {
+      "markdownText": {
+        "value": "An `Association` specifies a linking between between 2 data models"
+      },
+      "title": "What is an association element?"
+    },
+    "grammar.function": {
+      "markdownText": {
+        "value": "A `Function` specifies a piece of reusable Pure code logic"
+      },
+      "title": "What is a function element?"
+    },
+    "dsl-mapping.grammar.element.mapping": {
+      "markdownText": {
+        "value": "A `Mapping` specifies a transformation between models, including model-to-model, store-to-model, enumeration-to-model, etc."
+      },
+      "title": "What is a mapping element?"
+    },
+    "es-relational.grammar.element.database": {
+      "markdownText": {
+        "value": "A `Database` specifies the structure (schema, table, view) and joins of a relational database"
+      },
+      "title": "What is a database element?"
+    },
+    "question.what-is-dsl": {
+      "markdownText": {
+        "value": "A `domain-specific language` (DSL) is a higher-level abstraction optimized for a specific domain/class of problems. Each `DSL` often has their own `Pure` sub-grammar, which partition `Pure` code into sections (each starts with a header, such as `###Pure`, `###Mapping`, etc."
+      },
+      "title": "What is a domain-specific language (DSL)?"
+    },
+    "question.what-is-basic-pure-language": {
+      "title": "What are the basics of Pure language?",
+      "url": "https://legend.finos.org/docs/reference/legend-language"
+    },
+    "question.how-to-write-pure-lambda": {
+      "title": "How do I write a lambda function in Pure?",
+      "url": "https://legend.finos.org/docs/reference/legend-language#lambda"
+    },
+    "question.how-to-define-a-class": {
+      "title": "How do I define a class?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#define-a-new-class"
+    },
+    "question.how-to-define-a-class-property": {
+      "title": "How do I define a class property?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#add-a-property-primitive-data-type"
+    },
+    "question.how-to-define-a-class-derivation": {
+      "title": "How do I define a class derivation (derived property)?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#add-a-derived-property"
+    },
+    "question.how-to-write-a-class-derivation-lambda": {
+      "related": [
+        "question.how-to-write-pure-lambda",
+        "question.what-is-basic-pure-language"
+      ],
+      "title": "How to write a derived property lambda in Pure?",
+      "url": "https://legend.finos.org/docs/reference/legend-language#derivation"
+    },
+    "question.how-to-define-a-class-constraint": {
+      "title": "How do I put constraint on a class?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#add-a-constraint"
+    },
+    "question.how-to-write-a-class-constraint-lambda": {
+      "related": [
+        "question.how-to-write-pure-lambda",
+        "question.what-is-basic-pure-language"
+      ],
+      "title": "How to write a constraint lambda in Pure?",
+      "url": "https://legend.finos.org/docs/reference/legend-language#constraint"
+    }
+  }
+}
