@@ -260,7 +260,7 @@
     },
     "dsl-text.grammar.parser": {
       "markdownText": {
-        "value": "`Text DSL` (corresponding to header `###DataSpace` section in `Pure`) concerns with storing data in plain-text"
+        "value": "`Text DSL` (corresponding to header `###Text` section in `Pure`) concerns with storing data in plain-text"
       },
       "title": "What is Text DSL about?"
     },
