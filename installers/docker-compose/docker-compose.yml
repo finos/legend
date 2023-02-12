@@ -4,7 +4,7 @@ services:
   # The current dir on the host is mounted into the container as a writable volume. Any writes by the setup script are now visible on the host
   # To avoid the files generated inside the container from being owned as root, the container is started with the user/group id of the current user (on the host)
   setup:
-    profiles: ["setup", "query", "studio", "postgres"]
+    profiles: ["setup", "engine", "sdlc", "depot", "query", "studio", "postgres"]
     container_name: "setup"
     image: finos/legend-engine-server:${ENGINE_IMAGE_VERSION}
     user: ${U_ID}:${G_ID}
@@ -30,7 +30,7 @@ services:
       - DEPOT_STORE_HOST=${DEPOT_STORE_HOST}
       - DEPOT_STORE_PORT=${DEPOT_STORE_PORT}
   mongodb:
-    profiles: ["query", "studio"]
+    profiles: ["engine", "sdlc", "depot", "query", "studio"]
     container_name: "legend-mongodb"
     image: mongo:${MONGODB_IMAGE_VERSION}
     ports:
@@ -44,7 +44,7 @@ services:
     command: --auth
   # Servers
   legend-engine:
-    profiles: ["query", "studio"]
+    profiles: ["engine", "query", "studio"]
     depends_on:
       - setup
       - mongodb
@@ -82,7 +82,7 @@ services:
       timeout: 10s
       retries: 5
   legend-sdlc:
-    profiles: ["query", "studio"]
+    profiles: ["sdlc", "query", "studio"]
     depends_on:
       - setup
       - mongodb
@@ -110,14 +110,12 @@ services:
       timeout: 10s
       retries: 5
   legend-depot-store:
-    profiles: ["query", "studio"]
+    profiles: ["depot", "query", "studio"]
     depends_on: 
        - setup
        - mongodb
     container_name: "legend-depot-store"
-    #image: finos/legend-depot-store-server:${DEPOT_STORE_IMAGE_VERSION}
-    build:
-      context: depot-store
+    image: finos/legend-depot-store-server:${DEPOT_STORE_IMAGE_VERSION}
     env_file: .env
     environment:
       - GITLAB_HOST=$GITLAB_HOST
@@ -146,7 +144,7 @@ services:
       start_period: 20s
       interval: 5s
   legend-depot-store-setup:
-    profiles: ["query", "studio"]
+    profiles: ["depot", "query", "studio"]
     depends_on:
       - setup
       - legend-depot-store
@@ -159,14 +157,12 @@ services:
     networks:
       - legend 
   legend-depot:
-    profiles: ["query", "studio"]
+    profiles: ["depot", "query", "studio"]
     depends_on: 
       - setup
       - mongodb
     container_name: "legend-depot"
-    #image: finos/legend-depot-server:${DEPOT_IMAGE_VERSION}
-    build:
-      context: depot
+    image: finos/legend-depot-server:${DEPOT_IMAGE_VERSION}
     env_file: .env
     environment:
       - GITLAB_HOST=$GITLAB_HOST
@@ -179,8 +175,6 @@ services:
       - MONGO_SESSION_ENABLED=${MONGO_SESSION_ENABLED}
     ports:
       - ${DEPOT_PORT}:${DEPOT_PORT}
-    volumes:
-      - ./z_generated/depot/config:/config
     networks:
       - legend
     healthcheck:
@@ -193,18 +187,16 @@ services:
         ]
       start_period: 20s
       interval: 5s
-
   # UI Clients
   legend-studio:
     profiles: ["studio", "query"]
     depends_on:
-      - setup
       - legend-engine
       - legend-sdlc
       - legend-depot
       - legend-depot-store
     container_name: legend-studio
-    image: finos/legend-studio:snapshot
+    image: finos/legend-studio:${STUDIO_IMAGE_VERSION}
     env_file: .env
     environment:
       - GITLAB_HOST=${GITLAB_HOST}
@@ -222,8 +214,6 @@ services:
       - MONGO_SESSION_ENABLED=${MONGO_SESSION_ENABLED}
     ports:
       - ${STUDIO_PORT}:${STUDIO_PORT}
-    volumes:
-      - ./z_generated/studio/config:/config
     networks:
       - legend
     healthcheck:
@@ -245,8 +235,7 @@ services:
       - legend-studio
       - legend-depot
     container_name: "legend-query"
-    build:
-      context: query
+    image: finos/legend-query:${QUERY_IMAGE_VERSION}
     env_file: .env
     environment:
       - GITLAB_HOST=$GITLAB_HOST
@@ -265,8 +254,6 @@ services:
       - MONGO_SESSION_ENABLED=${MONGO_SESSION_ENABLED}
     ports:
       - ${QUERY_PORT}:${QUERY_PORT}
-    volumes:
-      - ./z_generated/query/config:/config
     networks:
       - legend
     healthcheck:
