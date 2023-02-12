@@ -135,8 +135,8 @@ Each component exposes a Swagger endpoint that can be used to explore the compon
 
 | Component | Endpoint |
 | ------ | ---------|
-| Engine | http://localhost:6301/api/swagger# |
-| SDLC Server | http://localhost:6101/api/swagger# |
+| Engine | http://localhost:6300/api/swagger# |
+| SDLC Server | http://localhost:6100/api/swagger# |
 | Depot Store Server | http://localhost:6201/depot-store/api/swagger# | 
 | Depot Server | http://localhost:6200/depot/api/swagger# |
 
