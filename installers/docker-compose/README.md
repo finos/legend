@@ -87,7 +87,7 @@ Once authorized, you should be able to start using Studio.
 
 In the opening page of Studio, select the "Legend Installer Demo" project or navigate directly to the project using this link http://localhost:9000/studio/setup/40061958
 
-## Run Query
+## Query
 
 Run Query as follows :
 ```
@@ -126,8 +126,19 @@ Query allows you to access projects that have been indexed by the depot store se
 We have automatically indexed a project into the depot store. If this project is not visible in query, execute the following command.
 
 ```
-curl -v -X GET "http://localhost:6201/depot-store/api/queue/Legend%20Query%20Demo/org.finos.legend.demo/legend-query/1.0.2?maxRetries=5" -H "accept: text/plain"
+curl -v -X GET "http://localhost:6201/depot-store/api/queue/PROD-1234/org.finos.legend.demo/legend-query/1.0.2?maxRetries=5" -H "accept: text/plain"
 ```
+
+# Swagger 
+
+Each component exposes a Swagger endpoint that can be used to explore the component's API.
+
+| Component | Endpoint |
+| ------ | ---------|
+| Engine | http://localhost:6300/api/swagger# |
+| SDLC Server | http://localhost:6100/api/swagger# |
+| Depot Store Server | http://localhost:6201/depot-store/api/swagger# | 
+| Depot Server | http://localhost:6200/depot/api/swagger# |
 
 # Known Issues / Gotchas
 
