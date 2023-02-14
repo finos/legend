@@ -59,9 +59,9 @@ services:
       - MONGODB_URI=${MONGODB_URI}
       - MONGODB_NAME=${MONGODB_NAME}
       - MONGO_SESSION_ENABLED=${MONGO_SESSION_ENABLED}
-      - METADATA_PURE_HOST=${METADATA_PURE_HOST}
+      - METADATA_PURE_HOST=legend-depot
       - METADATA_PURE_PORT=${METADATA_PURE_PORT}
-      - METADATA_ALLOY_HOST=${METADATA_ALLOY_HOST}
+      - METADATA_ALLOY_HOST=legend-depot
       - METADATA_ALLOY_PORT=${METADATA_ALLOY_PORT}
     ports:
       - ${ENGINE_PORT}:${ENGINE_PORT}
@@ -291,6 +291,14 @@ services:
         ]
       start_period: 20s
       interval: 5s
+  apache:
+    profiles: ["graphiql"]
+    image: httpd:latest
+    container_name: legend-httpd
+    ports:
+    - 9099:80
+    volumes:
+    - ./graphiql:/usr/local/apache2/htdocs
 
 networks:
   legend: {}
