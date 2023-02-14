@@ -123,7 +123,7 @@ The HTML input element at the top of the GraphiQL client provides Legend with th
 http://localhost:6300/api/graphQL/v1/execution/execute/prod/org.finos.legend.showcase/graphql/1.0.1/query/domain::Query/mapping/mapping::relational::Firm_Person/runtime/connection::runtime::h2
 ```
 
-In the example below, we are providing the following metadata to Legend 
+In the example above, we are providing the following metadata to Legend 
 * ```http://localhost:6300/api/graphQL/v1/execution/execute/prod/``` - The `prod` path indicates that model entities should be sourced from Legend Depot
 * ```org.finos.legend.showcase/graphql/1.0.1``` - The Maven coordinates of the model entities 
 * ```query/domain::Query``` - The Legend class that defines the GraphQL query root
