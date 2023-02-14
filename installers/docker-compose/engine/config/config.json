@@ -69,7 +69,8 @@
       "host": "${METADATA_ALLOY_HOST}",
       "port": ${METADATA_ALLOY_PORT},
       "prefix": "/depot/api"
-    }
+    }, 
+    "sdlc": { "host":"legend-sdlc", "port":${SDLC_PORT}}
   },
   "temporarytestdb": {
     "port": ${TEMP_DB_PORT}
