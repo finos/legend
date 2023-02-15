@@ -7,6 +7,7 @@
   --color-light-grey-150: #e6e6e6;
   --color-light-grey-180: #d4d4d4;
   --color-light-grey-200: #ddd;
+  --color-light-grey-250: #d7d5d5;
   --color-light-grey-300: #cecece;
   --color-light-grey-400: #bbb;
 
@@ -87,10 +88,11 @@
   --color-blue-200: #08629e;
   --color-blue-300: #014a7b;
 
-  --color-light-shade-50: #ffffff12;
-  --color-light-shade-100: #ffffff2e;
+  --color-light-shade-50: #eaeaea;
+  --color-light-shade-100: #cfcfcf;
 
-  --color-dark-shade-100: #0000002e;
+  /* --color-dark-shade-100: #0000002e; */
+  --color-dark-shade-100: #1e1e1e;
   --color-dark-shade-300: #00000061;
 
   --color-dark-blue-shade-100: #7f7ab124;
@@ -104,6 +106,7 @@
   --color-yellow-TEMP-2: #ab843b;
   --color-yellow-TEMP-3: #ffd946;
   --color-pink-TEMP: #ffa7c4;
+  --color-dark-pink-TEMP: #e97098;
   --color-teal-TEMP-2: #43849c;
 
   --color-primary-0: var(--color-pink-TEMP);
@@ -114,6 +117,67 @@
   --color-home-page__header-background: var(--color-dark-grey-120);
   --color-doc-background: var(--color-dark-grey-100);
   --color-sidebar-background: var(--color-dark-grey-150);
-  --color-pagenav-background: var(--color-dark-grey-200);
+  --color-pagenav-background: var(--color-dark-grey-180);
+  --color-pagenav-border: var(--color-light-grey-100);
   --color-doc-text: var(--color-light-grey-100);
+  --color-toc-content: var(--color-light-grey-400);
+  --color-code: var(--color-dark-grey-150);
+  --color-code-highlight: #4d3b3b;
+  --color-code-function-name: #a1a1ff;
+
+  /*--- HOME PAGE --- */
+  --color-home-page__second-background: var(--color-dark-grey-150);
+  --color-home-page__third-background: var(--color-dark-grey-150);
+  --color-home-page__nav__text: var(--color-light-grey-300);
+  --color-home-page__nav__text--hover: var(--color-light-grey-0);
+}
+
+.container {
+  --ifm-container-width-xl: 100%;
+  --ifm-container-width: 100%;
+  /* --ifm-spacing-horizontal: 15%; */
+}
+
+.container {
+  margin: 0 auto;
+  max-width: var(--ifm-container-width);
+  padding: 0 var(--ifm-spacing-horizontal);
+  padding-left: 20%;
+  width: 100%;
+}
+
+.margin-vert--lg {
+  padding: 0% 10%;
+}
+
+[data-theme="light"] {
+  --color-primary-0: var(--ifm-color-primary-dark);
+  --color-primary-50: var(--color-magenta-50);
+  --color-secondary-50: var(--color-yellow-TEMP-3);
+  --color-footer-background: var(--color-light-grey-250);
+  --color-header-background: var(--color-light-grey-50);
+  --color-home-page__header-background: var(--color-light-grey-120);
+  --color-doc-background: var(--color-light-grey-100);
+  --color-sidebar-background: var(--color-light-grey-150);
+  --color-pagenav-background: var(--color-light-grey-150);
+  --color-doc-text: var(--color-dark-grey-100);
+  --color-toc-content: var(--color-dark-grey-300);
+  --color-pagenav-border: var(--color-dark-grey-300);
+  --color-code: var(--color-light-grey-50);
+  --color-code-highlight: #f6d3d3;
+  --color-code-function-name: #6e6ed2;
+
+  /*--- HOME PAGE --- */
+  --color-home-page__second-background: var(--color-light-grey-150);
+  --color-home-page__third-background: var(--color-light-grey-300);
+  --color-home-page__nav__text: var(--color-dark-grey-50);
+  --color-home-page__nav__text--hover: var(--color-dark-grey-300);
+}
+
+html[data-theme="light"] .navbar .navbar__logo {
+  content: url("../img/logos/2023_Legend_Dark.png");
+}
+
+html[data-theme="light"] #finosicon {
+  content: url("../img/finos.png");
 }

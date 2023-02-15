@@ -1,0 +1,14 @@
+{
+  "unversionedId": "showcases/graphql",
+  "id": "showcases/graphql",
+  "title": "Legend GraphQL Showcase",
+  "description": "This showcase demonstrates the uses of the GraphQL protocol in Legend.",
+  "source": "@site/../docs/showcases/graphql.md",
+  "sourceDirName": "showcases",
+  "slug": "/showcases/graphql",
+  "permalink": "/docs/showcases/graphql",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

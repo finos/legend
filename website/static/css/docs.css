@@ -7,6 +7,12 @@ blockquote {
   margin-right: 4rem;
 }
 
+#__docusaurus {
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  height: 100%;
+}
 header.postHeader:empty {
   display: none;
 }
@@ -155,12 +161,15 @@ FeatureCallout article iframe {
   text-align: center;
 }
 
-.postHeaderTitle {
+.postHeaderTitle,
+.markdown h1:first-child {
   margin-top: 2.5rem !important;
 }
 
-.fixedHeaderContainer {
+.fixedHeaderContainer,
+.navbar--fixed-top {
   background: var(--color-header-background);
+  min-height: 50px;
 }
 
 .navPusher {
@@ -168,7 +177,8 @@ FeatureCallout article iframe {
 }
 
 .navPusher,
-.docMainWrapper {
+.docMainWrapper,
+.main-wrapper {
   background: var(--color-doc-background);
   color: var(--color-doc-text);
 }
@@ -180,7 +190,7 @@ FeatureCallout article iframe {
   position: sticky;
   display: flex;
   justify-content: center;
-  width: 26rem;
+  width: 22rem;
   flex: 0 0 26rem;
   right: 0;
   top: 5rem;
@@ -215,14 +225,23 @@ FeatureCallout article iframe {
   padding-top: 15rem;
 }
 
+.table-of-contents {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 4.5rem;
+  border-left: none;
+  /* padding-top: 15rem; */
+}
+
 .docsContainer img {
   border-radius: 0.5rem !important;
   margin-top: 3rem;
   margin-bottom: 6rem;
 }
 
-.docMainWrapper h2,
-.docMainWrapper h3 {
+.main-wrapper h2,
+.main-wrapper h3 {
   color: var(--color-primary-0);
 }
 
@@ -256,17 +275,18 @@ pre code.hljs {
   color: #ffa7c4;
 }
 
-@media only screen {
-  .navBreadcrumb.wrapper > h2 {
-    display: none; /* hide collapsed nav bar header because we only have 1 parent now which is Getting Started*/
-  }
+/* Not recommend, see https://docusaurus.io/docs/styling-layout#global-styles */
+[class*="docMainContainer"] {
+  max-width: 100% !important;
+}
 
+@media only screen {
   .docsNavContainer .toc .navBreadcrumb {
     background-color: var(--color-dark-grey-100);
     border-bottom: 0.1rem solid var(--color-dark-grey-50);
   }
 
-  .fixedHeaderContainer {
+  .navbar--fixed-top {
     top: 0;
   }
 
@@ -276,12 +296,32 @@ pre code.hljs {
     position: relative;
   }
 
+  .tableOfContents,
+  #__docusaurus .col--3 {
+    background: var(--color-pagenav-background);
+    padding: 0;
+    max-width: 27rem;
+    margin-right: 2%;
+    min-height: 72vh;
+    margin-top: -1rem;
+    margin-bottom: -2rem;
+  }
+
+  .theme-doc-toc-desktop {
+    text-align: left;
+    margin-right: 1.5rem;
+    height: 100%;
+    padding-top: 13rem;
+    margin: 0;
+    width: 100%;
+  }
+
   .toc .toggleNav .navGroup .navGroupCategoryTitle {
     text-transform: uppercase;
     max-width: 25rem;
     cursor: pointer;
     user-select: none;
-    color: var(--color-light-grey-400);
+    color: var(--color-toc-content);
     display: inline-flex;
   }
 
@@ -311,10 +351,6 @@ pre code.hljs {
   .docsSliderActive .toc .navBreadcrumb,
   .tocActive .navBreadcrumb {
     border-bottom: 0.1rem solid var(--color-dark-grey-150);
-  }
-
-  .container.mainContainer.docsContainer {
-    margin: 10rem 5rem;
   }
 
   .docsNavContainer + .container.mainContainer.docsContainer {
@@ -398,6 +434,10 @@ pre code.hljs {
 }
 
 @media only screen and (max-width: 1023px) {
+  .container {
+    padding: 0 !important;
+  }
+
   .toc .toggleNav .navGroup .navGroupCategoryTitle {
     max-width: initial;
     font-size: 1.4rem !important;
@@ -407,9 +447,115 @@ pre code.hljs {
   .toc .toggleNav .navGroup {
     margin-bottom: 1rem;
   }
+
+  .navbar-sidebar {
+    width: 100%;
+  }
+
+  .theme-doc-sidebar-menu {
+    margin-left: 3%;
+  }
+
+  .theme-doc-sidebar-menu .menu__link {
+    max-width: initial;
+    font-size: 1.4rem !important;
+    padding: 0;
+    font-weight: 500;
+    line-height: 1.2em;
+  }
+
+  .menu__link,
+  .menu__list {
+    padding-left: 0 !important;
+  }
+
+  /* .theme-doc-sidebar-menu .menu__link {
+    max-width: initial;
+    font-size: 1.4rem !important;
+    margin-bottom: 0.5rem;
+  } */
+
+  /*svp toc is for this*/
+}
+
+.theme-doc-sidebar-container {
+  background: var(--color-sidebar-background);
+  border-right: none !important;
+  /* svp */
+}
+
+.menu__list-item-collapsible {
+  text-transform: uppercase;
+  max-width: 25rem;
+  cursor: pointer;
+  user-select: none;
+  color: var(--color-light-grey-400);
+  font-size: 1.5rem !important;
+  display: inline-flex;
+}
+.theme-doc-sidebar-item-category {
+  margin-bottom: 16px;
+  padding-right: 2rem;
+}
+
+.sidebar_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-styles-module {
+  float: right;
+}
+
+.theme-doc-markdown {
+  margin: 0 10%;
+  padding: 0 2%;
+}
+
+.pagination-nav {
+  padding-left: 10%;
+  padding-bottom: 8rem;
 }
 
 @media only screen and (min-width: 1024px) {
+  .pagination-nav {
+    display: inline-block;
+    width: 100%;
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+
+  .theme-doc-markdown {
+    margin-left: 8rem;
+    margin-right: 8rem;
+    padding-top: 5rem;
+  }
+
+  .theme-doc-sidebar-container {
+    background: var(--color-sidebar-background);
+    border-right: none !important;
+    display: flex;
+    position: fixed;
+    align-items: flex-end;
+    /* width: 22% !important; */
+    width: var(--doc-sidebar-width);
+    height: 100%;
+    z-index: 2;
+    overflow-y: overlay;
+    overflow-x: hidden;
+  }
+
+  .theme-doc-sidebar-menu {
+    padding: 0px;
+    text-align: right;
+    height: 100%;
+    padding-top: 13rem;
+    float: right;
+    width: 25rem;
+  }
+
+  .theme-doc-sidebar-menu .menu__link {
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 22rem;
+  }
+
   .docsNavContainer {
     display: flex;
     position: fixed;
@@ -420,7 +566,11 @@ pre code.hljs {
     z-index: 2;
     overflow-y: overlay;
     overflow-x: hidden;
+
+    background: purple;
   }
+
+  /* svp */
 
   .docsNavContainer .toc {
     text-align: right;
@@ -467,7 +617,7 @@ pre code.hljs {
     max-width: 25rem;
     cursor: default;
     user-select: none;
-    color: var(--color-light-grey-400);
+    color: var(--color-toc-content);
     display: inline-flex;
     font-family: "Roboto Condensed" !important;
   }
@@ -491,6 +641,11 @@ pre code.hljs {
 }
 
 @media only screen and (min-width: 1200px) {
+  .container.mainContainer.docsContainer {
+    margin: 10rem 5rem;
+    /* margin-left: 37%; */
+  }
+
   .container.mainContainer.docsContainer {
     margin-left: 0rem;
   }
@@ -530,16 +685,16 @@ pre code.hljs {
 }
 
 .onPageNav::-webkit-scrollbar-thumb {
-  background: var(--color-dark-shade-100);
+  background: var(--color-dark-shade-100) !important;
   border-radius: 0.4rem;
 }
 
 .onPageNav::-webkit-scrollbar-thumb:window-inactive {
-  background: var(--color-dark-shade-100);
+  background: var(--color-dark-shade-100) !important;
 }
 
 .onPageNav::-webkit-scrollbar-track {
-  background: transparent;
+  background: transparent !important;
 }
 
 .headerTitleWithLogo {
@@ -552,21 +707,38 @@ pre code.hljs {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-dark-shade-100);
   border-radius: 0.4rem;
+  background: var(--color-dark-shade-100) !important;
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
-  background: var(--color-dark-shade-100);
+  background: var(--color-dark-shade-100) !important;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--color-sidebar-background) !important;
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:window-inactive {
+  background: var(--color-light-shade-100) !important;
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-track {
+  background: var(--color-sidebar-background) !important;
+}
+
+html[data-theme="light"] .onPageNav::-webkit-scrollbar-thumb {
+  background: var(--color-light-shade-100) !important;
+}
+
+html[data-theme="light"] .onPageNav::-webkit-scrollbar-thumb:window-inactive {
+  background: var(--color-light-shade-100) !important;
 }
 
 /* App scrollbar - Firefox */
 body {
-  scrollbar-color: var(--color-dark-shade-100) transparent;
+  scrollbar-color: var(--color-dark-shade-100) transparent !important;
 }
 
 .collapsible .arrow {
@@ -577,4 +749,70 @@ body {
   max-height: 2.4rem;
   margin-top: -0.3rem;
   margin-right: -0.3rem;
+}
+
+/* NOTE: These classes target Infima class names which are usually stable
+but may be changed https://docusaurus.io/docs/styling-layout */
+
+.table-of-contents__link {
+  font-size: 1.3rem;
+  color: var(--color-toc-content);
+}
+
+.menu__link {
+  line-height: 1.75;
+  font-family: "Roboto Condensed" !important;
+  font-size: 1.5rem !important;
+}
+
+.menu__link--sublist-caret:after {
+  margin-left: 5px;
+}
+
+.menu__link:not(.menu__link--active):not(.menu__link--sublist) {
+  color: #717171;
+}
+.menu__list-item-collapsible .menu__link--active {
+  color: var(--ifm-menu-color);
+}
+
+.table-of-contents__link--active {
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+}
+
+[data-theme="light"] .table-of-contents__link--active {
+  color: var(--ifm-color-primary-dark);
+}
+
+.pagination-nav__label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2em;
+  text-transform: uppercase;
+}
+.pagination-nav__link--next,
+.pagination-nav__link--prev {
+  width: fit-content;
+  border-radius: 0.3rem;
+  border: 1px solid var(--color-pagenav-border);
+  justify-content: flex-end;
+  border-radius: 0.3rem;
+  color: var(--color-pagenav-border);
+  text-decoration: none !important;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.pagination-nav__link--next:hover,
+.pagination-nav__link--prev:hover {
+  background: var(--color-primary-0);
+  border-color: var(--color-primary-0);
+  color: var(--color-dark-grey-100);
+}
+
+.pagination-nav__link--next {
+  float: right;
+}
+.pagination-nav__link--prev {
+  float: left;
 }

@@ -4,7 +4,7 @@
   border: none;
   font: inherit;
   font-weight: 400;
-  font-size: 1.4rem;
+  /* font-size: 1.4rem; */
   vertical-align: baseline;
 }
 
@@ -92,11 +92,35 @@ h5 {
   font-family: "Roboto Condensed" !important;
 }
 
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 13.6px;
+}
+
 code {
   font-family: "Source Code Pro";
   font-weight: 500;
   font-size: 1.5rem;
-  background: var(--color-dark-grey-150);
+  background: var(--color-code);
   margin-right: 0.5rem;
   padding: 0.4rem 1rem;
 }
@@ -117,4 +141,9 @@ blockquote code {
 
 table tr:nth-child(2n) {
   background-color: transparent;
+}
+
+.DocSearch-Logo .cls-2,
+.cls-1 {
+  fill: var(--docsearch-muted-color) !important;
 }

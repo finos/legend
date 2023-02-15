@@ -13,10 +13,6 @@
       "tutorials/studio-tutorial",
       "tutorials/query-tutorial"
     ],
-    "Showcases": [
-      "showcases/overview",
-      "showcases/graphql"
-    ],
     "Concepts": [
       "concepts/legend-concepts",
       "concepts/data-modeling-concepts"
