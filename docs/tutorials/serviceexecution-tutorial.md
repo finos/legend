@@ -1,4 +1,4 @@
-# GraphQL   
+# Service Execution Jar   
 
 This tutorial demonstrates the use of "Service Execution Jars"
 
