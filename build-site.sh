@@ -52,7 +52,7 @@ cd -
 # fi
 
 # Where the docusaurus app lives
-cd v2-website
+cd website
 
 # Install docusaurus deps
 yarn install

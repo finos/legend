@@ -1,0 +1,23 @@
+{
+  "unversionedId": "tutorials/graphql-tutorial",
+  "id": "tutorials/graphql-tutorial",
+  "title": "GraphQL",
+  "description": "This tutorial demonstrates the uses of the GraphQL protocol in Legend.",
+  "source": "@site/../docs/tutorials/graphql-tutorial.md",
+  "sourceDirName": "tutorials",
+  "slug": "/tutorials/graphql-tutorial",
+  "permalink": "/docs/tutorials/graphql-tutorial",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Service Store",
+    "permalink": "/docs/tutorials/servicestore-tutorial"
+  },
+  "next": {
+    "title": "Service Execution Jar",
+    "permalink": "/docs/tutorials/serviceexecution-tutorial"
+  }
+}
