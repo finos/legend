@@ -15,7 +15,7 @@ This showcase demonstrates the uses of the GraphQL protocol in Legend.
 
 ## Showcase setup 
 
-###1. Install Legend
+### 1. Install Legend
 
 This showcase uses the Docker Compose installers documented [here](https://github.com/finos/legend/tree/master/installers/docker-compose).
 
@@ -25,7 +25,7 @@ The command below installs and starts Legend Studio, Query, Engine, Depot Store 
 ./docker-compose.sh --profile query up -d --force-recreate 
 ```
 
-###2. Index Studio Project
+### 2. Index Studio Project
 
 This showcase uses Legend Depot to get the serialized Legend models (also called 'entities').
 
@@ -35,7 +35,7 @@ The command below adds the models of the 'Legend GraphQL Showcase' Studio projec
 curl -v -X GET "http://localhost:6201/depot-store/api/queue/PROD-4567/org.finos.legend.showcase/graphql/1.0.1?maxRetries=5" -H "accept: text/plain"
 ```
 
-###3. Start a GraphiQL client
+### 3. Start a GraphiQL client
 
 The command below starts an Apache httpd server that serves a HTML page that implements a GraphiQL client.
 
@@ -133,3 +133,7 @@ In the example above, we are providing the following metadata to Legend
 ## Reference 
 
 Reference documentation on the design/implementation of the GraphQL integration can be found [here](https://github.com/finos/legend-engine/blob/master/docs/graphQL/graphQL.md)
+
+## Code 
+
+Legend Engine source code is in the Maven modules named ```legend-engine-xt-graphQL-XXXX```
