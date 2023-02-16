@@ -1,8 +1,8 @@
-# Legend GraphQL Showcase  
+# GraphQL   
 
-This showcase demonstrates the uses of the GraphQL protocol in Legend. 
+This tutorial demonstrates the uses of the GraphQL protocol in Legend. 
 
-## Showcase requirements 
+## Requirements 
 
 * An installation of Legend with the following components :
     * Studio 
@@ -13,7 +13,7 @@ This showcase demonstrates the uses of the GraphQL protocol in Legend.
   
 * Legend Studio Project - https://gitlab.com/finosfoundation/legend/showcase/legend-graphql-showcase 
 
-## Showcase setup 
+## Setup 
 
 ### 1. Install Legend
 
@@ -27,7 +27,7 @@ The command below installs and starts Legend Studio, Query, Engine, Depot Store 
 
 ### 2. Index Studio Project
 
-This showcase uses Legend Depot to get the serialized Legend models (also called 'entities').
+This tutorial uses Legend Depot to get the serialized Legend models (also called 'entities').
 
 The command below adds the models of the 'Legend GraphQL Showcase' Studio project to the depot. 
 
@@ -44,7 +44,7 @@ The command below starts an Apache httpd server that serves a HTML page that imp
 Creating legend-httpd ... done
 ```
 
-## Showcase 
+## Tutorial 
 
 ### GraphQL Primer 
 
