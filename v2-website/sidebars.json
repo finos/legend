@@ -12,8 +12,10 @@
     "Tutorials": [
       "tutorials/studio-tutorial",
       "tutorials/query-tutorial",
-      "tutorials/graphql-tutorial",
+      "tutorials/logicalmodeling-tutorial",
+      "tutorials/relationalmapping-tutorial",
       "tutorials/servicestore-tutorial",
+      "tutorials/graphql-tutorial",
       "tutorials/serviceexecution-tutorial"
     ],
     "Concepts": [
