@@ -11,11 +11,8 @@
     ],
     "Tutorials": [
       "tutorials/studio-tutorial",
-      "tutorials/query-tutorial"
-    ],
-    "Showcases": [
-      "showcases/overview",
-      "showcases/graphql"
+      "tutorials/query-tutorial",
+      "tutorials/graphql-tutorial"
     ],
     "Concepts": [
       "concepts/legend-concepts",
