@@ -1,0 +1,23 @@
+{
+  "unversionedId": "tutorials/logicalmodeling-tutorial",
+  "id": "tutorials/logicalmodeling-tutorial",
+  "title": "Logical Data Modeling",
+  "description": "This tutorial demonstrates various logical data modeling concepts",
+  "source": "@site/../docs/tutorials/logicalmodeling-tutorial.md",
+  "sourceDirName": "tutorials",
+  "slug": "/tutorials/logicalmodeling-tutorial",
+  "permalink": "/docs/tutorials/logicalmodeling-tutorial",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Query",
+    "permalink": "/docs/tutorials/query-tutorial"
+  },
+  "next": {
+    "title": "Relational Mapping",
+    "permalink": "/docs/tutorials/relationalmapping-tutorial"
+  }
+}

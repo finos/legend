@@ -1,0 +1,27 @@
+{
+  "unversionedId": "concepts/legend-concepts",
+  "id": "concepts/legend-concepts",
+  "title": "Legend Concepts",
+  "description": "Workspace",
+  "source": "@site/../docs/concepts/legend-studio-concepts.md",
+  "sourceDirName": "concepts",
+  "slug": "/concepts/legend-concepts",
+  "permalink": "/docs/concepts/legend-concepts",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "legend-concepts",
+    "title": "Legend Concepts",
+    "sidebar_label": "Legend Concepts"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Service Execution Jar",
+    "permalink": "/docs/tutorials/serviceexecution-tutorial"
+  },
+  "next": {
+    "title": "Data Modeling Concepts",
+    "permalink": "/docs/concepts/data-modeling-concepts"
+  }
+}

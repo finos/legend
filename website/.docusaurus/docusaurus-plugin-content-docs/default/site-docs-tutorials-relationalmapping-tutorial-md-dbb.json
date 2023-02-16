@@ -1,0 +1,23 @@
+{
+  "unversionedId": "tutorials/relationalmapping-tutorial",
+  "id": "tutorials/relationalmapping-tutorial",
+  "title": "Relational Mapping",
+  "description": "This tutorial demonstrates various concepts around mapping a logical data model to a relational store.",
+  "source": "@site/../docs/tutorials/relationalmapping-tutorial.md",
+  "sourceDirName": "tutorials",
+  "slug": "/tutorials/relationalmapping-tutorial",
+  "permalink": "/docs/tutorials/relationalmapping-tutorial",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Logical Data Modeling",
+    "permalink": "/docs/tutorials/logicalmodeling-tutorial"
+  },
+  "next": {
+    "title": "Service Store",
+    "permalink": "/docs/tutorials/servicestore-tutorial"
+  }
+}

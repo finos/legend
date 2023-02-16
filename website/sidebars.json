@@ -11,11 +11,12 @@
     ],
     "Tutorials": [
       "tutorials/studio-tutorial",
-      "tutorials/query-tutorial"
-    ],
-    "Showcases": [
-      "showcases/overview",
-      "showcases/graphql"
+      "tutorials/query-tutorial",
+      "tutorials/logicalmodeling-tutorial",
+      "tutorials/relationalmapping-tutorial",
+      "tutorials/servicestore-tutorial",
+      "tutorials/graphql-tutorial",
+      "tutorials/serviceexecution-tutorial"
     ],
     "Concepts": [
       "concepts/legend-concepts",
