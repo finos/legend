@@ -1,4 +1,4 @@
-# GraphQL   
+# Service Store   
 
 This tutorial demonstrates the uses of "Service Store" 
 
