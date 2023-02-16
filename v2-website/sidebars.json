@@ -13,7 +13,8 @@
       "tutorials/studio-tutorial",
       "tutorials/query-tutorial",
       "tutorials/graphql-tutorial",
-      "tutorials/servicestore-tutorial"
+      "tutorials/servicestore-tutorial",
+      "tutorials/serviceexecution-tutorial"
     ],
     "Concepts": [
       "concepts/legend-concepts",
