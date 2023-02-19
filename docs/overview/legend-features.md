@@ -12,7 +12,7 @@ Associations are used to define a single linking relationship between two classe
 
 [Create an association](../tutorials/studio-association.md)
 
-## Bindings
+## Binding
 
 _Coming soon._
 
@@ -34,7 +34,7 @@ _Coming soon._
 
 Legend data models have built-in governance features, called _data quality controls_. You create data quality controls every time you define a model. Constraints are governance tools added on top of quality controls. Use constraints to define a validation or condition on the model that's expected to be met.
 
-[Add a constraint](../tutorials/studio-class.md/#constraint)
+[Create a constraint](../tutorials/studio-class.md/#constraint)
 
 ## Dataspace
 
@@ -47,12 +47,6 @@ A dataspace is a block of code that groups together a default mapping, runtime a
 You can configure a project to depend on another project. In other words, you can leverage the features defined in another data model to run your own data model.  
 
 [Define project dependencies](../tutorials/studio-project-dependencies.md)
-
-## Derived Property
-
-Derived properties use functions to operate on other attributes in the data model.
-
-[Create a derived property](../tutorials/studio-class.md/#derived-property)
 
 ## Diagram
  
@@ -74,14 +68,6 @@ _Coming soon._
 
 _Coming soon._
 
-## Tabular Data Structure
-
-_Coming soon._
-
-### Graph Fetch
-
-_Coming soon._
-
 ## File Generation
 
 File Generations let you generate your models in other codes or schemas. 
@@ -91,6 +77,8 @@ File Generations let you generate your models in other codes or schemas.
 ## Filter
 
 _Coming soon._
+
+[Filter queries](../tutorials/query-filter.md)
 
 ## Flat Data Schema
 
@@ -113,7 +101,7 @@ _Coming soon._
 
 _Coming soon._
 
-## Functions
+## Function Editor
 
 Functions are used to derive new values from existing values using various operations.
 
@@ -122,10 +110,6 @@ Functions are used to derive new values from existing values using various opera
 Defining a customized function allows you to re-use transformation logic as part of your mappings or services.
 
 [Define a function](../tutorials/studio-function.md)
-
-## Function Editor
-
-_Coming soon._
 
 ## Function Explorer
 
@@ -137,6 +121,10 @@ Generation Specification lets you specify the file and model generation elements
 
 [Generate models and files](../tutorials/studio-file-generation.md)
 
+## Graph Fetch
+
+_Coming soon._
+
 ## Group Workspace
 
 Group workspaces allow collaboration on the same workspace. Changes made in group workspaces are visible to other users without the need to merge to master. 
@@ -147,23 +135,35 @@ Group workspaces allow collaboration on the same workspace. Changes made in grou
 
 The mapping editor lets you construct mapping elements and test them through mapping tests.
 
-## Measure
-
-_Coming soon._
-
-## Model-to-model Mapping
+### Model-to-model Mapping
 
 Model-to-model mappings are used to create model transformations. Model transformations are used to connect different models.
 
 [Create model-to-model mappings](../tutorials/studio-m2m-mapping.md)
 
+### Relational Mapping
+
+Connect data to a data model to start querying data leveraging the business-friendly terms and data relationships defined in the data model.
+
+[Create relational mappings](../tutorials/studio-relational-mapping.md)
+
+## Measure
+
+_Coming soon._
+
+[Create a measure](../tutorials/studio-measure.md)
+
 ## Package
 
 _Coming soon._
 
+[Create a package](../tutorials/studio-package.md)
+
 ## Persistence
 
 _Coming soon._
+
+[Create a persistence](../tutorials/studio-persistence.md)
 
 ## Profile
 
@@ -181,13 +181,7 @@ Properties are components of classes that define the attributes of a business co
 
 _Coming soon._
 
-[Create and run a query](../tutorials/query-builder.md)
-
-## Relational Mapping
-
-Connect data to a data model to start querying data leveraging the business-friendly terms and data relationships defined in the data model.
-
-[Create relational mappings](../tutorials/studio-relational-mapping.md)
+[Build and run a query](../tutorials/query-builder.md)
 
 ## Result Modifiers
 
@@ -217,7 +211,7 @@ The service editor has two main panels: general and execution. The general panel
 
 ## Service Store
 
-Service store is a collection of Service definitions that correspond to users' REST endpoints. Servicestore allows users to model their REST endpoints as stores in Legend, map them to their models, and author Services on these models.
+Service store is a collection of Service definitions that correspond to users' REST endpoints. Service store allows users to model their REST endpoints as stores in Legend, map them to their models, and author Services on these models.
 
 [Service Store tutorial](../tutorials/studio-servicestore.md)
 
@@ -227,9 +221,13 @@ Service store is a collection of Service definitions that correspond to users' R
 
 _Coming soon._
 
+[Create tests](../tutorials/studio-tests.md)
+
 ## Text
 
 _Coming soon._
+
+[Create a text element](../tutorials/studio-text.md)
 
 ## Text Mode
 

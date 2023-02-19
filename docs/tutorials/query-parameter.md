@@ -1,7 +1,7 @@
 ---
 id: query-parameter
 title: Define Query Parameters
-sidebar_label: Define Query Parameters
+sidebar_label: Query Parameters
 ---
 
 _Tutorial coming soon._

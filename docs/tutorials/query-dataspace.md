@@ -1,7 +1,7 @@
 ---
 id: query-dataspace
-title: Data Spaces
-sidebar_label: Data Spaces
+title: Dataspaces
+sidebar_label: Dataspaces
 ---
 
 ## Create a Query from a Dataspace
