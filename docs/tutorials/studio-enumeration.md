@@ -21,6 +21,10 @@ To create an [enumeration](../concepts/legend-concepts.md/#enumeration):
 In the [basic logical modeling](../showcases/showcase-projects.md/#logical-modeling-basic) showcase project, ProductSynonymType is an enumeration. 
 
 ## More
-- [Legend concepts](../overview/legend-glossary.md)
-- [Reference documentation](../reference/legend-language)
+- [Showcase projects](../showcases/showcase-projects.md)
+- [Legend Features](../overview/legend-features.md)
+- [Legend Glossary](../overview/legend-glossary.md)
+- [Reference documentation](../reference/legend-language.md)
+- [Studio tutorials](../tutorials/studio-create-model.md)
+- [Query tutorials](../tutorials/query-builder.md)
 

@@ -2,11 +2,7 @@
 id: studio-association
 title: Create an Association
 sidebar_label: Association
----
-
-Associations are used to define a single linking relationship between two classes. 
-
-We can define one to one, one to many, many to many kind of relationships using association.  
+--- 
 
 To define an association:
 1. Click <kbd>+</kbd> and select <kbd>New Association</kbd>. Provide a meaningful name to your Association.
@@ -15,5 +11,9 @@ To define an association:
 In the [basic logical modeling](../showcases/showcase-projects.md/#logical-modeling-basic) showcase project, ProdSynonym is an Association. Note that it shows that 1 product can have many synonyms. 
 
 ## More
-- [Legend concepts](../overview/legend-glossary.md)
-- [Reference documentation](../reference/legend-language)
+- [Showcase projects](../showcases/showcase-projects.md)
+- [Legend Features](../overview/legend-features.md)
+- [Legend Glossary](../overview/legend-glossary.md)
+- [Reference documentation](../reference/legend-language.md)
+- [Studio tutorials](../tutorials/studio-create-model.md)
+- [Query tutorials](../tutorials/query-builder.md)

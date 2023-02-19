@@ -45,8 +45,9 @@ Test data for model to model can be defined through external format. Provides te
 _Coming soon._
 
 ## More
-- [Legend language](../reference/legend-language.md)
-- [Reference documentation](../reference/legend-language)
-- [Released functions](../reference/released-functions.md)
-- [Upcoming functions](../reference/upcoming-functions.md)
-- [Legend concepts](../overview/legend-glossary.md)
+- [Showcase projects](../showcases/showcase-projects.md)
+- [Legend Features](../overview/legend-features.md)
+- [Legend Glossary](../overview/legend-glossary.md)
+- [Reference documentation](../reference/legend-language.md)
+- [Studio tutorials](../tutorials/studio-create-model.md)
+- [Query tutorials](../tutorials/query-builder.md)

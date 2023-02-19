@@ -67,5 +67,9 @@ Right click on the diagram element in the explorer view and select **delete**.
 ![diagram editor](../assets/diagram-editor.gif)
 
 ## More
-- [Legend concepts](../concepts/legend-concepts)
-- [Reference documentation](../reference/legend-language)
+- [Showcase projects](../showcases/showcase-projects.md)
+- [Legend Features](../overview/legend-features.md)
+- [Legend Glossary](../overview/legend-glossary.md)
+- [Reference documentation](../reference/legend-language.md)
+- [Studio tutorials](../tutorials/studio-create-model.md)
+- [Query tutorials](../tutorials/query-builder.md)

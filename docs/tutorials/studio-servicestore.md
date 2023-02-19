@@ -7,5 +7,9 @@ sidebar_label: Connect Model to APIs
 _Tutorial coming soon._ 
 
 ## More
-- [What is Service store?](../overview/legend-glossary.md/#service-store)
-- [Service store technical documentation](../reference/stores.md/#service-stores)
+- [Showcase projects](../showcases/showcase-projects.md)
+- [Legend Features](../overview/legend-features.md)
+- [Legend Glossary](../overview/legend-glossary.md)
+- [Reference documentation](../reference/legend-language.md)
+- [Studio tutorials](../tutorials/studio-create-model.md)
+- [Query tutorials](../tutorials/query-builder.md)

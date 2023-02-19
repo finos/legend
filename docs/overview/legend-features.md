@@ -4,9 +4,11 @@ title: Legend Feature Overview
 sidebar_label: Legend Features 
 ---
 
+This page provides an overview of Legend Features, see [Tutorials](../tutorials/studio-workspace.md) for step-by-step tutorials for each feature, and [Showcase projects](../showcases/showcase-projects.md) to see the features in action.
+
 ## Association
 
-_Coming soon._
+Associations are used to define a single linking relationship between two classes. You can define one to one, one to many, many to many kind of relationships.
 
 [Create an association](../tutorials/studio-association.md)
 
@@ -16,15 +18,11 @@ _Coming soon._
 
 [Bindings technical documentation](../reference/bindings.md)
 
-## Class
+## Class Editor
 
 Classes define a business concept.
 
 [Create a class](../tutorials/studio-class.md)
-
-## Class Explorer
-
-_Coming soon._
 
 ## Connection
 
@@ -34,7 +32,7 @@ _Coming soon._
 
 ## Constraint
 
-A data model has built-in governance features, called _data quality controls_. You create data quality controls every time you define a model. Constraints are governance tools added on top of quality controls. Use constraints to define a validation or condition on the model that's expected to be met.
+Legend data models have built-in governance features, called _data quality controls_. You create data quality controls every time you define a model. Constraints are governance tools added on top of quality controls. Use constraints to define a validation or condition on the model that's expected to be met.
 
 [Add a constraint](../tutorials/studio-class.md/#constraint)
 
@@ -257,5 +255,5 @@ A workspace is where you create your data models. It's a copy (also known as a b
 - [Showcase projects](../showcases/showcase-projects.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-create-model.md)
-- [Query tutorials](../tutorials/query-tutorial.md)
+- [Query tutorials](../tutorials/query-builder.md)
 

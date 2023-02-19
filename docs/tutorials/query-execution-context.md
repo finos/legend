@@ -7,6 +7,9 @@ sidebar_label: Execution Context
 _Tutorial coming soon._
 
 ## More
-- [What is a Data Space](../overview/legend-glossary.md/#dataspace)?
-- [Legend concepts](../overview/legend-glossary.md)
-- [Reference documentation](../reference/legend-language)
+- [Showcase projects](../showcases/showcase-projects.md)
+- [Legend Features](../overview/legend-features.md)
+- [Legend Glossary](../overview/legend-glossary.md)
+- [Reference documentation](../reference/legend-language.md)
+- [Studio tutorials](../tutorials/studio-create-model.md)
+- [Query tutorials](../tutorials/query-builder.md)
