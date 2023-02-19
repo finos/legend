@@ -3,6 +3,7 @@ id: legend-glossary
 title: Glossary of Data Modeling Concepts
 sidebar_label: Glossary 
 ---
+This page provides an overview of Data modeling concepts. See [Legend features](../overview/legend-features.md) for an overview of Legend features.
 
 ## Class
 
@@ -24,7 +25,7 @@ Constraints are governance tools added on top of quality controls. Use constrain
 
 Data models allow you to describe your data and data relationships. 
 
-## Data types 
+## Data type
 
 _Coming soon._
 
@@ -87,7 +88,7 @@ Super types show a relationship between classes or business concepts within a mo
 
 ## More
 
-- [Legend Glossary](../overview/legend-glossary.md)
+- [Legend Features](../overview/legend-features.md)
 - [Showcase projects](../showcases/showcase-projects.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-create-model.md)

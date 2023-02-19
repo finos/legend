@@ -6,14 +6,13 @@ sidebar_label: Publish Data Model Changes
 
 ## Overview 
 
-<add user journey description>
-<add user journey flow>
+_Coming soon_
 
 ### Features
-- _Coming soon_
+- [Studio SDLC](../tutorials/studio-sdlc.md)
 
-- Tutorial: 
-    - [SDLC tutorial](../tutorials/studio-sdlc.md)
+### Showcase projects:
+- _Coming soon_
 
 ## Safely make changes to your data model and release a new version for your data consumers.
 
@@ -32,7 +31,12 @@ sidebar_label: Publish Data Model Changes
 - Showcase project: _coming soon_
 
 ## More
+- [Legend Features](../overview/legend-features.md)
 - [Legend Glossary](../overview/legend-glossary.md)
+- [Showcase projects](../showcases/showcase-projects.md)
+- [Reference documentation](../reference/legend-language.md)
+- [Studio tutorials](../tutorials/studio-workspace.md)
+- [Query tutorials](../tutorials/query-builder.md)
 
 
 

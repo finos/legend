@@ -6,8 +6,7 @@ sidebar_label: Query Modelled Data
 
 ## Overview 
 
-<TODO: user journey description>
-<TODO: add user journey flow>
+_Coming soon_
 
 ### Features
 - [Query Builder](../overview/legend-glossary/#query-builder)
@@ -16,7 +15,7 @@ sidebar_label: Query Modelled Data
 ## Create and run, load, edit, save a query
 
 - Tutorial: 
-    - [query creation & query running](../tutorials/query-tutorial.md) tutorial
+    - [query creation & query running](../tutorials/query-builder.md) tutorial
 - Showcase project: 
     - [Query showcase project](../showcases/showcase-projects.md/#query)
 
@@ -81,8 +80,9 @@ sidebar_label: Query Modelled Data
 - _Coming soon_
 
 ## More
+- [Legend Features](../overview/legend-features.md)
 - [Legend Glossary](../overview/legend-glossary.md)
-
-
-
-
+- [Showcase projects](../showcases/showcase-projects.md)
+- [Reference documentation](../reference/legend-language.md)
+- [Studio tutorials](../tutorials/studio-workspace.md)
+- [Query tutorials](../tutorials/query-builder.md)

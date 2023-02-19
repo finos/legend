@@ -1,14 +1,12 @@
 ---
 id: map-models
-title: Connect your Model to other Data Models
+title: Map your Model to other Data Models
 sidebar_label: Map to Data Models
 ---
 
 ## Overview 
 
 Discover, access and re-use existing models, classes, mappings, runtimes, functions. Recommend a way for others to access your models, classes, mappings, runtimes, functions, and share helpful information about your data with consumers.
-
-<TODO: add user journey flow>
 
 ### Features
 - [Model to Model (M2M) Mapping](../overview/legend-glossary.md/#model-to-model-mapping)
@@ -110,6 +108,9 @@ Discover, access and re-use existing models, classes, mappings, runtimes, functi
 - _Coming soon_
 
 ## More
+- [Legend Features](../overview/legend-features.md)
 - [Legend Glossary](../overview/legend-glossary.md)
-
-
+- [Showcase projects](../showcases/showcase-projects.md)
+- [Reference documentation](../reference/legend-language.md)
+- [Studio tutorials](../tutorials/studio-workspace.md)
+- [Query tutorials](../tutorials/query-builder.md)

@@ -6,8 +6,6 @@ sidebar_label: What is Legend?
 
 Legend is a data platform that provides a single place to access data via APIs or self-service queries, with built-in governance!
 
-_TO DO: add overview diagram_
-
 Build a graph of information by **describing and connecting** data in Legend data models. They foster a common data vocabulary and help everyone understand the data better. Being able to navigate the entire graph of information using terms that make sense and are agreed upon, makes it so much easier to **find meaningful data**.
 
 Legend data models connect to all type of data. Once you found the data you were looking for, **query** away with a simple click of a button! With Legend you can access data self-service, understand it and experiment with it.

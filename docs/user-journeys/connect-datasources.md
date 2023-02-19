@@ -1,14 +1,12 @@
 ---
 id: connect-datasources
 title: Connect Data Models to Data Sources
-sidebar_label: Connect To Data Sources
+sidebar_label: Connect to Data Sources
 ---
 
 ## Overview
 
-<TODO: user journey description>
-
-<TODO: add user journey flow>
+_Coming soon_
 
 ### Features
 
@@ -82,9 +80,9 @@ sidebar_label: Connect To Data Sources
 - _Coming soon_
 
 ## More
-- [Showcase projects](../showcases/showcase-projects.md)
 - [Legend Features](../overview/legend-features.md)
 - [Legend Glossary](../overview/legend-glossary.md)
+- [Showcase projects](../showcases/showcase-projects.md)
 - [Reference documentation](../reference/legend-language.md)
-- [Studio tutorials](../tutorials/studio-create-model.md)
-- [Query tutorials](../tutorials/query-tutorial.md)
+- [Studio tutorials](../tutorials/studio-workspace.md)
+- [Query tutorials](../tutorials/query-builder.md)

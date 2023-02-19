@@ -4,8 +4,6 @@ title: Get Started
 sidebar_label: Get Started
 ---
 
-_TODO: add intro paragraph, point to user journeys, showcase models, tutorials, glossary. Explain where to find what on the docs site. Consider framing this for each persona (business user vs. developer, new vs. experienced user._
-
 ## Introductory Videos
 
 Watch the introductory Studio & Query sessions hosted by Beeke-Marie Nelke for the FINOS Open Source community:
@@ -17,7 +15,7 @@ We highly recommend reviewing the [Legend talks and conferences](../community/le
 
 ## Tutorials
 
-Review the step by step tutorials for [Studio](../tutorials/studio-create-model) and [Query](../tutorials/query-tutorial.md).
+Review the step by step tutorials for [Studio](../tutorials/studio-workspace) and [Query](../tutorials/query-builder.md).
 
 ## Start Using Legend Today
 

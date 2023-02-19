@@ -101,9 +101,10 @@ Start your data modeling journey by reviewing sample [showcase projects](../show
 - Tutorial: _coming soon_
 - Showcase project: _coming soon_
 
-
 ## More
+- [Legend Features](../overview/legend-features.md)
 - [Legend Glossary](../overview/legend-glossary.md)
-
-
-
+- [Showcase projects](../showcases/showcase-projects.md)
+- [Reference documentation](../reference/legend-language.md)
+- [Studio tutorials](../tutorials/studio-workspace.md)
+- [Query tutorials](../tutorials/query-builder.md)

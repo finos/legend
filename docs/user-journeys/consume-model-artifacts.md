@@ -6,18 +6,21 @@ sidebar_label: Consume Data Model Artifacts
 
 ## Overview 
 
-<add user journey description>
-<add user journey flow>
+_Coming soon_
 
 ### Features
 - _Coming soon_
 
+### Showcase projects
+- _Coming soon_
+
 ## More
+- [Legend Features](../overview/legend-features.md)
 - [Legend Glossary](../overview/legend-glossary.md)
 - [Showcase projects](../showcases/showcase-projects.md)
 - [Reference documentation](../reference/legend-language.md)
-- [Studio tutorials](../tutorials/studio-create-model.md)
-- [Query tutorials](../tutorials/query-tutorial.md)
+- [Studio tutorials](../tutorials/studio-workspace.md)
+- [Query tutorials](../tutorials/query-builder.md)
 
 
 

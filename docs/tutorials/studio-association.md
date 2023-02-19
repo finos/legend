@@ -1,10 +1,12 @@
 ---
 id: studio-association
-title: Create an Association
+title: Association
 sidebar_label: Association
---- 
+---
 
-To define an association:
+## Create an Association
+
+To create an association:
 1. Click <kbd>+</kbd> and select <kbd>New Association</kbd>. Provide a meaningful name to your Association.
 2. Define the property name, select the class and multiplicy as shown below.
 
