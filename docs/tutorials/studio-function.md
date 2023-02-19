@@ -1,6 +1,6 @@
 ---
 id: studio-function
-title: Define a Customized Function
+title: Functions
 sidebar_label: Function
 ---
 
