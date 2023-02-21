@@ -48,6 +48,8 @@
     ],
     "Services Tutorial": [
       "tutorials/services-create-service",
+      "tutorials/services-create-connection",
+      "tutorials/services-create-runtime",
       "tutorials/services-retrieve-service-metadata"
     ],
     "Concepts": [

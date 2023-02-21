@@ -1,5 +1,5 @@
 ---
-id: studio-create-associaton
+id: studio-create-association
 title: Create an Association
 sidebar_label: Create an Association
 ---

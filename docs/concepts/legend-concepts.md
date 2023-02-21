@@ -1,14 +1,14 @@
 ---
 id: legend-concepts
-title: Generic Data Modeling and Legend-specific Concepts
-sidebar_label: Data Modeling & Legend Concepts
+title: Data Modeling and Legend-specific Concepts
+sidebar_label: Data Modeling/Legend Concepts
 ---
 
 ## Association
 
 _Coming soon._
 
-[Create an association](../tutorials/studio-create-association.md).
+[Create an association](../tutorials/studio-create-association.md)
 
 ## Bindings
 
@@ -20,23 +20,25 @@ _Coming soon._
 
 Classes define a business concept.
 
-[Create a class](../tutorials/studio-create-model.md/#class).
+[Create a class](../tutorials/studio-create-model.md/#class)
 
 ## Connection
 
 _Coming soon._
 
+[Create a connection](../tutorials/services-create-connection.md)
+
 ## Constraint
 
 A data model has built-in governance features, called _data quality controls_. You create data quality controls every time you define a model. Constraints are governance tools added on top of quality controls. Use constraints to define a validation or condition on the model that's expected to be met.
 
-[Add a constraint](../tutorials/studio-create-model.md/#constraint).
+[Add a constraint](../tutorials/studio-create-model.md/#constraint)
 
 ## Data model
 
 Data models allow you to describe your data and data relationships. 
 
-[Create a data model](../tutorials/studio-create-model.md).
+[Create a data model](../tutorials/studio-create-model.md)
 
 ## Data types 
 _Coming soon._
@@ -45,25 +47,25 @@ _Coming soon._
 
 A dataspace is a block of code that groups together a default mapping, runtime and diagram in a Studio project to enable easy query capabilities. Dataspaces help users intuitively find and query the data models they're interested in.
 
-[Create a dataspace](../tutorials/query-create-dataspace).
+[Create a dataspace](../tutorials/query-create-dataspace)
 
 ## Derived property
 
 Derived properties use functions to operate on other attributes in the data model.
 
-[Create a derived property](../tutorials/studio-create-model.md/#derived-property).
+[Create a derived property](../tutorials/studio-create-model.md/#derived-property)
 
 ## Diagram
  
 Diagrams are visual representations of your models to better visualize and communicate about data and their relationships. **Important to note** is that Diagrams are not auto-generated based on the created model. Instead, diagrams should be intentionally created to best represent the data being described.
 
-[Create a diagram](../tutorials/studio-create-diagram.md).
+[Create a diagram](../tutorials/studio-create-diagram.md)
 
 ## Enumeration
 
 An enumeration is a model attribute that has a finite list of values.
 
-[Create an enumeration](../tutorials/studio-create-model.md/#enumeration).
+[Create an enumeration](../tutorials/studio-create-model.md/#enumeration)
 
 ## File Generation
 
@@ -82,7 +84,7 @@ covers the configuration options for the core supported formats.
 
 The Flat Data grammar is used to describe a particular file format so that data in that format can be read and/or written by Services defined in Legend.
 
-[Create flat data schema](../tutorials/studio-create-flat-data-schema.md).
+[Create flat data schema](../tutorials/studio-create-flat-data-schema.md)
 
 ## Flat Data Store
 
@@ -100,7 +102,7 @@ Functions are used to derive new values from existing values using various opera
 
 Defining a customized function allows you to re-use transformation logic as part of your mappings or services.
 
-[Define a function](../tutorials/studio-define-function.md).
+[Define a function](../tutorials/studio-define-function.md)
 
 ### Function editor
 
@@ -116,7 +118,7 @@ Generation Specification lets you specify the file and model generation elements
 
 There is also the option to create a **group workspace** which allows collaboration on the same workspace. Changes made in this workspace are visible to other users without the need to merge to master. 
 
-[Create a group workspace](../tutorials/studio-create-model.md/#group-workspace).
+[Create a group workspace](../tutorials/studio-create-model.md/#group-workspace)
 
 ## Mapping editor
 
@@ -130,7 +132,7 @@ _Coming soon._
 
 Model-to-model mappings are used to create model transformations. Model transformations are used to connect different models.
 
-[Create model-to-model mappings](../tutorials/studio-m2m-mapping.md).
+[Create model-to-model mappings](../tutorials/studio-m2m-mapping.md)
 
 ## Persistence
 
@@ -140,7 +142,7 @@ _Coming soon._
 
 Capture additional information (metadata) about the data model by creating a Profile. Profiles store and manage tagged values and stereotypes.
 
-[Create and edit profiles](../tutorials/studio-create-model.md/#profile).
+[Create and edit profiles](../tutorials/studio-create-model.md/#profile)
 
 ## Project dependencies
 
@@ -152,7 +154,7 @@ You can configure a project to depend on another project. In other words, you ca
 
 Properties are components of classes that define the attributes of a business concept. Properties can be both primitives (like strings or integers) or other properties. Use properties in a class to define attributes of the business concept.
 
-[Create a property](../tutorials/studio-create-model.md/#property---non-primitive-data-type).
+[Create a property](../tutorials/studio-create-model.md/#property---non-primitive-data-type)
 
 ## Query builder
 
@@ -166,11 +168,13 @@ _Coming soon._
 
 Connect data to a data model to start querying data leveraging the business-friendly terms and data relationships defined in the data model.
 
-[Create relational mappings](../tutorials/studio-relational-mapping.md).
+[Create relational mappings](../tutorials/studio-relational-mapping.md)
 
 ## Runtime
 
 _Coming soon._
+
+[Create a runtime](../tutorials/services-create-runtime.md)
 
 ## Schemaset
 
@@ -180,19 +184,21 @@ _Coming soon._
 
 _Coming soon._
 
+[Create a service](../tutorials/services-create-service.md)
+
 ## Service editor
 
 The service editor has two main panels: general and execution. The general panel has basic metadata about your service. The execution panel has queries, and the ability to edit queries using the query builder. From there, you can also execute and register the service.
 
-[Create services](../tutorials/studio-create-service.md).
+[Create services](../tutorials/services-create-service.md)
 
 ## Service store
 
 Service store is a collection of Service definitions that correspond to users' REST endpoints. Servicestore allows users to model their REST endpoints as stores in Legend, map them to their models, and author Services on these models.
 
-[Service Store tutorial](../tutorials/studio-servicestore.md).
+[Service Store tutorial](../tutorials/studio-servicestore.md)
 
-See the [Service store technical documentation](https://github.com/finos/legend-engine/tree/master/docs/store/extensions/ServiceStore)
+[Service store technical documentation](https://github.com/finos/legend-engine/tree/master/docs/store/extensions/ServiceStore)
 
 ## Stereotype
 
@@ -210,7 +216,7 @@ Super types show a relationship between classes or business concepts within a mo
 
 Tagged values allow you to add context to your data model. Tagged values can be added at the class level and at the property level.
 
-[Add a tagged value](../tutorials/studio-create-model.md/#add-a-tagged-value-to-a-class).
+[Add a tagged value](../tutorials/studio-create-model.md/#add-a-tagged-value-to-a-class)
 
 ## Text Mode
 
@@ -218,11 +224,11 @@ Text Mode allows you to see the entirety of your workplace's code and edit your 
 
 Text Mode will also parse and compile your code. If the code compiles, your GUI graph will be updated and the changes will be updated in your forms.
 
-[Access or exit Text Mode](../tutorials/studio-create-model.md/#text-mode).
+[Access or exit Text Mode](../tutorials/studio-create-model.md/#text-mode)
 
 ## Workspace
 
 A workspace is where you create your data models. It's a copy (also known as a branch) of a project which can be later merged back into the main project and shared with other users.
 
-[Create a workspace](../tutorials/studio-create-model.md/#workspace).
+[Create a workspace](../tutorials/studio-create-model.md/#workspace)
 

@@ -1,6 +1,6 @@
 ---
 id: services-retrieve-service-metadata
-title: Retrieve Services metadata via API endpoints
+title: Retrieve Services Metadata via API Endpoints
 sidebar_label: Retrieve Service Metadata
 ---
 

@@ -3,4 +3,5 @@ id: legend-roadmap
 title: Roadmap
 sidebar_label: Roadmap
 ---
-_COMING SOON_
+
+_Coming soon._

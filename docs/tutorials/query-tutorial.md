@@ -1,7 +1,7 @@
 ---
 id: query-tutorial
-title: Legend Query Tutorial
-sidebar_label: Build/Execute a Query 
+title: Build and Run Queries
+sidebar_label: Build/Run Query 
 ---
 
 ## Build a Query

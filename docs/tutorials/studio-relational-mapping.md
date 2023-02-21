@@ -109,11 +109,11 @@ To execute against an in-memory H2 test data base, you would need to define test
 
 #### H2 Embedded
 
-_Coming soon_
+_Coming soon._
 
 #### Static
 
-_More details coming soon_
+_Coming soon._
 
 Specify Static connection details by adding the below details.
 
@@ -123,7 +123,7 @@ Specify Static connection details by adding the below details.
 
 #### Snowflake
 
-_More details coming soon_
+_Coming soon._
 
 Specify Snowflake connection details by adding the below details.
 
@@ -135,7 +135,7 @@ Specify Snowflake connection details by adding the below details.
 
 #### BigQuery
 
-_More details coming soon_
+_Coming soon._
 
 Specify BigQuery connection details by adding the below details.
 
@@ -162,16 +162,15 @@ Specify **Snowflake** authentication details by adding the below details.
 
 #### Gcp Application Default Credentials
 
-_More details coming soon_
+_Coming soon._
 
 Specify **GCP** authentication details.
 
 #### Username password
 
-_More details coming soon_
+_Coming soon._
 
 Specify **Username password** authentication details.
-
 
 ## Create a Runtime
 

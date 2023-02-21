@@ -1,7 +1,7 @@
 ---
 id: query-create-dataspace
 title: Create Dataspace
-sidebar_label: Create a Dataspace
+sidebar_label: Create Dataspace
 ---
 
 _Tutorial coming soon._

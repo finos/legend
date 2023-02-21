@@ -1,7 +1,7 @@
 ---
-id: query-build-run-parameter-query
-title: Build and Run Queries with Parameters
-sidebar_label: Build/Run Parameterized Query
+id: services-create-connection
+title: Create a Connection
+sidebar_label: Create Connection
 ---
 
 _Tutorial coming soon._
