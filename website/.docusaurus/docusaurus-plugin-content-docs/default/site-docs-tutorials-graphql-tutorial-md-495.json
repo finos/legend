@@ -10,14 +10,5 @@
   "draft": false,
   "tags": [],
   "version": "current",
-  "frontMatter": {},
-  "sidebar": "docs",
-  "previous": {
-    "title": "Service Store",
-    "permalink": "/docs/tutorials/servicestore-tutorial"
-  },
-  "next": {
-    "title": "Service Execution Jar",
-    "permalink": "/docs/tutorials/serviceexecution-tutorial"
-  }
+  "frontMatter": {}
 }

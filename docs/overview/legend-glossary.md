@@ -91,5 +91,5 @@ Super types show a relationship between classes or business concepts within a mo
 - [Legend Features](../overview/legend-features.md)
 - [Showcase projects](../showcases/showcase-projects.md)
 - [Reference documentation](../reference/legend-language.md)
-- [Studio tutorials](../tutorials/studio-create-model.md)
+- [Studio tutorials](../tutorials/studio-workspace.md)
 - [Query tutorials](../tutorials/query-builder.md)

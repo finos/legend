@@ -7,13 +7,13 @@ sidebar_label: Legend
 
 A workspace is where you create your data models. It's a copy (also known as a branch) of a project which can be later merged back into the main project and shared with other users.
 
-See the [tutorial to create a workspace](../tutorials/studio-create-model.md/#workspace).
+See the [tutorial to create a workspace](../tutorials/studio-workspace.md/#workspace).
 
 ### Group workspace
 
 There is also the option to create a **group workspace** which allows collaboration on the same workspace. Changes made in this workspace are visible to other users without the need to merge to master. 
 
-See the [tutorial to create a group workspace](../tutorials/studio-create-model.md/#group-workspace).
+See the [tutorial to create a group workspace](../tutorials/studio-workspace.md/#group-workspace).
 
 ## Diagram
 
@@ -27,13 +27,13 @@ Text mode allows you to see the entirety of your workplace's code and edit your 
 
 Text mode will also parse and compile your code. If the code compiles, your GUI graph will be updated and the changes will be updated in your forms.
 
-See the [tutorial to access or exit text mode](../tutorials/studio-create-model.md/#text-mode).
+See the [tutorial to access or exit text mode](../tutorials/studio-workspace.md/#text-mode).
 
 ## Profile
 
 Capture additional information (metadata) about the data model by creating a Profile. Profiles store and manage tagged values and stereotypes.
 
-See the [tutorial to create and edit profiles](../tutorials/studio-create-model.md/#profile).
+See the [tutorial to create and edit profiles](../tutorials/studio-workspace.md/#profile).
 
 ## Flat Data Schema
 

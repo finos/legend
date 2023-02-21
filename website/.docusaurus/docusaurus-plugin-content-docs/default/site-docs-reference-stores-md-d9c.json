@@ -17,11 +17,11 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Upcoming functions",
+    "title": "Upcoming Functions",
     "permalink": "/docs/reference/upcoming-functions"
   },
   "next": {
-    "title": "Bindings",
-    "permalink": "/docs/reference/bindings"
+    "title": "External Format",
+    "permalink": "/docs/reference/external-format"
   }
 }

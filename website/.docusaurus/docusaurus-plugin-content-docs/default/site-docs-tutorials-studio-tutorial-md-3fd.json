@@ -14,14 +14,5 @@
     "id": "studio-tutorial",
     "title": "Legend Studio Tutorial",
     "sidebar_label": "Studio"
-  },
-  "sidebar": "docs",
-  "previous": {
-    "title": "Installation Guide",
-    "permalink": "/docs/getting-started/installation-guide"
-  },
-  "next": {
-    "title": "Query",
-    "permalink": "/docs/tutorials/query-tutorial"
   }
 }

@@ -13,15 +13,15 @@
   "frontMatter": {
     "id": "legend-language",
     "title": "Legend Language",
-    "sidebar_label": "Legend Language"
+    "sidebar_label": "Language"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Data Modeling Concepts",
-    "permalink": "/docs/concepts/data-modeling-concepts"
+    "title": "Showcase Projects",
+    "permalink": "/docs/showcases/showcase-projects"
   },
   "next": {
-    "title": "Released functions",
+    "title": "Released Functions",
     "permalink": "/docs/reference/released-functions"
   }
 }

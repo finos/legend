@@ -13,15 +13,15 @@
   "frontMatter": {
     "id": "legend-media",
     "title": "Legend in the Media",
-    "sidebar_label": "Legend in the Media"
+    "sidebar_label": "Media"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Get Help",
-    "permalink": "/docs/community/get-help-from-community"
+    "title": "Roadmap",
+    "permalink": "/docs/community/legend-roadmap"
   },
   "next": {
-    "title": "Terms of service",
-    "permalink": "/docs/community/terms-of-service"
+    "title": "Case Studies",
+    "permalink": "/docs/community/case-studies"
   }
 }
