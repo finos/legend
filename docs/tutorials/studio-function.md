@@ -1,7 +1,7 @@
 ---
-id: studio-define-function
+id: studio-function
 title: Define a Customized Function
-sidebar_label: Define Functions 
+sidebar_label: Function
 ---
 
 ## Define a customized function
@@ -13,8 +13,8 @@ _Coming soon._
 _Coming soon_
 
 ## More
-- What is a [customized function](../concepts/legend-studio-concepts.md/#customized-function)?
+- What is a [customized function](../overview/legend-glossary.md/#customized-function)?
 - [Released functions](../reference/released-functions.md)
 - [Upcoming functions](../reference/upcoming-functions.md)
-- [Legend concepts](../concepts/legend-concepts)
+- [Legend concepts](../overview/legend-glossary.md)
 

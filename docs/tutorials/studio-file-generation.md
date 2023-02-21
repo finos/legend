@@ -4,9 +4,9 @@ title: Generate Files
 sidebar_label: Generate Files
 ---
 
-## [File Generation](../concepts/legend-concepts.md/#file-generation)
+## [File Generation](../overview/legend-glossary.md/#file-generation)
 
-[File generation](../concepts/legend-concepts.md/#file-generation) lets you generate your models in other codes or schemas.
+[File generation](../overview/legend-glossary.md/#file-generation) lets you generate your models in other codes or schemas.
 
 ### Create a File Generation
 
@@ -20,9 +20,9 @@ _Tutorial coming soon._
 
 ### Using your generated files
 
-If you want your file generations to generate files as part of your build, you can specify them in your [Generation specification](../concepts/legend-concepts.md/#generation-specification) element.
+If you want your file generations to generate files as part of your build, you can specify them in your [Generation specification](../overview/legend-glossary.md/#generation-specification) element.
 
-## [Generation Specification](../concepts/legend-concepts.md/#generation-specification)
+## [Generation Specification](../overview/legend-glossary.md/#generation-specification)
 
 ### Generation Specification editor
 
@@ -33,5 +33,5 @@ _Tutorial coming soon._
 _Tutorial coming soon._
 
 ## More
-- [Legend concepts](../concepts/legend-concepts)
-- [Reference documentation](../reference/legend-language)
+- [Legend concepts](../overview/legend-glossary.md)
+- [Reference documentation](../reference/legend-language.md)

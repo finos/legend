@@ -1,7 +1,7 @@
 ---
-id: studio-create-flat-data-schema
+id: studio-flat-data-schema
 title: Create a Flat Data Schema
-sidebar_label: Create a Flat Data Schema
+sidebar_label: Flat Data Schema
 ---
 
 ## Create a Flat Data Schema
@@ -337,5 +337,5 @@ section data: DelimitedWithoutHeadings
 ```
 
 ## More
-- [Legend concepts](../concepts/legend-concepts)
+- [Legend concepts](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language)

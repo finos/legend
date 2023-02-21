@@ -1,7 +1,7 @@
 ---
-id: studio-manage-model-information
-title: Manage Model Information and Workspaces
-sidebar_label: Manage Model Info & Workspaces
+id: query-explorer
+title: Query Explorer
+sidebar_label: Query Explorer
 ---
 
 _Tutorial coming soon._

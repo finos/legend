@@ -1,7 +1,7 @@
 ---
-id: studio-manage-model-information
-title: Manage Model Information and Workspaces
-sidebar_label: Manage Model Info & Workspaces
+id: studio-binding
+title: Binding
+sidebar_label: Binding
 ---
 
 _Tutorial coming soon._

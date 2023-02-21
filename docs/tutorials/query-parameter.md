@@ -1,7 +1,7 @@
 ---
-id: studio-manage-model-information
-title: Manage Model Information and Workspaces
-sidebar_label: Manage Model Info & Workspaces
+id: query-parameter
+title: Define Query Parameters
+sidebar_label: Define Query Parameters
 ---
 
 _Tutorial coming soon._

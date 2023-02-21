@@ -2,58 +2,61 @@
   "docs": {
     "Overview": [
       "overview/legend-overview",
-      "overview/use-cases",
-      "overview/architecture"
+      "overview/architecture",
+      "overview/legend-glossary"
     ],
     "User Journeys": [
-      "user-journeys/curate",
-      "user-journeys/find",
-      "user-journeys/retrieve",
-      "user-journeys/share",
-      "user-journeys/analyze",
-      "user-journeys/debug"
+      "user-journeys/describe-data",
+      "user-journeys/discover-reuse-share",
+      "user-journeys/connect-model-data",
+      "user-journeys/query-data",
+      "user-journeys/consume-transform-datasets",
+      "user-journeys/send-receive-data",
+      "user-journeys/analyze-data",
+      "user-journeys/test-troubleshoot",
+      "user-journeys/developer-journey"
     ],
     "Getting Started": [
       "getting-started/introduction-to-legend",
       "getting-started/installation-guide"
     ],
-    "Studio Tutorial": [
-      "tutorials/studio-create-model",
-      "tutorials/studio-create-diagram",
-      "tutorials/studio-define-function",
-      "tutorials/studio-create-association",
+    "Studio Tutorials": [
+      "tutorials/studio-workspace",
+      "tutorials/studio-package",
+      "tutorials/studio-class",
+      "tutorials/studio-enumeration",
+      "tutorials/studio-profile",
+      "tutorials/studio-association",
+      "tutorials/studio-function",
+      "tutorials/studio-measure",
       "tutorials/studio-m2m-mapping",
       "tutorials/studio-relational-mapping",
-      "tutorials/studio-servicestore",
-      "tutorials/studio-import-database-schema",
-      "tutorials/studio-create-test-data",
-      "tutorials/studio-run-tests",
-      "tutorials/studio-unit-tests",
-      "tutorials/studio-define-dataset-transformation-storage",
-      "tutorials/studio-create-flat-data-schema",
-      "tutorials/studio-project-dependencies",
+      "tutorials/services-runtime",
+      "tutorials/services-connection",
+      "tutorials/services-service",
       "tutorials/studio-file-generation",
+      "tutorials/studio-flat-data-schema",
+      "tutorials/studio-diagram",
+      "tutorials/query-dataspace",
+      "tutorials/studio-schemaset",
+      "tutorials/studio-binding",
+      "tutorials/studio-persistence",
+      "tutorials/studio-servicestore",
+      "tutorials/studio-tests",
+      "tutorials/studio-project-dependencies",
       "tutorials/studio-manage-model-information",
       "tutorials/studio-find-models",
       "tutorials/studio-sdlc"
     ],
-    "Query Tutorial": [
+    "Query Tutorials": [
       "tutorials/query-tutorial",
-      "tutorials/query-build-run-parameter-query",
-      "tutorials/query-create-dataspace",
-      "tutorials/query-edit-service-query",
-      "tutorials/query-specific-dates-times",
-      "tutorials/query-transform-datasets",
-      "tutorials/query-filter"
-    ],
-    "Services Tutorial": [
-      "tutorials/services-create-service",
-      "tutorials/services-create-connection",
-      "tutorials/services-create-runtime",
-      "tutorials/services-retrieve-service-metadata"
-    ],
-    "Concepts": [
-      "concepts/legend-concepts"
+      "tutorials/query-dataspace",
+      "tutorials/query-execution-context",
+      "tutorials/query-explorer",
+      "tutorials/query-parameter",
+      "tutorials/query-fetch-structure",
+      "tutorials/query-filter",
+      "tutorials/query-export"
     ],
     "Reference Docs": [
       "reference/legend-language",

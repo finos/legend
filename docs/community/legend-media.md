@@ -26,6 +26,10 @@ sidebar_label: Media
     Anusha Chedda, Gerrard Cowburn, Nick Hofbauer, Emily Menzies, Ram Rajamony - Goldman Sachs (July 2022)
 
 ### FINOS OSFF
+- ["Modernize Regulatory Reporting: Get ready for T+1 Settlement"](https://www.youtube.com/watch?v=9NisVenRKW4)
+
+    Antoine Amend & Ashley Trainer - Databricks, Stephen Goldbaum - Morgan Stanley, Ephrim Stanley - Goldman Sachs (December 2022)
+
 - ["Consuming Legend Data Models & Services Using BI, Python/ML & other Tools"](https://www.youtube.com/watch?v=rm-mAohz6NQ)
 
     Andrew Ormerod & John Pentelow - Goldman Sachs (July 2022)

@@ -1,11 +1,11 @@
 ---
-id: services-create-connection
+id: services-connection
 title: Create a Connection
-sidebar_label: Create Connection
+sidebar_label: Connection
 ---
 
 _Tutorial coming soon._
 
 ## More
-- [Legend concepts](../concepts/legend-concepts)
+- [Legend concepts](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language)

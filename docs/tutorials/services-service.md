@@ -1,18 +1,20 @@
 ---
-id: services-create-service
-title: Create a Service
-sidebar_label: Create Service 
+id: services-service
+title: Create and Consume Services
+sidebar_label: Services
 ---
+
+## Create a Service 
 
 Build services on top of data queries to consume modeled data systematically. To create a service select <kbd>New Service</kbd> from the drop down menu to launch the [Service Editor](../concepts/legend-concepts.md/#service-editor)
 
-## General Tab
+### General Tab
 
 In the <kbd>General</kbd> tab of the Service Editor, users can specify metadata of their service including the service URL, documentation and owners. URL parameters can be directly defined within the {} sytnax.
 
    ![Service Editor - General](../assets/service-editor-general.JPG)
 
-## Execution Tab
+### Execution Tab
 
 In the execution tab, users can create and edit their service query. By hitting the pencil icon button, users can edit the query using the [Query Builder](../concepts/legend-concepts.md/#query-builder). Users can make changes to the query either in the user-friendly form mode or in text mode. 
 
@@ -22,7 +24,7 @@ Additonally the bottom panel lets you define your execution context which repres
 
    ![Service Editor - Execution](../assets/service-editor-execution.JPG)
 
-## Tests Tab
+### Tests Tab
 
 This panel lets you define tests for the services you write by specifying test data, serialization format of your test and the assertions. 
 
@@ -117,10 +119,14 @@ The executable JAR file can be used as a dependency to execute your service.
 
 List the JAR file as a dependency in the Java application. For production use cases, the recommendation is to fetch the JAR file from a published repository (such as the public Maven repo).
 
+## Retrieve Services Metadata via API Endpoints
+
+_Coming soon._
+
 ## See features in action
 
 ![consume a service](../assets/consume-service.gif)
 
 ## More
-- [Legend concepts](../concepts/legend-concepts)
+- [Legend concepts](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language)

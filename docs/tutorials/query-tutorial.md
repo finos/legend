@@ -54,7 +54,6 @@ You can add a watermark to your query through the advanced options tab. If a wat
 
 ![Watermark](../assets/query-builder/watermark.gif)
 
-
 ## Fetch Structure - Tabular Data Structure 
 
 ### Projection Columns
@@ -85,7 +84,23 @@ _Coming soon._
 
 _Coming soon._
 
+## Open an Existing Query 
+
+_Coming soon._
+
+## Edit a Service Query
+
+_Coming soon._
+
 ## Executing Queries
+
+### Query Data as of Specific Dates and Times
+
+_Coming soon._
+
+### Apply operations, transformations, and calculations to your datasets in the Query Editor
+
+_Coming soon._
 
 ### Execute With Parameters
 
@@ -101,5 +116,5 @@ Once you are content with your data, you can also export to other types. For now
 ![Export CSV](../assets/query-builder/export-csv-params.gif)
 
 ## More
-- [Legend concepts](../concepts/legend-concepts)
+- [Legend concepts](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language)

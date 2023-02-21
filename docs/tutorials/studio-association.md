@@ -1,11 +1,11 @@
 ---
-id: studio-create-association
+id: studio-association
 title: Create an Association
-sidebar_label: Create an Association
+sidebar_label: Association
 ---
 
 _Coming soon._
 
 ## More
-- [Legend concepts](../concepts/legend-concepts)
+- [Legend concepts](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language)

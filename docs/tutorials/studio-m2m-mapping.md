@@ -76,5 +76,5 @@ Let's create a constraint on the `NewPerson` class that checks if the name value
 Studio will show a **defect** with the details about the violated constraint. Constraints can be both on source and target classes.
 
 ## More
-- [Legend concepts](../concepts/legend-concepts)
+- [Legend concepts](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language)

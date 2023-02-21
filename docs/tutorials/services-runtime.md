@@ -1,11 +1,11 @@
 ---
-id: services-create-runtime
+id: services-runtime
 title: Create a Runtime
-sidebar_label: Create Runtime
+sidebar_label: Runtime
 ---
 
 _Tutorial coming soon._
 
 ## More
-- [Legend concepts](../concepts/legend-concepts)
+- [Legend concepts](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language)

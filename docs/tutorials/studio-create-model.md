@@ -6,7 +6,7 @@ sidebar_label: Create Model
 
 ## Workspace
 
-Start working on your data model by creating a [workspace](../concepts/legend-concepts.md/#workspace). A workspace is a copy of a project which can be later merged back into the main project. It represents a branch in the underlying GitLab project. To create a workspace:
+Start working on your data model by creating a [workspace](../overview/legend-glossary.md/#workspace). A workspace is a copy of a project which can be later merged back into the main project. It represents a branch in the underlying GitLab project. To create a workspace:
 
 1. Select an existing (GitLab) project or select <kbd>+</kbd> to start working on a new one. Please note that the FINOS hosted version of [Legend Studio](https://legend.finos.org/studio/-/setup) does **not** support creating a new project at this time.
 
@@ -18,7 +18,7 @@ Start working on your data model by creating a [workspace](../concepts/legend-co
 
 ## Group workspace
 
-To create a [group workspace](../concepts/legend-concepts.md/#group-workspace):
+To create a [group workspace](../overview/legend-glossary.md/#group-workspace):
 
 1. Follow steps above to create a workspace
 
@@ -30,13 +30,13 @@ To create a [group workspace](../concepts/legend-concepts.md/#group-workspace):
 
    ![F8TextMode](../assets/F8TextMode.jpg)
 
-To access or exit [Text mode](../concepts/legend-concepts.md/#text-mode): Press `F8` or the hacker icon on the bottom right corner of your scrreen. The bar should change when you open or close Text mode.
+To access or exit [Text mode](../overview/legend-glossary.md/#text-mode): Press `F8` or the hacker icon on the bottom right corner of your scrreen. The bar should change when you open or close Text mode.
 
 To compile your code: Press `F9`
 
 ## Diagram
 
-To create a [diagram](../concepts/legend-concepts.md/#diagram), see the[diagram creation](../tutorials/studio-create-diagram.md) tutorial.
+To create a [diagram](../overview/legend-glossary.md/#diagram), see the[diagram creation](../tutorials/studio-create-diagram.md) tutorial.
 
 ## Package
 
@@ -57,7 +57,7 @@ See the [model info & workspace management](../tutorials/studio-manage-model-inf
 
 ## Class
 
-To create a [class](../concepts/legend-concepts.md/#class):
+To create a [class](../overview/legend-glossary.md/#class):
 
 1. Right-click any package on the left side of the panel, or click the `+` near the name of your project.
 2. Under `Class view`, you'll see a list of class forms as well as a diagram view of your class. You can add tags, stereotypes, properties, constraints, qualified properties, and super types to your model.
@@ -73,7 +73,7 @@ To create a [class](../concepts/legend-concepts.md/#class):
 
 ## Property
 
-To create a [property](../concepts/legend-concepts.md/#property):
+To create a [property](../overview/legend-glossary.md/#property):
 
 ### Property - primitive data type
 
@@ -99,7 +99,7 @@ Create a relationship between the **Person** and **Firm** classes.
 
 ### Derived property
 
-To create a [derived property](../concepts/legend-concepts.md/#derived-property):
+To create a [derived property](../overview/legend-glossary.md/#derived-property):
 
 1. Select the `Person` class.
 2. Go to the <kbd>Derived properties</kbd> tab and click the <kbd>+</kbd> icon.
@@ -132,7 +132,7 @@ _COMING SOON_
 
 ## Constraint
 
-To add a [constraint](../concepts/legend-concepts.md/#constraint):
+To add a [constraint](../overview/legend-glossary.md/#constraint):
 
 1. Select the `Person` class.
 2. Go to the <kbd>Constraints</kbd> tab and click the <kbd>+</kbd> icon.
@@ -150,7 +150,7 @@ When typing constraints and qualified properties, you will get immediate parsing
 
 ## Enumeration
 
-To create an [enumeration](../concepts/legend-concepts.md/#enumeration):
+To create an [enumeration](../overview/legend-glossary.md/#enumeration):
 
 1. Click the <kbd>+</kbd> icon on the left-hand side and select <kbd>Add an enumeration</kbd>.
 2. Let's create an enumeration called **CompanyType** with the values **LLC** and **Corporation**.
@@ -161,7 +161,7 @@ To create an [enumeration](../concepts/legend-concepts.md/#enumeration):
 
 ## Profile
 
-To create a [profile](../concepts/legend-concepts.md/#profile):
+To create a [profile](../overview/legend-glossary.md/#profile):
 
 1. Click the <kbd>+</kbd> icon.
 
@@ -169,7 +169,7 @@ To create a [profile](../concepts/legend-concepts.md/#profile):
 
 ### Profile tag
 
-Use [tagged values](../concepts/legend-concepts.md/#tagged-value) to add context to your data model. For example, we can add the tagged value **alias** to our `Firm` class to make it easier for others to navigate our data model.
+Use [tagged values](../overview/legend-glossary.md/#tagged-value) to add context to your data model. For example, we can add the tagged value **alias** to our `Firm` class to make it easier for others to navigate our data model.
 
 1. In the Profile editor, go to the <kbd>Tags</kbd> tab and click the <kbd>+</kbd> icon.
 2. Type in `alias`.
@@ -190,7 +190,7 @@ The `Firm` class now shows the additional context.
 
 ## Stereotype
 
-To create a [stereotype](../concepts/legend-concepts.md/#stereotype):
+To create a [stereotype](../overview/legend-glossary.md/#stereotype):
 
 ### Profile stereotype
 
@@ -216,7 +216,7 @@ The `Firm` class now shows the additional metadata information.
 
 ## Supertype
 
-To create a [supertype](../concepts/legend-concepts.md/#supertype), let's create a new class called `LegalEntity`.
+To create a [supertype](../overview/legend-glossary.md/#supertype), let's create a new class called `LegalEntity`.
 
 1. Moving back to the `Firm` class, go to the <kbd>Super types</kbd> tab and click the <kbd>+</kbd> icon.
 2. Select the `LegalEntity` class from the dropdown.
@@ -226,6 +226,6 @@ To create a [supertype](../concepts/legend-concepts.md/#supertype), let's create
 ![Add a super type](../assets/add-super-type.gif)
 
 ## More
-- [Legend concepts](../concepts/legend-concepts)
+- [Legend concepts](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language)
 

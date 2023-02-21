@@ -16,6 +16,10 @@ See the [relational mapping](../tutorials/studio-relational-mapping.md) and [rel
 
 See the [dataset transformation and storage](../tutorials/studio-define-dataset-transformation-storage) tutorial.
 
+### Connect your data to a semi-structured file
+
+See the [model to files connection](../tutorials/studio-connect-files) tutorial.
+
 ### Connect your data model to an API (Service store)
 
 See the [service store](../tutorials/studio-servicestore) tutorial.

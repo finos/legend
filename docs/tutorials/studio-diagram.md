@@ -1,7 +1,7 @@
 ---
-id: studio-create-diagram
+id: studio-diagram
 title: Create a Diagram
-sidebar_label: Create Diagram
+sidebar_label: Diagram
 ---
 
 To get started, click the <kbd>+</kbd> icon to open the **New Element** drop down menu on the left-hand side and select <kbd>Add a new diagram</kbd>.
