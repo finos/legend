@@ -5,35 +5,53 @@
       "overview/use-cases",
       "overview/architecture"
     ],
-    "Get Started: Studio": [
+    "User Journeys": [
+      "user-journeys/curate",
+      "user-journeys/find",
+      "user-journeys/retrieve",
+      "user-journeys/share",
+      "user-journeys/analyze",
+      "user-journeys/debug"
+    ],
+    "Getting Started": [
       "getting-started/introduction-to-legend",
       "getting-started/installation-guide"
     ],
     "Studio Tutorial": [
       "tutorials/studio-create-model",
       "tutorials/studio-create-diagram",
-      "tutorials/studio-create-data-element",
+      "tutorials/studio-create-association",
       "tutorials/studio-m2m-mapping",
       "tutorials/studio-relational-mapping",
+      "tutorials/studio-servicestore",
+      "tutorials/studio-import-database-schema",
+      "tutorials/studio-create-test-data",
+      "tutorials/studio-run-tests",
+      "tutorials/studio-unit-tests",
       "tutorials/services",
+      "tutorials/studio-define-dataset-transformation-storage",
       "tutorials/studio-flat-data-schema",
       "tutorials/studio-project-dependencies",
       "tutorials/studio-file-generation",
+      "tutorials/studio-define-function",
+      "tutorials/studio-manage-model-information",
+      "tutorials/studio-find-models",
       "tutorials/studio-sdlc"
     ],
     "Query Tutorial": [
-      "tutorials/query-tutorial"
+      "tutorials/query-tutorial",
+      "tutorials/create-dataspace"
+
     ],
     "Concepts": [
-      "concepts/legend-concepts",
-      "concepts/data-modeling-concepts"
+      "concepts/legend-concepts"
     ],
     "Reference Docs": [
-      "showcases/showcase-projects",
       "reference/legend-language",
       "reference/released-functions",
       "reference/upcoming-functions",
       "reference/stores",
+      "reference/external-format",
       "reference/bindings",
       "reference/query-protocol"
     ],

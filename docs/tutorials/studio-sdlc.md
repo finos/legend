@@ -1,7 +1,7 @@
 ---
 id: studio-sdlc
 title: Studio SDLC
-sidebar_label: Studio SDLC
+sidebar_label: SDLC
 ---
 
 ## Review and commit changes
@@ -49,3 +49,29 @@ A workspace update may result in a conflict. Studio will open a new view to aid 
 3. Once the changes compile successfully, either accept or discard the changes.
 
    ![Accept or discard changes](../assets/accept-or-discard-changes.JPG)
+
+## Release a new version of your data model and make it available to consumers
+
+_Tutorial coming soon._
+
+## Troubleshoot issues with your data model, query or service.
+
+### Navigate quickly to the underlying GitLab project
+
+_Tutorial coming soon._
+
+### Share your project with others in read-only mode
+
+_Tutorial coming soon._
+
+### Debug/troubleshoot issues with your query by reviewing execution details (Plan View)
+
+_Tutorial coming soon._
+
+### Troubleshoot, inspect your code, and make changes to your data model in Text Mode
+
+_Tutorial coming soon._
+
+## More
+- [Legend concepts](../concepts/legend-concepts)
+- [Reference documentation](../reference/)

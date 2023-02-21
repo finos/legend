@@ -1,7 +1,7 @@
 ---
-id: studio-create-data-element
-title: Create a Data Element
-sidebar_label: Create a Data Element
+id: studio-create-test-data
+title: Create Test Data
+sidebar_label: Create Test Data
 ---
 
 Data Elements are top level elements that define test data for store/external formats. They are useful for sharing test data among different tests.
@@ -25,3 +25,6 @@ Test data for model to model can be defined through external format. Provides te
 
    ![data-element-service-store](../assets/create-a-service-store-data-element.gif)
 
+## More
+- [Legend concepts](../concepts/legend-concepts)
+- [Reference documentation](../reference/)

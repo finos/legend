@@ -10,7 +10,7 @@ Detailed description of [Legend showcase projects](https://gitlab.com/finosfound
 
 [Legend showcase guided tour](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project-guided-tour).
 
-## Logical Modeling Basic 
+## Logical Modeling Basic showcase
 
 This showcase project shows a basic Product-Account-Trade model.
 https://legend-acct.finos.org/studio/view/UAT-40953672

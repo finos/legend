@@ -10,23 +10,23 @@ Safely make changes to your data model and release a new version for your data c
 
 ### Save changes to your data model, create a review and get it approved
 
-See the [SDLC tutorial](../tutorials/studio-sdlc).
+See the [SDLC tutorial](../tutorials/studio-sdlc/#review-and-commit-changes).
 
 ### Load the latest changes from master into your workspace
 
-_Tutorial coming soon._
+See the [SDLC tutorial](../tutorials/studio-sdlc/#update-workspace-with-latest-changes).
 
 ### Run all your tests globally across the project
 
-_Tutorial coming soon._
+See the [test running](../tutorials/studio-run-tests) tutorial.
 
 ### Release a new version of your data model and make it available to consumers
 
-_Tutorial coming soon._
+See the [SDLC tutorial](../tutorials/studio-sdlc/#release-a-new-version-of-your-data-model-and-make-it-available-to-consumers).
 
 ### Create a unit test for the feature you are using so that Platform upgrades do not cause your projects to break
 
-_Tutorial coming soon._
+See the [unit tests](../tutorials/studio-unit-tests.md) tutorial.
 
 ## Troubleshoot
 
@@ -34,22 +34,22 @@ Troubleshoot issues with your data model, query or service.
 
 ### Navigate quickly to the underlying GitLab project
 
-_Tutorial coming soon._
+See the [SDLC tutorial](../tutorials/studio-sdlc/#troubleshoot-issues-with-your-data-model-query-or-service).
 
 ### Share your project with others in read-only mode
 
-_Tutorial coming soon._
+See the [SDLC tutorial](../tutorials/studio-sdlc/#troubleshoot-issues-with-your-data-model-query-or-service).
 
 ### Debug/troubleshoot issues with your query by reviewing execution details (Plan View)
 
-_Tutorial coming soon._
+See the [SDLC tutorial](../tutorials/studio-sdlc/#troubleshoot-issues-with-your-data-model-query-or-service).
 
 ### Troubleshoot, inspect your code, and make changes to your data model in Text Mode
 
-_Tutorial coming soon._
+See the [SDLC tutorial](../tutorials/studio-sdlc/#troubleshoot-issues-with-your-data-model-query-or-service).
 
 ## More
-- Legend [Tutorials](../tutorials/studio-create-model.md) 
-- Legend [Showcase projects](../showcases/showcase-projects.md)
+- [Studio Tutorials](../tutorials/studio-create-model.md) 
+- [Studio Concepts](../concepts/legend-studio-concepts.md)
 
 

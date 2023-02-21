@@ -125,3 +125,6 @@ List the JAR file as a dependency in the Java application. For production use ca
 
 ![consume a service](../assets/consume-service.gif)
 
+## More
+- [Legend concepts](../concepts/legend-concepts)
+- [Reference documentation](../reference/)

@@ -1,7 +1,7 @@
 ---
 id: query-tutorial
 title: Legend Query Tutorial
-sidebar_label: Build and Execute a Query 
+sidebar_label: Build/Execute a Query 
 ---
 
 ## Build a Query
@@ -95,3 +95,7 @@ Once you are content with your data, you can also export to other types. For now
 ![Export CSV](../assets/query-builder/export-csv.gif)
 
 ![Export CSV](../assets/query-builder/export-csv-params.gif)
+
+## More
+- [Legend concepts](../concepts/legend-concepts)
+- [Reference documentation](../reference/)

@@ -1,7 +1,7 @@
 ---
 id: studio-create-model
 title: Create a Model
-sidebar_label: Create a Model
+sidebar_label: Create Model
 ---
 
 ## Workspace
@@ -36,7 +36,7 @@ To compile your code: Press `F9`
 
 ## Diagram
 
-To create a [diagram](../concepts/legend-studio-concepts.md/#diagram), see [create a model diagram](../tutorials/studio-create-diagram.md).
+To create a [diagram](../concepts/legend-studio-concepts.md/#diagram), see the[diagram creation](../tutorials/studio-create-diagram.md) tutorial.
 
 ## Package
 
@@ -49,15 +49,15 @@ Create a package to start defining model hierarchies to group models into logica
 
 ## Data model hierarchy
 
-_COMING SOON_
+_Coming soon._
 
 ## Project overview
 
-_COMING SOON_
+See the [model info & workspace management](../tutorials/studio-manage-model-information.md) tutorial.
 
 ## Class
 
-To create a [class](../concepts/data-modeling-concepts.md/#class):
+To create a [class](../concepts/legend-studio-concepts.md/#class):
 
 1. Right-click any package on the left side of the panel, or click the `+` near the name of your project.
 2. Under `Class view`, you'll see a list of class forms as well as a diagram view of your class. You can add tags, stereotypes, properties, constraints, qualified properties, and super types to your model.
@@ -73,7 +73,7 @@ To create a [class](../concepts/data-modeling-concepts.md/#class):
 
 ## Property
 
-To create a [property](../concepts/data-modeling-concepts.md/#property):
+To create a [property](../concepts/legend-studio-concepts.md/#property):
 
 ### Property - primitive data type
 
@@ -99,7 +99,7 @@ Create a relationship between the **Person** and **Firm** classes.
 
 ### Derived property
 
-To create a [derived property](../concepts/data-modeling-concepts.md/#derived-property):
+To create a [derived property](../concepts/legend-studio-concepts.md/#derived-property):
 
 1. Select the `Person` class.
 2. Go to the <kbd>Derived properties</kbd> tab and click the <kbd>+</kbd> icon.
@@ -132,7 +132,7 @@ _COMING SOON_
 
 ## Constraint
 
-To add a [constraint](../concepts/data-modeling-concepts.md/#constraint):
+To add a [constraint](../concepts/legend-studio-concepts.md/#constraint):
 
 1. Select the `Person` class.
 2. Go to the <kbd>Constraints</kbd> tab and click the <kbd>+</kbd> icon.
@@ -150,7 +150,7 @@ When typing constraints and qualified properties, you will get immediate parsing
 
 ## Enumeration
 
-To create an [enumeration](../concepts/data-modeling-concepts.md/#enumeration):
+To create an [enumeration](../concepts/legend-studio-concepts.md/#enumeration):
 
 1. Click the <kbd>+</kbd> icon on the left-hand side and select <kbd>Add an enumeration</kbd>.
 2. Let's create an enumeration called **CompanyType** with the values **LLC** and **Corporation**.
@@ -169,7 +169,7 @@ To create a [profile](../concepts/legend-studio-concepts.md/#profile):
 
 ### Profile tag
 
-Use tagged values to add context to your data model. For example, we can add the tagged value **alias** to our `Firm` class to make it easier for others to navigate our data model.
+Use [tagged values](../concepts/legend-studio-concepts.md/#tagged-value) to add context to your data model. For example, we can add the tagged value **alias** to our `Firm` class to make it easier for others to navigate our data model.
 
 1. In the Profile editor, go to the <kbd>Tags</kbd> tab and click the <kbd>+</kbd> icon.
 2. Type in `alias`.
@@ -190,7 +190,7 @@ The `Firm` class now shows the additional context.
 
 ## Stereotype
 
-To create a [stereotype](../concepts/data-modeling-concepts.md/#stereotype):
+To create a [stereotype](../concepts/legend-studio-concepts.md/#stereotype):
 
 ### Profile stereotype
 
@@ -216,7 +216,7 @@ The `Firm` class now shows the additional metadata information.
 
 ## Supertype
 
-To create a [supertype](../concepts/data-modeling-concepts.md/#supertype), let's create a new class called `LegalEntity`.
+To create a [supertype](../concepts/legend-studio-concepts.md/#supertype), let's create a new class called `LegalEntity`.
 
 1. Moving back to the `Firm` class, go to the <kbd>Super types</kbd> tab and click the <kbd>+</kbd> icon.
 2. Select the `LegalEntity` class from the dropdown.
@@ -225,5 +225,7 @@ To create a [supertype](../concepts/data-modeling-concepts.md/#supertype), let's
 
 ![Add a super type](../assets/add-super-type.gif)
 
-
+## More
+- [Legend concepts](../concepts/legend-concepts)
+- [Reference documentation](../reference/)
 

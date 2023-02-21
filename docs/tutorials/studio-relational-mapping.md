@@ -1,10 +1,10 @@
 ---
 id: studio-relational-mapping
-title: Create a Relational Mapping
-sidebar_label: Relational Mapping
+title: Connect to Databases
+sidebar_label: Connect Model to Data
 ---
 
-## Create a Relational Database
+## Create a Relational Database Schema
 
 Define the schema definition of the relational database you wish to connect to the data model.
 
@@ -18,6 +18,7 @@ The Studio form mode currently does not support defining the Relational Database
 
 Please refer to below sample SQL snippet to set up a in-memory H2 demo database.
 
+```
 ###Relational
 Database demo::H2DemoDataBase
 (
@@ -42,6 +43,7 @@ country_name VARCHAR(200)
 Join FirmEmployee(EmployeeTable.firm_id = FirmTable.id)
 Join EmployeeCountry(EmployeeTable.country_id = CountryTable.id)
 )
+```
 
 ## Create a Relational Mapping
 
@@ -179,3 +181,8 @@ The combination of the relational mapping and the connection details are specifi
 2. Select <kbd>New runtime</kbd>
 3. Enter the name of the Connection, for example <kbd>H2DemoRuntime</kbd>.
 4. Select the **relational mapping** you want to specify for your runtime, for example **DemoRelationalMapping**
+
+
+## More
+- [Legend concepts](../concepts/legend-concepts)
+- [Reference documentation](../reference/)

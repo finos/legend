@@ -6,4 +6,8 @@ sidebar_label: Generate Files
 
 File generation lets you generate your models in other codes or schemas.
 
-_COMING SOON_
+_Tutorial coming soon._
+
+## More
+- [Legend concepts](../concepts/legend-concepts)
+- [Reference documentation](../reference/)

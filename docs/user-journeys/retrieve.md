@@ -6,9 +6,8 @@ sidebar_label: Retrieve
 
 ## Query your modeled data self-service style
 
-See the [Query Tutorial](../tutorials/query-tutorial.md).
-
+See the [query creation & query running](../tutorials/query-tutorial.md) tutorial.
 
 ## More
-- Legend [Tutorials](../tutorials/studio-create-model.md) 
-- Legend [Showcase projects](../showcases/showcase-projects.md)
+- [Studio Tutorials](../tutorials/studio-create-model.md) 
+- [Studio Concepts](../concepts/legend-studio-concepts.md)

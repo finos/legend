@@ -335,3 +335,7 @@ section data: DelimitedWithoutHeadings
   }
 }
 ```
+
+## More
+- [Legend concepts](../concepts/legend-concepts)
+- [Reference documentation](../reference/)

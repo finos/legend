@@ -1,7 +1,7 @@
 ---
 id: studio-m2m-mapping
 title: Create a Model-to-Model Mapping
-sidebar_label: Model-to-Model Mapping
+sidebar_label: Connect Model to Model
 ---
 
 ## Create a Mapping between source and target class
@@ -61,7 +61,7 @@ You can promote this ad hoc execution to a test by clicking on the **beaker** ic
 
 ### Execute a Model-to-Model Mapping with Constraints
 
-Remember that we can add a [constraint](../tutorials/studio-create-model#add-a-constraint) on classes? We can also execute model-to-model mappings with constraints to check if the constraint criteria are violated.
+Remember that we can add a [constraint](../tutorials/studio-create-model/#constraint-1) on classes? We can also execute model-to-model mappings with constraints to check if the constraint criteria are violated.
 
 Let's create a constraint on the `NewPerson` class that checks if the name value is empty `$this.name-> == ''`
 
@@ -74,3 +74,7 @@ Let's create a constraint on the `NewPerson` class that checks if the name value
 7. Hit the <kbd>Execute</kbd> button to execute the defined query
 
 Studio will show a **defect** with the details about the violated constraint. Constraints can be both on source and target classes.
+
+## More
+- [Legend concepts](../concepts/legend-concepts)
+- [Reference documentation](../reference/)

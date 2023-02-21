@@ -14,7 +14,7 @@ In the <kbd>General</kbd> tab of the Service Editor, users can specify metadata 
 
 ## Execution Tab
 
-In the execution tab, users can create and edit their service query. By hitting the pencil icon button, users can edit the query using the [Query Builder](./query-tutorial.md). Users can make changes to the query either in the user-friendly form mode or in text mode. 
+In the execution tab, users can create and edit their service query. By hitting the pencil icon button, users can edit the query using the [Query Builder](../concepts/legend-concepts.md/#query-builder). Users can make changes to the query either in the user-friendly form mode or in text mode. 
 
 Additonally the bottom panel lets you define your execution context which represents the mapping and runtime used when executing your query, 
 
@@ -50,7 +50,7 @@ Click the `generate` button to automatically generate test data if possible. Oth
 ![Create connections test data - Relational](../assets/create-a-service-connection-test-data-with-external-format.gif)
 
 ### Data element
-More examples of different types of Data element creation could be found [here](../tutorials/create-data-element).
+More examples of different types of Data element creation could be found [here](../tutorials/studio-create-test-data).
 ![Create connections test data - Data Element](../assets/create-a-service-connection-test-with-data-element.gif)
 
 #### Service Store
@@ -120,3 +120,7 @@ List the JAR file as a dependency in the Java application. For production use ca
 ## See features in action
 
 ![consume a service](../assets/consume-service.gif)
+
+## More
+- [Legend concepts](../concepts/legend-concepts)
+- [Reference documentation](../reference/)

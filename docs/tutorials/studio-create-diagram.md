@@ -1,7 +1,7 @@
 ---
 id: studio-create-diagram
 title: Create a Diagram
-sidebar_label: Create a Diagram
+sidebar_label: Create Diagram
 ---
 
 To get started, click the <kbd>+</kbd> icon to open the **New Element** drop down menu on the left-hand side and select <kbd>Add a new diagram</kbd>.
@@ -49,3 +49,7 @@ Right click on the diagram element in the explorer view and select **delete**.
 ## See features in action
 
 ![diagram editor](../assets/diagram-editor.gif)
+
+## More
+- [Legend concepts](../concepts/legend-concepts)
+- [Reference documentation](../reference/)
