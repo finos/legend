@@ -4,23 +4,14 @@ title: Find meaningful data
 sidebar_label: Find
 ---
 
-## Find data that you need and subscribe to it with agreed upon contract definitions
+## Find data that you need and subscribe to it with agreed-upon contract definitions
+
+_Tutorial coming soon._
 
 ## Provide your consumers with a recommended way to access your data and share helpful information about your data with them
 
+_Tutorial coming soon._
 
-
-
-## Govern
-
-## Debug
-
-Check out our [blog posts](https://legend.finos.org/docs/community/legend-media#blog-posts) to learn more about Legend use cases and review the content below.
-## Data Governance
-_COMING SOON_
-
-## Self-serve Data
-_COMING SOON_
-
-## API Management
-_COMING SOON_
+## More
+- Legend [Tutorials](../tutorials/studio-create-model.md) 
+- Legend [Showcase projects](../showcases/showcase-projects.md)

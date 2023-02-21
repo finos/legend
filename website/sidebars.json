@@ -15,6 +15,7 @@
       "tutorials/studio-create-data-element",
       "tutorials/studio-m2m-mapping",
       "tutorials/studio-relational-mapping",
+      "tutorials/services",
       "tutorials/studio-flat-data-schema",
       "tutorials/studio-project-dependencies",
       "tutorials/studio-file-generation",
@@ -28,6 +29,7 @@
       "concepts/data-modeling-concepts"
     ],
     "Reference Docs": [
+      "showcases/showcase-projects",
       "reference/legend-language",
       "reference/released-functions",
       "reference/upcoming-functions",
