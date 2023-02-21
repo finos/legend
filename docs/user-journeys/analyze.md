@@ -1,6 +1,6 @@
 ---
 id: analyze
-title: Analyze
+title: Experiment With and Analyze Data
 sidebar_label: Analyze
 ---
 

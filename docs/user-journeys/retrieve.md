@@ -1,6 +1,6 @@
 ---
 id: retrieve
-title: Self-service query data with a click
+title: Query Data with Just a Click
 sidebar_label: Retrieve
 ---
 

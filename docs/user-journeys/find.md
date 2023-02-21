@@ -1,6 +1,6 @@
 ---
 id: find
-title: Find meaningful data
+title: Find Meaningful Data
 sidebar_label: Find
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: curate
-title: Curate
+title: Curate: Describe and Connect Your Data
 sidebar_label: Curate
 ---
 
