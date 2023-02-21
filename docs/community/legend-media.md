@@ -3,10 +3,26 @@ id: legend-media
 title: Legend in the Media
 sidebar_label: Legend in the Media
 ---
-## Legend in the News
 
--   [Goldman Sachs is giving away software to Wall Street for free](https://www.cnbc.com/2019/11/20/goldman-sachs-is-giving-away-software-to-wall-street-for-free.html) - CNBC  (October 19th, 2020)
--   [The code for Goldman Sachs' internal data platform is now open for anyone to use](https://www.businessinsider.com/code-for-goldmans-data-platform-legend-open-sharing-github-2020-10?r=US&IR=T) - Business Insider (October 19th, 2019)
+## Talks and Conferences
+
+### [AWS re:Invent 2022 - Cloudifying our Data Stack at Goldman Sachs](https://www.youtube.com/watch?v=pnPHEOlRcHQ)
+Neema Raphael, Goldman Sachs (December 2022)
+
+### [Consuming Legend Data Models & Services Using BI, Python/ML & other Tools](https://www.youtube.com/watch?v=rm-mAohz6NQ)
+Andrew Ormerod & John Pentelow, Goldman Sachs (July 2022)
+
+### [An open-sourced solution to Data Governance? How Legend may be the Answer to Data Quality concerns in the Financial Industry](https://www.youtube.com/watch?v=9qIq0mHKQeY)
+Ffion Acland & Beeke-Marie Nelke, Goldman Sachs (November 2021)
+
+### [Why Open Sourced Data Models revolutionize the Financial Industry](https://www.youtube.com/watch?v=6rUm7dN9pfU)
+Ffion Acland, Goldman Sachs (October 2020)
+
+### [Open Sourcing Legend, the Flagship of Goldman Sachs' Data Strategy](https://www.youtube.com/watch?v=93c966jNzYo)
+Pierre de Belen, Goldman Sachs (October 2020)
+
+### [Goldman Sachs PURE/ Alloy demo](https://www.youtube.com/watch?v=na4DCgvdDJ4)
+Pierre de Belen, Goldman Sachs (October 2019)
 
 ## Blog posts
 
@@ -28,9 +44,17 @@ GS Developer Blog Post (November 27th, 2021)
 
 ### ["Building Platforms for Data Engineering"](https://developer.gs.com/blog/posts/legend_data_engineering_platforms)
 
-GS Developer Blog Post (September 23rd, 2021)
+## Legend in the News
+
+- [Goldman Sachs is giving away software to Wall Street for free](https://www.cnbc.com/2019/11/20/goldman-sachs-is-giving-away-software-to-wall-street-for-free.html) - CNBC  (October 19th, 2020)
+- [The code for Goldman Sachs' internal data platform is now open for anyone to use](https://www.businessinsider.com/code-for-goldmans-data-platform-legend-open-sharing-github-2020-10?r=US&IR=T) - Business Insider (October 19th, 2019)
 
 ## Awards
+
+### FINOS Americas Community and Member Awards (December 2022)
+- An Phi from Goldman Sachs won the ["Most Active Individual"](https://www.finos.org/blog/congratulations-to-the-finos-americas-member-and-community-award-winners-2022) award, determined by active participation metrics.
+- Legend won the the ["Shining Star"](https://www.finos.org/blog/congratulations-to-the-finos-americas-member-and-community-award-winners-2022) award for going above and beyond to engage the community.
+- Goldman Sachs won the ["Most active FINOS member"](congratulations-to-the-finos-americas-member-and-community-award-winners-2022) award, determined by active participation metrics.
 
 ### Celent Model Awards (March 2022)
 
@@ -62,24 +86,3 @@ Won ["Best Collaboration Initiative"](https://www.aftas.org/past-winners) for pa
 
 _COMING SOON_
 
-## Talks and Conferences
-
-### ["Consuming Legend Data Models & Services Using BI, Python/ML & other Tools"](https://www.youtube.com/watch?v=rm-mAohz6NQ)
-
-Andrew Ormerod & John Pentelow, Goldman Sachs (July 2022)
-
-### ["An open-sourced solution to Data Governance? How Legend may be the Answer to Data Quality concerns in the Financial Industry"](https://www.youtube.com/watch?v=9qIq0mHKQeY)
-
-Ffion Acland & Beeke-Marie Nelke, Goldman Sachs (November 2021)
-
-### ["Why Open Sourced Data Models revolutionize the Financial Industry"](https://www.youtube.com/watch?v=6rUm7dN9pfU)
-
-Ffion Acland, Goldman Sachs (October 2020)
-
-### ["Open Sourcing Legend, the Flagship of Goldman Sachs' Data Strategy"](https://www.youtube.com/watch?v=93c966jNzYo)
-
-Pierre de Belen, Goldman Sachs (October 2020)
-
-### ["Goldman Sachs PURE/ Alloy demo"](https://www.youtube.com/watch?v=na4DCgvdDJ4)
-
-Pierre de Belen, Goldman Sachs (October 2019)
