@@ -4,37 +4,83 @@ title: Connect Data Models to Data Sources
 sidebar_label: Connect Data Sources
 ---
 
-## Connect Data Models to Data Sources
+## Overview
 
-_TODO: add image or diagram representing user journey flow
+<TODO: User journey description>
 
-TODO: describe user journey, what you can do with Legend + hyperlink to tutorials + why this user journey is relevant/impactful
+_TODO: add user journey flow_
 
-- Connect your data model to data sources
-- Stores & Mappings
-- External formats & Bindings
-- Connect your data model to a relational data store
-- Connect your data to a semi-structured file
-- Connect your data model to an API (Service store)
-- Define how your datasets are transformed and stored
-- Apply operations, transformations, and calculations to your datasets in the Query Editor
-- Import a database schema and model it in Studio (?)
+### Features
 
-### Relevant tutorials
-- [relational mapping](../tutorials/studio-relational-mapping.md) and [relational test data](../tutorials/studio-create-test-data.md/#relational) tutorials
-- [service store](../tutorials/studio-servicestore) tutorial
+- [Mapping](../overview/legend-glossary.md/#relational-mapping)
+- [Mapping Editor](../overview/legend-glossary.md/#mapping-editor)
+- [Runtime](../overview/legend-glossary.md/#runtime)
+- [Connection](../overview/legend-glossary.md/#connection)
+- [Flat-Data Schema](../overview/legend-glossary.md/#flat-data-schema)
+- [Flat-Data Store](../overview/legend-glossary.md/#flat-data-store)
+- [Relational Database](../overview/legend-glossary.md/#relational-database)
+- [Binding](../overview/legend-glossary.md/#bindings)
 
-## Features
-- Mapping
-- Mapping Editor
-- Runtime
-- Connection
-- Flat-Data Schema
-- Flat-Data Store
-- Relational Database
-- Data
-- External Format 
-- Binding
+### Showcase projects
 
-## Showcase project
-- TODO: add link to showcase project
+- [Relational showcase project](../showcases/showcase-projects.md/#relational)
+- [Service Store showcase project](../showcases/showcase-projects.md/#service-store)
+
+## Stores & Mappings
+
+- Tutorial: _coming soon_
+- Showcase project: _coming soon_
+
+### Connect your data model to a relational data store 
+
+- Tutorial:
+    - [relational mapping](../tutorials/studio-relational-mapping.md)  
+    - [relational test data](../tutorials/studio-create-test-data.md/#relational)
+- Showcase project: 
+    - [Relational showcase project](../showcases/showcase-projects.md/#relational)
+
+### Connect your data model to an API (Service store) 
+
+- Tutorial: _coming soon_
+- Showcase project: 
+    - [Service store showcase project](../tutorials/studio-servicestore) tutorial
+
+## External formats & Bindings
+
+- Tutorial: _coming soon_
+- Showcase project: _coming soon_
+
+### Import a database schema and model it in Studio
+
+- Tutorial: _coming soon_
+- Showcase project: _coming soon_
+
+### Connect your data to a semi-structured file
+
+- Tutorial: _coming soon_
+- Showcase project: _coming soon_
+
+
+## Apply operations, transformations, and calculations to your datasets
+
+- Tutorial: _coming soon_
+- Showcase project: _coming soon_
+
+### Query editor
+
+- Tutorial: _coming soon_
+- Showcase project: 
+    - [Query showcase project](../showcases/showcase-projects.md/#query)
+
+## Define how your datasets are transformed and stored
+
+- Tutorial: _coming soon_
+- Showcase project: _coming soon_
+
+## Troubleshoot
+
+- _Coming soon_
+
+## More
+- [Legend Glossary](../overview/legend-glossary.md)
+

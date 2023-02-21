@@ -4,6 +4,8 @@ title: Glossary of Data Modeling Concepts and Legend Components
 sidebar_label: Glossary 
 ---
 
+_TODO: add link to showcase projects_
+
 ## Association
 
 _Coming soon._

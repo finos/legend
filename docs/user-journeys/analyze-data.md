@@ -6,14 +6,22 @@ sidebar_label: Analyze Data
 
 ## Overview 
 
-TODO: add image or diagram representing user journey flow
+<TODO: add description>
 
-TODO: describe user journey, what you can do with Legend + hyperlink to tutorials + why this user journey is relevant/impactful
+<TODO: add user journey flow>
 
-- Consume Legend models & services using Business Intelligence and Machine Learning tools
+### Features
+ _Coming soon_
 
-## Features
-- TODO: add features
+### Showcase projects
+ _Coming soon_
 
-## Showcase project
-- TODO: add link to showcase project
+## Consume Legend models & services using Business Intelligence and Machine Learning tools
+
+- Tutorial: _coming soon_
+- Showcase project:  _coming soon_
+
+## More
+- ["Consuming Legend Data Models & Services Using BI, Python/ML & other Tools"](https://www.youtube.com/watch?v=rm-mAohz6NQ) - Presentation by Andrew Ormerod and John Pentelow of Goldman Sachs at the 2022 [FINOS OSFF conference](../community/legend-media.md/#finos-osff)
+- [Legend Tutorials](../tutorials/studio-create-model.md) 
+- [Legend Glossary](../overview/legend-glossary.md)

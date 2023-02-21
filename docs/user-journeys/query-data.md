@@ -6,37 +6,84 @@ sidebar_label: Query Data Sources
 
 ## Overview 
 
-TODO: add image or diagram representing user journey flow
+_TODO: add image or diagram representing user journey flow_
 
-TODO: describe user journey, what you can do with Legend + hyperlink to tutorials + why this user journey is relevant/impactful
+_TODO: describe user journey, what you can do with Legend + hyperlink to tutorials + why this user journey is relevant/impactful_
 
-- Create and run a query
-- Open an existing query
-- Data Spaces/create query from a dataspace
-- Load query
-- Edit query
-- Save query
-- Query data as of specific dates and times
-- Run queries with parameters
-- Filter your queries
-    - Create condition
-    - Create group from condition
-    - Clean up, simplify, collapse, expand tree
-- Test querying your data model before making it available to consumers
-- Debug/troubleshoot issues with your query by reviewing execution details (Plan View)
-- Productionize query
+### Features
+- [Query Builder](../overview/legend-glossary/#query-builder)
+- [Data Spaces](../overview/legend-glossary/#dataspace)
+
+## Create and run, load, edit, save a query
+
+- Tutorial: 
+    - [query creation & query running](../tutorials/query-tutorial.md) tutorial
+- Showcase project: 
+    - [Query showcase project](../showcases/showcase-projects.md/#query)
+
+## Find and open an existing query
+
+- Tutorial: _coming soon_
+- Showcase project: _coming soon_
+
+## Create a query from a dataspace
+
+- Tutorial: _coming soon_
+- Showcase project: _coming soon_
+
+## Query data as of specific dates and times
+
+- Tutorial: _coming soon_
+- Showcase project: _coming soon_
+
+## Run queries with parameters
+
+- Tutorial: 
+    - [query parameters](../tutorials/query-parameter.md)
+- Showcase project: _coming soon_
+
+## Filter your queries
+
+- Tutorial: 
+    - [query filtering](../tutorials/query-filter.md) 
+- Showcase project: _coming soon_
+
+### Create condition
+
+- Tutorial: _coming soon_
+- Showcase project: _coming soon_
+
+### Create group from condition
+
+- Tutorial: _coming soon_
+- Showcase project: _coming soon_
+
+### Clean up, simplify, collapse, expand tree
+
+- Tutorial: _coming soon_
+- Showcase project: _coming soon_
+
+## Test querying your data model before making it available to consumers
+
+- Tutorial: _coming soon_
+- Showcase project: _coming soon_
+
+## Productionize queries
+
+- Tutorial: _coming soon_
+- Showcase project: _coming soon_
+
+## Troubleshoot
+
+- [Troubleshoot issues with your data model ,query or service](../tutorials/studio-sdlc/#troubleshoot-issues-with-your-data-model-query-or-service)
+
+## Debug/troubleshoot issues with your query by reviewing execution details (Plan View)
+
+- _Coming soon_
+
+## More
+- [Legend Glossary](../overview/legend-glossary.md)
 
 
-### Relevant tutorials
-- [query creation & query running](../tutorials/query-tutorial.md) tutorial
-- [query parameters](../tutorials/query-parameter.md) tutorial
-- [query filtering](../tutorials/query-filter.md) tutorial
-- [SDLC](../tutorials/studio-sdlc/#troubleshoot-issues-with-your-data-model-query-or-service) tutorial
 
-## Features
-- Query Builder
-- Query Editor
-- Data Spaces
 
-## Showcase project
-- TODO: add link to showcase project

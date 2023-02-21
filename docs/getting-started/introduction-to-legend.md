@@ -3,6 +3,9 @@ id: introduction-to-legend
 title: Get Started
 sidebar_label: Get Started
 ---
+
+_TODO: add intro paragraph, point to user journeys, showcase models, tutorials, glossary. Explain where to find what on the docs site. Consider framing this for each persona (business user vs. developer, new vs. experienced user._
+
 ## Introductory Videos
 
 Watch the introductory Studio & Query sessions hosted by Beeke-Marie Nelke for the FINOS Open Source community:

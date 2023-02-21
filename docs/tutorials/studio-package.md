@@ -18,6 +18,6 @@ Create a package to start defining model hierarchies to group models into logica
 _Coming soon._
 
 ## More
-- [Legend concepts](../overview/legend-glossary.md)
+- [Legend glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language)
 

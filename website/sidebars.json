@@ -7,10 +7,11 @@
     ],
     "User Journeys": [
       "user-journeys/describe-data",
-      "user-journeys/discover-reuse-share",
+      "user-journeys/find",
+      "user-journeys/transform-reuse-share",
       "user-journeys/connect-datasources",
       "user-journeys/query-data",
-      "user-journeys/send-receive-data",
+      "user-journeys/generate-apis",
       "user-journeys/analyze-data",
       "user-journeys/test-troubleshoot",
       "user-journeys/developer-journey"
@@ -35,6 +36,7 @@
       "tutorials/services-service",
       "tutorials/studio-file-generation",
       "tutorials/studio-flat-data-schema",
+      "tutorials/studio-text",
       "tutorials/studio-diagram",
       "tutorials/query-dataspace",
       "tutorials/studio-schemaset",

@@ -4,6 +4,19 @@ title: Create a Diagram
 sidebar_label: Diagram
 ---
 
+## Create a new Diagram
+
+A diagram is like a canvas where you can add any model elements. A Diagram helps you to define your classes and relationship between them.
+It is a very convenient way to pictorially display your model.  
+
+To create a new Diagram:
+
+1. Click <kbd>+</kbd> and then select <kbd>New Diagram</kbd>.
+2. Provide a meaningful name to your diagram and start adding new elements to the diagram.   
+
+In the [Logical Modeling (Basic) showcase project](../showcases/showcase-projects.md/#logical-modeling-basic), TradeAccountDiagram is the diagram which shows the model.
+
+![Product Account Trade Model Diagram](../assets/trade-account-diagram.png)
 To get started, click the <kbd>+</kbd> icon to open the **New Element** drop down menu on the left-hand side and select <kbd>Add a new diagram</kbd>.
 
 ## Add classes to the diagram
@@ -22,11 +35,14 @@ To add **properties** to classes in the diagram, select the class and hit <kbd>A
 
 ## Build data relationships in the diagram
 
-There are two ways how to define data relationships in the diagram editor.
+There are two ways how to define data relationships in the diagram editor. This is done by using the Property tool in the diagram.
 
 1. Select the <kbd>Property Tool</kbd>  or hit <kbd>P</kbd> to connect classes.
 
 2. Select the <kbd>Inheritance Tool</kbd> or hit <kbd>I</kbd> to define a supertype relationship.
+
+3. Provide a name for the property, and define the multiplicity for that relationship. 
+ 
 
 ## Move and resize the diagram
 
