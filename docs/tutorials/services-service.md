@@ -104,7 +104,7 @@ Consume data services via <kbd>executable service JAR files</kbd>. As part of th
    * Data modeling with Legend services
 
 #### Showcase project 
-- [Service Execution JAR showcase project](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project2)  
+- [Service Execution JAR showcase project](../showcases/showcase-projects.md/#service-execution-jar)  
 
 ### 1. Service Execution Primer
 A "service execution" jar is a Java library generated from a Legend model.

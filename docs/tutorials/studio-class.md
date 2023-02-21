@@ -20,7 +20,7 @@ To create a [class](../overview/legend-glossary.md/#class):
 
 ![create class](../assets/create-class.gif)
 
-In the [Logical Modeling (Basic) showcase project](../showcases/showcase-projects.md/#logical-modeling-basic), Account, Product, and Trade are classes.
+In the [basic logical modeling](../showcases/showcase-projects.md/#logical-modeling-basic), Account, Product, and Trade are classes.
 
 ## Property
 

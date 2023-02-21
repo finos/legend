@@ -105,7 +105,7 @@ Consider browsing through issues labeled as "good first issue" in the respective
 
 FINOS hosts a shared version of Legend Studio in the public cloud, which is available to prototype collaborative data modeling, at . If you'd like to access the existing models, **request access to the modeling instance** at [finos.org/legend](https://www.finos.org/legend).
 
-Once you've requested access to the modeling instance, you can get started and [create a model](../tutorials/studio-tutorial.md).
+Once you've requested access to the modeling instance, you can get started and [create a model](../tutorials/studio-workspace.md).
 
 **Important Note:** The shared instance of [Legend Studio](https://legend.finos.org/studio) should only be used for public modeling initiatives. Every Studio project maps to a GitLab project in which the data model code could be reviewed by the general public.
 
@@ -119,9 +119,12 @@ In January 2020, FINOS launched a pilot with FINOS member organizations interest
 
 ## Contribute documentation
 
-You can get involved with Legend by suggesting topics you'd like to see in our documentation. Suggest a topic for our docs by [opening an issue in our GitHub repo](https://github.com/finos/legend/issues/new/choose). Ideas are also welcome through the [Legend General List](mailto:legend@finos.org).
+### Suggest documentation content
+You can get involved with Legend by suggesting documentation topics you would like to see covered. Make a suggestion by [opening an issue in our GitHub repo](https://github.com/finos/legend/issues/new/choose).
 
-### Edit the documentation site directly
+### Update the documentation site directly
+
+#### Prerequisites
 
 To make edits to the website itself, you need to run the website locally. You must have:
 
@@ -135,6 +138,17 @@ The following code automatically launches a browser and takes you to the staging
 
 
 ```
+#### Identify where to contribute documentation
+
+| Documentation type you're contributing | Example | Description | Best practices  |
+| - | - | - | - |
+| **Sub-user journeys** | _["Create a data model to describe business concepts and how they relate to eachother in a data model"](../user-journeys/build-data-model.md/#create-a-data-model-to-describe-business-concepts-and-how-they-relate-to-eachother-in-a-data-model) sub-user journey_ | <li> A sub-user journey describes the "What": a business goal that a user can achieve by **using** one or multiple Legend platform features </li> <li> A sub-user journey aligns with a high-level Legend User Journey (i.e. 'Build a data model', 'Map models', 'Publish model changes') </li> <li> Sub-user journeys link to **tutorials**, **showcase projects**, the Legend **glossary**, and **reference documentation** where appropriate | <li> Create a new (Heading 2) entry in the corresponding [top level user journey file](../user-journeys/build-data-model.md) </li> <li> Describe the sub-user journey </li> <li > Link to/update the corresponding **features** (e.g. [association](../overview/legend-features.md)), **[glossary entries](../overview/legend-glossary.md)**, **tutorials** (e.g. [association](../tutorials/studio-association.md)), **[showcase projects](../showcases/showcase-projects.md)** and **[reference documentation](../reference/legend-language.md)**  
+| **Tutorials** | _["Workspace"](../tutorials/studio-workspace.md) tutorial_ | <li> Tutorials are Legend feature-specific and describe the "How": the steps that a user needs to take in order to **use** a Legend feature </li> | <li> Create a new (Heading 2) entry within the corresponding feature file (e.g. [Workspace](../tutorials/studio-workspace.md))</li> <li> Describe the sequence of steps that a user needs to take in order to use the feature </li> <li> Link to/update the corresponding **feature description** (e.g. [association](../overview/legend-features.md)), **[glossary entries](../overview/legend-glossary.md)**, **tutorials** (e.g. [association](../tutorials/studio-association.md)), **[showcase projects](../showcases/showcase-projects.md)** and **[reference documentation](../reference/legend-language.md)** |
+ **Showcase projects** | _["Basic logical modelling"](../showcases/showcase-projects.md/#logical-modeling-basic) Showcase project_ </li>| <li> Showcase projects show Legend features in action in the Legend UI </li> <li> Showcase projects are hosted on the [Legend hosted instance](https://finos.org/legend) | <li> Get free access to the [Legend hosted instance](https://finos.org/legend) </li> <li> Update an [existing showcase project](../showcases/showcase-projects.md) OR create a new showcase project on the [Legend hosted instance](https://finos.org/legend), showcasing the feature of interest <li> Link to/update the [Legend showcase project roster](../showcases/showcase-projects.md) and corresponding **tutorials** (e.g. [association](../tutorials/studio-association.md))|
+| **Reference documentation**| _[Legend language](../reference/legend-language.md) reference documentation_ | <li> Reference documentation is technical and developer-oriented, and includes API calls and other information that users need in order to **work with/develop** Legend components </li> | Contact the Legend team via [GitHub issues](https://github.com/finos/legend/issues/new/choose) or the [Legend mailing list](mailto:legend@finos.org) if you have questions about contributing reference documentation.|
+|
+
+#### Submit your proposed changes 
 
 Once you're satisfied with your documentation changes, commit and propose them in line with the general process described above. Specifically for doc edits, it might look like this:
 
@@ -143,7 +157,7 @@ Once you're satisfied with your documentation changes, commit and propose them i
 -   Review and test the changes in your fork.
 -   If all looks good, propose a pull request into the [FINOS Legend GitHub Repo](https://github.com/finos/legend) from your fork.
 
-### Docusaurus
+## Docusaurus
 
 To learn more about Docusaurus, read the following resources:
 

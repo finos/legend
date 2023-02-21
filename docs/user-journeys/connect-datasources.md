@@ -41,7 +41,7 @@ _Coming soon_
 
 - Tutorial: _coming soon_
 - Showcase project: 
-    - [Service store showcase project](../tutorials/studio-servicestore) tutorial
+    - [Service Store showcase project](../showcases/showcase-projects.md/#service-store)
 
 ## External formats & Bindings
 

@@ -21,7 +21,7 @@ This tutorial demonstrates the use of the [Service Store](../overview/legend-fea
 
 ### Showcase project
   
-[Service Store showcase project](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-service-store) 
+[Service Store showcase project](../showcases/showcase-projects.md/#service-store) 
 
 ## Overview 
 
