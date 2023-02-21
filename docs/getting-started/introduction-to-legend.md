@@ -1,7 +1,7 @@
 ---
 id: introduction-to-legend
-title: Get started
-sidebar_label: Get started
+title: Get Started
+sidebar_label: Get Started
 ---
 ## Introductory Videos
 

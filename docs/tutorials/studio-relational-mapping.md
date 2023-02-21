@@ -1,7 +1,7 @@
 ---
 id: studio-relational-mapping
 title: Create a Relational Mapping
-sidebar_label: Relational mapping
+sidebar_label: Relational Mapping
 ---
 
 ## Create a Relational Database

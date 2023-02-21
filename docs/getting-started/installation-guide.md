@@ -1,6 +1,6 @@
 ---
 id: installation-guide
-title: Installation guide
+title: Installation Guide
 sidebar_label: Installation Guide
 ---
 There are a few different options to install and use Legend. They are listed below in increasing order of integration and installation complexity.
