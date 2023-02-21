@@ -1,13 +1,16 @@
 ---
 id: legend-media
 title: Legend in the Media
-sidebar_label: Legend in the Media
+sidebar_label: Media
 ---
 
 ## Talks and Conferences
 
 ### [AWS re:Invent 2022 - Cloudifying our Data Stack at Goldman Sachs](https://www.youtube.com/watch?v=pnPHEOlRcHQ)
 Neema Raphael, Goldman Sachs (December 2022)
+
+### [Hasura - Solving Data Access & Data Management with GraphQL APIs at Goldman Sachs](https://hasura.io/enterprisegraphql/solving-data-access-and-data-management-with-graphql-apis-at-goldman-sachs/?aliId=success_submit)
+Pierre de Belen & Beeke-Marie Nelke, Goldman Sachs (November 2021)
 
 ### [Consuming Legend Data Models & Services Using BI, Python/ML & other Tools](https://www.youtube.com/watch?v=rm-mAohz6NQ)
 Andrew Ormerod & John Pentelow, Goldman Sachs (July 2022)

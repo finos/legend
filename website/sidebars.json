@@ -5,10 +5,11 @@
       "overview/use-cases",
       "overview/architecture"
     ],
-    "Getting Started": [
+    "Get Started: Studio": [
       "getting-started/introduction-to-legend",
       "getting-started/installation-guide"
     ],
+<<<<<<< HEAD
     "Tutorials": [
       "tutorials/studio-tutorial",
       "tutorials/query-tutorial",
@@ -17,12 +18,27 @@
       "tutorials/servicestore-tutorial",
       "tutorials/graphql-tutorial",
       "tutorials/serviceexecution-tutorial"
+=======
+    "Studio Tutorial": [
+      "tutorials/studio-create-model",
+      "tutorials/studio-create-diagram",
+      "tutorials/studio-create-data-element",
+      "tutorials/studio-m2m-mapping",
+      "tutorials/studio-relational-mapping",
+      "tutorials/studio-flat-data-schema",
+      "tutorials/studio-project-dependencies",
+      "tutorials/studio-file-generation",
+      "tutorials/studio-sdlc"
+    ],
+    "Query Tutorial": [
+      "tutorials/query-tutorial"
+>>>>>>> ed433db (update site structure)
     ],
     "Concepts": [
       "concepts/legend-concepts",
       "concepts/data-modeling-concepts"
     ],
-    "Reference Documentation": [
+    "Reference Docs": [
       "reference/legend-language",
       "reference/released-functions",
       "reference/upcoming-functions",
@@ -30,7 +46,7 @@
       "reference/bindings",
       "reference/query-protocol"
     ],
-    "Release Notes": [
+    "Releases": [
       "release/release-2022-10-25",
       "release/release-2022-08-18",
       "release/release-2022-07-15",
@@ -39,12 +55,12 @@
       "release/release-2022-04-26",
       "release/release-2021-10-18"
     ],
-    "Case studies": ["case-studies/legend-case-studies"],
     "Community": [
       "community/contribute-to-legend",
-      "community/legend-roadmap",
       "community/get-help-from-community",
+      "community/legend-roadmap",
       "community/legend-media",
+      "community/case-studies",
       "community/terms-of-service"
     ]
   }
