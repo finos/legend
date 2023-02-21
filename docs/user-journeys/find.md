@@ -8,9 +8,7 @@ sidebar_label: Find Data Models
 
 Intuitively find and query data models relevant to your use case
 
-_TODO: describe user journey_
-
-_TODO: link to Showcase project_
+<TODO: add user journey flow>
 
 ### Features
 - [Data Space](../tutorials/query-dataspace.md)
@@ -31,6 +29,41 @@ _TODO: link to Showcase project_
 - _coming soon_
 
 ## More
-- [What is a Data Space?](../concepts/legend-concepts.md/#dataspace)
+- [What is a Data Space?](../concepts/legend-glossary.md/#dataspace)
 - [Legend Tutorials](../tutorials/studio-create-model.md) 
 - [Legend Glossary](../overview/legend-glossary.md)
+
+
+---------------------
+
+## Overview 
+
+<TODO: User journey description>
+
+<TODO: add user journey flow>
+ 
+### Features
+
+- _Coming soon_
+
+### Showcase projects
+
+- _Coming soon_
+
+## Sub-user journey
+
+- Tutorial: _coming soon_
+- Showcase project: _coming soon_
+
+### Sub-sub-user journey
+- Tutorial: _coming soon_
+- Showcase project: _coming soon_
+
+## More
+- [Legend Glossary](../overview/legend-glossary.md)
+- [Showcase projects](../showcases/showcase-projects.md)
+- [Reference documentation](../reference/legend-language.md)
+- [Studio tutorials](../tutorials/studio-create-model.md)
+- [Query tutorials](../tutorials/query-tutorial.md)
+
+

@@ -8,7 +8,7 @@ sidebar_label: Fetch Structure
 
 _Coming soon._
 
-### Result Set mMdifiers
+### Result Set Modifiers
 
 _Coming soon._
 

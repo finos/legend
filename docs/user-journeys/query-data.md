@@ -1,14 +1,13 @@
 ---
 id: query-data
-title: Query Data
-sidebar_label: Query Data Sources
+title: Query Modelled Data
+sidebar_label: Query Modelled Data
 ---
 
 ## Overview 
 
-_TODO: add image or diagram representing user journey flow_
-
-_TODO: describe user journey, what you can do with Legend + hyperlink to tutorials + why this user journey is relevant/impactful_
+<TODO: user journey description>
+<TODO: add user journey flow>
 
 ### Features
 - [Query Builder](../overview/legend-glossary/#query-builder)

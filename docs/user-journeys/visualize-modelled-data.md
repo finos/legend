@@ -1,7 +1,7 @@
 ---
-id: analyze-data
-title: Analyze Data
-sidebar_label: Analyze Data
+id: visualize-modelled-data
+title: Visualize Modelled Data
+sidebar_label: Visualize Modelled Data
 ---
 
 ## Overview 

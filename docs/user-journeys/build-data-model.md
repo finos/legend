@@ -1,7 +1,7 @@
 ---
-id: describe-data
+id: build-data-model
 title: Create a Data Model to Describe Business Concepts and Relationships
-sidebar_label: Describe Data Models
+sidebar_label: Build Data Models
 ---
 
 ## Overview 
@@ -13,15 +13,12 @@ Data models also improve data quality by re-using agreed-upon concepts across te
 _TODO: add user journey flow_
 
 ### Features
-- [Package](../tutorials/studio-package.md.md)
-- [Model](../tutorials/studio-create-model.md)
-- [Class](../tutorials/studio-class.md)
-- [Enumeration](../tutorials/studio-enumeration.md)
-- [Profile](../tutorials/studio-profile.md)
-- [Association](../tutorials/studio-association.md)
-- [Diagram](../tutorials/studio-diagram.md)
-- [Workspace](../tutorials/studio-workspace.md)
-- [SDLC](../tutorials/studio-sdlc.md)
+- [Class Editor](../overview/legend-glossary.md/#class-explorer)
+- [Enumeration](../overview/legend-glossary.md/#)
+- [Profile](../overview/legend-glossary.md/#profile)
+- [Association](../overview/legend-glossary.md/#association)
+- [Diagram](../overview/legend-glossary.md/#diagram)
+- [Workspace](../overview/legend-glossary.md/#workspace)
 
 ### Showcase projects
 
@@ -29,29 +26,39 @@ Start your data modeling journey by reviewing sample [showcase projects](../show
 - [Logical Modeling (basic) showcase project](../showcases/showcase-projects.md/#logical-modeling-basic)
 - [Logical Modeling (advanced) showcase project](../showcases/showcase-projects.md/#logical-modeling-advanced)
 
-## Describe and link business concepts in a data model
-
-- Tutorials:
-    - [create a package](../tutorials/studio-package.md) tutorial
-    - [create a workspace](../tutorials/studio-workspace.md) tutorial
-    - [create a class](../tutorials/studio-class.md) tutorial  
-    - [create a profile](../tutorials/studio-profile.md) tutorial  
-    - [create an association](../tutorials/studio-association.md) tutorial  
-    - [create a diagram](../tutorials/studio-diagram.md) tutorial
+## Build a data model
 
 ### Create a project where your data model is stored
 
 - Tutorial: _coming soon_
 - Showcase project: _coming soon_
 
+### Create a workspace
+
+- Tutorials:
+    - [create a package](../tutorials/studio-package.md)
+    - [create a workspace](../tutorials/studio-workspace.md)
+
+- Showcase project: _coming soon_
+
 ### Create a data model to describe business concepts and how they relate to eachother in a data model. 
 
-- Tutorial: _coming soon_
+- Tutorial: 
+    - [create a class](../tutorials/studio-class.md)  
+    - [create a profile](../tutorials/studio-profile.md)  
+    - [create an association](../tutorials/studio-association.md) 
+    - [create an enumeration](../tutorials/studio-enumeration.md)  
 - Showcase project: _coming soon_
 
 ### Create a Relationship between two data concepts and navigate bi-directionally when querying your data
 
 - Tutorial: _coming soon_
+- Showcase project: _coming soon_
+
+### Create a data model drag & drop style
+- Tutorial: 
+    - [create a diagram](../tutorials/studio-diagram.md)
+
 - Showcase project: _coming soon_
 
 ## Manage your data model

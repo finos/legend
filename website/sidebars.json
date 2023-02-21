@@ -2,19 +2,21 @@
   "docs": {
     "Overview": [
       "overview/legend-overview",
-      "overview/architecture",
+      "overview/legend-features",
       "overview/legend-glossary"
     ],
     "User Journeys": [
-      "user-journeys/describe-data",
-      "user-journeys/find",
-      "user-journeys/transform-reuse-share",
+      "user-journeys/build-data-model",
+      "user-journeys/publish-model-changes", 
+      "user-journeys/generate-model-schema", 
+      "user-journeys/consume-model-artifacts",
       "user-journeys/connect-datasources",
       "user-journeys/query-data",
-      "user-journeys/generate-apis",
-      "user-journeys/analyze-data",
-      "user-journeys/test-troubleshoot",
-      "user-journeys/developer-journey"
+      "user-journeys/map-models",
+      "user-journeys/create-apis",
+      "user-journeys/find",
+      "user-journeys/visualize-modelled-data",
+      "user-journeys/test-troubleshoot"
     ],
     "Getting Started": [
       "getting-started/introduction-to-legend",
@@ -50,7 +52,7 @@
       "tutorials/studio-sdlc"
     ],
     "Query Tutorials": [
-      "tutorials/query-tutorial",
+      "tutorials/query-builder",
       "tutorials/query-dataspace",
       "tutorials/query-execution-context",
       "tutorials/query-explorer",

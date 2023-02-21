@@ -1,5 +1,5 @@
 ---
-id: query-tutorial
+id: query-builder
 title: Build and Run Queries
 sidebar_label: Build/Run Query 
 ---

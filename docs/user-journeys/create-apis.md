@@ -1,13 +1,12 @@
 ---
-id: generate-apis
+id: create-apis
 title: Generate APIs to programmatically Send and Receive Data to/from Multiple Sources
-sidebar_label: Generate APIs
+sidebar_label: Create Data Model APIs
 ---
 
 ## Overview 
 
-<TODO: add description>
-
+<TODO: user journey description>
 <TODO: add user journey flow>
 
 ### Features
@@ -36,4 +35,11 @@ sidebar_label: Generate APIs
 
 ## More
 - [Legend Glossary](../overview/legend-glossary.md)
+- [Showcase projects](../showcases/showcase-projects.md)
+- [Reference documentation](../reference/legend-language.md)
+- [Studio tutorials](../tutorials/studio-create-model.md)
+- [Query tutorials](../tutorials/query-tutorial.md)
+
+
+
 

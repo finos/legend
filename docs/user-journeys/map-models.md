@@ -1,14 +1,14 @@
 ---
-id: transform-reuse-share
-title: Transform, Re-use, and Share Models
-sidebar_label: Transform, Re-use and Share Models
+id: map-models
+title: Connect your Model to other Data Models
+sidebar_label: Map to Data Models
 ---
 
 ## Overview 
 
 Discover, access and re-use existing models, classes, mappings, runtimes, functions. Recommend a way for others to access your models, classes, mappings, runtimes, functions, and share helpful information about your data with consumers.
 
-_TODO: add user journey flow_
+<TODO: add user journey flow>
 
 ### Features
 - [Model to Model (M2M) Mapping](../overview/legend-glossary.md/#model-to-model-mapping)

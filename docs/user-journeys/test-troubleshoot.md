@@ -1,13 +1,12 @@
 ---
 id: test-troubleshoot
 title: Test and Troubleshoot Models, Queries and Services 
-sidebar_label: Test & Troubleshoot
+sidebar_label: Test & Troubleshoot Data Models
 ---
 
 ## Overview
 
-<TODO: add description>
-
+<TODO: user journey description>
 <TODO: add user journey flow>
 
 ### Features
@@ -36,6 +35,11 @@ sidebar_label: Test & Troubleshoot
 - Tutorials: _coming soon_
 - Showcase project: _coming soon_
 
-
 ## More
 - [Legend Glossary](../overview/legend-glossary.md)
+- [Showcase projects](../showcases/showcase-projects.md)
+- [Reference documentation](../reference/legend-language.md)
+- [Studio tutorials](../tutorials/studio-create-model.md)
+- [Query tutorials](../tutorials/query-tutorial.md)
+
+

@@ -6,7 +6,7 @@ sidebar_label: Developer
 
 ## Overview
 
-<TODO: add description>
+<TODO: User journey description>
 
 <TODO: add user journey flow>
 
