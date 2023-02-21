@@ -57,8 +57,6 @@ See the [tutorial to define project dependencies](../tutorials/studio-project-de
 ## Service Editor
 
 The service editor has two main panels: general and execution. The general panel has basic metadata about your service. The execution panel has queries, and the ability to edit queries using the query builder. From there, you can also execute and register the service.
-<<<<<<< HEAD
-=======
 
 See the [tutorial to create services](../tutorials/studio-create-service.md).
 
@@ -75,4 +73,3 @@ Connect data to a data model to start querying data leveraging the business-frie
 See the [tutorial to create relational mappings](../tutorials/studio-relational-mapping.md).
 
 
->>>>>>> ed433db (update site structure)

@@ -1,17 +1,10 @@
 ---
 id: query-tutorial
 title: Legend Query Tutorial
-<<<<<<< HEAD
-sidebar_label: Query
----
-## Query Builder
-
-=======
 sidebar_label: Build and Execute a Query 
 ---
 
 ## Build a Query
->>>>>>> ed433db (update site structure)
 You can build a query directly in Alloy Studio using its drag-and-drop environment, Query Builder. To create a query, right-click any class with mapped data and drag-and-drop the fields you want to the central panel. To execute the query, click `play`. 
 
 ## Create a Query
@@ -20,12 +13,7 @@ _COMING SOON_
 
 ## Core Features
 
-<<<<<<< HEAD
-### Class Explorer
-
-=======
 ### Class Explorer 
->>>>>>> ed433db (update site structure)
 _COMING SOON_
 
 ### Function Explorer
@@ -62,12 +50,8 @@ You can add a watermark to your query through the advanced options tab. If a wat
 
 ![Watermark](../assets/query-builder/watermark.gif)
 
-<<<<<<< HEAD
-## Fetch Structure - Tabular Data Structure
-=======
 
 ## Fetch Structure - Tabular Data Structure 
->>>>>>> ed433db (update site structure)
 
 ### Projection Columns
 
@@ -82,12 +66,7 @@ You may add a filter that will be applied to your Tabular Data Structure Columns
 ![OLAP with Post Filter](../assets/query-builder/post-filter-derived.gif)
 
 ### OLAP
-<<<<<<< HEAD
-
-Olap let you add [window](https://mode.com/sql-tutorial/sql-window-functions/) columns to your query. 
-=======
 OLAP lets you add [window](https://mode.com/sql-tutorial/sql-window-functions/) columns to your query. 
->>>>>>> ed433db (update site structure)
 See: 
 
 ![Create Simple OLAP](../assets/query-builder/olap-simple.gif)
@@ -98,11 +77,7 @@ See:
 
 _COMING SOON_
 
-<<<<<<< HEAD
-## Fetch Structure - Graph Fetch
-=======
 ## Fetch Structure - Graph Fetch 
->>>>>>> ed433db (update site structure)
 
 _COMING SOON_
 

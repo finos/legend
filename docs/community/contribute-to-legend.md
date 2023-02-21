@@ -3,17 +3,6 @@ id: contribute-to-legend
 title: Contribute
 sidebar_label: Contribute
 ---
-<<<<<<< HEAD
-There are many ways to contribute to Legend and many of them don't involve writing any code. Here are a few ideas to get started:
-
-1.  [Contribute code](contribute-to-legend.md#contribute-code) to any of the Legend components by submitting a pull request.
-
-2.  Start using Legend Studio to provide feedback, [and contribute to, existing models](contribute-to-legend.md#contribute-to-models). Request access to the modeling instance at https: and go [through our Getting started guide](../tutorials/studio-tutorial.md). If you encounter an issue, let us know by [opening an issue](https://github.com/finos/legend/issues/new/choose).
-
-3.  [Help build out the documentation](contribute-to-legend.md#contribute-documentation). If you find anything that's confusing or can be improved, submit a pull request. 
-
-4.  [Contribute issues: identify bugs, suggest new features, and provide feedback on prioritization](contribute-to-legend.md#contribute-issues). Look through the [open issues](https://github.com/finos/legend/issues?q=is%3Aissue+is%3Aopen+). Provide workarounds, ask for clarification, or suggest labels. If you find an issue you'd like to fix, [open a pull request](https://github.com/finos/legend/pulls). Start with issues tagged as **Good first issue**. Take a look at the features requested by others in the community and consider opening a pull request if you see something you want to work on.
-=======
 
 ## Ways to Contribute
 There are many ways to contribute to Legend and many of them don't involve writing any code. Here are a few ideas to get started:
@@ -31,7 +20,6 @@ If you find anything that's confusing or can be improved, submit a pull request.
 
 ### 4. Contribute issues 
 [Contribute issues: identify bugs, suggest new features, and provide feedback on prioritization](contribute-to-legend.md#contribute-issues). Look through the [open issues](https://github.com/finos/legend/issues?q=is%3Aissue+is%3Aopen+). Provide workarounds, ask for clarification, or suggest labels. If you find an issue you'd like to fix, [open a pull request](https://github.com/finos/legend/pulls). Start with issues tagged as **Good first issue**. Take a look at the features requested by others in the community and consider opening a pull request if you see something you want to work on.
->>>>>>> 41b3880 (fix typos)
 
 ## Prerequisites
 

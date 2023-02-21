@@ -9,16 +9,6 @@
       "getting-started/introduction-to-legend",
       "getting-started/installation-guide"
     ],
-<<<<<<< HEAD
-    "Tutorials": [
-      "tutorials/studio-tutorial",
-      "tutorials/query-tutorial",
-      "tutorials/logicalmodeling-tutorial",
-      "tutorials/relationalmapping-tutorial",
-      "tutorials/servicestore-tutorial",
-      "tutorials/graphql-tutorial",
-      "tutorials/serviceexecution-tutorial"
-=======
     "Studio Tutorial": [
       "tutorials/studio-create-model",
       "tutorials/studio-create-diagram",
@@ -32,7 +22,6 @@
     ],
     "Query Tutorial": [
       "tutorials/query-tutorial"
->>>>>>> ed433db (update site structure)
     ],
     "Concepts": [
       "concepts/legend-concepts",

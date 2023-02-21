@@ -85,10 +85,6 @@ Won ["Best Collaboration Initiative"](https://www.aftas.org/past-winners) for pa
 
 -   Ephrim Stanley from Goldman Sachs won the ["Individual Newcomer"](https://www.finos.org/blog/congratulations-to-the-finos-americas-member-and-community-award-winners-2021) award for being the individual most active on a FINOS project in the previous year.
 
-<<<<<<< HEAD
-## Podcasts
-=======
->>>>>>> 41b3880 (fix typos)
 
 _COMING SOON_
 

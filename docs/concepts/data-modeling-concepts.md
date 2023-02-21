@@ -52,12 +52,7 @@ A data model has built-in governance features, called _data quality controls_. Y
 
 Super types show a relationship between classes or business concepts within a model. Add a super type to the model to show a hierarchical relationship between classes or business concepts. 
 
-<<<<<<< HEAD
-## Data Types
-
-=======
 [Create a super type](../tutorials/studio-create-model.md/#supertype).
 
 ## Data Types 
->>>>>>> ed433db (update site structure)
 _COMING SOON_
