@@ -38,7 +38,7 @@ Create a sample query to test if the model-to-model mapping executes correctly:
 3. Create a very simple query. Make sure to select the <kbd>Graph fetch</kbd> option for model-to-model queries. Studio does not currently support Projection queries on top of model-to-model mappings. Drag and drop the **name** property from the explorer panel into the fetch structure panel.
 4. Hit the <kbd>Save query</kbd> button.
 
-_Refer to the [create a query](../tutorials/query-tutorial.md/#create-a-query) section of the docs for more detailed information about the **Query Editor**_
+_Refer to the [create a query](../tutorials/query-builder.md/#create-a-query) section of the docs for more detailed information about the **Query Editor**_
 
 Studio generates sample input data for your defined query. You can also modify it if you want:
 
@@ -80,5 +80,5 @@ Studio will show a **defect** with the details about the violated constraint. Co
 - [Legend Features](../overview/legend-features.md)
 - [Legend Glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language.md)
-- [Studio tutorials](../tutorials/studio-create-model.md)
+- [Studio tutorials](../tutorials/studio-workspace.md)
 - [Query tutorials](../tutorials/query-builder.md)

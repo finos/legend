@@ -1,7 +1,7 @@
 {
   "unversionedId": "reference/upcoming-functions",
   "id": "reference/upcoming-functions",
-  "title": "Upcoming functions",
+  "title": "Upcoming Functions",
   "description": "acos",
   "source": "@site/../docs/reference/upcoming-functions.md",
   "sourceDirName": "reference",
@@ -12,11 +12,12 @@
   "version": "current",
   "frontMatter": {
     "id": "upcoming-functions",
-    "title": "Upcoming functions"
+    "title": "Upcoming Functions",
+    "sidebar_label": "Upcoming Functions"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Released functions",
+    "title": "Released Functions",
     "permalink": "/docs/reference/released-functions"
   },
   "next": {

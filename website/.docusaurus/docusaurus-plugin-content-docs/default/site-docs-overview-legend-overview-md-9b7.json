@@ -2,7 +2,7 @@
   "unversionedId": "overview/legend-overview",
   "id": "overview/legend-overview",
   "title": "What is Legend?",
-  "description": "Legend is a data platform that provides a single place to access all data via APIs or self-service queries, with built-in governance!",
+  "description": "Legend is a data platform that provides a single place to access data via APIs or self-service queries, with built-in governance!",
   "source": "@site/../docs/overview/legend-overview.md",
   "sourceDirName": "overview",
   "slug": "/overview/legend-overview",
@@ -17,7 +17,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "Use Cases",
-    "permalink": "/docs/overview/use-cases"
+    "title": "Legend Features",
+    "permalink": "/docs/overview/legend-features"
   }
 }

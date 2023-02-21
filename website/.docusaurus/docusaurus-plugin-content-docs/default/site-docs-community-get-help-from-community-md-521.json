@@ -2,7 +2,7 @@
   "unversionedId": "community/get-help-from-community",
   "id": "community/get-help-from-community",
   "title": "Get Help from the Legend Community",
-  "description": "Get Help",
+  "description": "FAQs",
   "source": "@site/../docs/community/get-help-from-community.md",
   "sourceDirName": "community",
   "slug": "/community/get-help-from-community",
@@ -17,11 +17,11 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Roadmap",
-    "permalink": "/docs/community/legend-roadmap"
+    "title": "Contribute",
+    "permalink": "/docs/community/contribute-to-legend"
   },
   "next": {
-    "title": "Legend in the Media",
-    "permalink": "/docs/community/legend-media"
+    "title": "Roadmap",
+    "permalink": "/docs/community/legend-roadmap"
   }
 }

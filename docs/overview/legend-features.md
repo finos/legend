@@ -252,6 +252,6 @@ A workspace is where you create your data models. It's a copy (also known as a b
 - [Legend Glossary](../overview/legend-glossary.md)
 - [Showcase projects](../showcases/showcase-projects.md)
 - [Reference documentation](../reference/legend-language.md)
-- [Studio tutorials](../tutorials/studio-create-model.md)
+- [Studio tutorials](../tutorials/studio-workspace.md)
 - [Query tutorials](../tutorials/query-builder.md)
 

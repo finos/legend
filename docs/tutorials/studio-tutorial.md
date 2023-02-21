@@ -581,7 +581,7 @@ In the **General** tab of the Service Editor, users can specify metadata of thei
 
 ### Execution Tab
 
-In the execution tab, users can create and edit their service query. By hitting the pencil icon button, users can edit the query using the [Query Builder](./query-tutorial.md). Users can make changes to the query either in the user-friendly form mode or in text mode. 
+In the execution tab, users can create and edit their service query. By hitting the pencil icon button, users can edit the query using the [Query Builder](./query-builder.md). Users can make changes to the query either in the user-friendly form mode or in text mode. 
 
 Additonally the bottom panel lets you define your execution context which represents the mapping and runtime used when executing your query, 
 

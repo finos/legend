@@ -24,6 +24,7 @@ website/build/
 website/node_modules
 website/i18n/*
 website/package-lock.json
+website/.docusaurus
 
 # Ignore auto generated contribute.md and roadmap.md file
 docs/contribute.md

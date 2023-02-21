@@ -27,7 +27,7 @@ _Coming soon_
 ## Query and edit a service query in the Query Editor
 
 - Tutorial:
-    - [Edit service query](../tutorials/query-tutorial.md/#edit-a-service-query)
+    - [Edit service query](../tutorials/query-builder.md/#edit-a-service-query)
 - Showcase project: _coming soon_
 
 ## Retrieve services metadata via API endpoints

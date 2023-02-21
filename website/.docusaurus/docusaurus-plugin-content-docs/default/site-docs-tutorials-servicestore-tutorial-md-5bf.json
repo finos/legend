@@ -10,14 +10,5 @@
   "draft": false,
   "tags": [],
   "version": "current",
-  "frontMatter": {},
-  "sidebar": "docs",
-  "previous": {
-    "title": "Relational Mapping",
-    "permalink": "/docs/tutorials/relationalmapping-tutorial"
-  },
-  "next": {
-    "title": "GraphQL",
-    "permalink": "/docs/tutorials/graphql-tutorial"
-  }
+  "frontMatter": {}
 }

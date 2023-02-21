@@ -1,7 +1,7 @@
 {
   "unversionedId": "getting-started/introduction-to-legend",
   "id": "getting-started/introduction-to-legend",
-  "title": "Introduction to Legend",
+  "title": "Get Started",
   "description": "Introductory Videos",
   "source": "@site/../docs/getting-started/introduction-to-legend.md",
   "sourceDirName": "getting-started",
@@ -12,13 +12,13 @@
   "version": "current",
   "frontMatter": {
     "id": "introduction-to-legend",
-    "title": "Introduction to Legend",
-    "sidebar_label": "Introduction to Legend"
+    "title": "Get Started",
+    "sidebar_label": "Get Started"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Architecture",
-    "permalink": "/docs/overview/architecture"
+    "title": "Test & Troubleshoot Data Models",
+    "permalink": "/docs/user-journeys/test-troubleshoot"
   },
   "next": {
     "title": "Installation Guide",

@@ -17,8 +17,8 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Stores",
-    "permalink": "/docs/reference/stores"
+    "title": "External Format",
+    "permalink": "/docs/reference/external-format"
   },
   "next": {
     "title": "Query Protocol",

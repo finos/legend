@@ -2,7 +2,7 @@
   "unversionedId": "reference/query-protocol",
   "id": "reference/query-protocol",
   "title": "Query Protocol",
-  "description": "SQL",
+  "description": "Queries",
   "source": "@site/../docs/reference/query-protocol.md",
   "sourceDirName": "reference",
   "slug": "/reference/query-protocol",
