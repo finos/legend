@@ -8,13 +8,9 @@ sidebar_label: Share
 
 Connect your data model to data and build a service on top of it to start querying.
 
-### Connect your data model to a Relational data store
+### Connect your data model to a relational data store
 
 See the [relational mapping](../tutorials/studio-relational-mapping.md) and [relational test data](../tutorials/studio-create-test-data.md/#relational) tutorials.
-
-### Define a data service querying your data model and define tests to ensure it does not break
-
-See the [services](../tutorials/services) tutorial.
 
 ### Define how your datasets are transformed and stored
 
@@ -55,5 +51,5 @@ See the [model discovery](../tutorials/studio-find-models.md) tutorial.
 See the [function definition](../tutorials/studio-define-function.md) tutorial.
 
 ## More
-- [Studio Tutorials](../tutorials/studio-create-model.md) 
-- [Studio Concepts](../concepts/legend-studio-concepts.md)
+- [Legend Tutorials](../tutorials/studio-create-model.md) 
+- [Legend Concepts](../concepts/legend-studio-concepts.md)

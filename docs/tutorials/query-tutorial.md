@@ -9,12 +9,17 @@ You can build a query directly in Alloy Studio using its drag-and-drop environme
 
 ## Create a Query
 
-_COMING SOON_
+_Coming soon._
+
+## Test Querying your Data model
+
+_Coming soon._
 
 ## Core Features
 
 ### Class Explorer 
-_COMING SOON_
+
+_Coming soon._
 
 ### Function Explorer
 
@@ -37,8 +42,7 @@ Constants are static values set to a variable name that can be leveraged within 
 ![Add a constant for milestone value](../assets/query-builder/constants-milestoning.gif)
 
 ### Filter
-
-_COMING SOON_
+_Coming soon._
 
 ### Milestoning
 
@@ -55,7 +59,7 @@ You can add a watermark to your query through the advanced options tab. If a wat
 
 ### Projection Columns
 
-_COMING SOON_
+_Coming soon._
 
 ### Post Filter
 
@@ -75,11 +79,11 @@ See:
 
 ### Result Modifiers
 
-_COMING SOON_
+_Coming soon._
 
 ## Fetch Structure - Graph Fetch 
 
-_COMING SOON_
+_Coming soon._
 
 ## Executing Queries
 

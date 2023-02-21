@@ -29,7 +29,6 @@
       "tutorials/studio-create-test-data",
       "tutorials/studio-run-tests",
       "tutorials/studio-unit-tests",
-      "tutorials/studio-create-service",
       "tutorials/studio-define-dataset-transformation-storage",
       "tutorials/studio-create-flat-data-schema",
       "tutorials/studio-project-dependencies",
@@ -40,7 +39,16 @@
     ],
     "Query Tutorial": [
       "tutorials/query-tutorial",
-      "tutorials/query-create-dataspace"
+      "tutorials/query-build-run-parameter-query",
+      "tutorials/query-create-dataspace",
+      "tutorials/query-edit-service-query",
+      "tutorials/query-specific-dates-times",
+      "tutorials/query-transform-datasets",
+      "tutorials/query-filter"
+    ],
+    "Services Tutorial": [
+      "tutorials/services-create-service",
+      "tutorials/services-retrieve-service-metadata"
     ],
     "Concepts": [
       "concepts/legend-concepts"

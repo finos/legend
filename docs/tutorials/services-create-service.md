@@ -1,5 +1,5 @@
 ---
-id: studio-create-service
+id: services-create-service
 title: Create a Service
 sidebar_label: Create Service 
 ---

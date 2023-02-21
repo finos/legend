@@ -49,7 +49,7 @@ See the [SDLC tutorial](../tutorials/studio-sdlc/#troubleshoot-issues-with-your-
 See the [SDLC tutorial](../tutorials/studio-sdlc/#troubleshoot-issues-with-your-data-model-query-or-service).
 
 ## More
-- [Studio Tutorials](../tutorials/studio-create-model.md) 
-- [Studio Concepts](../concepts/legend-studio-concepts.md)
+- [Legend Tutorials](../tutorials/studio-create-model.md) 
+- [Legend Concepts](../concepts/legend-studio-concepts.md)
 
 

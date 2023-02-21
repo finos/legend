@@ -16,7 +16,7 @@ See the [workspace creation](../tutorials/studio-create-model.md/#workspace) tut
 
 ### Describe business concepts and how they relate to each other in a data model
 
-See the [data model creation](../tutorials/studio-create-model.md) tutorial and review [data modeling and Studio concepts](../concepts/legend-concepts).
+See the [model creation](../tutorials/studio-create-model.md) tutorial and review [data modeling and Studio concepts](../concepts/legend-concepts).
 
 ### Create an association
 Create a relationship between two data concepts and navigate bi-directionally when querying your data
@@ -32,5 +32,5 @@ See the [diagram creation](../tutorials/studio-create-diagram) tutorial.
 See the [model information and workspace management](../tutorials/studio-manage-model-information.md) tutorial.
 
 ## More
-- [Studio Tutorials](../tutorials/studio-create-model.md) 
-- [Studio Concepts](../concepts/legend-studio-concepts.md)
+- [Legend Tutorials](../tutorials/studio-create-model.md) 
+- [Legend Concepts](../concepts/legend-studio-concepts.md)
