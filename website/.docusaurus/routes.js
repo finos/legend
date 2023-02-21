@@ -4,52 +4,52 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 export default [
   {
     path: '/__docusaurus/debug',
-    component: ComponentCreator('/__docusaurus/debug', '513'),
+    component: ComponentCreator('/__docusaurus/debug', 'cef'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/config',
-    component: ComponentCreator('/__docusaurus/debug/config', '89f'),
+    component: ComponentCreator('/__docusaurus/debug/config', 'c8d'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/content',
-    component: ComponentCreator('/__docusaurus/debug/content', 'ff6'),
+    component: ComponentCreator('/__docusaurus/debug/content', 'f2b'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/globalData',
-    component: ComponentCreator('/__docusaurus/debug/globalData', '66c'),
+    component: ComponentCreator('/__docusaurus/debug/globalData', '1ff'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/metadata',
-    component: ComponentCreator('/__docusaurus/debug/metadata', '0f9'),
+    component: ComponentCreator('/__docusaurus/debug/metadata', 'c07'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/registry',
-    component: ComponentCreator('/__docusaurus/debug/registry', 'a83'),
+    component: ComponentCreator('/__docusaurus/debug/registry', 'e94'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/routes',
-    component: ComponentCreator('/__docusaurus/debug/routes', '4ae'),
+    component: ComponentCreator('/__docusaurus/debug/routes', 'fbd'),
     exact: true
   },
   {
     path: '/releases',
-    component: ComponentCreator('/releases', 'f4d'),
+    component: ComponentCreator('/releases', '568'),
     exact: true
   },
   {
     path: '/search',
-    component: ComponentCreator('/search', 'c6c'),
+    component: ComponentCreator('/search', '09d'),
     exact: true
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '09c'),
+    component: ComponentCreator('/docs', '302'),
     routes: [
       {
         path: '/docs/case-studies/legend-case-studies',
@@ -184,6 +184,30 @@ export default [
         sidebar: "docs"
       },
       {
+        path: '/docs/release/release-2022-06-23',
+        component: ComponentCreator('/docs/release/release-2022-06-23', '493'),
+        exact: true,
+        sidebar: "docs"
+      },
+      {
+        path: '/docs/release/release-2022-07-15',
+        component: ComponentCreator('/docs/release/release-2022-07-15', 'db0'),
+        exact: true,
+        sidebar: "docs"
+      },
+      {
+        path: '/docs/release/release-2022-08-18',
+        component: ComponentCreator('/docs/release/release-2022-08-18', '504'),
+        exact: true,
+        sidebar: "docs"
+      },
+      {
+        path: '/docs/release/release-2022-10-25',
+        component: ComponentCreator('/docs/release/release-2022-10-25', '7dd'),
+        exact: true,
+        sidebar: "docs"
+      },
+      {
         path: '/docs/sdlc/project-structure',
         component: ComponentCreator('/docs/sdlc/project-structure', '7f5'),
         exact: true
@@ -239,7 +263,7 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', 'f5e'),
+    component: ComponentCreator('/', 'd96'),
     exact: true
   },
   {

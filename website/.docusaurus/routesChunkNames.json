@@ -1,64 +1,64 @@
 {
-  "/__docusaurus/debug-513": {
+  "/__docusaurus/debug-cef": {
     "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "plugin---docusaurus-debugd-15-2af"
+      "plugin": "plugin---docusaurus-debugbc-1-5c2"
     }
   },
-  "/__docusaurus/debug/config-89f": {
+  "/__docusaurus/debug/config-c8d": {
     "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "plugin---docusaurus-debugd-15-2af"
+      "plugin": "plugin---docusaurus-debugbc-1-5c2"
     }
   },
-  "/__docusaurus/debug/content-ff6": {
+  "/__docusaurus/debug/content-f2b": {
     "__comp": "__comp---theme-debug-contentba-8-ce7",
     "__context": {
-      "plugin": "plugin---docusaurus-debugd-15-2af"
+      "plugin": "plugin---docusaurus-debugbc-1-5c2"
     },
     "allContent": "allContent---docusaurus-debug-content-246-9aa"
   },
-  "/__docusaurus/debug/globalData-66c": {
+  "/__docusaurus/debug/globalData-1ff": {
     "__comp": "__comp---theme-debug-global-dataede-0fa",
     "__context": {
-      "plugin": "plugin---docusaurus-debugd-15-2af"
+      "plugin": "plugin---docusaurus-debugbc-1-5c2"
     }
   },
-  "/__docusaurus/debug/metadata-0f9": {
+  "/__docusaurus/debug/metadata-c07": {
     "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
     "__context": {
-      "plugin": "plugin---docusaurus-debugd-15-2af"
+      "plugin": "plugin---docusaurus-debugbc-1-5c2"
     }
   },
-  "/__docusaurus/debug/registry-a83": {
+  "/__docusaurus/debug/registry-e94": {
     "__comp": "__comp---theme-debug-registry-679-501",
     "__context": {
-      "plugin": "plugin---docusaurus-debugd-15-2af"
+      "plugin": "plugin---docusaurus-debugbc-1-5c2"
     }
   },
-  "/__docusaurus/debug/routes-4ae": {
+  "/__docusaurus/debug/routes-fbd": {
     "__comp": "__comp---theme-debug-routes-946-699",
     "__context": {
-      "plugin": "plugin---docusaurus-debugd-15-2af"
+      "plugin": "plugin---docusaurus-debugbc-1-5c2"
     }
   },
-  "/releases-f4d": {
+  "/releases-568": {
     "__comp": "__comp---site-src-components-releases-js-47-a-d1a",
     "__context": {
-      "plugin": "plugin---releasesc-77-be4"
+      "plugin": "plugin---releasesdaf-326"
     },
-    "releasesData": "releasesData---releases-5-fa-2ca"
+    "releasesData": "releasesData---releaseseab-7e8"
   },
-  "/search-c6c": {
+  "/search-09d": {
     "__comp": "__comp---theme-search-page-1-a-4-d6f",
     "__context": {
-      "plugin": "plugin---searchc-4-c-59a"
+      "plugin": "plugin---searchcc-2-813"
     }
   },
-  "/docs-09c": {
+  "/docs-302": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
-      "plugin": "plugin---docs-3-b-7-9b3"
+      "plugin": "plugin---docs-0-aa-8c2"
     },
     "versionMetadata": "versionMetadata---docs-935-398"
   },
@@ -150,6 +150,22 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-release-release-2022-05-053-c-8-2a5"
   },
+  "/docs/release/release-2022-06-23-493": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-release-release-2022-06-23-d-76-5da"
+  },
+  "/docs/release/release-2022-07-15-db0": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-release-release-2022-07-1569-b-f5d"
+  },
+  "/docs/release/release-2022-08-18-504": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-release-release-2022-08-184-a-4-1aa"
+  },
+  "/docs/release/release-2022-10-25-7dd": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-release-release-2022-10-25606-676"
+  },
   "/docs/sdlc/project-structure-7f5": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-sdlc-project-structuref-24-7b3"
@@ -186,10 +202,10 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-tutorials-studio-tutorial-3-fd-649"
   },
-  "/-f5e": {
+  "/-d96": {
     "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
     "__context": {
-      "plugin": "plugin---9-f-8-bef"
+      "plugin": "plugin---bbe-e22"
     },
     "config": "config---5-e-9-4f3"
   }

@@ -13,9 +13,9 @@
           "tagsPath": "/docs/tags",
           "isLast": true,
           "routePriority": -1,
-          "sidebarFilePath": "/Users/shoe/Documents/Github/legend/website/sidebars.json",
-          "contentPath": "/Users/shoe/Documents/Github/legend/docs",
-          "contentPathLocalized": "/Users/shoe/Documents/Github/legend/website/i18n/en/docusaurus-plugin-content-docs/current",
+          "sidebarFilePath": "/Users/aitana/Documents/legend/website/sidebars.json",
+          "contentPath": "/Users/aitana/Documents/legend/docs",
+          "contentPathLocalized": "/Users/aitana/Documents/legend/website/i18n/en/docusaurus-plugin-content-docs/current",
           "docs": [
             {
               "unversionedId": "case-studies/legend-case-studies",
@@ -437,8 +437,8 @@
                 "permalink": "/docs/reference/bindings"
               },
               "next": {
-                "title": "Release 2022-05-05",
-                "permalink": "/docs/release/release-2022-05-05"
+                "title": "Release 2022-10-25",
+                "permalink": "/docs/release/release-2022-10-25"
               }
             },
             {
@@ -593,12 +593,120 @@
               },
               "sidebar": "docs",
               "previous": {
-                "title": "Query Protocol",
-                "permalink": "/docs/reference/query-protocol"
+                "title": "Release 2022-06-23",
+                "permalink": "/docs/release/release-2022-06-23"
               },
               "next": {
                 "title": "Release 2022-04-26",
                 "permalink": "/docs/release/release-2022-04-26"
+              }
+            },
+            {
+              "unversionedId": "release/release-2022-06-23",
+              "id": "release/release-2022-06-23",
+              "title": "Release 2022-06-23",
+              "description": "Released Features",
+              "source": "@site/../docs/release/2022-06-23.md",
+              "sourceDirName": "release",
+              "slug": "/release/release-2022-06-23",
+              "permalink": "/docs/release/release-2022-06-23",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "release-2022-06-23",
+                "title": "Release 2022-06-23",
+                "sidebar_label": "Release 2022-06-23"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Release 2022-07-15",
+                "permalink": "/docs/release/release-2022-07-15"
+              },
+              "next": {
+                "title": "Release 2022-05-05",
+                "permalink": "/docs/release/release-2022-05-05"
+              }
+            },
+            {
+              "unversionedId": "release/release-2022-07-15",
+              "id": "release/release-2022-07-15",
+              "title": "Release 2022-07-15",
+              "description": "Released Features",
+              "source": "@site/../docs/release/2022-07-15.md",
+              "sourceDirName": "release",
+              "slug": "/release/release-2022-07-15",
+              "permalink": "/docs/release/release-2022-07-15",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "release-2022-07-15",
+                "title": "Release 2022-07-15",
+                "sidebar_label": "Release 2022-07-15"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Release 2022-08-18",
+                "permalink": "/docs/release/release-2022-08-18"
+              },
+              "next": {
+                "title": "Release 2022-06-23",
+                "permalink": "/docs/release/release-2022-06-23"
+              }
+            },
+            {
+              "unversionedId": "release/release-2022-08-18",
+              "id": "release/release-2022-08-18",
+              "title": "Release 2022-08-18",
+              "description": "Released Features",
+              "source": "@site/../docs/release/2022-08-18.md",
+              "sourceDirName": "release",
+              "slug": "/release/release-2022-08-18",
+              "permalink": "/docs/release/release-2022-08-18",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "release-2022-08-18",
+                "title": "Release 2022-08-18",
+                "sidebar_label": "Release 2022-08-18"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Release 2022-10-25",
+                "permalink": "/docs/release/release-2022-10-25"
+              },
+              "next": {
+                "title": "Release 2022-07-15",
+                "permalink": "/docs/release/release-2022-07-15"
+              }
+            },
+            {
+              "unversionedId": "release/release-2022-10-25",
+              "id": "release/release-2022-10-25",
+              "title": "Release 2022-10-25",
+              "description": "Released Features",
+              "source": "@site/../docs/release/2022-10-25.md",
+              "sourceDirName": "release",
+              "slug": "/release/release-2022-10-25",
+              "permalink": "/docs/release/release-2022-10-25",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "release-2022-10-25",
+                "title": "Release 2022-10-25",
+                "sidebar_label": "Release 2022-10-25"
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Query Protocol",
+                "permalink": "/docs/reference/query-protocol"
+              },
+              "next": {
+                "title": "Release 2022-08-18",
+                "permalink": "/docs/release/release-2022-08-18"
               }
             },
             {
@@ -926,6 +1034,22 @@
                 "type": "category",
                 "label": "Release Notes",
                 "items": [
+                  {
+                    "type": "doc",
+                    "id": "release/release-2022-10-25"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "release/release-2022-08-18"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "release/release-2022-07-15"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "release/release-2022-06-23"
+                  },
                   {
                     "type": "doc",
                     "id": "release/release-2022-05-05"

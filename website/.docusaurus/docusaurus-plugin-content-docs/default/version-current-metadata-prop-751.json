@@ -175,6 +175,30 @@
         "items": [
           {
             "type": "link",
+            "label": "Release 2022-10-25",
+            "href": "/docs/release/release-2022-10-25",
+            "docId": "release/release-2022-10-25"
+          },
+          {
+            "type": "link",
+            "label": "Release 2022-08-18",
+            "href": "/docs/release/release-2022-08-18",
+            "docId": "release/release-2022-08-18"
+          },
+          {
+            "type": "link",
+            "label": "Release 2022-07-15",
+            "href": "/docs/release/release-2022-07-15",
+            "docId": "release/release-2022-07-15"
+          },
+          {
+            "type": "link",
+            "label": "Release 2022-06-23",
+            "href": "/docs/release/release-2022-06-23",
+            "docId": "release/release-2022-06-23"
+          },
+          {
+            "type": "link",
             "label": "Release 2022-05-05",
             "href": "/docs/release/release-2022-05-05",
             "docId": "release/release-2022-05-05"
@@ -379,6 +403,30 @@
     "release/release-2022-05-05": {
       "id": "release/release-2022-05-05",
       "title": "Release 2022-05-05",
+      "description": "Released Features",
+      "sidebar": "docs"
+    },
+    "release/release-2022-06-23": {
+      "id": "release/release-2022-06-23",
+      "title": "Release 2022-06-23",
+      "description": "Released Features",
+      "sidebar": "docs"
+    },
+    "release/release-2022-07-15": {
+      "id": "release/release-2022-07-15",
+      "title": "Release 2022-07-15",
+      "description": "Released Features",
+      "sidebar": "docs"
+    },
+    "release/release-2022-08-18": {
+      "id": "release/release-2022-08-18",
+      "title": "Release 2022-08-18",
+      "description": "Released Features",
+      "sidebar": "docs"
+    },
+    "release/release-2022-10-25": {
+      "id": "release/release-2022-10-25",
+      "title": "Release 2022-10-25",
       "description": "Released Features",
       "sidebar": "docs"
     },
