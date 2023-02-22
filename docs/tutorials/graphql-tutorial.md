@@ -130,6 +130,26 @@ In the example above, we are providing the following metadata to Legend
 * ```mapping/mapping::relational::Firm_Person``` - The Legend mapping to be used to execute the underlying GraphFetch query. 
 * ```runtime/connection::runtime::h2``` - The Legend runtime to be used to execute the underlying GraphFetch query.
 
+### GraphQL Schema Generation 
+Legend is also able to generate GraphQL schemas from the Pure model. 
+
+First, create a new package. 
+
+![new package](../assets/graphql-tutorial/gql-create-generation.png)
+
+Then, in the package, create a file generation.
+
+![new package](../assets/graphql-tutorial/gql-create-file-generation.png)
+
+Once the generation has been created, generated GraphQL schemas are shown. 
+
+![new package](../assets/graphql-tutorial/gql-file-generation.png)
+
+## Unsupported Features 
+
+The following features are not supported as yet :
+* Graphql Input Types 
+
 ## Reference 
 
 Reference documentation on the design/implementation of the GraphQL integration can be found [here](https://github.com/finos/legend-engine/blob/master/docs/graphQL/graphQL.md)
