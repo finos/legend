@@ -3,7 +3,8 @@ id: legend-overview
 title: What is Legend?
 sidebar_label: What is Legend?
 ---
-Legend is a data platform that provides a single place to access all data via APIs or self-service queries, with built-in governance!
+
+Legend is a data platform that provides a single place to access data via APIs or self-service queries, with built-in governance!
 
 Build a graph of information by **describing and connecting** data in Legend data models. They foster a common data vocabulary and help everyone understand the data better. Being able to navigate the entire graph of information using terms that make sense and are agreed upon, makes it so much easier to **find meaningful data**.
 
@@ -18,22 +19,22 @@ Legend can elevate all sort of data-driven processes, such as creating client, f
 
 ## Legend Products
 
-### Legend Studio
+### Studio
 
 Legend Studio is a data model editor that allows you to describe, connect, and visualize your data.
 
-### Legend Query
+### Query
 
 Legend Query enables users to access modelled data in Legend, using a hosted graphical, drag-and-drop, self-service user interface. 
 
-### Legend Services
+### Services
 
 Legend Services can be used to share high quality data reliably with other applications via APIs. Any self-service query can be promoted to a production-quality Legend service, fully backed by SDLC.
 
-### Legend Engine
+### Engine
 
 Legend Engine is the execution engine for Legend.
 
-### Legend SDLC
+### SDLC
 
 The Legend SDLC Server provides a rich REST API allowing users to safely manage metadata. Most SDLCs are file- and text-centric, but the Legend SDLC is model-centric. That is, users interact with model entities rather than with files and folders.

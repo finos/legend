@@ -2,7 +2,7 @@
   "unversionedId": "reference/query-protocol",
   "id": "reference/query-protocol",
   "title": "Query Protocol",
-  "description": "SQL",
+  "description": "Queries",
   "source": "@site/../docs/reference/query-protocol.md",
   "sourceDirName": "reference",
   "slug": "/reference/query-protocol",
@@ -21,7 +21,7 @@
     "permalink": "/docs/reference/bindings"
   },
   "next": {
-    "title": "Release 2022-05-05",
-    "permalink": "/docs/release/release-2022-05-05"
+    "title": "Release 2022-10-25",
+    "permalink": "/docs/release/release-2022-10-25"
   }
 }

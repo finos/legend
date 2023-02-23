@@ -10,14 +10,5 @@
   "draft": false,
   "tags": [],
   "version": "current",
-  "frontMatter": {},
-  "sidebar": "docs",
-  "previous": {
-    "title": "GraphQL",
-    "permalink": "/docs/tutorials/graphql-tutorial"
-  },
-  "next": {
-    "title": "Legend Concepts",
-    "permalink": "/docs/concepts/legend-concepts"
-  }
+  "frontMatter": {}
 }

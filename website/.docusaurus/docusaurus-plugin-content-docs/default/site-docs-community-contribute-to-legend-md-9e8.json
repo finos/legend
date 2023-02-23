@@ -2,7 +2,7 @@
   "unversionedId": "community/contribute-to-legend",
   "id": "community/contribute-to-legend",
   "title": "Contribute",
-  "description": "There are many ways to contribute to Legend and many of them don't involve writing any code. Here are a few ideas to get started:",
+  "description": "Ways to Contribute",
   "source": "@site/../docs/community/contribute-to-legend.md",
   "sourceDirName": "community",
   "slug": "/community/contribute-to-legend",
@@ -17,11 +17,11 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Case Studies",
-    "permalink": "/docs/case-studies/legend-case-studies"
+    "title": "Release 2021-10-18",
+    "permalink": "/docs/release/release-2021-10-18"
   },
   "next": {
-    "title": "Roadmap",
-    "permalink": "/docs/community/legend-roadmap"
+    "title": "Get Help",
+    "permalink": "/docs/community/get-help-from-community"
   }
 }

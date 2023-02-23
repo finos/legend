@@ -14,14 +14,5 @@
     "id": "use-cases",
     "title": "Use Cases",
     "sidebar_label": "Use Cases"
-  },
-  "sidebar": "docs",
-  "previous": {
-    "title": "What is Legend?",
-    "permalink": "/docs/overview/legend-overview"
-  },
-  "next": {
-    "title": "Architecture",
-    "permalink": "/docs/overview/architecture"
   }
 }

@@ -1,36 +1,31 @@
 ---
 id: introduction-to-legend
-title: Introduction to Legend
-sidebar_label: Introduction to Legend
+title: Get Started
+sidebar_label: Get Started
 ---
+
 ## Introductory Videos
 
-In order to get started with Legend, check out the following videos
-
-First, Pierre de Belen, the creator of Legend, delivered the [keynote speech at 2020 Open Source Strategy Forum](https://www.youtube.com/watch?v=93c966jNzYo). Pierre provides a broad survey of the challenges of data management and how Legend can help in addressing them.
-
-Second, Beeke-Marie Nelke and Ffion Acland from Goldman Sachs presented at the 2021 Open Source Strategy Forum, where they discussed Legend in the context of data quality. [An Open-sourced Solution to Data Governance? How Legend may be the Answer to Data Quality Concerns in the Financial Industry](https://www.youtube.com/watch?v=9qIq0mHKQeY)
-
-Lastly, Beeke-Marie Nelke hosted two sessions for the FINOS Open Source Community.
+Watch the introductory Studio & Query sessions hosted by Beeke-Marie Nelke for the FINOS Open Source community:
 
 -   [Legend 101](https://www.youtube.com/watch?v=Mruhx5hnLzQ). Learn the basics of data modeling in Legend Studio.
 -   [Legend New Feature Deep Dive](https://www.youtube.com/watch?v=7lJoik3r38k). Learn how to create mappings and query your data.
 
-All these videos are highly recommended.
+We highly recommend reviewing the [Legend talks and conferences](../community/legend-media.md) recordings.
 
 ## Tutorials
 
-See step by step tutorials are available for [Legend Studio](../tutorials/studio-tutorial.md) and [Legend Query](../tutorials/query-tutorial.md).
+Review the step by step tutorials for [Studio](../tutorials/studio-workspace) and [Query](../tutorials/query-builder.md).
 
 ## Start Using Legend Today
 
-### Legend Studio
+### Studio hosted instance
 
-This is the easiest way to get started with Legend as it does not involve any installation steps.
+This is the easiest way to get started with Legend as it does not involve any installation steps. 
 
-The FINOS foundation hosts a free instance of Legend to be used for shared modeling efforts.
+FINOS hosts a free instance of Legend to be used for shared modeling efforts. 
 
-Instructions to sign up and use this instance can be found on the [FINOS page](https://www.finos.org/legend).
+Instructions to sign up and use this instance are available on the [FINOS website](https://www.finos.org/legend).
 
 **Note: This is a shared instance which might not be appropriate for proprietary data models.**
 

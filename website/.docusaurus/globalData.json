@@ -11,8 +11,8 @@
           "mainDocId": "overview/legend-overview",
           "docs": [
             {
-              "id": "case-studies/legend-case-studies",
-              "path": "/docs/case-studies/legend-case-studies",
+              "id": "community/case-studies",
+              "path": "/docs/community/case-studies",
               "sidebar": "docs"
             },
             {
@@ -41,16 +41,6 @@
               "sidebar": "docs"
             },
             {
-              "id": "concepts/data-modeling-concepts",
-              "path": "/docs/concepts/data-modeling-concepts",
-              "sidebar": "docs"
-            },
-            {
-              "id": "concepts/legend-concepts",
-              "path": "/docs/concepts/legend-concepts",
-              "sidebar": "docs"
-            },
-            {
               "id": "getting-started/installation-guide",
               "path": "/docs/getting-started/installation-guide",
               "sidebar": "docs"
@@ -62,7 +52,24 @@
             },
             {
               "id": "overview/architecture",
-              "path": "/docs/overview/architecture",
+              "path": "/docs/overview/architecture"
+            },
+            {
+              "id": "overview/data-modeling-concepts",
+              "path": "/docs/overview/data-modeling-concepts"
+            },
+            {
+              "id": "overview/legend-concepts",
+              "path": "/docs/overview/legend-concepts"
+            },
+            {
+              "id": "overview/legend-features",
+              "path": "/docs/overview/legend-features",
+              "sidebar": "docs"
+            },
+            {
+              "id": "overview/legend-glossary",
+              "path": "/docs/overview/legend-glossary",
               "sidebar": "docs"
             },
             {
@@ -72,12 +79,16 @@
             },
             {
               "id": "overview/use-cases",
-              "path": "/docs/overview/use-cases",
-              "sidebar": "docs"
+              "path": "/docs/overview/use-cases"
             },
             {
               "id": "reference/bindings",
               "path": "/docs/reference/bindings",
+              "sidebar": "docs"
+            },
+            {
+              "id": "reference/external-format",
+              "path": "/docs/reference/external-format",
               "sidebar": "docs"
             },
             {
@@ -94,6 +105,10 @@
               "id": "reference/released-functions",
               "path": "/docs/reference/released-functions",
               "sidebar": "docs"
+            },
+            {
+              "id": "reference/service-post-validations",
+              "path": "/docs/reference/service-post-validations"
             },
             {
               "id": "reference/stores",
@@ -121,8 +136,33 @@
               "sidebar": "docs"
             },
             {
+              "id": "release/release-2022-06-23",
+              "path": "/docs/release/release-2022-06-23",
+              "sidebar": "docs"
+            },
+            {
+              "id": "release/release-2022-07-15",
+              "path": "/docs/release/release-2022-07-15",
+              "sidebar": "docs"
+            },
+            {
+              "id": "release/release-2022-08-18",
+              "path": "/docs/release/release-2022-08-18",
+              "sidebar": "docs"
+            },
+            {
+              "id": "release/release-2022-10-25",
+              "path": "/docs/release/release-2022-10-25",
+              "sidebar": "docs"
+            },
+            {
               "id": "sdlc/project-structure",
               "path": "/docs/sdlc/project-structure"
+            },
+            {
+              "id": "showcases/showcase-projects",
+              "path": "/docs/showcases/showcase-projects",
+              "sidebar": "docs"
             },
             {
               "id": "tour/tour",
@@ -130,37 +170,255 @@
             },
             {
               "id": "tutorials/graphql-tutorial",
-              "path": "/docs/tutorials/graphql-tutorial",
-              "sidebar": "docs"
+              "path": "/docs/tutorials/graphql-tutorial"
             },
             {
               "id": "tutorials/logicalmodeling-tutorial",
-              "path": "/docs/tutorials/logicalmodeling-tutorial",
+              "path": "/docs/tutorials/logicalmodeling-tutorial"
+            },
+            {
+              "id": "tutorials/query-builder",
+              "path": "/docs/tutorials/query-builder",
               "sidebar": "docs"
             },
             {
-              "id": "tutorials/query-tutorial",
-              "path": "/docs/tutorials/query-tutorial",
+              "id": "tutorials/query-dataspace",
+              "path": "/docs/tutorials/query-dataspace",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/query-execution-context",
+              "path": "/docs/tutorials/query-execution-context",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/query-explorer",
+              "path": "/docs/tutorials/query-explorer",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/query-export",
+              "path": "/docs/tutorials/query-export",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/query-fetch-structure",
+              "path": "/docs/tutorials/query-fetch-structure",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/query-filter",
+              "path": "/docs/tutorials/query-filter",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/query-graphql",
+              "path": "/docs/tutorials/query-graphql"
+            },
+            {
+              "id": "tutorials/query-parameter",
+              "path": "/docs/tutorials/query-parameter",
               "sidebar": "docs"
             },
             {
               "id": "tutorials/relationalmapping-tutorial",
-              "path": "/docs/tutorials/relationalmapping-tutorial",
-              "sidebar": "docs"
+              "path": "/docs/tutorials/relationalmapping-tutorial"
             },
             {
               "id": "tutorials/serviceexecution-tutorial",
-              "path": "/docs/tutorials/serviceexecution-tutorial",
+              "path": "/docs/tutorials/serviceexecution-tutorial"
+            },
+            {
+              "id": "tutorials/services-connection",
+              "path": "/docs/tutorials/services-connection",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/services-runtime",
+              "path": "/docs/tutorials/services-runtime",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/services-service",
+              "path": "/docs/tutorials/services-service",
               "sidebar": "docs"
             },
             {
               "id": "tutorials/servicestore-tutorial",
-              "path": "/docs/tutorials/servicestore-tutorial",
+              "path": "/docs/tutorials/servicestore-tutorial"
+            },
+            {
+              "id": "tutorials/studio-association",
+              "path": "/docs/tutorials/studio-association",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/studio-binding",
+              "path": "/docs/tutorials/studio-binding",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/studio-class",
+              "path": "/docs/tutorials/studio-class",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/studio-diagram",
+              "path": "/docs/tutorials/studio-diagram",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/studio-enumeration",
+              "path": "/docs/tutorials/studio-enumeration",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/studio-file-generation",
+              "path": "/docs/tutorials/studio-file-generation",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/studio-find-models",
+              "path": "/docs/tutorials/studio-find-models",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/studio-flat-data-schema",
+              "path": "/docs/tutorials/studio-flat-data-schema",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/studio-function",
+              "path": "/docs/tutorials/studio-function",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/studio-m2m-mapping",
+              "path": "/docs/tutorials/studio-m2m-mapping",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/studio-manage-model-information",
+              "path": "/docs/tutorials/studio-manage-model-information",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/studio-measure",
+              "path": "/docs/tutorials/studio-measure",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/studio-package",
+              "path": "/docs/tutorials/studio-package",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/studio-persistence",
+              "path": "/docs/tutorials/studio-persistence",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/studio-profile",
+              "path": "/docs/tutorials/studio-profile",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/studio-project-dependencies",
+              "path": "/docs/tutorials/studio-project-dependencies",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/studio-relational-mapping",
+              "path": "/docs/tutorials/studio-relational-mapping",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/studio-schemaset",
+              "path": "/docs/tutorials/studio-schemaset",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/studio-sdlc",
+              "path": "/docs/tutorials/studio-sdlc",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/studio-servicestore",
+              "path": "/docs/tutorials/studio-servicestore",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/studio-tests",
+              "path": "/docs/tutorials/studio-tests",
+              "sidebar": "docs"
+            },
+            {
+              "id": "tutorials/studio-text",
+              "path": "/docs/tutorials/studio-text",
               "sidebar": "docs"
             },
             {
               "id": "tutorials/studio-tutorial",
-              "path": "/docs/tutorials/studio-tutorial",
+              "path": "/docs/tutorials/studio-tutorial"
+            },
+            {
+              "id": "tutorials/studio-workspace",
+              "path": "/docs/tutorials/studio-workspace",
+              "sidebar": "docs"
+            },
+            {
+              "id": "user-journeys/build-data-model",
+              "path": "/docs/user-journeys/build-data-model",
+              "sidebar": "docs"
+            },
+            {
+              "id": "user-journeys/connect-datasources",
+              "path": "/docs/user-journeys/connect-datasources",
+              "sidebar": "docs"
+            },
+            {
+              "id": "user-journeys/consume-model-artifacts",
+              "path": "/docs/user-journeys/consume-model-artifacts",
+              "sidebar": "docs"
+            },
+            {
+              "id": "user-journeys/create-apis",
+              "path": "/docs/user-journeys/create-apis",
+              "sidebar": "docs"
+            },
+            {
+              "id": "user-journeys/find",
+              "path": "/docs/user-journeys/find",
+              "sidebar": "docs"
+            },
+            {
+              "id": "user-journeys/generate-model-schema",
+              "path": "/docs/user-journeys/generate-model-schema",
+              "sidebar": "docs"
+            },
+            {
+              "id": "user-journeys/map-models",
+              "path": "/docs/user-journeys/map-models",
+              "sidebar": "docs"
+            },
+            {
+              "id": "user-journeys/publish-model-changes",
+              "path": "/docs/user-journeys/publish-model-changes",
+              "sidebar": "docs"
+            },
+            {
+              "id": "user-journeys/query-data",
+              "path": "/docs/user-journeys/query-data",
+              "sidebar": "docs"
+            },
+            {
+              "id": "user-journeys/test-troubleshoot",
+              "path": "/docs/user-journeys/test-troubleshoot",
+              "sidebar": "docs"
+            },
+            {
+              "id": "user-journeys/visualize-modelled-data",
+              "path": "/docs/user-journeys/visualize-modelled-data",
               "sidebar": "docs"
             }
           ],

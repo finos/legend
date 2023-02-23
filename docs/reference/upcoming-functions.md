@@ -1,6 +1,7 @@
 ---
 id: upcoming-functions
-title: Upcoming functions
+title: Upcoming Functions
+sidebar_label: Upcoming Functions
 ---
 ## acos
 

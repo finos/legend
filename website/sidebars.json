@@ -2,45 +2,92 @@
   "docs": {
     "Overview": [
       "overview/legend-overview",
-      "overview/use-cases",
-      "overview/architecture"
+      "overview/legend-features",
+      "overview/legend-glossary"
+    ],
+    "User Journeys": [
+      "user-journeys/build-data-model",
+      "user-journeys/publish-model-changes", 
+      "user-journeys/generate-model-schema", 
+      "user-journeys/consume-model-artifacts",
+      "user-journeys/connect-datasources",
+      "user-journeys/query-data",
+      "user-journeys/map-models",
+      "user-journeys/create-apis",
+      "user-journeys/find",
+      "user-journeys/visualize-modelled-data",
+      "user-journeys/test-troubleshoot"
     ],
     "Getting Started": [
       "getting-started/introduction-to-legend",
       "getting-started/installation-guide"
     ],
-    "Tutorials": [
-      "tutorials/studio-tutorial",
-      "tutorials/query-tutorial",
-      "tutorials/logicalmodeling-tutorial",
-      "tutorials/relationalmapping-tutorial",
-      "tutorials/servicestore-tutorial",
-      "tutorials/graphql-tutorial",
-      "tutorials/serviceexecution-tutorial"
+    "Studio Tutorials": [
+      "tutorials/studio-workspace",
+      "tutorials/studio-package",
+      "tutorials/studio-class",
+      "tutorials/studio-enumeration",
+      "tutorials/studio-profile",
+      "tutorials/studio-association",
+      "tutorials/studio-function",
+      "tutorials/studio-measure",
+      "tutorials/studio-m2m-mapping",
+      "tutorials/studio-relational-mapping",
+      "tutorials/services-runtime",
+      "tutorials/services-connection",
+      "tutorials/services-service",
+      "tutorials/studio-file-generation",
+      "tutorials/studio-flat-data-schema",
+      "tutorials/studio-text",
+      "tutorials/studio-diagram",
+      "tutorials/query-dataspace",
+      "tutorials/studio-schemaset",
+      "tutorials/studio-binding",
+      "tutorials/studio-persistence",
+      "tutorials/studio-servicestore",
+      "tutorials/studio-tests",
+      "tutorials/studio-project-dependencies",
+      "tutorials/studio-manage-model-information",
+      "tutorials/studio-find-models",
+      "tutorials/studio-sdlc"
     ],
-    "Concepts": [
-      "concepts/legend-concepts",
-      "concepts/data-modeling-concepts"
+    "Query Tutorials": [
+      "tutorials/query-builder",
+      "tutorials/query-dataspace",
+      "tutorials/query-execution-context",
+      "tutorials/query-explorer",
+      "tutorials/query-parameter",
+      "tutorials/query-fetch-structure",
+      "tutorials/query-filter",
+      "tutorials/query-export"
     ],
-    "Reference Documentation": [
+    "Showcase Projects": [
+      "showcases/showcase-projects"
+    ],
+    "Reference Docs": [
       "reference/legend-language",
       "reference/released-functions",
       "reference/upcoming-functions",
       "reference/stores",
+      "reference/external-format",
       "reference/bindings",
       "reference/query-protocol"
     ],
-    "Release Notes": [
+    "Releases": [
+      "release/release-2022-10-25",
+      "release/release-2022-08-18",
+      "release/release-2022-07-15",
+      "release/release-2022-06-23",
       "release/release-2022-05-05",
       "release/release-2022-04-26",
       "release/release-2021-10-18"
     ],
-    "Case studies": ["case-studies/legend-case-studies"],
     "Community": [
       "community/contribute-to-legend",
-      "community/legend-roadmap",
       "community/get-help-from-community",
+      "community/legend-roadmap",
       "community/legend-media",
+      "community/case-studies",
       "community/terms-of-service"
     ]
   }

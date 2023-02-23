@@ -4,21 +4,17 @@ title: Bindings
 sidebar_label: Bindings
 ---
 ## Protobuf
-
-_COMING SOON_
+_Coming soon._
 
 ## JSON Schema
-
-_COMING SOON_
+_Coming soon._
 
 ## Java
 
-_COMING SOON_
+- [Java technical documentation](https://github.com/finos/legend-engine/blob/master/docs/java/codeGen.md)
 
 ## Avro
-
-_COMING SOON_
+_Coming soon._
 
 ## Python
-
-_COMING SOON_
+_Coming soon._

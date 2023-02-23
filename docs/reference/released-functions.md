@@ -1,6 +1,7 @@
 ---
 id: released-functions
-title: Released functions
+title: Released Functions
+sidebar_label: Released Functions
 ---
 
 ## abs

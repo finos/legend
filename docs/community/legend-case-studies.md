@@ -1,10 +1,10 @@
 ---
-id: legend-case-studies
-title: Case Studies
+id: case-studies
+title: Legend Case Studies
 sidebar_label: Case Studies
 ---
-## Legend Studio Pilot Case Study
 
+## Legend Studio Pilot
 Legend was originally developed by Goldman Sachs and contributed to FINOS in October 2020. See the October 2020 [Open Sourcing Press Release](https://www.finos.org/press/goldman-sachs-open-sources-its-data-modeling-platform-through-finos), and coverage in Business Insider ["Code for Goldman Sachs' internal data platform is now open for anyone to use"](https://www.businessinsider.com/code-for-goldmans-data-platform-legend-open-sharing-github-2020-10), and Bloomberg ["Goldman Sachs Open Sources its Data Modeling Platform through FINOS"](https://www.bloomberg.com/press-releases/2020-10-19/goldman-sachs-open-sources-its-data-modeling-platform-through-finos).
 
 The launch followed the completion of the Legend Pilot, in which

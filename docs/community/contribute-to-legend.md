@@ -3,15 +3,23 @@ id: contribute-to-legend
 title: Contribute
 sidebar_label: Contribute
 ---
+
+## Ways to Contribute
 There are many ways to contribute to Legend and many of them don't involve writing any code. Here are a few ideas to get started:
 
-1.  [Contribute code](contribute-to-legend.md#contribute-code) to any of the Legend components by submitting a pull request.
+### 1. Contribute code
+[Contribute code](contribute-to-legend.md#contribute-code) to any of the Legend components by submitting a pull request.
 
-2.  Start using Legend Studio to provide feedback, [and contribute to, existing models](contribute-to-legend.md#contribute-to-models). Request access to the modeling instance at https: and go [through our Getting started guide](../tutorials/studio-tutorial.md). If you encounter an issue, let us know by [opening an issue](https://github.com/finos/legend/issues/new/choose).
+### 2. Contribute to existing models
+Start using Legend Studio to provide feedback, [and contribute to, existing models](contribute-to-legend.md#contribute-to-models). 
+Request access to the modeling instance at https://www.finos.org/legend and go [through our Getting started guide](../studio/create-workspace.md). If you encounter an issue, let us know by [opening an issue](https://github.com/finos/legend/issues/new/choose).
 
-3.  [Help build out the documentation](contribute-to-legend.md#contribute-documentation). If you find anything that's confusing or can be improved, submit a pull request. 
+### 3. Contribute documentation
+[Help build out the documentation](contribute-to-legend.md#contribute-documentation). 
+If you find anything that's confusing or can be improved, submit a pull request. 
 
-4.  [Contribute issues: identify bugs, suggest new features, and provide feedback on prioritization](contribute-to-legend.md#contribute-issues). Look through the [open issues](https://github.com/finos/legend/issues?q=is%3Aissue+is%3Aopen+). Provide workarounds, ask for clarification, or suggest labels. If you find an issue you'd like to fix, [open a pull request](https://github.com/finos/legend/pulls). Start with issues tagged as **Good first issue**. Take a look at the features requested by others in the community and consider opening a pull request if you see something you want to work on.
+### 4. Contribute issues 
+[Contribute issues: identify bugs, suggest new features, and provide feedback on prioritization](contribute-to-legend.md#contribute-issues). Look through the [open issues](https://github.com/finos/legend/issues?q=is%3Aissue+is%3Aopen+). Provide workarounds, ask for clarification, or suggest labels. If you find an issue you'd like to fix, [open a pull request](https://github.com/finos/legend/pulls). Start with issues tagged as **Good first issue**. Take a look at the features requested by others in the community and consider opening a pull request if you see something you want to work on.
 
 ## Prerequisites
 
@@ -97,7 +105,7 @@ Consider browsing through issues labeled as "good first issue" in the respective
 
 FINOS hosts a shared version of Legend Studio in the public cloud, which is available to prototype collaborative data modeling, at . If you'd like to access the existing models, **request access to the modeling instance** at [finos.org/legend](https://www.finos.org/legend).
 
-Once you've requested access to the modeling instance, you can get started and [create a model](../tutorials/studio-tutorial.md).
+Once you've requested access to the modeling instance, you can get started and [create a model](../tutorials/studio-workspace.md).
 
 **Important Note:** The shared instance of [Legend Studio](https://legend.finos.org/studio) should only be used for public modeling initiatives. Every Studio project maps to a GitLab project in which the data model code could be reviewed by the general public.
 
@@ -111,9 +119,12 @@ In January 2020, FINOS launched a pilot with FINOS member organizations interest
 
 ## Contribute documentation
 
-You can get involved with Legend by suggesting topics you'd like to see in our documentation. Suggest a topic for our docs by [opening an issue in our GitHub repo](https://github.com/finos/legend/issues/new/choose). Ideas are also welcome through the [Legend General List](mailto:legend@finos.org).
+### Suggest documentation content
+You can get involved with Legend by suggesting documentation topics you would like to see covered. Make a suggestion by [opening an issue in our GitHub repo](https://github.com/finos/legend/issues/new/choose).
 
-### Edit the documentation site directly
+### Update the documentation site directly
+
+#### Prerequisites
 
 To make edits to the website itself, you need to run the website locally. You must have:
 
@@ -123,25 +134,43 @@ To make edits to the website itself, you need to run the website locally. You mu
 The following code automatically launches a browser and takes you to the staging website, located at http://localhost:3000. File changes are live rendered, speeding up the editorial workflow.
 
 ```git
-
-
-
+git clone git@github.com:<yourfork>/legend.git
+git checkout -b feature/myProposedDocChanges
+cd legend ; ./build-site.sh
+cd website ; yarn start
 ```
+#### Identify where to contribute documentation
+
+| Documentation type you're contributing | Example | Description | Best practices  |
+| - | - | - | - |
+| **Sub-user journeys** | _["Create a data model to describe business concepts and how they relate to eachother in a data model"](../user-journeys/build-data-model.md/#create-a-data-model-to-describe-business-concepts-and-how-they-relate-to-eachother-in-a-data-model) sub-user journey_ |  A sub-user journey describes the "What": a business goal that a user can achieve by **using** one or multiple Legend platform features   A sub-user journey aligns with a high-level Legend User Journey (i.e. 'Build a data model', 'Map models', 'Publish model changes')   Sub-user journeys link to **tutorials**, **showcase projects**, the Legend **glossary**, and **reference documentation** where appropriate |  Create a new (Heading 2) entry in the corresponding [top level user journey file](../user-journeys/build-data-model.md)   Describe the sub-user journey  Link to/update the corresponding **features** (e.g. [association](../overview/legend-features.md)), **[glossary entries](../overview/legend-glossary.md)**, **tutorials** (e.g. [association](../tutorials/studio-association.md)), **[showcase projects](../showcases/showcase-projects.md)** and **[reference documentation](../reference/legend-language.md)**  
+| **Tutorials** | _["Workspace"](../tutorials/studio-workspace.md) tutorial_ |  Tutorials are Legend feature-specific and describe the "How": the steps that a user needs to take in order to **use** a Legend feature  |  Create a new (Heading 2) entry within the corresponding feature file (e.g. [Workspace](../tutorials/studio-workspace.md))  Describe the sequence of steps that a user needs to take in order to use the feature   Link to/update the corresponding **feature description** (e.g. [association](../overview/legend-features.md)), **[glossary entries](../overview/legend-glossary.md)**, **tutorials** (e.g. [association](../tutorials/studio-association.md)), **[showcase projects](../showcases/showcase-projects.md)** and **[reference documentation](../reference/legend-language.md)** |
+ **Showcase projects** | _["Basic logical modelling"](../showcases/showcase-projects.md/#logical-modeling-basic) Showcase project_ |  Showcase projects show Legend features in action in the Legend UI   Showcase projects are hosted on the [Legend hosted instance](https://finos.org/legend) |  Get free access to the [Legend hosted instance](https://finos.org/legend)   Update an [existing showcase project](../showcases/showcase-projects.md) OR create a new showcase project on the [Legend hosted instance](https://finos.org/legend), showcasing the feature of interest  Link to/update the [Legend showcase project roster](../showcases/showcase-projects.md) and corresponding **tutorials** (e.g. [association](../tutorials/studio-association.md))|
+| **Reference documentation**| _[Legend language](../reference/legend-language.md) reference documentation_ |  Reference documentation is technical and developer-oriented, and includes API calls and other information that users need in order to **work with/develop** Legend components  | Contact the Legend team via [GitHub issues](https://github.com/finos/legend/issues/new/choose) or the [Legend mailing list](mailto:legend@finos.org) if you have questions about contributing reference documentation.|
+
+
+
+
+<!-- | <li> **Tutorials** </li> | <li> _["Workspace"](../tutorials/studio-workspace.md) tutorial_  </li> -->
+
+
+#### Submit your proposed changes 
 
 Once you're satisfied with your documentation changes, commit and propose them in line with the general process described above. Specifically for doc edits, it might look like this:
 
--   Commit your changes (``).
--   Push to the branch to your forked repo on GitHub (``).
+-    Commit your changes (`git commit -am <short description of what docs you changed/added>`).
+-   Push to the branch to your forked repo on GitHub (`git push origin myProposedDocChanges`).
 -   Review and test the changes in your fork.
 -   If all looks good, propose a pull request into the [FINOS Legend GitHub Repo](https://github.com/finos/legend) from your fork.
 
-### Docusaurus
+## Docusaurus
 
 To learn more about Docusaurus, read the following resources:
 
--   
--    
--   
+-   [Legend](https://github.com/finos/legend/tree/master/website)
+-   [Using Docusaurus](https://finosfoundation.atlassian.net/wiki/spaces/FDX/pages/844759075/Using+Docusaurus+recommended)
+-   [Docusaurus home](https://docusaurus.io)
+
 
 **Note:** [The documentation build script](https://github.com/finos/legend/blob/master/build-site.sh) can be configured to pull in and include files from GitLab repositories housing modeling documentation into the GitHub pages/Docusaurus-powered site.
 
@@ -173,8 +202,8 @@ To receive updates on Legend, subscribe to these lists:
     -   Post with email to [legend@finos.org](mailto:legend@finos.org)
 
 -   GitHub / GitLab Issues & Kanban
-    -   GitHub Issues ()
-    -   GitHub Kanban ()
+    -   [GitHub Issues]((https://github.com/finos/legend/issues))
+    -   [GitHub Kanban](https://github.com/orgs/finos/projects/5)
 
 -   Legend Updates from FINOS
     -   [Subscribe at https://www.finos.org/legend](https://www.finos.org/legend)

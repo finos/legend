@@ -10,14 +10,5 @@
   "draft": false,
   "tags": [],
   "version": "current",
-  "frontMatter": {},
-  "sidebar": "docs",
-  "previous": {
-    "title": "Query",
-    "permalink": "/docs/tutorials/query-tutorial"
-  },
-  "next": {
-    "title": "Relational Mapping",
-    "permalink": "/docs/tutorials/relationalmapping-tutorial"
-  }
+  "frontMatter": {}
 }
