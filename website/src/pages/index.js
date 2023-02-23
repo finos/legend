@@ -167,19 +167,22 @@ C207.7,175.1,207.7,172.4,205,170.7L205,170.7z"
           </div>
           <ul class="home-page__content__whatis__reasons">
             <li class="home-page__content__whatis__reason">
-              <b>Describe</b> and <b>connect</b> data
+              <b>Describe</b> and <b>connect</b> data #CURATE
             </li>
             <li class="home-page__content__whatis__reason">
-              <b>Find</b> meaningful data
+              <b>Find</b> meaningful data #FIND
             </li>
             <li class="home-page__content__whatis__reason">
-              <b>Query</b> data with a button click
+              <b>Query</b> data with a button click #RETRIEVE
             </li>
             <li class="home-page__content__whatis__reason">
-              <b>Transform</b> and <b>share</b> data
+              <b>Transform</b> and <b>share</b> data #SHARE
             </li>
             <li class="home-page__content__whatis__reason">
-              High <b>quality</b> data by design
+              <b>Experiment</b> with and <b>analyze</b> data #ANALYZE
+            </li>
+            <li class="home-page__content__whatis__reason">
+              High <b>quality</b> data by design #GOVERN
             </li>
           </ul>
           <p>
