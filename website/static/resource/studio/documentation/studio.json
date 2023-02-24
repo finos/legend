@@ -97,61 +97,61 @@
       },
       "title": "What is a function element?"
     },
-    "dsl-mapping.grammar.element.mapping": {
+    "dsl-mapping.concept.element.mapping": {
       "markdownText": {
         "value": "A `Mapping` specifies a transformation between models, including model-to-model, store-to-model, enumeration-to-model, etc."
       },
       "title": "What is a mapping element?"
     },
-    "es-relational.grammar.element.database": {
+    "es-relational.concept.element.database": {
       "markdownText": {
         "value": "A `Database` specifies the structure (schema, table, view) and joins of a relational database"
       },
       "title": "What is a database element?"
     },
-    "dsl-service.grammar.element.service": {
+    "dsl-service.concept.element.service": {
       "markdownText": {
         "value": "A `Service` specifies query execution and deployment information so the it can be productionized: e.g. exposing it via API endpoints"
       },
       "title": "What is a service element?"
     },
-    "dsl-mapping.grammar.element.runtime": {
+    "dsl-mapping.concept.element.runtime": {
       "markdownText": {
         "value": "A `Runtime` specifies a logical grouping of connections which can be used for query execution"
       },
       "title": "What is a runtime element?"
     },
-    "dsl-mapping.grammar.element.connection": {
+    "dsl-mapping.concept.element.connection": {
       "markdownText": {
         "value": "A `Connection` specifies access to data store(s) including data store specifications and authentication strategies"
       },
       "title": "What is a connection element?"
     },
-    "dsl-external-format.grammar.element.binding": {
+    "dsl-external-format.concept.element.binding": {
       "title": "What is a binding element?",
       "markdownText": {
         "value": "A `Binding` element specifies the association between a set of models and their corresponding schemas in external formats (e.g. JSON, CSV, etc.) to ensure the models and schemas always kept in-sync"
       }
     },
-    "dsl-external-format.grammar.element.schema-set": {
+    "dsl-external-format.concept.element.schema-set": {
       "title": "What is a schema-set element?",
       "markdownText": {
         "value": "A `Schema-set` element specifies schemas in external formats (e.g. JSON, CSV, etc.), from which Pure models can be generated"
       }
     },
-    "dsl-generation-specification.grammar.element.generation-specification": {
+    "dsl-generation-specification.concept.element.generation-specification": {
       "markdownText": {
         "value": "A `Generation Specification` provides the pipeline for all generations"
       },
       "title": "What is a generation specification element?"
     },
-    "dsl-file-generation.grammar.element.file-generation-specification": {
+    "dsl-file-generation.concept.element.file-generation-specification": {
       "markdownText": {
         "value": "A `File Generation Specification` specifies the generation of external format from Pure models"
       },
       "title": "What is a file generation specification element?"
     },
-    "dsl-data.grammar.element.data": {
+    "dsl-data.concept.element.data": {
       "markdownText": {
         "value": "A `Data` element stores data which can be used for various purposes, including testing"
       },
@@ -288,7 +288,7 @@
       },
       "title": "What is DataSpace DSL about?"
     },
-    "dsl-dataspace.grammar.element.data-space": {
+    "dsl-dataspace.concept.element.data-space": {
       "markdownText": {
         "value": "A `Data-space` element specifies a grouping of model diagrams, execution context (mapping, runtime), test data, and so on to help communicate about the _meaning_, _usage_, and relationships of data models and to help users quickly explore and understand the models"
       },
@@ -300,13 +300,13 @@
       },
       "title": "What is Persistence DSL about?"
     },
-    "dsl-persistence.grammar.element.persistence": {
+    "dsl-persistence.concept.element.persistence": {
       "markdownText": {
         "value": "A `Persistence` element consists of a trigger to initiate persistence, a service to source and transform data, and a persister describing how to write to the target (e.g. ingest mode [snapshot | delta | append-only], temporality [non-temporal | unitemporal | bitemporal], and transactional semantics)"
       },
       "title": "What is a persistence element?"
     },
-    "dsl-persistence.grammar.element.persistence-context": {
+    "dsl-persistence.concept.element.persistence-context": {
       "markdownText": {
         "value": "A `PersistenceContext` element refers to a `Persistence` element, defines the runtime platform for persistence (e.g. AWS Glue), and may include additional runtime platform and environment details necessary for execution (e.g. data source connections, authentication strategies, and service input parameters)"
       },
@@ -318,7 +318,7 @@
       },
       "title": "What is External Store Service DSL about?"
     },
-    "es-service.grammar.element.service-store": {
+    "es-service.concept.element.service-store": {
       "markdownText": {
         "value": "A service store element specifies API endpoints as data source"
       },
