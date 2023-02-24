@@ -49,13 +49,13 @@
       },
       "title": "What is a function element?"
     },
-    "dsl-mapping.grammar.element.mapping": {
+    "dsl-mapping.concept.element.mapping": {
       "markdownText": {
         "value": "A `Mapping` specifies a transformation between models, including model-to-model, store-to-model, enumeration-to-model, etc."
       },
       "title": "What is a mapping element?"
     },
-    "es-relational.grammar.element.database": {
+    "es-relational.concept.element.database": {
       "markdownText": {
         "value": "A `Database` specifies the structure (schema, table, view) and joins of a relational database"
       },
