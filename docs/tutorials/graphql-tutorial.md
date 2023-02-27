@@ -145,10 +145,14 @@ Once the generation has been created, generated GraphQL schemas are shown.
 
 ![new package](../assets/graphql-tutorial/gql-file-generation.png)
 
-## Unsupported Features 
+## Upcoming Features
 
-The following features are not supported as yet :
-* Graphql Input Types 
+The following features are not supported as yet but will be added soon. 
+* Querying using input types 
+* GraphQL schema generation for input types 
+
+## Known bugs  
+* Out of order field arguments - Arguments have to be specified in the same order as in the Pure Query class
 
 ## Reference 
 
