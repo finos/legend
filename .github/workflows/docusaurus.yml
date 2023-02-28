@@ -68,3 +68,6 @@ jobs:
           GIT_USER=$GIT_USERNAME npm run deploy --prefix website
           # Run docusaurus-publish (v1)
           # GIT_USER=$GIT_USERNAME npm run publish-gh-pages --prefix website
+      - name: Search for Broken Links
+        run: |
+          ./test-broken-links.sh
