@@ -75,7 +75,7 @@ To create a class, enumeration or profile:
 
 ![create class](../assets/create-class.gif)
 
-## Add a property (primitive data type)
+## Add a property primitive data type
 
 1.  Select the `Person` and `Firm` class respectively.
 2.  Go to the **Properties** tab and click the **+** icon.

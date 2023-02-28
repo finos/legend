@@ -38,16 +38,13 @@ async function lookForUrlWithAnchor(url) {
   if (await fs.existsSync(filePathName)) {
     await fs.readFile(filePathName, "utf8", (err, data) => {
       if (!data) {
-        console.log("[ERROR] Broken Link:", filePathName);
         throw new Error("Broken link found " + filePathName);
       }
       if (!data.toLocaleLowerCase().includes(anchorTag)) {
-        console.log("[ERROR] Broken Link:", url);
         throw new Error("Broken link found " + url);
       }
     });
   } else {
-    console.log("[ERROR] Broken Link:", url);
     throw new Error("Broken link found " + url);
   }
 }
@@ -66,12 +63,10 @@ async function lookForUrl(url) {
       lookForUrlWithAnchor(url);
     } else {
       if (!fs.existsSync(currUrlFinal + fileName + ".md")) {
-        console.log("[ERROR] Broken Link:", currUrl);
         throw new Error("Broken link found " + url);
       }
     }
   } else {
-    console.log("[ERROR] Broken Link:", currUrl);
     throw new Error("Broken link found " + url);
   }
   return;
