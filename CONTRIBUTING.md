@@ -105,7 +105,7 @@ The following code automatically launches a browser and takes you to the staging
 ```git
 git clone git@github.com:<yourfork>/legend.git
 git checkout -b feature/myProposedDocChanges
-cd legend ; ./build-site.sh
+cd legend ; ./scripts/build-site.sh
 cd website ; yarn start
 ```
 
@@ -124,7 +124,7 @@ To learn more about Docusaurus, read the following resources:
 - https://finosfoundation.atlassian.net/wiki/spaces/FDX/pages/844759075/Using+Docusaurus+recommended 
 - https://docusaurus.io
 
-**Note:** [The documentation build script](https://github.com/finos/legend/blob/master/build-site.sh) can be configured to pull in and include files from GitLab repositories housing modeling documentation into the GitHub pages/Docusaurus-powered site.
+**Note:** [The documentation build script](https://github.com/finos/legend/blob/master/scripts/build-site.sh) can be configured to pull in and include files from GitLab repositories housing modeling documentation into the GitHub pages/Docusaurus-powered site.
 
 
 ## 4. Contribute issues: identify bugs, suggest new features, and provide feedback on prioritization 
