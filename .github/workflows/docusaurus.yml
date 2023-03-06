@@ -27,6 +27,7 @@ env:
 
 jobs:
   website-build:
+    if: github.repository != 'finos/legend-studio' # skip running action in forks
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -46,7 +47,10 @@ jobs:
           fi
       - name: Build Website
         run: |
-          ./build-site.sh
+          ./scripts/build-site.sh
+      - name: Search for Broken Links
+        run: |
+          node ./scripts/check-legend-application-documentation-broken-links.js
       - name: Publish Website
         run: |
           # Extract GitHub org/user
@@ -68,6 +72,3 @@ jobs:
           GIT_USER=$GIT_USERNAME npm run deploy --prefix website
           # Run docusaurus-publish (v1)
           # GIT_USER=$GIT_USERNAME npm run publish-gh-pages --prefix website
-      - name: Search for Broken Links
-        run: |
-          ./test-broken-links.sh

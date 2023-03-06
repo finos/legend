@@ -10,7 +10,7 @@ Legend Showcase projects are hosted on the [Legend hosted instance](https://fino
 
 ## Overview
 
-This page features a list of [Legend showcase projects](https://gitlab.com/finosfoundation/legend/showcase). Get started with the [Legend showcase guided tour](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project-guided-tour). For step by step tutorials, see [Legend tutorials](../tutorials/studio-workspace.md.md).
+This page features a list of [Legend showcase projects](https://gitlab.com/finosfoundation/legend/showcase). Get started with the [Legend showcase guided tour](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project-guided-tour). For step by step tutorials, see [Legend tutorials](../tutorials/studio-workspace.md).
 
 ## Showcase projects
 

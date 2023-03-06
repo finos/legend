@@ -229,7 +229,7 @@
     },
     "question.how-to-specify-a-class-supertype": {
       "title": "How do I specify a supertype of a class?",
-      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#add-a-super-type"
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#add-a-supertype"
     },
     "question.how-to-create-a-service": {
       "title": "How do I create a Service?",
@@ -326,7 +326,7 @@
     },
     "dsl-text.concept.element.text": {
       "markdownText": {
-        "value": "A `Text` element stores plain-text content with a specified content-type, which can be used for formatting, syntax-highlighting"
+        "value": "A `Text` element stores plain-text content with a b content-type, which can be used for formatting, syntax-highlighting"
       },
       "title": "What is a text element?"
     },

@@ -1,5 +1,5 @@
 ---
-id: legend-concepts
+id: legend-studio-concepts
 title: Legend Concepts
 sidebar_label: Legend
 ---
@@ -58,7 +58,7 @@ See the [tutorial to define project dependencies](../tutorials/studio-project-de
 
 The service editor has two main panels: general and execution. The general panel has basic metadata about your service. The execution panel has queries, and the ability to edit queries using the query builder. From there, you can also execute and register the service.
 
-See the [tutorial to create services](../tutorials/studio-create-service.md).
+See the [tutorial to create services](../tutorials/services-service.md).
 
 ## Model-to-Model Mapping
 
