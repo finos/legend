@@ -326,7 +326,7 @@
     },
     "dsl-text.concept.element.text": {
       "markdownText": {
-        "value": "A `Text` element stores plain-text content with a b content-type, which can be used for formatting, syntax-highlighting"
+        "value": "A `Text` element stores plain-text content with a specified content-type, which can be used for formatting, syntax-highlighting"
       },
       "title": "What is a text element?"
     },
