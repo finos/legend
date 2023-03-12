@@ -1,81 +1,115 @@
 const fs = require("fs");
+const http = require("http");
+const { parse } = require("url");
 
 const DOC_WEBSITE_URL = "https://legend.finos.org/";
 const APPLICATION_DOC_DIRECTORY =
-  "website/static/resource/studio/documentation/";
-const WEBSITE_CONTENT_DIRECTORY = "./website/build/";
+  "../website/static/resource/studio/documentation/";
+const WEBSITE_CONTENT_DIRECTORY = "../website/build/";
 
-var files = fs.readdirSync(APPLICATION_DOC_DIRECTORY);
-var brokenUrls = [];
+const files = fs.readdirSync(APPLICATION_DOC_DIRECTORY);
+const BROKEN_LINKS = [];
 
-for (let i = 0; i < files.length; i++) {
-  if (!files[i].endsWith(".json")) continue;
-  var jsonObject = JSON.parse(
-    fs.readFileSync(APPLICATION_DOC_DIRECTORY + files[i], "utf8")
+const https = require("https");
+
+files.forEach((file) => {
+  const fileContent = JSON.parse(
+    fs.readFileSync(APPLICATION_DOC_DIRECTORY + file, "utf8")
   );
 
-  const keys = Object.keys(jsonObject.entries);
-  for (let i = 0; i < keys.length; i++) {
-    const key = keys[i];
-    if (jsonObject.entries[key].url == undefined) {
-      continue;
+  Object.values(fileContent.entries)
+    .filter((entry) => entry.url)
+    .forEach((entry) => validateURL(entry.url));
+});
+
+if (BROKEN_LINKS.length !== 0) {
+  throw new Error(
+    `Found ${BROKEN_LINKS.length} broken link(s):\n${BROKEN_LINKS.join("\n")}`
+  );
+}
+
+function validateURL(url) {
+  if (!url.startsWith(DOC_WEBSITE_URL)) {
+    if (!url.startsWith("https://")) {
+      return;
     }
-    lookForUrl(jsonObject.entries[key].url);
-  }
-}
+    function urlExists(url) {
+      return new Promise((resolve) => {
+        const options = {
+          method: "HEAD",
+          host: parse(url).host,
+          path: parse(url).pathname,
+          port: 80,
+        };
 
-if (brokenUrls.length !== 0) {
-  throw new Error("Broken link(s) found: " + brokenUrls);
-}
+        const req = http.request(options, (res) => {
+          resolve(res.statusCode < 400 || res.statusCode >= 500);
+        });
 
-async function lookForUrlWithAnchor(url) {
-  const locationOfFile = url
-    .substring(0, url.lastIndexOf("/"))
-    .replace(DOC_WEBSITE_URL, "");
+        req.end();
+      });
+    }
 
-  const filePathName =
-    WEBSITE_CONTENT_DIRECTORY +
-    locationOfFile +
-    url.substring(url.lastIndexOf("/"), url.lastIndexOf("#")) +
-    ".html";
-
-  const anchorTag = url.substring(url.lastIndexOf("#"));
-
-  if (await fs.existsSync(filePathName)) {
-    await fs.readFile(filePathName, "UTF-8", (err, data) => {
-      if (!data) {
-        collectionOfErrors.push(["\n" + filePathName + "\n"]);
-      }
-
-      if (!data.toLocaleLowerCase().includes(anchorTag)) {
-        brokenUrls.push(["\n" + url + "\n"]);
-        throw new Error("Broken link(s) found: " + brokenUrls);
+    urlExists(url).then(() => {
+      if (url.lastIndexOf("#") !== -1) {
+        https.get(url, (res) => {
+          let rawHtml = "";
+          res.on("data", (chunk) => {
+            rawHtml += chunk;
+          });
+          res.on("end", () => {
+            try {
+              if (!rawHtml.includes(url.substring(url.lastIndexOf("#") + 1))) {
+                throw new Error(
+                  "Broken link found for " +
+                    url +
+                    " (anchor " +
+                    url.substring(url.lastIndexOf("#")) +
+                    " does not exist)"
+                );
+              }
+            } catch (e) {
+              console.error(e.message);
+            }
+          });
+        });
       }
     });
-  } else {
-    brokenUrls.push(["\n" + url + "\n"]);
+
+    return;
   }
-}
 
-async function lookForUrl(url) {
-  currUrl = url.replace(DOC_WEBSITE_URL, "");
-  lastDirectoryIndex = currUrl.lastIndexOf("/");
+  const relativeUrl = url.substring(DOC_WEBSITE_URL.length);
 
-  fileName = currUrl.substring(lastDirectoryIndex);
-  currUrlFinal = currUrl.substring(0, lastDirectoryIndex);
+  const filePath =
+    relativeUrl.lastIndexOf("#") !== -1
+      ? `${
+          WEBSITE_CONTENT_DIRECTORY +
+          relativeUrl.substring(0, relativeUrl.lastIndexOf("#"))
+        }.html`
+      : `${WEBSITE_CONTENT_DIRECTORY + relativeUrl}.html`;
 
-  if (fs.existsSync(WEBSITE_CONTENT_DIRECTORY + currUrlFinal)) {
-    if (fileName.lastIndexOf("#") !== -1) {
-      //includes markdown tag
-      lookForUrlWithAnchor(url);
-    } else {
-      if (!fs.existsSync(currUrlFinal + fileName + ".md")) {
-        brokenUrls.push(["\n" + url + "\n"]);
-      }
+  const anchorTag =
+    relativeUrl.lastIndexOf("#") !== -1
+      ? relativeUrl.substring(relativeUrl.lastIndexOf("#"))
+      : undefined;
+
+  if (fs.existsSync(filePath)) {
+    if (anchorTag) {
+      fs.readFile(filePath, "UTF-8", (err, data) => {
+        if (err || (data && !data.toLocaleLowerCase().includes(anchorTag))) {
+          BROKEN_LINKS.push(url);
+          throw new Error(
+            "Broken link found for " +
+              url +
+              " (anchor " +
+              anchorTag +
+              " does not exist)"
+          );
+        }
+      });
     }
   } else {
-    brokenUrls.push(["\n" + url + "\n"]);
+    BROKEN_LINKS.push(url);
   }
-
-  return;
 }
