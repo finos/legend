@@ -1,12 +1,15 @@
 const fs = require("fs");
 const http = require("http");
 const https = require("https");
+const path = require("path");
 const { parse } = require("url");
 
 const DOC_WEBSITE_URL = "https://legend.finos.org/";
-const APPLICATION_DOC_DIRECTORY =
-  "../website/static/resource/studio/documentation/";
-const WEBSITE_CONTENT_DIRECTORY = "../website/build/";
+const APPLICATION_DOC_DIRECTORY = path.resolve(
+  __dirname,
+  "../website/static/resource/studio/documentation/"
+);
+const WEBSITE_CONTENT_DIRECTORY = path.resolve(__dirname, "../website/build/");
 
 async function detectBrokenLinks() {
   const files = fs.readdirSync(APPLICATION_DOC_DIRECTORY);
@@ -15,7 +18,7 @@ async function detectBrokenLinks() {
     await Promise.all(
       files.flatMap((file) => {
         const fileContent = JSON.parse(
-          fs.readFileSync(APPLICATION_DOC_DIRECTORY + file, "utf8")
+          fs.readFileSync(path.resolve(APPLICATION_DOC_DIRECTORY, file), "utf8")
         );
 
         return Object.values(fileContent.entries)
@@ -109,10 +112,11 @@ async function checkLink(url) {
     anchorIdx !== -1 ? relativeUrl.substring(anchorIdx) : undefined;
   const filePath =
     anchorIdx !== -1
-      ? `${
-          WEBSITE_CONTENT_DIRECTORY + relativeUrl.substring(0, anchorIdx)
-        }.html`
-      : `${WEBSITE_CONTENT_DIRECTORY + relativeUrl}.html`;
+      ? path.resolve(
+          WEBSITE_CONTENT_DIRECTORY,
+          `${relativeUrl.substring(0, anchorIdx)}.html`
+        )
+      : path.resolve(WEBSITE_CONTENT_DIRECTORY, `${relativeUrl}.html`);
 
   if (fs.existsSync(filePath)) {
     if (anchorTag) {
