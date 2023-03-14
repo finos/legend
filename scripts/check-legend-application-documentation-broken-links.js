@@ -102,7 +102,6 @@ async function checkLink(url) {
     } else {
       result = url;
     }
-
     return result;
   }
 
@@ -120,13 +119,16 @@ async function checkLink(url) {
 
   if (fs.existsSync(filePath)) {
     if (anchorTag) {
-      let result = undefined;
-      fs.readFileSync(filePath, "UTF-8", (err, data) => {
-        if (err || (data && !data.toLocaleLowerCase().includes(anchorTag))) {
-          result = url;
+      try {
+        const data = fs.readFileSync(filePath, {
+          encoding: "utf-8",
+        });
+        if (data && !data.toLocaleLowerCase().includes(anchorTag)) {
+          return url;
         }
-      });
-      return result;
+      } catch {
+        return url;
+      }
     }
     return undefined;
   }
