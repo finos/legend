@@ -46,8 +46,10 @@ jobs:
           else echo "Skipping patching, as this is the finos user on github"
           fi
       - name: Build Website
+        working-directory: ./website
         run: |
-          ./scripts/build-site.sh
+          yarn install
+          yarn build
       - name: Search for Broken Links
         run: |
           node ./scripts/check-legend-application-documentation-broken-links.js

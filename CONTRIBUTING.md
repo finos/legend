@@ -97,16 +97,16 @@ You can get involved with Legend by suggesting topics you'd like to see in our d
 
 To make edits to the website itself, you need to run the website locally. You must have:
 
-- A Git client installed to checkout the code from github.com/finos/legend (`master` branch). The `git` command must be available via command-line, as it's needed to run the `build-site.sh` script.
+- A Git client installed to checkout the code from github.com/finos/legend (`master` branch). The `git` command must be available via command-line.
 - [Yarn installed](https://yarnpkg.com/lang/en/docs/install).
 
 The following code automatically launches a browser and takes you to the staging website, located at http://localhost:3000. File changes are live rendered, speeding up the editorial workflow.
 
-```git
+```sh
 git clone git@github.com:<yourfork>/legend.git
 git checkout -b feature/myProposedDocChanges
-cd legend ; ./scripts/build-site.sh
-cd website ; yarn start
+cd legend/website
+yarn start
 ```
 
 Once you're satisfied with your documentation changes, commit and propose them in line with the general process described above. Specifically for doc edits, it might look like this:
@@ -123,9 +123,6 @@ To learn more about Docusaurus, read the following resources:
 - https://github.com/finos/legend/tree/master/website
 - https://finosfoundation.atlassian.net/wiki/spaces/FDX/pages/844759075/Using+Docusaurus+recommended 
 - https://docusaurus.io
-
-**Note:** [The documentation build script](https://github.com/finos/legend/blob/master/scripts/build-site.sh) can be configured to pull in and include files from GitLab repositories housing modeling documentation into the GitHub pages/Docusaurus-powered site.
-
 
 ## 4. Contribute issues: identify bugs, suggest new features, and provide feedback on prioritization 
 View the prerequisites and steps to report an issue in GitHub.
