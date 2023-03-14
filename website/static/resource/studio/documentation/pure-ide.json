@@ -5,7 +5,7 @@
         "value": "Core `Pure` (coressponding to `###Pure` section in `Pure`) concerns with fundamental modelling concepts, such as, classes (data models), enumerations, associations, functions, etc."
       },
       "title": "What is core Pure about?",
-      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol"
+      "url": "https://legend.finos.org/docs/reference/legend-language"
     },
     "dsl-mapping.grammar.parser": {
       "markdownText": {

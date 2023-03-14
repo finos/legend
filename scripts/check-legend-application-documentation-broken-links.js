@@ -1,81 +1,132 @@
 const fs = require("fs");
+const http = require("http");
+const https = require("https");
+const { parse } = require("url");
 
 const DOC_WEBSITE_URL = "https://legend.finos.org/";
 const APPLICATION_DOC_DIRECTORY =
-  "website/static/resource/studio/documentation/";
-const WEBSITE_CONTENT_DIRECTORY = "./website/build/";
+  "../website/static/resource/studio/documentation/";
+const WEBSITE_CONTENT_DIRECTORY = "../website/build/";
 
-var files = fs.readdirSync(APPLICATION_DOC_DIRECTORY);
-var brokenUrls = [];
+async function detectBrokenLinks() {
+  const files = fs.readdirSync(APPLICATION_DOC_DIRECTORY);
 
-for (let i = 0; i < files.length; i++) {
-  if (!files[i].endsWith(".json")) continue;
-  var jsonObject = JSON.parse(
-    fs.readFileSync(APPLICATION_DOC_DIRECTORY + files[i], "utf8")
-  );
+  const brokenLinks = (
+    await Promise.all(
+      files.flatMap((file) => {
+        const fileContent = JSON.parse(
+          fs.readFileSync(APPLICATION_DOC_DIRECTORY + file, "utf8")
+        );
 
-  const keys = Object.keys(jsonObject.entries);
-  for (let i = 0; i < keys.length; i++) {
-    const key = keys[i];
-    if (jsonObject.entries[key].url == undefined) {
-      continue;
-    }
-    lookForUrl(jsonObject.entries[key].url);
+        return Object.values(fileContent.entries)
+          .filter((entry) => entry.url)
+          .map((entry) => checkLink(entry.url));
+      })
+    )
+  ).filter(Boolean);
+
+  if (brokenLinks.length !== 0) {
+    throw new Error(
+      `Found ${brokenLinks.length} broken link(s):\n${brokenLinks.join("\n")}`
+    );
+  } else {
+    console.log(`No broken links found!`);
   }
 }
 
-if (brokenUrls.length !== 0) {
-  throw new Error("Broken link(s) found: " + brokenUrls);
+// Use `HEAD` request via http to check if the url still exists
+// See https://stackoverflow.com/questions/60841965/how-can-i-check-to-see-if-a-url-exists-or-not
+// See https://github.com/nwaughachukwuma/url-exists-nodejs
+async function checkExternalLinkExists(url) {
+  return new Promise((resolve) => {
+    const req = http.request(
+      {
+        method: "HEAD",
+        host: parse(url).host,
+        path: parse(url).pathname,
+        port: 80,
+      },
+      (response) => {
+        // NOTE: only 400 requests are considered not found
+        resolve(response.statusCode < 400 || response.statusCode >= 500);
+      }
+    );
+
+    req.end();
+  });
 }
 
-async function lookForUrlWithAnchor(url) {
-  const locationOfFile = url
-    .substring(0, url.lastIndexOf("/"))
-    .replace(DOC_WEBSITE_URL, "");
-
-  const filePathName =
-    WEBSITE_CONTENT_DIRECTORY +
-    locationOfFile +
-    url.substring(url.lastIndexOf("/"), url.lastIndexOf("#")) +
-    ".html";
-
-  const anchorTag = url.substring(url.lastIndexOf("#"));
-
-  if (await fs.existsSync(filePathName)) {
-    await fs.readFile(filePathName, "UTF-8", (err, data) => {
-      if (!data) {
-        collectionOfErrors.push(["\n" + filePathName + "\n"]);
-      }
-
-      if (!data.toLocaleLowerCase().includes(anchorTag)) {
-        brokenUrls.push(["\n" + url + "\n"]);
-        throw new Error("Broken link(s) found: " + brokenUrls);
-      }
+async function fetchExternalLinkSiteData(url) {
+  return new Promise((resolve, reject) => {
+    https.get(url, (response) => {
+      let chunks_of_data = [];
+      response.on("data", (fragments) => {
+        chunks_of_data.push(fragments);
+      });
+      response.on("end", () => {
+        let response_body = Buffer.concat(chunks_of_data);
+        resolve(response_body.toString());
+      });
+      response.on("error", (error) => {
+        reject(error);
+      });
     });
-  } else {
-    brokenUrls.push(["\n" + url + "\n"]);
-  }
+  });
 }
 
-async function lookForUrl(url) {
-  currUrl = url.replace(DOC_WEBSITE_URL, "");
-  lastDirectoryIndex = currUrl.lastIndexOf("/");
-
-  fileName = currUrl.substring(lastDirectoryIndex);
-  currUrlFinal = currUrl.substring(0, lastDirectoryIndex);
-
-  if (fs.existsSync(WEBSITE_CONTENT_DIRECTORY + currUrlFinal)) {
-    if (fileName.lastIndexOf("#") !== -1) {
-      //includes markdown tag
-      lookForUrlWithAnchor(url);
-    } else {
-      if (!fs.existsSync(currUrlFinal + fileName + ".md")) {
-        brokenUrls.push(["\n" + url + "\n"]);
-      }
+async function checkLink(url) {
+  if (!url.startsWith(DOC_WEBSITE_URL)) {
+    // we will not handle unsecured links
+    if (!url.startsWith("https://")) {
+      return undefined;
     }
-  } else {
-    brokenUrls.push(["\n" + url + "\n"]);
+
+    let result = undefined;
+    const urlExists = await checkExternalLinkExists(url);
+    if (urlExists) {
+      await fetchExternalLinkSiteData(url)
+        .then((data) => {
+          if (
+            url.lastIndexOf("#") !== -1 &&
+            !data.includes(url.substring(url.lastIndexOf("#")))
+          ) {
+            result = url;
+          }
+        })
+        .catch(() => {
+          result = url;
+        });
+    } else {
+      result = url;
+    }
+
+    return result;
   }
 
-  return;
+  const relativeUrl = url.substring(DOC_WEBSITE_URL.length);
+  const anchorIdx = relativeUrl.lastIndexOf("#");
+  const anchorTag =
+    anchorIdx !== -1 ? relativeUrl.substring(anchorIdx) : undefined;
+  const filePath =
+    anchorIdx !== -1
+      ? `${
+          WEBSITE_CONTENT_DIRECTORY + relativeUrl.substring(0, anchorIdx)
+        }.html`
+      : `${WEBSITE_CONTENT_DIRECTORY + relativeUrl}.html`;
+
+  if (fs.existsSync(filePath)) {
+    if (anchorTag) {
+      let result = undefined;
+      fs.readFileSync(filePath, "UTF-8", (err, data) => {
+        if (err || (data && !data.toLocaleLowerCase().includes(anchorTag))) {
+          result = url;
+        }
+      });
+      return result;
+    }
+    return undefined;
+  }
+  return url;
 }
+
+detectBrokenLinks();
