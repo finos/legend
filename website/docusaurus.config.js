@@ -1,4 +1,5 @@
 const pureHighlighter = require("../website/pureHighlighter");
+console.log(process.env.NODE_ENV);
 
 module.exports = {
   title: "Legend",
@@ -25,9 +26,9 @@ module.exports = {
       },
     },
   },
-  onBrokenLinks: "log",
-
-  onBrokenMarkdownLinks: "log",
+  onBrokenLinks: process.env.NODE_ENV === 'production' ? "throw" : "warn",
+  onBrokenMarkdownLinks: process.env.NODE_ENV === 'production' ? "throw" : "warn",
+  onDuplicateRoutes: process.env.NODE_ENV === 'production' ? "throw" : "warn",
   presets: [
     [
       "@docusaurus/preset-classic",

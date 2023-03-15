@@ -86,7 +86,7 @@ sidebar_label: Media
 
 - ["Shining Star" - Americas 2022](https://www.finos.org/blog/congratulations-to-the-finos-americas-member-and-community-award-winners-2022) award, for going above and beyond to engage the community: Legend
 
-- ["Most active FINOS member" - Americas 2022](congratulations-to-the-finos-americas-member-and-community-award-winners-2022) award, determined by active participation metrics: Goldman Sachs 
+- ["Most active FINOS member" - Americas 2022](https://www.finos.org/blog/congratulations-to-the-finos-americas-member-and-community-award-winners-2022) award, determined by active participation metrics: Goldman Sachs 
 
 - ["Shining Star" FINOS community -  EMEA 2021](https://www.finos.org/blog/congratulations-to-the-finos-emea-member-and-community-awards-2021) award, for going above and beyond to engage with the Open Source Community: Legend and Goldman Sachs
 

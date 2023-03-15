@@ -6,7 +6,7 @@ sidebar_label: Flat Data Schema
 
 ## Create a Flat Data Schema
 
-To create a [Flat Data Schema](../concepts/legend-studio-concepts.md/#flat-data-schema)
+To create a [Flat Data Schema](../overview/legend-studio-concepts.md/#flat-data-schema)
 
 1. Click the **+** on the left-hand side and select **New SchemaSet**.
 2. Enter a name for the SchemaSet

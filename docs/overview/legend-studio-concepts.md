@@ -19,7 +19,7 @@ See the [tutorial to create a group workspace](../tutorials/studio-workspace.md/
 
 Diagrams are visual representations of your models to better visualize and communicate about data and their relationships. **Important to note** is that Diagrams are not auto-generated based on the created model. Instead, diagrams should be intentionally created to best represent the data being described.
 
-See the [tutorial to create a diagram](../tutorials/studio-create-diagram.md).
+See the [tutorial to create a diagram](../tutorials/studio-diagram.md).
 
 ## Text Mode
 

@@ -12,7 +12,7 @@ There are many ways to contribute to Legend and many of them don't involve writi
 
 ### 2. Contribute to existing models
 Start using Legend Studio to provide feedback, [and contribute to, existing models](contribute-to-legend.md#contribute-to-models). 
-Request access to the modeling instance at https://www.finos.org/legend and go [through our Getting started guide](../studio/create-workspace.md). If you encounter an issue, let us know by [opening an issue](https://github.com/finos/legend/issues/new/choose).
+Request access to the modeling instance at https://www.finos.org/legend and go [through our Getting started guide](../tutorials/studio-workspace.md). If you encounter an issue, let us know by [opening an issue](https://github.com/finos/legend/issues/new/choose).
 
 ### 3. Contribute documentation
 [Help build out the documentation](contribute-to-legend.md#contribute-documentation). 
@@ -202,7 +202,7 @@ To receive updates on Legend, subscribe to these lists:
     -   Post with email to [legend@finos.org](mailto:legend@finos.org)
 
 -   GitHub / GitLab Issues & Kanban
-    -   [GitHub Issues]((https://github.com/finos/legend/issues))
+    -   [GitHub Issues](https://github.com/finos/legend/issues)
     -   [GitHub Kanban](https://github.com/orgs/finos/projects/5)
 
 -   Legend Updates from FINOS
