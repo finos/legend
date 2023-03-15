@@ -95,7 +95,7 @@ We have a model of the shape the data should be in, the target model. We have a 
 
 Once these rules have been defined, Legend can automatically execute the mapping or data transformation.
 
-You can navigate to the live mapping by following this [https://legend.finos.org/studio/view/UAT-38029096/entity/mapping::m2m::Firm_Person](link)
+You can navigate to the live mapping by following this [link](https://legend.finos.org/studio/view/UAT-38029096/entity/mapping::m2m::Firm_Person).
 
 </a><a name="model-testing">
 

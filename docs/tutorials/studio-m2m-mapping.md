@@ -61,7 +61,7 @@ You can promote this ad hoc execution to a test by clicking on the **beaker** ic
 
 ### Execute a Model-to-Model Mapping with Constraints
 
-Remember that we can add a [constraint](../tutorials/studio-create-model/#constraint-1) on classes? We can also execute model-to-model mappings with constraints to check if the constraint criteria are violated.
+Remember that we can add a [constraint](../tutorials/studio-tutorial/#constraint-1) on classes? We can also execute model-to-model mappings with constraints to check if the constraint criteria are violated.
 
 Let's create a constraint on the `NewPerson` class that checks if the name value is empty `$this.name-> == ''`
 
