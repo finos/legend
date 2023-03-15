@@ -70,7 +70,6 @@
       "reference/upcoming-functions",
       "reference/stores",
       "reference/external-format",
-      "reference/bindings",
       "reference/query-protocol"
     ],
     "Releases": [
@@ -88,6 +87,7 @@
       "community/legend-roadmap",
       "community/legend-media",
       "community/case-studies",
+      "community/external-integrations",
       "community/terms-of-service"
     ]
   }
