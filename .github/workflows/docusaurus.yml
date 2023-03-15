@@ -1,50 +1,27 @@
 name: Docusaurus-website-build
 
-# Only trigger on documentation content changes:
-# - Docusaurus files
-# - docs/**
-# - website/**
 on:
   push:
     branches:
       - master
-    paths:
-      - ".github/workflows/docusaurus.yml"
-      - ".github/*.md"
-      - "docs/**"
-      - "website/**"
+      - 'release/**'
   pull_request:
-    paths:
-      - ".github/workflows/docusaurus.yml"
-      - "docs/**"
-      - "website/**"
+    branches:
+      - '**'
 
 env:
   # Used by docusaurus `publish-site` step
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   REPO_NAME: ${{ github.event.repository.name }}
-  PATCH_SCRIPT_URL: https://raw.githubusercontent.com/finos/open-developer-platform/master/scripts/patch-docusaurus-config.sh
 
 jobs:
   website-build:
-    if: github.repository != 'finos/legend-studio' # skip running action in forks
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v1
       - name: Install Node
         uses: actions/setup-node@v3
-      - name: Install Website deps
-        run: npm install --prefix website
-      - name: Patch forked version
-        run: |
-          # Extract GitHub org/user and patch siteConfig.js only if not "finos"
-          REPO="${{ github.repository }}"
-          REPO_ORG=${REPO%"/"*}
-          if [ "$REPO_ORG" != "finos" ]
-          then echo "Repo organization is '$REPO_ORG', patching docusaurus configuration to work on a forked repo" ; curl ${{ env.PATCH_SCRIPT_URL }} |  bash -s -- ${{ env.REPO_NAME }} $REPO_ORG
-          else echo "Skipping patching, as this is the finos user on github"
-          fi
       - name: Build Website
         working-directory: ./website
         run: |
@@ -54,6 +31,7 @@ jobs:
         run: |
           node ./scripts/check-legend-application-documentation-broken-links.js
       - name: Publish Website
+        if: github.repository == 'finos/legend' # skip running action in forks
         run: |
           # Extract GitHub org/user
           REPO="${{ github.repository }}"
@@ -70,7 +48,4 @@ jobs:
           git config --global user.email "$GIT_USERNAME@users.noreply.github.com"
           git config --global user.name "$GIT_USERNAME"
           echo "machine github.com login $GIT_USERNAME password $GITHUB_TOKEN" > ~/.netrc
-          # Run docusaurus deploy (v2)
           GIT_USER=$GIT_USERNAME npm run deploy --prefix website
-          # Run docusaurus-publish (v1)
-          # GIT_USER=$GIT_USERNAME npm run publish-gh-pages --prefix website
