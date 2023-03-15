@@ -16,7 +16,7 @@ Associations are used to define a single linking relationship between two classe
 
 _Coming soon._
 
-[Bindings technical documentation](../reference/bindings.md)
+[Bindings technical documentation](../reference/external-format.md#bindings)
 
 ## Class Editor
 
