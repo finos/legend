@@ -1,6 +1,6 @@
 [![FINOS - Incubating](https://cdn.jsdelivr.net/gh/finos/contrib-toolbox@master/images/badge-incubating.svg)](https://finosfoundation.atlassian.net/wiki/display/FINOS/Incubating)
 
-# Legend
+# Legend 
 
 Legend provides an **end-to-end data platform experience covering the full data lifecycle**. It encompasses a suite of data management and governance components known as the **Legend Platform**. Legend enables breaking down silos and building a critical bridge over the historical divide between business and engineering, allowing companies to build data-driven applications and insightful business intelligence dashboards. Legend also includes novel features that accelerate data curation, exchange, and sharing such as:
 
