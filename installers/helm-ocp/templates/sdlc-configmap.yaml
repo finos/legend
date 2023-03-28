@@ -1,0 +1,86 @@
+apiVersion: v1
+data:
+  config.yml: |
+    applicationName: Legend LEGEND_SDLC
+
+    server:
+      applicationConnectors:
+        - type: http
+          port: 7070
+          maxRequestHeaderSize: 128KiB
+      adminConnectors:
+        - type: http
+          port: 7076
+      gzip:
+        includedMethods:
+          - GET
+          - POST
+      requestLog:
+        type: classic
+        level: OFF
+        appenders:
+          - type: console
+            logFormat: "OFF"
+      rootPath: /api
+
+    projectStructure:
+      projectCreation:
+        groupIdPattern: ^org\.finos\.legend\..+
+
+    filterPriorities:
+      GitLab: 1
+      org.pac4j.j2e.filter.CallbackFilter: 2
+      org.pac4j.j2e.filter.SecurityFilter: 3
+      CORS: 4
+
+    pac4j:
+      callbackPrefix: /api/pac4j/login
+      mongoUri: mongodb://{{ .Values.mongo.env.MONGO_USER }}:{{ .Values.mongo.env.MONGO_PASSWORD }}@{{ include "legend.fullname" . }}-mongo.{{ .Release.Namespace }}.{{ .Values.clusterdns}}:{{ .Values.mongo.port }}
+      mongoDb: legend
+      clients:
+        - org.finos.legend.server.pac4j.gitlab.GitlabClient:
+            name: gitlab
+            clientId: {{ .Values.env.GITLAB_OAUTH_CLIENT_ID }}
+            secret: {{ .Values.env.GITLAB_OAUTH_SECRET }}
+            discoveryUri: https://{{ .Values.env.GITLAB_URL }}/.well-known/openid-configuration
+            scope: openid profile api
+      mongoSession:
+          enabled: true
+          collection: userSessions
+      bypassPaths:
+        - /api/info
+
+    gitLab:
+      newProjectVisibility: public
+      projectTag: legend
+      uat:
+        server:
+          scheme: https
+          host: {{ .Values.env.GITLAB_URL }}
+        app:
+          id: {{ .Values.env.GITLAB_OAUTH_CLIENT_ID }}
+          secret: {{ .Values.env.GITLAB_OAUTH_SECRET }}
+          redirectURI: http://{{ .Values.env.LEGEND_HOST }}/sdlc/api/auth/callback
+
+    projectStructure:
+      extensionProvider:
+        org.finos.legend.sdlc.server.gitlab.finos.FinosGitlabProjectStructureExtensionProvider: {}
+
+    logging:
+      # Change this to affect library class logging
+      level: INFO
+      appenders:
+        - type: console
+          logFormat: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%thread] %c - %m%n"
+
+    swagger:
+      resourcePackage: org.finos.legend.sdlc.server.resources
+      title: Legend LEGEND_SDLC
+      version: local-snapshot
+      schemes: []
+kind: ConfigMap
+metadata:
+  labels:
+    app: sdlc
+    {{- include "legend.labels" . | nindent 4 }}
+  name: {{ include "legend.fullname" . }}-sdlc

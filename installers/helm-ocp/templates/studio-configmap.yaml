@@ -1,0 +1,90 @@
+apiVersion: v1
+data:
+  uiConfig.json: |
+    {
+      "appName": "studio",
+      "env": "test",
+      "sdlc": {
+        "url": "https://{{ .Values.env.LEGEND_HOST }}/sdlc/api"
+      },
+      "metadata": {
+        "url": "__LEGEND_DEPOT_URL__/api"
+      },
+      "engine": {
+        "url": "https://{{ .Values.env.LEGEND_HOST }}/engine/api"
+      },
+      "documentation": {
+        "url": "https://legend.finos.org"
+      },
+      "options": {
+        "core": {
+          "TEMPORARY__disableServiceRegistration": true
+        }
+      }
+    }
+  httpConfig.json: |
+    {
+      "pac4j": {
+        "callbackPrefix": "/studio/log.in",
+        "bypassPaths": ["/studio/admin/healthcheck"],
+        "mongoUri": "mongodb://{{ .Values.mongo.env.MONGO_USER }}:{{ .Values.mongo.env.MONGO_PASSWORD }}@{{ include "legend.fullname" . }}-mongo.{{ .Release.Namespace }}.{{ .Values.clusterdns}}:{{ .Values.mongo.port }}",
+        "mongoDb": "legend",
+        "clients": [
+          {
+            "org.finos.legend.server.pac4j.gitlab.GitlabClient": {
+              "name" : "gitlab",
+              "clientId" : "{{ .Values.env.GITLAB_OAUTH_CLIENT_ID }}",
+              "secret": "{{ .Values.env.GITLAB_OAUTH_SECRET }}",
+              "discoveryUri": "https://{{ .Values.env.GITLAB_URL }}/.well-known/openid-configuration",
+              "scope": "openid profile api"
+            }
+          }
+        ],
+        "mongoSession": {
+          "enabled": true,
+          "collection": "userSessions"
+        }
+      },
+      "html5Router": true,
+      "routerExemptPaths": [
+          "/editor.worker.js",
+          "/json.worker.js",
+          "/editor.worker.js.map",
+          "/json.worker.js.map",
+          "/version.json",
+          "/config.json",
+          "/favicon.ico",
+          "/static"
+      ],
+      "localAssetPaths": {
+          "/studio/config.json" : "/config/uiConfig.json"
+      },
+      "uiPath": "/studio",
+      "server": {
+        "type": "simple",
+        "applicationContextPath": "/",
+        "adminContextPath": "/studio/admin",
+        "connector": {
+          "type": "http",
+          "port": 8080
+        }
+      },
+      "logging": {
+        "level": "INFO",
+        "loggers" : {
+          "root": { "level": "info"},
+          "org.pac4j": { "level": "debug"}
+        },
+        "appenders": [
+          {
+            "type": "console"
+          }
+        ]
+      }
+    }
+kind: ConfigMap
+metadata:
+  labels:
+    app: studio
+    {{- include "legend.labels" . | nindent 4 }}
+  name: {{ include "legend.fullname" . }}-studio

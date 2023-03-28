@@ -1,0 +1,89 @@
+apiVersion: v1
+data:
+  config.json: |
+    {
+      "deployment": {
+        "mode": "TEST_IGNORE_FUNCTION_MATCH"
+      },
+      "logging": {
+        "level": "info",
+        "loggers": {
+          "root": {
+            "level": "info"
+          },
+          "org.pac4j": {
+            "level": "debug"
+          }
+        },
+        "appenders": [
+          {
+            "type": "console",
+            "logFormat": "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%thread] %c - %m%n"
+          }
+        ]
+      },
+      "pac4j": {
+        "callbackPrefix": "",
+        "mongoUri": "mongodb://__MONGO_USER__:__MONGO_PASSWORD__@__MONGO_HOST__:__MONGO_PORT__",
+        "mongoDb": "legend",
+        "bypassPaths": [
+          "/api/server/v1/info"
+        ],
+        "clients": [
+          {
+            "org.finos.legend.server.pac4j.gitlab.GitlabClient": {
+              "name": "gitlab",
+              "clientId": "__GITLAB_OAUTH_CLIENT_ID__",
+              "secret": "__GITLAB_OAUTH_SECRET__",
+              "discoveryUri": "https://__GITLAB_URL__/.well-known/openid-configuration",
+              "scope": "openid profile api"
+            }
+          }
+        ],
+        "mongoSession": {
+          "enabled": true,
+          "collection": "userSessions"
+        }
+      },
+      "opentracing": {
+        "elastic": "",
+        "zipkin": "",
+        "uri": "",
+        "authenticator": {
+          "principal": "",
+          "keytab": ""
+        }
+      },
+      "swagger": {
+        "title": "Legend Engine",
+        "resourcePackage": "org.finos.legend",
+        "uriPrefix": "/api"
+      },
+      "server": {
+        "type": "simple",
+        "applicationContextPath": "/",
+        "adminContextPath": "/admin",
+        "connector": {
+          "maxRequestHeaderSize": "32KiB",
+          "type": "http",
+          "port": __LEGEND_ENGINE_PORT__
+        },
+        "requestLog": {
+          "appenders": [
+          ]
+        }
+      },
+      "metadataserver": {
+        "pure": {
+          "host": "127.0.0.1",
+          "port": 8090
+        }
+      },
+      "vaults": []
+    }
+kind: ConfigMap
+metadata:
+  labels:
+    app: engine
+    {{- include "legend.labels" . | nindent 4 }}
+  name: {{ include "legend.fullname" . }}-engine-template
