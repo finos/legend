@@ -67,31 +67,27 @@ Update the Studio configuration with the Gitlab Personal Access Token created fr
 
 Each of the Legend components are distributed as individual Docker images.
 
-"Legend in a box" repackages these images into a single Docker image. In addition, it uses supervisord to launch and manage the Legend components in the container.
-
-```
-docker build . -t legend-box
-```
-
-# Run the Docker container
-
-```
-sh -x ./run-box.sh
-```
-
-# Networking - Via Proxy
-
-The container runs a nginx proxy that is used to route to the various legend components.
+"Legend in a box" repackages these images into a single Docker image. In addition, it uses `supervisord` to launch and manage the Legend components in the container, and it runs a nginx proxy that is used to route to the various legend components.
 
 - Studio - http://localhost:9020/studio (routes to http://localhost:9000/studio)
 - Engine - http://localhost:9020/engine (routes to http://localhost:6300)
 - SDLC - http://localhost:9020/sdlc (routes to http://localhost:6100)
 - Supervisord - http://localhost:9020/sd (routes to http://localhost:9876)
 
-# Networking - Direct
+> For troubleshooting/debugging, the internal ports/urls (i.e 9000, 6300, 6100, 9876 etc) are also exposed outside the container
 
-For troubleshooting/debugging, the internal ports/urls (i.e 9000, 6300, 6100, 9876 etc) are also exposed outside the container
+```sh
+docker build . -t legend-box
+```
+
+# Run the Docker container
+
+```sh
+sh -x ./run-box.sh
+```
 
 # Use Legend
+
+> Note that it might take a few minutes for the components to start up, to check the status of the components, you can use the `supervisord` web interface at http://localhost:9020/sd and check the logs
 
 http://localhost:9020/studio
