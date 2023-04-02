@@ -2,8 +2,13 @@
 
 docker run \
 	-it \
-	-e STUDIO_HOME=/app/studio -e MONGO_HOME=/app/mongo -e ENGINE_HOME=/app/engine -e SDLC_HOME=/app/sdlc -e QUERY_HOME=/app/query -e DEPOT_HOME=/app/depot \
-	-p 27017:27017 -p 6100:6100 -p 6200:6200 -p 6300:6300 -p 9000:9000 -p 9001:9001 -p 9876:9876 -p 8080:8080 \
+	-p 27017:27017 -p 6100:6100 -p 6200:6200 -p 6300:6300 -p 9000:9000 -p 9001:9001 -p 9876:9876 -p 9020:9020 \
+	-e STUDIO_HOME=/app/studio \
+	-e MONGO_HOME=/app/mongo \
+	-e ENGINE_HOME=/app/engine \
+	-e SDLC_HOME=/app/sdlc \
+	-e QUERY_HOME=/app/query \
+	-e DEPOT_HOME=/app/depot \
 	-e MONGODB_URI=mongodb://localhost:27017 -e MONGO_SESSION_ENABLED=false -e MONGODB_NAME=legend \
 	-e ENGINE_PORT=6300 \
 	-e SDLC_PORT=6100 \

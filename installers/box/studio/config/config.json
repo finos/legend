@@ -2,16 +2,16 @@
   "appName": "studio",
   "env": "prod",
   "sdlc": {
-    "url": "http://localhost:8080/sdlc/api",
+    "url": "http://localhost:9020/sdlc/api",
     "baseHeaders": {
       "legend-test-pat": "xxxxx"
     }
   },
   "engine": {
-    "url": "http://localhost:8080/engine/api"
+    "url": "http://localhost:9020/engine/api"
   },
   "depot": {
-    "url": "http://localhost:8080/depot/api"
+    "url": "http://localhost:9020/depot/api"
   },
   "documentation": {
     "url": "https://legend.finos.org"

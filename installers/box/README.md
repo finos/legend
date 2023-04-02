@@ -59,16 +59,16 @@ cat studio/config/config.json
   "appName": "studio",
   "env": "prod",
   "sdlc": {
-    "url": "http://localhost:8080/sdlc/api",
+    "url": "http://localhost:9020/sdlc/api",
     "baseHeaders": {
       "legend-test-pat": "xxxxx" <---------------- HERE
     }
   },
   "engine": {
-    "url": "http://localhost:8080/engine/api"
+    "url": "http://localhost:9020/engine/api"
   },
   "depot": {
-    "url": "http://localhost:8080/depot/api"
+    "url": "http://localhost:9020/depot/api"
   },
   "documentation": {
     "url": "https://legend.finos.org"
@@ -103,10 +103,10 @@ sh -x ./run-box.sh
 
 The container runs a nginx proxy that is used to route to the various legend components.
 
-* Studio - http://localhost:8080/studio  (routes to http://localhost:9000/studio)
-* Engine - http://localhost:8080/engine (routes to http://localhost:6300)
-* SDLC - http://localhost:8000/sdlc (routes to http://localhost:6100)
-* Supervisord - http://localhost:8000/sd (routes to http://localhost:9876)
+* Studio - http://localhost:9020/studio  (routes to http://localhost:9000/studio)
+* Engine - http://localhost:9020/engine (routes to http://localhost:6300)
+* SDLC - http://localhost:9020/sdlc (routes to http://localhost:6100)
+* Supervisord - http://localhost:9020/sd (routes to http://localhost:9876)
 
 # Networking - Direct
 
@@ -114,5 +114,5 @@ For troubleshooting/debugging, the internal ports/urls (i.e 9000, 6300, 6100, 98
 
 # Use Legend 
 
-http://localhost:8080/studio
+http://localhost:9020/studio
 
