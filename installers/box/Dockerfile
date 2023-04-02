@@ -8,26 +8,12 @@ RUN apt-get update && apt-get install nginx -y
 
 ## Variables 
 
-ARG D_MONGO_HOME=/app/mongo
 ARG D_ENGINE_HOME=/app/engine
-ARG D_NGINX_HOME=/app/nginx
 ARG D_SDLC_HOME=/app/sdlc
 ARG D_DEPOT_HOME=/app/depot
 ARG D_STUDIO_HOME=/app/studio
 ARG D_QUERY_HOME=/app/query
-
-## Setup mongo 
-
-RUN apt-get install libcurl4 openssl liblzma5
-
-RUN mkdir -p $D_MONGO_HOME
-RUN wget -P $D_MONGO_HOME https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2204-6.0.5.tgz
-RUN cd $D_MONGO_HOME && tar -xzf mongodb-linux-x86_64-ubuntu2204-6.0.5.tgz
-
-RUN mkdir -p $D_MONGO_HOME/data
-RUN mkdir -p $D_MONGO_HOME/logs
-
-COPY mongo/run-mongo.sh $D_MONGO_HOME
+ARG D_NGINX_HOME=/app/nginx
 
 ## Setup nginx 
 

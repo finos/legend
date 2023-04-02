@@ -3,13 +3,6 @@
 docker run \
 	-it \
 	\
-	-e MONGO_HOME=/app/mongo \
-	-e MONGODB_URI=mongodb://localhost:27017 \
-	-e MONGO_SESSION_ENABLED=false \
-	-e MONGODB_NAME=legend \
-	-v `pwd`/mongo/config:/app/mongo/config \
-	-p 27017:27017 \
-	\
 	-e ENGINE_HOME=/app/engine \
 	-e ENGINE_PORT=6300 \
 	-e ENGINE_MAVEN_VERSION=3.15.3 \

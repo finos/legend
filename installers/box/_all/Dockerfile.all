@@ -3,6 +3,8 @@ FROM eclipse-temurin:11.0.17_8-jdk-jammy
 RUN apt-get update && apt-get install -y wget
 RUN apt-get update && apt-get install supervisor -y
 RUN apt-get update && apt-get install nano -y
+RUN apt-get update && apt-get install nginx -y
+RUN apt-get update && apt-get install nginx -y
 
 ## Variables 
 
@@ -12,6 +14,7 @@ ARG D_SDLC_HOME=/app/sdlc
 ARG D_DEPOT_HOME=/app/depot
 ARG D_STUDIO_HOME=/app/studio
 ARG D_QUERY_HOME=/app/query
+ARG D_NGINX_HOME=/app/nginx
 
 ## Setup mongo 
 
@@ -26,21 +29,28 @@ RUN mkdir -p $D_MONGO_HOME/logs
 
 COPY mongo/run-mongo.sh $D_MONGO_HOME
 
+## Setup nginx 
+
+RUN mkdir -p $D_NGINX_HOME/logs
+
 ## Setup engine 
 
 RUN mkdir -p $D_ENGINE_HOME/lib
 RUN mkdir -p $D_ENGINE_HOME/logs
 
-#RUN wget -P $D_ENGINE_HOME/lib https://repo1.maven.org/maven2/org/finos/legend/engine/legend-engine-server/4.4.2/legend-engine-server-4.4.2-shaded.jar
-COPY --from=finos/legend-engine-server:4.4.2 /app/bin/*.jar $D_ENGINE_HOME/lib
+COPY --from=finos/legend-engine-server:4.4.2 /app/bin/*.jar $D_ENGINE_HOME/lib/
 COPY engine/run-engine.sh $D_ENGINE_HOME
+
+# manually include bouncy castle jars as they are excluded from engine-server shaded jar
+RUN wget -P $D_ENGINE_HOME/lib https://repo1.maven.org/maven2/org/bouncycastle/bcprov-jdk15on/1.67/bcprov-jdk15on-1.67.jar
+RUN wget -P $D_ENGINE_HOME/lib https://repo1.maven.org/maven2/org/bouncycastle/bcpkix-jdk15on/1.67/bcpkix-jdk15on-1.67.jar
 
 ## Setup sdlc 
 
 RUN mkdir -p $D_SDLC_HOME/lib
 RUN mkdir -p $D_SDLC_HOME/logs
 
-COPY --from=finos/legend-sdlc-server:0.121.1 /app/bin/*.jar $D_SDLC_HOME/lib
+COPY --from=finos/legend-sdlc-server:0.121.1 /app/bin/*.jar $D_SDLC_HOME/lib/
 COPY sdlc/run-sdlc.sh $D_SDLC_HOME
 
 ## Setup depot
@@ -48,7 +58,7 @@ COPY sdlc/run-sdlc.sh $D_SDLC_HOME
 RUN mkdir -p $D_DEPOT_HOME/lib
 RUN mkdir -p $D_DEPOT_HOME/logs
 
-COPY --from=finos/legend-depot-server:1.5.3 /app/bin/*.jar $D_DEPOT_HOME/lib
+COPY --from=finos/legend-depot-server:1.5.3 /app/bin/*.jar $D_DEPOT_HOME/lib/
 COPY depot/run-depot.sh $D_DEPOT_HOME
 
 ## Setup studio 
@@ -56,7 +66,7 @@ COPY depot/run-depot.sh $D_DEPOT_HOME
 RUN mkdir -p $D_STUDIO_HOME/lib
 RUN mkdir -p $D_STUDIO_HOME/logs
 
-COPY --from=finos/legend-studio:9.6.0 /app/bin $D_STUDIO_HOME
+COPY --from=finos/legend-studio:9.6.0 /app/bin $D_STUDIO_HOME/
 COPY studio/run-studio.sh $D_STUDIO_HOME
 
 ## Setup query 
@@ -64,7 +74,7 @@ COPY studio/run-studio.sh $D_STUDIO_HOME
 RUN mkdir -p $D_QUERY_HOME/lib
 RUN mkdir -p $D_QUERY_HOME/logs
 
-COPY  --from=finos/legend-query:8.38.0 /app/bin $D_QUERY_HOME
+COPY  --from=finos/legend-query:8.38.0 /app/bin $D_QUERY_HOME/
 COPY query/run-query.sh $D_QUERY_HOME
 
 ## Setup supervisord
