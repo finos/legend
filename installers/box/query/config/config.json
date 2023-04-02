@@ -1,0 +1,25 @@
+{
+  "appName": "query",
+  "env": "prod",
+  "engine": {
+    "url": "http://localhost:6300/api"
+  },
+  "depot": {
+    "url": "http://localhost:6200/depot/api"
+  },
+  "studio": {
+    "url": "http://${STUDIO_HOST}:${STUDIO_PORT}/studio",
+    "instances": [
+      {
+        "sdlcProjectIDPrefix": "PROD",
+        "url": "http://${STUDIO_HOST}:${STUDIO_PORT}/studio"
+      }
+    ]
+  },
+  "taxonomy": {
+    "url": "http://unused:1234/taxonomy"
+  },
+  "documentation": {
+    "url": "https://legend.finos.org"
+  }
+}

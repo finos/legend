@@ -1,0 +1,25 @@
+{
+  "appName": "studio",
+  "env": "prod",
+  "sdlc": {
+    "url": "http://localhost:8080/sdlc/api",
+    "baseHeaders": {
+      "legend-test-pat": "xxxxx"
+    }
+  },
+  "engine": {
+    "url": "http://localhost:8080/engine/api"
+  },
+  "depot": {
+    "url": "http://localhost:8080/depot/api"
+  },
+  "documentation": {
+    "url": "https://legend.finos.org"
+  },
+  "extensions": {
+    "core": {
+      "TEMPORARY__disableSDLCProjectCreation": false,
+      "TEMPORARY__disableServiceRegistration": true
+    }
+  }
+}

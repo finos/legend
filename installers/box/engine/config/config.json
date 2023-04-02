@@ -1,0 +1,85 @@
+
+{
+  "deployment": {
+    "mode": "TEST_IGNORE_FUNCTION_MATCH"
+  },
+  "logging": {
+    "level": "INFO",
+    "appenders": [
+      {
+        "type": "console",
+        "logFormat": "%msg\r\n"
+      }
+    ]
+  },
+  "pac4j": {
+    "bypassPaths": ["/api/server/v1/info"],
+    "callbackPrefix": "",
+    "clients": [
+      {
+        "org.pac4j.core.client.direct.AnonymousClient": {
+        }
+      }
+    ]
+  },
+  "opentracing": {
+    "elastic": "",
+    "zipkin": "",
+    "uri": "",
+    "authenticator": {
+      "principal": "",
+      "keytab": ""
+    }
+  },
+  "swagger": {
+    "title": "Legend Engine",
+    "resourcePackage": "org.finos.legend",
+    "uriPrefix": "/api"
+  },
+  "sessionCookie": "LEGEND_ENGINE_JSESSIONID",
+  "server": {
+    "type": "simple",
+    "applicationContextPath": "/",
+    "adminContextPath": "/admin",
+    "connector": {
+      "maxRequestHeaderSize": "32KiB",
+      "type": "http",
+      "port": "${ENGINE_PORT}"
+    },
+    "requestLog": {
+      "appenders": []
+    }
+  },
+  "metadataserver": {
+    "pure": {
+      "host": "${METADATA_PURE_HOST}",
+      "port": ${METADATA_PURE_PORT}
+    },
+    "alloy": {
+      "host": "${METADATA_ALLOY_HOST}",
+      "port": ${METADATA_ALLOY_PORT},
+      "prefix": "/depot/api"
+    }, 
+    "sdlc": { "host":"legend-sdlc", "port":${SDLC_PORT}}
+  },
+  "temporarytestdb": {
+    "port": ${TEMP_DB_PORT}
+  },
+  "relationalexecution": {
+    "temporarytestdb": {
+      "port": ${TEMP_DB_PORT}
+    },
+    "tempPath": "/tmp/",
+    "flowProviderClass": "org.finos.legend.engine.authentication.LegendDefaultDatabaseAuthenticationFlowProvider",
+    "flowProviderConfiguration": {
+        "_type": "legendDefault"
+    }
+  },
+  "vaults": [
+     {
+       "_type":"property",
+        "location": "${ENGINE_HOME}/config/vault.properties"
+     }
+  ]
+}
+

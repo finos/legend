@@ -1,0 +1,58 @@
+## supervisord.conf
+
+[supervisord]
+nodaemon=true
+
+[inet_http_server]
+port = *:9876
+username = iam
+password = legend
+
+[program:mongo]
+command=/app/mongo/run-mongo.sh
+autorestart=true
+stderr_logfile=/app/mongo/logs/stdout
+stderr_logfile_maxbytes = 0
+stdout_logfile=/app/mongo/logs/stdout
+stdout_logfile_maxbytes = 0
+
+[program:legend_engine] 
+command=/app/engine/run-engine.sh
+autorestart=true 
+stderr_logfile=/app/engine/logs/stdout 
+stderr_logfile_maxbytes = 0
+stdout_logfile=/app/engine/logs/stdout 
+stdout_logfile_maxbytes = 0
+
+[program:legend_sdlc]
+command=/app/sdlc/run-sdlc.sh
+autorestart=true
+stderr_logfile=/app/sdlc/logs/stdout
+stderr_logfile_maxbytes = 0
+stdout_logfile=/app/sdlc/logs/stdout
+stdout_logfile_maxbytes = 0
+
+[program:legend_depot]
+command=/app/depot/run-depot.sh
+autorestart=true
+stderr_logfile=/app/depot/logs/stdout
+stderr_logfile_maxbytes = 0
+stdout_logfile=/app/depot/logs/stdout
+stdout_logfile_maxbytes = 0
+
+[program:legend_studio]
+command=/app/studio/run-studio.sh
+autorestart=true
+stderr_logfile=/app/studio/logs/stdout
+stderr_logfile_maxbytes = 0
+stdout_logfile=/app/studio/logs/stdout
+stdout_logfile_maxbytes = 0
+
+[program:legend_query]
+command=/app/query/run-query.sh
+autorestart=true
+stderr_logfile=/app/query/logs/stdout
+stderr_logfile_maxbytes = 0
+stdout_logfile=/app/query/logs/stdout
+stdout_logfile_maxbytes = 0
+
