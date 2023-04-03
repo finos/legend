@@ -24,7 +24,7 @@ RUN mkdir -p $D_NGINX_HOME/logs
 RUN mkdir -p $D_ENGINE_HOME/lib
 RUN mkdir -p $D_ENGINE_HOME/logs
 
-COPY --from=finos/legend-engine-server:4.4.2 /app/bin/*.jar $D_ENGINE_HOME/lib/
+COPY --from=finos/legend-engine-server:4.5.0 /app/bin/*.jar $D_ENGINE_HOME/lib/
 COPY engine/run-engine.sh $D_ENGINE_HOME
 
 # manually include bouncy castle jars as they are excluded from engine-server shaded jar
@@ -36,7 +36,7 @@ RUN wget -P $D_ENGINE_HOME/lib https://repo1.maven.org/maven2/org/bouncycastle/b
 RUN mkdir -p $D_SDLC_HOME/lib
 RUN mkdir -p $D_SDLC_HOME/logs
 
-COPY --from=finos/legend-sdlc-server:0.121.1 /app/bin/*.jar $D_SDLC_HOME/lib/
+COPY --from=finos/legend-sdlc-server:0.122.2 /app/bin/*.jar $D_SDLC_HOME/lib/
 COPY sdlc/run-sdlc.sh $D_SDLC_HOME
 
 ## Setup studio 
@@ -44,7 +44,7 @@ COPY sdlc/run-sdlc.sh $D_SDLC_HOME
 RUN mkdir -p $D_STUDIO_HOME/lib
 RUN mkdir -p $D_STUDIO_HOME/logs
 
-COPY --from=finos/legend-studio:9.6.0 /app/bin $D_STUDIO_HOME/
+COPY --from=finos/legend-studio:9.11.0 /app/bin $D_STUDIO_HOME/
 COPY studio/run-studio.sh $D_STUDIO_HOME
 
 ## Setup supervisord

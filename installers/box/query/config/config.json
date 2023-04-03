@@ -2,22 +2,22 @@
   "appName": "query",
   "env": "prod",
   "engine": {
-    "url": "http://localhost:6300/api"
+    "url": "/engine/api"
   },
   "depot": {
-    "url": "http://localhost:6200/depot/api"
+    "url": "/depot/api"
   },
   "studio": {
-    "url": "http://${STUDIO_HOST}:${STUDIO_PORT}/studio",
+    "url": "/studio",
     "instances": [
       {
         "sdlcProjectIDPrefix": "PROD",
-        "url": "http://${STUDIO_HOST}:${STUDIO_PORT}/studio"
+        "url": "/studio"
       }
     ]
   },
   "taxonomy": {
-    "url": "http://unused:1234/taxonomy"
+    "url": "/taxonomy"
   },
   "documentation": {
     "url": "https://legend.finos.org"
