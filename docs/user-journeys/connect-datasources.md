@@ -4,7 +4,7 @@ title: Connect Data Models to Data Sources
 sidebar_label: Connect to Data Sources
 ---
 
-## Connect data model to relational data store
+## Connect your data model to relational data store
 
 ### Features
 - [Mapping](../overview/legend-glossary.md/#relational-mapping)
@@ -20,7 +20,7 @@ sidebar_label: Connect to Data Sources
 - [Relational mapping](../tutorials/studio-relational-mapping.md)  
 - [Relational test data](../tutorials/studio-tests.md/#relational)
 
-## Connect data to a semi-structured file
+## Connect your data model to a semi-structured file
 
 ### Features
 - [Mapping](../overview/legend-glossary.md/#relational-mapping)
@@ -73,7 +73,7 @@ _Coming soon_
 ### Tutorials
 _Coming soon_
 
-## Import a database schem and model it in Studio (External Format & Bindings)
+## Import a database schema and model it in Studio (External Format & Bindings)
 
 ### Features
 - [Binding](../overview/legend-glossary.md/#bindings)
