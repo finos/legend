@@ -1,12 +1,12 @@
 ---
 id: create-apis
-title: Generate APIs to Programmatically Send and Receive Data to/from Multiple Sources
+title: Create & Manage APIs to Programmatically Send and Receive Data to/from Multiple Sources
 sidebar_label: Create Data Model APIs
 ---
 
-## Overview 
+## Quickly and easily create services
 
-_Coming soon_
+Define a data service querying your data model and define tests to ensure it does not break.
 
 ### Features
 - [Service](../overview/legend-glossary.md/#service)
@@ -16,32 +16,52 @@ _Coming soon_
 - [Runtime](../overview/legend-glossary.md/#runtime)
 
 ### Showcase projects
-- _Coming soon_
+_Coming soon_
 
-## Define a data service querying your data model and define tests to ensure it does not break
+### Tutorials
+- [Create a service](../tutorials/services-service.md)
 
-- Tutorial:
-    - [Create a service](../tutorials/services-service.md)
-- Showcase project: _coming soon_
+## Find & re-use services logic
 
-## Query and edit a service query in the Query Editor
+### Features
+_Coming soon_
 
-- Tutorial:
-    - [Edit service query](../tutorials/query-builder.md/#edit-a-service-query)
-- Showcase project: _coming soon_
+### Showcase projects
+_Coming soon_
 
-## Retrieve services metadata via API endpoints
+### Tutorials
+_Coming soon_
 
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
+## Manage services SDLC & operations
+
+### Features
+_Coming soon_
+
+### Showcase projects
+_Coming soon_
+
+### Tutorials
+_Coming soon_
+
+## Execute services
+
+### Features
+_Coming soon_
+
+### Showcase projects
+_Coming soon_
+
+### Tutorials
+_Coming soon_
 
 ## More
-- [Legend Features](../overview/legend-features.md)
-- [Legend Glossary](../overview/legend-glossary.md)
+- [Legend features](../overview/legend-features.md)
+- [Legend glossary](../overview/legend-glossary.md)
 - [Showcase projects](../showcases/showcase-projects.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)
 - [Query tutorials](../tutorials/query-builder.md)
+- [Troubleshooting](./test-troubleshoot.md)
 
 
 

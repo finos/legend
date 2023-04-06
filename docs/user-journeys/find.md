@@ -3,32 +3,49 @@ id: find
 title: Find Data Models
 sidebar_label: Find Data Models
 ---
-
-## Overview
+## Find data by data domain
 
 Intuitively find and query data models relevant to your use case.
 
-### Features
-- [Data Space](../tutorials/query-dataspace.md)
+Recommend a way to access your data and share helpful information about your data with consumers by defining a Data space.
 
-### Showcase Projects
-- _Coming soon_ 
+### Features
+- [Data space](../overview/legend-features.md/#dataspace)
+
+### Showcase projects
+_Coming soon_
+
+### Tutorials
+- [Find models](../tutorials/studio-find-models.md)
+- [Define Data Space](../tutorials/query-dataspace.md)
 
 ## Find an existing project to make edits to the data model
 
-- Description: _coming soon_
-- Tutorial:
-    - [find models](../tutorials/studio-find-models.md)
-- Showcase project: _coming soon_
+### Features
+_Coming soon_
 
-## Troubleshoot
+### Showcase projects
+_Coming soon_
 
-- _coming soon_
+### Tutorials
+_Coming soon_
+
+## Query model metadata (legend depot)
+
+### Features
+_Coming soon_
+
+### Showcase projects
+_Coming soon_
+
+### Tutorials
+_Coming soon_
 
 ## More
-- [Legend Features](../overview/legend-features.md)
-- [Legend Glossary](../overview/legend-glossary.md)
+- [Legend features](../overview/legend-features.md)
+- [Legend glossary](../overview/legend-glossary.md)
 - [Showcase projects](../showcases/showcase-projects.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)
 - [Query tutorials](../tutorials/query-builder.md)
+- [Troubleshooting](./test-troubleshoot.md)

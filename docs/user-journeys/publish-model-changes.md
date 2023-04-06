@@ -4,39 +4,29 @@ title: Publish Changes to your Data Model
 sidebar_label: Publish Data Model Changes
 ---
 
-## Overview 
+## Publish/load/make/save/review/release changes to your data model
 
-_Coming soon_
+Make changes to your data model in Studio or navigate quickly to the underlying Gitlab project. Save changes to your data model, create a review and get it approved. Share your project with others in read-only mode. Release a new version of your data model and make it available to consumers.
+
+Load the latest changes from master into your workspace.
 
 ### Features
 - [Studio SDLC](../tutorials/studio-sdlc.md)
 
-### Showcase projects:
-- _Coming soon_
+### Showcase projects
+_Coming soon_
 
-## Safely make changes to your data model and release a new version for your data consumers.
-
-- Showcase project: _coming soon_
-
-## Save changes to your data model, create a review and get it approved
-
-- Showcase project: _coming soon_
-
-## Load the latest changes from master into your workspace
-
-- Showcase project: _coming soon_
-
-## Release a new version of your data model and make it available to consumers
-
-- Showcase project: _coming soon_
+### Tutorials
+- [SDLC tutorial](../tutorials/studio-sdlc.md)
 
 ## More
-- [Legend Features](../overview/legend-features.md)
-- [Legend Glossary](../overview/legend-glossary.md)
+- [Legend features](../overview/legend-features.md)
+- [Legend glossary](../overview/legend-glossary.md)
 - [Showcase projects](../showcases/showcase-projects.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)
 - [Query tutorials](../tutorials/query-builder.md)
+- [Troubleshooting](./test-troubleshoot.md)
 
 
 
