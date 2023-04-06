@@ -17,7 +17,7 @@
       "user-journeys/find",
       "user-journeys/visualize-modelled-data",
       "user-journeys/test-troubleshoot",
-      "user-journeys/rely-quality-data-by-design.md"
+      "user-journeys/rely-quality-data-by-design"
     ],
     "Getting Started": [
       "getting-started/introduction-to-legend",
