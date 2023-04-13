@@ -69,7 +69,6 @@ Properties are components of classes that define the attributes of a business co
 
 [Create a property](../tutorials/studio-class.md/#property---non-primitive-data-type)
 
-
 ## Relational database
 
 _Coming soon._

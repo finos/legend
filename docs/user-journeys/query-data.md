@@ -4,85 +4,101 @@ title: Query Modelled Data
 sidebar_label: Query Modelled Data
 ---
 
-## Overview 
-
-_Coming soon_
+## Build and run queries - relational
 
 ### Features
 - [Query Builder](../overview/legend-glossary/#query-builder)
 - [Data Spaces](../overview/legend-glossary/#dataspace)
 
-## Create and run, load, edit, save a query
+### Showcase projects
+- [Query showcase project](../showcases/showcase-projects.md/#query)
 
-- Tutorial: 
-    - [query creation & query running](../tutorials/query-builder.md) tutorial
-- Showcase project: 
-    - [Query showcase project](../showcases/showcase-projects.md/#query)
+### Tutorials
+- [Build and run queries](../tutorials/query-builder.md)
 
-## Find and open an existing query
+## Build and run queries - graph fetch
 
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
+### Features
+_Coming soon_
 
-## Create a query from a dataspace
+### Showcase projects
+_Coming soon_
 
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
+### Tutorials
+_Coming soon_
 
-## Query data as of specific dates and times
+## Open/edit an existing query
 
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
+### Features
+_Coming soon_
 
-## Run queries with parameters
+### Showcase projects
+_Coming soon_
 
-- Tutorial: 
-    - [query parameters](../tutorials/query-parameter.md)
-- Showcase project: _coming soon_
+### Tutorials
+_Coming soon_
 
-## Filter your queries
+## Create a query from a data space
 
-- Tutorial: 
-    - [query filtering](../tutorials/query-filter.md) 
-- Showcase project: _coming soon_
+### Features
+_Coming soon_
 
-### Create condition
+### Showcase projects
+_Coming soon_
 
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
+### Tutorials
+_Coming soon_
 
-### Create group from condition
+## Run milestoned queries
 
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
+### Features
+_Coming soon_
 
-### Clean up, simplify, collapse, expand tree
+### Showcase projects
+_Coming soon_
 
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
+### Tutorials
+- [Run queries with parameters](../tutorials/query-parameter.md)
 
-## Test querying your data model before making it available to consumers
+## Apply operations/transformations/calculations to datasets in Query
 
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
+### Features
+_Coming soon_
 
-## Productionize queries
+### Showcase projects
+_Coming soon_
 
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
+### Tutorials
+- [Filter queries](../tutorials/query-filter.md) 
 
-## Troubleshoot
+## Productionize ad-hoc queries
 
-- [Troubleshoot issues with your data model ,query or service](../tutorials/studio-sdlc/#troubleshoot-issues-with-your-data-model-query-or-service)
+### Features
+_Coming soon_
 
-## Debug/troubleshoot issues with your query by reviewing execution details (Plan View)
+### Showcase projects
+_Coming soon_
 
-- _Coming soon_
+### Tutorials
+_Coming soon_
+
+## Export query results
+
+### Features
+_Coming soon_
+
+### Showcase projects
+_Coming soon_
+
+### Tutorials
+_Coming soon_
+
 
 ## More
-- [Legend Features](../overview/legend-features.md)
-- [Legend Glossary](../overview/legend-glossary.md)
+- [Legend features](../overview/legend-features.md)
+- [Legend glossary](../overview/legend-glossary.md)
 - [Showcase projects](../showcases/showcase-projects.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)
 - [Query tutorials](../tutorials/query-builder.md)
+- [Troubleshooting](./test-troubleshoot.md)

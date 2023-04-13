@@ -1,24 +1,23 @@
 ---
 id: build-data-model
-title: Create a Data Model to Describe Business Concepts and Relationships
+title: Build a Data Model to Describe Business Concepts and Relationships
 sidebar_label: Build Data Models
----
+--- 
 
-## Overview 
+## Create foundational data model elements (classes, enumerations, profiles,...)
 
 Data modeling is thinking about your data and its relationships to other data, and writing it down in a formal way. If data producers and data consumers share a common model, or understanding of the core concepts of the business and how data flows through the business, they can ensure transparency and alignment of what the data means, and how it is meant to be used.
 
 Data models also improve data quality by re-using agreed-upon concepts across teams and organizations, reducing data duplication, building controls and validations directly into the data flows and ensuring that business users are par of and in agreement with the data flow.
 
-_TODO: add user journey flow_
+Create a data model to describe business concepts and how they relate to eachother in a data model. 
 
 ### Features
+- [Workspace](../overview/legend-glossary.md/#workspace)
 - [Class Editor](../overview/legend-glossary.md/#class-explorer)
 - [Enumeration](../overview/legend-glossary.md/#)
 - [Profile](../overview/legend-glossary.md/#profile)
 - [Association](../overview/legend-glossary.md/#association)
-- [Diagram](../overview/legend-glossary.md/#diagram)
-- [Workspace](../overview/legend-glossary.md/#workspace)
 
 ### Showcase projects
 
@@ -26,85 +25,78 @@ Start your data modeling journey by reviewing sample [showcase projects](../show
 - [Logical Modeling (basic) showcase project](../showcases/showcase-projects.md/#logical-modeling-basic)
 - [Logical Modeling (advanced) showcase project](../showcases/showcase-projects.md/#logical-modeling-advanced)
 
-## Build a data model
+### Tutorials
+- [Create a workspace](../tutorials/studio-workspace.md)
+- [Create a package](../tutorials/studio-package.md)
+- [Create a class](../tutorials/studio-class.md)  
+- [Create a profile](../tutorials/studio-profile.md)  
+- [Create an association](../tutorials/studio-association.md) 
+- [Create an enumeration](../tutorials/studio-enumeration.md)  
 
-### Create a project where your data model is stored
+## Visualize your data model in a diagram
 
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
+Diagrams allow you to create a data model drag & drop style.
 
-### Create a workspace
+### Features
+- [Diagram](../overview/legend-glossary.md/#diagram)
 
-- Tutorials:
-    - [create a package](../tutorials/studio-package.md)
-    - [create a workspace](../tutorials/studio-workspace.md)
+### Showcase projects
+_Coming soon_
 
-- Showcase project: _coming soon_
+### Tutorials
+- [Create a diagram](../tutorials/studio-diagram.md)
 
-### Create a data model to describe business concepts and how they relate to eachother in a data model. 
+## Create a project where your data model is stored
 
-- Tutorial: 
-    - [create a class](../tutorials/studio-class.md)  
-    - [create a profile](../tutorials/studio-profile.md)  
-    - [create an association](../tutorials/studio-association.md) 
-    - [create an enumeration](../tutorials/studio-enumeration.md)  
-- Showcase project: _coming soon_
+### Features
+_Coming soon_
 
-### Create a Relationship between two data concepts and navigate bi-directionally when querying your data
+### Showcase projects
+_Coming soon_
 
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
-
-### Create a data model drag & drop style
-- Tutorial: 
-    - [create a diagram](../tutorials/studio-diagram.md)
-
-- Showcase project: _coming soon_
+### Tutorials
+_Coming soon_
 
 ## Manage your data model
 
-### Manage your data model information and workspaces
+### Features
+_Coming soon_
 
-- Tutorial: 
-    - [manage model information and workspaces](../tutorials/studio-manage-model-information.md)
-- Showcase project: _coming soon_
+### Showcase projects
+- [Manage model information and workspaces](../tutorials/studio-manage-model-information.md)
 
-## Make changes to your data model
+### Tutorials
+_Coming soon_
 
-- Tutorial: 
-    - [SDLC tutorial](../tutorials/studio-sdlc.md)
+## Review available unit tests to understand PURE grammar functionality
 
-### Safely make changes to your data model and release a new version for your data consumers.
+### Features
+_Coming soon_
 
-- Showcase project: _coming soon_
+### Showcase projects
+_Coming soon_
 
-### Save changes to your data model, create a review and get it approved
+### Tutorials
+_Coming soon_
 
-- Showcase project: _coming soon_
+## Legend standard library (Functions)
 
-### Load the latest changes from master into your workspace
+See reference documentation on [released functions](../reference/released-functions.md) and [upcoming functions](../reference/upcoming-functions.md).
 
-- Showcase project: _coming soon_
+### Features
+- [Functions](../tutorials/studio-function.md)
 
-### Release a new version of your data model and make it available to consumers
+### Showcase projects
+_Coming soon_
 
-- Showcase project: _coming soon_
-
-
-## Troubleshoot
-
-### Troubleshoot issues with your data model
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
-
-### Navigate quickly to the underlying GitLab project
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
+### Tutorials
+_Coming soon_
 
 ## More
-- [Legend Features](../overview/legend-features.md)
-- [Legend Glossary](../overview/legend-glossary.md)
+- [Legend features](../overview/legend-features.md)
+- [Legend glossary](../overview/legend-glossary.md)
 - [Showcase projects](../showcases/showcase-projects.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)
 - [Query tutorials](../tutorials/query-builder.md)
+- [Troubleshooting](./test-troubleshoot.md)

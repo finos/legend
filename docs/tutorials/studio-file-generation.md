@@ -4,9 +4,9 @@ title: Generate Files
 sidebar_label: Generate Files
 ---
 
-## [File Generation](../overview/legend-glossary.md/#file-generation)
+## [File Generation](../overview/legend-features.md/#file-generation)
 
-[File generation](../overview/legend-glossary.md/#file-generation) lets you generate your models in other codes or schemas.
+[File generation](../overview/legend-features.md/#file-generation) lets you generate your models in other codes or schemas.
 
 ### Create a File Generation
 

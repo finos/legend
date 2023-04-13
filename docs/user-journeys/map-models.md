@@ -3,114 +3,78 @@ id: map-models
 title: Map your Model to other Data Models
 sidebar_label: Map to Data Models
 ---
-
-## Overview 
-
 Discover, access and re-use existing models, classes, mappings, runtimes, functions. Recommend a way for others to access your models, classes, mappings, runtimes, functions, and share helpful information about your data with consumers.
 
+## Connect model to model
+
+Connect your model to another model to de-duplicate modeling efforts and use recommended datasets and models. Transform, re-use and refine data models. Re-use classes, mappings, and runtimes that make sense for your data model.
+
 ### Features
-- [Model to Model (M2M) Mapping](../overview/legend-glossary.md/#model-to-model-mapping)
-- [Mapping Editor](../overview/legend-glossary.md/#mapping-editor)
-- [Function](../overview/legend-glossary.md/#functions)
-- [File Generation](../overview/legend-glossary.md/#file-generation)
-- [Generation Specification](../overview/legend-glossary.md/#generation-specification)
+- [Model to Model (M2M) Mapping](../overview/legend-features.md/#model-to-model-mapping)
+- [Mapping Editor](../overview/legend-features.md/#mapping-editor)
+- [Functions](../overview/legend-features.md/#functions)
+- [File Generation](../overview/legend-features.md/#file-generation)
+- [Generation Specification](../overview/legend-features.md/#generation-specification)
+
+### Showcase projects 
+_Coming soon_
+
+### Tutorials
+- [Map models to models](../tutorials/studio-m2m-mapping)
+- [Add & manage project dependencies](../tutorials/studio-project-dependencies.md)
+- [Define functions](../tutorials/studio-function.md)
+
+## Add a project/data model dependency to your data model
+Add a project/data model dependency to your data model and resolve project dependency conflicts.
+
+### Features
+_Coming soon_
 
 ### Showcase projects
-- _Coming soon_
+_Coming soon_
 
-## Transform, re-use and refine data models
+### Tutorials
+- [Add & manage project dependencies](../tutorials/studio-project-dependencies.md)
 
-### Connect your model to another model to de-duplicate modeling efforts and use recommended datasets and models
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
+## Re-use transformation logic in mappings or services (customized functions)
+Re-use transformation logic as part of your mappings or services by defining customized functions.
 
-#### Re-use classes, mappings, and runtimes that make sense for your data model
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
+### Features
+- [Functions](../overview/legend-glossary.md/#functions)
 
-#### Add a project/data model dependency to your data model and resolve project dependency conflicts
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
+### Showcase projects
+_Coming soon_
 
-### Re-use transformation logic as part of your mappings or services by defining a customized function
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
+### Tutorials
+- [Define customized functions](../tutorials/studio-function.md)
 
 ## Manage model dependencies
 
-- Tutorials
-    - [model discovery](../tutorials/studio-find-models.md) tutorial
-    - [model-to-model mapping](../tutorials/studio-m2m-mapping) tutorial
-    - [project dependency](../tutorials/studio-project-dependencies.md) tutorial
-    - [function definition](../tutorials/studio-function.md) tutorial
+### Features
+_Coming soon_
 
-- Showcase project: _coming soon_
+### Showcase projects
+_Coming soon_
 
-## Make your model re-usable
+### Tutorials
+- [Add & manage project dependencies](../tutorials/studio-project-dependencies.md)
 
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
+## Query data in one model and map to another model
 
-### Define a new Data Space
+### Features
+_Coming soon_
 
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
+### Showcase projects
+_Coming soon_
 
-### Recommend a way to access your data and share helpful information about your data with consumers
-
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
-
-### Make changes to your data model and release a new version for your data consumers
-
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
-
-### Share your project with others in read-only mode
-
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
-
-### Generate files
-
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
-
-## Share what you produced
-
-- Tutorial: 
-    - [SDLC](../tutorials/studio-sdlc.md) tutorial
-- Showcase project: _coming soon_
-
-### Recommend a way to access your data and share helpful information about your data with consumers
-
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
-
-### Release a new version of your data model and make it available to consumers
-
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
-
-### Share your project with others in read-only mode
-
-- Tutorial: _coming soon_
-- Showcase project: _coming soon_
-
-### Generate files
-
-- Tutorial: _coming soon_
-    - [File Generation](../tutorials/studio-file-generation.md)
-- Showcase project: _coming soon_
-
-
-## Troubleshoot
-- _Coming soon_
+### Tutorials
+_Coming soon_
 
 ## More
-- [Legend Features](../overview/legend-features.md)
-- [Legend Glossary](../overview/legend-glossary.md)
+- [Legend features](../overview/legend-features.md)
+- [Legend glossary](../overview/legend-glossary.md)
 - [Showcase projects](../showcases/showcase-projects.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)
 - [Query tutorials](../tutorials/query-builder.md)
+- [Troubleshooting](./test-troubleshoot.md)
