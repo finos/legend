@@ -249,6 +249,10 @@
       "title": "How do I specify a service with multi executions?",
       "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-a-multi-execution-service"
     },
+    "question.how-to-write-a-service-post-validation": {
+      "title": "How do I specify a service post validation?",
+      "url": "https://github.com/finos/legend-engine/blob/master/docs/data-quality/service-post-validations.md"
+    },
     "context.class-editor": {
       "related": [
         "question.how-to-define-a-class",
