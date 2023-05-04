@@ -26,7 +26,7 @@ env:
   WORKFLOW_ID: legend-stack-release.yml
 
 jobs:
-  release:
+  release-input-validation:
     runs-on: ubuntu-latest
     steps:
       - name: Validate Input Parameters
@@ -61,26 +61,28 @@ jobs:
           fi
 
 
-      # Legend Shared Release
+  release-legend-shared:
+    runs-on: ubuntu-latest
+    needs: release-input-validation
+    if: success() && github.event.inputs.legend-shared-release-version
+    steps:
       - name: Set Required RunNumber of Legend Shared Release
-        if: success() && github.event.inputs.legend-shared-release-version
         run: |
           auth_token="${{ env.RELEASE_TOKEN }}"
           owner="${{ env.OWNER }}"
           repo="legend-shared"
           workflow_id="${{ env.WORKFLOW_ID }}"
-  
+          
           # Get the last run number
           lastRunNumber=$(curl -s -H "Authorization: token $auth_token" "https://api.github.com/repos/$owner/$repo/actions/workflows/$workflow_id/runs" | jq -r '.workflow_runs[0].run_number')
-  
+          
           # Calculate the required run number
           requiredRunNumber=$((lastRunNumber + 1))
-  
+          
           # Set the environment variable
           echo "Setting LEGEND_SHARED_RUN_NUMBER to $requiredRunNumber"
           echo "LEGEND_SHARED_RUN_NUMBER=${requiredRunNumber}" >> $GITHUB_ENV
       - name: Trigger Legend Shared Release
-        if: success() && github.event.inputs.legend-shared-release-version
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ env.RELEASE_TOKEN }}
@@ -88,10 +90,9 @@ jobs:
           event-type: ${{ env.EVENT_TYPE }}
           client-payload: '{"releaseVersion": "${{ github.event.inputs.legend-shared-release-version }}"}'
       - name: Check Status Of Legend Shared Release
-        if: success() && github.event.inputs.legend-shared-release-version
         run: |
-          sleep 60                                # Wait for 1 minute before polling the API again
-
+          sleep 1m                                # Wait for 1 minute before polling the API again
+          
           auth_token="${{ env.RELEASE_TOKEN }}"
           owner="${{ env.OWNER }}"
           repo="legend-shared"
@@ -107,13 +108,13 @@ jobs:
           result="null"
           while [ "$result" == "null" ]
           do
-            sleep 300                           # Wait for 5 minute before polling the API again
+            sleep 5m                           # Wait for 5 minute before polling the API again
             result=$(curl -s -H "Authorization: token $auth_token" \
               "https://api.github.com/repos/$owner/$repo/actions/runs/$run_id" \
               | jq -r '.conclusion')
             echo "Waiting for workflow $run_id to complete..."
           done
-  
+          
           # Log the result
           echo "Triggered workflow $run_id completed with result $result."
           
@@ -122,10 +123,12 @@ jobs:
           then
             exit 1
           fi
-
-      # Legend Pure Release
+  release-legend-pure:
+    runs-on: ubuntu-latest
+    needs: release-input-validation
+    if: success() && github.event.inputs.legend-pure-release-version
+    steps:
       - name: Set Required RunNumber of Legend Pure Release
-        if: success() && github.event.inputs.legend-pure-release-version
         run: |
           auth_token="${{ env.RELEASE_TOKEN }}"
           owner="${{ env.OWNER }}"
@@ -142,7 +145,6 @@ jobs:
           echo "Setting LEGEND_PURE_RUN_NUMBER to $requiredRunNumber"
           echo "LEGEND_PURE_RUN_NUMBER=${requiredRunNumber}" >> $GITHUB_ENV
       - name: Trigger Legend Pure Release
-        if: success() && github.event.inputs.legend-pure-release-version
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ env.RELEASE_TOKEN }}
@@ -150,9 +152,8 @@ jobs:
           event-type: ${{ env.EVENT_TYPE }}
           client-payload: '{"releaseVersion": "${{ github.event.inputs.legend-pure-release-version }}"}'
       - name: Check Status Of Legend Pure Release
-        if: success() && github.event.inputs.legend-pure-release-version
         run: |
-          sleep 60                                # Wait for 1 minute before polling the API again
+          sleep 1m                                # Wait for 1 minute before polling the API again
 
           auth_token="${{ env.RELEASE_TOKEN }}"
           owner="${{ env.OWNER }}"
@@ -169,7 +170,7 @@ jobs:
           result="null"
           while [ "$result" == "null" ]
           do
-            sleep 300                             # Wait for 5 minutes before polling the API again
+            sleep 5m                             # Wait for 5 minutes before polling the API again
             result=$(curl -s -H "Authorization: token $auth_token" \
               "https://api.github.com/repos/$owner/$repo/actions/runs/$run_id" \
               | jq -r '.conclusion')
@@ -185,9 +186,12 @@ jobs:
             exit 1
           fi
 
-      # Legend Engine Release
+  release-legend-engine:
+    runs-on: ubuntu-latest
+    needs: [release-input-validation, release-legend-shared, release-legend-pure]
+    if: success() && github.event.inputs.legend-engine-release-version
+    steps:
       - name: Set Required RunNumber of Legend Engine Release
-        if: success() && github.event.inputs.legend-engine-release-version
         run: |
           auth_token="${{ env.RELEASE_TOKEN }}"
           owner="${{ env.OWNER }}"
@@ -204,7 +208,6 @@ jobs:
           echo "Setting LEGEND_ENGINE_RUN_NUMBER to $requiredRunNumber"
           echo "LEGEND_ENGINE_RUN_NUMBER=${requiredRunNumber}" >> $GITHUB_ENV
       - name: Trigger Legend Engine Release
-        if: success() && github.event.inputs.legend-engine-release-version
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ env.RELEASE_TOKEN }}
@@ -212,9 +215,8 @@ jobs:
           event-type: ${{ env.EVENT_TYPE }}
           client-payload: '{"releaseVersion": "${{ github.event.inputs.legend-engine-release-version }}", "legendPureVersion": "${{ github.event.inputs.legend-pure-release-version }}", "legendSharedVersion": "${{ github.event.inputs.legend-shared-release-version }}"}'
       - name: Check Status Of Legend Engine Release
-        if: success() && github.event.inputs.legend-engine-release-version
         run: |
-          sleep 60                                # Wait for 1 minute before polling the API again
+          sleep 1m                                # Wait for 1 minute before polling the API again
 
           auth_token="${{ env.RELEASE_TOKEN }}"
           owner="${{ env.OWNER }}"
@@ -231,7 +233,7 @@ jobs:
           result="null"
           while [ "$result" == "null" ]
           do
-            sleep 300                           # Wait for 5 minutes before polling the API again
+            sleep 5m                           # Wait for 5 minutes before polling the API again
             result=$(curl -s -H "Authorization: token $auth_token" \
               "https://api.github.com/repos/$owner/$repo/actions/runs/$run_id" \
               | jq -r '.conclusion')
@@ -247,9 +249,12 @@ jobs:
             exit 1
           fi
 
-      # Legend Sdlc Release
+  release-legend-sdlc:
+    runs-on: ubuntu-latest
+    needs: [release-input-validation, release-legend-shared, release-legend-pure, release-legend-engine]
+    if: success() && github.event.inputs.legend-sdlc-release-version
+    steps:
       - name: Set Required RunNumber of Legend Sdlc Release
-        if: success() && github.event.inputs.legend-sdlc-release-version
         run: |
           auth_token="${{ env.RELEASE_TOKEN }}"
           owner="${{ env.OWNER }}"
@@ -266,7 +271,6 @@ jobs:
           echo "Setting LEGEND_SDLC_RUN_NUMBER to $requiredRunNumber"
           echo "LEGEND_SDLC_RUN_NUMBER=${requiredRunNumber}" >> $GITHUB_ENV
       - name: Trigger Legend Sdlc Release
-        if: success() && github.event.inputs.legend-sdlc-release-version
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ env.RELEASE_TOKEN }}
@@ -274,9 +278,8 @@ jobs:
           event-type: ${{ env.EVENT_TYPE }}
           client-payload: '{"releaseVersion": "${{ github.event.inputs.legend-sdlc-release-version }}", "legendPureVersion": "${{ github.event.inputs.legend-pure-release-version }}", "legendSharedVersion": "${{ github.event.inputs.legend-shared-release-version }}", "legendEngineVersion": "${{ github.event.inputs.legend-engine-release-version }}"}'
       - name: Check Status Of Legend Sdlc Release
-        if: success() && github.event.inputs.legend-sdlc-release-version
         run: |
-          sleep 60                                # Wait for 1 minute before polling the API again
+          sleep 1m                                # Wait for 1 minute before polling the API again
 
           auth_token="${{ env.RELEASE_TOKEN }}"
           owner="${{ env.OWNER }}"
@@ -293,7 +296,7 @@ jobs:
           result="null"
           while [ "$result" == "null" ]
           do
-            sleep 300                             # Wait for 5 minutes before polling the API again
+            sleep 5m                             # Wait for 5 minutes before polling the API again
             result=$(curl -s -H "Authorization: token $auth_token" \
               "https://api.github.com/repos/$owner/$repo/actions/runs/$run_id" \
               | jq -r '.conclusion')
@@ -310,9 +313,12 @@ jobs:
           fi
           
 
-      # Legend Depot Release
+  release-legend-depot:
+    runs-on: ubuntu-latest
+    needs: [release-input-validation, release-legend-shared, release-legend-pure, release-legend-engine, release-legend-sdlc]
+    if: success() && github.event.inputs.legend-depot-release-version
+    steps:
       - name: Set Required RunNumber of Legend Depot Release
-        if: success() && github.event.inputs.legend-depot-release-version
         run: |
           auth_token="${{ env.RELEASE_TOKEN }}"
           owner="${{ env.OWNER }}"
@@ -329,7 +335,6 @@ jobs:
           echo "Setting LEGEND_DEPOT_RUN_NUMBER to $requiredRunNumber"
           echo "LEGEND_DEPOT_RUN_NUMBER=${requiredRunNumber}" >> $GITHUB_ENV
       - name: Trigger Legend Depot Release
-        if: success() && github.event.inputs.legend-depot-release-version
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ env.RELEASE_TOKEN }}
@@ -337,9 +342,8 @@ jobs:
           event-type: ${{ env.EVENT_TYPE }}
           client-payload: '{"releaseVersion": "${{ github.event.inputs.legend-depot-release-version }}", "legendSdlcVersion": "${{ github.event.inputs.legend-sdlc-release-version }}", "legendSharedVersion": "${{ github.event.inputs.legend-shared-release-version }}", "legendEngineVersion": "${{ github.event.inputs.legend-engine-release-version }}"}'
       - name: Check Status Of Legend Depot Release
-        if: success() && github.event.inputs.legend-depot-release-version
         run: |
-          sleep 60                                # Wait for 1 minute before polling the API again
+          sleep 1m                                # Wait for 1 minute before polling the API again
 
           auth_token="${{ env.RELEASE_TOKEN }}"
           owner="${{ env.OWNER }}"
@@ -356,7 +360,7 @@ jobs:
           result="null"
           while [ "$result" == "null" ]
           do
-            sleep 300                             # Wait for 5 minutes before polling the API again
+            sleep 5m                             # Wait for 5 minutes before polling the API again
             result=$(curl -s -H "Authorization: token $auth_token" \
               "https://api.github.com/repos/$owner/$repo/actions/runs/$run_id" \
               | jq -r '.conclusion')
