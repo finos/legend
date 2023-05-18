@@ -16,78 +16,84 @@ Legend Showcase projects are hosted on the [Legend hosted instance](https://fino
 
 ### User Journey #1: Build a data model to describe business concepts and relationships
 
-#### Legend Installation
-[Legend installation showcase project](https://gitlab.com/finosfoundation/legend/showcase/InstallerDemo)
+| Showcase Project | Legend Studio | Gitlab |
+| - | - | - | 
+| **Legend Installation** | [Legend installation showcase (Studio)](https://legend.finos.org/studio/view/UAT-40061958)| [Legend installation showcase project (Gitlab)](https://gitlab.com/finosfoundation/legend/showcase/InstallerDemo) |
+| **Logical Modeling (Basic)** | [Logical modeling (basic) (Studio)](https://legend-acct.finos.org/studio/view/UAT-40953672)|
+| **Logical Modeling (Advanced)** | _Coming soon_ |
 
-#### Logical Modeling (Basic)
-
-The [logical modeling (basic)](https://legend-acct.finos.org/studio/view/UAT-40953672) showcase project shows a basic Product-Account-Trade model
-
-#### Logical Modeling (Advanced)
-
-_Coming soon_
 
 ### User Journey #2: Publish data model changes
 
-_Coming soon_ 
+| Showcase Project | Legend Studio | Gitlab |
+| - | - | - | 
+| _Coming soon_ |
+
 
 ### User Journey #3: Generate model schema
 
-_Coming soon_ 
+| Showcase Project | Legend Studio | Gitlab |
+| - | - | - | 
+| _Coming soon_ |
 
 ### User Journey #4: Consume data model artifacts
 
-_Coming soon_ 
+| Showcase Project | Legend Studio | Gitlab |
+| - | - | - | 
+| _Coming soon_ |
 
 ### User Journey #5: Connect to data sources
 
-#### Relational
-
-[Relational showcase project](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-relational-mapping)
-
-#### Service Store
-
-[Service store showcase project](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-service-store)
-
-#### External Format
-
-_Coming soon_ 
+| Showcase Project | Legend Studio | Gitlab |
+| - | - | - | 
+| **Relational** | [Relational showcase (Studio)](https://legend.finos.org/studio/view/UAT-41655582)| [Relational showcase (Gitlab)](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-relational-mapping) |
+| **Service store**| [Service store showcase (Studio)](https://legend.finos.org/studio/view/UAT-41664972) | [Service store showcase (Gitlab)](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-service-store)| 
+| **External format** | [External format showcase (Studio)](https://legend.finos.org/studio/view/UAT-45125958)| [External format showcase (Gitlab)](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-external-formats) | 
 
 ### User Journey #6: Query modelled data
 
-#### Query
-
-[Query showcase project](https://gitlab.com/finosfoundation/legend/showcase/legend-query-demo)
-
-#### GraphQL 
-
-[GraphQL showcase project](https://gitlab.com/finosfoundation/legend/showcase/legend-graphql-showcase)
+| Showcase Project | Legend Studio | Gitlab |
+| - | - | - | 
+| **Query** | _Coming soon_ | [Query showcase (Gitlab)](https://gitlab.com/finosfoundation/legend/showcase/legend-query-demo) |
+| **GraphQL** | _Coming soon_ | [GraphQL showcase (Gitlab)](https://gitlab.com/finosfoundation/legend/showcase/legend-graphql-showcase)| 
 
 ### User Journey #7: Map to data models
 
-_Coming soon_ 
+| Showcase Project | Legend Studio | Gitlab |
+| - | - | - | 
+| _Coming soon_ |
 
 ### User Journey #8: Create data model APIs
 
 #### Service Execution JAR
 
-[Service execution JAR showcase project](https://github.com/finos/legend/tree/service-exec-jar-example/examples/service-execution-jar)
+| Showcase Project | Legend Studio | Gitlab |
+| - | - | - | 
+| **Service execution JAR** |[Service execution JAR showcase (Studio)](https://github.com/finos/legend/tree/service-exec-jar-example/examples/service-execution-jar) | [Service execution JAR showcase (Gitlab)](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project2)|
 
 ### User Journey #9: Find data models
 
-_Coming soon_ 
+| Showcase Project | Legend Studio | Gitlab |
+| - | - | - | 
+| _Coming soon_ |
 
 ### User Journey #10: Visualize modelled data
 
-_Coming soon_ 
+| Showcase Project | Legend Studio | Gitlab |
+| - | - | - | 
+| _Coming soon_ |
 
 ### User Journey #11: Test & troubleshoot data models
 
-_Coming soon_ 
+| Showcase Project | Legend Studio | Gitlab |
+| - | - | - | 
+| _Coming soon_ | 
 
 ### User Journey #12: Rely on high quality data by Design
 
-_Coming soon_ 
+| Showcase Project | Legend Studio | Gitlab |
+| - | - | - | 
+| _Coming soon_ |
 
 ## More
 - [Legend User Journeys](../user-journeys/build-data-model.md)

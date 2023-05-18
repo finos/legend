@@ -8,6 +8,8 @@ _Tutorial coming soon._
 
 ## Connect your model to semi-structured files
 
+### External Format
+
 _Tutorial coming soon._
 
 ## More
