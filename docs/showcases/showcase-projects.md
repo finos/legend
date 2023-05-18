@@ -42,7 +42,7 @@ Legend Showcase projects are hosted on the [Legend hosted instance](https://fino
 | - | - | - | 
 | _Coming soon_ |
 
-### User Journey #5: Connect to data sources
+### User Journey #5: Connect to data source
 
 | Showcase Project | Legend Studio | Gitlab |
 | - | - | - | 

@@ -82,7 +82,7 @@ _Coming soon_
 - [External format showcase project](../showcases/showcase-projects.md/#user-journey-5-connect-to-data-sources)
 
 ### Tutorials
-_Coming soon_
+- [Binding & External Format](../tutorials/studio-binding.md)
 
 ## More
 - [Legend features](../overview/legend-features.md)
