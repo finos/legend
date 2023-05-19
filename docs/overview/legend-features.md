@@ -14,7 +14,9 @@ Associations are used to define a single linking relationship between two classe
 
 ## Binding
 
-_Coming soon._
+A binding is a packageable element that binds your schema definition and models and ensures that both are in sync. See [reference documentation](../reference/external-format.md) for more details. 
+
+[Create a binding](../tutorials/studio-binding.md)
 
 [Bindings technical documentation](../reference/external-format.md#bindings)
 

@@ -51,6 +51,13 @@ An enumeration is a model attribute that has a finite list of values.
 
 Functions are used to derive new values from existing values using various operations.
 
+### Internalize
+Internalize is a function used to deserialize source data into model instances using a binding definition. It accepts a class, binding, and source data.
+
+### Externalize 
+
+Externalize is a function to serialize model instances into a serializable string using binding definition. It accepts model instances, binding and graphfetch tree.
+
 ## Milestoning
 
 _Coming soon._

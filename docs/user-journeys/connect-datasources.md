@@ -79,10 +79,10 @@ _Coming soon_
 - [Binding](../overview/legend-glossary.md/#bindings)
 
 ### Showcase projects
-_Coming soon_
+- [External format showcase project](../showcases/showcase-projects.md/#user-journey-5-connect-to-data-sources)
 
 ### Tutorials
-_Coming soon_
+- [Binding & External Format](../tutorials/studio-binding.md)
 
 ## More
 - [Legend features](../overview/legend-features.md)
