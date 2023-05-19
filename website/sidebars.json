@@ -73,15 +73,6 @@
       "reference/external-format",
       "reference/query-protocol"
     ],
-    "Releases": [
-      "release/release-2022-10-25",
-      "release/release-2022-08-18",
-      "release/release-2022-07-15",
-      "release/release-2022-06-23",
-      "release/release-2022-05-05",
-      "release/release-2022-04-26",
-      "release/release-2021-10-18"
-    ],
     "Community": [
       "community/contribute-to-legend",
       "community/get-help-from-community",
