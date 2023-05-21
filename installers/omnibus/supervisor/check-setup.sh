@@ -27,4 +27,11 @@ if [[ $error -eq 1 ]]; then
 	echo -e "\e[31mSome component(s) have failed to start. Please check logs for more details...\e[0m"
 	exit 1
 fi
-echo -e "\e[32mAll components have started successfully! Launch Legend Studio at: http://localhost:$LEGEND_OMNIBUS_STUDIO_PORT/studio\e[0m"
+
+echo -e "\e[32mAll components have started successfully!\e[0m"
+echo -e "Supervisor: \e[32mhttp://localhost:$LEGEND_OMNIBUS_SUPERVISOR_PORT\e[0m (user: $LEGEND_OMNIBUS_SUPERVISOR_USERNAME, password: $LEGEND_OMNIBUS_SUPERVISOR_PASSWORD)"
+echo -e "Gitlab: \e[32mhttp://localhost:$LEGEND_OMNIBUS_GITLAB_PORT\e[0m (user: $LEGEND_OMNIBUS_GITLAB_ROOT_USER, password: $LEGEND_OMNIBUS_GITLAB_ROOT_PASSWORD)"
+echo -e "Legend Engine: \e[32mhttp://localhost:$LEGEND_OMNIBUS_ENGINE_PORT\e[0m"
+echo -e "Legend SDLC: \e[32mhttp://localhost:$LEGEND_OMNIBUS_SDLC_PORT\e[0m"
+echo -e "Legend Studio: \e[32mhttp://localhost:$LEGEND_OMNIBUS_STUDIO_PORT/studio\e[0m"
+echo -e "\nTo start using Legend, launch Studio at: \e[32mhttp://localhost:$LEGEND_OMNIBUS_STUDIO_PORT/studio\e[0m\e[0m"

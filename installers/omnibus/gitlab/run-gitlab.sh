@@ -1,7 +1,12 @@
 #!/bin/bash
 
-# This is required in Gitlab configuration
-EXTERNAL_URL=http://localhost
+# Set the URL
+# See https://docs.gitlab.com/omnibus/settings/configuration.html#configure-a-relative-url-for-gitlab
+sed -i'' -e "s/^external_url.*/external_url \"http:\/\/localhost:$LEGEND_OMNIBUS_GITLAB_PORT\"/" /etc/gitlab/gitlab.rb
+
+# Set the initial root password
+# See https://docs.gitlab.cn/14.0/omnibus/installation/#set-up-the-initial-password
+sed -i'' -e "s/^# gitlab_rails\['initial_root_password'\].*/gitlab_rails['initial_root_password'] = \"$LEGEND_OMNIBUS_GITLAB_ROOT_PASSWORD\"/" /etc/gitlab/gitlab.rb
 
 # NOTE: we cannot exactly foolow step detailed in the omnibus installation guide
 # See https://about.gitlab.com/install/#ubuntu
@@ -12,6 +17,12 @@ EXTERNAL_URL=http://localhost
 /opt/gitlab/embedded/bin/runsvdir-start &
 
 gitlab-ctl reconfigure
+
+########################## Post Configuration ##########################
+
+# Generate Private Access Token
+LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN=$(openssl rand -base64 8 | sed 's:/::g')
+echo "LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN=$LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN" >> /.env
 
 # NOTE: in this file, we call Gitlab Rails console to do a some hacking to make booting up the application
 # stack more smoothly; however, this bypasses the safety net that the abstraction API layer provides and can
