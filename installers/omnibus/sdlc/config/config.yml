@@ -1,0 +1,87 @@
+cors:
+  allowedHeaders:
+    - X-Requested-With
+    - Content-Type
+    - Accept
+    - Origin
+    - Access-Control-Allow-Credentials
+    - x-b3-parentspanid
+    - x-b3-sampled
+    - x-b3-spanid
+    - x-b3-traceid
+    - legend-omnibus-pat
+applicationName: Legend SDLC
+sessionCookie: LEGEND_SDLC_JSESSIONID
+server:
+  adminContextPath: /admin
+  applicationConnectors:
+    - type: http
+      port: ${LEGEND_OMNIBUS_SDLC_PORT}
+      maxRequestHeaderSize: 128KiB
+  adminConnectors:
+    - type: http
+      port: ${LEGEND_OMNIBUS_SDLC_ADMIN_PORT}
+  gzip:
+    includedMethods:
+      - GET
+      - POST
+  requestLog:
+    type: classic
+    level: "OFF"
+    appenders:
+      - type: console
+        logFormat: "OFF"
+  rootPath: /api
+projectStructure:
+  projectCreation: {}
+  extensionProvider:
+    org.finos.legend.sdlc.server.gitlab.finos.FinosGitlabProjectStructureExtensionProvider:
+      {}
+  platforms:
+    legend-engine:
+      groupId: org.finos.legend.engine
+      platformVersion:
+        version: ${LEGEND_OMNIBUS_ENGINE_VERSION}
+    legend-sdlc:
+      groupId: org.finos.legend.sdlc
+      platformVersion:
+        version: ${LEGEND_OMNIBUS_SDLC_VERSION}
+filterPriorities:
+  GitLab: 1
+  org.pac4j.j2e.filter.CallbackFilter: 2
+  org.pac4j.j2e.filter.SecurityFilter: 3
+  CORS: 4
+pac4j:
+  callbackPrefix: /api/pac4j/login
+  clients:
+    - org.finos.legend.server.pac4j.gitlab.GitlabPersonalAccessTokenClient:
+        headerTokenName: legend-omnibus-pat
+        scheme: http
+        gitlabHost: localhost
+        gitlabApiVersion: v4
+  bypassPaths:
+    - /api/info
+features:
+  canCreateProject: true
+  canCreateVersion: true
+gitLab:
+  newProjectVisibility: public
+  projectTag: ${LEGEND_OMNIBUS_SDLC_PROJECT_TAG}
+  projectIdPrefix: OMNIBUS
+  server:
+    scheme: http
+    host: localhost
+  app:
+    id: ${LEGEND_OMNIBUS_SDLC_GITLAB_APP_ID}
+    secret: ${LEGEND_OMNIBUS_SDLC_GITLAB_APP_SECRET}
+    redirectURI: ${LEGEND_OMNIBUS_SDLC_REDIRECT_URI}
+logging:
+  level: INFO
+  appenders:
+    - type: console
+      logFormat: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%thread] %c - %m%n"
+swagger:
+  resourcePackage: org.finos.legend.sdlc.server.resources
+  title: Legend LEGEND_SDLC
+  version: local-snapshot
+  schemes: []

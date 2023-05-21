@@ -1,0 +1,34 @@
+{
+  "appName": "studio",
+  "env": "prod",
+  "sdlc": {
+    "url": "http://localhost:${LEGEND_OMNIBUS_NGINX_PORT}/sdlc/api",
+    "baseHeaders": {
+      "legend-omnibus-pat": "${LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN}"
+    }
+  },
+  "engine": {
+    "url": "http://localhost:${LEGEND_OMNIBUS_NGINX_PORT}/engine/api"
+  },
+  "depot": {
+    "url": "http://localhost:${LEGEND_OMNIBUS_NGINX_PORT}/depot/api"
+  },
+  "documentation": {
+    "url": "https://legend.finos.org",
+    "registry": [
+      {
+        "url": "https://legend.finos.org/resource/studio/documentation/shared.json",
+        "simple": true
+      },
+      {
+        "url": "https://legend.finos.org/resource/studio/documentation/studio.json",
+        "simple": true
+      }
+    ]
+  },
+  "extensions": {
+    "core": {
+      "TEMPORARY__enableFunctionActivatorSupport": true
+    }
+  }
+}

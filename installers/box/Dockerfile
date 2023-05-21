@@ -4,7 +4,6 @@ RUN apt-get update && apt-get install -y wget
 RUN apt-get update && apt-get install supervisor -y
 RUN apt-get update && apt-get install nano -y
 RUN apt-get update && apt-get install nginx -y
-RUN apt-get update && apt-get install nginx -y
 
 ## Variables 
 
