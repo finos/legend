@@ -1,0 +1,59 @@
+deployment:
+  mode: TEST_IGNORE_FUNCTION_MATCH
+logging:
+  level: INFO
+  appenders:
+    - type: console
+      logFormat: "%msg\r\n"
+pac4j:
+  bypassPaths:
+    - /api/server/v1/info
+  callbackPrefix: ""
+  clients:
+    - org.pac4j.core.client.direct.AnonymousClient: {}
+opentracing:
+  elastic: ""
+  zipkin: ""
+  uri: ""
+  authenticator:
+    principal: ""
+    keytab: ""
+swagger:
+  title: Legend Engine
+  resourcePackage: org.finos.legend
+  uriPrefix: /api
+sessionCookie: LEGEND_ENGINE_JSESSIONID
+server:
+  type: simple
+  applicationContextPath: /
+  adminContextPath: /admin
+  connector:
+    maxRequestHeaderSize: 32KiB
+    type: http
+    port: ${LEGEND_OMNIBUS_ENGINE_PORT}
+  requestLog:
+    appenders: []
+metadataserver:
+  pure:
+    host: unused # unsupported flow
+    port: 1234 # unsupported flow
+  alloy:
+    host: unused # unsupported flow
+    port: 1234 # unsupported flow
+    prefix: /depot/api
+  sdlc:
+    host: legend-sdlc
+    port: ${LEGEND_OMNIBUS_SDLC_PORT}
+temporarytestdb:
+  port: ${LEGEND_OMNIBUS_ENGINE_TEMP_DB_PORT}
+relationalexecution:
+  temporarytestdb:
+    port: ${LEGEND_OMNIBUS_ENGINE_TEMP_DB_PORT}
+  tempPath: /tmp/
+  flowProviderClass: >-
+    org.finos.legend.engine.authentication.LegendDefaultDatabaseAuthenticationFlowProvider
+  flowProviderConfiguration:
+    _type: legendDefault
+vaults:
+  - _type: property
+    location: /app/engine/config/vault.properties
