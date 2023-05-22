@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /.env
+
 error=0
 
 while :; do
@@ -30,7 +32,7 @@ fi
 
 echo -e "\e[32mAll components have started successfully!\e[0m"
 echo -e "Supervisor: \e[32mhttp://localhost:$LEGEND_OMNIBUS_SUPERVISOR_PORT\e[0m (user: $LEGEND_OMNIBUS_SUPERVISOR_USERNAME, password: $LEGEND_OMNIBUS_SUPERVISOR_PASSWORD)"
-echo -e "Gitlab: \e[32mhttp://localhost:$LEGEND_OMNIBUS_GITLAB_PORT\e[0m (user: $LEGEND_OMNIBUS_GITLAB_ROOT_USER, password: $LEGEND_OMNIBUS_GITLAB_ROOT_PASSWORD)"
+echo -e "Gitlab: \e[32mhttp://localhost:$LEGEND_OMNIBUS_GITLAB_PORT\e[0m (user: $LEGEND_OMNIBUS_GITLAB_ROOT_USER, password: $LEGEND_OMNIBUS_GITLAB_ROOT_PASSWORD, pat: $LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN)"
 echo -e "Legend Engine: \e[32mhttp://localhost:$LEGEND_OMNIBUS_ENGINE_PORT\e[0m"
 echo -e "Legend SDLC: \e[32mhttp://localhost:$LEGEND_OMNIBUS_SDLC_PORT\e[0m"
 echo -e "Legend Studio: \e[32mhttp://localhost:$LEGEND_OMNIBUS_STUDIO_PORT/studio\e[0m"

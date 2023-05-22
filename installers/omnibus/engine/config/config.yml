@@ -35,11 +35,11 @@ server:
     appenders: []
 metadataserver:
   pure:
-    host: ${LEGEND_OMNIBUS_ENGINE_METADATA_PURE_HOST}
-    port: ${LEGEND_OMNIBUS_ENGINE_METADATA_PURE_PORT}
+    host: unused # unsupported flow
+    port: 1234 # unsupported flow
   alloy:
-    host: ${LEGEND_OMNIBUS_ENGINE_METADATA_ALLOY_HOST}
-    port: ${LEGEND_OMNIBUS_ENGINE_METADATA_ALLOY_PORT}
+    host: unused # unsupported flow
+    port: 1234 # unsupported flow
     prefix: /depot/api
   sdlc:
     host: legend-sdlc
