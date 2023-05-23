@@ -130,12 +130,6 @@ Legend Showcase projects are hosted on the [Legend hosted instance](https://fino
 </table>
 
 
-
-<a href="url">link text</a>
-
-<a href="url">link text</a>
-
-
 ## More
 - [Legend User Journeys](../user-journeys/build-data-model.md)
 - [Legend Features](../overview/legend-features.md)
