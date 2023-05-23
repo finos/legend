@@ -67,7 +67,11 @@ _Tutorial coming soon._
 
 ### Share your project with others in read-only mode
 
-_Tutorial coming soon._
+Instead of having to copy the URL of a Studio project to share it with others, you can just click on the 'share project' button in the Project Details view. 
+
+![share-project](../assets/share-project.gif)
+
+More details and video walkthrough [here](https://github.com/finos/legend-studio/pull/1166).
 
 ### Debug/troubleshoot issues with your query by reviewing execution details (Plan View)
 
