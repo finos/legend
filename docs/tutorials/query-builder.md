@@ -54,7 +54,7 @@ Constants are static values set to a variable name that can be leveraged within 
 
 ### Filter
 
-**Date Filter and Operations.** 
+#### Date Filter and Operations
 Leverage <kbd>&gt;</kbd>, <kbd>&gt;=</kbd>, <kbd>&lt;</kbd>, <kbd>&lt;=</kbd>, <kbd>is in</kbd>, and <kbd>is not in</kbd>. More details [here](https://github.com/finos/legend-studio/pull/784).
 
 ![date filter](../assets/new-date-filter.gif)
@@ -62,6 +62,11 @@ Leverage <kbd>&gt;</kbd>, <kbd>&gt;=</kbd>, <kbd>&lt;</kbd>, <kbd>&lt;=</kbd>, <
 ### Milestoning
 
 ![Milestoning](../assets/query-builder/milestoning.gif)
+
+#### Date Propagations for milestoned properties
+Query supports propagations for milestoned properties. You can also overwrite default date parameter values for milestoned properties directly from the projection and filter panels or from Text Mode.
+
+![milestoning](../assets/milestoning.gif)
 
 ### Watermark
 
@@ -73,7 +78,11 @@ You can add a watermark to your query through the advanced options tab. If a wat
 
 ### Projection Columns
 
-_Coming soon._
+#### Aggregations for Enumeration values.
+
+You can perform aggregation operations in the projection column on an enumeration value when creating your query in the Query Builder. 
+
+![enumeration aggregation](../assets/enumeration-aggregation.gif)
 
 ### Post Filter
 
@@ -111,7 +120,9 @@ _Coming soon._
 
 ### Query Data as of Specific Dates and Times
 
-_Coming soon._
+Query Builder supports filtering by additional date and time values. These include <kbd>now()</kbd>, <kbd>today ()</kbd>, and customized absolute date & time values. Additional, date and time values can be used for filters, post filters, parameters and derived properties.  
+
+![datefilter](../assets/datefilter.gif)
 
 ### Apply operations, transformations, and calculations to your datasets in the Query Editor
 
