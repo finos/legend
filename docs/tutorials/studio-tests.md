@@ -42,7 +42,7 @@ Test data for model to model can be defined through external format. Provides te
 
 ## Run all your tests globally across the project
 
-_Coming soon._
+You can run all saved tests across your Studio project at the same time in the new "testables" section. Previously, users needed to navigate to the Service or Mapping editor respectively to run tests. This will be hugely beneficial when testing how changes to your data model may impact data feeds or ad-hoc data queries of your data consumers. More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1114).
 
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)

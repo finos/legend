@@ -22,6 +22,15 @@ Navigate properties of subtypes in the explorer tree. These properties can be us
 
 ![subtype query](../assets/new-subtype-query.gif)
 
+### Search for properties when building your data query
+You can search for data model properties when building a query. The search functionality includes filtering by specific data types and dragging & dropping of the selected property into the fetch panel. More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1212).
+
+### See the full element path of classes
+ When selecting the class you want to query, you can see the full element path to avoid picking the wrong class in case of duplicates. More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1243).
+
+### Review execution time and result set size of your query
+You can see how long it takes to run your query and how many rows are being returned. This will help users to identify issues with their query. More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1244).
+
 ## Test Querying your Data model
 
 _Coming soon._
@@ -53,6 +62,10 @@ Constants are static values set to a variable name that can be leveraged within 
 ![Add a constant for milestone value](../assets/query-builder/constants-milestoning.gif)
 
 ### Filter
+
+#### "Filter by" results in your query
+
+You can quickly filter by returned results (row entries) post running a query. This will add a post filter to your query that you can then further customize if needed. More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1204).
 
 #### Date Filter and Operations
 Leverage <kbd>&gt;</kbd>, <kbd>&gt;=</kbd>, <kbd>&lt;</kbd>, <kbd>&lt;=</kbd>, <kbd>is in</kbd>, and <kbd>is not in</kbd>. More details [here](https://github.com/finos/legend-studio/pull/784).

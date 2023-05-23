@@ -57,7 +57,8 @@ A workspace update may result in a conflict. Studio will open a new view to aid 
 
 ## Release a new version of your data model and make it available to consumers
 
-_Tutorial coming soon._
+### Test new data model versions
+You can depend on another project's "HEAD" version to dynamically pull in and review incoming changes. As a data producer, you can more safely release new project versions because your consumers can test any data model changes before updating to a new released version. 
 
 ## Troubleshoot issues with your data model, query or service.
 
