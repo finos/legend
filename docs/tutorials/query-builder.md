@@ -12,12 +12,15 @@ Further define the expected results of a query by writing functions.
 
 ![derivation in query](../assets/new-feature-derivation.jpg)
 
-### See your query in text mode (PURE).
+### See your query in text mode (PURE)
 Review and edit your created queries using the user-friendly UI mode also in text mode.
 
 ![textmode in query](../assets/new-textmode-query.jpg)
 
-### Leverage Subtype in Query Builder.
+## Notification upon exiting Query Editor
+In order to prevent accidental loss of query edits when exiting the Query Editor, there is a pop up asking you if you would like to exit the Query Editor without saving your query. More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1278). 
+
+### Leverage Subtype in Query Builder
 Navigate properties of subtypes in the explorer tree. These properties can be used in building queries through projection, graph fetch and filter features in form mode. More details [here](https://github.com/finos/legend-studio/issues/630).
 
 ![subtype query](../assets/new-subtype-query.gif)
@@ -30,6 +33,9 @@ You can search for data model properties when building a query. The search funct
 
 ### Review execution time and result set size of your query
 You can see how long it takes to run your query and how many rows are being returned. This will help users to identify issues with their query. More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1244).
+
+### Toggle between light & dark theme
+Click on the light bulb icon on the top right corner and you will see the Query Editor in light theme. More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1388).
 
 ## Test Querying your Data model
 
@@ -53,6 +59,8 @@ Parameters are variables assigned to your query. They are dynamic in nature and 
 
 ![Add a parameter](../assets/query-builder/params.gif)
 
+We run validations upon creation of query parameters such as not allowing duplicate parameter names or empty names. More details [here](https://github.com/finos/legend-studio/issues/1269).
+
 ### Constants
 
 Constants are static values set to a variable name that can be leveraged within your query. They remain the same for ALL executions.
@@ -63,6 +71,9 @@ Constants are static values set to a variable name that can be leveraged within 
 
 ### Filter
 
+#### Drag columns from projection to filter panel.
+Drag & drop properties from the projection into the filter panel. More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1350).
+
 #### "Filter by" results in your query
 
 You can quickly filter by returned results (row entries) post running a query. This will add a post filter to your query that you can then further customize if needed. More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1204).
@@ -71,6 +82,9 @@ You can quickly filter by returned results (row entries) post running a query. T
 Leverage <kbd>&gt;</kbd>, <kbd>&gt;=</kbd>, <kbd>&lt;</kbd>, <kbd>&lt;=</kbd>, <kbd>is in</kbd>, and <kbd>is not in</kbd>. More details [here](https://github.com/finos/legend-studio/pull/784).
 
 ![date filter](../assets/new-date-filter.gif)
+
+#### Type-ahead for filter
+We support fuzzy search & type-ahead for filter and post-filter. More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1381).
 
 ### Milestoning
 
@@ -104,6 +118,10 @@ You may add a filter that will be applied to your Tabular Data Structure Columns
 ![Post Filter](../assets/query-builder/post-filter-simple.gif)
 ![Post Filter on aggregation](../assets/query-builder/post-filter-aggregation.gif)
 ![OLAP with Post Filter](../assets/query-builder/post-filter-derived.gif)
+
+#### Type-ahead for post-filter
+We support fuzzy search & type-ahead for filter and post-filter. More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1381).
+
 
 ### OLAP
 OLAP lets you add [window](https://mode.com/sql-tutorial/sql-window-functions/) columns to your query. 
@@ -148,7 +166,13 @@ The Query Editor supports performing aggregation functions as part of your query
 ![Execute Params](../assets/query-builder/execute-params.gif)
 ![Export Params With Enums](../assets/query-builder/execute-params-enums.gif)
 
-### Export Data
+### Cancel queries while running.
+You can cancel queries while they're running in the Query Builder as well as in the Service & Mapping Editor. More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1358).
+
+### Running and exporting invalid queries
+It is not allowed to run or export queries that are invalid - such as when no properties or duplicate properties are selected. More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1359).
+
+## Export Data
 
 Once you are content with your data, you can also export to other types. For now we support exporting your query results to `CSV`.
 

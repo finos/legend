@@ -11,6 +11,9 @@ Provide a meaningful name to your text and then choose it to be either PlainText
 
 In the [basic logical modeling](https://legend-acct.finos.org/studio/view/UAT-40953672) showcase project, README is a text element.
 
+### Markdown 
+Text mode supports markdown and preview functionality. More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1282).
+
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)
 - [Legend Features](../overview/legend-features.md)
