@@ -56,9 +56,9 @@ pac4j:
   clients:
     - org.finos.legend.server.pac4j.gitlab.GitlabPersonalAccessTokenClient:
         headerTokenName: legend-omnibus-pat
-        scheme: http
-        host: localhost
-        port: ${LEGEND_OMNIBUS_GITLAB_PORT}
+        scheme: ${LEGEND_OMNIBUS_GITLAB_URL_SCHEME}
+        host: ${LEGEND_OMNIBUS_GITLAB_URL_HOST}
+        port: ${LEGEND_OMNIBUS_GITLAB_URL_PORT}
         apiVersion: v4
   bypassPaths:
     - /api/info
@@ -70,9 +70,9 @@ gitLab:
   projectTag: legend
   projectIdPrefix: OMNIBUS
   server:
-    scheme: http
-    host: localhost
-    port: ${LEGEND_OMNIBUS_GITLAB_PORT}
+    scheme: ${LEGEND_OMNIBUS_GITLAB_URL_SCHEME}
+    host: ${LEGEND_OMNIBUS_GITLAB_URL_HOST}
+    port: ${LEGEND_OMNIBUS_GITLAB_URL_PORT}
   app:
     id: unused # not used since we use private access token
     secret: unused # not used since we use private access token

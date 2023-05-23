@@ -29,3 +29,11 @@ In addition, it uses [Supervisor](http://supervisord.org/) to launch and manage 
 - **Legend Engine:** http://localhost:6300 (routed from http://localhost:6900/engine)
 - **Legend SDLC:** http://localhost:6100 (routed from http://localhost:6900/sdlc)
 - **Legend Studio:** http://localhost:9000/studio (routed from http://localhost:6900/studio)
+
+## Customization
+
+### Use gitlab.com with Private Access Token (PAT)
+
+```sh
+docker run --platform=linux/amd64 -it -p 6100:6100 -p 6300:6300 -p 9000:9000 -p 6900:6900 -p 6901:6901 -p 6902:6902 --env LEGEND_OMNIBUS_REMOTE_GITLAB_PAT="<your private access token>" finos/legend-omnibus:latest
+```
