@@ -7,7 +7,7 @@ sidebar_label: Query Builder
 ## Build a Query
 You can build a query directly in Alloy Studio using its drag-and-drop environment, Query Builder. To create a query, right-click any class with mapped data and drag-and-drop the fields you want to the central panel. To execute the query, click `play`. 
 
-### Convert query attributes to Derivations.
+### Convert query attributes to Derivations
 Further define the expected results of a query by writing functions.
 
 ![derivation in query](../assets/new-feature-derivation.jpg)
@@ -36,6 +36,11 @@ You can see how long it takes to run your query and how many rows are being retu
 
 ### Toggle between light & dark theme
 Click on the light bulb icon on the top right corner and you will see the Query Editor in light theme. More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1388).
+
+### Load a new query directly from the Query Editor.
+Load a new query directly from the Query Editor. 
+
+More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1436).
 
 ## Test Querying your Data model
 
@@ -179,6 +184,11 @@ Once you are content with your data, you can also export to other types. For now
 ![Export CSV](../assets/query-builder/export-csv.gif)
 
 ![Export CSV](../assets/query-builder/export-csv-params.gif)
+
+## Promote an ad-hoc query to a service
+You can promote an ad-hoc query to a service. 
+
+More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1506).
 
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)
