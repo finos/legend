@@ -21,9 +21,7 @@ Create a data model to describe business concepts and how they relate to eachoth
 
 ### Showcase projects
 
-Start your data modeling journey by reviewing sample [showcase projects](../showcases/showcase-projects.md):
-- [Logical Modeling (basic) showcase project](../showcases/showcase-projects.md/#logical-modeling-basic)
-- [Logical Modeling (advanced) showcase project](../showcases/showcase-projects.md/#logical-modeling-advanced)
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 - [Create a workspace](../tutorials/studio-workspace.md)
@@ -41,7 +39,8 @@ Diagrams allow you to create a data model drag & drop style.
 - [Diagram](../overview/legend-glossary.md/#diagram)
 
 ### Showcase projects
-_Coming soon_
+
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 - [Create a diagram](../tutorials/studio-diagram.md)
@@ -52,7 +51,8 @@ _Coming soon_
 _Coming soon_
 
 ### Showcase projects
-_Coming soon_
+
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 _Coming soon_
@@ -63,7 +63,7 @@ _Coming soon_
 _Coming soon_
 
 ### Showcase projects
-- [Manage model information and workspaces](../tutorials/studio-manage-model-information.md)
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 _Coming soon_
@@ -74,7 +74,7 @@ _Coming soon_
 _Coming soon_
 
 ### Showcase projects
-_Coming soon_
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 _Coming soon_
@@ -87,15 +87,15 @@ See reference documentation on [released functions](../reference/released-functi
 - [Functions](../tutorials/studio-function.md)
 
 ### Showcase projects
-_Coming soon_
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 _Coming soon_
 
 ## More
+- [Showcase projects](../showcases/showcase-projects.md)
 - [Legend features](../overview/legend-features.md)
 - [Legend glossary](../overview/legend-glossary.md)
-- [Showcase projects](../showcases/showcase-projects.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)
 - [Query tutorials](../tutorials/query-builder.md)

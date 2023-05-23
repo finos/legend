@@ -14,15 +14,15 @@ Load the latest changes from master into your workspace.
 - [Studio SDLC](../tutorials/studio-sdlc.md)
 
 ### Showcase projects
-_Coming soon_
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 - [SDLC tutorial](../tutorials/studio-sdlc.md)
 
 ## More
+- [Showcase projects](../showcases/showcase-projects.md)
 - [Legend features](../overview/legend-features.md)
 - [Legend glossary](../overview/legend-glossary.md)
-- [Showcase projects](../showcases/showcase-projects.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)
 - [Query tutorials](../tutorials/query-builder.md)

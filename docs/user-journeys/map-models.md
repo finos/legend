@@ -17,7 +17,7 @@ Connect your model to another model to de-duplicate modeling efforts and use rec
 - [Generation Specification](../overview/legend-features.md/#generation-specification)
 
 ### Showcase projects 
-_Coming soon_
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 - [Map models to models](../tutorials/studio-m2m-mapping)
@@ -31,7 +31,7 @@ Add a project/data model dependency to your data model and resolve project depen
 _Coming soon_
 
 ### Showcase projects
-_Coming soon_
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 - [Add & manage project dependencies](../tutorials/studio-project-dependencies.md)
@@ -43,7 +43,7 @@ Re-use transformation logic as part of your mappings or services by defining cus
 - [Functions](../overview/legend-glossary.md/#functions)
 
 ### Showcase projects
-_Coming soon_
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 - [Define customized functions](../tutorials/studio-function.md)
@@ -54,7 +54,7 @@ _Coming soon_
 _Coming soon_
 
 ### Showcase projects
-_Coming soon_
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 - [Add & manage project dependencies](../tutorials/studio-project-dependencies.md)
@@ -65,15 +65,15 @@ _Coming soon_
 _Coming soon_
 
 ### Showcase projects
-_Coming soon_
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 _Coming soon_
 
 ## More
+- [Showcase projects](../showcases/showcase-projects.md)
 - [Legend features](../overview/legend-features.md)
 - [Legend glossary](../overview/legend-glossary.md)
-- [Showcase projects](../showcases/showcase-projects.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)
 - [Query tutorials](../tutorials/query-builder.md)

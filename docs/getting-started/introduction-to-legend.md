@@ -4,6 +4,10 @@ title: Get Started
 sidebar_label: Get Started
 ---
 
+## Showcase Projects
+
+See Legend features in action in [Legend showcase projects](../showcases/showcase-projects.md)
+
 ## Introductory Videos
 
 Watch the introductory Studio & Query sessions hosted by Beeke-Marie Nelke for the FINOS Open Source community:

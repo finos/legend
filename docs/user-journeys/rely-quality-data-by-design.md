@@ -10,16 +10,15 @@ sidebar_label: Rely on High Quality Data by Design
 - [Constraints](../overview/legend-features.md/#constraint)
 
 ### Showcase projects
-- [Logical Modeling (basic) showcase project](../showcases/showcase-projects.md/#logical-modeling-basic)
-- [Logical Modeling (advanced) showcase project](../showcases/showcase-projects.md/#logical-modeling-advanced)
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 _Coming soon_
 
 ## More
+- [Showcase projects](../showcases/showcase-projects.md)
 - [Legend features](../overview/legend-features.md)
 - [Legend glossary](../overview/legend-glossary.md)
-- [Showcase projects](../showcases/showcase-projects.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)
 - [Query tutorials](../tutorials/query-builder.md)

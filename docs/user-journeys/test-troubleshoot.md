@@ -40,9 +40,9 @@ _Coming soon_
 _Coming soon_
 
 ## More
+- [Showcase projects](../showcases/showcase-projects.md)
 - [Legend features](../overview/legend-features.md)
 - [Legend glossary](../overview/legend-glossary.md)
-- [Showcase projects](../showcases/showcase-projects.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)
 - [Query tutorials](../tutorials/query-builder.md)

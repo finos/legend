@@ -14,7 +14,7 @@ sidebar_label: Connect to Data Sources
 - [Relational Database](../overview/legend-glossary.md/#relational-database)
 
 ### Showcase projects
-- [Relational showcase project](../showcases/showcase-projects.md/#relational)
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 - [Relational mapping](../tutorials/studio-relational-mapping.md)  
@@ -31,7 +31,7 @@ sidebar_label: Connect to Data Sources
 - [Flat-Data Store](../overview/legend-glossary.md/#flat-data-store)
 
 ### Showcase projects
-_Coming soon_
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 _Coming soon_
@@ -46,7 +46,7 @@ _Coming soon_
 - [Service store](../overview/legend-features.md/#service-store)
 
 ### Showcase projects
-_Coming soon_
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 - [Service store showcase project](../showcases/showcase-projects.md/#service-store)
@@ -57,7 +57,7 @@ _Coming soon_
 _Coming soon_
 
 ### Showcase projects
-_Coming soon_
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 _Coming soon_
@@ -68,7 +68,7 @@ _Coming soon_
 _Coming soon_
 
 ### Showcase projects
-_Coming soon_
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 _Coming soon_
@@ -79,15 +79,15 @@ _Coming soon_
 - [Binding](../overview/legend-glossary.md/#bindings)
 
 ### Showcase projects
-- [External format showcase project](../showcases/showcase-projects.md/#user-journey-5-connect-to-data-sources)
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 - [Binding & External Format](../tutorials/studio-binding.md)
 
 ## More
+- [Showcase projects](../showcases/showcase-projects.md)
 - [Legend features](../overview/legend-features.md)
 - [Legend glossary](../overview/legend-glossary.md)
-- [Showcase projects](../showcases/showcase-projects.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)
 - [Query tutorials](../tutorials/query-builder.md)
