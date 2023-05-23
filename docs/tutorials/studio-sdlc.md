@@ -32,6 +32,11 @@ When the workspace is out of date, Studio provides a notification in the status 
 
 ![](../assets/sdlc_step5.JPG)
 
+## Share and upload recent unsaved local changes via a Patch
+ This feature allows you to save (or write) a patch that they can then upload and apply to their local workspace. More details [here](https://github.com/finos/legend-studio/pull/748).
+
+![patches](../assets/new-patches.gif)
+
 ## Resolve a conflict in the workspace
 
 A workspace update may result in a conflict. Studio will open a new view to aid in resolving the conflict.

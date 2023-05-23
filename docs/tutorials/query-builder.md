@@ -17,6 +17,11 @@ Review and edit your created queries using the user-friendly UI mode also in tex
 
 ![textmode in query](../assets/new-textmode-query.jpg)
 
+### Leverage Subtype in Query Builder.
+Navigate properties of subtypes in the explorer tree. These properties can be used in building queries through projection, graph fetch and filter features in form mode. More details [here](https://github.com/finos/legend-studio/issues/630).
+
+![subtype query](../assets/new-subtype-query.gif)
+
 ## Test Querying your Data model
 
 _Coming soon._
@@ -48,7 +53,11 @@ Constants are static values set to a variable name that can be leveraged within 
 ![Add a constant for milestone value](../assets/query-builder/constants-milestoning.gif)
 
 ### Filter
-_Coming soon._
+
+**Date Filter and Operations.** 
+Leverage <kbd>&gt;</kbd>, <kbd>&gt;=</kbd>, <kbd>&lt;</kbd>, <kbd>&lt;=</kbd>, <kbd>is in</kbd>, and <kbd>is not in</kbd>. More details [here](https://github.com/finos/legend-studio/pull/784).
+
+![date filter](../assets/new-date-filter.gif)
 
 ### Milestoning
 
