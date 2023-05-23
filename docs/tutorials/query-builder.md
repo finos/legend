@@ -7,9 +7,15 @@ sidebar_label: Query Builder
 ## Build a Query
 You can build a query directly in Alloy Studio using its drag-and-drop environment, Query Builder. To create a query, right-click any class with mapped data and drag-and-drop the fields you want to the central panel. To execute the query, click `play`. 
 
-## Create a Query
+### Convert query attributes to Derivations.
+Further define the expected results of a query by writing functions.
 
-_Coming soon._
+![derivation in query](../assets/new-feature-derivation.jpg)
+
+### See your query in text mode (PURE).
+Review and edit your created queries using the user-friendly UI mode also in text mode.
+
+![textmode in query](../assets/new-textmode-query.jpg)
 
 ## Test Querying your Data model
 
@@ -100,7 +106,9 @@ _Coming soon._
 
 ### Apply operations, transformations, and calculations to your datasets in the Query Editor
 
-_Coming soon._
+The Query Editor supports performing aggregation functions as part of your query.
+
+![aggregation in query](../assets/new-aggregations.jpg)
 
 ### Execute With Parameters
 

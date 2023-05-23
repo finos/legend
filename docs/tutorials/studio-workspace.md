@@ -18,6 +18,10 @@ Start working on your data model by creating a [workspace](../overview/legend-fe
 
 ## Group workspace
 
+There's no need to merge changes in your workspace to master to make them visible to others. Group workspaces allow for easier collaboration in community driven projects.
+
+![new group workspace feature](../assets/new-group-workspace.jpg)
+
 To create a [group workspace](../overview/legend-features.md/#group-workspace):
 
 1. Follow steps above to create a workspace
