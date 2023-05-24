@@ -1,17 +1,3 @@
-cors:
-  allowedHeaders:
-    - X-Requested-With
-    - Content-Type
-    - Accept
-    - Origin
-    - Access-Control-Allow-Credentials
-    - x-b3-parentspanid
-    - x-b3-sampled
-    - x-b3-spanid
-    - x-b3-traceid
-    - legend-omnibus-pat
-applicationName: Legend SDLC
-sessionCookie: LEGEND_SDLC_JSESSIONID
 server:
   adminContextPath: /admin
   applicationConnectors:
@@ -32,6 +18,51 @@ server:
       - type: console
         logFormat: "OFF"
   rootPath: /api
+sessionCookie: LEGEND_SDLC_JSESSIONID
+logging:
+  level: INFO
+  appenders:
+    - type: console
+      logFormat: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%thread] %c - %m%n"
+swagger:
+  resourcePackage: org.finos.legend.sdlc.server.resources
+  title: Legend SDLC
+  version: local-snapshot
+  schemes: []
+
+pac4j:
+  callbackPrefix: /api/pac4j/login
+  clients:
+    - org.finos.legend.server.pac4j.gitlab.GitlabPersonalAccessTokenClient:
+        headerTokenName: legend-omnibus-pat
+        scheme: ${LEGEND_OMNIBUS_GITLAB_URL_SCHEME}
+        host: ${LEGEND_OMNIBUS_GITLAB_URL_HOST}
+        port: ${LEGEND_OMNIBUS_GITLAB_URL_PORT}
+        apiVersion: v4
+  bypassPaths:
+    - /api/info
+
+applicationName: Legend SDLC
+filterPriorities:
+  GitLab: 1
+  org.pac4j.j2e.filter.CallbackFilter: 2
+  org.pac4j.j2e.filter.SecurityFilter: 3
+  CORS: 4
+cors:
+  allowedHeaders:
+    - X-Requested-With
+    - Content-Type
+    - Accept
+    - Origin
+    - Access-Control-Allow-Credentials
+    - x-b3-parentspanid
+    - x-b3-sampled
+    - x-b3-spanid
+    - x-b3-traceid
+    - legend-omnibus-pat
+features:
+  canCreateProject: true
+  canCreateVersion: true
 projectStructure:
   projectCreation: {}
   extensionProvider:
@@ -46,44 +77,15 @@ projectStructure:
       groupId: org.finos.legend.sdlc
       platformVersion:
         version: ${LEGEND_OMNIBUS_SDLC_VERSION}
-filterPriorities:
-  GitLab: 1
-  org.pac4j.j2e.filter.CallbackFilter: 2
-  org.pac4j.j2e.filter.SecurityFilter: 3
-  CORS: 4
-pac4j:
-  callbackPrefix: /api/pac4j/login
-  clients:
-    - org.finos.legend.server.pac4j.gitlab.GitlabPersonalAccessTokenClient:
-        headerTokenName: legend-omnibus-pat
-        scheme: http
-        host: localhost
-        port: ${LEGEND_OMNIBUS_GITLAB_PORT}
-        apiVersion: v4
-  bypassPaths:
-    - /api/info
-features:
-  canCreateProject: true
-  canCreateVersion: true
 gitLab:
   newProjectVisibility: public
   projectTag: legend
   projectIdPrefix: OMNIBUS
   server:
-    scheme: http
-    host: localhost
-    port: ${LEGEND_OMNIBUS_GITLAB_PORT}
+    scheme: ${LEGEND_OMNIBUS_GITLAB_URL_SCHEME}
+    host: ${LEGEND_OMNIBUS_GITLAB_URL_HOST}
+    port: ${LEGEND_OMNIBUS_GITLAB_URL_PORT}
   app:
     id: unused # not used since we use private access token
     secret: unused # not used since we use private access token
     redirectURI: unused # not used since we use private access token
-logging:
-  level: INFO
-  appenders:
-    - type: console
-      logFormat: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%thread] %c - %m%n"
-swagger:
-  resourcePackage: org.finos.legend.sdlc.server.resources
-  title: Legend LEGEND_SDLC
-  version: local-snapshot
-  schemes: []

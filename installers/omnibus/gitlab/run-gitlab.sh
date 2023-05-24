@@ -1,5 +1,13 @@
 #!/bin/bash
 
+if [[ ! -z "$LEGEND_OMNIBUS_REMOTE_GITLAB_PAT" ]]; then
+  echo "LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN=$LEGEND_OMNIBUS_REMOTE_GITLAB_PAT" >> /.env
+  echo "LEGEND_OMNIBUS_GITLAB_URL_SCHEME=https" >> /.env
+  echo "LEGEND_OMNIBUS_GITLAB_URL_HOST=gitlab.com" >> /.env
+  echo "LEGEND_OMNIBUS_GITLAB_URL_PORT=443" >> /.env
+  exit 0
+fi
+
 # Set the URL
 # See https://docs.gitlab.com/omnibus/settings/configuration.html#configure-a-relative-url-for-gitlab
 sed -i'' -e "s/^external_url.*/external_url \"http:\/\/localhost:$LEGEND_OMNIBUS_GITLAB_PORT\"/" /etc/gitlab/gitlab.rb
@@ -8,9 +16,14 @@ sed -i'' -e "s/^external_url.*/external_url \"http:\/\/localhost:$LEGEND_OMNIBUS
 # See https://docs.gitlab.cn/14.0/omnibus/installation/#set-up-the-initial-password
 sed -i'' -e "s/^# gitlab_rails\['initial_root_password'\].*/gitlab_rails['initial_root_password'] = \"$LEGEND_OMNIBUS_GITLAB_ROOT_PASSWORD\"/" /etc/gitlab/gitlab.rb
 
+# Turn off init detection
+# See https://gitlab.com/gitlab-org/omnibus-gitlab/-/issues/3552
+# See https://gitlab.com/gitlab-org/omnibus-gitlab/-/merge_requests/3028
+sed -i'' -e "s/^# package\['detect_init'\].*/package['detect_init'] = false/" /etc/gitlab/gitlab.rb
+
 # NOTE: we cannot exactly foolow step detailed in the omnibus installation guide
 # See https://about.gitlab.com/install/#ubuntu
-# Due to a problem with logrotate service, auto-reconfiguration will get stuck
+# Due to a problem with `logrotate` service, auto-reconfiguration will get stuck
 # so we have to use the following workaround
 # See https://gitlab.com/gitlab-org/omnibus-gitlab/-/issues/4257
 # See https://gitlab.com/gitlab-org/omnibus-gitlab/-/issues/7776
@@ -23,6 +36,9 @@ gitlab-ctl reconfigure
 # Generate Private Access Token
 LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN=$(openssl rand -base64 8 | sed 's:/::g')
 echo "LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN=$LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN" >> /.env
+echo "LEGEND_OMNIBUS_GITLAB_URL_SCHEME=http" >> /.env
+echo "LEGEND_OMNIBUS_GITLAB_URL_HOST=localhost" >> /.env
+echo "LEGEND_OMNIBUS_GITLAB_URL_PORT=$LEGEND_OMNIBUS_GITLAB_PORT" >> /.env
 
 # NOTE: in this file, we call Gitlab Rails console to do a some hacking to make booting up the application
 # stack more smoothly; however, this bypasses the safety net that the abstraction API layer provides and can
