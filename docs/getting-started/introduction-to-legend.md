@@ -31,12 +31,15 @@ Instructions to sign up and use this instance are available on the [FINOS websit
 
 ### Using Legend Omnibus
 
-<!-- TODO: swap out to use Docker image snapshot when we update -->
-<!-- Run the following command from your terminal, make sure you have `Docker` [installed](https://docs.docker.com/engine/install/) -->
+This is a quick way to get the Lgend environment up and running locally. Make sure you have Docker [installed](https://docs.docker.com/engine/install/). Run the following command in the terminal.
 
-See the [Omnibus Guide](https://github.com/finos/legend/tree/master/installers/omnibus) for details.
+```sh
+docker run --platform=linux/amd64 -it -p 6900:6900 -p 6901:6901 -p 6902:6902 -p 6100:6100 -p 6300:6300 -p 9200:9200 -p 9000:9000 finos/legend-omnibus:latest
+```
+
+See the [Omnibus Guide](https://github.com/finos/legend/tree/master/installers/omnibus) for more details.
 
 
-### Install your own Legend
+### Setup your own Legend environment
 
-See the [Installation Guide](../getting-started/installation-guide.md) for details.
+This is the recommended way to setup Legend for local development. See the [Installation Guide](../getting-started/installation-guide.md) for details.
