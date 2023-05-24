@@ -48,7 +48,7 @@ touch ./releases/$NEW_VERSION/manifest.json
 cat > ./releases/$NEW_VERSION/manifest.json <<-END
 {
   "version": "$NEW_VERSION",
-  "timestamp": $(date +%s),
+  "timestamp": $(date +%s000),
   "releaseNotesUrl": "",
   "core": {
     "finos/legend-engine-server": "$NEW_ENGINE_VERSION",
