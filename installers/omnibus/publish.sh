@@ -30,12 +30,12 @@ fi
 
 # Build Docker image
 bash ./build.sh
-docker tag legend-omnibus:latest finos/legend-omnibus:$DOCKER_IMAGE_TAG
-
 # Push Docker image
+docker tag legend-omnibus:latest finos/legend-omnibus:$DOCKER_IMAGE_TAG
 docker push --quiet finos/legend-omnibus:$DOCKER_IMAGE_TAG || {
   exit 1
 }
+docker tag legend-omnibus:latest finos/legend-omnibus:latest
 docker push --quiet finos/legend-omnibus:latest || {
   exit 1
 }
