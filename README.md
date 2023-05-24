@@ -1,4 +1,5 @@
 [![FINOS - Incubating](https://cdn.jsdelivr.net/gh/finos/contrib-toolbox@master/images/badge-incubating.svg)](https://finosfoundation.atlassian.net/wiki/display/FINOS/Incubating)
+[![docker](https://img.shields.io/docker/v/finos/legend-omnibus?label=finos%2Flegend-omnibus&logo=docker&logoColor=docker&sort=semver)](https://hub.docker.com/r/finos/legend-omnibus)
 
 # Legend
 
