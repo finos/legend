@@ -6019,5 +6019,4 @@ sidebar_label: Released Functions
 - [User journeys](../user-journeys/build-data-model.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)
 - [Query tutorials](../tutorials/query-builder.md)
-- [Troubleshooting](./test-troubleshoot.md)
 - [Contribute to Legend](../community/contribute-to-legend.md)
