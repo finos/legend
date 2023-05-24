@@ -19,7 +19,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Publish Omnibus to Docker
         working-directory: ./installers/omnibus
-        shell: bash
         run: |
+          chmod +x ./build.sh
           chmod +x ./publish.sh
           ./publish.sh

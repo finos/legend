@@ -29,7 +29,7 @@ fi
 # login beforehand.
 
 # Build Docker image
-sh -x ./build.sh
+bash ./build.sh
 docker tag legend-omnibus:latest finos/legend-omnibus:$DOCKER_IMAGE_TAG
 
 # Push Docker image
