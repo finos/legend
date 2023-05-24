@@ -1,28 +1,3 @@
-deployment:
-  mode: TEST_IGNORE_FUNCTION_MATCH
-logging:
-  level: INFO
-  appenders:
-    - type: console
-      logFormat: "%msg\r\n"
-pac4j:
-  bypassPaths:
-    - /api/server/v1/info
-  callbackPrefix: ""
-  clients:
-    - org.pac4j.core.client.direct.AnonymousClient: {}
-opentracing:
-  elastic: ""
-  zipkin: ""
-  uri: ""
-  authenticator:
-    principal: ""
-    keytab: ""
-swagger:
-  title: Legend Engine
-  resourcePackage: org.finos.legend
-  uriPrefix: /api
-sessionCookie: LEGEND_ENGINE_JSESSIONID
 server:
   type: simple
   applicationContextPath: /
@@ -33,6 +8,33 @@ server:
     port: ${LEGEND_OMNIBUS_ENGINE_PORT}
   requestLog:
     appenders: []
+sessionCookie: LEGEND_ENGINE_JSESSIONID
+logging:
+  level: INFO
+  appenders:
+    - type: console
+      logFormat: "%msg\r\n"
+swagger:
+  title: Legend Engine
+  resourcePackage: org.finos.legend
+  uriPrefix: /api
+
+pac4j:
+  bypassPaths:
+    - /api/server/v1/info
+  callbackPrefix: ""
+  clients:
+    - org.pac4j.core.client.direct.AnonymousClient: {}
+
+deployment:
+  mode: TEST_IGNORE_FUNCTION_MATCH
+opentracing:
+  elastic: ""
+  zipkin: ""
+  uri: ""
+  authenticator:
+    principal: ""
+    keytab: ""
 metadataserver:
   pure:
     host: unused # unsupported flow

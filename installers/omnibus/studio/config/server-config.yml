@@ -1,9 +1,28 @@
+server:
+  type: simple
+  applicationContextPath: /
+  adminContextPath: /studio/admin
+  connector:
+    type: http
+    port: ${LEGEND_OMNIBUS_STUDIO_PORT}
+sessionCookie: LEGEND_STUDIO_JSESSIONID
+logging:
+  level: INFO
+  loggers:
+    root:
+      level: INFO
+    org.pac4j:
+      level: INFO
+  appenders:
+    - type: console
+
 pac4j:
   callbackPrefix: /studio/log.in
   bypassPaths:
     - /studio/admin/healthcheck
   clients:
     - org.pac4j.core.client.direct.AnonymousClient: {}
+
 html5Router: true
 routerExemptPaths:
   - /editor.worker.js
@@ -17,20 +36,3 @@ routerExemptPaths:
 localAssetPaths:
   /studio/config.json: /app/studio/config/config.json
 uiPath: /studio
-sessionCookie: LEGEND_STUDIO_JSESSIONID
-server:
-  type: simple
-  applicationContextPath: /
-  adminContextPath: /studio/admin
-  connector:
-    type: http
-    port: ${LEGEND_OMNIBUS_STUDIO_PORT}
-logging:
-  level: INFO
-  loggers:
-    root:
-      level: INFO
-    org.pac4j:
-      level: INFO
-  appenders:
-    - type: console

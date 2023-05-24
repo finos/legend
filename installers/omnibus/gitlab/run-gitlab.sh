@@ -16,6 +16,11 @@ sed -i'' -e "s/^external_url.*/external_url \"http:\/\/localhost:$LEGEND_OMNIBUS
 # See https://docs.gitlab.cn/14.0/omnibus/installation/#set-up-the-initial-password
 sed -i'' -e "s/^# gitlab_rails\['initial_root_password'\].*/gitlab_rails['initial_root_password'] = \"$LEGEND_OMNIBUS_GITLAB_ROOT_PASSWORD\"/" /etc/gitlab/gitlab.rb
 
+# Turn off init detection
+# See https://gitlab.com/gitlab-org/omnibus-gitlab/-/issues/3552
+# See https://gitlab.com/gitlab-org/omnibus-gitlab/-/merge_requests/3028
+sed -i'' -e "s/^# package\['detect_init'\].*/package['detect_init'] = false/" /etc/gitlab/gitlab.rb
+
 # NOTE: we cannot exactly foolow step detailed in the omnibus installation guide
 # See https://about.gitlab.com/install/#ubuntu
 # Due to a problem with `logrotate` service, auto-reconfiguration will get stuck
