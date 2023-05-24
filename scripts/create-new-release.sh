@@ -39,7 +39,6 @@ fi
 
 mkdir -p ./releases/$NEW_VERSION
 touch ./releases/$NEW_VERSION/manifest.json
-
 cat > ./releases/$NEW_VERSION/manifest.json <<-END
 {
   "version": "$NEW_VERSION",

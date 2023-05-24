@@ -16,6 +16,9 @@ on:
         description: "Legend Studio version"
         required: false
 
+# This script will create a new release version of date format (YYYY-MM-DD)
+# and bump dependecies version in Legend Omnibus
+# See https://github.com/finos/legend/tree/master/installers/omnibus
 jobs:
   create-new-docker-release:
     # There is currently no way to limit workflow dispatch to only allow default branch
