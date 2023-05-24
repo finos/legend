@@ -1,0 +1,54 @@
+name: (Manual) Publish Omnibus to Docker
+
+on:
+  workflow_dispatch:
+    inputs:
+      new-version:
+        description: "Tag - e.g. 2023-09-09, 2022-10-10 (default to today's date)"
+        required: false
+      legend-engine-version:
+        description: "Legend Engine version"
+        required: false
+      legend-sdlc-version:
+        description: "Legend SDLC version"
+        required: false
+      legend-studio-version:
+        description: "Legend Studio version"
+        required: false
+
+jobs:
+  create-docker-release:
+    # There is currently no way to limit workflow dispatch to only allow default branch
+    # so we need to restrict it here
+    # See https://github.community/t/limit-branch-for-workflow-dispatch/122099
+    if: github.ref == 'refs/heads/master' && github.repository == 'finos/legend'
+    name: Create Docker Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.5.2
+        with:
+          token: ${{ secrets.FINOS_GITHUB_TOKEN }}
+      - name: Configure Git
+        run: |
+          git config --global user.email "37706051+finos-admin@users.noreply.github.com"
+          git config --global user.name "FINOS Administrator"
+      - name: Setup Node
+        uses: actions/setup-node@v3.6.0
+        with:
+          node-version: 16
+      - name: Create New Release Version
+        run: |
+          chmod +x ./scripts/create-new-release.sh
+          ./scripts/create-new-release.sh
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: finos
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Publish Omnibus to Docker
+        working-directory: ./installers/omnibus
+        run: |
+          chmod +x ./publish.sh
+          chmod +x ./build.sh
+          ./publish.sh
