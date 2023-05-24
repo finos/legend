@@ -1,4 +1,4 @@
-name: (Manual) Publish Omnibus to Docker
+name: (Manual) Create New Docker Release
 
 on:
   workflow_dispatch:
@@ -17,12 +17,12 @@ on:
         required: false
 
 jobs:
-  create-docker-release:
+  create-new-docker-release:
     # There is currently no way to limit workflow dispatch to only allow default branch
     # so we need to restrict it here
     # See https://github.community/t/limit-branch-for-workflow-dispatch/122099
     if: github.ref == 'refs/heads/master' && github.repository == 'finos/legend'
-    name: Create Docker Release
+    name: Create New Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code

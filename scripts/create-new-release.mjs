@@ -125,8 +125,8 @@ writeFileSync(
         return `LEGEND_OMNIBUS_ENGINE_VERSION=${engineVersion}`;
       } else if (line.startsWith(`LEGEND_OMNIBUS_SDLC_VERSION=`)) {
         return `LEGEND_OMNIBUS_SDLC_VERSION=${sdlcVersion}`;
-      } else if (line.startsWith(`LEGEND_OMNIBUS_PURE_IDE_IMAGE=`)) {
-        return `LEGEND_OMNIBUS_PURE_IDE_IMAGE=${engineVersion}`; // use the same version as engine
+      } else if (line.startsWith(`LEGEND_OMNIBUS_PURE_IDE_VERSION=`)) {
+        return `LEGEND_OMNIBUS_PURE_IDE_VERSION=${engineVersion}`; // use the same version as engine
       } else if (line.startsWith(`LEGEND_OMNIBUS_STUDIO_VERSION=`)) {
         return `LEGEND_OMNIBUS_STUDIO_VERSION=${studioVersion}`;
       }

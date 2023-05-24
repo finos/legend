@@ -20,8 +20,10 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v1
-      - name: Install Node
-        uses: actions/setup-node@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3.6.0
+        with:
+          node-version: 16
       - name: Build Website
         working-directory: ./website
         run: |
