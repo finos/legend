@@ -124,8 +124,7 @@ You can get involved with Legend by suggesting documentation topics you would li
 
 ### Update the documentation site directly
 
-#### Prerequisites
-
+#### **Step 1. Run the website locally**
 To make edits to the website itself, you need to run the website locally. You must have:
 
 -   A Git client installed to checkout the code from github.com/finos/legend (`` branch). The `` command must be available via command-line, as it's needed to run the `` script.
@@ -139,22 +138,36 @@ git checkout -b feature/myProposedDocChanges
 cd legend ; ./scripts/build-site.sh
 cd website ; yarn start
 ```
-#### Identify where to contribute documentation
+#### **Step 2. Create a showcase project**
+
+Showcase projects show Legend features in action and are hosted on the [Legend hosted instance](https://gitlab.com/finosfoundation/legend). 
+
+See showcase project examples [here](../showcases/showcase-projects.md).
+
+To create a showcase project:
+
+1. Request free access to the [Legend hosted instance](https://finos.org/legend)    
+
+2. 
+    a) Create a new showcase project on the [Legend hosted instance](https://gitlab.com/finosfoundation/legend/showcase) and call it "Legend showcase - _feature name_"
+    
+    b) Open the [existing showcase project](https://gitlab.com/finosfoundation/legend/showcase) that you would like to update
+
+3. Document the features in the showcase project
+
+4. Submit a PR to add the showcase project's gitlab URL to the [showcase projects filehttps://github.com/finos/legend/blob/master/docs/showcases/showcase-projects.md) under the corresponding Legend User Journey. 
+
+#### **Step 3 Write additional documentation**
+
+Legend documentation is showcase project-first. If you would like to add step-by-step tutorials, or technical reference documentation for developers, see the best practices and examples in the table below.
 
 | Documentation type you're contributing | Example | Description | Best practices  |
-| - | - | - | - |
-| **Sub-user journeys** | _["Create a data model to describe business concepts and how they relate to eachother in a data model"](../user-journeys/build-data-model.md/#create-a-data-model-to-describe-business-concepts-and-how-they-relate-to-eachother-in-a-data-model) sub-user journey_ |  A sub-user journey describes the "What": a business goal that a user can achieve by **using** one or multiple Legend platform features   A sub-user journey aligns with a high-level Legend User Journey (i.e. 'Build a data model', 'Map models', 'Publish model changes')   Sub-user journeys link to **tutorials**, **showcase projects**, the Legend **glossary**, and **reference documentation** where appropriate |  Create a new (Heading 2) entry in the corresponding [top level user journey file](../user-journeys/build-data-model.md)   Describe the sub-user journey  Link to/update the corresponding **features** (e.g. [association](../overview/legend-features.md)), **[glossary entries](../overview/legend-glossary.md)**, **tutorials** (e.g. [association](../tutorials/studio-association.md)), **[showcase projects](../showcases/showcase-projects.md)** and **[reference documentation](../reference/legend-language.md)**  
+| - | - | - | - | 
+| **Feature overview**| _[Legend feature overview](../overview/legend-features)_| The Legend feature overview provides a high level, 1-2-line description of Legend features | If you are documenting a new feature, add a description of the feature to the the Legend feature overview file.
 | **Tutorials** | _["Workspace"](../tutorials/studio-workspace.md) tutorial_ |  Tutorials are Legend feature-specific and describe the "How": the steps that a user needs to take in order to **use** a Legend feature  |  Create a new (Heading 2) entry within the corresponding feature file (e.g. [Workspace](../tutorials/studio-workspace.md))  Describe the sequence of steps that a user needs to take in order to use the feature   Link to/update the corresponding **feature description** (e.g. [association](../overview/legend-features.md)), **[glossary entries](../overview/legend-glossary.md)**, **tutorials** (e.g. [association](../tutorials/studio-association.md)), **[showcase projects](../showcases/showcase-projects.md)** and **[reference documentation](../reference/legend-language.md)** |
- **Showcase projects** | _["Basic logical modelling"](../showcases/showcase-projects.md/#logical-modeling-basic) Showcase project_ |  Showcase projects show Legend features in action in the Legend UI   Showcase projects are hosted on the [Legend hosted instance](https://finos.org/legend) |  Get free access to the [Legend hosted instance](https://finos.org/legend)   Update an [existing showcase project](../showcases/showcase-projects.md) OR create a new showcase project on the [Legend hosted instance](https://finos.org/legend), showcasing the feature of interest  Link to/update the [Legend showcase project roster](../showcases/showcase-projects.md) and corresponding **tutorials** (e.g. [association](../tutorials/studio-association.md))|
 | **Reference documentation**| _[Legend language](../reference/legend-language.md) reference documentation_ |  Reference documentation is technical and developer-oriented, and includes API calls and other information that users need in order to **work with/develop** Legend components  | Contact the Legend team via [GitHub issues](https://github.com/finos/legend/issues/new/choose) or the [Legend mailing list](mailto:legend@finos.org) if you have questions about contributing reference documentation.|
 
-
-
-
-<!-- | <li> **Tutorials** </li> | <li> _["Workspace"](../tutorials/studio-workspace.md) tutorial_  </li> -->
-
-
-#### Submit your proposed changes 
+#### **Step 4. Submit your proposed changes**
 
 Once you're satisfied with your documentation changes, commit and propose them in line with the general process described above. Specifically for doc edits, it might look like this:
 

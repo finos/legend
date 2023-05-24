@@ -61,7 +61,7 @@ External Format allows you to define a formal schema (eg : XSD, Json Schema) of 
 
 3. Create a service chaining deserialization and M2M transform:
     - Query data: ``String[1]|TargetPerson.all()->graphFetch(#{TargetPerson{fullName}}#)->from(M2MMapping, Person->getRuntimeWithModelQueryConnection(PersonBinding, $data))->serialize(#{TargetPerson{fullName}}#);``
-        - This query accepts input as parameter named data. This input is deserialized into Person instances and wrapped into a runtime by this part of the query ``Person->getRuntimeWithModelQueryConnection(PersonBinding, $data)``. Once deserialization is achieved, the query uses from to perform a M2M transform.
+        - This query accepts input as parameter named data. This input is deserialized into Person instances and wrapped into a runtime by this part of the query ``Person->getRuntimeWithModelQueryConnection(PersonBinding, $data)``. Once deserialization is achieved and generated instances are wrapped into runtime, the query executes **from** expression to perform a M2M transform.
 
 4. Define tests for your service. You do not need to provide connection test data because connection is generated implicitly using input. Your test data goes as a parameter in the test setup tab, because your query accepts data as a parameter.
 

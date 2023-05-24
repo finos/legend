@@ -16,7 +16,7 @@ Define a data service querying your data model and define tests to ensure it doe
 - [Runtime](../overview/legend-glossary.md/#runtime)
 
 ### Showcase projects
-_Coming soon_
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 - [Create a service](../tutorials/services-service.md)
@@ -27,7 +27,7 @@ _Coming soon_
 _Coming soon_
 
 ### Showcase projects
-_Coming soon_
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 _Coming soon_
@@ -38,7 +38,7 @@ _Coming soon_
 _Coming soon_
 
 ### Showcase projects
-_Coming soon_
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 _Coming soon_
@@ -49,15 +49,15 @@ _Coming soon_
 _Coming soon_
 
 ### Showcase projects
-_Coming soon_
+See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
 _Coming soon_
 
 ## More
+- [Showcase projects](../showcases/showcase-projects.md)
 - [Legend features](../overview/legend-features.md)
 - [Legend glossary](../overview/legend-glossary.md)
-- [Showcase projects](../showcases/showcase-projects.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)
 - [Query tutorials](../tutorials/query-builder.md)

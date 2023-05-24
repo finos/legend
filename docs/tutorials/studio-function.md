@@ -8,6 +8,12 @@ sidebar_label: Function
 
 _Coming soon._
 
+### Functions with the same name but different parameters (function overload).
+
+You can create functions with the same name but different parameters. 
+
+More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1339).
+
 ### Re-use transformation logic as part of your mappings or services by defining a customized function
 
 _Coming soon_

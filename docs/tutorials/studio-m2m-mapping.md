@@ -22,6 +22,12 @@ Define the source class for our mapping and specifiy the transformation.
 
 ![Create model-to-model](../assets/create-M2M.gif)
 
+## Add a filter to model-to-model mappings
+
+This allows you to further restrict the values they would like to retrieve as part of the defined transformation.
+
+![filter in mapping](../assets/new-mapping-filter.jpg)
+
 ## Create a Mapping Test
 
 Legend provides an execution feature to run queries, constraints, and model-to-model/model-to-database transformations. You can use live data (pulled from physical data stores) or generated sample data as inputs to the executions, and review the results to test your model as you build it.

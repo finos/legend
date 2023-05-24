@@ -32,6 +32,11 @@ When the workspace is out of date, Studio provides a notification in the status 
 
 ![](../assets/sdlc_step5.JPG)
 
+## Share and upload recent unsaved local changes via a Patch
+ This feature allows you to save (or write) a patch that they can then upload and apply to their local workspace. More details [here](https://github.com/finos/legend-studio/pull/748).
+
+![patches](../assets/new-patches.gif)
+
 ## Resolve a conflict in the workspace
 
 A workspace update may result in a conflict. Studio will open a new view to aid in resolving the conflict.
@@ -52,7 +57,8 @@ A workspace update may result in a conflict. Studio will open a new view to aid 
 
 ## Release a new version of your data model and make it available to consumers
 
-_Tutorial coming soon._
+### Test new data model versions
+You can depend on another project's "HEAD" version to dynamically pull in and review incoming changes. As a data producer, you can more safely release new project versions because your consumers can test any data model changes before updating to a new released version. 
 
 ## Troubleshoot issues with your data model, query or service.
 
@@ -62,7 +68,11 @@ _Tutorial coming soon._
 
 ### Share your project with others in read-only mode
 
-_Tutorial coming soon._
+Instead of having to copy the URL of a Studio project to share it with others, you can just click on the 'share project' button in the Project Details view. 
+
+![share-project](../assets/share-project.gif)
+
+More details and video walkthrough [here](https://github.com/finos/legend-studio/pull/1166).
 
 ### Debug/troubleshoot issues with your query by reviewing execution details (Plan View)
 

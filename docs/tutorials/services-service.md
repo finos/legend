@@ -38,8 +38,13 @@ This panel lets you define tests for the services you write by specifying test d
 
 ## Create a Service Test 
 
+After setting up general information about your service as well as execution details, you can generate test data with a click of a button (or use test data you created). We highly encourage setting up tests for all services running in production. More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1195).
+
 ### Create connection test data
 Click the `generate` button to automatically generate test data if possible. Otherwise, manually create test data.
+
+#### Create re-usable test data.
+You can create test data in the <kbd>Data</kbd> element that can be easily re-used across all your service tests in your Studio project. This includes test data for external formats, relational stores and service stores. We are working on making the same functionality available in mapping tests as well - stay tuned! More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1195).
 
 ### Relational
 Add relational data tables based on databases to which the service's mapping connects. 
