@@ -4,23 +4,29 @@
 
 source ./installers/omnibus/.env
 
+echo "Creating new release version $NEW_VERSION..."
+
 if [[ -z $NEW_VERSION ]]; then
   NEW_VERSION=$(date '+%Y-%m-%d')
 fi
 
 if [[ -z $NEW_ENGINE_VERSION ]]; then
   NEW_ENGINE_VERSION=$LEGEND_OMNIBUS_ENGINE_VERSION
+else
+  echo "Bumping Legend Engine: $LEGEND_OMNIBUS_ENGINE_VERSION to $NEW_ENGINE_VERSION..."
 fi
 
 if [[ -z $NEW_SDLC_VERSION ]]; then
   NEW_SDLC_VERSION=$LEGEND_OMNIBUS_SDLC_VERSION
+else
+  echo "Bumping Legend SDLC: $LEGEND_OMNIBUS_SDLC_VERSION to $NEW_SDLC_VERSION..."
 fi
 
 if [[ -z $NEW_STUDIO_VERSION ]]; then
   NEW_STUDIO_VERSION=$LEGEND_OMNIBUS_STUDIO_VERSION
+else
+  echo "Bumping Legend Studio: $LEGEND_OMNIBUS_STUDIO_VERSION to $NEW_STUDIO_VERSION..."
 fi
-
-echo "Creating new release version $NEW_VERSION..."
 
 # --------------------------- Check ------------------------------
 

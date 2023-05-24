@@ -3,16 +3,16 @@ name: (Manual) Create New Docker Release
 on:
   workflow_dispatch:
     inputs:
-      new-version:
+      tag:
         description: "Tag - e.g. 2023-09-09, 2022-10-10 (default to today's date)"
         required: false
-      legend-engine-version:
+      legend_engine_version:
         description: "Legend Engine version"
         required: false
-      legend-sdlc-version:
+      legend_sdlc_version:
         description: "Legend SDLC version"
         required: false
-      legend-studio-version:
+      legend_studio_version:
         description: "Legend Studio version"
         required: false
 
@@ -41,6 +41,11 @@ jobs:
         with:
           node-version: 16
       - name: Create New Release Version
+        env:
+          NEW_VERSION: ${{ github.event.inputs.tag }}
+          NEW_ENGINE_VERSION: ${{ github.event.inputs.legend_engine_version }}
+          NEW_SDLC_VERSION: ${{ github.event.inputs.legend_sdlc_version }}
+          NEW_STUDIO_VERSION: ${{ github.event.inputs.legend_studio_version }}
         run: |
           chmod +x ./scripts/create-new-release.sh
           ./scripts/create-new-release.sh
