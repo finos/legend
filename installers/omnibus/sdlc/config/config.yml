@@ -72,11 +72,11 @@ projectStructure:
     legend-engine:
       groupId: org.finos.legend.engine
       platformVersion:
-        version: ${LEGEND_OMNIBUS_ENGINE_VERSION}
+        version: ${LEGEND_OMNIBUS_SDLC_PLATFORM_ENGINE_VERSION}
     legend-sdlc:
       groupId: org.finos.legend.sdlc
       platformVersion:
-        version: ${LEGEND_OMNIBUS_SDLC_VERSION}
+        version: ${LEGEND_OMNIBUS_SDLC_PLATFORM_SDLC_VERSION}
 gitLab:
   newProjectVisibility: public
   projectTag: legend
