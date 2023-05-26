@@ -50,44 +50,44 @@ module.exports = {
     ],
   ],
   plugins: [
-    async function myPlugin(context, options) {
-      // ...
-      return {
-        name: "docusaurus-releases-plugin",
-        async loadContent() {
-          const path = require("path");
-          const fs = require("fs");
-          const releases = fs
-            .readdirSync(path.resolve(__dirname, "../releases"))
-            .map((dir) => {
-              console.log(dir);
-              const fullDir = path.resolve(__dirname, `../releases/${dir}`);
-              if (!fs.lstatSync(fullDir).isDirectory()) {
-                return undefined;
-              }
-              return require(`${fullDir}/manifest.json`);
-            })
-            .filter(Boolean);
-          return releases;
-        },
-        async contentLoaded({ content, actions }) {
-          const { createData, addRoute } = actions;
-          const releaseJSONPath = await createData(
-            "releasesData.json",
-            JSON.stringify(content)
-          );
-          // Add the '/releases' routes, and ensure it receives the releases props
-          addRoute({
-            path: "/releases",
-            component: "@site/src/components/releases.js",
-            modules: {
-              releasesData: releaseJSONPath,
-            },
-            exact: true,
-          });
-        },
-      };
-    },
+    // async function myPlugin(context, options) {
+    //   // ...
+    //   return {
+    //     name: "docusaurus-releases-plugin",
+    //     async loadContent() {
+    //       const path = require("path");
+    //       const fs = require("fs");
+    //       const releases = fs
+    //         .readdirSync(path.resolve(__dirname, "../releases"))
+    //         .map((dir) => {
+    //           console.log(dir);
+    //           const fullDir = path.resolve(__dirname, `../releases/${dir}`);
+    //           if (!fs.lstatSync(fullDir).isDirectory()) {
+    //             return undefined;
+    //           }
+    //           return require(`${fullDir}/manifest.json`);
+    //         })
+    //         .filter(Boolean);
+    //       return releases;
+    //     },
+    //     async contentLoaded({ content, actions }) {
+    //       const { createData, addRoute } = actions;
+    //       const releaseJSONPath = await createData(
+    //         "releasesData.json",
+    //         JSON.stringify(content)
+    //       );
+    //       // Add the '/releases' routes, and ensure it receives the releases props
+    //       addRoute({
+    //         path: "/releases",
+    //         component: "@site/src/components/releases.js",
+    //         modules: {
+    //           releasesData: releaseJSONPath,
+    //         },
+    //         exact: true,
+    //       });
+    //     },
+    //   };
+    // },
   ],
   themeConfig: {
     // prism: {
@@ -117,11 +117,11 @@ module.exports = {
           label: "Docs",
           position: "right",
         },
-        {
-          to: "releases",
-          label: "Releases",
-          position: "right",
-        },
+        // {
+        //   to: "releases",
+        //   label: "Releases",
+        //   position: "right",
+        // },
       ],
     },
 
