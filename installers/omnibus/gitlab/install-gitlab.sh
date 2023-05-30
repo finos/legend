@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [[ "$LEGEND_OMNIBUS_GITLAB_USE_REMOTE" = true ]]; then
+  exit 0;
+fi
+
 # Follow the Omnibus installation guide
 # See https://about.gitlab.com/install/#ubuntu
 

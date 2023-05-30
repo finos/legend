@@ -28,9 +28,9 @@ fi
 # so we will use `docker/login-action`, if we run this script manually, make sure we
 # login beforehand.
 
-# Build Docker image
+# ------------------------- Full Build -------------------------
+
 bash ./build.sh
-# Push Docker image
 docker tag legend-omnibus:latest finos/legend-omnibus:$DOCKER_IMAGE_TAG
 docker push --quiet finos/legend-omnibus:$DOCKER_IMAGE_TAG || {
   exit 1
@@ -40,6 +40,21 @@ docker push --quiet finos/legend-omnibus:latest || {
   exit 1
 }
 
+# ------------------------- Slim Build -------------------------
+# This build skips Gitlab
+
+bash ./build-slim.sh
+docker tag legend-omnibus:latest-slim finos/legend-omnibus:$DOCKER_IMAGE_TAG-slim
+docker push --quiet finos/legend-omnibus:$DOCKER_IMAGE_TAG-slim || {
+  exit 1
+}
+docker tag legend-omnibus:latest-slim finos/legend-omnibus:latest-slim
+docker push --quiet finos/legend-omnibus:latest-slim || {
+  exit 1
+}
+
+# ------------------------- Summary -------------------------
+
 echo -e "\n"
-echo -e "${GREEN}Successfully published image finos/legend-omnibus:$DOCKER_IMAGE_TAG to Docker Hub! ${NC}"
+echo -e "${GREEN}Successfully published finos/legend-omnibus images to Docker Hub! ${NC}"
 echo -e "\n"
