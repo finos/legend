@@ -21,7 +21,7 @@ source ./.env
 
 echo "Running tests on the slim image..."
 bash ./build-slim.sh
-docker run \
+TEST_CONTAINER=$(docker run \
 	--platform=linux/amd64 \
 	-dit \
 	-p $LEGEND_OMNIBUS_SUPERVISOR_PORT:$LEGEND_OMNIBUS_SUPERVISOR_PORT \
@@ -33,7 +33,7 @@ docker run \
 	-p $LEGEND_OMNIBUS_PURE_IDE_PORT:$LEGEND_OMNIBUS_PURE_IDE_PORT \
 	-p $LEGEND_OMNIBUS_STUDIO_PORT:$LEGEND_OMNIBUS_STUDIO_PORT \
 	--env LEGEND_OMNIBUS_REMOTE_GITLAB_PAT="$LEGEND_OMNIBUS_REMOTE_GITLAB_PAT" \
-	legend-omnibus:latest-slim
+	legend-omnibus:latest-slim)
 
 while :; do
 	status_status_checker=$(curl --write-out %{http_code} --silent --output /dev/null http://localhost:$OMNIBUS_STATUS_REPORT_FILE_PATH/status)
@@ -54,6 +54,7 @@ while :; do
 	sleep 10
 done
 
+docker stop $TEST_CONTAINER
 
 # ----------------------------- Publish ------------------------------
 # Login to Docker Hub
