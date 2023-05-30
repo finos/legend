@@ -20,6 +20,33 @@ source ./.env
 # make a breaking change in their config, this test will detect it
 
 bash ./build-slim.sh
+bash ./run-slim.sh &
+while :; do
+	# Check status of Supervisor component processes
+	status_supervisor_components=$(supervisorctl -c /app/supervisor/supervisor.conf status | awk '{print $2}')
+	if grep -q "$status_supervisor_components" <<< "EXITED"; then
+	  echo -e "\e[31mFAILED: Some component(s) have failed to start\e[0m"
+		exit 1
+		break
+	fi
+
+	status_status_checker=$(curl --write-out %{http_code} --silent --output /dev/null http://localhost:$OMNIBUS_STATUS_REPORT_FILE_PATH/status)
+	if [[ $status_status_checker -ge 300 ]]; then
+	  echo -e "\e[31mFAILED: Status checker failed to start\e[0m"
+		exit 1
+		break
+	fi
+
+  status=$(curl --silent http://localhost:6903/status | jq '.status')
+	if [[ $status -eq "FAILED" ]]; then
+	  echo -e "\e[31mFAILED: Some status checks failed. Please identify and fix the issue... 🙏🙏🙏\e[0m"
+		exit 1
+		break
+	fi
+
+	sleep 10
+done
+
 
 # ----------------------------- Publish ------------------------------
 # Login to Docker Hub
@@ -29,32 +56,32 @@ bash ./build-slim.sh
 # so we will use `docker/login-action`, if we run this script manually, make sure we
 # login beforehand.
 
-# ------------------------- Standard Variant -------------------------
+# # ------------------------- Standard Variant -------------------------
 
-bash ./build.sh
-docker tag legend-omnibus:latest finos/legend-omnibus:snapshot
-docker push --quiet finos/legend-omnibus:snapshot || {
-  exit 1
-}
-docker tag legend-omnibus:latest finos/legend-omnibus:latest
-docker push --quiet finos/legend-omnibus:latest || {
-  exit 1
-}
+# bash ./build.sh
+# docker tag legend-omnibus:latest finos/legend-omnibus:snapshot
+# docker push --quiet finos/legend-omnibus:snapshot || {
+#   exit 1
+# }
+# docker tag legend-omnibus:latest finos/legend-omnibus:latest
+# docker push --quiet finos/legend-omnibus:latest || {
+#   exit 1
+# }
 
-# ------------------------- Slim Variant -------------------------
-# This build skips Gitlab
+# # ------------------------- Slim Variant -------------------------
+# # This build skips Gitlab
 
-docker tag legend-omnibus:latest-slim finos/legend-omnibus:snapshot-slim
-docker push --quiet finos/legend-omnibus:snapshot-slim || {
-  exit 1
-}
-docker tag legend-omnibus:latest-slim finos/legend-omnibus:latest-slim
-docker push --quiet finos/legend-omnibus:latest-slim || {
-  exit 1
-}
+# docker tag legend-omnibus:latest-slim finos/legend-omnibus:snapshot-slim
+# docker push --quiet finos/legend-omnibus:snapshot-slim || {
+#   exit 1
+# }
+# docker tag legend-omnibus:latest-slim finos/legend-omnibus:latest-slim
+# docker push --quiet finos/legend-omnibus:latest-slim || {
+#   exit 1
+# }
 
-# ------------------------- Summary -------------------------
+# # ------------------------- Summary -------------------------
 
-echo -e "\n"
-echo -e "${GREEN}Successfully published snapshot images to Docker Hub! ${NC}"
-echo -e "\n"
+# echo -e "\n"
+# echo -e "${GREEN}Successfully published snapshot images to Docker Hub! ${NC}"
+# echo -e "\n"

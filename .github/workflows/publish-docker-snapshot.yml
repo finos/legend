@@ -1,13 +1,14 @@
-name: (Manual) Publish Omnibus to Docker
-on: workflow_dispatch
+name: Publish Omnibus Snapshot to Docker
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */2 * * *' # runs every 2 hours
 
 jobs:
-  publish-docker:
-    # There is currently no way to limit workflow dispatch to only allow default branch
-    # so we need to restrict it here
-    # See https://github.community/t/limit-branch-for-workflow-dispatch/122099
+  publish-snapshot-docker:
     if: github.ref == 'refs/heads/master' && github.repository == 'finos/legend'
-    name: Publish Omnibus Docker Image
+    name: Publish Omnibus Snapshot Docker Image
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -20,6 +21,5 @@ jobs:
       - name: Publish Omnibus to Docker
         working-directory: ./installers/omnibus
         run: |
-          chmod +x ./build.sh
-          chmod +x ./publish.sh
-          ./publish.sh
+          chmod +x ./snapshot.sh
+          ./snapshot.sh
