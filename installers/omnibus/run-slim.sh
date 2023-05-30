@@ -2,6 +2,11 @@
 
 source .env
 
+if [[ -z "$LEGEND_OMNIBUS_REMOTE_GITLAB_PAT" ]]; then
+  echo "LEGEND_OMNIBUS_REMOTE_GITLAB_PAT is required to be set when running slim build"
+  exit 1
+fi
+
 docker run \
 	--platform=linux/amd64 \
 	-it \
@@ -12,4 +17,5 @@ docker run \
 	-p $LEGEND_OMNIBUS_SDLC_PORT:$LEGEND_OMNIBUS_SDLC_PORT \
 	-p $LEGEND_OMNIBUS_PURE_IDE_PORT:$LEGEND_OMNIBUS_PURE_IDE_PORT \
 	-p $LEGEND_OMNIBUS_STUDIO_PORT:$LEGEND_OMNIBUS_STUDIO_PORT \
-	legend-omnibus:latest
+	--env LEGEND_OMNIBUS_REMOTE_GITLAB_PAT="$LEGEND_OMNIBUS_REMOTE_GITLAB_PAT" \
+	legend-omnibus:latest-slim
