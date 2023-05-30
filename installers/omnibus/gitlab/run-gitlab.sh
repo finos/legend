@@ -1,10 +1,10 @@
 #!/bin/bash
 
 if [[ "$LEGEND_OMNIBUS_GITLAB_USE_REMOTE" = true ]]; then
-  echo "Using remote Gitlab instance..."
+  echo -e "\e[33mUsing remote Gitlab instance...\e[0m"
 
   if [[ -z "$LEGEND_OMNIBUS_REMOTE_GITLAB_PAT" ]]; then
-    echo "LEGEND_OMNIBUS_REMOTE_GITLAB_PAT is required to be set when using remote Gitlab instance"
+    echo -e "\e[31mLEGEND_OMNIBUS_REMOTE_GITLAB_PAT is required to be set when using remote Gitlab instance\e[0m"
     exit 1;
   fi
 fi

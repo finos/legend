@@ -53,7 +53,6 @@ docker push --quiet finos/legend-omnibus:latest-slim || {
   exit 1
 }
 
-
 # ------------------------- Summary -------------------------
 
 echo -e "\n"
