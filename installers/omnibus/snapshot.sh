@@ -72,7 +72,7 @@ docker push --quiet finos/legend-omnibus:snapshot-slim || {
   exit 1
 }
 docker tag legend-omnibus:latest-slim finos/legend-omnibus:latest-slim
-docker push --quiet finos/legend-omnibus:latest-slim || {
+docker push --quiet finos/legend-omnibus:snapshot-slim || {
   exit 1
 }
 
@@ -84,7 +84,7 @@ docker push --quiet finos/legend-omnibus:snapshot || {
   exit 1
 }
 docker tag legend-omnibus:latest finos/legend-omnibus:latest
-docker push --quiet finos/legend-omnibus:latest || {
+docker push --quiet finos/legend-omnibus:snapshot || {
   exit 1
 }
 
