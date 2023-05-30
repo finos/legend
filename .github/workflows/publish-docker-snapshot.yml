@@ -20,6 +20,8 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Publish Omnibus to Docker
         working-directory: ./installers/omnibus
+        env:
+          LEGEND_OMNIBUS_REMOTE_GITLAB_PAT: ${{ secrets.LEGEND_DEV_TEAM_GITLAB_READ_ONLY_PAT }}
         run: |
           chmod +x ./snapshot.sh
           ./snapshot.sh
