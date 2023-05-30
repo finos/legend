@@ -12,10 +12,8 @@ export default function Releases(props) {
             <h1> Releases</h1>
           </header>
           <p>
-            In the following table, we keep track of the details of each Legend
-            release, which includes the changelog as well as the combination of
-            versions for Studio, Engine and SDLC Docker images that are meant to
-            work together.
+            This tracks the Legend Docker releases where we provide the changelog as well as the combination of
+            various Legend components (engine, SDLC, studio, etc.) that are meant to work together
           </p>
           <div
             style={{
@@ -27,7 +25,11 @@ export default function Releases(props) {
             <table>
               <thead>
                 <tr>
-                  <th>Version</th>
+                  <th>
+                    <a href="https://hub.docker.com/r/finos/legend-omnibus">
+                      Legend Omnibus
+                    </a>
+                  </th>
                   <th>
                     <a href="https://hub.docker.com/r/finos/legend-studio">
                       Legend Studio
@@ -51,7 +53,7 @@ export default function Releases(props) {
                   .sort((a, b) => b.timestamp - a.timestamp)
                   .map((release) => (
                     <tr key={release.version}>
-                      <td>{release.version}</td>
+                      <td>finos/legend-omnibus:{release.version}</td>
                       <td>
                         finos/legend-studio:
                         {release.core["finos/legend-studio"]}
