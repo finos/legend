@@ -96,7 +96,7 @@ Legend was originally developed by Goldman Sachs and contributed to FINOS in Oct
 
 # License
 
-Copyright 2020 Goldman Sachs
+Copyright 2023 Goldman Sachs
 
 Distributed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 

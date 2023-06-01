@@ -229,7 +229,7 @@ function Features() {
             <li>
               <p>
                 <strong class="home-page__highlight">Services</strong> -- Our
-                solution to reliably and programatcially share high quality data
+                solution to reliably and programmatically share high quality data
                 with other applications. Any query designed in{" "}
                 <strong class="home-page__highlight">Query</strong> can be
                 promoted to a production-ready Legend API with a simple click of
