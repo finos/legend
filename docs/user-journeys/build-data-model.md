@@ -8,9 +8,9 @@ sidebar_label: Build Data Models
 
 Data modeling is thinking about your data and its relationships to other data, and writing it down in a formal way. If data producers and data consumers share a common model, or understanding of the core concepts of the business and how data flows through the business, they can ensure transparency and alignment of what the data means, and how it is meant to be used.
 
-Data models also improve data quality by re-using agreed-upon concepts across teams and organizations, reducing data duplication, building controls and validations directly into the data flows and ensuring that business users are par of and in agreement with the data flow.
+Data models also improve data quality by re-using agreed-upon concepts across teams and organizations, reducing data duplication, building controls and validations directly into the data flows and ensuring that business users are part of and in agreement with the data flow.
 
-Create a data model to describe business concepts and how they relate to eachother in a data model. 
+Create a data model to describe business concepts and how they relate to each other in a data model. 
 
 ### Features
 - [Workspace](../overview/legend-glossary.md/#workspace)
