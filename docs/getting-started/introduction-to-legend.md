@@ -23,6 +23,8 @@ Review the step by step tutorials for [Studio](../tutorials/studio-workspace) an
 
 ## Start Using Legend Today
 
+There are multiple ways to get started with Legend: getting access to the Studio hosted instance, using Legend Omnibus to get the Legend environment up and running locally, or installing Legend.
+
 ### Studio hosted instance
 
 This is the easiest way to get started with Legend as it does not involve any installation steps.
@@ -35,7 +37,7 @@ Instructions to sign up and use this instance are available on the [FINOS websit
 
 ### Using Legend Omnibus
 
-This is a quick way to get the Lgend environment up and running locally. Make sure you have Docker [installed](https://docs.docker.com/engine/install/). Run the following command in the terminal.
+This is a quick way to get the Legend environment up and running locally. Make sure you have Docker [installed](https://docs.docker.com/engine/install/). Run the following command in the terminal.
 
 ```sh
 docker run --platform=linux/amd64 -it -p 6900:6900 -p 6901:6901 -p 6902:6902 -p 6100:6100 -p 6300:6300 -p 9200:9200 -p 9000:9000 finos/legend-omnibus:latest

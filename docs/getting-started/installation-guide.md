@@ -4,6 +4,8 @@ title: Installation Guide
 sidebar_label: Installation Guide
 ---
 
+There are multiple ways to get started with Legend: [getting access to the Studio hosted instance](./introduction-to-legend.md/#studio-hosted-instance), using [Legend Omnibus](./introduction-to-legend.md/#using-legend-omnibus) to get the Legend environment up and running locally, or installing Legend.
+
 There are a few different options to install and use Legend. They are listed below in increasing order of integration and installation complexity.
 
 ## Setup Maven
@@ -25,3 +27,8 @@ This includes but is not limited to:
 - Configuring authentication using an identity provider
 
 We are happy to help develop installation instructions to meet your particular deployment environment.
+
+## More
+- [Get started with Legend](./introduction-to-legend.md/#start-using-legend-today)
+- [Get access to the Studio hosted instance](./introduction-to-legend.md/#studio-hosted-instance)
+- [Legend Omnibus](./introduction-to-legend.md/#using-legend-omnibus)
