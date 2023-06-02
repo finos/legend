@@ -356,6 +356,20 @@
         "value": "Your SDLC project pipeline could rely on various platform dependencies (e.g. `engine`, `sdlc`, etc.). By default, these platform dependencies' versions are not specfied, meaning that when the CI pipeline is running, the versions to be used will be derived from the latest version of `sdlc`. This means your pipeline effectively operates on progressing/moving platforms. The upside of this is the project automatically gets the benefit of newer releases (bug fixes, new features, etc.), but it could once in a while yield unexpected results.\n\n Sometimes, this might be less desirable; for example, your pipeline produces artifacts that you need to depend on so you would like to stabilize these artifacts. In these cases, freezing the platform dependencies' versions would be a sound approach. Otherwise, we highly recommend you not to fix these dependencies' versions."
       },
       "title": "When should I configure the versions of project platform dependencies"
+    },
+    "question.where-to-find-examples-features-in-action": {
+      "markdownText": {
+        "value": "Check out the Showcase Projects section on the Legend documentation site."
+      },
+      "title": "Where can I find examples of features in action?",
+      "url": "https://legend.finos.org/docs/showcases/showcase-projects"
+    },
+    "question.showcase-projects": {
+      "markdownText": {
+        "value": "Check out the Showcase Projects section on the Legend documentation site."
+      },
+      "title": "Where can I find Showcase projects?",
+      "url": "https://legend.finos.org/docs/showcases/showcase-projects"
     }
   }
 }
