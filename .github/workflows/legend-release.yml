@@ -128,7 +128,10 @@ jobs:
           artifact_group='org.finos.legend.shared'
           artifact_name='legend-shared'
           artifact_version='${{ github.event.inputs.legend-shared-release-version }}'
-
+          
+          max_retries=20
+          retries=0
+          
           while true; do
             response=$(curl -s -o /dev/null -w "%{http_code}" "https://search.maven.org/artifact/$artifact_group/$artifact_name/$artifact_version/jar")
 
@@ -136,6 +139,13 @@ jobs:
               echo "Artifact is available in Maven Central."
               break
             else
+              retries=$((retries + 1))
+          
+              if [ "$retries" -gt "$max_retries" ]; then
+                echo "Maximum number of retries reached. Artifact is not available in Maven Central."
+                exit 1
+              fi
+          
               echo "Artifact is not available in Maven Central. Retrying in 1 minute..."
               sleep 1m
             fi
@@ -204,12 +214,15 @@ jobs:
           then
             exit 1
           fi
-      - name: Check Legend Pure Artifact Availability
+      - name: Check Legend Shared Artifact Availability
         run: |
           artifact_group='org.finos.legend.pure'
           artifact_name='legend-pure'
           artifact_version='${{ github.event.inputs.legend-pure-release-version }}'
-
+          
+          max_retries=20
+          retries=0
+          
           while true; do
             response=$(curl -s -o /dev/null -w "%{http_code}" "https://search.maven.org/artifact/$artifact_group/$artifact_name/$artifact_version/jar")
 
@@ -217,6 +230,13 @@ jobs:
               echo "Artifact is available in Maven Central."
               break
             else
+              retries=$((retries + 1))
+          
+              if [ "$retries" -gt "$max_retries" ]; then
+                echo "Maximum number of retries reached. Artifact is not available in Maven Central."
+                exit 1
+              fi
+          
               echo "Artifact is not available in Maven Central. Retrying in 1 minute..."
               sleep 1m
             fi
@@ -290,7 +310,10 @@ jobs:
           artifact_group='org.finos.legend.engine'
           artifact_name='legend-engine'
           artifact_version='${{ github.event.inputs.legend-engine-release-version }}'
-
+          
+          max_retries=20
+          retries=0
+          
           while true; do
             response=$(curl -s -o /dev/null -w "%{http_code}" "https://search.maven.org/artifact/$artifact_group/$artifact_name/$artifact_version/jar")
 
@@ -298,6 +321,13 @@ jobs:
               echo "Artifact is available in Maven Central."
               break
             else
+              retries=$((retries + 1))
+          
+              if [ "$retries" -gt "$max_retries" ]; then
+                echo "Maximum number of retries reached. Artifact is not available in Maven Central."
+                exit 1
+              fi
+          
               echo "Artifact is not available in Maven Central. Retrying in 1 minute..."
               sleep 1m
             fi
@@ -371,7 +401,10 @@ jobs:
           artifact_group='org.finos.legend.sdlc'
           artifact_name='legend-sdlc'
           artifact_version='${{ github.event.inputs.legend-sdlc-release-version }}'
-
+          
+          max_retries=20
+          retries=0
+          
           while true; do
             response=$(curl -s -o /dev/null -w "%{http_code}" "https://search.maven.org/artifact/$artifact_group/$artifact_name/$artifact_version/jar")
 
@@ -379,6 +412,13 @@ jobs:
               echo "Artifact is available in Maven Central."
               break
             else
+              retries=$((retries + 1))
+          
+              if [ "$retries" -gt "$max_retries" ]; then
+                echo "Maximum number of retries reached. Artifact is not available in Maven Central."
+                exit 1
+              fi
+          
               echo "Artifact is not available in Maven Central. Retrying in 1 minute..."
               sleep 1m
             fi
@@ -452,7 +492,10 @@ jobs:
           artifact_group='org.finos.legend.depot'
           artifact_name='legend-depot'
           artifact_version='${{ github.event.inputs.legend-depot-release-version }}'
-
+          
+          max_retries=20
+          retries=0
+          
           while true; do
             response=$(curl -s -o /dev/null -w "%{http_code}" "https://search.maven.org/artifact/$artifact_group/$artifact_name/$artifact_version/jar")
 
@@ -460,6 +503,13 @@ jobs:
               echo "Artifact is available in Maven Central."
               break
             else
+              retries=$((retries + 1))
+          
+              if [ "$retries" -gt "$max_retries" ]; then
+                echo "Maximum number of retries reached. Artifact is not available in Maven Central."
+                exit 1
+              fi
+          
               echo "Artifact is not available in Maven Central. Retrying in 1 minute..."
               sleep 1m
             fi
