@@ -108,4 +108,3 @@ _Coming soon_
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)
 - [Query tutorials](../tutorials/query-builder.md)
-- [Troubleshooting](./test-troubleshoot.md)
