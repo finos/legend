@@ -96,10 +96,9 @@ module.exports = {
     algolia: {
       // The application ID provided by Algolia
       appId: "X69JR631XX",
-      apiKey: "b8ea4fa1535a60bc9385193ba58dcd69",
-      indexName: "legend-finoslegend-finos1",
+      apiKey: "622bf47b15a74089a06eed2d241f265a",
+      indexName: "legend-finos-test",
       contextualSearch: true,
-      // searchParameters: {},
       searchPagePath: "search",
     },
     colorMode: {
