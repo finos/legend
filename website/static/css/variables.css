@@ -146,6 +146,10 @@
   width: 100%;
 }
 
+.search-page-wrapper .container {
+  padding: 0 10%;
+}
+
 [data-theme="light"] {
   --color-primary-0: var(--ifm-color-primary-dark);
   --color-primary-50: var(--color-magenta-50);
