@@ -93,6 +93,13 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 ### Tutorials
 _Coming soon_
 
+## Troubleshoot issues in query by reviewing execution details (plan view)
+
+### Features
+_Coming soon_
+
+### Tutorials
+_Coming soon_
 
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)
@@ -101,4 +108,3 @@ _Coming soon_
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)
 - [Query tutorials](../tutorials/query-builder.md)
-- [Troubleshooting](./test-troubleshoot.md)
