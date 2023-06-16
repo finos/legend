@@ -26,45 +26,9 @@ env:
   WORKFLOW_ID: legend-stack-release.yml
 
 jobs:
-  release-input-validation:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Validate Input Parameters
-        run: |
-          if [ -z "${{ github.event.inputs.legend-shared-release-version }}" ] && [ -z "${{ github.event.inputs.legend-pure-release-version }}" ] && [ -z "${{ github.event.inputs.legend-engine-release-version }}" ] && [ -z "${{ github.event.inputs.legend-sdlc-release-version }}" ] && [ -z "${{ github.event.inputs.legend-depot-release-version }}" ]; then
-            echo "Error: No version is provided for release."
-            exit 1
-          fi
-          if [ -n "${{ github.event.inputs.legend-shared-release-version }}" ]; then
-            if [ -z "${{ github.event.inputs.legend-engine-release-version }}" ] && [ -z "${{ github.event.inputs.legend-sdlc-release-version }}" ] && [ -z "${{ github.event.inputs.legend-depot-release-version }}" ]; then
-              echo "Error: Legend Shared to be released without providing versions for all its dependent projects."
-              exit 1
-            fi
-          fi
-          if [ -n "${{ github.event.inputs.legend-pure-release-version }}" ]; then
-            if [ -z "${{ github.event.inputs.legend-engine-release-version }}" ] && [ -z "${{ github.event.inputs.legend-sdlc-release-version }}" ] && [ -z "${{ github.event.inputs.legend-depot-release-version }}" ]; then
-              echo "Error: Legend Pure to be released without providing versions for all its dependent projects."
-              exit 1
-            fi
-          fi
-          if [ -n "${{ github.event.inputs.legend-engine-release-version }}" ]; then
-            if [ -z "${{ github.event.inputs.legend-sdlc-release-version }}" ] && [ -z "${{ github.event.inputs.legend-depot-release-version }}" ]; then
-              echo "Error: Legend Engine to be released without providing versions for all its dependent projects."
-              exit 1
-            fi
-          fi
-          if [ -n "${{ github.event.inputs.legend-sdlc-release-version }}" ]; then
-            if [ -z "${{ github.event.inputs.legend-depot-release-version }}" ]; then
-              echo "Error: Legend SDLC to be released without providing versions for all its dependent projects."
-              exit 1
-            fi
-          fi
-
-
   release-legend-shared:
     runs-on: ubuntu-latest
-    needs: release-input-validation
-    if: success() && github.event.inputs.legend-shared-release-version
+    if: github.event.inputs.legend-shared-release-version
     steps:
       - name: Set Required RunNumber of Legend Shared Release
         run: |
@@ -154,8 +118,7 @@ jobs:
 
   release-legend-pure:
     runs-on: ubuntu-latest
-    needs: release-input-validation
-    if: success() && github.event.inputs.legend-pure-release-version
+    if: github.event.inputs.legend-pure-release-version
     steps:
       - name: Set Required RunNumber of Legend Pure Release
         run: |
@@ -245,8 +208,8 @@ jobs:
 
   release-legend-engine:
     runs-on: ubuntu-latest
-    needs: [release-input-validation, release-legend-shared, release-legend-pure]
-    if: success() && github.event.inputs.legend-engine-release-version
+    needs: [release-legend-shared, release-legend-pure]
+    if: always() && github.event.inputs.legend-engine-release-version && ( needs.release-legend-shared.result == 'success' || needs.release-legend-shared.result == 'skipped' ) && ( needs.release-legend-pure.result == 'success' || needs.release-legend-pure.result == 'skipped' )
     steps:
       - name: Set Required RunNumber of Legend Engine Release
         run: |
@@ -336,8 +299,8 @@ jobs:
 
   release-legend-sdlc:
     runs-on: ubuntu-latest
-    needs: [release-input-validation, release-legend-shared, release-legend-pure, release-legend-engine]
-    if: success() && github.event.inputs.legend-sdlc-release-version
+    needs: [release-legend-shared, release-legend-pure, release-legend-engine]
+    if: always() && github.event.inputs.legend-sdlc-release-version && ( needs.release-legend-shared.result == 'success' || needs.release-legend-shared.result == 'skipped' ) && ( needs.release-legend-pure.result == 'success' || needs.release-legend-pure.result == 'skipped' ) && ( needs.release-legend-engine.result == 'success' || needs.release-legend-engine.result == 'skipped' )
     steps:
       - name: Set Required RunNumber of Legend Sdlc Release
         run: |
@@ -427,8 +390,8 @@ jobs:
 
   release-legend-depot:
     runs-on: ubuntu-latest
-    needs: [release-input-validation, release-legend-shared, release-legend-pure, release-legend-engine, release-legend-sdlc]
-    if: success() && github.event.inputs.legend-depot-release-version
+    needs: [release-legend-shared, release-legend-pure, release-legend-engine, release-legend-sdlc]
+    if: always() && github.event.inputs.legend-depot-release-version && ( needs.release-legend-shared.result == 'success' || needs.release-legend-shared.result == 'skipped' ) && ( needs.release-legend-pure.result == 'success' || needs.release-legend-pure.result == 'skipped' ) && ( needs.release-legend-engine.result == 'success' || needs.release-legend-engine.result == 'skipped' ) && ( needs.release-legend-sdlc.result == 'success' || needs.release-legend-sdlc.result == 'skipped' )
     steps:
       - name: Set Required RunNumber of Legend Depot Release
         run: |
