@@ -21,48 +21,17 @@ Legend Showcase projects are hosted on the [Legend hosted instance](https://fino
   <td><strong>Showcase project</strong></td>
  </tr>
  <tr>
-  <td colspan="3"> <strong>User Journey #1: Build a data model to describe business concepts and relationships</strong> </td>
+  <td>Class, Association, Multiplicity, Enumeration, Diagram, Document, Test, User defined function, Union mapping, Mapping filter, Function</td>
+  <td>Introduction to foundational data model elements</td>
+  <td><a href="https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-logical-modeling">Logical modeling (basic) (Gitlab)</a>; <a href="https://gitlab.com/finosfoundation/legend/showcase/InstallerDemo">Legend installation showcase project (Gitlab)</a></td>
  </tr>
- <tr>
-  <td>Legend Installation</td>
+  <tr>
+  <td>Inherited class, Derived property, Stereotupe, Profile, Constraint</td>
+  <td>Elements required for advanced logical modeling</td>
   <td>&nbsp;</td>
-  <td> <a href="https://gitlab.com/finosfoundation/legend/showcase/InstallerDemo">Legend installation showcase project (Gitlab)</a></td>
- </tr>
- <tr>
-  <td>Logical Modeling (Basic)</td>
-  <td>&nbsp;</td>
-  <td><a href="https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-logical-modeling">Logical modeling (basic) (Gitlab)</a></td>
- </tr>
   <tr>
-  <td>Logical Modeling (Advanced)</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
- </tr>
-
-  <tr>
-  <td colspan="3"> <strong>User Journey #2: Publish data model changes </strong> </td>
- </tr>
-  <tr>
-  <td colspan="3"> Coming soon </td>
- </tr>
-   <tr>
-  <td colspan="3"> <strong>User Journey #3: Generate model schema </strong> </td>
- </tr>
-  <tr>
-   <td colspan="3"> Coming soon </td>
- </tr>
-   <tr>
-  <td colspan="3"> <strong>User Journey #4: Consume data model artifacts </strong> </td>
- </tr>
-  <tr>
-  <td colspan="3"> Coming soon </td>
- </tr>
-   <tr>
-  <td colspan="3"> <strong>User Journey #5: Connect to data sources </strong> </td>
- </tr>
-  <tr>
-  <td>Relational</td>
-  <td>&nbsp;</td>
+  <td>Relational mapping</td>
+  <td> Relational mapping entities, file generation, and service execution </td>
   <td><a href="https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-relational-mapping">Relational showcase (Gitlab)</a></td>
  </tr>
    <tr>
@@ -75,9 +44,6 @@ Legend Showcase projects are hosted on the [Legend hosted instance](https://fino
   <td>&nbsp;</td>
   <td><a href="https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-external-formats">External format showcase (Gitlab)</a></td>
  </tr>
-    <tr>
-  <td colspan="3"> <strong>User Journey #6: Query modelled data </strong> </td>
- </tr>
   <tr>
   <td>Query</td>
   <td>&nbsp;</td>
@@ -88,43 +54,10 @@ Legend Showcase projects are hosted on the [Legend hosted instance](https://fino
   <td>&nbsp;</td>
   <td><a href="https://gitlab.com/finosfoundation/legend/showcase/legend-graphql-showcase">GraphQL showcase (Gitlab)</a></td>
  </tr>
-    <tr>
-  <td colspan="3"> <strong>User Journey #7: Map to Data Models </strong> </td>
- </tr>
-  <tr>
-  <td colspan="3"> Coming soon </td>
- </tr>
-   <tr>
-  <td colspan="3"> <strong>User Journey #8: Create data model APIs </strong> </td>
- </tr>
   <tr>
   <td>Service execution JAR</td>
   <td>&nbsp;</td>
   <td><a href="https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project2">Service execution JAR showcase (Gitlab)</a></td>
- </tr>
-    <tr>
-  <td colspan="3"> <strong>User Journey #9: Find data models </strong> </td>
- </tr>
-  <tr>
-  <td colspan="3"> Coming soon </td>
- </tr>
-    <tr>
-  <td colspan="3"> <strong>User Journey #10: Visualize modelled data </strong> </td>
- </tr>
-  <tr>
-  <td colspan="3"> Coming soon </td>
- </tr>
-    <tr>
-  <td colspan="3"> <strong>User Journey #11: Test & troubleshoot data models </strong> </td>
- </tr>
-  <tr>
-  <td colspan="3"> Coming soon </td>
- </tr>
-    <tr>
-  <td colspan="3"> <strong>User Journey #12: Rely on high quality data by Design </strong> </td>
- </tr>
-  <tr>
-  <td colspan="3"> Coming soon </td>
  </tr>
  
 </table>
