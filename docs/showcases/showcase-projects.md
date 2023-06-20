@@ -59,7 +59,6 @@ Legend Showcase projects are hosted on the [Legend hosted instance](https://fino
   <td>&nbsp;</td>
   <td><a href="https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project2">Service execution JAR showcase (Gitlab)</a></td>
  </tr>
- 
 </table>
 
 
