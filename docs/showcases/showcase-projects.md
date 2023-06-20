@@ -29,7 +29,6 @@ Legend Showcase projects are hosted on the [Legend hosted instance](https://fino
   <td>Inherited class, Derived property, Stereotupe, Profile, Constraint</td>
   <td>Elements required for advanced logical modeling</td>
   <td>&nbsp;</td>
-   </tr>
   <tr>
   <td>Relational mapping</td>
   <td> Relational mapping entities, file generation, and service execution </td>
