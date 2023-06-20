@@ -29,6 +29,7 @@ Legend Showcase projects are hosted on the [Legend hosted instance](https://fino
   <td>Inherited class, Derived property, Stereotupe, Profile, Constraint</td>
   <td>Elements required for advanced logical modeling</td>
   <td>&nbsp;</td>
+   </tr>
   <tr>
   <td>Relational mapping</td>
   <td> Relational mapping entities, file generation, and service execution </td>
@@ -58,7 +59,6 @@ Legend Showcase projects are hosted on the [Legend hosted instance](https://fino
   <td>Service execution JAR</td>
   <td>&nbsp;</td>
   <td><a href="https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project2">Service execution JAR showcase (Gitlab)</a></td>
- </tr>
  </tr>
 </table>
 
