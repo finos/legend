@@ -8,7 +8,7 @@ sidebar_label: Showcase Projects
 
 This page features a list of [Legend showcase projects](https://gitlab.com/finosfoundation/legend/showcase). Get started with the [Legend showcase guided tour](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project-guided-tour). For step by step tutorials, see [Legend tutorials](../tutorials/studio-workspace.md).
 
-### :warning: Prerequisites 
+### :warning: Prerequisites
 
 Legend Showcase projects are hosted on the [Legend hosted instance](https://finos.org/legend). Request **free** access to the Legend hosted instance [here](https://finos.org/legend).
 
@@ -29,6 +29,7 @@ Legend Showcase projects are hosted on the [Legend hosted instance](https://fino
   <td>Inherited class, Derived property, Stereotupe, Profile, Constraint</td>
   <td>Elements required for advanced logical modeling</td>
   <td>&nbsp;</td>
+  </tr>
   <tr>
   <td>Relational mapping</td>
   <td> Relational mapping entities, file generation, and service execution </td>
@@ -61,8 +62,8 @@ Legend Showcase projects are hosted on the [Legend hosted instance](https://fino
  </tr>
 </table>
 
-
 ## More
+
 - [Legend User Journeys](../user-journeys/build-data-model.md)
 - [Legend Features](../overview/legend-features.md)
 - [Legend Glossary](../overview/legend-glossary.md)
