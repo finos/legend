@@ -1,5 +1,5 @@
 # Purpose
-Documentation to set up Legend Depot, Legend Studio, Legend Engine, Legend SDLC, Legend Query
+Documentation to set up Legend Depot, Legend Studio, Legend Engine, Legend SDLC, Legend Query Locally.
 
 
 # Ports 
@@ -37,13 +37,12 @@ http://127.0.0.1:8076/depot-store/callback
 # Legend SDLC
 
 ## Build Info
-* version: 0.85.0 
 * repo: https://github.com/finos/legend-sdlc
 
 ## Build Steps
 1. Run maven install/build (disable tests)
 2. Run `org.finos.legend.sdlc.server.LegendSDLCServer` with args `server legend-sdlc-server/src/test/resources/config-test.yaml`
-3. Sample config provided [sdlc config](./sample-legend-sdlc-config.yaml) (Replace gitlab appId and secretID with the one associated with your gitlab application).
+3. Sample config provided [sdlc config](https://github.com/finos/legend-sdlc/blob/master/legend-sdlc-server/src/test/resources/config-sample.yaml) (Replace gitlab appId and secretID with the one associated with your gitlab application).
 
 # Legend Engine
 
@@ -54,7 +53,7 @@ http://127.0.0.1:8076/depot-store/callback
 ## Build Steps
 1. Run maven install/build (disable tests)
 2.  Run `org.finos.legend.engine.server.Server` with args `server legend-engine-server/src/test/resources/org/finos/legend/engine/server/test/userTestConfig.json`
-3. Sample config provided [engine config](./sample-legend-engine-config.json)
+3. Sample config provided [engine config](https://github.com/finos/legend-engine/blob/master/legend-engine-server/src/test/resources/org/finos/legend/engine/server/test/userTestConfig.json)
 
 # Legend Studio
 ## Build Info
@@ -65,7 +64,7 @@ http://127.0.0.1:8076/depot-store/callback
 ## Build Steps
 1. run `yarn install && yarn setup && yarn dev`. This will bring legend studio up on port 8080. 
 2. config will be auto generated and will be placed in directory `packages\legend-application-studio-deployment\dev\config.json`.
-3. Sample config provided [studio config](./sample-legend-studio-config.json)
+3. Sample config provided [studio config](https://github.com/finos/legend-studio/blob/master/packages/legend-application-studio-deployment/docker/config.json)
 
 
 
@@ -74,7 +73,7 @@ http://127.0.0.1:8076/depot-store/callback
 Open Project you plan to run this POC with. There are some issues with the gitlab ci files generated and the main pom file. This is due to an existing bug we plan to fix in the near future. To fix do the following
 
 - Ensure you are updated to the latest project structure (12.2) and merge to master
-- Manually change the version of  `platform.legend.engine.version` to 3.9.0 see: https://gitlab.com/p948/LegendPipelinePOC/-/commit/cda1af3239f11ada2e28982574827c463ed7c6e5. **No need to change any other version as the maven version plugin will fetch latest version during build**
+- Manually change the version of  `platform.legend.engine.version` to 3.9.0 (or latest version) see: https://gitlab.com/p948/LegendPipelinePOC/-/commit/cda1af3239f11ada2e28982574827c463ed7c6e5. **No need to change any other version as the maven version plugin will fetch latest version during build**
 - Change gitlab ci gile to the provided sample ci file [gitlab project ci file](./sample-gitlab-ci-file.yaml). This change will add publishing steps to your build to publish to your gitlab repo. Please change the groupId if you are publishing to a different group than [Legend Pipeline Testing](https://gitlab.com/p948).
 - For all manual changes in your project you can use the gitlab  web IDE. 
 - To test your changes create elements into your project and merge to master. You should see master-SNAPSHOT artifacts being published to your repo. [Example](https://gitlab.com/p948/LegendPipelinePOC/-/packages).
@@ -96,10 +95,10 @@ Open Project you plan to run this POC with. There are some issues with the gitla
 
 ## Build Setup - Legend Depot Store
 1. Run maven install/build (disable tests)
-2. Add gitlab handle to `legend-depot-store-server/src/main/resources/authorisedIdentities.json`, see [sample](./sample-legend-depot-store-authorisedIdentities.json).
+2. Add gitlab handle to `legend-depot-store-server/src/main/resources/authorisedIdentities.json`, [see](https://github.com/finos/legend-depot/blob/master/legend-depot-store-server/src/main/resources/authorisedIdentities.json).
 3. Update gitlab repo settings `legend-depot-store-server/src/test/resources/sample-repository-settings.xml`, see [sample](./sample-depot-store-repository-settings.xml). If you are fetching from a different repo please replace the groupID in the file.
 3. Run `org.finos.legend.depot.store.server.LegendDepotStoreServer` with args `server legend-depot-store-server/src/test/resources/sample-server-config.json`
-4. Use sample [depot store config](./sample-legend-depot-store-config.json). Replace the clientId to gitlab appId and secret with your gitlab secret.
+4. Use sample [depot store config](https://github.com/finos/legend-depot/blob/master/legend-depot-store-server/src/test/resources/sample-server-config.json). Replace the clientId to gitlab appId and secret with your gitlab secret.
 5. Open [swagger page](http://127.0.0.1:8076/depot-store/api/swagger)
 6. Register your project with depot store. Use [queue api](http://127.0.0.1:8076/depot-store/api/swagger#/Notifications/queueEvent).  i.e `{groupId}:{artifactID}:master-SNAPSHOT`, `{groupId}:{artifactID}:1.0.0`. Call this api for each version you want depot to fetch entities for.
 7.  You can use this [api](http://127.0.0.1:8076/depot-store/api/swagger#/Notifications/getAllEventsInQueue) to see all queue events 
@@ -107,7 +106,7 @@ Open Project you plan to run this POC with. There are some issues with the gitla
 
 ## Build Setup - Legend Depot 
 1. Run `org.finos.legend.depot.server.LegendDepotServer` with args `server legend-depot-store-server/src/test/resources/sample-server-config.json`
-2. Use sample [depot config](./sample-legend-depot-config.json)
+2. Use sample [depot config](https://github.com/finos/legend-depot/blob/master/legend-depot-server/src/test/resources/sample-server-config.json)
 3. You can test to see your entities are being picked up by legend depot through these [apis](http://localhost:8075/depot/api/swagger#/Entities).
 
 
@@ -128,7 +127,7 @@ Open Project you plan to run this POC with. There are some issues with the gitla
   ]
 ```
 3. if you have already built studio in the first step, all you have to run is `yarn dev:query`. This will bring up stand alone query 
-4. config will be auto generated and will be placed in directory  packages\legend-application-query-deployment\dev\config.json. See [sample](./sample-legend-studio-config.json).
+4. config will be auto generated and will be placed in directory  packages\legend-application-query-deployment\dev\config.json. See [sample](https://github.com/finos/legend-studio/blob/master/packages/legend-application-query-deployment/docker/server-config.json).
 5. Upon home page click `create new query` (last option). You choudl see the groupId, artifact ids for any projects you have published entities for. If you have projects with mapping/runtime, they will show up there so you can query from there.
 
 
