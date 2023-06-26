@@ -26,8 +26,8 @@ fi
 # ------------------------------- Test -------------------------------
 
 echo "Running test(s)..."
-bash ./build.sh
-bash ./test.sh
+bash ./variants/slim/build.sh
+bash ./variants/slim/test.sh
 
 # ----------------------------- Publish ------------------------------
 

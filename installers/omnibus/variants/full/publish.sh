@@ -26,8 +26,8 @@ fi
 # ------------------------------- Test -------------------------------
 
 echo "Running test(s)..."
-bash ./build.sh
-bash ./test.sh
+bash ./variants/full/build.sh
+bash ./variants/full/test.sh
 
 # ------------------------------- Publish -------------------------------
 # Login to Docker Hub
