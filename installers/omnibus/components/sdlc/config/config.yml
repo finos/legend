@@ -86,6 +86,6 @@ gitLab:
     host: ${LEGEND_OMNIBUS_GITLAB_URL_HOST}
     port: ${LEGEND_OMNIBUS_GITLAB_URL_PORT}
   app:
-    id: unused # not used since we use private access token
-    secret: unused # not used since we use private access token
-    redirectURI: unused # not used since we use private access token
+    id: unused # not used since we use personal access token
+    secret: unused # not used since we use personal access token
+    redirectURI: unused # not used since we use personal access token

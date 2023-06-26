@@ -4,7 +4,7 @@
   "sdlc": {
     "url": "http://localhost:${LEGEND_OMNIBUS_NGINX_PORT}/sdlc/api",
     "baseHeaders": {
-      "legend-omnibus-pat": "${LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN}"
+      "legend-omnibus-pat": "${LEGEND_OMNIBUS_GITLAB_PERSONAL_ACCESS_TOKEN}"
     }
   },
   "engine": {

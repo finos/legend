@@ -35,7 +35,7 @@ while :; do
 			if [[ $authenticated -eq 200 ]]; then
 				break
 			else
-				echo -e "\e[31mLegend SDLC with remote Gitlab instance with Private Access Token: Authentication check failed!\e[0m"
+				echo -e "\e[31mLegend SDLC with remote Gitlab instance with Personal Access Token: Authentication check failed!\e[0m"
 				error=1
 				break
 			fi

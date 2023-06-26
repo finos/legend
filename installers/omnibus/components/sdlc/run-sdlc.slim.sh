@@ -3,10 +3,10 @@
 source /.env
 
 if [[ "$LEGEND_OMNIBUS_CONFIG_SDLC_MODE" = "gitlab-pat" ]]; then
-  echo -e "\e[33mUsing Legend SDLC using remote Gitlab instance with Private Access Token...\e[0m"
+  echo -e "\e[33mUsing Legend SDLC using remote Gitlab instance with Personal Access Token...\e[0m"
 
   if [[ -z "$LEGEND_OMNIBUS_CONFIG_GITLAB_PAT" ]]; then
-    echo -e "\e[31mLEGEND_OMNIBUS_CONFIG_GITLAB_PAT is required to be set when using remote Gitlab instance with Private Access Token\e[0m"
+    echo -e "\e[31mLEGEND_OMNIBUS_CONFIG_GITLAB_PAT is required to be set when using remote Gitlab instance with Personal Access Token\e[0m"
     exit 1;
   fi
 

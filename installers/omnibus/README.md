@@ -1,15 +1,8 @@
 # Legend Omnibus
 
-## Getting Started
+Legend Omnibus is a way to package different services and tools required to run Legend, so that most users can install it without laborious configuration. Simply run:
 
 ```sh
-# Build the Docker image
-sh -x ./build.sh
-
-# Run the Docker container
-sh -x ./run.sh
-
-# Or using published image (e.g. finos/legend-omnibus:latest), simply run:
 docker run --platform=linux/amd64 -it -p 6900:6900 -p 6901:6901 -p 6902:6902 -p 6903:6903 -p 6100:6100 -p 6300:6300 -p 9200:9200 -p 9000:9000 finos/legend-omnibus:latest
 
 # Wait until the process completed successfully then launch Legend Studio at:
@@ -18,15 +11,43 @@ docker run --platform=linux/amd64 -it -p 6900:6900 -p 6901:6901 -p 6902:6902 -p 
 # Check out Legend documentation at https://legend.finos.org/docs/overview/legend-overview
 ```
 
+> NOTE: Legend relies on [Gitlab](https://about.gitlab.com/), the omnibus spins up its own Gitlab instance so users do not need to setup a Gitlab account, but this means the omnibus is more heavy and expensive to run, consider using [slim variant](#image-variants) if your environment is more tight on resource.
+
 ## Example Usage
 
-### Use gitlab.com with Private Access Token (PAT)
+### Use gitlab.com with Personal Access Token (PAT)
 
 ```sh
-docker run --platform=linux/amd64 -it -p 6900:6900 -p 6901:6901 -p 6902:6902 -p 6903:6903 -p 6100:6100 -p 6300:6300 -p 9200:9200 -p 9000:9000 --env LEGEND_OMNIBUS_CONFIG_REMOTE_GITLAB_PAT="<your private access token>" finos/legend-omnibus:latest-slim
+docker run --platform=linux/amd64 -it -p 6900:6900 -p 6901:6901 -p 6902:6902 -p 6903:6903 -p 6100:6100 -p 6300:6300 -p 9000:9000 --env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="gitlab-pat" --env LEGEND_OMNIBUS_CONFIG_GITLAB_PAT="<your personal access token>" finos/legend-omnibus:latest-slim
+```
+
+### Use gitlab.com with OAuth
+
+```sh
+docker run --platform=linux/amd64 -it -p 6900:6900 -p 6901:6901 -p 6902:6902 -p 6903:6903 -p 6100:6100 -p 6300:6300 -p 9000:9000 --env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="gitlab-oauth" --env LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID="<your OAuth app ID>" --env LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET="<your OAuth app secret>" finos/legend-omnibus:latest-slim
+```
+
+### Deploy Omnibus to the cloud (AWS, GCP, etc.)
+
+When deployed on the remotely on the cloud, the omnibus can only be reached via a public address (which might be dynamic), in this case, `Legend Studio` config should be changed to use relative URLs instead.
+
+```sh
+docker run --platform=linux/amd64 -it -p 6900:6900 -p 6901:6901 -p 6902:6902 -p 6903:6903 -p 6100:6100 -p 6300:6300 -p 9000:9000 --env LEGEND_OMNIBUS_CONFIG_STUDIO_CONFIG_USE_RELATIVE_URL=true finos/legend-omnibus:latest
 ```
 
 ## Technical Overview
+
+### Development
+
+```sh
+# Take the full omnibus as an example:
+
+# Build the Docker image
+sh -x ./variants/full/build.sh
+
+# Run the Docker container
+sh -x ./variants/full/run.sh
+```
 
 ### Components
 
@@ -34,8 +55,10 @@ Each of the Legend components are distributed as individual Docker images. **Leg
 
 In addition, it uses [Supervisor](http://supervisord.org/) to launch and manage the Legend components in the container to check the status of the components, you can use the `Supervisor` web interface at http://localhost:6901 and check the process logs. Also, it runs a [nginx](https://www.nginx.com/) proxy that is used to route to the various components. The components' URLs are listed below:
 
-- **Supervisor:** http://localhost:6901 (routed from http://localhost:6900/sd)
-- **Gitlab:** http://localhost:6902
+- **NginX (DEV):** http://localhost:6900
+- **Supervisor (DEV):** http://localhost:6901 (routed from http://localhost:6900/sd)
+- **Directory Server (DEV):** http://localhost:6903 (routed from http://localhost:6900/dir)
+- **Gitlab:** http://localhost:6902 (only available in full build)
 - **Legend Engine:** http://localhost:6300 (routed from http://localhost:6900/engine)
 - **Legend SDLC:** http://localhost:6100 (routed from http://localhost:6900/sdlc)
 - **Legend Pure IDE:** http://localhost:9200/ide (routed from http://localhost:6900/pure-ide)
@@ -43,14 +66,76 @@ In addition, it uses [Supervisor](http://supervisord.org/) to launch and manage 
 
 ### Image Variants
 
-The `finos/legend-omnibus` comes in many flavors, each designed for a specific use case.
+The `finos/legend-omnibus` image comes with [several variants](https://github.com/finos/legend/tree/master/installers/omnibus/variants), each designed for a specific use case and comes with different configurations:
 
-> Note: we should reorganize the variants build/run scripts as we start to have more and more custom builds.
+- **Full/Standard (finos/legend-omnibus:\<version\>):** This includes all the components, it takes a while longer to run/build as it spins up its own instance of `Gitlab`
+- **Slim (finos/legend-omnibus:\<version\>-slim):** This does not include `Gitlab` and `Pure IDE` and allows configuring `Legend SDLC` running mode
 
-#### finos/legend-omnibus:\<version\>
+#### Options
 
-This includes all the components, it takes a while longer to run/build as it includes `Gitlab`
+**`LEGEND_OMNIBUS_CONFIG_STUDIO_CONFIG_USE_RELATIVE_URL`**
 
-#### finos/legend-omnibus:\<version\>-slim
+`boolean`, default: `false`.
 
-This is the same as `Standard` but without `Gitlab`, the flag `LEGEND_OMNIBUS_CONFIG_REMOTE_GITLAB_PAT` is required to be set when running this build. This is more agile and a good starting point for development.
+When set to `true` this will change all URLs specified in `Legend Studio` config to relative and do not assume `localhost` as the host. This is useful when the omnibus is deployed on remotely on cloud services like AWS, GCP, etc. as the omnibus can only be reached via a public address (which might be dynamic).
+
+---
+
+**`LEGEND_OMNIBUS_CONFIG_REMOTE_GITLAB_PAT`**
+
+`string`
+
+> Only applicable in `full` variant
+
+This is the Gitlab Personal Access Token (PAT) used to authenticate with `gitlab.com` (see [this guide](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) for help with creating the PAT). Setting this will configure the omnibus to run against `gitlab.com` instead of the local Gitlab instance.
+
+---
+
+**`LEGEND_OMNIBUS_CONFIG_SDLC_MODE`**
+
+`string`, possible values: `gitlab-pat`, `gitlab-oauth`
+
+> Only applicable in `slim` variant
+
+This specifies `Legend SDLC` running mode:
+
+- `gitlab-pat`: use remote Gitlab with Personal Access Token; this requires specifying `LEGEND_OMNIBUS_CONFIG_GITLAB_PAT`
+- `gitlab-oauth`: use remote Gitlab with OAuth; this requires specifying `LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID` and `LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET`
+
+---
+
+**`LEGEND_OMNIBUS_CONFIG_GITLAB_PAT`**
+
+`string`
+
+> Only applicable in `slim` variant for `LEGEND_OMNIBUS_CONFIG_SDLC_MODE=gitlab-pat`
+
+This is the Gitlab Personal Access Token (PAT) used to authenticate with `gitlab.com` (see [this guide](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) for help with creating the PAT).
+
+---
+
+**`LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID` and `LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET`**
+
+`string`
+
+> Only applicable in `slim` variant for `LEGEND_OMNIBUS_CONFIG_SDLC_MODE=gitlab-oauth`
+
+These are information of the `OAuth` application that users will need to authorize so that `Legend SDLC` can make calls to Gitlab API on their behalf. To setup:
+
+1. Create an OAuth application following [this guide](https://docs.gitlab.com/ee/integration/oauth_provider.html)
+
+2. The OAuth application should be configured as follows:
+
+- Redirect URI:
+
+```
+http://localhost:6100/api/auth/callback
+http://localhost:6100/api/pac4j/login/callback
+http://localhost:6300/callback
+http://localhost:9000/studio/log.in/callback
+```
+
+- Enable the `Confidential` check box
+- Enable these scopes: `openid`, `profile`, `api`
+
+3. Configure the options using the generated OAuth `application ID` and `secret`

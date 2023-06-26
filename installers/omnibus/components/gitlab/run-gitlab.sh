@@ -2,7 +2,7 @@
 
 if [[ ! -z "$LEGEND_OMNIBUS_CONFIG_REMOTE_GITLAB_PAT" ]]; then
   echo -e "\e[33mUsing remote Gitlab instance...\e[0m"
-  echo "LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN=$LEGEND_OMNIBUS_CONFIG_REMOTE_GITLAB_PAT" >> /.env
+  echo "LEGEND_OMNIBUS_GITLAB_PERSONAL_ACCESS_TOKEN=$LEGEND_OMNIBUS_CONFIG_REMOTE_GITLAB_PAT" >> /.env
   echo "LEGEND_OMNIBUS_GITLAB_URL_SCHEME=https" >> /.env
   echo "LEGEND_OMNIBUS_GITLAB_URL_HOST=gitlab.com" >> /.env
   echo "LEGEND_OMNIBUS_GITLAB_URL_PORT=443" >> /.env
@@ -34,9 +34,9 @@ gitlab-ctl reconfigure
 
 ########################## Post Configuration ##########################
 
-# Generate Private Access Token
-LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN=$(openssl rand -base64 8 | sed 's:/::g')
-echo "LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN=$LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN" >> /.env
+# Generate Personal Access Token
+LEGEND_OMNIBUS_GITLAB_PERSONAL_ACCESS_TOKEN=$(openssl rand -base64 8 | sed 's:/::g')
+echo "LEGEND_OMNIBUS_GITLAB_PERSONAL_ACCESS_TOKEN=$LEGEND_OMNIBUS_GITLAB_PERSONAL_ACCESS_TOKEN" >> /.env
 echo "LEGEND_OMNIBUS_GITLAB_URL_SCHEME=http" >> /.env
 echo "LEGEND_OMNIBUS_GITLAB_URL_HOST=localhost" >> /.env
 echo "LEGEND_OMNIBUS_GITLAB_URL_PORT=$LEGEND_OMNIBUS_GITLAB_PORT" >> /.env
@@ -51,22 +51,22 @@ echo "LEGEND_OMNIBUS_GITLAB_URL_PORT=$LEGEND_OMNIBUS_GITLAB_PORT" >> /.env
 
 # Configure Gitlab via gitlab-rails
 # - Disallow signup
-# - Add private access token
+# - Add personal access token
 gitlab-rails runner '\
   ApplicationSetting.last.update_attribute(:signup_enabled, false);\
   user = User.find_by_username("'$LEGEND_OMNIBUS_GITLAB_ROOT_USER'");\
   token = user.personal_access_tokens.find_or_create_by(scopes: [:api, :read_api, :read_user, :read_repository, :write_repository, :sudo], name: "Automation token", expires_at: Date.current.advance(days: 90));\
-  token.set_token("'$LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN'"); token.save! if user.personal_access_tokens.find_by_token("'$LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN'") == nil;\
+  token.set_token("'$LEGEND_OMNIBUS_GITLAB_PERSONAL_ACCESS_TOKEN'"); token.save! if user.personal_access_tokens.find_by_token("'$LEGEND_OMNIBUS_GITLAB_PERSONAL_ACCESS_TOKEN'") == nil;\
 '
 
 # Configure Gitlab Oauth
 # NOTE: the following section is needed if we need to auto setup an OAuth application for authentication;
-# however, since we use private access token directly, we can skip this step, but it's handy to keep around
+# however, since we use personal access token directly, we can skip this step, but it's handy to keep around
 # NOTE: if enabled, this requires `jq` so add `apt-get update && apt-get install -y jq` to the Dockerfile
 
 # GITLAB_OAUTH_APPLICATION=$(curl --request POST "http://localhost:80/api/v4/applications" \
 #   --insecure --silent \
-#   --header "PRIVATE-TOKEN: $LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN" \
+#   --header "PRIVATE-TOKEN: $LEGEND_OMNIBUS_GITLAB_PERSONAL_ACCESS_TOKEN" \
 #   --data "name=Legend%20Demo\
 # &redirect_uri=\
 # http://localhost:$LEGEND_OMNIBUS_ENGINE_PORT/callback%0A\
