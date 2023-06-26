@@ -1,6 +1,6 @@
 {
   "appName": "studio",
-  "env": "prod",
+  "env": "omnibus",
   "sdlc": {
     "url": "http://localhost:${LEGEND_OMNIBUS_NGINX_PORT}/sdlc/api",
     "baseHeaders": {

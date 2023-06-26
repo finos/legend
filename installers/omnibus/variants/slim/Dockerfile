@@ -34,21 +34,6 @@ ARG LEGEND_OMNIBUS_NGINX_PORT
 
 ENV LEGEND_OMNIBUS_NGINX_PORT=${LEGEND_OMNIBUS_NGINX_PORT}
 
-# # Gitlab
-# ARG LEGEND_OMNIBUS_GITLAB_VERSION
-# ARG LEGEND_OMNIBUS_GITLAB_PORT
-# ARG LEGEND_OMNIBUS_GITLAB_ROOT_USER
-# ARG LEGEND_OMNIBUS_GITLAB_ROOT_PASSWORD
-# ARG LEGEND_OMNIBUS_REMOTE_GITLAB_PAT
-# ARG LEGEND_OMNIBUS_GITLAB_USE_REMOTE
-
-# ENV LEGEND_OMNIBUS_GITLAB_VERSION=${LEGEND_OMNIBUS_GITLAB_VERSION}
-# ENV LEGEND_OMNIBUS_GITLAB_PORT=${LEGEND_OMNIBUS_GITLAB_PORT}
-# ENV LEGEND_OMNIBUS_GITLAB_ROOT_USER=${LEGEND_OMNIBUS_GITLAB_ROOT_USER}
-# ENV LEGEND_OMNIBUS_GITLAB_ROOT_PASSWORD=${LEGEND_OMNIBUS_GITLAB_ROOT_PASSWORD}
-# ENV LEGEND_OMNIBUS_REMOTE_GITLAB_PAT=${LEGEND_OMNIBUS_REMOTE_GITLAB_PAT}
-# ENV LEGEND_OMNIBUS_GITLAB_USE_REMOTE=${LEGEND_OMNIBUS_GITLAB_USE_REMOTE}
-
 # Legend Engine
 ARG LEGEND_OMNIBUS_ENGINE_VERSION
 ARG LEGEND_OMNIBUS_ENGINE_PORT
@@ -113,7 +98,7 @@ RUN mkdir -p $SDLC_DIR/lib
 RUN mkdir -p $SDLC_DIR/logs
 COPY --from=sdlc-image /app/bin/*.jar $SDLC_DIR/lib/
 COPY components/sdlc $SDLC_DIR
-RUN chmod +x $SDLC_DIR/run-sdlc.sh
+RUN chmod +x $SDLC_DIR/run-sdlc.slim.sh
 EXPOSE ${LEGEND_OMNIBUS_SDLC_PORT}
 
 # ---------------- Setup Legend Studio ----------------
@@ -123,7 +108,7 @@ RUN mkdir -p $STUDIO_DIR/lib
 RUN mkdir -p $STUDIO_DIR/logs
 COPY --from=studio-image /app/bin $STUDIO_DIR/
 COPY components/studio $STUDIO_DIR
-RUN chmod +x $STUDIO_DIR/run-studio.sh
+RUN chmod +x $STUDIO_DIR/run-studio.slim.sh
 EXPOSE ${LEGEND_OMNIBUS_STUDIO_PORT}
 
 # ---------------- Setup Supervisor ----------------
@@ -132,7 +117,7 @@ ARG SUPERVISOR_DIR=/app/supervisor
 RUN mkdir -p $SUPERVISOR_DIR
 RUN apt-get update && apt-get install -y supervisor
 COPY components/supervisor $SUPERVISOR_DIR
-RUN chmod +x $SUPERVISOR_DIR/check-setup.sh
+RUN chmod +x $SUPERVISOR_DIR/check-setup.slim.sh
 EXPOSE ${LEGEND_OMNIBUS_SUPERVISOR_PORT}
 
 # ---------------- Status Checker ----------------
@@ -145,10 +130,10 @@ EXPOSE ${LEGEND_OMNIBUS_SUPERVISOR_STATUS_CHECKER_PORT}
 
 # ---------------- Reporting ----------------
 
-RUN chmod +x $SUPERVISOR_DIR/report-build.sh
-RUN $SUPERVISOR_DIR/report-build.sh
+RUN chmod +x $SUPERVISOR_DIR/report-build.slim.sh
+RUN $SUPERVISOR_DIR/report-build.slim.sh
 
 # ---------------- Run Omnibus ----------------
 
-CMD (/app/supervisor/check-setup.sh &) && \
+CMD (/app/supervisor/check-setup.slim.sh &) && \
   supervisord -c /app/supervisor/supervisor.slim.conf

@@ -11,6 +11,8 @@ source ./.env
 DOCKER_IMAGE_NAME=finos/legend-omnibus
 DOCKER_IMAGE_TAG=$LEGEND_OMNIBUS_IMAGE_VERSION
 
+# ------------------------------- Check -------------------------------
+
 # Check if the image has already been published
 ALREADY_PUBLISHED=true
 docker pull finos/legend-omnibus:$DOCKER_IMAGE_TAG >/dev/null 2>&1 || {
@@ -25,6 +27,7 @@ fi
 
 echo "Running test(s)..."
 bash ./variants/full/build.sh
+# NOTE: we skip testing for now since it could take too long to boot up Gitlab
 
 # ------------------------------- Publish -------------------------------
 # Login to Docker Hub
