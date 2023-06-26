@@ -2,12 +2,6 @@
 
 source .env
 
-if [[ -z "$LEGEND_OMNIBUS_CONFIG_SDLC_MODE" ]]; then
-  # TODO: support in-memory backend as default when we have official support for configurable backend
-  echo "Using Legend SDLC using in-memory backend is currently not supported, please specify LEGEND_OMNIBUS_CONFIG_SDLC_MODE (possible values: gitlab-pat, gitlab-oauth)"
-  exit 1;
-fi
-
 # Usage example of different SDLC modes, set the following environment variables:
 # 1. Remote Gitlab with OAuth:
 # --env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="gitlab-oauth" --env LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID="$LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID" --env LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET="$LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET" \
