@@ -65,19 +65,22 @@
       "markdownText": {
         "value": "A `Class` specifies a data model's structure, inheritance, and constraints"
       },
-      "title": "What is a class element?"
+      "title": "What is a class element?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-class"
     },
     "grammar.profile": {
       "markdownText": {
         "value": "A `Profile` provides a generic extension mechanism for customizing existing data models; some of its uses include documentating and classifying data models"
       },
-      "title": "What is a profile element?"
+      "title": "What is a profile element?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-profile"
     },
     "grammar.enumeration": {
       "markdownText": {
         "value": "An `Enumeration` specifies the complete list of value that a given type may acquire"
       },
-      "title": "What is an enumeration element?"
+      "title": "What is an enumeration element?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-enumeration"
     },
     "grammar.measure": {
       "markdownText": {
@@ -89,12 +92,14 @@
       "markdownText": {
         "value": "An `Association` specifies a linking between between 2 data models"
       },
-      "title": "What is an association element?"
+      "title": "What is an association element?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-association"
     },
     "grammar.function": {
       "markdownText": {
         "value": "A `Function` specifies a piece of reusable Pure code logic"
       },
+      "url": "https://legend.finos.org/docs/tutorials/studio-function",
       "title": "What is a function element?"
     },
     "dsl-mapping.concept.element.mapping": {
@@ -113,6 +118,7 @@
       "markdownText": {
         "value": "A `Service` specifies query execution and deployment information so the it can be productionized: e.g. exposing it via API endpoints"
       },
+      "url": "https://legend.finos.org/docs/tutorials/services-service",
       "title": "What is a service element?"
     },
     "dsl-mapping.concept.element.runtime": {
@@ -131,7 +137,8 @@
       "title": "What is a binding element?",
       "markdownText": {
         "value": "A `Binding` element specifies the association between a set of models and their corresponding schemas in external formats (e.g. JSON, CSV, etc.) to ensure the models and schemas always kept in-sync"
-      }
+      },
+      "url": "https://legend.finos.org/docs/tutorials/studio-binding"
     },
     "dsl-external-format.concept.element.schema-set": {
       "title": "What is a schema-set element?",
@@ -235,6 +242,14 @@
       "title": "How do I specify a service test?",
       "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-a-service-test"
     },
+    "question.how-to-write-a-mapping-test": {
+      "title": "How do I specify a mapping test?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-mapping-test"
+    },
+    "question.how-to-define-flat-data-schema-set": {
+      "title": "How do I define a flat data schema set (i.e csv)?",
+      "url": "https://legend.finos.org/docs/tutorials/studio-flat-data-schema"
+    },
     "question.how-to-write-a-service-test-with-parameters": {
       "title": "How do I specify a service test with parameters?",
       "related": ["question.how-to-write-a-service-test"],
@@ -270,6 +285,11 @@
         "question.how-to-write-service-connection-test-data"
       ]
     },
+    "context.mapping-editor.test": {
+      "related": [
+        "question.how-to-write-a-mapping-test"
+      ]
+    },
     "context.data-element-editor": {
       "related": ["question.how-to-create-a-data-element"]
     },
@@ -289,6 +309,7 @@
       "markdownText": {
         "value": "`Diagram DSL`  (corresponding to `###Diagram` section in `Pure`) concerns with visualizing data models and their relationship"
       },
+      "url": "https://legend.finos.org/docs/tutorials/studio-diagram",
       "title": "What is Diagram DSL about?"
     },
     "dsl-diagram.concept.element.diagram": {
@@ -337,6 +358,7 @@
       "markdownText": {
         "value": "A service store element specifies API endpoints as data source"
       },
+      "url": "https://legend.finos.org/docs/tutorials/studio-servicestore",
       "title": "What is a service store element?"
     },
     "dsl-service.setup.productionize-query": {
