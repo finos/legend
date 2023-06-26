@@ -26,8 +26,8 @@ fi
 # ------------------------------- Test -------------------------------
 
 echo "Running test(s)..."
-bash ./variants/full/build.sh
-# NOTE: we skip testing for now since it could take too long to boot up Gitlab
+bash ./build.sh
+bash ./test.sh
 
 # ------------------------------- Publish -------------------------------
 # Login to Docker Hub
