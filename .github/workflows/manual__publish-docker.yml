@@ -9,6 +9,10 @@ jobs:
     if: github.ref == 'refs/heads/master' && github.repository == 'finos/legend'
     name: Publish Omnibus Docker Image
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        variant: [full, slim]
     steps:
       - name: Checkout code
         uses: actions/checkout@v3.5.2
@@ -20,6 +24,7 @@ jobs:
       - name: Publish Omnibus to Docker
         working-directory: ./installers/omnibus
         run: |
-          chmod +x ./build.sh
-          chmod +x ./publish.sh
-          ./publish.sh
+          chmod +x ./variants/${{ matrix.variant }}/publish.sh
+          chmod +x ./variants/${{ matrix.variant }}/build.sh
+          chmod +x ./variants/${{ matrix.variant }}/test.sh
+          ./variants/${{ matrix.variant }}/publish.sh

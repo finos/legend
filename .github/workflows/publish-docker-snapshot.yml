@@ -3,13 +3,17 @@ name: Publish Omnibus Snapshot to Docker
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */2 * * *' # runs every 2 hours
+    - cron: "0 */2 * * *" # runs every 2 hours
 
 jobs:
   publish-snapshot-docker:
     if: github.ref == 'refs/heads/master' && github.repository == 'finos/legend'
     name: Publish Omnibus Snapshot Docker Image
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        variant: [full, slim]
     steps:
       - name: Checkout code
         uses: actions/checkout@v3.5.2
@@ -21,7 +25,11 @@ jobs:
       - name: Publish Omnibus to Docker
         working-directory: ./installers/omnibus
         env:
-          LEGEND_OMNIBUS_REMOTE_GITLAB_PAT: ${{ secrets.LEGEND_DEV_TEAM_GITLAB_READ_ONLY_PAT }}
+          LEGEND_OMNIBUS_CONFIG_GITLAB_PAT: ${{ secrets.LEGEND_DEV_TEAM_GITLAB_READ_ONLY_PAT }}
+          LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID: ${{ secrets.LEGEND_DEV_TEAM_GITLAB_READ_ONLY_OAUTH_APP_ID }}
+          LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET: ${{ secrets.LEGEND_DEV_TEAM_GITLAB_READ_ONLY_OAUTH_SECRET_ID }}
         run: |
-          chmod +x ./snapshot.sh
-          ./snapshot.sh
+          chmod +x ./variants/${{ matrix.variant }}/publish-snapshot.sh
+          chmod +x ./variants/${{ matrix.variant }}/build.sh
+          chmod +x ./variants/${{ matrix.variant }}/test.sh
+          ./variants/${{ matrix.variant }}/publish-snapshot.sh
