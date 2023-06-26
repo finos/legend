@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [[ ! -z "$LEGEND_OMNIBUS_REMOTE_GITLAB_PAT" ]]; then
+if [[ ! -z "$LEGEND_OMNIBUS_CONFIG_REMOTE_GITLAB_PAT" ]]; then
   echo -e "\e[33mUsing remote Gitlab instance...\e[0m"
-  echo "LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN=$LEGEND_OMNIBUS_REMOTE_GITLAB_PAT" >> /.env
+  echo "LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN=$LEGEND_OMNIBUS_CONFIG_REMOTE_GITLAB_PAT" >> /.env
   echo "LEGEND_OMNIBUS_GITLAB_URL_SCHEME=https" >> /.env
   echo "LEGEND_OMNIBUS_GITLAB_URL_HOST=gitlab.com" >> /.env
   echo "LEGEND_OMNIBUS_GITLAB_URL_PORT=443" >> /.env

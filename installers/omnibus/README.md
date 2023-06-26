@@ -23,7 +23,7 @@ docker run --platform=linux/amd64 -it -p 6900:6900 -p 6901:6901 -p 6902:6902 -p 
 ### Use gitlab.com with Private Access Token (PAT)
 
 ```sh
-docker run --platform=linux/amd64 -it -p 6900:6900 -p 6901:6901 -p 6902:6902 -p 6903:6903 -p 6100:6100 -p 6300:6300 -p 9200:9200 -p 9000:9000 --env LEGEND_OMNIBUS_REMOTE_GITLAB_PAT="<your private access token>" finos/legend-omnibus:latest-slim
+docker run --platform=linux/amd64 -it -p 6900:6900 -p 6901:6901 -p 6902:6902 -p 6903:6903 -p 6100:6100 -p 6300:6300 -p 9200:9200 -p 9000:9000 --env LEGEND_OMNIBUS_CONFIG_REMOTE_GITLAB_PAT="<your private access token>" finos/legend-omnibus:latest-slim
 ```
 
 ## Technical Overview
@@ -53,4 +53,4 @@ This includes all the components, it takes a while longer to run/build as it inc
 
 #### finos/legend-omnibus:\<version\>-slim
 
-This is the same as `Standard` but without `Gitlab`, the flag `LEGEND_OMNIBUS_REMOTE_GITLAB_PAT` is required to be set when running this build. This is more agile and a good starting point for development.
+This is the same as `Standard` but without `Gitlab`, the flag `LEGEND_OMNIBUS_CONFIG_REMOTE_GITLAB_PAT` is required to be set when running this build. This is more agile and a good starting point for development.

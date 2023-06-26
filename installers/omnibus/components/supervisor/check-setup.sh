@@ -53,7 +53,7 @@ fi
 
 echo -e "\n\e[32mAll components have started successfully!\e[0m"
 echo -e "Supervisor: \e[32mhttp://localhost:$LEGEND_OMNIBUS_SUPERVISOR_PORT\e[0m (user: $LEGEND_OMNIBUS_SUPERVISOR_USERNAME, password: $LEGEND_OMNIBUS_SUPERVISOR_PASSWORD)"
-if [[ ! -z "$LEGEND_OMNIBUS_REMOTE_GITLAB_PAT" ]]; then
+if [[ ! -z "$LEGEND_OMNIBUS_CONFIG_REMOTE_GITLAB_PAT" ]]; then
 	echo -e "Gitlab: \e[32mhttps://gitlab.com\e[0m (access token: $LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN)"
 else
 	echo -e "Gitlab: \e[32mhttp://localhost:$LEGEND_OMNIBUS_GITLAB_PORT\e[0m (user: $LEGEND_OMNIBUS_GITLAB_ROOT_USER, password: $LEGEND_OMNIBUS_GITLAB_ROOT_PASSWORD, access token: $LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN)"
