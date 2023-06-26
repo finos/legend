@@ -9,7 +9,7 @@ FROM finos/legend-engine-server:${LEGEND_OMNIBUS_ENGINE_VERSION} AS engine-image
 FROM finos/legend-sdlc-server:${LEGEND_OMNIBUS_SDLC_VERSION} AS sdlc-image
 FROM finos/legend-studio:${LEGEND_OMNIBUS_STUDIO_VERSION} AS studio-image
 
-FROM eclipse-temurin:11.0.17_8-jdk-jammy
+FROM eclipse-temurin:11.0.19_7-jdk-jammy
 RUN apt-get update && apt-get install -y wget nano
 
 # ---------------- Setup environment ----------------
@@ -22,12 +22,12 @@ ENV LEGEND_OMNIBUS_IMAGE_VERSION=${LEGEND_OMNIBUS_IMAGE_VERSION}
 ARG LEGEND_OMNIBUS_SUPERVISOR_PORT
 ARG LEGEND_OMNIBUS_SUPERVISOR_USERNAME
 ARG LEGEND_OMNIBUS_SUPERVISOR_PASSWORD
-ARG LEGEND_OMNIBUS_SUPERVISOR_STATUS_CHECKER_PORT
+ARG LEGEND_OMNIBUS_SUPERVISOR_DIRECTORY_SERVER_PORT
 
 ENV LEGEND_OMNIBUS_SUPERVISOR_PORT=${LEGEND_OMNIBUS_SUPERVISOR_PORT}
 ENV LEGEND_OMNIBUS_SUPERVISOR_USERNAME=${LEGEND_OMNIBUS_SUPERVISOR_USERNAME}
 ENV LEGEND_OMNIBUS_SUPERVISOR_PASSWORD=${LEGEND_OMNIBUS_SUPERVISOR_PASSWORD}
-ENV LEGEND_OMNIBUS_SUPERVISOR_STATUS_CHECKER_PORT=${LEGEND_OMNIBUS_SUPERVISOR_STATUS_CHECKER_PORT}
+ENV LEGEND_OMNIBUS_SUPERVISOR_DIRECTORY_SERVER_PORT=${LEGEND_OMNIBUS_SUPERVISOR_DIRECTORY_SERVER_PORT}
 
 # Nginx
 ARG LEGEND_OMNIBUS_NGINX_PORT
@@ -115,23 +115,18 @@ EXPOSE ${LEGEND_OMNIBUS_STUDIO_PORT}
 
 ARG SUPERVISOR_DIR=/app/supervisor
 RUN mkdir -p $SUPERVISOR_DIR
-RUN apt-get update && apt-get install -y supervisor
+RUN apt-get update && apt-get install -y supervisor python3
 COPY components/supervisor $SUPERVISOR_DIR
 RUN chmod +x $SUPERVISOR_DIR/check-setup.slim.sh
 EXPOSE ${LEGEND_OMNIBUS_SUPERVISOR_PORT}
 
-# ---------------- Status Checker ----------------
-
-RUN mkdir -p $SUPERVISOR_DIR/status-checker/logs
-RUN curl -s https://deb.nodesource.com/setup_16.x | bash
-RUN apt-get update && apt-get install -y nodejs
-RUN npm install fastify --prefix /app/supervisor/status-checker
-EXPOSE ${LEGEND_OMNIBUS_SUPERVISOR_STATUS_CHECKER_PORT}
+RUN chmod +x $SUPERVISOR_DIR/run-directory-server.sh
+EXPOSE ${LEGEND_OMNIBUS_SUPERVISOR_DIRECTORY_SERVER_PORT}
 
 # ---------------- Reporting ----------------
 
-RUN chmod +x $SUPERVISOR_DIR/report-build.slim.sh
-RUN $SUPERVISOR_DIR/report-build.slim.sh
+RUN chmod +x $SUPERVISOR_DIR/report-build-info.slim.sh
+RUN $SUPERVISOR_DIR/report-build-info.slim.sh
 
 # ---------------- Run Omnibus ----------------
 
