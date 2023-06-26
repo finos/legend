@@ -53,6 +53,9 @@ echo "LEGEND_OMNIBUS_GITLAB_URL_PORT=$LEGEND_OMNIBUS_GITLAB_PORT" >> /.env
 # stack more smoothly; however, this bypasses the safety net that the abstraction API layer provides and can
 # break if underlying implementation changes so we should almost always prefer using APIs over Rails console.
 # See https://docs.gitlab.com/ee/administration/operations/rails_console.html
+#
+# Note that it is required to set an expiry date for the access token, so we choose 90-day as a reasonable period
+# See https://gitlab.com/gitlab-org/customers-gitlab-com/-/issues/6625
 
 # Configure Gitlab via gitlab-rails
 # - Disallow signup
@@ -60,7 +63,7 @@ echo "LEGEND_OMNIBUS_GITLAB_URL_PORT=$LEGEND_OMNIBUS_GITLAB_PORT" >> /.env
 gitlab-rails runner '\
   ApplicationSetting.last.update_attribute(:signup_enabled, false);\
   user = User.find_by_username("'$LEGEND_OMNIBUS_GITLAB_ROOT_USER'");\
-  token = user.personal_access_tokens.find_or_create_by(scopes: [:api, :read_api, :read_user, :read_repository, :write_repository, :sudo], name: "Automation token");\
+  token = user.personal_access_tokens.find_or_create_by(scopes: [:api, :read_api, :read_user, :read_repository, :write_repository, :sudo], name: "Automation token", expires_at: Date.current.advance(days: 90));\
   token.set_token("'$LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN'"); token.save! if user.personal_access_tokens.find_by_token("'$LEGEND_OMNIBUS_GITLAB_PRIVATE_ACCESS_TOKEN'") == nil;\
 '
 
