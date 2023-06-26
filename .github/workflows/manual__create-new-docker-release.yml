@@ -45,6 +45,10 @@ jobs:
         run: |
           chmod +x ./scripts/create-new-release.sh
           ./scripts/create-new-release.sh
+      # NOTE: Wait for half a minute before starting next steps in order to be sure the publish
+      # script will get the latest version for the release
+      - name: Wait
+        run: sleep 30
 
   publish-new-docker-release:
     needs: [create-new-docker-release]
