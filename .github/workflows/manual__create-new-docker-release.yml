@@ -48,7 +48,7 @@ jobs:
       # NOTE: Wait for half a minute before starting next steps in order to be sure the publish
       # script will get the latest version for the release
       - name: Wait
-        run: sleep 30
+        run: sleep 60
 
   publish-new-docker-release:
     needs: [create-new-docker-release]
@@ -65,15 +65,17 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3.5.2
-      - name: Login to Docker Hub
-        uses: docker/login-action@v2
-        with:
-          username: finos
-          password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Publish Omnibus to Docker
-        working-directory: ./installers/omnibus
-        run: |
-          chmod +x ./variants/${{ matrix.variant }}/publish.sh
-          chmod +x ./variants/${{ matrix.variant }}/build.sh
-          chmod +x ./variants/${{ matrix.variant }}/test.sh
-          ./variants/${{ matrix.variant }}/publish.sh
+      - name: Debug
+        run: git log --oneline -5
+      # - name: Login to Docker Hub
+      #   uses: docker/login-action@v2
+      #   with:
+      #     username: finos
+      #     password: ${{ secrets.DOCKER_PASSWORD }}
+      # - name: Publish Omnibus to Docker
+      #   working-directory: ./installers/omnibus
+      #   run: |
+      #     chmod +x ./variants/${{ matrix.variant }}/publish.sh
+      #     chmod +x ./variants/${{ matrix.variant }}/build.sh
+      #     chmod +x ./variants/${{ matrix.variant }}/test.sh
+      #     ./variants/${{ matrix.variant }}/publish.sh
