@@ -45,10 +45,6 @@ jobs:
         run: |
           chmod +x ./scripts/create-new-release.sh
           ./scripts/create-new-release.sh
-      # NOTE: Wait for half a minute before starting next steps in order to be sure the publish
-      # script will get the latest version for the release
-      - name: Wait
-        run: sleep 60
 
   publish-new-docker-release:
     needs: [create-new-docker-release]
@@ -65,6 +61,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3.5.2
+        with:
+          ref: 'master'
       - name: Debug
         run: git log --oneline -5
       # - name: Login to Docker Hub
