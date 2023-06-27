@@ -3,11 +3,13 @@
 ARG LEGEND_OMNIBUS_IMAGE_VERSION
 ARG LEGEND_OMNIBUS_ENGINE_VERSION
 ARG LEGEND_OMNIBUS_SDLC_VERSION
+ARG LEGEND_OMNIBUS_SDLC_DEMO_VERSION
 ARG LEGEND_OMNIBUS_STUDIO_VERSION
 
 FROM finos/legend-engine-server:${LEGEND_OMNIBUS_ENGINE_VERSION} AS engine-image
 FROM finos/legend-sdlc-server:${LEGEND_OMNIBUS_SDLC_VERSION} AS sdlc-image
 FROM finos/legend-studio:${LEGEND_OMNIBUS_STUDIO_VERSION} AS studio-image
+FROM legenddemo/legend-sdlc-server-demo:${LEGEND_OMNIBUS_SDLC_DEMO_VERSION} as sdlc-demo-image
 
 FROM eclipse-temurin:11.0.19_7-jdk-jammy
 RUN apt-get update && apt-get install -y wget nano
@@ -51,6 +53,11 @@ ARG LEGEND_OMNIBUS_SDLC_ADMIN_PORT
 ENV LEGEND_OMNIBUS_SDLC_VERSION=${LEGEND_OMNIBUS_SDLC_VERSION}
 ENV LEGEND_OMNIBUS_SDLC_PORT=${LEGEND_OMNIBUS_SDLC_PORT}
 ENV LEGEND_OMNIBUS_SDLC_ADMIN_PORT=${LEGEND_OMNIBUS_SDLC_ADMIN_PORT}
+
+# Legend SDLC Demo
+ARG LEGEND_OMNIBUS_SDLC_DEMO_VERSION
+
+ENV LEGEND_OMNIBUS_SDLC_DEMO_VERSION=${LEGEND_OMNIBUS_SDLC_DEMO_VERSION}
 
 # Legend Studio
 ARG LEGEND_OMNIBUS_STUDIO_VERSION
@@ -100,6 +107,14 @@ COPY --from=sdlc-image /app/bin/*.jar $SDLC_DIR/lib/
 COPY components/sdlc $SDLC_DIR
 RUN chmod +x $SDLC_DIR/run-sdlc.slim.sh
 EXPOSE ${LEGEND_OMNIBUS_SDLC_PORT}
+
+# ---------------- Setup Legend SDLC Demo -------------
+
+ARG SDLC_DEMO_DIR=/app/sdlc-demo
+RUN mkdir -p $SDLC_DEMO_DIR/lib
+RUN mkdir -p $SDLC_DEMO_DIR/logs
+COPY --from=sdlc-demo-image /app/bin/*.jar $SDLC_DEMO_DIR/lib
+
 
 # ---------------- Setup Legend Studio ----------------
 
