@@ -1,0 +1,10 @@
+{
+  "version": "2023-06-27",
+  "timestamp": 1687840080000,
+  "releaseNotesUrl": "",
+  "core": {
+    "finos/legend-engine-server": "4.16.1",
+    "finos/legend-sdlc-server": "0.135.1",
+    "finos/legend-studio": "9.60.0"
+  }
+}
