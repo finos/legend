@@ -2,9 +2,9 @@
 
 source /.env
 
-MAIN_CLASS=org.finos.legend.sdlc.server.LegendSDLCServer
-LIB_DIR=$/app/sdlc/lib
-
+# NOTE: this is temporary until we can switch SDLC backend using the config
+main_class=org.finos.legend.sdlc.server.LegendSDLCServer
+lib_dir=/app/sdlc/lib
 
 if [[ "$LEGEND_OMNIBUS_CONFIG_SDLC_MODE" = "gitlab-pat" ]]; then
   echo -e "\e[33mUsing Legend SDLC using remote Gitlab instance with Personal Access Token...\e[0m"
@@ -32,18 +32,17 @@ elif [[ "$LEGEND_OMNIBUS_CONFIG_SDLC_MODE" = "gitlab-oauth" ]]; then
 elif [[ "$LEGEND_OMNIBUS_CONFIG_SDLC_MODE" = "in-memory" ]]; then
   echo -e "\e[33mUsing Legend SDLC using in-memory backend with no authentication...\e[0m"
 
-  MAIN_CLASS=org.finos.legend.sdlc.server.demo.LegendSDLCServerForDemo
-  LIB_DIR=/app/sdlc-demo/lib
-
+  main_class=org.finos.legend.sdlc.server.demo.LegendSDLCServerForDemo
+  lib_dir=/app/sdlc-demo/lib
   config_file="config.memory.slim.yml"
 else
   echo -e "\e[31mUnsupported Legend SDLC mode ${LEGEND_OMNIBUS_CONFIG_SDLC_MODE} \e[0m"
   exit 1;
 fi
 
-java -cp $LIB_DIR/*-shaded.jar \
+java -cp $lib_dir/*-shaded.jar \
   -XX:+ExitOnOutOfMemoryError \
   -XX:MaxRAMPercentage=60 \
   -Xss4M \
   -Dfile.encoding=UTF8 \
-  $MAIN_CLASS server "/app/sdlc/config/$config_file"
+  $main_class server "/app/sdlc/config/$config_file"
