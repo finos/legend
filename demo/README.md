@@ -31,3 +31,12 @@ Open http://localhost:9000/studio/
 
 Follow the tutorials at https://legend.finos.org/docs/tutorials/studio-workspace
 
+## Saving your model 
+
+This version of Legend keeps the models in memory.
+
+This means that they are not saved to disk and will be lost when the Legend Docker image is restarted. 
+
+To save, switch to text mode (Hit F8 or the hacker icon in the bottom right corner of Studio) and copy/paste the model to a notepad/file etc.
+
+The next version will support models being saved to disk.
