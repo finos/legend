@@ -91,4 +91,4 @@ gitLab:
   app:
     id: ${LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID}
     secret: ${LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET}
-    redirectURI: http://localhost:${LEGEND_OMNIBUS_SDLC_PORT}/api/auth/callback
+    redirectURI: http://${LEGEND_OMNIBUS_CONFIG_DOMAIN_NAME:-localhost}:${LEGEND_OMNIBUS_SDLC_PORT}/api/auth/callback
