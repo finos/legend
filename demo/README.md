@@ -5,7 +5,7 @@
 
 This step assumes that Docker has already been installed.
 
-Copy/paste the command below in a terminal. Wait for a few minutes till   
+Copy/paste the command below in a terminal. 
 
 ```
 bash <(curl -s https://raw.githubusercontent.com/finos/legend/demo/demo/demo1.sh)
