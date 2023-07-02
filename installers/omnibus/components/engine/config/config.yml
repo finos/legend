@@ -20,11 +20,11 @@ swagger:
   uriPrefix: /api
 
 pac4j:
-  bypassPaths:
-    - /api/server/v1/info
-  callbackPrefix: ""
+  callbackPrefix: /api/pac4j
   clients:
     - org.pac4j.core.client.direct.AnonymousClient: {}
+  bypassPaths:
+    - /api/server/v1/info
 
 deployment:
   mode: TEST_IGNORE_FUNCTION_MATCH

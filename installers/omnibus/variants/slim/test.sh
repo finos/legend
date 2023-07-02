@@ -1,22 +1,30 @@
 #!/bin/bash
 
+# --------------------------------------------------------------------
+# NOTE: must use `echo -e` to interpret the backslash escapes
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No color
+# --------------------------------------------------------------------
+
 source ./.env
 
-STATUS_CHECK_URL=http://localhost:$LEGEND_OMNIBUS_SUPERVISOR_DIRECTORY_SERVER_PORT/.omnibus-status.json
+STATUS_CHECK_URL=http://localhost:$LEGEND_OMNIBUS_NGINX_PORT/dir/.omnibus-status.json
 check_status()
 {
 	while :; do
 		status_status_checker=$(curl --write-out %{http_code} --silent --output /dev/null $STATUS_CHECK_URL)
 		if [[ $status_status_checker -ge 300 ]]; then
-			echo -e "\e[31mFAILED: Status checker failed to start\e[0m"
+			echo -e "${RED}FAILED: Status checker failed to start${NC}"
 			exit 1
 		else
 			status=$(curl --silent $STATUS_CHECK_URL | jq -r '.status')
 			if [[ $status == "FAILED" ]]; then
-				echo -e "\e[31mFAILED: Some status checks failed. Please identify and fix the issue... 🙏🙏🙏\e[0m"
+				echo -e "${RED}FAILED: Some status checks failed. Please identify and fix the issue... 🙏🙏🙏${NC}"
 				exit 1
 			elif [[ $status == "SUCCEEDED" ]]; then
-				echo -e "\e[32mSUCCESS: All status checks passed! 🎉🎉🎉\e[0m"
+				echo -e "${GREEN}SUCCESS: All status checks passed! 🎉🎉🎉${NC}"
 				break
 			fi
 		fi
@@ -25,32 +33,30 @@ check_status()
 	done
 }
 
-# Test Gitlab with PAT
+# Test for SDLC with In-Memory backend
 TEST_CONTAINER=$(docker run \
 	--platform=linux/amd64 \
 	-dit \
-	-p $LEGEND_OMNIBUS_SUPERVISOR_PORT:$LEGEND_OMNIBUS_SUPERVISOR_PORT \
-	-p $LEGEND_OMNIBUS_SUPERVISOR_DIRECTORY_SERVER_PORT:$LEGEND_OMNIBUS_SUPERVISOR_DIRECTORY_SERVER_PORT \
 	-p $LEGEND_OMNIBUS_NGINX_PORT:$LEGEND_OMNIBUS_NGINX_PORT \
-	-p $LEGEND_OMNIBUS_ENGINE_PORT:$LEGEND_OMNIBUS_ENGINE_PORT \
-	-p $LEGEND_OMNIBUS_SDLC_PORT:$LEGEND_OMNIBUS_SDLC_PORT \
-	-p $LEGEND_OMNIBUS_STUDIO_PORT:$LEGEND_OMNIBUS_STUDIO_PORT \
+	--env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="in-memory" \
+	legend-omnibus:latest-slim)
+
+# Test for SDLC with Gitlab (PAT) backend
+TEST_CONTAINER=$(docker run \
+	--platform=linux/amd64 \
+	-dit \
+	-p $LEGEND_OMNIBUS_NGINX_PORT:$LEGEND_OMNIBUS_NGINX_PORT \
 	--env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="gitlab-pat" --env LEGEND_OMNIBUS_CONFIG_GITLAB_PAT="$LEGEND_OMNIBUS_CONFIG_GITLAB_PAT" \
 	legend-omnibus:latest-slim)
 
 check_status
 docker stop $TEST_CONTAINER
 
-# Test Gitlab with OAuth
+# Test for SDLC with Gitlab (OAuth) backend
 TEST_CONTAINER=$(docker run \
 	--platform=linux/amd64 \
 	-dit \
-	-p $LEGEND_OMNIBUS_SUPERVISOR_PORT:$LEGEND_OMNIBUS_SUPERVISOR_PORT \
-	-p $LEGEND_OMNIBUS_SUPERVISOR_DIRECTORY_SERVER_PORT:$LEGEND_OMNIBUS_SUPERVISOR_DIRECTORY_SERVER_PORT \
 	-p $LEGEND_OMNIBUS_NGINX_PORT:$LEGEND_OMNIBUS_NGINX_PORT \
-	-p $LEGEND_OMNIBUS_ENGINE_PORT:$LEGEND_OMNIBUS_ENGINE_PORT \
-	-p $LEGEND_OMNIBUS_SDLC_PORT:$LEGEND_OMNIBUS_SDLC_PORT \
-	-p $LEGEND_OMNIBUS_STUDIO_PORT:$LEGEND_OMNIBUS_STUDIO_PORT \
 	--env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="gitlab-oauth" --env LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID="$LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID" --env LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET="$LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET" \
 	legend-omnibus:latest-slim)
 

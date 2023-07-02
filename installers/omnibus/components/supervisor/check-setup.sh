@@ -1,6 +1,16 @@
 #!/bin/bash
 
+# --------------------------------------------------------------------
+# NOTE: must use `echo -e` to interpret the backslash escapes
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No color
+# --------------------------------------------------------------------
+
 source /.env
+
+# ---------------------------- Check Setup ---------------------------
 
 error=0
 
@@ -11,7 +21,6 @@ cat > /.omnibus-status.json <<-END
   "status": "WAITING"
 }
 END
-
 
 while :; do
 	# Check status of Supervisor component processes
@@ -42,7 +51,7 @@ while :; do
 done
 
 if [[ $error -eq 1 ]]; then
-	echo -e "\e[31mSome component(s) have failed to start. Please check logs for more details...\e[0m"
+	echo -e "${RED}Some component(s) have failed to start. Please check logs for more details...${NC}"
 	cat > /.omnibus-status.json <<-END
 {
   "status": "FAILED"
@@ -51,18 +60,28 @@ END
 	exit 1
 fi
 
-echo -e "\n\e[32mAll components have started successfully!\e[0m"
-echo -e "Supervisor: \e[32mhttp://localhost:$LEGEND_OMNIBUS_SUPERVISOR_PORT\e[0m (user: $LEGEND_OMNIBUS_SUPERVISOR_USERNAME, password: $LEGEND_OMNIBUS_SUPERVISOR_PASSWORD)"
-if [[ ! -z "$LEGEND_OMNIBUS_CONFIG_REMOTE_GITLAB_PAT" ]]; then
-	echo -e "Gitlab: \e[32mhttps://gitlab.com\e[0m (access token: $LEGEND_OMNIBUS_GITLAB_PERSONAL_ACCESS_TOKEN)"
+# ------------------------------ Report -------------------------------
+
+if [[ -z "$LEGEND_OMNIBUS_CONFIG_BASE_URL" ]]; then
+  BASE_URL=http://localhost:$LEGEND_OMNIBUS_NGINX_PORT
 else
-	echo -e "Gitlab: \e[32mhttp://localhost:$LEGEND_OMNIBUS_GITLAB_PORT\e[0m (user: $LEGEND_OMNIBUS_GITLAB_ROOT_USER, password: $LEGEND_OMNIBUS_GITLAB_ROOT_PASSWORD, access token: $LEGEND_OMNIBUS_GITLAB_PERSONAL_ACCESS_TOKEN)"
+  BASE_URL=$LEGEND_OMNIBUS_CONFIG_BASE_URL
 fi
-echo -e "Legend Engine: \e[32mhttp://localhost:$LEGEND_OMNIBUS_ENGINE_PORT\e[0m"
-echo -e "Legend SDLC: \e[32mhttp://localhost:$LEGEND_OMNIBUS_SDLC_PORT\e[0m"
-echo -e "Legend Pure IDE: \e[32mhttp://localhost:$LEGEND_OMNIBUS_PURE_IDE_PORT/ide\e[0m"
-echo -e "Legend Studio: \e[32mhttp://localhost:$LEGEND_OMNIBUS_STUDIO_PORT/studio\e[0m"
-echo -e "\nTo start using Legend, launch Studio at: \e[32mhttp://localhost:$LEGEND_OMNIBUS_STUDIO_PORT/studio/\e[0m\e[0m"
+
+echo -e "\n${GREEN}All components have started successfully!${NC}"
+echo -e "(DEV) Supervisor: ${GREEN}${BASE_URL}/sd${NC} (user: $LEGEND_OMNIBUS_SUPERVISOR_USERNAME, password: $LEGEND_OMNIBUS_SUPERVISOR_PASSWORD)"
+echo -e "(DEV) Directory Viewer: ${GREEN}${BASE_URL}/dir${NC}"
+
+if [[ ! -z "$LEGEND_OMNIBUS_CONFIG_REMOTE_GITLAB_PAT" ]]; then
+	echo -e "Gitlab: ${GREEN}https://gitlab.com${NC} (access token: $LEGEND_OMNIBUS_GITLAB_PERSONAL_ACCESS_TOKEN)"
+else
+	echo -e "Gitlab: ${GREEN}${BASE_URL}/gitlab${NC} (user: $LEGEND_OMNIBUS_GITLAB_ROOT_USER, password: $LEGEND_OMNIBUS_GITLAB_ROOT_PASSWORD, access token: $LEGEND_OMNIBUS_GITLAB_PERSONAL_ACCESS_TOKEN)"
+fi
+echo -e "Legend SDLC: ${GREEN}${BASE_URL}/sdlc${NC}"
+echo -e "Legend Engine: ${GREEN}${BASE_URL}/engine${NC}"
+echo -e "Legend Pure IDE: ${GREEN}${BASE_URL}/ide${NC}"
+echo -e "Legend Studio: ${GREEN}${BASE_URL}/studio${NC}"
+echo -e "\nTo start using Legend, launch Studio at: ${GREEN}${BASE_URL}/studio/${NC}${NC}"
 cat > /.omnibus-status.json <<-END
 {
   "status": "SUCCEEDED"

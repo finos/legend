@@ -31,7 +31,7 @@ swagger:
   schemes: []
 
 pac4j:
-  callbackPrefix: /api/pac4j/login
+  callbackPrefix: /api/pac4j
   clients:
     - org.finos.legend.server.pac4j.gitlab.GitlabClient:
         name: gitlab
@@ -51,18 +51,6 @@ filterPriorities:
   org.pac4j.j2e.filter.CallbackFilter: 2
   org.pac4j.j2e.filter.SecurityFilter: 3
   CORS: 4
-cors:
-  allowedHeaders:
-    - X-Requested-With
-    - Content-Type
-    - Accept
-    - Origin
-    - Access-Control-Allow-Credentials
-    - x-b3-parentspanid
-    - x-b3-sampled
-    - x-b3-spanid
-    - x-b3-traceid
-    - legend-omnibus-pat
 features:
   canCreateProject: true
   canCreateVersion: true
@@ -91,4 +79,4 @@ gitLab:
   app:
     id: ${LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID}
     secret: ${LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET}
-    redirectURI: http://${LEGEND_OMNIBUS_CONFIG_DOMAIN_NAME:-localhost}:${LEGEND_OMNIBUS_SDLC_PORT}/api/auth/callback
+    redirectURI: ${LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_REDIRECT_BASE_URL}/sdlc/api/auth/callback

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ ! -z "$LEGEND_OMNIBUS_CONFIG_REMOTE_GITLAB_PAT" ]]; then
-  echo -e "\e[33mUsing remote Gitlab instance...\e[0m"
+  echo -e "Using remote Gitlab instance..."
   echo "LEGEND_OMNIBUS_GITLAB_PERSONAL_ACCESS_TOKEN=$LEGEND_OMNIBUS_CONFIG_REMOTE_GITLAB_PAT" >> /.env
   echo "LEGEND_OMNIBUS_GITLAB_URL_SCHEME=https" >> /.env
   echo "LEGEND_OMNIBUS_GITLAB_URL_HOST=gitlab.com" >> /.env
@@ -69,10 +69,10 @@ gitlab-rails runner '\
 #   --header "PRIVATE-TOKEN: $LEGEND_OMNIBUS_GITLAB_PERSONAL_ACCESS_TOKEN" \
 #   --data "name=Legend%20Demo\
 # &redirect_uri=\
-# http://localhost:$LEGEND_OMNIBUS_ENGINE_PORT/callback%0A\
 # http://localhost:$LEGEND_OMNIBUS_SDLC_PORT/api/auth/callback%0A\
-# http://localhost:$LEGEND_OMNIBUS_SDLC_PORT/api/pac4j/login/callback%0A\
-# http://localhost:$LEGEND_OMNIBUS_STUDIO_PORT/studio/log.in/callback%0A\
+# http://localhost:$LEGEND_OMNIBUS_SDLC_PORT/api/pac4j/callback%0A\
+# http://localhost:$LEGEND_OMNIBUS_ENGINE_PORT/api/pac4j/callback%0A\
+# http://localhost:$LEGEND_OMNIBUS_STUDIO_PORT/api/pac4j/callback%0A\
 # &scopes=openid%0Aprofile%0Aapi\
 # &confidential=false"
 # )
