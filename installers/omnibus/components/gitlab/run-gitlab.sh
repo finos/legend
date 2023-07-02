@@ -69,10 +69,10 @@ gitlab-rails runner '\
 #   --header "PRIVATE-TOKEN: $LEGEND_OMNIBUS_GITLAB_PERSONAL_ACCESS_TOKEN" \
 #   --data "name=Legend%20Demo\
 # &redirect_uri=\
-# http://localhost:$LEGEND_OMNIBUS_ENGINE_PORT/callback%0A\
 # http://localhost:$LEGEND_OMNIBUS_SDLC_PORT/api/auth/callback%0A\
-# http://localhost:$LEGEND_OMNIBUS_SDLC_PORT/api/pac4j/login/callback%0A\
-# http://localhost:$LEGEND_OMNIBUS_STUDIO_PORT/studio/log.in/callback%0A\
+# http://localhost:$LEGEND_OMNIBUS_SDLC_PORT/api/pac4j/callback%0A\
+# http://localhost:$LEGEND_OMNIBUS_ENGINE_PORT/api/pac4j/callback%0A\
+# http://localhost:$LEGEND_OMNIBUS_STUDIO_PORT/api/pac4j/callback%0A\
 # &scopes=openid%0Aprofile%0Aapi\
 # &confidential=false"
 # )

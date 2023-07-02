@@ -31,7 +31,7 @@ swagger:
   schemes: []
 
 pac4j:
-  callbackPrefix: /api/pac4j/login
+  callbackPrefix: /api/pac4j
   clients:
     - org.finos.legend.server.pac4j.gitlab.GitlabPersonalAccessTokenClient:
         headerTokenName: legend-omnibus-pat

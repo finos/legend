@@ -130,9 +130,13 @@ These are information of the `OAuth` application that users will need to authori
 
 ```
 http://localhost:6100/api/auth/callback
-http://localhost:6100/api/pac4j/login/callback
-http://localhost:6300/callback
-http://localhost:9000/studio/log.in/callback
+http://localhost:6100/api/pac4j/callback
+http://localhost:6300/api/pac4j/callback
+http://localhost:9000/api/pac4j/callback
+http://localhost:6900/sdlc/api/auth/callback
+http://localhost:6900/sdlc/api/pac4j/callback
+http://localhost:6900/engine/api/pac4j/callback
+http://localhost:6900/studio/api/pac4j/callback
 ```
 
 - Enable the `Confidential` check box
