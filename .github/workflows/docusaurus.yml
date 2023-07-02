@@ -24,6 +24,10 @@ jobs:
         uses: actions/setup-node@v3.6.0
         with:
           node-version: 16
+      - name: Prepare static artifacts
+        run:
+          mkdir website/static/omnibus
+          cp -r installers/omnibus/scripts/* website/static/omnibus
       - name: Build Website
         working-directory: ./website
         run: |
