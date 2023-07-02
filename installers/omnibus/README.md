@@ -62,7 +62,7 @@ In addition, it uses [Supervisor](http://supervisord.org/) to launch and manage 
 - **Legend SDLC:** http://localhost:6900/sdlc (exposable port: 6100)
 - **Legend Engine:** http://localhost:6900/engine (exposable port: 6300)
 - **Legend Studio:** http://localhost:6900/studio (exposable port: 9000)
-- **Legend Pure IDE:** http://localhost:6900/pure-ide (exposable port: 9200)
+- **Legend Pure IDE:** http://localhost:6900/ide (exposable port: 9200)
 
 ### Image Variants
 

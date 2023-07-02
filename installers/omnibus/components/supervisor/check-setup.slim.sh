@@ -60,16 +60,18 @@ END
 fi
 
 echo -e "\n\e[32mAll components have started successfully!\e[0m"
-echo -e "Supervisor: \e[32mhttp://localhost:$LEGEND_OMNIBUS_SUPERVISOR_PORT\e[0m (user: $LEGEND_OMNIBUS_SUPERVISOR_USERNAME, password: $LEGEND_OMNIBUS_SUPERVISOR_PASSWORD)"
+echo -e "(DEV) Supervisor: \e[32mhttp://localhost:$LEGEND_OMNIBUS_NGINX_PORT/sd\e[0m (user: $LEGEND_OMNIBUS_SUPERVISOR_USERNAME, password: $LEGEND_OMNIBUS_SUPERVISOR_PASSWORD)"
+echo -e "(DEV) Directory Viewer: \e[32mhttp://localhost:$LEGEND_OMNIBUS_NGINX_PORT/dir\e[0m"
+
 if [[ "$LEGEND_OMNIBUS_CONFIG_SDLC_MODE" = "gitlab-pat" ]]; then
 	echo -e "Gitlab: \e[32mhttps://gitlab.com\e[0m (access token: $LEGEND_OMNIBUS_CONFIG_GITLAB_PAT)"
 elif [[ "$LEGEND_OMNIBUS_CONFIG_SDLC_MODE" = "gitlab-oauth" ]]; then
 	echo -e "Gitlab: \e[32mhttps://gitlab.com\e[0m (OAuth)"
 fi
-echo -e "Legend Engine: \e[32mhttp://localhost:$LEGEND_OMNIBUS_ENGINE_PORT\e[0m"
-echo -e "Legend SDLC: \e[32mhttp://localhost:$LEGEND_OMNIBUS_SDLC_PORT\e[0m"
-echo -e "Legend Studio: \e[32mhttp://localhost:$LEGEND_OMNIBUS_STUDIO_PORT/studio\e[0m"
-echo -e "\nTo start using Legend, launch Studio at: \e[32mhttp://localhost:$LEGEND_OMNIBUS_STUDIO_PORT/studio/\e[0m\e[0m"
+echo -e "Legend SDLC: \e[32mhttp://localhost:$LEGEND_OMNIBUS_NGINX_PORT/sdlc\e[0m"
+echo -e "Legend Engine: \e[32mhttp://localhost:$LEGEND_OMNIBUS_NGINX_PORT/engine\e[0m"
+echo -e "Legend Studio: \e[32mhttp://localhost:$LEGEND_OMNIBUS_NGINX_PORT/studio\e[0m"
+echo -e "\nTo start using Legend, launch Studio at: \e[32mhttp://localhost:$LEGEND_OMNIBUS_NGINX_PORT/studio/\e[0m\e[0m"
 cat > /.omnibus-status.json <<-END
 {
   "status": "SUCCEEDED"
