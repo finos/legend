@@ -3,10 +3,10 @@
 Legend Omnibus is a way to package different services and tools required to run Legend, so that most users can install it without laborious configuration. Simply run:
 
 ```sh
-docker run --platform=linux/amd64 -it -p 6900:6900 finos/legend-omnibus:latest
+docker run --platform=linux/amd64 -it -p 6900:6900 finos/legend-omnibus:latest-slim
 
 # Wait until the process completed successfully then launch Legend Studio at:
-# http://localhost:9000/studio
+# http://localhost:6900/studio
 #
 # Check out Legend documentation at https://legend.finos.org/docs/overview/legend-overview
 ```
@@ -73,7 +73,7 @@ The `finos/legend-omnibus` image comes with [several variants](https://github.co
 
 #### Options
 
-**`LEGEND_OMNIBUS_CONFIG_STUDIO_CONFIG_USE_RELATIVE_URL`**
+**`LEGEND_OMNIBUS_CONFIG_BASE_URL`**
 
 `boolean`, default: `false`.
 

@@ -4,10 +4,11 @@ source /.env
 
 sed -i 's~${LEGEND_OMNIBUS_GITLAB_PERSONAL_ACCESS_TOKEN}~'$LEGEND_OMNIBUS_CONFIG_GITLAB_PAT'~g' /app/studio/config/config.json
 
-if [[ "$LEGEND_OMNIBUS_CONFIG_STUDIO_CONFIG_USE_RELATIVE_URL" = true ]]; then
-  sed -i 's~http://localhost:${LEGEND_OMNIBUS_NGINX_PORT}~''~g' /app/studio/config/config.json
-else
+if [[ -z "$LEGEND_OMNIBUS_CONFIG_BASE_URL" ]]; then
   sed -i 's~${LEGEND_OMNIBUS_NGINX_PORT}~'$LEGEND_OMNIBUS_NGINX_PORT'~g' /app/studio/config/config.json
+else
+  # Assume that Studio is being served from the same host, therfore, make all paths relative
+  sed -i 's~http://localhost:${LEGEND_OMNIBUS_NGINX_PORT}~''~g' /app/studio/config/config.json
 fi
 
 java -cp /app/studio/webapp-content:app/studio/* \
