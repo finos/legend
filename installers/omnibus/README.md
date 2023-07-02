@@ -3,7 +3,7 @@
 Legend Omnibus is a way to package different services and tools required to run Legend, so that most users can install it without laborious configuration. Simply run:
 
 ```sh
-docker run --platform=linux/amd64 -it -p 6900:6900 -p 6901:6901 -p 6902:6902 -p 6903:6903 -p 6100:6100 -p 6300:6300 -p 9200:9200 -p 9000:9000 finos/legend-omnibus:latest
+docker run --platform=linux/amd64 -it -p 6900:6900 finos/legend-omnibus:latest
 
 # Wait until the process completed successfully then launch Legend Studio at:
 # http://localhost:9000/studio
@@ -18,13 +18,13 @@ docker run --platform=linux/amd64 -it -p 6900:6900 -p 6901:6901 -p 6902:6902 -p 
 ### Use gitlab.com with Personal Access Token (PAT)
 
 ```sh
-docker run --platform=linux/amd64 -it -p 6900:6900 -p 6901:6901 -p 6902:6902 -p 6903:6903 -p 6100:6100 -p 6300:6300 -p 9000:9000 --env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="gitlab-pat" --env LEGEND_OMNIBUS_CONFIG_GITLAB_PAT="<your personal access token>" finos/legend-omnibus:latest-slim
+docker run --platform=linux/amd64 -it -p 6900:6900 --env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="gitlab-pat" --env LEGEND_OMNIBUS_CONFIG_GITLAB_PAT="<your personal access token>" finos/legend-omnibus:latest-slim
 ```
 
 ### Use gitlab.com with OAuth
 
 ```sh
-docker run --platform=linux/amd64 -it -p 6900:6900 -p 6901:6901 -p 6902:6902 -p 6903:6903 -p 6100:6100 -p 6300:6300 -p 9000:9000 --env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="gitlab-oauth" --env LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID="<your OAuth app ID>" --env LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET="<your OAuth app secret>" finos/legend-omnibus:latest-slim
+docker run --platform=linux/amd64 -it -p 6900:6900 --env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="gitlab-oauth" --env LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID="<your OAuth app ID>" --env LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET="<your OAuth app secret>" finos/legend-omnibus:latest-slim
 ```
 
 ### Deploy Omnibus to the cloud (AWS, GCP, etc.)
@@ -32,7 +32,7 @@ docker run --platform=linux/amd64 -it -p 6900:6900 -p 6901:6901 -p 6902:6902 -p 
 When deployed on the remotely on the cloud, the omnibus can only be reached via a public address (which might be dynamic), in this case, `Legend Studio` config should be changed to use relative URLs instead.
 
 ```sh
-docker run --platform=linux/amd64 -it -p 6900:6900 -p 6901:6901 -p 6902:6902 -p 6903:6903 -p 6100:6100 -p 6300:6300 -p 9000:9000 --env LEGEND_OMNIBUS_CONFIG_STUDIO_CONFIG_USE_RELATIVE_URL=true finos/legend-omnibus:latest
+docker run --platform=linux/amd64 -it -p 6900:6900 --env LEGEND_OMNIBUS_CONFIG_STUDIO_CONFIG_USE_RELATIVE_URL=true finos/legend-omnibus:latest
 ```
 
 ## Technical Overview
@@ -56,13 +56,13 @@ Each of the Legend components are distributed as individual Docker images. **Leg
 In addition, it uses [Supervisor](http://supervisord.org/) to launch and manage the Legend components in the container to check the status of the components, you can use the `Supervisor` web interface at http://localhost:6901 and check the process logs. Also, it runs a [nginx](https://www.nginx.com/) proxy that is used to route to the various components. The components' URLs are listed below:
 
 - **NginX (DEV):** http://localhost:6900
-- **Supervisor (DEV):** http://localhost:6901 (routed from http://localhost:6900/sd)
-- **Directory Server (DEV):** http://localhost:6903 (routed from http://localhost:6900/dir)
-- **Gitlab:** http://localhost:6902 (only available in full build)
-- **Legend Engine:** http://localhost:6300 (routed from http://localhost:6900/engine)
-- **Legend SDLC:** http://localhost:6100 (routed from http://localhost:6900/sdlc)
-- **Legend Pure IDE:** http://localhost:9200/ide (routed from http://localhost:6900/pure-ide)
-- **Legend Studio:** http://localhost:9000/studio (routed from http://localhost:6900/studio)
+- **Supervisor (DEV):** http://localhost:6900/sd (exposable port: 6901)
+- **Directory Server (DEV):** http://localhost:6900/dir (exposable port: 6902)
+- **Gitlab:** http://localhost:6900/gitlab (exposable port: 6951)
+- **Legend SDLC:** http://localhost:6900/sdlc (exposable port: 6100)
+- **Legend Engine:** http://localhost:6900/engine (exposable port: 6300)
+- **Legend Studio:** http://localhost:6900/studio (exposable port: 9000)
+- **Legend Pure IDE:** http://localhost:6900/pure-ide (exposable port: 9200)
 
 ### Image Variants
 

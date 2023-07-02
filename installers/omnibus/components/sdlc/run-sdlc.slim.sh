@@ -28,6 +28,11 @@ elif [[ "$LEGEND_OMNIBUS_CONFIG_SDLC_MODE" = "gitlab-oauth" ]]; then
     exit 1;
   fi
 
+  if [[ -z "$LEGEND_OMNIBUS_CONFIG_BASE_URL" ]]; then
+    LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_REDIRECT_BASE_URL=http://localhost:$LEGEND_OMNIBUS_NGINX_PORT
+  else
+    LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_REDIRECT_BASE_URL=$LEGEND_OMNIBUS_CONFIG_BASE_URL
+  fi
   config_file="config.gitlab-oauth.slim.yml"
 elif [[ "$LEGEND_OMNIBUS_CONFIG_SDLC_MODE" = "in-memory" ]]; then
   echo -e "\e[33mUsing Legend SDLC using in-memory backend with no authentication...\e[0m"
