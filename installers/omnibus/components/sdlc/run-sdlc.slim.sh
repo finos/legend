@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# --------------------------------------------------------------------
+# NOTE: must use `echo -e` to interpret the backslash escapes
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No color
+# --------------------------------------------------------------------
+
 source /.env
 
 # NOTE: this is temporary until we can switch SDLC backend using the config
@@ -7,24 +15,24 @@ main_class=org.finos.legend.sdlc.server.LegendSDLCServer
 lib_dir=/app/sdlc/lib
 
 if [[ "$LEGEND_OMNIBUS_CONFIG_SDLC_MODE" = "gitlab-pat" ]]; then
-  echo -e "\e[33mUsing Legend SDLC using remote Gitlab instance with Personal Access Token...\e[0m"
+  echo -e "Using remote Gitlab instance with Personal Access Token..."
 
   if [[ -z "$LEGEND_OMNIBUS_CONFIG_GITLAB_PAT" ]]; then
-    echo -e "\e[31mLEGEND_OMNIBUS_CONFIG_GITLAB_PAT is required to be set when using remote Gitlab instance with Personal Access Token\e[0m"
+    echo -e "${RED}LEGEND_OMNIBUS_CONFIG_GITLAB_PAT is required to be set when using remote Gitlab instance with Personal Access Token${NC}"
     exit 1;
   fi
 
   config_file="config.gitlab-pat.slim.yml"
 elif [[ "$LEGEND_OMNIBUS_CONFIG_SDLC_MODE" = "gitlab-oauth" ]]; then
-  echo -e "\e[33mUsing Legend SDLC using remote Gitlab instance with OAuth...\e[0m"
+  echo -e "Using remote Gitlab instance with OAuth..."
 
   if [[ -z "$LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID" ]]; then
-    echo -e "\e[31mLEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID is required to be set when using remote Gitlab instance with OAuth\e[0m"
+    echo -e "${RED}LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID is required to be set when using remote Gitlab instance with OAuth${NC}"
     exit 1;
   fi
 
   if [[ -z "$LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET" ]]; then
-    echo -e "\e[31mLEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET is required to be set when using remote Gitlab instance with OAuth\e[0m"
+    echo -e "${RED}LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET is required to be set when using remote Gitlab instance with OAuth${NC}"
     exit 1;
   fi
 
@@ -37,7 +45,7 @@ elif [[ "$LEGEND_OMNIBUS_CONFIG_SDLC_MODE" = "gitlab-oauth" ]]; then
 else
   # Default to LEGEND_OMNIBUS_CONFIG_SDLC_MODE=in-memory
   LEGEND_OMNIBUS_CONFIG_SDLC_MODE="in-memory"
-  echo -e "\e[33mUsing Legend SDLC using in-memory backend with no authentication...\e[0m"
+  echo -e "Using in-memory backend with no authentication..."
 
   main_class=org.finos.legend.sdlc.server.demo.LegendSDLCServerForDemo
   lib_dir=/app/sdlc-demo/lib

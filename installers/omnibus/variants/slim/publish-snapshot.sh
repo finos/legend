@@ -1,10 +1,12 @@
 #!/bin/bash
 
-# NOTE: have to use -e for `echo` when using these colors to interpret the backslash escapes
-LIGHT_BLUE='\033[1;34m'
+# --------------------------------------------------------------------
+# NOTE: must use `echo -e` to interpret the backslash escapes
+RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No color
+# --------------------------------------------------------------------
 
 sed -i'' -e "s/^LEGEND_OMNIBUS_IMAGE_VERSION.*/LEGEND_OMNIBUS_IMAGE_VERSION=snapshot/" ./.env
 sed -i'' -e "s/^LEGEND_OMNIBUS_ENGINE_VERSION.*/LEGEND_OMNIBUS_ENGINE_VERSION=snapshot/" ./.env
@@ -18,6 +20,14 @@ source ./.env
 echo "Running test(s)..."
 bash ./variants/slim/build.sh
 bash ./variants/slim/test.sh
+
+test_result=$?
+if [[ $test_result == 0 ]]; then
+  echo -e "${GREEN}Test passed successfully!${NC}"
+else
+  echo -e "${RED}Test failed!${NC}"
+  exit 1
+fi
 
 # ----------------------------- Publish ------------------------------
 

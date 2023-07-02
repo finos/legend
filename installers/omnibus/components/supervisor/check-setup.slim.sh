@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# --------------------------------------------------------------------
+# NOTE: must use `echo -e` to interpret the backslash escapes
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No color
+# --------------------------------------------------------------------
+
 source /.env
 
 error=0
@@ -35,7 +43,7 @@ while :; do
 			if [[ $authenticated -eq 200 ]]; then
 				break
 			else
-				echo -e "\e[31mLegend SDLC with remote Gitlab instance with Personal Access Token: Authentication check failed!\e[0m"
+				echo -e "${RED}Legend SDLC with remote Gitlab instance with Personal Access Token: Authentication check failed!${NC}"
 				error=1
 				break
 			fi
@@ -50,7 +58,7 @@ while :; do
 done
 
 if [[ $error -eq 1 ]]; then
-	echo -e "\e[31mSome component(s) have failed to start. Please check logs for more details...\e[0m"
+	echo -e "${RED}Some component(s) have failed to start. Please check logs for more details...${NC}"
 	cat > /.omnibus-status.json <<-END
 {
   "status": "FAILED"
@@ -59,19 +67,19 @@ END
 	exit 1
 fi
 
-echo -e "\n\e[32mAll components have started successfully!\e[0m"
-echo -e "(DEV) Supervisor: \e[32mhttp://localhost:$LEGEND_OMNIBUS_NGINX_PORT/sd\e[0m (user: $LEGEND_OMNIBUS_SUPERVISOR_USERNAME, password: $LEGEND_OMNIBUS_SUPERVISOR_PASSWORD)"
-echo -e "(DEV) Directory Viewer: \e[32mhttp://localhost:$LEGEND_OMNIBUS_NGINX_PORT/dir\e[0m"
+echo -e "\n${GREEN}All components have started successfully!${NC}"
+echo -e "(DEV) Supervisor: ${GREEN}http://localhost:$LEGEND_OMNIBUS_NGINX_PORT/sd${NC} (user: $LEGEND_OMNIBUS_SUPERVISOR_USERNAME, password: $LEGEND_OMNIBUS_SUPERVISOR_PASSWORD)"
+echo -e "(DEV) Directory Viewer: ${GREEN}http://localhost:$LEGEND_OMNIBUS_NGINX_PORT/dir${NC}"
 
 if [[ "$LEGEND_OMNIBUS_CONFIG_SDLC_MODE" = "gitlab-pat" ]]; then
-	echo -e "Gitlab: \e[32mhttps://gitlab.com\e[0m (access token: $LEGEND_OMNIBUS_CONFIG_GITLAB_PAT)"
+	echo -e "Gitlab: ${GREEN}https://gitlab.com${NC} (access token: $LEGEND_OMNIBUS_CONFIG_GITLAB_PAT)"
 elif [[ "$LEGEND_OMNIBUS_CONFIG_SDLC_MODE" = "gitlab-oauth" ]]; then
-	echo -e "Gitlab: \e[32mhttps://gitlab.com\e[0m (OAuth)"
+	echo -e "Gitlab: ${GREEN}https://gitlab.com${NC} (OAuth)"
 fi
-echo -e "Legend SDLC: \e[32mhttp://localhost:$LEGEND_OMNIBUS_NGINX_PORT/sdlc\e[0m"
-echo -e "Legend Engine: \e[32mhttp://localhost:$LEGEND_OMNIBUS_NGINX_PORT/engine\e[0m"
-echo -e "Legend Studio: \e[32mhttp://localhost:$LEGEND_OMNIBUS_NGINX_PORT/studio\e[0m"
-echo -e "\nTo start using Legend, launch Studio at: \e[32mhttp://localhost:$LEGEND_OMNIBUS_NGINX_PORT/studio/\e[0m\e[0m"
+echo -e "Legend SDLC: ${GREEN}http://localhost:$LEGEND_OMNIBUS_NGINX_PORT/sdlc${NC}"
+echo -e "Legend Engine: ${GREEN}http://localhost:$LEGEND_OMNIBUS_NGINX_PORT/engine${NC}"
+echo -e "Legend Studio: ${GREEN}http://localhost:$LEGEND_OMNIBUS_NGINX_PORT/studio${NC}"
+echo -e "\nTo start using Legend, launch Studio at: ${GREEN}http://localhost:$LEGEND_OMNIBUS_NGINX_PORT/studio/${NC}${NC}"
 cat > /.omnibus-status.json <<-END
 {
   "status": "SUCCEEDED"
