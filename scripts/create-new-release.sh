@@ -4,11 +4,10 @@
 
 source ./installers/omnibus/.env
 
-echo "Creating new release version $NEW_VERSION..."
-
 if [[ -z $NEW_VERSION ]]; then
   NEW_VERSION=$(date '+%Y-%m-%d')
 fi
+echo "Creating new release version $NEW_VERSION..."
 
 if [[ -z $NEW_ENGINE_VERSION ]]; then
   NEW_ENGINE_VERSION=$LEGEND_OMNIBUS_ENGINE_VERSION
