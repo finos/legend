@@ -37,14 +37,18 @@ Instructions to sign up and use this instance are available on the [FINOS websit
 
 ### Using Legend Omnibus
 
-This is a quick way to get the Legend environment up and running locally. Make sure you have Docker [installed](https://docs.docker.com/engine/install/). Run the following command in the terminal.
+This is a quick way to get the Legend environment up and running locally. Make sure you have [Docker](https://docs.docker.com/engine/install/) installed. Run the following command in the terminal:
 
 ```sh
+curl https://legend.finos.org/omnibus/start.sh | bash
+
+# Or run the full Omnibus (with embedded Gitlab) which might take a little longer to start up
 curl https://legend.finos.org/omnibus/start.full.sh | bash
 ```
 
-See the [Omnibus Guide](https://github.com/finos/legend/tree/master/installers/omnibus) for more details.
+> For Windows user, please use [Git Bash](https://git-scm.com/downloads) or [WSL](https://docs.docker.com/desktop/wsl/) to run the above command.
 
+See the [Omnibus Guide](https://github.com/finos/legend/tree/master/installers/omnibus) for more details.
 
 ### Setup your own Legend environment
 

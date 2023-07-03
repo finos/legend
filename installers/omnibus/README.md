@@ -11,6 +11,8 @@ curl https://legend.finos.org/omnibus/start.sh | bash
 # Check out Legend documentation at https://legend.finos.org/docs/overview/legend-overview
 ```
 
+> To run the scrip above, make sure to have [Docker](https://docs.docker.com/engine/install/) installed. For Windows user, please use [Git Bash](https://git-scm.com/downloads) or [WSL](https://docs.docker.com/desktop/wsl/) to run the above command.
+
 ## Example Usage
 
 #### Use gitlab.com with Personal Access Token (PAT)
