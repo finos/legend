@@ -40,7 +40,7 @@ Instructions to sign up and use this instance are available on the [FINOS websit
 This is a quick way to get the Legend environment up and running locally. Make sure you have Docker [installed](https://docs.docker.com/engine/install/). Run the following command in the terminal.
 
 ```sh
-docker run --platform=linux/amd64 -it -p 6900:6900 -p 6901:6901 -p 6902:6902 -p 6100:6100 -p 6300:6300 -p 9200:9200 -p 9000:9000 finos/legend-omnibus:latest
+curl https://legend.finos.org/omnibus/start.full.sh | bash
 ```
 
 See the [Omnibus Guide](https://github.com/finos/legend/tree/master/installers/omnibus) for more details.
