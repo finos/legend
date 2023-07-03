@@ -23,11 +23,19 @@ fi
 
 # ------------------------------- Run -------------------------------
 
+# NOTE: for full variant where we might target built-in instance of Gitlab, we want to expose Gitlab port as well
+# due to the fact that Legend SDLC might return URLs pointing to Gitlab instance, which might be consumed by Legend Studio
 echo -e "${YELLOW}Running Docker in detached mode, please make sure to stop the container if not aborted properly...${NC}"
 if [[ "$LEGEND_OMNIBUS_CONFIG_EXPOSE_BACKEND_PORTS" = true ]]; then
-  CONTAINER_ID=$(docker run --platform=linux/amd64 -d --pull="$PULL_STRATEGY" -p 6900:6900 -p 6100:6100 -p 6300:6300 $IMAGE)
+  CONTAINER_ID=$(docker run --platform=linux/amd64 -d \
+    --pull="$PULL_STRATEGY" \
+    -p 6900:6900 -p 6951:6951 -p 6100:6100 -p 6300:6300 \
+    $IMAGE)
 else
-  CONTAINER_ID=$(docker run --platform=linux/amd64 -d --pull="$PULL_STRATEGY" -p 6900:6900 $IMAGE)
+  CONTAINER_ID=$(docker run --platform=linux/amd64 -d \
+    --pull="$PULL_STRATEGY" \
+    -p 6900:6900 -p 6951:6951 \
+    $IMAGE)
 fi
 # NOTE: since we cannot run the script with `docker run -it` when consuming this
 # with `curl ... | bash` method, we need to trap the exit/abort signal to stop the container manually

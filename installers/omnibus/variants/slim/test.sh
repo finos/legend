@@ -9,6 +9,7 @@ NC='\033[0m' # No color
 # --------------------------------------------------------------------
 
 source ./.env
+IMAGE=legend-omnibus:latest-slim
 
 STATUS_CHECK_URL=http://localhost:$LEGEND_OMNIBUS_NGINX_PORT/dir/.omnibus-status.json
 check_status()
@@ -39,7 +40,7 @@ TEST_CONTAINER=$(docker run \
 	-dit \
 	-p $LEGEND_OMNIBUS_NGINX_PORT:$LEGEND_OMNIBUS_NGINX_PORT \
 	--env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="in-memory" \
-	legend-omnibus:latest-slim)
+	$IMAGE)
 
 check_status
 docker stop $TEST_CONTAINER
@@ -49,8 +50,9 @@ TEST_CONTAINER=$(docker run \
 	--platform=linux/amd64 \
 	-dit \
 	-p $LEGEND_OMNIBUS_NGINX_PORT:$LEGEND_OMNIBUS_NGINX_PORT \
-	--env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="gitlab-pat" --env LEGEND_OMNIBUS_CONFIG_GITLAB_PAT="$LEGEND_OMNIBUS_CONFIG_GITLAB_PAT" \
-	legend-omnibus:latest-slim)
+	--env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="gitlab-pat" \
+	--env LEGEND_OMNIBUS_CONFIG_GITLAB_PAT="$LEGEND_OMNIBUS_CONFIG_GITLAB_PAT" \
+	$IMAGE)
 
 check_status
 docker stop $TEST_CONTAINER
@@ -60,8 +62,10 @@ TEST_CONTAINER=$(docker run \
 	--platform=linux/amd64 \
 	-dit \
 	-p $LEGEND_OMNIBUS_NGINX_PORT:$LEGEND_OMNIBUS_NGINX_PORT \
-	--env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="gitlab-oauth" --env LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID="$LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID" --env LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET="$LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET" \
-	legend-omnibus:latest-slim)
+	--env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="gitlab-oauth" \
+	--env LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID="$LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID" \
+	--env LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET="$LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET" \
+	$IMAGE)
 
 check_status
 docker stop $TEST_CONTAINER
