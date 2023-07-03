@@ -43,6 +43,9 @@ TEST_CONTAINER=$(docker run \
 	--env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="in-memory" \
 	legend-omnibus:latest-slim)
 
+check_status
+docker stop $TEST_CONTAINER
+
 # Test for SDLC with Gitlab (PAT) backend
 TEST_CONTAINER=$(docker run \
 	--platform=linux/amd64 \
