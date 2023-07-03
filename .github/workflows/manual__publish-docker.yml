@@ -23,6 +23,10 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Publish Omnibus to Docker
         working-directory: ./installers/omnibus
+        env:
+          LEGEND_OMNIBUS_CONFIG_GITLAB_PAT: ${{ secrets.LEGEND_DEV_TEAM_GITLAB_READ_ONLY_PAT }}
+          LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID: ${{ secrets.LEGEND_DEV_TEAM_GITLAB_READ_ONLY_OAUTH_APP_ID }}
+          LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET: ${{ secrets.LEGEND_DEV_TEAM_GITLAB_READ_ONLY_OAUTH_SECRET_ID }}
         run: |
           chmod +x ./variants/${{ matrix.variant }}/publish.sh
           chmod +x ./variants/${{ matrix.variant }}/build.sh

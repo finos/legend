@@ -32,6 +32,7 @@ swagger:
 
 pac4j:
   callbackPrefix: /api/pac4j
+  callbackBaseUrl: ${LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_REDIRECT_BASE_URL}/sdlc
   clients:
     - org.finos.legend.server.pac4j.gitlab.GitlabClient:
         name: gitlab
