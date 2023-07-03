@@ -1,7 +1,5 @@
 #!/bin/bash
 
-exit 1
-
 # -------------------------- Setup Color -----------------------------
 # NOTE: must use `echo -e` to interpret the backslash escapes
 RED='\033[0;31m'
