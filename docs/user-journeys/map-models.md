@@ -27,8 +27,10 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 ## Add a project/data model dependency to your data model
 Add a project/data model dependency to your data model and resolve project dependency conflicts.
 
+<!-- 
 ### Features
 _Coming soon_
+-->
 
 ### Showcase projects
 See features in action in [showcase projects](../showcases/showcase-projects.md).
@@ -48,6 +50,7 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 ### Tutorials
 - [Define customized functions](../tutorials/studio-function.md)
 
+<!-- 
 ## Manage model dependencies
 
 ### Features
@@ -69,6 +72,8 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 
 ### Tutorials
 _Coming soon_
+
+-->
 
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)

@@ -3,9 +3,7 @@ id: visualize-modelled-data
 title: Visualize Modelled Data
 sidebar_label: Visualize Modelled Data
 ---
-
-## Visualize modelled data
-
+<!-- 
 ### Features
 _Coming soon_
 
@@ -14,6 +12,8 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 
 ### Tutorials
 _Coming soon_
+
+-->
 
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)
