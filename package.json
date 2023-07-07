@@ -1,0 +1,11 @@
+{
+  "name": "finos-legend",
+  "private": true,
+  "scripts": {
+    "build:showcases": "node ./scripts/buildShowcasesData.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "@finos/legend-server-showcase-deployment": "^9.65.0"
+  }
+}

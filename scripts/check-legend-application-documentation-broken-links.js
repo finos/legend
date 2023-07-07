@@ -1,24 +1,24 @@
-const fs = require("fs");
-const http = require("http");
-const https = require("https");
-const path = require("path");
-const { parse } = require("url");
+import { readdirSync, readFileSync, existsSync } from "fs";
+import { request } from "http";
+import { get } from "https";
+import { resolve as _resolve } from "path";
+import { parse } from "url";
 
 const DOC_WEBSITE_URL = "https://legend.finos.org/";
-const APPLICATION_DOC_DIRECTORY = path.resolve(
+const APPLICATION_DOC_DIRECTORY = _resolve(
   __dirname,
   "../website/static/resource/studio/documentation/"
 );
-const WEBSITE_CONTENT_DIRECTORY = path.resolve(__dirname, "../website/build/");
+const WEBSITE_CONTENT_DIRECTORY = _resolve(__dirname, "../website/build/");
 
 async function detectBrokenLinks() {
-  const files = fs.readdirSync(APPLICATION_DOC_DIRECTORY);
+  const files = readdirSync(APPLICATION_DOC_DIRECTORY);
 
   const brokenLinks = (
     await Promise.all(
       files.flatMap((file) => {
         const fileContent = JSON.parse(
-          fs.readFileSync(path.resolve(APPLICATION_DOC_DIRECTORY, file), "utf8")
+          readFileSync(_resolve(APPLICATION_DOC_DIRECTORY, file), "utf8")
         );
 
         return Object.values(fileContent.entries)
@@ -42,7 +42,7 @@ async function detectBrokenLinks() {
 // See https://github.com/nwaughachukwuma/url-exists-nodejs
 async function checkExternalLinkExists(url) {
   return new Promise((resolve) => {
-    const req = http.request(
+    const req = request(
       {
         method: "HEAD",
         host: parse(url).host,
@@ -61,7 +61,7 @@ async function checkExternalLinkExists(url) {
 
 async function fetchExternalLinkSiteData(url) {
   return new Promise((resolve, reject) => {
-    https.get(url, (response) => {
+    get(url, (response) => {
       let chunks_of_data = [];
       response.on("data", (fragments) => {
         chunks_of_data.push(fragments);
@@ -111,16 +111,16 @@ async function checkLink(url) {
     anchorIdx !== -1 ? relativeUrl.substring(anchorIdx) : undefined;
   const filePath =
     anchorIdx !== -1
-      ? path.resolve(
+      ? _resolve(
           WEBSITE_CONTENT_DIRECTORY,
           `${relativeUrl.substring(0, anchorIdx)}.html`
         )
-      : path.resolve(WEBSITE_CONTENT_DIRECTORY, `${relativeUrl}.html`);
+      : _resolve(WEBSITE_CONTENT_DIRECTORY, `${relativeUrl}.html`);
 
-  if (fs.existsSync(filePath)) {
+  if (existsSync(filePath)) {
     if (anchorTag) {
       try {
-        const data = fs.readFileSync(filePath, {
+        const data = readFileSync(filePath, {
           encoding: "utf-8",
         });
         if (data && !data.toLocaleLowerCase().includes(anchorTag)) {

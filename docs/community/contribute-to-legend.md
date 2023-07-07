@@ -128,7 +128,6 @@ You can get involved with Legend by suggesting documentation topics you would li
 To make edits to the website itself, you need to run the website locally. You must have:
 
 -   A Git client installed to checkout the code from github.com/finos/legend (`` branch). The `` command must be available via command-line, as it's needed to run the `` script.
--   [Yarn installed](https://yarnpkg.com/lang/en/docs/install).
 
 The following code automatically launches a browser and takes you to the staging website, located at http://localhost:3000. File changes are live rendered, speeding up the editorial workflow.
 
@@ -136,7 +135,7 @@ The following code automatically launches a browser and takes you to the staging
 git clone git@github.com:<yourfork>/legend.git
 git checkout -b feature/myProposedDocChanges
 cd legend ; ./scripts/build-site.sh
-cd website ; yarn start
+cd website ; npm run start
 ```
 #### **Step 2. Create a showcase project**
 

@@ -1,0 +1,143 @@
+###Service
+Service model::ModelToModelMappingService
+{
+  pattern: '/myURL';
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |model::target::_Firm.all()->graphFetchChecked(#{model::target::_Firm{name,type,employees{fullName}}}#)->serialize(#{model::target::_Firm{name,type,employees{fullName}}}#);
+    mapping: model::ModelToModelMapping;
+    runtime:
+    #{
+      mappings:
+      [
+        model::ModelToModelMapping
+      ];
+      connections:
+      [
+        ModelStore:
+        [
+          connection_1:
+          #{
+            JsonModelConnection
+            {
+              class: model::Firm;
+              url: 'data:application/json,';
+            }
+          }#
+        ]
+      ];
+    }#;
+  }
+  testSuites:
+  [
+
+  ]
+  test: Single
+  {
+    data: '';
+    asserts:
+    [
+      { [], res: meta::pure::mapping::Result[1]|$res.values->toOne()->toString()->equalJsonStrings('') }
+    ];
+  }
+}
+
+
+###Pure
+Enum model::target::IncType
+{
+  LLC,
+  CORP
+}
+
+Class model::Firm
+{
+  employees: model::Person[1..*];
+  type: String[1];
+  legalName: String[1];
+}
+
+Class model::Person
+{
+  firstName: String[1];
+  lastName: String[1];
+}
+
+Class model::target::_Firm extends model::target::_LegalEntity
+{
+  employees: model::target::_Person[1..*];
+  type: model::target::IncType[1];
+}
+
+Class model::target::_Person
+{
+  fullName: String[1];
+}
+
+Class model::target::_LegalEntity
+{
+  name: String[1];
+}
+
+
+###Mapping
+Mapping model::ModelToModelMapping
+(
+  *model::target::_Person: Pure
+  {
+    ~src model::Person
+    fullName: $src.firstName
+  }
+  *model::target::_Firm: Pure
+  {
+    ~src model::Firm
+    employees[model_target__Person]: $src.employees,
+    type: EnumerationMapping model_target_IncType: $src.type,
+    name: $src.legalName
+  }
+
+  model::target::IncType: EnumerationMapping
+  {
+    LLC: ['llc'],
+    CORP: ['corp']
+  }
+
+  MappingTests
+  [
+    test_1
+    (
+      query: |model::target::_Firm.all()->graphFetchChecked(#{model::target::_Firm{name,type,employees{fullName}}}#)->serialize(#{model::target::_Firm{name,type,employees{fullName}}}#);
+      data:
+      [
+        <Object, JSON, model::Firm, '{"employees":[{"firstName":"firstName 92","lastName":"lastName 40"}],"type":"corp","legalName":"legalName 55"}'>
+      ];
+      assert: '{"defects":[],"source":{"defects":[],"source":{"number":1,"record":"{\"employees\":[{\"firstName\":\"firstName 92\",\"lastName\":\"lastName 40\"}],\"type\":\"corp\",\"legalName\":\"legalName 55\"}"},"value":{"legalName":"legalName 55","type":"corp","employees":[{"firstName":"firstName 92"}]}},"value":{"name":"legalName 55","type":"CORP","employees":[{"fullName":"firstName 92"}]}}';
+    )
+  ]
+)
+
+
+###Runtime
+Runtime model::runtime
+{
+  mappings:
+  [
+    model::ModelToModelMapping
+  ];
+  connections:
+  [
+    ModelStore:
+    [
+      connection_1:
+      #{
+        JsonModelConnection
+        {
+          class: model::Firm;
+          url: 'data:application/json,%7B%22employees%22%3A%5B%7B%22firstName%22%3A%22firstName%2013%22%2C%22lastName%22%3A%22lastName%2035%22%7D%5D%7D';
+        }
+      }#
+    ]
+  ];
+}
