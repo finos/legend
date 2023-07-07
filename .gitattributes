@@ -8,5 +8,5 @@
 *.png                   binary
 *.jpg                   binary
 
-# Hide .yarn and docs from GitHub's language detection
+# Hide generated code from GitHub's language detection
 /docs/**                linguist-documentation

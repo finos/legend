@@ -28,11 +28,13 @@ jobs:
         run: |
           mkdir website/static/omnibus
           cp -r installers/omnibus/scripts/* website/static/omnibus
+          npm install
+          npm run build:showcases
       - name: Build Website
         working-directory: ./website
         run: |
-          yarn install
-          yarn build
+          npm install
+          npm run build
       - name: Search for Broken Links
         run: |
           node ./scripts/check-legend-application-documentation-broken-links.js
