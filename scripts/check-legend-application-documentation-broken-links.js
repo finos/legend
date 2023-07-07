@@ -1,9 +1,10 @@
 import { readdirSync, readFileSync, existsSync } from "fs";
 import { request } from "http";
 import { get } from "https";
-import { resolve as _resolve } from "path";
-import { parse } from "url";
+import { resolve as _resolve, dirname } from "path";
+import { fileURLToPath, parse } from "url";
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const DOC_WEBSITE_URL = "https://legend.finos.org/";
 const APPLICATION_DOC_DIRECTORY = _resolve(
   __dirname,
