@@ -7,6 +7,7 @@ Thumbs.db
 
 # IDE
 /.idea/
+*.iml
 
 # Dependencies
 **/node_modules
@@ -34,3 +35,6 @@ docs/roadmap.md
 
 # Ignore checked out models
 docs/models
+
+# Ignore Java generated files
+showcases/target/

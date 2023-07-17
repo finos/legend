@@ -14,7 +14,7 @@ const startTime = Date.now();
 console.log(`Building showcase registry data...`);
 
 extractShowcaseRegistryData(
-  resolve(__dirname, "../showcases"),
+  resolve(__dirname, "../showcases/data"),
   resolve(outputDir, "data.json")
 );
 
