@@ -4,7 +4,7 @@ title: Generate Data Model Schema
 sidebar_label: Generate Model Schema
 ---
 
-## Generate model schema
+## Generate model schema}  
 
 ### Features
 - [File generation](../overview/legend-features.md/#file-generation)
@@ -16,6 +16,7 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 ### Tutorials
 - [Generate Files](../tutorials/studio-file-generation.md)
 
+<!-- 
 ## Create model schema generators
 
 ### Features
@@ -26,6 +27,7 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 
 ### Tutorials
 _Coming soon_
+-->
 
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)

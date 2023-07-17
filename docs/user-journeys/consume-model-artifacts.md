@@ -3,8 +3,9 @@ id: consume-model-artifacts
 title: Consume Data Model Artifacts
 sidebar_label: Consume Data Model Artifacts
 ---
-# 4. Consume data model artifacts
+# Consume data model artifacts
 
+<!-- 
 ## File generation: generate an embeddable Legend artifact
 
 ### Features
@@ -37,6 +38,8 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 
 ### Tutorials
 _Coming soon_
+
+-->
 
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)

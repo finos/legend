@@ -16,6 +16,7 @@ sidebar_label: Query Modelled Data
 ### Tutorials
 - [Build and run queries](../tutorials/query-builder.md)
 
+<!-- 
 ## Build and run queries - graph fetch
 
 ### Features
@@ -48,11 +49,13 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 
 ### Tutorials
 _Coming soon_
+-->
 
 ## Run milestoned queries
-
+<!-- 
 ### Features
 _Coming soon_
+-->
 
 ### Showcase projects
 See features in action in [showcase projects](../showcases/showcase-projects.md).
@@ -62,8 +65,10 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 
 ## Apply operations/transformations/calculations to datasets in Query
 
+<!-- 
 ### Features
 _Coming soon_
+-->
 
 ### Showcase projects
 See features in action in [showcase projects](../showcases/showcase-projects.md).
@@ -71,6 +76,7 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 ### Tutorials
 - [Filter queries](../tutorials/query-filter.md) 
 
+<!-- 
 ## Productionize ad-hoc queries
 
 ### Features
@@ -100,6 +106,8 @@ _Coming soon_
 
 ### Tutorials
 _Coming soon_
+
+-->
 
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)

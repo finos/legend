@@ -21,6 +21,7 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 ### Tutorials
 - [Create a service](../tutorials/services-service.md)
 
+<!-- 
 ## Find & re-use services logic
 
 ### Features
@@ -61,6 +62,7 @@ _Coming soon_
 
 ### Tutorials
 _Coming soon_
+-->
 
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)

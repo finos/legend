@@ -33,8 +33,10 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 ### Showcase projects
 See features in action in [showcase projects](../showcases/showcase-projects.md).
 
+<!-- 
 ### Tutorials
 _Coming soon_
+-->
 
 ## Connect your data model to an API (Service store)
 
@@ -51,6 +53,7 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 ### Tutorials
 - [Service store showcase project](../showcases/showcase-projects.md/#service-store)
 
+<!-- 
 ## Connect your data model to a document store
 
 ### Features
@@ -72,6 +75,8 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 
 ### Tutorials
 _Coming soon_
+
+-->
 
 ## Import a database schema and model it in Studio (External Format & Bindings)
 

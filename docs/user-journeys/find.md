@@ -19,6 +19,7 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 - [Find models](../tutorials/studio-find-models.md)
 - [Define Data Space](../tutorials/query-dataspace.md)
 
+<!-- 
 ## Find an existing project to make edits to the data model
 
 ### Features
@@ -40,7 +41,7 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 
 ### Tutorials
 _Coming soon_
-
+-->
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)
 - [Legend features](../overview/legend-features.md)
