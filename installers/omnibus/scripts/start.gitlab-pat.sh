@@ -49,7 +49,7 @@ if [[ "$LEGEND_OMNIBUS_CONFIG_EXPOSE_BACKEND_PORTS" = true ]]; then
     --env LEGEND_OMNIBUS_CONFIG_GITLAB_PAT="$LEGEND_OMNIBUS_CONFIG_GITLAB_PAT" \
     $IMAGE)
 else
-  CONTAINER_ID=$(docker run --platform=linux/amd64 -d \
+  CONTAINER_ID=$(docker run -v /var/run/docker.sock:/var/run/docker.sock --platform=linux/amd64 -d \
     --pull="$PULL_STRATEGY" docker run \
     -p 6900:6900 \
     --env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="gitlab-pat" \
