@@ -28,8 +28,8 @@ jobs:
           cache: "maven"
       - name: Run Showcase test with latest Legend versions
         run: |
-          mvn versions:use-latest-versions -f legend/showcases/pom.xml
+          mvn versions:use-latest-versions -f showcases/pom.xml
           mvn -B -Dmaven.surefire.thread.count=$THREAD_COUNT -showcase.locations=$SHOWCASE_LOCATIONS test
         env:
           THREAD_COUNT: 3
-          SHOWCASE_LOCATIONS: legend/showcases/data
+          SHOWCASE_LOCATIONS: showcases/data
