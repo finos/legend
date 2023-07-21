@@ -117,3 +117,13 @@ http://localhost:6900/studio/api/pac4j/callback
 
 - Enable **`Confidential`** option
 - Enable scopes: **`openid`**, **`profile`**, **`api`**
+
+## Troubleshooting
+
+### Error "dial tcp: lookup docker on 192.168.1.1:53: no such host." when running within a virtual machine/Docker container
+
+You need to mount volume for `docker.sock`. See [this pull request](https://github.com/finos/legend/pull/723) for more details.
+
+```sh
+docker run -v /var/run/docker.sock:/var/run/docker.sock ...
+```

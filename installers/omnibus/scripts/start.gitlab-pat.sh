@@ -43,13 +43,15 @@ fi
 echo -e "${YELLOW}Running Docker in detached mode, please make sure to stop the container if not aborted properly...${NC}"
 if [[ "$LEGEND_OMNIBUS_CONFIG_EXPOSE_BACKEND_PORTS" = true ]]; then
   CONTAINER_ID=$(docker run --platform=linux/amd64 -d \
+    -v /var/run/docker.sock:/var/run/docker.sock \
     --pull="$PULL_STRATEGY" \
     -p 6900:6900 -p 6100:6100 -p 6300:6300 \
     --env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="gitlab-pat" \
     --env LEGEND_OMNIBUS_CONFIG_GITLAB_PAT="$LEGEND_OMNIBUS_CONFIG_GITLAB_PAT" \
     $IMAGE)
 else
-  CONTAINER_ID=$(docker run -v /var/run/docker.sock:/var/run/docker.sock --platform=linux/amd64 -d \
+  CONTAINER_ID=$(docker run --platform=linux/amd64 -d \
+    -v /var/run/docker.sock:/var/run/docker.sock \
     --pull="$PULL_STRATEGY" docker run \
     -p 6900:6900 \
     --env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="gitlab-pat" \
