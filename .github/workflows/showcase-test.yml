@@ -12,6 +12,7 @@ on:
       - "**"
     paths:
       - "showcases/"
+  workflow_dispatch: {}
 jobs:
   test:
     name: Run Compilation Check for Showcases
