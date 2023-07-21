@@ -1,35 +1,30 @@
-name: showcase-tests
-run-name: Showcase Tests
+name: Showcase Tests
 on:
   schedule:
-    - cron: '0 0,12 * * *' # run twice daily
+    - cron: "0 0,12 * * *" # run twice daily
   push:
     branches:
       - master
     paths:
-      - 'showcases/'
+      - "showcases/"
   pull_request:
     branches:
-      - '**'
+      - "**"
     paths:
-      - 'showcases/'
-
+      - "showcases/"
 jobs:
   test:
-    name: Showcase Compile Test
+    name: Run Compilation Check for Showcases
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-
       - name: Setup Java JDK 11
         uses: actions/setup-java@v3
         with:
-          java-version: '11'
-          distribution: 'oracle'
-          cache: 'maven'
-
+          java-version: "11"
+          distribution: "temurin"
+          cache: "maven"
       - name: Run Showcase test with latest Legend versions
         run: |
           mvn versions:use-latest-versions -f legend/showcases/pom.xml
