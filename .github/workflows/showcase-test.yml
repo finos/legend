@@ -31,7 +31,7 @@ jobs:
       - name: Run test
         working-directory: ./showcases
         run: |
-          mvn versions:use-latest-versions -f
+          mvn versions:use-latest-versions
           mvn -B -Dmaven.surefire.thread.count=$THREAD_COUNT -Dshowcase.locations=$SHOWCASE_LOCATIONS test
         env:
           THREAD_COUNT: 3
