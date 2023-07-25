@@ -1,6 +1,6 @@
 ---
-title: <>
-description: <TODO: ADD DESCRIPTION>
+title: 
+description:
 tags: 
 ---
 
