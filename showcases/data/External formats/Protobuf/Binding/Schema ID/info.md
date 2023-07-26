@@ -1,5 +1,5 @@
 ---
-title: 
+title: Protobuf Binding Schema ID
 description:
 ---
 
