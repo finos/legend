@@ -1,5 +1,5 @@
 ---
-title: 
+title: JSON Model Generator
 description:
 ---
 

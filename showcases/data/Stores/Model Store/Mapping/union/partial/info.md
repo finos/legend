@@ -1,5 +1,5 @@
 ---
-title: 
+title: Union - Partial
 description:
 ---
 

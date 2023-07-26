@@ -1,5 +1,5 @@
 ---
-title: 
+title: Extent - inlineEmbeddedPropertyMapping
 description:
 ---
 

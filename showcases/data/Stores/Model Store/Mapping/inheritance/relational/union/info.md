@@ -1,5 +1,5 @@
 ---
-title: 
+title: Inheritance - Relational - union
 description:
 ---
 

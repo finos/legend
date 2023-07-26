@@ -1,5 +1,5 @@
 ---
-title: 
+title: Avro Model Generator
 description:
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 
+title: Daml Binding Schema ID
 description:
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 
+title: Join
 description:
 ---
 

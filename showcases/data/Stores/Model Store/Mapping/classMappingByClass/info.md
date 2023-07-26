@@ -1,5 +1,5 @@
 ---
-title: 
+title: Association - ClassMappingByClass
 description:
 ---
 

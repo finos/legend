@@ -1,5 +1,5 @@
 ---
-title: 
+title: Propertyfunc - simple
 description:
 ---
 

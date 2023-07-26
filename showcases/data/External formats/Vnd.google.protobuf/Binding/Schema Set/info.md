@@ -1,5 +1,5 @@
 ---
-title: 
+title: Vnd.google.protobuf Binding Schema Set
 description:
 ---
 
