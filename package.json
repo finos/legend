@@ -2,10 +2,12 @@
   "name": "finos-legend",
   "private": true,
   "scripts": {
-    "update:showcases-index": "node ./scripts/updateShowcasesData.js"
+    "check:showcases-index": "node ./scripts/updateShowcasesData.js",
+    "update:showcases-index": "node ./scripts/updateShowcasesData.js --commitChanges"
   },
   "type": "module",
   "dependencies": {
-    "@finos/legend-server-showcase-deployment": "^9.65.0"
+    "@finos/legend-server-showcase-deployment": "^9.65.0",
+    "yargs": "17.7.2"
   }
 }

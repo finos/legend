@@ -1,4 +1,4 @@
-name: Showcase Tests
+name: Check Showcases
 on:
   schedule:
     - cron: "0 0,12 * * *" # run twice daily
@@ -13,14 +13,29 @@ on:
     paths:
       - "showcases/**"
   workflow_dispatch: {}
+
 jobs:
-  test:
+  index-showcases:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3.5.2
+      - name: Setup Node
+        uses: actions/setup-node@v3.6.0
+        with:
+          node-version: 16
+      - name: Prepare static artifacts
+        run: |
+          npm install
+          npm run check:showcases-index
+
+  test-showcases:
     # except for pull request, make sure to run the pipeline only for default branch
     if: github.event_name == 'pull_request' || (github.ref == 'refs/heads/master' && github.repository == 'finos/legend')
     name: Run Compilation Check for Showcases
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v3
       - name: Setup Java
         uses: actions/setup-java@v3
