@@ -1,11 +1,11 @@
 import { buildShowcaseRegistryData } from "@finos/legend-server-showcase-deployment/builder";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
-import { mkdirSync, existsSync } from "fs";
+import { mkdirSync, existsSync, writeFileSync } from "fs";
 import { execSync } from "child_process";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const outputDir = resolve(__dirname, "../showcases/generated");
+const outputDir = resolve(__dirname, "../website/static/showcases");
 
 if (!existsSync(outputDir)) {
   mkdirSync(outputDir);

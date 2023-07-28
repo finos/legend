@@ -30,7 +30,6 @@ jobs:
           cp -r installers/omnibus/scripts/* website/static/omnibus
           npm install
           npm run update:showcases-index
-          cp -r showcases/generated website/static/showcases
       - name: Build Website
         working-directory: ./website
         run: |
