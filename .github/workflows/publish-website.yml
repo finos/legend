@@ -1,13 +1,9 @@
-name: Build Website
+name: Publish Website
 
 on:
   push:
     branches:
       - master
-      - "release/**"
-  pull_request:
-    branches:
-      - "**"
 
 env:
   # Used by docusaurus `publish-site` step
@@ -19,29 +15,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        if: github.ref != 'refs/heads/master' || github.repository != 'finos/legend'
         uses: actions/checkout@v3.5.2
-      - name: Checkout Repo (default branch)
-        if: github.ref == 'refs/heads/master' && github.repository == 'finos/legend'
-        uses: actions/checkout@v3.5.2
-        with:
-          token: ${{ secrets.FINOS_GITHUB_TOKEN }}
-      - name: Configure Git
-        if: github.ref == 'refs/heads/master' && github.repository == 'finos/legend'
-        run: |
-          git config --global user.email "37706051+finos-admin@users.noreply.github.com"
-          git config --global user.name "FINOS Administrator"
       - name: Setup Node
         uses: actions/setup-node@v3.6.0
         with:
           node-version: 16
       - name: Prepare static artifacts
-        env:
-          COMMIT_NEW_SHOWCASES_INDEX: ${{ github.ref == 'refs/heads/master' && github.repository == 'finos/legend' }}
         run: |
           cp -r installers/omnibus/scripts/* website/static/omnibus
-          npm install
-          npm run update:showcases-index
       - name: Build Website
         working-directory: ./website
         run: |

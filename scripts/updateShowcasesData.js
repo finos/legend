@@ -1,9 +1,12 @@
+import * as yargs from "yargs";
+import { hideBin } from "yargs/helpers";
 import { buildShowcaseRegistryData } from "@finos/legend-server-showcase-deployment/builder";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 import { mkdirSync, existsSync, writeFileSync } from "fs";
 import { execSync } from "child_process";
 
+const argv = yargs.default(hideBin(process.argv)).argv;
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const outputDir = resolve(__dirname, "../website/static/showcases");
 
@@ -25,7 +28,7 @@ const hasChanged = Boolean(
 // file and commit it as part of their change, but we decide to this like this to lower the entry barrier
 // for contributors, i.e. they don't need to setup Node, follow instructions, etc. locally, they can just
 // contribute directly on Github if they wish to and rely on the pipeline to catch their changes
-if (hasChanged && process.env.COMMIT_NEW_SHOWCASES_INDEX === "true") {
+if (hasChanged && argv.commitChanges) {
   console.log(`Updating showcases index...`);
   execSync(`git add . && git commit -m "Update showcases index" && git push`, {
     encoding: "utf-8",

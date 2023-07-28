@@ -1,0 +1,25 @@
+name: Check Website Build
+
+on:
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  website-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3.5.2
+      - name: Setup Node
+        uses: actions/setup-node@v3.6.0
+        with:
+          node-version: 16
+      - name: Build Website
+        working-directory: ./website
+        run: |
+          npm install
+          npm run build
+      - name: Search for Broken Links
+        run: |
+          node ./scripts/check-legend-application-documentation-broken-links.js
