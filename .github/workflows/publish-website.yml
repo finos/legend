@@ -16,12 +16,6 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3.5.2
-        with:
-          token: ${{ secrets.FINOS_GITHUB_TOKEN }}
-      - name: Configure Git
-        run: |
-          git config --global user.email "37706051+finos-admin@users.noreply.github.com"
-          git config --global user.name "FINOS Administrator"
       - name: Setup Node
         uses: actions/setup-node@v3.6.0
         with:
@@ -29,8 +23,6 @@ jobs:
       - name: Prepare static artifacts
         run: |
           cp -r installers/omnibus/scripts/* website/static/omnibus
-          npm install
-          npm run update:showcases-index
       - name: Build Website
         working-directory: ./website
         run: |
