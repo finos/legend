@@ -37,7 +37,6 @@ jobs:
           node-version: 16
       - name: Prepare static artifacts
         run: |
-          mkdir website/static/omnibus
           cp -r installers/omnibus/scripts/* website/static/omnibus
           npm install
           npm run update:showcases-index
