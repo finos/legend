@@ -21,7 +21,7 @@ const hasChanged = Boolean(
   execSync("git status --porcelain", { encoding: "utf-8" }).trim()
 );
 
-console.log("moh", process.env.COMMIT_NEW_SHOWCASES_INDEX, "moh");
+console.log("moh", Boolean(process.env.COMMIT_NEW_SHOWCASES_INDEX), "moh");
 
 // NOTE: ideally, we could make it so that each contributor of showcases can re-generate the index
 // file and commit it as part of their change, but we decide to this like this to lower the entry barrier

@@ -27,8 +27,6 @@ website/node_modules
 website/i18n/
 website/.docusaurus/
 
-website/static/showcases/data.json
-
 # Ignore auto generated contribute.md and roadmap.md file
 docs/contribute.md
 docs/roadmap.md
