@@ -1,6 +1,4 @@
 ---
-title: Relational Database Mapping Metamodel
+title: Relational Database Metamodel
 description:
 ---
-
-TODO: Some dummy description
