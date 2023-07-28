@@ -15,7 +15,7 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  index-showcases:
+  check-index-showcases:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
