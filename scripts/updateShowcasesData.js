@@ -20,6 +20,16 @@ writeFileSync(resolve(outputDir, "data.json"), JSON.stringify(data));
 const hasChanged = Boolean(
   execSync("git status --porcelain", { encoding: "utf-8" }).trim()
 );
+// NOTE: ideally, we could make it so that each contributor of showcases can re-generate the index
+// file and commit it as part of their change, but we decide to this like this to lower the entry barrier
+// for contributors, i.e. they don't need to setup Node, follow instructions, etc. locally, they can just
+// contribute directly on Github if they wish to and rely on the pipeline to catch their changes
+if (hasChanged && process.env.COMMIT_NEW_SHOWCASES_INDEX) {
+  console.log(`Updating showcases index...`);
+  execSync(`git add . && git commit -m "Update showcases index" && git push`, {
+    encoding: "utf-8",
+  });
+}
 
 console.log(
   `Finished building showcase registry data in ${Date.now() - startTime}ms!`
