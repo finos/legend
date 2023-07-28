@@ -2,7 +2,7 @@
   "name": "finos-legend",
   "private": true,
   "scripts": {
-    "build:showcases": "node ./scripts/buildShowcasesData.js"
+    "update:showcases-index": "node ./scripts/updateShowcasesData.js"
   },
   "type": "module",
   "dependencies": {
