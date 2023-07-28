@@ -4,10 +4,10 @@ on:
   push:
     branches:
       - master
-      - 'release/**'
+      - "release/**"
   pull_request:
     branches:
-      - '**'
+      - "**"
 
 env:
   # Used by docusaurus `publish-site` step
@@ -18,8 +18,19 @@ jobs:
   website-build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v1
+      - name: Checkout Repo
+        if: github.ref != 'refs/heads/master' || github.repository != 'finos/legend'
+        uses: actions/checkout@v3.5.2
+      - name: Checkout Repo (default branch)
+        if: github.ref == 'refs/heads/master' && github.repository == 'finos/legend'
+        uses: actions/checkout@v3.5.2
+        with:
+          token: ${{ secrets.FINOS_GITHUB_TOKEN }}
+      - name: Configure Git
+        if: github.ref == 'refs/heads/master' && github.repository == 'finos/legend'
+        run: |
+          git config --global user.email "37706051+finos-admin@users.noreply.github.com"
+          git config --global user.name "FINOS Administrator"
       - name: Setup Node
         uses: actions/setup-node@v3.6.0
         with:
@@ -30,6 +41,16 @@ jobs:
           cp -r installers/omnibus/scripts/* website/static/omnibus
           npm install
           npm run update:showcases-index
+      # NOTE: ideally, we could make it so that each contributor of showcases can re-generate the index
+      # file and commit it as part of their change, but we decide to this like this to lower the entry barrier
+      # for contributors, i.e. they don't need to setup Node, follow instructions, etc. locally, they can just
+      # contribute directly on Github if they wish to and rely on the pipeline to catch their changes
+      - name: Update Showcases Index
+        if: github.ref == 'refs/heads/master' && github.repository == 'finos/legend'
+        run: |
+          git add .
+          git commit -m "Update Showcases Index"
+          git push
       - name: Build Website
         working-directory: ./website
         run: |

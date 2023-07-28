@@ -6,12 +6,12 @@ on:
     branches:
       - master
     paths:
-      - "showcases/"
+      - "showcases/**"
   pull_request:
     branches:
       - "**"
     paths:
-      - "showcases/"
+      - "showcases/**"
   workflow_dispatch: {}
 jobs:
   test:
