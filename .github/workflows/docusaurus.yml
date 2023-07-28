@@ -1,4 +1,4 @@
-name: Docusaurus-website-build
+name: Build Website
 
 on:
   push:
