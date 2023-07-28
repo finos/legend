@@ -1,5 +1,5 @@
 ---
-title: Contract
+title: Core
 description:
 ---
 
