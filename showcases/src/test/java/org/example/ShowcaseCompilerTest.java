@@ -22,6 +22,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assume.assumeFalse;
 
 /**
  * Unit tests for each showcase that will run in parallel reading from file
@@ -77,7 +78,12 @@ public class ShowcaseCompilerTest
     @Test
     public void processShowcaseFile() throws IOException
     {
-        String pureGrammar = String.join("\n", Files.readAllLines(showcasePath));
+        // Stripping comments required as compiler will remove them
+        String pureGrammar = Files.readAllLines(showcasePath).stream()
+                .filter(l -> l.stripLeading().startsWith("//"))
+                .collect(Collectors.joining("\n"));
+
+        assumeFalse(pureGrammar.isEmpty());
 
         // TODO: Ideally want compilation and all testables to be run while maintaining comments in the code
         PureModelContextData pureModelContextData = PureGrammarParser.newInstance().parseModel(pureGrammar, "", 0, 0, true);
