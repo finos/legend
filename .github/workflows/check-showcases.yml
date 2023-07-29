@@ -48,7 +48,7 @@ jobs:
       - name: Get Changed Files for PR
         if: ${{ github.event_name == 'pull_request' }}
         working-directory: ./showcases
-        run: echo "CHANGED_FILES=`git diff --name-only | paste -sd ','`" >> "$GITHUB_ENV"
+        run: echo "CHANGED_FILES=`git diff --name-only $GITHUB_BASE_REF...$GITHUB_HEAD_REF | paste -sd ','`" >> "$GITHUB_ENV"
       - name: Run test
         working-directory: ./showcases
         run: |
