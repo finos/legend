@@ -43,6 +43,10 @@ jobs:
           java-version: "11"
           distribution: "temurin"
           cache: "maven"
+      - name: Get Changed Files
+        id: changed_files
+        working-directory: ./showcases
+        run: echo "CHANGED_FILES=`git diff --name-only | paste -sd ','`" >> "$GITHUB_OUTPUT"
       - name: Run test
         working-directory: ./showcases
         run: |
@@ -50,4 +54,4 @@ jobs:
           mvn -B -Dmaven.surefire.thread.count=$THREAD_COUNT -Dshowcase.locations=$SHOWCASE_LOCATIONS test
         env:
           THREAD_COUNT: 3
-          SHOWCASE_LOCATIONS: data
+          SHOWCASE_LOCATIONS: ${{ steps.changed_files.outputs.CHANGED_FILES }}
