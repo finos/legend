@@ -1,0 +1,17 @@
+###Connection
+RelationalDatabaseConnection mySimpleConnection
+{
+  store: store::Store;
+  type: Databricks;
+  specification: Databricks
+  {
+    hostname: 'databricks.com';
+    port: '443';
+    protocol: 'https';
+    httpPath: 'databricks/api/path';
+  };
+  auth: ApiToken
+  {
+    apiToken: 'databricks.api.token';
+  };
+}
