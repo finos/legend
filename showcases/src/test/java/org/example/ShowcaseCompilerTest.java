@@ -78,14 +78,18 @@ public class ShowcaseCompilerTest
     @Test
     public void processShowcaseFile() throws IOException
     {
-        // Stripping comments required as compiler will remove them
+        // Stripping comments required as parser will remove them
         String pureGrammar = Files.readAllLines(showcasePath).stream()
-                .filter(l -> l.stripLeading().startsWith("//"))
+                .filter(l -> !l.stripLeading().startsWith("//"))
                 .collect(Collectors.joining("\n"));
 
         assumeFalse(pureGrammar.isEmpty());
 
-        // TODO: Ideally want compilation and all testables to be run while maintaining comments in the code
+        /* 
+         * TODO:
+         * - Add a compilation step to each of the tests
+         * - Run all testables within a showcase
+        */
         PureModelContextData pureModelContextData = PureGrammarParser.newInstance().parseModel(pureGrammar, "", 0, 0, true);
         PureGrammarComposer grammarComposer = PureGrammarComposer.newInstance(PureGrammarComposerContext.Builder.newInstance().build());
 
