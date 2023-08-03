@@ -8,6 +8,7 @@ on:
     paths:
       - "showcases/**"
   pull_request:
+    types: [opened, reopened, synchronize, edited]
     branches:
       - "**"
     paths:
@@ -43,11 +44,21 @@ jobs:
           java-version: "11"
           distribution: "temurin"
           cache: "maven"
+      # For PRs only want to run changed files
+      - name: Get Changed Files for PR
+        if: ${{ github.event_name == 'pull_request' }}
+        working-directory: ./showcases
+        run: echo "CHANGED_FILES=`git diff --name-only $GITHUB_BASE_REF...$GITHUB_HEAD_REF | paste -sd ','`" >> "$GITHUB_ENV"
       - name: Run test
         working-directory: ./showcases
         run: |
+          if [ $SHOWCASE_LOCATIONS == "" ]; then
+            locations=data
+          else
+            locations=$SHOWCASE_LOCATIONS
+          fi
           mvn versions:use-latest-versions
-          mvn -B -Dmaven.surefire.thread.count=$THREAD_COUNT -Dshowcase.locations=$SHOWCASE_LOCATIONS test
+          mvn -B -Dmaven.surefire.thread.count=$THREAD_COUNT -Dshowcase.locations=$locations test
         env:
           THREAD_COUNT: 3
-          SHOWCASE_LOCATIONS: data
+          SHOWCASE_LOCATIONS: ${{ env.CHANGED_FILES }}
