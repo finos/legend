@@ -1,0 +1,16 @@
+###Mapping
+Mapping SimpleOtherwiseMapping
+(
+  Person: Relational
+  {
+    name: People.name,
+    pet
+    (
+      name: Pets.name
+    ) Otherwise ([backupPetMapping]: @PetOwner)
+  }
+  Pet[backupPetMapping]: Relational
+  {
+    name: BackupPets.name
+  }
+)

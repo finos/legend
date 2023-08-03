@@ -1,0 +1,12 @@
+###Mapping
+Mapping SimpleInheritanceMapping
+(
+  Person[basePerson]: Relational
+  {
+    name: People.name
+  }
+  GoodPerson[goodperson] extends [basePerson]: Relational
+  {
+    available_promotion_titles: Promotions.title
+  }
+)

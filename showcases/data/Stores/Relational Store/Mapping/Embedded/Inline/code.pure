@@ -1,0 +1,20 @@
+###Mapping
+Mapping SimpleInlineMapping
+(
+  Person: Relational
+  {
+    name: People.name,
+    // Either of the following are valid syntax with the former more useful if
+    // repeated.
+    address() Inline[USAddress],
+    pet
+    (
+      name: Pets.name
+    )
+  }
+  Address[USAddress]: Relational
+  {
+    street_address: Addresses.street_address,
+    zip: US_Zips.zip_code
+  }
+)

@@ -1,0 +1,10 @@
+###Mapping
+Mapping IncludeSubstitutionMapping
+(
+  include mapping BaseMapping[SimpleDB->ComplexDB]
+
+  Person: Relational
+  {
+    name: [ComplexDB]People.name
+  }
+)

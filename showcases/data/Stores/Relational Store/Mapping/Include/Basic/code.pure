@@ -1,0 +1,10 @@
+###Mapping
+Mapping IncludeMapping
+(
+  include mapping BaseMapping
+
+  Person: Relational
+  {
+    name: [SimpleDB]People.name
+  }
+)
