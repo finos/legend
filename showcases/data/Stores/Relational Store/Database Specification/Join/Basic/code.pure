@@ -1,0 +1,18 @@
+###Relational
+Database SimpleDB
+(
+  Table People
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200),
+    firm_id INTEGER
+  )
+  Table Firms
+  (
+    id INTEGER PRIMARY KEY,
+    legal_name VARCHAR(200)
+  )
+
+  Join PersonCompany(People.firm_id = Firms.id)
+  // Joins can also be defined across schemas
+)

@@ -1,0 +1,24 @@
+###Relational
+Database SimpleDB
+(
+  Schema SimpleSchema
+  (
+    Table People
+    (
+      id INTEGER PRIMARY KEY,
+      name VARCHAR(200),
+      firm_id INTEGER
+    )
+    Table Firms
+    (
+      id INTEGER PRIMARY KEY,
+      legal_name VARCHAR(200)
+    )
+
+    View ImportantPeople
+    (
+      id: SimpleSchema.People.id PRIMARY KEY,
+      name: SimpleSchema.People.name
+    )
+  )
+)
