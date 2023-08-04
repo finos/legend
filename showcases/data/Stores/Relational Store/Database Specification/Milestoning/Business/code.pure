@@ -1,0 +1,34 @@
+###Relational
+Database MilestonedDB
+(
+  Table ProductTable
+  (
+    milestoning
+    (
+      // A subset of the following options can be used with the minimal being BUS_FROM and BUS_THRU
+      business(BUS_FROM = from_z, BUS_THRU = thru_z, THRU_IS_INCLUSIVE = true, INFINITY_DATE = %9999-12-31T00:00:00.0000)
+    )
+
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200) PRIMARY KEY,
+    type VARCHAR(200),
+    exchange VARCHAR(200),
+    classificationSystemId INTEGER,
+    referenceSystemName VARCHAR(200),
+    externalReferenceSystemName VARCHAR(200),
+    from_z DATE,
+    thru_z DATE
+  )
+  Table ProductTableWithBusinessSnapshotMilestoning
+  (
+    milestoning
+    (
+      business(BUS_SNAPSHOT_DATE = snapshotDate)
+    )
+
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200),
+    type VARCHAR(200),
+    snapshotDate DATE
+  )
+)

@@ -1,0 +1,10 @@
+###Mapping
+Mapping SimpleJoinMapping
+(
+  Person: Relational
+  {
+    name: People.name,
+    firm: [SomeDB]@FirmPerson,
+    pet_name: [SomeDB]@PersonPets | [SomeDB]Pets.name
+  }
+)

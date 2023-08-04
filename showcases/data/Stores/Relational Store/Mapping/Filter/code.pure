@@ -1,0 +1,9 @@
+###Mapping
+Mapping SimpleFilterMapping
+(
+  Person: Relational
+  {
+    ~filter [SomeDB]longNameFilter
+    name: People.name
+  }
+)

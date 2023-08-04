@@ -1,0 +1,9 @@
+###Mapping
+Mapping SimpleDistinctMapping
+(
+  Person: Relational
+  {
+    ~distinct
+    name: People.name
+  }
+)

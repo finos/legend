@@ -1,0 +1,19 @@
+###Relational
+Database SimpleDB
+(
+  // There is an implicit 'default' schema 
+  Table People
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200),
+    firm_id INTEGER
+  )
+  Table Firms
+  (
+    id INTEGER PRIMARY KEY,
+    legal_name VARCHAR(200)
+  )
+
+  // Filters at the database level can be shared with several mappings
+  Filter largePersonIds(People.id > 100)
+)

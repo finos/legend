@@ -1,0 +1,28 @@
+###Relational
+Database SimpleDB
+(
+  include IncludedDB
+
+  // Definitions in included DB are available here
+  Table People
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200),
+    firm_id INTEGER
+  )
+  Table Firms
+  (
+    id INTEGER PRIMARY KEY,
+    legal_name VARCHAR(200)
+  )
+)
+
+Database IncludedDB
+(
+  Table PeoplePart2
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200),
+    firm_id INTEGER
+  )
+)

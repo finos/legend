@@ -1,0 +1,81 @@
+###Connection
+RelationalDatabaseConnection mySimpleConnection1
+{
+  store: store::Store;
+  type: Spanner;
+  specification: Spanner
+  {
+    projectId: 'spanner-emulator-test-1';
+    instanceId: 'test-instance-1';
+    databaseId: 'test-db';
+    proxyHost: 'localhost';
+    proxyPort: 9010;
+  };
+  auth: GCPApplicationDefaultCredentials;
+}
+
+RelationalDatabaseConnection mySimpleConnection2
+{
+  store: store::Store;
+  type: Spanner;
+  specification: Spanner
+  {
+    projectId: 'spanner-emulator-test-1';
+    instanceId: 'test-instance-1';
+    databaseId: 'test-db';
+  };
+  auth: GCPApplicationDefaultCredentials;
+}
+
+RelationalDatabaseConnection mySimpleConnection3
+{
+  store: store::Store;
+  type: Spanner;
+  specification: Spanner
+  {
+    projectId: 'spanner-emulator-test-1';
+    instanceId: 'test-instance-1';
+    databaseId: 'test-db';
+  };
+  auth: DelegatedKerberos;
+}
+
+RelationalDatabaseConnection mySimpleConnection4
+{
+  store: store::Store;
+  type: Spanner;
+  specification: Spanner
+  {
+    projectId: 'spanner-emulator-test-1';
+    instanceId: 'test-instance-1';
+    databaseId: 'test-db';
+    proxyHost: 'localhost';
+    proxyPort: 9010;
+  };
+  auth: GCPWorkloadIdentityFederation
+  {
+    serviceAccountEmail: 'name';
+  };
+}
+
+RelationalDatabaseConnection mySimpleConnection5
+{
+  store: store::Store;
+  type: Spanner;
+  specification: Spanner
+  {
+    projectId: 'spanner-emulator-test-1';
+    instanceId: 'test-instance-1';
+    databaseId: 'test-db';
+    proxyHost: 'localhost';
+    proxyPort: 9010;
+  };
+  auth: GCPWorkloadIdentityFederation
+  {
+    serviceAccountEmail: 'name';
+    additionalGcpScopes: [
+      'gcpScope',
+      'anotherGcpScope'
+      ];
+  };
+}

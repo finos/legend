@@ -1,0 +1,19 @@
+###Relational
+Database MilestonedDB
+(
+  Table BiTemporalProductTable
+  (
+    milestoning
+    (
+      processing(PROCESSING_IN = in_z, PROCESSING_OUT = out_z, INFINITY_DATE = %9999-12-31T00:00:00.0000),
+      business(BUS_FROM = from_z, BUS_THRU = thru_z, INFINITY_DATE = %9999-12-31T00:00:00.0000)
+    )
+
+    id INTEGER PRIMARY KEY,
+    type VARCHAR(200),
+    in_z DATE,
+    out_z DATE,
+    from_z DATE,
+    thru_z DATE
+  )
+)

@@ -1,0 +1,9 @@
+###Mapping
+Mapping SimpleScopedMapping
+(
+  Person: Relational
+  {
+    // scope([SimpleDB]SimpleSchema.People) can be used to extract the prefix
+    name: [SimpleDB]SimpleSchema.People.name
+  }
+)

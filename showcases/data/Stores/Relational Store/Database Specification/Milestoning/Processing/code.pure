@@ -1,0 +1,18 @@
+###Relational
+Database MilestonedDB
+(
+  Table BiTemporalProductTableWithProcessingMilestoning
+  (
+    milestoning
+    (
+      // The minimal set of options is PROCESSING_IN and PROCESSING_OUT
+      processing(PROCESSING_IN = in_z, PROCESSING_OUT = out_z, OUT_IS_INCLUSIVE = true, INFINITY_DATE = %9999-12-31T00:00:00.0000)
+    )
+
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200),
+    type VARCHAR(200),
+    in_z DATE,
+    out_z DATE
+  )
+)

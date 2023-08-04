@@ -1,0 +1,12 @@
+###Connection
+RelationalDatabaseConnection mySimpleConnection
+{
+  store: store::Store;
+  type: BigQuery;
+  specification: BigQuery
+  {
+    projectId: 'proj1';
+    defaultDataset: 'dataset1';
+  };
+  auth: GCPApplicationDefaultCredentials;
+}

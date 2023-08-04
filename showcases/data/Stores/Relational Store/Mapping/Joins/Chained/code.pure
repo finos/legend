@@ -1,0 +1,10 @@
+###Mapping
+Mapping ChainedJoinMapping
+(
+  Person: Relational
+  {
+    name: People.name,
+    firm: [SomeDB]@FirmPerson,
+    good_pet_name: [SomeDB]@PersonPet > (INNER) [SomeDB]@GoodPets | [SomeDB]Pets.name
+  }
+)

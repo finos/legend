@@ -1,0 +1,12 @@
+###Mapping
+Mapping SimpleGroupByMapping
+(
+  Person: Relational
+  {
+    ~groupBy
+    (
+      [SomeDB]People.firm_id
+    )
+    name: People.name
+  }
+)
