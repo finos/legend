@@ -1,16 +1,52 @@
 ###Mapping
-Mapping SimpleOtherwiseMapping
+import models::*;
+import stores::*;
+Mapping mapping::SimpleOtherwiseMapping
 (
   Person: Relational
   {
-    name: People.name,
+    name: [SimpleDB]People.name,
     pet
     (
-      name: Pets.name
-    ) Otherwise ([backupPetMapping]: @PetOwner)
+      name: [SimpleDB]People.pet_name
+    ) Otherwise ([backupPetMapping]: [SimpleDB]@PetOwner)
   }
   Pet[backupPetMapping]: Relational
   {
-    name: BackupPets.name
+    name: [SimpleDB]Pets.name
   }
+)
+
+
+###Pure
+import models::*;
+Class models::Person
+{
+  name: String[1];
+  pet: Pet[1];
+}
+
+Class models::Pet
+{
+  name: String[1];
+}
+
+
+###Relational
+Database stores::SimpleDB
+(
+  Table People
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200),
+    pet_id INTEGER,
+    pet_name VARCHAR(50)
+  )
+  Table Pets
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(50)
+  )
+
+  Join PetOwner(People.pet_id = Pets.id)
 )

@@ -1,5 +1,5 @@
 ###Relational
-Database SimpleDB
+Database store::SimpleDB
 (
   // There is an implicit 'default' schema 
   Table People

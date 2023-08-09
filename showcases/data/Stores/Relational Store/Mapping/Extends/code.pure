@@ -1,12 +1,42 @@
 ###Mapping
-Mapping SimpleInheritanceMapping
+import models::*;
+import stores::*;
+Mapping mapping::SimpleInheritanceMapping
 (
   Person[basePerson]: Relational
   {
-    name: People.name
+    name: [SimpleDB]People.name
   }
-  GoodPerson[goodperson] extends [basePerson]: Relational
+  PromotableWorker[promotableWorker] extends [basePerson]: Relational
   {
-    available_promotion_titles: Promotions.title
+    available_promotion_titles: [SimpleDB]Promotions.title
   }
+)
+
+
+###Pure
+import models::*;
+Class models::Person
+{
+  name: String[1];
+}
+
+Class models::PromotableWorker
+{
+  available_promotion_titles: String[1..*];
+}
+
+
+###Relational
+Database stores::SimpleDB
+(
+  Table People
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200)
+  )
+  Table Promotions
+  (
+    title VARCHAR(50)
+  )
 )

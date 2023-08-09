@@ -1,10 +1,13 @@
 package org.example;
 
+import org.eclipse.collections.api.factory.Lists;
 import org.eclipse.collections.api.factory.Sets;
+import org.finos.legend.engine.language.pure.compiler.Compiler;
 import org.finos.legend.engine.language.pure.grammar.from.PureGrammarParser;
 import org.finos.legend.engine.language.pure.grammar.to.PureGrammarComposer;
 import org.finos.legend.engine.language.pure.grammar.to.PureGrammarComposerContext;
 import org.finos.legend.engine.protocol.pure.v1.model.context.PureModelContextData;
+import org.finos.legend.engine.shared.core.deployment.DeploymentMode;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -87,7 +90,6 @@ public class ShowcaseCompilerTest
 
         /* 
          * TODO:
-         * - Add a compilation step to each of the tests
          * - Run all testables within a showcase
         */
         PureModelContextData pureModelContextData = PureGrammarParser.newInstance().parseModel(pureGrammar, "", 0, 0, true);
@@ -95,5 +97,7 @@ public class ShowcaseCompilerTest
 
         // Grammar composer adds a trailing newline
         assertEquals(pureGrammar + "\n", grammarComposer.renderPureModelContextData(pureModelContextData));
+        
+        Compiler.compile(pureModelContextData, DeploymentMode.PROD, Lists.mutable.empty());
     }
 }

@@ -1,5 +1,5 @@
 ###Relational
-Database MilestonedDB
+Database store::MilestonedDB
 (
   Table ProductTable
   (

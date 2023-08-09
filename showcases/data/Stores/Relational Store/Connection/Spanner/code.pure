@@ -1,5 +1,5 @@
 ###Connection
-RelationalDatabaseConnection mySimpleConnection1
+RelationalDatabaseConnection connection::mySimpleConnection1
 {
   store: store::Store;
   type: Spanner;
@@ -14,7 +14,7 @@ RelationalDatabaseConnection mySimpleConnection1
   auth: GCPApplicationDefaultCredentials;
 }
 
-RelationalDatabaseConnection mySimpleConnection2
+RelationalDatabaseConnection connection::mySimpleConnection2
 {
   store: store::Store;
   type: Spanner;
@@ -27,7 +27,7 @@ RelationalDatabaseConnection mySimpleConnection2
   auth: GCPApplicationDefaultCredentials;
 }
 
-RelationalDatabaseConnection mySimpleConnection3
+RelationalDatabaseConnection connection::mySimpleConnection3
 {
   store: store::Store;
   type: Spanner;
@@ -40,7 +40,7 @@ RelationalDatabaseConnection mySimpleConnection3
   auth: DelegatedKerberos;
 }
 
-RelationalDatabaseConnection mySimpleConnection4
+RelationalDatabaseConnection connection::mySimpleConnection4
 {
   store: store::Store;
   type: Spanner;
@@ -58,7 +58,7 @@ RelationalDatabaseConnection mySimpleConnection4
   };
 }
 
-RelationalDatabaseConnection mySimpleConnection5
+RelationalDatabaseConnection connection::mySimpleConnection5
 {
   store: store::Store;
   type: Spanner;

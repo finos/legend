@@ -1,9 +1,33 @@
 ###Mapping
-Mapping SimpleScopedMapping
+import stores::*;
+import models::*;
+Mapping mappings::SimpleScopedMapping
 (
   Person: Relational
   {
     // scope([SimpleDB]SimpleSchema.People) can be used to extract the prefix
+    // it is just syntactic sugar and will be string replaced.
     name: [SimpleDB]SimpleSchema.People.name
   }
+)
+
+
+###Pure
+Class models::Person
+{
+  name: String[1];
+}
+
+
+###Relational
+Database stores::SimpleDB
+(
+  Schema SimpleSchema
+  (
+    Table People
+    (
+      id INTEGER PRIMARY KEY,
+      name VARCHAR(200)
+    )
+  )
 )

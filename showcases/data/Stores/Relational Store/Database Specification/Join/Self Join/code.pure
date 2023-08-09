@@ -1,5 +1,5 @@
 ###Relational
-Database SimpleDB
+Database store::SimpleDB
 (
   Table People
   (

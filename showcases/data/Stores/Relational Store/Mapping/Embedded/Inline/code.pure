@@ -1,20 +1,62 @@
 ###Mapping
-Mapping SimpleInlineMapping
+import models::*;
+import stores::*;
+Mapping mapping::SimpleInlineMapping
 (
-  Person: Relational
+  Person[normalPerson]: Relational
   {
-    name: People.name,
-    // Either of the following are valid syntax with the former more useful if
-    // repeated.
+    name: [SimpleDB]People.name,
     address() Inline[USAddress],
-    pet
+    hobby
     (
-      name: Pets.name
+      name: [SimpleDB]People.hobby_name
     )
   }
   Address[USAddress]: Relational
   {
-    street_address: Addresses.street_address,
-    zip: US_Zips.zip_code
+    ~mainTable [SimpleDB]Addresses
+    street_address: [SimpleDB]Addresses.street_address,
+    zip: [SimpleDB]US_Zips.zip_code
   }
+)
+
+
+###Pure
+import models::*;
+Class models::Person
+{
+  name: String[1];
+  address: Address[1];
+  hobby: Hobby[1];
+}
+
+Class models::Hobby
+{
+  name: String[1];
+}
+
+Class models::Address
+{
+  street_address: String[1];
+  zip: String[1];
+}
+
+
+###Relational
+Database stores::SimpleDB
+(
+  Table People
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200),
+    hobby_name VARCHAR(100)
+  )
+  Table Addresses
+  (
+    street_address VARCHAR(200)
+  )
+  Table US_Zips
+  (
+    zip_code CHAR(5)
+  )
 )
