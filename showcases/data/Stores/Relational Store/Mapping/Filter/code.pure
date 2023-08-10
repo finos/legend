@@ -1,9 +1,32 @@
 ###Mapping
-Mapping SimpleFilterMapping
+import models::*;
+import stores::*;
+Mapping mapping::SimpleFilterMapping
 (
   Person: Relational
   {
-    ~filter [SomeDB]longNameFilter
-    name: People.name
+    ~filter [SimpleDB]longNameFilter
+    name: [SimpleDB]People.name
   }
+)
+
+
+###Pure
+import models::*;
+Class models::Person
+{
+  name: String[1];
+}
+
+
+###Relational
+Database stores::SimpleDB
+(
+  Table People
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200)
+  )
+
+  Filter longNameFilter(length(People.name) >= 100)
 )

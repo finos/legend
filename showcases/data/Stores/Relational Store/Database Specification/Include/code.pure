@@ -1,7 +1,7 @@
 ###Relational
-Database SimpleDB
+Database store::SimpleDB
 (
-  include IncludedDB
+  include store::IncludedDB
 
   // Definitions in included DB are available here
   Table People
@@ -17,7 +17,7 @@ Database SimpleDB
   )
 )
 
-Database IncludedDB
+Database store::IncludedDB
 (
   Table PeoplePart2
   (

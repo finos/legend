@@ -1,5 +1,5 @@
 ###Connection
-RelationalDatabaseConnection TrinoConnection
+RelationalDatabaseConnection connection::TrinoConnection
 {
   store: store::Store;
   type: Trino;

@@ -1,9 +1,29 @@
 ###Mapping
-Mapping SimpleDistinctMapping
+import models::*;
+import stores::*;
+Mapping mapping::SimpleDistinctMapping
 (
   Person: Relational
   {
     ~distinct
-    name: People.name
+    name: [SimpleDB]People.name
   }
+)
+
+
+###Pure
+Class models::Person
+{
+  name: String[1];
+}
+
+
+###Relational
+Database stores::SimpleDB
+(
+  Table People
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(100)
+  )
 )

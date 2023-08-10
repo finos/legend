@@ -1,10 +1,64 @@
 ###Mapping
-Mapping ChainedJoinMapping
+import models::*;
+import stores::*;
+Mapping mappings::ChainedJoinMapping
 (
   Person: Relational
   {
-    name: People.name,
-    firm: [SomeDB]@FirmPerson,
-    good_pet_name: [SomeDB]@PersonPet > (INNER) [SomeDB]@GoodPets | [SomeDB]Pets.name
+    name: [SimpleDB]People.name,
+    firm: [SimpleDB]@FirmPerson,
+    good_pet_name: [SimpleDB]@PersonPet > (INNER) [SimpleDB]@GoodPets | [SimpleDB]Pets.name
   }
+)
+
+
+###Pure
+import models::*;
+Class models::Person
+{
+  name: String[1];
+  firm: Firm[1];
+  good_pet_name: String[1];
+}
+
+Class models::Firm
+{
+  name: String[1];
+}
+
+Class models::Pet
+{
+  name: String[1];
+}
+
+
+###Relational
+Database stores::SimpleDB
+(
+  Table People
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200),
+    firm_id INTEGER,
+    pet_id INTEGER
+  )
+  Table Firms
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200)
+  )
+  Table Pets
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(50)
+  )
+  Table GoodPets
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(50)
+  )
+
+  Join FirmPerson(People.firm_id = Firms.id)
+  Join PersonPet(People.pet_id = Pets.id)
+  Join GoodPets(Pets.id = GoodPets.id)
 )

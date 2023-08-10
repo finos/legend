@@ -1,5 +1,5 @@
 ###Connection
-RelationalDatabaseConnection mySimpleConnection
+RelationalDatabaseConnection connection::mySimpleConnection
 {
   store: store::Store;
   type: BigQuery;
