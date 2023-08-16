@@ -2,22 +2,31 @@ name: Trigger Legend Stack Release
 
 on:
   workflow_dispatch:
-    inputs:
-      legend-shared-release-version:
-        description: "New release version for legend shared"
-        required: false
-      legend-pure-release-version:
-        description: "New release version for legend pure"
-        required: false
-      legend-engine-release-version:
-        description: "New release version for legend engine"
-        required: false
-      legend-sdlc-release-version:
-        description: "New release version for legend sdlc"
-        required: false
-      legend-depot-release-version:
-        description: "New release version for legend depot"
-        required: false
+    legend-shared-release:
+      type: choice
+      description: "New release version for legend shared"
+      default: 'n/a'
+      options: ['n/a', 'major', 'minor', 'patch']
+    legend-pure-release:
+      type: choice
+      description: "New release version for legend pure"
+      default: 'n/a'
+      options: ['n/a', 'major', 'minor', 'patch']
+    legend-engine-release:
+      type: choice
+      description: "New release version for legend engine"
+      default: 'n/a'
+      options: ['n/a', 'major', 'minor', 'patch']
+    legend-sdlc-release:
+      type: choice
+      description: "New release version for legend sdlc"
+      default: 'n/a'
+      options: ['n/a', 'major', 'minor', 'patch']
+    legend-depot-release:
+      type: choice
+      description: "New release version for legend depot"
+      default: 'n/a'
+      options: ['n/a', 'major', 'minor', 'patch']
 
 env:
   OWNER: finos
@@ -26,9 +35,138 @@ env:
   WORKFLOW_ID: legend-stack-release.yml
 
 jobs:
+  compute-versions:
+    runs-on: ubuntu-latest
+    outputs:
+      legend_shared_release_version: ${{ steps.set_legend_shared_release_version.outputs.legend_shared_release_version }}
+      legend_pure_release_version: ${{ steps.set_legend_pure_release_version.outputs.legend_pure_release_version }}
+      legend_engine_release_version: ${{ steps.set_legend_engine_release_version.outputs.legend_engine_release_version }}
+      legend_sdlc_release_version: ${{ steps.set_legend_sdlc_release_version.outputs.legend_sdlc_release_version }}
+      legend_depot_release_version: ${{ steps.set_legend_depot_release_version.outputs.legend_depot_release_version }}
+    steps:
+      - name: Compute legend-shared-release-version
+        id: set_legend_shared_release_version
+        if: github.event.inputs.legend-shared-release != 'n/a'
+        run: |
+          GROUP_ID="org.finos.legend.shared"
+          ARTIFACT_ID="legend-shared"
+          
+          # Query Maven Central API to get latest version
+          latest_version=$(curl -s "https://search.maven.org/solrsearch/select?q=g:${GROUP_ID}+AND+a:${ARTIFACT_ID}&core=gav&rows=1&wt=json" | jq -r '.response.docs[0].v')
+          
+          # Increment patch version
+          IFS='.' read -r major minor patch <<< "$latest_version"
+          
+          release_type="${{ github.event.inputs.legend-shared-release }}"
+          if [ "$release_type" == "major" ]; then
+            major=$((major + 1))
+          elif [ "$release_type" == "minor" ]; then
+            minor=$((minor + 1))
+          else
+            patch=$((patch + 1))
+          fi
+          legend_shared_release_version="${major}.${minor}.${patch}"
+          echo "legend_shared_release_version=${legend_shared_release_version}" >> "$GITHUB_OUTPUT"
+
+      - name: Compute legend-pure-release-version
+        id: set_legend_pure_release_version
+        if: github.event.inputs.legend-pure-release != 'n/a'
+        run: |
+          GROUP_ID="org.finos.legend.pure"
+          ARTIFACT_ID="legend-pure"
+          
+          # Query Maven Central API to get latest version
+          latest_version=$(curl -s "https://search.maven.org/solrsearch/select?q=g:${GROUP_ID}+AND+a:${ARTIFACT_ID}&core=gav&rows=1&wt=json" | jq -r '.response.docs[0].v')
+          
+          # Increment patch version
+          IFS='.' read -r major minor patch <<< "$latest_version"
+          
+          release_type="${{ github.event.inputs.legend-pure-release }}"
+          if [ "$release_type" == "major" ]; then
+            major=$((major + 1))
+          elif [ "$release_type" == "minor" ]; then
+            minor=$((minor + 1))
+          else
+            patch=$((patch + 1))
+          fi
+          legend_pure_release_version="${major}.${minor}.${patch}"
+          echo "legend_pure_release_version=${legend_pure_release_version}" >> "$GITHUB_OUTPUT"
+
+      - name: Compute legend-engine-release-version
+        id: set_legend_engine_release_version
+        if: github.event.inputs.legend-engine-release != 'n/a'
+        run: |
+          GROUP_ID="org.finos.legend.engine"
+          ARTIFACT_ID="legend-engine"
+          
+          # Query Maven Central API to get latest version
+          latest_version=$(curl -s "https://search.maven.org/solrsearch/select?q=g:${GROUP_ID}+AND+a:${ARTIFACT_ID}&core=gav&rows=1&wt=json" | jq -r '.response.docs[0].v')
+          
+          # Increment patch version
+          IFS='.' read -r major minor patch <<< "$latest_version"
+          
+          release_type="${{ github.event.inputs.legend-engine-release }}"
+          if [ "$release_type" == "major" ]; then
+            major=$((major + 1))
+          elif [ "$release_type" == "minor" ]; then
+            minor=$((minor + 1))
+          else
+            patch=$((patch + 1))
+          fi
+          legend_engine_release_version="${major}.${minor}.${patch}"
+          echo "legend_engine_release_version=${legend_engine_release_version}" >> "$GITHUB_OUTPUT"
+
+      - name: Compute legend-sdlc-release-version
+        id: set_legend_sdlc_release_version
+        if: github.event.inputs.legend-sdlc-release != 'n/a'
+        run: |
+          GROUP_ID="org.finos.legend.sdlc"
+          ARTIFACT_ID="legend-sdlc"
+          
+          # Query Maven Central API to get latest version
+          latest_version=$(curl -s "https://search.maven.org/solrsearch/select?q=g:${GROUP_ID}+AND+a:${ARTIFACT_ID}&core=gav&rows=1&wt=json" | jq -r '.response.docs[0].v')
+          
+          # Increment patch version
+          IFS='.' read -r major minor patch <<< "$latest_version"
+          
+          release_type="${{ github.event.inputs.legend-sdlc-release }}"
+          if [ "$release_type" == "major" ]; then
+            major=$((major + 1))
+          elif [ "$release_type" == "minor" ]; then
+            minor=$((minor + 1))
+          else
+            patch=$((patch + 1))
+          fi
+          legend_sdlc_release_version="${major}.${minor}.${patch}"
+          echo "legend_sdlc_release_version=${legend_sdlc_release_version}" >> "$GITHUB_OUTPUT"
+
+      - name: Compute legend-depot-release-version
+        id: set_legend_depot_release_version
+        if: github.event.inputs.legend-depot-release != 'n/a'
+        run: |
+          GROUP_ID="org.finos.legend.depot"
+          ARTIFACT_ID="legend-depot"
+          
+          # Query Maven Central API to get latest version
+          latest_version=$(curl -s "https://search.maven.org/solrsearch/select?q=g:${GROUP_ID}+AND+a:${ARTIFACT_ID}&core=gav&rows=1&wt=json" | jq -r '.response.docs[0].v')
+          
+          # Increment patch version
+          IFS='.' read -r major minor patch <<< "$latest_version"
+          
+          release_type="${{ github.event.inputs.legend-depot-release }}"
+          if [ "$release_type" == "major" ]; then
+            major=$((major + 1))
+          elif [ "$release_type" == "minor" ]; then
+            minor=$((minor + 1))
+          else
+            patch=$((patch + 1))
+          fi
+          legend_depot_release_version="${major}.${minor}.${patch}"
+          echo "legend_depot_release_version=${legend_depot_release_version}" >> "$GITHUB_OUTPUT"
   release-legend-shared:
     runs-on: ubuntu-latest
-    if: github.event.inputs.legend-shared-release-version
+    needs: [compute-versions]
+    if: github.event.inputs.legend-shared-release != 'n/a'
     steps:
       - name: Set Required RunNumber of Legend Shared Release
         run: |
@@ -46,13 +184,16 @@ jobs:
           # Set the environment variable
           echo "Setting LEGEND_SHARED_RUN_NUMBER to $requiredRunNumber"
           echo "LEGEND_SHARED_RUN_NUMBER=${requiredRunNumber}" >> $GITHUB_ENV
+          
+          # Echo release version
+          echo "legend_shared_release_version:${{ needs.compute-versions.outputs.legend_shared_release_version }}"
       - name: Trigger Legend Shared Release
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ env.RELEASE_TOKEN }}
           repository: ${{ env.OWNER }}/legend-shared
           event-type: ${{ env.EVENT_TYPE }}
-          client-payload: '{"releaseVersion": "${{ github.event.inputs.legend-shared-release-version }}"}'
+          client-payload: '{"releaseVersion": "${{ needs.compute-versions.outputs.legend_shared_release_version }}"}'
       - name: Check Status Of Legend Shared Release
         run: |
           sleep 1m                                # Wait for 1 minute before polling the API again
@@ -91,9 +232,9 @@ jobs:
         run: |
           artifact_group='org.finos.legend.shared'
           artifact_name='legend-shared'
-          artifact_version='${{ github.event.inputs.legend-shared-release-version }}'
+          artifact_version='${{ needs.compute-versions.outputs.legend_shared_release_version }}'
           
-          max_retries=20
+          max_retries=120
           retries=0
           
           while true; do
@@ -118,7 +259,8 @@ jobs:
 
   release-legend-pure:
     runs-on: ubuntu-latest
-    if: github.event.inputs.legend-pure-release-version
+    needs: [compute-versions]
+    if: github.event.inputs.legend-pure-release != 'n/a'
     steps:
       - name: Set Required RunNumber of Legend Pure Release
         run: |
@@ -136,13 +278,16 @@ jobs:
           # Set the environment variable
           echo "Setting LEGEND_PURE_RUN_NUMBER to $requiredRunNumber"
           echo "LEGEND_PURE_RUN_NUMBER=${requiredRunNumber}" >> $GITHUB_ENV
+          
+          # Echo release version
+          echo "legend_pure_release_version:${{ needs.compute-versions.outputs.legend_pure_release_version }}"
       - name: Trigger Legend Pure Release
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ env.RELEASE_TOKEN }}
           repository: ${{ env.OWNER }}/legend-pure
           event-type: ${{ env.EVENT_TYPE }}
-          client-payload: '{"releaseVersion": "${{ github.event.inputs.legend-pure-release-version }}"}'
+          client-payload: '{"releaseVersion": "${{ needs.compute-versions.outputs.legend_pure_release_version }}"}'
       - name: Check Status Of Legend Pure Release
         run: |
           sleep 1m                                # Wait for 1 minute before polling the API again
@@ -181,9 +326,9 @@ jobs:
         run: |
           artifact_group='org.finos.legend.pure'
           artifact_name='legend-pure'
-          artifact_version='${{ github.event.inputs.legend-pure-release-version }}'
+          artifact_version='${{ needs.compute-versions.outputs.legend_pure_release_version }}'
           
-          max_retries=20
+          max_retries=120
           retries=0
           
           while true; do
@@ -208,8 +353,8 @@ jobs:
 
   release-legend-engine:
     runs-on: ubuntu-latest
-    needs: [release-legend-shared, release-legend-pure]
-    if: always() && github.event.inputs.legend-engine-release-version && ( needs.release-legend-shared.result == 'success' || needs.release-legend-shared.result == 'skipped' ) && ( needs.release-legend-pure.result == 'success' || needs.release-legend-pure.result == 'skipped' )
+    needs: [compute-versions, release-legend-shared, release-legend-pure]
+    if: always() && github.event.inputs.legend-engine-release != 'n/a' && ( needs.release-legend-shared.result == 'success' || needs.release-legend-shared.result == 'skipped' ) && ( needs.release-legend-pure.result == 'success' || needs.release-legend-pure.result == 'skipped' )
     steps:
       - name: Set Required RunNumber of Legend Engine Release
         run: |
@@ -227,13 +372,16 @@ jobs:
           # Set the environment variable
           echo "Setting LEGEND_ENGINE_RUN_NUMBER to $requiredRunNumber"
           echo "LEGEND_ENGINE_RUN_NUMBER=${requiredRunNumber}" >> $GITHUB_ENV
+          
+          # Echo release version
+          echo "legend_engine_release_version:${{ needs.compute-versions.outputs.legend_engine_release_version }}"
       - name: Trigger Legend Engine Release
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ env.RELEASE_TOKEN }}
           repository: ${{ env.OWNER }}/legend-engine
           event-type: ${{ env.EVENT_TYPE }}
-          client-payload: '{"releaseVersion": "${{ github.event.inputs.legend-engine-release-version }}", "legendPureVersion": "${{ github.event.inputs.legend-pure-release-version }}", "legendSharedVersion": "${{ github.event.inputs.legend-shared-release-version }}"}'
+          client-payload: '{"releaseVersion": "${{ needs.compute-versions.outputs.legend_engine_release_version }}", "legendPureVersion": "${{ needs.compute-versions.outputs.legend_pure_release_version }}", "legendSharedVersion": "${{ needs.compute-versions.outputs.legend_shared_release_version }}"}'
       - name: Check Status Of Legend Engine Release
         run: |
           sleep 1m                                # Wait for 1 minute before polling the API again
@@ -272,9 +420,9 @@ jobs:
         run: |
           artifact_group='org.finos.legend.engine'
           artifact_name='legend-engine'
-          artifact_version='${{ github.event.inputs.legend-engine-release-version }}'
+          artifact_version='${{ needs.compute-versions.outputs.legend_engine_release_version }}'
           
-          max_retries=20
+          max_retries=120
           retries=0
           
           while true; do
@@ -299,8 +447,8 @@ jobs:
 
   release-legend-sdlc:
     runs-on: ubuntu-latest
-    needs: [release-legend-shared, release-legend-pure, release-legend-engine]
-    if: always() && github.event.inputs.legend-sdlc-release-version && ( needs.release-legend-shared.result == 'success' || needs.release-legend-shared.result == 'skipped' ) && ( needs.release-legend-pure.result == 'success' || needs.release-legend-pure.result == 'skipped' ) && ( needs.release-legend-engine.result == 'success' || needs.release-legend-engine.result == 'skipped' )
+    needs: [compute-versions, release-legend-shared, release-legend-pure, release-legend-engine]
+    if: always() && github.event.inputs.legend-sdlc-release != 'n/a' && ( needs.release-legend-shared.result == 'success' || needs.release-legend-shared.result == 'skipped' ) && ( needs.release-legend-pure.result == 'success' || needs.release-legend-pure.result == 'skipped' ) && ( needs.release-legend-engine.result == 'success' || needs.release-legend-engine.result == 'skipped' )
     steps:
       - name: Set Required RunNumber of Legend Sdlc Release
         run: |
@@ -318,13 +466,16 @@ jobs:
           # Set the environment variable
           echo "Setting LEGEND_SDLC_RUN_NUMBER to $requiredRunNumber"
           echo "LEGEND_SDLC_RUN_NUMBER=${requiredRunNumber}" >> $GITHUB_ENV
+          
+          # Echo release version
+          echo "legend_sdlc_release_version:${{ needs.compute-versions.outputs.legend_sdlc_release_version }}"
       - name: Trigger Legend Sdlc Release
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ env.RELEASE_TOKEN }}
           repository: ${{ env.OWNER }}/legend-sdlc
           event-type: ${{ env.EVENT_TYPE }}
-          client-payload: '{"releaseVersion": "${{ github.event.inputs.legend-sdlc-release-version }}", "legendPureVersion": "${{ github.event.inputs.legend-pure-release-version }}", "legendSharedVersion": "${{ github.event.inputs.legend-shared-release-version }}", "legendEngineVersion": "${{ github.event.inputs.legend-engine-release-version }}"}'
+          client-payload: '{"releaseVersion": "${{ needs.compute-versions.outputs.legend_sdlc_release_version }}", "legendPureVersion": "${{ needs.compute-versions.outputs.legend_pure_release_version }}", "legendSharedVersion": "${{ needs.compute-versions.outputs.legend_shared_release_version }}", "legendEngineVersion": "${{ needs.compute-versions.outputs.legend_engine_release_version }}"}'
       - name: Check Status Of Legend Sdlc Release
         run: |
           sleep 1m                                # Wait for 1 minute before polling the API again
@@ -363,9 +514,9 @@ jobs:
         run: |
           artifact_group='org.finos.legend.sdlc'
           artifact_name='legend-sdlc'
-          artifact_version='${{ github.event.inputs.legend-sdlc-release-version }}'
+          artifact_version='${{ needs.compute-versions.outputs.legend_sdlc_release_version }}'
           
-          max_retries=20
+          max_retries=120
           retries=0
           
           while true; do
@@ -390,8 +541,8 @@ jobs:
 
   release-legend-depot:
     runs-on: ubuntu-latest
-    needs: [release-legend-shared, release-legend-pure, release-legend-engine, release-legend-sdlc]
-    if: always() && github.event.inputs.legend-depot-release-version && ( needs.release-legend-shared.result == 'success' || needs.release-legend-shared.result == 'skipped' ) && ( needs.release-legend-pure.result == 'success' || needs.release-legend-pure.result == 'skipped' ) && ( needs.release-legend-engine.result == 'success' || needs.release-legend-engine.result == 'skipped' ) && ( needs.release-legend-sdlc.result == 'success' || needs.release-legend-sdlc.result == 'skipped' )
+    needs: [compute-versions, release-legend-shared, release-legend-pure, release-legend-engine, release-legend-sdlc]
+    if: always() && github.event.inputs.legend-depot-release != 'n/a' && ( needs.release-legend-shared.result == 'success' || needs.release-legend-shared.result == 'skipped' ) && ( needs.release-legend-pure.result == 'success' || needs.release-legend-pure.result == 'skipped' ) && ( needs.release-legend-engine.result == 'success' || needs.release-legend-engine.result == 'skipped' ) && ( needs.release-legend-sdlc.result == 'success' || needs.release-legend-sdlc.result == 'skipped' )
     steps:
       - name: Set Required RunNumber of Legend Depot Release
         run: |
@@ -409,13 +560,16 @@ jobs:
           # Set the environment variable
           echo "Setting LEGEND_DEPOT_RUN_NUMBER to $requiredRunNumber"
           echo "LEGEND_DEPOT_RUN_NUMBER=${requiredRunNumber}" >> $GITHUB_ENV
+          
+          # Echo release version
+          echo "legend_depot_release_version:${{ needs.compute-versions.outputs.legend_depot_release_version }}"
       - name: Trigger Legend Depot Release
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ env.RELEASE_TOKEN }}
           repository: ${{ env.OWNER }}/legend-depot
           event-type: ${{ env.EVENT_TYPE }}
-          client-payload: '{"releaseVersion": "${{ github.event.inputs.legend-depot-release-version }}", "legendSdlcVersion": "${{ github.event.inputs.legend-sdlc-release-version }}", "legendSharedVersion": "${{ github.event.inputs.legend-shared-release-version }}", "legendEngineVersion": "${{ github.event.inputs.legend-engine-release-version }}"}'
+          client-payload: '{"releaseVersion": "${{ needs.compute-versions.outputs.legend_depot_release_version }}", "legendSdlcVersion": "${{ needs.compute-versions.outputs.legend_sdlc_release_version }}", "legendSharedVersion": "${{ needs.compute-versions.outputs.legend_shared_release_version }}", "legendEngineVersion": "${{ needs.compute-versions.outputs.legend_engine_release_version }}"}'
       - name: Check Status Of Legend Depot Release
         run: |
           sleep 1m                                # Wait for 1 minute before polling the API again
@@ -454,9 +608,9 @@ jobs:
         run: |
           artifact_group='org.finos.legend.depot'
           artifact_name='legend-depot'
-          artifact_version='${{ github.event.inputs.legend-depot-release-version }}'
+          artifact_version='${{ needs.compute-versions.outputs.legend_depot_release_version }}'
           
-          max_retries=20
+          max_retries=120
           retries=0
           
           while true; do
