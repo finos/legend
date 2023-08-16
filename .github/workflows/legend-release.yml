@@ -2,31 +2,32 @@ name: Trigger Legend Stack Release
 
 on:
   workflow_dispatch:
-    legend-shared-release:
-      type: choice
-      description: "New release version for legend shared"
-      default: 'n/a'
-      options: ['n/a', 'major', 'minor', 'patch']
-    legend-pure-release:
-      type: choice
-      description: "New release version for legend pure"
-      default: 'n/a'
-      options: ['n/a', 'major', 'minor', 'patch']
-    legend-engine-release:
-      type: choice
-      description: "New release version for legend engine"
-      default: 'n/a'
-      options: ['n/a', 'major', 'minor', 'patch']
-    legend-sdlc-release:
-      type: choice
-      description: "New release version for legend sdlc"
-      default: 'n/a'
-      options: ['n/a', 'major', 'minor', 'patch']
-    legend-depot-release:
-      type: choice
-      description: "New release version for legend depot"
-      default: 'n/a'
-      options: ['n/a', 'major', 'minor', 'patch']
+    inputs:
+      legend-shared-release:
+        type: choice
+        description: "New release version for legend shared"
+        default: 'n/a'
+        options: ['n/a', 'major', 'minor', 'patch']
+      legend-pure-release:
+        type: choice
+        description: "New release version for legend pure"
+        default: 'n/a'
+        options: ['n/a', 'major', 'minor', 'patch']
+      legend-engine-release:
+        type: choice
+        description: "New release version for legend engine"
+        default: 'n/a'
+        options: ['n/a', 'major', 'minor', 'patch']
+      legend-sdlc-release:
+        type: choice
+        description: "New release version for legend sdlc"
+        default: 'n/a'
+        options: ['n/a', 'major', 'minor', 'patch']
+      legend-depot-release:
+        type: choice
+        description: "New release version for legend depot"
+        default: 'n/a'
+        options: ['n/a', 'major', 'minor', 'patch']
 
 env:
   OWNER: finos
