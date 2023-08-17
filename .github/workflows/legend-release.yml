@@ -49,11 +49,10 @@ jobs:
         id: set_legend_shared_release_version
         if: github.event.inputs.legend-shared-release != 'n/a'
         run: |
-          GROUP_ID="org.finos.legend.shared"
-          ARTIFACT_ID="legend-shared"
+          REPO_NAME="legend-shared"
           
           # Query Maven Central API to get latest version
-          latest_version=$(curl -s "https://search.maven.org/solrsearch/select?q=g:${GROUP_ID}+AND+a:${ARTIFACT_ID}&core=gav&rows=1&wt=json" | jq -r '.response.docs[0].v')
+          latest_version=$(curl -s "https://api.github.com/repos/${OWNER}/${REPO_NAME}/tags" | jq -r --arg repo_name "${REPO_NAME}" '.[] | select(.name | test("^" + $repo_name + "-[0-9]+\\.[0-9]+\\.[0-9]+$")) | .name' | sort -V | tail -n1 | sed "s/^${REPO_NAME}-//")  
           
           # Increment patch version
           IFS='.' read -r major minor patch <<< "$latest_version"
@@ -73,11 +72,10 @@ jobs:
         id: set_legend_pure_release_version
         if: github.event.inputs.legend-pure-release != 'n/a'
         run: |
-          GROUP_ID="org.finos.legend.pure"
-          ARTIFACT_ID="legend-pure"
+          REPO_NAME="legend-pure"
           
           # Query Maven Central API to get latest version
-          latest_version=$(curl -s "https://search.maven.org/solrsearch/select?q=g:${GROUP_ID}+AND+a:${ARTIFACT_ID}&core=gav&rows=1&wt=json" | jq -r '.response.docs[0].v')
+          latest_version=$(curl -s "https://api.github.com/repos/${OWNER}/${REPO_NAME}/tags" | jq -r --arg repo_name "${REPO_NAME}" '.[] | select(.name | test("^" + $repo_name + "-[0-9]+\\.[0-9]+\\.[0-9]+$")) | .name' | sort -V | tail -n1 | sed "s/^${REPO_NAME}-//")
           
           # Increment patch version
           IFS='.' read -r major minor patch <<< "$latest_version"
@@ -97,11 +95,10 @@ jobs:
         id: set_legend_engine_release_version
         if: github.event.inputs.legend-engine-release != 'n/a'
         run: |
-          GROUP_ID="org.finos.legend.engine"
-          ARTIFACT_ID="legend-engine"
+          REPO_NAME="legend-engine"
           
           # Query Maven Central API to get latest version
-          latest_version=$(curl -s "https://search.maven.org/solrsearch/select?q=g:${GROUP_ID}+AND+a:${ARTIFACT_ID}&core=gav&rows=1&wt=json" | jq -r '.response.docs[0].v')
+          latest_version=$(curl -s "https://api.github.com/repos/${OWNER}/${REPO_NAME}/tags" | jq -r --arg repo_name "${REPO_NAME}" '.[] | select(.name | test("^" + $repo_name + "-[0-9]+\\.[0-9]+\\.[0-9]+$")) | .name' | sort -V | tail -n1 | sed "s/^${REPO_NAME}-//")
           
           # Increment patch version
           IFS='.' read -r major minor patch <<< "$latest_version"
@@ -121,11 +118,10 @@ jobs:
         id: set_legend_sdlc_release_version
         if: github.event.inputs.legend-sdlc-release != 'n/a'
         run: |
-          GROUP_ID="org.finos.legend.sdlc"
-          ARTIFACT_ID="legend-sdlc"
+          REPO_NAME="legend-sdlc"
           
           # Query Maven Central API to get latest version
-          latest_version=$(curl -s "https://search.maven.org/solrsearch/select?q=g:${GROUP_ID}+AND+a:${ARTIFACT_ID}&core=gav&rows=1&wt=json" | jq -r '.response.docs[0].v')
+          latest_version=$(curl -s "https://api.github.com/repos/${OWNER}/${REPO_NAME}/tags" | jq -r --arg repo_name "${REPO_NAME}" '.[] | select(.name | test("^" + $repo_name + "-[0-9]+\\.[0-9]+\\.[0-9]+$")) | .name' | sort -V | tail -n1 | sed "s/^${REPO_NAME}-//")
           
           # Increment patch version
           IFS='.' read -r major minor patch <<< "$latest_version"
@@ -145,11 +141,10 @@ jobs:
         id: set_legend_depot_release_version
         if: github.event.inputs.legend-depot-release != 'n/a'
         run: |
-          GROUP_ID="org.finos.legend.depot"
-          ARTIFACT_ID="legend-depot"
+          REPO_NAME="legend-depot"
           
           # Query Maven Central API to get latest version
-          latest_version=$(curl -s "https://search.maven.org/solrsearch/select?q=g:${GROUP_ID}+AND+a:${ARTIFACT_ID}&core=gav&rows=1&wt=json" | jq -r '.response.docs[0].v')
+          latest_version=$(curl -s "https://api.github.com/repos/${OWNER}/${REPO_NAME}/tags" | jq -r --arg repo_name "${REPO_NAME}" '.[] | select(.name | test("^" + $repo_name + "-[0-9]+\\.[0-9]+\\.[0-9]+$")) | .name' | sort -V | tail -n1 | sed "s/^${REPO_NAME}-//")
           
           # Increment patch version
           IFS='.' read -r major minor patch <<< "$latest_version"
