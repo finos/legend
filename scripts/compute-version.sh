@@ -11,8 +11,11 @@ IFS='.' read -r major minor patch <<< "$latest_version"
 
 if [ "$RELEASE_TYPE" == "major" ]; then
   major=$((major + 1))
+  minor=0
+  patch=0
 elif [ "$RELEASE_TYPE" == "minor" ]; then
   minor=$((minor + 1))
+  patch=0
 else
   patch=$((patch + 1))
 fi
