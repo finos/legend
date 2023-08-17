@@ -45,119 +45,41 @@ jobs:
       legend_sdlc_release_version: ${{ steps.set_legend_sdlc_release_version.outputs.legend_sdlc_release_version }}
       legend_depot_release_version: ${{ steps.set_legend_depot_release_version.outputs.legend_depot_release_version }}
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.5.2
       - name: Compute legend-shared-release-version
         id: set_legend_shared_release_version
         if: github.event.inputs.legend-shared-release != 'n/a'
         run: |
-          REPO_NAME="legend-shared"
-          
-          # Query Maven Central API to get latest version
-          latest_version=$(curl -s "https://api.github.com/repos/${OWNER}/${REPO_NAME}/tags" | jq -r --arg repo_name "${REPO_NAME}" '.[] | select(.name | test("^" + $repo_name + "-[0-9]+\\.[0-9]+\\.[0-9]+$")) | .name' | sort -V | tail -n1 | sed "s/^${REPO_NAME}-//")  
-          
-          # Increment patch version
-          IFS='.' read -r major minor patch <<< "$latest_version"
-          
-          release_type="${{ github.event.inputs.legend-shared-release }}"
-          if [ "$release_type" == "major" ]; then
-            major=$((major + 1))
-          elif [ "$release_type" == "minor" ]; then
-            minor=$((minor + 1))
-          else
-            patch=$((patch + 1))
-          fi
-          legend_shared_release_version="${major}.${minor}.${patch}"
+          legend_shared_release_version=$(bash ./scripts/compute-version.sh "legend-shared" "${{ github.event.inputs.legend-shared-release }}")
           echo "legend_shared_release_version=${legend_shared_release_version}" >> "$GITHUB_OUTPUT"
 
       - name: Compute legend-pure-release-version
         id: set_legend_pure_release_version
         if: github.event.inputs.legend-pure-release != 'n/a'
         run: |
-          REPO_NAME="legend-pure"
-          
-          # Query Maven Central API to get latest version
-          latest_version=$(curl -s "https://api.github.com/repos/${OWNER}/${REPO_NAME}/tags" | jq -r --arg repo_name "${REPO_NAME}" '.[] | select(.name | test("^" + $repo_name + "-[0-9]+\\.[0-9]+\\.[0-9]+$")) | .name' | sort -V | tail -n1 | sed "s/^${REPO_NAME}-//")
-          
-          # Increment patch version
-          IFS='.' read -r major minor patch <<< "$latest_version"
-          
-          release_type="${{ github.event.inputs.legend-pure-release }}"
-          if [ "$release_type" == "major" ]; then
-            major=$((major + 1))
-          elif [ "$release_type" == "minor" ]; then
-            minor=$((minor + 1))
-          else
-            patch=$((patch + 1))
-          fi
-          legend_pure_release_version="${major}.${minor}.${patch}"
+          legend_pure_release_version=$(bash ./scripts/compute-version.sh "legend-pure" "${{ github.event.inputs.legend-pure-release }}")
           echo "legend_pure_release_version=${legend_pure_release_version}" >> "$GITHUB_OUTPUT"
 
       - name: Compute legend-engine-release-version
         id: set_legend_engine_release_version
         if: github.event.inputs.legend-engine-release != 'n/a'
         run: |
-          REPO_NAME="legend-engine"
-          
-          # Query Maven Central API to get latest version
-          latest_version=$(curl -s "https://api.github.com/repos/${OWNER}/${REPO_NAME}/tags" | jq -r --arg repo_name "${REPO_NAME}" '.[] | select(.name | test("^" + $repo_name + "-[0-9]+\\.[0-9]+\\.[0-9]+$")) | .name' | sort -V | tail -n1 | sed "s/^${REPO_NAME}-//")
-          
-          # Increment patch version
-          IFS='.' read -r major minor patch <<< "$latest_version"
-          
-          release_type="${{ github.event.inputs.legend-engine-release }}"
-          if [ "$release_type" == "major" ]; then
-            major=$((major + 1))
-          elif [ "$release_type" == "minor" ]; then
-            minor=$((minor + 1))
-          else
-            patch=$((patch + 1))
-          fi
-          legend_engine_release_version="${major}.${minor}.${patch}"
+          legend_engine_release_version=$(bash ./scripts/compute-version.sh "legend-engine" "${{ github.event.inputs.legend-engine-release }}")
           echo "legend_engine_release_version=${legend_engine_release_version}" >> "$GITHUB_OUTPUT"
 
       - name: Compute legend-sdlc-release-version
         id: set_legend_sdlc_release_version
         if: github.event.inputs.legend-sdlc-release != 'n/a'
         run: |
-          REPO_NAME="legend-sdlc"
-          
-          # Query Maven Central API to get latest version
-          latest_version=$(curl -s "https://api.github.com/repos/${OWNER}/${REPO_NAME}/tags" | jq -r --arg repo_name "${REPO_NAME}" '.[] | select(.name | test("^" + $repo_name + "-[0-9]+\\.[0-9]+\\.[0-9]+$")) | .name' | sort -V | tail -n1 | sed "s/^${REPO_NAME}-//")
-          
-          # Increment patch version
-          IFS='.' read -r major minor patch <<< "$latest_version"
-          
-          release_type="${{ github.event.inputs.legend-sdlc-release }}"
-          if [ "$release_type" == "major" ]; then
-            major=$((major + 1))
-          elif [ "$release_type" == "minor" ]; then
-            minor=$((minor + 1))
-          else
-            patch=$((patch + 1))
-          fi
-          legend_sdlc_release_version="${major}.${minor}.${patch}"
+          legend_sdlc_release_version=$(bash ./scripts/compute-version.sh "legend-sdlc" "${{ github.event.inputs.legend-sdlc-release }}")
           echo "legend_sdlc_release_version=${legend_sdlc_release_version}" >> "$GITHUB_OUTPUT"
 
       - name: Compute legend-depot-release-version
         id: set_legend_depot_release_version
         if: github.event.inputs.legend-depot-release != 'n/a'
         run: |
-          REPO_NAME="legend-depot"
-          
-          # Query Maven Central API to get latest version
-          latest_version=$(curl -s "https://api.github.com/repos/${OWNER}/${REPO_NAME}/tags" | jq -r --arg repo_name "${REPO_NAME}" '.[] | select(.name | test("^" + $repo_name + "-[0-9]+\\.[0-9]+\\.[0-9]+$")) | .name' | sort -V | tail -n1 | sed "s/^${REPO_NAME}-//")
-          
-          # Increment patch version
-          IFS='.' read -r major minor patch <<< "$latest_version"
-          
-          release_type="${{ github.event.inputs.legend-depot-release }}"
-          if [ "$release_type" == "major" ]; then
-            major=$((major + 1))
-          elif [ "$release_type" == "minor" ]; then
-            minor=$((minor + 1))
-          else
-            patch=$((patch + 1))
-          fi
-          legend_depot_release_version="${major}.${minor}.${patch}"
+          legend_depot_release_version=$(bash ./scripts/compute-version.sh "legend-depot" "${{ github.event.inputs.legend-depot-release }}")
           echo "legend_depot_release_version=${legend_depot_release_version}" >> "$GITHUB_OUTPUT"
   release-legend-shared:
     runs-on: ubuntu-latest
@@ -350,7 +272,7 @@ jobs:
   release-legend-engine:
     runs-on: ubuntu-latest
     needs: [compute-versions, release-legend-shared, release-legend-pure]
-    if: always() && github.event.inputs.legend-engine-release != 'n/a' && ( needs.release-legend-shared.result == 'success' || needs.release-legend-shared.result == 'skipped' ) && ( needs.release-legend-pure.result == 'success' || needs.release-legend-pure.result == 'skipped' )
+    if: always() && github.event.inputs.legend-engine-release != 'n/a' && needs.compute-versions.result == 'success' && ( needs.release-legend-shared.result == 'success' || needs.release-legend-shared.result == 'skipped' ) && ( needs.release-legend-pure.result == 'success' || needs.release-legend-pure.result == 'skipped' )
     steps:
       - name: Set Required RunNumber of Legend Engine Release
         run: |
@@ -444,7 +366,7 @@ jobs:
   release-legend-sdlc:
     runs-on: ubuntu-latest
     needs: [compute-versions, release-legend-shared, release-legend-pure, release-legend-engine]
-    if: always() && github.event.inputs.legend-sdlc-release != 'n/a' && ( needs.release-legend-shared.result == 'success' || needs.release-legend-shared.result == 'skipped' ) && ( needs.release-legend-pure.result == 'success' || needs.release-legend-pure.result == 'skipped' ) && ( needs.release-legend-engine.result == 'success' || needs.release-legend-engine.result == 'skipped' )
+    if: always() && github.event.inputs.legend-sdlc-release != 'n/a' && needs.compute-versions.result == 'success' && ( needs.release-legend-shared.result == 'success' || needs.release-legend-shared.result == 'skipped' ) && ( needs.release-legend-pure.result == 'success' || needs.release-legend-pure.result == 'skipped' ) && ( needs.release-legend-engine.result == 'success' || needs.release-legend-engine.result == 'skipped' )
     steps:
       - name: Set Required RunNumber of Legend Sdlc Release
         run: |
@@ -538,7 +460,7 @@ jobs:
   release-legend-depot:
     runs-on: ubuntu-latest
     needs: [compute-versions, release-legend-shared, release-legend-pure, release-legend-engine, release-legend-sdlc]
-    if: always() && github.event.inputs.legend-depot-release != 'n/a' && ( needs.release-legend-shared.result == 'success' || needs.release-legend-shared.result == 'skipped' ) && ( needs.release-legend-pure.result == 'success' || needs.release-legend-pure.result == 'skipped' ) && ( needs.release-legend-engine.result == 'success' || needs.release-legend-engine.result == 'skipped' ) && ( needs.release-legend-sdlc.result == 'success' || needs.release-legend-sdlc.result == 'skipped' )
+    if: always() && github.event.inputs.legend-depot-release != 'n/a' && needs.compute-versions.result == 'success' && ( needs.release-legend-shared.result == 'success' || needs.release-legend-shared.result == 'skipped' ) && ( needs.release-legend-pure.result == 'success' || needs.release-legend-pure.result == 'skipped' ) && ( needs.release-legend-engine.result == 'success' || needs.release-legend-engine.result == 'skipped' ) && ( needs.release-legend-sdlc.result == 'success' || needs.release-legend-sdlc.result == 'skipped' )
     steps:
       - name: Set Required RunNumber of Legend Depot Release
         run: |
