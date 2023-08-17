@@ -4,7 +4,7 @@ REPO_NAME="$1"
 RELEASE_TYPE="$2"
 
 # Query Maven Central API to get latest version
-latest_version=$(curl -s "https://api.github.com/repos/${OWNER}/${REPO_NAME}/tags" | jq -r --arg repo_name "${REPO_NAME}" '.[] | select(.name | test("^" + $repo_name + "-[0-9]+\\.[0-9]+\\.[0-9]+$")) | .name' | sort -V | tail -n1 | sed "s/^${REPO_NAME}-//")
+latest_version=$(curl -s "https://api.github.com/repos/finos/${REPO_NAME}/tags" | jq -r --arg repo_name "${REPO_NAME}" '.[] | select(.name | test("^" + $repo_name + "-[0-9]+\\.[0-9]+\\.[0-9]+$")) | .name' | sort -V | tail -n1 | sed "s/^${REPO_NAME}-//")
 
 # Increment patch version
 IFS='.' read -r major minor patch <<< "$latest_version"
