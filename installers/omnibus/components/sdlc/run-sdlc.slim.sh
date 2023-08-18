@@ -42,7 +42,7 @@ elif [[ "$LEGEND_OMNIBUS_CONFIG_SDLC_MODE" = "gitlab-oauth" ]]; then
     export LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_REDIRECT_BASE_URL=$LEGEND_OMNIBUS_CONFIG_BASE_URL
   fi
   config_file="config.gitlab-oauth.slim.yml"
-else
+elif [[ "$LEGEND_OMNIBUS_CONFIG_SDLC_MODE" = "in-memory" ]]; then
   # Default to LEGEND_OMNIBUS_CONFIG_SDLC_MODE=in-memory
   LEGEND_OMNIBUS_CONFIG_SDLC_MODE="in-memory"
   echo -e "Using in-memory backend with no authentication..."
@@ -50,6 +50,13 @@ else
   main_class=org.finos.legend.sdlc.server.demo.LegendSDLCServerForDemo
   lib_dir=/app/sdlc-demo/lib
   config_file="config.in-memory.slim.yml"
+else
+  LEGEND_OMNIBUS_CONFIG_SDLC_MODE="fileSystem"
+  echo -e "Using file system backend with no authentication..."
+
+  main_class=org.finos.legend.sdlc.server.startup.LegendSDLCServerFS
+  lib_dir=/app/sdlc-fs-demo/lib
+  config_file="config.fileSystem.slim.yml"
 fi
 
 java -cp $lib_dir/*-shaded.jar \

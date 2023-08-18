@@ -1,0 +1,78 @@
+server:
+  adminContextPath: /admin
+  applicationConnectors:
+    - type: http
+      port: ${LEGEND_OMNIBUS_SDLC_PORT}
+      maxRequestHeaderSize: 128KiB
+  adminConnectors:
+    - type: http
+      port: ${LEGEND_OMNIBUS_SDLC_ADMIN_PORT}
+  gzip:
+    includedMethods:
+      - GET
+      - POST
+  requestLog:
+    type: classic
+    level: "OFF"
+    appenders:
+      - type: console
+        logFormat: "OFF"
+  rootPath: /api
+sessionCookie: LEGEND_SDLC_JSESSIONID
+logging:
+  level: INFO
+  appenders:
+    - type: console
+      logFormat: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%thread] %c - %m%n"
+swagger:
+  resourcePackage: org.finos.legend.sdlc.server.resources
+  title: Legend SDLC (File System)
+  version: local-snapshot
+  schemes: []
+
+pac4j:
+  clients:
+    - org.pac4j.core.client.direct.AnonymousClient: {}          
+  bypassPaths:
+    - /api/info
+    - /api/server/info
+    - /api/server/platforms
+    - /api/auth/authorized      
+
+applicationName: Legend SDLC
+filterPriorities:
+  GitLab: 1
+  org.pac4j.j2e.filter.CallbackFilter: 2
+  org.pac4j.j2e.filter.SecurityFilter: 3
+  CORS: 4
+cors:
+  allowedHeaders:
+    - X-Requested-With
+    - Content-Type
+    - Accept
+    - Origin
+    - Access-Control-Allow-Credentials
+    - x-b3-parentspanid
+    - x-b3-sampled
+    - x-b3-spanid
+    - x-b3-traceid
+    - legend-omnibus-pat
+fileSystem:
+  rootDirectory: ${LEGEND_OMNIBUS_SDLC_FS_ROOT_DIR}
+features:
+  canCreateProject: true
+  canCreateVersion: false
+projectStructure:
+  projectCreation: {}
+  extensionProvider:
+    org.finos.legend.sdlc.server.gitlab.finos.FinosGitlabProjectStructureExtensionProvider:
+      {}
+  platforms:
+    legend-engine:
+      groupId: org.finos.legend.engine
+      platformVersion:
+        version: ${LEGEND_OMNIBUS_ENGINE_VERSION}
+    legend-sdlc:
+      groupId: org.finos.legend.sdlc
+      platformVersion:
+        version: ${LEGEND_OMNIBUS_SDLC_VERSION}

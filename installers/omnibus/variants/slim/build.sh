@@ -23,8 +23,9 @@ docker build \
   --build-arg LEGEND_OMNIBUS_SDLC_DEMO_VERSION=$LEGEND_OMNIBUS_SDLC_DEMO_VERSION \
   --build-arg LEGEND_OMNIBUS_SDLC_PORT=$LEGEND_OMNIBUS_SDLC_PORT \
   --build-arg LEGEND_OMNIBUS_SDLC_ADMIN_PORT=$LEGEND_OMNIBUS_SDLC_ADMIN_PORT \
+  --build-arg LEGEND_OMNIBUS_SDLC_FS_ROOT_DIR=$LEGEND_OMNIBUS_SDLC_FS_ROOT_DIR \
   \
   --build-arg LEGEND_OMNIBUS_STUDIO_VERSION=$LEGEND_OMNIBUS_STUDIO_VERSION \
   --build-arg LEGEND_OMNIBUS_STUDIO_PORT=$LEGEND_OMNIBUS_STUDIO_PORT \
   \
-  -f ./variants/slim/Dockerfile -t legend-omnibus:latest-slim .
+  -f ./variants/slim/Dockerfile -t legendfsdemo/legend-omnibus:latest-slim .
