@@ -8,7 +8,7 @@ This step assumes that Docker has already been installed.
 Copy/paste the command below in a terminal. 
 
 ```
-bash <(curl -s https://raw.githubusercontent.com/finos/legend/fsDemo/fsdemo/Demo.sh)
+bash <(curl -s https://raw.githubusercontent.com/mrudula-gs/legend/fsDemo/fsdemo/Demo.sh)
 ```
 
 Wait for a few minutes till the following banner is printed
