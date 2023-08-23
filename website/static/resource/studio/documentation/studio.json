@@ -381,17 +381,17 @@
     },
     "question.where-to-find-examples-features-in-action": {
       "markdownText": {
-        "value": "Check out the Showcase Projects section on the Legend documentation site."
+        "value": "Check out Legend Showcase Projects."
       },
       "title": "Where can I find examples of features in action?",
-      "url": "https://legend.finos.org/docs/showcases/showcase-projects"
+      "url": "In Studio, navigate to the top icon on the left sidebar to browse showcase projects hosted at https://github.com/finos/legend/tree/master/showcases in the Studio showcase explorer"
     },
     "question.showcase-projects": {
       "markdownText": {
-        "value": "Check out the Showcase Projects section on the Legend documentation site."
+        "value": "Check out Legend Showcase Projects."
       },
       "title": "Where can I find Showcase projects?",
-      "url": "https://legend.finos.org/docs/showcases/showcase-projects"
+      "url": "In Studio, navigate to the top icon on the left sidebar to browse showcase projects hosted at https://github.com/finos/legend/tree/master/showcases in the Studio showcase explorer"
     }
   }
 }

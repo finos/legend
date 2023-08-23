@@ -139,22 +139,19 @@ cd website ; npm run start
 ```
 #### **Step 2. Create a showcase project**
 
-Showcase projects show Legend features in action and are hosted on the [Legend hosted instance](https://gitlab.com/finosfoundation/legend). 
+##### Before you start
 
-See showcase project examples [here](../showcases/showcase-projects.md).
+- **Keep the [Legend showcase folder](https://github.com/finos/legend/tree/master/showcases) structure clean**. This allows for easier navigation and breakdown of the supported features and use cases. Navigation is important for both developers and users. Example: if a particular milestoning works only for Relational, put it under Relational, and not under Core
+- **`info.md`**. The `info.md` file is used for indexing, so make sure to choose words that you think a user would type in when doing free-text search
+- **`code.pure`**. The `code.pure` file should highlight one, and only one feature. Do **not** showcase multiple features in the same file. Example: if a Connection type can have different authentication types, separate these into different files. Similarly, do **not** include a Mapping with ~filter and ~groupBy in it. These should be separate. The goal is to highlight the available "puzzle pieces" and allow users to combine them in ways that make sense with the folder hierarchy that we have provided.
 
-To create a showcase project:
+##### Step by step guide
 
-1. Request free access to the [Legend hosted instance](https://finos.org/legend)    
+1. Go to the [Legend showcase folder](https://github.com/finos/legend/tree/master/showcases) on GitHub and identify the appropriate folder to document your feature.
 
-2. 
-    a) Create a new showcase project on the [Legend hosted instance](https://gitlab.com/finosfoundation/legend/showcase) and call it "Legend showcase - _feature name_"
-    
-    b) Open the [existing showcase project](https://gitlab.com/finosfoundation/legend/showcase) that you would like to update
+2. Update the `info.md` folder with a description of the feature and how it is meant to be used. The title and description parts will be displayed in the Legend Studio showcase explorer.
 
-3. Document the features in the showcase project
-
-4. Submit a PR to add the showcase project's gitlab URL to the [showcase projects filehttps://github.com/finos/legend/blob/master/docs/showcases/showcase-projects.md) under the corresponding Legend User Journey. 
+3. Update the `code.pure` file with the showcase project code. This should be the minimal amount of code needed to showcase a feature in isolation. For example, if you are contributing a filter relational mapping, you sould include a small model, store and mapping that has the ~filter within it.
 
 #### **Step 3 Write additional documentation**
 
