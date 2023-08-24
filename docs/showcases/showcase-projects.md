@@ -4,9 +4,11 @@ title: Showcase Projects
 sidebar_label: Showcase Projects
 ---
 
-## Overview
+## Overview 
 
 This page features a list of [Legend showcase projects](https://gitlab.com/finosfoundation/legend/showcase). Get started with the [Legend showcase guided tour](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project-guided-tour). For step by step tutorials, see [Legend tutorials](../tutorials/studio-workspace.md).
+
+All Legend showcase projects are available [here]](https://github.com/finos/legend/tree/master/showcases).
 
 ### :warning: Prerequisites
 
