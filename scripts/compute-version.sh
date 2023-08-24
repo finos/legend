@@ -21,4 +21,4 @@ else
 fi
 
 new_version="${major}.${minor}.${patch}"
-echo "::set-output name=new_version::$new_version"
+echo "$new_version"
