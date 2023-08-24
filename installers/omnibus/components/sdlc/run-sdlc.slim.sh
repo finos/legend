@@ -55,7 +55,7 @@ else
   echo -e "Using file system backend with no authentication..."
 
   main_class=org.finos.legend.sdlc.server.startup.LegendSDLCServerFS
-  lib_dir=/app/sdlc-fs-demo/lib
+  lib_dir=/app/sdlc-fs/lib
   config_file="config.fileSystem.slim.yml"
 fi
 

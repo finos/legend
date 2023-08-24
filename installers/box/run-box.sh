@@ -18,7 +18,6 @@ docker run \
 	-e SDLC_PORT=6100 \
 	-e SDLC_MAVEN_VERSION=0.91.1 \
 	-e SDLC_ADMIN_PORT=6101 \
-	-e FS_ROOT_DIR=/tmp/Legend \
 	-e SDLC_REDIRECT_URI=http://localhost:6100/api/auth/callback \
 	-e SDLC_PROJECT_TAG=legend \
 	-e SDLC_PROJECT_ID_PREFIX=^org\.demo\.legend\..+ \

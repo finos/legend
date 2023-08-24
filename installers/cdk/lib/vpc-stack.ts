@@ -173,7 +173,6 @@ export class VpcStack extends cdk.Stack {
             "GITLAB_APP_SECRET": props.gitlabAppSecret,
             "SDLC_PORT": props.legendSdlcPort.toString(),
             "SDLC_ADMIN_PORT": "7071",
-            "FS_ROOT_DIR": "/tmp/Legend",
             "SDLC_PROJECT_TAG": "legend",
             "SDLC_REDIRECT_URI": "https://"+ legendRecord.domainName + ":" + props.legendSdlcPort + "/api/auth/callback",
             "SDLC_MAVEN_VERSION": "0.91.1",
