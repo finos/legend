@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        variant: [full, slim]
+        variant: [full, slim, ghc]
     steps:
       - name: Checkout code
         uses: actions/checkout@v3.5.2

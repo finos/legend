@@ -9,4 +9,4 @@ docker run -v --platform=linux/amd64 -it \
 	-p 6300:6300 \
 	-p 9000:9000 \
 	--env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="fileSystem" \
-	legendfsdemo/legend-omnibus:latest-slim
+	legendfsdemo/legend-omnibus:latest-ghc

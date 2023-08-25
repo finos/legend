@@ -3,13 +3,13 @@
 ARG LEGEND_OMNIBUS_IMAGE_VERSION
 ARG LEGEND_OMNIBUS_ENGINE_VERSION
 ARG LEGEND_OMNIBUS_SDLC_VERSION
-ARG LEGEND_OMNIBUS_SDLC_DEMO_VERSION
+ARG LEGEND_OMNIBUS_SDLC_FS_VERSION
 ARG LEGEND_OMNIBUS_STUDIO_VERSION
 
 FROM finos/legend-engine-server:${LEGEND_OMNIBUS_ENGINE_VERSION} AS engine-image
 FROM finos/legend-sdlc-server:${LEGEND_OMNIBUS_SDLC_VERSION} AS sdlc-image
 FROM finos/legend-studio:${LEGEND_OMNIBUS_STUDIO_VERSION} AS studio-image
-FROM legenddemo/legend-sdlc-server-demo:${LEGEND_OMNIBUS_SDLC_DEMO_VERSION} as sdlc-demo-image
+FROM finos/legend-sdlc-server-fs:${LEGEND_OMNIBUS_SDLC_FS_VERSION} AS sdlc-fs-image
 
 FROM eclipse-temurin:11.0.19_7-jdk-jammy
 RUN apt-get update && apt-get install -y wget nano
@@ -54,10 +54,12 @@ ENV LEGEND_OMNIBUS_SDLC_VERSION=${LEGEND_OMNIBUS_SDLC_VERSION}
 ENV LEGEND_OMNIBUS_SDLC_PORT=${LEGEND_OMNIBUS_SDLC_PORT}
 ENV LEGEND_OMNIBUS_SDLC_ADMIN_PORT=${LEGEND_OMNIBUS_SDLC_ADMIN_PORT}
 
-# Legend SDLC Demo
-ARG LEGEND_OMNIBUS_SDLC_DEMO_VERSION
+# Legend SDLC FS
+ARG LEGEND_OMNIBUS_SDLC_FS_VERSION
+ARG LEGEND_OMNIBUS_SDLC_FS_ROOT_DIR
 
-ENV LEGEND_OMNIBUS_SDLC_DEMO_VERSION=${LEGEND_OMNIBUS_SDLC_DEMO_VERSION}
+ENV LEGEND_OMNIBUS_SDLC_FS_VERSION=${LEGEND_OMNIBUS_SDLC_FS_VERSION}
+ENV LEGEND_OMNIBUS_SDLC_FS_ROOT_DIR=${LEGEND_OMNIBUS_SDLC_FS_ROOT_DIR}
 
 # Legend Studio
 ARG LEGEND_OMNIBUS_STUDIO_VERSION
@@ -82,7 +84,7 @@ ARG NGINX_DIR=/app/nginx
 RUN mkdir -p $NGINX_DIR/logs
 RUN apt-get update && apt-get install -y nginx
 COPY components/nginx $NGINX_DIR
-RUN chmod +x $NGINX_DIR/run-nginx.slim.sh
+RUN chmod +x $NGINX_DIR/run-nginx.ghc.sh
 EXPOSE ${LEGEND_OMNIBUS_NGINX_PORT}
 
 # ---------------- Setup Legend Engine ----------------
@@ -105,16 +107,17 @@ RUN mkdir -p $SDLC_DIR/lib
 RUN mkdir -p $SDLC_DIR/logs
 COPY --from=sdlc-image /app/bin/*.jar $SDLC_DIR/lib/
 COPY components/sdlc $SDLC_DIR
-RUN chmod +x $SDLC_DIR/run-sdlc.slim.sh
+RUN chmod +x $SDLC_DIR/run-sdlc.ghc.sh
 EXPOSE ${LEGEND_OMNIBUS_SDLC_PORT}
 
-# ---------------- Setup Legend SDLC Demo -------------
+# ---------------- Setup Legend SDLC FS -------------
 
-ARG SDLC_DEMO_DIR=/app/sdlc-demo
-RUN mkdir -p $SDLC_DEMO_DIR/lib
-RUN mkdir -p $SDLC_DEMO_DIR/logs
-COPY --from=sdlc-demo-image /app/bin/*.jar $SDLC_DEMO_DIR/lib
-
+ARG SDLC_FS_DIR=/app/sdlc-fs
+RUN mkdir -p $SDLC_FS_DIR/lib
+RUN mkdir -p $SDLC_FS_DIR/logs
+COPY --from=sdlc-fs-image /app/bin/*.jar $SDLC_FS_DIR/lib
+COPY components/sdlc/showcase/Legend $LEGEND_OMNIBUS_SDLC_FS_ROOT_DIR
+RUN apt-get update && apt-get install -y git
 
 # ---------------- Setup Legend Studio ----------------
 
@@ -123,7 +126,7 @@ RUN mkdir -p $STUDIO_DIR/lib
 RUN mkdir -p $STUDIO_DIR/logs
 COPY --from=studio-image /app/bin $STUDIO_DIR/
 COPY components/studio $STUDIO_DIR
-RUN chmod +x $STUDIO_DIR/run-studio.slim.sh
+RUN chmod +x $STUDIO_DIR/run-studio.ghc.sh
 EXPOSE ${LEGEND_OMNIBUS_STUDIO_PORT}
 
 # ---------------- Setup Supervisor ----------------
@@ -132,7 +135,7 @@ ARG SUPERVISOR_DIR=/app/supervisor
 RUN mkdir -p $SUPERVISOR_DIR
 RUN apt-get update && apt-get install -y supervisor python3
 COPY components/supervisor $SUPERVISOR_DIR
-RUN chmod +x $SUPERVISOR_DIR/check-setup.slim.sh
+RUN chmod +x $SUPERVISOR_DIR/check-setup.ghc.sh
 EXPOSE ${LEGEND_OMNIBUS_SUPERVISOR_PORT}
 
 RUN chmod +x $SUPERVISOR_DIR/run-directory-server.sh
@@ -140,10 +143,10 @@ EXPOSE ${LEGEND_OMNIBUS_SUPERVISOR_DIRECTORY_SERVER_PORT}
 
 # ---------------- Reporting ----------------
 
-RUN chmod +x $SUPERVISOR_DIR/report-build-info.slim.sh
-RUN $SUPERVISOR_DIR/report-build-info.slim.sh
+RUN chmod +x $SUPERVISOR_DIR/report-build-info.ghc.sh
+RUN $SUPERVISOR_DIR/report-build-info.ghc.sh
 
 # ---------------- Run Omnibus ----------------
 
-CMD (/app/supervisor/check-setup.slim.sh &) && \
-  supervisord -c /app/supervisor/supervisor.slim.conf
+CMD (/app/supervisor/check-setup.ghc.sh &) && \
+  supervisord -c /app/supervisor/supervisor.ghc.conf
