@@ -34,40 +34,13 @@ check_status()
 	done
 }
 
-# Test for SDLC with In-Memory backend
-echo -e "${YELLOW}Testing SDLC with In-Memory backend...${NC}"
+# Test for SDLC with File-System backend
+echo -e "${YELLOW}Testing SDLC with File-System backend...${NC}"
 TEST_CONTAINER=$(docker run \
 	--platform=linux/amd64 \
 	-dit \
 	-p $LEGEND_OMNIBUS_NGINX_PORT:$LEGEND_OMNIBUS_NGINX_PORT \
-	--env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="in-memory" \
-	$IMAGE)
-docker logs -f $TEST_CONTAINER &
-check_status
-docker stop $TEST_CONTAINER
-
-# Test for SDLC with Gitlab (PAT) backend
-echo -e "${YELLOW}Testing SDLC with Gitlab (PAT) backend...${NC}"
-TEST_CONTAINER=$(docker run \
-	--platform=linux/amd64 \
-	-dit \
-	-p $LEGEND_OMNIBUS_NGINX_PORT:$LEGEND_OMNIBUS_NGINX_PORT \
-	--env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="gitlab-pat" \
-	--env LEGEND_OMNIBUS_CONFIG_GITLAB_PAT="$LEGEND_OMNIBUS_CONFIG_GITLAB_PAT" \
-	$IMAGE)
-docker logs -f $TEST_CONTAINER &
-check_status
-docker stop $TEST_CONTAINER
-
-# Test for SDLC with Gitlab (OAuth) backend
-echo -e "${YELLOW}Testing SDLC with Gitlab (OAuth) backend...${NC}"
-TEST_CONTAINER=$(docker run \
-	--platform=linux/amd64 \
-	-dit \
-	-p $LEGEND_OMNIBUS_NGINX_PORT:$LEGEND_OMNIBUS_NGINX_PORT \
-	--env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="gitlab-oauth" \
-	--env LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID="$LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_ID" \
-	--env LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET="$LEGEND_OMNIBUS_CONFIG_GITLAB_OAUTH_APPLICATION_SECRET" \
+	--env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="fileSystem" \
 	$IMAGE)
 docker logs -f $TEST_CONTAINER &
 check_status
