@@ -45,18 +45,6 @@ filterPriorities:
   org.pac4j.j2e.filter.CallbackFilter: 2
   org.pac4j.j2e.filter.SecurityFilter: 3
   CORS: 4
-cors:
-  allowedHeaders:
-    - X-Requested-With
-    - Content-Type
-    - Accept
-    - Origin
-    - Access-Control-Allow-Credentials
-    - x-b3-parentspanid
-    - x-b3-sampled
-    - x-b3-spanid
-    - x-b3-traceid
-    - legend-omnibus-pat
 fileSystem:
   rootDirectory: ${LEGEND_OMNIBUS_SDLC_FS_ROOT_DIR}
 features:

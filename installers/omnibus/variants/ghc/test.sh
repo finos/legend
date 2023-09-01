@@ -40,7 +40,7 @@ TEST_CONTAINER=$(docker run \
 	--platform=linux/amd64 \
 	-dit \
 	-p $LEGEND_OMNIBUS_NGINX_PORT:$LEGEND_OMNIBUS_NGINX_PORT \
-	--env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="fileSystem" \
+	--env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="file-system" \
 	$IMAGE)
 docker logs -f $TEST_CONTAINER &
 check_status

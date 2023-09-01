@@ -110,7 +110,7 @@ COPY components/sdlc $SDLC_DIR
 RUN chmod +x $SDLC_DIR/run-sdlc.ghc.sh
 EXPOSE ${LEGEND_OMNIBUS_SDLC_PORT}
 
-# ---------------- Setup Legend SDLC FS -------------
+# --------- Setup Legend SDLC (File-System) ----------
 
 ARG SDLC_FS_DIR=/app/sdlc-fs
 RUN mkdir -p $SDLC_FS_DIR/lib
@@ -128,6 +128,13 @@ COPY --from=studio-image /app/bin $STUDIO_DIR/
 COPY components/studio $STUDIO_DIR
 RUN chmod +x $STUDIO_DIR/run-studio.ghc.sh
 EXPOSE ${LEGEND_OMNIBUS_STUDIO_PORT}
+
+# ---------------- Setup Datasource(s) ----------------
+
+ARG DATASOURCES_DIR=/app/datasources
+COPY components/datasources $DATASOURCES_DIR
+RUN chmod +x $DATASOURCES_DIR/run-postgres.ghc.sh
+RUN apt-get update && apt install -y postgresql
 
 # ---------------- Setup Supervisor ----------------
 
@@ -148,5 +155,6 @@ RUN $SUPERVISOR_DIR/report-build-info.ghc.sh
 
 # ---------------- Run Omnibus ----------------
 
-CMD (/app/supervisor/check-setup.ghc.sh &) && \
+CMD /app/datasources/run-postgres.ghc.sh && \
+  (/app/supervisor/check-setup.ghc.sh &) && \
   supervisord -c /app/supervisor/supervisor.ghc.conf
