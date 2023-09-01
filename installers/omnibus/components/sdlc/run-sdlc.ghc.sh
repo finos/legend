@@ -51,12 +51,12 @@ elif [[ "$LEGEND_OMNIBUS_CONFIG_SDLC_MODE" = "in-memory" ]]; then
   lib_dir=/app/sdlc-demo/lib
   config_file="config.in-memory.ghc.yml"
 else
-  LEGEND_OMNIBUS_CONFIG_SDLC_MODE="fileSystem"
+  LEGEND_OMNIBUS_CONFIG_SDLC_MODE="file-system"
   echo -e "Using file system backend with no authentication..."
 
   main_class=org.finos.legend.sdlc.server.startup.LegendSDLCServerFS
   lib_dir=/app/sdlc-fs/lib
-  config_file="config.fileSystem.ghc.yml"
+  config_file="config.file-system.ghc.yml"
 fi
 
 java -cp $lib_dir/*-shaded.jar \
