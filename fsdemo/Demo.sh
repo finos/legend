@@ -8,5 +8,6 @@ docker run -v --platform=linux/amd64 -it \
 	-p 6100:6100 \
 	-p 6300:6300 \
 	-p 9000:9000 \
+	-p 5432:5432 \
 	--env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="file-system" \
 	legendfsdemo/legend-omnibus:latest-ghc

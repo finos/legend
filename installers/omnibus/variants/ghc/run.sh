@@ -13,4 +13,4 @@ docker run \
 	-p $LEGEND_OMNIBUS_STUDIO_PORT:$LEGEND_OMNIBUS_STUDIO_PORT \
 	-p 6910:5432 \
 	--env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="file-system" \
-	legend-omnibus:latest-ghc
+	legendfsdemo/legend-omnibus:latest-ghc

@@ -28,4 +28,4 @@ docker build \
   --build-arg LEGEND_OMNIBUS_STUDIO_VERSION=$LEGEND_OMNIBUS_STUDIO_VERSION \
   --build-arg LEGEND_OMNIBUS_STUDIO_PORT=$LEGEND_OMNIBUS_STUDIO_PORT \
   \
-  -f ./variants/ghc/Dockerfile -t legend-omnibus:latest-ghc .
+  -f ./variants/ghc/Dockerfile -t legendfsdemo/legend-omnibus:latest-ghc .
