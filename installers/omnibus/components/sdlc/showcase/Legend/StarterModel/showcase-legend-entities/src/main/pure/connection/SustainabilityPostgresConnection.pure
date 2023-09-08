@@ -6,13 +6,13 @@ RelationalDatabaseConnection connection::SustainabilityPostgresConnection
   quoteIdentifiers: false;
   specification: Static
   {
-    name: 'postgres';
+    name: 'legend';
     host: 'postgres';
     port: 5432;
   };
   auth: UserNamePassword
   {
-    userNameVaultReference: 'postgres_username_ref';
-    passwordVaultReference: 'postgres_password_ref';
+    userNameVaultReference: 'postgres.username';
+    passwordVaultReference: 'postgres.password';
   };
 }
