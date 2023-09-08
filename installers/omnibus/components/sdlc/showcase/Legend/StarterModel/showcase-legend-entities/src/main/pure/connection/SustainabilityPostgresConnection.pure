@@ -7,7 +7,7 @@ RelationalDatabaseConnection connection::SustainabilityPostgresConnection
   specification: Static
   {
     name: 'legend';
-    host: 'postgres';
+    host: 'localhost';
     port: 5432;
   };
   auth: UserNamePassword
