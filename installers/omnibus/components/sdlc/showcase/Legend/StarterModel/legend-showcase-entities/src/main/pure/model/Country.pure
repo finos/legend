@@ -1,0 +1,7 @@
+Class model::Country
+{
+  name: String[1];
+  isoCode: String[1];
+  year: Integer[1];
+  population: Float[1];
+}

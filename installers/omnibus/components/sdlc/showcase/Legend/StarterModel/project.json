@@ -1,0 +1,13 @@
+{
+  "artifactGenerations" : [ ],
+  "artifactId" : "legend-showcase",
+  "groupId" : "org.finos.legend.showcase",
+  "metamodelDependencies" : [ ],
+  "projectDependencies" : [ ],
+  "projectId" : "StarterModel",
+  "projectStructureVersion" : {
+    "extensionVersion" : 1,
+    "version" : 13
+  },
+  "projectType" : "MANAGED"
+}

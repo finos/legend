@@ -1,0 +1,8 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	logallrefupdates = true
+[project]
+	id = StarterModel
+	name = StarterModel
+	description = Demo Starter Model
