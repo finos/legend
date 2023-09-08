@@ -1,0 +1,18 @@
+###Connection
+RelationalDatabaseConnection connection::SustainabilityPostgresConnection
+{
+  store: store::SustainabilityStatisticsDatabase;
+  type: Postgres;
+  quoteIdentifiers: false;
+  specification: Static
+  {
+    name: 'postgres';
+    host: 'postgres';
+    port: 5432;
+  };
+  auth: UserNamePassword
+  {
+    userNameVaultReference: 'postgres_username_ref';
+    passwordVaultReference: 'postgres_password_ref';
+  };
+}
