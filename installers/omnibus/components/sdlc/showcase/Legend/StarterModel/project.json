@@ -1,6 +1,6 @@
 {
   "artifactGenerations" : [ ],
-  "artifactId" : "showcase-legend",
+  "artifactId" : "legend-showcase",
   "groupId" : "org.finos.legend.showcase",
   "metamodelDependencies" : [ ],
   "projectDependencies" : [ ],

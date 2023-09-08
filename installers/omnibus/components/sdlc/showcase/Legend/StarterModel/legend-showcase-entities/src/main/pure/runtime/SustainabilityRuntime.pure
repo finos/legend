@@ -1,0 +1,15 @@
+###Runtime
+Runtime runtime::SustainabilityRuntime
+{
+  mappings:
+  [
+    mapping::SustainabilityStatisticsMapping
+  ];
+  connections:
+  [
+    store::SustainabilityStatisticsDatabase:
+    [
+      connection_1: connection::SustainabilityPostgresConnection
+    ]
+  ];
+}
