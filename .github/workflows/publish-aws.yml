@@ -1,0 +1,50 @@
+name: Publish AWS
+on:
+  push:
+    branches:
+      - master
+      - grace_hopper
+    paths:
+      - "installers/ghc/**"
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Maven Build
+        working-directory: ./installers/ghc
+        run: mvn clean install
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+
+      - name: CDK Synth
+        working-directory: ./installers/ghc
+        run: |
+          mkdir dist
+          npm install -g aws-cdk
+          cdk synth > dist/cfn.yaml
+
+      - name: Configure AWS credentials from Test account
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.GHC_PUBLISH_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.GHC_PUBLISH_AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Copy CFN Template to S3
+        working-directory: ./installers/ghc
+        run: |
+          aws s3 cp dist/cfn.yaml s3://legend.ghc/template.yaml --acl public-read
