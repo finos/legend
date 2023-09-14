@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - master
-      - grace_hopper
     paths:
       - "installers/ghc/**"
   workflow_dispatch: {}
@@ -37,7 +36,7 @@ jobs:
           npm install -g aws-cdk
           cdk synth > dist/cfn.yaml
 
-      - name: Configure AWS credentials from Test account
+      - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.GHC_PUBLISH_AWS_ACCESS_KEY_ID }}
