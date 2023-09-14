@@ -1,5 +1,8 @@
 {
   "entries": {
+    "setup.create-patch": {
+      "url": "https://legend.finos.org/docs/tutorials/studio-sdlc#create-patch-release"
+    },
     "grammar.parser.pure": {
       "markdownText": {
         "value": "Core `Pure` (coressponding to `###Pure` section in `Pure`) concerns with fundamental modelling concepts, such as, classes (data models), enumerations, associations, functions, etc."
