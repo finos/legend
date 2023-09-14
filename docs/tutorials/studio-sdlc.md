@@ -60,6 +60,28 @@ A workspace update may result in a conflict. Studio will open a new view to aid 
 ### Test new data model versions
 You can depend on another project's "HEAD" version to dynamically pull in and review incoming changes. As a data producer, you can more safely release new project versions because your consumers can test any data model changes before updating to a new released version. 
 
+## Create patch release
+You can create patch release from any of the previous released versions of your studio project by following below steps
+
+1. Create a patch from the previously released version of your project.
+
+   ![create-patch](../assets/create-patch.gif)
+
+2. Create a workspace from the patch you just created.
+   
+   ![create-workspace](../assets/create-workspace.gif)
+
+3. Make changes to your workspace and commit them.
+
+4. Create a review and get it approved, merged.
+
+   ![create-review](../assets/create-a-review-for-patch.PNG)
+
+5. Once you are done with making changes and merging it to the patch you can release it.
+
+   ![release-patch](../assets/release-patch.PNG)
+
+
 ## Troubleshoot issues with your data model, query or service.
 
 ### Navigate quickly to the underlying GitLab project
