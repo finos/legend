@@ -118,7 +118,7 @@ RUN mkdir -p $SDLC_FS_DIR/logs
 COPY --from=sdlc-fs-image /app/bin/*.jar $SDLC_FS_DIR/lib
 COPY components/sdlc/showcase/Legend $LEGEND_OMNIBUS_SDLC_FS_ROOT_DIR
 # Rename the directory
-RUN mv $LEGEND_OMNIBUS_SDLC_FS_ROOT_DIR/StarterModel/git_renamed $LEGEND_OMNIBUS_SDLC_FS_ROOT_DIR/StarterModel/.git
+RUN mv $LEGEND_OMNIBUS_SDLC_FS_ROOT_DIR/LegendStarterModel/git_renamed $LEGEND_OMNIBUS_SDLC_FS_ROOT_DIR/LegendStarterModel/.git
 RUN apt-get update && apt-get install -y git
 
 # ---------------- Setup Legend Studio ----------------
