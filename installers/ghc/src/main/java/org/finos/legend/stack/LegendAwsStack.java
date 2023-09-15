@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.finos.legend.LegendAwsConstants;
+
 import software.amazon.awscdk.CfnOutput;
 import software.amazon.awscdk.Stack;
 import software.amazon.awscdk.StackProps;
@@ -60,8 +62,7 @@ public class LegendAwsStack extends Stack {
                                 .taskImageOptions(
                                                 ApplicationLoadBalancedTaskImageOptions
                                                                 .builder()
-                                                                .image(ContainerImage.fromRegistry(
-                                                                        "finos/legend-omnibus:snapshot-ghc")) //latest-ghc
+                                                                .image(ContainerImage.fromRegistry(LegendAwsConstants.LEGEND_IMAGE))
                                                                 .environment(environment)
                                                                 .build())
                                 .memoryLimitMiB(4096)

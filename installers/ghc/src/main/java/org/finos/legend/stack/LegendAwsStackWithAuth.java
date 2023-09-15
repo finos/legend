@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.finos.legend.LegendAwsConstants;
 import org.finos.legend.construct.CognitoUser;
 
 import software.amazon.awscdk.CfnOutput;
@@ -115,8 +116,7 @@ public class LegendAwsStackWithAuth extends Stack {
                                 .taskImageOptions(
                                                 ApplicationLoadBalancedTaskImageOptions
                                                                 .builder()
-                                                                .image(ContainerImage.fromRegistry(
-                                                                                "dockerizeduser/legend-box2:latest"))
+                                                                .image(ContainerImage.fromRegistry(LegendAwsConstants.LEGEND_IMAGE))
                                                                 .environment(environment)
                                                                 .build())
                                 .memoryLimitMiB(4096)
