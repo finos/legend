@@ -1,0 +1,23 @@
+function z_cheatsheet::queries::Query2_Top10CO2Emissions(): meta::pure::tds::TabularDataSet[1]
+{
+  model::ProductionBasedCarbonDioxideEmissions.all()->filter(
+    x|!($x.annualCO2Emissions->isEmpty()) &&
+      ($x.year == 2021)
+  )->project(
+    [
+      x|$x.country.name,
+      x|$x.annualCO2Emissions
+    ],
+    [
+      'Country/Name',
+      'Annual CO 2 Emissions'
+    ]
+  )->sort(
+    [
+      desc('Annual CO 2 Emissions')
+    ]
+  )->take(10)->from(
+    mapping::SustainabilityStatisticsMapping,
+    runtime::SustainabilityRuntime
+  )
+}

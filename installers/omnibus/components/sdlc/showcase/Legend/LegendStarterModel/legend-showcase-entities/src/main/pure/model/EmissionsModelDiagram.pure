@@ -1,0 +1,133 @@
+###Diagram
+Diagram model::EmissionsModelDiagram
+{
+  classView 0a227d35-7600-4c1a-85a5-d3063abc6fde
+  {
+    class: model::GasProductionBasedCarbonDioxideEmissions;
+    position: (1050.5707797604866,339.94375882817627);
+    rectangle: (287.392578125,86.0);
+  }
+  classView 17ec1cd8-b2c0-406b-9783-083aef4fd7af
+  {
+    class: model::CementProductionBasedCarbonDioxideEmissions;
+    position: (1049.425658507277,453.09135126365885);
+    rectangle: (287.380859375,86.0);
+  }
+  classView 9292d69e-9823-43ba-8b29-015cd721753f
+  {
+    class: model::CoalProductionBasedCarbonDioxideEmissions;
+    position: (1051.5921279732086,566.3027255882855);
+    rectangle: (288.0,86.0);
+  }
+  classView ff8874d5-1f53-406a-8e85-0687297efe2b
+  {
+    class: model::FlaringBasedCarbonDioxideEmissions;
+    position: (1052.508893240243,685.5063417240776);
+    rectangle: (287.0,104.0);
+  }
+  classView 09e02f77-893b-449f-8fcb-27cc1bde37fd
+  {
+    class: model::LandUseBasedCarbonDioxideEmissions;
+    position: (1053.2849289629053,812.3146923527258);
+    rectangle: (284.0,91.0);
+  }
+  classView 0a519a0e-bf27-483e-82bb-52312df07cab
+  {
+    class: model::OilProductionBasedCarbonDioxideEmissions;
+    position: (1057.5231760981746,931.1705963283571);
+    rectangle: (280.712890625,86.0);
+  }
+  classView a50e24c0-6c01-4ea6-8bf0-823ed1f6a921
+  {
+    class: model::OtherIndustryCarbonDioxideEmissions;
+    position: (1061.039566157518,1032.8020708139502);
+    rectangle: (281.0,100.0);
+  }
+  classView 44d5da05-ca29-4187-87d9-69c0820409b5
+  {
+    class: model::Country;
+    position: (-347.012067050179,158.74962290468187);
+    rectangle: (397.7490234375,305.5);
+  }
+  classView a66434bc-303b-4f39-a04f-a748c47658c8
+  {
+    class: model::ProductionBasedCarbonDioxideEmissions;
+    position: (527.5281127887845,331.97952936060904);
+    rectangle: (291.2939453125,792.6253628026508);
+  }
+  classView 6e412d99-3996-4d4d-825a-14eddd935ca7
+  {
+    class: model::CarbonDioxideEmissions;
+    position: (547.0572388477069,168.5154925680954);
+    rectangle: (244.9521484375,100.0);
+  }
+  propertyView
+  {
+    property: model::Country_ProductionBasedCarbonDioxideEmissions.country;
+    source: a66434bc-303b-4f39-a04f-a748c47658c8;
+    target: 44d5da05-ca29-4187-87d9-69c0820409b5;
+    points: [(552.8833052011084,372.7683171543477),(46.49715735967362,375.23143065701026)];
+  }
+  propertyView
+  {
+    property: model::Country_ProductionBasedCarbonDioxideEmissions.carbonDioxideEmissions;
+    source: 44d5da05-ca29-4187-87d9-69c0820409b5;
+    target: a66434bc-303b-4f39-a04f-a748c47658c8;
+    points: [(25.996403169037478,435.02529704636584),(550.6785058609064,434.5026986800061)];
+  }
+  propertyView
+  {
+    property: model::ProductionBasedCarbonDioxideEmissions.gasProductionBasedCO2Emissions;
+    source: a66434bc-303b-4f39-a04f-a748c47658c8;
+    target: 0a227d35-7600-4c1a-85a5-d3063abc6fde;
+    points: [(792.1040336130351,380.48511484505497),(1194.2670688229866,382.94375882817627)];
+  }
+  propertyView
+  {
+    property: model::ProductionBasedCarbonDioxideEmissions.cementProductionBasedCO2Emissions;
+    source: a66434bc-303b-4f39-a04f-a748c47658c8;
+    target: 17ec1cd8-b2c0-406b-9783-083aef4fd7af;
+    points: [(778.8752375718226,494.03228086546255),(1193.116088194777,496.09135126365885)];
+  }
+  propertyView
+  {
+    property: model::ProductionBasedCarbonDioxideEmissions.flaringBasedCO2Emissions;
+    source: a66434bc-303b-4f39-a04f-a748c47658c8;
+    target: ff8874d5-1f53-406a-8e85-0687297efe2b;
+    points: [(763.441642190408,734.3554089474901),(1196.008893240243,737.5063417240776)];
+  }
+  propertyView
+  {
+    property: model::ProductionBasedCarbonDioxideEmissions.coalProductionBasedCO2Emissions;
+    source: a66434bc-303b-4f39-a04f-a748c47658c8;
+    target: 9292d69e-9823-43ba-8b29-015cd721753f;
+    points: [(772.2608395512162,607.5794468858701),(1195.5921279732086,609.3027255882855)];
+  }
+  propertyView
+  {
+    property: model::ProductionBasedCarbonDioxideEmissions.landUseBasedCO2Emissions;
+    source: a66434bc-303b-4f39-a04f-a748c47658c8;
+    target: 09e02f77-893b-449f-8fcb-27cc1bde37fd;
+    points: [(766.748841200711,852.3121736483018),(1195.2849289629053,857.8146923527258)];
+  }
+  propertyView
+  {
+    property: model::ProductionBasedCarbonDioxideEmissions.oilProductionBasedCO2Emissions;
+    source: a66434bc-303b-4f39-a04f-a748c47658c8;
+    target: 0a519a0e-bf27-483e-82bb-52312df07cab;
+    points: [(756.8272441698017,969.1665386790125),(1197.8796214106746,974.1705963283571)];
+  }
+  propertyView
+  {
+    property: model::ProductionBasedCarbonDioxideEmissions.otherIndustryBasedCO2Emissions;
+    source: a66434bc-303b-4f39-a04f-a748c47658c8;
+    target: a50e24c0-6c01-4ea6-8bf0-823ed1f6a921;
+    points: [(763.441642190408,1075.5481068437634),(1201.539566157518,1082.8020708139502)];
+  }
+  generalizationView
+  {
+    source: a66434bc-303b-4f39-a04f-a748c47658c8;
+    target: 6e412d99-3996-4d4d-825a-14eddd935ca7;
+    points: [(659.8835815387845,728.2922107619345),(669.5333130664569,218.5154925680954)];
+  }
+}

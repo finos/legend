@@ -1,0 +1,14 @@
+Class {doc.doc = 'Annual total production-based emissions of carbon dioxide measured in million tonnes.'} model::ProductionBasedCarbonDioxideEmissions extends model::CarbonDioxideEmissions
+{
+  {doc.doc = 'Annual total production-based emissions of carbon dioxide (CO\u2082).'} annualGrowthInCO2Emissions: Float[0..1];
+  {doc.doc = 'Annual production-based emissions of carbon dioxide (CO\u2082) from cement.'} cementProductionBasedCO2Emissions: model::CementProductionBasedCarbonDioxideEmissions[0..1];
+  {doc.doc = 'Annual production-based emissions of carbon dioxide (CO\u2082) from coal.'} coalProductionBasedCO2Emissions: model::CoalProductionBasedCarbonDioxideEmissions[0..1];
+  {doc.doc = 'Annual production-based emissions of carbon dioxide (CO\u2082) from flaring.'} flaringBasedCO2Emissions: model::FlaringBasedCarbonDioxideEmissions[0..1];
+  {doc.doc = 'Annual production-based emissions of carbon dioxide (CO\u2082) from gas.'} gasProductionBasedCO2Emissions: model::GasProductionBasedCarbonDioxideEmissions[0..1];
+  {doc.doc = 'Annual production-based emissions of carbon dioxide (CO\u2082) from oil.'} oilProductionBasedCO2Emissions: model::OilProductionBasedCarbonDioxideEmissions[0..1];
+  {doc.doc = 'Annual production-based emissions of carbon dioxide (CO\u2082) from land-use change.'} landUseBasedCO2Emissions: model::LandUseBasedCarbonDioxideEmissions[0..1];
+  {doc.doc = 'Annual production-based emissions of carbon dioxide (CO\u2082) from other industry source.'} otherIndustryBasedCO2Emissions: model::OtherIndustryCarbonDioxideEmissions[0..1];
+  countriesWithEmissionsRecordedIn2020() {$this.country->filter(
+  x|$x.year == 2020
+).name}: String[*];
+}
