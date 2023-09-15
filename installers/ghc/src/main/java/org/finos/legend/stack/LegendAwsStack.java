@@ -44,6 +44,7 @@ public class LegendAwsStack extends Stack {
 
                 Map<String, String> environment = new HashMap<>();
                 environment.put("LEGEND_OMNIBUS_NGINX_PORT", "80");
+                environment.put("LEGEND_OMNIBUS_CONFIG_BASE_URL", "http://unknown");
 
                 Cluster cluster = Cluster.Builder
                                 .create(this, "LegendAwsCluster")
