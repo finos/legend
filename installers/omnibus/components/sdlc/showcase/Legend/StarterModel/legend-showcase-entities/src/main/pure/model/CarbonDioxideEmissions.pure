@@ -1,7 +1,0 @@
-Class model::CarbonDioxideEmissions
-{
-  country: model::Country[1];
-  year: Integer[1];
-  annualCO2Emissions: Float[0..1];
-  annualCO2EmissionsPerCapita: Float[0..1];
-}

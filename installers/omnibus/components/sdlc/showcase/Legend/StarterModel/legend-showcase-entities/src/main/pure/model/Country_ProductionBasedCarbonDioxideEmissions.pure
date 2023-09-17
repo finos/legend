@@ -1,5 +1,0 @@
-Association model::Country_ProductionBasedCarbonDioxideEmissions
-{
-  country: model::Country[1];
-  carbonDioxideEmissions: model::ProductionBasedCarbonDioxideEmissions[1];
-}

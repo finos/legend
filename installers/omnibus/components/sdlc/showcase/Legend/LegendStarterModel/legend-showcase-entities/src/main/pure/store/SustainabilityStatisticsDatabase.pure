@@ -1,0 +1,57 @@
+###Relational
+Database store::SustainabilityStatisticsDatabase
+(
+  Schema legend_datastore_gracehopper
+  (
+    Table carbon_dioxide_emissions
+    (
+      country_iso_code VARCHAR(10) PRIMARY KEY,
+      year INTEGER PRIMARY KEY,
+      co2_including_luc FLOAT,
+      co2_including_luc_per_capita FLOAT,
+      co2_including_luc_growth_abs FLOAT,
+      gas_co2 FLOAT,
+      gas_co2_per_capita FLOAT,
+      cumulative_gas_co2 FLOAT,
+      land_use_change_co2 FLOAT,
+      land_use_change_co2_per_capita FLOAT,
+      cumulative_luc_co2 FLOAT,
+      oil_co2 FLOAT,
+      oil_co2_per_capita FLOAT,
+      cumulative_oil_co2 FLOAT,
+      cement_co2 FLOAT,
+      cement_co2_per_capita FLOAT,
+      cumulative_cement_co2 FLOAT,
+      flaring_co2 FLOAT,
+      flaring_co2_per_capita FLOAT,
+      cumulative_flaring_co2 FLOAT,
+      coal_co2 FLOAT,
+      coal_co2_per_capita FLOAT,
+      cumulative_coal_co2 FLOAT,
+      other_industry_co2 FLOAT,
+      other_co2_per_capita FLOAT,
+      cumulative_other_co2 FLOAT
+    )
+    Table country
+    (
+      country_iso_code VARCHAR(10) PRIMARY KEY,
+      name VARCHAR(100),
+      year INTEGER PRIMARY KEY,
+      population FLOAT,
+      gdp FLOAT
+    )
+    Table surface_temperature_change
+    (
+      country_iso_code VARCHAR(10) PRIMARY KEY,
+      year INTEGER PRIMARY KEY,
+      temperature_change FLOAT
+    )
+  )
+
+  Join country_emmissions(legend_datastore_gracehopper.carbon_dioxide_emissions.country_iso_code = legend_datastore_gracehopper.country.country_iso_code
+    and legend_datastore_gracehopper.carbon_dioxide_emissions.year = legend_datastore_gracehopper.country.year)
+  Join emissions_self_join(legend_datastore_gracehopper.carbon_dioxide_emissions.country_iso_code = {target}.country_iso_code
+    and legend_datastore_gracehopper.carbon_dioxide_emissions.year = {target}.year)
+  Join country_surface_temperature_change(legend_datastore_gracehopper.surface_temperature_change.country_iso_code = legend_datastore_gracehopper.country.country_iso_code
+    and legend_datastore_gracehopper.surface_temperature_change.year = legend_datastore_gracehopper.country.year)
+)
