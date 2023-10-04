@@ -392,6 +392,10 @@
       },
       "title": "Where can I find Showcase projects?",
       "url": "In Studio, navigate to the top icon on the left sidebar to browse showcase projects hosted at https://github.com/finos/legend/tree/master/showcases in the Studio showcase explorer"
+    },
+    "question.what-are-project-roles": {
+      "title": "What are project roles and what actions can I do for each role?",
+      "url": "https://docs.gitlab.com/ee/user/permissions.html"
     }
   }
 }
