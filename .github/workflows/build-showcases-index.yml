@@ -6,7 +6,8 @@ on:
       - master
     paths:
       - "showcases/**"
-
+  workflow_dispatch: {}
+  
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   REPO_NAME: ${{ github.event.repository.name }}
