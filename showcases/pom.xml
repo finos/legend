@@ -23,13 +23,13 @@
         <dependency>
             <groupId>org.finos.legend.engine</groupId>
             <artifactId>legend-engine-extensions-collection-execution</artifactId>
-            <version>4.18.2</version>
+            <version>4.30.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.finos.legend.engine</groupId>
             <artifactId>legend-engine-extensions-collection-generation</artifactId>
-            <version>4.18.2</version>
+            <version>4.30.3</version>
             <scope>test</scope>
         </dependency>
 
@@ -78,6 +78,14 @@
                     </threadCount> <!-- Thread count is by default per core -->
                     <!--          <forkCount>3</forkCount>-->
                     <!--          <reuseForks>true</reuseForks>-->
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
         </plugins>
