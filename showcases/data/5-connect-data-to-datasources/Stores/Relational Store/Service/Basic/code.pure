@@ -1,0 +1,678 @@
+###Service
+Service service::SimpleProductService
+{
+  pattern: '/ed49e48b-1536-4d04-9b6f-ad3a8ed6daf9';
+  ownership: DID { identifier: '' };
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |store::NORTHWIND::Products.all()->project(
+      [
+        x|$x.categoryId,
+        x|$x.discontinued,
+        x|$x.productId,
+        x|$x.productName,
+        x|$x.quantityPerUnit,
+        x|$x.reorderLevel,
+        x|$x.supplierId,
+        x|$x.unitPrice,
+        x|$x.unitsInStock,
+        x|$x.unitsOnOrder
+      ],
+      [
+        'Category Id',
+        'Discontinued',
+        'Product Id',
+        'Product Name',
+        'Quantity Per Unit',
+        'Reorder Level',
+        'Supplier Id',
+        'Unit Price',
+        'Units In Stock',
+        'Units On Order'
+      ]
+    );
+    mapping: store::MyDatabaseMapping;
+    runtime: model::NorthWindRuntime;
+  }
+  testSuites:
+  [
+    testSuite_1:
+    {
+      data:
+      [
+        connections:
+        [
+          connection_1:
+            Relational
+            #{
+              NORTHWIND.PRODUCTS:
+                'PRODUCT_ID,PRODUCT_NAME,SUPPLIER_ID,CATEGORY_ID,QUANTITY_PER_UNIT,UNITS_IN_STOCK,UNITS_ON_ORDER,REORDER_LEVEL,DISCONTINUED\n'+
+                '1,MyProduct,1,2,20,2,4,10,0\n';
+            }#
+        ]
+      ]
+      tests:
+      [
+        test_1:
+        {
+          serializationFormat: PURE_TDSOBJECT;
+          asserts:
+          [
+            assertion_1:
+              EqualToJson
+              #{
+                expected:
+                  ExternalFormat
+                  #{
+                    contentType: 'application/json';
+                    data: '[\n  {\n    "Category Id": 2,\n    "Discontinued": 0,\n    "Product Id": 1,\n    "Product Name": "MyProduct",\n    "Quantity Per Unit": "20",\n    "Reorder Level": 10,\n    "Supplier Id": 1,\n    "Unit Price": null,\n    "Units In Stock": 2,\n    "Units On Order": 4\n  }\n]';
+                  }#;
+              }#
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
+###Relational
+Database store::MyDatabase
+(
+  Schema NORTHWIND
+  (
+    Table CATEGORIES
+    (
+      CATEGORY_ID SMALLINT PRIMARY KEY,
+      CATEGORY_NAME VARCHAR(15) NOT NULL,
+      DESCRIPTION VARCHAR(256),
+      PICTURE OTHER
+    )
+    Table CUSTOMERS
+    (
+      CUSTOMER_ID VARCHAR(5) PRIMARY KEY,
+      COMPANY_NAME VARCHAR(40) NOT NULL,
+      CONTACT_NAME VARCHAR(30),
+      CONTACT_TITLE VARCHAR(30),
+      ADDRESS VARCHAR(60),
+      CITY VARCHAR(15),
+      REGION VARCHAR(15),
+      POSTAL_CODE VARCHAR(10),
+      COUNTRY VARCHAR(15),
+      PHONE VARCHAR(24),
+      FAX VARCHAR(24)
+    )
+    Table CUSTOMER_CUSTOMER_DEMO
+    (
+      CUSTOMER_ID VARCHAR(5) PRIMARY KEY,
+      CUSTOMER_TYPE_ID VARCHAR(5) PRIMARY KEY
+    )
+    Table CUSTOMER_DEMOGRAPHICS
+    (
+      CUSTOMER_TYPE_ID VARCHAR(5) PRIMARY KEY,
+      CUSTOMER_DESC VARCHAR(256)
+    )
+    Table EMPLOYEES
+    (
+      EMPLOYEE_ID SMALLINT PRIMARY KEY,
+      LAST_NAME VARCHAR(20) NOT NULL,
+      FIRST_NAME VARCHAR(10) NOT NULL,
+      TITLE VARCHAR(30),
+      TITLE_OF_COURTESY VARCHAR(25),
+      BIRTH_DATE DATE,
+      HIRE_DATE DATE,
+      ADDRESS VARCHAR(60),
+      CITY VARCHAR(15),
+      REGION VARCHAR(15),
+      POSTAL_CODE VARCHAR(10),
+      COUNTRY VARCHAR(15),
+      HOME_PHONE VARCHAR(24),
+      EXTENSION VARCHAR(4),
+      PHOTO OTHER,
+      NOTES OTHER,
+      REPORTS_TO SMALLINT,
+      PHOTO_PATH VARCHAR(255)
+    )
+    Table EMPLOYEE_TERRITORIES
+    (
+      EMPLOYEE_ID SMALLINT PRIMARY KEY,
+      TERRITORY_ID VARCHAR(20) PRIMARY KEY
+    )
+    Table ORDERS
+    (
+      ORDER_ID SMALLINT PRIMARY KEY,
+      CUSTOMER_ID VARCHAR(5),
+      EMPLOYEE_ID SMALLINT,
+      ORDER_DATE DATE,
+      REQUIRED_DATE DATE,
+      SHIPPED_DATE DATE,
+      SHIP_VIA SMALLINT,
+      FREIGHT OTHER,
+      SHIP_NAME VARCHAR(40),
+      SHIP_ADDRESS VARCHAR(60),
+      SHIP_CITY VARCHAR(15),
+      SHIP_REGION VARCHAR(15),
+      SHIP_POSTAL_CODE VARCHAR(10),
+      SHIP_COUNTRY VARCHAR(15)
+    )
+    Table ORDER_DETAILS
+    (
+      ORDER_ID SMALLINT PRIMARY KEY,
+      PRODUCT_ID SMALLINT PRIMARY KEY,
+      UNIT_PRICE OTHER NOT NULL,
+      QUANTITY SMALLINT NOT NULL,
+      DISCOUNT OTHER NOT NULL
+    )
+    Table PRODUCTS
+    (
+      PRODUCT_ID SMALLINT PRIMARY KEY,
+      PRODUCT_NAME VARCHAR(40) NOT NULL,
+      SUPPLIER_ID SMALLINT,
+      CATEGORY_ID SMALLINT,
+      QUANTITY_PER_UNIT VARCHAR(20),
+      UNIT_PRICE OTHER,
+      UNITS_IN_STOCK SMALLINT,
+      UNITS_ON_ORDER SMALLINT,
+      REORDER_LEVEL SMALLINT,
+      DISCONTINUED INTEGER NOT NULL
+    )
+    Table REGION
+    (
+      REGION_ID SMALLINT PRIMARY KEY,
+      REGION_DESCRIPTION VARCHAR(60) NOT NULL
+    )
+    Table SHIPPERS
+    (
+      SHIPPER_ID SMALLINT PRIMARY KEY,
+      COMPANY_NAME VARCHAR(40) NOT NULL,
+      PHONE VARCHAR(24)
+    )
+    Table SUPPLIERS
+    (
+      SUPPLIER_ID SMALLINT PRIMARY KEY,
+      COMPANY_NAME VARCHAR(40) NOT NULL,
+      CONTACT_NAME VARCHAR(30),
+      CONTACT_TITLE VARCHAR(30),
+      ADDRESS VARCHAR(60),
+      CITY VARCHAR(15),
+      REGION VARCHAR(15),
+      POSTAL_CODE VARCHAR(10),
+      COUNTRY VARCHAR(15),
+      PHONE VARCHAR(24),
+      FAX VARCHAR(24),
+      HOMEPAGE VARCHAR(256)
+    )
+    Table TERRITORIES
+    (
+      TERRITORY_ID VARCHAR(20) PRIMARY KEY,
+      TERRITORY_DESCRIPTION VARCHAR(60) NOT NULL,
+      REGION_ID SMALLINT NOT NULL
+    )
+    Table US_STATES
+    (
+      STATE_ID SMALLINT PRIMARY KEY,
+      STATE_NAME VARCHAR(100),
+      STATE_ABBR VARCHAR(2),
+      STATE_REGION VARCHAR(50)
+    )
+  )
+)
+
+
+###Pure
+Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::OrderDetails
+{
+  orderId: Integer[1];
+  productId: Integer[1];
+  unitPrice: String[1];
+  quantity: Integer[1];
+  discount: String[1];
+}
+
+Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::CustomerDemographics
+{
+  customerTypeId: String[1];
+  customerDesc: String[0..1];
+}
+
+Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::Shippers
+{
+  shipperId: Integer[1];
+  companyName: String[1];
+  phone: String[0..1];
+}
+
+Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::CustomerCustomerDemo
+{
+  customerId: String[1];
+  customerTypeId: String[1];
+}
+
+Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::Employees
+{
+  employeeId: Integer[1];
+  lastName: String[1];
+  firstName: String[1];
+  title: String[0..1];
+  titleOfCourtesy: String[0..1];
+  birthDate: StrictDate[0..1];
+  hireDate: StrictDate[0..1];
+  address: String[0..1];
+  city: String[0..1];
+  region: String[0..1];
+  postalCode: String[0..1];
+  country: String[0..1];
+  homePhone: String[0..1];
+  extension: String[0..1];
+  photo: String[0..1];
+  notes: String[0..1];
+  reportsTo: Integer[0..1];
+  photoPath: String[0..1];
+}
+
+Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::Territories
+{
+  territoryId: String[1];
+  territoryDescription: String[1];
+  regionId: Integer[1];
+}
+
+Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::Customers
+{
+  customerId: String[1];
+  companyName: String[1];
+  contactName: String[0..1];
+  contactTitle: String[0..1];
+  address: String[0..1];
+  city: String[0..1];
+  region: String[0..1];
+  postalCode: String[0..1];
+  country: String[0..1];
+  phone: String[0..1];
+  fax: String[0..1];
+}
+
+Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::Region
+{
+  regionId: Integer[1];
+  regionDescription: String[1];
+}
+
+Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::EmployeeTerritories
+{
+  employeeId: Integer[1];
+  territoryId: String[1];
+}
+
+Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::Products
+{
+  productId: Integer[1];
+  productName: String[1];
+  supplierId: Integer[0..1];
+  categoryId: Integer[0..1];
+  quantityPerUnit: String[0..1];
+  unitPrice: String[0..1];
+  unitsInStock: Integer[0..1];
+  unitsOnOrder: Integer[0..1];
+  reorderLevel: Integer[0..1];
+  discontinued: Integer[1];
+}
+
+Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::Categories
+{
+  categoryId: Integer[1];
+  categoryName: String[1];
+  description: String[0..1];
+  picture: String[0..1];
+}
+
+Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::UsStates
+{
+  stateId: Integer[1];
+  stateName: String[0..1];
+  stateAbbr: String[0..1];
+  stateRegion: String[0..1];
+}
+
+Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::Orders
+{
+  orderId: Integer[1];
+  customerId: String[0..1];
+  employeeId: Integer[0..1];
+  orderDate: StrictDate[0..1];
+  requiredDate: StrictDate[0..1];
+  shippedDate: StrictDate[0..1];
+  shipVia: Integer[0..1];
+  freight: String[0..1];
+  shipName: String[0..1];
+  shipAddress: String[0..1];
+  shipCity: String[0..1];
+  shipRegion: String[0..1];
+  shipPostalCode: String[0..1];
+  shipCountry: String[0..1];
+}
+
+Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::Suppliers
+{
+  supplierId: Integer[1];
+  companyName: String[1];
+  contactName: String[0..1];
+  contactTitle: String[0..1];
+  address: String[0..1];
+  city: String[0..1];
+  region: String[0..1];
+  postalCode: String[0..1];
+  country: String[0..1];
+  phone: String[0..1];
+  fax: String[0..1];
+  homepage: String[0..1];
+}
+
+
+###Mapping
+Mapping store::MyDatabaseMapping
+(
+  *store::NORTHWIND::Categories[store_NORTHWIND_Categories]: Relational
+  {
+    ~primaryKey
+    (
+      [store::MyDatabase]NORTHWIND.CATEGORIES.CATEGORY_ID
+    )
+    ~mainTable [store::MyDatabase]NORTHWIND.CATEGORIES
+    categoryId: [store::MyDatabase]NORTHWIND.CATEGORIES.CATEGORY_ID,
+    categoryName: [store::MyDatabase]NORTHWIND.CATEGORIES.CATEGORY_NAME,
+    description: [store::MyDatabase]NORTHWIND.CATEGORIES.DESCRIPTION,
+    picture: [store::MyDatabase]NORTHWIND.CATEGORIES.PICTURE
+  }
+  *store::NORTHWIND::Customers[store_NORTHWIND_Customers]: Relational
+  {
+    ~primaryKey
+    (
+      [store::MyDatabase]NORTHWIND.CUSTOMERS.CUSTOMER_ID
+    )
+    ~mainTable [store::MyDatabase]NORTHWIND.CUSTOMERS
+    customerId: [store::MyDatabase]NORTHWIND.CUSTOMERS.CUSTOMER_ID,
+    companyName: [store::MyDatabase]NORTHWIND.CUSTOMERS.COMPANY_NAME,
+    contactName: [store::MyDatabase]NORTHWIND.CUSTOMERS.CONTACT_NAME,
+    contactTitle: [store::MyDatabase]NORTHWIND.CUSTOMERS.CONTACT_TITLE,
+    address: [store::MyDatabase]NORTHWIND.CUSTOMERS.ADDRESS,
+    city: [store::MyDatabase]NORTHWIND.CUSTOMERS.CITY,
+    region: [store::MyDatabase]NORTHWIND.CUSTOMERS.REGION,
+    postalCode: [store::MyDatabase]NORTHWIND.CUSTOMERS.POSTAL_CODE,
+    country: [store::MyDatabase]NORTHWIND.CUSTOMERS.COUNTRY,
+    phone: [store::MyDatabase]NORTHWIND.CUSTOMERS.PHONE,
+    fax: [store::MyDatabase]NORTHWIND.CUSTOMERS.FAX
+  }
+  *store::NORTHWIND::CustomerCustomerDemo[store_NORTHWIND_CustomerCustomerDemo]: Relational
+  {
+    ~primaryKey
+    (
+      [store::MyDatabase]NORTHWIND.CUSTOMER_CUSTOMER_DEMO.CUSTOMER_ID,
+      [store::MyDatabase]NORTHWIND.CUSTOMER_CUSTOMER_DEMO.CUSTOMER_TYPE_ID
+    )
+    ~mainTable [store::MyDatabase]NORTHWIND.CUSTOMER_CUSTOMER_DEMO
+    customerId: [store::MyDatabase]NORTHWIND.CUSTOMER_CUSTOMER_DEMO.CUSTOMER_ID,
+    customerTypeId: [store::MyDatabase]NORTHWIND.CUSTOMER_CUSTOMER_DEMO.CUSTOMER_TYPE_ID
+  }
+  *store::NORTHWIND::CustomerDemographics[store_NORTHWIND_CustomerDemographics]: Relational
+  {
+    ~primaryKey
+    (
+      [store::MyDatabase]NORTHWIND.CUSTOMER_DEMOGRAPHICS.CUSTOMER_TYPE_ID
+    )
+    ~mainTable [store::MyDatabase]NORTHWIND.CUSTOMER_DEMOGRAPHICS
+    customerTypeId: [store::MyDatabase]NORTHWIND.CUSTOMER_DEMOGRAPHICS.CUSTOMER_TYPE_ID,
+    customerDesc: [store::MyDatabase]NORTHWIND.CUSTOMER_DEMOGRAPHICS.CUSTOMER_DESC
+  }
+  *store::NORTHWIND::Employees[store_NORTHWIND_Employees]: Relational
+  {
+    ~primaryKey
+    (
+      [store::MyDatabase]NORTHWIND.EMPLOYEES.EMPLOYEE_ID
+    )
+    ~mainTable [store::MyDatabase]NORTHWIND.EMPLOYEES
+    employeeId: [store::MyDatabase]NORTHWIND.EMPLOYEES.EMPLOYEE_ID,
+    lastName: [store::MyDatabase]NORTHWIND.EMPLOYEES.LAST_NAME,
+    firstName: [store::MyDatabase]NORTHWIND.EMPLOYEES.FIRST_NAME,
+    title: [store::MyDatabase]NORTHWIND.EMPLOYEES.TITLE,
+    titleOfCourtesy: [store::MyDatabase]NORTHWIND.EMPLOYEES.TITLE_OF_COURTESY,
+    birthDate: [store::MyDatabase]NORTHWIND.EMPLOYEES.BIRTH_DATE,
+    hireDate: [store::MyDatabase]NORTHWIND.EMPLOYEES.HIRE_DATE,
+    address: [store::MyDatabase]NORTHWIND.EMPLOYEES.ADDRESS,
+    city: [store::MyDatabase]NORTHWIND.EMPLOYEES.CITY,
+    region: [store::MyDatabase]NORTHWIND.EMPLOYEES.REGION,
+    postalCode: [store::MyDatabase]NORTHWIND.EMPLOYEES.POSTAL_CODE,
+    country: [store::MyDatabase]NORTHWIND.EMPLOYEES.COUNTRY,
+    homePhone: [store::MyDatabase]NORTHWIND.EMPLOYEES.HOME_PHONE,
+    extension: [store::MyDatabase]NORTHWIND.EMPLOYEES.EXTENSION,
+    photo: [store::MyDatabase]NORTHWIND.EMPLOYEES.PHOTO,
+    notes: [store::MyDatabase]NORTHWIND.EMPLOYEES.NOTES,
+    reportsTo: [store::MyDatabase]NORTHWIND.EMPLOYEES.REPORTS_TO,
+    photoPath: [store::MyDatabase]NORTHWIND.EMPLOYEES.PHOTO_PATH
+  }
+  *store::NORTHWIND::EmployeeTerritories[store_NORTHWIND_EmployeeTerritories]: Relational
+  {
+    ~primaryKey
+    (
+      [store::MyDatabase]NORTHWIND.EMPLOYEE_TERRITORIES.EMPLOYEE_ID,
+      [store::MyDatabase]NORTHWIND.EMPLOYEE_TERRITORIES.TERRITORY_ID
+    )
+    ~mainTable [store::MyDatabase]NORTHWIND.EMPLOYEE_TERRITORIES
+    employeeId: [store::MyDatabase]NORTHWIND.EMPLOYEE_TERRITORIES.EMPLOYEE_ID,
+    territoryId: [store::MyDatabase]NORTHWIND.EMPLOYEE_TERRITORIES.TERRITORY_ID
+  }
+  *store::NORTHWIND::Orders[store_NORTHWIND_Orders]: Relational
+  {
+    ~primaryKey
+    (
+      [store::MyDatabase]NORTHWIND.ORDERS.ORDER_ID
+    )
+    ~mainTable [store::MyDatabase]NORTHWIND.ORDERS
+    orderId: [store::MyDatabase]NORTHWIND.ORDERS.ORDER_ID,
+    customerId: [store::MyDatabase]NORTHWIND.ORDERS.CUSTOMER_ID,
+    employeeId: [store::MyDatabase]NORTHWIND.ORDERS.EMPLOYEE_ID,
+    orderDate: [store::MyDatabase]NORTHWIND.ORDERS.ORDER_DATE,
+    requiredDate: [store::MyDatabase]NORTHWIND.ORDERS.REQUIRED_DATE,
+    shippedDate: [store::MyDatabase]NORTHWIND.ORDERS.SHIPPED_DATE,
+    shipVia: [store::MyDatabase]NORTHWIND.ORDERS.SHIP_VIA,
+    freight: [store::MyDatabase]NORTHWIND.ORDERS.FREIGHT,
+    shipName: [store::MyDatabase]NORTHWIND.ORDERS.SHIP_NAME,
+    shipAddress: [store::MyDatabase]NORTHWIND.ORDERS.SHIP_ADDRESS,
+    shipCity: [store::MyDatabase]NORTHWIND.ORDERS.SHIP_CITY,
+    shipRegion: [store::MyDatabase]NORTHWIND.ORDERS.SHIP_REGION,
+    shipPostalCode: [store::MyDatabase]NORTHWIND.ORDERS.SHIP_POSTAL_CODE,
+    shipCountry: [store::MyDatabase]NORTHWIND.ORDERS.SHIP_COUNTRY
+  }
+  *store::NORTHWIND::OrderDetails[store_NORTHWIND_OrderDetails]: Relational
+  {
+    ~primaryKey
+    (
+      [store::MyDatabase]NORTHWIND.ORDER_DETAILS.ORDER_ID,
+      [store::MyDatabase]NORTHWIND.ORDER_DETAILS.PRODUCT_ID
+    )
+    ~mainTable [store::MyDatabase]NORTHWIND.ORDER_DETAILS
+    orderId: [store::MyDatabase]NORTHWIND.ORDER_DETAILS.ORDER_ID,
+    productId: [store::MyDatabase]NORTHWIND.ORDER_DETAILS.PRODUCT_ID,
+    unitPrice: [store::MyDatabase]NORTHWIND.ORDER_DETAILS.UNIT_PRICE,
+    quantity: [store::MyDatabase]NORTHWIND.ORDER_DETAILS.QUANTITY,
+    discount: [store::MyDatabase]NORTHWIND.ORDER_DETAILS.DISCOUNT
+  }
+  *store::NORTHWIND::Products[store_NORTHWIND_Products]: Relational
+  {
+    ~primaryKey
+    (
+      [store::MyDatabase]NORTHWIND.PRODUCTS.PRODUCT_ID
+    )
+    ~mainTable [store::MyDatabase]NORTHWIND.PRODUCTS
+    productId: [store::MyDatabase]NORTHWIND.PRODUCTS.PRODUCT_ID,
+    productName: [store::MyDatabase]NORTHWIND.PRODUCTS.PRODUCT_NAME,
+    supplierId: [store::MyDatabase]NORTHWIND.PRODUCTS.SUPPLIER_ID,
+    categoryId: [store::MyDatabase]NORTHWIND.PRODUCTS.CATEGORY_ID,
+    quantityPerUnit: [store::MyDatabase]NORTHWIND.PRODUCTS.QUANTITY_PER_UNIT,
+    unitPrice: [store::MyDatabase]NORTHWIND.PRODUCTS.UNIT_PRICE,
+    unitsInStock: [store::MyDatabase]NORTHWIND.PRODUCTS.UNITS_IN_STOCK,
+    unitsOnOrder: [store::MyDatabase]NORTHWIND.PRODUCTS.UNITS_ON_ORDER,
+    reorderLevel: [store::MyDatabase]NORTHWIND.PRODUCTS.REORDER_LEVEL,
+    discontinued: [store::MyDatabase]NORTHWIND.PRODUCTS.DISCONTINUED
+  }
+  *store::NORTHWIND::Region[store_NORTHWIND_Region]: Relational
+  {
+    ~primaryKey
+    (
+      [store::MyDatabase]NORTHWIND.REGION.REGION_ID
+    )
+    ~mainTable [store::MyDatabase]NORTHWIND.REGION
+    regionId: [store::MyDatabase]NORTHWIND.REGION.REGION_ID,
+    regionDescription: [store::MyDatabase]NORTHWIND.REGION.REGION_DESCRIPTION
+  }
+  *store::NORTHWIND::Shippers[store_NORTHWIND_Shippers]: Relational
+  {
+    ~primaryKey
+    (
+      [store::MyDatabase]NORTHWIND.SHIPPERS.SHIPPER_ID
+    )
+    ~mainTable [store::MyDatabase]NORTHWIND.SHIPPERS
+    shipperId: [store::MyDatabase]NORTHWIND.SHIPPERS.SHIPPER_ID,
+    companyName: [store::MyDatabase]NORTHWIND.SHIPPERS.COMPANY_NAME,
+    phone: [store::MyDatabase]NORTHWIND.SHIPPERS.PHONE
+  }
+  *store::NORTHWIND::Suppliers[store_NORTHWIND_Suppliers]: Relational
+  {
+    ~primaryKey
+    (
+      [store::MyDatabase]NORTHWIND.SUPPLIERS.SUPPLIER_ID
+    )
+    ~mainTable [store::MyDatabase]NORTHWIND.SUPPLIERS
+    supplierId: [store::MyDatabase]NORTHWIND.SUPPLIERS.SUPPLIER_ID,
+    companyName: [store::MyDatabase]NORTHWIND.SUPPLIERS.COMPANY_NAME,
+    contactName: [store::MyDatabase]NORTHWIND.SUPPLIERS.CONTACT_NAME,
+    contactTitle: [store::MyDatabase]NORTHWIND.SUPPLIERS.CONTACT_TITLE,
+    address: [store::MyDatabase]NORTHWIND.SUPPLIERS.ADDRESS,
+    city: [store::MyDatabase]NORTHWIND.SUPPLIERS.CITY,
+    region: [store::MyDatabase]NORTHWIND.SUPPLIERS.REGION,
+    postalCode: [store::MyDatabase]NORTHWIND.SUPPLIERS.POSTAL_CODE,
+    country: [store::MyDatabase]NORTHWIND.SUPPLIERS.COUNTRY,
+    phone: [store::MyDatabase]NORTHWIND.SUPPLIERS.PHONE,
+    fax: [store::MyDatabase]NORTHWIND.SUPPLIERS.FAX,
+    homepage: [store::MyDatabase]NORTHWIND.SUPPLIERS.HOMEPAGE
+  }
+  *store::NORTHWIND::Territories[store_NORTHWIND_Territories]: Relational
+  {
+    ~primaryKey
+    (
+      [store::MyDatabase]NORTHWIND.TERRITORIES.TERRITORY_ID
+    )
+    ~mainTable [store::MyDatabase]NORTHWIND.TERRITORIES
+    territoryId: [store::MyDatabase]NORTHWIND.TERRITORIES.TERRITORY_ID,
+    territoryDescription: [store::MyDatabase]NORTHWIND.TERRITORIES.TERRITORY_DESCRIPTION,
+    regionId: [store::MyDatabase]NORTHWIND.TERRITORIES.REGION_ID
+  }
+  *store::NORTHWIND::UsStates[store_NORTHWIND_UsStates]: Relational
+  {
+    ~primaryKey
+    (
+      [store::MyDatabase]NORTHWIND.US_STATES.STATE_ID
+    )
+    ~mainTable [store::MyDatabase]NORTHWIND.US_STATES
+    stateId: [store::MyDatabase]NORTHWIND.US_STATES.STATE_ID,
+    stateName: [store::MyDatabase]NORTHWIND.US_STATES.STATE_NAME,
+    stateAbbr: [store::MyDatabase]NORTHWIND.US_STATES.STATE_ABBR,
+    stateRegion: [store::MyDatabase]NORTHWIND.US_STATES.STATE_REGION
+  }
+
+  testSuites:
+  [
+    ProductSuite:
+    {
+      function: |store::NORTHWIND::Products.all()->project(
+  [
+    x|$x.categoryId,
+    x|$x.discontinued,
+    x|$x.productId,
+    x|$x.productName,
+    x|$x.quantityPerUnit,
+    x|$x.reorderLevel,
+    x|$x.supplierId,
+    x|$x.unitPrice,
+    x|$x.unitsInStock,
+    x|$x.unitsOnOrder
+  ],
+  [
+    'Category Id',
+    'Discontinued',
+    'Product Id',
+    'Product Name',
+    'Quantity Per Unit',
+    'Reorder Level',
+    'Supplier Id',
+    'Unit Price',
+    'Units In Stock',
+    'Units On Order'
+  ]
+);
+      tests:
+      [
+        productTest:
+        {
+          data:
+          [
+            store::MyDatabase:
+              Relational
+              #{
+                NORTHWIND.PRODUCTS:
+                  'PRODUCT_ID,PRODUCT_NAME,SUPPLIER_ID,CATEGORY_ID,QUANTITY_PER_UNIT,UNITS_IN_STOCK,UNITS_ON_ORDER,REORDER_LEVEL,DISCONTINUED\n'+
+                  '1,MyProduct,1,2,20,2,4,10,0\n';
+              }#
+          ];
+          asserts:
+          [
+            expectedAssertion:
+              EqualToJson
+              #{
+                expected:
+                  ExternalFormat
+                  #{
+                    contentType: 'application/json';
+                    data: '[ {\r\n  "Category Id" : 2,\r\n  "Discontinued" : 0,\r\n  "Product Id" : 1,\r\n  "Product Name" : "MyProduct",\r\n  "Quantity Per Unit" : "20",\r\n  "Reorder Level" : 10,\r\n  "Supplier Id" : 1,\r\n  "Unit Price" : null,\r\n  "Units In Stock" : 2,\r\n  "Units On Order" : 4\r\n} ]';
+                  }#;
+              }#
+          ];
+        }
+      ];
+    }
+  ]
+)
+
+
+###Connection
+RelationalDatabaseConnection model::NorthWindH2Connection
+{
+  store: store::MyDatabase;
+  type: H2;
+  specification: LocalH2
+  {
+    testDataSetupSqls: [
+      '-- loads sample data for getting started. See https://github.com/pthom/northwind_psql for more info\n call loadNorthwindData()'
+      ];
+  };
+  auth: DefaultH2;
+}
+
+
+###Runtime
+Runtime model::NorthWindRuntime
+{
+  mappings:
+  [
+    store::MyDatabaseMapping
+  ];
+  connections:
+  [
+    store::MyDatabase:
+    [
+      connection_1: model::NorthWindH2Connection
+    ]
+  ];
+}

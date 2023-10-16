@@ -1,0 +1,311 @@
+###Data
+Data data::IBMFirmData
+{
+  ExternalFormat
+  #{
+    contentType: 'application/json';
+    data: '{\n  "employees": [\n    {\n      "firstName": "John",\n      "lastName": "Smith"\n    }\n  ],\n  "legalName": "IBM",\n  "type": "llc"\n}';
+  }#
+}
+
+
+###Service
+Service mapping::FirmService
+{
+  pattern: '/83a0d72d-e69d-453e-8f23-8059767aeab7';
+  ownership: DID { identifier: '' };
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |model::target::_Firm.all()->graphFetch(
+      #{
+        model::target::_Firm{
+          myLegalName,
+          name,
+          employees{
+            fullName
+          }
+        }
+      }#
+    )->serialize(
+      #{
+        model::target::_Firm{
+          myLegalName,
+          name,
+          employees{
+            fullName
+          }
+        }
+      }#
+    );
+    mapping: mapping::ModelToModelMapping;
+    runtime: mapping::FirmRuntime;
+  }
+  testSuites:
+  [
+    testSuite_1:
+    {
+      data:
+      [
+        connections:
+        [
+          connection_1:
+            ExternalFormat
+            #{
+              contentType: 'application/json';
+              data: '{\n  "employees": [\n    {\n      "firstName": "John",\n      "lastName": "Smith"\n    }\n  ],\n  "legalName": "IBM",\n  "type": "llc"\n}';
+            }#
+        ]
+      ]
+      tests:
+      [
+        test_1:
+        {
+          serializationFormat: PURE;
+          asserts:
+          [
+            assertion_1:
+              EqualToJson
+              #{
+                expected:
+                  ExternalFormat
+                  #{
+                    contentType: 'application/json';
+                    data: '{\n  "myLegalName()": "my name is: IBM",\n  "name": "IBM",\n  "employees": [\n    {\n      "fullName": "John Smith"\n    }\n  ]\n}';
+                  }#;
+              }#
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
+###Pure
+Enum model::target::IncType
+{
+  LLC,
+  CORP
+}
+
+Class model::Person
+{
+  firstName: String[1];
+  lastName: String[1];
+}
+
+Class model::Firm
+{
+  employees: model::Person[1..*];
+  legalName: String[1];
+}
+
+Class model::target::_Firm
+{
+  employees: model::target::_Person[1..*];
+  name: String[1];
+  myLegalName() {'my name is: ' + $this.name}: String[1];
+}
+
+Class model::target::_Person
+{
+  fullName: String[1];
+}
+
+
+###Mapping
+Mapping mapping::ModelToModelMapping
+(
+  *model::target::_Person: Pure
+  {
+    ~src model::Person
+    fullName: $src.firstName + ' ' + $src.lastName
+  }
+  *model::target::_Firm: Pure
+  {
+    ~src model::Firm
+    employees[model_target__Person]: $src.employees,
+    name: $src.legalName
+  }
+
+  model::target::IncType: EnumerationMapping
+  {
+    LLC: ['llc'],
+    CORP: ['corp']
+  }
+
+  testSuites:
+  [
+    FirmSuite:
+    {
+      function: |model::target::_Firm.all()->graphFetch(
+  #{
+    model::target::_Firm{
+      employees{
+        fullName
+      },
+      name,
+      myLegalName
+    }
+  }#
+)->serialize(
+  #{
+    model::target::_Firm{
+      employees{
+        fullName
+      },
+      name,
+      myLegalName
+    }
+  }#
+);
+      tests:
+      [
+        AppleData:
+        {
+          doc: 'This test will use Apple Data and assert  the transformation.';
+          data:
+          [
+            ModelStore:
+              ModelStore
+              #{
+                model::Firm:
+                  ExternalFormat
+                  #{
+                    contentType: 'application/json';
+                    data: '{\n  "employees": [\n    {\n      "firstName": "firstEmployeeName",\n      "lastName": "secondEmployeeName"\n    }\n  ],\n  "legalName": "Apple Inc"\n}';
+                  }#
+              }#
+          ];
+          asserts:
+          [
+            expectedAssertion:
+              EqualToJson
+              #{
+                expected:
+                  ExternalFormat
+                  #{
+                    contentType: 'application/json';
+                    data: '{\n  "employees" : [ {\n    "fullName" : "firstEmployeeName secondEmployeeName"\n  } ],\n  "name" : "Apple Inc",\n  "myLegalName()" : "my name is: Apple Inc"\n}';
+                  }#;
+              }#
+          ];
+        },
+        GoogleData:
+        {
+          data:
+          [
+            ModelStore:
+              ModelStore
+              #{
+                model::Firm:
+                  ExternalFormat
+                  #{
+                    contentType: 'application/json';
+                    data: '{\n  "employees": [\n    {\n      "firstName": "firstEmployeeName",\n      "lastName": "secondEmployeeName"\n    }\n  ],\n  "legalName": "Google"\n}';
+                  }#
+              }#
+          ];
+          asserts:
+          [
+            expectedAssertion:
+              EqualToJson
+              #{
+                expected:
+                  ExternalFormat
+                  #{
+                    contentType: 'application/json';
+                    data: '{\r\n  "employees" : [ {\r\n    "fullName" : "firstEmployeeName secondEmployeeName"\r\n  } ],\r\n  "name" : "Google",\r\n  "myLegalName()" : "my name is: Google"\r\n}';
+                  }#;
+              }#
+          ];
+        },
+        IBMData:
+        {
+          doc: '';
+          data:
+          [
+            ModelStore:
+              ModelStore
+              #{
+                model::Firm:
+                  Reference
+                  #{
+                    data::IBMFirmData
+                  }#
+              }#
+          ];
+          asserts:
+          [
+            expectedAssertion:
+              EqualToJson
+              #{
+                expected:
+                  ExternalFormat
+                  #{
+                    contentType: 'application/json';
+                    data: '{\r\n  "employees" : [ {\r\n    "fullName" : "John Smith"\r\n  } ],\r\n  "name" : "IBM",\r\n  "myLegalName()" : "my name is: IBM"\r\n}';
+                  }#;
+              }#
+          ];
+        },
+        ExpectedToFail:
+        {
+          doc: '';
+          data:
+          [
+            ModelStore:
+              ModelStore
+              #{
+                model::Firm:
+                  Reference
+                  #{
+                    data::IBMFirmData
+                  }#
+              }#
+          ];
+          asserts:
+          [
+            expectedAssertion:
+              EqualToJson
+              #{
+                expected:
+                  ExternalFormat
+                  #{
+                    contentType: 'application/json';
+                    data: '{\n  "employees" : [ {\n    "fullName" : "John Smith"\n  } ],\n  "name" : "IBMWhoops",\n  "myLegalName()" : "my name is: IBM"\n}';
+                  }#;
+              }#
+          ];
+        }
+      ];
+    }
+  ]
+)
+
+
+###Connection
+JsonModelConnection mapping::FirmConnection
+{
+  class: model::Firm;
+  url: 'data:application/json,%7B%7D';
+}
+
+
+###Runtime
+Runtime mapping::FirmRuntime
+{
+  mappings:
+  [
+    mapping::ModelToModelMapping
+  ];
+  connections:
+  [
+    ModelStore:
+    [
+      connection_1: mapping::FirmConnection
+    ]
+  ];
+}
