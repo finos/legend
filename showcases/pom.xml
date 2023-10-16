@@ -23,13 +23,13 @@
         <dependency>
             <groupId>org.finos.legend.engine</groupId>
             <artifactId>legend-engine-extensions-collection-execution</artifactId>
-            <version>4.18.2</version>
+            <version>4.30.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.finos.legend.engine</groupId>
             <artifactId>legend-engine-extensions-collection-generation</artifactId>
-            <version>4.18.2</version>
+            <version>4.30.3</version>
             <scope>test</scope>
         </dependency>
 
