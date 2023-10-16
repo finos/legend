@@ -7,32 +7,7 @@ Service service::SimpleProductService
   autoActivateUpdates: true;
   execution: Single
   {
-    query: |store::NORTHWIND::Products.all()->project(
-      [
-        x|$x.categoryId,
-        x|$x.discontinued,
-        x|$x.productId,
-        x|$x.productName,
-        x|$x.quantityPerUnit,
-        x|$x.reorderLevel,
-        x|$x.supplierId,
-        x|$x.unitPrice,
-        x|$x.unitsInStock,
-        x|$x.unitsOnOrder
-      ],
-      [
-        'Category Id',
-        'Discontinued',
-        'Product Id',
-        'Product Name',
-        'Quantity Per Unit',
-        'Reorder Level',
-        'Supplier Id',
-        'Unit Price',
-        'Units In Stock',
-        'Units On Order'
-      ]
-    );
+    query: |store::NORTHWIND::Products.all()->project([x|$x.categoryId, x|$x.discontinued, x|$x.productId, x|$x.productName, x|$x.quantityPerUnit, x|$x.reorderLevel, x|$x.supplierId, x|$x.unitPrice, x|$x.unitsInStock, x|$x.unitsOnOrder], ['Category Id', 'Discontinued', 'Product Id', 'Product Name', 'Quantity Per Unit', 'Reorder Level', 'Supplier Id', 'Unit Price', 'Units In Stock', 'Units On Order']);
     mapping: store::MyDatabaseMapping;
     runtime: model::NorthWindRuntime;
   }
@@ -586,32 +561,7 @@ Mapping store::MyDatabaseMapping
   [
     ProductSuite:
     {
-      function: |store::NORTHWIND::Products.all()->project(
-  [
-    x|$x.categoryId,
-    x|$x.discontinued,
-    x|$x.productId,
-    x|$x.productName,
-    x|$x.quantityPerUnit,
-    x|$x.reorderLevel,
-    x|$x.supplierId,
-    x|$x.unitPrice,
-    x|$x.unitsInStock,
-    x|$x.unitsOnOrder
-  ],
-  [
-    'Category Id',
-    'Discontinued',
-    'Product Id',
-    'Product Name',
-    'Quantity Per Unit',
-    'Reorder Level',
-    'Supplier Id',
-    'Unit Price',
-    'Units In Stock',
-    'Units On Order'
-  ]
-);
+      function: |store::NORTHWIND::Products.all()->project([x|$x.categoryId, x|$x.discontinued, x|$x.productId, x|$x.productName, x|$x.quantityPerUnit, x|$x.reorderLevel, x|$x.supplierId, x|$x.unitPrice, x|$x.unitsInStock, x|$x.unitsOnOrder], ['Category Id', 'Discontinued', 'Product Id', 'Product Name', 'Quantity Per Unit', 'Reorder Level', 'Supplier Id', 'Unit Price', 'Units In Stock', 'Units On Order']);
       tests:
       [
         productTest:

@@ -18,27 +18,7 @@ Service mapping::FirmService
   autoActivateUpdates: true;
   execution: Single
   {
-    query: |model::target::_Firm.all()->graphFetch(
-      #{
-        model::target::_Firm{
-          myLegalName,
-          name,
-          employees{
-            fullName
-          }
-        }
-      }#
-    )->serialize(
-      #{
-        model::target::_Firm{
-          myLegalName,
-          name,
-          employees{
-            fullName
-          }
-        }
-      }#
-    );
+    query: |model::target::_Firm.all()->graphFetch(#{model::target::_Firm{myLegalName,name,employees{fullName}}}#)->serialize(#{model::target::_Firm{myLegalName,name,employees{fullName}}}#);
     mapping: mapping::ModelToModelMapping;
     runtime: mapping::FirmRuntime;
   }
@@ -140,27 +120,7 @@ Mapping mapping::ModelToModelMapping
   [
     FirmSuite:
     {
-      function: |model::target::_Firm.all()->graphFetch(
-  #{
-    model::target::_Firm{
-      employees{
-        fullName
-      },
-      name,
-      myLegalName
-    }
-  }#
-)->serialize(
-  #{
-    model::target::_Firm{
-      employees{
-        fullName
-      },
-      name,
-      myLegalName
-    }
-  }#
-);
+      function: |model::target::_Firm.all()->graphFetch(#{model::target::_Firm{employees{fullName},name,myLegalName}}#)->serialize(#{model::target::_Firm{employees{fullName},name,myLegalName}}#);
       tests:
       [
         AppleData:
