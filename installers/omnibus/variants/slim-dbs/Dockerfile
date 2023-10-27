@@ -125,6 +125,14 @@ COPY components/studio $STUDIO_DIR
 RUN chmod +x $STUDIO_DIR/run-studio.slim.sh
 EXPOSE ${LEGEND_OMNIBUS_STUDIO_PORT}
 
+# ---------------- Setup Datasource(s) ----------------
+
+ARG DATASOURCES_DIR=/app/datasources
+COPY components/datasources $DATASOURCES_DIR
+# Postgres (with Northwind DB)
+RUN chmod +x $DATASOURCES_DIR/run-postgres.slim-dbs.sh
+RUN apt-get update && apt install -y postgresql
+
 # ---------------- Setup Supervisor ----------------
 
 ARG SUPERVISOR_DIR=/app/supervisor
@@ -144,5 +152,7 @@ RUN $SUPERVISOR_DIR/report-build-info.slim.sh
 
 # ---------------- Run Omnibus ----------------
 
-CMD (/app/supervisor/check-setup.slim.sh &) && \
+
+CMD /app/datasources/run-postgres.slim-dbs.sh && \
+  (/app/supervisor/check-setup.slim.sh &) && \
   supervisord -c /app/supervisor/supervisor.slim.conf
