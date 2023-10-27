@@ -13,7 +13,7 @@ service postgresql start
 
 su postgres -c "psql -c \"CREATE DATABASE legend;\""
 
-su postgres -c "psql -d legend -f /app/datasources/postgres-setup.ghc.sql"
+su postgres -c "psql -d legend -f /app/datasources/postgres-setup.slim-dbs.sql"
 
 su postgres -c "psql -c \"ALTER USER postgres PASSWORD 'postgres';\""
 
