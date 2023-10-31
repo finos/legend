@@ -1,7 +1,7 @@
 ---
 title: Service Jar activator
 description:
-development: true
+development: 
 ---
 
-TODO: Some dummy description
+Service execution Jar showcase.
