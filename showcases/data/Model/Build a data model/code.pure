@@ -1,0 +1,426 @@
+###Diagram
+Diagram _02_advanced::FinalTradeAccountDiagram
+{
+  classView 2607efb4-489b-451c-9fe0-3ee0f71191db
+  {
+    class: _01_basic::Trade;
+    position: (1150.5257568359375,706.5);
+    rectangle: (207.88623046875,184.0);
+  }
+  classView 3f9f55f3-0f34-4aa5-972b-6fb0d0839393
+  {
+    class: _01_basic::TradeEvent;
+    position: (1528.4548415786112,750.0066923369803);
+    rectangle: (146.54296875,72.0);
+  }
+  classView dbbcb7fc-5ca1-485d-a9e6-86bcb5813b9d
+  {
+    class: _01_basic::Account;
+    position: (804.5257568359375,756.0);
+    rectangle: (179.53759765625,72.0);
+  }
+  classView 742b39b1-983a-4913-bad9-a45654973427
+  {
+    class: _02_advanced::AccountWithConstraints;
+    position: (789.9989051643056,921.25);
+    rectangle: (206.46875,58.0);
+  }
+  classView 931cb999-5873-4fcd-8e9b-0ca4f1cf9a3f
+  {
+    class: _02_advanced::SynonymStereoTyped;
+    position: (1170.9989051643056,579.625);
+    rectangle: (180.54736328125,86.0);
+  }
+  classView dfcaa3ce-a0e4-47ca-8a08-937129ab8c5e
+  {
+    class: _02_advanced::ProductUpdated;
+    position: (763.9989051643056,565.625);
+    rectangle: (224.7783203125,114.0);
+  }
+  classView 1e46b918-d9c4-4212-90b3-0b51992421dc
+  {
+    class: _01_basic::Trader;
+    position: (1536.7489051643056,594.1887199867499);
+    rectangle: (117.796875,58.0);
+  }
+  propertyView
+  {
+    property: _01_basic::Account.trades;
+    source: dbbcb7fc-5ca1-485d-a9e6-86bcb5813b9d;
+    target: 2607efb4-489b-451c-9fe0-3ee0f71191db;
+    points: [(977.9580688476562,781.5),(1204.9580688476562,782.5)];
+  }
+  propertyView
+  {
+    property: _01_basic::Trade.account;
+    source: 2607efb4-489b-451c-9fe0-3ee0f71191db;
+    target: dbbcb7fc-5ca1-485d-a9e6-86bcb5813b9d;
+    points: [(1156.9580688476562,819.5),(957.9580688476562,819.5)];
+  }
+  propertyView
+  {
+    property: _01_basic::Trade.events;
+    source: 2607efb4-489b-451c-9fe0-3ee0f71191db;
+    target: 3f9f55f3-0f34-4aa5-972b-6fb0d0839393;
+    points: [(1340.9989051643056,779.6887199867499),(1544.9989051643056,779.6887199867499)];
+  }
+  propertyView
+  {
+    property: _01_basic::TradeEvent.trade;
+    source: 3f9f55f3-0f34-4aa5-972b-6fb0d0839393;
+    target: 2607efb4-489b-451c-9fe0-3ee0f71191db;
+    points: [(1533.9989051643056,813.6887199867499),(1320.9989051643056,813.6887199867499)];
+  }
+  propertyView
+  {
+    property: _02_advanced::ProductUpdated.synonyms;
+    source: dfcaa3ce-a0e4-47ca-8a08-937129ab8c5e;
+    target: 931cb999-5873-4fcd-8e9b-0ca4f1cf9a3f;
+    points: [(876.3880653205556,622.625),(1261.2725868049306,622.625)];
+  }
+  propertyView
+  {
+    property: _02_advanced::SynonymStereoTyped.product;
+    source: 931cb999-5873-4fcd-8e9b-0ca4f1cf9a3f;
+    target: dfcaa3ce-a0e4-47ca-8a08-937129ab8c5e;
+    points: [(1261.2725868049306,622.625),(876.3880653205556,622.625)];
+  }
+  generalizationView
+  {
+    source: 742b39b1-983a-4913-bad9-a45654973427;
+    target: dbbcb7fc-5ca1-485d-a9e6-86bcb5813b9d;
+    points: [(893.2332801643056,950.25),(894.2945556640625,792.0)];
+  }
+}
+
+Diagram _01_basic::TradeAccountDiagram
+{
+  classView 7bac7403-9f7b-44e3-8396-de6093534159
+  {
+    class: _01_basic::Product;
+    position: (789.0,567.0);
+    rectangle: (237.00830078125,114.0);
+  }
+  classView 1e46b918-d9c4-4212-90b3-0b51992421dc
+  {
+    class: _01_basic::Trader;
+    position: (1528.7489051643056,576.1887199867499);
+    rectangle: (117.796875,58.0);
+  }
+  classView 0dd5c051-e28d-413a-a94e-567128bcdbc9
+  {
+    class: _01_basic::Synonym;
+    position: (1170.254150390625,579.5);
+    rectangle: (180.54736328125,72.0);
+  }
+  classView 2607efb4-489b-451c-9fe0-3ee0f71191db
+  {
+    class: _01_basic::Trade;
+    position: (1150.5257568359375,706.5);
+    rectangle: (207.88623046875,184.0);
+  }
+  classView 3f9f55f3-0f34-4aa5-972b-6fb0d0839393
+  {
+    class: _01_basic::TradeEvent;
+    position: (1528.4548415786112,750.0066923369803);
+    rectangle: (146.54296875,72.0);
+  }
+  classView dbbcb7fc-5ca1-485d-a9e6-86bcb5813b9d
+  {
+    class: _01_basic::Account;
+    position: (799.5257568359375,757.0);
+    rectangle: (179.53759765625,72.0);
+  }
+  propertyView
+  {
+    property: _01_basic::Account.trades;
+    source: dbbcb7fc-5ca1-485d-a9e6-86bcb5813b9d;
+    target: 2607efb4-489b-451c-9fe0-3ee0f71191db;
+    points: [(972.9580688476562,782.5),(1204.9580688476562,782.5)];
+  }
+  propertyView
+  {
+    property: _01_basic::Trade.account;
+    source: 2607efb4-489b-451c-9fe0-3ee0f71191db;
+    target: dbbcb7fc-5ca1-485d-a9e6-86bcb5813b9d;
+    points: [(1156.9580688476562,819.5),(952.9580688476562,820.5)];
+  }
+  propertyView
+  {
+    property: _01_basic::Trade.events;
+    source: 2607efb4-489b-451c-9fe0-3ee0f71191db;
+    target: 3f9f55f3-0f34-4aa5-972b-6fb0d0839393;
+    points: [(1340.9989051643056,779.6887199867499),(1544.9989051643056,779.6887199867499)];
+  }
+  propertyView
+  {
+    property: _01_basic::TradeEvent.trade;
+    source: 3f9f55f3-0f34-4aa5-972b-6fb0d0839393;
+    target: 2607efb4-489b-451c-9fe0-3ee0f71191db;
+    points: [(1533.9989051643056,813.6887199867499),(1320.9989051643056,813.6887199867499)];
+  }
+}
+
+
+###Text
+Text _01_basic::README
+{
+  type: markdown;
+  content: '### Logical Modeling Showcase\n\nThis package contains showcase model to demonstrate logical modeling capabilities of Legend\nIn this showcase, we will show the following:\n1) How to create new Classes\n2) How to define associations between related classes\n3) How to define multiplicities for the fields in a Class\n4) How to define enumerations\n5) How to create a diagrams\n6) How to create a doc like the one you are reading right now';
+}
+
+Text _02_advanced::README
+{
+  type: markdown;
+  content: '###Advanced Modeling Concepts\n\nThis package builds upon the basic model developed in previous package and add more features to the model.\nIn this showcase, we will show the following:\n1. Class Inheritance\n2. Derived Properties\n3. Constraints\n4. Stereotypes\n5. Tags\n\n\n';
+}
+
+Text _03_modelToModelMapping::README
+{
+  type: markdown;
+  content: '###Model to Model Mapping\n\nThis package contains showcase models to demonstrate Model to model mapping which involves \nthe transformation of data from source to the desired target model.\nIn this showcase, we will cover the following:\n1. Simple Model to model Mapping\n2. Filtering within a mapping\n3. Testing the m2m mapping \n4. Union mappings';
+}
+
+
+###Pure
+Enum _01_basic::ProductSynonymType
+{
+  CUSIP,
+  ISIN,
+  SEDOL
+}
+
+Class _01_basic::Product
+{
+  name: String[1];
+  classification: _01_basic::ProductClassification[0..1];
+  cusip() {$this.synonyms->filter(s|$s.type == _01_basic::ProductSynonymType.CUSIP)->toOne().name}: String[1];
+  isin() {$this.synonyms->filter(s|$s.type == _01_basic::ProductSynonymType.ISIN)->toOne().name}: String[1];
+  sedol() {$this.synonyms->filter(s|$s.type == _01_basic::ProductSynonymType.SEDOL)->toOne().name}: String[1];
+}
+
+Class _01_basic::TradeEvent
+{
+  eventType: String[1];
+  eventDate: StrictDate[1];
+  initiator: _01_basic::Trader[0..1];
+  trade: _01_basic::Trade[1];
+}
+
+Class _03_modelToModelMapping::S_Product
+{
+  name: String[1];
+  classification: _03_modelToModelMapping::S_ProductClassification[0..1];
+  synonym: _03_modelToModelMapping::S_Synonym[*];
+}
+
+Class _01_basic::Trader
+{
+  name: String[1];
+  address: String[1];
+}
+
+Class _01_basic::Synonym
+{
+  type: _01_basic::ProductSynonymType[1];
+  name: String[1];
+}
+
+Class _01_basic::Trade
+{
+  id: Integer[1];
+  tradeDate: StrictDate[1];
+  quantity: Float[1];
+  settlementDateTime: DateTime[0..1];
+  product: _01_basic::Product[0..1];
+  account: _01_basic::Account[0..1];
+  events: _01_basic::TradeEvent[*];
+  productIdentifier() {if($this.product->isNotEmpty(), |$this.product->toOne().name, |'Unknown')}: String[1];
+  eventsByDate(date: Date[1]) {$this.events->filter(e|$e.eventDate == $date)}: _01_basic::TradeEvent[*];
+  tradeDateEvent() {$this.eventsByDate($this.tradeDate->toOne())->toOne()}: _01_basic::TradeEvent[1];
+  tradeDataEventType() {$this.tradeDateEvent.eventType}: String[1];
+  initiator() {$this.tradeDateEvent.initiator}: _01_basic::Trader[0..1];
+  latestEventDate() {$this.events->map(e|$e.eventDate)->sort()->reverse()->at(0)}: StrictDate[1];
+}
+
+Class _01_basic::Account
+{
+  name: String[1];
+  createDate: StrictDate[1];
+  trades: _01_basic::Trade[*];
+  closeDate: StrictDate[0..1];
+}
+
+Class <<meta::pure::profiles::temporal.businesstemporal>> _02_advanced::SynonymStereoTyped
+{
+  type: _01_basic::ProductSynonymType[1];
+  name: String[1];
+}
+
+Class _03_modelToModelMapping::S_Synonym
+{
+  type: String[1];
+  name: String[1];
+}
+
+Class {meta::pure::profiles::doc.doc = 'must pass date for isin/cusip/sedol now.'} _02_advanced::ProductUpdated
+{
+  name: String[1];
+  classification: _01_basic::ProductClassification[1];
+  cusip(businessDate: StrictDate[1]) {$this.synonyms($businessDate)->filter(s|$s.type == _01_basic::ProductSynonymType.CUSIP)->toOne().name}: String[1];
+  isin(businessDate: StrictDate[1]) {$this.synonyms($businessDate)->filter(s|$s.type == _01_basic::ProductSynonymType.ISIN)->toOne().name}: String[1];
+  sedol(businessDate: StrictDate[1]) {$this.synonyms($businessDate)->filter(s|$s.type == _01_basic::ProductSynonymType.SEDOL)->toOne().name}: String[1];
+}
+
+Class {meta::pure::profiles::doc.doc = 'use tags to add metadata.'} _02_advanced::AccountWithConstraints extends _01_basic::Account
+[
+  tradesNotDoubleBooked: $this->project([a|$a.trades.id], ['tradeId'])->groupBy('tradeId', 'count'->agg(x|$x, y|$y->count()))->filter(t|$t.getInteger('count') > 1)->tdsRows()->isEmpty(),
+  noTradesAfterCloseDate: true
+]
+{
+  isOpen() {$this.closeDate->isEmpty()}: Boolean[1];
+}
+
+Class _03_modelToModelMapping::S_ProductClassification
+{
+  type: String[1];
+  description: String[1];
+}
+
+Class _01_basic::ProductClassification
+{
+  type: String[1];
+  description: String[1];
+}
+
+Association _02_advanced::ProdSynonymMilestoned
+{
+  product: _02_advanced::ProductUpdated[1];
+  synonyms: _02_advanced::SynonymStereoTyped[*];
+}
+
+Association _01_basic::ProdSynonym
+{
+  product: _01_basic::Product[1];
+  synonyms: _01_basic::Synonym[*];
+}
+
+
+###Mapping
+Mapping _03_modelToModelMapping::simpleModelToModelMapping
+(
+  *_01_basic::Product: Pure
+  {
+    ~src _03_modelToModelMapping::S_Product
+    ~filter !($src.classification.type == 'type2')
+    name: $src.name,
+    synonyms[_01_basic_Synonym]: $src.synonym,
+    classification[_01_basic_ProductClassification]: $src.classification
+  }
+  *_01_basic::ProductClassification: Pure
+  {
+    ~src _03_modelToModelMapping::S_ProductClassification
+    type: $src.type,
+    description: $src.description
+  }
+  *_01_basic::Synonym: Pure
+  {
+    ~src _03_modelToModelMapping::S_Synonym
+    name: $src.name,
+    type: EnumerationMapping _01_basic_ProductSynonymType: $src.type
+  }
+
+  _01_basic::ProductSynonymType: EnumerationMapping
+  {
+    CUSIP: ['C'],
+    ISIN: ['I'],
+    SEDOL: ['S']
+  }
+
+  MappingTests
+  [
+    test_1
+    (
+      query: |_01_basic::Product.all()->graphFetchChecked(#{_01_basic::Product{name,classification{description,type},synonyms{type,name}}}#)->serialize(#{_01_basic::Product{name,classification{description,type},synonyms{type,name}}}#);
+      data:
+      [
+        <Object, JSON, _03_modelToModelMapping::S_Product, '{"name":"Product1","classification":{"type":"type1","description":"Product classification of type 1"},"synonym":[{"type":"C","name":"C1"}]}'>
+      ];
+      assert: '{"defects":[],"source":{"defects":[],"source":{"number":1,"record":"{\"name\":\"Product1\",\"classification\":{\"type\":\"type1\",\"description\":\"Product classification of type 1\"},\"synonym\":[{\"type\":\"C\",\"name\":\"C1\"}]}"},"value":{"classification":{"description":"Product classification of type 1","type":"type1"},"name":"Product1","synonym":[{"name":"C1","type":"C"}]}},"value":{"name":"Product1","classification":{"description":"Product classification of type 1","type":"type1"},"synonyms":[{"type":"CUSIP","name":"C1"}]}}';
+    ),
+    test_2
+    (
+      query: |_01_basic::Product.all()->graphFetchChecked(#{_01_basic::Product{name,classification{type,description},synonyms{name,type}}}#)->serialize(#{_01_basic::Product{name,classification{type,description},synonyms{name,type}}}#);
+      data:
+      [
+        <Object, JSON, _03_modelToModelMapping::S_Product, '{"name":"Product2","classification":{"type":"type2","description":"Classification of type2"},"synonym":[{"type":"I","name":"I1"}]}'>
+      ];
+      assert: '[]';
+    )
+  ]
+)
+
+Mapping _03_modelToModelMapping::unionMapping
+(
+  _01_basic::Product[p1]: Pure
+  {
+    ~src _03_modelToModelMapping::S_Product
+    ~filter !($src.classification.type == 'type2')
+    name: $src.name,
+    classification[_01_basic_ProductClassification]: $src.classification,
+    synonyms[_01_basic_Synonym]: $src.synonym
+  }
+  _01_basic::Product[p2]: Pure
+  {
+    ~src _03_modelToModelMapping::S_Product
+    ~filter $src.classification.type == 'type2'
+    name: $src.name,
+    classification[_01_basic_ProductClassification]: $src.classification,
+    synonyms[_01_basic_Synonym]: $src.synonym
+  }
+  *_01_basic::ProductClassification: Pure
+  {
+    ~src _03_modelToModelMapping::S_ProductClassification
+    type: $src.type,
+    description: $src.description
+  }
+  *_01_basic::Synonym: Pure
+  {
+    ~src _03_modelToModelMapping::S_Synonym
+    type: EnumerationMapping _01_basic_ProductSynonymType: $src.type,
+    name: $src.name
+  }
+  *_01_basic::Product[union]: Operation
+  {
+    meta::pure::router::operations::union_OperationSetImplementation_1__SetImplementation_MANY_(p1,p2)
+  }
+
+  _01_basic::ProductSynonymType: EnumerationMapping
+  {
+    CUSIP: ['C'],
+    ISIN: ['I'],
+    SEDOL: ['S']
+  }
+
+  MappingTests
+  [
+    test_1
+    (
+      query: |_01_basic::Product.all()->graphFetchChecked(#{_01_basic::Product{name,synonyms{name,type},classification{type,description}}}#)->serialize(#{_01_basic::Product{name,synonyms{name,type},classification{type,description}}}#);
+      data:
+      [
+        <Object, JSON, _03_modelToModelMapping::S_Product, '{"name":"Product1","classification":{"type":"type1","description":"Product of type1"},"synonym":[{"type":"C","name":"C1"},{"type":"I","name":"I1"}]}'>
+      ];
+      assert: '{"defects":[],"source":{"defects":[],"source":{"number":1,"record":"{\"name\":\"Product1\",\"classification\":{\"type\":\"type1\",\"description\":\"Product of type1\"},\"synonym\":[{\"type\":\"C\",\"name\":\"C1\"},{\"type\":\"I\",\"name\":\"I1\"}]}"},"value":{"classification":{"description":"Product of type1","type":"type1"},"name":"Product1","synonym":[{"name":"C1","type":"C"},{"name":"I1","type":"I"}]}},"value":{"name":"Product1","synonyms":[{"name":"C1","type":"CUSIP"},{"name":"I1","type":"ISIN"}],"classification":{"type":"type1","description":"Product of type1"}}}';
+    ),
+    test_2
+    (
+      query: |_01_basic::Product.all()->graphFetchChecked(#{_01_basic::Product{name,classification{type,description},synonyms{name,type}}}#)->serialize(#{_01_basic::Product{name,classification{type,description},synonyms{name,type}}}#);
+      data:
+      [
+        <Object, JSON, _03_modelToModelMapping::S_Product, '{"name":"Product2","classification":{"type":"type2","description":"Product of classification type2"},"synonym":[{"type":"S","name":"S1"}]}'>
+      ];
+      assert: '{"defects":[],"source":{"defects":[],"source":{"number":1,"record":"{\"name\":\"Product2\",\"classification\":{\"type\":\"type2\",\"description\":\"Product of classification type2\"},\"synonym\":[{\"type\":\"S\",\"name\":\"S1\"}]}"},"value":{"classification":{"description":"Product of classification type2","type":"type2"},"name":"Product2","synonym":[{"name":"S1","type":"S"}]}},"value":{"name":"Product2","classification":{"type":"type2","description":"Product of classification type2"},"synonyms":[{"name":"S1","type":"SEDOL"}]}}';
+    )
+  ]
+)

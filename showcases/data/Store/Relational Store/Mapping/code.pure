@@ -1,0 +1,494 @@
+###Diagram
+Diagram relationalMapping::TradeAccountDiagram
+{
+  classView 2607efb4-489b-451c-9fe0-3ee0f71191db
+  {
+    class: relationalMapping::Trade;
+    position: (1150.5257568359375,706.5);
+    rectangle: (207.88623046875,184.0);
+  }
+  classView 3f9f55f3-0f34-4aa5-972b-6fb0d0839393
+  {
+    class: relationalMapping::TradeEvent;
+    position: (1528.4548415786112,750.0066923369803);
+    rectangle: (146.54296875,72.0);
+  }
+  classView dfcaa3ce-a0e4-47ca-8a08-937129ab8c5e
+  {
+    class: relationalMapping::Product;
+    position: (763.9989051643056,565.625);
+    rectangle: (247.4994525821528,150.3125);
+  }
+  classView 1e46b918-d9c4-4212-90b3-0b51992421dc
+  {
+    class: relationalMapping::Trader;
+    position: (1536.7489051643056,594.1887199867499);
+    rectangle: (117.796875,58.0);
+  }
+  classView 931cb999-5873-4fcd-8e9b-0ca4f1cf9a3f
+  {
+    class: relationalMapping::Synonym;
+    position: (1170.9989051643056,579.625);
+    rectangle: (180.54736328125,100.0);
+  }
+  classView 742b39b1-983a-4913-bad9-a45654973427
+  {
+    class: relationalMapping::AccountWithConstraints;
+    position: (789.9989051643056,922.25);
+    rectangle: (206.46875,58.0);
+  }
+  classView dbbcb7fc-5ca1-485d-a9e6-86bcb5813b9d
+  {
+    class: relationalMapping::Account;
+    position: (804.5257568359375,756.0);
+    rectangle: (179.53759765625,72.0);
+  }
+  propertyView
+  {
+    property: relationalMapping::Account.trades;
+    source: dbbcb7fc-5ca1-485d-a9e6-86bcb5813b9d;
+    target: 2607efb4-489b-451c-9fe0-3ee0f71191db;
+    points: [(977.9580688476562,781.5),(1204.9580688476562,782.5)];
+  }
+  propertyView
+  {
+    property: relationalMapping::Trade.account;
+    source: 2607efb4-489b-451c-9fe0-3ee0f71191db;
+    target: dbbcb7fc-5ca1-485d-a9e6-86bcb5813b9d;
+    points: [(1156.9580688476562,819.5),(957.9580688476562,819.5)];
+  }
+  propertyView
+  {
+    property: relationalMapping::Trade.events;
+    source: 2607efb4-489b-451c-9fe0-3ee0f71191db;
+    target: 3f9f55f3-0f34-4aa5-972b-6fb0d0839393;
+    points: [(1340.9989051643056,779.6887199867499),(1544.9989051643056,779.6887199867499)];
+  }
+  propertyView
+  {
+    property: relationalMapping::TradeEvent.trade;
+    source: 3f9f55f3-0f34-4aa5-972b-6fb0d0839393;
+    target: 2607efb4-489b-451c-9fe0-3ee0f71191db;
+    points: [(1533.9989051643056,813.6887199867499),(1320.9989051643056,813.6887199867499)];
+  }
+  generalizationView
+  {
+    source: 742b39b1-983a-4913-bad9-a45654973427;
+    target: dbbcb7fc-5ca1-485d-a9e6-86bcb5813b9d;
+    points: [(893.2332801643056,951.25),(894.2945556640625,792.0)];
+  }
+}
+
+
+###Text
+Text relationalMapping::README
+{
+  type: markdown;
+  content: '### Relational Mapping Showcase\n\nThis package contains showcase model to demonstrate relational mapping capabilities of Legend\nIn this showcase, we will show the following:\n1) Relational store specifications  (schema, tables, column data types, quoting, join, self-join, filter)\n2) Relational mappings with tests\n3) Relational functions \u2013 dyna functions\n4) PURE function support\n';
+}
+
+
+###Relational
+Database relationalMapping::TradeAccountDb
+(
+  Schema productSchema
+  (
+    Table synonymTable
+    (
+      ID INTEGER PRIMARY KEY,
+      PROD_ID INTEGER,
+      TYPE VARCHAR(200),
+      NAME VARCHAR(200)
+    )
+    Table productTable
+    (
+      ID INTEGER PRIMARY KEY,
+      PROD_CLASSIFICATION_ID INTEGER,
+      NAME VARCHAR(200)
+    )
+    Table productClassificationTable
+    (
+      ID INTEGER PRIMARY KEY,
+      TYPE VARCHAR(200),
+      DESCRIPTION VARCHAR(200)
+    )
+  )
+
+  Table tradeTable
+  (
+    ID INTEGER PRIMARY KEY,
+    PROD_ID INTEGER,
+    ACCOUNT_ID INTEGER,
+    QUANTITY FLOAT,
+    TRADE_DATE DATE,
+    SETTLEMENT_DATETIME TIMESTAMP
+  )
+  Table accountTable
+  (
+    ID INTEGER PRIMARY KEY,
+    NAME VARCHAR(200),
+    "CREATE DATE" DATE,
+    "CLOSE DATE" DATE
+  )
+  Table tradeEventTable
+  (
+    ID INTEGER PRIMARY KEY,
+    TRADE_ID INTEGER,
+    EVENT_TYPE VARCHAR(10),
+    EVENT_DATE DATE,
+    TRADER_ID INTEGER
+  )
+  Table traderTable
+  (
+    ID INTEGER PRIMARY KEY,
+    NAME VARCHAR(200),
+    ADDRESS VARCHAR(200)
+  )
+
+  Join Product_Synonym(productSchema.synonymTable.PROD_ID = productSchema.productTable.ID)
+  Join Product_Classification(productSchema.productTable.PROD_CLASSIFICATION_ID = productSchema.productClassificationTable.ID)
+  Join TradeEvent_Trader(tradeEventTable.TRADER_ID = traderTable.ID)
+  Join TradeEvent_Trade(tradeEventTable.TRADE_ID = tradeTable.ID)
+  Join Trade_Account(tradeTable.ACCOUNT_ID = accountTable.ID)
+  Join Trade_Product(tradeTable.PROD_ID = productSchema.productTable.ID)
+
+  Filter AccountActiveFilter(accountTable."CLOSE DATE" > now())
+  Filter TradeEventSettledFilter(tradeEventTable.EVENT_TYPE = 'Settle')
+)
+
+
+###Pure
+Enum relationalMapping::ProductSynonymType
+{
+  CUSIP,
+  ISIN,
+  SEDOL
+}
+
+Class relationalMapping::Trader
+{
+  name: String[1];
+  address: String[1];
+}
+
+Class relationalMapping::Synonym
+{
+  type: relationalMapping::ProductSynonymType[1];
+  name: String[1];
+}
+
+Class {meta::pure::profiles::doc.doc = 'use tags to add metadata.'} relationalMapping::AccountWithConstraints extends relationalMapping::Account
+[
+  tradesNotDoubleBooked: $this->project([a|$a.trades.id], ['tradeId'])->groupBy('tradeId', 'count'->agg(x|$x, y|$y->count()))->filter(t|$t.getInteger('count') > 1)->tdsRows()->isEmpty(),
+  noTradesAfterCloseDate: true
+]
+{
+  isOpen() {$this.closeDate->isEmpty()}: Boolean[1];
+}
+
+Class relationalMapping::TradeEvent
+{
+  eventType: String[1];
+  eventDate: StrictDate[1];
+  initiator: relationalMapping::Trader[0..1];
+  trade: relationalMapping::Trade[1];
+}
+
+Class relationalMapping::Account
+{
+  name: String[1];
+  createDate: StrictDate[1];
+  trades: relationalMapping::Trade[*];
+  closeDate: StrictDate[0..1];
+}
+
+Class relationalMapping::ProductClassification
+{
+  type: String[1];
+  description: String[1];
+}
+
+Class relationalMapping::Trade
+{
+  id: Integer[1];
+  tradeDate: StrictDate[1];
+  quantity: Float[1];
+  settlementDateTime: DateTime[0..1];
+  product: relationalMapping::Product[0..1];
+  account: relationalMapping::Account[0..1];
+  events: relationalMapping::TradeEvent[*];
+  productIdentifier() {if($this.product->isNotEmpty(), |$this.product->toOne().name, |'Unknown')}: String[1];
+  eventsByDate(date: Date[1]) {$this.events->filter(e|$e.eventDate == $date)}: relationalMapping::TradeEvent[*];
+  tradeDateEvent() {$this.eventsByDate($this.tradeDate->toOne())->toOne()}: relationalMapping::TradeEvent[1];
+  tradeDateEventType() {$this.tradeDateEvent.eventType}: String[1];
+  initiator() {$this.tradeDateEvent.initiator}: relationalMapping::Trader[0..1];
+}
+
+Class {meta::pure::profiles::doc.doc = 'must pass date for isin/cusip/sedol now.'} relationalMapping::Product
+{
+  name: String[1];
+  classification: relationalMapping::ProductClassification[1];
+  cusip() {$this.synonyms->filter(s|$s.type == relationalMapping::ProductSynonymType.CUSIP)->toOne().name}: String[1];
+  isin() {$this.synonyms->filter(s|$s.type == relationalMapping::ProductSynonymType.ISIN)->toOne().name}: String[1];
+  sedol() {$this.synonyms->filter(s|$s.type == relationalMapping::ProductSynonymType.SEDOL)->toOne().name}: String[1];
+}
+
+Association relationalMapping::ProdSynonym
+{
+  product: relationalMapping::Product[1];
+  synonyms: relationalMapping::Synonym[*];
+}
+
+
+###Mapping
+Mapping relationalMapping::RelationalMappingWithFilters
+(
+  relationalMapping::Account: Relational
+  {
+    ~filter [relationalMapping::TradeAccountDb]AccountActiveFilter
+    ~primaryKey
+    (
+      [relationalMapping::TradeAccountDb]accountTable.ID
+    )
+    ~mainTable [relationalMapping::TradeAccountDb]accountTable
+    name: [relationalMapping::TradeAccountDb]accountTable.NAME,
+    createDate: [relationalMapping::TradeAccountDb]accountTable."CREATE DATE",
+    closeDate: [relationalMapping::TradeAccountDb]accountTable."CLOSE DATE"
+  }
+  relationalMapping::TradeEvent: Relational
+  {
+    ~filter [relationalMapping::TradeAccountDb]TradeEventSettledFilter
+    ~primaryKey
+    (
+      [relationalMapping::TradeAccountDb]tradeEventTable.ID
+    )
+    ~mainTable [relationalMapping::TradeAccountDb]tradeEventTable
+    eventType: [relationalMapping::TradeAccountDb]tradeEventTable.EVENT_TYPE,
+    eventDate: [relationalMapping::TradeAccountDb]tradeEventTable.EVENT_DATE
+  }
+
+  MappingTests
+  [
+    test_1
+    (
+      query: |relationalMapping::Account.all()->graphFetch(#{relationalMapping::Account{name,createDate,closeDate}}#)->serialize(#{relationalMapping::Account{name,createDate,closeDate}}#);
+      data:
+      [
+        <Relational, SQL, relationalMapping::TradeAccountDb, 
+          'Drop table if exists accountTable;\n'+
+          'Create Table accountTable(id INT, name VARCHAR(200), "CREATE DATE" DATE, "CLOSE DATE" DATE);\n'+
+          'insert into accountTable (id, name, "CREATE DATE", "CLOSE DATE") values (1, \'Acct 1\', \'2020-01-01\', \'2021-01-01\');\n'+
+          'insert into accountTable (id, name, "CREATE DATE", "CLOSE DATE") values (2, \'Acct 2\', \'2020-01-01\', \'2025-01-01\');\n'+
+          'insert into accountTable (id, name, "CREATE DATE", "CLOSE DATE") values (2, \'Acct 2\', \'2020-01-01\', \'2029-01-01\');\n'
+        >
+      ];
+      assert: '[{"name":"Acct 2","createDate":"2020-01-01","closeDate":"2025-01-01"},{"name":"Acct 2","createDate":"2020-01-01","closeDate":"2029-01-01"}]';
+    ),
+    test_2
+    (
+      query: |relationalMapping::TradeEvent.all()->graphFetch(#{relationalMapping::TradeEvent{eventDate,eventType}}#)->serialize(#{relationalMapping::TradeEvent{eventDate,eventType}}#);
+      data:
+      [
+        <Relational, SQL, relationalMapping::TradeAccountDb, 
+          'Drop table if exists tradeEventTable;\n'+
+          'Create Table tradeEventTable(id INT, trade_id INT, event_type VARCHAR(10), event_date DATE, trader_id INT);\n'+
+          'insert into tradeEventTable(id, trade_id, event_type, event_date, trader_id) values (1, 1, \'New\', \'2021-01-01\', 1);\n'+
+          'insert into tradeEventTable(id, trade_id, event_type, event_date, trader_id) values (2, 1, \'Correct\', \'2021-01-02\', 1);\n'+
+          'insert into tradeEventTable(id, trade_id, event_type, event_date, trader_id) values (3, 1, \'Settle\', \'2021-01-03\', 1);\n'
+        >
+      ];
+      assert: '{"eventDate":"2021-01-03","eventType":"Settle"}';
+    )
+  ]
+)
+
+Mapping relationalMapping::TradeAccountRelationalMapping
+(
+  *relationalMapping::ProductClassification: Relational
+  {
+    ~primaryKey
+    (
+      [relationalMapping::TradeAccountDb]productSchema.productClassificationTable.ID
+    )
+    ~mainTable [relationalMapping::TradeAccountDb]productSchema.productClassificationTable
+    type: [relationalMapping::TradeAccountDb]productSchema.productClassificationTable.TYPE,
+    description: toUpper([relationalMapping::TradeAccountDb]productSchema.productClassificationTable.DESCRIPTION)
+  }
+  *relationalMapping::Synonym: Relational
+  {
+    ~primaryKey
+    (
+      [relationalMapping::TradeAccountDb]productSchema.synonymTable.ID
+    )
+    ~mainTable [relationalMapping::TradeAccountDb]productSchema.synonymTable
+    name: [relationalMapping::TradeAccountDb]productSchema.synonymTable.NAME,
+    type: EnumerationMapping relationalMapping_ProductSynonymType: [relationalMapping::TradeAccountDb]productSchema.synonymTable.TYPE,
+    product[relationalMapping_Product]: [relationalMapping::TradeAccountDb]@Product_Synonym
+  }
+  *relationalMapping::Product: Relational
+  {
+    ~primaryKey
+    (
+      [relationalMapping::TradeAccountDb]productSchema.productTable.ID
+    )
+    ~mainTable [relationalMapping::TradeAccountDb]productSchema.productTable
+    synonyms[relationalMapping_Synonym]: [relationalMapping::TradeAccountDb]@Product_Synonym,
+    name: [relationalMapping::TradeAccountDb]productSchema.productTable.NAME,
+    classification[relationalMapping_ProductClassification]: [relationalMapping::TradeAccountDb]@Product_Classification
+  }
+  *relationalMapping::Account: Relational
+  {
+    ~primaryKey
+    (
+      [relationalMapping::TradeAccountDb]accountTable.ID
+    )
+    ~mainTable [relationalMapping::TradeAccountDb]accountTable
+    name: [relationalMapping::TradeAccountDb]accountTable.NAME,
+    createDate: [relationalMapping::TradeAccountDb]accountTable."CREATE DATE",
+    closeDate: [relationalMapping::TradeAccountDb]accountTable."CLOSE DATE"
+  }
+  *relationalMapping::Trader: Relational
+  {
+    ~primaryKey
+    (
+      [relationalMapping::TradeAccountDb]traderTable.ID
+    )
+    ~mainTable [relationalMapping::TradeAccountDb]traderTable
+    name: [relationalMapping::TradeAccountDb]traderTable.NAME,
+    address: [relationalMapping::TradeAccountDb]traderTable.ADDRESS
+  }
+  *relationalMapping::TradeEvent: Relational
+  {
+    ~primaryKey
+    (
+      [relationalMapping::TradeAccountDb]tradeEventTable.ID
+    )
+    ~mainTable [relationalMapping::TradeAccountDb]tradeEventTable
+    eventType: [relationalMapping::TradeAccountDb]tradeEventTable.EVENT_TYPE,
+    eventDate: [relationalMapping::TradeAccountDb]tradeEventTable.EVENT_DATE,
+    initiator[relationalMapping_Trader]: [relationalMapping::TradeAccountDb]@TradeEvent_Trader
+  }
+  *relationalMapping::Trade: Relational
+  {
+    ~primaryKey
+    (
+      [relationalMapping::TradeAccountDb]tradeTable.ID
+    )
+    ~mainTable [relationalMapping::TradeAccountDb]tradeTable
+    id: [relationalMapping::TradeAccountDb]tradeTable.ID,
+    tradeDate: [relationalMapping::TradeAccountDb]tradeTable.TRADE_DATE,
+    quantity: [relationalMapping::TradeAccountDb]tradeTable.QUANTITY,
+    settlementDateTime: [relationalMapping::TradeAccountDb]tradeTable.SETTLEMENT_DATETIME,
+    product[relationalMapping_Product]: [relationalMapping::TradeAccountDb]@Trade_Product,
+    account[relationalMapping_Account]: [relationalMapping::TradeAccountDb]@Trade_Account,
+    events[relationalMapping_TradeEvent]: [relationalMapping::TradeAccountDb]@TradeEvent_Trade
+  }
+
+  relationalMapping::ProductSynonymType: EnumerationMapping
+  {
+    CUSIP: ['CUSIP'],
+    ISIN: ['ISIN'],
+    SEDOL: ['SEDOL']
+  }
+
+  MappingTests
+  [
+    test_1
+    (
+      query: |relationalMapping::ProductClassification.all()->project([x|$x.description, x|$x.type->contains('Type A'), x|$x.type], ['Description', 'Is Type A', 'Type']);
+      data:
+      [
+        <Relational, SQL, relationalMapping::TradeAccountDb, 
+          'Drop schema if exists productSchema cascade;\n'+
+          'Create schema productSchema;\n'+
+          'Drop table if exists productSchema.ProductClassificationTable;\n'+
+          'Create Table productSchema.ProductClassificationTable(id INT, type VARCHAR(200), description VARCHAR(200));\n'+
+          'insert into productSchema.ProductClassificationTable (id, type, description) values (1, \'Type A\', \'Type A Product\');\n'+
+          'insert into productSchema.ProductClassificationTable (id, type, description) values (1, \'Type B\', \'Type B Product\');\n'+
+          'insert into productSchema.ProductClassificationTable (id, type, description) values (1, \'Type C\', \'Type C Product\');\n'
+        >
+      ];
+      assert: '[{"values":["TYPE A PRODUCT",true,"Type A"]},{"values":["TYPE B PRODUCT",false,"Type B"]},{"values":["TYPE C PRODUCT",false,"Type C"]}]';
+    ),
+    test_2
+    (
+      query: |relationalMapping::Product.all()->filter(x|$x.classification.type == 'Type A')->project([x|$x.name, x|$x.classification.type, x|$x.classification.description, x|$x.synonyms.type, x|$x.synonyms.name], ['Name', 'Classification/Type', 'Classification/Description', 'Synonyms/Type', 'Synonyms/Name']);
+      data:
+      [
+        <Relational, SQL, relationalMapping::TradeAccountDb, 
+          'Drop schema if exists productSchema cascade;\n'+
+          'Create schema productSchema;\n'+
+          'Drop table if exists productSchema.ProductClassificationTable;\n'+
+          'Drop table if exists productSchema.productTable;\n'+
+          'Drop table if exists productSchema.synonymTable;\n'+
+          'Create Table productSchema.ProductClassificationTable(id INT, type VARCHAR(200), description VARCHAR(200));\n'+
+          'Create Table productSchema.productTable(id INT, prod_classification_id VARCHAR(200), name VARCHAR(200));\n'+
+          'Create Table productSchema.synonymTable(id INT, prod_id INT, type VARCHAR(200), name VARCHAR(200));\n'+
+          'insert into productSchema.ProductClassificationTable (id, type, description) values (1, \'Type A\', \'Type A Product\');\n'+
+          'insert into productSchema.ProductClassificationTable (id, type, description) values (2, \'Type B\', \'Type B Product\');\n'+
+          'insert into productSchema.productTable (id, prod_classification_id, name) values (1, 1, \'Product1\');\n'+
+          'insert into productSchema.productTable (id, prod_classification_id, name) values (2, 2, \'Product2\');\n'+
+          'insert into productSchema.synonymTable (id, prod_id, type, name) values (1, 1, \'CUSIP\', \'CUSIP1\');\n'+
+          'insert into productSchema.synonymTable (id, prod_id, type, name) values (2, 1, \'ISIN\', \'ISIN1\');\n'+
+          'insert into productSchema.synonymTable (id, prod_id, type, name) values (3, 2, \'CUSIP\', \'CUSIP2\');\n'+
+          'insert into productSchema.synonymTable (id, prod_id, type, name) values (4, 2, \'SEDOL\', \'SEDOL2\');\n'
+        >
+      ];
+      assert: '[{"values":["Product1","Type A","TYPE A PRODUCT","CUSIP","CUSIP1"]},{"values":["Product1","Type A","TYPE A PRODUCT","ISIN","ISIN1"]}]';
+    ),
+    test_3
+    (
+      query: |relationalMapping::Account.all()->project([x|$x.name, x|$x.closeDate, x|$x.createDate, x|$x.createDate->monthNumber(), x|$x.createDate->dayOfMonth()], ['Name', 'Close Date', 'Create Date', 'Create Month Number', 'Create dayOfMonth']);
+      data:
+      [
+        <Relational, SQL, relationalMapping::TradeAccountDb, 
+          'Drop table if exists accountTable;\n'+
+          'Create Table accountTable(id INT, name VARCHAR(200), "CREATE DATE" DATE, "CLOSE DATE" DATE);\n'+
+          'insert into accountTable (id, name, "CREATE DATE", "CLOSE DATE") values (1, \'Acct 1\', \'2020-01-01\', \'2021-01-01\');\n'
+        >
+      ];
+      assert: '[{"values":["Acct 1","2021-01-01","2020-01-01",1,1]}]';
+    ),
+    test_4
+    (
+      query: |relationalMapping::Trade.all()->project([x|$x.id, x|$x.quantity, x|$x.settlementDateTime, x|$x.tradeDate, x|$x.account.name, x|$x.product.name, x|$x.tradeDateEvent.eventDate, x|$x.tradeDateEventType, x|$x.initiator.name], ['Id', 'Quantity', 'Settlement Date Time', 'Trade Date', 'Account_Name', 'Product_Name', 'Trade Event Date', 'Trade Date Event Type', 'Initiator']);
+      data:
+      [
+        <Relational, SQL, relationalMapping::TradeAccountDb, 
+          'Drop schema if exists productSchema cascade;\n'+
+          'Create schema productSchema;\n'+
+          'Drop table if exists productSchema.ProductClassificationTable;\n'+
+          'Drop table if exists productSchema.productTable;\n'+
+          'Drop table if exists productSchema.synonymTable;\n'+
+          'Drop table if exists accountTable;\n'+
+          'Drop table if exists traderTable;\n'+
+          'Drop table if exists tradeTable;\n'+
+          'Drop table if exists tradeEventTable;\n'+
+          'Create Table productSchema.ProductClassificationTable(id INT, type VARCHAR(200), description VARCHAR(200));\n'+
+          'Create Table productSchema.productTable(id INT, prod_classification_id VARCHAR(200), name VARCHAR(200));\n'+
+          'Create Table productSchema.synonymTable(id INT, prod_id INT, type VARCHAR(200), name VARCHAR(200));\n'+
+          'Create Table accountTable(id INT, name VARCHAR(200), "CREATE DATE" DATE, "CLOSE DATE" DATE);\n'+
+          'Create Table traderTable(id INT, name VARCHAR(200), address VARCHAR(200));\n'+
+          'Create Table tradeTable(id INT, prod_id INT, account_id INT, quantity FLOAT, trade_date DATE, settlement_datetime TIMESTAMP);\n'+
+          'Create Table tradeEventTable(id INT, trade_id INT, event_type VARCHAR(10), event_date DATE, trader_id INT);\n'+
+          'insert into productSchema.ProductClassificationTable (id, type, description) values (1, \'Type A\', \'Type A Product\');\n'+
+          'insert into productSchema.ProductClassificationTable (id, type, description) values (2, \'Type B\', \'Type B Product\');\n'+
+          'insert into productSchema.productTable (id, prod_classification_id, name) values (1, 1, \'Product1\');\n'+
+          'insert into productSchema.productTable (id, prod_classification_id, name) values (2, 2, \'Product2\');\n'+
+          'insert into productSchema.synonymTable (id, prod_id, type, name) values (1, 1, \'CUSIP\', \'CUSIP1\');\n'+
+          'insert into productSchema.synonymTable (id, prod_id, type, name) values (2, 1, \'ISIN\', \'ISIN1\');\n'+
+          'insert into productSchema.synonymTable (id, prod_id, type, name) values (3, 2, \'CUSIP\', \'CUSIP2\');\n'+
+          'insert into productSchema.synonymTable (id, prod_id, type, name) values (4, 2, \'SEDOL\', \'SEDOL2\');\n'+
+          'insert into accountTable (id, name, "CREATE DATE", "CLOSE DATE") values (1, \'Acct 1\', \'2020-01-01\', \'2021-01-01\');\n'+
+          'insert into traderTable(id, name, address) values (1, \'Jack\', \'Orchard\');\n'+
+          'insert into traderTable(id, name, address) values (2, \'Cathy\', \'Marina Bay\');\n'+
+          'insert into tradeTable(id, prod_id, account_id, quantity, trade_date, settlement_datetime) values (1, 1, 1, 100, \'2021-01-01\', \'2021-01-01 12:00:00\');\n'+
+          'insert into tradeEventTable(id, trade_id, event_type, event_date, trader_id) values (1, 1, \'New\', \'2021-01-01\', 1);\n'+
+          'insert into tradeEventTable(id, trade_id, event_type, event_date, trader_id) values (2, 1, \'Correct\', \'2021-01-02\', 1);\n'+
+          'insert into tradeEventTable(id, trade_id, event_type, event_date, trader_id) values (3, 1, \'Settle\', \'2021-01-03\', 1);\n'
+        >
+      ];
+      assert: '[{"values":[1,100.0,"2021-01-01T12:00:00.000000000+0000","2021-01-01","Acct 1","Product1","2021-01-01","New","Jack"]}]';
+    )
+  ]
+)
