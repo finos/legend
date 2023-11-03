@@ -1,0 +1,24 @@
+{
+  "appName": "studio",
+  "env": "prod",
+  "sdlc": {
+    "url": "__LEGEND_EXTERNAL_BASE_URL__/sdlc/api"
+  },
+  "engine": {
+    "url": "__LEGEND_EXTERNAL_BASE_URL__/engine/api"
+  },
+  "depot": {
+    "url": "__LEGEND_EXTERNAL_BASE_URL__/depot/api"
+  },
+  "documentation": {
+    "url": "https://legend.finos.org"
+  },
+  "extensions": {
+    "core": {
+      "TEMPORARY__disableSDLCProjectCreation": false,
+      "TEMPORARY__disableServiceRegistration": true,
+      "TEMPORARY__enableFunctionActivatorSupport": true,
+      "TEMPORARY__enableRawSQLExecutor": true
+    }
+  }
+}

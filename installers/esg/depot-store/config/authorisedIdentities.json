@@ -1,0 +1,7 @@
+{
+  "Artifacts": ["${DEPOT_STORE_ADMIN_USER}"],
+  "Store Administration": ["${DEPOT_STORE_ADMIN_USER}"],
+  "Projects": ["${DEPOT_STORE_ADMIN_USER}"],
+  "Notifications": ["${DEPOT_STORE_ADMIN_USER}"],
+  "Entities": ["${DEPOT_STORE_ADMIN_USER}"]
+}

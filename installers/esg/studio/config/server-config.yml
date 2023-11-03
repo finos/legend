@@ -1,0 +1,44 @@
+server:
+  type: simple
+  applicationContextPath: /
+  adminContextPath: /studio/admin
+  connector:
+    type: http
+    port: ${STUDIO_PORT}
+sessionCookie: LEGEND_STUDIO_JSESSIONID
+logging:
+  level: INFO
+  loggers:
+    root:
+      level: INFO
+    org.pac4j:
+      level: INFO
+  appenders:
+    - type: console
+
+pac4j:
+  callbackPrefix: /studio/api/pac4j
+  clients:
+    - org.finos.legend.server.pac4j.gitlab.GitlabClient:
+        name: gitlab
+        clientId: ${GITLAB_APP_ID}
+        secret: ${GITLAB_APP_SECRET}
+        discoveryUri: https://gitlab.com/.well-known/openid-configuration
+        scope: openid profile api
+  bypassPaths:
+    - /studio/admin/healthcheck
+    - /studio/config.json
+
+html5Router: true
+routerExemptPaths:
+  - /editor.worker.js
+  - /json.worker.js
+  - /editor.worker.js.map
+  - /json.worker.js.map
+  - /version.json
+  - /config.json
+  - /favicon.ico
+  - /static
+localAssetPaths:
+  /studio/config.json: /config/config.json
+uiPath: /studio
