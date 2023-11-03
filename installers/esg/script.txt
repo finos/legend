@@ -1,0 +1,22 @@
+
+curl --location 'https://d7nifimeibcde.cloudfront.net/engine/api/sql/v1/execution/executeQueryString?serializationFormat=DEFAULT&client_name=gitlabPAToken' \
+--header 'legend-test-pat: PUT_YOUR_PAT_HERE' \
+--header 'Content-Type: text/plain' \
+--data 'SELECT
+    "root"."entityId" AS "entityId",
+    "root"."fiscalYear" AS "fiscalYear",
+    "root"."env.climate.emissions.ghgScope1Absolute" AS "env.climate.emissions.ghgScope1Absolute",
+    "root"."env.climate.emissions.ghgScope1Absolute_unit" AS "env.climate.emissions.ghgScope1Absolute_unit",
+    "root"."env.climate.emissions.ghgScope1Absolute.pcafScore" AS "env.climate.emissions.ghgScope1Absolute.pcafScore",
+    "root"."env.climate.emissions.ghgScope1Absolute.sourceDescription" AS "env.climate.emissions.ghgScope1Absolute.sourceDescription",
+    "root"."env.climate.emissions.ghgScope2LocAbsolute" AS "env.climate.emissions.ghgScope2LocAbsolute",
+    "root"."env.climate.emissions.ghgScope2LocAbsolute_unit" AS "env.climate.emissions.ghgScope2LocAbsolute_unit",
+    "root"."env.climate.emissions.ghgScope2LocAbsolute.pcafScore" AS "env.climate.emissions.ghgScope2LocAbsolute.pcafScore",
+    "root"."env.climate.emissions.ghgScope2LocAbsolute.sourceDescription" AS "env.climate.emissions.ghgScope2LocAbsolute.sourceDescription"
+FROM
+    service(
+        pattern => '\''/finos/esg/env/climate/getEmissionData'\'',
+        project => '\''OMNIBUS-51104062'\'',
+        groupWorkspace => '\''GWS8'\''
+
+    ) AS "root"'

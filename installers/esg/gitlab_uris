@@ -1,0 +1,3 @@
+http://localhost:6300/engine/callback
+http://localhost:6100/sdlc/api/pac4j/callback
+http://localhost:9000/studio/api/pac4j/callback

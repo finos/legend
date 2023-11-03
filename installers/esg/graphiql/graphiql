@@ -1,0 +1,80 @@
+<!--
+ *  Copyright (c) 2021 GraphQL Contributors
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the license found in the
+ *  LICENSE file in the root directory of this source tree.
+ * 
+ * Note - The original version of this file is at https://github.com/graphql/graphiql/blob/main/examples/graphiql-cdn/index.html 
+ * This version adds some minimal html to allow the injection of the GraphQL endpoint.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://unpkg.com/graphiql/graphiql.min.css" rel="stylesheet"/>
+	<style>
+.legend {
+  background-color: white; 
+  font-family: monospace;
+  padding: 12px 20px;
+}
+.legend-endpoint {
+  background-color: white; 
+  width:50%;
+  font-family: monospace;
+  padding: 12px 20px;
+  height: 20px;
+}
+</style>
+</head>
+<body style="margin: 0;">
+	<div >
+		<table border="0" width=100% class="legend">
+			<tr >
+				<td width=5%>
+					<b>Legend Engine Endpoint</b>
+				</td>
+				<td width=95%>
+					<input type="text" id='legend-endpoint' class="legend-endpoint" value="http://localhost:6300/api/graphQL/v1/execution/execute/prod/org.finos.legend.showcase/graphql/1.0.1/query/domain::Query/mapping/mapping::relational::Firm_Person/runtime/connection::runtime::h2">
+				</td>
+			</tr>
+		</table>
+	</div>
+<div id="graphiql" style="height: 100vh;"></div>
+<script crossorigin src="https://unpkg.com/react/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/graphiql/graphiql.min.js"></script>
+<script>
+      function graphQLFetcher(graphQLParams, opts = {headers: {}}) {
+		var legendEndpoint = document.getElementById('legend-endpoint').value;
+		console.log("Using Legend endpoint = " + legendEndpoint);
+		//'http://localhost:6300/api/graphQL/v1/execution/execute/prod/org.finos.legend.showcase/graphql/1.0.1/query/domain::Query/mapping/mapping::relational::Firm_Person/runtime/connection::runtime::h2',
+        return fetch(
+          legendEndpoint,
+          {
+            method: 'post',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+			//mode: 'no-cors',
+            body: JSON.stringify(graphQLParams),
+            credentials: 'include',
+          },
+        ).then(function (response) {
+          return response.json().catch(function () {
+            return response.text();
+          });
+        });
+      }
+
+      ReactDOM.render(
+        React.createElement(GraphiQL, {
+          fetcher: graphQLFetcher,
+          headerEditorEnabled: true,
+        }),
+        document.getElementById('graphiql'),
+      );
+</script>
+</body>
+</html>

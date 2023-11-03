@@ -1,0 +1,104 @@
+server:
+  adminContextPath: /admin
+  applicationConnectors:
+    - type: http
+      port: ${SDLC_PORT}
+      maxRequestHeaderSize: 128KiB
+  adminConnectors:
+    - type: http
+      port: ${SDLC_ADMIN_PORT}
+  gzip:
+    includedMethods:
+      - GET
+      - POST
+  requestLog:
+    type: classic
+    level: "OFF"
+    appenders:
+      - type: console
+        logFormat: "OFF"
+  rootPath: /sdlc/api
+cors:
+  allowedHeaders:
+    - X-Requested-With
+    - Content-Type
+    - Accept
+    - Origin
+    - Access-Control-Allow-Credentials
+    - x-b3-parentspanid
+    - x-b3-sampled
+    - x-b3-spanid
+    - x-b3-traceid
+    - legend-test-pat
+sessionCookie: LEGEND_SDLC_JSESSIONID
+logging:
+  level: INFO
+  appenders:
+    - type: console
+      logFormat: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%thread] %c - %m%n"
+swagger:
+  resourcePackage: org.finos.legend.sdlc.server.resources
+  title: Legend SDLC
+  version: local-snapshot
+  schemes: []
+pac4j:
+  callbackPrefix: /sdlc/api/pac4j
+  mongoUri: ${MONGODB_URI}
+  mongoDb: ${MONGODB_NAME}
+  mongoSession:
+    enabled: ${MONGO_SESSION_ENABLED}
+    collection: userSessions
+  clients:
+    - org.finos.legend.server.pac4j.gitlab.GitlabClient:
+        name: gitlab
+        clientId: ${GITLAB_APP_ID}
+        secret: ${GITLAB_APP_SECRET}
+        discoveryUri: https://gitlab.com/.well-known/openid-configuration
+        scope: openid profile api
+    - org.finos.legend.server.pac4j.gitlab.GitlabPersonalAccessTokenClient:
+        name: gitlab-pat
+        headerTokenName: legend-test-pat
+        scheme: https
+        gitlabHost: gitlab.com
+        gitlabApiVersion: v4
+  bypassPaths:
+    - /sdlc/api/info
+    - /sdlc/api/server/info
+    - /sdlc/api/server/platforms
+    - /sdlc/api/auth/authorized
+
+applicationName: Legend SDLC
+filterPriorities:
+  GitLab: 1
+  org.pac4j.j2e.filter.CallbackFilter: 2
+  org.pac4j.j2e.filter.SecurityFilter: 3
+  CORS: 4
+features:
+  canCreateProject: true
+  canCreateVersion: true
+projectStructure:
+  projectCreation: {}
+  extensionProvider:
+    org.finos.legend.sdlc.server.gitlab.finos.FinosGitlabProjectStructureExtensionProvider:
+      {}
+  platforms:
+    legend-engine:
+      groupId: org.finos.legend.engine
+      platformVersion:
+        version: ${ENGINE_IMAGE_VERSION}
+    legend-sdlc:
+      groupId: org.finos.legend.sdlc
+      platformVersion:
+        version: ${SDLC_IMAGE_VERSION}
+gitLab:
+  newProjectVisibility: public
+  projectTag: legend
+  projectIdPrefix: OMNIBUS
+  server:
+    scheme: https
+    host: gitlab.com
+    port: 443
+  app:
+    id: ${GITLAB_APP_ID}
+    secret: ${GITLAB_APP_SECRET}
+    redirectURI: ${LEGEND_EXTERNAL_BASE_URL}/sdlc/api/auth/callback
