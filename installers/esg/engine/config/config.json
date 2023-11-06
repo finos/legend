@@ -52,7 +52,8 @@
   },
   "swagger": {
     "title": "Legend Engine",
-    "resourcePackage": "org.finos.legend"
+    "resourcePackage": "org.finos.legend",
+    "schemes": ["https"]
   },
   "server": {
     "rootPath": "/engine/api",

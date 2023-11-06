@@ -40,7 +40,9 @@ swagger:
   resourcePackage: org.finos.legend.sdlc.server.resources
   title: Legend SDLC
   version: local-snapshot
-  schemes: []
+  # force HTTPS for Swagger, else when served on HTTPS, it will try to call APIS on HTTP
+  schemes:
+    - https
 pac4j:
   callbackPrefix: /sdlc/api/pac4j
   mongoUri: ${MONGODB_URI}
