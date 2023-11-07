@@ -8,17 +8,34 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # No color
 # --------------------------------------------------------------------
 
-IMAGE=finos/legend-omnibus:2023-09-15-ghc
+IMAGE=finos/legend-omnibus:latest-example-esg
 
 # ------------------------------- Check -------------------------------
 # Check if repulling image is necessary
 
 REMOTE_DIGEST=$(docker manifest inspect $IMAGE | awk -F ': "|"' '{for(i=1;i<=NF;i++){if($i~/^sha256:/){print substr($i,8);exit}}}')
-LOCAL_DIGEST=$(docker images --digests --format "table {{.Repository}}:{{.Tag}}\t{{.Digest}}" | grep finos/legend-omnibus:latest-ghc | awk -F 'sha256:' '{print $2}')
+LOCAL_DIGEST=$(docker images --digests --format "table {{.Repository}}:{{.Tag}}\t{{.Digest}}" | grep finos/legend-omnibus:latest-example-esg | awk -F 'sha256:' '{print $2}')
 if [[ $LOCAL_DIGEST != $REMOTE_DIGEST ]]; then
   PULL_STRATEGY="always" # force re-pulling the image
 else
   PULL_STRATEGY="missing"
+fi
+
+# ----------------------- Check Parameters --------------------------
+
+echo "Running Omnibus with Legend SDLC using Gitlab (PAT) backend..."
+if [[ -z "$PS1" ]]; then
+  # non-interactive
+  if [[ -z "$LEGEND_OMNIBUS_CONFIG_GITLAB_PAT" ]]; then
+    echo "Failed: LEGEND_OMNIBUS_CONFIG_GITLAB_PAT is not set"
+    exit 1
+  fi
+else
+  # interactive
+  if [[ -z "$LEGEND_OMNIBUS_CONFIG_GITLAB_PAT" ]]; then
+    echo "Enter Gitlab personal access token (PAT):"
+    read -s LEGEND_OMNIBUS_CONFIG_GITLAB_PAT
+  fi
 fi
 
 # ------------------------------- Run -------------------------------
