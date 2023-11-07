@@ -1,60 +1,326 @@
-###Service
-Service service::SimpleProductService
+###Diagram
+Diagram showcase::northwind::model::NorthwindModelDiagram
 {
-  pattern: '/ed49e48b-1536-4d04-9b6f-ad3a8ed6daf9';
-  ownership: DID { identifier: '' };
+  classView 8947a897-a67d-4064-8770-8a440e1220ce
+  {
+    class: showcase::northwind::model::crm::Employee;
+    position: (401.1871744777152,580.7157363134539);
+    rectangle: (211.03332710266113,212.0);
+  }
+  classView d30683e5-5c3c-4e4b-9d75-08ba75aa2bf2
+  {
+    class: showcase::northwind::model::geography::Address;
+    position: (428.11321850038996,365.8790985977993);
+    rectangle: (145.85000038146973,114.0);
+  }
+  classView fd4a376f-11c2-4f8b-9e76-19079a06cc0b
+  {
+    class: showcase::northwind::model::Order;
+    position: (89.66931137749526,364.84316585774513);
+    rectangle: (174.01666831970215,114.0);
+  }
+  classView 51d867fc-1dce-4979-9120-d10a551e23a7
+  {
+    class: showcase::northwind::model::crm::ShippingCompany;
+    position: (-240.98019847552794,379.4990577970102);
+    rectangle: (179.4666690826416,86.0);
+  }
+  classView 4251c20c-4779-4c21-9b9c-900caf75fcc6
+  {
+    class: showcase::northwind::model::inventory::Product;
+    position: (421.60610674363886,-69.9030438054377);
+    rectangle: (167.85000038146973,128.0);
+  }
+  classView 2a461b5d-77dd-43e1-a33f-0759d84b8667
+  {
+    class: showcase::northwind::model::OrderLineItem;
+    position: (92.87799226709058,-43.093765410358316);
+    rectangle: (169.10000133514404,86.0);
+  }
+  classView 8217f514-1928-48bc-b8de-386ca506c1f9
+  {
+    class: showcase::northwind::model::geography::SalesTerritory;
+    position: (806.4847354152803,653.513841427653);
+    rectangle: (141.58333110809326,72.0);
+  }
+  classView 37cda7f9-22dc-4e75-ad3a-a5599d88772a
+  {
+    class: showcase::northwind::model::inventory::ProductCategory;
+    position: (786.770946360032,-49.13039766561275);
+    rectangle: (175.1082781744508,86.0);
+  }
+  classView 09710ba2-c255-4222-a85d-50520d5eae95
+  {
+    class: showcase::northwind::model::inventory::Supplier;
+    position: (768.5537612977755,206.91393580644078);
+    rectangle: (179.4666690826416,142.0);
+  }
+  classView df47922a-2b8a-4b12-b835-d7c75a694670
+  {
+    class: showcase::northwind::model::crm::Customer;
+    position: (382.36050099956327,131.63043674809185);
+    rectangle: (236.94999885559082,128.0);
+  }
+  classView 6bb172ca-aab8-4c80-a825-dccc9b0f2ef1
+  {
+    class: showcase::northwind::model::geography::SalesRegion;
+    position: (806.4847354152804,492.60599452399185);
+    rectangle: (133.0166654586792,58.0);
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::crm::Customer.address;
+    source: df47922a-2b8a-4b12-b835-d7c75a694670;
+    target: d30683e5-5c3c-4e4b-9d75-08ba75aa2bf2;
+    points: [(500.8355004273587,195.63043674809185),(501.0382186911248,422.8790985977993)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Order_Shipper.shipper;
+    source: fd4a376f-11c2-4f8b-9e76-19079a06cc0b;
+    target: 51d867fc-1dce-4979-9120-d10a551e23a7;
+    points: [(176.67764553734634,421.84316585774513),(-151.24686393420714,422.4990577970102)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Order_Shipper.orders;
+    source: 51d867fc-1dce-4979-9120-d10a551e23a7;
+    target: fd4a376f-11c2-4f8b-9e76-19079a06cc0b;
+    points: [(-151.24686393420714,422.4990577970102),(176.67764553734634,421.84316585774513)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Order_OrderLineItem.lineItems;
+    source: fd4a376f-11c2-4f8b-9e76-19079a06cc0b;
+    target: 2a461b5d-77dd-43e1-a33f-0759d84b8667;
+    points: [(176.67764553734634,421.84316585774513),(177.4279929346626,-0.09376541035831565)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Order_OrderLineItem.order;
+    source: 2a461b5d-77dd-43e1-a33f-0759d84b8667;
+    target: fd4a376f-11c2-4f8b-9e76-19079a06cc0b;
+    points: [(177.4279929346626,-0.09376541035831565),(176.67764553734634,421.84316585774513)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::Order.shipToAddress;
+    source: fd4a376f-11c2-4f8b-9e76-19079a06cc0b;
+    target: d30683e5-5c3c-4e4b-9d75-08ba75aa2bf2;
+    points: [(176.67764553734634,421.84316585774513),(501.0382186911248,422.8790985977993)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Order_Customer.customer;
+    source: fd4a376f-11c2-4f8b-9e76-19079a06cc0b;
+    target: df47922a-2b8a-4b12-b835-d7c75a694670;
+    points: [(176.67764553734634,421.84316585774513),(500.8355004273587,195.63043674809185)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Order_Customer.orders;
+    source: df47922a-2b8a-4b12-b835-d7c75a694670;
+    target: fd4a376f-11c2-4f8b-9e76-19079a06cc0b;
+    points: [(500.8355004273587,195.63043674809185),(176.67764553734634,421.84316585774513)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::inventory::Supplier.address;
+    source: 09710ba2-c255-4222-a85d-50520d5eae95;
+    target: d30683e5-5c3c-4e4b-9d75-08ba75aa2bf2;
+    points: [(858.2870958390963,277.9139358064408),(501.0382186911248,422.8790985977993)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Order_Employee.orders;
+    source: 8947a897-a67d-4064-8770-8a440e1220ce;
+    target: fd4a376f-11c2-4f8b-9e76-19079a06cc0b;
+    points: [(506.70383802904576,686.7157363134539),(176.67764553734634,421.84316585774513)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Order_Employee.employee;
+    source: fd4a376f-11c2-4f8b-9e76-19079a06cc0b;
+    target: 8947a897-a67d-4064-8770-8a440e1220ce;
+    points: [(176.67764553734634,421.84316585774513),(506.70383802904576,686.7157363134539)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::crm::Employee.address;
+    source: 8947a897-a67d-4064-8770-8a440e1220ce;
+    target: d30683e5-5c3c-4e4b-9d75-08ba75aa2bf2;
+    points: [(506.70383802904576,686.7157363134539),(501.0382186911248,422.8790985977993)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Product_Category.category;
+    source: 4251c20c-4779-4c21-9b9c-900caf75fcc6;
+    target: 37cda7f9-22dc-4e75-ad3a-a5599d88772a;
+    points: [(505.5311069343737,-5.903043805437704),(874.3250854472574,-6.1303976656127475)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Product_Category.products;
+    source: 37cda7f9-22dc-4e75-ad3a-a5599d88772a;
+    target: 4251c20c-4779-4c21-9b9c-900caf75fcc6;
+    points: [(874.3250854472574,-6.1303976656127475),(505.5311069343737,-5.903043805437704)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::OrderLineItem_Product.orderLineItems;
+    source: 4251c20c-4779-4c21-9b9c-900caf75fcc6;
+    target: 2a461b5d-77dd-43e1-a33f-0759d84b8667;
+    points: [(505.5311069343737,-5.903043805437704),(177.4279929346626,-0.09376541035831565)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::OrderLineItem_Product.product;
+    source: 2a461b5d-77dd-43e1-a33f-0759d84b8667;
+    target: 4251c20c-4779-4c21-9b9c-900caf75fcc6;
+    points: [(177.4279929346626,-0.09376541035831565),(505.5311069343737,-5.903043805437704)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Product_Suppliers.supplier;
+    source: 4251c20c-4779-4c21-9b9c-900caf75fcc6;
+    target: 09710ba2-c255-4222-a85d-50520d5eae95;
+    points: [(505.5311069343737,-5.903043805437704),(858.2870958390963,277.9139358064408)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Product_Suppliers.products;
+    source: 09710ba2-c255-4222-a85d-50520d5eae95;
+    target: 4251c20c-4779-4c21-9b9c-900caf75fcc6;
+    points: [(858.2870958390963,277.9139358064408),(505.5311069343737,-5.903043805437704)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Terriroties_Employees.employees;
+    source: 8217f514-1928-48bc-b8de-386ca506c1f9;
+    target: 8947a897-a67d-4064-8770-8a440e1220ce;
+    points: [(877.2764009693269,689.513841427653),(506.70383802904576,686.7157363134539)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Terriroties_Employees.territories;
+    source: 8947a897-a67d-4064-8770-8a440e1220ce;
+    target: 8217f514-1928-48bc-b8de-386ca506c1f9;
+    points: [(506.70383802904576,686.7157363134539),(877.2764009693269,689.513841427653)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Terriroties_Region.territories;
+    source: 6bb172ca-aab8-4c80-a825-dccc9b0f2ef1;
+    target: 8217f514-1928-48bc-b8de-386ca506c1f9;
+    points: [(872.99306814462,521.6059945239919),(877.2764009693269,689.513841427653)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Terriroties_Region.region;
+    source: 8217f514-1928-48bc-b8de-386ca506c1f9;
+    target: 6bb172ca-aab8-4c80-a825-dccc9b0f2ef1;
+    points: [(877.2764009693269,689.513841427653),(872.99306814462,521.6059945239919)];
+  }
+}
+
+
+###DataSpace
+DataSpace showcase::northwind::dataspace::NorthwindDataSpace
+{
+  executionContexts:
+  [
+    {
+      name: 'default';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    }
+  ];
+  defaultExecutionContext: 'default';
+}
+
+
+###Service
+Service showcase::northwind::services::graph::OrderDetailsByIdGraphFetch
+{
+  pattern: '/orderDetailsByIdGraphFetch/{id}';
   documentation: '';
   autoActivateUpdates: true;
   execution: Single
   {
-    query: |store::NORTHWIND::Products.all()->project([x|$x.categoryId, x|$x.discontinued, x|$x.productId, x|$x.productName, x|$x.quantityPerUnit, x|$x.reorderLevel, x|$x.supplierId, x|$x.unitPrice, x|$x.unitsInStock, x|$x.unitsOnOrder], ['Category Id', 'Discontinued', 'Product Id', 'Product Name', 'Quantity Per Unit', 'Reorder Level', 'Supplier Id', 'Unit Price', 'Units In Stock', 'Units On Order']);
-    mapping: store::MyDatabaseMapping;
-    runtime: model::NorthWindRuntime;
+    query: id: Integer[1]|showcase::northwind::model::Order.all()->filter(x|$x.id == $id)->graphFetch(#{showcase::northwind::model::Order{id,createdDate,customer{companyName},employee{firstName},lineItems{product{name,category{name}},quantity},shipper{name}}}#)->serialize(#{showcase::northwind::model::Order{id,createdDate,customer{companyName},employee{firstName},lineItems{product{name,category{name}},quantity},shipper{name}}}#);
+    mapping: showcase::northwind::mapping::NorthwindMapping;
+    runtime: showcase::northwind::runtime::NorthwindRuntime;
   }
-  testSuites:
-  [
-    testSuite_1:
-    {
-      data:
-      [
-        connections:
-        [
-          connection_1:
-            Relational
-            #{
-              NORTHWIND.PRODUCTS:
-                'PRODUCT_ID,PRODUCT_NAME,SUPPLIER_ID,CATEGORY_ID,QUANTITY_PER_UNIT,UNITS_IN_STOCK,UNITS_ON_ORDER,REORDER_LEVEL,DISCONTINUED\n'+
-                '1,MyProduct,1,2,20,2,4,10,0\n';
-            }#
-        ]
-      ]
-      tests:
-      [
-        test_1:
-        {
-          serializationFormat: PURE_TDSOBJECT;
-          asserts:
-          [
-            assertion_1:
-              EqualToJson
-              #{
-                expected:
-                  ExternalFormat
-                  #{
-                    contentType: 'application/json';
-                    data: '[\n  {\n    "Category Id": 2,\n    "Discontinued": 0,\n    "Product Id": 1,\n    "Product Name": "MyProduct",\n    "Quantity Per Unit": "20",\n    "Reorder Level": 10,\n    "Supplier Id": 1,\n    "Unit Price": null,\n    "Units In Stock": 2,\n    "Units On Order": 4\n  }\n]';
-                  }#;
-              }#
-          ]
-        }
-      ]
-    }
-  ]
+}
+
+Service showcase::northwind::services::tds::TopCategories
+{
+  pattern: '/topCategories';
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |showcase::northwind::model::Order.all()->groupBy([x|$x.lineItems.product.category.id, x|$x.lineItems.product.category.name], [agg(x|$x.id, x|$x->distinct()->count())], ['Category Id', 'Category Name', 'Order Count'])->sort([desc('Order Count')])->take(5);
+    mapping: showcase::northwind::mapping::NorthwindMapping;
+    runtime: showcase::northwind::runtime::NorthwindRuntime;
+  }
+}
+
+Service showcase::northwind::services::tds::OrderDetailsByIdTDS
+{
+  pattern: '/orderDetailsByIdTDS/{id}';
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: orderId: Integer[1]|showcase::northwind::model::Order.all()->filter(x|$x.id == $orderId)->project([x|$x.id, x|$x.customer.companyName, x|$x.employee.firstName, x|$x.lineItems.product.name, x|$x.lineItems.product.category.name, x|$x.lineItems.quantity, x|$x.shipper.name], ['Order Id', 'Customer/Company Name', 'Employee/First Name', 'Order Line Items/Product/Product Name', 'Order Line Items/Product/Category/Category Name', 'Order Line Items/Quantity', 'Shipper/Company Name']);
+    mapping: showcase::northwind::mapping::NorthwindMapping;
+    runtime: showcase::northwind::runtime::NorthwindRuntime;
+  }
+}
+
+Service showcase::northwind::services::tds::ProductRankingWithinCategory
+{
+  pattern: '/productRankingWithinCategory';
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |showcase::northwind::model::inventory::ProductCategory.all()->groupBy([x|$x.name, x|$x.products.name], [agg(x|$x.products.orderLineItems.order.id, x|$x->distinct()->count())], ['Category Name', 'Products/Product Name', 'OrderCount'])->olapGroupBy(['Category Name'], desc('OrderCount'), x|$x->rank(), 'Rank Within Category')->sort([asc('Category Name'), asc('Rank Within Category')]);
+    mapping: showcase::northwind::mapping::NorthwindMapping;
+    runtime: showcase::northwind::runtime::NorthwindRuntime;
+  }
+}
+
+Service showcase::northwind::services::tds::Customers
+{
+  pattern: '/customers';
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |showcase::northwind::model::crm::Customer.all()->project([x|$x.id, x|$x.companyName, x|$x.contactName, x|$x.companyTitle, x|$x.address.country, x|$x.address.address, x|$x.address.city, x|$x.telephoneNumber], ['Customer Id', 'Company Name', 'Contact Name', 'Company Title', 'Country', 'Address', 'City', 'Phone']);
+    mapping: showcase::northwind::mapping::NorthwindMapping;
+    runtime: showcase::northwind::runtime::NorthwindRuntime;
+  }
+}
+
+Service showcase::northwind::services::graph::ShipperValidationDefects
+{
+  pattern: '/shipperValidationDefects';
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |showcase::northwind::model::crm::ShippingCompany.all()->graphFetchChecked(#{showcase::northwind::model::crm::ShippingCompany{id,telephoneNumber}}#)->serialize(#{showcase::northwind::model::crm::ShippingCompany{id,telephoneNumber}}#);
+    mapping: showcase::northwind::mapping::NorthwindMapping;
+    runtime: showcase::northwind::runtime::NorthwindRuntime;
+  }
 }
 
 
 ###Relational
-Database store::MyDatabase
+Database showcase::northwind::store::NorthwindDatabase
 (
   Schema NORTHWIND
   (
@@ -162,7 +428,7 @@ Database store::MyDatabase
     (
       SHIPPER_ID SMALLINT PRIMARY KEY,
       COMPANY_NAME VARCHAR(40) NOT NULL,
-      PHONE VARCHAR(24)
+      PHONE VARCHAR(24) NOT NULL
     )
     Table SUPPLIERS
     (
@@ -193,436 +459,557 @@ Database store::MyDatabase
       STATE_REGION VARCHAR(50)
     )
   )
+
+  Join ORDERS_CUSTMERS(NORTHWIND.ORDERS.CUSTOMER_ID = NORTHWIND.CUSTOMERS.CUSTOMER_ID)
+  Join ORDERS_EMPLOYEES(NORTHWIND.ORDERS.EMPLOYEE_ID = NORTHWIND.EMPLOYEES.EMPLOYEE_ID)
+  Join ORDERS_SHIPPERS(NORTHWIND.ORDERS.SHIP_VIA = NORTHWIND.SHIPPERS.SHIPPER_ID)
+  Join ORDERS_ORDER_DETAILS(NORTHWIND.ORDERS.ORDER_ID = NORTHWIND.ORDER_DETAILS.ORDER_ID)
+  Join ORDERS_DETAILS_PRODUCTS(NORTHWIND.ORDER_DETAILS.PRODUCT_ID = NORTHWIND.PRODUCTS.PRODUCT_ID)
+  Join PRODUCTS_CATEGORIES(NORTHWIND.PRODUCTS.CATEGORY_ID = NORTHWIND.CATEGORIES.CATEGORY_ID)
+  Join PRODUCTS_SUPPLIERS(NORTHWIND.PRODUCTS.SUPPLIER_ID = NORTHWIND.SUPPLIERS.SUPPLIER_ID)
+  Join TERRITORIES_REGION(NORTHWIND.TERRITORIES.REGION_ID = NORTHWIND.REGION.REGION_ID)
+  Join EMPLOYEES_EMPLOYEE_TERRITORIES(NORTHWIND.EMPLOYEES.EMPLOYEE_ID = NORTHWIND.EMPLOYEE_TERRITORIES.EMPLOYEE_ID)
+  Join EMPLOYEE_TERRITORIES_TERRITORIES(NORTHWIND.EMPLOYEE_TERRITORIES.TERRITORY_ID = NORTHWIND.TERRITORIES.TERRITORY_ID)
+  Join CUSTOMER_CURSTOMER_DEMO(NORTHWIND.CUSTOMERS.CUSTOMER_ID = NORTHWIND.CUSTOMER_CUSTOMER_DEMO.CUSTOMER_ID)
+  Join CURSTOMER_DEMO_DEMOGRAPHICS(NORTHWIND.CUSTOMER_CUSTOMER_DEMO.CUSTOMER_TYPE_ID = NORTHWIND.CUSTOMER_DEMOGRAPHICS.CUSTOMER_TYPE_ID)
+  Join EMPLOYEE_REPORTS(NORTHWIND.EMPLOYEES.REPORTS_TO = {target}.EMPLOYEE_ID)
+  Join SUPPLIERS_REGION(NORTHWIND.SUPPLIERS.REGION = NORTHWIND.REGION.REGION_ID)
+  Join ORDERS_REGION(NORTHWIND.ORDERS.SHIP_REGION = NORTHWIND.REGION.REGION_ID)
+  Join CUSTOMERS_REGION(NORTHWIND.CUSTOMERS.REGION = NORTHWIND.REGION.REGION_ID)
+  Join EMPLOYEES_REGION(NORTHWIND.EMPLOYEES.REGION = NORTHWIND.REGION.REGION_ID)
 )
 
 
 ###Pure
-Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::OrderDetails
+Enum showcase::northwind::model::crm::Title
 {
-  orderId: Integer[1];
-  productId: Integer[1];
-  unitPrice: String[1];
-  quantity: Integer[1];
-  discount: String[1];
+  Mr,
+  Mrs,
+  Miss,
+  Ms,
+  Dr,
+  Sir,
+  Professor,
+  Duchess,
+  Duke
 }
 
-Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::CustomerDemographics
+Class showcase::northwind::model::geography::Address
 {
-  customerTypeId: String[1];
-  customerDesc: String[0..1];
+  address: String[0..1];
+  city: String[0..1];
+  postalCode: String[0..1];
+  region: String[0..1];
+  country: String[0..1];
 }
 
-Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::Shippers
+Class showcase::northwind::model::crm::Employee
+[
+  dateOfBirthNotInTheFuture: $this.dateOfBirth < now(),
+  dateOfBirthValid: $this.dateOfBirth > %1900-01-01,
+  employeeIsOverEighteen: $this.dateOfBirth->dateDiff(today(), meta::pure::functions::date::DurationUnit.YEARS) >= 18,
+  employeeIsUnderEighty: $this.dateOfBirth->dateDiff(today(), meta::pure::functions::date::DurationUnit.YEARS) < 80,
+  notDateOfHireNotBeforeDateOfBirth: $this.dateOfHire > $this.dateOfBirth
+]
 {
-  shipperId: Integer[1];
-  companyName: String[1];
-  phone: String[0..1];
-}
-
-Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::CustomerCustomerDemo
-{
-  customerId: String[1];
-  customerTypeId: String[1];
-}
-
-Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::Employees
-{
-  employeeId: Integer[1];
+  id: Integer[1];
   lastName: String[1];
   firstName: String[1];
   title: String[0..1];
-  titleOfCourtesy: String[0..1];
-  birthDate: StrictDate[0..1];
-  hireDate: StrictDate[0..1];
-  address: String[0..1];
-  city: String[0..1];
-  region: String[0..1];
-  postalCode: String[0..1];
-  country: String[0..1];
-  homePhone: String[0..1];
+  preferredTitle: showcase::northwind::model::crm::Title[0..1];
+  dateOfBirth: StrictDate[0..1];
+  dateOfHire: StrictDate[0..1];
+  address: showcase::northwind::model::geography::Address[0..1];
+  homeTelephoneNumber: String[0..1];
   extension: String[0..1];
-  photo: String[0..1];
-  notes: String[0..1];
-  reportsTo: Integer[0..1];
-  photoPath: String[0..1];
+  fullName() {if($this.preferredTitle->isNotEmpty(), |$this.preferredTitle->toOne()->toString() + ' ', |if($this.title->isNotEmpty(), |$this.title->toOne() + ' ', |'')) + $this.firstName + ' ' + $this.lastName}: String[1];
 }
 
-Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::Territories
+Class showcase::northwind::model::geography::USState
+[
+  idNotNegative: $this.id >= 0,
+  nameNotBlank: $this.name->isEmpty() || ($this.name->toOne()->length() > 0)
+]
 {
-  territoryId: String[1];
-  territoryDescription: String[1];
-  regionId: Integer[1];
+  id: Integer[1];
+  name: String[0..1];
+  code: String[0..1];
 }
 
-Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::Customers
+Class showcase::northwind::model::OrderLineItem
 {
-  customerId: String[1];
+  quantity: Integer[1];
+  unitPrice: Float[1];
+  unitPriceCurrency: String[1];
+}
+
+Class showcase::northwind::model::inventory::ProductCategory
+[
+  idNotNegative: $this.id >= 0,
+  nameNotBlank: $this.name->length() > 0
+]
+{
+  id: Integer[1];
+  name: String[1];
+  description: String[0..1];
+}
+
+Class showcase::northwind::model::Order
+{
+  id: Integer[1];
+  createdDate: StrictDate[0..1];
+  requiredDate: StrictDate[0..1];
+  shippedDate: StrictDate[0..1];
+  shipToName: String[0..1];
+  shipToAddress: showcase::northwind::model::geography::Address[0..1];
+  itemCount() {$this.lineItems->count()}: Integer[1];
+}
+
+Class showcase::northwind::model::geography::SalesRegion
+[
+  idNotNegative: $this.id >= 0,
+  descriptionNotBlank: $this.description->length() > 0
+]
+{
+  id: Integer[1];
+  description: String[1];
+}
+
+Class showcase::northwind::model::crm::Customer
+[
+  idNotBlank: $this.id->length() > 0
+]
+{
+  id: String[1];
   companyName: String[1];
   contactName: String[0..1];
-  contactTitle: String[0..1];
-  address: String[0..1];
-  city: String[0..1];
-  region: String[0..1];
-  postalCode: String[0..1];
-  country: String[0..1];
-  phone: String[0..1];
-  fax: String[0..1];
+  companyTitle: String[0..1];
+  address: showcase::northwind::model::geography::Address[0..1];
+  telephoneNumber: String[0..1];
+  faxNumber: String[0..1];
 }
 
-Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::Region
+Class showcase::northwind::model::crm::CustomerDemographic
+[
+  idNotBlank: $this.id->length() > 0
+]
 {
-  regionId: Integer[1];
-  regionDescription: String[1];
+  id: String[1];
+  description: String[0..1];
 }
 
-Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::EmployeeTerritories
+Class showcase::northwind::model::geography::SalesTerritory
+[
+  idNotBlank: $this.id->length() > 0,
+  descriptionNotBlank: $this.description->length() > 0
+]
 {
-  employeeId: Integer[1];
-  territoryId: String[1];
+  id: String[1];
+  description: String[1];
 }
 
-Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::Products
+Class showcase::northwind::model::crm::ShippingCompany
+[
+  idNotNegative: $this.id >= 0,
+  telephoneNumberFormatValid: $this.telephoneNumber->isEmpty() || $this.telephoneNumber->toOne()->matches('(1-)?\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d')
+]
 {
-  productId: Integer[1];
-  productName: String[1];
-  supplierId: Integer[0..1];
-  categoryId: Integer[0..1];
+  id: Integer[1];
+  name: String[1];
+  telephoneNumber: String[1];
+}
+
+Class showcase::northwind::model::inventory::Product
+[
+  idNotNegative: $this.id >= 0,
+  nameNotBlank: $this.name->length() > 0
+]
+{
+  id: Integer[1];
+  name: String[1];
   quantityPerUnit: String[0..1];
-  unitPrice: String[0..1];
   unitsInStock: Integer[0..1];
   unitsOnOrder: Integer[0..1];
   reorderLevel: Integer[0..1];
   discontinued: Integer[1];
 }
 
-Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::Categories
+Class showcase::northwind::model::inventory::Supplier
 {
-  categoryId: Integer[1];
-  categoryName: String[1];
-  description: String[0..1];
-  picture: String[0..1];
-}
-
-Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::UsStates
-{
-  stateId: Integer[1];
-  stateName: String[0..1];
-  stateAbbr: String[0..1];
-  stateRegion: String[0..1];
-}
-
-Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::Orders
-{
-  orderId: Integer[1];
-  customerId: String[0..1];
-  employeeId: Integer[0..1];
-  orderDate: StrictDate[0..1];
-  requiredDate: StrictDate[0..1];
-  shippedDate: StrictDate[0..1];
-  shipVia: Integer[0..1];
-  freight: String[0..1];
-  shipName: String[0..1];
-  shipAddress: String[0..1];
-  shipCity: String[0..1];
-  shipRegion: String[0..1];
-  shipPostalCode: String[0..1];
-  shipCountry: String[0..1];
-}
-
-Class {meta::pure::profiles::doc.doc = 'Generated Element'} store::NORTHWIND::Suppliers
-{
-  supplierId: Integer[1];
+  id: Integer[1];
   companyName: String[1];
   contactName: String[0..1];
   contactTitle: String[0..1];
-  address: String[0..1];
-  city: String[0..1];
-  region: String[0..1];
-  postalCode: String[0..1];
-  country: String[0..1];
-  phone: String[0..1];
-  fax: String[0..1];
-  homepage: String[0..1];
+  address: showcase::northwind::model::geography::Address[0..1];
+  telephoneNumber: String[0..1];
+  faxNumber: String[0..1];
+  homepageUrl: String[0..1];
+}
+
+Association showcase::northwind::model::associations::Order_Employee
+{
+  orders: showcase::northwind::model::Order[*];
+  employee: showcase::northwind::model::crm::Employee[0..1];
+}
+
+Association showcase::northwind::model::associations::Order_Shipper
+{
+  orders: showcase::northwind::model::Order[*];
+  shipper: showcase::northwind::model::crm::ShippingCompany[0..1];
+}
+
+Association showcase::northwind::model::associations::Order_OrderLineItem
+{
+  order: showcase::northwind::model::Order[1];
+  lineItems: showcase::northwind::model::OrderLineItem[*];
+}
+
+Association showcase::northwind::model::associations::Order_Customer
+{
+  orders: showcase::northwind::model::Order[*];
+  customer: showcase::northwind::model::crm::Customer[0..1];
+}
+
+Association showcase::northwind::model::associations::Product_Category
+{
+  category: showcase::northwind::model::inventory::ProductCategory[0..1];
+  products: showcase::northwind::model::inventory::Product[*];
+}
+
+Association showcase::northwind::model::associations::Terriroties_Region
+{
+  region: showcase::northwind::model::geography::SalesRegion[1];
+  territories: showcase::northwind::model::geography::SalesTerritory[1..*];
+}
+
+Association showcase::northwind::model::associations::Customer_CustomerDemographics
+{
+  customers: showcase::northwind::model::crm::Customer[*];
+  demographics: showcase::northwind::model::crm::CustomerDemographic[*];
+}
+
+Association showcase::northwind::model::associations::Employee_Manager
+{
+  reports: showcase::northwind::model::crm::Employee[*];
+  manager: showcase::northwind::model::crm::Employee[0..1];
+}
+
+Association showcase::northwind::model::associations::Product_Suppliers
+{
+  supplier: showcase::northwind::model::inventory::Supplier[1];
+  products: showcase::northwind::model::inventory::Product[*];
+}
+
+Association showcase::northwind::model::associations::Terriroties_Employees
+{
+  employees: showcase::northwind::model::crm::Employee[*];
+  territories: showcase::northwind::model::geography::SalesTerritory[*];
+}
+
+Association showcase::northwind::model::associations::OrderLineItem_Product
+{
+  orderLineItems: showcase::northwind::model::OrderLineItem[*];
+  product: showcase::northwind::model::inventory::Product[1];
 }
 
 
 ###Mapping
-Mapping store::MyDatabaseMapping
+Mapping showcase::northwind::mapping::NorthwindMapping
 (
-  *store::NORTHWIND::Categories[store_NORTHWIND_Categories]: Relational
+  showcase::northwind::model::inventory::ProductCategory[Category]: Relational
   {
     ~primaryKey
     (
-      [store::MyDatabase]NORTHWIND.CATEGORIES.CATEGORY_ID
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CATEGORIES.CATEGORY_ID
     )
-    ~mainTable [store::MyDatabase]NORTHWIND.CATEGORIES
-    categoryId: [store::MyDatabase]NORTHWIND.CATEGORIES.CATEGORY_ID,
-    categoryName: [store::MyDatabase]NORTHWIND.CATEGORIES.CATEGORY_NAME,
-    description: [store::MyDatabase]NORTHWIND.CATEGORIES.DESCRIPTION,
-    picture: [store::MyDatabase]NORTHWIND.CATEGORIES.PICTURE
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CATEGORIES
+    id: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CATEGORIES.CATEGORY_ID,
+    name: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CATEGORIES.CATEGORY_NAME,
+    description: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CATEGORIES.DESCRIPTION
   }
-  *store::NORTHWIND::Customers[store_NORTHWIND_Customers]: Relational
+  showcase::northwind::model::crm::Customer[Customer]: Relational
   {
     ~primaryKey
     (
-      [store::MyDatabase]NORTHWIND.CUSTOMERS.CUSTOMER_ID
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.CUSTOMER_ID
     )
-    ~mainTable [store::MyDatabase]NORTHWIND.CUSTOMERS
-    customerId: [store::MyDatabase]NORTHWIND.CUSTOMERS.CUSTOMER_ID,
-    companyName: [store::MyDatabase]NORTHWIND.CUSTOMERS.COMPANY_NAME,
-    contactName: [store::MyDatabase]NORTHWIND.CUSTOMERS.CONTACT_NAME,
-    contactTitle: [store::MyDatabase]NORTHWIND.CUSTOMERS.CONTACT_TITLE,
-    address: [store::MyDatabase]NORTHWIND.CUSTOMERS.ADDRESS,
-    city: [store::MyDatabase]NORTHWIND.CUSTOMERS.CITY,
-    region: [store::MyDatabase]NORTHWIND.CUSTOMERS.REGION,
-    postalCode: [store::MyDatabase]NORTHWIND.CUSTOMERS.POSTAL_CODE,
-    country: [store::MyDatabase]NORTHWIND.CUSTOMERS.COUNTRY,
-    phone: [store::MyDatabase]NORTHWIND.CUSTOMERS.PHONE,
-    fax: [store::MyDatabase]NORTHWIND.CUSTOMERS.FAX
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS
+    id: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.CUSTOMER_ID,
+    companyName: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.COMPANY_NAME,
+    contactName: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.CONTACT_NAME,
+    companyTitle: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.CONTACT_TITLE,
+    address
+    (
+      address: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.ADDRESS,
+      city: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.CITY,
+      region: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.REGION,
+      postalCode: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.POSTAL_CODE,
+      country: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.COUNTRY
+    ),
+    telephoneNumber: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.PHONE,
+    faxNumber: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.FAX
   }
-  *store::NORTHWIND::CustomerCustomerDemo[store_NORTHWIND_CustomerCustomerDemo]: Relational
+  showcase::northwind::model::crm::Employee[Employee]: Relational
   {
     ~primaryKey
     (
-      [store::MyDatabase]NORTHWIND.CUSTOMER_CUSTOMER_DEMO.CUSTOMER_ID,
-      [store::MyDatabase]NORTHWIND.CUSTOMER_CUSTOMER_DEMO.CUSTOMER_TYPE_ID
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.EMPLOYEE_ID
     )
-    ~mainTable [store::MyDatabase]NORTHWIND.CUSTOMER_CUSTOMER_DEMO
-    customerId: [store::MyDatabase]NORTHWIND.CUSTOMER_CUSTOMER_DEMO.CUSTOMER_ID,
-    customerTypeId: [store::MyDatabase]NORTHWIND.CUSTOMER_CUSTOMER_DEMO.CUSTOMER_TYPE_ID
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES
+    id: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.EMPLOYEE_ID,
+    lastName: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.LAST_NAME,
+    firstName: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.FIRST_NAME,
+    title: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.TITLE,
+    preferredTitle: EnumerationMapping TitleMapping: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.TITLE_OF_COURTESY,
+    dateOfBirth: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.BIRTH_DATE,
+    dateOfHire: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.HIRE_DATE,
+    address
+    (
+      address: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.ADDRESS,
+      city: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.CITY,
+      region: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.REGION,
+      postalCode: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.POSTAL_CODE,
+      country: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.COUNTRY
+    ),
+    homeTelephoneNumber: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.HOME_PHONE,
+    extension: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.EXTENSION
   }
-  *store::NORTHWIND::CustomerDemographics[store_NORTHWIND_CustomerDemographics]: Relational
+  showcase::northwind::model::Order[Order]: Relational
   {
     ~primaryKey
     (
-      [store::MyDatabase]NORTHWIND.CUSTOMER_DEMOGRAPHICS.CUSTOMER_TYPE_ID
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.ORDER_ID
     )
-    ~mainTable [store::MyDatabase]NORTHWIND.CUSTOMER_DEMOGRAPHICS
-    customerTypeId: [store::MyDatabase]NORTHWIND.CUSTOMER_DEMOGRAPHICS.CUSTOMER_TYPE_ID,
-    customerDesc: [store::MyDatabase]NORTHWIND.CUSTOMER_DEMOGRAPHICS.CUSTOMER_DESC
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS
+    id: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.ORDER_ID,
+    createdDate: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.ORDER_DATE,
+    requiredDate: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.REQUIRED_DATE,
+    shippedDate: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.SHIPPED_DATE,
+    shipToName: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.SHIP_NAME,
+    shipToAddress
+    (
+      address: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.SHIP_ADDRESS,
+      city: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.SHIP_CITY,
+      region: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.SHIP_REGION,
+      postalCode: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.SHIP_POSTAL_CODE,
+      country: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.SHIP_COUNTRY
+    )
   }
-  *store::NORTHWIND::Employees[store_NORTHWIND_Employees]: Relational
+  showcase::northwind::model::OrderLineItem[OrderLineItem]: Relational
   {
     ~primaryKey
     (
-      [store::MyDatabase]NORTHWIND.EMPLOYEES.EMPLOYEE_ID
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDER_DETAILS.ORDER_ID,
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDER_DETAILS.PRODUCT_ID
     )
-    ~mainTable [store::MyDatabase]NORTHWIND.EMPLOYEES
-    employeeId: [store::MyDatabase]NORTHWIND.EMPLOYEES.EMPLOYEE_ID,
-    lastName: [store::MyDatabase]NORTHWIND.EMPLOYEES.LAST_NAME,
-    firstName: [store::MyDatabase]NORTHWIND.EMPLOYEES.FIRST_NAME,
-    title: [store::MyDatabase]NORTHWIND.EMPLOYEES.TITLE,
-    titleOfCourtesy: [store::MyDatabase]NORTHWIND.EMPLOYEES.TITLE_OF_COURTESY,
-    birthDate: [store::MyDatabase]NORTHWIND.EMPLOYEES.BIRTH_DATE,
-    hireDate: [store::MyDatabase]NORTHWIND.EMPLOYEES.HIRE_DATE,
-    address: [store::MyDatabase]NORTHWIND.EMPLOYEES.ADDRESS,
-    city: [store::MyDatabase]NORTHWIND.EMPLOYEES.CITY,
-    region: [store::MyDatabase]NORTHWIND.EMPLOYEES.REGION,
-    postalCode: [store::MyDatabase]NORTHWIND.EMPLOYEES.POSTAL_CODE,
-    country: [store::MyDatabase]NORTHWIND.EMPLOYEES.COUNTRY,
-    homePhone: [store::MyDatabase]NORTHWIND.EMPLOYEES.HOME_PHONE,
-    extension: [store::MyDatabase]NORTHWIND.EMPLOYEES.EXTENSION,
-    photo: [store::MyDatabase]NORTHWIND.EMPLOYEES.PHOTO,
-    notes: [store::MyDatabase]NORTHWIND.EMPLOYEES.NOTES,
-    reportsTo: [store::MyDatabase]NORTHWIND.EMPLOYEES.REPORTS_TO,
-    photoPath: [store::MyDatabase]NORTHWIND.EMPLOYEES.PHOTO_PATH
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDER_DETAILS
+    quantity: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDER_DETAILS.QUANTITY,
+    unitPrice: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDER_DETAILS.UNIT_PRICE,
+    unitPriceCurrency: 'USD'
   }
-  *store::NORTHWIND::EmployeeTerritories[store_NORTHWIND_EmployeeTerritories]: Relational
+  showcase::northwind::model::inventory::Product[Product]: Relational
   {
     ~primaryKey
     (
-      [store::MyDatabase]NORTHWIND.EMPLOYEE_TERRITORIES.EMPLOYEE_ID,
-      [store::MyDatabase]NORTHWIND.EMPLOYEE_TERRITORIES.TERRITORY_ID
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.PRODUCTS.PRODUCT_ID
     )
-    ~mainTable [store::MyDatabase]NORTHWIND.EMPLOYEE_TERRITORIES
-    employeeId: [store::MyDatabase]NORTHWIND.EMPLOYEE_TERRITORIES.EMPLOYEE_ID,
-    territoryId: [store::MyDatabase]NORTHWIND.EMPLOYEE_TERRITORIES.TERRITORY_ID
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.PRODUCTS
+    id: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.PRODUCTS.PRODUCT_ID,
+    name: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.PRODUCTS.PRODUCT_NAME,
+    quantityPerUnit: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.PRODUCTS.QUANTITY_PER_UNIT,
+    unitsInStock: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.PRODUCTS.UNITS_IN_STOCK,
+    unitsOnOrder: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.PRODUCTS.UNITS_ON_ORDER,
+    reorderLevel: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.PRODUCTS.REORDER_LEVEL,
+    discontinued: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.PRODUCTS.DISCONTINUED
   }
-  *store::NORTHWIND::Orders[store_NORTHWIND_Orders]: Relational
+  showcase::northwind::model::geography::SalesRegion[Region]: Relational
   {
     ~primaryKey
     (
-      [store::MyDatabase]NORTHWIND.ORDERS.ORDER_ID
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.REGION.REGION_ID
     )
-    ~mainTable [store::MyDatabase]NORTHWIND.ORDERS
-    orderId: [store::MyDatabase]NORTHWIND.ORDERS.ORDER_ID,
-    customerId: [store::MyDatabase]NORTHWIND.ORDERS.CUSTOMER_ID,
-    employeeId: [store::MyDatabase]NORTHWIND.ORDERS.EMPLOYEE_ID,
-    orderDate: [store::MyDatabase]NORTHWIND.ORDERS.ORDER_DATE,
-    requiredDate: [store::MyDatabase]NORTHWIND.ORDERS.REQUIRED_DATE,
-    shippedDate: [store::MyDatabase]NORTHWIND.ORDERS.SHIPPED_DATE,
-    shipVia: [store::MyDatabase]NORTHWIND.ORDERS.SHIP_VIA,
-    freight: [store::MyDatabase]NORTHWIND.ORDERS.FREIGHT,
-    shipName: [store::MyDatabase]NORTHWIND.ORDERS.SHIP_NAME,
-    shipAddress: [store::MyDatabase]NORTHWIND.ORDERS.SHIP_ADDRESS,
-    shipCity: [store::MyDatabase]NORTHWIND.ORDERS.SHIP_CITY,
-    shipRegion: [store::MyDatabase]NORTHWIND.ORDERS.SHIP_REGION,
-    shipPostalCode: [store::MyDatabase]NORTHWIND.ORDERS.SHIP_POSTAL_CODE,
-    shipCountry: [store::MyDatabase]NORTHWIND.ORDERS.SHIP_COUNTRY
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.REGION
+    id: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.REGION.REGION_ID,
+    description: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.REGION.REGION_DESCRIPTION
   }
-  *store::NORTHWIND::OrderDetails[store_NORTHWIND_OrderDetails]: Relational
+  showcase::northwind::model::crm::ShippingCompany[Shipper]: Relational
   {
     ~primaryKey
     (
-      [store::MyDatabase]NORTHWIND.ORDER_DETAILS.ORDER_ID,
-      [store::MyDatabase]NORTHWIND.ORDER_DETAILS.PRODUCT_ID
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SHIPPERS.SHIPPER_ID
     )
-    ~mainTable [store::MyDatabase]NORTHWIND.ORDER_DETAILS
-    orderId: [store::MyDatabase]NORTHWIND.ORDER_DETAILS.ORDER_ID,
-    productId: [store::MyDatabase]NORTHWIND.ORDER_DETAILS.PRODUCT_ID,
-    unitPrice: [store::MyDatabase]NORTHWIND.ORDER_DETAILS.UNIT_PRICE,
-    quantity: [store::MyDatabase]NORTHWIND.ORDER_DETAILS.QUANTITY,
-    discount: [store::MyDatabase]NORTHWIND.ORDER_DETAILS.DISCOUNT
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SHIPPERS
+    id: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SHIPPERS.SHIPPER_ID,
+    name: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SHIPPERS.COMPANY_NAME,
+    telephoneNumber: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SHIPPERS.PHONE
   }
-  *store::NORTHWIND::Products[store_NORTHWIND_Products]: Relational
+  showcase::northwind::model::inventory::Supplier[Supplier]: Relational
   {
     ~primaryKey
     (
-      [store::MyDatabase]NORTHWIND.PRODUCTS.PRODUCT_ID
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.SUPPLIER_ID
     )
-    ~mainTable [store::MyDatabase]NORTHWIND.PRODUCTS
-    productId: [store::MyDatabase]NORTHWIND.PRODUCTS.PRODUCT_ID,
-    productName: [store::MyDatabase]NORTHWIND.PRODUCTS.PRODUCT_NAME,
-    supplierId: [store::MyDatabase]NORTHWIND.PRODUCTS.SUPPLIER_ID,
-    categoryId: [store::MyDatabase]NORTHWIND.PRODUCTS.CATEGORY_ID,
-    quantityPerUnit: [store::MyDatabase]NORTHWIND.PRODUCTS.QUANTITY_PER_UNIT,
-    unitPrice: [store::MyDatabase]NORTHWIND.PRODUCTS.UNIT_PRICE,
-    unitsInStock: [store::MyDatabase]NORTHWIND.PRODUCTS.UNITS_IN_STOCK,
-    unitsOnOrder: [store::MyDatabase]NORTHWIND.PRODUCTS.UNITS_ON_ORDER,
-    reorderLevel: [store::MyDatabase]NORTHWIND.PRODUCTS.REORDER_LEVEL,
-    discontinued: [store::MyDatabase]NORTHWIND.PRODUCTS.DISCONTINUED
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS
+    id: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.SUPPLIER_ID,
+    companyName: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.COMPANY_NAME,
+    contactName: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.CONTACT_NAME,
+    contactTitle: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.CONTACT_TITLE,
+    address
+    (
+      address: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.ADDRESS,
+      city: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.CITY,
+      region: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.REGION,
+      postalCode: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.POSTAL_CODE,
+      country: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.COUNTRY
+    ),
+    telephoneNumber: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.PHONE,
+    faxNumber: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.FAX,
+    homepageUrl: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.HOMEPAGE
   }
-  *store::NORTHWIND::Region[store_NORTHWIND_Region]: Relational
+  showcase::northwind::model::geography::SalesTerritory[Territory]: Relational
   {
     ~primaryKey
     (
-      [store::MyDatabase]NORTHWIND.REGION.REGION_ID
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.TERRITORIES.TERRITORY_ID
     )
-    ~mainTable [store::MyDatabase]NORTHWIND.REGION
-    regionId: [store::MyDatabase]NORTHWIND.REGION.REGION_ID,
-    regionDescription: [store::MyDatabase]NORTHWIND.REGION.REGION_DESCRIPTION
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.TERRITORIES
+    id: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.TERRITORIES.TERRITORY_ID,
+    description: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.TERRITORIES.TERRITORY_DESCRIPTION
   }
-  *store::NORTHWIND::Shippers[store_NORTHWIND_Shippers]: Relational
+  showcase::northwind::model::geography::USState[USState]: Relational
   {
     ~primaryKey
     (
-      [store::MyDatabase]NORTHWIND.SHIPPERS.SHIPPER_ID
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.US_STATES.STATE_ID
     )
-    ~mainTable [store::MyDatabase]NORTHWIND.SHIPPERS
-    shipperId: [store::MyDatabase]NORTHWIND.SHIPPERS.SHIPPER_ID,
-    companyName: [store::MyDatabase]NORTHWIND.SHIPPERS.COMPANY_NAME,
-    phone: [store::MyDatabase]NORTHWIND.SHIPPERS.PHONE
-  }
-  *store::NORTHWIND::Suppliers[store_NORTHWIND_Suppliers]: Relational
-  {
-    ~primaryKey
-    (
-      [store::MyDatabase]NORTHWIND.SUPPLIERS.SUPPLIER_ID
-    )
-    ~mainTable [store::MyDatabase]NORTHWIND.SUPPLIERS
-    supplierId: [store::MyDatabase]NORTHWIND.SUPPLIERS.SUPPLIER_ID,
-    companyName: [store::MyDatabase]NORTHWIND.SUPPLIERS.COMPANY_NAME,
-    contactName: [store::MyDatabase]NORTHWIND.SUPPLIERS.CONTACT_NAME,
-    contactTitle: [store::MyDatabase]NORTHWIND.SUPPLIERS.CONTACT_TITLE,
-    address: [store::MyDatabase]NORTHWIND.SUPPLIERS.ADDRESS,
-    city: [store::MyDatabase]NORTHWIND.SUPPLIERS.CITY,
-    region: [store::MyDatabase]NORTHWIND.SUPPLIERS.REGION,
-    postalCode: [store::MyDatabase]NORTHWIND.SUPPLIERS.POSTAL_CODE,
-    country: [store::MyDatabase]NORTHWIND.SUPPLIERS.COUNTRY,
-    phone: [store::MyDatabase]NORTHWIND.SUPPLIERS.PHONE,
-    fax: [store::MyDatabase]NORTHWIND.SUPPLIERS.FAX,
-    homepage: [store::MyDatabase]NORTHWIND.SUPPLIERS.HOMEPAGE
-  }
-  *store::NORTHWIND::Territories[store_NORTHWIND_Territories]: Relational
-  {
-    ~primaryKey
-    (
-      [store::MyDatabase]NORTHWIND.TERRITORIES.TERRITORY_ID
-    )
-    ~mainTable [store::MyDatabase]NORTHWIND.TERRITORIES
-    territoryId: [store::MyDatabase]NORTHWIND.TERRITORIES.TERRITORY_ID,
-    territoryDescription: [store::MyDatabase]NORTHWIND.TERRITORIES.TERRITORY_DESCRIPTION,
-    regionId: [store::MyDatabase]NORTHWIND.TERRITORIES.REGION_ID
-  }
-  *store::NORTHWIND::UsStates[store_NORTHWIND_UsStates]: Relational
-  {
-    ~primaryKey
-    (
-      [store::MyDatabase]NORTHWIND.US_STATES.STATE_ID
-    )
-    ~mainTable [store::MyDatabase]NORTHWIND.US_STATES
-    stateId: [store::MyDatabase]NORTHWIND.US_STATES.STATE_ID,
-    stateName: [store::MyDatabase]NORTHWIND.US_STATES.STATE_NAME,
-    stateAbbr: [store::MyDatabase]NORTHWIND.US_STATES.STATE_ABBR,
-    stateRegion: [store::MyDatabase]NORTHWIND.US_STATES.STATE_REGION
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.US_STATES
+    id: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.US_STATES.STATE_ID,
+    name: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.US_STATES.STATE_NAME,
+    code: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.US_STATES.STATE_ABBR
   }
 
-  testSuites:
-  [
-    ProductSuite:
-    {
-      function: |store::NORTHWIND::Products.all()->project([x|$x.categoryId, x|$x.discontinued, x|$x.productId, x|$x.productName, x|$x.quantityPerUnit, x|$x.reorderLevel, x|$x.supplierId, x|$x.unitPrice, x|$x.unitsInStock, x|$x.unitsOnOrder], ['Category Id', 'Discontinued', 'Product Id', 'Product Name', 'Quantity Per Unit', 'Reorder Level', 'Supplier Id', 'Unit Price', 'Units In Stock', 'Units On Order']);
-      tests:
-      [
-        productTest:
-        {
-          data:
-          [
-            store::MyDatabase:
-              Relational
-              #{
-                NORTHWIND.PRODUCTS:
-                  'PRODUCT_ID,PRODUCT_NAME,SUPPLIER_ID,CATEGORY_ID,QUANTITY_PER_UNIT,UNITS_IN_STOCK,UNITS_ON_ORDER,REORDER_LEVEL,DISCONTINUED\n'+
-                  '1,MyProduct,1,2,20,2,4,10,0\n';
-              }#
-          ];
-          asserts:
-          [
-            expectedAssertion:
-              EqualToJson
-              #{
-                expected:
-                  ExternalFormat
-                  #{
-                    contentType: 'application/json';
-                    data: '[ {\r\n  "Category Id" : 2,\r\n  "Discontinued" : 0,\r\n  "Product Id" : 1,\r\n  "Product Name" : "MyProduct",\r\n  "Quantity Per Unit" : "20",\r\n  "Reorder Level" : 10,\r\n  "Supplier Id" : 1,\r\n  "Unit Price" : null,\r\n  "Units In Stock" : 2,\r\n  "Units On Order" : 4\r\n} ]';
-                  }#;
-              }#
-          ];
-        }
-      ];
-    }
-  ]
+  showcase::northwind::model::associations::Order_Customer: Relational
+  {
+    AssociationMapping
+    (
+      orders[Customer,Order]: [showcase::northwind::store::NorthwindDatabase]@ORDERS_CUSTMERS,
+      customer[Order,Customer]: [showcase::northwind::store::NorthwindDatabase]@ORDERS_CUSTMERS
+    )
+  }
+  showcase::northwind::model::associations::Order_Employee: Relational
+  {
+    AssociationMapping
+    (
+      orders[Employee,Order]: [showcase::northwind::store::NorthwindDatabase]@ORDERS_EMPLOYEES,
+      employee[Order,Employee]: [showcase::northwind::store::NorthwindDatabase]@ORDERS_EMPLOYEES
+    )
+  }
+  showcase::northwind::model::associations::Order_Shipper: Relational
+  {
+    AssociationMapping
+    (
+      orders[Shipper,Order]: [showcase::northwind::store::NorthwindDatabase]@ORDERS_SHIPPERS,
+      shipper[Order,Shipper]: [showcase::northwind::store::NorthwindDatabase]@ORDERS_SHIPPERS
+    )
+  }
+  showcase::northwind::model::associations::Order_OrderLineItem: Relational
+  {
+    AssociationMapping
+    (
+      order[OrderLineItem,Order]: [showcase::northwind::store::NorthwindDatabase]@ORDERS_ORDER_DETAILS,
+      lineItems[Order,OrderLineItem]: [showcase::northwind::store::NorthwindDatabase]@ORDERS_ORDER_DETAILS
+    )
+  }
+  showcase::northwind::model::associations::OrderLineItem_Product: Relational
+  {
+    AssociationMapping
+    (
+      orderLineItems[Product,OrderLineItem]: [showcase::northwind::store::NorthwindDatabase]@ORDERS_DETAILS_PRODUCTS,
+      product[OrderLineItem,Product]: [showcase::northwind::store::NorthwindDatabase]@ORDERS_DETAILS_PRODUCTS
+    )
+  }
+  showcase::northwind::model::associations::Product_Category: Relational
+  {
+    AssociationMapping
+    (
+      category[Product,Category]: [showcase::northwind::store::NorthwindDatabase]@PRODUCTS_CATEGORIES,
+      products[Category,Product]: [showcase::northwind::store::NorthwindDatabase]@PRODUCTS_CATEGORIES
+    )
+  }
+  showcase::northwind::model::associations::Product_Suppliers: Relational
+  {
+    AssociationMapping
+    (
+      supplier[Product,Supplier]: [showcase::northwind::store::NorthwindDatabase]@PRODUCTS_SUPPLIERS,
+      products[Supplier,Product]: [showcase::northwind::store::NorthwindDatabase]@PRODUCTS_SUPPLIERS
+    )
+  }
+  showcase::northwind::model::associations::Terriroties_Region: Relational
+  {
+    AssociationMapping
+    (
+      region[Territory,Region]: [showcase::northwind::store::NorthwindDatabase]@TERRITORIES_REGION,
+      territories[Region,Territory]: [showcase::northwind::store::NorthwindDatabase]@TERRITORIES_REGION
+    )
+  }
+  showcase::northwind::model::associations::Terriroties_Employees: Relational
+  {
+    AssociationMapping
+    (
+      employees[Territory,Employee]: [showcase::northwind::store::NorthwindDatabase]@EMPLOYEE_TERRITORIES_TERRITORIES > [showcase::northwind::store::NorthwindDatabase]@EMPLOYEES_EMPLOYEE_TERRITORIES,
+      territories[Employee,Territory]: [showcase::northwind::store::NorthwindDatabase]@EMPLOYEES_EMPLOYEE_TERRITORIES > [showcase::northwind::store::NorthwindDatabase]@EMPLOYEE_TERRITORIES_TERRITORIES
+    )
+  }
+  showcase::northwind::model::associations::Employee_Manager: Relational
+  {
+    AssociationMapping
+    (
+      reports[Employee,Employee]: [showcase::northwind::store::NorthwindDatabase]@EMPLOYEE_REPORTS,
+      manager[Employee,Employee]: [showcase::northwind::store::NorthwindDatabase]@EMPLOYEE_REPORTS
+    )
+  }
+
+  showcase::northwind::model::crm::Title: EnumerationMapping TitleMapping
+  {
+    Mr: ['Mr.'],
+    Mrs: ['Mrs.'],
+    Miss: ['Miss.'],
+    Ms: ['Ms.'],
+    Dr: ['Dr.'],
+    Sir: ['Sir.'],
+    Professor: ['Prof.'],
+    Duchess: ['Duchess.'],
+    Duke: ['Duke.']
+  }
 )
 
 
-###Connection
-RelationalDatabaseConnection model::NorthWindH2Connection
-{
-  store: store::MyDatabase;
-  type: H2;
-  specification: LocalH2
-  {
-    testDataSetupSqls: [
-      '-- loads sample data for getting started. See https://github.com/pthom/northwind_psql for more info\n call loadNorthwindData()'
-      ];
-  };
-  auth: DefaultH2;
-}
-
-
 ###Runtime
-Runtime model::NorthWindRuntime
+Runtime showcase::northwind::runtime::NorthwindRuntime
 {
   mappings:
   [
-    store::MyDatabaseMapping
+    showcase::northwind::mapping::NorthwindMapping
   ];
   connections:
   [
-    store::MyDatabase:
+    showcase::northwind::store::NorthwindDatabase:
     [
-      connection_1: model::NorthWindH2Connection
+      connection_1:
+      #{
+        RelationalDatabaseConnection
+        {
+          store: showcase::northwind::store::NorthwindDatabase;
+          type: H2;
+          specification: LocalH2
+          {
+            testDataSetupSqls: [
+              'call loadNorthwindData()'
+              ];
+          };
+          auth: DefaultH2;
+        }
+      }#
     ]
   ];
 }
