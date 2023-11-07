@@ -1,5 +1,5 @@
 ---
-title: Service Jar activator
+title: Activator - Service Jar
 description:
 development: 
 ---

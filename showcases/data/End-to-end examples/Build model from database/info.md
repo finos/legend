@@ -1,5 +1,5 @@
 ---
-title: Build model from database
+title: Build Model From database
 description:
 development: true
 ---

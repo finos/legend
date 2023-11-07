@@ -1,6 +1,5 @@
 ---
-title: Build a data model
-
+title: Build A Data model
 description: 
 development: true
 ---

@@ -1,5 +1,5 @@
 ---
-title: Build a relational service
+title: Build a Relational service
 description:
 development: true
 ---

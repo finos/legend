@@ -1,6 +1,5 @@
 ---
-title: Relational mapping
-
+title: Relational Mapping with tests
 description: 
 ---
 This package contains showcase model to demonstrate relational mapping capabilities of Legend
