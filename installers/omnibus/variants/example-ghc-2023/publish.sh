@@ -11,17 +11,18 @@ NC='\033[0m' # No color
 source ./.env
 
 DOCKER_IMAGE_NAME=finos/legend-omnibus
+DOCKER_IMAGE_TAG_SUFFIX=example-ghc-2023
 DOCKER_IMAGE_TAG=$LEGEND_OMNIBUS_IMAGE_VERSION
 
 # ------------------------------- Check -------------------------------
 
 # Check if the image has already been published
 ALREADY_PUBLISHED=true
-docker pull finos/legend-omnibus:$DOCKER_IMAGE_TAG-example-ghc-2023 >/dev/null 2>&1 || {
+docker pull finos/legend-omnibus:$DOCKER_IMAGE_TAG-$DOCKER_IMAGE_TAG_SUFFIX >/dev/null 2>&1 || {
   ALREADY_PUBLISHED=false
 }
 if [[ $ALREADY_PUBLISHED = true ]]; then
-  echo -e "${YELLOW}Image finos/legend-omnibus:$DOCKER_IMAGE_TAG-example-ghc-2023 is already published. Aborting...${NC}"
+  echo -e "${YELLOW}Image finos/legend-omnibus:$DOCKER_IMAGE_TAG-$DOCKER_IMAGE_TAG_SUFFIX is already published. Aborting...${NC}"
   exit 0
 fi
 
@@ -41,12 +42,12 @@ fi
 
 # ----------------------------- Publish ------------------------------
 
-docker tag legend-omnibus:latest-example-ghc-2023 finos/legend-omnibus:$DOCKER_IMAGE_TAG-example-ghc-2023
-docker push --quiet finos/legend-omnibus:$DOCKER_IMAGE_TAG-example-ghc-2023 || {
+docker tag legend-omnibus:latest-$DOCKER_IMAGE_TAG_SUFFIX finos/legend-omnibus:$DOCKER_IMAGE_TAG-$DOCKER_IMAGE_TAG_SUFFIX
+docker push --quiet finos/legend-omnibus:$DOCKER_IMAGE_TAG-$DOCKER_IMAGE_TAG_SUFFIX || {
   exit 1
 }
-docker tag legend-omnibus:latest-example-ghc-2023 finos/legend-omnibus:latest-example-ghc-2023
-docker push --quiet finos/legend-omnibus:latest-example-ghc-2023 || {
+docker tag legend-omnibus:latest-$DOCKER_IMAGE_TAG_SUFFIX finos/legend-omnibus:latest-$DOCKER_IMAGE_TAG_SUFFIX
+docker push --quiet finos/legend-omnibus:latest-$DOCKER_IMAGE_TAG_SUFFIX || {
   exit 1
 }
 

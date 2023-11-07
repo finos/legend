@@ -115,7 +115,7 @@ ARG SDLC_FS_DIR=/app/sdlc-fs
 RUN mkdir -p $SDLC_FS_DIR/lib
 COPY --from=sdlc-fs-image /app/bin/*.jar $SDLC_FS_DIR/lib
 RUN mkdir -p $LEGEND_OMNIBUS_SDLC_FILE_SYSTEM_ROOT_DIR
-RUN tar -xzf $SDLC_DIR/project-data__example-ghc-2023.tar.gz -C $LEGEND_OMNIBUS_SDLC_FILE_SYSTEM_ROOT_DIR
+RUN tar -xzf $SDLC_DIR/project-data__example-esg.tar.gz -C $LEGEND_OMNIBUS_SDLC_FILE_SYSTEM_ROOT_DIR
 RUN apt-get update && apt-get install -y git
 
 # ---------------- Setup Legend Studio ----------------
@@ -127,13 +127,6 @@ COPY --from=studio-image /app/bin $STUDIO_DIR/
 COPY components/studio $STUDIO_DIR
 RUN chmod +x $STUDIO_DIR/run-studio.sh
 EXPOSE ${LEGEND_OMNIBUS_STUDIO_PORT}
-
-# ---------------- Setup Datasource(s) ----------------
-
-ARG DATASOURCES_DIR=/app/datasources
-COPY components/datasources $DATASOURCES_DIR
-RUN chmod +x $DATASOURCES_DIR/run-postgres.example-ghc-2023.sh
-RUN apt-get update && apt install -y postgresql
 
 # ---------------- Setup Supervisor ----------------
 
@@ -154,6 +147,5 @@ RUN $SUPERVISOR_DIR/report-build-info.slim.sh
 
 # ---------------- Run Omnibus ----------------
 
-CMD /app/datasources/run-postgres.example-ghc-2023.sh && \
-  (/app/supervisor/check-setup.slim.sh &) && \
-  supervisord -c /app/supervisor/supervisor.example-ghc-2023.conf
+CMD (/app/supervisor/check-setup.slim.sh &) && \
+  supervisord -c /app/supervisor/supervisor.example-esg.conf

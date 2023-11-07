@@ -46,7 +46,7 @@ filterPriorities:
   org.pac4j.j2e.filter.SecurityFilter: 3
   CORS: 4
 fileSystem:
-  rootDirectory: ${LEGEND_OMNIBUS_SDLC_FS_ROOT_DIR}
+  rootDirectory: ${LEGEND_OMNIBUS_SDLC_FILE_SYSTEM_ROOT_DIR}
 features:
   canCreateProject: true
   canCreateVersion: false

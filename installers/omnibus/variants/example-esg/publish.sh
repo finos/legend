@@ -11,7 +11,7 @@ NC='\033[0m' # No color
 source ./.env
 
 DOCKER_IMAGE_NAME=finos/legend-omnibus
-DOCKER_IMAGE_TAG_SUFFIX=slim
+DOCKER_IMAGE_TAG_SUFFIX=example-esg
 DOCKER_IMAGE_TAG=$LEGEND_OMNIBUS_IMAGE_VERSION
 
 # ------------------------------- Check -------------------------------
@@ -29,8 +29,8 @@ fi
 # ------------------------------- Test -------------------------------
 
 echo "Running test(s)..."
-bash ./variants/slim/build.sh
-bash ./variants/slim/test.sh
+bash ./variants/example-esg/build.sh
+bash ./variants/example-esg/test.sh
 
 test_result=$?
 if [[ $test_result == 0 ]]; then

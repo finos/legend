@@ -14,6 +14,7 @@ sed -i'' -e "s/^LEGEND_OMNIBUS_SDLC_VERSION.*/LEGEND_OMNIBUS_SDLC_VERSION=snapsh
 sed -i'' -e "s/^LEGEND_OMNIBUS_STUDIO_VERSION.*/LEGEND_OMNIBUS_STUDIO_VERSION=snapshot/" ./.env
 
 source ./.env
+DOCKER_IMAGE_TAG_SUFFIX=example-ghc-2023
 
 # ------------------------------- Test -------------------------------
 
@@ -31,12 +32,12 @@ fi
 
 # ----------------------------- Publish ------------------------------
 
-docker tag legend-omnibus:latest-example-ghc-2023 finos/legend-omnibus:snapshot-example-ghc-2023
-docker push --quiet finos/legend-omnibus:snapshot-example-ghc-2023 || {
+docker tag legend-omnibus:latest-$DOCKER_IMAGE_TAG_SUFFIX finos/legend-omnibus:snapshot-$DOCKER_IMAGE_TAG_SUFFIX
+docker push --quiet finos/legend-omnibus:snapshot-$DOCKER_IMAGE_TAG_SUFFIX || {
   exit 1
 }
-docker tag legend-omnibus:latest-example-ghc-2023 finos/legend-omnibus:latest-example-ghc-2023
-docker push --quiet finos/legend-omnibus:snapshot-example-ghc-2023 || {
+docker tag legend-omnibus:latest-$DOCKER_IMAGE_TAG_SUFFIX finos/legend-omnibus:latest-$DOCKER_IMAGE_TAG_SUFFIX
+docker push --quiet finos/legend-omnibus:snapshot-$DOCKER_IMAGE_TAG_SUFFIX || {
   exit 1
 }
 
