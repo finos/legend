@@ -1,6 +1,0 @@
-###Text
-Text z_cheatsheet::links::cheatsheet_link
-{
-  type: plainText;
-  content: 'https://github.com/finos/legend/wiki/GHC-Cheat-Sheet';
-}

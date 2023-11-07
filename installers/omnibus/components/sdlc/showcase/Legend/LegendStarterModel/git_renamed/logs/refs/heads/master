@@ -1,3 +1,0 @@
-0000000000000000000000000000000000000000 cb19367de70151fcc3d75ae04b5cf50dfd07a4fc root <root@7eb324864bda> 1694797842 +0000	commit (initial): Initial Commit
-cb19367de70151fcc3d75ae04b5cf50dfd07a4fc a1bc5df271f3c2cead022efb910b678aca7e87e0 root <root@7eb324864bda> 1694797843 +0000	commit: Build project structure
-a1bc5df271f3c2cead022efb910b678aca7e87e0 be64668b09c42b5b3f1ffd59894e488bb2856fb1 root <root@7eb324864bda.(none)> 1694798088 +0000	merge group/gw1: Fast-forward
