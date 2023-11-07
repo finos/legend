@@ -1,5 +1,10 @@
 #!/bin/bash
 
+######################################################################
+# NOTE: this is an example, meant for use in conference/demo
+# remove it once the event is over to maintain codebase hygiene
+######################################################################
+
 # -------------------------- Setup Color -----------------------------
 # NOTE: must use `echo -e` to interpret the backslash escapes
 RED='\033[0;31m'
@@ -19,23 +24,6 @@ if [[ $LOCAL_DIGEST != $REMOTE_DIGEST ]]; then
   PULL_STRATEGY="always" # force re-pulling the image
 else
   PULL_STRATEGY="missing"
-fi
-
-# ----------------------- Check Parameters --------------------------
-
-echo "Running Omnibus with Legend SDLC using Gitlab (PAT) backend..."
-if [[ -z "$PS1" ]]; then
-  # non-interactive
-  if [[ -z "$LEGEND_OMNIBUS_CONFIG_GITLAB_PAT" ]]; then
-    echo "Failed: LEGEND_OMNIBUS_CONFIG_GITLAB_PAT is not set"
-    exit 1
-  fi
-else
-  # interactive
-  if [[ -z "$LEGEND_OMNIBUS_CONFIG_GITLAB_PAT" ]]; then
-    echo "Enter Gitlab personal access token (PAT):"
-    read -s LEGEND_OMNIBUS_CONFIG_GITLAB_PAT
-  fi
 fi
 
 # ------------------------------- Run -------------------------------
