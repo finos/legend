@@ -28,8 +28,7 @@
   },
   "extensions": {
     "core": {
-      "TEMPORARY__enableFunctionActivatorSupport": true,
-      "TEMPORARY__enableRawSQLExecutor": true
+      "TEMPORARY__enableFunctionActivatorSupport": true
     }
   }
 }

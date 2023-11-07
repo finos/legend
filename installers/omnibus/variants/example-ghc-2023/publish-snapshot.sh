@@ -14,14 +14,13 @@ sed -i'' -e "s/^LEGEND_OMNIBUS_SDLC_VERSION.*/LEGEND_OMNIBUS_SDLC_VERSION=snapsh
 sed -i'' -e "s/^LEGEND_OMNIBUS_STUDIO_VERSION.*/LEGEND_OMNIBUS_STUDIO_VERSION=snapshot/" ./.env
 
 source ./.env
-
-DOCKER_IMAGE_TAG_SUFFIX=slim-dbs
+DOCKER_IMAGE_TAG_SUFFIX=example-ghc-2023
 
 # ------------------------------- Test -------------------------------
 
 echo "Running test(s)..."
-bash ./variants/slim-dbs/build.sh
-bash ./variants/slim-dbs/test.sh
+bash ./variants/example-ghc-2023/build.sh
+bash ./variants/example-ghc-2023/test.sh
 
 test_result=$?
 if [[ $test_result == 0 ]]; then

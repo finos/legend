@@ -1,7 +1,0 @@
-Class {doc.doc = 'Geographic location with yearly population.'} model::Country
-{
-  {doc.doc = 'Geographic location.'} name: String[1];
-  {doc.doc = 'ISO 3166-1 alpha-3, three-letter country codes.'} isoCode: String[1];
-  {doc.doc = 'Year of observation.'} year: Integer[1];
-  {doc.doc = 'Population of each country or region.'} population: Float[1];
-}

@@ -15,6 +15,8 @@ sed -i'' -e "s/^LEGEND_OMNIBUS_STUDIO_VERSION.*/LEGEND_OMNIBUS_STUDIO_VERSION=sn
 
 source ./.env
 
+DOCKER_IMAGE_TAG_SUFFIX=slim
+
 # ------------------------------- Test -------------------------------
 
 echo "Running test(s)..."
@@ -31,12 +33,12 @@ fi
 
 # ----------------------------- Publish ------------------------------
 
-docker tag legend-omnibus:latest-slim finos/legend-omnibus:snapshot-slim
-docker push --quiet finos/legend-omnibus:snapshot-slim || {
+docker tag legend-omnibus:latest-$DOCKER_IMAGE_TAG_SUFFIX finos/legend-omnibus:snapshot-$DOCKER_IMAGE_TAG_SUFFIX
+docker push --quiet finos/legend-omnibus:snapshot-$DOCKER_IMAGE_TAG_SUFFIX || {
   exit 1
 }
-docker tag legend-omnibus:latest-slim finos/legend-omnibus:latest-slim
-docker push --quiet finos/legend-omnibus:snapshot-slim || {
+docker tag legend-omnibus:latest-$DOCKER_IMAGE_TAG_SUFFIX finos/legend-omnibus:latest-$DOCKER_IMAGE_TAG_SUFFIX
+docker push --quiet finos/legend-omnibus:snapshot-$DOCKER_IMAGE_TAG_SUFFIX || {
   exit 1
 }
 
