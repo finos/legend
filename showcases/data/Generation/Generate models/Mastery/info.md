@@ -1,5 +1,5 @@
 ---
-title: Mastery model generation
+title: Mastery Model generation
 description:
 development: true
 ---
