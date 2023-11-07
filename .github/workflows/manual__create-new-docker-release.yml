@@ -57,7 +57,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        variant: [full, slim, slim-dbs]
+        variant: [full, slim, slim-dbs, example-esg]
     steps:
       - name: Checkout code
         uses: actions/checkout@v3.5.2
