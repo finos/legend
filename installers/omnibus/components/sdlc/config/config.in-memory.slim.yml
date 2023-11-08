@@ -32,12 +32,7 @@ swagger:
 
 pac4j:
   clients:
-    - org.pac4j.core.client.direct.AnonymousClient: {}          
-  bypassPaths:
-    - /api/info
-    - /api/server/info
-    - /api/server/platforms
-    - /api/auth/authorized      
+    - org.pac4j.core.client.direct.AnonymousClient: {}   
 
 applicationName: Legend SDLC
 filterPriorities:

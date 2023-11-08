@@ -1,13 +1,19 @@
 server:
-  type: simple
-  applicationContextPath: /
   adminContextPath: /admin
-  connector:
-    maxRequestHeaderSize: 32KiB
-    type: http
-    port: ${LEGEND_OMNIBUS_ENGINE_PORT}
+  applicationConnectors:
+    - type: http
+      port: ${LEGEND_OMNIBUS_ENGINE_PORT}
+      maxRequestHeaderSize: 128KiB
+  adminConnectors:
+    - type: http
+      port: ${LEGEND_OMNIBUS_ENGINE_ADMIN_PORT}
+  gzip:
+    includedMethods:
+      - GET
+      - POST
   requestLog:
     appenders: []
+  rootPath: /api
 sessionCookie: LEGEND_ENGINE_JSESSIONID
 logging:
   level: INFO
@@ -17,14 +23,10 @@ logging:
 swagger:
   title: Legend Engine
   resourcePackage: org.finos.legend
-  uriPrefix: /api
 
 pac4j:
-  callbackPrefix: /api/pac4j
   clients:
     - org.pac4j.core.client.direct.AnonymousClient: {}
-  bypassPaths:
-    - /api/server/v1/info
 
 deployment:
   mode: TEST_IGNORE_FUNCTION_MATCH
@@ -44,8 +46,9 @@ metadataserver:
     port: 1234 # unsupported flow
     prefix: /depot/api
   sdlc:
-    host: legend-sdlc
-    port: ${LEGEND_OMNIBUS_SDLC_PORT}
+    host: localhost
+    port: ${LEGEND_OMNIBUS_NGINX_PORT}
+    prefix: /sdlc
 temporarytestdb:
   port: ${LEGEND_OMNIBUS_ENGINE_TEMP_DB_PORT}
 relationalexecution:
