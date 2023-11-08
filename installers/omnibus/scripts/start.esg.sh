@@ -13,7 +13,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # No color
 # --------------------------------------------------------------------
 
-IMAGE=finos/legend-omnibus:2023-11-07-example-esg
+IMAGE=finos/legend-omnibus:latest-example-esg
 
 # ------------------------------- Check -------------------------------
 # Check if repulling image is necessary
