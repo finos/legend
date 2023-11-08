@@ -1,10 +1,14 @@
 server:
-  type: simple
-  applicationContextPath: /
-  adminContextPath: /studio/admin
-  connector:
-    type: http
-    port: ${LEGEND_OMNIBUS_STUDIO_PORT}
+  applicationConnectors:
+    - type: http
+      port: ${LEGEND_OMNIBUS_STUDIO_PORT}
+      maxRequestHeaderSize: 128KiB
+  gzip:
+    includedMethods:
+      - GET
+      - POST
+  requestLog:
+    appenders: []
 sessionCookie: LEGEND_STUDIO_JSESSIONID
 logging:
   level: INFO
@@ -17,11 +21,8 @@ logging:
     - type: console
 
 pac4j:
-  callbackPrefix: /api/pac4j
   clients:
     - org.pac4j.core.client.direct.AnonymousClient: {}
-  bypassPaths:
-    - /studio/admin/healthcheck
 
 html5Router: true
 routerExemptPaths:

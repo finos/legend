@@ -41,6 +41,9 @@ pac4j:
         apiVersion: v4
   bypassPaths:
     - /api/info
+    - /api/server/info
+    - /api/server/platforms
+    - /api/auth/authorized
 
 applicationName: Legend SDLC
 filterPriorities:
