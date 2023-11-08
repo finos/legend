@@ -9,7 +9,9 @@ ARG LEGEND_OMNIBUS_STUDIO_VERSION
 FROM finos/legend-engine-server:${LEGEND_OMNIBUS_ENGINE_VERSION} AS engine-image
 FROM finos/legend-sdlc-server:${LEGEND_OMNIBUS_SDLC_VERSION} AS sdlc-image
 FROM finos/legend-studio:${LEGEND_OMNIBUS_STUDIO_VERSION} AS studio-image
-FROM finos/legend-sdlc-server-fs:${LEGEND_OMNIBUS_SDLC_DEMO_FILE_SYSTEM_VERSION} AS sdlc-fs-image
+# TODO: to be removed when we make SDLC backend configurable
+# See https://github.com/finos/legend-sdlc/issues/722
+FROM finos/legend-sdlc-server-fs:${LEGEND_OMNIBUS_SDLC_DEMO_FILE_SYSTEM_VERSION} AS sdlc-file-system-backend-image
 
 FROM eclipse-temurin:11.0.19_7-jdk-jammy
 RUN apt-get update && apt-get install -y wget nano
@@ -113,9 +115,11 @@ RUN chmod +x $SDLC_DIR/run-sdlc.file-system.sh
 EXPOSE ${LEGEND_OMNIBUS_SDLC_PORT}
 
 # Copy over file-system backend libraries for Legend SDLC
+# TODO: to be removed when we make SDLC backend configurable
+# See https://github.com/finos/legend-sdlc/issues/722
 ARG SDLC_FS_DIR=/app/sdlc-fs
 RUN mkdir -p $SDLC_FS_DIR/lib
-COPY --from=sdlc-fs-image /app/bin/*.jar $SDLC_FS_DIR/lib
+COPY --from=sdlc-file-system-backend-image /app/bin/*.jar $SDLC_FS_DIR/lib
 RUN mkdir -p $LEGEND_OMNIBUS_SDLC_FILE_SYSTEM_ROOT_DIR
 RUN tar -xzf $SDLC_DIR/project-data__example-ghc-2023.tar.gz -C $LEGEND_OMNIBUS_SDLC_FILE_SYSTEM_ROOT_DIR
 RUN apt-get update && apt-get install -y git
