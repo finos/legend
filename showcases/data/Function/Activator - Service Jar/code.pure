@@ -91,8 +91,14 @@ Mapping mapping::m2m::Firm_Person
   domain::Person: Pure
   {
     ~src domain::S_Person
-    firstName: $src.fullName->substring(0, $src.fullName->indexOf(' ')),
-    lastName: $src.fullName->substring($src.fullName->indexOf(' ') + 1, $src.fullName->length())
+    firstName: $src.fullName->substring(
+  0,
+  $src.fullName->indexOf(' ')
+),
+    lastName: $src.fullName->substring(
+  $src.fullName->indexOf(' ') + 1,
+  $src.fullName->length()
+)
   }
   domain::Firm: Pure
   {
@@ -105,7 +111,25 @@ Mapping mapping::m2m::Firm_Person
   [
     test_1
     (
-      query: |domain::Firm.all()->graphFetch(#{domain::Firm{legalName,employees{firstName}}}#)->serialize(#{domain::Firm{legalName,employees{firstName}}}#);
+      query: |domain::Firm.all()->graphFetch(
+  #{
+    domain::Firm{
+      legalName,
+      employees{
+        firstName
+      }
+    }
+  }#
+)->serialize(
+  #{
+    domain::Firm{
+      legalName,
+      employees{
+        firstName
+      }
+    }
+  }#
+);
       data:
       [
         <Object, JSON, domain::S_Firm, '[{"employees":[{"fullName":"Road Runner"},{"fullName":"Wile Coyote"}],"legalName":"ACME Corp."},{"employees":[{"fullName":"Jake Sullivan"},{"fullName":"Mike Wazwoski"}],"legalName":"Monsters Inc."}]'>
@@ -142,7 +166,18 @@ Mapping mapping::relational::Firm_Person
   [
     test_1
     (
-      query: |domain::Firm.all()->project([x|$x.legalName, x|$x.employees.firstName, x|$x.employees.lastName], ['Legal Name', 'Employees/First Name', 'Employees/Last Name']);
+      query: |domain::Firm.all()->project(
+  [
+    x: domain::Firm[1]|$x.legalName,
+    x: domain::Firm[1]|$x.employees.firstName,
+    x: domain::Firm[1]|$x.employees.lastName
+  ],
+  [
+    'Legal Name',
+    'Employees/First Name',
+    'Employees/Last Name'
+  ]
+);
       data:
       [
         <Relational, SQL, database::h2, 
