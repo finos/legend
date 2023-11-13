@@ -16,20 +16,16 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.surefire.thread.count>3</maven.surefire.thread.count>
         <showcase.projects.location>data</showcase.projects.location>
+        <legend.engine.version>4.35.1</legend.engine.version>
+
     </properties>
 
     <dependencies>
         <!-- TODO: auto-update these on a schedule to make local development easier -->
         <dependency>
             <groupId>org.finos.legend.engine</groupId>
-            <artifactId>legend-engine-extensions-collection-execution</artifactId>
-            <version>4.30.3</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.finos.legend.engine</groupId>
             <artifactId>legend-engine-extensions-collection-generation</artifactId>
-            <version>4.30.3</version>
+            <version>${legend.engine.version}</version>
             <scope>test</scope>
         </dependency>
 

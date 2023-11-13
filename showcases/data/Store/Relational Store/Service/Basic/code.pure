@@ -247,7 +247,60 @@ Service showcase::northwind::services::graph::OrderDetailsByIdGraphFetch
   autoActivateUpdates: true;
   execution: Single
   {
-    query: id: Integer[1]|showcase::northwind::model::Order.all()->filter(x|$x.id == $id)->graphFetch(#{showcase::northwind::model::Order{id,createdDate,customer{companyName},employee{firstName},lineItems{product{name,category{name}},quantity},shipper{name}}}#)->serialize(#{showcase::northwind::model::Order{id,createdDate,customer{companyName},employee{firstName},lineItems{product{name,category{name}},quantity},shipper{name}}}#);
+    query: id: Integer[1]|showcase::northwind::model::Order.all()->filter(
+      x: showcase::northwind::model::Order[1]|$x.id ==
+        $id
+    )->graphFetch(
+      #{
+        showcase::northwind::model::Order{
+          id,
+          createdDate,
+          customer{
+            companyName
+          },
+          employee{
+            firstName
+          },
+          lineItems{
+            product{
+              name,
+              category{
+                name
+              }
+            },
+            quantity
+          },
+          shipper{
+            name
+          }
+        }
+      }#
+    )->serialize(
+      #{
+        showcase::northwind::model::Order{
+          id,
+          createdDate,
+          customer{
+            companyName
+          },
+          employee{
+            firstName
+          },
+          lineItems{
+            product{
+              name,
+              category{
+                name
+              }
+            },
+            quantity
+          },
+          shipper{
+            name
+          }
+        }
+      }#
+    );
     mapping: showcase::northwind::mapping::NorthwindMapping;
     runtime: showcase::northwind::runtime::NorthwindRuntime;
   }
@@ -260,7 +313,27 @@ Service showcase::northwind::services::tds::TopCategories
   autoActivateUpdates: true;
   execution: Single
   {
-    query: |showcase::northwind::model::Order.all()->groupBy([x|$x.lineItems.product.category.id, x|$x.lineItems.product.category.name], [agg(x|$x.id, x|$x->distinct()->count())], ['Category Id', 'Category Name', 'Order Count'])->sort([desc('Order Count')])->take(5);
+    query: |showcase::northwind::model::Order.all()->groupBy(
+      [
+        x: showcase::northwind::model::Order[1]|$x.lineItems.product.category.id,
+        x: showcase::northwind::model::Order[1]|$x.lineItems.product.category.name
+      ],
+      [
+        agg(
+          x: showcase::northwind::model::Order[1]|$x.id,
+          x: Integer[*]|$x->distinct()->count()
+        )
+      ],
+      [
+        'Category Id',
+        'Category Name',
+        'Order Count'
+      ]
+    )->sort(
+      [
+        desc('Order Count')
+      ]
+    )->take(5);
     mapping: showcase::northwind::mapping::NorthwindMapping;
     runtime: showcase::northwind::runtime::NorthwindRuntime;
   }
@@ -273,7 +346,29 @@ Service showcase::northwind::services::tds::OrderDetailsByIdTDS
   autoActivateUpdates: true;
   execution: Single
   {
-    query: orderId: Integer[1]|showcase::northwind::model::Order.all()->filter(x|$x.id == $orderId)->project([x|$x.id, x|$x.customer.companyName, x|$x.employee.firstName, x|$x.lineItems.product.name, x|$x.lineItems.product.category.name, x|$x.lineItems.quantity, x|$x.shipper.name], ['Order Id', 'Customer/Company Name', 'Employee/First Name', 'Order Line Items/Product/Product Name', 'Order Line Items/Product/Category/Category Name', 'Order Line Items/Quantity', 'Shipper/Company Name']);
+    query: orderId: Integer[1]|showcase::northwind::model::Order.all()->filter(
+      x: showcase::northwind::model::Order[1]|$x.id ==
+        $orderId
+    )->project(
+      [
+        x: showcase::northwind::model::Order[1]|$x.id,
+        x: showcase::northwind::model::Order[1]|$x.customer.companyName,
+        x: showcase::northwind::model::Order[1]|$x.employee.firstName,
+        x: showcase::northwind::model::Order[1]|$x.lineItems.product.name,
+        x: showcase::northwind::model::Order[1]|$x.lineItems.product.category.name,
+        x: showcase::northwind::model::Order[1]|$x.lineItems.quantity,
+        x: showcase::northwind::model::Order[1]|$x.shipper.name
+      ],
+      [
+        'Order Id',
+        'Customer/Company Name',
+        'Employee/First Name',
+        'Order Line Items/Product/Product Name',
+        'Order Line Items/Product/Category/Category Name',
+        'Order Line Items/Quantity',
+        'Shipper/Company Name'
+      ]
+    );
     mapping: showcase::northwind::mapping::NorthwindMapping;
     runtime: showcase::northwind::runtime::NorthwindRuntime;
   }
@@ -286,7 +381,33 @@ Service showcase::northwind::services::tds::ProductRankingWithinCategory
   autoActivateUpdates: true;
   execution: Single
   {
-    query: |showcase::northwind::model::inventory::ProductCategory.all()->groupBy([x|$x.name, x|$x.products.name], [agg(x|$x.products.orderLineItems.order.id, x|$x->distinct()->count())], ['Category Name', 'Products/Product Name', 'OrderCount'])->olapGroupBy(['Category Name'], desc('OrderCount'), x|$x->rank(), 'Rank Within Category')->sort([asc('Category Name'), asc('Rank Within Category')]);
+    query: |showcase::northwind::model::inventory::ProductCategory.all()->groupBy(
+      [
+        x: showcase::northwind::model::inventory::ProductCategory[1]|$x.name,
+        x: showcase::northwind::model::inventory::ProductCategory[1]|$x.products.name
+      ],
+      [
+        agg(
+          x: showcase::northwind::model::inventory::ProductCategory[1]|$x.products.orderLineItems.order.id,
+          x: Integer[*]|$x->distinct()->count()
+        )
+      ],
+      [
+        'Category Name',
+        'Products/Product Name',
+        'OrderCount'
+      ]
+    )->olapGroupBy(
+      ['Category Name'],
+      desc('OrderCount'),
+      x: meta::pure::tds::TDSRow[*]|$x->rank(),
+      'Rank Within Category'
+    )->sort(
+      [
+        asc('Category Name'),
+        asc('Rank Within Category')
+      ]
+    );
     mapping: showcase::northwind::mapping::NorthwindMapping;
     runtime: showcase::northwind::runtime::NorthwindRuntime;
   }
@@ -299,7 +420,28 @@ Service showcase::northwind::services::tds::Customers
   autoActivateUpdates: true;
   execution: Single
   {
-    query: |showcase::northwind::model::crm::Customer.all()->project([x|$x.id, x|$x.companyName, x|$x.contactName, x|$x.companyTitle, x|$x.address.country, x|$x.address.address, x|$x.address.city, x|$x.telephoneNumber], ['Customer Id', 'Company Name', 'Contact Name', 'Company Title', 'Country', 'Address', 'City', 'Phone']);
+    query: |showcase::northwind::model::crm::Customer.all()->project(
+      [
+        x: showcase::northwind::model::crm::Customer[1]|$x.id,
+        x: showcase::northwind::model::crm::Customer[1]|$x.companyName,
+        x: showcase::northwind::model::crm::Customer[1]|$x.contactName,
+        x: showcase::northwind::model::crm::Customer[1]|$x.companyTitle,
+        x: showcase::northwind::model::crm::Customer[1]|$x.address.country,
+        x: showcase::northwind::model::crm::Customer[1]|$x.address.address,
+        x: showcase::northwind::model::crm::Customer[1]|$x.address.city,
+        x: showcase::northwind::model::crm::Customer[1]|$x.telephoneNumber
+      ],
+      [
+        'Customer Id',
+        'Company Name',
+        'Contact Name',
+        'Company Title',
+        'Country',
+        'Address',
+        'City',
+        'Phone'
+      ]
+    );
     mapping: showcase::northwind::mapping::NorthwindMapping;
     runtime: showcase::northwind::runtime::NorthwindRuntime;
   }
@@ -312,7 +454,21 @@ Service showcase::northwind::services::graph::ShipperValidationDefects
   autoActivateUpdates: true;
   execution: Single
   {
-    query: |showcase::northwind::model::crm::ShippingCompany.all()->graphFetchChecked(#{showcase::northwind::model::crm::ShippingCompany{id,telephoneNumber}}#)->serialize(#{showcase::northwind::model::crm::ShippingCompany{id,telephoneNumber}}#);
+    query: |showcase::northwind::model::crm::ShippingCompany.all()->graphFetchChecked(
+      #{
+        showcase::northwind::model::crm::ShippingCompany{
+          id,
+          telephoneNumber
+        }
+      }#
+    )->serialize(
+      #{
+        showcase::northwind::model::crm::ShippingCompany{
+          id,
+          telephoneNumber
+        }
+      }#
+    );
     mapping: showcase::northwind::mapping::NorthwindMapping;
     runtime: showcase::northwind::runtime::NorthwindRuntime;
   }
@@ -505,11 +661,19 @@ Class showcase::northwind::model::geography::Address
 
 Class showcase::northwind::model::crm::Employee
 [
-  dateOfBirthNotInTheFuture: $this.dateOfBirth < now(),
+  dateOfBirthNotInTheFuture: $this.dateOfBirth <
+  now(),
   dateOfBirthValid: $this.dateOfBirth > %1900-01-01,
-  employeeIsOverEighteen: $this.dateOfBirth->dateDiff(today(), meta::pure::functions::date::DurationUnit.YEARS) >= 18,
-  employeeIsUnderEighty: $this.dateOfBirth->dateDiff(today(), meta::pure::functions::date::DurationUnit.YEARS) < 80,
-  notDateOfHireNotBeforeDateOfBirth: $this.dateOfHire > $this.dateOfBirth
+  employeeIsOverEighteen: $this.dateOfBirth->dateDiff(
+  today(),
+  meta::pure::functions::date::DurationUnit.YEARS
+) >= 18,
+  employeeIsUnderEighty: $this.dateOfBirth->dateDiff(
+  today(),
+  meta::pure::functions::date::DurationUnit.YEARS
+) < 80,
+  notDateOfHireNotBeforeDateOfBirth: $this.dateOfHire >
+  $this.dateOfBirth
 ]
 {
   id: Integer[1];
@@ -522,13 +686,22 @@ Class showcase::northwind::model::crm::Employee
   address: showcase::northwind::model::geography::Address[0..1];
   homeTelephoneNumber: String[0..1];
   extension: String[0..1];
-  fullName() {if($this.preferredTitle->isNotEmpty(), |$this.preferredTitle->toOne()->toString() + ' ', |if($this.title->isNotEmpty(), |$this.title->toOne() + ' ', |'')) + $this.firstName + ' ' + $this.lastName}: String[1];
+  fullName() {if(
+  $this.preferredTitle->isNotEmpty(),
+  |$this.preferredTitle->toOne()->toString() + ' ',
+  |if(
+    $this.title->isNotEmpty(),
+    |$this.title->toOne() + ' ',
+    |''
+  )
+) + $this.firstName + ' ' + $this.lastName}: String[1];
 }
 
 Class showcase::northwind::model::geography::USState
 [
   idNotNegative: $this.id >= 0,
-  nameNotBlank: $this.name->isEmpty() || ($this.name->toOne()->length() > 0)
+  nameNotBlank: $this.name->isEmpty() ||
+  ($this.name->toOne()->length() > 0)
 ]
 {
   id: Integer[1];
@@ -611,7 +784,8 @@ Class showcase::northwind::model::geography::SalesTerritory
 Class showcase::northwind::model::crm::ShippingCompany
 [
   idNotNegative: $this.id >= 0,
-  telephoneNumberFormatValid: $this.telephoneNumber->isEmpty() || $this.telephoneNumber->toOne()->matches('(1-)?\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d')
+  telephoneNumberFormatValid: $this.telephoneNumber->isEmpty() ||
+  $this.telephoneNumber->toOne()->matches('(1-)?\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d')
 ]
 {
   id: Integer[1];

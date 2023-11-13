@@ -194,9 +194,18 @@ Class _01_basic::Product
 {
   name: String[1];
   classification: _01_basic::ProductClassification[0..1];
-  cusip() {$this.synonyms->filter(s|$s.type == _01_basic::ProductSynonymType.CUSIP)->toOne().name}: String[1];
-  isin() {$this.synonyms->filter(s|$s.type == _01_basic::ProductSynonymType.ISIN)->toOne().name}: String[1];
-  sedol() {$this.synonyms->filter(s|$s.type == _01_basic::ProductSynonymType.SEDOL)->toOne().name}: String[1];
+  cusip() {$this.synonyms->filter(
+  s: _01_basic::Synonym[1]|$s.type ==
+    _01_basic::ProductSynonymType.CUSIP
+)->toOne().name}: String[1];
+  isin() {$this.synonyms->filter(
+  s: _01_basic::Synonym[1]|$s.type ==
+    _01_basic::ProductSynonymType.ISIN
+)->toOne().name}: String[1];
+  sedol() {$this.synonyms->filter(
+  s: _01_basic::Synonym[1]|$s.type ==
+    _01_basic::ProductSynonymType.SEDOL
+)->toOne().name}: String[1];
 }
 
 Class _01_basic::TradeEvent
@@ -235,12 +244,21 @@ Class _01_basic::Trade
   product: _01_basic::Product[0..1];
   account: _01_basic::Account[0..1];
   events: _01_basic::TradeEvent[*];
-  productIdentifier() {if($this.product->isNotEmpty(), |$this.product->toOne().name, |'Unknown')}: String[1];
-  eventsByDate(date: Date[1]) {$this.events->filter(e|$e.eventDate == $date)}: _01_basic::TradeEvent[*];
+  productIdentifier() {if(
+  $this.product->isNotEmpty(),
+  |$this.product->toOne().name,
+  |'Unknown'
+)}: String[1];
+  eventsByDate(date: Date[1]) {$this.events->filter(
+  e: _01_basic::TradeEvent[1]|$e.eventDate ==
+    $date
+)}: _01_basic::TradeEvent[*];
   tradeDateEvent() {$this.eventsByDate($this.tradeDate->toOne())->toOne()}: _01_basic::TradeEvent[1];
   tradeDataEventType() {$this.tradeDateEvent.eventType}: String[1];
   initiator() {$this.tradeDateEvent.initiator}: _01_basic::Trader[0..1];
-  latestEventDate() {$this.events->map(e|$e.eventDate)->sort()->reverse()->at(0)}: StrictDate[1];
+  latestEventDate() {$this.events->map(
+  e: _01_basic::TradeEvent[1]|$e.eventDate
+)->sort()->reverse()->at(0)}: StrictDate[1];
 }
 
 Class _01_basic::Account
@@ -267,14 +285,36 @@ Class {meta::pure::profiles::doc.doc = 'must pass date for isin/cusip/sedol now.
 {
   name: String[1];
   classification: _01_basic::ProductClassification[1];
-  cusip(businessDate: StrictDate[1]) {$this.synonyms($businessDate)->filter(s|$s.type == _01_basic::ProductSynonymType.CUSIP)->toOne().name}: String[1];
-  isin(businessDate: StrictDate[1]) {$this.synonyms($businessDate)->filter(s|$s.type == _01_basic::ProductSynonymType.ISIN)->toOne().name}: String[1];
-  sedol(businessDate: StrictDate[1]) {$this.synonyms($businessDate)->filter(s|$s.type == _01_basic::ProductSynonymType.SEDOL)->toOne().name}: String[1];
+  cusip(businessDate: StrictDate[1]) {$this.synonyms($businessDate)->filter(
+  s: _02_advanced::SynonymStereoTyped[1]|$s.type ==
+    _01_basic::ProductSynonymType.CUSIP
+)->toOne().name}: String[1];
+  isin(businessDate: StrictDate[1]) {$this.synonyms($businessDate)->filter(
+  s: _02_advanced::SynonymStereoTyped[1]|$s.type ==
+    _01_basic::ProductSynonymType.ISIN
+)->toOne().name}: String[1];
+  sedol(businessDate: StrictDate[1]) {$this.synonyms($businessDate)->filter(
+  s: _02_advanced::SynonymStereoTyped[1]|$s.type ==
+    _01_basic::ProductSynonymType.SEDOL
+)->toOne().name}: String[1];
 }
 
 Class {meta::pure::profiles::doc.doc = 'use tags to add metadata.'} _02_advanced::AccountWithConstraints extends _01_basic::Account
 [
-  tradesNotDoubleBooked: $this->project([a|$a.trades.id], ['tradeId'])->groupBy('tradeId', 'count'->agg(x|$x, y|$y->count()))->filter(t|$t.getInteger('count') > 1)->tdsRows()->isEmpty(),
+  tradesNotDoubleBooked: $this->project(
+  [
+    a: _02_advanced::AccountWithConstraints[1]|$a.trades.id
+  ],
+  ['tradeId']
+)->groupBy(
+  'tradeId',
+  'count'->agg(
+    x: meta::pure::tds::TDSRow[1]|$x,
+    y: meta::pure::tds::TDSRow[*]|$y->count()
+  )
+)->filter(
+  t: meta::pure::tds::TDSRow[1]|$t.getInteger('count') > 1
+)->tdsRows()->isEmpty(),
   noTradesAfterCloseDate: true
 ]
 {
@@ -341,7 +381,35 @@ Mapping _03_modelToModelMapping::simpleModelToModelMapping
   [
     test_1
     (
-      query: |_01_basic::Product.all()->graphFetchChecked(#{_01_basic::Product{name,classification{description,type},synonyms{type,name}}}#)->serialize(#{_01_basic::Product{name,classification{description,type},synonyms{type,name}}}#);
+      query: |_01_basic::Product.all()->graphFetchChecked(
+  #{
+    _01_basic::Product{
+      name,
+      classification{
+        description,
+        type
+      },
+      synonyms{
+        type,
+        name
+      }
+    }
+  }#
+)->serialize(
+  #{
+    _01_basic::Product{
+      name,
+      classification{
+        description,
+        type
+      },
+      synonyms{
+        type,
+        name
+      }
+    }
+  }#
+);
       data:
       [
         <Object, JSON, _03_modelToModelMapping::S_Product, '{"name":"Product1","classification":{"type":"type1","description":"Product classification of type 1"},"synonym":[{"type":"C","name":"C1"}]}'>
@@ -350,7 +418,35 @@ Mapping _03_modelToModelMapping::simpleModelToModelMapping
     ),
     test_2
     (
-      query: |_01_basic::Product.all()->graphFetchChecked(#{_01_basic::Product{name,classification{type,description},synonyms{name,type}}}#)->serialize(#{_01_basic::Product{name,classification{type,description},synonyms{name,type}}}#);
+      query: |_01_basic::Product.all()->graphFetchChecked(
+  #{
+    _01_basic::Product{
+      name,
+      classification{
+        type,
+        description
+      },
+      synonyms{
+        name,
+        type
+      }
+    }
+  }#
+)->serialize(
+  #{
+    _01_basic::Product{
+      name,
+      classification{
+        type,
+        description
+      },
+      synonyms{
+        name,
+        type
+      }
+    }
+  }#
+);
       data:
       [
         <Object, JSON, _03_modelToModelMapping::S_Product, '{"name":"Product2","classification":{"type":"type2","description":"Classification of type2"},"synonym":[{"type":"I","name":"I1"}]}'>
@@ -406,7 +502,35 @@ Mapping _03_modelToModelMapping::unionMapping
   [
     test_1
     (
-      query: |_01_basic::Product.all()->graphFetchChecked(#{_01_basic::Product{name,synonyms{name,type},classification{type,description}}}#)->serialize(#{_01_basic::Product{name,synonyms{name,type},classification{type,description}}}#);
+      query: |_01_basic::Product.all()->graphFetchChecked(
+  #{
+    _01_basic::Product{
+      name,
+      synonyms{
+        name,
+        type
+      },
+      classification{
+        type,
+        description
+      }
+    }
+  }#
+)->serialize(
+  #{
+    _01_basic::Product{
+      name,
+      synonyms{
+        name,
+        type
+      },
+      classification{
+        type,
+        description
+      }
+    }
+  }#
+);
       data:
       [
         <Object, JSON, _03_modelToModelMapping::S_Product, '{"name":"Product1","classification":{"type":"type1","description":"Product of type1"},"synonym":[{"type":"C","name":"C1"},{"type":"I","name":"I1"}]}'>
@@ -415,7 +539,35 @@ Mapping _03_modelToModelMapping::unionMapping
     ),
     test_2
     (
-      query: |_01_basic::Product.all()->graphFetchChecked(#{_01_basic::Product{name,classification{type,description},synonyms{name,type}}}#)->serialize(#{_01_basic::Product{name,classification{type,description},synonyms{name,type}}}#);
+      query: |_01_basic::Product.all()->graphFetchChecked(
+  #{
+    _01_basic::Product{
+      name,
+      classification{
+        type,
+        description
+      },
+      synonyms{
+        name,
+        type
+      }
+    }
+  }#
+)->serialize(
+  #{
+    _01_basic::Product{
+      name,
+      classification{
+        type,
+        description
+      },
+      synonyms{
+        name,
+        type
+      }
+    }
+  }#
+);
       data:
       [
         <Object, JSON, _03_modelToModelMapping::S_Product, '{"name":"Product2","classification":{"type":"type2","description":"Product of classification type2"},"synonym":[{"type":"S","name":"S1"}]}'>

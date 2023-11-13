@@ -179,7 +179,20 @@ Class relationalMapping::Synonym
 
 Class {meta::pure::profiles::doc.doc = 'use tags to add metadata.'} relationalMapping::AccountWithConstraints extends relationalMapping::Account
 [
-  tradesNotDoubleBooked: $this->project([a|$a.trades.id], ['tradeId'])->groupBy('tradeId', 'count'->agg(x|$x, y|$y->count()))->filter(t|$t.getInteger('count') > 1)->tdsRows()->isEmpty(),
+  tradesNotDoubleBooked: $this->project(
+  [
+    a: relationalMapping::AccountWithConstraints[1]|$a.trades.id
+  ],
+  ['tradeId']
+)->groupBy(
+  'tradeId',
+  'count'->agg(
+    x: meta::pure::tds::TDSRow[1]|$x,
+    y: meta::pure::tds::TDSRow[*]|$y->count()
+  )
+)->filter(
+  t: meta::pure::tds::TDSRow[1]|$t.getInteger('count') > 1
+)->tdsRows()->isEmpty(),
   noTradesAfterCloseDate: true
 ]
 {
@@ -217,8 +230,15 @@ Class relationalMapping::Trade
   product: relationalMapping::Product[0..1];
   account: relationalMapping::Account[0..1];
   events: relationalMapping::TradeEvent[*];
-  productIdentifier() {if($this.product->isNotEmpty(), |$this.product->toOne().name, |'Unknown')}: String[1];
-  eventsByDate(date: Date[1]) {$this.events->filter(e|$e.eventDate == $date)}: relationalMapping::TradeEvent[*];
+  productIdentifier() {if(
+  $this.product->isNotEmpty(),
+  |$this.product->toOne().name,
+  |'Unknown'
+)}: String[1];
+  eventsByDate(date: Date[1]) {$this.events->filter(
+  e: relationalMapping::TradeEvent[1]|$e.eventDate ==
+    $date
+)}: relationalMapping::TradeEvent[*];
   tradeDateEvent() {$this.eventsByDate($this.tradeDate->toOne())->toOne()}: relationalMapping::TradeEvent[1];
   tradeDateEventType() {$this.tradeDateEvent.eventType}: String[1];
   initiator() {$this.tradeDateEvent.initiator}: relationalMapping::Trader[0..1];
@@ -228,9 +248,18 @@ Class {meta::pure::profiles::doc.doc = 'must pass date for isin/cusip/sedol now.
 {
   name: String[1];
   classification: relationalMapping::ProductClassification[1];
-  cusip() {$this.synonyms->filter(s|$s.type == relationalMapping::ProductSynonymType.CUSIP)->toOne().name}: String[1];
-  isin() {$this.synonyms->filter(s|$s.type == relationalMapping::ProductSynonymType.ISIN)->toOne().name}: String[1];
-  sedol() {$this.synonyms->filter(s|$s.type == relationalMapping::ProductSynonymType.SEDOL)->toOne().name}: String[1];
+  cusip() {$this.synonyms->filter(
+  s: relationalMapping::Synonym[1]|$s.type ==
+    relationalMapping::ProductSynonymType.CUSIP
+)->toOne().name}: String[1];
+  isin() {$this.synonyms->filter(
+  s: relationalMapping::Synonym[1]|$s.type ==
+    relationalMapping::ProductSynonymType.ISIN
+)->toOne().name}: String[1];
+  sedol() {$this.synonyms->filter(
+  s: relationalMapping::Synonym[1]|$s.type ==
+    relationalMapping::ProductSynonymType.SEDOL
+)->toOne().name}: String[1];
 }
 
 Association relationalMapping::ProdSynonym
@@ -271,7 +300,23 @@ Mapping relationalMapping::RelationalMappingWithFilters
   [
     test_1
     (
-      query: |relationalMapping::Account.all()->graphFetch(#{relationalMapping::Account{name,createDate,closeDate}}#)->serialize(#{relationalMapping::Account{name,createDate,closeDate}}#);
+      query: |relationalMapping::Account.all()->graphFetch(
+  #{
+    relationalMapping::Account{
+      name,
+      createDate,
+      closeDate
+    }
+  }#
+)->serialize(
+  #{
+    relationalMapping::Account{
+      name,
+      createDate,
+      closeDate
+    }
+  }#
+);
       data:
       [
         <Relational, SQL, relationalMapping::TradeAccountDb, 
@@ -286,7 +331,21 @@ Mapping relationalMapping::RelationalMappingWithFilters
     ),
     test_2
     (
-      query: |relationalMapping::TradeEvent.all()->graphFetch(#{relationalMapping::TradeEvent{eventDate,eventType}}#)->serialize(#{relationalMapping::TradeEvent{eventDate,eventType}}#);
+      query: |relationalMapping::TradeEvent.all()->graphFetch(
+  #{
+    relationalMapping::TradeEvent{
+      eventDate,
+      eventType
+    }
+  }#
+)->serialize(
+  #{
+    relationalMapping::TradeEvent{
+      eventDate,
+      eventType
+    }
+  }#
+);
       data:
       [
         <Relational, SQL, relationalMapping::TradeAccountDb, 
@@ -395,7 +454,18 @@ Mapping relationalMapping::TradeAccountRelationalMapping
   [
     test_1
     (
-      query: |relationalMapping::ProductClassification.all()->project([x|$x.description, x|$x.type->contains('Type A'), x|$x.type], ['Description', 'Is Type A', 'Type']);
+      query: |relationalMapping::ProductClassification.all()->project(
+  [
+    x: relationalMapping::ProductClassification[1]|$x.description,
+    x: relationalMapping::ProductClassification[1]|$x.type->contains('Type A'),
+    x: relationalMapping::ProductClassification[1]|$x.type
+  ],
+  [
+    'Description',
+    'Is Type A',
+    'Type'
+  ]
+);
       data:
       [
         <Relational, SQL, relationalMapping::TradeAccountDb, 
@@ -412,7 +482,24 @@ Mapping relationalMapping::TradeAccountRelationalMapping
     ),
     test_2
     (
-      query: |relationalMapping::Product.all()->filter(x|$x.classification.type == 'Type A')->project([x|$x.name, x|$x.classification.type, x|$x.classification.description, x|$x.synonyms.type, x|$x.synonyms.name], ['Name', 'Classification/Type', 'Classification/Description', 'Synonyms/Type', 'Synonyms/Name']);
+      query: |relationalMapping::Product.all()->filter(
+  x: relationalMapping::Product[1]|$x.classification.type == 'Type A'
+)->project(
+  [
+    x: relationalMapping::Product[1]|$x.name,
+    x: relationalMapping::Product[1]|$x.classification.type,
+    x: relationalMapping::Product[1]|$x.classification.description,
+    x: relationalMapping::Product[1]|$x.synonyms.type,
+    x: relationalMapping::Product[1]|$x.synonyms.name
+  ],
+  [
+    'Name',
+    'Classification/Type',
+    'Classification/Description',
+    'Synonyms/Type',
+    'Synonyms/Name'
+  ]
+);
       data:
       [
         <Relational, SQL, relationalMapping::TradeAccountDb, 
@@ -438,7 +525,22 @@ Mapping relationalMapping::TradeAccountRelationalMapping
     ),
     test_3
     (
-      query: |relationalMapping::Account.all()->project([x|$x.name, x|$x.closeDate, x|$x.createDate, x|$x.createDate->monthNumber(), x|$x.createDate->dayOfMonth()], ['Name', 'Close Date', 'Create Date', 'Create Month Number', 'Create dayOfMonth']);
+      query: |relationalMapping::Account.all()->project(
+  [
+    x: relationalMapping::Account[1]|$x.name,
+    x: relationalMapping::Account[1]|$x.closeDate,
+    x: relationalMapping::Account[1]|$x.createDate,
+    x: relationalMapping::Account[1]|$x.createDate->monthNumber(),
+    x: relationalMapping::Account[1]|$x.createDate->dayOfMonth()
+  ],
+  [
+    'Name',
+    'Close Date',
+    'Create Date',
+    'Create Month Number',
+    'Create dayOfMonth'
+  ]
+);
       data:
       [
         <Relational, SQL, relationalMapping::TradeAccountDb, 
@@ -451,7 +553,30 @@ Mapping relationalMapping::TradeAccountRelationalMapping
     ),
     test_4
     (
-      query: |relationalMapping::Trade.all()->project([x|$x.id, x|$x.quantity, x|$x.settlementDateTime, x|$x.tradeDate, x|$x.account.name, x|$x.product.name, x|$x.tradeDateEvent.eventDate, x|$x.tradeDateEventType, x|$x.initiator.name], ['Id', 'Quantity', 'Settlement Date Time', 'Trade Date', 'Account_Name', 'Product_Name', 'Trade Event Date', 'Trade Date Event Type', 'Initiator']);
+      query: |relationalMapping::Trade.all()->project(
+  [
+    x: relationalMapping::Trade[1]|$x.id,
+    x: relationalMapping::Trade[1]|$x.quantity,
+    x: relationalMapping::Trade[1]|$x.settlementDateTime,
+    x: relationalMapping::Trade[1]|$x.tradeDate,
+    x: relationalMapping::Trade[1]|$x.account.name,
+    x: relationalMapping::Trade[1]|$x.product.name,
+    x: relationalMapping::Trade[1]|$x.tradeDateEvent.eventDate,
+    x: relationalMapping::Trade[1]|$x.tradeDateEventType,
+    x: relationalMapping::Trade[1]|$x.initiator.name
+  ],
+  [
+    'Id',
+    'Quantity',
+    'Settlement Date Time',
+    'Trade Date',
+    'Account_Name',
+    'Product_Name',
+    'Trade Event Date',
+    'Trade Date Event Type',
+    'Initiator'
+  ]
+);
       data:
       [
         <Relational, SQL, relationalMapping::TradeAccountDb, 
