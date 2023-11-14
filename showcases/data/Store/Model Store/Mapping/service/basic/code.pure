@@ -251,7 +251,7 @@ Mapping mapping::ModelToModelMapping
               }#
           ];
         },
-        ExpectedToFail:
+        IBMData2:
         {
           doc: '';
           data:
@@ -275,7 +275,7 @@ Mapping mapping::ModelToModelMapping
                   ExternalFormat
                   #{
                     contentType: 'application/json';
-                    data: '{\n  "employees" : [ {\n    "fullName" : "John Smith"\n  } ],\n  "name" : "IBMWhoops",\n  "myLegalName()" : "my name is: IBM"\n}';
+                    data: '{\n  "employees" : [ {\n    "fullName" : "John Smith"\n  } ],\n  "name" : "IBM",\n  "myLegalName()" : "my name is: IBM"\n}';
                   }#;
               }#
           ];
