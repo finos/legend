@@ -12,4 +12,4 @@ docker run \
 	-p $LEGEND_OMNIBUS_SDLC_PORT:$LEGEND_OMNIBUS_SDLC_PORT \
 	-p $LEGEND_OMNIBUS_STUDIO_PORT:$LEGEND_OMNIBUS_STUDIO_PORT \
 	--env LEGEND_OMNIBUS_CONFIG_SDLC_MODE="file-system" \
-	legend-omnibus:latest-example-esg
+	legend-omnibus:latest-example-esg-2023

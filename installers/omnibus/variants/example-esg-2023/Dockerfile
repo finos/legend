@@ -119,7 +119,7 @@ ARG SDLC_FS_DIR=/app/sdlc-fs
 RUN mkdir -p $SDLC_FS_DIR/lib
 COPY --from=sdlc-file-system-backend-image /app/bin/*.jar $SDLC_FS_DIR/lib
 RUN mkdir -p $LEGEND_OMNIBUS_SDLC_FILE_SYSTEM_ROOT_DIR
-RUN tar -xzf $SDLC_DIR/project-data__example-esg.tar.gz -C $LEGEND_OMNIBUS_SDLC_FILE_SYSTEM_ROOT_DIR
+RUN tar -xzf $SDLC_DIR/project-data__example-esg-2023.tar.gz -C $LEGEND_OMNIBUS_SDLC_FILE_SYSTEM_ROOT_DIR
 RUN apt-get update && apt-get install -y git
 
 # ---------------- Setup Legend Studio ----------------
@@ -152,4 +152,4 @@ RUN $SUPERVISOR_DIR/report-build-info.slim.sh
 # ---------------- Run Omnibus ----------------
 
 CMD (/app/supervisor/check-setup.slim.sh &) && \
-  supervisord -c /app/supervisor/supervisor.example-esg.conf
+  supervisord -c /app/supervisor/supervisor.example-esg-2023.conf
