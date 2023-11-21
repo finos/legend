@@ -29,4 +29,4 @@ docker build \
   --build-arg LEGEND_OMNIBUS_STUDIO_VERSION=$LEGEND_OMNIBUS_STUDIO_VERSION \
   --build-arg LEGEND_OMNIBUS_STUDIO_PORT=$LEGEND_OMNIBUS_STUDIO_PORT \
   \
-  -f ./variants/example-esg/Dockerfile -t legend-omnibus:latest-example-esg .
+  -f ./variants/example-esg-2023/Dockerfile -t legend-omnibus:latest-example-esg-2023 .
