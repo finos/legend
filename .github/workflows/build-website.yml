@@ -6,7 +6,8 @@ on:
       - "**"
 
 jobs:
-  website-build:
+  build-website:
+    name: Build Website
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
