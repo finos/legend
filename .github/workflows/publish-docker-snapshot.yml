@@ -16,7 +16,7 @@ jobs:
         variant:
           - full
           - slim
-          - sim-dbs
+          - slim-dbs
     steps:
       - name: Checkout code
         uses: actions/checkout@v3.5.2
