@@ -17,6 +17,7 @@ Association com::trade::Trade_LegalEntity
   trades: com::trade::Trade[*];
 }
 
+
 ###Relational
 Database com::trade::TradeDatabase
 (
@@ -42,6 +43,7 @@ Database com::entity::EntityDatabase
     )
   )
 )
+
 
 ###Mapping
 Mapping com::entity::LegalEntityMapping
@@ -83,6 +85,7 @@ Mapping com::trade::TradeWithLegalEntityMapping
   }
 )
 
+
 ###DataSpace
 DataSpace com::entity::EntityDataspace
 {
@@ -96,6 +99,7 @@ DataSpace com::entity::EntityDataspace
   ];
   defaultExecutionContext: 'default';
 }
+
 
 ###Connection
 RelationalDatabaseConnection com::entity::EntityConnection
@@ -117,6 +121,7 @@ RelationalDatabaseConnection com::trade::TradeConnection
   };
   auth: DefaultH2;
 }
+
 
 ###Runtime
 Runtime com::entity::EntityRuntime
