@@ -1,0 +1,156 @@
+###Pure
+Class com::entity::LegalEntity
+{
+  entityId: String[1];
+  name: String[1];
+}
+
+Class com::trade::Trade
+{
+  id: String[1];
+  value: Integer[1];
+}
+
+Association com::trade::Trade_LegalEntity
+{
+  client: com::entity::LegalEntity[1];
+  trades: com::trade::Trade[*];
+}
+
+
+###Relational
+Database com::trade::TradeDatabase
+(
+  Schema Trade
+  (
+    Table Trade
+    (
+      id VARCHAR(32) PRIMARY KEY,
+      value INTEGER NOT NULL,
+      ENTITY_ID_FK VARCHAR(32) NOT NULL
+    )
+  )
+)
+
+Database com::entity::EntityDatabase
+(
+  Schema Entity
+  (
+    Table LegalEntity
+    (
+      ENTITY_ID VARCHAR(32) PRIMARY KEY,
+      name VARCHAR(32) NOT NULL
+    )
+  )
+)
+
+
+###Mapping
+Mapping com::entity::LegalEntityMapping
+(
+  *com::entity::LegalEntity: Relational
+  {
+    ~primaryKey
+    (
+      [com::entity::EntityDatabase]Entity.LegalEntity.ENTITY_ID
+    )
+    ~mainTable [com::entity::EntityDatabase]Entity.LegalEntity
+    entityId: [com::entity::EntityDatabase]Entity.LegalEntity.ENTITY_ID,
+    name: [com::entity::EntityDatabase]Entity.LegalEntity.name
+  }
+)
+
+Mapping com::trade::TradeWithLegalEntityMapping
+(
+  include dataspace com::entity::EntityDataspace
+
+  com::trade::Trade[trade]: Relational
+  {
+    ~primaryKey
+    (
+      [com::trade::TradeDatabase]Trade.Trade.id
+    )
+    ~mainTable [com::trade::TradeDatabase]Trade.Trade
+    id: [com::trade::TradeDatabase]Trade.Trade.id,
+    value: [com::trade::TradeDatabase]Trade.Trade.value,
+    +entityIdFk: String[1]: [com::trade::TradeDatabase]Trade.Trade.ENTITY_ID_FK
+  }
+
+  com::trade::Trade_LegalEntity: XStore
+  {
+    client[trade, com_entity_LegalEntity]: $this.entityIdFk ==
+  $that.entityId,
+    trades[com_entity_LegalEntity, trade]: $this.entityId ==
+  $that.entityIdFk
+  }
+)
+
+
+###DataSpace
+DataSpace com::entity::EntityDataspace
+{
+  executionContexts:
+  [
+    {
+      name: 'default';
+      mapping: com::entity::LegalEntityMapping;
+      defaultRuntime: com::entity::EntityRuntime;
+    }
+  ];
+  defaultExecutionContext: 'default';
+}
+
+
+###Connection
+RelationalDatabaseConnection com::entity::EntityConnection
+{
+  store: com::entity::EntityDatabase;
+  type: H2;
+  specification: LocalH2
+  {
+  };
+  auth: DefaultH2;
+}
+
+RelationalDatabaseConnection com::trade::TradeConnection
+{
+  store: com::trade::TradeDatabase;
+  type: H2;
+  specification: LocalH2
+  {
+  };
+  auth: DefaultH2;
+}
+
+
+###Runtime
+Runtime com::entity::EntityRuntime
+{
+  mappings:
+  [
+    com::entity::LegalEntityMapping
+  ];
+  connectionStores:
+  [
+    com::entity::EntityConnection:
+    [
+      com::entity::EntityDatabase
+    ]
+  ];
+}
+
+Runtime com::trade::TradeRuntime
+{
+  mappings:
+  [
+    com::trade::TradeWithLegalEntityMapping
+  ];
+  connectionStores:
+  [
+    com::trade::TradeConnection:
+    [
+      com::trade::TradeDatabase,
+      com::entity::EntityDatabase
+    ]
+  ];
+}
