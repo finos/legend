@@ -76,9 +76,9 @@ Mapping com::trade::TradeWithLegalEntityMapping
 
   com::trade::Trade_LegalEntity: XStore
   {
-    client[trade, com_gs_entity_LegalEntity]: $this.entityIdFk ==
+    client[trade, com_entity_LegalEntity]: $this.entityIdFk ==
   $that.entityId,
-    trades[com_gs_entity_LegalEntity, trade]: $this.entityId ==
+    trades[com_entity_LegalEntity, trade]: $this.entityId ==
   $that.entityIdFk
   }
 )
@@ -148,75 +148,4 @@ Runtime com::trade::TradeRuntime
       com::entity::EntityDatabase
     ]
   ];
-}
-
-###Service
-Service com::trade::ServiceSimpleProject
-{
-  pattern: '/trade/simpleJoinProjectService';
-  owners:
-  [
-    'owner'
-  ];
-  documentation: '';
-  autoActivateUpdates: true;
-  execution: Single
-  {
-    query: |com::trade::Trade.all()->project(
-      [
-        x|$x.value,
-        x|$x.client.name
-      ],
-      [
-        'Value',
-        'Client/Name'
-      ]
-    );
-    mapping: com::trade::TradeWithLegalEntityMapping;
-    runtime: com::trade::TradeRuntime;
-  }
-  testSuites:
-  [
-    testSuite_1:
-    {
-      data:
-      [
-        connections:
-        [
-          com::trade::TradeConnection:
-            Relational
-            #{
-              Trade.Trade:
-                'id,value,ENTITY_ID_FK\n'+
-                '1,100,abc\n'+
-                '2,200,def\n';
-              EntityDatabase.LegalEntiy:
-                'ENTITY_ID, name\n'+
-                'abc,EntityName1\n'+
-                'def,EntityName2\n';
-            }#
-        ]
-      ]
-      tests:
-      [
-        test_1:
-        {
-          serializationFormat: PURE_TDSOBJECT;
-          asserts:
-          [
-            assertion_1:
-              EqualToJson
-              #{
-                expected:
-                  ExternalFormat
-                  #{
-                    contentType: 'application/json';
-                    data: '[\n  {\n    "Value": 100,\n    "Client/Name": "EntityName1"\n  },\n  {\n    "Value": 200,\n    "Client/Name": "EntityName2"\n  }\n]';
-                  }#;
-              }#
-          ]
-        }
-      ]
-    }
-  ]
 }
