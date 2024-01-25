@@ -134,7 +134,7 @@ public class ShowcaseCompilerTest
             String classifierPath = classifierPathMap.get(packageableElement.getClass());
             if(testableClassifiers.contains(classifierPath))
             {
-                TestableRunner runner = new TestableRunner(new ModelManager(DeploymentMode.PROD));
+                TestableRunner runner = new TestableRunner();
                 RunTestsTestableInput runTestsTestableInput = new RunTestsTestableInput();
                 runTestsTestableInput.testable = packageableElement.getPath();
                 RunTestsResult testsResult = runner.doTests(Collections.singletonList(runTestsTestableInput), puremodel, data);
