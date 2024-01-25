@@ -154,3 +154,80 @@ Runtime com::trade::TradeRuntime
     ]
   ];
 }
+
+
+###Service
+Service com::trade::ServiceSimpleProject
+{
+  pattern: '/trade/simpleJoinProjectService';
+  owners:
+  [
+    'user1',
+    'user2'
+  ];
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |com::trade::Trade.all()->project(
+      [
+        x: com::trade::Trade[1]|$x.value,
+        x: com::trade::Trade[1]|$x.client.name
+      ],
+      [
+        'Value',
+        'Client/Name'
+      ]
+    );
+    mapping: com::trade::TradeWithLegalEntityMapping;
+    runtime: com::trade::TradeRuntime;
+  }
+  testSuites:
+  [
+    testSuite_1:
+    {
+      data:
+      [
+        connections:
+        [
+          com::trade::TradeConnection:
+            Relational
+            #{
+              Trade.Trade:
+                'id,value,ENTITY_ID_FK\n'+
+                '1,100,abc\n'+
+                '2,200,def\n';
+            }#,
+          com::trade::TradeConnection:
+            Relational
+            #{
+              Entity.LegalEntity:
+                'ENTITY_ID,name\n'+
+                'abc,Entity1\n'+
+                'def,Entity2\n';
+            }#
+        ]
+      ]
+      tests:
+      [
+        test_1:
+        {
+          serializationFormat: PURE_TDSOBJECT;
+          asserts:
+          [
+            assertion_1:
+              EqualToJson
+              #{
+                expected:
+                  ExternalFormat
+                  #{
+                    contentType: 'application/json';
+                    data: '[ {\n  "Value" : 100,\n  "Client/Name" : "Entity1"\n}, {\n  "Value" : 200,\n  "Client/Name" : "Entity2"\n} ]';
+                  }#;
+              }#
+          ]
+        }
+      ]
+    }
+  ]
+}
