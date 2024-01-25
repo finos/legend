@@ -155,6 +155,7 @@ Runtime com::trade::TradeRuntime
   ];
 }
 
+
 ###Service
 Service com::trade::ServiceSimpleProject
 {
