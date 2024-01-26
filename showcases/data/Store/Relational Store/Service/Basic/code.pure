@@ -372,6 +372,20 @@ Service showcase::northwind::services::tds::OrderDetailsByIdTDS
     mapping: showcase::northwind::mapping::NorthwindMapping;
     runtime: showcase::northwind::runtime::NorthwindRuntime;
   }
+  postValidations:
+  [
+    {
+      description: 'a simple passing validation with static parameter';
+      params:[
+        |10248
+      ];
+      assertions:[
+        rowCountGreaterThan10: tds: TabularDataSet[1]|$tds->filter(
+  row|$row.getString('Employee/First Name')->startsWith('T')
+)->meta::legend::service::validation::assertTabularDataSetEmpty('Expected no Employee/First Name to begin with the letter T')
+      ];
+    }
+  ]
 }
 
 Service showcase::northwind::services::tds::ProductRankingWithinCategory
@@ -445,6 +459,20 @@ Service showcase::northwind::services::tds::Customers
     mapping: showcase::northwind::mapping::NorthwindMapping;
     runtime: showcase::northwind::runtime::NorthwindRuntime;
   }
+  postValidations:
+  [
+    {
+      description: 'A simple passing validation';
+      params:[
+
+      ];
+      assertions:[
+        noCompanyNamedAroundtheHorn: tds: TabularDataSet[1]|$tds->filter(
+  row|$row.getString('Company Name')->contains('Around the Hornsss')
+)->meta::legend::service::validation::assertTabularDataSetEmpty('Expected there is no company named Around the Hornsss')
+      ];
+    }
+  ]
 }
 
 Service showcase::northwind::services::graph::ShipperValidationDefects
