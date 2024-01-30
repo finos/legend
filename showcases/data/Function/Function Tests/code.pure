@@ -1,0 +1,26 @@
+function model::Simple(): String[1]
+{
+  'Hello' + ' World!'
+}
+{
+  testPass | Simple() => 'Hello World!';
+}
+
+function model::Hello(name: String[1]): String[1]
+{
+  'Hello World! My name is ' + $name + '.'
+}
+{
+  testSuite_1
+  (
+    testPass | Hello('John') => 'Hello World! My name is John.';
+  )
+}
+
+function model::SimpleReference(): String[1]
+{
+  model::Simple()
+}
+{
+  testPass | SimpleReference() => 'Hello World!';
+}

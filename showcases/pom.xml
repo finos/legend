@@ -44,6 +44,12 @@
         </dependency>
         <dependency>
             <groupId>org.finos.legend.engine</groupId>
+            <artifactId>legend-engine-test-runner-function</artifactId>
+            <version>${legend.engine.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.finos.legend.engine</groupId>
             <artifactId>legend-engine-test-runner-mapping</artifactId>
             <version>${legend.engine.version}</version>
             <scope>test</scope>
