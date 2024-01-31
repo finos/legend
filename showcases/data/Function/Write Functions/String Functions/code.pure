@@ -1,0 +1,48 @@
+function legend::string::test::testTrim(val: String[1]): String[1]
+{
+  $val->trim()
+}
+{
+  test1 | testTrim(' A Simple Text To Trim    ') => 'A Simple Text To Trim';
+  test2 | testTrim(' A Simple Text To Trim') => 'A Simple Text To Trim';
+}
+
+function legend::string::test::testToUpper(val: String[1]): String[1]
+{
+  $val->toUpper()
+}
+{
+  test1 | testToUpper('TesT') => 'TEST';
+  test2 | testToUpper('TEST') => 'TEST';
+}
+
+function legend::string::test::testToLower(val: String[1]): String[1]
+{
+  $val->toLower()
+}
+{
+  test1 | testToLower('TesT') => 'test';
+  test2 | testToLower('TEST') => 'test';
+}
+
+function legend::string::test::testParseInteger(val: String[1]): Integer[1]
+{
+  $val->parseInteger()
+}
+{
+  test1 | testParseInteger('17') => 17;
+  test2 | testParseInteger('+00000017') => 17;
+  test3 | testParseInteger('-17') => -17;
+  test4 | testParseInteger('9999999999999992') => 9999999999999992;
+}
+
+function legend::string::test::testParseFloat(val: String[1]): Float[1]
+{
+  $val->parseFloat()
+}
+{
+  test1 | testParseFloat('3.14159') => 3.14159;
+  test2 | testParseFloat('+0000003.1415900000') => 3.14159;
+  test3 | testParseFloat('-0000003.1415900000') => -3.14159;
+  test4 | testParseFloat('0.0') => 0.0;
+}
