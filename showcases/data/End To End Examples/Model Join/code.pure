@@ -63,8 +63,8 @@ function com::trade::TestFunction(): meta::pure::tds::TabularDataSet[1]
 {
   com::trade::Trade.all()->project(
     [
-      x|$x.value,
-      x|$x.client.name
+      x: com::trade::Trade[1]|$x.value,
+      x: com::trade::Trade[1]|$x.client.name
     ],
     [
       'Value',

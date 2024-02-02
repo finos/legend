@@ -1,0 +1,195 @@
+###DataSpace
+DataSpace domain::COVIDDataspace
+{
+  executionContexts:
+  [
+    {
+      name: 'dummyContext';
+      mapping: mapping::CovidDataMapping;
+      defaultRuntime: runtime::H2Runtime;
+    }
+  ];
+  defaultExecutionContext: 'dummyContext';
+  title: 'COVID Sample Data';
+  description: '# Peleus rupit\n\n## Sum super gerens paterque\n\nLorem markdownum presso, et tamen cogitis, Taenarius lactantia fluxerunt\nterrita, vota. Tempore flumina ferrumque bella.\n\n- Per dixit\n- Truces tellusque indignata ducem\n- Cervice venitis cavernis minus\n\n## Tum ausus fovebam incursus magis dici extemplo\n\nPiscator degenerat desertaque quid scelus tyranni feror ipsa mortis nec silva\nsparsus neci cum? Est patulas meam decorem, dat demit corpora exuritque Ulixes,\ngenitore. Captare certa amore pressos, Diamque\n[traxit](http://istecondar.net/ministropudoris) devorat duritia ecce, capillos\nfuerint progenitore curva relictas. Iubae pectus et quateret, non vires tibi\ncacumina figuram Antigonen rursus verti.\n\n## Dicta nec Thestiadae tristi exempla sed suoque\n\nFlumina quae loricaeque meruique defensae *me terram* tamen attollere totum\nneque nullos. Quem plus, stratum.\n\n## Quaeque si reddite summoque vultu Teleboasque vincere\n\nIsmariae me munus umbram. Usum pedem multis quotiensque mirantum Cephenum et\namori Procne locutum auctor Volturnus pavent virgineas.\n\n    if (edi + sidebarTooltip < aiffDisk) {\n        drive_key_firewire += bank(searchHardBoot(bus, packet_click));\n    }\n    var adRow = dlc_rootkit(rdramMegabit) - hertzBanner * 2 +\n            memory_adc.horizontal(class_box_rte, disk, lte_grep);\n    if (grayscale) {\n        spool_windows_metal.zif_firewire *= 3;\n        emoticon_mp = user.thunderboltIcqBus.installer_remote(4, searchCable) *\n                kibibyteYoutubeRaster.simm(-3, nosqlCharacter, sip);\n    }\n    var blob = -2;\n\n## Est magis interdum in luctus\n\nPrimus illa sub bis infregit saepe agrestem Cyllare lumen cultrosque **Cnosia**.\nSuis est fero durisque satis.\n\n- Nos quas est maesta aliquis se unum\n- Tu ossa Cupido sagitta hanc inflati profuso\n- Modo est proles pavor\n- Stillabant pallada invitaque et tantum dictaque in\n- Generum coegi tum edaci\n\nSuo nec cerae me omnem Famemque, passi si auditque ullo, praebita. Gravi annos\npudore formidabilis erat pectora perpetuo qua oscula cum ad sed Nabataeus\nRomethiumque deum Erectheus? O Victoria rostro utque terras vitisque classe.\nTibi [miserrima hirta](http://decentia-qui.net/docta-petentem), eratis saepius\ntuus.';
+  executables:
+  [
+    {
+      title: 'Exec 1';
+      description: 'Some exec description';
+      executable: service::CovidDataMulti;
+    },
+    {
+      title: 'Exec 2';
+      description: 'Some more exec description';
+      executable: service::CovidDataSingle;
+    }
+  ];
+}
+
+
+###Service
+Service service::CovidDataMulti
+{
+  pattern: '/9566f101-2108-408f-863f-6d7e154dc17a';
+  owners:
+  [
+    'anonymous',
+    'akphi'
+  ];
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Multi
+  {
+    query: |domain::COVIDData.all()->project(
+      [
+        x: domain::COVIDData[1]|$x.cases
+      ],
+      ['Cases']
+    );
+    key: 'env';
+    executions['PROD']:
+    {
+      mapping: mapping::CovidDataMapping;
+      runtime: runtime::H2Runtime;
+    }
+    executions['DEV']:
+    {
+      mapping: mapping::CovidDataMapping;
+      runtime: runtime::H2Runtime;
+    }
+  }
+}
+
+Service service::CovidDataSingle
+{
+  pattern: '/9566f101-2108-408f-863f-6d7e154dc17b';
+  owners:
+  [
+    'anonymous',
+    'akphi'
+  ];
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |domain::COVIDData.all()->project(
+      [
+        x: domain::COVIDData[1]|$x.cases
+      ],
+      ['Cases']
+    );
+    mapping: mapping::CovidDataMapping;
+    runtime: runtime::H2Runtime;
+  }
+}
+
+
+###Relational
+Database store::CovidDataStore
+(
+  Table DEMOGRAPHICS
+  (
+    FIPS VARCHAR(200),
+    STATE VARCHAR(200)
+  )
+  Table COVID_DATA
+  (
+    ID INTEGER PRIMARY KEY,
+    FIPS VARCHAR(200),
+    DATE DATE,
+    CASE_TYPE VARCHAR(200),
+    CASES INTEGER,
+    LAST_REPORTED_FLAG BIT
+  )
+
+  Join CovidDataDemographicsJoin(DEMOGRAPHICS.FIPS = COVID_DATA.FIPS)
+)
+
+
+###Pure
+Enum {doc.doc = 'List of known viruses'} domain::Virus
+{
+  {doc.doc = 'Severe acute respiratory syndrome (SARS) is a viral respiratory disease of zoonotic origin caused by the severe acute respiratory syndrome coronavirus'} SARS,
+  {doc.doc = 'Coronavirus disease 2019 (COVID-19) is a contagious disease caused by a virus, the severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)'} COVID19
+}
+
+Class {doc.doc = 'COVID-19 data demographics consisting of geolocation information'} domain::Demographics
+{
+  {doc.doc = 'The Federal Information Processing Standard (FIPS) code (FIPS 6-4) uniquely identifies counties and county equivalents in the United States'} fips: String[0..1];
+  {doc.doc = 'United States in 2-letter codes format'} state: String[0..1];
+}
+
+Class {doc.doc = 'COVID-19 data report consisting of case statistics details and basic information on demographics'} domain::COVIDData
+{
+  id: Integer[1];
+  {doc.doc = 'The Federal Information Processing Standard (FIPS) code (FIPS 6-4) uniquely identifies counties and county equivalents in the United States'} fips: String[0..1];
+  date: StrictDate[0..1];
+  caseType: String[0..1];
+  cases: Float[0..1];
+  {doc.doc = 'A flag indicating if the similar case data has been reported previously'} lastReportedFlag: Boolean[0..1];
+  demographics: domain::Demographics[0..1];
+}
+
+
+###Mapping
+Mapping mapping::CovidDataMapping
+(
+  domain::Demographics: Relational
+  {
+    ~primaryKey
+    (
+      [store::CovidDataStore]DEMOGRAPHICS.FIPS
+    )
+    ~mainTable [store::CovidDataStore]DEMOGRAPHICS
+    fips: [store::CovidDataStore]DEMOGRAPHICS.FIPS,
+    state: [store::CovidDataStore]DEMOGRAPHICS.STATE
+  }
+  domain::COVIDData: Relational
+  {
+    ~primaryKey
+    (
+      [store::CovidDataStore]COVID_DATA.ID
+    )
+    ~mainTable [store::CovidDataStore]COVID_DATA
+    id: [store::CovidDataStore]COVID_DATA.ID,
+    fips: [store::CovidDataStore]COVID_DATA.FIPS,
+    date: [store::CovidDataStore]COVID_DATA.DATE,
+    caseType: [store::CovidDataStore]COVID_DATA.CASE_TYPE,
+    cases: [store::CovidDataStore]COVID_DATA.CASES,
+    lastReportedFlag: [store::CovidDataStore]COVID_DATA.LAST_REPORTED_FLAG,
+    demographics[domain_Demographics]: [store::CovidDataStore]@CovidDataDemographicsJoin
+  }
+)
+
+
+###Connection
+RelationalDatabaseConnection runtime::connection::H2Connection
+{
+  store: store::CovidDataStore;
+  type: H2;
+  specification: LocalH2
+  {
+    testDataSetupSqls: [
+      'DROP TABLE IF EXISTS COVID_DATA;\nDROP TABLE IF EXISTS DEMOGRAPHICS;\n\nCREATE TABLE DEMOGRAPHICS(\n  FIPS VARCHAR(200) PRIMARY KEY,\n  STATE VARCHAR(200)\n);\n\nCREATE TABLE COVID_DATA(\n  ID INT PRIMARY KEY,\n  FIPS VARCHAR(200),\n  DATE DATE,\n  CASE_TYPE VARCHAR(200),\n  CASES INT,\n  LAST_REPORTED_FLAG BIT,\n  FOREIGN KEY (FIPS) REFERENCES DEMOGRAPHICS(FIPS)\n);\n\nINSERT INTO DEMOGRAPHICS VALUES(\'1\', \'NY\');\nINSERT INTO DEMOGRAPHICS VALUES(\'2\', \'NJ\');\nINSERT INTO DEMOGRAPHICS VALUES(\'3\', \'CA\');\n\nINSERT INTO COVID_DATA VALUES(1, \'1\', \'2021-04-01\', \'Confirmed\', 405, 0);\nINSERT INTO COVID_DATA VALUES(2, \'2\', \'2021-04-01\', \'Active\', 290, 1);\n'
+      ];
+  };
+  auth: DefaultH2;
+}
+
+
+###Runtime
+Runtime runtime::H2Runtime
+{
+  mappings:
+  [
+    mapping::CovidDataMapping
+  ];
+  connections:
+  [
+    store::CovidDataStore:
+    [
+      connection_1: runtime::connection::H2Connection
+    ]
+  ];
+}

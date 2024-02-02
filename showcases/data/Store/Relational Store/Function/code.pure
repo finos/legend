@@ -4,18 +4,18 @@ Data data::RelationalData
   Relational
   #{
     default.PersonTable:
-              'id,firm_id,firstName,lastName,employeeType\n' +
-              '1,1,John,Doe,FTO\n' +
-              '2,1,Nicole,Smith,FTC\n' +
-              '3,2,Time,Smith,FTE\n';
+      'id,firm_id,firstName,lastName,employeeType\n'+
+      '1,1,John,Doe,FTO\n'+
+      '2,1,Nicole,Smith,FTC\n'+
+      '3,2,Time,Smith,FTE\n';
 
     default.FirmTable:
-          'id,legal_name\n' +
-          '1,Finos\n' +
-          '2,Apple';
-
+      'id,legal_name\n'+
+      '1,Finos\n'+
+      '2,Apple\n';
   }#
 }
+
 
 ###Relational
 Database store::TestDB
@@ -48,8 +48,8 @@ Class model::Person
 
 Enum model::EmployeeType
 {
-    CONTRACT,
-    FULL_TIME
+  CONTRACT,
+  FULL_TIME
 }
 
 Class model::Firm
@@ -73,13 +73,6 @@ Mapping execution::RelationalMapping
     lastName: [store::TestDB]PersonTable.lastName,
     employeeType: EnumerationMapping EmployeeTypeMapping: [store::TestDB]PersonTable.employeeType
   }
-
-  model::EmployeeType: EnumerationMapping EmployeeTypeMapping
-  {
-    CONTRACT: ['FTC', 'FTO'],
-    FULL_TIME: 'FTE'
-  }
-
   *model::Firm: Relational
   {
     ~primaryKey
@@ -89,6 +82,12 @@ Mapping execution::RelationalMapping
     ~mainTable [store::TestDB]FirmTable
     legalName: [store::TestDB]FirmTable.legal_name,
     employees[model_Person]: [store::TestDB]@FirmPerson
+  }
+
+  model::EmployeeType: EnumerationMapping EmployeeTypeMapping
+  {
+    CONTRACT: ['FTC', 'FTO'],
+    FULL_TIME: ['FTE']
   }
 )
 
@@ -107,6 +106,7 @@ RelationalDatabaseConnection model::MyConnection
   auth: DefaultH2;
 }
 
+
 ###Runtime
 Runtime execution::Runtime
 {
@@ -123,6 +123,7 @@ Runtime execution::Runtime
   ];
 }
 
+
 ###Runtime
 Runtime execution::RuntimeWithStoreConnections
 {
@@ -134,52 +135,19 @@ Runtime execution::RuntimeWithStoreConnections
   [
     model::MyConnection:
     [
-       store::TestDB
+      store::TestDB
     ]
   ];
 }
+
 
 ###Pure
 function model::PersonQuery(): meta::pure::tds::TabularDataSet[1]
 {
   model::Person.all()->project(
     [
-      x|$x.firstName,
-      x|$x.lastName
-    ],
-    [
-      'First Name',
-      'Last Name'
-    ]
-  )->from(
-    execution::RelationalMapping,
-    execution::Runtime
-  )
-}
-{
-  testSuite_1
-  (
-   store::TestDB:
-          Relational
-          #{
-            default.PersonTable:
-              'id,firm_id,firstName,lastName,employeeType\n'+
-              '1,1,I\'m John,"Doe, Jr",FTO\n'+
-              '2,1,Nicole,Smith,FTC\n'+
-              '3,2,Time,Smith,FTE\n';
-          }#;
-    test_1 | PersonQuery() => (JSON) '[ {\n  "First Name" : "I\'m John",\n  "Last Name" : "Doe, Jr"\n}, {\n  "First Name" : "Nicole",\n  "Last Name" : "Smith"\n}, {\n  "First Name" : "Time",\n  "Last Name" : "Smith"\n} ]';
-  )
-}
-function model::PersonWithParams(firstName: String[1]): meta::pure::tds::TabularDataSet[1]
-{
-  model::Person.all()->filter(
-    x|$x.firstName ==
-      $firstName
-  )->project(
-    [
-      x|$x.firstName,
-      x|$x.lastName
+      x: model::Person[1]|$x.firstName,
+      x: model::Person[1]|$x.lastName
     ],
     [
       'First Name',
@@ -194,24 +162,60 @@ function model::PersonWithParams(firstName: String[1]): meta::pure::tds::Tabular
   testSuite_1
   (
     store::TestDB:
-          Relational
-          #{
-            default.PersonTable:
-              'id,firm_id,firstName,lastName,employeeType\n'+
-              '1,1,I\'m John,"Doe, Jr",FTO\n'+
-              '2,1,Nicole,Smith,FTC\n'+
-              '3,2,Time,Smith,FTE\n';
-          }#;
+        Relational
+        #{
+          default.PersonTable:
+            'id,firm_id,firstName,lastName,employeeType\n'+
+            '1,1,I\'m John,"Doe, Jr",FTO\n'+
+            '2,1,Nicole,Smith,FTC\n'+
+            '3,2,Time,Smith,FTE\n';
+        }#;
+    test_1 | PersonQuery() => (JSON) '[ {\n  "First Name" : "I\'m John",\n  "Last Name" : "Doe, Jr"\n}, {\n  "First Name" : "Nicole",\n  "Last Name" : "Smith"\n}, {\n  "First Name" : "Time",\n  "Last Name" : "Smith"\n} ]';
+  )
+}
+
+function model::PersonWithParams(firstName: String[1]): meta::pure::tds::TabularDataSet[1]
+{
+  model::Person.all()->filter(
+    x: model::Person[1]|$x.firstName ==
+      $firstName
+  )->project(
+    [
+      x: model::Person[1]|$x.firstName,
+      x: model::Person[1]|$x.lastName
+    ],
+    [
+      'First Name',
+      'Last Name'
+    ]
+  )->from(
+    execution::RelationalMapping,
+    execution::Runtime
+  )
+}
+{
+  testSuite_1
+  (
+    store::TestDB:
+        Relational
+        #{
+          default.PersonTable:
+            'id,firm_id,firstName,lastName,employeeType\n'+
+            '1,1,I\'m John,"Doe, Jr",FTO\n'+
+            '2,1,Nicole,Smith,FTC\n'+
+            '3,2,Time,Smith,FTE\n';
+        }#;
     testFail | PersonWithParams('Nicole') => (JSON) '[]';
     testPass | PersonWithParams('Nicole') => (JSON) '[{\n  "First Name" : "Nicole","Last Name" : "Smith"} ]';
   )
 }
+
 function model::PersonQuerySharedData(): meta::pure::tds::TabularDataSet[1]
 {
   model::Person.all()->project(
     [
-      x|$x.firstName,
-      x|$x.lastName
+      x: model::Person[1]|$x.firstName,
+      x: model::Person[1]|$x.lastName
     ],
     [
       'First Name',
@@ -234,8 +238,8 @@ function model::PersonWithConnectionStores(): meta::pure::tds::TabularDataSet[1]
 {
   model::Person.all()->project(
     [
-      x|$x.firstName,
-      x|$x.lastName
+      x: model::Person[1]|$x.firstName,
+      x: model::Person[1]|$x.lastName
     ],
     [
       'First Name',

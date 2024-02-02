@@ -1,0 +1,285 @@
+###Diagram
+Diagram model::GeneralDiagram
+{
+  classView 4cec85f9-9b66-450a-bdcb-c855aa0314e1
+  {
+    class: model::animal::reptile::Reptile;
+    position: (568.0,404.0);
+    rectangle: (120.84765625,58.0);
+  }
+  classView 902bf14e-e7ff-40e7-92e4-8780f91bfa29
+  {
+    class: model::animal::Animal;
+    position: (809.0,187.0);
+    rectangle: (108.64453125,44.0);
+  }
+  generalizationView
+  {
+    source: 4cec85f9-9b66-450a-bdcb-c855aa0314e1;
+    target: 902bf14e-e7ff-40e7-92e4-8780f91bfa29;
+    points: [(628.423828125,433.0),(863.322265625,209.0)];
+  }
+}
+
+Diagram model::animal::AnimalDiagram
+{
+  classView 641a0336-d4b5-418c-b656-2f52461264e2
+  {
+    class: model::animal::mammal::Mammal;
+    position: (427.0,210.0);
+    rectangle: (125.1123046875,44.0);
+  }
+  classView b92253d8-0389-4c7d-b5d2-3cdc3bb1ad98
+  {
+    class: model::animal::reptile::Reptile;
+    position: (787.0,216.0);
+    rectangle: (120.84765625,58.0);
+  }
+  classView 7a992cfc-c888-4091-aa00-ab430915aced
+  {
+    class: model::animal::Animal;
+    position: (515.423828125,-7.5);
+    rectangle: (199.716796875,100.0);
+  }
+  generalizationView
+  {
+    source: b92253d8-0389-4c7d-b5d2-3cdc3bb1ad98;
+    target: 7a992cfc-c888-4091-aa00-ab430915aced;
+    points: [(847.423828125,245.0),(615.2822265625,42.5)];
+  }
+}
+
+
+###DataSpace
+DataSpace {meta::pure::profiles::enterprise.taxonomyNodes = 'abcdxyz003,abcdxyz002'} model::animal::mammal::Mammal1
+{
+  executionContexts:
+  [
+    {
+      name: 'dummyContext';
+      mapping: model::dummyMapping;
+      defaultRuntime: model::dummyRuntime;
+    }
+  ];
+  defaultExecutionContext: 'dummyContext';
+}
+
+DataSpace model::NoDiagram
+{
+  executionContexts:
+  [
+    {
+      name: 'dummyContext';
+      mapping: model::dummyMapping;
+      defaultRuntime: model::dummyRuntime;
+    }
+  ];
+  defaultExecutionContext: 'dummyContext';
+  description: 'A simple data space with not much info and no diagram';
+}
+
+DataSpace {meta::pure::profiles::enterprise.taxonomyNodes = 'abcdxyz006', doc.doc = 'Lorem ipsum', doc.doc = 'Lorem ipsum2'} model::animal::reptile::Reptile1
+{
+  executionContexts:
+  [
+    {
+      name: 'dummyContext';
+      mapping: model::dummyMapping;
+      defaultRuntime: model::dummyRuntime;
+    }
+  ];
+  defaultExecutionContext: 'dummyContext';
+  supportInfo: Email {
+    address: 'someEmail@test.org';
+  };
+}
+
+DataSpace <<doc.deprecated>> {meta::pure::profiles::enterprise.taxonomyNodes = 'abcdxyz005', doc.doc = 'Lorem ipsum', doc.doc = 'Lorem ipsum2', meta::pure::metamodel::dataSpace::profiles::DataSpaceInfo.deprecationNotice = 'Please use AnimalDS dataspace instead - link provided'} model::animal::AnimalDS_Old
+{
+  executionContexts:
+  [
+    {
+      name: 'dummyContext';
+      description: 'An important execution context';
+      mapping: model::dummyMapping;
+      defaultRuntime: model::dummyRuntime;
+    },
+    {
+      name: 'dummyContext2';
+      mapping: model::dummyMapping2;
+      defaultRuntime: model::dummyRuntime;
+    },
+    {
+      name: 'dummyContext3';
+      mapping: model::dummyMapping2;
+      defaultRuntime: model::dummyRuntime2;
+    }
+  ];
+  defaultExecutionContext: 'dummyContext';
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+  diagrams:
+  [
+    {
+      title: '';
+      diagram: model::animal::AnimalDiagram;
+    },
+    {
+      title: '';
+      diagram: model::GeneralDiagram;
+    }
+  ];
+  supportInfo: Email {
+    address: 'someEmail@test.org';
+  };
+}
+
+DataSpace <<meta::pure::metamodel::dataSpace::profiles::DataSpaceInfo.Verified>> model::animal::AnimalDS2
+{
+  executionContexts:
+  [
+    {
+      name: 'dummyContext';
+      description: 'An important execution context';
+      mapping: model::dummyMapping;
+      defaultRuntime: model::dummyRuntime;
+    },
+    {
+      name: 'dummyContext2';
+      mapping: model::dummyMapping2;
+      defaultRuntime: model::dummyRuntime;
+    },
+    {
+      name: 'dummyContext3';
+      mapping: model::dummyMapping2;
+      defaultRuntime: model::dummyRuntime2;
+    }
+  ];
+  defaultExecutionContext: 'dummyContext';
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+  diagrams:
+  [
+    {
+      title: '';
+      diagram: model::animal::AnimalDiagram;
+    },
+    {
+      title: '';
+      diagram: model::GeneralDiagram;
+    }
+  ];
+  supportInfo: Email {
+    address: 'someEmail@test.org';
+  };
+}
+
+DataSpace <<meta::pure::metamodel::dataSpace::profiles::DataSpaceInfo.Verified>> model::animal::AnimalDS
+{
+  executionContexts:
+  [
+    {
+      name: 'dummyContext';
+      title: 'Haha Nice';
+      description: 'An important execution context';
+      mapping: model::dummyMapping;
+      defaultRuntime: model::dummyRuntime;
+    },
+    {
+      name: 'dummyContext2';
+      mapping: model::dummyMapping2;
+      defaultRuntime: model::dummyRuntime;
+    },
+    {
+      name: 'dummyContext3';
+      mapping: model::dummyMapping2;
+      defaultRuntime: model::dummyRuntime2;
+    }
+  ];
+  defaultExecutionContext: 'dummyContext';
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+  diagrams:
+  [
+    {
+      title: 'Diag 1';
+      description: 'Some diagram description';
+      diagram: model::animal::AnimalDiagram;
+    },
+    {
+      title: 'Diag 2';
+      description: 'Some more diagram description';
+      diagram: model::GeneralDiagram;
+    }
+  ];
+  supportInfo: Email {
+    address: 'someEmail@test.org';
+  };
+}
+
+
+###Pure
+Enum model::animal::Family
+{
+  UO,
+  OP
+}
+
+Class {doc.doc = ''} model::animal::reptile::Reptile extends model::animal::Animal2, model::animal::Animal
+{
+  hasFin: Boolean[1];
+}
+
+Class model::animal::Animal
+{
+  family: model::animal::Family[1];
+  noOfLegs: Number[1];
+  children: model::animal::GenericAnimal2[*];
+  something() {$this.noOfLegs > 4}: Boolean[1];
+  something2() {[]}: model::animal::GenericAnimal[0..1];
+}
+
+Class model::animal::GenericAnimal2
+{
+}
+
+Class model::animal::GenericAnimal
+{
+}
+
+Class model::animal::mammal::Mammal
+{
+  noOfLegs: String[1];
+}
+
+Class model::animal::Animal2
+{
+  name: String[1];
+  name2() {''}: String[1];
+}
+
+
+###Mapping
+Mapping model::dummyMapping2
+(
+)
+
+Mapping model::dummyMapping
+(
+)
+
+
+###Runtime
+Runtime model::dummyRuntime
+{
+  mappings:
+  [
+    model::dummyMapping,
+    model::dummyMapping2
+  ];
+}
+
+Runtime model::dummyRuntime2
+{
+  mappings:
+  [
+    model::dummyMapping2
+  ];
+}

@@ -1,7 +1,6 @@
 ---
-title: Data Space
+title: Data Space Basic Specification
 description:
-development: true
 ---
 
-TODO: Some dummy description
+DataSpace Basic Specification
