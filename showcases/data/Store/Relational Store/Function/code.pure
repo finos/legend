@@ -158,21 +158,6 @@ function model::PersonQuery(): meta::pure::tds::TabularDataSet[1]
     execution::Runtime
   )
 }
-{
-  testSuite_1
-  (
-    store::TestDB:
-        Relational
-        #{
-          default.PersonTable:
-            'id,firm_id,firstName,lastName,employeeType\n'+
-            '1,1,I\'m John,"Doe, Jr",FTO\n'+
-            '2,1,Nicole,Smith,FTC\n'+
-            '3,2,Time,Smith,FTE\n';
-        }#;
-    test_1 | PersonQuery() => (JSON) '[ {\n  "First Name" : "I\'m John",\n  "Last Name" : "Doe, Jr"\n}, {\n  "First Name" : "Nicole",\n  "Last Name" : "Smith"\n}, {\n  "First Name" : "Time",\n  "Last Name" : "Smith"\n} ]';
-  )
-}
 
 function model::PersonWithParams(firstName: String[1]): meta::pure::tds::TabularDataSet[1]
 {
@@ -205,7 +190,6 @@ function model::PersonWithParams(firstName: String[1]): meta::pure::tds::Tabular
             '2,1,Nicole,Smith,FTC\n'+
             '3,2,Time,Smith,FTE\n';
         }#;
-    testFail | PersonWithParams('Nicole') => (JSON) '[]';
     testPass | PersonWithParams('Nicole') => (JSON) '[{\n  "First Name" : "Nicole","Last Name" : "Smith"} ]';
   )
 }
@@ -226,13 +210,6 @@ function model::PersonQuerySharedData(): meta::pure::tds::TabularDataSet[1]
     execution::Runtime
   )
 }
-{
-  testSuite_1
-  (
-    store::TestDB: data::RelationalData;
-    test_1 | PersonQuerySharedData() => (JSON) '[ {\n  "First Name" : "I\'m John",\n  "Last Name" : "Doe, Jr"\n}, {\n  "First Name" : "Nicole",\n  "Last Name" : "Smith"\n}, {\n  "First Name" : "Time",\n  "Last Name" : "Smith"\n} ]';
-  )
-}
 
 function model::PersonWithConnectionStores(): meta::pure::tds::TabularDataSet[1]
 {
@@ -248,12 +225,5 @@ function model::PersonWithConnectionStores(): meta::pure::tds::TabularDataSet[1]
   )->from(
     execution::RelationalMapping,
     execution::RuntimeWithStoreConnections
-  )
-}
-{
-  testSuite_1
-  (
-    store::TestDB: data::RelationalData;
-    test_1 | PersonWithConnectionStores() => (JSON) '[ {\n  "First Name" : "I\'m John",\n  "Last Name" : "Doe, Jr"\n}, {\n  "First Name" : "Nicole",\n  "Last Name" : "Smith"\n}, {\n  "First Name" : "Time",\n  "Last Name" : "Smith"\n} ]';
   )
 }

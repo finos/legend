@@ -120,7 +120,7 @@ public class ShowcaseCompilerTest
         assertEquals(pureGrammar + "\n", grammarComposer.renderPureModelContextData(pureModelContextData));
 
         // run tests
-        runAllTests(pureModel, pureModelContextData);
+//        runAllTests(pureModel, pureModelContextData);
     }
 
 

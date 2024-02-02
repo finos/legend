@@ -1,5 +1,5 @@
 ---
-title: Integrate Mappings leveraging Functions
+title: Model Join Leveraging DataSpace and Functions to Query
 description: How to integrate your mapping with another group's model without tying yourself to their underlying physical implementation or specific mapping.
 ---
 
