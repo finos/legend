@@ -1,0 +1,238 @@
+###Pure
+Class simple::model::Firm
+{
+  ID: Integer[1];
+  legalName: String[1];
+  employeeCount: Integer[1];
+  mnc: Boolean[1];
+  estDate: StrictDate[1];
+  lastUpdate: DateTime[1];
+  entityType: simple::model::EntityType[1];
+  secondLineOfAddress: String[0..1];
+}
+
+Enum simple::model::EntityType
+{
+  Organization,
+  Company
+}
+
+
+###Relational
+Database simple::store::H2DB
+(
+  Schema FIRM_SCHEMA
+  (
+    Table FIRM_TABLE
+    (
+      ID INTEGER PRIMARY KEY,
+      FIRM_DETAILS VARCHAR(1000)
+    )
+  )
+)
+
+Database simple::store::SnowflakeDB
+(
+  Schema FIRM_SCHEMA
+  (
+    Table FIRM_TABLE
+    (
+      ID INTEGER PRIMARY KEY,
+      FIRM_DETAILS SEMISTRUCTURED
+    )
+  )
+)
+
+Database simple::store::MemSQLDB
+(
+  Schema FIRM_SCHEMA
+  (
+    Table FIRM_TABLE
+    (
+      ID INTEGER PRIMARY KEY,
+      FIRM_DETAILS JSON
+    )
+  )
+)
+
+
+###Mapping
+Mapping simple::mapping::SnowflakeMapping
+(
+  *simple::model::Firm: Relational
+  {
+    ~primaryKey
+    (
+      [simple::store::SnowflakeDB]FIRM_SCHEMA.FIRM_TABLE.ID
+    )
+    ~mainTable [simple::store::SnowflakeDB]FIRM_SCHEMA.FIRM_TABLE
+    ID: [simple::store::SnowflakeDB]FIRM_SCHEMA.FIRM_TABLE.ID,
+    legalName: extractFromSemiStructured([simple::store::SnowflakeDB]FIRM_SCHEMA.FIRM_TABLE.FIRM_DETAILS, 'legalName', 'VARCHAR'),
+    employeeCount: extractFromSemiStructured([simple::store::SnowflakeDB]FIRM_SCHEMA.FIRM_TABLE.FIRM_DETAILS, 'employeeCount', 'INTEGER'),
+    mnc: extractFromSemiStructured([simple::store::SnowflakeDB]FIRM_SCHEMA.FIRM_TABLE.FIRM_DETAILS, 'mnc', 'BOOLEAN'),
+    estDate: extractFromSemiStructured([simple::store::SnowflakeDB]FIRM_SCHEMA.FIRM_TABLE.FIRM_DETAILS, 'dates.estDate', 'DATE'),
+    lastUpdate: extractFromSemiStructured([simple::store::SnowflakeDB]FIRM_SCHEMA.FIRM_TABLE.FIRM_DETAILS, '["dates"]["last Update"]', 'TIMESTAMP'),
+    entityType: EnumerationMapping simple_model_EntityType: extractFromSemiStructured([simple::store::SnowflakeDB]FIRM_SCHEMA.FIRM_TABLE.FIRM_DETAILS, 'entity.entityType', 'VARCHAR'),
+    secondLineOfAddress: extractFromSemiStructured([simple::store::SnowflakeDB]FIRM_SCHEMA.FIRM_TABLE.FIRM_DETAILS, 'address.lines[1]["details"]', 'VARCHAR')
+  }
+
+  simple::model::EntityType: EnumerationMapping
+  {
+    Organization: ['O'],
+    Company: ['P']
+  }
+)
+
+Mapping simple::mapping::MemSQLMapping
+(
+  *simple::model::Firm: Relational
+  {
+    ~primaryKey
+    (
+      [simple::store::MemSQLDB]FIRM_SCHEMA.FIRM_TABLE.ID
+    )
+    ~mainTable [simple::store::MemSQLDB]FIRM_SCHEMA.FIRM_TABLE
+    ID: [simple::store::MemSQLDB]FIRM_SCHEMA.FIRM_TABLE.ID,
+    legalName: extractFromSemiStructured([simple::store::MemSQLDB]FIRM_SCHEMA.FIRM_TABLE.FIRM_DETAILS, 'legalName', 'VARCHAR'),
+    employeeCount: extractFromSemiStructured([simple::store::MemSQLDB]FIRM_SCHEMA.FIRM_TABLE.FIRM_DETAILS, 'employeeCount', 'INTEGER'),
+    mnc: extractFromSemiStructured([simple::store::MemSQLDB]FIRM_SCHEMA.FIRM_TABLE.FIRM_DETAILS, 'mnc', 'BOOLEAN'),
+    estDate: extractFromSemiStructured([simple::store::MemSQLDB]FIRM_SCHEMA.FIRM_TABLE.FIRM_DETAILS, 'dates.estDate', 'DATE'),
+    lastUpdate: extractFromSemiStructured([simple::store::MemSQLDB]FIRM_SCHEMA.FIRM_TABLE.FIRM_DETAILS, '["dates"]["last Update"]', 'TIMESTAMP'),
+    entityType: EnumerationMapping simple_model_EntityType: extractFromSemiStructured([simple::store::MemSQLDB]FIRM_SCHEMA.FIRM_TABLE.FIRM_DETAILS, 'entity.entityType', 'VARCHAR'),
+    secondLineOfAddress: extractFromSemiStructured([simple::store::MemSQLDB]FIRM_SCHEMA.FIRM_TABLE.FIRM_DETAILS, 'address.lines[1]["details"]', 'VARCHAR')
+  }
+
+  simple::model::EntityType: EnumerationMapping
+  {
+    Organization: ['O'],
+    Company: ['P']
+  }
+)
+
+Mapping simple::mapping::H2Mapping
+(
+  *simple::model::Firm: Relational
+  {
+    ~primaryKey
+    (
+      [simple::store::H2DB]FIRM_SCHEMA.FIRM_TABLE.ID
+    )
+    ~mainTable [simple::store::H2DB]FIRM_SCHEMA.FIRM_TABLE
+    ID: [simple::store::H2DB]FIRM_SCHEMA.FIRM_TABLE.ID,
+    legalName: extractFromSemiStructured([simple::store::H2DB]FIRM_SCHEMA.FIRM_TABLE.FIRM_DETAILS, 'legalName', 'VARCHAR'),
+    employeeCount: extractFromSemiStructured([simple::store::H2DB]FIRM_SCHEMA.FIRM_TABLE.FIRM_DETAILS, 'employeeCount', 'INTEGER'),
+    mnc: extractFromSemiStructured([simple::store::H2DB]FIRM_SCHEMA.FIRM_TABLE.FIRM_DETAILS, 'mnc', 'BOOLEAN'),
+    estDate: extractFromSemiStructured([simple::store::H2DB]FIRM_SCHEMA.FIRM_TABLE.FIRM_DETAILS, 'dates.estDate', 'DATE'),
+    lastUpdate: extractFromSemiStructured([simple::store::H2DB]FIRM_SCHEMA.FIRM_TABLE.FIRM_DETAILS, '["dates"]["last Update"]', 'TIMESTAMP'),
+    entityType: EnumerationMapping simple_model_EntityType: extractFromSemiStructured([simple::store::H2DB]FIRM_SCHEMA.FIRM_TABLE.FIRM_DETAILS, 'entity.entityType', 'VARCHAR'),
+    secondLineOfAddress: extractFromSemiStructured([simple::store::H2DB]FIRM_SCHEMA.FIRM_TABLE.FIRM_DETAILS, 'address.lines[1]["details"]', 'VARCHAR')
+  }
+
+  simple::model::EntityType: EnumerationMapping
+  {
+    Organization: ['O'],
+    Company: ['C']
+  }
+)
+
+
+###Runtime
+Runtime simple::runtime::SnowflakeRuntime
+{
+  mappings:
+  [
+    simple::mapping::SnowflakeMapping
+  ];
+  connections:
+  [
+    simple::store::SnowflakeDB:
+    [
+      connection_1:
+      #{
+        RelationalDatabaseConnection
+        {
+          store: simple::store::SnowflakeDB;
+          type: Snowflake;
+          specification: Snowflake
+          {
+            name: 'dbName';
+            account: 'account';
+            warehouse: 'warehouse';
+            region: 'region';
+          };
+          auth: DefaultH2;
+        }
+      }#
+    ]
+  ];
+}
+
+
+###Pure
+function simple::dotAndBracketNotationAccess(): TabularDataSet[1]
+{
+  simple::model::Firm.all()->project(
+    [
+      x: simple::model::Firm[1]|$x.ID,
+      x: simple::model::Firm[1]|$x.estDate,
+      x: simple::model::Firm[1]|$x.lastUpdate,
+      x: simple::model::Firm[1]|$x.secondLineOfAddress
+    ],
+    [
+      'Id',
+      'Dot Only',
+      'Bracket Only',
+      'Dot & Bracket'
+    ]
+  )
+}
+
+function simple::arrayElementNoFlattenAccess(): TabularDataSet[1]
+{
+  simple::model::Firm.all()->project(
+    [
+      x: simple::model::Firm[1]|$x.ID,
+      x: simple::model::Firm[1]|$x.secondLineOfAddress
+    ],
+    [
+      'Id',
+      'Second Line of Address'
+    ]
+  )
+}
+
+function simple::extractEnumProperty(): TabularDataSet[1]
+{
+  simple::model::Firm.all()->project(
+    [
+      x: simple::model::Firm[1]|$x.ID,
+      x: simple::model::Firm[1]|$x.entityType
+    ],
+    [
+      'Id',
+      'Entity Type'
+    ]
+  )
+}
+
+function simple::allDataTypesAccess(): TabularDataSet[1]
+{
+  simple::model::Firm.all()->project(
+    [
+      x: simple::model::Firm[1]|$x.ID,
+      x: simple::model::Firm[1]|$x.legalName,
+      x: simple::model::Firm[1]|$x.estDate,
+      x: simple::model::Firm[1]|$x.mnc,
+      x: simple::model::Firm[1]|$x.employeeCount,
+      x: simple::model::Firm[1]|$x.lastUpdate
+    ],
+    [
+      'Id',
+      'Legal Name',
+      'Est Date',
+      'Mnc',
+      'Employee Count',
+      'Last Update'
+    ]
+  )
+}
