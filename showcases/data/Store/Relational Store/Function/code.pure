@@ -1,0 +1,255 @@
+###Data
+Data data::RelationalData
+{
+  Relational
+  #{
+    default.PersonTable:
+              'id,firm_id,firstName,lastName,employeeType\n' +
+              '1,1,John,Doe,FTO\n' +
+              '2,1,Nicole,Smith,FTC\n' +
+              '3,2,Time,Smith,FTE\n';
+
+    default.FirmTable:
+          'id,legal_name\n' +
+          '1,Finos\n' +
+          '2,Apple';
+
+  }#
+}
+
+###Relational
+Database store::TestDB
+(
+  Table FirmTable
+  (
+    id INTEGER PRIMARY KEY,
+    legal_name VARCHAR(200)
+  )
+  Table PersonTable
+  (
+    id INTEGER PRIMARY KEY,
+    firm_id INTEGER,
+    firstName VARCHAR(200),
+    lastName VARCHAR(200),
+    employeeType VARCHAR(200)
+  )
+
+  Join FirmPerson(PersonTable.firm_id = FirmTable.id)
+)
+
+
+###Pure
+Class model::Person
+{
+  firstName: String[1];
+  lastName: String[1];
+  employeeType: model::EmployeeType[1];
+}
+
+Enum model::EmployeeType
+{
+    CONTRACT,
+    FULL_TIME
+}
+
+Class model::Firm
+{
+  legalName: String[1];
+  employees: model::Person[*];
+}
+
+
+###Mapping
+Mapping execution::RelationalMapping
+(
+  *model::Person: Relational
+  {
+    ~primaryKey
+    (
+      [store::TestDB]PersonTable.id
+    )
+    ~mainTable [store::TestDB]PersonTable
+    firstName: [store::TestDB]PersonTable.firstName,
+    lastName: [store::TestDB]PersonTable.lastName,
+    employeeType: EnumerationMapping EmployeeTypeMapping: [store::TestDB]PersonTable.employeeType
+  }
+
+  model::EmployeeType: EnumerationMapping EmployeeTypeMapping
+  {
+    CONTRACT: ['FTC', 'FTO'],
+    FULL_TIME: 'FTE'
+  }
+
+  *model::Firm: Relational
+  {
+    ~primaryKey
+    (
+      [store::TestDB]FirmTable.id
+    )
+    ~mainTable [store::TestDB]FirmTable
+    legalName: [store::TestDB]FirmTable.legal_name,
+    employees[model_Person]: [store::TestDB]@FirmPerson
+  }
+)
+
+
+###Connection
+RelationalDatabaseConnection model::MyConnection
+{
+  store: store::TestDB;
+  type: H2;
+  specification: LocalH2
+  {
+    testDataSetupSqls: [
+      'Drop table if exists FirmTable;\nDrop table if exists PersonTable;\nCreate Table FirmTable(id INT, Legal_Name VARCHAR(200));\nCreate Table PersonTable(id INT, firm_id INT, lastName VARCHAR(200), firstName VARCHAR(200), employeeType VARCHAR(200));\nInsert into FirmTable (id, Legal_Name) values (1, \'FirmA\');\nInsert into FirmTable (id, Legal_Name) values (2, \'Apple\');\nInsert into PersonTable (id, firm_id, lastName, firstName, employeeType) values (1, 1, \'John\', \'Doe\', \'FTC\');\nInsert into PersonTable (id, firm_id, lastName, firstName, employeeType) values (2, 2, \'Tim\', \'Smith\', \'FTE\');\nInsert into PersonTable (id, firm_id, lastName, firstName, employeeType) values (3, 3, \'Nicole\', \'Doe\', \'FTO\');\n\n'
+      ];
+  };
+  auth: DefaultH2;
+}
+
+###Runtime
+Runtime execution::Runtime
+{
+  mappings:
+  [
+    execution::RelationalMapping
+  ];
+  connections:
+  [
+    store::TestDB:
+    [
+      connection_1: model::MyConnection
+    ]
+  ];
+}
+
+###Runtime
+Runtime execution::RuntimeWithStoreConnections
+{
+  mappings:
+  [
+    execution::RelationalMapping
+  ];
+  connectionStores:
+  [
+    model::MyConnection:
+    [
+       store::TestDB
+    ]
+  ];
+}
+
+###Pure
+function model::PersonQuery(): meta::pure::tds::TabularDataSet[1]
+{
+  model::Person.all()->project(
+    [
+      x|$x.firstName,
+      x|$x.lastName
+    ],
+    [
+      'First Name',
+      'Last Name'
+    ]
+  )->from(
+    execution::RelationalMapping,
+    execution::Runtime
+  )
+}
+{
+  testSuite_1
+  (
+   store::TestDB:
+          Relational
+          #{
+            default.PersonTable:
+              'id,firm_id,firstName,lastName,employeeType\n'+
+              '1,1,I\'m John,"Doe, Jr",FTO\n'+
+              '2,1,Nicole,Smith,FTC\n'+
+              '3,2,Time,Smith,FTE\n';
+          }#;
+    test_1 | PersonQuery() => (JSON) '[ {\n  "First Name" : "I\'m John",\n  "Last Name" : "Doe, Jr"\n}, {\n  "First Name" : "Nicole",\n  "Last Name" : "Smith"\n}, {\n  "First Name" : "Time",\n  "Last Name" : "Smith"\n} ]';
+  )
+}
+function model::PersonWithParams(firstName: String[1]): meta::pure::tds::TabularDataSet[1]
+{
+  model::Person.all()->filter(
+    x|$x.firstName ==
+      $firstName
+  )->project(
+    [
+      x|$x.firstName,
+      x|$x.lastName
+    ],
+    [
+      'First Name',
+      'Last Name'
+    ]
+  )->from(
+    execution::RelationalMapping,
+    execution::Runtime
+  )
+}
+{
+  testSuite_1
+  (
+    store::TestDB:
+          Relational
+          #{
+            default.PersonTable:
+              'id,firm_id,firstName,lastName,employeeType\n'+
+              '1,1,I\'m John,"Doe, Jr",FTO\n'+
+              '2,1,Nicole,Smith,FTC\n'+
+              '3,2,Time,Smith,FTE\n';
+          }#;
+    testFail | PersonWithParams('Nicole') => (JSON) '[]';
+    testPass | PersonWithParams('Nicole') => (JSON) '[{\n  "First Name" : "Nicole","Last Name" : "Smith"} ]';
+  )
+}
+function model::PersonQuerySharedData(): meta::pure::tds::TabularDataSet[1]
+{
+  model::Person.all()->project(
+    [
+      x|$x.firstName,
+      x|$x.lastName
+    ],
+    [
+      'First Name',
+      'Last Name'
+    ]
+  )->from(
+    execution::RelationalMapping,
+    execution::Runtime
+  )
+}
+{
+  testSuite_1
+  (
+    store::TestDB: data::RelationalData;
+    test_1 | PersonQuerySharedData() => (JSON) '[ {\n  "First Name" : "I\'m John",\n  "Last Name" : "Doe, Jr"\n}, {\n  "First Name" : "Nicole",\n  "Last Name" : "Smith"\n}, {\n  "First Name" : "Time",\n  "Last Name" : "Smith"\n} ]';
+  )
+}
+
+function model::PersonWithConnectionStores(): meta::pure::tds::TabularDataSet[1]
+{
+  model::Person.all()->project(
+    [
+      x|$x.firstName,
+      x|$x.lastName
+    ],
+    [
+      'First Name',
+      'Last Name'
+    ]
+  )->from(
+    execution::RelationalMapping,
+    execution::RuntimeWithStoreConnections
+  )
+}
+{
+  testSuite_1
+  (
+    store::TestDB: data::RelationalData;
+    test_1 | PersonWithConnectionStores() => (JSON) '[ {\n  "First Name" : "I\'m John",\n  "Last Name" : "Doe, Jr"\n}, {\n  "First Name" : "Nicole",\n  "Last Name" : "Smith"\n}, {\n  "First Name" : "Time",\n  "Last Name" : "Smith"\n} ]';
+  )
+}

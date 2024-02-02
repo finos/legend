@@ -1,0 +1,199 @@
+###DataSpace
+DataSpace com::entity::EntityDataspace
+{
+  executionContexts:
+  [
+    {
+      name: 'default';
+      mapping: com::entity::LegalEntityMapping;
+      defaultRuntime: com::entity::EntityRuntime;
+    }
+  ];
+  defaultExecutionContext: 'default';
+}
+
+
+###Relational
+Database com::trade::TradeDatabase
+(
+  Schema Trade
+  (
+    Table Trade
+    (
+      id VARCHAR(32) PRIMARY KEY,
+      value INTEGER NOT NULL,
+      ENTITY_ID_FK VARCHAR(32) NOT NULL
+    )
+  )
+)
+
+Database com::entity::EntityDatabase
+(
+  Schema Entity
+  (
+    Table LegalEntity
+    (
+      ENTITY_ID VARCHAR(32) PRIMARY KEY,
+      name VARCHAR(32) NOT NULL
+    )
+  )
+)
+
+
+###Pure
+Class com::entity::LegalEntity
+{
+  entityId: String[1];
+  name: String[1];
+}
+
+Class com::trade::Trade
+{
+  id: String[1];
+  value: Integer[1];
+}
+
+Association com::trade::Trade_LegalEntity
+{
+  client: com::entity::LegalEntity[1];
+  trades: com::trade::Trade[*];
+}
+
+function com::trade::TestFunction(): meta::pure::tds::TabularDataSet[1]
+{
+  com::trade::Trade.all()->project(
+    [
+      x|$x.value,
+      x|$x.client.name
+    ],
+    [
+      'Value',
+      'Client/Name'
+    ]
+  )->from(
+    com::trade::TradeWithLegalEntityMapping,
+    com::trade::TradeRuntime
+  )
+}
+{
+  testSuite_1
+  (
+    com::entity::EntityDatabase:
+        Relational
+        #{
+          Entity.LegalEntity:
+            'ENTITY_ID,name\n'+
+            'abc,EntityName1\n'+
+            'def,EntityName2\n';
+        }#;
+    com::trade::TradeDatabase:
+        Relational
+        #{
+          Trade.Trade:
+            'id,value,ENTITY_ID_FK\n'+
+            '1,100,abc\n'+
+            '2,200,def\n';
+        }#;
+    test_1 | TestFunction() => (JSON) '[ {"Value" : 100,"Client/Name" : "EntityName1"}, {"Value" : 200,"Client/Name" : "EntityName2"} ]';
+  )
+}
+
+
+###Mapping
+Mapping com::trade::TradeWithLegalEntityMapping
+(
+  include dataspace com::entity::EntityDataspace
+
+  com::trade::Trade[trade]: Relational
+  {
+    ~primaryKey
+    (
+      [com::trade::TradeDatabase]Trade.Trade.id
+    )
+    ~mainTable [com::trade::TradeDatabase]Trade.Trade
+    id: [com::trade::TradeDatabase]Trade.Trade.id,
+    value: [com::trade::TradeDatabase]Trade.Trade.value,
+    +entityIdFk: String[1]: [com::trade::TradeDatabase]Trade.Trade.ENTITY_ID_FK
+  }
+
+  com::trade::Trade_LegalEntity: XStore
+  {
+    client[trade, com_entity_LegalEntity]: $this.entityIdFk ==
+  $that.entityId,
+    trades[com_entity_LegalEntity, trade]: $this.entityId ==
+  $that.entityIdFk
+  }
+)
+
+Mapping com::entity::LegalEntityMapping
+(
+  *com::entity::LegalEntity: Relational
+  {
+    ~primaryKey
+    (
+      [com::entity::EntityDatabase]Entity.LegalEntity.ENTITY_ID
+    )
+    ~mainTable [com::entity::EntityDatabase]Entity.LegalEntity
+    entityId: [com::entity::EntityDatabase]Entity.LegalEntity.ENTITY_ID,
+    name: [com::entity::EntityDatabase]Entity.LegalEntity.name
+  }
+)
+
+
+###Connection
+RelationalDatabaseConnection com::entity::EntityConnection
+{
+  store: com::entity::EntityDatabase;
+  type: H2;
+  specification: LocalH2
+  {
+  };
+  auth: DefaultH2;
+}
+
+RelationalDatabaseConnection com::trade::TradeConnection
+{
+  store: com::trade::TradeDatabase;
+  type: H2;
+  quoteIdentifiers: true;
+  specification: LocalH2
+  {
+    testDataSetupSqls: [
+      'Drop Schema if exists TRADE;\nCreate Schema if not exists TRADE;\nCreate Table TRADE.Trade(id VARCHAR(200), value INT, ENTITY_ID_FK VARCHAR(200));\nInsert into TRADE.Trade (id, value, ENTITY_ID_FK) values (1,\'100\',\'entity1\');\nInsert into TRADE.Trade (id, value, ENTITY_ID_FK) values (2,\'200\',\'entity2\');\nInsert into TRADE.Trade (id, value, ENTITY_ID_FK) values (3,\'300\',\'entity3\');\nCREATE SCHEMA IF NOT EXISTS Entity;\nDrop table if exists Entity.LegalEntity;\nCreate Table Entity.LegalEntity(ENTITY_ID VARCHAR(200), name VARCHAR(200));\nInsert into Entity.LegalEntity (ENTITY_ID, name) values (\'entity1\', \'Google\');\nInsert into Entity.LegalEntity (ENTITY_ID, name) values (\'entity2\', \'Apple\');\n'
+      ];
+  };
+  auth: DefaultH2;
+}
+
+
+###Runtime
+Runtime com::trade::TradeRuntime
+{
+  mappings:
+  [
+    com::trade::TradeWithLegalEntityMapping
+  ];
+  connectionStores:
+  [
+    com::trade::TradeConnection:
+    [
+      com::trade::TradeDatabase,
+      com::entity::EntityDatabase
+    ]
+  ];
+}
+
+Runtime com::entity::EntityRuntime
+{
+  mappings:
+  [
+    com::entity::LegalEntityMapping
+  ];
+  connectionStores:
+  [
+    com::entity::EntityConnection:
+    [
+      com::entity::EntityDatabase
+    ]
+  ];
+}
