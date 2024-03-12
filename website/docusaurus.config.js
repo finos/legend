@@ -122,6 +122,11 @@ module.exports = {
           label: "Releases",
           position: "right",
         },
+        {
+          to: "https://finos.org/legend",
+          label: "FINOS Legend Shared Instance",
+          position: "right",
+        }
       ],
     },
 
