@@ -123,7 +123,7 @@ module.exports = {
           position: "right",
         },
         {
-          to: "https://finos.org/legend",
+          href: "https://finos.org/legend",
           label: "FINOS Legend Shared Instance",
           position: "right",
         }
