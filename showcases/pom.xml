@@ -16,7 +16,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.surefire.thread.count>3</maven.surefire.thread.count>
         <showcase.projects.location>data</showcase.projects.location>
-        <legend.engine.version>4.38.0</legend.engine.version>
+        <legend.engine.version>4.40.3</legend.engine.version>
 
     </properties>
 
@@ -57,6 +57,12 @@
         <dependency>
             <groupId>org.finos.legend.engine</groupId>
             <artifactId>legend-engine-configuration</artifactId>
+            <version>${legend.engine.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.finos.legend.engine</groupId>
+            <artifactId>legend-engine-shared-core</artifactId>
             <version>${legend.engine.version}</version>
             <scope>test</scope>
         </dependency>
