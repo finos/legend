@@ -62,7 +62,7 @@ Mapping com::entity::LegalEntityMapping
 
 Mapping com::trade::TradeWithLegalEntityMapping
 (
-  include dataspace com::entity::EntityDataspace
+  include dataspace com::entity::EntityDataSpace
 
   com::trade::Trade[trade]: Relational
   {
@@ -87,7 +87,7 @@ Mapping com::trade::TradeWithLegalEntityMapping
 
 
 ###DataSpace
-DataSpace com::entity::EntityDataspace
+DataSpace com::entity::EntityDataSpace
 {
   executionContexts:
   [
@@ -95,6 +95,11 @@ DataSpace com::entity::EntityDataspace
       name: 'default';
       mapping: com::entity::LegalEntityMapping;
       defaultRuntime: com::entity::EntityRuntime;
+      testData:
+        Reference
+        #{
+          com::entity::EntityData
+        }#;
     }
   ];
   defaultExecutionContext: 'default';
@@ -155,6 +160,28 @@ Runtime com::trade::TradeRuntime
   ];
 }
 
+SingleConnectionRuntime com::trade::AlternativeTradeRuntime
+{
+  mappings:
+  [
+    com::trade::TradeWithLegalEntityMapping
+  ];
+  connection: com::trade::TradeConnection;
+}
+
+
+###Data
+Data com::entity::EntityData
+{
+  Relational
+  #{
+    Entity.LegalEntity:
+      'ENTITY_ID,name\n'+
+      'abc,Entity1\n'+
+      'def,Entity2\n';
+  }#
+}
+
 
 ###Service
 Service com::trade::ServiceSimpleProject
@@ -199,12 +226,9 @@ Service com::trade::ServiceSimpleProject
                 '2,200,def\n';
             }#,
           com::trade::TradeConnection:
-            Relational
+            DataspaceTestData
             #{
-              Entity.LegalEntity:
-                'ENTITY_ID,name\n'+
-                'abc,Entity1\n'+
-                'def,Entity2\n';
+              com::entity::EntityDataSpace
             }#
         ]
       ]
