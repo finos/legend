@@ -1,13 +1,11 @@
 package org.example;
 
-import org.eclipse.collections.api.factory.Lists;
 import org.eclipse.collections.api.factory.Sets;
 import org.finos.legend.engine.language.pure.compiler.Compiler;
 import org.finos.legend.engine.language.pure.compiler.toPureGraph.PureModel;
 import org.finos.legend.engine.language.pure.grammar.from.PureGrammarParser;
 import org.finos.legend.engine.language.pure.grammar.to.PureGrammarComposer;
 import org.finos.legend.engine.language.pure.grammar.to.PureGrammarComposerContext;
-import org.finos.legend.engine.language.pure.modelManager.ModelManager;
 import org.finos.legend.engine.protocol.pure.v1.ProtocolToClassifierPathLoader;
 import org.finos.legend.engine.protocol.pure.v1.model.context.PureModelContextData;
 import org.finos.legend.engine.protocol.pure.v1.model.packageableElement.PackageableElement;
@@ -20,6 +18,7 @@ import org.finos.legend.engine.protocol.pure.v1.model.test.result.TestExecutionS
 import org.finos.legend.engine.protocol.pure.v1.model.test.result.TestResult;
 import org.finos.legend.engine.shared.core.api.grammar.RenderStyle;
 import org.finos.legend.engine.shared.core.deployment.DeploymentMode;
+import org.finos.legend.engine.shared.core.identity.factory.IdentityFactoryProvider;
 import org.finos.legend.engine.testable.TestableRunner;
 import org.finos.legend.engine.testable.extension.TestableRunnerExtensionLoader;
 import org.finos.legend.engine.testable.model.RunTestsResult;
@@ -114,13 +113,13 @@ public class ShowcaseCompilerTest
         PureGrammarComposer grammarComposer = PureGrammarComposer.newInstance(PureGrammarComposerContext.Builder.newInstance().withRenderStyle(RenderStyle.PRETTY).build());
 
         // compile
-        PureModel pureModel = Compiler.compile(pureModelContextData, DeploymentMode.PROD, Lists.mutable.empty());
+        PureModel pureModel = Compiler.compile(pureModelContextData, DeploymentMode.PROD, IdentityFactoryProvider.getInstance().getAnonymousIdentity().getName());
 
         // Grammar composer adds a trailing newline
         assertEquals(pureGrammar + "\n", grammarComposer.renderPureModelContextData(pureModelContextData));
 
         // run tests
-//        runAllTests(pureModel, pureModelContextData);
+        runAllTests(pureModel, pureModelContextData);
     }
 
 
