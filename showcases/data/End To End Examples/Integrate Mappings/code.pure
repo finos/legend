@@ -207,7 +207,7 @@ Service com::trade::ServiceSimpleProject
       ]
     );
     mapping: com::trade::TradeWithLegalEntityMapping;
-    runtime: com::trade::TradeRuntime;
+    runtime: com::trade::AlternativeTradeRuntime;
   }
   testSuites:
   [
