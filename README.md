@@ -1,3 +1,4 @@
+[![FINOS Hosted Platform - Legend Shared instance](https://img.shields.io/badge/FINOS%20Hosted%20Platform-Legend%20Shared%20Instance-blue)](https://www.finos.org/legend#hs_cos_wrapper_widget_1609863816114_)
 [![FINOS - Incubating](https://cdn.jsdelivr.net/gh/finos/contrib-toolbox@master/images/badge-incubating.svg)](https://finosfoundation.atlassian.net/wiki/display/FINOS/Incubating)
 [![build](https://img.shields.io/github/actions/workflow/status/finos/legend/publish-docker-snapshot.yml?branch=master)](https://github.com/finos/legend/actions/workflows/publish-docker-snapshot.yml)
 [![docker](https://img.shields.io/docker/v/finos/legend-omnibus/latest)](https://hub.docker.com/r/finos/legend-omnibus)
