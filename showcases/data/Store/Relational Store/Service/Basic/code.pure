@@ -238,6 +238,48 @@ DataSpace showcase::northwind::dataspace::NorthwindDataSpace
   defaultExecutionContext: 'default';
 }
 
+DataSpace showcase::northwind::dataspace::NorthwindDataSpaceWithTemplateQuery
+{
+  executionContexts:
+  [
+    {
+      name: 'default';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    }
+  ];
+  defaultExecutionContext: 'default';
+  executables:
+  [
+    {
+      title: 'this is title - Top Categories';
+      description: 'this is description - TopCategories';
+      query: |showcase::northwind::model::Order.all()->groupBy(
+      [
+        x: showcase::northwind::model::Order[1]|$x.lineItems.product.category.id,
+        x: showcase::northwind::model::Order[1]|$x.lineItems.product.category.name
+      ],
+      [
+        agg(
+          x: showcase::northwind::model::Order[1]|$x.id,
+          x: Integer[*]|$x->distinct()->count()
+        )
+      ],
+      [
+        'Category Id',
+        'Category Name',
+        'Order Count'
+      ]
+    )->sort(
+      [
+        desc('Order Count')
+      ]
+    )->take(5);
+      executionContextKey: 'default';
+    }
+  ];
+}
+
 
 ###Service
 Service showcase::northwind::services::graph::OrderDetailsByIdGraphFetch
