@@ -252,6 +252,7 @@ DataSpace showcase::northwind::dataspace::NorthwindDataSpaceWithTemplateQuery
   executables:
   [
     {
+      id: my_id;
       title: 'this is title - Top Categories';
       description: 'this is description - TopCategories';
       query: |showcase::northwind::model::Order.all()->groupBy(
