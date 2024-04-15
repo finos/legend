@@ -1,20 +1,13 @@
-###Pure
-Class com::entity::LegalEntity
+###Data
+Data com::entity::EntityData
 {
-  entityId: String[1];
-  name: String[1];
-}
-
-Class com::trade::Trade
-{
-  id: String[1];
-  value: Integer[1];
-}
-
-Association com::trade::Trade_LegalEntity
-{
-  client: com::entity::LegalEntity[1];
-  trades: com::trade::Trade[*];
+  Relational
+  #{
+    Entity.LegalEntity:
+      'ENTITY_ID,name\n'+
+      'abc,Entity1\n'+
+      'def,Entity2\n';
+  }#
 }
 
 
@@ -41,146 +34,14 @@ Database com::entity::EntityDatabase
       ENTITY_ID VARCHAR(32) PRIMARY KEY,
       name VARCHAR(32) NOT NULL
     )
+
+    View LegalEntity_View
+    (
+      ENTITY_ID: Entity.LegalEntity.ENTITY_ID PRIMARY KEY,
+      name: Entity.LegalEntity.name PRIMARY KEY
+    )
   )
 )
-
-
-###Mapping
-Mapping com::entity::LegalEntityMapping
-(
-  *com::entity::LegalEntity: Relational
-  {
-    ~primaryKey
-    (
-      [com::entity::EntityDatabase]Entity.LegalEntity.ENTITY_ID
-    )
-    ~mainTable [com::entity::EntityDatabase]Entity.LegalEntity
-    entityId: [com::entity::EntityDatabase]Entity.LegalEntity.ENTITY_ID,
-    name: [com::entity::EntityDatabase]Entity.LegalEntity.name
-  }
-)
-
-Mapping com::trade::TradeWithLegalEntityMapping
-(
-  include dataspace com::entity::EntityDataSpace
-
-  com::trade::Trade[trade]: Relational
-  {
-    ~primaryKey
-    (
-      [com::trade::TradeDatabase]Trade.Trade.id
-    )
-    ~mainTable [com::trade::TradeDatabase]Trade.Trade
-    id: [com::trade::TradeDatabase]Trade.Trade.id,
-    value: [com::trade::TradeDatabase]Trade.Trade.value,
-    +entityIdFk: String[1]: [com::trade::TradeDatabase]Trade.Trade.ENTITY_ID_FK
-  }
-
-  com::trade::Trade_LegalEntity: XStore
-  {
-    client[trade, com_entity_LegalEntity]: $this.entityIdFk ==
-  $that.entityId,
-    trades[com_entity_LegalEntity, trade]: $this.entityId ==
-  $that.entityIdFk
-  }
-)
-
-
-###DataSpace
-DataSpace com::entity::EntityDataSpace
-{
-  executionContexts:
-  [
-    {
-      name: 'default';
-      mapping: com::entity::LegalEntityMapping;
-      defaultRuntime: com::entity::EntityRuntime;
-      testData:
-        Reference
-        #{
-          com::entity::EntityData
-        }#;
-    }
-  ];
-  defaultExecutionContext: 'default';
-}
-
-
-###Connection
-RelationalDatabaseConnection com::entity::EntityConnection
-{
-  store: com::entity::EntityDatabase;
-  type: H2;
-  specification: LocalH2
-  {
-  };
-  auth: DefaultH2;
-}
-
-RelationalDatabaseConnection com::trade::TradeConnection
-{
-  store: com::trade::TradeDatabase;
-  type: H2;
-  specification: LocalH2
-  {
-  };
-  auth: DefaultH2;
-}
-
-
-###Runtime
-Runtime com::entity::EntityRuntime
-{
-  mappings:
-  [
-    com::entity::LegalEntityMapping
-  ];
-  connectionStores:
-  [
-    com::entity::EntityConnection:
-    [
-      com::entity::EntityDatabase
-    ]
-  ];
-}
-
-Runtime com::trade::TradeRuntime
-{
-  mappings:
-  [
-    com::trade::TradeWithLegalEntityMapping
-  ];
-  connectionStores:
-  [
-    com::trade::TradeConnection:
-    [
-      com::trade::TradeDatabase,
-      com::entity::EntityDatabase
-    ]
-  ];
-}
-
-SingleConnectionRuntime com::trade::AlternativeTradeRuntime
-{
-  mappings:
-  [
-    com::trade::TradeWithLegalEntityMapping
-  ];
-  connection: com::trade::TradeConnection;
-}
-
-
-###Data
-Data com::entity::EntityData
-{
-  Relational
-  #{
-    Entity.LegalEntity:
-      'ENTITY_ID,name\n'+
-      'abc,Entity1\n'+
-      'def,Entity2\n';
-  }#
-}
 
 
 ###Service
@@ -254,4 +115,149 @@ Service com::trade::ServiceSimpleProject
       ]
     }
   ]
+}
+
+
+###DataSpace
+DataSpace com::entity::EntityDataSpace
+{
+  executionContexts:
+  [
+    {
+      name: 'default';
+      mapping: com::entity::LegalEntityMapping;
+      defaultRuntime: com::entity::EntityRuntime;
+      testData:
+        Reference
+        #{
+          com::entity::EntityData
+        }#;
+    }
+  ];
+  defaultExecutionContext: 'default';
+}
+
+
+###Pure
+Class com::entity::LegalEntity
+{
+  entityId: String[1];
+  name: String[1];
+}
+
+Class com::trade::Trade
+{
+  id: String[1];
+  value: Integer[1];
+}
+
+Association com::trade::Trade_LegalEntity
+{
+  client: com::entity::LegalEntity[1];
+  trades: com::trade::Trade[*];
+}
+
+
+###Mapping
+Mapping com::entity::LegalEntityMapping
+(
+  *com::entity::LegalEntity: Relational
+  {
+    ~primaryKey
+    (
+      [com::entity::EntityDatabase]Entity.LegalEntity_View.ENTITY_ID
+    )
+    ~mainTable [com::entity::EntityDatabase]Entity.LegalEntity_View
+    entityId: [com::entity::EntityDatabase]Entity.LegalEntity_View.ENTITY_ID,
+    name: [com::entity::EntityDatabase]Entity.LegalEntity_View.name
+  }
+)
+
+Mapping com::trade::TradeWithLegalEntityMapping
+(
+  include dataspace com::entity::EntityDataSpace
+
+  com::trade::Trade[trade]: Relational
+  {
+    ~primaryKey
+    (
+      [com::trade::TradeDatabase]Trade.Trade.id
+    )
+    ~mainTable [com::trade::TradeDatabase]Trade.Trade
+    id: [com::trade::TradeDatabase]Trade.Trade.id,
+    value: [com::trade::TradeDatabase]Trade.Trade.value,
+    +entityIdFk: String[1]: [com::trade::TradeDatabase]Trade.Trade.ENTITY_ID_FK
+  }
+
+  com::trade::Trade_LegalEntity: XStore
+  {
+    client[trade, com_entity_LegalEntity]: $this.entityIdFk ==
+  $that.entityId,
+    trades[com_entity_LegalEntity, trade]: $this.entityId ==
+  $that.entityIdFk
+  }
+)
+
+
+###Connection
+RelationalDatabaseConnection com::entity::EntityConnection
+{
+  store: com::entity::EntityDatabase;
+  type: H2;
+  specification: LocalH2
+  {
+  };
+  auth: DefaultH2;
+}
+
+RelationalDatabaseConnection com::trade::TradeConnection
+{
+  store: com::trade::TradeDatabase;
+  type: H2;
+  specification: LocalH2
+  {
+  };
+  auth: DefaultH2;
+}
+
+
+###Runtime
+Runtime com::entity::EntityRuntime
+{
+  mappings:
+  [
+    com::entity::LegalEntityMapping
+  ];
+  connectionStores:
+  [
+    com::entity::EntityConnection:
+    [
+      com::entity::EntityDatabase
+    ]
+  ];
+}
+
+Runtime com::trade::TradeRuntime
+{
+  mappings:
+  [
+    com::trade::TradeWithLegalEntityMapping
+  ];
+  connectionStores:
+  [
+    com::trade::TradeConnection:
+    [
+      com::trade::TradeDatabase,
+      com::entity::EntityDatabase
+    ]
+  ];
+}
+
+SingleConnectionRuntime com::trade::AlternativeTradeRuntime
+{
+  mappings:
+  [
+    com::trade::TradeWithLegalEntityMapping
+  ];
+  connection: com::trade::TradeConnection;
 }
