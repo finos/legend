@@ -8,7 +8,14 @@ Service showcase::northwind::service::model::GetCustomer
   execution: Single
   {
     query: |showcase::northwind::model::crm::Customer.all()->project(
-      ~[companyName:x|$x.companyName, companyTitle:x|$x.companyTitle, contactName:x|$x.contactName, faxNumber:x|$x.faxNumber, id:x|$x.id, telephoneNumber:x|$x.telephoneNumber]
+      ~[
+         companyName: x|$x.companyName,
+         companyTitle: x|$x.companyTitle,
+         contactName: x|$x.contactName,
+         faxNumber: x|$x.faxNumber,
+         id: x|$x.id,
+         telephoneNumber: x|$x.telephoneNumber
+       ]
     );
     mapping: showcase::northwind::mapping::NorthwindMapping;
     runtime: showcase::northwind::mapping::ModelNorthWindRuntime;
@@ -24,7 +31,9 @@ Service {doc.doc = 'was trying to do -> distinct(~[companyTile]) but does not wo
   execution: Single
   {
     query: |showcase::northwind::model::crm::Customer.all()->project(
-      ~[companyTitle:x|$x.companyTitle]
+      ~[
+         companyTitle: x|$x.companyTitle
+       ]
     );
     mapping: showcase::northwind::mapping::NorthwindMapping;
     runtime: showcase::northwind::mapping::ModelNorthWindRuntime;
@@ -40,7 +49,14 @@ Service showcase::northwind::service::model::GetCustomerWithDrop
   execution: Single
   {
     query: |showcase::northwind::model::crm::Customer.all()->project(
-      ~[companyName:x|$x.companyName, companyTitle:x|$x.companyTitle, contactName:x|$x.contactName, faxNumber:x|$x.faxNumber, id:x|$x.id, telephoneNumber:x|$x.telephoneNumber]
+      ~[
+         companyName: x|$x.companyName,
+         companyTitle: x|$x.companyTitle,
+         contactName: x|$x.contactName,
+         faxNumber: x|$x.faxNumber,
+         id: x|$x.id,
+         telephoneNumber: x|$x.telephoneNumber
+       ]
     )->drop(1);
     mapping: showcase::northwind::mapping::NorthwindMapping;
     runtime: showcase::northwind::mapping::ModelNorthWindRuntime;
@@ -56,7 +72,14 @@ Service showcase::northwind::service::model::GetCustomerWithLimit
   execution: Single
   {
     query: |showcase::northwind::model::crm::Customer.all()->project(
-      ~[companyName:x|$x.companyName, companyTitle:x|$x.companyTitle, contactName:x|$x.contactName, faxNumber:x|$x.faxNumber, id:x|$x.id, telephoneNumber:x|$x.telephoneNumber]
+      ~[
+         companyName: x|$x.companyName,
+         companyTitle: x|$x.companyTitle,
+         contactName: x|$x.contactName,
+         faxNumber: x|$x.faxNumber,
+         id: x|$x.id,
+         telephoneNumber: x|$x.telephoneNumber
+       ]
     )->limit(1);
     mapping: showcase::northwind::mapping::NorthwindMapping;
     runtime: showcase::northwind::mapping::ModelNorthWindRuntime;
@@ -72,7 +95,15 @@ Service {doc.doc = 'Does not work -> route function'} showcase::northwind::servi
   execution: Single
   {
     query: |showcase::northwind::model::inventory::Product.all()->project(
-      ~[quantityPerUnit:x|$x.quantityPerUnit, discontinued:x|$x.discontinued, id:x|$x.id, name:x|$x.name, reorderLevel:x|$x.reorderLevel, unitsInStock:x|$x.unitsInStock, unitsOnOrder:x|$x.unitsOnOrder]
+      ~[
+         quantityPerUnit: x|$x.quantityPerUnit,
+         discontinued: x|$x.discontinued,
+         id: x|$x.id,
+         name: x|$x.name,
+         reorderLevel: x|$x.reorderLevel,
+         unitsInStock: x|$x.unitsInStock,
+         unitsOnOrder: x|$x.unitsOnOrder
+       ]
     )->filter(
       x|$x.unitsInStock > 1
     );
@@ -90,9 +121,12 @@ Service showcase::northwind::service::model::CustomerExtend
   execution: Single
   {
     query: |showcase::northwind::model::crm::Customer.all()->project(
-      ~[companyName:x|$x.companyName, companyTitle:x|$x.companyTitle]
+      ~[
+         companyName: x|$x.companyName,
+         companyTitle: x|$x.companyTitle
+       ]
     )->extend(
-      ~name:c|$c.companyName->toOne() + ' , title: ' + $c.companyTitle->toOne()->toString()
+      ~name: c|$c.companyName->toOne() + ' , title: ' + $c.companyTitle->toOne()->toString()
     );
     mapping: showcase::northwind::mapping::NorthwindMapping;
     runtime: showcase::northwind::mapping::ModelNorthWindRuntime;
@@ -108,9 +142,14 @@ Service showcase::northwind::service::model::CustomerSelect
   execution: Single
   {
     query: |showcase::northwind::model::crm::Customer.all()->project(
-      ~[companyName:x|$x.companyName, companyTitle:x|$x.companyTitle]
+      ~[
+         companyName: x|$x.companyName,
+         companyTitle: x|$x.companyTitle
+       ]
     )->select(
-      ~[companyName]
+      ~[
+         companyName
+       ]
     );
     mapping: showcase::northwind::mapping::NorthwindMapping;
     runtime: showcase::northwind::mapping::ModelNorthWindRuntime;
@@ -541,7 +580,9 @@ Association showcase::northwind::model::associations::Order_OrderLineItem
 function showcase::northwind::store::functions::SelectOnNorthWindCustomer(): Any[*]
 {
   #>{showcase::northwind::store::NorthwindDatabase.NORTHWIND.CUSTOMERS}#->select(
-    ~[COMPANY_NAME]
+    ~[
+       COMPANY_NAME
+     ]
   )->from(
     showcase::northwind::store::NorthwindRuntime
   )
@@ -557,7 +598,7 @@ function showcase::northwind::store::functions::NorthwindDrop(): Any[*]
 function showcase::northwind::store::functions::NorthwindExtendd(): Any[*]
 {
   #>{showcase::northwind::store::NorthwindDatabase.NORTHWIND.CUSTOMERS}#->extend(
-    ~newCol:x|$x.CONTACT_NAME->toOne() + ' |' + $x.CONTACT_TITLE->toOne()
+    ~newCol: x|$x.CONTACT_NAME->toOne() + ' |' + $x.CONTACT_TITLE->toOne()
   )->from(
     showcase::northwind::store::NorthwindRuntime
   )
@@ -597,8 +638,12 @@ function showcase::simple::functions::simpleTableFunctionGroup(): Any[*]
   )->from(
     showcase::simple::connection::TestRuntime
   )->groupBy(
-    ~[FIRSTNAME],
-    ~[count:x|$x.FIRSTNAME:y|$y->count()]
+    ~[
+       FIRSTNAME
+     ],
+    ~[
+       count: x|$x.FIRSTNAME:y|$y->count()
+     ]
   )
 }
 
