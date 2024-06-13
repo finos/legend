@@ -230,12 +230,37 @@ DataSpace showcase::northwind::dataspace::NorthwindDataSpace
   executionContexts:
   [
     {
-      name: 'default';
+      name: 'PC0 (QA)';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'PC0 (PROD)';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'PC1 (QA)';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'PC1 (PROD)';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'PC2 (QA)';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'PC2 (PROD)';
       mapping: showcase::northwind::mapping::NorthwindMapping;
       defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
     }
   ];
-  defaultExecutionContext: 'default';
+  defaultExecutionContext: 'PC0 (PROD)';
 }
 
 DataSpace showcase::northwind::dataspace::NorthwindDataSpaceWithTemplateQuery
@@ -243,12 +268,37 @@ DataSpace showcase::northwind::dataspace::NorthwindDataSpaceWithTemplateQuery
   executionContexts:
   [
     {
-      name: 'default';
+      name: 'PC0 (QA)';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'PC0 (PROD)';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'PC1 (QA)';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'PC1 (PROD)';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'PC2 (QA)';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'PC2 (PROD)';
       mapping: showcase::northwind::mapping::NorthwindMapping;
       defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
     }
   ];
-  defaultExecutionContext: 'default';
+  defaultExecutionContext: 'PC0 (PROD)';
   executables:
   [
     {
@@ -256,27 +306,27 @@ DataSpace showcase::northwind::dataspace::NorthwindDataSpaceWithTemplateQuery
       title: 'this is title - Top Categories';
       description: 'this is description - TopCategories';
       query: |showcase::northwind::model::Order.all()->groupBy(
-      [
-        x: showcase::northwind::model::Order[1]|$x.lineItems.product.category.id,
-        x: showcase::northwind::model::Order[1]|$x.lineItems.product.category.name
-      ],
-      [
-        agg(
-          x: showcase::northwind::model::Order[1]|$x.id,
-          x: Integer[*]|$x->distinct()->count()
-        )
-      ],
-      [
-        'Category Id',
-        'Category Name',
-        'Order Count'
-      ]
-    )->sort(
-      [
-        desc('Order Count')
-      ]
-    )->take(5);
-      executionContextKey: 'default';
+        [
+          x: showcase::northwind::model::Order[1]|$x.lineItems.product.category.id,
+          x: showcase::northwind::model::Order[1]|$x.lineItems.product.category.name
+        ],
+        [
+          agg(
+            x: showcase::northwind::model::Order[1]|$x.id,
+            x: Integer[*]|$x->distinct()->count()
+          )
+        ],
+        [
+          'Category Id',
+          'Category Name',
+          'Order Count'
+        ]
+      )->sort(
+        [
+          desc('Order Count')
+        ]
+      )->take(5);
+      executionContextKey: 'PC0 (PROD)';
     }
   ];
 }
