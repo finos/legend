@@ -230,12 +230,37 @@ DataSpace showcase::northwind::dataspace::NorthwindDataSpace
   executionContexts:
   [
     {
-      name: 'default';
+      name: 'externally-public-QA';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'externally-public-PROD';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'internally-public-QA';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'internally-public-PROD';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'internally-restricted-QA';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'internally-restricted-PROD';
       mapping: showcase::northwind::mapping::NorthwindMapping;
       defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
     }
   ];
-  defaultExecutionContext: 'default';
+  defaultExecutionContext: 'externally-public-PROD';
 }
 
 DataSpace showcase::northwind::dataspace::NorthwindDataSpaceWithTemplateQuery
@@ -243,12 +268,37 @@ DataSpace showcase::northwind::dataspace::NorthwindDataSpaceWithTemplateQuery
   executionContexts:
   [
     {
-      name: 'default';
+      name: 'externally-public-QA';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'externally-public-PROD';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'internally-public-QA';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'internally-public-PROD';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'internally-restricted-QA';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'internally-restricted-PROD';
       mapping: showcase::northwind::mapping::NorthwindMapping;
       defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
     }
   ];
-  defaultExecutionContext: 'default';
+  defaultExecutionContext: 'externally-public-PROD';
   executables:
   [
     {
@@ -276,7 +326,7 @@ DataSpace showcase::northwind::dataspace::NorthwindDataSpaceWithTemplateQuery
         desc('Order Count')
       ]
     )->take(5);
-      executionContextKey: 'default';
+      executionContextKey: 'externally-public-PROD';
     }
   ];
 }
