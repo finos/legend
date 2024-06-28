@@ -4,4 +4,4 @@ description:
 development: true
 ---
 
-TODO: Some dummy description
+Service Store connection is linked to External Formats.

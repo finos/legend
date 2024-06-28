@@ -1,5 +1,5 @@
 ---
-title: Embedded - Advanced - Inline - targetId
+title: Relational database inline nested mapping
 description:
 development: true
 ---
