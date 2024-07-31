@@ -1,0 +1,214 @@
+###Relational
+Database showcase::stores::TradeDB
+(
+  Schema Trade
+  (
+    Table Trade
+    (
+      id VARCHAR(32) PRIMARY KEY,
+      value INTEGER NOT NULL,
+      order VARCHAR(32)
+    )
+  )
+)
+
+
+###Service
+Service showcase::services::ServicePropEqVarEnumVal
+{
+  pattern: '/a9950bb2-d53b-4185-84d6-98a8f8abf5c2/var';
+  ownership: DID { identifier: '' };
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: var: showcase::model::Order[1]|showcase::model::Trade.all()->filter(
+      x|$x.order ==
+        $var
+    )->project(
+      [
+        x|$x.id,
+        x|$x.order
+      ],
+      [
+        'Id',
+        'Order'
+      ]
+    );
+    mapping: showcase::mappings::TradeMapping;
+    runtime: showcase::runtimes::TradeRuntime;
+  }
+}
+
+Service showcase::services::ServiceVarInStaticEnumVal
+{
+  pattern: '/886c08c8-6284-4a7c-ac94-6ed1b91d7b05';
+  ownership: DID { identifier: '' };
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |showcase::model::Trade.all()->filter(
+      x|$x.order->in(
+        [
+          showcase::model::Order.MARKET,
+          showcase::model::Order.LIMIT
+        ]
+      )
+    )->project(
+      [
+        x|$x.id,
+        x|$x.order
+      ],
+      [
+        'Id',
+        'Order'
+      ]
+    );
+    mapping: showcase::mappings::TradeMapping;
+    runtime: showcase::runtimes::TradeRuntime;
+  }
+}
+
+Service showcase::services::ServicePropEqStaticEnumVal
+{
+  pattern: '/fb22f2b6-d47b-4e5c-a281-353f7e17a7a1';
+  ownership: DID { identifier: '' };
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |showcase::model::Trade.all()->filter(
+      x|$x.order ==
+        showcase::model::Order.LIMIT
+    )->project(
+      [
+        x|$x.id,
+        x|$x.order
+      ],
+      [
+        'Id',
+        'Order'
+      ]
+    );
+    mapping: showcase::mappings::TradeMapping;
+    runtime: showcase::runtimes::TradeRuntime;
+  }
+  testSuites:
+  [
+    testSuite_1:
+    {
+      data:
+      [
+        connections:
+        [
+          connection_1:
+            Relational
+            #{
+              Trade.Trade:
+                'id,value,order\n'+
+                'id 63,42,LMT\n';
+            }#
+        ]
+      ]
+      tests:
+      [
+        test_1:
+        {
+          serializationFormat: PURE_TDSOBJECT;
+          asserts:
+          [
+            assertion_1:
+              EqualToJson
+              #{
+                expected:
+                  ExternalFormat
+                  #{
+                    contentType: 'application/json';
+                    data: '[\n  {\n    "Id": "id 63",\n    "Order": "LIMIT"\n  }\n]';
+                  }#;
+              }#
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
+###Text
+Text showcase::info
+{
+  type: markdown;
+  content: '---\ntitle: Enum Mapping Showcase Project\ndescription: Example Mapping using Enum and Enum Mapping\n---\n\nThis showcase displays building a mapping from a database where one of the elements is an enum, utilizing enum mapping syntax. \n\nComponents needed for Example Enum Mapping:\n* Source Models [Physical Model]  : `showcase::stores::TradeDB`\n* Source Models [Logical Model]   : `showcase::model::Trade`\n                                  : `showcase::model::Order`\n* Connection                      : `showcase::connections::EntityConnection`\n* Service                         : `showcase::services::ServicePropEqStaticEnumVal`\n                                  : `showcase::services::ServicePropEqVarEnumVal`\n                                  : `showcase::services::ServiceVarInStaticEnumVal`\n';
+}
+
+
+###Pure
+Enum showcase::model::Order
+{
+  MARKET,
+  LIMIT,
+  STOP
+}
+
+Class showcase::model::Trade
+{
+  id: String[1];
+  value: Integer[1];
+  order: showcase::model::Order[1];
+}
+
+
+###Mapping
+Mapping showcase::mappings::TradeMapping
+(
+  showcase::model::Trade[trade]: Relational
+  {
+    ~primaryKey
+    (
+      [showcase::stores::TradeDB]Trade.Trade.id
+    )
+    ~mainTable [showcase::stores::TradeDB]Trade.Trade
+    id: [showcase::stores::TradeDB]Trade.Trade.id,
+    value: [showcase::stores::TradeDB]Trade.Trade.value,
+    order: EnumerationMapping OrderMapping: [showcase::stores::TradeDB]Trade.Trade.order
+  }
+
+  showcase::model::Order: EnumerationMapping OrderMapping
+  {
+    MARKET: ['MKT'],
+    LIMIT: ['LMT'],
+    STOP: ['STP']
+  }
+)
+
+
+###Connection
+RelationalDatabaseConnection showcase::connections::TradeConnection
+{
+  store: showcase::stores::TradeDB;
+  type: H2;
+  specification: LocalH2
+  {
+    testDataSetupCSV: 'Trade\nTrade\nID,value,order\n101,3,MKT\n102,4,LMT\n103,9,STP\n104,10,LMT\n---';
+  };
+  auth: DefaultH2;
+}
+
+
+###Runtime
+Runtime showcase::runtimes::TradeRuntime
+{
+  mappings:
+  [
+    showcase::mappings::TradeMapping
+  ];
+  connections:
+  [
+    showcase::stores::TradeDB:
+    [
+      connection_1: showcase::connections::TradeConnection
+    ]
+  ];
+}
