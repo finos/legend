@@ -1,0 +1,21 @@
+###Text
+Text showcase::model::README
+{
+  type: markdown;
+  content: '---\ntitle: Leverage profiles in your model > Stereotypes\ndescription: This an example that shows how to use stereotypes in your data model\n---\n\nThis showcase show how stereotypes can be used in the data model. Stereotypes can be defined at both class level and property level. Stereotypes are used to add additional metadata to your models.\nYou can choose from the various types of stereotypes based on your use case. In this example, \'doc\' stereotype is used to mark the class as deprecated. In addition, the \'integerType\' stereotype is used on the \'age\' field to specify that it expects an Interger and not Long. \nFor more details, refer https://enghub.gs.com/alloy-platform/alloy-studio/docs/tutorials/create-foundational-data-model-elements#stereotypes. \n\nFor more custom use cases, you can create your own profile with custom stereotypes. Here we have create the Profile `showcase::model::CustomProfile` with a stereotype of `custom`.\nWe use this custom profile in the `introduction` derived property of Animal. ';
+}
+
+
+###Pure
+Profile showcase::model::CustomProfile
+{
+  stereotypes: [custom];
+}
+
+Class <<meta::pure::profiles::doc.deprecated>> showcase::model::Animal
+{
+  name: String[1];
+  sound: String[1];
+  <<meta::external::language::java::metamodel::profiles::integerType.Integer>> age: Integer[1];
+  <<showcase::model::CustomProfile.custom>> introduction() {'Hi my name is ' + $this.name}: String[1];
+}
