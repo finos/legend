@@ -24,7 +24,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3.6.0
         with:
-          node-version: 16
+          node-version: 21
       - name: Prepare static artifacts
         run: |
           cp -r installers/omnibus/scripts/* website/static/omnibus
