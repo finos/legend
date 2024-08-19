@@ -1,0 +1,124 @@
+###Relational
+Database showcase::stores::SimpleDB
+(
+  Schema SimpleDBSchema
+  (
+    Table Pets
+    (
+      id INTEGER PRIMARY KEY,
+      pet_type VARCHAR(50),
+      pet_name VARCHAR(50)
+    )
+    Table People
+    (
+      id INTEGER PRIMARY KEY,
+      person_name VARCHAR(200),
+      pet_id INTEGER
+    )
+  )
+
+  Join PersonPet(SimpleDBSchema.Pets.id = SimpleDBSchema.People.pet_id)
+
+  Filter petDogFilter(SimpleDBSchema.Pets.pet_type = 'Dog')
+)
+
+
+###Text
+Text showcase::README
+{
+  type: markdown;
+  content: '---\ntitle: Relational Mapping with Join and Filter showcase\ndescription: Showcase displaying a relational mapping with a join and a filter\n---\n\nIn this showcase, two tables (Pets and People) are joined and a filter condition is applied. A test case explaining the use case is added.\n\n';
+}
+
+
+###Pure
+Class showcase::models::Pet
+{
+  pet_name: String[0..1];
+  pet_type: String[0..1];
+  person_name: String[0..1];
+}
+
+Class showcase::models::Person
+{
+  person_name: String[0..1];
+}
+
+
+###Mapping
+Mapping showcase::mapping::PetMapping
+(
+  showcase::models::Pet: Relational
+  {
+    ~filter [showcase::stores::SimpleDB]petDogFilter
+    ~primaryKey
+    (
+      [showcase::stores::SimpleDB]SimpleDBSchema.Pets.id
+    )
+    ~mainTable [showcase::stores::SimpleDB]SimpleDBSchema.Pets
+    pet_name: [showcase::stores::SimpleDB]SimpleDBSchema.Pets.pet_name,
+    pet_type: [showcase::stores::SimpleDB]SimpleDBSchema.Pets.pet_type,
+    person_name: [showcase::stores::SimpleDB]@PersonPet | [showcase::stores::SimpleDB]SimpleDBSchema.People.person_name
+  }
+
+  testSuites:
+  [
+    testSuite1:
+    {
+      function: |showcase::models::Pet.all()->filter(
+  x|$x.pet_type == 'Dog'
+)->graphFetch(
+  #{
+    showcase::models::Pet{
+      person_name,
+      pet_name,
+      pet_type
+    }
+  }#
+)->serialize(
+  #{
+    showcase::models::Pet{
+      person_name,
+      pet_name,
+      pet_type
+    }
+  }#
+);
+      tests:
+      [
+        test1:
+        {
+          data:
+          [
+            showcase::stores::SimpleDB:
+              Relational
+              #{
+                SimpleDBSchema.Pets:
+                  'id,pet_name,pet_type\n'+
+                  '1,Coco,Dog\n'+
+                  '2,Jojo,Cat\n';
+
+                SimpleDBSchema.People:
+                  'id,person_name,pet_id\n'+
+                  '1,Tom,1\n'+
+                  '2,Jim,2\n';
+              }#
+          ];
+          asserts:
+          [
+            expectedAssertion:
+              EqualToJson
+              #{
+                expected:
+                  ExternalFormat
+                  #{
+                    contentType: 'application/json';
+                    data: '{\n  "person_name": "Tom",\n  "pet_name": "Coco",\n  "pet_type": "Dog"\n}';
+                  }#;
+              }#
+          ];
+        }
+      ];
+    }
+  ]
+)
