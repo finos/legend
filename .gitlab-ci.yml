@@ -1,0 +1,11 @@
+stages:
+    - clmscan
+
+
+clm_scan:
+    stage: clmscan
+    tags: [sdlc]
+    image: ${CI_REGISTRY}/dx/sdlc-tools/aws-gitlab-clm-plugin/aws-gitlab-clm-plugin:current
+    before_script: []
+    script:
+        - /opt/clm/request-clmscan.sh "${CI_PROJECT_DIR}"
