@@ -1,0 +1,205 @@
+###Service
+Service cde::store::mongodb::executionTest::service::PersonService
+{
+  pattern: '/api/allPersons';
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |cde::store::mongodb::executionTest::domain::Person.all()->filter(
+      x|($x.firstName == 'Chev') ||
+        ($x.birthDate > %1990-01-01T12:00:01)
+    )->graphFetch(
+      #{
+        cde::store::mongodb::executionTest::domain::Person{
+          firstName,
+          lastName,
+          department{
+            name
+          },
+          firm{
+            legalName
+          },
+          birthDate
+        }
+      }#
+    )->serialize(
+      #{
+        cde::store::mongodb::executionTest::domain::Person{
+          firstName,
+          lastName,
+          department{
+            name
+          },
+          firm{
+            legalName
+          },
+          birthDate
+        }
+      }#
+    );
+    mapping: cde::store::mongodb::executionTest::mapping::TestPersonMapping;
+    runtime: cde::store::mongodb::executionTest::runtime::TestMongoDBRuntime;
+  }
+}
+
+
+###Text
+Text cde::mongoREADME
+{
+  type: plainText;
+  content: '---\ntitle: MongoDB Query\ndescription: Example of querying MongoDB\n---\n\nThis showcase exemplifies how we can connect to MongoDB and run queries on it.\n\nThe connection is made using the database type, store, and authentication method. In this project, we used kerberos for authentication.\nElements can be found in the domain directory, and these are all the models queries can be run on. \nThe mapping here is used to map the mongo store to a person class, and the binding in this project is used to map json to elements.\nFinally the service is how the query is run. A mapping and runtime is required for a service.';
+}
+
+
+###ExternalFormat
+Binding cde::store::mongodb::executionTest::binding::PersonCollectionBinding
+{
+  contentType: 'application/json';
+  modelIncludes: [
+    cde::store::mongodb::executionTest::domain::Person,
+    cde::store::mongodb::executionTest::domain::Firm,
+    cde::store::mongodb::executionTest::domain::Address,
+    cde::store::mongodb::executionTest::domain::Department
+  ];
+}
+
+
+###MongoDB
+Database cde::store::mongodb::executionTest::store::mydatabase
+(
+  Collection person
+  (
+    validationLevel: strict;
+    validationAction: warn;
+    jsonSchema: {
+      "bsonType": "object",
+      "title": "Record of Firm",
+      "properties": {
+        "firstName": {
+          "bsonType": "string",
+          "description": "firstName of the person",
+          "minLength": 2
+        },
+        "lastName": {
+          "bsonType": "string",
+          "description": "lastName of the person",
+          "minLength": 2
+        },
+        "age": {
+          "bsonType": "int",
+          "description": "age of the person"
+        },
+        "firm": {
+          "bsonType": "object",
+          "description": "firm of the person",
+          "properties": {
+            "legalName": {
+              "bsonType": "string",
+              "description": "legal name of the firm"
+            },
+            "address": {
+              "bsonType": "string",
+              "description": "address of the firm"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    };
+  )
+)
+
+
+###Pure
+Class cde::store::mongodb::executionTest::domain::Address
+{
+  city: String[1];
+  buildingNumber: Integer[0..1];
+  isActive: Boolean[0..1];
+  lastUpdated: DateTime[1];
+}
+
+Class cde::store::mongodb::executionTest::domain::Department
+{
+  name: String[1];
+  numberOfEmployees: Integer[0..1];
+  dateCreated: DateTime[1];
+  isActive: Boolean[1];
+}
+
+Class cde::store::mongodb::executionTest::domain::Firm
+{
+  legalName: String[0..1];
+  numberOfEmployees: Integer[1];
+  dateFounded: DateTime[1];
+  phoneNumbers: String[1..*];
+  yearsAwarded: Integer[1..*];
+  address: cde::store::mongodb::executionTest::domain::Address[0..1];
+  public: Boolean[0..1];
+}
+
+Class cde::store::mongodb::executionTest::domain::Person
+{
+  firstName: String[0..1];
+  lastName: String[1];
+  age: Integer[0..1];
+  birthDate: DateTime[1];
+  otherPhoneNumbers: String[*];
+  yearsEmployed: Integer[1..*];
+  legallyCompetent: Boolean[1];
+  address: cde::store::mongodb::executionTest::domain::Address[1];
+  firm: cde::store::mongodb::executionTest::domain::Firm[0..1];
+}
+
+Association cde::store::mongodb::executionTest::domain::Firm_Department
+{
+  firm: cde::store::mongodb::executionTest::domain::Firm[0..1];
+  department: cde::store::mongodb::executionTest::domain::Department[*];
+}
+
+Association cde::store::mongodb::executionTest::domain::Person_Department
+{
+  person: cde::store::mongodb::executionTest::domain::Person[0..1];
+  department: cde::store::mongodb::executionTest::domain::Department[0..1];
+}
+
+
+###Mapping
+Mapping cde::store::mongodb::executionTest::mapping::TestPersonMapping
+(
+  *cde::store::mongodb::executionTest::domain::Person[Person]: MongoDB
+  {
+    ~mainCollection [cde::store::mongodb::executionTest::store::mydatabase] person
+    ~binding cde::store::mongodb::executionTest::binding::PersonCollectionBinding
+  }
+)
+
+
+###Connection
+MongoDBConnection cde::store::mongodb::executionTest::connection::testConnection
+{
+  database: mongo-query-poc;
+  store: cde::store::mongodb::executionTest::store::mydatabase;
+  serverURLs: [d1234.url.com:123];
+  authentication: # Kerberos {
+  }#;
+}
+
+
+###Runtime
+Runtime cde::store::mongodb::executionTest::runtime::TestMongoDBRuntime
+{
+  mappings:
+  [
+    cde::store::mongodb::executionTest::mapping::TestPersonMapping
+  ];
+  connections:
+  [
+    cde::store::mongodb::executionTest::store::mydatabase:
+    [
+      connection_1: cde::store::mongodb::executionTest::connection::testConnection
+    ]
+  ];
+}
