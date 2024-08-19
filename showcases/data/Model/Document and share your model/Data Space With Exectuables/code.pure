@@ -1,195 +1,1277 @@
+###Diagram
+Diagram showcase::northwind::model::NorthwindModelDiagram
+{
+  classView 8947a897-a67d-4064-8770-8a440e1220ce
+  {
+    class: showcase::northwind::model::crm::Employee;
+    position: (401.1871744777152,580.7157363134539);
+    rectangle: (211.03332710266113,212.0);
+  }
+  classView d30683e5-5c3c-4e4b-9d75-08ba75aa2bf2
+  {
+    class: showcase::northwind::model::geography::Address;
+    position: (428.11321850038996,365.8790985977993);
+    rectangle: (145.85000038146973,114.0);
+  }
+  classView fd4a376f-11c2-4f8b-9e76-19079a06cc0b
+  {
+    class: showcase::northwind::model::Order;
+    position: (89.66931137749526,364.84316585774513);
+    rectangle: (174.01666831970215,114.0);
+  }
+  classView 51d867fc-1dce-4979-9120-d10a551e23a7
+  {
+    class: showcase::northwind::model::crm::ShippingCompany;
+    position: (-240.98019847552794,379.4990577970102);
+    rectangle: (179.4666690826416,86.0);
+  }
+  classView 4251c20c-4779-4c21-9b9c-900caf75fcc6
+  {
+    class: showcase::northwind::model::inventory::Product;
+    position: (421.60610674363886,-69.9030438054377);
+    rectangle: (167.85000038146973,128.0);
+  }
+  classView 2a461b5d-77dd-43e1-a33f-0759d84b8667
+  {
+    class: showcase::northwind::model::OrderLineItem;
+    position: (92.87799226709058,-43.093765410358316);
+    rectangle: (169.10000133514404,86.0);
+  }
+  classView 8217f514-1928-48bc-b8de-386ca506c1f9
+  {
+    class: showcase::northwind::model::geography::SalesTerritory;
+    position: (806.4847354152803,653.513841427653);
+    rectangle: (141.58333110809326,72.0);
+  }
+  classView 37cda7f9-22dc-4e75-ad3a-a5599d88772a
+  {
+    class: showcase::northwind::model::inventory::ProductCategory;
+    position: (786.770946360032,-49.13039766561275);
+    rectangle: (175.1082781744508,86.0);
+  }
+  classView 09710ba2-c255-4222-a85d-50520d5eae95
+  {
+    class: showcase::northwind::model::inventory::Supplier;
+    position: (768.5537612977755,206.91393580644078);
+    rectangle: (179.4666690826416,142.0);
+  }
+  classView df47922a-2b8a-4b12-b835-d7c75a694670
+  {
+    class: showcase::northwind::model::crm::Customer;
+    position: (382.36050099956327,131.63043674809185);
+    rectangle: (236.94999885559082,128.0);
+  }
+  classView 6bb172ca-aab8-4c80-a825-dccc9b0f2ef1
+  {
+    class: showcase::northwind::model::geography::SalesRegion;
+    position: (806.4847354152804,492.60599452399185);
+    rectangle: (133.0166654586792,58.0);
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::crm::Customer.address;
+    source: df47922a-2b8a-4b12-b835-d7c75a694670;
+    target: d30683e5-5c3c-4e4b-9d75-08ba75aa2bf2;
+    points: [(500.8355004273587,195.63043674809185),(501.0382186911248,422.8790985977993)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Order_Shipper.shipper;
+    source: fd4a376f-11c2-4f8b-9e76-19079a06cc0b;
+    target: 51d867fc-1dce-4979-9120-d10a551e23a7;
+    points: [(176.67764553734634,421.84316585774513),(-151.24686393420714,422.4990577970102)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Order_Shipper.orders;
+    source: 51d867fc-1dce-4979-9120-d10a551e23a7;
+    target: fd4a376f-11c2-4f8b-9e76-19079a06cc0b;
+    points: [(-151.24686393420714,422.4990577970102),(176.67764553734634,421.84316585774513)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Order_OrderLineItem.lineItems;
+    source: fd4a376f-11c2-4f8b-9e76-19079a06cc0b;
+    target: 2a461b5d-77dd-43e1-a33f-0759d84b8667;
+    points: [(176.67764553734634,421.84316585774513),(177.4279929346626,-0.09376541035831565)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Order_OrderLineItem.order;
+    source: 2a461b5d-77dd-43e1-a33f-0759d84b8667;
+    target: fd4a376f-11c2-4f8b-9e76-19079a06cc0b;
+    points: [(177.4279929346626,-0.09376541035831565),(176.67764553734634,421.84316585774513)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::Order.shipToAddress;
+    source: fd4a376f-11c2-4f8b-9e76-19079a06cc0b;
+    target: d30683e5-5c3c-4e4b-9d75-08ba75aa2bf2;
+    points: [(176.67764553734634,421.84316585774513),(501.0382186911248,422.8790985977993)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Order_Customer.customer;
+    source: fd4a376f-11c2-4f8b-9e76-19079a06cc0b;
+    target: df47922a-2b8a-4b12-b835-d7c75a694670;
+    points: [(176.67764553734634,421.84316585774513),(500.8355004273587,195.63043674809185)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Order_Customer.orders;
+    source: df47922a-2b8a-4b12-b835-d7c75a694670;
+    target: fd4a376f-11c2-4f8b-9e76-19079a06cc0b;
+    points: [(500.8355004273587,195.63043674809185),(176.67764553734634,421.84316585774513)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::inventory::Supplier.address;
+    source: 09710ba2-c255-4222-a85d-50520d5eae95;
+    target: d30683e5-5c3c-4e4b-9d75-08ba75aa2bf2;
+    points: [(858.2870958390963,277.9139358064408),(501.0382186911248,422.8790985977993)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Order_Employee.orders;
+    source: 8947a897-a67d-4064-8770-8a440e1220ce;
+    target: fd4a376f-11c2-4f8b-9e76-19079a06cc0b;
+    points: [(506.70383802904576,686.7157363134539),(176.67764553734634,421.84316585774513)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Order_Employee.employee;
+    source: fd4a376f-11c2-4f8b-9e76-19079a06cc0b;
+    target: 8947a897-a67d-4064-8770-8a440e1220ce;
+    points: [(176.67764553734634,421.84316585774513),(506.70383802904576,686.7157363134539)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::crm::Employee.address;
+    source: 8947a897-a67d-4064-8770-8a440e1220ce;
+    target: d30683e5-5c3c-4e4b-9d75-08ba75aa2bf2;
+    points: [(506.70383802904576,686.7157363134539),(501.0382186911248,422.8790985977993)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Product_Category.category;
+    source: 4251c20c-4779-4c21-9b9c-900caf75fcc6;
+    target: 37cda7f9-22dc-4e75-ad3a-a5599d88772a;
+    points: [(505.5311069343737,-5.903043805437704),(874.3250854472574,-6.1303976656127475)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Product_Category.products;
+    source: 37cda7f9-22dc-4e75-ad3a-a5599d88772a;
+    target: 4251c20c-4779-4c21-9b9c-900caf75fcc6;
+    points: [(874.3250854472574,-6.1303976656127475),(505.5311069343737,-5.903043805437704)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::OrderLineItem_Product.orderLineItems;
+    source: 4251c20c-4779-4c21-9b9c-900caf75fcc6;
+    target: 2a461b5d-77dd-43e1-a33f-0759d84b8667;
+    points: [(505.5311069343737,-5.903043805437704),(177.4279929346626,-0.09376541035831565)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::OrderLineItem_Product.product;
+    source: 2a461b5d-77dd-43e1-a33f-0759d84b8667;
+    target: 4251c20c-4779-4c21-9b9c-900caf75fcc6;
+    points: [(177.4279929346626,-0.09376541035831565),(505.5311069343737,-5.903043805437704)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Product_Suppliers.supplier;
+    source: 4251c20c-4779-4c21-9b9c-900caf75fcc6;
+    target: 09710ba2-c255-4222-a85d-50520d5eae95;
+    points: [(505.5311069343737,-5.903043805437704),(858.2870958390963,277.9139358064408)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Product_Suppliers.products;
+    source: 09710ba2-c255-4222-a85d-50520d5eae95;
+    target: 4251c20c-4779-4c21-9b9c-900caf75fcc6;
+    points: [(858.2870958390963,277.9139358064408),(505.5311069343737,-5.903043805437704)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Terriroties_Employees.employees;
+    source: 8217f514-1928-48bc-b8de-386ca506c1f9;
+    target: 8947a897-a67d-4064-8770-8a440e1220ce;
+    points: [(877.2764009693269,689.513841427653),(506.70383802904576,686.7157363134539)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Terriroties_Employees.territories;
+    source: 8947a897-a67d-4064-8770-8a440e1220ce;
+    target: 8217f514-1928-48bc-b8de-386ca506c1f9;
+    points: [(506.70383802904576,686.7157363134539),(877.2764009693269,689.513841427653)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Terriroties_Region.territories;
+    source: 6bb172ca-aab8-4c80-a825-dccc9b0f2ef1;
+    target: 8217f514-1928-48bc-b8de-386ca506c1f9;
+    points: [(872.99306814462,521.6059945239919),(877.2764009693269,689.513841427653)];
+  }
+  propertyView
+  {
+    property: showcase::northwind::model::associations::Terriroties_Region.region;
+    source: 8217f514-1928-48bc-b8de-386ca506c1f9;
+    target: 6bb172ca-aab8-4c80-a825-dccc9b0f2ef1;
+    points: [(877.2764009693269,689.513841427653),(872.99306814462,521.6059945239919)];
+  }
+}
+
+
 ###DataSpace
-DataSpace domain::COVIDDataspace
+DataSpace showcase::northwind::dataspace::NorthwindDataSpaceWithExecutables
 {
   executionContexts:
   [
     {
-      name: 'dummyContext';
-      mapping: mapping::CovidDataMapping;
-      defaultRuntime: runtime::H2Runtime;
+      name: 'externally-public-QA';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'externally-public-PROD';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'internally-public-QA';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'internally-public-PROD';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'internally-restricted-QA';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
+    },
+    {
+      name: 'internally-restricted-PROD';
+      mapping: showcase::northwind::mapping::NorthwindMapping;
+      defaultRuntime: showcase::northwind::runtime::NorthwindRuntime;
     }
   ];
-  defaultExecutionContext: 'dummyContext';
-  title: 'COVID Sample Data';
-  description: '# Peleus rupit\n\n## Sum super gerens paterque\n\nLorem markdownum presso, et tamen cogitis, Taenarius lactantia fluxerunt\nterrita, vota. Tempore flumina ferrumque bella.\n\n- Per dixit\n- Truces tellusque indignata ducem\n- Cervice venitis cavernis minus\n\n## Tum ausus fovebam incursus magis dici extemplo\n\nPiscator degenerat desertaque quid scelus tyranni feror ipsa mortis nec silva\nsparsus neci cum? Est patulas meam decorem, dat demit corpora exuritque Ulixes,\ngenitore. Captare certa amore pressos, Diamque\n[traxit](http://istecondar.net/ministropudoris) devorat duritia ecce, capillos\nfuerint progenitore curva relictas. Iubae pectus et quateret, non vires tibi\ncacumina figuram Antigonen rursus verti.\n\n## Dicta nec Thestiadae tristi exempla sed suoque\n\nFlumina quae loricaeque meruique defensae *me terram* tamen attollere totum\nneque nullos. Quem plus, stratum.\n\n## Quaeque si reddite summoque vultu Teleboasque vincere\n\nIsmariae me munus umbram. Usum pedem multis quotiensque mirantum Cephenum et\namori Procne locutum auctor Volturnus pavent virgineas.\n\n    if (edi + sidebarTooltip < aiffDisk) {\n        drive_key_firewire += bank(searchHardBoot(bus, packet_click));\n    }\n    var adRow = dlc_rootkit(rdramMegabit) - hertzBanner * 2 +\n            memory_adc.horizontal(class_box_rte, disk, lte_grep);\n    if (grayscale) {\n        spool_windows_metal.zif_firewire *= 3;\n        emoticon_mp = user.thunderboltIcqBus.installer_remote(4, searchCable) *\n                kibibyteYoutubeRaster.simm(-3, nosqlCharacter, sip);\n    }\n    var blob = -2;\n\n## Est magis interdum in luctus\n\nPrimus illa sub bis infregit saepe agrestem Cyllare lumen cultrosque **Cnosia**.\nSuis est fero durisque satis.\n\n- Nos quas est maesta aliquis se unum\n- Tu ossa Cupido sagitta hanc inflati profuso\n- Modo est proles pavor\n- Stillabant pallada invitaque et tantum dictaque in\n- Generum coegi tum edaci\n\nSuo nec cerae me omnem Famemque, passi si auditque ullo, praebita. Gravi annos\npudore formidabilis erat pectora perpetuo qua oscula cum ad sed Nabataeus\nRomethiumque deum Erectheus? O Victoria rostro utque terras vitisque classe.\nTibi [miserrima hirta](http://decentia-qui.net/docta-petentem), eratis saepius\ntuus.';
+  defaultExecutionContext: 'externally-public-PROD';
   executables:
   [
     {
-      title: 'Exec 1';
-      description: 'Some exec description';
-      executable: service::CovidDataMulti;
+      title: 'Northwind Data Space -Shipper Validation Defects';
+      description: 'Shipper Validation Defects';
+      executable: showcase::northwind::services::graph::ShipperValidationDefects;
     },
     {
-      title: 'Exec 2';
-      description: 'Some more exec description';
-      executable: service::CovidDataSingle;
+      id: my_id;
+      title: 'this is title - Top Categories';
+      description: 'this is description - TopCategories';
+      query: |showcase::northwind::model::Order.all()->groupBy(
+        [
+          x: showcase::northwind::model::Order[1]|$x.lineItems.product.category.id,
+          x: showcase::northwind::model::Order[1]|$x.lineItems.product.category.name
+        ],
+        [
+          agg(
+            x: showcase::northwind::model::Order[1]|$x.id,
+            x: Integer[*]|$x->distinct()->count()
+          )
+        ],
+        [
+          'Category Id',
+          'Category Name',
+          'Order Count'
+        ]
+      )->sort(
+        [
+          desc('Order Count')
+        ]
+      )->take(5);
+      executionContextKey: 'externally-public-PROD';
     }
   ];
 }
 
 
 ###Service
-Service service::CovidDataMulti
+Service showcase::northwind::services::graph::OrderDetailsByIdGraphFetch
 {
-  pattern: '/9566f101-2108-408f-863f-6d7e154dc17a';
-  owners:
-  [
-    'anonymous',
-    'akphi'
-  ];
-  documentation: '';
-  autoActivateUpdates: true;
-  execution: Multi
-  {
-    query: |domain::COVIDData.all()->project(
-      [
-        x: domain::COVIDData[1]|$x.cases
-      ],
-      ['Cases']
-    );
-    key: 'env';
-    executions['PROD']:
-    {
-      mapping: mapping::CovidDataMapping;
-      runtime: runtime::H2Runtime;
-    }
-    executions['DEV']:
-    {
-      mapping: mapping::CovidDataMapping;
-      runtime: runtime::H2Runtime;
-    }
-  }
-}
-
-Service service::CovidDataSingle
-{
-  pattern: '/9566f101-2108-408f-863f-6d7e154dc17b';
-  owners:
-  [
-    'anonymous',
-    'akphi'
-  ];
+  pattern: '/orderDetailsByIdGraphFetch/{id}';
   documentation: '';
   autoActivateUpdates: true;
   execution: Single
   {
-    query: |domain::COVIDData.all()->project(
-      [
-        x: domain::COVIDData[1]|$x.cases
-      ],
-      ['Cases']
+    query: id: Integer[1]|showcase::northwind::model::Order.all()->filter(
+      x: showcase::northwind::model::Order[1]|$x.id ==
+        $id
+    )->graphFetch(
+      #{
+        showcase::northwind::model::Order{
+          id,
+          createdDate,
+          customer{
+            companyName
+          },
+          employee{
+            firstName
+          },
+          lineItems{
+            product{
+              name,
+              category{
+                name
+              }
+            },
+            quantity
+          },
+          shipper{
+            name
+          }
+        }
+      }#
+    )->serialize(
+      #{
+        showcase::northwind::model::Order{
+          id,
+          createdDate,
+          customer{
+            companyName
+          },
+          employee{
+            firstName
+          },
+          lineItems{
+            product{
+              name,
+              category{
+                name
+              }
+            },
+            quantity
+          },
+          shipper{
+            name
+          }
+        }
+      }#
     );
-    mapping: mapping::CovidDataMapping;
-    runtime: runtime::H2Runtime;
+    mapping: showcase::northwind::mapping::NorthwindMapping;
+    runtime: showcase::northwind::runtime::NorthwindRuntime;
   }
+}
+
+Service showcase::northwind::services::graph::ShipperValidationDefects
+{
+  pattern: '/shipperValidationDefects';
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |showcase::northwind::model::crm::ShippingCompany.all()->graphFetchChecked(
+      #{
+        showcase::northwind::model::crm::ShippingCompany{
+          id,
+          telephoneNumber
+        }
+      }#
+    )->serialize(
+      #{
+        showcase::northwind::model::crm::ShippingCompany{
+          id,
+          telephoneNumber
+        }
+      }#
+    );
+    mapping: showcase::northwind::mapping::NorthwindMapping;
+    runtime: showcase::northwind::runtime::NorthwindRuntime;
+  }
+}
+
+Service showcase::northwind::services::tds::OrderDetailsByIdTDS
+{
+  pattern: '/orderDetailsByIdTDS/{id}';
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: orderId: Integer[1]|showcase::northwind::model::Order.all()->filter(
+      x: showcase::northwind::model::Order[1]|$x.id ==
+        $orderId
+    )->project(
+      [
+        x: showcase::northwind::model::Order[1]|$x.id,
+        x: showcase::northwind::model::Order[1]|$x.customer.companyName,
+        x: showcase::northwind::model::Order[1]|$x.employee.firstName,
+        x: showcase::northwind::model::Order[1]|$x.lineItems.product.name,
+        x: showcase::northwind::model::Order[1]|$x.lineItems.product.category.name,
+        x: showcase::northwind::model::Order[1]|$x.lineItems.quantity,
+        x: showcase::northwind::model::Order[1]|$x.shipper.name
+      ],
+      [
+        'Order Id',
+        'Customer/Company Name',
+        'Employee/First Name',
+        'Order Line Items/Product/Product Name',
+        'Order Line Items/Product/Category/Category Name',
+        'Order Line Items/Quantity',
+        'Shipper/Company Name'
+      ]
+    );
+    mapping: showcase::northwind::mapping::NorthwindMapping;
+    runtime: showcase::northwind::runtime::NorthwindRuntime;
+  }
+  postValidations:
+  [
+    {
+      description: 'a simple passing validation with static parameter';
+      params:[
+        |10248
+      ];
+      assertions:[
+        rowCountGreaterThan10: tds: TabularDataSet[1]|$tds->filter(
+  row: meta::pure::tds::TDSRow[1]|$row.getString('Employee/First Name')->startsWith('T')
+)->meta::legend::service::validation::assertTabularDataSetEmpty('Expected no Employee/First Name to begin with the letter T')
+      ];
+    }
+  ]
+}
+
+Service showcase::northwind::services::tds::TopCategories
+{
+  pattern: '/topCategories';
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |showcase::northwind::model::Order.all()->groupBy(
+      [
+        x: showcase::northwind::model::Order[1]|$x.lineItems.product.category.id,
+        x: showcase::northwind::model::Order[1]|$x.lineItems.product.category.name
+      ],
+      [
+        agg(
+          x: showcase::northwind::model::Order[1]|$x.id,
+          x: Integer[*]|$x->distinct()->count()
+        )
+      ],
+      [
+        'Category Id',
+        'Category Name',
+        'Order Count'
+      ]
+    )->sort(
+      [
+        desc('Order Count')
+      ]
+    )->take(5);
+    mapping: showcase::northwind::mapping::NorthwindMapping;
+    runtime: showcase::northwind::runtime::NorthwindRuntime;
+  }
+}
+
+Service showcase::northwind::services::tds::ProductRankingWithinCategory
+{
+  pattern: '/productRankingWithinCategory';
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |showcase::northwind::model::inventory::ProductCategory.all()->groupBy(
+      [
+        x: showcase::northwind::model::inventory::ProductCategory[1]|$x.name,
+        x: showcase::northwind::model::inventory::ProductCategory[1]|$x.products.name
+      ],
+      [
+        agg(
+          x: showcase::northwind::model::inventory::ProductCategory[1]|$x.products.orderLineItems.order.id,
+          x: Integer[*]|$x->distinct()->count()
+        )
+      ],
+      [
+        'Category Name',
+        'Products/Product Name',
+        'OrderCount'
+      ]
+    )->olapGroupBy(
+      ['Category Name'],
+      desc('OrderCount'),
+      x: meta::pure::tds::TDSRow[*]|$x->rank(),
+      'Rank Within Category'
+    )->sort(
+      [
+        asc('Category Name'),
+        asc('Rank Within Category')
+      ]
+    );
+    mapping: showcase::northwind::mapping::NorthwindMapping;
+    runtime: showcase::northwind::runtime::NorthwindRuntime;
+  }
+}
+
+Service showcase::northwind::services::tds::Customers
+{
+  pattern: '/customers';
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |showcase::northwind::model::crm::Customer.all()->project(
+      [
+        x: showcase::northwind::model::crm::Customer[1]|$x.id,
+        x: showcase::northwind::model::crm::Customer[1]|$x.companyName,
+        x: showcase::northwind::model::crm::Customer[1]|$x.contactName,
+        x: showcase::northwind::model::crm::Customer[1]|$x.companyTitle,
+        x: showcase::northwind::model::crm::Customer[1]|$x.address.country,
+        x: showcase::northwind::model::crm::Customer[1]|$x.address.address,
+        x: showcase::northwind::model::crm::Customer[1]|$x.address.city,
+        x: showcase::northwind::model::crm::Customer[1]|$x.telephoneNumber
+      ],
+      [
+        'Customer Id',
+        'Company Name',
+        'Contact Name',
+        'Company Title',
+        'Country',
+        'Address',
+        'City',
+        'Phone'
+      ]
+    );
+    mapping: showcase::northwind::mapping::NorthwindMapping;
+    runtime: showcase::northwind::runtime::NorthwindRuntime;
+  }
+  postValidations:
+  [
+    {
+      description: 'A simple passing validation';
+      params:[
+
+      ];
+      assertions:[
+        noCompanyNamedAroundtheHorn: tds: TabularDataSet[1]|$tds->filter(
+  row: meta::pure::tds::TDSRow[1]|$row.getString('Company Name')->contains('Around the Hornsss')
+)->meta::legend::service::validation::assertTabularDataSetEmpty('Expected there is no company named Around the Hornsss')
+      ];
+    }
+  ]
 }
 
 
 ###Relational
-Database store::CovidDataStore
+Database showcase::northwind::store::NorthwindDatabase
 (
-  Table DEMOGRAPHICS
+  Schema NORTHWIND
   (
-    FIPS VARCHAR(200),
-    STATE VARCHAR(200)
-  )
-  Table COVID_DATA
-  (
-    ID INTEGER PRIMARY KEY,
-    FIPS VARCHAR(200),
-    DATE DATE,
-    CASE_TYPE VARCHAR(200),
-    CASES INTEGER,
-    LAST_REPORTED_FLAG BIT
+    Table CATEGORIES
+    (
+      CATEGORY_ID SMALLINT PRIMARY KEY,
+      CATEGORY_NAME VARCHAR(15) NOT NULL,
+      DESCRIPTION VARCHAR(256),
+      PICTURE OTHER
+    )
+    Table CUSTOMERS
+    (
+      CUSTOMER_ID VARCHAR(5) PRIMARY KEY,
+      COMPANY_NAME VARCHAR(40) NOT NULL,
+      CONTACT_NAME VARCHAR(30),
+      CONTACT_TITLE VARCHAR(30),
+      ADDRESS VARCHAR(60),
+      CITY VARCHAR(15),
+      REGION VARCHAR(15),
+      POSTAL_CODE VARCHAR(10),
+      COUNTRY VARCHAR(15),
+      PHONE VARCHAR(24),
+      FAX VARCHAR(24)
+    )
+    Table CUSTOMER_CUSTOMER_DEMO
+    (
+      CUSTOMER_ID VARCHAR(5) PRIMARY KEY,
+      CUSTOMER_TYPE_ID VARCHAR(5) PRIMARY KEY
+    )
+    Table CUSTOMER_DEMOGRAPHICS
+    (
+      CUSTOMER_TYPE_ID VARCHAR(5) PRIMARY KEY,
+      CUSTOMER_DESC VARCHAR(256)
+    )
+    Table EMPLOYEES
+    (
+      EMPLOYEE_ID SMALLINT PRIMARY KEY,
+      LAST_NAME VARCHAR(20) NOT NULL,
+      FIRST_NAME VARCHAR(10) NOT NULL,
+      TITLE VARCHAR(30),
+      TITLE_OF_COURTESY VARCHAR(25),
+      BIRTH_DATE DATE,
+      HIRE_DATE DATE,
+      ADDRESS VARCHAR(60),
+      CITY VARCHAR(15),
+      REGION VARCHAR(15),
+      POSTAL_CODE VARCHAR(10),
+      COUNTRY VARCHAR(15),
+      HOME_PHONE VARCHAR(24),
+      EXTENSION VARCHAR(4),
+      PHOTO OTHER,
+      NOTES OTHER,
+      REPORTS_TO SMALLINT,
+      PHOTO_PATH VARCHAR(255)
+    )
+    Table EMPLOYEE_TERRITORIES
+    (
+      EMPLOYEE_ID SMALLINT PRIMARY KEY,
+      TERRITORY_ID VARCHAR(20) PRIMARY KEY
+    )
+    Table ORDERS
+    (
+      ORDER_ID SMALLINT PRIMARY KEY,
+      CUSTOMER_ID VARCHAR(5),
+      EMPLOYEE_ID SMALLINT,
+      ORDER_DATE DATE,
+      REQUIRED_DATE DATE,
+      SHIPPED_DATE DATE,
+      SHIP_VIA SMALLINT,
+      FREIGHT OTHER,
+      SHIP_NAME VARCHAR(40),
+      SHIP_ADDRESS VARCHAR(60),
+      SHIP_CITY VARCHAR(15),
+      SHIP_REGION VARCHAR(15),
+      SHIP_POSTAL_CODE VARCHAR(10),
+      SHIP_COUNTRY VARCHAR(15)
+    )
+    Table ORDER_DETAILS
+    (
+      ORDER_ID SMALLINT PRIMARY KEY,
+      PRODUCT_ID SMALLINT PRIMARY KEY,
+      UNIT_PRICE OTHER NOT NULL,
+      QUANTITY SMALLINT NOT NULL,
+      DISCOUNT OTHER NOT NULL
+    )
+    Table PRODUCTS
+    (
+      PRODUCT_ID SMALLINT PRIMARY KEY,
+      PRODUCT_NAME VARCHAR(40) NOT NULL,
+      SUPPLIER_ID SMALLINT,
+      CATEGORY_ID SMALLINT,
+      QUANTITY_PER_UNIT VARCHAR(20),
+      UNIT_PRICE OTHER,
+      UNITS_IN_STOCK SMALLINT,
+      UNITS_ON_ORDER SMALLINT,
+      REORDER_LEVEL SMALLINT,
+      DISCONTINUED INTEGER NOT NULL
+    )
+    Table REGION
+    (
+      REGION_ID SMALLINT PRIMARY KEY,
+      REGION_DESCRIPTION VARCHAR(60) NOT NULL
+    )
+    Table SHIPPERS
+    (
+      SHIPPER_ID SMALLINT PRIMARY KEY,
+      COMPANY_NAME VARCHAR(40) NOT NULL,
+      PHONE VARCHAR(24) NOT NULL
+    )
+    Table SUPPLIERS
+    (
+      SUPPLIER_ID SMALLINT PRIMARY KEY,
+      COMPANY_NAME VARCHAR(40) NOT NULL,
+      CONTACT_NAME VARCHAR(30),
+      CONTACT_TITLE VARCHAR(30),
+      ADDRESS VARCHAR(60),
+      CITY VARCHAR(15),
+      REGION VARCHAR(15),
+      POSTAL_CODE VARCHAR(10),
+      COUNTRY VARCHAR(15),
+      PHONE VARCHAR(24),
+      FAX VARCHAR(24),
+      HOMEPAGE VARCHAR(256)
+    )
+    Table TERRITORIES
+    (
+      TERRITORY_ID VARCHAR(20) PRIMARY KEY,
+      TERRITORY_DESCRIPTION VARCHAR(60) NOT NULL,
+      REGION_ID SMALLINT NOT NULL
+    )
+    Table US_STATES
+    (
+      STATE_ID SMALLINT PRIMARY KEY,
+      STATE_NAME VARCHAR(100),
+      STATE_ABBR VARCHAR(2),
+      STATE_REGION VARCHAR(50)
+    )
   )
 
-  Join CovidDataDemographicsJoin(DEMOGRAPHICS.FIPS = COVID_DATA.FIPS)
+  Join ORDERS_CUSTMERS(NORTHWIND.ORDERS.CUSTOMER_ID = NORTHWIND.CUSTOMERS.CUSTOMER_ID)
+  Join ORDERS_EMPLOYEES(NORTHWIND.ORDERS.EMPLOYEE_ID = NORTHWIND.EMPLOYEES.EMPLOYEE_ID)
+  Join ORDERS_SHIPPERS(NORTHWIND.ORDERS.SHIP_VIA = NORTHWIND.SHIPPERS.SHIPPER_ID)
+  Join ORDERS_ORDER_DETAILS(NORTHWIND.ORDERS.ORDER_ID = NORTHWIND.ORDER_DETAILS.ORDER_ID)
+  Join ORDERS_DETAILS_PRODUCTS(NORTHWIND.ORDER_DETAILS.PRODUCT_ID = NORTHWIND.PRODUCTS.PRODUCT_ID)
+  Join PRODUCTS_CATEGORIES(NORTHWIND.PRODUCTS.CATEGORY_ID = NORTHWIND.CATEGORIES.CATEGORY_ID)
+  Join PRODUCTS_SUPPLIERS(NORTHWIND.PRODUCTS.SUPPLIER_ID = NORTHWIND.SUPPLIERS.SUPPLIER_ID)
+  Join TERRITORIES_REGION(NORTHWIND.TERRITORIES.REGION_ID = NORTHWIND.REGION.REGION_ID)
+  Join EMPLOYEES_EMPLOYEE_TERRITORIES(NORTHWIND.EMPLOYEES.EMPLOYEE_ID = NORTHWIND.EMPLOYEE_TERRITORIES.EMPLOYEE_ID)
+  Join EMPLOYEE_TERRITORIES_TERRITORIES(NORTHWIND.EMPLOYEE_TERRITORIES.TERRITORY_ID = NORTHWIND.TERRITORIES.TERRITORY_ID)
+  Join CUSTOMER_CURSTOMER_DEMO(NORTHWIND.CUSTOMERS.CUSTOMER_ID = NORTHWIND.CUSTOMER_CUSTOMER_DEMO.CUSTOMER_ID)
+  Join CURSTOMER_DEMO_DEMOGRAPHICS(NORTHWIND.CUSTOMER_CUSTOMER_DEMO.CUSTOMER_TYPE_ID = NORTHWIND.CUSTOMER_DEMOGRAPHICS.CUSTOMER_TYPE_ID)
+  Join EMPLOYEE_REPORTS(NORTHWIND.EMPLOYEES.REPORTS_TO = {target}.EMPLOYEE_ID)
+  Join SUPPLIERS_REGION(NORTHWIND.SUPPLIERS.REGION = NORTHWIND.REGION.REGION_ID)
+  Join ORDERS_REGION(NORTHWIND.ORDERS.SHIP_REGION = NORTHWIND.REGION.REGION_ID)
+  Join CUSTOMERS_REGION(NORTHWIND.CUSTOMERS.REGION = NORTHWIND.REGION.REGION_ID)
+  Join EMPLOYEES_REGION(NORTHWIND.EMPLOYEES.REGION = NORTHWIND.REGION.REGION_ID)
 )
 
 
 ###Pure
-Enum {doc.doc = 'List of known viruses'} domain::Virus
+Enum showcase::northwind::model::crm::Title
 {
-  {doc.doc = 'Severe acute respiratory syndrome (SARS) is a viral respiratory disease of zoonotic origin caused by the severe acute respiratory syndrome coronavirus'} SARS,
-  {doc.doc = 'Coronavirus disease 2019 (COVID-19) is a contagious disease caused by a virus, the severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)'} COVID19
+  Mr,
+  Mrs,
+  Miss,
+  Ms,
+  Dr,
+  Sir,
+  Professor,
+  Duchess,
+  Duke
 }
 
-Class {doc.doc = 'COVID-19 data demographics consisting of geolocation information'} domain::Demographics
-{
-  {doc.doc = 'The Federal Information Processing Standard (FIPS) code (FIPS 6-4) uniquely identifies counties and county equivalents in the United States'} fips: String[0..1];
-  {doc.doc = 'United States in 2-letter codes format'} state: String[0..1];
-}
-
-Class {doc.doc = 'COVID-19 data report consisting of case statistics details and basic information on demographics'} domain::COVIDData
+Class showcase::northwind::model::crm::Employee
+[
+  dateOfBirthNotInTheFuture: $this.dateOfBirth <
+  now(),
+  dateOfBirthValid: $this.dateOfBirth > %1900-01-01,
+  employeeIsOverEighteen: $this.dateOfBirth->dateDiff(
+  today(),
+  meta::pure::functions::date::DurationUnit.YEARS
+) >= 18,
+  employeeIsUnderEighty: $this.dateOfBirth->dateDiff(
+  today(),
+  meta::pure::functions::date::DurationUnit.YEARS
+) < 80,
+  notDateOfHireNotBeforeDateOfBirth: $this.dateOfHire >
+  $this.dateOfBirth
+]
 {
   id: Integer[1];
-  {doc.doc = 'The Federal Information Processing Standard (FIPS) code (FIPS 6-4) uniquely identifies counties and county equivalents in the United States'} fips: String[0..1];
-  date: StrictDate[0..1];
-  caseType: String[0..1];
-  cases: Float[0..1];
-  {doc.doc = 'A flag indicating if the similar case data has been reported previously'} lastReportedFlag: Boolean[0..1];
-  demographics: domain::Demographics[0..1];
+  lastName: String[1];
+  firstName: String[1];
+  title: String[0..1];
+  preferredTitle: showcase::northwind::model::crm::Title[0..1];
+  dateOfBirth: StrictDate[0..1];
+  dateOfHire: StrictDate[0..1];
+  address: showcase::northwind::model::geography::Address[0..1];
+  homeTelephoneNumber: String[0..1];
+  extension: String[0..1];
+  fullName() {if(
+  $this.preferredTitle->isNotEmpty(),
+  |$this.preferredTitle->toOne()->toString() + ' ',
+  |if(
+    $this.title->isNotEmpty(),
+    |$this.title->toOne() + ' ',
+    |''
+  )
+) + $this.firstName + ' ' + $this.lastName}: String[1];
+}
+
+Class showcase::northwind::model::Order
+{
+  id: Integer[1];
+  createdDate: StrictDate[0..1];
+  requiredDate: StrictDate[0..1];
+  shippedDate: StrictDate[0..1];
+  shipToName: String[0..1];
+  shipToAddress: showcase::northwind::model::geography::Address[0..1];
+  itemCount() {$this.lineItems->count()}: Integer[1];
+}
+
+Class showcase::northwind::model::geography::Address
+{
+  address: String[0..1];
+  city: String[0..1];
+  postalCode: String[0..1];
+  region: String[0..1];
+  country: String[0..1];
+}
+
+Class showcase::northwind::model::inventory::Product
+[
+  idNotNegative: $this.id >= 0,
+  nameNotBlank: $this.name->length() > 0
+]
+{
+  id: Integer[1];
+  name: String[1];
+  quantityPerUnit: String[0..1];
+  unitsInStock: Integer[0..1];
+  unitsOnOrder: Integer[0..1];
+  reorderLevel: Integer[0..1];
+  discontinued: Integer[1];
+}
+
+Class showcase::northwind::model::inventory::Supplier
+{
+  id: Integer[1];
+  companyName: String[1];
+  contactName: String[0..1];
+  contactTitle: String[0..1];
+  address: showcase::northwind::model::geography::Address[0..1];
+  telephoneNumber: String[0..1];
+  faxNumber: String[0..1];
+  homepageUrl: String[0..1];
+}
+
+Class showcase::northwind::model::crm::Customer
+[
+  idNotBlank: $this.id->length() > 0
+]
+{
+  id: String[1];
+  companyName: String[1];
+  contactName: String[0..1];
+  companyTitle: String[0..1];
+  address: showcase::northwind::model::geography::Address[0..1];
+  telephoneNumber: String[0..1];
+  faxNumber: String[0..1];
+}
+
+Class showcase::northwind::model::crm::CustomerDemographic
+[
+  idNotBlank: $this.id->length() > 0
+]
+{
+  id: String[1];
+  description: String[0..1];
+}
+
+Class showcase::northwind::model::crm::ShippingCompany
+[
+  idNotNegative: $this.id >= 0,
+  telephoneNumberFormatValid: $this.telephoneNumber->isEmpty() ||
+  $this.telephoneNumber->toOne()->matches('(1-)?\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d')
+]
+{
+  id: Integer[1];
+  name: String[1];
+  telephoneNumber: String[1];
+}
+
+Class showcase::northwind::model::geography::USState
+[
+  idNotNegative: $this.id >= 0,
+  nameNotBlank: $this.name->isEmpty() ||
+  ($this.name->toOne()->length() > 0)
+]
+{
+  id: Integer[1];
+  name: String[0..1];
+  code: String[0..1];
+}
+
+Class showcase::northwind::model::geography::SalesRegion
+[
+  idNotNegative: $this.id >= 0,
+  descriptionNotBlank: $this.description->length() > 0
+]
+{
+  id: Integer[1];
+  description: String[1];
+}
+
+Class showcase::northwind::model::inventory::ProductCategory
+[
+  idNotNegative: $this.id >= 0,
+  nameNotBlank: $this.name->length() > 0
+]
+{
+  id: Integer[1];
+  name: String[1];
+  description: String[0..1];
+}
+
+Class showcase::northwind::model::OrderLineItem
+{
+  quantity: Integer[1];
+  unitPrice: Float[1];
+  unitPriceCurrency: String[1];
+}
+
+Class showcase::northwind::model::geography::SalesTerritory
+[
+  idNotBlank: $this.id->length() > 0,
+  descriptionNotBlank: $this.description->length() > 0
+]
+{
+  id: String[1];
+  description: String[1];
+}
+
+Association showcase::northwind::model::associations::Order_Employee
+{
+  orders: showcase::northwind::model::Order[*];
+  employee: showcase::northwind::model::crm::Employee[0..1];
+}
+
+Association showcase::northwind::model::associations::Product_Category
+{
+  category: showcase::northwind::model::inventory::ProductCategory[0..1];
+  products: showcase::northwind::model::inventory::Product[*];
+}
+
+Association showcase::northwind::model::associations::Product_Suppliers
+{
+  supplier: showcase::northwind::model::inventory::Supplier[1];
+  products: showcase::northwind::model::inventory::Product[*];
+}
+
+Association showcase::northwind::model::associations::OrderLineItem_Product
+{
+  orderLineItems: showcase::northwind::model::OrderLineItem[*];
+  product: showcase::northwind::model::inventory::Product[1];
+}
+
+Association showcase::northwind::model::associations::Order_Customer
+{
+  orders: showcase::northwind::model::Order[*];
+  customer: showcase::northwind::model::crm::Customer[0..1];
+}
+
+Association showcase::northwind::model::associations::Order_OrderLineItem
+{
+  order: showcase::northwind::model::Order[1];
+  lineItems: showcase::northwind::model::OrderLineItem[*];
+}
+
+Association showcase::northwind::model::associations::Terriroties_Employees
+{
+  employees: showcase::northwind::model::crm::Employee[*];
+  territories: showcase::northwind::model::geography::SalesTerritory[*];
+}
+
+Association showcase::northwind::model::associations::Order_Shipper
+{
+  orders: showcase::northwind::model::Order[*];
+  shipper: showcase::northwind::model::crm::ShippingCompany[0..1];
+}
+
+Association showcase::northwind::model::associations::Terriroties_Region
+{
+  region: showcase::northwind::model::geography::SalesRegion[1];
+  territories: showcase::northwind::model::geography::SalesTerritory[1..*];
+}
+
+Association showcase::northwind::model::associations::Customer_CustomerDemographics
+{
+  customers: showcase::northwind::model::crm::Customer[*];
+  demographics: showcase::northwind::model::crm::CustomerDemographic[*];
+}
+
+Association showcase::northwind::model::associations::Employee_Manager
+{
+  reports: showcase::northwind::model::crm::Employee[*];
+  manager: showcase::northwind::model::crm::Employee[0..1];
 }
 
 
 ###Mapping
-Mapping mapping::CovidDataMapping
+Mapping showcase::northwind::mapping::NorthwindMapping
 (
-  domain::Demographics: Relational
+  showcase::northwind::model::inventory::ProductCategory[Category]: Relational
   {
     ~primaryKey
     (
-      [store::CovidDataStore]DEMOGRAPHICS.FIPS
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CATEGORIES.CATEGORY_ID
     )
-    ~mainTable [store::CovidDataStore]DEMOGRAPHICS
-    fips: [store::CovidDataStore]DEMOGRAPHICS.FIPS,
-    state: [store::CovidDataStore]DEMOGRAPHICS.STATE
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CATEGORIES
+    id: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CATEGORIES.CATEGORY_ID,
+    name: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CATEGORIES.CATEGORY_NAME,
+    description: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CATEGORIES.DESCRIPTION
   }
-  domain::COVIDData: Relational
+  showcase::northwind::model::crm::Customer[Customer]: Relational
   {
     ~primaryKey
     (
-      [store::CovidDataStore]COVID_DATA.ID
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.CUSTOMER_ID
     )
-    ~mainTable [store::CovidDataStore]COVID_DATA
-    id: [store::CovidDataStore]COVID_DATA.ID,
-    fips: [store::CovidDataStore]COVID_DATA.FIPS,
-    date: [store::CovidDataStore]COVID_DATA.DATE,
-    caseType: [store::CovidDataStore]COVID_DATA.CASE_TYPE,
-    cases: [store::CovidDataStore]COVID_DATA.CASES,
-    lastReportedFlag: [store::CovidDataStore]COVID_DATA.LAST_REPORTED_FLAG,
-    demographics[domain_Demographics]: [store::CovidDataStore]@CovidDataDemographicsJoin
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS
+    id: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.CUSTOMER_ID,
+    companyName: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.COMPANY_NAME,
+    contactName: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.CONTACT_NAME,
+    companyTitle: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.CONTACT_TITLE,
+    address
+    (
+      address: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.ADDRESS,
+      city: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.CITY,
+      region: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.REGION,
+      postalCode: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.POSTAL_CODE,
+      country: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.COUNTRY
+    ),
+    telephoneNumber: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.PHONE,
+    faxNumber: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.CUSTOMERS.FAX
+  }
+  showcase::northwind::model::crm::Employee[Employee]: Relational
+  {
+    ~primaryKey
+    (
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.EMPLOYEE_ID
+    )
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES
+    id: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.EMPLOYEE_ID,
+    lastName: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.LAST_NAME,
+    firstName: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.FIRST_NAME,
+    title: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.TITLE,
+    preferredTitle: EnumerationMapping TitleMapping: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.TITLE_OF_COURTESY,
+    dateOfBirth: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.BIRTH_DATE,
+    dateOfHire: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.HIRE_DATE,
+    address
+    (
+      address: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.ADDRESS,
+      city: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.CITY,
+      region: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.REGION,
+      postalCode: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.POSTAL_CODE,
+      country: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.COUNTRY
+    ),
+    homeTelephoneNumber: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.HOME_PHONE,
+    extension: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.EMPLOYEES.EXTENSION
+  }
+  showcase::northwind::model::Order[Order]: Relational
+  {
+    ~primaryKey
+    (
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.ORDER_ID
+    )
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS
+    id: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.ORDER_ID,
+    createdDate: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.ORDER_DATE,
+    requiredDate: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.REQUIRED_DATE,
+    shippedDate: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.SHIPPED_DATE,
+    shipToName: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.SHIP_NAME,
+    shipToAddress
+    (
+      address: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.SHIP_ADDRESS,
+      city: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.SHIP_CITY,
+      region: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.SHIP_REGION,
+      postalCode: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.SHIP_POSTAL_CODE,
+      country: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDERS.SHIP_COUNTRY
+    )
+  }
+  showcase::northwind::model::OrderLineItem[OrderLineItem]: Relational
+  {
+    ~primaryKey
+    (
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDER_DETAILS.ORDER_ID,
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDER_DETAILS.PRODUCT_ID
+    )
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDER_DETAILS
+    quantity: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDER_DETAILS.QUANTITY,
+    unitPrice: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.ORDER_DETAILS.UNIT_PRICE,
+    unitPriceCurrency: 'USD'
+  }
+  showcase::northwind::model::inventory::Product[Product]: Relational
+  {
+    ~primaryKey
+    (
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.PRODUCTS.PRODUCT_ID
+    )
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.PRODUCTS
+    id: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.PRODUCTS.PRODUCT_ID,
+    name: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.PRODUCTS.PRODUCT_NAME,
+    quantityPerUnit: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.PRODUCTS.QUANTITY_PER_UNIT,
+    unitsInStock: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.PRODUCTS.UNITS_IN_STOCK,
+    unitsOnOrder: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.PRODUCTS.UNITS_ON_ORDER,
+    reorderLevel: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.PRODUCTS.REORDER_LEVEL,
+    discontinued: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.PRODUCTS.DISCONTINUED
+  }
+  showcase::northwind::model::geography::SalesRegion[Region]: Relational
+  {
+    ~primaryKey
+    (
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.REGION.REGION_ID
+    )
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.REGION
+    id: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.REGION.REGION_ID,
+    description: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.REGION.REGION_DESCRIPTION
+  }
+  showcase::northwind::model::crm::ShippingCompany[Shipper]: Relational
+  {
+    ~primaryKey
+    (
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SHIPPERS.SHIPPER_ID
+    )
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SHIPPERS
+    id: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SHIPPERS.SHIPPER_ID,
+    name: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SHIPPERS.COMPANY_NAME,
+    telephoneNumber: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SHIPPERS.PHONE
+  }
+  showcase::northwind::model::inventory::Supplier[Supplier]: Relational
+  {
+    ~primaryKey
+    (
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.SUPPLIER_ID
+    )
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS
+    id: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.SUPPLIER_ID,
+    companyName: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.COMPANY_NAME,
+    contactName: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.CONTACT_NAME,
+    contactTitle: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.CONTACT_TITLE,
+    address
+    (
+      address: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.ADDRESS,
+      city: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.CITY,
+      region: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.REGION,
+      postalCode: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.POSTAL_CODE,
+      country: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.COUNTRY
+    ),
+    telephoneNumber: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.PHONE,
+    faxNumber: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.FAX,
+    homepageUrl: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.SUPPLIERS.HOMEPAGE
+  }
+  showcase::northwind::model::geography::SalesTerritory[Territory]: Relational
+  {
+    ~primaryKey
+    (
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.TERRITORIES.TERRITORY_ID
+    )
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.TERRITORIES
+    id: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.TERRITORIES.TERRITORY_ID,
+    description: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.TERRITORIES.TERRITORY_DESCRIPTION
+  }
+  showcase::northwind::model::geography::USState[USState]: Relational
+  {
+    ~primaryKey
+    (
+      [showcase::northwind::store::NorthwindDatabase]NORTHWIND.US_STATES.STATE_ID
+    )
+    ~mainTable [showcase::northwind::store::NorthwindDatabase]NORTHWIND.US_STATES
+    id: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.US_STATES.STATE_ID,
+    name: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.US_STATES.STATE_NAME,
+    code: [showcase::northwind::store::NorthwindDatabase]NORTHWIND.US_STATES.STATE_ABBR
+  }
+
+  showcase::northwind::model::associations::Order_Customer: Relational
+  {
+    AssociationMapping
+    (
+      orders[Customer,Order]: [showcase::northwind::store::NorthwindDatabase]@ORDERS_CUSTMERS,
+      customer[Order,Customer]: [showcase::northwind::store::NorthwindDatabase]@ORDERS_CUSTMERS
+    )
+  }
+  showcase::northwind::model::associations::Order_Employee: Relational
+  {
+    AssociationMapping
+    (
+      orders[Employee,Order]: [showcase::northwind::store::NorthwindDatabase]@ORDERS_EMPLOYEES,
+      employee[Order,Employee]: [showcase::northwind::store::NorthwindDatabase]@ORDERS_EMPLOYEES
+    )
+  }
+  showcase::northwind::model::associations::Order_Shipper: Relational
+  {
+    AssociationMapping
+    (
+      orders[Shipper,Order]: [showcase::northwind::store::NorthwindDatabase]@ORDERS_SHIPPERS,
+      shipper[Order,Shipper]: [showcase::northwind::store::NorthwindDatabase]@ORDERS_SHIPPERS
+    )
+  }
+  showcase::northwind::model::associations::Order_OrderLineItem: Relational
+  {
+    AssociationMapping
+    (
+      order[OrderLineItem,Order]: [showcase::northwind::store::NorthwindDatabase]@ORDERS_ORDER_DETAILS,
+      lineItems[Order,OrderLineItem]: [showcase::northwind::store::NorthwindDatabase]@ORDERS_ORDER_DETAILS
+    )
+  }
+  showcase::northwind::model::associations::OrderLineItem_Product: Relational
+  {
+    AssociationMapping
+    (
+      orderLineItems[Product,OrderLineItem]: [showcase::northwind::store::NorthwindDatabase]@ORDERS_DETAILS_PRODUCTS,
+      product[OrderLineItem,Product]: [showcase::northwind::store::NorthwindDatabase]@ORDERS_DETAILS_PRODUCTS
+    )
+  }
+  showcase::northwind::model::associations::Product_Category: Relational
+  {
+    AssociationMapping
+    (
+      category[Product,Category]: [showcase::northwind::store::NorthwindDatabase]@PRODUCTS_CATEGORIES,
+      products[Category,Product]: [showcase::northwind::store::NorthwindDatabase]@PRODUCTS_CATEGORIES
+    )
+  }
+  showcase::northwind::model::associations::Product_Suppliers: Relational
+  {
+    AssociationMapping
+    (
+      supplier[Product,Supplier]: [showcase::northwind::store::NorthwindDatabase]@PRODUCTS_SUPPLIERS,
+      products[Supplier,Product]: [showcase::northwind::store::NorthwindDatabase]@PRODUCTS_SUPPLIERS
+    )
+  }
+  showcase::northwind::model::associations::Terriroties_Region: Relational
+  {
+    AssociationMapping
+    (
+      region[Territory,Region]: [showcase::northwind::store::NorthwindDatabase]@TERRITORIES_REGION,
+      territories[Region,Territory]: [showcase::northwind::store::NorthwindDatabase]@TERRITORIES_REGION
+    )
+  }
+  showcase::northwind::model::associations::Terriroties_Employees: Relational
+  {
+    AssociationMapping
+    (
+      employees[Territory,Employee]: [showcase::northwind::store::NorthwindDatabase]@EMPLOYEE_TERRITORIES_TERRITORIES > [showcase::northwind::store::NorthwindDatabase]@EMPLOYEES_EMPLOYEE_TERRITORIES,
+      territories[Employee,Territory]: [showcase::northwind::store::NorthwindDatabase]@EMPLOYEES_EMPLOYEE_TERRITORIES > [showcase::northwind::store::NorthwindDatabase]@EMPLOYEE_TERRITORIES_TERRITORIES
+    )
+  }
+  showcase::northwind::model::associations::Employee_Manager: Relational
+  {
+    AssociationMapping
+    (
+      reports[Employee,Employee]: [showcase::northwind::store::NorthwindDatabase]@EMPLOYEE_REPORTS,
+      manager[Employee,Employee]: [showcase::northwind::store::NorthwindDatabase]@EMPLOYEE_REPORTS
+    )
+  }
+
+  showcase::northwind::model::crm::Title: EnumerationMapping TitleMapping
+  {
+    Mr: ['Mr.'],
+    Mrs: ['Mrs.'],
+    Miss: ['Miss.'],
+    Ms: ['Ms.'],
+    Dr: ['Dr.'],
+    Sir: ['Sir.'],
+    Professor: ['Prof.'],
+    Duchess: ['Duchess.'],
+    Duke: ['Duke.']
   }
 )
 
 
-###Connection
-RelationalDatabaseConnection runtime::connection::H2Connection
-{
-  store: store::CovidDataStore;
-  type: H2;
-  specification: LocalH2
-  {
-    testDataSetupSqls: [
-      'DROP TABLE IF EXISTS COVID_DATA;\nDROP TABLE IF EXISTS DEMOGRAPHICS;\n\nCREATE TABLE DEMOGRAPHICS(\n  FIPS VARCHAR(200) PRIMARY KEY,\n  STATE VARCHAR(200)\n);\n\nCREATE TABLE COVID_DATA(\n  ID INT PRIMARY KEY,\n  FIPS VARCHAR(200),\n  DATE DATE,\n  CASE_TYPE VARCHAR(200),\n  CASES INT,\n  LAST_REPORTED_FLAG BIT,\n  FOREIGN KEY (FIPS) REFERENCES DEMOGRAPHICS(FIPS)\n);\n\nINSERT INTO DEMOGRAPHICS VALUES(\'1\', \'NY\');\nINSERT INTO DEMOGRAPHICS VALUES(\'2\', \'NJ\');\nINSERT INTO DEMOGRAPHICS VALUES(\'3\', \'CA\');\n\nINSERT INTO COVID_DATA VALUES(1, \'1\', \'2021-04-01\', \'Confirmed\', 405, 0);\nINSERT INTO COVID_DATA VALUES(2, \'2\', \'2021-04-01\', \'Active\', 290, 1);\n'
-      ];
-  };
-  auth: DefaultH2;
-}
-
-
 ###Runtime
-Runtime runtime::H2Runtime
+Runtime showcase::northwind::runtime::NorthwindRuntime
 {
   mappings:
   [
-    mapping::CovidDataMapping
+    showcase::northwind::mapping::NorthwindMapping
   ];
   connections:
   [
-    store::CovidDataStore:
+    showcase::northwind::store::NorthwindDatabase:
     [
-      connection_1: runtime::connection::H2Connection
+      connection_1:
+      #{
+        RelationalDatabaseConnection
+        {
+          store: showcase::northwind::store::NorthwindDatabase;
+          type: H2;
+          specification: LocalH2
+          {
+            testDataSetupSqls: [
+              'call loadNorthwindData()'
+              ];
+          };
+          auth: DefaultH2;
+        }
+      }#
     ]
   ];
 }
