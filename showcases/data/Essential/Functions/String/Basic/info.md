@@ -1,5 +1,5 @@
 ---
-title: String function
+title: String Basic Functions
 description: Showcases native string legend functions
 ---
 
