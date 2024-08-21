@@ -1,0 +1,37 @@
+###Relational
+Database showcase::store::DemoStore
+(
+  Table Person
+  (
+    id INTEGER PRIMARY KEY,
+    firm_id INTEGER,
+    firstName VARCHAR(200),
+    lastName VARCHAR(200)
+  )
+)
+
+
+###Text
+Text showcase::README
+{
+  type: markdown;
+  content: '---\ntitle: Postgres Connection\ndescription: Showcase of Postgres connection\n---\n\n Feature: Postgres connection is defined when we need to read data from Postgres.\n Usage: Define a new connection and choose Connection Type as "Relational Connection", Database Type as "Postgres". Add database specifications - host, port, db name. Also mention the authentication strategy.';
+}
+
+
+###Connection
+RelationalDatabaseConnection showcase::connection::PostgresConnection
+{
+  store: showcase::store::DemoStore;
+  type: Postgres;
+  specification: Static
+  {
+    name: 'DemoStore';
+    host: 'url.here';
+    port: 480;
+  };
+  auth: DelegatedKerberos
+  {
+    serverPrincipal: 'kerberos';
+  };
+}
