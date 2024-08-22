@@ -1,0 +1,51 @@
+Class examples::stringToDate::StringToDateSource
+{
+  sourceValue: String[0..1];
+}
+
+Class examples::stringToDate::StringToDateTarget
+{
+  targetValue: StrictDate[0..1];
+}
+
+
+###Mapping
+Mapping examples::stringToDate::StringToDateMapping
+(
+  *examples::stringToDate::StringToDateTarget: Pure
+  {
+    ~src examples::stringToDate::StringToDateSource
+    targetValue: if(
+  $src.sourceValue->isEmpty(),
+  |[],
+  |$src.sourceValue->toOne()->parseDate()->cast(
+    @StrictDate
+  )
+)
+  }
+
+  MappingTests
+  [
+    test_1
+    (
+      query: |examples::stringToDate::StringToDateTarget.all()->graphFetch(
+  #{
+    examples::stringToDate::StringToDateTarget{
+      targetValue
+    }
+  }#
+)->serialize(
+  #{
+    examples::stringToDate::StringToDateTarget{
+      targetValue
+    }
+  }#
+);
+      data:
+      [
+        <Object, JSON, examples::stringToDate::StringToDateSource, '{"sourceValue":"2022-02-17"}'>
+      ];
+      assert: '{"targetValue":"2022-02-17"}';
+    )
+  ]
+)
