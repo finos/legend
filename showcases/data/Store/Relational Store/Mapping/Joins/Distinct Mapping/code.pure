@@ -1,0 +1,107 @@
+###Relational
+Database showcase::stores::SimpleDB
+(
+  Schema SimpleDBSchema
+  (
+    Table Pets
+    (
+      id INTEGER PRIMARY KEY,
+      owner_id INTEGER,
+      pet_type VARCHAR(50),
+      pet_name VARCHAR(50)
+    )
+    Table People
+    (
+      id INTEGER PRIMARY KEY,
+      person_name VARCHAR(200)
+    )
+  )
+
+  Join PersonPet(SimpleDBSchema.Pets.owner_id = SimpleDBSchema.People.id)
+)
+
+
+###Text
+Text showcase::README
+{
+  type: markdown;
+  content: '---\ntitle: Relational Mapping with Join and Distinct showcase\ndescription: Showcase displaying a relational mapping with a join and a distinct clause\n---\n\nIn this showcase, two tables (Pets and People) are joined to find all distinct combinations(Person Name and Pet Type) of People and the type of pets they have. A test case explaining the use case is added.\n\n';
+}
+
+
+###Pure
+Class showcase::models::Pet
+{
+  pet_type: String[0..1];
+  person_name: String[0..1];
+}
+
+
+###Mapping
+Mapping showcase::mapping::PetMapping
+(
+  showcase::models::Pet: Relational
+  {
+    ~distinct
+    ~primaryKey
+    (
+      [showcase::stores::SimpleDB]SimpleDBSchema.Pets.id
+    )
+    ~mainTable [showcase::stores::SimpleDB]SimpleDBSchema.Pets
+    pet_type: [showcase::stores::SimpleDB]SimpleDBSchema.Pets.pet_type,
+    person_name: [showcase::stores::SimpleDB]@PersonPet | [showcase::stores::SimpleDB]SimpleDBSchema.People.person_name
+  }
+
+  testSuites:
+  [
+    testSuite1:
+    {
+      function: |showcase::models::Pet.all()->project(
+  [
+    x|$x.person_name,
+    x|$x.pet_type
+  ],
+  [
+    'Person name',
+    'Pet type'
+  ]
+)->distinct();
+      tests:
+      [
+        test1:
+        {
+          data:
+          [
+            showcase::stores::SimpleDB:
+              Relational
+              #{
+                SimpleDBSchema.People:
+                  'id,person_name\n'+
+                  '1,Jim\n'+
+                  '2,Tom\n';
+
+                SimpleDBSchema.Pets:
+                  'id,owner_id,pet_type,pet_name\n'+
+                  '1,1,Dog,Coco\n'+
+                  '2,1,Dog,Pam\n'+
+                  '3,2,Cat,Van\n';
+              }#
+          ];
+          asserts:
+          [
+            expectedAssertion:
+              EqualToJson
+              #{
+                expected:
+                  ExternalFormat
+                  #{
+                    contentType: 'application/json';
+                    data: '[\n  {\n    "Person name": "Jim",\n    "Pet type": "Dog"\n  },\n  {\n    "Person name": "Tom",\n    "Pet type": "Cat"\n  }\n]';
+                  }#;
+              }#
+          ];
+        }
+      ];
+    }
+  ]
+)
