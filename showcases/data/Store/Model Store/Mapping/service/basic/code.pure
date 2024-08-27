@@ -1,11 +1,19 @@
 ###Data
-Data data::IBMFirmData
+Data data::MyFirmData
 {
   ExternalFormat
   #{
     contentType: 'application/json';
-    data: '{\n  "employees": [\n    {\n      "firstName": "John",\n      "lastName": "Smith"\n    }\n  ],\n  "legalName": "IBM",\n  "type": "llc"\n}';
+    data: '{\n  "employees": [\n    {\n      "firstName": "John",\n      "lastName": "Smith"\n    }\n  ],\n  "legalName": "Business",\n  "type": "llc"\n}';
   }#
+}
+
+
+###Text
+Text mapping::m2mREADME
+{
+  type: plainText;
+  content: '---\nTitle: Legend Model-to-Model Services & Hosting\nDescription: Example implementation of Legend Model-to-Model Services and Hosting\n---\n\n# Overview\n\nTry out Legend Services! [Go to the guide!](https://legend.finos.org/docs/overview/legend-overview)\n\n# Use Legend to Create Model-to-Model Mapping, Services, and Hosting\n\n## Prerequisite\n\n## Modeling\nThe first step of this implementation involves creating models.\n\nFor the purposes of this showcase (and for any model-to-model service), you will need to create two models: one source model and one target model.\n\nBy doing this, you are able to take in input data and transform this data from source to target.\n\nIn this example, our input data is stored in JSON format in `data::MyFirmData`.\n\nOur JSON data is connected to via `mapping::FirmConnection`, and `mapping::FirmRuntime` uses the connection to map the data into the model.\n\nOur source models are `model::Firm` and `model::Person`.\n\nOur target models are `model::target::_Firm` and `model::target::_Person`\n\n## Model-to-Model Service\nServices contain three different components, as follows:\n1. Function: uses a graphFetch query to select the properties of the target class that should be mapped and returned in the JSON response\n   1a. In our example, our Function is located under `mapping::FirmService`\n2. Mapping: a standard model-to-model mapping\n   2a. In our example, our Mapping is located under `mapping::ModelToModelMapping`\n3. Runtime: connection types are JsonModel, XmlModel, and FlatData.\n   3a. In our example, our Runtime is a JsonModel, and is located under `mapping::FirmRuntime`';
 }
 
 
@@ -54,7 +62,7 @@ Service mapping::FirmService
             ExternalFormat
             #{
               contentType: 'application/json';
-              data: '{\n  "employees": [\n    {\n      "firstName": "John",\n      "lastName": "Smith"\n    }\n  ],\n  "legalName": "IBM",\n  "type": "llc"\n}';
+              data: '{\n  "employees": [\n    {\n      "firstName": "John",\n      "lastName": "Smith"\n    }\n  ],\n  "legalName": "Business",\n  "type": "llc"\n}';
             }#
         ]
       ]
@@ -72,7 +80,7 @@ Service mapping::FirmService
                   ExternalFormat
                   #{
                     contentType: 'application/json';
-                    data: '{\n  "myLegalName()": "my name is: IBM",\n  "name": "IBM",\n  "employees": [\n    {\n      "fullName": "John Smith"\n    }\n  ]\n}';
+                    data: '{\n  "myLegalName()": "my name is: Business",\n  "name": "Business",\n  "employees": [\n    {\n      "fullName": "John Smith"\n    }\n  ]\n}';
                   }#;
               }#
           ]
@@ -222,7 +230,7 @@ Mapping mapping::ModelToModelMapping
               }#
           ];
         },
-        IBMData:
+        MyData:
         {
           doc: '';
           data:
@@ -233,7 +241,7 @@ Mapping mapping::ModelToModelMapping
                 model::Firm:
                   Reference
                   #{
-                    data::IBMFirmData
+                    data::MyFirmData
                   }#
               }#
           ];
@@ -246,12 +254,12 @@ Mapping mapping::ModelToModelMapping
                   ExternalFormat
                   #{
                     contentType: 'application/json';
-                    data: '{\r\n  "employees" : [ {\r\n    "fullName" : "John Smith"\r\n  } ],\r\n  "name" : "IBM",\r\n  "myLegalName()" : "my name is: IBM"\r\n}';
+                    data: '{\r\n  "employees" : [ {\r\n    "fullName" : "John Smith"\r\n  } ],\r\n  "name" : "Business",\r\n  "myLegalName()" : "my name is: Business"\r\n}';
                   }#;
               }#
           ];
         },
-        IBMData2:
+        MyData2:
         {
           doc: '';
           data:
@@ -262,7 +270,7 @@ Mapping mapping::ModelToModelMapping
                 model::Firm:
                   Reference
                   #{
-                    data::IBMFirmData
+                    data::MyFirmData
                   }#
               }#
           ];
@@ -275,7 +283,7 @@ Mapping mapping::ModelToModelMapping
                   ExternalFormat
                   #{
                     contentType: 'application/json';
-                    data: '{\n  "employees" : [ {\n    "fullName" : "John Smith"\n  } ],\n  "name" : "IBM",\n  "myLegalName()" : "my name is: IBM"\n}';
+                    data: '{\n  "employees" : [ {\n    "fullName" : "John Smith"\n  } ],\n  "name" : "Business",\n  "myLegalName()" : "my name is: Business"\n}';
                   }#;
               }#
           ];
