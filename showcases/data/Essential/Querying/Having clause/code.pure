@@ -1,0 +1,152 @@
+###Relational
+Database example::store::MyDepartmentStore
+(
+  Schema DepartmentStore
+  (
+    Table EmployeeDepartment
+    (
+      uid INTEGER PRIMARY KEY,
+      employeeName VARCHAR(100) NOT NULL,
+      department VARCHAR(100) NOT NULL
+    )
+  )
+)
+
+
+###Service
+Service example::service::EmployeeAssignmentService
+{
+  pattern: '/EmployeeAssignmentService';
+  ownership: DID { identifier: '' };
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |example::model::EmployeeAssignment.all()->groupBy(
+      [
+        x|$x.name
+      ],
+      [
+        agg(
+          x|$x.department,
+          x|$x->distinct()->count()
+        )
+      ],
+      [
+        'Name',
+        'Distinct Departments'
+      ]
+    )->filter(
+      row|$row.getInteger('Distinct Departments') > 1
+    );
+    mapping: example::mapping::EmployeeAssignmentMapping;
+    runtime: example::runtime::EmployeeAssignmentRuntime;
+  }
+}
+
+
+###Pure
+Class example::model::EmployeeAssignment
+{
+  name: String[1];
+  department: String[1];
+}
+
+
+###Mapping
+Mapping example::mapping::EmployeeAssignmentMapping
+(
+  *example::model::EmployeeAssignment: Relational
+  {
+    ~primaryKey
+    (
+      [example::store::MyDepartmentStore]DepartmentStore.EmployeeDepartment.uid
+    )
+    ~mainTable [example::store::MyDepartmentStore]DepartmentStore.EmployeeDepartment
+    name: [example::store::MyDepartmentStore]DepartmentStore.EmployeeDepartment.employeeName,
+    department: [example::store::MyDepartmentStore]DepartmentStore.EmployeeDepartment.department
+  }
+
+  testSuites:
+  [
+    TestSuite1:
+    {
+      function: |example::model::EmployeeAssignment.all()->project(
+  [
+    x|$x.name,
+    x|$x.department
+  ],
+  [
+    'Name',
+    'Department'
+  ]
+);
+      tests:
+      [
+        Test1:
+        {
+          data:
+          [
+            example::store::MyDepartmentStore:
+              Relational
+              #{
+                DepartmentStore.EmployeeDepartment:
+                  'uid,employeeName,department\n'+
+                  '1001,Elsa,Electrical\n'+
+                  '1002,Etienne,Electrical\n'+
+                  '1003,Chidi,Cosmetics\n'+
+                  '1004,Chidi,Cafe\n'+
+                  '1005,Heidi,Haberdashery\n'+
+                  '1006,Heidi,Homewares\n';
+              }#
+          ];
+          asserts:
+          [
+            expectedAssertion:
+              EqualToJson
+              #{
+                expected:
+                  ExternalFormat
+                  #{
+                    contentType: 'application/json';
+                    data: '[\n  {\n    "Name": "Elsa",\n    "Department": "Electrical"\n  },\n  {\n    "Name": "Etienne",\n    "Department": "Electrical"\n  },\n  {\n    "Name": "Chidi",\n    "Department": "Cosmetics"\n  },\n  {\n    "Name": "Chidi",\n    "Department": "Cafe"\n  },\n  {\n    "Name": "Heidi",\n    "Department": "Haberdashery"\n  },\n  {\n    "Name": "Heidi",\n    "Department": "Homewares"\n  }\n]';
+                  }#;
+              }#
+          ];
+        }
+      ];
+    }
+  ]
+)
+
+
+###Connection
+RelationalDatabaseConnection example::connection::MyDepartmentStoreConnection
+{
+  store: example::store::MyDepartmentStore;
+  type: H2;
+  specification: LocalH2
+  {
+    testDataSetupSqls: [
+      'Create Schema if not exists DepartmentStore;\nDrop Table if exists DepartmentStore.EmployeeDepartment;\nCreate Table DepartmentStore.EmployeeDepartment (uid INTEGER, employeeName VARCHAR(100), department VARCHAR(100));\nINSERT INTO DepartmentStore.EmployeeDepartment(uid,employeeName,department) VALUES (1001,\'Elsa\',\'Electrical\');\nINSERT INTO DepartmentStore.EmployeeDepartment(uid,employeeName,department) VALUES (1002,\'Etienne\',\'Electrical\');\nINSERT INTO DepartmentStore.EmployeeDepartment(uid,employeeName,department) VALUES (1003,\'Chidi\',\'Cosmetics\');\nINSERT INTO DepartmentStore.EmployeeDepartment(uid,employeeName,department) VALUES (1004,\'Chidi\',\'Cafe\');\nINSERT INTO DepartmentStore.EmployeeDepartment(uid,employeeName,department) VALUES (1005,\'Heidi\',\'Haberdashery\');\nINSERT INTO DepartmentStore.EmployeeDepartment(uid,employeeName,department) VALUES (1006,\'Heidi\',\'Homewares\');'
+      ];
+  };
+  auth: DefaultH2;
+}
+
+
+###Runtime
+Runtime example::runtime::EmployeeAssignmentRuntime
+{
+  mappings:
+  [
+    example::mapping::EmployeeAssignmentMapping
+  ];
+  connections:
+  [
+    example::store::MyDepartmentStore:
+    [
+      connection_1: example::connection::MyDepartmentStoreConnection
+    ]
+  ];
+}
