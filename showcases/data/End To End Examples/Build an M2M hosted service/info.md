@@ -18,7 +18,7 @@ For the purposes of this showcase (and for any model-to-model service), you will
 
 By doing this, you are able to take in input data and transform this data from source to target.
 
-In this example, our input data is stored in JSON format in `data::IBMFirmData`.
+In this example, our input data is stored in JSON format in `data::MyFirmData`.
 
 Our JSON data is connected to via `mapping::FirmConnection`, and `mapping::FirmRuntime` uses the connection to map the data into the model.
 
