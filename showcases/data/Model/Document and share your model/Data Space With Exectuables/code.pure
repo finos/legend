@@ -264,35 +264,41 @@ DataSpace showcase::northwind::dataspace::NorthwindDataSpaceWithExecutables
   executables:
   [
     {
-      title: 'Northwind Data Space -Shipper Validation Defects';
-      description: 'Shipper Validation Defects';
+      title: 'this is title (service) - Northwind Data Space -Shipper Validation Defects';
+      description: 'this is description (service) Shipper Validation Defects';
       executable: showcase::northwind::services::graph::ShipperValidationDefects;
     },
     {
+      id: my_id_1;
+      title: 'this is title (function pointer) - Top Categories';
+      description: 'this is description (function pointer) - TopCategories';
+      executable: showcase::northwind::model::Order_QueryFunction():TabularDataSet[1];
+    },
+    {
       id: my_id;
-      title: 'this is title - Top Categories';
-      description: 'this is description - TopCategories';
+      title: 'this is title (inline query) - Top Categories';
+      description: 'this is description (inline query) - TopCategories';
       query: |showcase::northwind::model::Order.all()->groupBy(
-      [
-        x: showcase::northwind::model::Order[1]|$x.lineItems.product.category.id,
-        x: showcase::northwind::model::Order[1]|$x.lineItems.product.category.name
-      ],
-      [
-        agg(
-          x: showcase::northwind::model::Order[1]|$x.id,
-          x: Integer[*]|$x->distinct()->count()
-        )
-      ],
-      [
-        'Category Id',
-        'Category Name',
-        'Order Count'
-      ]
-    )->sort(
-      [
-        desc('Order Count')
-      ]
-    )->take(5);
+        [
+          x: showcase::northwind::model::Order[1]|$x.lineItems.product.category.id,
+          x: showcase::northwind::model::Order[1]|$x.lineItems.product.category.name
+        ],
+        [
+          agg(
+            x: showcase::northwind::model::Order[1]|$x.id,
+            x: Integer[*]|$x->distinct()->count()
+          )
+        ],
+        [
+          'Category Id',
+          'Category Name',
+          'Order Count'
+        ]
+      )->sort(
+        [
+          desc('Order Count')
+        ]
+      )->take(5);
       executionContextKey: 'externally-public-PROD';
     }
   ];
@@ -972,6 +978,31 @@ Association showcase::northwind::model::associations::Employee_Manager
 {
   reports: showcase::northwind::model::crm::Employee[*];
   manager: showcase::northwind::model::crm::Employee[0..1];
+}
+
+function showcase::northwind::model::Order_QueryFunction(): meta::pure::tds::TabularDataSet[1]
+{
+  showcase::northwind::model::Order.all()->groupBy(
+    [
+      x: showcase::northwind::model::Order[1]|$x.lineItems.product.category.id,
+      x: showcase::northwind::model::Order[1]|$x.lineItems.product.category.name
+    ],
+    [
+      agg(
+        x: showcase::northwind::model::Order[1]|$x.id,
+        x: Integer[*]|$x->distinct()->count()
+      )
+    ],
+    [
+      'Category Id',
+      'Category Name',
+      'Order Count'
+    ]
+  )->sort(
+    [
+      desc('Order Count')
+    ]
+  )->take(5)
 }
 
 
