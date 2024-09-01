@@ -34,7 +34,7 @@ To create a [group workspace](../overview/legend-features.md/#group-workspace):
 
    ![F8TextMode](../assets/F8TextMode.jpg)
 
-To access or exit [Text mode](../overview/legend-features.md/#text-mode): Press `F8` or the hacker icon on the bottom right corner of your scrreen. The bar should change when you open or close Text mode.
+To access or exit [Text mode](../overview/legend-features.md/#text-mode): Press `F8` or the hacker icon on the bottom right corner of your screen. The bar should change when you open or close Text mode.
 
 To compile your code: Press `F9`
 
