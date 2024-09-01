@@ -26,7 +26,7 @@ Start working on your data model by creating a workspace. A workspace is a copy 
 
 _[TODO: add screenshot]_
 
-To access or exit Text mode: Press `F8` or the hacker icon on the bottom right corner of your scrreen. The bar should change when you open or close Text mode.
+To access or exit Text mode: Press `F8` or the hacker icon on the bottom right corner of your screen. The bar should change when you open or close Text mode.
 
 To compile your code: Press `F9`
 
@@ -243,7 +243,7 @@ Test data for model to model could be defined through external format. Provide t
 
 `UrlPath` in `Service Request Pattern` = Root path defined in the `Service Group` of `Service Store` and the path specified in the service for which this data element is created.
 In `Service Response Definition` panel, provide test data for all used properties in the chosen format. 
-Please check the demo video below for futher information.
+Please check the demo video below for further information.
 !\[[data-element-service-store](../assets/create-a-service-store-data-element.gif)
 
 ## Create a Diagram
@@ -274,7 +274,7 @@ There are two ways how to define data relationships in the diagram editor.
 
 ### Move and resize the diagram
 
-To **move** the diagram, either select the **Pan Tool** from the left-hand side menu, hit **M** or hold down the right mouse button.The mouse cursor will change to a hand symbol.
+To **move** the diagram, either select the **Pan Tool** from the left-hand side menu, hit **M** or hold down the right mouse button. The mouse cursor will change to a hand symbol.
 
 To **resize** the diagram, either select **Zoom In/Out** from the left-hand side menu, hit **Z** or choose a zoom percentage from the drop down on the top right corner.
 
@@ -309,7 +309,7 @@ Let's start by defining the target class, for which we would like to create the 
 5.  Drag and drop the **NewPerson** target class into the **Add a mapping element** section on the left.
 6.  Hit the **create** button using the default setting.
 
-Let's define the source class for our mapping and specifiy the transformation.
+Let's define the source class for our mapping and specify the transformation.
 
 7.  Drag and drop the `Person` source class into the **choose a source** section on the right.
 8.  To specify the transformation add the following expression for the **name** property: `$src.firstName + ' ' + $src.lastName`. You can also drag and drop the **firstName** and **lastName** properties from the `Person` source class into the function panel.
@@ -318,7 +318,7 @@ Let's define the source class for our mapping and specifiy the transformation.
 
 ## Add a Mapping Test
 
-It is good practice to add test to any mapping that you specifiy. Let's create one.
+It is good practice to add test to any mapping that you specify. Let's create one.
 
 1.  Right click on the `NewPerson` class and select **Test**. Alternatively, you can click on the **+** icon in the bottom left panel to add a test.
 
@@ -350,7 +350,7 @@ You can promote this ad hoc execution to a test by clicking on the **beaker** ic
 
 ### Execute a Model-to-Model Mapping with Constraints
 
-Remember that we can add a [constraint](../tutorials/studio-tutorial#add-a-constraint) on classes? We can can also execute model-to-model mappings with constraints to check if the constraint criteria are violated.
+Remember that we can add a [constraint](../tutorials/studio-tutorial#add-a-constraint) on classes? We can also execute model-to-model mappings with constraints to check if the constraint criteria are violated.
 
 Let's create a constraint on the `NewPerson` class that checksq if the name value is empty `$this.name-> == ''`
 
@@ -565,7 +565,7 @@ You can save these tests and continue to enhance your data models with the comfo
 
 3.  Execute the mapping and review the results.
 
-4.  Save this exection as a test to run as part of the pipeline.
+4.  Save this execution as a test to run as part of the pipeline.
 
     ![Save execution as a test](../assets/execution.gif)
 
@@ -575,7 +575,7 @@ Build services on top of data queries to consume modeled data systematically. To
 
 ### General Tab
 
-In the **General** tab of the Service Editor, users can specify metadata of their service including the service URL, documentation and owners. URL parameters can be directly defined within the {"{"}{"}"} sytnax.
+In the **General** tab of the Service Editor, users can specify metadata of their service including the service URL, documentation and owners. URL parameters can be directly defined within the {"{"}{"}"} syntax.
 
    ![Service Editor - General](../assets/service-editor-general.JPG)
 
@@ -889,7 +889,7 @@ Notes:
 -   If the datetime data does not include time zone information the time zone will be set according to the arguments/properties specified.
 -   Valid timeZone values are per Java's [ZoneId](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/ZoneId.html) including [SHORT_IDS](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/ZoneId.html#SHORT_IDS).
 -   The default time zone for all `DATETIME` fields in a section can be specified using the `defaultTimeZone` property.
--   When no time zone information is specified it is assumes to be UTC.
+-   When no time zone information is specified it is assumed to be UTC.
 
 #### Driver: DelimitedWithHeadings
 
@@ -1079,7 +1079,7 @@ A workspace update may result in a conflict. Studio will open a new view to aid 
 
     ![Discard or review changes](../assets/discard-or-remove-changes.JPG)
 
-2.  If you chooose to review changes, review and press `F9` to compile.
+2.  If you choose to review changes, review and press `F9` to compile.
 
 3.  Once the changes compile successfully, either accept or discard the changes.
 
