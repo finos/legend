@@ -15,7 +15,7 @@ Legend data models connect to all type of data. Once you found the data you were
 Data powered by Legend ensures **data quality by design**. Automated lineage captures how data is transformed along the way. You know where your data is coming from, starting with the raw data source all the way up to the productized data service or user query.
 All data models in Legend are 100% codified (and SDLC-backed!) in the Legend language, which can express structural and non-structural quality criteria for additional validations.
 
-Legend can elevate all sort of data-driven processes, such as creating client, financial or regulatory reports, building applications or powering data analytics and predications.
+Legend can elevate all sorts of data-driven processes, such as creating client, financial or regulatory reports, building applications or powering data analytics and predications.
 
 ## Legend Products
 
