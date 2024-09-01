@@ -69,7 +69,7 @@ The following list is a high-level overview of the code contribution workflow.
 5.  Add your changes (``).
 6.  Commit your changes (``).
 7.  Push to the branch (``).
-8.  Optional but recommeded: Do a build in/from your fork; further evaluate and test it.
+8.  Optional but recommended: Do a build in/from your fork; further evaluate and test it.
 9.  If all looks good, propose a pull request into the [Legend GitHub repo](https://github.com/finos/legend/pull/new/master) from your fork.
 
 ### Propose and submit pull requests
@@ -151,7 +151,7 @@ cd website ; npm run start
 
 2. Update the `info.md` folder with a description of the feature and how it is meant to be used. The title and description parts will be displayed in the Legend Studio showcase explorer.
 
-3. Update the `code.pure` file with the showcase project code. This should be the minimal amount of code needed to showcase a feature in isolation. For example, if you are contributing a filter relational mapping, you sould include a small model, store and mapping that has the ~filter within it.
+3. Update the `code.pure` file with the showcase project code. This should be the minimal amount of code needed to showcase a feature in isolation. For example, if you are contributing a filter relational mapping, you should include a small model, store and mapping that has the ~filter within it.
 
 #### **Step 3 Write additional documentation**
 
@@ -159,7 +159,7 @@ Legend documentation is showcase project-first. If you would like to add step-by
 
 | Documentation type you're contributing | Example | Description | Best practices  |
 | - | - | - | - | 
-| **Feature overview**| _[Legend feature overview](../overview/legend-features)_| The Legend feature overview provides a high level, 1-2-line description of Legend features | If you are documenting a new feature, add a description of the feature to the the Legend feature overview file.
+| **Feature overview**| _[Legend feature overview](../overview/legend-features)_| The Legend feature overview provides a high level, 1-2-line description of Legend features | If you are documenting a new feature, add a description of the feature to the Legend feature overview file.
 | **Tutorials** | _["Workspace"](../tutorials/studio-workspace.md) tutorial_ |  Tutorials are Legend feature-specific and describe the "How": the steps that a user needs to take in order to **use** a Legend feature  |  Create a new (Heading 2) entry within the corresponding feature file (e.g. [Workspace](../tutorials/studio-workspace.md))  Describe the sequence of steps that a user needs to take in order to use the feature   Link to/update the corresponding **feature description** (e.g. [association](../overview/legend-features.md)), **[glossary entries](../overview/legend-glossary.md)**, **tutorials** (e.g. [association](../tutorials/studio-association.md)), **[showcase projects](../showcases/showcase-projects.md)** and **[reference documentation](../reference/legend-language.md)** |
 | **Reference documentation**| _[Legend language](../reference/legend-language.md) reference documentation_ |  Reference documentation is technical and developer-oriented, and includes API calls and other information that users need in order to **work with/develop** Legend components  | Contact the Legend team via [GitHub issues](https://github.com/finos/legend/issues/new/choose) or the [Legend mailing list](mailto:legend@finos.org) if you have questions about contributing reference documentation.|
 
