@@ -10,7 +10,7 @@ There are a few different options to install and use Legend. They are listed bel
 
 ## Setup Maven
 
-This instllation option is for software developers who want to build and run Legend from source. Instructions can be found [here](https://github.com/finos/legend/tree/master/installers/maven).
+This installation option is for software developers who want to build and run Legend from source. Instructions can be found [here](https://github.com/finos/legend/tree/master/installers/maven).
 
 ## Docker Compose
 
