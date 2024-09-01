@@ -8,7 +8,7 @@ This page provides an overview of Legend Features, see [Tutorials](../tutorials/
 
 ## Association
 
-Associations are used to define a single linking relationship between two classes. You can define one to one, one to many, many to many kind of relationships.
+Associations are used to define a single linking relationship between two classes. You can define one to one, one to many, many to many kinds of relationships.
 
 [Create an association](../tutorials/studio-association.md)
 
