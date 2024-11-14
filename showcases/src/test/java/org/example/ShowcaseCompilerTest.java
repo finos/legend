@@ -103,9 +103,12 @@ public class ShowcaseCompilerTest
     public void processShowcaseFile() throws IOException
     {
         // Stripping comments required as parser will remove them
-        String pureGrammar = Files.readAllLines(showcasePath).stream()
-                .filter(l -> !l.stripLeading().startsWith("//"))
+        String pureGrammar;
+        try (Stream<String> lines = Files.lines(showcasePath)) {
+            pureGrammar = lines
+                .filter(line -> !line.stripLeading().startsWith("//"))
                 .collect(Collectors.joining("\n"));
+        }
 
         assumeFalse(pureGrammar.isEmpty());
 
