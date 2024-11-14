@@ -5,7 +5,7 @@ sidebar_label: Contributing to Legend
 ---
 
 #### *Are you using Legend? Are you planning to deploy, or have you already deployed your own internal instance of Legend?*
-If you already use, or are planning to use Legend at an individual or corporate level, we would like to hear from you: just email the [Legend General List](legend@finos.org) with details about how you are using it. 
+If you already use, or are planning to use Legend at an individual or corporate level, we would like to hear from you: just email the [Legend General List](mailto:legend@finos.org) with details about how you are using it.
 
 # Get Started
 There are many ways to contribute to Legend, and many of them do not involve writing any code. Here are a few ideas to get started:
