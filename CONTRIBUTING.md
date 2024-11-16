@@ -5,7 +5,7 @@ sidebar_label: Contributing to Legend
 ---
 
 #### *Are you using Legend? Are you planning to deploy, or have you already deployed your own internal instance of Legend?*
-If you already use, or are planning to use Legend at an individual or corporate level, we would like to hear from you: just email the [Legend General List](legend@finos.org) with details about how you are using it. 
+If you already use, or are planning to use Legend at an individual or corporate level, we would like to hear from you: just email the [Legend General List](mailto:legend@finos.org) with details about how you are using it. 
 
 # Get Started
 There are many ways to contribute to Legend, and many of them do not involve writing any code. Here are a few ideas to get started:
@@ -59,7 +59,7 @@ Once you have requested access to the modeling instance, follow the instructions
 If you have questions or encounter any issues, please raise an issue at https://github.com/finos/legend/issues.
 
 ### Suggest Modeling Use Cases
-If you have suggestions or ideas for modeling use cases for which Legend may be appropriate, we'd love to hear your ideas -- send a note with your suggestion to the [Legend General List](legend@finos.org).
+If you have suggestions or ideas for modeling use cases for which Legend may be appropriate, we'd love to hear your ideas -- send a note with your suggestion to the [Legend General List](mailto:legend@finos.org).
 
 ### Background: The Legend Pilot - Shared Modeling in Legend (January - September 2020)
 In January 2020, FINOS launched a pilot with FINOS member organizations interested in evaluating Legend-PURE/Legend. Modeling occurred on the FINOS hosted, shared version of Legend Studio in the public cloud, which was used by FINOS members to collaborate on Legend Studio by building extensions to the [ISDA Common Domain Model (CDM)](https://www.isda.org/2018/11/22/isda-cdm-factsheet/). Modeling occurred in two workstreams: **FX Options** and **Commodities Reference Data**, which concluded their work in September 2020. We expect that further working groups may use Legend for data modeling in these and/or other areas after the first wave of code has been open sourced in October 2020.
