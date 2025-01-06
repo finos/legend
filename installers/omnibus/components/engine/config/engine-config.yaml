@@ -1,0 +1,84 @@
+deployment:
+  mode: TEST_IGNORE_FUNCTION_MATCH
+logging:
+  level: error
+  appenders:
+    - type: console
+      logFormat: "%msg\r\n"
+#pac4j:
+#  bypassPaths:
+#    - "/api/server/v1/info"
+#  clients:
+#    - org.pac4j.core.client.direct.AnonymousClient: {}
+#  mongoSession:
+#    enabled: false
+pac4j:
+  callbackPrefix: /api/pac4j/login
+  clients:
+    - org.pac4j.core.client.direct.AnonymousClient: {}
+    - org.finos.legend.server.pac4j.gitlab.GitlabPersonalAccessTokenClient:
+#        name: pat
+        headerTokenName: legend-test-pat
+        scheme: https
+        gitlabHost: gitlab.com
+        gitlabApiVersion: v4
+  bypassPaths:
+    - /api/info
+cors:
+  allowedHeaders:
+    - X-Requested-With
+    - Content-Type
+    - Accept
+    - Origin
+    - Access-Control-Allow-Credentials
+    - x-b3-parentspanid
+    - x-b3-sampled
+    - x-b3-spanid
+    - x-b3-traceid
+    - legend-test-pat
+opentracing:
+  elastic: ''
+  zipkin: ''
+  uri: ''
+  authenticator:
+    principal: ''
+    keytab: ''
+swagger:
+  title: Legend Engine
+  resourcePackage: org.finos.legend
+sessionCookie: LEGEND_ENGINE_JSESSIONID
+server:
+  rootPath: "/api"
+  applicationConnectors:
+    - maxRequestHeaderSize: 32KiB
+      type: http
+      port: 6300
+  requestLog:
+    appenders: []
+metadataserver:
+  pure:
+    host: 127.0.0.1
+    port: 8080
+  alloy:
+    host: 127.0.0.1
+    port: 6200
+    prefix: "/depot/api"
+  sdlc:
+    host: localhost
+    port: 6100
+#    prefix: "/sdlc"
+    pac4j:
+      _type: privateAccessToken
+      accessTokenHeaderName: legend-test-pat
+temporarytestdb:
+  port: 9092
+relationalexecution:
+  tempPath: "/tmp/"
+  temporarytestdb:
+    port: 9092
+errorhandlingconfiguration:
+  enabled: true
+activatorConfiguration: []
+vaults:
+  - _type: property
+    location: temp/test-secret.properties

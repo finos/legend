@@ -6,14 +6,14 @@ ARG LEGEND_OMNIBUS_SDLC_VERSION
 ARG LEGEND_OMNIBUS_SDLC_DEMO_IN_MEMORY_VERSION
 ARG LEGEND_OMNIBUS_STUDIO_VERSION
 
-FROM finos/legend-engine-server:${LEGEND_OMNIBUS_ENGINE_VERSION} AS engine-image
+FROM finos/legend-engine-server-http-server:${LEGEND_OMNIBUS_ENGINE_VERSION} AS engine-image
 FROM finos/legend-sdlc-server:${LEGEND_OMNIBUS_SDLC_VERSION} AS sdlc-image
 FROM finos/legend-studio:${LEGEND_OMNIBUS_STUDIO_VERSION} AS studio-image
 # TODO: to be removed when we make SDLC backend configurable
 # See https://github.com/finos/legend-sdlc/issues/722
 FROM legenddemo/legend-sdlc-server-demo:${LEGEND_OMNIBUS_SDLC_DEMO_IN_MEMORY_VERSION} as sdlc-in-memory-backend-image
 
-FROM eclipse-temurin:11.0.19_7-jdk-jammy
+FROM eclipse-temurin:11.0.25_9-jdk-jammy
 RUN apt-get update && apt-get install -y wget nano
 
 # ---------------- Setup environment ----------------

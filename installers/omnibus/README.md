@@ -72,14 +72,13 @@ In addition, it uses [Supervisor](http://supervisord.org/) to launch and manage 
 - **Legend SDLC:** http://localhost:6900/sdlc (port: 6100)
 - **Legend Engine:** http://localhost:6900/engine (port: 6300)
 - **Legend Studio:** http://localhost:6900/studio (port: 9000)
-- **Legend Pure IDE:** http://localhost:6900/ide (port: 9200)
 
 ### Image Variants
 
 The `finos/legend-omnibus` image comes with [several variants](https://github.com/finos/legend/tree/master/installers/omnibus/variants), each designed for a specific use case and comes with different configurations:
 
 - **Full/Standard (finos/legend-omnibus:\<version\>):** This includes all the components, it takes a while longer to run/build as it spins up its own instance of `Gitlab`
-- **Slim (finos/legend-omnibus:\<version\>-slim):** This does not include `Gitlab` and `Pure IDE` and allows configuring `Legend SDLC` running mode
+- **Slim (finos/legend-omnibus:\<version\>-slim):** This does not include `Gitlab` and allows configuring `Legend SDLC` running mode
 
 #### Options
 

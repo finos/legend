@@ -36,7 +36,7 @@ export default function Releases(props) {
                     </a>
                   </th>
                   <th>
-                    <a href="https://hub.docker.com/r/finos/legend-engine-server">
+                    <a href="https://hub.docker.com/r/finos/legend-engine-server-http-server">
                       Legend Engine
                     </a>
                   </th>
@@ -59,7 +59,7 @@ export default function Releases(props) {
                         {release.core["finos/legend-studio"]}
                       </td>
                       <td>
-                        finos/legend-engine-server:
+                        finos/legend-engine-server-http-server:
                         {release.core["finos/legend-engine-server"]}
                       </td>
                       <td>

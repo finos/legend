@@ -59,6 +59,9 @@ relationalexecution:
     org.finos.legend.engine.authentication.LegendDefaultDatabaseAuthenticationFlowProvider
   flowProviderConfiguration:
     _type: legendDefault
+errorhandlingconfiguration:
+  enabled: true
+activatorConfiguration: []
 vaults:
   - _type: property
     location: /app/engine/config/vault.properties

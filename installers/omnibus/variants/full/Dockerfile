@@ -3,15 +3,13 @@
 ARG LEGEND_OMNIBUS_IMAGE_VERSION
 ARG LEGEND_OMNIBUS_ENGINE_VERSION
 ARG LEGEND_OMNIBUS_SDLC_VERSION
-ARG LEGEND_OMNIBUS_PURE_IDE_VERSION
 ARG LEGEND_OMNIBUS_STUDIO_VERSION
 
-FROM finos/legend-engine-server:${LEGEND_OMNIBUS_ENGINE_VERSION} AS engine-image
+FROM finos/legend-engine-server-http-server:${LEGEND_OMNIBUS_ENGINE_VERSION} AS engine-image
 FROM finos/legend-sdlc-server:${LEGEND_OMNIBUS_SDLC_VERSION} AS sdlc-image
-FROM finos/legend-engine-pure-ide-light:${LEGEND_OMNIBUS_PURE_IDE_VERSION} AS pure-ide-image
 FROM finos/legend-studio:${LEGEND_OMNIBUS_STUDIO_VERSION} AS studio-image
 
-FROM eclipse-temurin:11.0.19_7-jdk-jammy
+FROM eclipse-temurin:11.0.25_9-jdk-jammy
 RUN apt-get update && apt-get install -y wget nano
 
 # ---------------- Setup environment ----------------
@@ -66,13 +64,6 @@ ARG LEGEND_OMNIBUS_SDLC_ADMIN_PORT
 ENV LEGEND_OMNIBUS_SDLC_VERSION=${LEGEND_OMNIBUS_SDLC_VERSION}
 ENV LEGEND_OMNIBUS_SDLC_PORT=${LEGEND_OMNIBUS_SDLC_PORT}
 ENV LEGEND_OMNIBUS_SDLC_ADMIN_PORT=${LEGEND_OMNIBUS_SDLC_ADMIN_PORT}
-
-# Legend Pure IDE
-ARG LEGEND_OMNIBUS_PURE_IDE_VERSION
-ARG LEGEND_OMNIBUS_PURE_IDE_PORT
-
-ENV LEGEND_OMNIBUS_PURE_IDE_VERSION=${LEGEND_OMNIBUS_PURE_IDE_VERSION}
-ENV LEGEND_OMNIBUS_PURE_IDE_PORT=${LEGEND_OMNIBUS_PURE_IDE_PORT}
 
 # Legend Studio
 ARG LEGEND_OMNIBUS_STUDIO_VERSION
@@ -131,16 +122,6 @@ COPY --from=sdlc-image /app/bin/*.jar $SDLC_DIR/lib/
 COPY components/sdlc $SDLC_DIR
 RUN chmod +x $SDLC_DIR/run-sdlc.sh
 EXPOSE ${LEGEND_OMNIBUS_SDLC_PORT}
-
-# ---------------- Setup Legend Pure IDE ----------------
-
-ARG PURE_IDE_DIR=/app/pure-ide
-RUN mkdir -p $PURE_IDE_DIR/lib
-RUN mkdir -p $PURE_IDE_DIR/logs
-COPY --from=pure-ide-image /app/bin/*.jar $PURE_IDE_DIR/lib/
-COPY components/pure-ide $PURE_IDE_DIR
-RUN chmod +x $PURE_IDE_DIR/run-pure-ide.sh
-EXPOSE ${LEGEND_OMNIBUS_PURE_IDE_PORT}
 
 # ---------------- Setup Legend Studio ----------------
 
