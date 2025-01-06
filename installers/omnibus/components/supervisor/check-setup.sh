@@ -39,11 +39,10 @@ while :; do
 	status_engine=$(curl --write-out %{http_code} --silent --output /dev/null http://localhost:$LEGEND_OMNIBUS_ENGINE_PORT/api/server/v1/info)
 	status_sdlc=$(curl --write-out %{http_code} --silent --output /dev/null http://localhost:$LEGEND_OMNIBUS_SDLC_PORT/api/info)
 	status_sdlc_authenticated=$(curl --header "legend-omnibus-pat: $LEGEND_OMNIBUS_GITLAB_PERSONAL_ACCESS_TOKEN" --write-out %{http_code} --silent --output /dev/null http://localhost:$LEGEND_OMNIBUS_SDLC_PORT/api/currentUser)
-	status_pure_ide=$(curl --write-out %{http_code} --silent --output /dev/null http://localhost:$LEGEND_OMNIBUS_PURE_IDE_PORT/ide)
 	status_studio=$(curl --write-out %{http_code} --silent --output /dev/null http://localhost:$LEGEND_OMNIBUS_STUDIO_PORT/studio)
-	if [[ $status_engine -eq 200 ]] && [[ $status_sdlc -eq 200 ]] && [[ $status_sdlc_authenticated -eq 200 ]] && [[ $status_pure_ide -eq 200 ]] && [[ $status_studio -eq 200 ]]; then
+	if [[ $status_engine -eq 200 ]] && [[ $status_sdlc -eq 200 ]] && [[ $status_sdlc_authenticated -eq 200 ]] && [[ $status_studio -eq 200 ]]; then
 		break
-	elif [[ $status_engine -ge 300 ]] || [[ $status_sdlc -ge 300 ]] || [[ $status_sdlc_authenticated -ge 300 ]] || [[ $status_pure_ide -ge 300 ]] || [[ $status_studio -ge 300 ]]; then
+	elif [[ $status_engine -ge 300 ]] || [[ $status_sdlc -ge 300 ]] || [[ $status_sdlc_authenticated -ge 300 ]] || [[ $status_studio -ge 300 ]]; then
 		error=1
 		break
 	fi
@@ -79,7 +78,6 @@ else
 fi
 echo -e "Legend SDLC: ${GREEN}${BASE_URL}/sdlc${NC}"
 echo -e "Legend Engine: ${GREEN}${BASE_URL}/engine${NC}"
-echo -e "Legend Pure IDE: ${GREEN}${BASE_URL}/ide${NC}"
 echo -e "Legend Studio: ${GREEN}${BASE_URL}/studio${NC}"
 echo -e "\nTo start using Legend, launch Studio at: ${GREEN}${BASE_URL}/studio/${NC}${NC}"
 cat > /.omnibus-status.json <<-END

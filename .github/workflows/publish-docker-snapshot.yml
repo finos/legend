@@ -14,7 +14,9 @@ jobs:
       fail-fast: false
       matrix:
         variant:
-          - full
+          # NOTE: latest version of Gitlab is significantly more costly to run, making it quite unfeasible to run
+          # all components in the same container, i.e. we disable full build for now.
+          # - full
           - slim
           - slim-dbs
     steps:

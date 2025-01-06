@@ -60,7 +60,6 @@ END
 sed -i'' -e "s/^LEGEND_OMNIBUS_IMAGE_VERSION.*/LEGEND_OMNIBUS_IMAGE_VERSION=$NEW_VERSION/" ./installers/omnibus/.env
 sed -i'' -e "s/^LEGEND_OMNIBUS_ENGINE_VERSION.*/LEGEND_OMNIBUS_ENGINE_VERSION=$NEW_ENGINE_VERSION/" ./installers/omnibus/.env
 sed -i'' -e "s/^LEGEND_OMNIBUS_SDLC_VERSION.*/LEGEND_OMNIBUS_SDLC_VERSION=$NEW_SDLC_VERSION/" ./installers/omnibus/.env
-sed -i'' -e "s/^LEGEND_OMNIBUS_PURE_IDE_VERSION.*/LEGEND_OMNIBUS_PURE_IDE_VERSION=$NEW_ENGINE_VERSION/" ./installers/omnibus/.env
 sed -i'' -e "s/^LEGEND_OMNIBUS_STUDIO_VERSION.*/LEGEND_OMNIBUS_STUDIO_VERSION=$NEW_STUDIO_VERSION/" ./installers/omnibus/.env
 
 # --------------------------- Commit Changes ------------------------------

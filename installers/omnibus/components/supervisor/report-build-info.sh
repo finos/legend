@@ -8,7 +8,6 @@ cat > /.buildinfo.json <<-END
   "gitlab_version": "$LEGEND_OMNIBUS_GITLAB_VERSION",
   "sdlc_version": "$LEGEND_OMNIBUS_SDLC_VERSION",
   "engine_version": "$LEGEND_OMNIBUS_ENGINE_VERSION",
-  "pure_ide_version": "$LEGEND_OMNIBUS_PURE_IDE_VERSION",
   "studio_version": "$LEGEND_OMNIBUS_STUDIO_VERSION"
 }
 END
