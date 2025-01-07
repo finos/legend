@@ -43,7 +43,9 @@ pac4j:
     - /api/info
     - /api/server/info
     - /api/server/platforms
-    - /api/auth/authorized
+    # NOTE: recent changes to SDLC server causing this logic to change slightly,
+    # for PAT, /authorized always returns false, and /authorize needs to be bypassed
+    - /api/auth/authorize
 
 applicationName: Legend SDLC
 filterPriorities:
