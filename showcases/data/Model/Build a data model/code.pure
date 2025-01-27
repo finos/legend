@@ -352,7 +352,7 @@ Mapping _03_modelToModelMapping::simpleModelToModelMapping
   *_01_basic::Product: Pure
   {
     ~src _03_modelToModelMapping::S_Product
-    ~filter !($src.classification.type == 'type2')
+    ~filter $src.classification.type != 'type2'
     name: $src.name,
     synonyms[_01_basic_Synonym]: $src.synonym,
     classification[_01_basic_ProductClassification]: $src.classification
@@ -461,7 +461,7 @@ Mapping _03_modelToModelMapping::unionMapping
   _01_basic::Product[p1]: Pure
   {
     ~src _03_modelToModelMapping::S_Product
-    ~filter !($src.classification.type == 'type2')
+    ~filter $src.classification.type != 'type2'
     name: $src.name,
     classification[_01_basic_ProductClassification]: $src.classification,
     synonyms[_01_basic_Synonym]: $src.synonym

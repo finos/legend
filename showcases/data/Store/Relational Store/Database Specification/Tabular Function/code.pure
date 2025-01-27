@@ -8,6 +8,7 @@ Database demo::udtf::DemoDb
       firmId INTEGER,
       legalname VARCHAR(200)
     )
+
     TabularFunction Person
     (
       firstname VARCHAR(200),
@@ -34,8 +35,7 @@ Database demo::udtf::DemoDb
 
   Join firm_person(Org.Firm.firmId = Org.Person.associatedFirmId)
   Join firm_person2(Org.Firm.firmId = Org.Person2.associatedFirmId)
-    Join relationship(Org.ParentAndChildren.parentId = {target}.id)
-
+  Join relationship(Org.ParentAndChildren.parentId = {target}.id)
 )
 
 
@@ -69,8 +69,7 @@ Association demo::udtf::firm_person
 
 function demo::udtf::Org::FirmToPerson(): meta::pure::tds::TabularDataSet[1]
 {
-  demo::udtf::Org::Firm.all()
-  ->project(
+  demo::udtf::Org::Firm.all()->project(
     [
       x|$x.firmId,
       x|$x.associatedPerson.age
@@ -127,7 +126,6 @@ function demo::udtf::Org::FirmToPersonWithFilterOnPersonUsingUnion(): meta::pure
   )
 }
 
-
 function demo::udtf::Org::FetchChildrenViaSelfJoin(): meta::pure::tds::TabularDataSet[1]
 {
   demo::udtf::Org::Person.all()->project(
@@ -168,7 +166,6 @@ Mapping demo::udtf::DemoMapping
   }
   *demo::udtf::Org::Person[p]: Relational
   {
-
     ~mainTable [demo::udtf::DemoDb]Org.Person
     firstname: [demo::udtf::DemoDb]Org.Person.firstname,
     lastname: [demo::udtf::DemoDb]Org.Person.lastname,
@@ -184,6 +181,7 @@ Mapping demo::udtf::DemoMapping
     )
   }
 )
+
 
 ###Mapping
 Mapping demo::udtf::DemoMappingUnion
@@ -230,12 +228,13 @@ Mapping demo::udtf::DemoMappingUnion
   }
 )
 
+
 ###Mapping
 Mapping demo::udtf::DemoMappingSelfJoin
 (
   *demo::udtf::Org::Person[p1]: Relational
   {
-     ~primaryKey
+    ~primaryKey
     (
       [demo::udtf::DemoDb]Org.ParentAndChildren.firstname
     )
@@ -255,6 +254,7 @@ Mapping demo::udtf::DemoMappingSelfJoin
     )
   }
 )
+
 
 ###Connection
 RelationalDatabaseConnection demo::udtf::DemoSnowflakeConnection
@@ -292,6 +292,7 @@ Runtime demo::runtimes::DemoRuntime
     ]
   ];
 }
+
 
 ###Snowflake
 SnowflakeApp demo::udtf::snowflakeApp::App1
