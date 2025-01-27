@@ -18,9 +18,7 @@ Mapping examples::stringToDate::StringToDateMapping
     targetValue: if(
   $src.sourceValue->isEmpty(),
   |[],
-  |$src.sourceValue->toOne()->parseDate()->cast(
-    @StrictDate
-  )
+  |$src.sourceValue->toOne()->parseDate()->cast(@StrictDate)
 )
   }
 

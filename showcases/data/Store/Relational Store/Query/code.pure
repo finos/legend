@@ -607,7 +607,7 @@ function showcase::northwind::store::functions::NorthwindExtendd(): Any[*]
 function showcase::simple::functions::simpleFunctionSort(): Any[*]
 {
   #>{showcase::simple::store::TestDatabase.TEST0}#->filter(
-    c|!($c.FIRSTNAME == 'Doe')
+    c|$c.FIRSTNAME != 'Doe'
   )->from(
     showcase::simple::connection::TestRuntime
   )->sort(
@@ -620,8 +620,8 @@ function showcase::simple::functions::simpleFunctionSort(): Any[*]
 function showcase::simple::functions::simpleTableFunctionFilter(): Any[*]
 {
   #>{showcase::simple::store::TestDatabase.TEST0}#->filter(
-    c|!($c.FIRSTNAME == 'Doe') &&
-      !($c.LASTNAME == 'Doe')
+    c|($c.FIRSTNAME != 'Doe') &&
+      ($c.LASTNAME != 'Doe')
   )->from(
     showcase::simple::connection::TestRuntime
   )->sort(
@@ -634,7 +634,7 @@ function showcase::simple::functions::simpleTableFunctionFilter(): Any[*]
 function showcase::simple::functions::simpleTableFunctionGroup(): Any[*]
 {
   #>{showcase::simple::store::TestDatabase.TEST0}#->filter(
-    c|!($c.FIRSTNAME == 'Doe')
+    c|$c.FIRSTNAME != 'Doe'
   )->from(
     showcase::simple::connection::TestRuntime
   )->groupBy(
@@ -650,8 +650,8 @@ function showcase::simple::functions::simpleTableFunctionGroup(): Any[*]
 function showcase::simple::functions::simpleTableFunctionSlice(): Any[*]
 {
   #>{showcase::simple::store::TestDatabase.TEST0}#->filter(
-    c|!($c.FIRSTNAME == 'Doe') &&
-      !($c.LASTNAME == 'Doe')
+    c|($c.FIRSTNAME != 'Doe') &&
+      ($c.LASTNAME != 'Doe')
   )->from(
     showcase::simple::connection::TestRuntime
   )

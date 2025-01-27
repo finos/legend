@@ -1,0 +1,305 @@
+###Relational
+Database demo::udtf::DemoDb
+(
+  Schema Org
+  (
+    Table Firm
+    (
+      firmId INTEGER,
+      legalname VARCHAR(200)
+    )
+
+    TabularFunction Person
+    (
+      firstname VARCHAR(200),
+      lastname VARCHAR(200),
+      age INTEGER,
+      associatedFirmId INTEGER
+    )
+    TabularFunction Person2
+    (
+      firstname VARCHAR(200),
+      lastname VARCHAR(200),
+      age INTEGER,
+      associatedFirmId INTEGER
+    )
+    TabularFunction ParentAndChildren
+    (
+      firstname VARCHAR(200),
+      lastname VARCHAR(200),
+      id INTEGER,
+      age INTEGER,
+      parentId INTEGER
+    )
+  )
+
+  Join firm_person(Org.Firm.firmId = Org.Person.associatedFirmId)
+  Join firm_person2(Org.Firm.firmId = Org.Person2.associatedFirmId)
+  Join relationship(Org.ParentAndChildren.parentId = {target}.id)
+)
+
+
+###Pure
+Class demo::udtf::Org::Firm
+{
+  firmId: Integer[1];
+  legalname: String[1];
+}
+
+Class demo::udtf::Org::Person
+{
+  firstname: String[1];
+  lastname: String[1];
+  age: Integer[1];
+  associatedFirmId: Integer[1];
+  id: Integer[1];
+}
+
+Association demo::udtf::Person_person
+{
+  parent: demo::udtf::Org::Person[1];
+  children: demo::udtf::Org::Person[1..*];
+}
+
+Association demo::udtf::firm_person
+{
+  assoacitedFirm: demo::udtf::Org::Firm[1];
+  associatedPerson: demo::udtf::Org::Person[1..*];
+}
+
+function demo::udtf::Org::FirmToPerson(): meta::pure::tds::TabularDataSet[1]
+{
+  demo::udtf::Org::Firm.all()->project(
+    [
+      x|$x.firmId,
+      x|$x.associatedPerson.age
+    ],
+    [
+      'Firm Id',
+      'Associated Person/Age'
+    ]
+  )->from(
+    demo::udtf::DemoMapping,
+    demo::runtimes::DemoRuntime
+  )
+}
+
+function demo::udtf::Org::FirmToPersonWithFilterOnPerson(): meta::pure::tds::TabularDataSet[1]
+{
+  demo::udtf::Org::Firm.all()->filter(
+    x|$x.associatedPerson->exists(
+      x_1|$x_1.firstname == 'David'
+    )
+  )->project(
+    [
+      x|$x.firmId,
+      x|$x.associatedPerson.age
+    ],
+    [
+      'Firm Id',
+      'Associated Person/Age'
+    ]
+  )->from(
+    demo::udtf::DemoMapping,
+    demo::runtimes::DemoRuntime
+  )
+}
+
+function demo::udtf::Org::FirmToPersonWithFilterOnPersonUsingUnion(): meta::pure::tds::TabularDataSet[1]
+{
+  demo::udtf::Org::Firm.all()->filter(
+    x|$x.associatedPerson->exists(
+      x_1|$x_1.firstname == 'David'
+    )
+  )->project(
+    [
+      x|$x.firmId,
+      x|$x.associatedPerson.age
+    ],
+    [
+      'Firm Id',
+      'Associated Person/Age'
+    ]
+  )->from(
+    demo::udtf::DemoMappingUnion,
+    demo::runtimes::DemoRuntime
+  )
+}
+
+function demo::udtf::Org::FetchChildrenViaSelfJoin(): meta::pure::tds::TabularDataSet[1]
+{
+  demo::udtf::Org::Person.all()->project(
+    [
+      x|$x.firstname,
+      x|$x.id,
+      x|$x.children.age,
+      x|$x.children.id,
+      x|$x.children.firstname
+    ],
+    [
+      'Firstname',
+      'Id',
+      'Children/Age',
+      'Children/Id',
+      'Children/Firstname'
+    ]
+  )->from(
+    demo::udtf::DemoMappingSelfJoin,
+    demo::runtimes::DemoRuntime
+  )
+}
+
+
+###Mapping
+Mapping demo::udtf::DemoMapping
+(
+  *demo::udtf::Org::Firm[f]: Relational
+  {
+    ~primaryKey
+    (
+      [demo::udtf::DemoDb]Org.Firm.firmId,
+      [demo::udtf::DemoDb]Org.Firm.legalname
+    )
+    ~mainTable [demo::udtf::DemoDb]Org.Firm
+    firmId: [demo::udtf::DemoDb]Org.Firm.firmId,
+    legalname: [demo::udtf::DemoDb]Org.Firm.legalname
+  }
+  *demo::udtf::Org::Person[p]: Relational
+  {
+    ~mainTable [demo::udtf::DemoDb]Org.Person
+    firstname: [demo::udtf::DemoDb]Org.Person.firstname,
+    lastname: [demo::udtf::DemoDb]Org.Person.lastname,
+    age: [demo::udtf::DemoDb]Org.Person.age
+  }
+
+  demo::udtf::firm_person: Relational
+  {
+    AssociationMapping
+    (
+      assoacitedFirm[p,f]: [demo::udtf::DemoDb]@firm_person,
+      associatedPerson[f,p]: [demo::udtf::DemoDb]@firm_person
+    )
+  }
+)
+
+
+###Mapping
+Mapping demo::udtf::DemoMappingUnion
+(
+  *demo::udtf::Org::Person: Operation
+  {
+    meta::pure::router::operations::union_OperationSetImplementation_1__SetImplementation_MANY_(p1,p2)
+  }
+  *demo::udtf::Org::Firm[f]: Relational
+  {
+    ~primaryKey
+    (
+      [demo::udtf::DemoDb]Org.Firm.firmId,
+      [demo::udtf::DemoDb]Org.Firm.legalname
+    )
+    ~mainTable [demo::udtf::DemoDb]Org.Firm
+    firmId: [demo::udtf::DemoDb]Org.Firm.firmId,
+    legalname: [demo::udtf::DemoDb]Org.Firm.legalname
+  }
+  demo::udtf::Org::Person[p1]: Relational
+  {
+    ~mainTable [demo::udtf::DemoDb]Org.Person
+    firstname: [demo::udtf::DemoDb]Org.Person.firstname,
+    lastname: [demo::udtf::DemoDb]Org.Person.lastname,
+    age: [demo::udtf::DemoDb]Org.Person.age
+  }
+  demo::udtf::Org::Person[p2]: Relational
+  {
+    ~mainTable [demo::udtf::DemoDb]Org.Person2
+    firstname: [demo::udtf::DemoDb]Org.Person2.firstname,
+    lastname: [demo::udtf::DemoDb]Org.Person2.lastname,
+    age: [demo::udtf::DemoDb]Org.Person2.age
+  }
+
+  demo::udtf::firm_person: Relational
+  {
+    AssociationMapping
+    (
+      assoacitedFirm[p1,f]: [demo::udtf::DemoDb]@firm_person,
+      assoacitedFirm[p2,f]: [demo::udtf::DemoDb]@firm_person2,
+      associatedPerson[f,p1]: [demo::udtf::DemoDb]@firm_person,
+      associatedPerson[f,p2]: [demo::udtf::DemoDb]@firm_person2
+    )
+  }
+)
+
+
+###Mapping
+Mapping demo::udtf::DemoMappingSelfJoin
+(
+  *demo::udtf::Org::Person[p1]: Relational
+  {
+    ~primaryKey
+    (
+      [demo::udtf::DemoDb]Org.ParentAndChildren.firstname
+    )
+    ~mainTable [demo::udtf::DemoDb]Org.ParentAndChildren
+    firstname: [demo::udtf::DemoDb]Org.ParentAndChildren.firstname,
+    lastname: [demo::udtf::DemoDb]Org.ParentAndChildren.lastname,
+    id: [demo::udtf::DemoDb]Org.ParentAndChildren.id,
+    age: [demo::udtf::DemoDb]Org.ParentAndChildren.age
+  }
+
+  demo::udtf::Person_person: Relational
+  {
+    AssociationMapping
+    (
+      children[p1,p1]: [demo::udtf::DemoDb]@relationship,
+      parent[p1,p1]: [demo::udtf::DemoDb]@relationship
+    )
+  }
+)
+
+
+###Connection
+RelationalDatabaseConnection demo::udtf::DemoSnowflakeConnection
+{
+  store: demo::udtf::DemoDb;
+  type: Snowflake;
+  specification: Snowflake
+  {
+    name: 'SUMMIT_MDM_DATA';
+    account: 'sfcedeawseast1d01';
+    warehouse: 'DEMO_WH';
+    region: 'us-east-1';
+  };
+  auth: SnowflakePublic
+  {
+    publicUserName: 'isThis';
+    privateKeyVaultReference: 'Hi';
+    passPhraseVaultReference: 'What';
+  };
+}
+
+
+###Runtime
+Runtime demo::runtimes::DemoRuntime
+{
+  mappings:
+  [
+    demo::udtf::DemoMapping
+  ];
+  connections:
+  [
+    demo::udtf::DemoDb:
+    [
+      connection_2: demo::udtf::DemoSnowflakeConnection
+    ]
+  ];
+}
+
+
+###Snowflake
+SnowflakeApp demo::udtf::snowflakeApp::App1
+{
+   applicationName : 'App1_revised';
+   function : demo::udtf::Org::FirmToPersonWithFilterOnPersonUsingUnion():TabularDataSet[1];
+   ownership : Deployment { identifier: '441143'};
+   description : 'test App';
+   activationConfiguration : demo::udtf::DemoSnowflakeConnection;
+}
