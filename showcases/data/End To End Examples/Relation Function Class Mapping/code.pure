@@ -43,199 +43,11 @@ Database showcase::relationFunctionMapping::store::Database
 )
 
 
-###Service
-Service showcase::relationFunctionMapping::service::SimpleService
-{
-  pattern: '/5e1615e2-f153-4b3e-baee-878f51dfa25a';
-  ownership: DID { identifier: '' };
-  documentation: '';
-  autoActivateUpdates: true;
-  execution: Single
-  {
-    query: |showcase::relationFunctionMapping::domain::Firm.all()->project(
-      [
-        x|$x.legalName,
-        x|$x.employees.firstName,
-        x|$x.employees.age
-      ],
-      [
-        'Legal Name',
-        'Employees/First Name',
-        'Employees/Age'
-      ]
-    );
-    mapping: showcase::relationFunctionMapping::mapping::SimpleMapping;
-    runtime: showcase::relationFunctionMapping::runtime::Runtime;
-  }
-  testSuites:
-  [
-    testSuite_1:
-    {
-      data:
-      [
-        connections:
-        [
-          connection_1:
-            Reference
-            #{
-              showcase::relationFunctionMapping::TestData
-            }#
-        ]
-      ]
-      tests:
-      [
-        test_1:
-        {
-          serializationFormat: PURE_TDSOBJECT;
-          asserts:
-          [
-            assertion_1:
-              EqualToJson
-              #{
-                expected:
-                  ExternalFormat
-                  #{
-                    contentType: 'application/json';
-                    data: '[\n  {\n    "Legal Name": "Firm X",\n    "Employees/First Name": "Peter",\n    "Employees/Age": 23\n  },\n  {\n    "Legal Name": "Firm X",\n    "Employees/First Name": "John",\n    "Employees/Age": 30\n  },\n  {\n    "Legal Name": "Firm A",\n    "Employees/First Name": "Jane",\n    "Employees/Age": 23\n  },\n  {\n    "Legal Name": "Firm B",\n    "Employees/First Name": "Anthony",\n    "Employees/Age": 19\n  },\n  {\n    "Legal Name": "Firm C",\n    "Employees/First Name": "Fabrice",\n    "Employees/Age": 45\n  },\n  {\n    "Legal Name": "Firm C",\n    "Employees/First Name": "Oliver",\n    "Employees/Age": 26\n  },\n  {\n    "Legal Name": "Firm D",\n    "Employees/First Name": "David",\n    "Employees/Age": 52\n  }\n]';
-                  }#;
-              }#
-          ]
-        }
-      ]
-    }
-  ]
-}
-
-Service showcase::relationFunctionMapping::service::ComplexService
-{
-  pattern: '/0b2bf7d8-e7e2-424e-8755-70974496adda';
-  ownership: DID { identifier: '' };
-  documentation: '';
-  autoActivateUpdates: true;
-  execution: Single
-  {
-    query: |showcase::relationFunctionMapping::domain::ComplexPerson.all()->project(
-      [
-        x|$x.age,
-        x|$x.rank,
-        x|$x.salary
-      ],
-      [
-        'Age',
-        'Rank',
-        'Salary'
-      ]
-    );
-    mapping: showcase::relationFunctionMapping::mapping::ComplexMapping;
-    runtime: showcase::relationFunctionMapping::runtime::Runtime;
-  }
-  testSuites:
-  [
-    testSuite_1:
-    {
-      data:
-      [
-        connections:
-        [
-          connection_1:
-            Reference
-            #{
-              showcase::relationFunctionMapping::TestData
-            }#
-        ]
-      ]
-      tests:
-      [
-        test_1:
-        {
-          serializationFormat: PURE_TDSOBJECT;
-          asserts:
-          [
-            assertion_1:
-              EqualToJson
-              #{
-                expected:
-                  ExternalFormat
-                  #{
-                    contentType: 'application/json';
-                    data: '[\n  {\n    "Age": 23,\n    "Rank": 1,\n    "Salary": 14.34\n  },\n  {\n    "Age": 30,\n    "Rank": 2,\n    "Salary": 72.4\n  },\n  {\n    "Age": 23,\n    "Rank": 1,\n    "Salary": 48.0\n  },\n  {\n    "Age": 19,\n    "Rank": 1,\n    "Salary": 64.9\n  },\n  {\n    "Age": 45,\n    "Rank": 1,\n    "Salary": 19.29\n  },\n  {\n    "Age": 26,\n    "Rank": 2,\n    "Salary": 42.34\n  },\n  {\n    "Age": 52,\n    "Rank": 1,\n    "Salary": 88.88\n  }\n]';
-                  }#;
-              }#
-          ]
-        }
-      ]
-    }
-  ]
-}
-
-Service showcase::relationFunctionMapping::service::MixedService
-{
-  pattern: '/46b251f5-93fc-4e97-a723-2c984cbc5ba0';
-  ownership: DID { identifier: '' };
-  documentation: '';
-  autoActivateUpdates: true;
-  execution: Single
-  {
-    query: |showcase::relationFunctionMapping::domain::Person.all()->project(
-      [
-        x|$x.age,
-        x|$x.firstName,
-        x|$x.firm.legalName
-      ],
-      [
-        'Age',
-        'First Name',
-        'Firm/Legal Name'
-      ]
-    );
-    mapping: showcase::relationFunctionMapping::mapping::MixedMapping;
-    runtime: showcase::relationFunctionMapping::runtime::Runtime;
-  }
-  testSuites:
-  [
-    testSuite_1:
-    {
-      data:
-      [
-        connections:
-        [
-          connection_1:
-            Reference
-            #{
-              showcase::relationFunctionMapping::TestData
-            }#
-        ]
-      ]
-      tests:
-      [
-        test_1:
-        {
-          serializationFormat: PURE_TDSOBJECT;
-          asserts:
-          [
-            assertion_1:
-              EqualToJson
-              #{
-                expected:
-                  ExternalFormat
-                  #{
-                    contentType: 'application/json';
-                    data: '[\n  {\n    "Age": 23,\n    "First Name": "Peter",\n    "Firm/Legal Name": "Firm X"\n  },\n  {\n    "Age": 30,\n    "First Name": "John",\n    "Firm/Legal Name": "Firm X"\n  },\n  {\n    "Age": 23,\n    "First Name": "Jane",\n    "Firm/Legal Name": "Firm A"\n  },\n  {\n    "Age": 19,\n    "First Name": "Anthony",\n    "Firm/Legal Name": "Firm B"\n  },\n  {\n    "Age": 45,\n    "First Name": "Fabrice",\n    "Firm/Legal Name": "Firm C"\n  }\n]';
-                  }#;
-              }#
-          ]
-        }
-      ]
-    }
-  ]
-}
-
-
 ###Text
 Text showcase::relationFunctionMapping::README
 {
   type: markdown;
-  content: 'This showcase demonstrates how to write Relation Function Class Mappings. \n\nThis allows you to map classes to functions returning a \'new\' TDS (Relation). Supported class properties can only be primitives \nhaving multiplicity 1 and get mapped to individual columns in the mapped relation.\n\nQueries can also use a mixture of Relational and Relation Function class mappings.\n\nYour relation expression can contain complex joins, aggregates and window columns, thus providing a more powerful alternative to \nRelational Store views.\n\nYou can execute the service tests to see how all of this works end-to-end. You can also generate plan for the services and inspect \nthe generated SQL.';
+  content: 'This showcase demonstrates how to write Relation Function Class Mappings. \n\nThis allows you to map classes to functions returning a \'new\' TDS (Relation). Supported class properties can only be primitives \nhaving multiplicity 1 and get mapped to individual columns in the mapped relation.\n\nQueries can also use a mixture of Relational and Relation Function class mappings.\n\nYour relation expression can contain complex joins, aggregates and window columns, thus providing a more powerful alternative to \nRelational Store views.\n\nYou can execute the function tests to see how all of this works end-to-end. You can also generate plan for the functions and inspect \nthe generated SQL.';
 }
 
 
@@ -306,6 +118,84 @@ function showcase::relationFunctionMapping::function::complexPersonFunction(): m
       $r
     )    }
      ]
+  )
+}
+
+function showcase::relationFunctionMapping::query::complexQuery(): meta::pure::tds::TabularDataSet[1]
+{
+  showcase::relationFunctionMapping::domain::ComplexPerson.all()->project(
+    [
+      x|$x.age,
+      x|$x.rank,
+      x|$x.salary
+    ],
+    [
+      'Age',
+      'Rank',
+      'Salary'
+    ]
+  )->from(
+    showcase::relationFunctionMapping::mapping::ComplexMapping,
+    showcase::relationFunctionMapping::runtime::Runtime
+  )
+}
+{
+  test
+  (
+    showcase::relationFunctionMapping::store::Database: showcase::relationFunctionMapping::TestData;
+    test | complexQuery() => (JSON) '[\n  {\n    "Age": 23,\n    "Rank": 1,\n    "Salary": 14.34\n  },\n  {\n    "Age": 30,\n    "Rank": 2,\n    "Salary": 72.4\n  },\n  {\n    "Age": 23,\n    "Rank": 1,\n    "Salary": 48.0\n  },\n  {\n    "Age": 19,\n    "Rank": 1,\n    "Salary": 64.9\n  },\n  {\n    "Age": 45,\n    "Rank": 1,\n    "Salary": 19.29\n  },\n  {\n    "Age": 26,\n    "Rank": 2,\n    "Salary": 42.34\n  },\n  {\n    "Age": 52,\n    "Rank": 1,\n    "Salary": 88.88\n  }\n]';
+  )
+}
+
+function showcase::relationFunctionMapping::query::simpleQuery(): meta::pure::tds::TabularDataSet[1]
+{
+  showcase::relationFunctionMapping::domain::Firm.all()->project(
+    [
+      x|$x.legalName,
+      x|$x.employees.firstName,
+      x|$x.employees.age
+    ],
+    [
+      'Legal Name',
+      'Employees/First Name',
+      'Employees/Age'
+    ]
+  )->from(
+    showcase::relationFunctionMapping::mapping::SimpleMapping,
+    showcase::relationFunctionMapping::runtime::Runtime
+  )
+}
+{
+  test
+  (
+    showcase::relationFunctionMapping::store::Database: showcase::relationFunctionMapping::TestData;
+    test | simpleQuery() => (JSON) '[\n  {\n    "Legal Name": "Firm X",\n    "Employees/First Name": "Peter",\n    "Employees/Age": 23\n  },\n  {\n    "Legal Name": "Firm X",\n    "Employees/First Name": "John",\n    "Employees/Age": 30\n  },\n  {\n    "Legal Name": "Firm A",\n    "Employees/First Name": "Jane",\n    "Employees/Age": 23\n  },\n  {\n    "Legal Name": "Firm B",\n    "Employees/First Name": "Anthony",\n    "Employees/Age": 19\n  },\n  {\n    "Legal Name": "Firm C",\n    "Employees/First Name": "Fabrice",\n    "Employees/Age": 45\n  },\n  {\n    "Legal Name": "Firm C",\n    "Employees/First Name": "Oliver",\n    "Employees/Age": 26\n  },\n  {\n    "Legal Name": "Firm D",\n    "Employees/First Name": "David",\n    "Employees/Age": 52\n  }\n]';
+  )
+}
+
+function showcase::relationFunctionMapping::query::mixedQuery(): meta::pure::tds::TabularDataSet[1]
+{
+  showcase::relationFunctionMapping::domain::Person.all()->project(
+    [
+      x|$x.age,
+      x|$x.firstName,
+      x|$x.firm.legalName
+    ],
+    [
+      'Age',
+      'First Name',
+      'Firm/Legal Name'
+    ]
+  )->from(
+    showcase::relationFunctionMapping::mapping::MixedMapping,
+    showcase::relationFunctionMapping::runtime::Runtime
+  )
+}
+{
+  testSuite
+  (
+    showcase::relationFunctionMapping::store::Database: showcase::relationFunctionMapping::TestData;
+    test | mixedQuery() => (JSON) '[\n  {\n    "Age": 23,\n    "First Name": "Peter",\n    "Firm/Legal Name": "Firm X"\n  },\n  {\n    "Age": 30,\n    "First Name": "John",\n    "Firm/Legal Name": "Firm X"\n  },\n  {\n    "Age": 23,\n    "First Name": "Jane",\n    "Firm/Legal Name": "Firm A"\n  },\n  {\n    "Age": 19,\n    "First Name": "Anthony",\n    "Firm/Legal Name": "Firm B"\n  },\n  {\n    "Age": 45,\n    "First Name": "Fabrice",\n    "Firm/Legal Name": "Firm C"\n  }\n]';
   )
 }
 
