@@ -1,0 +1,408 @@
+###Data
+Data showcase::relationFunctionMapping::TestData
+{
+  Relational
+  #{
+    default.firmTable:
+      'ID,LEGALNAME\n'+
+      '1,Firm X\n'+
+      '2,Firm A\n'+
+      '3,Firm B\n'+
+      '4,Firm C\n'+
+      '5,Firm D\n';
+
+    default.personTable:
+      'ID,FIRSTNAME,AGE,FIRMID,SALARY\n'+
+      '1,Peter,23,1,14.34\n'+
+      '2,John,30,1,72.40\n'+
+      '3,Jane,23,2,48.00\n'+
+      '4,Anthony,19,3,64.90\n'+
+      '5,Fabrice,45,4,19.29\n'+
+      '6,Oliver,26,4,42.34\n'+
+      '7,David,52,5,88.88\n';
+  }#
+}
+
+
+###Relational
+Database showcase::relationFunctionMapping::store::Database
+(
+  Table personTable
+  (
+    ID INTEGER PRIMARY KEY,
+    FIRSTNAME VARCHAR(100),
+    AGE INTEGER,
+    FIRMID INTEGER,
+    SALARY FLOAT
+  )
+  Table firmTable
+  (
+    ID INTEGER PRIMARY KEY,
+    LEGALNAME VARCHAR(100)
+  )
+)
+
+
+###Service
+Service showcase::relationFunctionMapping::service::SimpleService
+{
+  pattern: '/5e1615e2-f153-4b3e-baee-878f51dfa25a';
+  ownership: DID { identifier: '' };
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |showcase::relationFunctionMapping::domain::Firm.all()->project(
+      [
+        x|$x.legalName,
+        x|$x.employees.firstName,
+        x|$x.employees.age
+      ],
+      [
+        'Legal Name',
+        'Employees/First Name',
+        'Employees/Age'
+      ]
+    );
+    mapping: showcase::relationFunctionMapping::mapping::SimpleMapping;
+    runtime: showcase::relationFunctionMapping::runtime::Runtime;
+  }
+  testSuites:
+  [
+    testSuite_1:
+    {
+      data:
+      [
+        connections:
+        [
+          connection_1:
+            Reference
+            #{
+              showcase::relationFunctionMapping::TestData
+            }#
+        ]
+      ]
+      tests:
+      [
+        test_1:
+        {
+          serializationFormat: PURE_TDSOBJECT;
+          asserts:
+          [
+            assertion_1:
+              EqualToJson
+              #{
+                expected:
+                  ExternalFormat
+                  #{
+                    contentType: 'application/json';
+                    data: '[\n  {\n    "Legal Name": "Firm X",\n    "Employees/First Name": "Peter",\n    "Employees/Age": 23\n  },\n  {\n    "Legal Name": "Firm X",\n    "Employees/First Name": "John",\n    "Employees/Age": 30\n  },\n  {\n    "Legal Name": "Firm A",\n    "Employees/First Name": "Jane",\n    "Employees/Age": 23\n  },\n  {\n    "Legal Name": "Firm B",\n    "Employees/First Name": "Anthony",\n    "Employees/Age": 19\n  },\n  {\n    "Legal Name": "Firm C",\n    "Employees/First Name": "Fabrice",\n    "Employees/Age": 45\n  },\n  {\n    "Legal Name": "Firm C",\n    "Employees/First Name": "Oliver",\n    "Employees/Age": 26\n  },\n  {\n    "Legal Name": "Firm D",\n    "Employees/First Name": "David",\n    "Employees/Age": 52\n  }\n]';
+                  }#;
+              }#
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+Service showcase::relationFunctionMapping::service::ComplexService
+{
+  pattern: '/0b2bf7d8-e7e2-424e-8755-70974496adda';
+  ownership: DID { identifier: '' };
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |showcase::relationFunctionMapping::domain::ComplexPerson.all()->project(
+      [
+        x|$x.age,
+        x|$x.rank,
+        x|$x.salary
+      ],
+      [
+        'Age',
+        'Rank',
+        'Salary'
+      ]
+    );
+    mapping: showcase::relationFunctionMapping::mapping::ComplexMapping;
+    runtime: showcase::relationFunctionMapping::runtime::Runtime;
+  }
+  testSuites:
+  [
+    testSuite_1:
+    {
+      data:
+      [
+        connections:
+        [
+          connection_1:
+            Reference
+            #{
+              showcase::relationFunctionMapping::TestData
+            }#
+        ]
+      ]
+      tests:
+      [
+        test_1:
+        {
+          serializationFormat: PURE_TDSOBJECT;
+          asserts:
+          [
+            assertion_1:
+              EqualToJson
+              #{
+                expected:
+                  ExternalFormat
+                  #{
+                    contentType: 'application/json';
+                    data: '[\n  {\n    "Age": 23,\n    "Rank": 1,\n    "Salary": 14.34\n  },\n  {\n    "Age": 30,\n    "Rank": 2,\n    "Salary": 72.4\n  },\n  {\n    "Age": 23,\n    "Rank": 1,\n    "Salary": 48.0\n  },\n  {\n    "Age": 19,\n    "Rank": 1,\n    "Salary": 64.9\n  },\n  {\n    "Age": 45,\n    "Rank": 1,\n    "Salary": 19.29\n  },\n  {\n    "Age": 26,\n    "Rank": 2,\n    "Salary": 42.34\n  },\n  {\n    "Age": 52,\n    "Rank": 1,\n    "Salary": 88.88\n  }\n]';
+                  }#;
+              }#
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+Service showcase::relationFunctionMapping::service::MixedService
+{
+  pattern: '/46b251f5-93fc-4e97-a723-2c984cbc5ba0';
+  ownership: DID { identifier: '' };
+  documentation: '';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |showcase::relationFunctionMapping::domain::Person.all()->project(
+      [
+        x|$x.age,
+        x|$x.firstName,
+        x|$x.firm.legalName
+      ],
+      [
+        'Age',
+        'First Name',
+        'Firm/Legal Name'
+      ]
+    );
+    mapping: showcase::relationFunctionMapping::mapping::MixedMapping;
+    runtime: showcase::relationFunctionMapping::runtime::Runtime;
+  }
+  testSuites:
+  [
+    testSuite_1:
+    {
+      data:
+      [
+        connections:
+        [
+          connection_1:
+            Reference
+            #{
+              showcase::relationFunctionMapping::TestData
+            }#
+        ]
+      ]
+      tests:
+      [
+        test_1:
+        {
+          serializationFormat: PURE_TDSOBJECT;
+          asserts:
+          [
+            assertion_1:
+              EqualToJson
+              #{
+                expected:
+                  ExternalFormat
+                  #{
+                    contentType: 'application/json';
+                    data: '[\n  {\n    "Age": 23,\n    "First Name": "Peter",\n    "Firm/Legal Name": "Firm X"\n  },\n  {\n    "Age": 30,\n    "First Name": "John",\n    "Firm/Legal Name": "Firm X"\n  },\n  {\n    "Age": 23,\n    "First Name": "Jane",\n    "Firm/Legal Name": "Firm A"\n  },\n  {\n    "Age": 19,\n    "First Name": "Anthony",\n    "Firm/Legal Name": "Firm B"\n  },\n  {\n    "Age": 45,\n    "First Name": "Fabrice",\n    "Firm/Legal Name": "Firm C"\n  }\n]';
+                  }#;
+              }#
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
+###Text
+Text showcase::relationFunctionMapping::README
+{
+  type: markdown;
+  content: 'This showcase demonstrates how to write Relation Function Class Mappings. \n\nThis allows you to map classes to functions returning a \'new\' TDS (Relation). Supported class properties can only be primitives \nhaving multiplicity 1 and get mapped to individual columns in the mapped relation.\n\nQueries can also use a mixture of Relational and Relation Function class mappings.\n\nYour relation expression can contain complex joins, aggregates and window columns, thus providing a more powerful alternative to \nRelational Store views.\n\nYou can execute the service tests to see how all of this works end-to-end. You can also generate plan for the services and inspect \nthe generated SQL.';
+}
+
+
+###Pure
+Class showcase::relationFunctionMapping::domain::Firm
+{
+  legalName: String[1];
+}
+
+Class showcase::relationFunctionMapping::domain::Person
+{
+  firstName: String[1];
+  age: Integer[1];
+}
+
+Class showcase::relationFunctionMapping::domain::ComplexPerson
+{
+  firstName: String[1];
+  age: Integer[1];
+  salary: Float[1];
+  rank: Integer[1];
+}
+
+Association showcase::relationFunctionMapping::domain::Person_Firm
+{
+  employees: showcase::relationFunctionMapping::domain::Person[*];
+  firm: showcase::relationFunctionMapping::domain::Firm[1];
+}
+
+function showcase::relationFunctionMapping::function::firmFunction(): meta::pure::metamodel::relation::Relation<meta::pure::metamodel::type::Any>[1]
+{
+  #>{showcase::relationFunctionMapping::store::Database.firmTable}#->limit(10)->select(
+    ~[
+       ID,
+       LEGALNAME
+     ]
+  )
+}
+
+function showcase::relationFunctionMapping::function::personFunction(): meta::pure::metamodel::relation::Relation<meta::pure::metamodel::type::Any>[1]
+{
+  #>{showcase::relationFunctionMapping::store::Database.personTable}#->filter(
+    x|$x.AGE > 15
+  )->limit(5)
+}
+
+function showcase::relationFunctionMapping::function::complexPersonFunction(): meta::pure::metamodel::relation::Relation<meta::pure::metamodel::type::Any>[1]
+{
+  #>{showcase::relationFunctionMapping::store::Database.personTable}#->select(
+    ~[
+       AGE,
+       FIRMID,
+       SALARY
+     ]
+  )->join(
+    #>{showcase::relationFunctionMapping::store::Database.firmTable}#,
+    JoinKind.INNER,
+    {x,y|$x.FIRMID ==
+      $y.ID    }
+  )->extend(
+    over(
+      ~FIRMID,
+      ~SALARY->ascending()
+    ),
+    ~[
+       RANK: {p,w,r|$p->rank(
+      $w,
+      $r
+    )    }
+     ]
+  )
+}
+
+
+###Mapping
+Mapping showcase::relationFunctionMapping::mapping::SimpleMapping
+(
+  *showcase::relationFunctionMapping::domain::Person[person]: Relation
+  {
+    ~func showcase::relationFunctionMapping::function::personFunction():Relation<Any>[1]
+    firstName: FIRSTNAME,
+    age: AGE,
+    +firmId: Integer[1]: FIRMID
+  }
+  *showcase::relationFunctionMapping::domain::Firm[firm]: Relation
+  {
+    ~func showcase::relationFunctionMapping::function::firmFunction():Relation<Any>[1]
+    legalName: LEGALNAME,
+    +id: Integer[1]: ID
+  }
+
+  showcase::relationFunctionMapping::domain::Person_Firm: XStore
+  {
+    employees[firm, person]: $this.id ==
+  $that.firmId,
+    firm[person, firm]: $this.firmId ==
+  $that.id
+  }
+)
+
+Mapping showcase::relationFunctionMapping::mapping::ComplexMapping
+(
+  *showcase::relationFunctionMapping::domain::ComplexPerson[person]: Relation
+  {
+    ~func showcase::relationFunctionMapping::function::complexPersonFunction():Relation<Any>[1]
+    age: AGE,
+    salary: SALARY,
+    rank: RANK
+  }
+)
+
+Mapping showcase::relationFunctionMapping::mapping::MixedMapping
+(
+  *showcase::relationFunctionMapping::domain::Person[person]: Relation
+  {
+    ~func showcase::relationFunctionMapping::function::personFunction():Relation<Any>[1]
+    firstName: FIRSTNAME,
+    age: AGE,
+    +firmId: Integer[1]: FIRMID
+  }
+  *showcase::relationFunctionMapping::domain::Firm[firm]: Relational
+  {
+    ~primaryKey
+    (
+      [showcase::relationFunctionMapping::store::Database]firmTable.ID
+    )
+    ~mainTable [showcase::relationFunctionMapping::store::Database]firmTable
+    +id: Integer[1]: [showcase::relationFunctionMapping::store::Database]firmTable.ID,
+    legalName: [showcase::relationFunctionMapping::store::Database]firmTable.LEGALNAME
+  }
+
+  showcase::relationFunctionMapping::domain::Person_Firm: XStore
+  {
+    employees[firm, person]: $this.id ==
+  $that.firmId,
+    firm[person, firm]: $this.firmId ==
+  $that.id
+  }
+)
+
+
+###Connection
+RelationalDatabaseConnection showcase::relationFunctionMapping::connection::Connection
+{
+  store: showcase::relationFunctionMapping::store::Database;
+  type: H2;
+  specification: LocalH2
+  {
+  };
+  auth: DefaultH2;
+}
+
+
+###Runtime
+Runtime showcase::relationFunctionMapping::runtime::Runtime
+{
+  mappings:
+  [
+    showcase::relationFunctionMapping::mapping::SimpleMapping,
+    showcase::relationFunctionMapping::mapping::ComplexMapping,
+    showcase::relationFunctionMapping::mapping::MixedMapping
+  ];
+  connections:
+  [
+    showcase::relationFunctionMapping::store::Database:
+    [
+      connection_1: showcase::relationFunctionMapping::connection::Connection
+    ]
+  ];
+}
