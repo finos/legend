@@ -169,7 +169,7 @@ Runtime simple::runtime::SnowflakeRuntime
 
 
 ###Pure
-function simple::dotAndBracketNotationAccess(): TabularDataSet[1]
+function simple::dotAndBracketNotationAccess(): meta::pure::tds::TabularDataSet[1]
 {
   simple::model::Firm.all()->project(
     [
@@ -187,7 +187,7 @@ function simple::dotAndBracketNotationAccess(): TabularDataSet[1]
   )
 }
 
-function simple::arrayElementNoFlattenAccess(): TabularDataSet[1]
+function simple::arrayElementNoFlattenAccess(): meta::pure::tds::TabularDataSet[1]
 {
   simple::model::Firm.all()->project(
     [
@@ -201,7 +201,7 @@ function simple::arrayElementNoFlattenAccess(): TabularDataSet[1]
   )
 }
 
-function simple::extractEnumProperty(): TabularDataSet[1]
+function simple::extractEnumProperty(): meta::pure::tds::TabularDataSet[1]
 {
   simple::model::Firm.all()->project(
     [
@@ -215,7 +215,7 @@ function simple::extractEnumProperty(): TabularDataSet[1]
   )
 }
 
-function simple::allDataTypesAccess(): TabularDataSet[1]
+function simple::allDataTypesAccess(): meta::pure::tds::TabularDataSet[1]
 {
   simple::model::Firm.all()->project(
     [

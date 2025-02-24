@@ -577,7 +577,7 @@ Association showcase::northwind::model::associations::Order_OrderLineItem
   lineItems: showcase::northwind::model::OrderLineItem[*];
 }
 
-function showcase::northwind::store::functions::SelectOnNorthWindCustomer(): Any[*]
+function showcase::northwind::store::functions::SelectOnNorthWindCustomer(): meta::pure::metamodel::relation::Relation<meta::pure::metamodel::type::Any>[*]
 {
   #>{showcase::northwind::store::NorthwindDatabase.NORTHWIND.CUSTOMERS}#->select(
     ~[
@@ -588,14 +588,14 @@ function showcase::northwind::store::functions::SelectOnNorthWindCustomer(): Any
   )
 }
 
-function showcase::northwind::store::functions::NorthwindDrop(): Any[*]
+function showcase::northwind::store::functions::NorthwindDrop(): meta::pure::metamodel::relation::Relation<meta::pure::metamodel::type::Any>[*]
 {
   #>{showcase::northwind::store::NorthwindDatabase.NORTHWIND.CUSTOMERS}#->drop(10)->from(
     showcase::northwind::store::NorthwindRuntime
   )
 }
 
-function showcase::northwind::store::functions::NorthwindExtendd(): Any[*]
+function showcase::northwind::store::functions::NorthwindExtendd(): meta::pure::metamodel::relation::Relation<meta::pure::metamodel::type::Any>[*]
 {
   #>{showcase::northwind::store::NorthwindDatabase.NORTHWIND.CUSTOMERS}#->extend(
     ~newCol: x|$x.CONTACT_NAME->toOne() + ' |' + $x.CONTACT_TITLE->toOne()
@@ -604,7 +604,7 @@ function showcase::northwind::store::functions::NorthwindExtendd(): Any[*]
   )
 }
 
-function showcase::simple::functions::simpleFunctionSort(): Any[*]
+function showcase::simple::functions::simpleFunctionSort(): meta::pure::metamodel::relation::Relation<meta::pure::metamodel::type::Any>[*]
 {
   #>{showcase::simple::store::TestDatabase.TEST0}#->filter(
     c|$c.FIRSTNAME != 'Doe'
@@ -617,7 +617,7 @@ function showcase::simple::functions::simpleFunctionSort(): Any[*]
   )
 }
 
-function showcase::simple::functions::simpleTableFunctionFilter(): Any[*]
+function showcase::simple::functions::simpleTableFunctionFilter(): meta::pure::metamodel::relation::Relation<meta::pure::metamodel::type::Any>[*]
 {
   #>{showcase::simple::store::TestDatabase.TEST0}#->filter(
     c|($c.FIRSTNAME != 'Doe') &&
@@ -631,7 +631,7 @@ function showcase::simple::functions::simpleTableFunctionFilter(): Any[*]
   )
 }
 
-function showcase::simple::functions::simpleTableFunctionGroup(): Any[*]
+function showcase::simple::functions::simpleTableFunctionGroup(): meta::pure::metamodel::relation::Relation<meta::pure::metamodel::type::Any>[*]
 {
   #>{showcase::simple::store::TestDatabase.TEST0}#->filter(
     c|$c.FIRSTNAME != 'Doe'
@@ -647,7 +647,7 @@ function showcase::simple::functions::simpleTableFunctionGroup(): Any[*]
   )
 }
 
-function showcase::simple::functions::simpleTableFunctionSlice(): Any[*]
+function showcase::simple::functions::simpleTableFunctionSlice(): meta::pure::metamodel::relation::Relation<meta::pure::metamodel::type::Any>[*]
 {
   #>{showcase::simple::store::TestDatabase.TEST0}#->filter(
     c|($c.FIRSTNAME != 'Doe') &&
