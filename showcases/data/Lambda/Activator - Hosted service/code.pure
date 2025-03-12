@@ -2,46 +2,46 @@
 // Define a simple function to be used by our hosted service
 function model::greet(name: String[1]): String[1]
 {
-  'Hello, ' + $name + '! Welcome to the hosted service.'
+  "Hello, " + $name + "! Welcome to the hosted service."
 }
 
 function model::processData(data: String[1]): String[1]
 {
-  'Processed data: ' + $data
+  "Processed data: " + $data
 }
 
 ###HostedService
 // Basic hosted service with UserList ownership
 HostedService model::BasicHostedService
 {
-   pattern: '/api/greet/{name}';
+   pattern: "/api/greet/{name}";
    ownership: UserList { users: [
-      'user1',
-      'user2'
+      "user1",
+      "user2"
    ] };
    function: model::greet(String[1]):String[1];
-   documentation: 'A simple hosted service that greets users by name';
+   documentation: "A simple hosted service that greets users by name";
    autoActivateUpdates: true;
 }
 
 // Hosted service with Deployment ownership and stereotypes
-HostedService <<meta::pure::profiles::doc.doc>> {doc.doc = 'Example with deployment ownership'} model::DeploymentHostedService
+HostedService <<meta::pure::profiles::doc.doc>> {doc.doc = "Example with deployment ownership"} model::DeploymentHostedService
 {
-   pattern: '/api/process/{data}';
-   ownership: Deployment { identifier: '12345' };
+   pattern: "/api/process/{data}";
+   ownership: Deployment { identifier: "12345" };
    function: model::processData(String[1]):String[1];
-   documentation: 'A hosted service that processes data with deployment ownership';
+   documentation: "A hosted service that processes data with deployment ownership";
    autoActivateUpdates: false;
 }
 
 // Hosted service with post-deployment actions
 HostedService model::AdvancedHostedService
 {
-   pattern: '/api/advanced/{param}';
+   pattern: "/api/advanced/{param}";
    ownership: UserList { users: [
-      'admin'
+      "admin"
    ] };
    function: model::processData(String[1]):String[1];
-   documentation: 'Advanced hosted service with post-deployment actions';
+   documentation: "Advanced hosted service with post-deployment actions";
    autoActivateUpdates: true;
 }
