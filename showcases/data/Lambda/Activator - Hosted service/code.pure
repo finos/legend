@@ -40,7 +40,7 @@ HostedService model::AdvancedHostedService
    pattern : '/api/advanced/{param}';
    ownership : UserList { users: [
       'admin'
-]    ] };
+ ]    ] };
    function : model::processData(String[1]):String[1];
    documentation : 'Advanced hosted service with post-deployment actions';
    autoActivateUpdates : true;
