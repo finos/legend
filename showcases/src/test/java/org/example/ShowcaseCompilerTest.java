@@ -23,11 +23,7 @@ import org.finos.legend.engine.testable.TestableRunner;
 import org.finos.legend.engine.testable.extension.TestableRunnerExtensionLoader;
 import org.finos.legend.engine.testable.model.RunTestsResult;
 import org.finos.legend.engine.testable.model.RunTestsTestableInput;
-import org.finos.legend.pure.generated.Root_meta_pure_test_AtomicTest;
-import org.finos.legend.pure.generated.Root_meta_pure_test_TestSuite;
-import org.finos.legend.pure.m3.coreinstance.meta.pure.metamodel.testable.Test;
-import org.finos.legend.pure.m3.coreinstance.meta.pure.metamodel.testable.TestAccessor;
-import org.finos.legend.pure.m3.coreinstance.meta.pure.metamodel.testable.Testable;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
