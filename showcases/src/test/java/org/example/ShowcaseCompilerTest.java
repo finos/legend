@@ -8,7 +8,7 @@ import org.finos.legend.engine.language.pure.grammar.to.PureGrammarComposer;
 import org.finos.legend.engine.language.pure.grammar.to.PureGrammarComposerContext;
 import org.finos.legend.engine.protocol.pure.v1.ProtocolToClassifierPathLoader;
 import org.finos.legend.engine.protocol.pure.v1.model.context.PureModelContextData;
-import org.finos.legend.engine.protocol.pure.v1.model.PackageableElement;
+import org.finos.legend.engine.protocol.pure.m3.PackageableElement;
 import org.finos.legend.engine.protocol.pure.v1.model.test.assertion.status.AssertFail;
 import org.finos.legend.engine.protocol.pure.v1.model.test.assertion.status.AssertionStatus;
 import org.finos.legend.engine.protocol.pure.v1.model.test.assertion.status.EqualToJsonAssertFail;
@@ -23,6 +23,7 @@ import org.finos.legend.engine.testable.TestableRunner;
 import org.finos.legend.engine.testable.extension.TestableRunnerExtensionLoader;
 import org.finos.legend.engine.testable.model.RunTestsResult;
 import org.finos.legend.engine.testable.model.RunTestsTestableInput;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
