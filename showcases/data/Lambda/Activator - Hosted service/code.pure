@@ -51,9 +51,9 @@ HostedService model::AdvancedHostedService
   actions:
   [
     SlackNotify
-    [
+    {
       channel: '#deployments';
       message: 'Hosted service has been deployed';
-    ]
+    }
   ]
 }
