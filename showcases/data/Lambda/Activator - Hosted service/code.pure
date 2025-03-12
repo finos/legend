@@ -48,8 +48,5 @@ HostedService model::AdvancedHostedService
   function: model::processData(String[1]):String[1];
   documentation: 'Advanced hosted service with post-deployment actions';
   autoActivateUpdates: true;
-  actions:
-  [
-    SlackNotify
-  ]
+
 }
