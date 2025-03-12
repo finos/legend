@@ -49,11 +49,11 @@ HostedService model::AdvancedHostedService
   documentation: 'Advanced hosted service with post-deployment actions';
   autoActivateUpdates: true;
   actions:
-  {
+  [
     SlackNotify
-    {
+    [
       channel: '#deployments';
       message: 'Hosted service has been deployed';
-    }
-  }
+    ]
+  ]
 }
