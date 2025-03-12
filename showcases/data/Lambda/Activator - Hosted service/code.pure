@@ -9,6 +9,7 @@ function model::processData(data: String[1]): String[1]
 {
   'Processed data: ' + $data
 }
+
 ###HostedService
 // Basic hosted service with UserList ownership
 HostedService model::BasicHostedService
