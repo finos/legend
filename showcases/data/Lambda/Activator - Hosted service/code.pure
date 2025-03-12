@@ -14,8 +14,8 @@ HostedService model::BasicHostedService
 {
    pattern : '/api/greet/{name}';
    ownership : UserList { users: [
-       'user1',
-       'user2'
+    'user1',
+    'user2'
     ] };
    function : model::greet(String[1]):String[1];
    documentation : 'A simple hosted service';
@@ -35,7 +35,7 @@ HostedService model::AdvancedHostedService
 {
    pattern : '/api/advanced/{param}';
    ownership : UserList { users: [
-       'admin'
+    'admin'
     ] };
    function : model::processData(String[1]):String[1];
    documentation : 'Advanced hosted service';
