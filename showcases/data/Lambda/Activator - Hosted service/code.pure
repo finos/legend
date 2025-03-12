@@ -12,36 +12,36 @@ function model::processData(data: String[1]): String[1]
 
 ###HostedService
 // Basic hosted service with UserList ownership
-^HostedService model::BasicHostedService
+HostedService model::BasicHostedService
 {
-   pattern = '/api/greet/{name}';
-   ownership = ^UserList { users = [
+   pattern : '/api/greet/{name}';
+   ownership : UserList {users: [
       'user1',
       'user2'
-   ] };
-   function = model::greet(String[1]):String[1];
-   documentation = 'A simple hosted service that greets users by name';
-   autoActivateUpdates = true;
+   ]};
+   function : model::greet(String[1]):String[1];
+   documentation : 'A simple hosted service that greets users by name';
+   autoActivateUpdates : true;
 }
 
 // Hosted service with Deployment ownership and stereotypes
-^HostedService <<meta::pure::profiles::doc.doc>> {doc.doc = 'Example with deployment ownership'} model::DeploymentHostedService
+HostedService <<meta::pure::profiles::doc.doc>> {doc.doc = 'Example with deployment ownership'} model::DeploymentHostedService
 {
-   pattern = '/api/process/{data}';
-   ownership = ^Deployment { identifier = '12345' };
-   function = model::processData(String[1]):String[1];
-   documentation = 'A hosted service that processes data with deployment ownership';
-   autoActivateUpdates = false;
+   pattern : '/api/process/{data}';
+   ownership : Deployment {identifier: '12345'};
+   function : model::processData(String[1]):String[1];
+   documentation : 'A hosted service that processes data with deployment ownership';
+   autoActivateUpdates : false;
 }
 
 // Hosted service with post-deployment actions
-^HostedService model::AdvancedHostedService
+HostedService model::AdvancedHostedService
 {
-   pattern = '/api/advanced/{param}';
-   ownership = ^UserList { users = [
+   pattern : '/api/advanced/{param}';
+   ownership : UserList {users: [
       'admin'
-   ] };
-   function = model::processData(String[1]):String[1];
-   documentation = 'Advanced hosted service with post-deployment actions';
-   autoActivateUpdates = true;
+   ]};
+   function : model::processData(String[1]):String[1];
+   documentation : 'Advanced hosted service with post-deployment actions';
+   autoActivateUpdates : true;
 }
