@@ -8,8 +8,7 @@ function model::greet(name: String[1]): String[1]
 function model::processData(data: String[1]): String[1]
 {
   'Processed data: ' + $data
-}
-###HostedService
+}###HostedService
 // Basic hosted service with UserList ownership
 HostedService model::BasicHostedService
 {
