@@ -41,4 +41,3 @@ HostedService model::AdvancedHostedService
    documentation: 'Advanced hosted service';
    autoActivateUpdates: true;
 }
-// Forcing update to fix CI issue
