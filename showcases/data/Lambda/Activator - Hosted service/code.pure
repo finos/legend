@@ -41,4 +41,3 @@ HostedService model::AdvancedHostedService
    documentation: 'Advanced hosted service';
    autoActivateUpdates: true;
 }
-// Updated 1741870948 to fix CI issue
