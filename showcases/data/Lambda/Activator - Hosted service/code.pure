@@ -22,7 +22,7 @@ HostedService model::BasicHostedService
       ]
    };
    function: model::greet(String[1]):String[1];
-   documentation: 'A simple hosted service';
+   documentation: 'A simple hosted service example';
    autoActivateUpdates: true;
 }
 
