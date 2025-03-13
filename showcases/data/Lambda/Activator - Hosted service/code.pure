@@ -1,11 +1,22 @@
+###Pure
+function model::greet(name: String[1]): String[1]
+{
+  'Hello, ' + $name + '!'
+}
+
+function model::processData(data: String[1]): String[1]
+{
+  'Processed: ' + $data
+}
+
 ###HostedService
 HostedService model::BasicHostedService
 {
    pattern : '/api/greet/{name}';
    ownership : UserList { users: [
-    'user1',
-    'user2'
-    ] };
+      'user1',
+      'user2'
+   ] };
    function : model::greet(String[1]):String[1];
    documentation : 'A simple hosted service';
    autoActivateUpdates : true;
@@ -24,8 +35,8 @@ HostedService model::AdvancedHostedService
 {
    pattern : '/api/advanced/{param}';
    ownership : UserList { users: [
-    'admin'
-    ] };
+      'admin'
+   ] };
    function : model::processData(String[1]):String[1];
    documentation : 'Advanced hosted service';
    autoActivateUpdates : true;
