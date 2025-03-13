@@ -14,7 +14,7 @@ HostedService model::BasicHostedService
 {
    pattern : '/api/greet/{name}';
    ownership : UserList { users: [
-       'user1'
+       'user1',
        'user2'
        ] };
    function : model::greet(String[1]):String[1];
