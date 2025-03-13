@@ -12,32 +12,32 @@ function model::processData(data: String[1]): String[1]
 ###HostedService
 HostedService model::BasicHostedService
 {
-   pattern : '/api/greet/{name}';
-   ownership : UserList { users: [
-        'user1',
-        'user2'
-         ] };
-   function : model::greet(String[1]):String[1];
-   documentation : 'A simple hosted service';
-   autoActivateUpdates : true;
+   pattern: '/api/greet/{name}';
+   ownership: UserList{users:[
+      'user1',
+      'user2'
+   ]};
+   function: model::greet(String[1]):String[1];
+   documentation: 'A simple hosted service';
+   autoActivateUpdates: true;
 }
 
 HostedService <<meta::pure::profiles::doc.doc>> {doc.doc = 'Example with deployment ownership'} model::DeploymentHostedService
 {
-   pattern : '/api/process/{data}';
-   ownership : Deployment { identifier: '12345' };
-   function : model::processData(String[1]):String[1];
-   documentation : 'A hosted service with deployment ownership';
-   autoActivateUpdates : false;
+   pattern: '/api/process/{data}';
+   ownership: Deployment{identifier: '12345'};
+   function: model::processData(String[1]):String[1];
+   documentation: 'A hosted service with deployment ownership';
+   autoActivateUpdates: false;
 }
 
 HostedService model::AdvancedHostedService
 {
-   pattern : '/api/advanced/{param}';
-   ownership : UserList { users: [
-        'admin'
-         ] };
-   function : model::processData(String[1]):String[1];
-   documentation : 'Advanced hosted service';
-   autoActivateUpdates : true;
+   pattern: '/api/advanced/{param}';
+   ownership: UserList{users:[
+      'admin'
+   ]};
+   function: model::processData(String[1]):String[1];
+   documentation: 'Advanced hosted service';
+   autoActivateUpdates: true;
 }
