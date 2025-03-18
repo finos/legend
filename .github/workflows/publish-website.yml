@@ -25,13 +25,9 @@ jobs:
         uses: actions/setup-node@v3.6.0
         with:
           node-version: 21
-      - name: Prepare static artifacts Omnibus
+      - name: Prepare static artifacts
         run: |
           cp -r installers/omnibus/scripts/* website/static/omnibus
-      - name: Prepare static artifacts PCT
-        run: |
-          mvn exec:java -pl org.finos.legend.engine:legend-engine-server-http-server -Dexec.mainClass="org.finos.legend.engine.server.core.pct.PCT_to_SimpleHTML"
-          cp -f target/ok.html website/static/PCT_Report_Compatibility.html
       - name: Build Website
         working-directory: ./website
         run: |
