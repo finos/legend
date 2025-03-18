@@ -1,1 +1,6 @@
 productGuid: "product::781219"
+
+# Exclude installers dir from CatchIT scanning
+CatchIT:
+  directory_exclude:
+    - installers
