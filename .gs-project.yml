@@ -1,6 +1,6 @@
 productGuid: "product::781219"
 
-# Exclude installers dir from CatchIT scanning
+# Exclude omnibus dir from CatchIT scanner
 CatchIT:
   directory_exclude:
-    - installers
+    - omnibus
