@@ -5,7 +5,11 @@
 }
 
 body {
-  overflow: hidden !important;
+  /* overflow: hidden !important; */
+  /* NOTE: base.css sets a `min-width`, which causes overflow on narrow screens. 
+   * Removing it ensures the page properly shrinks to fit the device width.
+   */
+  min-width: 0;
 }
 
 .body-wrapper {
@@ -119,18 +123,19 @@ body {
 }
 
 .home-page__down-arrow__container {
-  width: calc(100% - 20rem);
   position: absolute;
   bottom: 5vh;
   height: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .home-page__down-arrow {
-  height: 5vh;
-  width: 5vw;
+  height: 10rem;
+  width: 10rem;
   fill: var(--color-dark-grey-200);
   animation: arrow-bounce 0.5s alternate ease infinite;
 }
@@ -214,7 +219,7 @@ body {
 }
 
 .home-page__content__whatis__title__logo {
-  width: 42rem;
+  width: 100%;
 }
 
 .home-page__content__whatis__title__logo path {
@@ -394,6 +399,10 @@ body {
     justify-content: center;
   }
 
+  .home-page__content__brand .home-page__content__container {
+    padding: 0 5rem 5rem 5rem;
+  }
+
   .home-page__content__whatis__title {
     min-width: initial;
     display: flex;
@@ -416,10 +425,6 @@ body {
 
   .home-page__content__whatis__title__pre {
     font-size: 9rem;
-  }
-
-  .home-page__content__whatis__title__logo {
-    width: 31rem;
   }
 
   .home-page__content__tools .home-page__content__container {
@@ -450,6 +455,11 @@ body {
 }
 
 @media only screen and (max-width: 850px) {
+
+  .home-page__content__brand .home-page__content__container {
+    padding: 0 2rem 2rem 2rem;
+  }
+
   .home-page__down-arrow__container {
     /* NOTE: on iOS, in landscape mode, the browser header is shown leading to a shorter height about 5-10vh
      * as such, we want to take bump the bottom distance up a little bit
@@ -496,10 +506,14 @@ body {
 }
 
 @media only screen and (max-width: 650px) {
+
+  .home-page__content__brand .home-page__content__container {
+    padding: 0 1rem 1rem 1rem;
+  }
+
   .home-page__down-arrow__container {
-    width: calc(100% - 20rem);
     position: absolute;
-    bottom: 5rem;
+    /* bottom: 5rem; */
     height: 5rem;
     display: flex;
     justify-content: center;
@@ -507,14 +521,22 @@ body {
   }
 
   .home-page__down-arrow {
-    height: 5rem;
-    width: 5rem;
+    height: 7rem;
+    width: 7rem;
     fill: var(--color-dark-grey-200);
     animation: arrow-bounce 0.5s alternate ease infinite;
   }
 
   .home-page__content__container {
-    padding: 0 5rem;
+    padding: 0 2rem;
+  }
+
+  .home-page__content__whatis__title {
+    min-width: 0;
+  }
+
+  .home-page__content__whatis__title__pre {
+    font-size: 7rem;
   }
 
   .home-page__content__tool {
@@ -528,6 +550,7 @@ body {
     top: 6.5rem;
     left: 23.5rem;
     width: 0.4rem;
+    min-width: none;
   }
 
   .home-page__content__ecosystem {
