@@ -1,18 +1,9 @@
 ### Required Development Setup
-Set up develoment environment for *legend-pure* and *legend-engine* repositories: 
-- https://github.com/finos/legend-pure/blob/master/README.md#development-setup
+Set up develoment environment for *legend-engine*: 
 - https://github.com/finos/legend-engine/blob/master/README.md#development-setup
-    - Note: legend-engine depends on legend-pure. **Modify** ```legend.pure.version``` of the legend-engine pom.xml to depend on the legend-pure **SNAPSHOT** version, once you have built legend-pure and before building legend-engine
  
 #### Test your Development Setup
-Once you have built the below repos, try running Pure code
-
-*legend-pure*
-- ```TestFunction_TestHelper_Compiled.java```
-- ```TestFunction_TestHelper_Interpreted.java```
-
-
-*legend-engine*
+Once you have built the repo, try running Pure code
 
 Provided with PureIDE is a ```welcome.pure``` file. F9 within this file to execute pure code.
 
@@ -68,73 +59,50 @@ native function
 
 In this example, we only needed one function signature. A native function can have more than one signature. **All signatures for the same native function should be written in the same file.** E.g. the above native function signature and its associated PCT functions exist in *timeBucket.pure*.
 
-###### Dev Envs: PureIDE (native function signature); IntelliJ (reference/spec implementaiton), Target runtimes for testing behavior of equivalent function (e.g. DuckDb, Snowflake)*
+###### Dev Envs: PureIDE (native function signature); IntelliJ (reference/spec implementation), Target runtimes for testing behavior of equivalent function (e.g. DuckDb, Snowflake)
 
 #### 2. Native Function Development Loop
 ##### 2.i. Start by writing a draft native function signature in pure 
-Depending on which repo was determined in Step 2, you would use welcome.pure in legend-engine or TestHelper_Interpreted.java in legend-pure.
+To play with pure code, use welcome.pure in PureIDE.
 
-##### How to use TestFunction_TestHelper_Interpreted.java
-TestFunction_TestHelper_Interpreted.java (legend-pure)
-```Java
-    @After
-    public void cleanRuntime()
-    {
-        runtime.delete("myScratchFn.pure");
-    }
-
-    protected static FunctionExecution getFunctionExecution()
-    {
-        return new FunctionExecutionInterpreted();
-    }
-
-    @Test
-    public void testNativeFunctionTesterHelperBeforeAddingToPCT()
-    {
-        compileTestSource("myScratchFn.pure",
-                         "native function meta::pure::functions::standard::myScratchFn(myString:String[1]):String[2];" +
-                                 // this is an example of a pure function call
-                                 "function meta::functions::myScratchFn(myString:String[1]):String[2]" +
-                                 "{" +
-                                 "   println('123');" +
-                                 "   let myStrList = [$myString, $myString];" +
-                                 "   println($myStrList);" +
-                                 "   $myStrList;" +
-                                 "}" +
-                                 "function test():Any[*]\n" +
-                                 "{" +
-                                 "   let myString = 'abc';" +
-                                 "   meta::functions::myScratchFn($myString);" +
-                                 // if you call this function the call would fail due to missing wiring
-                                 "   meta::pure::functions::standard::myScratchFn($myString); " +
-                                "}");
-        this.execute("test():Any[*]");
-        runtime.delete("myScratchFn.pure");
-    }
-```
-
-##### How to use PureIDE welcome.pure (legend-engine)
-The same code outlined in the second param of "compileTestSource" in the TestHelper example above, can be written in the go():Any[*] function of welcome.pure. In PureIDE, hitting F9 will execute the code.
+##### How to use PureIDE welcome.pure
+Dev pure code can be written in the go():Any[*] function of welcome.pure. In PureIDE, hitting F9 will execute the code.
 ```Java
 function go():Any[*]
 {
     // Your pure code here
+    
+    // E.g. this is an example function definition and call
+    function meta::functions::myScratchFn(myString:String[1]):String[2]
+    {
+        println('123');
+        let myStrList = [$myString, $myString];
+        println($myStrList);
+        $myStrList;
+    }
+    let myString = 'abc';
+    meta::functions::myScratchFn($myString);
+    
+    // the below call would fail due to missing wiring
+    meta::pure::functions::unclassified::scratch::myScratchFn($myString);
 }
 ```
 
-###### Dev Envs: PureIDE welcome.pure (legend-engine) or IntelliJ TestFunction_TestHelper_Interpreted.java (legend-pure)
+###### Dev Envs: PureIDE welcome.pure (legend-engine)
 
 ##### 2.ii. Determine where the signature of the PCT Function and associated tests should reside.
 Once you know how to run pure code, begin your development loop. Leverage the PCT Taxonomy conventions and the results of weekly Taxonomy review sessions to determine the repo/package in which to put your pure code.
 
 ###### PCT Taxonomy Conventions
+Below describes the categories of PCT functions. Most of the functions you add will end up in Standard. However, as a first step, you should add them in **legend-engine-pure-code-functions-unclassified** . Later on, a legend-engine PCT SME will look to determine the correct place for the function. 
+
 The structure of *.pure files containing Platform Functions has been harmonized to reflect the four categories of Pure Functions:
 1. Grammar (legend-pure) - functions needed for the grammar of the platform. Should almost never be modified. If needed, consult with a Legend CODEOWNER.
 2. Essential (legend-pure) - foundational functions required for running tests int he platform (e.g. assert, eq). Should almost never be modified. If needed, consult with a Legend CODEOWNER.
 3. Standard (legend-engine) - majority of platform functions will fall into this category
 4. Relation (legend-engine) - platform functions specific to operating on relations (e.g. join)
 
-It was not yet possible to harmonize pure packages to the new taxonomy reflected by the filesystem. Where it makes sense (e.g. adding a brand new package or function), the package name should mirror the new taxonomy reflected by the filesystem. The best example of the ideal taxonomy is the directory structure of legend-pure essential functions; however, please consult with an SME to confirm the proposed package/naming for your PCT function. In the future, pure package naming will be harmonized to follow the new taxonomy.
+Note that *pure package* naming will eventually be harmonized to a hierarchy similar to the directory structure of *legend-pure* "essential" functions. However, for now, please consult with an SME to confirm the proposed package/naming for your PCT function. 
 
 ##### Example
 ```Java
@@ -161,7 +129,7 @@ meta::pure::functions::date::operation
 //however, in this instance we kept the existing pure package taxonomy for dates - until the taxonomy has been upgraded, please speak to an SME to double check your proposed package/naming
 ```
 
-###### Dev Envs: PureIDE code search (legend-engine) IntelliJ code search (legend-pure)
+###### Dev Envs: PureIDE code search (legend-engine)
 
 ##### 2.iii. Start writing some Pure Compatibility Tests (PCT) to encapsulate the understanding gained in 1., being careful to test for edge cases.
 **PCT Tests should be written in the same file as your native function signature**
@@ -179,7 +147,7 @@ pack("meta::pure::functions::date::tests::timeBucket", "\"meta::pure::functions:
 meta::pure::functions::date::tests
 ```
 
-###### Dev Envs: PureIDE welcome.pure (legend-engine) or IntelliJ TestFunction_TestHelper_Interpreted.java (legend-pure)
+###### Dev Envs: PureIDE welcome.pure (legend-engine)
 
 ##### 2.iv. Write the Reference/Spec implementation
 Your native function implementation (Java code) will be split across 3 modules in the taxonomy package:
@@ -205,10 +173,10 @@ let inmemoryadapter = meta::pure::test::pct::testAdapterForInMemoryExecution_Fun
 meta::pure::functions::date::tests::testTimeBucketSeconds($inmemoryadapter);
 ```
 
-###### Dev Envs: PureIDE welcome.pure (legend-engine) or IntelliJ TestFunction_TestHelper_Interpreted.java (legend-pure)
+###### Dev Envs: PureIDE welcome.pure (legend-engine)
 
 #### 3. Target (cross-compilation) development loop
-Once you have completed the Native Function development loop, it is time to wire your native function to cross-compile to the target environments (legend-engine)
+Once you have completed the Native Function development loop, it is time to wire your native function to cross-compile to the target environments 
 
 ##### 3.i. PCTs and PureToTarget wiring (e.g. PureToSQL). 
 PCT are useful for testing your wiring, as they are evaluated in the context of the target platform. The assert happens in the Pure Runtime, but the assertion is over the result of an eval on the target platform (i.e. that the cross-compilation behaves as the platform expects).
@@ -290,9 +258,9 @@ You can build these modules individually to run the tests - avoid rebuilding the
 ###### Dev Env: IntelliJ
 
 ##### 3.iv. Leverage Adapters to easily run the PCT Tests written in the Native Function Development Loop against target environments.
-You may need to loop between this step and earlier steps to improve what you wrote previously. Remember that if you are developing in legend-pure, ```TestFunction_TestHelper_Compiled.java``` and ```TestFunction_TestHelper_Interpreted.java``` enable you to run pure code without having to rebuild/restart PureIDE in legend-engine.
+You may need to loop between this step and earlier steps to improve what you wrote previously.
 
-###### Dev Envs: PureIDE (legend-engine) or IntelliJ TestFunction_TestHelper_Interpreted.java (legend-pure)
+###### Dev Envs: PureIDE (legend-engine)
 
 -----------------
 #### 4. FINAL Step: Preparing for PR
