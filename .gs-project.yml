@@ -1,1 +1,6 @@
 productGuid: "product::781219"
+
+# Exclude omnibus dir from CatchIT scanner
+CatchIT:
+  directory_exclude:
+    - omnibus
