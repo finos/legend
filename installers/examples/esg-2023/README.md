@@ -3,6 +3,12 @@
 This directory contains a Docker Compose specification that can be used to spin up an instance of Legend Studio and Legend Query.
 
 # Assumptions
+There are many environment settings which need to be set. For making it is easier to test Legend, we are providing this .env file. Some variables are missing from it. Before you run the script, you need to add the following ones:
+```
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_HOST_AUTH_METHOD=password
+```
 
 ## Localhost
 
