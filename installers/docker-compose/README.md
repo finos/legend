@@ -7,7 +7,7 @@ This directory contains a Docker Compose specification that can be used to spin 
 There are many environment settings which need to be set. For making it is easier to test Legend Studio, we are providing this .env file. Some variables are missing from it. Before you run the script, you need to add the following ones:
 ```
 POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres
+POSTGRES_PASSWORD=<add your password>
 POSTGRES_HOST_AUTH_METHOD=password
 ```
 
