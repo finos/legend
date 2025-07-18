@@ -16,8 +16,8 @@ function demo::bitOr(): meta::pure::metamodel::relation::Relation<meta::pure::me
     showcase::simple::connection::TestRuntime
   )->extend(
     ~[
-       bitOr: x|$x.LEFTARG->bitOr(
-      $x.RIGHTARG
+       bitOr: x|$x.LEFTARG->toOne()->bitOr(
+      $x.RIGHTARG->toOne()
     )
      ]
   )
@@ -29,8 +29,8 @@ function demo::bitShiftLeft(): meta::pure::metamodel::relation::Relation<meta::p
     showcase::simple::connection::TestRuntime
   )->extend(
     ~[
-       bitShiftLeft: x|$x.LEFTARG->bitShiftLeft(
-      $x.RIGHTARG
+       bitShiftLeft: x|$x.LEFTARG->toOne()->bitShiftLeft(
+      $x.RIGHTARG->toOne()
     )
      ]
   )
@@ -42,8 +42,8 @@ function demo::bitXor(): meta::pure::metamodel::relation::Relation<meta::pure::m
     showcase::simple::connection::TestRuntime
   )->extend(
     ~[
-       bitXor: x|$x.LEFTARG->bitXor(
-      $x.RIGHTARG
+       bitXor: x|$x.LEFTARG->toOne()->bitXor(
+      $x.RIGHTARG->toOne()
     )
      ]
   )
@@ -75,8 +75,8 @@ function demo::bitNot(): meta::pure::metamodel::relation::Relation<meta::pure::m
     showcase::simple::connection::TestRuntime
   )->extend(
     ~[
-       bitNotLeft: x|$x.LEFTARG->bitNot(),
-       bitNotRight: x|$x.RIGHTARG->bitNot()
+       bitNotLeft: x|$x.LEFTARG->toOne()->bitNot(),
+       bitNotRight: x|$x.RIGHTARG->toOne()->bitNot()
      ]
   )
 }
@@ -87,8 +87,8 @@ function demo::bitShiftRight(): meta::pure::metamodel::relation::Relation<meta::
     showcase::simple::connection::TestRuntime
   )->extend(
     ~[
-       bitShiftRight: x|$x.LEFTARG->bitShiftRight(
-      $x.RIGHTARG
+       bitShiftRight: x|$x.LEFTARG->toOne()->bitShiftRight(
+      $x.RIGHTARG->toOne()
     )
      ]
   )
@@ -100,8 +100,8 @@ function demo::bitAnd(): meta::pure::metamodel::relation::Relation<meta::pure::m
     showcase::simple::connection::TestRuntime
   )->extend(
     ~[
-       bitAnd: x|$x.LEFTARG->bitAnd(
-      $x.RIGHTARG
+       bitAnd: x|$x.LEFTARG->toOne()->bitAnd(
+      $x.RIGHTARG->toOne()
     )
      ]
   )
