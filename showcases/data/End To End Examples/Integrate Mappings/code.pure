@@ -216,6 +216,9 @@ RelationalDatabaseConnection com::trade::TradeConnection
   type: H2;
   specification: LocalH2
   {
+    testDataSetupSqls: [
+      'Drop Schema if exists TRADE;\nCreate Schema if not exists TRADE;\nCreate Table TRADE.Trade(id VARCHAR(200), value INT, ENTITY_ID_FK VARCHAR(200));\nInsert into TRADE.Trade (id, value, ENTITY_ID_FK) values (1,\'100\',\'entity1\');\nInsert into TRADE.Trade (id, value, ENTITY_ID_FK) values (2,\'200\',\'entity2\');\nInsert into TRADE.Trade (id, value, ENTITY_ID_FK) values (3,\'300\',\'entity3\');\nCREATE SCHEMA IF NOT EXISTS Entity;\nDrop table if exists Entity.LegalEntity;\nCreate Table Entity.LegalEntity(ENTITY_ID VARCHAR(200), name VARCHAR(200));\nInsert into Entity.LegalEntity (ENTITY_ID, name) values (\'entity1\', \'Google\');\nInsert into Entity.LegalEntity (ENTITY_ID, name) values (\'entity2\', \'Apple\');\n'
+      ];
   };
   auth: DefaultH2;
 }
