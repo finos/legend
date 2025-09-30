@@ -191,9 +191,9 @@ Mapping com::trade::TradeWithLegalEntityMapping
 
   com::trade::Trade_LegalEntity: XStore
   {
-    client[trade, com_entity_LegalEntity]: $this.entityIdFk ==
+    client: $this.entityIdFk ==
   $that.entityId,
-    trades[com_entity_LegalEntity, trade]: $this.entityId ==
+    trades: $this.entityId ==
   $that.entityIdFk
   }
 )
