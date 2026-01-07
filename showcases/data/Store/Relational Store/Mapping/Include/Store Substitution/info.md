@@ -3,9 +3,8 @@ title: Relational Database Mapping with Store Substitution
 description: An example of a mapping using store substitution across mappings.
 ---
 
-Store substitution is when we tell a mapping to use a specific store when including
-it in another mapping. Store substitution replaces all references of db1 to db2 when
-notating by [db1->db2].
+The Store Substitution feature allows us to replace a store from an included mapping with a store of our choosing. 
+Store substitution replaces all references of db1 to db2 when notating by [db1->db2].
 
 Without the store substitution, the compiler can misinterpret it as a cross-store join,
 which can have several consequences:
@@ -19,7 +18,7 @@ This showcase has 2 separate stores to illustrate 2 potential different database
 
 ---
 
-We include BaseMapping in both NeedsSubstitution and SubstitutesCorrectly.
+We include BaseMapping in both SubstitutesCorrectly and NeedsSubstitution.
 
 In SubstitutesCorrectly, we indicate a store substitution by [stores::OriginalDB->stores::SubstitutedDB]
 which tells the pure compiler to use SubstitutedDB for BaseMapping instead of the originally defined OriginalDB.
@@ -34,7 +33,7 @@ the TDS join.
 ---
 
 We can confirm whether or not we perform a store substitution correctly by:
-- Enter in form mode
+- Enter in form mode(F8)
 - Click on the function that is using the included mapping
 - Click on the dropdown on the run button
 - Generate plan
@@ -44,3 +43,7 @@ If we see tdsvar_0 in the JSON, then that means there is a temp table being crea
 and that the mapping requires a store substitution.
 
 If there is no tdsvar_0, then the store substitution is correct.
+
+If we do that with the 2 functions in this showcase, we can see that SubstitutesCorrectly
+does not have a tdsvar_0 while NeedsSubstitution does. That means that SubstitutesCorrectly
+is performing the store substitution correctly while NeedsSubstitution is not.

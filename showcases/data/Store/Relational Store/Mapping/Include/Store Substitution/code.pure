@@ -1,27 +1,3 @@
-###Relational
-Database stores::OriginalDB
-(
-  Table Firms
-  (
-    id INTEGER PRIMARY KEY,
-    name VARCHAR(200),
-    officeLocation VARCHAR(200)
-  )
-)
-
-Database stores::SubstitutedDB
-(
-  include stores::OriginalDB
-
-  Table People
-  (
-    id INTEGER PRIMARY KEY,
-    firm_id INTEGER,
-    name VARCHAR(200)
-  )
-)
-
-
 ###Pure
 Class models::Firm
 {
@@ -36,6 +12,55 @@ Class models::Person
   firmEmployedAt: String[1];
 }
 
+###Mapping
+Mapping mappings::BaseMapping
+(
+  models::Firm: Relational
+  {
+    ~primaryKey
+    (
+      [stores::OriginalDB]Firms.id
+    )
+    ~mainTable [stores::OriginalDB]Firms
+    name: [stores::OriginalDB]Firms.name,
+    location: [stores::OriginalDB]Firms.officeLocation,
+    firmId: [stores::OriginalDB]Firms.id
+  }
+)
+
+Mapping mappings::NeedsSubstitution
+(
+  include mapping mappings::BaseMapping
+
+  models::Person: Relational
+  {
+    ~primaryKey
+    (
+      [stores::SubstitutedDB]People.id
+    )
+    ~mainTable [stores::SubstitutedDB]People
+    name: [stores::SubstitutedDB]People.name,
+    firmEmployedAt: [stores::SubstitutedDB]People.firm_id
+  }
+)
+
+Mapping mappings::SubstitutesCorrectly
+(
+  include mapping mappings::BaseMapping[stores::OriginalDB->stores::SubstitutedDB]
+
+  models::Person: Relational
+  {
+    ~primaryKey
+    (
+      [stores::SubstitutedDB]People.id
+    )
+    ~mainTable [stores::SubstitutedDB]People
+    name: [stores::SubstitutedDB]People.name,
+    firmEmployedAt: [stores::SubstitutedDB]People.firm_id
+  }
+)
+
+###Pure
 function model::GetNYCGSEmployeesWorks(): meta::pure::metamodel::relation::Relation<meta::pure::metamodel::type::Any>[1]
 {
   models::Person.all()->project(
@@ -94,55 +119,28 @@ function model::GetNYCGSEmployeesFailed(): meta::pure::metamodel::relation::Rela
   )
 }
 
-
-###Mapping
-Mapping mappings::NeedsSubstitution
+###Relational
+Database stores::OriginalDB
 (
-  include mapping mappings::BaseMapping
-
-  models::Person: Relational
-  {
-    ~primaryKey
-    (
-      [stores::SubstitutedDB]People.id
-    )
-    ~mainTable [stores::SubstitutedDB]People
-    name: [stores::SubstitutedDB]People.name,
-    firmEmployedAt: [stores::SubstitutedDB]People.firm_id
-  }
+  Table Firms
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200),
+    officeLocation VARCHAR(200)
+  )
 )
 
-Mapping mappings::SubstitutesCorrectly
+Database stores::SubstitutedDB
 (
-  include mapping mappings::BaseMapping[stores::OriginalDB->stores::SubstitutedDB]
+  include stores::OriginalDB
 
-  models::Person: Relational
-  {
-    ~primaryKey
-    (
-      [stores::SubstitutedDB]People.id
-    )
-    ~mainTable [stores::SubstitutedDB]People
-    name: [stores::SubstitutedDB]People.name,
-    firmEmployedAt: [stores::SubstitutedDB]People.firm_id
-  }
+  Table People
+  (
+    id INTEGER PRIMARY KEY,
+    firm_id INTEGER,
+    name VARCHAR(200)
+  )
 )
-
-Mapping mappings::BaseMapping
-(
-  models::Firm: Relational
-  {
-    ~primaryKey
-    (
-      [stores::OriginalDB]Firms.id
-    )
-    ~mainTable [stores::OriginalDB]Firms
-    name: [stores::OriginalDB]Firms.name,
-    location: [stores::OriginalDB]Firms.officeLocation,
-    firmId: [stores::OriginalDB]Firms.id
-  }
-)
-
 
 ###Connection
 RelationalDatabaseConnection connections::OriginalConnection
@@ -170,7 +168,6 @@ RelationalDatabaseConnection connections::SubstitutedConnection
   };
   auth: DefaultH2;
 }
-
 
 ###Runtime
 Runtime runtimes::TestCorrect
