@@ -18,8 +18,6 @@ and incorrectly in NeedsSubstitution.
 
 This showcase has 2 separate stores to illustrate 2 potential different database types.
 
----
-
 # Showcase Explanation
 We include BaseMapping in both SubstitutesCorrectly and NeedsSubstitution.
 
@@ -33,7 +31,6 @@ we return via query. Using OriginalDB in this case could lead to misinterpreted 
 joins and potential performance hits/errors since we have to create a temp table to create
 the TDS join.
 
----
 # How do you know if you need a store substitution?
 We can confirm whether or not we perform a store substitution correctly by:
 - Enter in form mode(F8)
@@ -51,7 +48,6 @@ If we do that with the 2 functions in this showcase, we can see that Substitutes
 does not have a tdsvar_0 while NeedsSubstitution does. That means that SubstitutesCorrectly
 is performing the store substitution correctly while NeedsSubstitution is not.
 
----
 # Will a store substitution fix my errors?
 Some key characteristics of situations in which store substitution related errors occur are:
 - Using a TDS join
