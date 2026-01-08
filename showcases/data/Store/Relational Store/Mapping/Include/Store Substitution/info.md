@@ -10,6 +10,7 @@ Without the store substitution, the compiler can misinterpret it as a cross-stor
 which can have several consequences:
 - Degraded performance
 - Potential permissions errors when creating temp tables(TDS_VAR)
+- Values not being recognized
 
 In the following showcase, we use store substitution correctly in SubstitutesCorrectly
 and incorrectly in NeedsSubstitution.
@@ -40,10 +41,15 @@ We can confirm whether or not we perform a store substitution correctly by:
 - Switch to JSON mode
 
 If we see tdsvar_0 in the JSON, then that means there is a temp table being created
-and that the mapping requires a store substitution.
+and that a store substitution would make the query more efficient and/or potentially get rid of errors.
 
 If there is no tdsvar_0, then the store substitution is correct.
 
 If we do that with the 2 functions in this showcase, we can see that SubstitutesCorrectly
 does not have a tdsvar_0 while NeedsSubstitution does. That means that SubstitutesCorrectly
 is performing the store substitution correctly while NeedsSubstitution is not.
+
+---
+Some key characteristics of situations in which store substitution related errors occur are:
+- Using a TDS join
+- Seeing a column TDSVAR_0 in the error message
