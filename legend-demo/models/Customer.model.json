@@ -1,0 +1,9 @@
+{
+  "package": "demo",
+  "name": "Customer",
+  "properties": [
+    {"name": "id", "type": "Integer"},
+    {"name": "name", "type": "String"},
+    {"name": "orders", "type": "List<Order>"}
+  ]
+}

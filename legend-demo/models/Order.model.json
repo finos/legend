@@ -1,0 +1,9 @@
+{
+  "package": "demo",
+  "name": "Order",
+  "properties": [
+    {"name": "id", "type": "Integer"},
+    {"name": "product", "type": "String"},
+    {"name": "amount", "type": "Float"}
+  ]
+}
