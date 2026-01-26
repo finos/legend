@@ -12,6 +12,7 @@ Class models::Person
   firmEmployedAt: String[1];
 }
 
+
 ###Mapping
 Mapping mappings::BaseMapping
 (
@@ -59,6 +60,7 @@ Mapping mappings::SubstitutesCorrectly
     firmEmployedAt: [stores::SubstitutedDB]People.firm_id
   }
 )
+
 
 ###Pure
 function model::GetNYCGSEmployeesWorks(): meta::pure::metamodel::relation::Relation<meta::pure::metamodel::type::Any>[1]
@@ -119,6 +121,7 @@ function model::GetNYCGSEmployeesFailed(): meta::pure::metamodel::relation::Rela
   )
 }
 
+
 ###Relational
 Database stores::OriginalDB
 (
@@ -141,6 +144,7 @@ Database stores::SubstitutedDB
     name VARCHAR(200)
   )
 )
+
 
 ###Connection
 RelationalDatabaseConnection connections::OriginalConnection
@@ -168,6 +172,7 @@ RelationalDatabaseConnection connections::SubstitutedConnection
   };
   auth: DefaultH2;
 }
+
 
 ###Runtime
 Runtime runtimes::TestCorrect
