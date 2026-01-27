@@ -45,6 +45,21 @@ Mapping mappings::NeedsSubstitution
   }
 )
 
+Mapping mappings::SubstitutesCorrectly
+(
+  include mapping mappings::BaseMapping[stores::OriginalDB->stores::SubstitutedDB]
+
+  models::Person: Relational
+  {
+    ~primaryKey
+    (
+      [stores::SubstitutedDB]People.id
+    )
+    ~mainTable [stores::SubstitutedDB]People
+    name: [stores::SubstitutedDB]People.name,
+    firmEmployedAt: [stores::SubstitutedDB]People.firm_id
+  }
+)
 
 ###Pure
 function model::GetNYCGSEmployeesWorks(): meta::pure::metamodel::relation::Relation<meta::pure::metamodel::type::Any>[1]
@@ -104,7 +119,6 @@ function model::GetNYCGSEmployeesFailed(): meta::pure::metamodel::relation::Rela
       $y.Firm_ID    }
   )
 }
-
 
 ###Relational
 Database stores::OriginalDB
