@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Alice",
+    "orders": [
+      {"id": 101, "product": "Laptop", "amount": 1200.50},
+      {"id": 102, "product": "Mouse", "amount": 25.75}
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Bob",
+    "orders": [
+      {"id": 103, "product": "Phone", "amount": 800.00}
+    ]
+  }
+]

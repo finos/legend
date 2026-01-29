@@ -1,0 +1,15 @@
+{
+  "mappingName": "CustomerMapping",
+  "model": "demo",
+  "sources": [
+    {
+      "sourceType": "json",
+      "path": "../sample-data/customers.json",
+      "classMapping": {
+        "Customer": {"id": "$.id", "name": "$.name", "orders": "$.orders"},
+        "Order": {"id": "$.id", "product": "$.product", "amount": "$.amount"}
+      }
+    }
+  ],
+  "runtime": {"type": "memory"}
+}
