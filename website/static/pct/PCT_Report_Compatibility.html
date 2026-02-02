@@ -74,7 +74,7 @@
             return {
                 adapters: params.getAll('adapters'),
                 qualifiers: params.getAll('qualifiers'),
-                skipNoTests: params.get('skipNoTests') === '1'
+                skipNoTests: params.get('skipNoTests') === '1' || params.get('skipNoTests') === null
             };
         }
 
@@ -89,7 +89,7 @@
         }
 
         function renderForm() {
-            const adapters = pctDoc.adapters.map(a => a.adapter.name).sort();
+            const adapters = pctDoc.adapters.map(a => (a.adapter.name === 'Native' ? a.platform : a.adapter.name)).sort();
             const qualifiers = getUniqueQualifiers(pctDoc);
             const urlState = getQueryParams();
 
@@ -158,8 +158,8 @@
             const { adapters, qualifiers, skipNoTests } = getFormParams();
 
             // Filter adapters
-            const filteredAdapters = pctDoc.adapters.filter(a => adapters.length === 0 || adapters.includes(a.adapter.name));
-            const groupedAdapters = groupBy(filteredAdapters, a => a.adapter.group);
+            const filteredAdapters = pctDoc.adapters.filter(a => adapters.length === 0 || adapters.includes(a.adapter.name !== 'Native' ? a.adapter.name : a.platform));
+            const groupedAdapters = groupBy(filteredAdapters, a => a.adapter.name !== 'Native' ? a.adapter.group : 'Native');
             const groupNames = Object.keys(groupedAdapters).sort();
             const orderedAdapters = groupNames.flatMap(g => sortBy(groupedAdapters[g], a => a.adapter.name));
 
@@ -168,11 +168,18 @@
             if (skipNoTests) {
                 functions = functions.filter(fd =>
                     orderedAdapters.some(adapter =>
-                        fd.functionTestResults && fd.functionTestResults[adapter.platform + ':' + adapter.adapter.group + ':' + adapter.adapter.name] &&
-                        (fd.functionTestResults[adapter.platform + ':' + adapter.adapter.group + ':' + adapter.adapter.name].tests || []).some(t =>
-                            qualifiers.length === 0 ||
-                            qualifiers.includes("all") ||
-                            t.qualifiers.some(q => qualifiers.includes(q))
+
+                        (fd.functionDefinition.signatures.some(s => s.platformOnly) && adapter.adapter.name === 'Native' && qualifiers.length === 0)
+
+                        ||
+
+                        (
+                            fd.functionTestResults && fd.functionTestResults[adapter.platform + ':' + adapter.adapter.group + ':' + adapter.adapter.name] &&
+                            (fd.functionTestResults[adapter.platform + ':' + adapter.adapter.group + ':' + adapter.adapter.name].tests || []).some(t =>
+                                qualifiers.length === 0 ||
+                                qualifiers.includes("all") ||
+                                t.qualifiers.some(q => qualifiers.includes(q))
+                            )
                         )
                     )
                 );
@@ -205,14 +212,24 @@
                     <th style="width:10px">Group</th>
                     <th style="width:200px">Function</th>
                     <th style="width:200px">Signatures & Documentation</th>
-                    ${orderedAdapters.map(a => `<th style="width:10px">${a.adapter.name}</th>`).join('')}
+                    ${orderedAdapters.map(a => `<th style="width:10px">${a.adapter.name === 'Native' ? a.platform : a.adapter.name}</th>`).join('')}
                 </tr>
             `;
 
             // Helper: test cell
-            function testCell(testResults) {
+            function testCell(f, adapter) {
+                const testResults = f.functionTestResults[adapter.platform + ':' + adapter.adapter.group + ':' + adapter.adapter.name];
                 if (!testResults) {
-                    return `<td><div style="color:#FF0000" class="hover-text">&#x00A4;<div class="tooltip-text" id="top">No tests (or reports) were found!</div></div></td>`;
+                    if (f.functionDefinition.signatures.some(s => s.platformOnly)) {
+                        if (adapter.adapter.name === 'Native') {
+                            return `<td><div style="color:#00C72B" class="hover-text">${f.functionDefinition.testCount + '/' + f.functionDefinition.testCount}<div class="tooltip-text" id="top">Platform_function Tests are executed outside of PCT</div></div></td>`;
+                        }
+                        else {
+                            return `<td><div style="color:#AAAAAA" class="hover-text">-<div class="tooltip-text" id="top">Platform_function Tests are executed outside of PCT</div></div></td>`;
+                        }
+                    } else {
+                        return `<td><div style="color:#FF0000" class="hover-text">&#x00A4;<div class="tooltip-text" id="top">No tests (or reports) were found!</div></div></td>`;
+                    }
                 }
                 let tests = testResults.tests || [];
                 if (qualifiers.length > 0) {
@@ -293,7 +310,7 @@
                         <td><div style="color:#AAAAAA">${f.reportScope.module}</div></td>
                         <td>${funcNameCell(f)}</td>
                         <td>${funcSignaturesCell(f)}</td>
-                        ${orderedAdapters.map(adapter => testCell(f.functionTestResults[adapter.platform + ':' + adapter.adapter.group + ':' + adapter.adapter.name])).join('')}
+                        ${orderedAdapters.map(adapter => testCell(f, adapter)).join('')}
                     </tr>`;
                 }
                 else {
