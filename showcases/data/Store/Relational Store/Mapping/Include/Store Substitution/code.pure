@@ -1,60 +1,214 @@
-###Mapping
-import models::*;
-import stores::*;
-import mappings::*;
-Mapping mappings::IncludeSubstitutionMapping
-(
-  include mapping BaseMapping[SimpleDB->ComplexDB]
+###Pure
+Class models::Firm
+{
+  firmId: String[1];
+  name: String[1];
+  location: String[1];
+}
 
-  Person: Relational
+Class models::Person
+{
+  name: String[1];
+  firmEmployedAt: String[1];
+}
+
+
+###Mapping
+Mapping mappings::BaseMapping
+(
+  models::Firm: Relational
   {
-    name: [ComplexDB]People.name
+    ~primaryKey
+    (
+      [stores::OriginalDB]Firms.id
+    )
+    ~mainTable [stores::OriginalDB]Firms
+    name: [stores::OriginalDB]Firms.name,
+    location: [stores::OriginalDB]Firms.officeLocation,
+    firmId: [stores::OriginalDB]Firms.id
   }
 )
 
-Mapping mappings::BaseMapping
+Mapping mappings::NeedsSubstitution
 (
-  Firm: Relational
+  include mapping mappings::BaseMapping
+
+  models::Person: Relational
   {
-    name: [SimpleDB]Firms.name
+    ~primaryKey
+    (
+      [stores::SubstitutedDB]People.id
+    )
+    ~mainTable [stores::SubstitutedDB]People
+    name: [stores::SubstitutedDB]People.name,
+    firmEmployedAt: [stores::SubstitutedDB]People.firm_id
+  }
+)
+
+Mapping mappings::SubstitutesCorrectly
+(
+  include mapping mappings::BaseMapping[stores::OriginalDB->stores::SubstitutedDB]
+
+  models::Person: Relational
+  {
+    ~primaryKey
+    (
+      [stores::SubstitutedDB]People.id
+    )
+    ~mainTable [stores::SubstitutedDB]People
+    name: [stores::SubstitutedDB]People.name,
+    firmEmployedAt: [stores::SubstitutedDB]People.firm_id
   }
 )
 
 
 ###Pure
-import models::*;
-Class models::Person
+function model::GetNYCGSEmployeesWorks(): meta::pure::metamodel::relation::Relation<meta::pure::metamodel::type::Any>[1]
 {
-  name: String[1];
+  models::Person.all()->project(
+    ~[
+       Person_Name: person|$person.name,
+       Work_ID: person|$person.firmEmployedAt
+     ]
+  )->from(
+    mappings::SubstitutesCorrectly,
+    runtimes::TestCorrect
+  )->join(
+    models::Firm.all()->filter(
+      firm|$firm.location == 'New York'
+    )->project(
+      ~[
+         Firm_Name: firm|$firm.name,
+         Firm_Location: firm|$firm.location,
+         Firm_ID: firm|$firm.firmId
+       ]
+    )->from(
+      mappings::SubstitutesCorrectly,
+      runtimes::TestCorrect
+    ),
+    JoinKind.INNER,
+    {x, y|$x.Work_ID ==
+      $y.Firm_ID    }
+  )
 }
 
-Class models::Firm
+function model::GetNYCGSEmployeesFailed(): meta::pure::metamodel::relation::Relation<meta::pure::metamodel::type::Any>[1]
 {
-  name: String[1];
+  models::Person.all()->project(
+    ~[
+       Person_Name: person|$person.name,
+       Work_ID: person|$person.firmEmployedAt
+     ]
+  )->from(
+    mappings::NeedsSubstitution,
+    runtimes::TestFailed
+  )->join(
+    models::Firm.all()->filter(
+      firm|$firm.location == 'New York'
+    )->project(
+      ~[
+         Firm_Name: firm|$firm.name,
+         Firm_Location: firm|$firm.location,
+         Firm_ID: firm|$firm.firmId
+       ]
+    )->from(
+      mappings::NeedsSubstitution,
+      runtimes::TestFailed
+    ),
+    JoinKind.INNER,
+    {x, y|$x.Work_ID ==
+      $y.Firm_ID    }
+  )
 }
 
 
 ###Relational
-Database stores::SimpleDB
+Database stores::OriginalDB
 (
-  Table Firms
-  (
-    id INTEGER PRIMARY KEY,
-    name VARCHAR(200)
-  )
-)
-
-Database stores::ComplexDB
-(
-  Table People
-  (
-    id INTEGER PRIMARY KEY,
-    name VARCHAR(200)
-  )
   Table Firms
   (
     id INTEGER PRIMARY KEY,
     name VARCHAR(200),
-    firm_sector VARCHAR(50)
+    officeLocation VARCHAR(200)
   )
 )
+
+Database stores::SubstitutedDB
+(
+  include stores::OriginalDB
+
+  Table People
+  (
+    id INTEGER PRIMARY KEY,
+    firm_id INTEGER,
+    name VARCHAR(200)
+  )
+)
+
+
+###Connection
+RelationalDatabaseConnection connections::OriginalConnection
+{
+  store: stores::OriginalDB;
+  type: H2;
+  specification: LocalH2
+  {
+    testDataSetupSqls: [
+      'Drop table if exists Firms;\nCreate Table Firms(id INTEGER, name VARCHAR(200), officeLocation VARCHAR(200));\nInsert into Firms(id, name, officeLocation) values(1, \'Goldman Sachs\', \'New York\');\nInsert into Firms(id, name, officeLocation) values(2, \'JP Morgan\', \'Miami\');\nInsert into Firms(id, name, officeLocation) values(80, \'Citi\', \'London\');\nDrop table if exists People;\nCreate Table People(id INTEGER, firm_id INTEGER, name VARCHAR(200));\nInsert into People(id, firm_id, name) values(1, 1, \'Joe\');\nInsert into People(id, firm_id, name) values(2, 2, \'Janice\');\nInsert into People(id, firm_id, name) values(80, 80, \'Ella\');'
+      ];
+  };
+  auth: DefaultH2;
+}
+
+RelationalDatabaseConnection connections::SubstitutedConnection
+{
+  store: stores::SubstitutedDB;
+  type: H2;
+  specification: LocalH2
+  {
+    testDataSetupSqls: [
+      'Drop table if exists Firms;\nCreate Table Firms(id INTEGER, name VARCHAR(200), officeLocation VARCHAR(200));\nInsert into Firms(id, name, officeLocation) values(1, \'Goldman Sachs\', \'New York\');\nInsert into Firms(id, name, officeLocation) values(2, \'JP Morgan\', \'Miami\');\nInsert into Firms(id, name, officeLocation) values(80, \'Citi\', \'London\');\nDrop table if exists People;\nCreate Table People(id INTEGER, firm_id INTEGER, name VARCHAR(200));\nInsert into People(id, firm_id, name) values(1, 1, \'Joe\');\nInsert into People(id, firm_id, name) values(2, 2, \'Janice\');\nInsert into People(id, firm_id, name) values(80, 80, \'Ella\');'
+      ];
+  };
+  auth: DefaultH2;
+}
+
+
+###Runtime
+Runtime runtimes::TestCorrect
+{
+  mappings:
+  [
+    mappings::SubstitutesCorrectly
+  ];
+  connections:
+  [
+    stores::SubstitutedDB:
+    [
+      connection_1: connections::SubstitutedConnection
+    ],
+    stores::OriginalDB:
+    [
+      connection_2: connections::OriginalConnection
+    ]
+  ];
+}
+
+Runtime runtimes::TestFailed
+{
+  mappings:
+  [
+    mappings::NeedsSubstitution
+  ];
+  connections:
+  [
+    stores::OriginalDB:
+    [
+      connection_1: connections::OriginalConnection
+    ],
+    stores::SubstitutedDB:
+    [
+      connection_2: connections::SubstitutedConnection
+    ]
+  ];
+}
