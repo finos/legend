@@ -1,0 +1,157 @@
+name: Update Showcases Dependencies
+
+on:
+  workflow_run:
+    workflows: ["Trigger Legend Stack Release"]
+    types:
+      - completed
+  workflow_dispatch:
+    inputs:
+      force_version:
+        description: "Force a specific version to manually downgrade or fix a broken release (optional)"
+        required: false
+        default: ""
+
+jobs:
+  update-showcases:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3.5.2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Fetch Latest Engine Version
+        id: fetch-version
+        run: |
+          if [ "${{ github.event.inputs.force_version }}" != "" ]; then
+            VERSION="${{ github.event.inputs.force_version }}"
+          else
+            echo "Fetching latest successful release from Legend Engine..."
+            RESPONSE=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+              "https://api.github.com/repos/finos/legend-engine/releases/latest")
+            VERSION=$(echo "$RESPONSE" | jq -r '.tag_name // empty' | sed 's/^legend-engine-//')
+          fi
+
+          if [ -z "$VERSION" ] || [ "$VERSION" == "null" ]; then
+            echo "Error: Could not determine version."
+            exit 1
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Check Idempotency
+        id: check
+        run: |
+          POM_PATH=$(find . -name "pom.xml" | grep "showcases/pom.xml" | head -n 1)
+          if [ -z "$POM_PATH" ]; then exit 1; fi
+
+          CURRENT_VERSION=$(sed -n 's/.*<legend.engine.version>\(.*\)<\/legend.engine.version>.*/\1/p' "$POM_PATH" | head -n 1 | xargs)
+          LATEST_VERSION="${{ steps.fetch-version.outputs.version }}"
+
+          if [ "$CURRENT_VERSION" == "$LATEST_VERSION" ]; then
+            echo "should_update=false" >> $GITHUB_OUTPUT
+          else
+            echo "should_update=true" >> $GITHUB_OUTPUT
+          fi
+          echo "pom_path=$POM_PATH" >> $GITHUB_OUTPUT
+
+      - name: Wait for Maven Central Sync
+        if: steps.check.outputs.should_update == 'true'
+        run: |
+          artifact_group='org.finos.legend.engine'
+          artifact_name='legend-engine-extensions-collection-generation'
+          artifact_version='${{ steps.fetch-version.outputs.version }}'
+          max_retries=120
+          retries=0
+          while true; do
+            response=$(curl -s -o /dev/null -w "%{http_code}" "https://central.sonatype.com/artifact/$artifact_group/$artifact_name/$artifact_version")
+            if [ "$response" == "200" ]; then
+              echo "Artifact is available in Maven Central."
+              break
+            else
+              retries=$((retries + 1))
+              if [ "$retries" -gt "$max_retries" ]; then
+                echo "Maximum number of retries reached. Artifact is not available in Maven Central."
+                exit 1
+              fi
+              echo "Artifact is not available in Maven Central. Retrying in 1 minute..."
+              sleep 1m
+            fi
+          done
+          sleep 1m   # Sleep for 1 more minute to be on safer side
+
+      - name: Setup Java
+        if: steps.check.outputs.should_update == 'true'
+        uses: actions/setup-java@v3
+        with:
+          java-version: "11"
+          distribution: "temurin"
+          cache: "maven"
+
+      - name: Update Version Property
+        if: steps.check.outputs.should_update == 'true'
+        run: |
+          mvn org.codehaus.mojo:versions-maven-plugin:2.7:set-property \
+            -Dproperty=legend.engine.version \
+            -DnewVersion=${{ steps.fetch-version.outputs.version }} \
+            -DgenerateBackupPoms=false \
+            -f ${{ steps.check.outputs.pom_path }}
+
+          if ! grep -q "${{ steps.fetch-version.outputs.version }}" "${{ steps.check.outputs.pom_path }}"; then
+            echo "Error: POM version was not updated!"
+            exit 1
+          fi
+
+      - name: Verify Build Compatibility
+        if: steps.check.outputs.should_update == 'true'
+        run: mvn clean compile -f ${{ steps.check.outputs.pom_path }}
+
+      - name: Create Pull Request
+        id: create-pr
+        if: steps.check.outputs.should_update == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION="${{ steps.fetch-version.outputs.version }}"
+          BRANCH="automated/showcases-update-${VERSION}"
+          DEFAULT_BRANCH=$(gh repo view --json defaultBranchRef --jq .defaultBranchRef.name)
+
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git checkout -b "$BRANCH" || git checkout "$BRANCH"
+          git add ${{ steps.check.outputs.pom_path }}
+          git commit -m "chore: update showcases engine dependency to ${VERSION}"
+          git push origin "$BRANCH" --force
+
+          # Create PR, or if it exists, get the URL of the existing one
+          PR_URL=$(gh pr create \
+            --title "chore: update showcases engine dependency to ${VERSION}" \
+            --body "Automated dependency update to match Legend Engine release **${VERSION}**." \
+            --base "master" \
+            --head "$BRANCH" \
+            --label "dependencies,automated" --json url --jq .url 2>/dev/null || \
+            gh pr list --head "$BRANCH" --base "master" --json url --jq '.[0].url')
+
+          echo "pr_url=$PR_URL" >> $GITHUB_OUTPUT
+
+      - name: Generate Summary
+        if: always()
+        run: |
+          echo "### 🚀 Dependency Update Summary" >> $GITHUB_STEP_SUMMARY
+          echo "* **Engine Version Found:** \`${{ steps.fetch-version.outputs.version }}\`" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ steps.check.outputs.should_update }}" == "true" ]; then
+            echo "* **Status:** 🆕 Update Required" >> $GITHUB_STEP_SUMMARY
+            echo "* **Action:** A Pull Request has been generated to update the POM file." >> $GITHUB_STEP_SUMMARY
+            echo "* **PR Link:** ${{ steps.create-pr.outputs.pr_url }}" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "* **Status:** ✅ Up to Date" >> $GITHUB_STEP_SUMMARY
+            echo "* **Action:** No changes needed. The Showcases are already using the latest version." >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "* **Workflow Result:** ${{ job.status == 'success' && '🟢 Success' || '🔴 Failed' }}" >> $GITHUB_STEP_SUMMARY
