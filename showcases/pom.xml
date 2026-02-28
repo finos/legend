@@ -21,7 +21,7 @@
     </properties>
 
     <dependencies>
-        <!-- TODO: auto-update these on a schedule to make local development easier -->
+
         <dependency>
             <groupId>org.finos.legend.engine</groupId>
             <artifactId>legend-engine-extensions-collection-generation</artifactId>
