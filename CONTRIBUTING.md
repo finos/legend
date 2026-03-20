@@ -36,9 +36,11 @@ _Please email help@finos.org if you encounter any issues while setting up your G
 #### FINOS Contributor License Agreement ("CLA")
 A Contributor License Agreement ("CLA") is a document that specifies how a project is allowed to use your contribution; they are commonly used in many open source projects.
 
-_NOTE:_ Commits and pull requests to FINOS project repositories, including Legend, will only be accepted from those contributors with an active, executed Individual Contributor License Agreement (ICLA) with FINOS OR who are covered under an existing and active Corporate Contribution License Agreement (CCLA) executed with FINOS. See the [Contribute page on the FINOS Wiki for more information](https://finosfoundation.atlassian.net/wiki/spaces/FINOS/pages/83034172/Contribute). Commits from individuals not covered under an ICLA or CCLA will be flagged and blocked by the FINOS ["CLA Bot" tool](https://github.com/finos/cla-bot). Please note that some CCLAs require individuals/employees to be explicitly named on the CCLA. PRs submitted to the Legend project cannot be accepted until you have a CLA in place with the Foundation. CLAs are also required for modelers participating in the pilot.
+_NOTE:_ Commits and pull requests to FINOS project repositories, including Legend, will only be accepted from those contributors with an active, executed Individual Contributor License Agreement (ICLA) with FINOS OR who are covered under an existing and active Corporate Contribution License Agreement (CCLA) executed with FINOS. FINOS uses [EasyCLA](https://community.finos.org/docs/governance/software-projects/easycla/) to verify contributor status when you open a pull request. Please note that some CCLAs require individuals/employees to be explicitly named on the CCLA. PRs submitted to the Legend project cannot be accepted until you have a CLA in place with the Foundation. CLAs are also required for modelers participating in the pilot.
 
-_NOTE:_ **Even if you have signed and are covered by a CLA, the [CLA Bot](https://github.com/finos/cla-bot) will block your Pull Requests if your Git client is configured with an email address other than the ones configured in your [GitHub Email Settings](https://github.com/settings/emails). (you can use the `git config user.email` command to see which email address your git client is configured with). If your git client doesn't define any `user.email` configuration, or it's using an email address not configured in GitHub, the CLA bot will not be able to parse your GitHub details and identify you, which will block your Pull Request. In order to fix this issue, please follow the instructions below.
+_NOTE:_ If you are signing as an individual, the fastest way to start is to open a small PR against a FINOS repo that uses EasyCLA. If the EasyCLA check is red, click the authorization link from the PR, choose **Individual**, sign the agreement, and then wait for the check to rerun. Once your individual signature is recognized for one FINOS non-standards software project that uses the shared EasyCLA group, it applies across the other repos in that group as well.
+
+_NOTE:_ **Even if you have signed and are covered by a CLA, EasyCLA can still block your Pull Requests if your Git client is configured with an email address other than the ones configured in your [GitHub Email Settings](https://github.com/settings/emails).** (you can use the `git config user.email` command to see which email address your git client is configured with). If your git client doesn't define any `user.email` configuration, or it's using an email address not configured in GitHub, EasyCLA might not be able to match your contribution to your GitHub details. In order to fix this issue, please follow the instructions below.
 
    1. Check your git client is configured with a user email `git config user.email`
    2. If the user email is missing, run the following command, substituting with your git commit email address `git config --global user.email ID+myusername@users.noreply.github.com`
@@ -47,7 +49,7 @@ _NOTE:_ **Even if you have signed and are covered by a CLA, the [CLA Bot](https:
 
    Alternatively, use the slightly more complex `git reset --soft` and `git rebase` to checkout your changes, rewrite the commit history locally and (force) push changes to the downstream branch.
 
-   If you have any issues with the steps above, please email help@finos.org so we can help you resolve before reviewing and accepting your pull request.
+   If you have any issues with the steps above, please email help@finos.org so we can help you resolve them before reviewing and accepting your pull request.
 
 Need an ICLA? Unsure if you are covered under an existing CCLA? Email [help@finos.org](mailto:help@finos.org?subject=CLA)
 
@@ -74,7 +76,7 @@ The following list is a high-level overview of the code contribution workflow.
 5. Add your changes (`git add <filename containing fooBar change>`).
 6. Commit your changes (`git commit -m 'Add some fooBar'`).
 7. Push to the branch (`git push origin feature/fooBar`).
-8. Optional but recommeded: Do a build in/from your fork; further evaluate and test it.
+8. Optional but recommended: Do a build in/from your fork; further evaluate and test it.
 9. If all looks good, propose a pull request into the [Legend GitHub repo](https://github.com/finos/legend/pull/new/master) from your fork.
 
 ### Propose and submit pull requests
