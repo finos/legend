@@ -31,10 +31,10 @@ To configure your GitHub access:
 
 1.  [Create an account on GitHub.com](https://help.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account).
 2.  [Set up a Git client locally](https://help.github.com/en/github/getting-started-with-github/set-up-git).
-3.  Ensure that the Git client is configured with your `` email address (you can use the `` command). If you use a different email address, you may face one of the following issues:
+3.  Ensure that the Git client is configured with your `<ID+username>@users.noreply.github.com` email address (you can use the `git config user.email` command). If you use a different email address, you may face one of the following issues:
 
-     a) Your corporate firewall blocks Git activity, unless you're signed in with an `` email address.
-     b) GitHub forces you to set the email address as public, or it would reject push operations with the error ``.
+     a) Your corporate firewall blocks Git activity, unless you're signed in with an `@<your company domain>` email address.
+     b) GitHub forces you to set the email address as public, or it would reject push operations with the error `push declined due to email privacy restrictions`.
      
 
 _Note:_ Email [help@finos.org](mailto:help@finos.org) if you encounter any issues while setting up your GitHub account.
@@ -43,18 +43,20 @@ _Note:_ Email [help@finos.org](mailto:help@finos.org) if you encounter any issue
 
 A Contributor License Agreement ("CLA") is a document that specifies how a project is allowed to use your contribution; they are commonly used in many open source projects.
 
-_NOTE:_ Commits and pull requests to FINOS project repositories, including Legend, will only be accepted from those contributors with an active, executed Individual Contributor License Agreement (ICLA) with FINOS OR who are covered under an existing and active Corporate Contribution License Agreement (CCLA) executed with FINOS. See the [Contribute page on the FINOS Wiki for more information](https://finosfoundation.atlassian.net/wiki/spaces/FINOS/pages/83034172/Contribute). Commits from individuals not covered under an ICLA or CCLA will be flagged and blocked by the FINOS ["CLA Bot" tool](https://github.com/finos/cla-bot). Please note that some CCLAs require individuals/employees to be explicitly named on the CCLA. PRs submitted to the Legend project cannot be accepted until you have a CLA in place with the Foundation. CLAs are also required for modelers participating in the pilot.
+_NOTE:_ Commits and pull requests to FINOS project repositories, including Legend, will only be accepted from those contributors with an active, executed Individual Contributor License Agreement (ICLA) with FINOS OR who are covered under an existing and active Corporate Contribution License Agreement (CCLA) executed with FINOS. FINOS uses [EasyCLA](https://community.finos.org/docs/governance/software-projects/easycla/) to verify contributor status when you open a pull request. Please note that some CCLAs require individuals/employees to be explicitly named on the CCLA. PRs submitted to the Legend project cannot be accepted until you have a CLA in place with the Foundation. CLAs are also required for modelers participating in the pilot.
 
-_NOTE:_ **Even if you have signed and are covered by a CLA, the [CLA Bot](https://github.com/finos/cla-bot) may block your Pull Requests if your Git client is configured with an email address other than your `` email address**. (you can use the `` command to see which email address your git client is configured with). If your git client is not correctly configured, the CLA bot will not be able to parse your GitHub details and identify you, which will block your Pull Request. In order to fix this issue, please follow the instructions below.
+_NOTE:_ If you are signing as an individual, the fastest way to start is to open a small PR against a FINOS repo that uses EasyCLA. If the EasyCLA check is red, click the authorization link from the PR, choose **Individual**, sign the agreement, and then wait for the check to rerun. Once your individual signature is recognized for one FINOS non-standards software project that uses the shared EasyCLA group, it applies across the other repos in that group as well.
 
-1.  Check your git client is configured with a user email ``
-2.  If the user email is missing, run the following command, substituting with your git commit email address ``
+_NOTE:_ **Even if you have signed and are covered by a CLA, EasyCLA may block your Pull Requests if your Git client is configured with an email address other than the ones configured in your [GitHub Email Settings](https://github.com/settings/emails)**. (you can use the `git config user.email` command to see which email address your git client is configured with). If your git client is not correctly configured, EasyCLA might not be able to match your contribution to your GitHub details, which will block your Pull Request. In order to fix this issue, please follow the instructions below.
+
+1.  Check your git client is configured with a user email `git config user.email`
+2.  If the user email is missing, run the following command, substituting with your git commit email address `git config --global user.email ID+myusername@users.noreply.github.com`
 3.  Make sure your git commit email is configured on GitHub by [Setting your Commit Email Address](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address)
-4.  Then, amend the authors in your commit history by using `` to change your last commit.
+4.  Then, amend the authors in your commit history by using `git commit --amend` to change your last commit.
 
-    Alternatively, use the slightly more complex `` and `` to checkout your changes, rewrite the commit history locally and (force) push changes to the downstream branch.
+    Alternatively, use the slightly more complex `git reset --soft` and `git rebase` to checkout your changes, rewrite the commit history locally and (force) push changes to the downstream branch.
 
-    If you have any issues with the steps above, please email [help@finos.org](mailto:help@finos.org) so we can help you resolve before reviewing and accepting your pull request.
+    If you have any issues with the steps above, please email [help@finos.org](mailto:help@finos.org) so we can help you resolve them before reviewing and accepting your pull request.
 
 Need an ICLA? Unsure if you are covered under an existing CCLA? Email [help@finos.org](mailto:help@finos.org?subject=CLA)
 
@@ -63,13 +65,13 @@ Need an ICLA? Unsure if you are covered under an existing CCLA? Email [help@fino
 The following list is a high-level overview of the code contribution workflow.
 
 1.  Read our [Community Code of Conduct](https://www.finos.org/code-of-conduct).
-2.  Fork the Legend repository ().
-3.  Create your feature branch (``).
+2.  Fork the Legend repository (<https://github.com/finos/legend/fork>).
+3.  Create your feature branch (`git checkout -b feature/fooBar`).
 4.  Make and test your changes locally.
-5.  Add your changes (``).
-6.  Commit your changes (``).
-7.  Push to the branch (``).
-8.  Optional but recommeded: Do a build in/from your fork; further evaluate and test it.
+5.  Add your changes (`git add <filename containing fooBar change>`).
+6.  Commit your changes (`git commit -m 'Add some fooBar'`).
+7.  Push to the branch (`git push origin feature/fooBar`).
+8.  Optional but recommended: Do a build in/from your fork; further evaluate and test it.
 9.  If all looks good, propose a pull request into the [Legend GitHub repo](https://github.com/finos/legend/pull/new/master) from your fork.
 
 ### Propose and submit pull requests
@@ -103,7 +105,7 @@ Consider browsing through issues labeled as "good first issue" in the respective
 
 ## Contribute to models
 
-FINOS hosts a shared version of Legend Studio in the public cloud, which is available to prototype collaborative data modeling, at . If you'd like to access the existing models, **request access to the modeling instance** at [finos.org/legend](https://www.finos.org/legend).
+FINOS hosts a shared version of Legend Studio in the public cloud, which is available to prototype collaborative data modeling, at https://legend.finos.org/studio. If you'd like to access the existing models, **request access to the modeling instance** at [finos.org/legend](https://www.finos.org/legend).
 
 Once you've requested access to the modeling instance, you can get started and [create a model](../tutorials/studio-workspace.md).
 
@@ -127,7 +129,7 @@ You can get involved with Legend by suggesting documentation topics you would li
 #### **Step 1. Run the website locally**
 To make edits to the website itself, you need to run the website locally. You must have:
 
--   A Git client installed to checkout the code from github.com/finos/legend (`` branch). The `` command must be available via command-line, as it's needed to run the `` script.
+-   A Git client installed to checkout the code from github.com/finos/legend (`master` branch). The `git` command must be available via command-line, as it's needed to run the `build-site.sh` script.
 
 The following code automatically launches a browser and takes you to the staging website, located at http://localhost:3000. File changes are live rendered, speeding up the editorial workflow.
 
