@@ -4,9 +4,9 @@
     "git.build.time": "2026-04-07T13:35:25+0000",
     "git.build.version": "4.125.1-SNAPSHOT",
     "git.closest.tag.name": "",
-    "git.commit.id": "2247988c8ddd114f0b067ec11fd58a64039b5c2a",
-    "git.commit.id.abbrev": "2247988",
-    "git.commit.time": "2026-04-09T09:30:06+0000",
+    "git.commit.id": "975d6e838e3385825f3b7671cd86450bfe12e7af",
+    "git.commit.id.abbrev": "975d6e8",
+    "git.commit.time": "2026-04-09T09:29:55+0000",
     "git.tags": "",
     "git.total.commit.count": "1"
 }
