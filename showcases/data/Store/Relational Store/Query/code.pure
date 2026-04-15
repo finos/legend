@@ -22,7 +22,7 @@ Service showcase::northwind::service::model::GetCustomer
   }
 }
 
-Service {doc.doc = 'was trying to do -> distinct(~[companyTile]) but does not work'} showcase::northwind::service::model::GetCustomerDistinctTitle
+Service showcase::northwind::service::model::GetCustomerDistinctTitle
 {
   pattern: '/bed74c09-bef9-45dc-b7aa-95a9408d6c87';
   ownership: DID { identifier: '' };
@@ -33,6 +33,10 @@ Service {doc.doc = 'was trying to do -> distinct(~[companyTile]) but does not wo
     query: |showcase::northwind::model::crm::Customer.all()->project(
       ~[
          companyTitle: x|$x.companyTitle
+       ]
+    )->distinct(
+      ~[
+         companyTitle
        ]
     );
     mapping: showcase::northwind::mapping::NorthwindMapping;
@@ -595,7 +599,7 @@ function showcase::northwind::store::functions::NorthwindDrop(): meta::pure::met
   )
 }
 
-function showcase::northwind::store::functions::NorthwindExtendd(): meta::pure::metamodel::relation::Relation<meta::pure::metamodel::type::Any>[*]
+function showcase::northwind::store::functions::NorthwindExtend(): meta::pure::metamodel::relation::Relation<meta::pure::metamodel::type::Any>[*]
 {
   #>{showcase::northwind::store::NorthwindDatabase.NORTHWIND.CUSTOMERS}#->extend(
     ~newCol: x|$x.CONTACT_NAME->toOne() + ' |' + $x.CONTACT_TITLE->toOne()
@@ -653,6 +657,28 @@ function showcase::simple::functions::simpleTableFunctionSlice(): meta::pure::me
     c|($c.FIRSTNAME != 'Doe') &&
       ($c.LASTNAME != 'Doe')
   )->from(
+    showcase::simple::connection::TestRuntime
+  )
+}
+
+function {doc.doc = 'Demonstrating use of common table expressions (CTEs). Generates WITH AS SQL structure.'} showcase::simple::functions::simpleCommonTableExpression(): meta::pure::metamodel::relation::Relation<meta::pure::metamodel::type::Any>[*]
+{
+  eval(
+      {|
+        let commonTable = #>{showcase::simple::store::TestDatabase.TEST0}#;
+        $commonTable->project(
+          ~[
+             NAME: x|$x.FIRSTNAME
+           ]
+        )->concatenate(
+          $commonTable->project(
+            ~[
+               NAME: x|$x.LASTNAME
+             ]
+          )
+        );
+      }
+    )->from(
     showcase::simple::connection::TestRuntime
   )
 }
