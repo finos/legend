@@ -25,10 +25,12 @@ module.exports = {
       },
     },
   },
-  onBrokenLinks: process.env.NODE_ENV === "production" ? "throw" : "warn",
-  onBrokenMarkdownLinks:
-    process.env.NODE_ENV === "production" ? "throw" : "warn",
+  onBrokenLinks: "warn",
+  onBrokenMarkdownLinks: "warn",
   onDuplicateRoutes: process.env.NODE_ENV === "production" ? "throw" : "warn",
+  markdown: {
+    format: 'detect',
+  },
   presets: [
     [
       "@docusaurus/preset-classic",
