@@ -1,0 +1,16 @@
+###Relational
+Database store::MilestonedDB
+(
+  Table ProductTableWithProcessingSnapshotMilestoning
+  (
+    milestoning
+    (
+      processing(PROCESSING_SNAPSHOT_DATE = processingDate)
+    )
+
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200),
+    type VARCHAR(200),
+    processingDate DATE
+  )
+)

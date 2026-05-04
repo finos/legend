@@ -1,0 +1,41 @@
+###Relational
+Database store::AdvancedViewDB
+(
+  Table People
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200),
+    firm_id INTEGER,
+    salary DOUBLE,
+    region VARCHAR(20)
+  )
+  Table Firms
+  (
+    id INTEGER PRIMARY KEY,
+    legal_name VARCHAR(200),
+    url VARCHAR(200)
+  )
+
+  View SalaryPerFirm
+  (
+    ~filter euPeople
+    ~groupBy
+    (
+      People.firm_id
+    )
+    ~distinct
+    firm_id: People.firm_id PRIMARY KEY,
+    total_salary: sum(People.salary)
+  )
+  View PersonProfile
+  (
+    id: People.id PRIMARY KEY,
+    name: People.name,
+    seniority: case(People.salary >= 200000, 'Senior', People.salary >= 100000, 'Mid', People.salary is not null, 'Junior', sqlNull()),
+    firm_url: [store::AdvancedViewDB]@PersonCompany | plus('https://', Firms.url, '/people/', People.name)
+  )
+
+  Join PersonCompany(People.firm_id = Firms.id)
+
+  Filter euPeople(People.region = 'EU')
+)

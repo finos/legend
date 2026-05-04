@@ -1,0 +1,151 @@
+###Pure
+Class demo::svc::Person
+{
+  id: Integer[1];
+  name: String[1];
+  region: String[1];
+}
+
+
+###Relational
+Database demo::svc::PersonDB
+(
+  Table PERSON
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200),
+    region VARCHAR(20)
+  )
+)
+
+
+###Mapping
+Mapping demo::svc::QaMapping
+(
+  *demo::svc::Person: Relational
+  {
+    ~primaryKey
+    (
+      [demo::svc::PersonDB]PERSON.id
+    )
+    ~mainTable [demo::svc::PersonDB]PERSON
+    id: [demo::svc::PersonDB]PERSON.id,
+    name: [demo::svc::PersonDB]PERSON.name,
+    region: [demo::svc::PersonDB]PERSON.region
+  }
+)
+
+Mapping demo::svc::ProdMapping
+(
+  *demo::svc::Person: Relational
+  {
+    ~primaryKey
+    (
+      [demo::svc::PersonDB]PERSON.id
+    )
+    ~mainTable [demo::svc::PersonDB]PERSON
+    id: [demo::svc::PersonDB]PERSON.id,
+    name: [demo::svc::PersonDB]PERSON.name,
+    region: [demo::svc::PersonDB]PERSON.region
+  }
+)
+
+
+###Connection
+RelationalDatabaseConnection demo::svc::QaConnection
+{
+  store: demo::svc::PersonDB;
+  type: H2;
+  specification: LocalH2
+  {
+    testDataSetupSqls: [
+      'create table if not exists PERSON(id INTEGER, name VARCHAR(200), region VARCHAR(20));'
+      ];
+  };
+  auth: DefaultH2;
+}
+
+RelationalDatabaseConnection demo::svc::ProdConnection
+{
+  store: demo::svc::PersonDB;
+  type: H2;
+  specification: LocalH2
+  {
+    testDataSetupSqls: [
+      'create table if not exists PERSON(id INTEGER, name VARCHAR(200), region VARCHAR(20));'
+      ];
+  };
+  auth: DefaultH2;
+}
+
+
+###Runtime
+Runtime demo::svc::QaRuntime
+{
+  mappings:
+  [
+    demo::svc::QaMapping
+  ];
+  connections:
+  [
+    demo::svc::PersonDB:
+    [
+      qa_connection: demo::svc::QaConnection
+    ]
+  ];
+}
+
+Runtime demo::svc::ProdRuntime
+{
+  mappings:
+  [
+    demo::svc::ProdMapping
+  ];
+  connections:
+  [
+    demo::svc::PersonDB:
+    [
+      prod_connection: demo::svc::ProdConnection
+    ]
+  ];
+}
+
+
+###Service
+Service demo::svc::PeopleByEnv
+{
+  pattern: '/demo/people/{env}';
+  owners:
+  [
+    'alice',
+    'bob'
+  ];
+  documentation: 'Returns all people, routed by environment key.';
+  autoActivateUpdates: true;
+  execution: Multi
+  {
+    query: |demo::svc::Person.all()->project(
+      [
+        p|$p.id,
+        p|$p.name,
+        p|$p.region
+      ],
+      [
+        'Id',
+        'Name',
+        'Region'
+      ]
+    );
+    key: 'env';
+    executions['QA']:
+    {
+      mapping: demo::svc::QaMapping;
+      runtime: demo::svc::QaRuntime;
+    }
+    executions['PROD']:
+    {
+      mapping: demo::svc::ProdMapping;
+      runtime: demo::svc::ProdRuntime;
+    }
+  }
+}

@@ -1,0 +1,98 @@
+###Pure
+Class demo::svc::ts::Person
+{
+  id: Integer[1];
+  name: String[1];
+  department: String[1];
+}
+
+
+###Relational
+Database demo::svc::ts::PersonDB
+(
+  Table PERSON
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200),
+    department VARCHAR(100)
+  )
+)
+
+
+###Mapping
+Mapping demo::svc::ts::PersonMapping
+(
+  *demo::svc::ts::Person: Relational
+  {
+    ~primaryKey
+    (
+      [demo::svc::ts::PersonDB]PERSON.id
+    )
+    ~mainTable [demo::svc::ts::PersonDB]PERSON
+    id: [demo::svc::ts::PersonDB]PERSON.id,
+    name: [demo::svc::ts::PersonDB]PERSON.name,
+    department: [demo::svc::ts::PersonDB]PERSON.department
+  }
+)
+
+
+###Connection
+RelationalDatabaseConnection demo::svc::ts::PersonConnection
+{
+  store: demo::svc::ts::PersonDB;
+  type: H2;
+  specification: LocalH2
+  {
+    testDataSetupSqls: [
+      'create table if not exists PERSON(id INTEGER, name VARCHAR(200), department VARCHAR(100));'
+      ];
+  };
+  auth: DefaultH2;
+}
+
+
+###Runtime
+Runtime demo::svc::ts::PersonRuntime
+{
+  mappings:
+  [
+    demo::svc::ts::PersonMapping
+  ];
+  connections:
+  [
+    demo::svc::ts::PersonDB:
+    [
+      conn: demo::svc::ts::PersonConnection
+    ]
+  ];
+}
+
+
+###Service
+Service demo::svc::ts::AllPeople
+{
+  pattern: '/demo/people';
+  owners:
+  [
+    'alice'
+  ];
+  documentation: 'Returns all people, exercised by a modern testSuites block.';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |demo::svc::ts::Person.all()->project(
+      [
+        p|$p.id,
+        p|$p.name,
+        p|$p.department
+      ],
+      [
+        'Id',
+        'Name',
+        'Department'
+      ]
+    );
+    mapping: demo::svc::ts::PersonMapping;
+    runtime: demo::svc::ts::PersonRuntime;
+  }
+}

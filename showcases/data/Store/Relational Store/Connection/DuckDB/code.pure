@@ -1,0 +1,24 @@
+###Relational
+Database showcase::store::DemoStore
+(
+  Table Person
+  (
+    id INTEGER PRIMARY KEY,
+    firm_id INTEGER,
+    firstName VARCHAR(200),
+    lastName VARCHAR(200)
+  )
+)
+
+
+###Connection
+RelationalDatabaseConnection showcase::connection::DuckDbConnection
+{
+  store: showcase::store::DemoStore;
+  type: DuckDB;
+  specification: DuckDB
+  {
+    path: '/tmp/demo.duckdb';
+  };
+  auth: Test;
+}

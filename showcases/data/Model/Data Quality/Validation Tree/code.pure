@@ -1,0 +1,137 @@
+###Pure
+Class demo::dq::vt::Address
+[
+  streetMustNotBeBlank: $this.street->trim()->length() > 0
+]
+{
+  addressId: Integer[1];
+  street: String[1];
+  city: String[1];
+}
+
+Class demo::dq::vt::Person
+[
+  ageMustBePositive: $this.age > 0,
+  'nameMust NotBeBlank': $this.name->trim()->length() > 0
+]
+{
+  name: String[1];
+  lastName: String[1];
+  age: Integer[1];
+  addresses: demo::dq::vt::Address[*];
+}
+
+
+###Relational
+Database demo::dq::vt::PersonDB
+(
+  Table PERSON
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200),
+    lastName VARCHAR(200),
+    age INTEGER
+  )
+  Table ADDRESS
+  (
+    addressId INTEGER PRIMARY KEY,
+    personId INTEGER,
+    street VARCHAR(200),
+    city VARCHAR(200)
+  )
+
+  Join Person_Address(PERSON.id = ADDRESS.personId)
+)
+
+
+###Mapping
+Mapping demo::dq::vt::PersonMapping
+(
+  *demo::dq::vt::Person: Relational
+  {
+    ~primaryKey
+    (
+      [demo::dq::vt::PersonDB]PERSON.id
+    )
+    ~mainTable [demo::dq::vt::PersonDB]PERSON
+    name: [demo::dq::vt::PersonDB]PERSON.name,
+    lastName: [demo::dq::vt::PersonDB]PERSON.lastName,
+    age: [demo::dq::vt::PersonDB]PERSON.age,
+    addresses: [demo::dq::vt::PersonDB]@Person_Address
+  }
+  *demo::dq::vt::Address: Relational
+  {
+    ~primaryKey
+    (
+      [demo::dq::vt::PersonDB]ADDRESS.addressId
+    )
+    ~mainTable [demo::dq::vt::PersonDB]ADDRESS
+    addressId: [demo::dq::vt::PersonDB]ADDRESS.addressId,
+    street: [demo::dq::vt::PersonDB]ADDRESS.street,
+    city: [demo::dq::vt::PersonDB]ADDRESS.city
+  }
+)
+
+
+###Connection
+RelationalDatabaseConnection demo::dq::vt::LocalConnection
+{
+  store: demo::dq::vt::PersonDB;
+  type: H2;
+  specification: LocalH2
+  {
+    testDataSetupSqls: [
+      'create table if not exists PERSON(id INTEGER, name VARCHAR(200), lastName VARCHAR(200), age INTEGER);',
+      'create table if not exists ADDRESS(addressId INTEGER, personId INTEGER, street VARCHAR(200), city VARCHAR(200));'
+      ];
+  };
+  auth: DefaultH2;
+}
+
+
+###Runtime
+Runtime demo::dq::vt::LocalRuntime
+{
+  mappings:
+  [
+    demo::dq::vt::PersonMapping
+  ];
+  connections:
+  [
+    demo::dq::vt::PersonDB:
+    [
+      conn: demo::dq::vt::LocalConnection
+    ]
+  ];
+}
+
+
+###DataSpace
+DataSpace demo::dq::vt::PersonDataSpace
+{
+  executionContexts:
+  [
+    {
+      name: 'Local_Context';
+      mapping: demo::dq::vt::PersonMapping;
+      defaultRuntime: demo::dq::vt::LocalRuntime;
+    }
+  ];
+  defaultExecutionContext: 'Local_Context';
+}
+
+
+###DataQualityValidation
+DataQualityValidation demo::dq::vt::PersonDataQualityValidation
+{
+   context: fromDataSpace(demo::dq::vt::PersonDataSpace, 'Local_Context');
+   validationTree: $[
+       demo::dq::vt::Person<ageMustBePositive, 'nameMust NotBeBlank'>{
+         lastName,
+         name,
+         addresses<streetMustNotBeBlank>{
+           addressId
+         }
+       }
+     ]$;
+}

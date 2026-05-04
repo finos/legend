@@ -1,0 +1,23 @@
+###Relational
+Database store::FirmDB
+(
+  Table Firms
+  (
+    id INTEGER PRIMARY KEY,
+    legal_name VARCHAR(200)
+  )
+)
+
+Database store::PeopleDB
+(
+  include store::FirmDB
+
+  Table People
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200),
+    firm_id INTEGER
+  )
+
+  Join PersonFirm(People.firm_id = [store::FirmDB]Firms.id)
+)

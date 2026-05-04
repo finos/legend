@@ -1,0 +1,22 @@
+###Relational
+Database store::SimpleDB
+(
+  Table People
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200),
+    firm_id INTEGER,
+    region VARCHAR(20)
+  )
+  Table Firms
+  (
+    id INTEGER PRIMARY KEY,
+    legal_name VARCHAR(200),
+    region VARCHAR(20)
+  )
+
+  Join PersonCompany(People.firm_id = Firms.id)
+
+  Filter activePeople(People.id > 0)
+  MultiGrainFilter euOnly(People.region = 'EU')
+)

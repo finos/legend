@@ -1,0 +1,33 @@
+###Relational
+Database showcase::store::DemoStore
+(
+  Table Person
+  (
+    id INTEGER PRIMARY KEY,
+    firm_id INTEGER,
+    firstName VARCHAR(200),
+    lastName VARCHAR(200)
+  )
+)
+
+
+###Connection
+RelationalDatabaseConnection showcase::connection::SnowflakeConnection
+{
+  store: showcase::store::DemoStore;
+  type: Snowflake;
+  specification: Snowflake
+  {
+    name: 'DEMO_DB';
+    account: 'myAccount';
+    warehouse: 'DEMO_WH';
+    region: 'us-east-1';
+    role: 'DEMO_ROLE';
+  };
+  auth: SnowflakePublic
+  {
+    publicUserName: 'demoUser';
+    privateKeyVaultReference: 'snowflake.demo.privateKey';
+    passPhraseVaultReference: 'snowflake.demo.passPhrase';
+  };
+}

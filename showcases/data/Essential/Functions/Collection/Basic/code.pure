@@ -1,0 +1,91 @@
+###Pure
+function demo::collection::demoFilter(): Integer[*]
+{
+  [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ]->filter(
+    x|$x > 3
+  )
+}
+
+function demo::collection::demoMap(): Integer[*]
+{
+  [
+    1,
+    2,
+    3
+  ]->map(
+    x|$x * $x
+  )
+}
+
+function demo::collection::demoExists(): Boolean[1]
+{
+  [
+    1,
+    2,
+    3
+  ]->exists(
+    x|$x > 2
+  )
+}
+
+function demo::collection::demoForAll(): Boolean[1]
+{
+  [
+    1,
+    2,
+    3
+  ]->forAll(
+    x|$x > 0
+  )
+}
+
+function demo::collection::demoFoldSum(): Integer[1]
+{
+  [
+    1,
+    2,
+    3,
+    4
+  ]->fold(
+    {a, b|$a + $b    },
+    0
+  )
+}
+
+function demo::collection::demoDistinct(): String[*]
+{
+  [
+    'a',
+    'b',
+    'a',
+    'c',
+    'b'
+  ]->distinct()
+}
+
+function demo::collection::demoSortBy(): String[*]
+{
+  [
+    'banana',
+    'apple',
+    'cherry'
+  ]->sortBy(
+    s|$s
+  )
+}
+
+function demo::collection::demoSize(): Integer[1]
+{
+  [
+    'a',
+    'b',
+    'c'
+  ]->size()
+}

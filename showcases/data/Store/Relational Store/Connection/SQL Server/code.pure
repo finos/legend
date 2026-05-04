@@ -1,0 +1,31 @@
+###Relational
+Database showcase::store::DemoStore
+(
+  Table Person
+  (
+    id INTEGER PRIMARY KEY,
+    firm_id INTEGER,
+    firstName VARCHAR(200),
+    lastName VARCHAR(200)
+  )
+)
+
+
+###Connection
+RelationalDatabaseConnection showcase::connection::SqlServerConnection
+{
+  store: showcase::store::DemoStore;
+  type: SqlServer;
+  specification: Static
+  {
+    name: 'DemoStore';
+    host: 'sqlserver.host.example.com';
+    port: 1433;
+  };
+  auth: UserNamePassword
+  {
+    baseVaultReference: 'sqlserver.demo.';
+    userNameVaultReference: 'username';
+    passwordVaultReference: 'password';
+  };
+}

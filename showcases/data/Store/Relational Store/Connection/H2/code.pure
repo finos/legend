@@ -1,0 +1,30 @@
+###Relational
+Database showcase::store::DemoStore
+(
+  Table Person
+  (
+    id INTEGER PRIMARY KEY,
+    firm_id INTEGER,
+    firstName VARCHAR(200),
+    lastName VARCHAR(200)
+  )
+)
+
+
+###Connection
+RelationalDatabaseConnection showcase::connection::H2Connection
+{
+  store: showcase::store::DemoStore;
+  type: H2;
+  specification: LocalH2
+  {
+    testDataSetupSqls: [
+      'drop table if exists Person;',
+      'create table Person(id INTEGER, firm_id INTEGER, firstName VARCHAR(200), lastName VARCHAR(200));',
+      'insert into Person(id, firm_id, firstName, lastName) values (1, 100, \'Ada\',  \'Lovelace\');',
+      'insert into Person(id, firm_id, firstName, lastName) values (2, 100, \'Alan\', \'Turing\');',
+      'insert into Person(id, firm_id, firstName, lastName) values (3, 200, \'Grace\',\'Hopper\');'
+      ];
+  };
+  auth: DefaultH2;
+}

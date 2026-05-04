@@ -1,0 +1,28 @@
+###Pure
+Class demo::query::Person
+{
+  firstName: String[1];
+  lastName: String[1];
+  salary: Float[1];
+}
+
+function demo::query::topPaid(): meta::pure::tds::TabularDataSet[1]
+{
+  demo::query::Person.all()->project(
+    [
+      p|$p.firstName,
+      p|$p.lastName,
+      p|$p.salary
+    ],
+    [
+      'First Name',
+      'Last Name',
+      'Salary'
+    ]
+  )->sort(
+    [
+      desc('Salary'),
+      asc('Last Name')
+    ]
+  )->take(10)
+}

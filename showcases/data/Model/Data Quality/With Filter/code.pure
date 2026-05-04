@@ -1,0 +1,136 @@
+###Pure
+Class demo::dq::filter::Address
+[
+  streetMustNotBeBlank: $this.street->trim()->length() > 0
+]
+{
+  addressId: Integer[1];
+  street: String[1];
+}
+
+Class demo::dq::filter::Person
+[
+  ageMustBePositive: $this.age > 0,
+  'nameMust NotBeBlank': $this.name->trim()->length() > 0
+]
+{
+  name: String[1];
+  lastName: String[1];
+  age: Integer[1];
+  addresses: demo::dq::filter::Address[*];
+}
+
+
+###Relational
+Database demo::dq::filter::PersonDB
+(
+  Table PERSON
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200),
+    lastName VARCHAR(200),
+    age INTEGER
+  )
+  Table ADDRESS
+  (
+    addressId INTEGER PRIMARY KEY,
+    personId INTEGER,
+    street VARCHAR(200)
+  )
+
+  Join Person_Address(PERSON.id = ADDRESS.personId)
+)
+
+
+###Mapping
+Mapping demo::dq::filter::PersonMapping
+(
+  *demo::dq::filter::Person: Relational
+  {
+    ~primaryKey
+    (
+      [demo::dq::filter::PersonDB]PERSON.id
+    )
+    ~mainTable [demo::dq::filter::PersonDB]PERSON
+    name: [demo::dq::filter::PersonDB]PERSON.name,
+    lastName: [demo::dq::filter::PersonDB]PERSON.lastName,
+    age: [demo::dq::filter::PersonDB]PERSON.age,
+    addresses: [demo::dq::filter::PersonDB]@Person_Address
+  }
+  *demo::dq::filter::Address: Relational
+  {
+    ~primaryKey
+    (
+      [demo::dq::filter::PersonDB]ADDRESS.addressId
+    )
+    ~mainTable [demo::dq::filter::PersonDB]ADDRESS
+    addressId: [demo::dq::filter::PersonDB]ADDRESS.addressId,
+    street: [demo::dq::filter::PersonDB]ADDRESS.street
+  }
+)
+
+
+###Connection
+RelationalDatabaseConnection demo::dq::filter::LocalConnection
+{
+  store: demo::dq::filter::PersonDB;
+  type: H2;
+  specification: LocalH2
+  {
+    testDataSetupSqls: [
+      'create table if not exists PERSON(id INTEGER, name VARCHAR(200), lastName VARCHAR(200), age INTEGER);',
+      'create table if not exists ADDRESS(addressId INTEGER, personId INTEGER, street VARCHAR(200));'
+      ];
+  };
+  auth: DefaultH2;
+}
+
+
+###Runtime
+Runtime demo::dq::filter::LocalRuntime
+{
+  mappings:
+  [
+    demo::dq::filter::PersonMapping
+  ];
+  connections:
+  [
+    demo::dq::filter::PersonDB:
+    [
+      conn: demo::dq::filter::LocalConnection
+    ]
+  ];
+}
+
+
+###DataSpace
+DataSpace demo::dq::filter::PersonDataSpace
+{
+  executionContexts:
+  [
+    {
+      name: 'Local_Context';
+      mapping: demo::dq::filter::PersonMapping;
+      defaultRuntime: demo::dq::filter::LocalRuntime;
+    }
+  ];
+  defaultExecutionContext: 'Local_Context';
+}
+
+
+###DataQualityValidation
+DataQualityValidation demo::dq::filter::AdultsOnlyValidation
+{
+   context: fromDataSpace(demo::dq::filter::PersonDataSpace, 'Local_Context');
+   validationTree: $[
+       demo::dq::filter::Person<ageMustBePositive, 'nameMust NotBeBlank'>{
+         lastName,
+         name,
+         age,
+         addresses<streetMustNotBeBlank>{
+           addressId
+         }
+       }
+     ]$;
+   filter: p: demo::dq::filter::Person[1]|$p.age >= 18;
+}
