@@ -6,7 +6,6 @@ Mapping mappings::ChainedJoinMapping
   Person: Relational
   {
     name: [SimpleDB]People.name,
-    firm: [SimpleDB]@FirmPerson,
     good_pet_name: [SimpleDB]@PersonPet > (INNER) [SimpleDB]@GoodPets | [SimpleDB]Pets.name
   }
 )

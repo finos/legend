@@ -123,11 +123,18 @@ RelationalDatabaseConnection showcase::simple::connection::TestConnection
 }
 
 
+###Mapping
+Mapping showcase::simple::connection::EmptyMapping
+(
+)
+
+
 ###Runtime
 Runtime showcase::simple::connection::TestRuntime
 {
   mappings:
   [
+    showcase::simple::connection::EmptyMapping
   ];
   connections:
   [

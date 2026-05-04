@@ -6,7 +6,6 @@ Mapping mapping::SimpleJoinMapping
   Person: Relational
   {
     name: [SimpleDB]People.name,
-    firm: [SimpleDB]@FirmPerson,
     pet_name: [SimpleDB]@PersonPet | [SimpleDB]Pets.name
   }
 )

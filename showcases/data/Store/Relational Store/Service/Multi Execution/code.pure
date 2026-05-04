@@ -115,6 +115,7 @@ Runtime demo::svc::ProdRuntime
 Service demo::svc::PeopleByEnv
 {
   pattern: '/demo/people/{env}';
+  title: 'People By Environment';
   owners:
   [
     'alice',

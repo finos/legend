@@ -72,6 +72,7 @@ Runtime demo::svc::params::PersonRuntime
 Service demo::svc::params::PeopleByMinAge
 {
   pattern: '/demo/people/byAge/{minAge}';
+  title: 'People By Min Age';
   owners:
   [
     'alice'

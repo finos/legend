@@ -48,12 +48,13 @@ Database com::entity::EntityDatabase
 Service com::trade::ServiceSimpleProject
 {
   pattern: '/trade/simpleJoinProjectService';
+  title: 'Trade Simple Join Project';
   owners:
   [
     'user1',
     'user2'
   ];
-  documentation: '';
+  documentation: 'Projects trade value and the joined client name as a TDS, demonstrating an integrated mapping that combines trade and legal entity data with an alternative runtime.';
   autoActivateUpdates: true;
   execution: Single
   {

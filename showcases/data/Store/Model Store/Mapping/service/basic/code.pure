@@ -21,8 +21,9 @@ Text mapping::m2mREADME
 Service mapping::FirmService
 {
   pattern: '/83a0d72d-e69d-453e-8f23-8059767aeab7';
+  title: 'Firm Service';
   ownership: DID { identifier: '' };
-  documentation: '';
+  documentation: 'Returns target firms with name, legal name and the full names of their employees, demonstrating a model-to-model graphFetch service backed by a JSON model store.';
   autoActivateUpdates: true;
   execution: Single
   {

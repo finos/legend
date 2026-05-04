@@ -17,8 +17,9 @@ Database example::store::MyDepartmentStore
 Service example::service::EmployeeAssignmentService
 {
   pattern: '/EmployeeAssignmentService';
+  title: 'Employee Assignment Service';
   ownership: DID { identifier: '' };
-  documentation: '';
+  documentation: 'Returns employees assigned to more than one distinct department, demonstrating a having-style filter on a TDS produced by groupBy with a distinct count aggregate.';
   autoActivateUpdates: true;
   execution: Single
   {

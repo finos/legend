@@ -25,11 +25,18 @@ RelationalDatabaseConnection demo::dq::rel::DevConnection
 }
 
 
+###Mapping
+Mapping demo::dq::rel::Mapping
+(
+)
+
+
 ###Runtime
 Runtime demo::dq::rel::DevRuntime
 {
   mappings:
   [
+    demo::dq::rel::Mapping
   ];
   connections:
   [

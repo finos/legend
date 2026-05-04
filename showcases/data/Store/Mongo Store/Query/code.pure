@@ -2,7 +2,8 @@
 Service cde::store::mongodb::executionTest::service::PersonService
 {
   pattern: '/api/allPersons';
-  documentation: '';
+  title: 'All Persons';
+  documentation: 'Returns persons from a MongoDB store, filtered by first name or birth date, with department and firm details fetched via graphFetch and serialized to JSON.';
   autoActivateUpdates: true;
   execution: Single
   {

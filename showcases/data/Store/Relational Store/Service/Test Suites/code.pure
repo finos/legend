@@ -72,6 +72,7 @@ Runtime demo::svc::ts::PersonRuntime
 Service demo::svc::ts::AllPeople
 {
   pattern: '/demo/people';
+  title: 'All People (Test Suites)';
   owners:
   [
     'alice'
