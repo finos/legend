@@ -1,0 +1,20 @@
+###Pure
+Class demo::query::Person
+{
+  firstName: String[1];
+  region: String[1];
+}
+
+function demo::query::distinctRegions(): meta::pure::tds::TabularDataSet[1]
+{
+  demo::query::Person.all()->project(
+    [
+      p|$p.region
+    ],
+    ['Region']
+  )->distinct()->sort(
+    [
+      asc('Region')
+    ]
+  )
+}

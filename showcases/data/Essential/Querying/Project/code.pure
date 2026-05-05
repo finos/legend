@@ -1,0 +1,23 @@
+###Pure
+Class demo::query::Person
+{
+  firstName: String[1];
+  lastName: String[1];
+  age: Integer[1];
+}
+
+function demo::query::personRows(): meta::pure::tds::TabularDataSet[1]
+{
+  demo::query::Person.all()->project(
+    [
+      p|$p.firstName,
+      p|$p.lastName,
+      p|$p.age
+    ],
+    [
+      'First Name',
+      'Last Name',
+      'Age'
+    ]
+  )
+}

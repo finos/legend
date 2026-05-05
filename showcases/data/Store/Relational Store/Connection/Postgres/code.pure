@@ -30,8 +30,10 @@ RelationalDatabaseConnection showcase::connection::PostgresConnection
     host: 'url.here';
     port: 480;
   };
-  auth: DelegatedKerberos
+  auth: UserNamePassword
   {
-    serverPrincipal: 'kerberos';
+    baseVaultReference: 'sqlserver.demo.';
+    userNameVaultReference: 'username';
+    passwordVaultReference: 'password';
   };
 }

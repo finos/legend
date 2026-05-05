@@ -336,7 +336,8 @@ DataSpace showcase::northwind::dataspace::NorthwindDataSpaceWithTemplateQuery
 Service showcase::northwind::services::graph::OrderDetailsByIdGraphFetch
 {
   pattern: '/orderDetailsByIdGraphFetch/{id}';
-  documentation: '';
+  title: 'Order Details By Id - Graph Fetch';
+  documentation: 'Returns full details for a specified order, including customer, employee, line item products with categories and quantities, and shipper information. Demonstrates using graphFetch to retrieve a rich object graph in a single query and serialize it for output.';
   autoActivateUpdates: true;
   execution: Single
   {
@@ -402,7 +403,8 @@ Service showcase::northwind::services::graph::OrderDetailsByIdGraphFetch
 Service showcase::northwind::services::tds::TopCategories
 {
   pattern: '/topCategories';
-  documentation: '';
+  title: 'Top Categories';
+  documentation: 'Returns the top 5 product categories ranked by distinct order count. Demonstrates a TDS query that groups orders by their line item product category, aggregates a distinct count of orders per category, then sorts descending and limits the result.';
   autoActivateUpdates: true;
   execution: Single
   {
@@ -435,7 +437,8 @@ Service showcase::northwind::services::tds::TopCategories
 Service showcase::northwind::services::tds::OrderDetailsByIdTDS
 {
   pattern: '/orderDetailsByIdTDS/{id}';
-  documentation: '';
+  title: 'Order Details By Id - TDS';
+  documentation: 'Returns full details for a specified order as a TDS, including customer, employee, line item products with categories and quantities, and shipper information. Also includes a post validation that asserts no employee first name in the result begins with the letter T.';
   autoActivateUpdates: true;
   execution: Single
   {
@@ -484,7 +487,8 @@ Service showcase::northwind::services::tds::OrderDetailsByIdTDS
 Service showcase::northwind::services::tds::ProductRankingWithinCategory
 {
   pattern: '/productRankingWithinCategory';
-  documentation: '';
+  title: 'Product Ranking Within Category';
+  documentation: 'Ranks products within each category by distinct order count using an OLAP groupBy with a rank window function. Demonstrates combining standard TDS aggregation with OLAP windowing to produce per-partition rankings sorted by category and rank.';
   autoActivateUpdates: true;
   execution: Single
   {
@@ -523,7 +527,8 @@ Service showcase::northwind::services::tds::ProductRankingWithinCategory
 Service showcase::northwind::services::tds::Customers
 {
   pattern: '/customers';
-  documentation: '';
+  title: 'Customers';
+  documentation: 'Returns the full list of customers as a TDS with id, company name, contact name, company title, address details (country, address, city) and telephone number. Includes a post validation that asserts no company is named "Around the Hornsss".';
   autoActivateUpdates: true;
   execution: Single
   {
@@ -571,7 +576,8 @@ Service showcase::northwind::services::tds::Customers
 Service showcase::northwind::services::graph::ShipperValidationDefects
 {
   pattern: '/shipperValidationDefects';
-  documentation: '';
+  title: 'Shipper Validation Defects';
+  documentation: 'Demonstrates graphFetchChecked on shipping companies to expose data quality defects alongside the fetched values. The serialized output preserves the checked structure so consumers can inspect both the returned id and telephoneNumber and any constraint or conversion defects detected during fetching.';
   autoActivateUpdates: true;
   execution: Single
   {

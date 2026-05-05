@@ -1,0 +1,42 @@
+###Pure
+Class demo::dq::Person
+[
+  ageMustBePositive: $this.age > 0,
+  nameMustNotBeBlank: $this.name->trim()->length() > 0
+]
+{
+  name: String[1];
+  age: Integer[1];
+}
+
+Class demo::dq::Trade
+[
+  notionalIsPositive
+  (
+    ~function: $this.notional > 0.0
+    ~enforcementLevel: Error
+    ~message: 'Trade notional must be strictly positive (got ' + $this.notional->toString() + ')'
+  ),
+  settlementAfterTrade
+  (
+    ~function: $this.settlementDate >=
+  $this.tradeDate
+    ~enforcementLevel: Error
+    ~message: 'Settlement date must be on or after trade date'
+  ),
+  preferredCurrency
+  (
+    ~function: (($this.currency == 'USD') ||
+  ($this.currency == 'EUR')) ||
+  ($this.currency == 'GBP')
+    ~enforcementLevel: Warn
+    ~message: 'Currency ' + $this.currency + ' is not in the preferred list (USD/EUR/GBP)'
+  )
+]
+{
+  tradeId: String[1];
+  tradeDate: StrictDate[1];
+  settlementDate: StrictDate[1];
+  notional: Float[1];
+  currency: String[1];
+}

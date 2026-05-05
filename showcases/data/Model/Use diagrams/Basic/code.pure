@@ -1,0 +1,60 @@
+###Pure
+Class demo::diagram::Firm
+{
+  legalName: String[1];
+}
+
+Class demo::diagram::Person extends demo::diagram::Party
+{
+  firstName: String[1];
+  lastName: String[1];
+}
+
+Class demo::diagram::Party
+{
+  id: Integer[1];
+}
+
+Association demo::diagram::Firm_Person
+{
+  firm: demo::diagram::Firm[1];
+  employees: demo::diagram::Person[*];
+}
+
+
+###Diagram
+Diagram demo::diagram::CompanyDiagram
+{
+  classView firm-cv
+  {
+    class: demo::diagram::Firm;
+    position: (640.0,200.0);
+    rectangle: (140.0,60.0);
+  }
+  classView person-cv
+  {
+    class: demo::diagram::Person;
+    position: (640.0,360.0);
+    rectangle: (140.0,80.0);
+  }
+  classView party-cv
+  {
+    class: demo::diagram::Party;
+    position: (640.0,520.0);
+    rectangle: (140.0,60.0);
+    hideProperties: true;
+  }
+  propertyView
+  {
+    property: demo::diagram::Firm_Person.employees;
+    source: firm-cv;
+    target: person-cv;
+    points: [(710.0,260.0),(710.0,360.0)];
+  }
+  generalizationView
+  {
+    source: person-cv;
+    target: party-cv;
+    points: [(710.0,440.0),(710.0,520.0)];
+  }
+}

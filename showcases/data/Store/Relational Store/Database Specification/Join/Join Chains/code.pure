@@ -1,0 +1,38 @@
+###Relational
+Database store::JoinChainDB
+(
+  Table People
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200),
+    firm_id INTEGER
+  )
+  Table Firms
+  (
+    id INTEGER PRIMARY KEY,
+    legal_name VARCHAR(200),
+    address_id INTEGER
+  )
+  Table Addresses
+  (
+    id INTEGER PRIMARY KEY,
+    city VARCHAR(200),
+    country_id INTEGER
+  )
+  Table Countries
+  (
+    id INTEGER PRIMARY KEY,
+    code VARCHAR(3)
+  )
+
+  View PersonWithCountry
+  (
+    id: People.id PRIMARY KEY,
+    name: People.name,
+    country_code: [store::JoinChainDB]@PersonFirm > (INNER) [store::JoinChainDB]@FirmAddress > (OUTER) [store::JoinChainDB]@AddressCountry | Countries.code
+  )
+
+  Join PersonFirm(People.firm_id = Firms.id)
+  Join FirmAddress(Firms.address_id = Addresses.id)
+  Join AddressCountry(Addresses.country_id = Countries.id)
+)

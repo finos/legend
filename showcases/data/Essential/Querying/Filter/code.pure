@@ -1,0 +1,27 @@
+###Pure
+Class demo::query::Person
+{
+  firstName: String[1];
+  lastName: String[1];
+  age: Integer[1];
+  region: String[1];
+}
+
+function demo::query::adultsInEU(): meta::pure::tds::TabularDataSet[1]
+{
+  demo::query::Person.all()->filter(
+    p|($p.age >= 18) &&
+      ($p.region == 'EU')
+  )->project(
+    [
+      p|$p.firstName,
+      p|$p.lastName,
+      p|$p.age
+    ],
+    [
+      'First Name',
+      'Last Name',
+      'Age'
+    ]
+  )
+}

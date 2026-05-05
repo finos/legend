@@ -1,0 +1,19 @@
+###Relational
+Database <<equality.Key>> {doc.doc = 'Sample database showcasing annotations'} store::AnnotatedDB
+(
+  Schema <<equality.Key>> {doc.doc = 'Default sample schema'} SimpleSchema
+  (
+    Table <<equality.Key>> {doc.doc = 'People reference table'} People
+    (
+      id INTEGER PRIMARY KEY,
+      name <<equality.Key>> {doc.doc = 'Full legal name'} VARCHAR(200),
+      firm_id INTEGER
+    )
+
+    View <<doc.deprecated>> {doc.doc = 'Use SimpleSchema.People instead'} ImportantPeople
+    (
+      id: SimpleSchema.People.id PRIMARY KEY,
+      name: SimpleSchema.People.name
+    )
+  )
+)

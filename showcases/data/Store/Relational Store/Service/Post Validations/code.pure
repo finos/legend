@@ -1,0 +1,120 @@
+###Pure
+Class demo::svc::pv::Person
+{
+  id: Integer[1];
+  name: String[1];
+}
+
+
+###Relational
+Database demo::svc::pv::PersonDB
+(
+  Table PERSON
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200)
+  )
+)
+
+
+###Mapping
+Mapping demo::svc::pv::PersonMapping
+(
+  *demo::svc::pv::Person: Relational
+  {
+    ~primaryKey
+    (
+      [demo::svc::pv::PersonDB]PERSON.id
+    )
+    ~mainTable [demo::svc::pv::PersonDB]PERSON
+    id: [demo::svc::pv::PersonDB]PERSON.id,
+    name: [demo::svc::pv::PersonDB]PERSON.name
+  }
+)
+
+
+###Connection
+RelationalDatabaseConnection demo::svc::pv::PersonConnection
+{
+  store: demo::svc::pv::PersonDB;
+  type: H2;
+  specification: LocalH2
+  {
+    testDataSetupSqls: [
+      'create table if not exists PERSON(id INTEGER, name VARCHAR(200));'
+      ];
+  };
+  auth: DefaultH2;
+}
+
+
+###Runtime
+Runtime demo::svc::pv::PersonRuntime
+{
+  mappings:
+  [
+    demo::svc::pv::PersonMapping
+  ];
+  connections:
+  [
+    demo::svc::pv::PersonDB:
+    [
+      conn: demo::svc::pv::PersonConnection
+    ]
+  ];
+}
+
+
+###Service
+Service demo::svc::pv::PeopleService
+{
+  pattern: '/demo/people';
+  title: 'People with Post Validations';
+  owners:
+  [
+    'alice'
+  ];
+  documentation: 'Returns all people, with post-execution invariants checked at runtime.';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: |demo::svc::pv::Person.all()->project(
+      [
+        p|$p.id,
+        p|$p.name
+      ],
+      [
+        'Id',
+        'Name'
+      ]
+    );
+    mapping: demo::svc::pv::PersonMapping;
+    runtime: demo::svc::pv::PersonRuntime;
+  }
+  postValidations:
+  [
+    {
+      description: 'No person name may begin with the letter X.';
+      params:[
+
+      ];
+      assertions:[
+        noNamesStartingWithX: tds: TabularDataSet[1]|$tds->filter(
+  row|$row.getString('Name')->startsWith('X')
+)->meta::legend::service::validation::assertTabularDataSetEmpty('Expected no Name to begin with the letter X')
+      ];
+    }
+,
+    {
+      description: 'No person id may be null.';
+      params:[
+
+      ];
+      assertions:[
+        idIsNeverNull: tds: TabularDataSet[1]|$tds->filter(
+  row|$row.isNull('Id')
+)->meta::legend::service::validation::assertTabularDataSetEmpty('Expected every Id to be non-null')
+      ];
+    }
+  ]
+}

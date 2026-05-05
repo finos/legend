@@ -160,7 +160,12 @@ Runtime simple::runtime::SnowflakeRuntime
             warehouse: 'warehouse';
             region: 'region';
           };
-          auth: DefaultH2;
+          auth: SnowflakePublic
+          {
+            publicUserName: 'test';
+            privateKeyVaultReference: 'test';
+            passPhraseVaultReference: 'test';
+          };
         }
       }#
     ]

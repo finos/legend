@@ -1,0 +1,31 @@
+###Relational
+Database showcase::store::DemoStore
+(
+  Table Person
+  (
+    id INTEGER PRIMARY KEY,
+    firm_id INTEGER,
+    firstName VARCHAR(200),
+    lastName VARCHAR(200)
+  )
+)
+
+
+###Connection
+RelationalDatabaseConnection showcase::connection::MemSqlConnection
+{
+  store: showcase::store::DemoStore;
+  type: MemSQL;
+  specification: Static
+  {
+    name: 'DemoStore';
+    host: 'memsql.host.example.com';
+    port: 3306;
+  };
+  auth: UserNamePassword
+  {
+    baseVaultReference: 'memsql.demo.';
+    userNameVaultReference: 'username';
+    passwordVaultReference: 'password';
+  };
+}

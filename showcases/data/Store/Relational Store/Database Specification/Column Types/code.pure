@@ -1,0 +1,26 @@
+###Relational
+Database store::AllTypesDB
+(
+  Table AllColumnTypes
+  (
+    tiny_col TINYINT,
+    small_col SMALLINT PRIMARY KEY,
+    int_col INTEGER,
+    big_col BIGINT NOT NULL,
+    float_col FLOAT,
+    real_col REAL,
+    double_col DOUBLE PRIMARY KEY,
+    numeric_col NUMERIC(32, 23),
+    decimal_col DECIMAL(32, 23),
+    char_col CHAR(32),
+    varchar_col VARCHAR(200) NOT NULL,
+    date_col DATE,
+    timestamp_col TIMESTAMP,
+    binary_col BINARY(16),
+    varbinary_col VARBINARY(64) NOT NULL,
+    bit_col BIT,
+    other_col OTHER,
+    "this is a col" VARCHAR(32),
+    "select" VARCHAR(32)
+  )
+)

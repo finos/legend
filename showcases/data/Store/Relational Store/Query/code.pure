@@ -2,8 +2,9 @@
 Service showcase::northwind::service::model::GetCustomer
 {
   pattern: '/bed74c09-bef9-45dc-b7aa-95a9408d6c87';
+  title: 'Get Customer';
   ownership: DID { identifier: '' };
-  documentation: '';
+  documentation: 'Projects all customers as a TDS with company name, company title, contact name, fax number, id and telephone number.';
   autoActivateUpdates: true;
   execution: Single
   {
@@ -25,8 +26,9 @@ Service showcase::northwind::service::model::GetCustomer
 Service showcase::northwind::service::model::GetCustomerDistinctTitle
 {
   pattern: '/bed74c09-bef9-45dc-b7aa-95a9408d6c87';
+  title: 'Get Customer Distinct Title';
   ownership: DID { identifier: '' };
-  documentation: '';
+  documentation: 'Projects customer company titles and returns the distinct set, demonstrating the distinct() function on a TDS.';
   autoActivateUpdates: true;
   execution: Single
   {
@@ -47,8 +49,9 @@ Service showcase::northwind::service::model::GetCustomerDistinctTitle
 Service showcase::northwind::service::model::GetCustomerWithDrop
 {
   pattern: '/bed74c09-bef9-45dc-b7aa-95a9408d6c87';
+  title: 'Get Customer With Drop';
   ownership: DID { identifier: '' };
-  documentation: '';
+  documentation: 'Projects all customers as a TDS and drops the first row, demonstrating the drop() pagination function.';
   autoActivateUpdates: true;
   execution: Single
   {
@@ -70,8 +73,9 @@ Service showcase::northwind::service::model::GetCustomerWithDrop
 Service showcase::northwind::service::model::GetCustomerWithLimit
 {
   pattern: '/bed74c09-bef9-45dc-b7aa-95a9408d6c87';
+  title: 'Get Customer With Limit';
   ownership: DID { identifier: '' };
-  documentation: '';
+  documentation: 'Projects all customers as a TDS and limits the result to a single row, demonstrating the limit() function.';
   autoActivateUpdates: true;
   execution: Single
   {
@@ -93,8 +97,9 @@ Service showcase::northwind::service::model::GetCustomerWithLimit
 Service {doc.doc = 'Does not work -> route function'} showcase::northwind::service::model::ProductService
 {
   pattern: '/67591400-468d-4bb5-b875-f1fe2699d143';
+  title: 'Product Service';
   ownership: DID { identifier: '' };
-  documentation: '';
+  documentation: 'Projects products as a TDS (quantity per unit, discontinued flag, id, name, reorder level, stock and on-order counts) filtered to those with units in stock greater than one.';
   autoActivateUpdates: true;
   execution: Single
   {
@@ -119,8 +124,9 @@ Service {doc.doc = 'Does not work -> route function'} showcase::northwind::servi
 Service showcase::northwind::service::model::CustomerExtend
 {
   pattern: '/fde94d89-b181-4fbe-b615-fc450772438f';
+  title: 'Customer Extend';
   ownership: DID { identifier: '' };
-  documentation: '';
+  documentation: 'Projects customers and adds a derived column that concatenates the company name and title, demonstrating the extend() function on a TDS.';
   autoActivateUpdates: true;
   execution: Single
   {
@@ -140,8 +146,9 @@ Service showcase::northwind::service::model::CustomerExtend
 Service showcase::northwind::service::model::CustomerSelect
 {
   pattern: '/fde94d89-b181-4fbe-b615-fc450772438f';
+  title: 'Customer Select';
   ownership: DID { identifier: '' };
-  documentation: '';
+  documentation: 'Projects customer company name and title, then narrows the result to only the company name column, demonstrating the select() function on a TDS.';
   autoActivateUpdates: true;
   execution: Single
   {
@@ -663,7 +670,6 @@ function showcase::simple::functions::simpleTableFunctionSlice(): meta::pure::me
 
 function {doc.doc = 'Demonstrating use of common table expressions (CTEs). Generates WITH AS SQL structure.'} showcase::simple::functions::simpleCommonTableExpression(): meta::pure::metamodel::relation::Relation<meta::pure::metamodel::type::Any>[*]
 {
-  // Eval is necessary syntax to accept let statements in SQL flows and be translated into CTEs
   eval(
       {|
         let commonTable = #>{showcase::simple::store::TestDatabase.TEST0}#;
@@ -956,6 +962,12 @@ Mapping showcase::northwind::mapping::NorthwindMapping
 )
 
 
+###Mapping
+Mapping showcase::simple::connection::TestMapping
+(
+)
+
+
 ###Connection
 RelationalDatabaseConnection showcase::simple::connection::TestConnection
 {
@@ -1004,6 +1016,7 @@ Runtime showcase::northwind::store::NorthwindRuntime
 {
   mappings:
   [
+    showcase::northwind::mapping::NorthwindMapping
   ];
   connections:
   [
@@ -1018,6 +1031,7 @@ Runtime showcase::simple::connection::TestRuntime
 {
   mappings:
   [
+    showcase::simple::connection::TestMapping
   ];
   connections:
   [

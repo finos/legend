@@ -1,0 +1,105 @@
+###Pure
+Class demo::svc::params::Person
+{
+  id: Integer[1];
+  name: String[1];
+  age: Integer[1];
+}
+
+
+###Relational
+Database demo::svc::params::PersonDB
+(
+  Table PERSON
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200),
+    age INTEGER
+  )
+)
+
+
+###Mapping
+Mapping demo::svc::params::PersonMapping
+(
+  *demo::svc::params::Person: Relational
+  {
+    ~primaryKey
+    (
+      [demo::svc::params::PersonDB]PERSON.id
+    )
+    ~mainTable [demo::svc::params::PersonDB]PERSON
+    id: [demo::svc::params::PersonDB]PERSON.id,
+    name: [demo::svc::params::PersonDB]PERSON.name,
+    age: [demo::svc::params::PersonDB]PERSON.age
+  }
+)
+
+
+###Connection
+RelationalDatabaseConnection demo::svc::params::PersonConnection
+{
+  store: demo::svc::params::PersonDB;
+  type: H2;
+  specification: LocalH2
+  {
+    testDataSetupSqls: [
+      'create table if not exists PERSON(id INTEGER, name VARCHAR(200), age INTEGER);'
+      ];
+  };
+  auth: DefaultH2;
+}
+
+
+###Runtime
+Runtime demo::svc::params::PersonRuntime
+{
+  mappings:
+  [
+    demo::svc::params::PersonMapping
+  ];
+  connections:
+  [
+    demo::svc::params::PersonDB:
+    [
+      conn: demo::svc::params::PersonConnection
+    ]
+  ];
+}
+
+
+###Service
+Service demo::svc::params::PeopleByMinAge
+{
+  pattern: '/demo/people/byAge/{minAge}';
+  title: 'People By Min Age';
+  owners:
+  [
+    'alice'
+  ];
+  documentation: 'Returns people with age >= minAge whose name starts with the given prefix.';
+  autoActivateUpdates: true;
+  execution: Single
+  {
+    query: {minAge: Integer[1], namePrefix: String[1]|demo::svc::params::Person.all()->filter(
+      p|($p.age >=
+        $minAge) &&
+        $p.name->startsWith(
+        $namePrefix
+      )
+    )->project(
+      [
+        p|$p.id,
+        p|$p.name,
+        p|$p.age
+      ],
+      [
+        'Id',
+        'Name',
+        'Age'
+      ]
+    )    };
+    mapping: demo::svc::params::PersonMapping;
+    runtime: demo::svc::params::PersonRuntime;
+  }
+}

@@ -1,0 +1,101 @@
+###Relational
+Database demo::dq::rel::Store
+(
+  Table myTable
+  (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(200),
+    amount DOUBLE
+  )
+)
+
+
+###Connection
+RelationalDatabaseConnection demo::dq::rel::DevConnection
+{
+  store: demo::dq::rel::Store;
+  type: H2;
+  specification: LocalH2
+  {
+    testDataSetupSqls: [
+      'create table if not exists myTable(id INTEGER, name VARCHAR(200), amount DOUBLE);'
+      ];
+  };
+  auth: DefaultH2;
+}
+
+
+###Mapping
+Mapping demo::dq::rel::Mapping
+(
+)
+
+
+###Runtime
+Runtime demo::dq::rel::DevRuntime
+{
+  mappings:
+  [
+    demo::dq::rel::Mapping
+  ];
+  connections:
+  [
+    demo::dq::rel::Store:
+    [
+      conn: demo::dq::rel::DevConnection
+    ]
+  ];
+}
+
+
+###DataQualityValidation
+DataQualityRelationValidation demo::dq::rel::NoErrorRows
+{
+   query: |#>{demo::dq::rel::Store.myTable}#->filter(
+  c|$c.name == 'ok'
+)->from(
+  demo::dq::rel::DevRuntime
+);
+   validations: [
+   {
+     name: 'noErrorRowAllowed';
+     description: 'Reports any row whose name is the string "error".';
+     assertion: row|$row.name != 'error';
+     type: ROW_LEVEL;
+    }
+   ];
+}
+
+DataQualityRelationValidation demo::dq::rel::MyTableNotEmpty
+{
+   query: |#>{demo::dq::rel::Store.myTable}#->filter(
+  c|$c.name == 'ok'
+)->from(
+  demo::dq::rel::DevRuntime
+);
+   validations: [
+   {
+     name: 'myTableNotEmpty';
+     description: 'Asserts that at least one row exists in myTable for name == "ok".';
+     assertion: rel|$rel->assertRelationNotEmpty();
+     type: AGGREGATE;
+    }
+   ];
+}
+
+DataQualityRelationValidation demo::dq::rel::ByName
+{
+   query: name: String[1]|#>{demo::dq::rel::Store.myTable}#->filter(
+  c|$c.name ==
+    $name
+)->from(
+  demo::dq::rel::DevRuntime
+);
+   validations: [
+   {
+     name: 'byNameNotEmpty';
+     description: 'For a given name, the filtered relation must contain at least one row.';
+     assertion: {name: String[1], rel|$rel->assertRelationNotEmpty()};
+    }
+   ];
+}
