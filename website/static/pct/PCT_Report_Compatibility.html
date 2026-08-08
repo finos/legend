@@ -216,13 +216,19 @@
                 </tr>
             `;
 
+            // Helper: non-PCT test count (platform_function tests run outside PCT)
+            function nonPctTestCount(functionDefinition) {
+                return (functionDefinition.tests || []).filter(t => !t.pct).length;
+            }
+
             // Helper: test cell
             function testCell(f, adapter) {
                 const testResults = f.functionTestResults[adapter.platform + ':' + adapter.adapter.group + ':' + adapter.adapter.name];
                 if (!testResults) {
                     if (f.functionDefinition.signatures.some(s => s.platformOnly)) {
                         if (adapter.adapter.name === 'Native') {
-                            return `<td><div style="color:#00C72B" class="hover-text">${f.functionDefinition.testCount + '/' + f.functionDefinition.testCount}<div class="tooltip-text" id="top">Platform_function Tests are executed outside of PCT</div></div></td>`;
+                            const count = nonPctTestCount(f.functionDefinition);
+                            return `<td><div style="color:#00C72B" class="hover-text">${count + '/' + count}<div class="tooltip-text" id="top">Platform_function Tests are executed outside of PCT</div></div></td>`;
                         }
                         else {
                             return `<td><div style="color:#AAAAAA" class="hover-text">-<div class="tooltip-text" id="top">Platform_function Tests are executed outside of PCT</div></div></td>`;
@@ -285,7 +291,7 @@
                 return `<table style="width:1000px;table-layout:fixed;"><tr>` +
                     f.signatures.map(sig =>
                         `<td style="text-align:left;">${escapeHtml(sig.simple.substring(sig.simple.indexOf(f.name + "(")))}</td>` +
-                        `<td style="text-align:left;">${escapeHtml(sig.documentation || "")}</td>`
+                        `<td style="text-align:left;white-space:pre-wrap;">${escapeHtml(sig.documentation || "")}</td>`
                     ).join("</tr><tr>") +
                     `</tr></table>`;
             }
