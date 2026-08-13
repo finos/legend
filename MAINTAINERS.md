@@ -4,23 +4,23 @@ This file lists the maintainers of this repository.
 
 ## Current maintainers
 
-| GitHub Username | Name | Organization | Email |
-|----------------|------|--------------|-------|
+| GitHub Username | Name | Organization | Email (optional) |
+|----------------|------|--------------|------------------|
 | @MauricioUyaguari | Mauricio Uyaguari | *please add organization* | lmauricio12@gmail.com |
-| @Yasirmod17 | Mohammed Ibrahim | *please add organization* | *please add email* |
-| @agitana | Aitana Myohl | Goldman Sachs | *please add email* |
-| @aormerod-gs | Andrew Ormerod | *please add organization* | *please add email* |
-| @appwiz | Rohan Deshpande | @goldmansachs | *please add email* |
-| @aziemchawdhary-gs | Aziem Chawdhary | *please add organization* | *please add email* |
-| @beekemarie | Beeke-Marie Nelke | *please add organization* | *please add email* |
-| @davidharte-gs | *please add name* | *please add organization* | *please add email* |
-| @elopezcastro | *please add name* | *please add organization* | *please add email* |
-| @epsstan | Ephrim Stanley | *please add organization* | *please add email* |
-| @hardikmaheshwari | Hardik Maheshwari | *please add organization* | *please add email* |
-| @ivan-kyosev-gs | *please add name* | *please add organization* | *please add email* |
-| @kevin-m-knight-gs | Kevin Knight | Goldman Sachs | *please add email* |
+| @Yasirmod17 | Mohammed Ibrahim | *please add organization* |  |
+| @agitana | Aitana Myohl | Goldman Sachs |  |
+| @aormerod-gs | Andrew Ormerod | *please add organization* |  |
+| @appwiz | Rohan Deshpande | @goldmansachs |  |
+| @aziemchawdhary-gs | Aziem Chawdhary | *please add organization* |  |
+| @beekemarie | Beeke-Marie Nelke | *please add organization* |  |
+| @davidharte-gs | *please add name* | *please add organization* |  |
+| @elopezcastro | *please add name* | *please add organization* |  |
+| @epsstan | Ephrim Stanley | *please add organization* |  |
+| @hardikmaheshwari | Hardik Maheshwari | *please add organization* |  |
+| @ivan-kyosev-gs | *please add name* | *please add organization* |  |
+| @kevin-m-knight-gs | Kevin Knight | Goldman Sachs |  |
 | @pierredebelen | Pierre De Belen | *please add organization* | pierre.debelen@gmail.com |
-| @rafaelbey | Rafael Bey-Hernandez | Goldman Sachs | *please add email* |
+| @rafaelbey | Rafael Bey-Hernandez | Goldman Sachs |  |
 
 For information about maintainer responsibilities and resources, see the [FINOS Maintainers Cheatsheet](https://community.finos.org/docs/finos-maintainers-cheatsheet).
 
