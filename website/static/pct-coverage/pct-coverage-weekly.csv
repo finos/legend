@@ -1,0 +1,920 @@
+week,week_ending,commit,era,adapter,group,platform,tests_passed,suite_tests,test_pass_pct,functions_supported,suite_functions,function_supported_pct,tests_reported,functions_reported
+2025-W16,2025-04-16,30f342dc64,html,DuckDB,Store_Relational,compiled,384,663,57.92,107,157,68.15,663,157
+2025-W16,2025-04-16,30f342dc64,html,H2,Store_Relational,compiled,340,663,51.28,103,157,65.61,663,157
+2025-W16,2025-04-16,30f342dc64,html,Java,Platform,compiled,375,663,56.56,113,157,71.97,663,157
+2025-W16,2025-04-16,30f342dc64,html,MemSQL,Store_Relational,compiled,252,663,38.01,90,157,57.32,663,157
+2025-W16,2025-04-16,30f342dc64,html,Native (compiled),,compiled,660,663,99.55,157,157,100.0,663,157
+2025-W16,2025-04-16,30f342dc64,html,Native (interpreted),,interpreted,455,663,68.63,108,157,68.79,455,108
+2025-W16,2025-04-16,30f342dc64,html,Postgres,Store_Relational,compiled,349,663,52.64,105,157,66.88,663,157
+2025-W16,2025-04-16,30f342dc64,html,Snowflake,Store_Relational,compiled,368,663,55.51,109,157,69.43,663,157
+2025-W16,2025-04-16,30f342dc64,html,Spanner,Store_Relational,compiled,205,663,30.92,75,157,47.77,663,157
+2025-W17,2025-04-23,52523fd605,html,DuckDB,Store_Relational,compiled,384,663,57.92,107,157,68.15,663,157
+2025-W17,2025-04-23,52523fd605,html,H2,Store_Relational,compiled,340,663,51.28,103,157,65.61,663,157
+2025-W17,2025-04-23,52523fd605,html,Java,Platform,compiled,375,663,56.56,113,157,71.97,663,157
+2025-W17,2025-04-23,52523fd605,html,MemSQL,Store_Relational,compiled,239,663,36.05,87,157,55.41,663,157
+2025-W17,2025-04-23,52523fd605,html,Native (compiled),,compiled,660,663,99.55,157,157,100.0,663,157
+2025-W17,2025-04-23,52523fd605,html,Native (interpreted),,interpreted,455,663,68.63,108,157,68.79,455,108
+2025-W17,2025-04-23,52523fd605,html,Postgres,Store_Relational,compiled,349,663,52.64,105,157,66.88,663,157
+2025-W17,2025-04-23,52523fd605,html,Snowflake,Store_Relational,compiled,368,663,55.51,109,157,69.43,663,157
+2025-W17,2025-04-23,52523fd605,html,Spanner,Store_Relational,compiled,205,663,30.92,75,157,47.77,663,157
+2025-W18,2025-05-02,818c73821d,html,DuckDB,Store_Relational,compiled,393,678,57.96,110,160,68.75,678,160
+2025-W18,2025-05-02,818c73821d,html,H2,Store_Relational,compiled,352,678,51.92,106,160,66.25,678,160
+2025-W18,2025-05-02,818c73821d,html,Java,Platform,compiled,384,678,56.64,116,160,72.5,678,160
+2025-W18,2025-05-02,818c73821d,html,MemSQL,Store_Relational,compiled,248,678,36.58,90,160,56.25,678,160
+2025-W18,2025-05-02,818c73821d,html,Native (compiled),,compiled,675,678,99.56,160,160,100.0,678,160
+2025-W18,2025-05-02,818c73821d,html,Native (interpreted),,interpreted,455,678,67.11,108,160,67.5,455,108
+2025-W18,2025-05-02,818c73821d,html,Postgres,Store_Relational,compiled,358,678,52.8,108,160,67.5,678,160
+2025-W18,2025-05-02,818c73821d,html,Snowflake,Store_Relational,compiled,380,678,56.05,112,160,70.0,678,160
+2025-W18,2025-05-02,818c73821d,html,Spanner,Store_Relational,compiled,214,678,31.56,78,160,48.75,678,160
+2025-W19,2025-05-06,c21c88247a,html,Databricks,Store_Relational,compiled,356,806,44.17,122,183,66.67,749,177
+2025-W19,2025-05-06,c21c88247a,html,DuckDB,Store_Relational,compiled,448,806,55.58,125,183,68.31,749,177
+2025-W19,2025-05-06,c21c88247a,html,H2,Store_Relational,compiled,403,806,50.0,121,183,66.12,749,177
+2025-W19,2025-05-06,c21c88247a,html,Java,Platform,compiled,424,806,52.61,130,183,71.04,749,177
+2025-W19,2025-05-06,c21c88247a,html,MemSQL,Store_Relational,compiled,288,806,35.73,101,183,55.19,749,177
+2025-W19,2025-05-06,c21c88247a,html,Native (compiled),,compiled,803,806,99.63,183,183,100.0,806,183
+2025-W19,2025-05-06,c21c88247a,html,Native (interpreted),,interpreted,512,806,63.52,114,183,62.3,512,114
+2025-W19,2025-05-06,c21c88247a,html,Postgres,Store_Relational,compiled,400,806,49.63,119,183,65.03,749,177
+2025-W19,2025-05-06,c21c88247a,html,Snowflake,Store_Relational,compiled,435,806,53.97,127,183,69.4,749,177
+2025-W19,2025-05-06,c21c88247a,html,Spanner,Store_Relational,compiled,234,806,29.03,85,183,46.45,749,177
+2025-W20,2025-05-15,96bdf51ca2,html,Databricks,Store_Relational,compiled,359,813,44.16,123,183,67.21,756,177
+2025-W20,2025-05-15,96bdf51ca2,html,DuckDB,Store_Relational,compiled,455,813,55.97,125,183,68.31,756,177
+2025-W20,2025-05-15,96bdf51ca2,html,H2,Store_Relational,compiled,406,813,49.94,122,183,66.67,756,177
+2025-W20,2025-05-15,96bdf51ca2,html,Java,Platform,compiled,424,813,52.15,130,183,71.04,756,177
+2025-W20,2025-05-15,96bdf51ca2,html,MemSQL,Store_Relational,compiled,291,813,35.79,102,183,55.74,756,177
+2025-W20,2025-05-15,96bdf51ca2,html,Native (compiled),,compiled,810,813,99.63,183,183,100.0,813,183
+2025-W20,2025-05-15,96bdf51ca2,html,Native (interpreted),,interpreted,512,813,62.98,114,183,62.3,512,114
+2025-W20,2025-05-15,96bdf51ca2,html,Postgres,Store_Relational,compiled,403,813,49.57,120,183,65.57,756,177
+2025-W20,2025-05-15,96bdf51ca2,html,Snowflake,Store_Relational,compiled,442,813,54.37,127,183,69.4,756,177
+2025-W20,2025-05-15,96bdf51ca2,html,Spanner,Store_Relational,compiled,237,813,29.15,86,183,46.99,756,177
+2025-W21,2025-05-24,33e606f712,html,Databricks,Store_Relational,compiled,359,815,44.05,123,184,66.85,758,178
+2025-W21,2025-05-24,33e606f712,html,DuckDB,Store_Relational,compiled,457,815,56.07,126,184,68.48,758,178
+2025-W21,2025-05-24,33e606f712,html,H2,Store_Relational,compiled,408,815,50.06,123,184,66.85,758,178
+2025-W21,2025-05-24,33e606f712,html,Java,Platform,compiled,426,815,52.27,131,184,71.2,758,178
+2025-W21,2025-05-24,33e606f712,html,MemSQL,Store_Relational,compiled,291,815,35.71,102,184,55.43,758,178
+2025-W21,2025-05-24,33e606f712,html,Native (compiled),,compiled,812,815,99.63,184,184,100.0,815,184
+2025-W21,2025-05-24,33e606f712,html,Native (interpreted),,interpreted,512,815,62.82,114,184,61.96,512,114
+2025-W21,2025-05-24,33e606f712,html,Postgres,Store_Relational,compiled,405,815,49.69,121,184,65.76,758,178
+2025-W21,2025-05-24,33e606f712,html,Snowflake,Store_Relational,compiled,444,815,54.48,128,184,69.57,758,178
+2025-W21,2025-05-24,33e606f712,html,Spanner,Store_Relational,compiled,239,815,29.33,87,184,47.28,758,178
+2025-W22,2025-05-31,7fdd8320d1,html,DuckDB,Store_Relational,compiled,468,845,55.38,128,187,68.45,784,181
+2025-W22,2025-05-31,7fdd8320d1,html,H2,Store_Relational,compiled,421,845,49.82,125,187,66.84,784,181
+2025-W22,2025-05-31,7fdd8320d1,html,Java,Platform,compiled,440,845,52.07,132,187,70.59,784,181
+2025-W22,2025-05-31,7fdd8320d1,html,MemSQL,Store_Relational,compiled,299,845,35.38,104,187,55.61,784,181
+2025-W22,2025-05-31,7fdd8320d1,html,Native (compiled),,compiled,842,845,99.64,187,187,100.0,845,187
+2025-W22,2025-05-31,7fdd8320d1,html,Native (interpreted),,interpreted,519,845,61.42,113,187,60.43,519,113
+2025-W22,2025-05-31,7fdd8320d1,html,Postgres,Store_Relational,compiled,418,845,49.47,123,187,65.78,784,181
+2025-W22,2025-05-31,7fdd8320d1,html,Snowflake,Store_Relational,compiled,457,845,54.08,130,187,69.52,784,181
+2025-W22,2025-05-31,7fdd8320d1,html,Spanner,Store_Relational,compiled,247,845,29.23,89,187,47.59,784,181
+2025-W23,2025-06-07,3792de4aeb,html,DuckDB,Store_Relational,compiled,507,885,57.29,140,198,70.71,824,192
+2025-W23,2025-06-07,3792de4aeb,html,H2,Store_Relational,compiled,454,885,51.3,133,198,67.17,824,192
+2025-W23,2025-06-07,3792de4aeb,html,Java,Platform,compiled,446,885,50.4,131,198,66.16,824,192
+2025-W23,2025-06-07,3792de4aeb,html,MemSQL,Store_Relational,compiled,314,885,35.48,105,198,53.03,824,192
+2025-W23,2025-06-07,3792de4aeb,html,Native (compiled),,compiled,882,885,99.66,198,198,100.0,885,198
+2025-W23,2025-06-07,3792de4aeb,html,Native (interpreted),,interpreted,519,885,58.64,113,198,57.07,519,113
+2025-W23,2025-06-07,3792de4aeb,html,Postgres,Store_Relational,compiled,442,885,49.94,128,198,64.65,824,192
+2025-W23,2025-06-07,3792de4aeb,html,Snowflake,Store_Relational,compiled,504,885,56.95,144,198,72.73,824,192
+2025-W23,2025-06-07,3792de4aeb,html,Spanner,Store_Relational,compiled,266,885,30.06,90,198,45.45,824,192
+2025-W24,2025-06-14,180f8b4741,html,Databricks,Store_Relational,compiled,398,885,44.97,132,198,66.67,824,192
+2025-W24,2025-06-14,180f8b4741,html,DuckDB,Store_Relational,compiled,508,885,57.4,141,198,71.21,824,192
+2025-W24,2025-06-14,180f8b4741,html,H2,Store_Relational,compiled,477,885,53.9,142,198,71.72,824,192
+2025-W24,2025-06-14,180f8b4741,html,Java,Platform,compiled,448,885,50.62,131,198,66.16,824,192
+2025-W24,2025-06-14,180f8b4741,html,MemSQL,Store_Relational,compiled,315,885,35.59,105,198,53.03,824,192
+2025-W24,2025-06-14,180f8b4741,html,Native (compiled),,compiled,882,885,99.66,198,198,100.0,885,198
+2025-W24,2025-06-14,180f8b4741,html,Native (interpreted),,interpreted,519,885,58.64,113,198,57.07,519,113
+2025-W24,2025-06-14,180f8b4741,html,Postgres,Store_Relational,compiled,442,885,49.94,128,198,64.65,824,192
+2025-W24,2025-06-14,180f8b4741,html,Snowflake,Store_Relational,compiled,505,885,57.06,145,198,73.23,824,192
+2025-W24,2025-06-14,180f8b4741,html,Spanner,Store_Relational,compiled,266,885,30.06,90,198,45.45,824,192
+2025-W25,2025-06-20,249ff489d3,html,Databricks,Store_Relational,compiled,398,885,44.97,132,198,66.67,551,150
+2025-W25,2025-06-20,249ff489d3,html,DuckDB,Store_Relational,compiled,508,885,57.4,141,198,71.21,660,164
+2025-W25,2025-06-20,249ff489d3,html,H2,Store_Relational,compiled,477,885,53.9,142,198,71.72,629,159
+2025-W25,2025-06-20,249ff489d3,html,Java,Platform,compiled,448,885,50.62,131,198,66.16,694,176
+2025-W25,2025-06-20,249ff489d3,html,MemSQL,Store_Relational,compiled,315,885,35.59,105,198,53.03,563,146
+2025-W25,2025-06-20,249ff489d3,html,Native (compiled),,compiled,882,885,99.66,198,198,100.0,885,198
+2025-W25,2025-06-20,249ff489d3,html,Native (interpreted),,interpreted,519,885,58.64,113,198,57.07,519,113
+2025-W25,2025-06-20,249ff489d3,html,Postgres,Store_Relational,compiled,442,885,49.94,128,198,64.65,606,152
+2025-W25,2025-06-20,249ff489d3,html,Snowflake,Store_Relational,compiled,507,885,57.29,145,198,73.23,670,169
+2025-W25,2025-06-20,249ff489d3,html,Spanner,Store_Relational,compiled,266,885,30.06,90,198,45.45,427,115
+2025-W26,2025-06-28,8dfdb15d0f,html,Databricks,Store_Relational,compiled,417,906,46.03,135,201,67.16,570,153
+2025-W26,2025-06-28,8dfdb15d0f,html,DuckDB,Store_Relational,compiled,527,906,58.17,144,201,71.64,681,167
+2025-W26,2025-06-28,8dfdb15d0f,html,H2,Store_Relational,compiled,494,906,54.53,143,201,71.14,650,162
+2025-W26,2025-06-28,8dfdb15d0f,html,Java,Platform,compiled,448,906,49.45,131,201,65.17,715,179
+2025-W26,2025-06-28,8dfdb15d0f,html,MemSQL,Store_Relational,compiled,332,906,36.64,106,201,52.74,584,149
+2025-W26,2025-06-28,8dfdb15d0f,html,Native (compiled),,compiled,903,906,99.67,201,201,100.0,906,201
+2025-W26,2025-06-28,8dfdb15d0f,html,Native (interpreted),,interpreted,519,906,57.28,113,201,56.22,519,113
+2025-W26,2025-06-28,8dfdb15d0f,html,Postgres,Store_Relational,compiled,459,906,50.66,129,201,64.18,627,155
+2025-W26,2025-06-28,8dfdb15d0f,html,Snowflake,Store_Relational,compiled,524,906,57.84,148,201,73.63,689,172
+2025-W26,2025-06-28,8dfdb15d0f,html,Spanner,Store_Relational,compiled,267,906,29.47,91,201,45.27,432,118
+2025-W27,2025-07-05,c6a57441d1,html,Databricks,Store_Relational,compiled,423,915,46.23,136,201,67.66,641,160
+2025-W27,2025-07-05,c6a57441d1,html,DuckDB,Store_Relational,compiled,599,915,65.46,155,201,77.11,752,174
+2025-W27,2025-07-05,c6a57441d1,html,H2,Store_Relational,compiled,507,915,55.41,145,201,72.14,726,169
+2025-W27,2025-07-05,c6a57441d1,html,Java,Platform,compiled,448,915,48.96,131,201,65.17,726,179
+2025-W27,2025-07-05,c6a57441d1,html,MemSQL,Store_Relational,compiled,337,915,36.83,107,201,53.23,652,155
+2025-W27,2025-07-05,c6a57441d1,html,Native (compiled),,compiled,912,915,99.67,201,201,100.0,915,201
+2025-W27,2025-07-05,c6a57441d1,html,Native (interpreted),,interpreted,519,915,56.72,113,201,56.22,519,113
+2025-W27,2025-07-05,c6a57441d1,html,Postgres,Store_Relational,compiled,471,915,51.48,130,201,64.68,703,162
+2025-W27,2025-07-05,c6a57441d1,html,Snowflake,Store_Relational,compiled,580,915,63.39,156,201,77.61,754,178
+2025-W27,2025-07-05,c6a57441d1,html,Spanner,Store_Relational,compiled,272,915,29.73,92,201,45.77,501,124
+2025-W28,2025-07-12,901bb02830,html,Databricks,Store_Relational,compiled,433,927,46.71,140,203,68.97,656,164
+2025-W28,2025-07-12,901bb02830,html,DuckDB,Store_Relational,compiled,610,927,65.8,159,203,78.33,765,178
+2025-W28,2025-07-12,901bb02830,html,H2,Store_Relational,compiled,515,927,55.56,148,203,72.91,741,173
+2025-W28,2025-07-12,901bb02830,html,Java,Platform,compiled,450,927,48.54,131,203,64.53,736,180
+2025-W28,2025-07-12,901bb02830,html,MemSQL,Store_Relational,compiled,346,927,37.32,110,203,54.19,665,158
+2025-W28,2025-07-12,901bb02830,html,Native (compiled),,compiled,924,927,99.68,203,203,100.0,927,203
+2025-W28,2025-07-12,901bb02830,html,Native (interpreted),,interpreted,519,927,55.99,113,203,55.67,519,113
+2025-W28,2025-07-12,901bb02830,html,Postgres,Store_Relational,compiled,478,927,51.56,133,203,65.52,713,165
+2025-W28,2025-07-12,901bb02830,html,Snowflake,Store_Relational,compiled,592,927,63.86,160,203,78.82,765,180
+2025-W28,2025-07-12,901bb02830,html,Spanner,Store_Relational,compiled,273,927,29.45,93,203,45.81,511,127
+2025-W29,2025-07-19,7411738f0d,html,Databricks,Store_Relational,compiled,457,964,47.41,141,204,69.12,683,166
+2025-W29,2025-07-19,7411738f0d,html,DuckDB,Store_Relational,compiled,663,964,68.78,165,204,80.88,818,184
+2025-W29,2025-07-19,7411738f0d,html,H2,Store_Relational,compiled,541,964,56.12,149,204,73.04,780,176
+2025-W29,2025-07-19,7411738f0d,html,Java,Platform,compiled,450,964,46.68,131,204,64.22,776,181
+2025-W29,2025-07-19,7411738f0d,html,MemSQL,Store_Relational,compiled,356,964,36.93,111,204,54.41,676,160
+2025-W29,2025-07-19,7411738f0d,html,Native (compiled),,compiled,961,964,99.69,204,204,100.0,964,204
+2025-W29,2025-07-19,7411738f0d,html,Native (interpreted),,interpreted,519,964,53.84,113,204,55.39,519,113
+2025-W29,2025-07-19,7411738f0d,html,Postgres,Store_Relational,compiled,488,964,50.62,134,204,65.69,722,166
+2025-W29,2025-07-19,7411738f0d,html,Snowflake,Store_Relational,compiled,645,964,66.91,166,204,81.37,822,185
+2025-W29,2025-07-19,7411738f0d,html,Spanner,Store_Relational,compiled,279,964,28.94,94,204,46.08,517,129
+2025-W30,2025-07-24,13ec6de849,html,Databricks,Store_Relational,compiled,458,965,47.46,141,204,69.12,684,166
+2025-W30,2025-07-24,13ec6de849,html,DuckDB,Store_Relational,compiled,664,965,68.81,165,204,80.88,819,184
+2025-W30,2025-07-24,13ec6de849,html,H2,Store_Relational,compiled,542,965,56.17,149,204,73.04,781,176
+2025-W30,2025-07-24,13ec6de849,html,Java,Platform,compiled,450,965,46.63,131,204,64.22,777,181
+2025-W30,2025-07-24,13ec6de849,html,MemSQL,Store_Relational,compiled,356,965,36.89,111,204,54.41,677,160
+2025-W30,2025-07-24,13ec6de849,html,Native (compiled),,compiled,962,965,99.69,204,204,100.0,965,204
+2025-W30,2025-07-24,13ec6de849,html,Native (interpreted),,interpreted,519,965,53.78,113,204,55.39,519,113
+2025-W30,2025-07-24,13ec6de849,html,Postgres,Store_Relational,compiled,489,965,50.67,134,204,65.69,723,166
+2025-W30,2025-07-24,13ec6de849,html,Snowflake,Store_Relational,compiled,646,965,66.94,166,204,81.37,823,185
+2025-W30,2025-07-24,13ec6de849,html,Spanner,Store_Relational,compiled,279,965,28.91,94,204,46.08,518,129
+2025-W31,2025-08-03,ade4375e81,html,Databricks,Store_Relational,compiled,471,993,47.43,142,204,69.61,693,167
+2025-W31,2025-08-03,ade4375e81,html,DuckDB,Store_Relational,compiled,692,993,69.69,165,204,80.88,847,184
+2025-W31,2025-08-03,ade4375e81,html,H2,Store_Relational,compiled,575,993,57.91,150,204,73.53,810,177
+2025-W31,2025-08-03,ade4375e81,html,Java,Platform,compiled,450,993,45.32,131,204,64.22,805,181
+2025-W31,2025-08-03,ade4375e81,html,MemSQL,Store_Relational,compiled,363,993,36.56,112,204,54.9,680,161
+2025-W31,2025-08-03,ade4375e81,html,Native (compiled),,compiled,990,993,99.7,204,204,100.0,993,204
+2025-W31,2025-08-03,ade4375e81,html,Native (interpreted),,interpreted,519,993,52.27,113,204,55.39,519,113
+2025-W31,2025-08-03,ade4375e81,html,Postgres,Store_Relational,compiled,496,993,49.95,135,204,66.18,726,167
+2025-W31,2025-08-03,ade4375e81,html,Snowflake,Store_Relational,compiled,676,993,68.08,166,204,81.37,849,185
+2025-W31,2025-08-03,ade4375e81,html,Spanner,Store_Relational,compiled,279,993,28.1,94,204,46.08,515,130
+2025-W32,2025-08-10,fd5c7e92a8,html,Databricks,Store_Relational,compiled,471,1002,47.01,142,206,68.93,693,167
+2025-W32,2025-08-10,fd5c7e92a8,html,DuckDB,Store_Relational,compiled,701,1002,69.96,167,206,81.07,856,186
+2025-W32,2025-08-10,fd5c7e92a8,html,H2,Store_Relational,compiled,575,1002,57.39,150,206,72.82,819,179
+2025-W32,2025-08-10,fd5c7e92a8,html,Java,Platform,compiled,450,1002,44.91,131,206,63.59,585,149
+2025-W32,2025-08-10,fd5c7e92a8,html,MemSQL,Store_Relational,compiled,363,1002,36.23,112,206,54.37,680,161
+2025-W32,2025-08-10,fd5c7e92a8,html,Native (compiled),,compiled,999,1002,99.7,206,206,100.0,1002,206
+2025-W32,2025-08-10,fd5c7e92a8,html,Native (interpreted),,interpreted,519,1002,51.8,113,206,54.85,519,113
+2025-W32,2025-08-10,fd5c7e92a8,html,Postgres,Store_Relational,compiled,496,1002,49.5,135,206,65.53,726,167
+2025-W32,2025-08-10,fd5c7e92a8,html,Snowflake,Store_Relational,compiled,685,1002,68.36,168,206,81.55,858,187
+2025-W32,2025-08-10,fd5c7e92a8,html,Spanner,Store_Relational,compiled,279,1002,27.84,94,206,45.63,515,130
+2025-W33,2025-08-15,3c76d68f8d,html,Databricks,Store_Relational,compiled,473,1004,47.11,142,206,68.93,695,167
+2025-W33,2025-08-15,3c76d68f8d,html,DuckDB,Store_Relational,compiled,703,1004,70.02,168,206,81.55,858,186
+2025-W33,2025-08-15,3c76d68f8d,html,H2,Store_Relational,compiled,577,1004,57.47,151,206,73.3,821,179
+2025-W33,2025-08-15,3c76d68f8d,html,Java,Platform,compiled,450,1004,44.82,131,206,63.59,587,149
+2025-W33,2025-08-15,3c76d68f8d,html,MemSQL,Store_Relational,compiled,365,1004,36.35,113,206,54.85,682,161
+2025-W33,2025-08-15,3c76d68f8d,html,Native (compiled),,compiled,1001,1004,99.7,206,206,100.0,1004,206
+2025-W33,2025-08-15,3c76d68f8d,html,Native (interpreted),,interpreted,519,1004,51.69,113,206,54.85,519,113
+2025-W33,2025-08-15,3c76d68f8d,html,Postgres,Store_Relational,compiled,498,1004,49.6,136,206,66.02,728,167
+2025-W33,2025-08-15,3c76d68f8d,html,Snowflake,Store_Relational,compiled,687,1004,68.43,169,206,82.04,860,187
+2025-W33,2025-08-15,3c76d68f8d,html,Spanner,Store_Relational,compiled,286,1004,28.49,96,206,46.6,518,130
+2025-W34,2025-08-22,732664dd43,html,Databricks,Store_Relational,compiled,512,1019,50.25,143,207,69.08,745,169
+2025-W34,2025-08-22,732664dd43,html,DuckDB,Store_Relational,compiled,717,1019,70.36,170,207,82.13,874,187
+2025-W34,2025-08-22,732664dd43,html,H2,Store_Relational,compiled,591,1019,58.0,152,207,73.43,836,180
+2025-W34,2025-08-22,732664dd43,html,Java,Platform,compiled,455,1019,44.65,132,207,63.77,594,151
+2025-W34,2025-08-22,732664dd43,html,MemSQL,Store_Relational,compiled,372,1019,36.51,113,207,54.59,692,162
+2025-W34,2025-08-22,732664dd43,html,Native (compiled),,compiled,1014,1019,99.51,207,207,100.0,1019,207
+2025-W34,2025-08-22,732664dd43,html,Native (interpreted),,interpreted,524,1019,51.42,114,207,55.07,524,114
+2025-W34,2025-08-22,732664dd43,html,Postgres,Store_Relational,compiled,512,1019,50.25,137,207,66.18,740,168
+2025-W34,2025-08-22,732664dd43,html,Snowflake,Store_Relational,compiled,702,1019,68.89,170,207,82.13,876,188
+2025-W34,2025-08-22,732664dd43,html,Spanner,Store_Relational,compiled,293,1019,28.75,98,207,47.34,525,131
+2025-W35,2025-08-29,ca37e9b36b,html,Databricks,Store_Relational,compiled,508,1027,49.46,141,212,66.51,727,168
+2025-W35,2025-08-29,ca37e9b36b,html,DuckDB,Store_Relational,compiled,735,1027,71.57,173,212,81.6,884,191
+2025-W35,2025-08-29,ca37e9b36b,html,H2,Store_Relational,compiled,587,1027,57.16,150,212,70.75,829,179
+2025-W35,2025-08-29,ca37e9b36b,html,Java,Platform,compiled,451,1027,43.91,132,212,62.26,590,151
+2025-W35,2025-08-29,ca37e9b36b,html,MemSQL,Store_Relational,compiled,368,1027,35.83,110,212,51.89,674,161
+2025-W35,2025-08-29,ca37e9b36b,html,Native (compiled),,compiled,1021,1027,99.42,212,212,100.0,1027,212
+2025-W35,2025-08-29,ca37e9b36b,html,Native (interpreted),,interpreted,1022,1027,99.51,212,212,100.0,1027,212
+2025-W35,2025-08-29,ca37e9b36b,html,Postgres,Store_Relational,compiled,508,1027,49.46,135,212,63.68,743,172
+2025-W35,2025-08-29,ca37e9b36b,html,SQL,Reverse_PCT,compiled,7,1027,0.68,7,212,3.3,889,189
+2025-W35,2025-08-29,ca37e9b36b,html,Snowflake,Store_Relational,compiled,717,1027,69.81,173,212,81.6,882,192
+2025-W35,2025-08-29,ca37e9b36b,html,Spanner,Store_Relational,compiled,289,1027,28.14,96,212,45.28,517,130
+2025-W36,2025-09-07,a7fef35b0a,html,Databricks,Store_Relational,compiled,508,1027,49.46,141,212,66.51,727,168
+2025-W36,2025-09-07,a7fef35b0a,html,DuckDB,Store_Relational,compiled,735,1027,71.57,173,212,81.6,884,191
+2025-W36,2025-09-07,a7fef35b0a,html,H2,Store_Relational,compiled,587,1027,57.16,150,212,70.75,829,179
+2025-W36,2025-09-07,a7fef35b0a,html,Java,Platform,compiled,451,1027,43.91,132,212,62.26,590,151
+2025-W36,2025-09-07,a7fef35b0a,html,MemSQL,Store_Relational,compiled,368,1027,35.83,110,212,51.89,674,161
+2025-W36,2025-09-07,a7fef35b0a,html,Native (compiled),,compiled,1021,1027,99.42,212,212,100.0,1027,212
+2025-W36,2025-09-07,a7fef35b0a,html,Native (interpreted),,interpreted,1022,1027,99.51,212,212,100.0,1027,212
+2025-W36,2025-09-07,a7fef35b0a,html,Postgres,Store_Relational,compiled,508,1027,49.46,135,212,63.68,743,172
+2025-W36,2025-09-07,a7fef35b0a,html,SQL,Reverse_PCT,compiled,62,1027,6.04,20,212,9.43,885,189
+2025-W36,2025-09-07,a7fef35b0a,html,Snowflake,Store_Relational,compiled,717,1027,69.81,173,212,81.6,882,192
+2025-W36,2025-09-07,a7fef35b0a,html,Spanner,Store_Relational,compiled,289,1027,28.14,96,212,45.28,517,130
+2025-W37,2025-09-09,18b1e94401,html,Databricks,Store_Relational,compiled,510,1030,49.51,141,212,66.51,728,168
+2025-W37,2025-09-09,18b1e94401,html,DuckDB,Store_Relational,compiled,738,1030,71.65,173,212,81.6,888,192
+2025-W37,2025-09-09,18b1e94401,html,H2,Store_Relational,compiled,588,1030,57.09,150,212,70.75,832,179
+2025-W37,2025-09-09,18b1e94401,html,Java,Platform,compiled,451,1030,43.79,132,212,62.26,588,150
+2025-W37,2025-09-09,18b1e94401,html,MemSQL,Store_Relational,compiled,370,1030,35.92,110,212,51.89,675,161
+2025-W37,2025-09-09,18b1e94401,html,Native (compiled),,compiled,1024,1030,99.42,212,212,100.0,1030,212
+2025-W37,2025-09-09,18b1e94401,html,Native (interpreted),,interpreted,1025,1030,99.51,212,212,100.0,1030,212
+2025-W37,2025-09-09,18b1e94401,html,Postgres,Store_Relational,compiled,510,1030,49.51,135,212,63.68,744,172
+2025-W37,2025-09-09,18b1e94401,html,SQL,Reverse_PCT,compiled,62,1030,6.02,20,212,9.43,888,189
+2025-W37,2025-09-09,18b1e94401,html,Snowflake,Store_Relational,compiled,721,1030,70.0,173,212,81.6,885,192
+2025-W37,2025-09-09,18b1e94401,html,Spanner,Store_Relational,compiled,291,1030,28.25,96,212,45.28,518,130
+2025-W38,2025-09-19,0a3f7b9ae3,html,Databricks,Store_Relational,compiled,511,1033,49.47,142,213,66.67,730,169
+2025-W38,2025-09-19,0a3f7b9ae3,html,DuckDB,Store_Relational,compiled,744,1033,72.02,175,213,82.16,892,193
+2025-W38,2025-09-19,0a3f7b9ae3,html,H2,Store_Relational,compiled,588,1033,56.92,150,213,70.42,835,180
+2025-W38,2025-09-19,0a3f7b9ae3,html,Java,Platform,compiled,452,1033,43.76,133,213,62.44,590,151
+2025-W38,2025-09-19,0a3f7b9ae3,html,MemSQL,Store_Relational,compiled,371,1033,35.91,111,213,52.11,679,163
+2025-W38,2025-09-19,0a3f7b9ae3,html,Native (compiled),,compiled,1027,1033,99.42,213,213,100.0,1033,213
+2025-W38,2025-09-19,0a3f7b9ae3,html,Native (interpreted),,interpreted,1027,1033,99.42,213,213,100.0,1033,213
+2025-W38,2025-09-19,0a3f7b9ae3,html,Postgres,Store_Relational,compiled,590,1033,57.12,144,213,67.61,765,172
+2025-W38,2025-09-19,0a3f7b9ae3,html,SQL,Reverse_PCT,compiled,62,1033,6.0,20,213,9.39,890,189
+2025-W38,2025-09-19,0a3f7b9ae3,html,Snowflake,Store_Relational,compiled,727,1033,70.38,175,213,82.16,891,195
+2025-W38,2025-09-19,0a3f7b9ae3,html,Spanner,Store_Relational,compiled,291,1033,28.17,96,213,45.07,521,131
+2025-W39,2025-09-26,ffb5b1d199,html,Databricks,Store_Relational,compiled,501,1036,48.36,139,214,64.95,717,167
+2025-W39,2025-09-26,ffb5b1d199,html,DuckDB,Store_Relational,compiled,780,1036,75.29,181,214,84.58,911,199
+2025-W39,2025-09-26,ffb5b1d199,html,H2,Store_Relational,compiled,578,1036,55.79,147,214,68.69,832,181
+2025-W39,2025-09-26,ffb5b1d199,html,Java,Platform,compiled,457,1036,44.11,135,214,63.08,596,153
+2025-W39,2025-09-26,ffb5b1d199,html,MemSQL,Store_Relational,compiled,365,1036,35.23,109,214,50.93,666,161
+2025-W39,2025-09-26,ffb5b1d199,html,Native (compiled),,compiled,1030,1036,99.42,214,214,100.0,1036,214
+2025-W39,2025-09-26,ffb5b1d199,html,Native (interpreted),,interpreted,1030,1036,99.42,214,214,100.0,1036,214
+2025-W39,2025-09-26,ffb5b1d199,html,Postgres,Store_Relational,compiled,580,1036,55.98,141,214,65.89,742,172
+2025-W39,2025-09-26,ffb5b1d199,html,SQL,Reverse_PCT,compiled,112,1036,10.81,25,214,11.68,893,190
+2025-W39,2025-09-26,ffb5b1d199,html,Snowflake,Store_Relational,compiled,768,1036,74.13,182,214,85.05,915,200
+2025-W39,2025-09-26,ffb5b1d199,html,Spanner,Store_Relational,compiled,280,1036,27.03,92,214,42.99,498,129
+2025-W40,2025-10-03,f2263bba52,html,Databricks,Store_Relational,compiled,501,1036,48.36,139,214,64.95,717,167
+2025-W40,2025-10-03,f2263bba52,html,DuckDB,Store_Relational,compiled,780,1036,75.29,181,214,84.58,911,199
+2025-W40,2025-10-03,f2263bba52,html,H2,Store_Relational,compiled,578,1036,55.79,147,214,68.69,832,181
+2025-W40,2025-10-03,f2263bba52,html,Java,Platform,compiled,457,1036,44.11,135,214,63.08,596,153
+2025-W40,2025-10-03,f2263bba52,html,MemSQL,Store_Relational,compiled,365,1036,35.23,109,214,50.93,666,161
+2025-W40,2025-10-03,f2263bba52,html,Native (compiled),,compiled,1030,1036,99.42,214,214,100.0,1036,214
+2025-W40,2025-10-03,f2263bba52,html,Native (interpreted),,interpreted,1030,1036,99.42,214,214,100.0,1036,214
+2025-W40,2025-10-03,f2263bba52,html,Postgres,Store_Relational,compiled,580,1036,55.98,141,214,65.89,742,172
+2025-W40,2025-10-03,f2263bba52,html,SQL,Reverse_PCT,compiled,112,1036,10.81,25,214,11.68,893,190
+2025-W40,2025-10-03,f2263bba52,html,Snowflake,Store_Relational,compiled,768,1036,74.13,182,214,85.05,915,200
+2025-W40,2025-10-03,f2263bba52,html,Spanner,Store_Relational,compiled,280,1036,27.03,92,214,42.99,498,129
+2025-W41,2025-10-10,575ea22dc3,html,Databricks,Store_Relational,compiled,501,1036,48.36,139,214,64.95,717,167
+2025-W41,2025-10-10,575ea22dc3,html,DuckDB,Store_Relational,compiled,780,1036,75.29,181,214,84.58,911,199
+2025-W41,2025-10-10,575ea22dc3,html,H2,Store_Relational,compiled,578,1036,55.79,147,214,68.69,832,181
+2025-W41,2025-10-10,575ea22dc3,html,Java,Platform,compiled,457,1036,44.11,135,214,63.08,596,153
+2025-W41,2025-10-10,575ea22dc3,html,MemSQL,Store_Relational,compiled,365,1036,35.23,109,214,50.93,666,161
+2025-W41,2025-10-10,575ea22dc3,html,Native (compiled),,compiled,1030,1036,99.42,214,214,100.0,1036,214
+2025-W41,2025-10-10,575ea22dc3,html,Native (interpreted),,interpreted,1030,1036,99.42,214,214,100.0,1036,214
+2025-W41,2025-10-10,575ea22dc3,html,Postgres,Store_Relational,compiled,580,1036,55.98,141,214,65.89,742,172
+2025-W41,2025-10-10,575ea22dc3,html,SQL,Reverse_PCT,compiled,414,1036,39.96,96,214,44.86,1021,213
+2025-W41,2025-10-10,575ea22dc3,html,Snowflake,Store_Relational,compiled,768,1036,74.13,182,214,85.05,915,200
+2025-W41,2025-10-10,575ea22dc3,html,Spanner,Store_Relational,compiled,280,1036,27.03,92,214,42.99,498,129
+2025-W42,2025-10-18,a0b9dcd4ce,html,Databricks,Store_Relational,compiled,501,1036,48.36,139,214,64.95,717,167
+2025-W42,2025-10-18,a0b9dcd4ce,html,DuckDB,Store_Relational,compiled,780,1036,75.29,181,214,84.58,911,199
+2025-W42,2025-10-18,a0b9dcd4ce,html,H2,Store_Relational,compiled,578,1036,55.79,147,214,68.69,832,181
+2025-W42,2025-10-18,a0b9dcd4ce,html,Java,Platform,compiled,457,1036,44.11,135,214,63.08,596,153
+2025-W42,2025-10-18,a0b9dcd4ce,html,MemSQL,Store_Relational,compiled,365,1036,35.23,109,214,50.93,666,161
+2025-W42,2025-10-18,a0b9dcd4ce,html,Native (compiled),,compiled,1030,1036,99.42,214,214,100.0,1036,214
+2025-W42,2025-10-18,a0b9dcd4ce,html,Native (interpreted),,interpreted,1030,1036,99.42,214,214,100.0,1036,214
+2025-W42,2025-10-18,a0b9dcd4ce,html,Postgres,Store_Relational,compiled,580,1036,55.98,141,214,65.89,742,172
+2025-W42,2025-10-18,a0b9dcd4ce,html,SQL,Reverse_PCT,compiled,415,1036,40.06,96,214,44.86,1021,213
+2025-W42,2025-10-18,a0b9dcd4ce,html,Snowflake,Store_Relational,compiled,768,1036,74.13,182,214,85.05,915,200
+2025-W42,2025-10-18,a0b9dcd4ce,html,Spanner,Store_Relational,compiled,280,1036,27.03,92,214,42.99,498,129
+2025-W43,2025-10-24,3d0847f0de,html,Databricks,Store_Relational,compiled,502,1053,47.67,139,219,63.47,734,172
+2025-W43,2025-10-24,3d0847f0de,html,DuckDB,Store_Relational,compiled,792,1053,75.21,185,219,84.47,928,204
+2025-W43,2025-10-24,3d0847f0de,html,H2,Store_Relational,compiled,579,1053,54.99,147,219,67.12,849,186
+2025-W43,2025-10-24,3d0847f0de,html,Java,Platform,compiled,457,1053,43.4,135,219,61.64,596,153
+2025-W43,2025-10-24,3d0847f0de,html,MemSQL,Store_Relational,compiled,366,1053,34.76,109,219,49.77,683,166
+2025-W43,2025-10-24,3d0847f0de,html,Native (compiled),,compiled,1047,1053,99.43,219,219,100.0,1053,219
+2025-W43,2025-10-24,3d0847f0de,html,Native (interpreted),,interpreted,1047,1053,99.43,219,219,100.0,1053,219
+2025-W43,2025-10-24,3d0847f0de,html,Postgres,Store_Relational,compiled,581,1053,55.18,141,219,64.38,760,177
+2025-W43,2025-10-24,3d0847f0de,html,SQL,Reverse_PCT,compiled,415,1053,39.41,96,219,43.84,1038,218
+2025-W43,2025-10-24,3d0847f0de,html,Snowflake,Store_Relational,compiled,780,1053,74.07,186,219,84.93,932,205
+2025-W43,2025-10-24,3d0847f0de,html,Spanner,Store_Relational,compiled,280,1053,26.59,92,219,42.01,515,134
+2025-W44,2025-11-01,dc87a38945,html,Databricks,Store_Relational,compiled,502,1053,47.67,139,219,63.47,734,172
+2025-W44,2025-11-01,dc87a38945,html,DuckDB,Store_Relational,compiled,792,1053,75.21,185,219,84.47,928,204
+2025-W44,2025-11-01,dc87a38945,html,H2,Store_Relational,compiled,579,1053,54.99,147,219,67.12,849,186
+2025-W44,2025-11-01,dc87a38945,html,Java,Platform,compiled,457,1053,43.4,135,219,61.64,596,153
+2025-W44,2025-11-01,dc87a38945,html,MemSQL,Store_Relational,compiled,366,1053,34.76,109,219,49.77,683,166
+2025-W44,2025-11-01,dc87a38945,html,Native (compiled),,compiled,1047,1053,99.43,219,219,100.0,1053,219
+2025-W44,2025-11-01,dc87a38945,html,Native (interpreted),,interpreted,1047,1053,99.43,219,219,100.0,1053,219
+2025-W44,2025-11-01,dc87a38945,html,Postgres,Store_Relational,compiled,581,1053,55.18,141,219,64.38,760,177
+2025-W44,2025-11-01,dc87a38945,html,PythonLegendQL,Reverse_PCT,compiled,65,1053,6.17,32,219,14.61,1014,211
+2025-W44,2025-11-01,dc87a38945,html,SQL,Reverse_PCT,compiled,415,1053,39.41,96,219,43.84,1038,218
+2025-W44,2025-11-01,dc87a38945,html,Snowflake,Store_Relational,compiled,780,1053,74.07,186,219,84.93,932,205
+2025-W44,2025-11-01,dc87a38945,html,Spanner,Store_Relational,compiled,279,1053,26.5,92,219,42.01,514,134
+2025-W44,2025-11-01,dc87a38945,html,SqlServer,Store_Relational,compiled,321,1053,30.48,98,219,44.75,736,170
+2025-W45,2025-11-09,85eb2250c4,html,Databricks,Store_Relational,compiled,502,1053,47.67,139,220,63.18,734,172
+2025-W45,2025-11-09,85eb2250c4,html,DuckDB,Store_Relational,compiled,792,1053,75.21,185,220,84.09,928,205
+2025-W45,2025-11-09,85eb2250c4,html,H2,Store_Relational,compiled,579,1053,54.99,147,220,66.82,849,187
+2025-W45,2025-11-09,85eb2250c4,html,Java,Platform,compiled,457,1053,43.4,135,220,61.36,594,153
+2025-W45,2025-11-09,85eb2250c4,html,MemSQL,Store_Relational,compiled,366,1053,34.76,109,220,49.55,685,167
+2025-W45,2025-11-09,85eb2250c4,html,Native (compiled),,compiled,1047,1053,99.43,220,220,100.0,1053,220
+2025-W45,2025-11-09,85eb2250c4,html,Native (interpreted),,interpreted,1047,1053,99.43,220,220,100.0,1053,220
+2025-W45,2025-11-09,85eb2250c4,html,Postgres,Store_Relational,compiled,581,1053,55.18,141,220,64.09,752,176
+2025-W45,2025-11-09,85eb2250c4,html,PythonLegendQL,Reverse_PCT,compiled,65,1053,6.17,32,220,14.55,1014,212
+2025-W45,2025-11-09,85eb2250c4,html,SQL,Reverse_PCT,compiled,427,1053,40.55,99,220,45.0,1035,219
+2025-W45,2025-11-09,85eb2250c4,html,Snowflake,Store_Relational,compiled,780,1053,74.07,186,220,84.55,932,206
+2025-W45,2025-11-09,85eb2250c4,html,Spanner,Store_Relational,compiled,279,1053,26.5,92,220,41.82,514,135
+2025-W46,2025-11-15,da91976ad8,html,Databricks,Store_Relational,compiled,505,1053,47.96,140,220,63.64,734,172
+2025-W46,2025-11-15,da91976ad8,html,DuckDB,Store_Relational,compiled,792,1053,75.21,185,220,84.09,928,205
+2025-W46,2025-11-15,da91976ad8,html,H2,Store_Relational,compiled,579,1053,54.99,147,220,66.82,849,187
+2025-W46,2025-11-15,da91976ad8,html,Java,Platform,compiled,457,1053,43.4,135,220,61.36,594,153
+2025-W46,2025-11-15,da91976ad8,html,MemSQL,Store_Relational,compiled,366,1053,34.76,109,220,49.55,685,167
+2025-W46,2025-11-15,da91976ad8,html,Native (compiled),,compiled,1047,1053,99.43,220,220,100.0,1053,220
+2025-W46,2025-11-15,da91976ad8,html,Native (interpreted),,interpreted,1047,1053,99.43,220,220,100.0,1053,220
+2025-W46,2025-11-15,da91976ad8,html,Postgres,Store_Relational,compiled,581,1053,55.18,141,220,64.09,752,176
+2025-W46,2025-11-15,da91976ad8,html,PythonLegendQL,Reverse_PCT,compiled,65,1053,6.17,32,220,14.55,1014,212
+2025-W46,2025-11-15,da91976ad8,html,SQL,Reverse_PCT,compiled,427,1053,40.55,99,220,45.0,1035,219
+2025-W46,2025-11-15,da91976ad8,html,Snowflake,Store_Relational,compiled,780,1053,74.07,186,220,84.55,932,206
+2025-W46,2025-11-15,da91976ad8,html,Spanner,Store_Relational,compiled,279,1053,26.5,92,220,41.82,514,135
+2025-W47,2025-11-19,924c146b6c,html,Databricks,Store_Relational,compiled,505,1053,47.96,140,220,63.64,734,172
+2025-W47,2025-11-19,924c146b6c,html,DuckDB,Store_Relational,compiled,792,1053,75.21,185,220,84.09,928,205
+2025-W47,2025-11-19,924c146b6c,html,H2,Store_Relational,compiled,579,1053,54.99,147,220,66.82,849,187
+2025-W47,2025-11-19,924c146b6c,html,Java,Platform,compiled,457,1053,43.4,135,220,61.36,594,153
+2025-W47,2025-11-19,924c146b6c,html,MemSQL,Store_Relational,compiled,366,1053,34.76,109,220,49.55,685,167
+2025-W47,2025-11-19,924c146b6c,html,Native (compiled),,compiled,1047,1053,99.43,220,220,100.0,1053,220
+2025-W47,2025-11-19,924c146b6c,html,Native (interpreted),,interpreted,1047,1053,99.43,220,220,100.0,1053,220
+2025-W47,2025-11-19,924c146b6c,html,Postgres,Store_Relational,compiled,581,1053,55.18,141,220,64.09,752,176
+2025-W47,2025-11-19,924c146b6c,html,PythonLegendQL,Reverse_PCT,compiled,65,1053,6.17,32,220,14.55,1014,212
+2025-W47,2025-11-19,924c146b6c,html,SQL,Reverse_PCT,compiled,427,1053,40.55,99,220,45.0,1035,219
+2025-W47,2025-11-19,924c146b6c,html,Snowflake,Store_Relational,compiled,780,1053,74.07,186,220,84.55,932,206
+2025-W47,2025-11-19,924c146b6c,html,Spanner,Store_Relational,compiled,280,1053,26.59,92,220,41.82,515,135
+2025-W48,2025-11-29,f77b546fa2,html,Databricks,Store_Relational,compiled,507,1055,48.06,140,220,63.64,736,172
+2025-W48,2025-11-29,f77b546fa2,html,DuckDB,Store_Relational,compiled,794,1055,75.26,185,220,84.09,930,205
+2025-W48,2025-11-29,f77b546fa2,html,H2,Store_Relational,compiled,581,1055,55.07,147,220,66.82,851,187
+2025-W48,2025-11-29,f77b546fa2,html,Java,Platform,compiled,457,1055,43.32,135,220,61.36,594,153
+2025-W48,2025-11-29,f77b546fa2,html,MemSQL,Store_Relational,compiled,368,1055,34.88,109,220,49.55,687,167
+2025-W48,2025-11-29,f77b546fa2,html,Native (compiled),,compiled,1049,1055,99.43,220,220,100.0,1055,220
+2025-W48,2025-11-29,f77b546fa2,html,Native (interpreted),,interpreted,1049,1055,99.43,220,220,100.0,1055,220
+2025-W48,2025-11-29,f77b546fa2,html,Postgres,Store_Relational,compiled,583,1055,55.26,141,220,64.09,754,176
+2025-W48,2025-11-29,f77b546fa2,html,PythonLegendQL,Reverse_PCT,compiled,136,1055,12.89,52,220,23.64,1016,212
+2025-W48,2025-11-29,f77b546fa2,html,SQL,Reverse_PCT,compiled,427,1055,40.47,99,220,45.0,1037,219
+2025-W48,2025-11-29,f77b546fa2,html,Snowflake,Store_Relational,compiled,782,1055,74.12,186,220,84.55,934,206
+2025-W48,2025-11-29,f77b546fa2,html,Spanner,Store_Relational,compiled,282,1055,26.73,92,220,41.82,517,135
+2025-W49,2025-12-05,d159463ffe,html,Databricks,Store_Relational,compiled,507,1058,47.92,140,220,63.64,736,172
+2025-W49,2025-12-05,d159463ffe,html,DuckDB,Store_Relational,compiled,794,1058,75.05,185,220,84.09,933,205
+2025-W49,2025-12-05,d159463ffe,html,H2,Store_Relational,compiled,581,1058,54.91,147,220,66.82,851,187
+2025-W49,2025-12-05,d159463ffe,html,Java,Platform,compiled,457,1058,43.19,135,220,61.36,594,153
+2025-W49,2025-12-05,d159463ffe,html,MemSQL,Store_Relational,compiled,371,1058,35.07,110,220,50.0,690,168
+2025-W49,2025-12-05,d159463ffe,html,Native (compiled),,compiled,1052,1058,99.43,220,220,100.0,1058,220
+2025-W49,2025-12-05,d159463ffe,html,Native (interpreted),,interpreted,1052,1058,99.43,220,220,100.0,1058,220
+2025-W49,2025-12-05,d159463ffe,html,Postgres,Store_Relational,compiled,583,1058,55.1,141,220,64.09,754,176
+2025-W49,2025-12-05,d159463ffe,html,PythonLegendQL,Reverse_PCT,compiled,165,1058,15.6,62,220,28.18,1011,212
+2025-W49,2025-12-05,d159463ffe,html,SQL,Reverse_PCT,compiled,427,1058,40.36,99,220,45.0,1040,219
+2025-W49,2025-12-05,d159463ffe,html,Snowflake,Store_Relational,compiled,782,1058,73.91,186,220,84.55,937,206
+2025-W49,2025-12-05,d159463ffe,html,Spanner,Store_Relational,compiled,282,1058,26.65,92,220,41.82,517,135
+2025-W50,2025-12-12,3afbf323b2,html,Databricks,Store_Relational,compiled,507,1057,47.97,140,220,63.64,734,172
+2025-W50,2025-12-12,3afbf323b2,html,DuckDB,Store_Relational,compiled,796,1057,75.31,185,220,84.09,930,205
+2025-W50,2025-12-12,3afbf323b2,html,H2,Store_Relational,compiled,581,1057,54.97,147,220,66.82,849,187
+2025-W50,2025-12-12,3afbf323b2,html,Java,Platform,compiled,457,1057,43.24,135,220,61.36,594,153
+2025-W50,2025-12-12,3afbf323b2,html,MemSQL,Store_Relational,compiled,370,1057,35.0,110,220,50.0,689,168
+2025-W50,2025-12-12,3afbf323b2,html,Native (compiled),,compiled,1051,1057,99.43,220,220,100.0,1057,220
+2025-W50,2025-12-12,3afbf323b2,html,Native (interpreted),,interpreted,1051,1057,99.43,220,220,100.0,1057,220
+2025-W50,2025-12-12,3afbf323b2,html,Postgres,Store_Relational,compiled,583,1057,55.16,141,220,64.09,752,176
+2025-W50,2025-12-12,3afbf323b2,html,PythonLegendQL,Reverse_PCT,compiled,165,1057,15.61,62,220,28.18,1010,212
+2025-W50,2025-12-12,3afbf323b2,html,SQL,Reverse_PCT,compiled,423,1057,40.02,99,220,45.0,1039,219
+2025-W50,2025-12-12,3afbf323b2,html,Snowflake,Store_Relational,compiled,784,1057,74.17,186,220,84.55,934,206
+2025-W50,2025-12-12,3afbf323b2,html,Spanner,Store_Relational,compiled,282,1057,26.68,92,220,41.82,515,135
+2025-W51,2025-12-20,656816a9b7,html,Databricks,Store_Relational,compiled,508,1057,48.06,140,220,63.64,734,172
+2025-W51,2025-12-20,656816a9b7,html,DuckDB,Store_Relational,compiled,797,1057,75.4,185,220,84.09,930,205
+2025-W51,2025-12-20,656816a9b7,html,H2,Store_Relational,compiled,582,1057,55.06,147,220,66.82,849,187
+2025-W51,2025-12-20,656816a9b7,html,Java,Platform,compiled,457,1057,43.24,135,220,61.36,594,153
+2025-W51,2025-12-20,656816a9b7,html,MemSQL,Store_Relational,compiled,371,1057,35.1,110,220,50.0,689,168
+2025-W51,2025-12-20,656816a9b7,html,Native (compiled),,compiled,1051,1057,99.43,220,220,100.0,1057,220
+2025-W51,2025-12-20,656816a9b7,html,Native (interpreted),,interpreted,1051,1057,99.43,220,220,100.0,1057,220
+2025-W51,2025-12-20,656816a9b7,html,Postgres,Store_Relational,compiled,584,1057,55.25,141,220,64.09,753,176
+2025-W51,2025-12-20,656816a9b7,html,PythonLegendQL,Reverse_PCT,compiled,197,1057,18.64,72,220,32.73,1002,212
+2025-W51,2025-12-20,656816a9b7,html,SQL,Reverse_PCT,compiled,426,1057,40.3,100,220,45.45,1039,219
+2025-W51,2025-12-20,656816a9b7,html,Snowflake,Store_Relational,compiled,784,1057,74.17,186,220,84.55,934,206
+2025-W51,2025-12-20,656816a9b7,html,Spanner,Store_Relational,compiled,285,1057,26.96,92,220,41.82,515,135
+2025-W52,2025-12-25,085d2e0d45,html,Databricks,Store_Relational,compiled,510,1282,39.78,140,262,53.44,760,173
+2025-W52,2025-12-25,085d2e0d45,html,DuckDB,Store_Relational,compiled,821,1282,64.04,185,262,70.61,955,205
+2025-W52,2025-12-25,085d2e0d45,html,H2,Store_Relational,compiled,586,1282,45.71,148,262,56.49,873,187
+2025-W52,2025-12-25,085d2e0d45,html,Java,Platform,compiled,457,1282,35.65,135,262,51.53,594,153
+2025-W52,2025-12-25,085d2e0d45,html,MemSQL,Store_Relational,compiled,373,1282,29.1,110,262,41.98,718,169
+2025-W52,2025-12-25,085d2e0d45,html,Native (compiled),,compiled,1276,1282,99.53,262,262,100.0,1282,262
+2025-W52,2025-12-25,085d2e0d45,html,Native (interpreted),,interpreted,1276,1282,99.53,262,262,100.0,1282,262
+2025-W52,2025-12-25,085d2e0d45,html,Postgres,Store_Relational,compiled,595,1282,46.41,142,262,54.2,777,177
+2025-W52,2025-12-25,085d2e0d45,html,PythonLegendQL,Reverse_PCT,compiled,197,1282,15.37,72,262,27.48,1026,212
+2025-W52,2025-12-25,085d2e0d45,html,SQL,Reverse_PCT,compiled,426,1282,33.23,100,262,38.17,1063,219
+2025-W52,2025-12-25,085d2e0d45,html,Snowflake,Store_Relational,compiled,808,1282,63.03,186,262,70.99,959,206
+2025-W52,2025-12-25,085d2e0d45,html,Spanner,Store_Relational,compiled,287,1282,22.39,92,262,35.11,544,136
+2025-W52,2025-12-25,085d2e0d45,html,SqlServer,Store_Relational,compiled,326,1282,25.43,98,262,37.4,778,173
+2026-W01,2026-01-02,0e279df438,html,Databricks,Store_Relational,compiled,510,1282,39.78,140,262,53.44,760,173
+2026-W01,2026-01-02,0e279df438,html,DuckDB,Store_Relational,compiled,821,1282,64.04,185,262,70.61,955,205
+2026-W01,2026-01-02,0e279df438,html,H2,Store_Relational,compiled,586,1282,45.71,148,262,56.49,873,187
+2026-W01,2026-01-02,0e279df438,html,Java,Platform,compiled,457,1282,35.65,135,262,51.53,594,153
+2026-W01,2026-01-02,0e279df438,html,MemSQL,Store_Relational,compiled,373,1282,29.1,110,262,41.98,718,169
+2026-W01,2026-01-02,0e279df438,html,Native (compiled),,compiled,1276,1282,99.53,262,262,100.0,1282,262
+2026-W01,2026-01-02,0e279df438,html,Native (interpreted),,interpreted,1276,1282,99.53,262,262,100.0,1282,262
+2026-W01,2026-01-02,0e279df438,html,Postgres,Store_Relational,compiled,595,1282,46.41,142,262,54.2,777,177
+2026-W01,2026-01-02,0e279df438,html,PythonLegendQL,Reverse_PCT,compiled,341,1282,26.6,108,262,41.22,1015,212
+2026-W01,2026-01-02,0e279df438,html,SQL,Reverse_PCT,compiled,426,1282,33.23,100,262,38.17,1063,219
+2026-W01,2026-01-02,0e279df438,html,Snowflake,Store_Relational,compiled,808,1282,63.03,186,262,70.99,959,206
+2026-W01,2026-01-02,0e279df438,html,Spanner,Store_Relational,compiled,287,1282,22.39,92,262,35.11,544,136
+2026-W01,2026-01-02,0e279df438,html,SqlServer,Store_Relational,compiled,326,1282,25.43,98,262,37.4,778,173
+2026-W02,2026-01-10,6b3c9a1973,html,Databricks,Store_Relational,compiled,511,1284,39.8,141,263,53.61,761,174
+2026-W02,2026-01-10,6b3c9a1973,html,DuckDB,Store_Relational,compiled,822,1284,64.02,186,263,70.72,956,206
+2026-W02,2026-01-10,6b3c9a1973,html,H2,Store_Relational,compiled,587,1284,45.72,149,263,56.65,874,188
+2026-W02,2026-01-10,6b3c9a1973,html,Java,Platform,compiled,457,1284,35.59,135,263,51.33,596,154
+2026-W02,2026-01-10,6b3c9a1973,html,MemSQL,Store_Relational,compiled,374,1284,29.13,111,263,42.21,719,170
+2026-W02,2026-01-10,6b3c9a1973,html,Native (compiled),,compiled,1278,1284,99.53,263,263,100.0,1284,263
+2026-W02,2026-01-10,6b3c9a1973,html,Native (interpreted),,interpreted,1280,1284,99.69,263,263,100.0,1284,263
+2026-W02,2026-01-10,6b3c9a1973,html,Postgres,Store_Relational,compiled,596,1284,46.42,143,263,54.37,778,178
+2026-W02,2026-01-10,6b3c9a1973,html,PythonLegendQL,Reverse_PCT,compiled,420,1284,32.71,109,263,41.44,1014,212
+2026-W02,2026-01-10,6b3c9a1973,html,SQL,Reverse_PCT,compiled,426,1284,33.18,100,263,38.02,1063,219
+2026-W02,2026-01-10,6b3c9a1973,html,Snowflake,Store_Relational,compiled,809,1284,63.01,187,263,71.1,960,207
+2026-W02,2026-01-10,6b3c9a1973,html,Spanner,Store_Relational,compiled,287,1284,22.35,92,263,34.98,545,137
+2026-W02,2026-01-10,6b3c9a1973,html,SqlServer,Store_Relational,compiled,326,1284,25.39,98,263,37.26,779,174
+2026-W04,2026-01-24,61bb4f5012,html,Databricks,Store_Relational,compiled,513,1291,39.74,144,269,53.53,766,179
+2026-W04,2026-01-24,61bb4f5012,html,DuckDB,Store_Relational,compiled,827,1291,64.06,191,269,71.0,962,211
+2026-W04,2026-01-24,61bb4f5012,html,H2,Store_Relational,compiled,593,1291,45.93,152,269,56.51,879,193
+2026-W04,2026-01-24,61bb4f5012,html,Java,Platform,compiled,458,1291,35.48,135,269,50.19,541,151
+2026-W04,2026-01-24,61bb4f5012,html,MemSQL,Store_Relational,compiled,378,1291,29.28,115,269,42.75,724,175
+2026-W04,2026-01-24,61bb4f5012,html,Native (compiled),,compiled,1285,1291,99.54,269,269,100.0,1291,269
+2026-W04,2026-01-24,61bb4f5012,html,Native (interpreted),,interpreted,1287,1291,99.69,269,269,100.0,1291,269
+2026-W04,2026-01-24,61bb4f5012,html,Oracle,Store_Relational,compiled,452,1291,35.01,120,269,44.61,822,182
+2026-W04,2026-01-24,61bb4f5012,html,Postgres,Store_Relational,compiled,600,1291,46.48,147,269,54.65,783,183
+2026-W04,2026-01-24,61bb4f5012,html,PythonLegendQL,Reverse_PCT,compiled,420,1291,32.53,109,269,40.52,1014,212
+2026-W04,2026-01-24,61bb4f5012,html,SQL,Reverse_PCT,compiled,471,1291,36.48,112,269,41.64,1056,219
+2026-W04,2026-01-24,61bb4f5012,html,Snowflake,Store_Relational,compiled,813,1291,62.97,190,269,70.63,965,212
+2026-W04,2026-01-24,61bb4f5012,html,Spanner,Store_Relational,compiled,287,1291,22.23,92,269,34.2,550,142
+2026-W04,2026-01-24,61bb4f5012,html,SqlServer,Store_Relational,compiled,325,1291,25.17,98,269,36.43,784,179
+2026-W05,2026-01-31,e9e6a12563,json,Databricks,Store_Relational,compiled,513,1088,47.15,144,226,63.72,1088,226
+2026-W05,2026-01-31,e9e6a12563,json,Deephaven,Store_Deephaven,compiled,6,1088,0.55,4,226,1.77,592,124
+2026-W05,2026-01-31,e9e6a12563,json,DuckDB,Store_Relational,compiled,828,1088,76.1,191,226,84.51,1088,226
+2026-W05,2026-01-31,e9e6a12563,json,H2,Store_Relational,compiled,594,1088,54.6,152,226,67.26,1088,226
+2026-W05,2026-01-31,e9e6a12563,json,Java,Platform,compiled,458,1088,42.1,135,226,59.73,1000,219
+2026-W05,2026-01-31,e9e6a12563,json,MemSQL,Store_Relational,compiled,379,1088,34.83,115,226,50.88,1088,226
+2026-W05,2026-01-31,e9e6a12563,json,Native (compiled),,compiled,1082,1088,99.45,226,226,100.0,1088,226
+2026-W05,2026-01-31,e9e6a12563,json,Native (interpreted),,interpreted,1084,1088,99.63,226,226,100.0,1088,226
+2026-W05,2026-01-31,e9e6a12563,json,Oracle,Store_Relational,compiled,453,1088,41.64,120,226,53.1,1088,226
+2026-W05,2026-01-31,e9e6a12563,json,Postgres,Store_Relational,compiled,601,1088,55.24,147,226,65.04,1088,226
+2026-W05,2026-01-31,e9e6a12563,json,PythonLegendQL,Reverse_PCT,compiled,420,1088,38.6,109,226,48.23,1082,220
+2026-W05,2026-01-31,e9e6a12563,json,SQL,Reverse_PCT,compiled,471,1088,43.29,112,226,49.56,1082,220
+2026-W05,2026-01-31,e9e6a12563,json,Snowflake,Store_Relational,compiled,814,1088,74.82,190,226,84.07,1088,226
+2026-W05,2026-01-31,e9e6a12563,json,Spanner,Store_Relational,compiled,287,1088,26.38,92,226,40.71,1088,226
+2026-W05,2026-01-31,e9e6a12563,json,SqlServer,Store_Relational,compiled,326,1088,29.96,98,226,43.36,1088,226
+2026-W06,2026-02-06,5dadfd829d,json,Databricks,Store_Relational,compiled,515,1091,47.2,144,226,63.72,1091,226
+2026-W06,2026-02-06,5dadfd829d,json,Deephaven,Store_Deephaven,compiled,61,1091,5.59,22,226,9.73,595,124
+2026-W06,2026-02-06,5dadfd829d,json,DuckDB,Store_Relational,compiled,831,1091,76.17,191,226,84.51,1091,226
+2026-W06,2026-02-06,5dadfd829d,json,H2,Store_Relational,compiled,595,1091,54.54,152,226,67.26,1091,226
+2026-W06,2026-02-06,5dadfd829d,json,Java,Platform,compiled,458,1091,41.98,135,226,59.73,1003,219
+2026-W06,2026-02-06,5dadfd829d,json,MemSQL,Store_Relational,compiled,381,1091,34.92,115,226,50.88,1091,226
+2026-W06,2026-02-06,5dadfd829d,json,Native (compiled),,compiled,1085,1091,99.45,226,226,100.0,1091,226
+2026-W06,2026-02-06,5dadfd829d,json,Native (interpreted),,interpreted,1087,1091,99.63,226,226,100.0,1091,226
+2026-W06,2026-02-06,5dadfd829d,json,Oracle,Store_Relational,compiled,455,1091,41.7,120,226,53.1,1091,226
+2026-W06,2026-02-06,5dadfd829d,json,Postgres,Store_Relational,compiled,602,1091,55.18,147,226,65.04,1091,226
+2026-W06,2026-02-06,5dadfd829d,json,PythonLegendQL,Reverse_PCT,compiled,477,1091,43.72,120,226,53.1,1085,220
+2026-W06,2026-02-06,5dadfd829d,json,SQL,Reverse_PCT,compiled,471,1091,43.17,112,226,49.56,1085,220
+2026-W06,2026-02-06,5dadfd829d,json,Snowflake,Store_Relational,compiled,817,1091,74.89,190,226,84.07,1091,226
+2026-W06,2026-02-06,5dadfd829d,json,Spanner,Store_Relational,compiled,288,1091,26.4,92,226,40.71,1091,226
+2026-W06,2026-02-06,5dadfd829d,json,SqlServer,Store_Relational,compiled,327,1091,29.97,98,226,43.36,1091,226
+2026-W07,2026-02-15,8c33c04ae8,json,Databricks,Store_Relational,compiled,518,1093,47.39,144,226,63.72,1093,226
+2026-W07,2026-02-15,8c33c04ae8,json,Deephaven,Store_Deephaven,compiled,61,1093,5.58,22,226,9.73,595,124
+2026-W07,2026-02-15,8c33c04ae8,json,DuckDB,Store_Relational,compiled,834,1093,76.3,191,226,84.51,1093,226
+2026-W07,2026-02-15,8c33c04ae8,json,H2,Store_Relational,compiled,597,1093,54.62,152,226,67.26,1093,226
+2026-W07,2026-02-15,8c33c04ae8,json,Java,Platform,compiled,459,1093,41.99,135,226,59.73,1005,219
+2026-W07,2026-02-15,8c33c04ae8,json,MemSQL,Store_Relational,compiled,383,1093,35.04,115,226,50.88,1093,226
+2026-W07,2026-02-15,8c33c04ae8,json,Native (compiled),,compiled,1087,1093,99.45,226,226,100.0,1093,226
+2026-W07,2026-02-15,8c33c04ae8,json,Native (interpreted),,interpreted,1089,1093,99.63,226,226,100.0,1093,226
+2026-W07,2026-02-15,8c33c04ae8,json,Oracle,Store_Relational,compiled,456,1093,41.72,120,226,53.1,1093,226
+2026-W07,2026-02-15,8c33c04ae8,json,Postgres,Store_Relational,compiled,604,1093,55.26,147,226,65.04,1093,226
+2026-W07,2026-02-15,8c33c04ae8,json,PythonLegendQL,Reverse_PCT,compiled,477,1093,43.64,120,226,53.1,1087,220
+2026-W07,2026-02-15,8c33c04ae8,json,SQL,Reverse_PCT,compiled,471,1093,43.09,112,226,49.56,1087,220
+2026-W07,2026-02-15,8c33c04ae8,json,Snowflake,Store_Relational,compiled,819,1093,74.93,190,226,84.07,1093,226
+2026-W07,2026-02-15,8c33c04ae8,json,Spanner,Store_Relational,compiled,289,1093,26.44,92,226,40.71,1093,226
+2026-W07,2026-02-15,8c33c04ae8,json,SqlServer,Store_Relational,compiled,327,1093,29.92,98,226,43.36,1093,226
+2026-W08,2026-02-18,702fb7206d,json,Databricks,Store_Relational,compiled,518,1094,47.35,144,226,63.72,1094,226
+2026-W08,2026-02-18,702fb7206d,json,Deephaven,Store_Deephaven,compiled,61,1094,5.58,22,226,9.73,596,124
+2026-W08,2026-02-18,702fb7206d,json,DuckDB,Store_Relational,compiled,835,1094,76.33,191,226,84.51,1094,226
+2026-W08,2026-02-18,702fb7206d,json,H2,Store_Relational,compiled,597,1094,54.57,152,226,67.26,1094,226
+2026-W08,2026-02-18,702fb7206d,json,Java,Platform,compiled,459,1094,41.96,135,226,59.73,1006,219
+2026-W08,2026-02-18,702fb7206d,json,MemSQL,Store_Relational,compiled,384,1094,35.1,115,226,50.88,1094,226
+2026-W08,2026-02-18,702fb7206d,json,Native (compiled),,compiled,1088,1094,99.45,226,226,100.0,1094,226
+2026-W08,2026-02-18,702fb7206d,json,Native (interpreted),,interpreted,1090,1094,99.63,226,226,100.0,1094,226
+2026-W08,2026-02-18,702fb7206d,json,Oracle,Store_Relational,compiled,456,1094,41.68,120,226,53.1,1094,226
+2026-W08,2026-02-18,702fb7206d,json,Postgres,Store_Relational,compiled,604,1094,55.21,147,226,65.04,1094,226
+2026-W08,2026-02-18,702fb7206d,json,PythonLegendQL,Reverse_PCT,compiled,477,1094,43.6,120,226,53.1,1088,220
+2026-W08,2026-02-18,702fb7206d,json,SQL,Reverse_PCT,compiled,471,1094,43.05,112,226,49.56,1088,220
+2026-W08,2026-02-18,702fb7206d,json,Snowflake,Store_Relational,compiled,820,1094,74.95,190,226,84.07,1094,226
+2026-W08,2026-02-18,702fb7206d,json,Spanner,Store_Relational,compiled,289,1094,26.42,92,226,40.71,1094,226
+2026-W08,2026-02-18,702fb7206d,json,SqlServer,Store_Relational,compiled,327,1094,29.89,98,226,43.36,1094,226
+2026-W09,2026-02-27,924ff626c8,json,ClickHouse,Store_Relational,compiled,493,1106,44.58,134,226,59.29,1106,226
+2026-W09,2026-02-27,924ff626c8,json,Databricks,Store_Relational,compiled,530,1106,47.92,144,226,63.72,1106,226
+2026-W09,2026-02-27,924ff626c8,json,Deephaven,Store_Deephaven,compiled,65,1106,5.88,22,226,9.73,608,124
+2026-W09,2026-02-27,924ff626c8,json,DuckDB,Store_Relational,compiled,847,1106,76.58,191,226,84.51,1106,226
+2026-W09,2026-02-27,924ff626c8,json,H2,Store_Relational,compiled,609,1106,55.06,152,226,67.26,1106,226
+2026-W09,2026-02-27,924ff626c8,json,Java,Platform,compiled,462,1106,41.77,136,226,60.18,1018,219
+2026-W09,2026-02-27,924ff626c8,json,MemSQL,Store_Relational,compiled,396,1106,35.8,115,226,50.88,1106,226
+2026-W09,2026-02-27,924ff626c8,json,Native (compiled),,compiled,1100,1106,99.46,226,226,100.0,1106,226
+2026-W09,2026-02-27,924ff626c8,json,Native (interpreted),,interpreted,1101,1106,99.55,226,226,100.0,1106,226
+2026-W09,2026-02-27,924ff626c8,json,Oracle,Store_Relational,compiled,468,1106,42.31,120,226,53.1,1106,226
+2026-W09,2026-02-27,924ff626c8,json,Postgres,Store_Relational,compiled,616,1106,55.7,147,226,65.04,1106,226
+2026-W09,2026-02-27,924ff626c8,json,PythonLegendQL,Reverse_PCT,compiled,477,1106,43.13,120,226,53.1,1100,220
+2026-W09,2026-02-27,924ff626c8,json,SQL,Reverse_PCT,compiled,471,1106,42.59,112,226,49.56,1100,220
+2026-W09,2026-02-27,924ff626c8,json,Snowflake,Store_Relational,compiled,832,1106,75.23,190,226,84.07,1106,226
+2026-W09,2026-02-27,924ff626c8,json,Spanner,Store_Relational,compiled,301,1106,27.22,92,226,40.71,1106,226
+2026-W09,2026-02-27,924ff626c8,json,SqlServer,Store_Relational,compiled,337,1106,30.47,98,226,43.36,1106,226
+2026-W10,2026-03-08,38be6bac9a,json,ClickHouse,Store_Relational,compiled,491,1106,44.39,132,226,58.41,1106,226
+2026-W10,2026-03-08,38be6bac9a,json,Databricks,Store_Relational,compiled,527,1106,47.65,142,226,62.83,1106,226
+2026-W10,2026-03-08,38be6bac9a,json,Deephaven,Store_Deephaven,compiled,65,1106,5.88,22,226,9.73,608,124
+2026-W10,2026-03-08,38be6bac9a,json,DuckDB,Store_Relational,compiled,844,1106,76.31,189,226,83.63,1106,226
+2026-W10,2026-03-08,38be6bac9a,json,H2,Store_Relational,compiled,608,1106,54.97,152,226,67.26,1106,226
+2026-W10,2026-03-08,38be6bac9a,json,Java,Platform,compiled,462,1106,41.77,136,226,60.18,1018,219
+2026-W10,2026-03-08,38be6bac9a,json,MemSQL,Store_Relational,compiled,393,1106,35.53,113,226,50.0,1106,226
+2026-W10,2026-03-08,38be6bac9a,json,Native (compiled),,compiled,1100,1106,99.46,226,226,100.0,1106,226
+2026-W10,2026-03-08,38be6bac9a,json,Native (interpreted),,interpreted,1101,1106,99.55,226,226,100.0,1106,226
+2026-W10,2026-03-08,38be6bac9a,json,Oracle,Store_Relational,compiled,456,1106,41.23,120,226,53.1,1106,226
+2026-W10,2026-03-08,38be6bac9a,json,Postgres,Store_Relational,compiled,613,1106,55.42,145,226,64.16,1106,226
+2026-W10,2026-03-08,38be6bac9a,json,PythonLegendQL,Reverse_PCT,compiled,477,1106,43.13,120,226,53.1,1100,220
+2026-W10,2026-03-08,38be6bac9a,json,SQL,Reverse_PCT,compiled,471,1106,42.59,112,226,49.56,1100,220
+2026-W10,2026-03-08,38be6bac9a,json,Snowflake,Store_Relational,compiled,829,1106,74.95,188,226,83.19,1106,226
+2026-W10,2026-03-08,38be6bac9a,json,Spanner,Store_Relational,compiled,301,1106,27.22,92,226,40.71,1106,226
+2026-W10,2026-03-08,38be6bac9a,json,SqlServer,Store_Relational,compiled,337,1106,30.47,98,226,43.36,1106,226
+2026-W11,2026-03-14,f767d8e8c5,json,ClickHouse,Store_Relational,compiled,503,1108,45.4,136,226,60.18,1108,226
+2026-W11,2026-03-14,f767d8e8c5,json,Databricks,Store_Relational,compiled,538,1108,48.56,144,226,63.72,1108,226
+2026-W11,2026-03-14,f767d8e8c5,json,Deephaven,Store_Deephaven,compiled,74,1108,6.68,28,226,12.39,610,124
+2026-W11,2026-03-14,f767d8e8c5,json,DuckDB,Store_Relational,compiled,857,1108,77.35,193,226,85.4,1108,226
+2026-W11,2026-03-14,f767d8e8c5,json,H2,Store_Relational,compiled,618,1108,55.78,154,226,68.14,1108,226
+2026-W11,2026-03-14,f767d8e8c5,json,Java,Platform,compiled,462,1108,41.7,136,226,60.18,1020,219
+2026-W11,2026-03-14,f767d8e8c5,json,MemSQL,Store_Relational,compiled,400,1108,36.1,115,226,50.88,1108,226
+2026-W11,2026-03-14,f767d8e8c5,json,Native (compiled),,compiled,1102,1108,99.46,226,226,100.0,1108,226
+2026-W11,2026-03-14,f767d8e8c5,json,Native (interpreted),,interpreted,1103,1108,99.55,226,226,100.0,1108,226
+2026-W11,2026-03-14,f767d8e8c5,json,Oracle,Store_Relational,compiled,476,1108,42.96,120,226,53.1,1108,226
+2026-W11,2026-03-14,f767d8e8c5,json,Postgres,Store_Relational,compiled,626,1108,56.5,149,226,65.93,1108,226
+2026-W11,2026-03-14,f767d8e8c5,json,PythonLegendQL,Reverse_PCT,compiled,492,1108,44.4,123,226,54.42,1102,220
+2026-W11,2026-03-14,f767d8e8c5,json,SQL,Reverse_PCT,compiled,471,1108,42.51,112,226,49.56,1102,220
+2026-W11,2026-03-14,f767d8e8c5,json,Snowflake,Store_Relational,compiled,842,1108,75.99,192,226,84.96,1108,226
+2026-W11,2026-03-14,f767d8e8c5,json,Spanner,Store_Relational,compiled,307,1108,27.71,94,226,41.59,1108,226
+2026-W11,2026-03-14,f767d8e8c5,json,SqlServer,Store_Relational,compiled,338,1108,30.51,98,226,43.36,1108,226
+2026-W11,2026-03-14,f767d8e8c5,json,Trino,Store_Relational,compiled,477,1108,43.05,129,226,57.08,1108,226
+2026-W12,2026-03-20,92ecab7b7e,json,ClickHouse,Store_Relational,compiled,549,1177,46.64,138,228,60.53,1177,228
+2026-W12,2026-03-20,92ecab7b7e,json,Databricks,Store_Relational,compiled,587,1177,49.87,146,228,64.04,1177,228
+2026-W12,2026-03-20,92ecab7b7e,json,Deephaven,Store_Deephaven,compiled,76,1177,6.46,29,228,12.72,678,125
+2026-W12,2026-03-20,92ecab7b7e,json,DuckDB,Store_Relational,compiled,926,1177,78.67,195,228,85.53,1177,228
+2026-W12,2026-03-20,92ecab7b7e,json,H2,Store_Relational,compiled,687,1177,58.37,156,228,68.42,1177,228
+2026-W12,2026-03-20,92ecab7b7e,json,Java,Platform,compiled,462,1177,39.25,136,228,59.65,1089,221
+2026-W12,2026-03-20,92ecab7b7e,json,MemSQL,Store_Relational,compiled,429,1177,36.45,117,228,51.32,1177,228
+2026-W12,2026-03-20,92ecab7b7e,json,Native (compiled),,compiled,1171,1177,99.49,228,228,100.0,1177,228
+2026-W12,2026-03-20,92ecab7b7e,json,Native (interpreted),,interpreted,1172,1177,99.58,228,228,100.0,1177,228
+2026-W12,2026-03-20,92ecab7b7e,json,Oracle,Store_Relational,compiled,517,1177,43.93,122,228,53.51,1177,228
+2026-W12,2026-03-20,92ecab7b7e,json,Postgres,Store_Relational,compiled,675,1177,57.35,151,228,66.23,1177,228
+2026-W12,2026-03-20,92ecab7b7e,json,PythonLegendQL,Reverse_PCT,compiled,492,1177,41.8,123,228,53.95,1171,222
+2026-W12,2026-03-20,92ecab7b7e,json,SQL,Reverse_PCT,compiled,471,1177,40.02,112,228,49.12,1171,222
+2026-W12,2026-03-20,92ecab7b7e,json,Snowflake,Store_Relational,compiled,907,1177,77.06,194,228,85.09,1177,228
+2026-W12,2026-03-20,92ecab7b7e,json,Spanner,Store_Relational,compiled,309,1177,26.25,95,228,41.67,1177,228
+2026-W12,2026-03-20,92ecab7b7e,json,SqlServer,Store_Relational,compiled,359,1177,30.5,100,228,43.86,1177,228
+2026-W12,2026-03-20,92ecab7b7e,json,Trino,Store_Relational,compiled,519,1177,44.1,131,228,57.46,1177,228
+2026-W13,2026-03-27,4a4861e0e0,json,ClickHouse,Store_Relational,compiled,551,1179,46.73,138,228,60.53,1179,228
+2026-W13,2026-03-27,4a4861e0e0,json,Databricks,Store_Relational,compiled,589,1179,49.96,146,228,64.04,1179,228
+2026-W13,2026-03-27,4a4861e0e0,json,Deephaven,Store_Deephaven,compiled,76,1179,6.45,29,228,12.72,678,125
+2026-W13,2026-03-27,4a4861e0e0,json,DuckDB,Store_Relational,compiled,928,1179,78.71,195,228,85.53,1179,228
+2026-W13,2026-03-27,4a4861e0e0,json,H2,Store_Relational,compiled,689,1179,58.44,156,228,68.42,1179,228
+2026-W13,2026-03-27,4a4861e0e0,json,Java,Platform,compiled,462,1179,39.19,136,228,59.65,1091,221
+2026-W13,2026-03-27,4a4861e0e0,json,MemSQL,Store_Relational,compiled,431,1179,36.56,117,228,51.32,1179,228
+2026-W13,2026-03-27,4a4861e0e0,json,Native (compiled),,compiled,1173,1179,99.49,228,228,100.0,1179,228
+2026-W13,2026-03-27,4a4861e0e0,json,Native (interpreted),,interpreted,1174,1179,99.58,228,228,100.0,1179,228
+2026-W13,2026-03-27,4a4861e0e0,json,Oracle,Store_Relational,compiled,519,1179,44.02,122,228,53.51,1179,228
+2026-W13,2026-03-27,4a4861e0e0,json,Postgres,Store_Relational,compiled,677,1179,57.42,151,228,66.23,1179,228
+2026-W13,2026-03-27,4a4861e0e0,json,PythonLegendQL,Reverse_PCT,compiled,492,1179,41.73,123,228,53.95,1173,222
+2026-W13,2026-03-27,4a4861e0e0,json,SQL,Reverse_PCT,compiled,470,1179,39.86,112,228,49.12,1173,222
+2026-W13,2026-03-27,4a4861e0e0,json,Snowflake,Store_Relational,compiled,909,1179,77.1,194,228,85.09,1179,228
+2026-W13,2026-03-27,4a4861e0e0,json,Spanner,Store_Relational,compiled,309,1179,26.21,95,228,41.67,1179,228
+2026-W13,2026-03-27,4a4861e0e0,json,SqlServer,Store_Relational,compiled,361,1179,30.62,100,228,43.86,1179,228
+2026-W13,2026-03-27,4a4861e0e0,json,Trino,Store_Relational,compiled,521,1179,44.19,131,228,57.46,1179,228
+2026-W14,2026-04-02,5a5291a5e2,json,ClickHouse,Store_Relational,compiled,561,1199,46.79,140,230,60.87,1199,230
+2026-W14,2026-04-02,5a5291a5e2,json,Databricks,Store_Relational,compiled,599,1199,49.96,148,230,64.35,1199,230
+2026-W14,2026-04-02,5a5291a5e2,json,Deephaven,Store_Deephaven,compiled,76,1199,6.34,29,230,12.61,678,125
+2026-W14,2026-04-02,5a5291a5e2,json,DuckDB,Store_Relational,compiled,938,1199,78.23,197,230,85.65,1199,230
+2026-W14,2026-04-02,5a5291a5e2,json,H2,Store_Relational,compiled,699,1199,58.3,158,230,68.7,1199,230
+2026-W14,2026-04-02,5a5291a5e2,json,Java,Platform,compiled,473,1199,39.45,138,230,60.0,1111,223
+2026-W14,2026-04-02,5a5291a5e2,json,MemSQL,Store_Relational,compiled,440,1199,36.7,119,230,51.74,1199,230
+2026-W14,2026-04-02,5a5291a5e2,json,Native (compiled),,compiled,1193,1199,99.5,230,230,100.0,1199,230
+2026-W14,2026-04-02,5a5291a5e2,json,Native (interpreted),,interpreted,1192,1199,99.42,230,230,100.0,1199,230
+2026-W14,2026-04-02,5a5291a5e2,json,Oracle,Store_Relational,compiled,527,1199,43.95,124,230,53.91,1199,230
+2026-W14,2026-04-02,5a5291a5e2,json,Postgres,Store_Relational,compiled,687,1199,57.3,153,230,66.52,1199,230
+2026-W14,2026-04-02,5a5291a5e2,json,PythonLegendQL,Reverse_PCT,compiled,492,1199,41.03,123,230,53.48,1193,224
+2026-W14,2026-04-02,5a5291a5e2,json,PythonPandasAPI,Reverse_PCT,compiled,331,1199,27.61,99,230,43.04,1193,224
+2026-W14,2026-04-02,5a5291a5e2,json,SQL,Reverse_PCT,compiled,477,1199,39.78,113,230,49.13,1193,224
+2026-W14,2026-04-02,5a5291a5e2,json,Snowflake,Store_Relational,compiled,919,1199,76.65,196,230,85.22,1199,230
+2026-W14,2026-04-02,5a5291a5e2,json,Spanner,Store_Relational,compiled,315,1199,26.27,97,230,42.17,1199,230
+2026-W14,2026-04-02,5a5291a5e2,json,SqlServer,Store_Relational,compiled,368,1199,30.69,102,230,44.35,1199,230
+2026-W14,2026-04-02,5a5291a5e2,json,Trino,Store_Relational,compiled,529,1199,44.12,133,230,57.83,1199,230
+2026-W15,2026-04-10,28867a2e0e,json,ClickHouse,Store_Relational,compiled,561,1201,46.71,140,230,60.87,1201,230
+2026-W15,2026-04-10,28867a2e0e,json,Databricks,Store_Relational,compiled,600,1201,49.96,148,230,64.35,1201,230
+2026-W15,2026-04-10,28867a2e0e,json,Deephaven,Store_Deephaven,compiled,76,1201,6.33,29,230,12.61,680,125
+2026-W15,2026-04-10,28867a2e0e,json,DuckDB,Store_Relational,compiled,938,1201,78.1,197,230,85.65,1201,230
+2026-W15,2026-04-10,28867a2e0e,json,H2,Store_Relational,compiled,701,1201,58.37,158,230,68.7,1201,230
+2026-W15,2026-04-10,28867a2e0e,json,Java,Platform,compiled,473,1201,39.38,138,230,60.0,1113,223
+2026-W15,2026-04-10,28867a2e0e,json,MemSQL,Store_Relational,compiled,442,1201,36.8,119,230,51.74,1201,230
+2026-W15,2026-04-10,28867a2e0e,json,Native (compiled),,compiled,1195,1201,99.5,230,230,100.0,1201,230
+2026-W15,2026-04-10,28867a2e0e,json,Native (interpreted),,interpreted,1194,1201,99.42,230,230,100.0,1201,230
+2026-W15,2026-04-10,28867a2e0e,json,Oracle,Store_Relational,compiled,527,1201,43.88,124,230,53.91,1201,230
+2026-W15,2026-04-10,28867a2e0e,json,Postgres,Store_Relational,compiled,689,1201,57.37,153,230,66.52,1201,230
+2026-W15,2026-04-10,28867a2e0e,json,PythonLegendQL,Reverse_PCT,compiled,492,1201,40.97,123,230,53.48,1195,224
+2026-W15,2026-04-10,28867a2e0e,json,PythonPandasAPI,Reverse_PCT,compiled,384,1201,31.97,114,230,49.57,1195,224
+2026-W15,2026-04-10,28867a2e0e,json,SQL,Reverse_PCT,compiled,477,1201,39.72,113,230,49.13,1195,224
+2026-W15,2026-04-10,28867a2e0e,json,Snowflake,Store_Relational,compiled,921,1201,76.69,196,230,85.22,1201,230
+2026-W15,2026-04-10,28867a2e0e,json,Spanner,Store_Relational,compiled,315,1201,26.23,97,230,42.17,1201,230
+2026-W15,2026-04-10,28867a2e0e,json,SqlServer,Store_Relational,compiled,368,1201,30.64,102,230,44.35,1201,230
+2026-W15,2026-04-10,28867a2e0e,json,Trino,Store_Relational,compiled,529,1201,44.05,133,230,57.83,1201,230
+2026-W16,2026-04-17,14959c88cc,json,ClickHouse,Store_Relational,compiled,561,1201,46.71,140,230,60.87,1201,230
+2026-W16,2026-04-17,14959c88cc,json,Databricks,Store_Relational,compiled,606,1201,50.46,147,230,63.91,1201,230
+2026-W16,2026-04-17,14959c88cc,json,Deephaven,Store_Deephaven,compiled,76,1201,6.33,29,230,12.61,680,125
+2026-W16,2026-04-17,14959c88cc,json,DuckDB,Store_Relational,compiled,941,1201,78.35,197,230,85.65,1201,230
+2026-W16,2026-04-17,14959c88cc,json,H2,Store_Relational,compiled,701,1201,58.37,158,230,68.7,1201,230
+2026-W16,2026-04-17,14959c88cc,json,Java,Platform,compiled,473,1201,39.38,138,230,60.0,1113,223
+2026-W16,2026-04-17,14959c88cc,json,MemSQL,Store_Relational,compiled,442,1201,36.8,119,230,51.74,1201,230
+2026-W16,2026-04-17,14959c88cc,json,Native (compiled),,compiled,1195,1201,99.5,230,230,100.0,1201,230
+2026-W16,2026-04-17,14959c88cc,json,Native (interpreted),,interpreted,1194,1201,99.42,230,230,100.0,1201,230
+2026-W16,2026-04-17,14959c88cc,json,Oracle,Store_Relational,compiled,527,1201,43.88,124,230,53.91,1201,230
+2026-W16,2026-04-17,14959c88cc,json,Postgres,Store_Relational,compiled,689,1201,57.37,153,230,66.52,1201,230
+2026-W16,2026-04-17,14959c88cc,json,PythonLegendQL,Reverse_PCT,compiled,518,1201,43.13,125,230,54.35,1195,224
+2026-W16,2026-04-17,14959c88cc,json,PythonPandasAPI,Reverse_PCT,compiled,608,1201,50.62,132,230,57.39,1195,224
+2026-W16,2026-04-17,14959c88cc,json,SQL,Reverse_PCT,compiled,477,1201,39.72,113,230,49.13,1195,224
+2026-W16,2026-04-17,14959c88cc,json,Snowflake,Store_Relational,compiled,921,1201,76.69,196,230,85.22,1201,230
+2026-W16,2026-04-17,14959c88cc,json,Spanner,Store_Relational,compiled,315,1201,26.23,97,230,42.17,1201,230
+2026-W16,2026-04-17,14959c88cc,json,SqlServer,Store_Relational,compiled,368,1201,30.64,102,230,44.35,1201,230
+2026-W16,2026-04-17,14959c88cc,json,Trino,Store_Relational,compiled,529,1201,44.05,133,230,57.83,1201,230
+2026-W17,2026-04-25,04aa4278ec,json,ClickHouse,Store_Relational,compiled,548,1198,45.74,139,231,60.17,1198,231
+2026-W17,2026-04-25,04aa4278ec,json,Databricks,Store_Relational,compiled,591,1198,49.33,146,231,63.2,1198,231
+2026-W17,2026-04-25,04aa4278ec,json,Deephaven,Store_Deephaven,compiled,66,1198,5.51,29,231,12.55,672,125
+2026-W17,2026-04-25,04aa4278ec,json,DuckDB,Store_Relational,compiled,929,1198,77.55,196,231,84.85,1198,231
+2026-W17,2026-04-25,04aa4278ec,json,H2,Store_Relational,compiled,691,1198,57.68,157,231,67.97,1198,231
+2026-W17,2026-04-25,04aa4278ec,json,Java,Platform,compiled,476,1198,39.73,138,231,59.74,1110,224
+2026-W17,2026-04-25,04aa4278ec,json,MemSQL,Store_Relational,compiled,427,1198,35.64,118,231,51.08,1198,231
+2026-W17,2026-04-25,04aa4278ec,json,Native (compiled),,compiled,1192,1198,99.5,231,231,100.0,1198,231
+2026-W17,2026-04-25,04aa4278ec,json,Native (interpreted),,interpreted,1191,1198,99.42,231,231,100.0,1198,231
+2026-W17,2026-04-25,04aa4278ec,json,Oracle,Store_Relational,compiled,512,1198,42.74,123,231,53.25,1198,231
+2026-W17,2026-04-25,04aa4278ec,json,Postgres,Store_Relational,compiled,676,1198,56.43,152,231,65.8,1198,231
+2026-W17,2026-04-25,04aa4278ec,json,PythonLegendQL,Reverse_PCT,compiled,608,1198,50.75,130,231,56.28,1192,225
+2026-W17,2026-04-25,04aa4278ec,json,PythonPandasAPI,Reverse_PCT,compiled,610,1198,50.92,133,231,57.58,1192,225
+2026-W17,2026-04-25,04aa4278ec,json,SQL,Reverse_PCT,compiled,469,1198,39.15,112,231,48.48,1192,225
+2026-W17,2026-04-25,04aa4278ec,json,Snowflake,Store_Relational,compiled,909,1198,75.88,195,231,84.42,1198,231
+2026-W17,2026-04-25,04aa4278ec,json,Spanner,Store_Relational,compiled,304,1198,25.38,95,231,41.13,1198,231
+2026-W17,2026-04-25,04aa4278ec,json,SqlServer,Store_Relational,compiled,358,1198,29.88,101,231,43.72,1198,231
+2026-W17,2026-04-25,04aa4278ec,json,Trino,Store_Relational,compiled,516,1198,43.07,132,231,57.14,1198,231
+2026-W18,2026-05-01,7725cbe627,json,ClickHouse,Store_Relational,compiled,548,1199,45.7,139,231,60.17,1199,231
+2026-W18,2026-05-01,7725cbe627,json,Databricks,Store_Relational,compiled,591,1199,49.29,146,231,63.2,1199,231
+2026-W18,2026-05-01,7725cbe627,json,Deephaven,Store_Deephaven,compiled,66,1199,5.5,29,231,12.55,673,125
+2026-W18,2026-05-01,7725cbe627,json,DuckDB,Store_Relational,compiled,930,1199,77.56,196,231,84.85,1199,231
+2026-W18,2026-05-01,7725cbe627,json,H2,Store_Relational,compiled,691,1199,57.63,157,231,67.97,1199,231
+2026-W18,2026-05-01,7725cbe627,json,Java,Platform,compiled,476,1199,39.7,138,231,59.74,1111,224
+2026-W18,2026-05-01,7725cbe627,json,MemSQL,Store_Relational,compiled,428,1199,35.7,118,231,51.08,1199,231
+2026-W18,2026-05-01,7725cbe627,json,Native (compiled),,compiled,1193,1199,99.5,231,231,100.0,1199,231
+2026-W18,2026-05-01,7725cbe627,json,Native (interpreted),,interpreted,1192,1199,99.42,231,231,100.0,1199,231
+2026-W18,2026-05-01,7725cbe627,json,Oracle,Store_Relational,compiled,512,1199,42.7,123,231,53.25,1199,231
+2026-W18,2026-05-01,7725cbe627,json,Postgres,Store_Relational,compiled,676,1199,56.38,152,231,65.8,1199,231
+2026-W18,2026-05-01,7725cbe627,json,PythonLegendQL,Reverse_PCT,compiled,608,1199,50.71,130,231,56.28,1193,225
+2026-W18,2026-05-01,7725cbe627,json,PythonPandasAPI,Reverse_PCT,compiled,610,1199,50.88,133,231,57.58,1193,225
+2026-W18,2026-05-01,7725cbe627,json,SQL,Reverse_PCT,compiled,469,1199,39.12,112,231,48.48,1193,225
+2026-W18,2026-05-01,7725cbe627,json,Snowflake,Store_Relational,compiled,910,1199,75.9,195,231,84.42,1199,231
+2026-W18,2026-05-01,7725cbe627,json,Spanner,Store_Relational,compiled,304,1199,25.35,95,231,41.13,1199,231
+2026-W18,2026-05-01,7725cbe627,json,SqlServer,Store_Relational,compiled,358,1199,29.86,101,231,43.72,1199,231
+2026-W18,2026-05-01,7725cbe627,json,Trino,Store_Relational,compiled,516,1199,43.04,132,231,57.14,1199,231
+2026-W19,2026-05-08,5972a064c9,json,ClickHouse,Store_Relational,compiled,548,1199,45.7,139,231,60.17,1199,231
+2026-W19,2026-05-08,5972a064c9,json,Databricks,Store_Relational,compiled,620,1199,51.71,149,231,64.5,1199,231
+2026-W19,2026-05-08,5972a064c9,json,Deephaven,Store_Deephaven,compiled,66,1199,5.5,29,231,12.55,673,125
+2026-W19,2026-05-08,5972a064c9,json,DuckDB,Store_Relational,compiled,930,1199,77.56,196,231,84.85,1199,231
+2026-W19,2026-05-08,5972a064c9,json,H2,Store_Relational,compiled,691,1199,57.63,157,231,67.97,1199,231
+2026-W19,2026-05-08,5972a064c9,json,Java,Platform,compiled,476,1199,39.7,138,231,59.74,1111,224
+2026-W19,2026-05-08,5972a064c9,json,MemSQL,Store_Relational,compiled,428,1199,35.7,118,231,51.08,1199,231
+2026-W19,2026-05-08,5972a064c9,json,Native (compiled),,compiled,1193,1199,99.5,231,231,100.0,1199,231
+2026-W19,2026-05-08,5972a064c9,json,Native (interpreted),,interpreted,1192,1199,99.42,231,231,100.0,1199,231
+2026-W19,2026-05-08,5972a064c9,json,Oracle,Store_Relational,compiled,512,1199,42.7,123,231,53.25,1199,231
+2026-W19,2026-05-08,5972a064c9,json,Postgres,Store_Relational,compiled,676,1199,56.38,152,231,65.8,1199,231
+2026-W19,2026-05-08,5972a064c9,json,PythonLegendQL,Reverse_PCT,compiled,608,1199,50.71,130,231,56.28,1193,225
+2026-W19,2026-05-08,5972a064c9,json,PythonPandasAPI,Reverse_PCT,compiled,610,1199,50.88,133,231,57.58,1193,225
+2026-W19,2026-05-08,5972a064c9,json,SQL,Reverse_PCT,compiled,469,1199,39.12,112,231,48.48,1193,225
+2026-W19,2026-05-08,5972a064c9,json,Snowflake,Store_Relational,compiled,910,1199,75.9,195,231,84.42,1199,231
+2026-W19,2026-05-08,5972a064c9,json,Spanner,Store_Relational,compiled,304,1199,25.35,95,231,41.13,1199,231
+2026-W19,2026-05-08,5972a064c9,json,SqlServer,Store_Relational,compiled,358,1199,29.86,101,231,43.72,1199,231
+2026-W19,2026-05-08,5972a064c9,json,Trino,Store_Relational,compiled,516,1199,43.04,132,231,57.14,1199,231
+2026-W20,2026-05-15,7284bf50a8,json,ClickHouse,Store_Relational,compiled,547,1199,45.62,139,231,60.17,1199,231
+2026-W20,2026-05-15,7284bf50a8,json,Databricks,Store_Relational,compiled,619,1199,51.63,149,231,64.5,1199,231
+2026-W20,2026-05-15,7284bf50a8,json,Deephaven,Store_Deephaven,compiled,66,1199,5.5,29,231,12.55,673,125
+2026-W20,2026-05-15,7284bf50a8,json,DuckDB,Store_Relational,compiled,929,1199,77.48,196,231,84.85,1199,231
+2026-W20,2026-05-15,7284bf50a8,json,H2,Store_Relational,compiled,690,1199,57.55,157,231,67.97,1199,231
+2026-W20,2026-05-15,7284bf50a8,json,Java,Platform,compiled,476,1199,39.7,138,231,59.74,1111,224
+2026-W20,2026-05-15,7284bf50a8,json,MemSQL,Store_Relational,compiled,427,1199,35.61,118,231,51.08,1199,231
+2026-W20,2026-05-15,7284bf50a8,json,Native (compiled),,compiled,1193,1199,99.5,231,231,100.0,1199,231
+2026-W20,2026-05-15,7284bf50a8,json,Native (interpreted),,interpreted,1192,1199,99.42,231,231,100.0,1199,231
+2026-W20,2026-05-15,7284bf50a8,json,Oracle,Store_Relational,compiled,511,1199,42.62,123,231,53.25,1199,231
+2026-W20,2026-05-15,7284bf50a8,json,Postgres,Store_Relational,compiled,675,1199,56.3,152,231,65.8,1199,231
+2026-W20,2026-05-15,7284bf50a8,json,PythonLegendQL,Reverse_PCT,compiled,608,1199,50.71,130,231,56.28,1193,225
+2026-W20,2026-05-15,7284bf50a8,json,PythonPandasAPI,Reverse_PCT,compiled,610,1199,50.88,133,231,57.58,1193,225
+2026-W20,2026-05-15,7284bf50a8,json,SQL,Reverse_PCT,compiled,469,1199,39.12,112,231,48.48,1193,225
+2026-W20,2026-05-15,7284bf50a8,json,Snowflake,Store_Relational,compiled,909,1199,75.81,195,231,84.42,1199,231
+2026-W20,2026-05-15,7284bf50a8,json,Spanner,Store_Relational,compiled,303,1199,25.27,95,231,41.13,1199,231
+2026-W20,2026-05-15,7284bf50a8,json,SqlServer,Store_Relational,compiled,357,1199,29.77,101,231,43.72,1199,231
+2026-W20,2026-05-15,7284bf50a8,json,Trino,Store_Relational,compiled,515,1199,42.95,132,231,57.14,1199,231
+2026-W21,2026-05-23,b2b56d3b89,json,ClickHouse,Store_Relational,compiled,547,1199,45.62,139,231,60.17,1199,231
+2026-W21,2026-05-23,b2b56d3b89,json,Databricks,Store_Relational,compiled,619,1199,51.63,149,231,64.5,1199,231
+2026-W21,2026-05-23,b2b56d3b89,json,Deephaven,Store_Deephaven,compiled,66,1199,5.5,29,231,12.55,673,125
+2026-W21,2026-05-23,b2b56d3b89,json,DuckDB,Store_Relational,compiled,929,1199,77.48,196,231,84.85,1199,231
+2026-W21,2026-05-23,b2b56d3b89,json,H2,Store_Relational,compiled,690,1199,57.55,157,231,67.97,1199,231
+2026-W21,2026-05-23,b2b56d3b89,json,Java,Platform,compiled,489,1199,40.78,144,231,62.34,1111,224
+2026-W21,2026-05-23,b2b56d3b89,json,MemSQL,Store_Relational,compiled,427,1199,35.61,118,231,51.08,1199,231
+2026-W21,2026-05-23,b2b56d3b89,json,Native (compiled),,compiled,1193,1199,99.5,231,231,100.0,1199,231
+2026-W21,2026-05-23,b2b56d3b89,json,Native (interpreted),,interpreted,1192,1199,99.42,231,231,100.0,1199,231
+2026-W21,2026-05-23,b2b56d3b89,json,Oracle,Store_Relational,compiled,511,1199,42.62,123,231,53.25,1199,231
+2026-W21,2026-05-23,b2b56d3b89,json,Postgres,Store_Relational,compiled,675,1199,56.3,152,231,65.8,1199,231
+2026-W21,2026-05-23,b2b56d3b89,json,PythonLegendQL,Reverse_PCT,compiled,608,1199,50.71,130,231,56.28,1193,225
+2026-W21,2026-05-23,b2b56d3b89,json,PythonPandasAPI,Reverse_PCT,compiled,610,1199,50.88,133,231,57.58,1193,225
+2026-W21,2026-05-23,b2b56d3b89,json,SQL,Reverse_PCT,compiled,472,1199,39.37,113,231,48.92,1193,225
+2026-W21,2026-05-23,b2b56d3b89,json,Snowflake,Store_Relational,compiled,909,1199,75.81,195,231,84.42,1199,231
+2026-W21,2026-05-23,b2b56d3b89,json,Spanner,Store_Relational,compiled,303,1199,25.27,95,231,41.13,1199,231
+2026-W21,2026-05-23,b2b56d3b89,json,SqlServer,Store_Relational,compiled,357,1199,29.77,101,231,43.72,1199,231
+2026-W21,2026-05-23,b2b56d3b89,json,Trino,Store_Relational,compiled,515,1199,42.95,132,231,57.14,1199,231
+2026-W22,2026-05-29,75bc97c9b4,json,ClickHouse,Store_Relational,compiled,549,1201,45.71,140,232,60.34,1201,232
+2026-W22,2026-05-29,75bc97c9b4,json,Databricks,Store_Relational,compiled,620,1201,51.62,150,232,64.66,1201,232
+2026-W22,2026-05-29,75bc97c9b4,json,Deephaven,Store_Deephaven,compiled,66,1201,5.5,29,232,12.5,673,125
+2026-W22,2026-05-29,75bc97c9b4,json,DuckDB,Store_Relational,compiled,931,1201,77.52,197,232,84.91,1201,232
+2026-W22,2026-05-29,75bc97c9b4,json,H2,Store_Relational,compiled,692,1201,57.62,158,232,68.1,1201,232
+2026-W22,2026-05-29,75bc97c9b4,json,Java,Platform,compiled,491,1201,40.88,145,232,62.5,1113,225
+2026-W22,2026-05-29,75bc97c9b4,json,MemSQL,Store_Relational,compiled,429,1201,35.72,119,232,51.29,1201,232
+2026-W22,2026-05-29,75bc97c9b4,json,Native (compiled),,compiled,1195,1201,99.5,232,232,100.0,1201,232
+2026-W22,2026-05-29,75bc97c9b4,json,Native (interpreted),,interpreted,1194,1201,99.42,232,232,100.0,1201,232
+2026-W22,2026-05-29,75bc97c9b4,json,Oracle,Store_Relational,compiled,513,1201,42.71,124,232,53.45,1201,232
+2026-W22,2026-05-29,75bc97c9b4,json,Postgres,Store_Relational,compiled,677,1201,56.37,153,232,65.95,1201,232
+2026-W22,2026-05-29,75bc97c9b4,json,PythonLegendQL,Reverse_PCT,compiled,608,1201,50.62,130,232,56.03,1195,226
+2026-W22,2026-05-29,75bc97c9b4,json,PythonPandasAPI,Reverse_PCT,compiled,610,1201,50.79,133,232,57.33,1195,226
+2026-W22,2026-05-29,75bc97c9b4,json,SQL,Reverse_PCT,compiled,472,1201,39.3,113,232,48.71,1195,226
+2026-W22,2026-05-29,75bc97c9b4,json,Snowflake,Store_Relational,compiled,911,1201,75.85,196,232,84.48,1201,232
+2026-W22,2026-05-29,75bc97c9b4,json,Spanner,Store_Relational,compiled,303,1201,25.23,95,232,40.95,1201,232
+2026-W22,2026-05-29,75bc97c9b4,json,SqlServer,Store_Relational,compiled,359,1201,29.89,102,232,43.97,1201,232
+2026-W22,2026-05-29,75bc97c9b4,json,Trino,Store_Relational,compiled,517,1201,43.05,133,232,57.33,1201,232
+2026-W23,2026-06-06,afcf2700b1,json,ClickHouse,Store_Relational,compiled,549,1202,45.67,140,232,60.34,1202,232
+2026-W23,2026-06-06,afcf2700b1,json,Databricks,Store_Relational,compiled,620,1202,51.58,150,232,64.66,1202,232
+2026-W23,2026-06-06,afcf2700b1,json,Deephaven,Store_Deephaven,compiled,66,1202,5.49,29,232,12.5,674,125
+2026-W23,2026-06-06,afcf2700b1,json,DuckDB,Store_Relational,compiled,934,1202,77.7,198,232,85.34,1202,232
+2026-W23,2026-06-06,afcf2700b1,json,H2,Store_Relational,compiled,690,1202,57.4,157,232,67.67,1202,232
+2026-W23,2026-06-06,afcf2700b1,json,Java,Platform,compiled,491,1202,40.85,145,232,62.5,1114,225
+2026-W23,2026-06-06,afcf2700b1,json,MemSQL,Store_Relational,compiled,429,1202,35.69,119,232,51.29,1202,232
+2026-W23,2026-06-06,afcf2700b1,json,Native (compiled),,compiled,1196,1202,99.5,232,232,100.0,1202,232
+2026-W23,2026-06-06,afcf2700b1,json,Native (interpreted),,interpreted,1195,1202,99.42,232,232,100.0,1202,232
+2026-W23,2026-06-06,afcf2700b1,json,Oracle,Store_Relational,compiled,510,1202,42.43,123,232,53.02,1202,232
+2026-W23,2026-06-06,afcf2700b1,json,Postgres,Store_Relational,compiled,677,1202,56.32,153,232,65.95,1202,232
+2026-W23,2026-06-06,afcf2700b1,json,PythonLegendQL,Reverse_PCT,compiled,608,1202,50.58,130,232,56.03,1196,226
+2026-W23,2026-06-06,afcf2700b1,json,PythonPandasAPI,Reverse_PCT,compiled,610,1202,50.75,133,232,57.33,1196,226
+2026-W23,2026-06-06,afcf2700b1,json,SQL,Reverse_PCT,compiled,472,1202,39.27,113,232,48.71,1196,226
+2026-W23,2026-06-06,afcf2700b1,json,Snowflake,Store_Relational,compiled,915,1202,76.12,197,232,84.91,1202,232
+2026-W23,2026-06-06,afcf2700b1,json,Spanner,Store_Relational,compiled,303,1202,25.21,95,232,40.95,1202,232
+2026-W23,2026-06-06,afcf2700b1,json,SqlServer,Store_Relational,compiled,359,1202,29.87,102,232,43.97,1202,232
+2026-W23,2026-06-06,afcf2700b1,json,Trino,Store_Relational,compiled,517,1202,43.01,133,232,57.33,1202,232
+2026-W24,2026-06-12,284fac9df2,json,ClickHouse,Store_Relational,compiled,550,1203,45.72,140,232,60.34,1203,232
+2026-W24,2026-06-12,284fac9df2,json,Databricks,Store_Relational,compiled,621,1203,51.62,150,232,64.66,1203,232
+2026-W24,2026-06-12,284fac9df2,json,Deephaven,Store_Deephaven,compiled,66,1203,5.49,29,232,12.5,675,125
+2026-W24,2026-06-12,284fac9df2,json,DuckDB,Store_Relational,compiled,935,1203,77.72,198,232,85.34,1203,232
+2026-W24,2026-06-12,284fac9df2,json,H2,Store_Relational,compiled,691,1203,57.44,157,232,67.67,1203,232
+2026-W24,2026-06-12,284fac9df2,json,Java,Platform,compiled,491,1203,40.81,145,232,62.5,1115,225
+2026-W24,2026-06-12,284fac9df2,json,MemSQL,Store_Relational,compiled,429,1203,35.66,119,232,51.29,1203,232
+2026-W24,2026-06-12,284fac9df2,json,Native (compiled),,compiled,1197,1203,99.5,232,232,100.0,1203,232
+2026-W24,2026-06-12,284fac9df2,json,Native (interpreted),,interpreted,1196,1203,99.42,232,232,100.0,1203,232
+2026-W24,2026-06-12,284fac9df2,json,Oracle,Store_Relational,compiled,513,1203,42.64,124,232,53.45,1203,232
+2026-W24,2026-06-12,284fac9df2,json,Postgres,Store_Relational,compiled,684,1203,56.86,153,232,65.95,1203,232
+2026-W24,2026-06-12,284fac9df2,json,PythonLegendQL,Reverse_PCT,compiled,608,1203,50.54,130,232,56.03,1197,226
+2026-W24,2026-06-12,284fac9df2,json,PythonPandasAPI,Reverse_PCT,compiled,610,1203,50.71,133,232,57.33,1197,226
+2026-W24,2026-06-12,284fac9df2,json,SQL,Reverse_PCT,compiled,474,1203,39.4,114,232,49.14,1197,226
+2026-W24,2026-06-12,284fac9df2,json,Snowflake,Store_Relational,compiled,916,1203,76.14,197,232,84.91,1203,232
+2026-W24,2026-06-12,284fac9df2,json,Spanner,Store_Relational,compiled,303,1203,25.19,95,232,40.95,1203,232
+2026-W24,2026-06-12,284fac9df2,json,SqlServer,Store_Relational,compiled,359,1203,29.84,102,232,43.97,1203,232
+2026-W24,2026-06-12,284fac9df2,json,Trino,Store_Relational,compiled,517,1203,42.98,133,232,57.33,1203,232
+2026-W25,2026-06-19,8c1d0572ae,json,ClickHouse,Store_Relational,compiled,550,1203,45.72,140,232,60.34,1203,232
+2026-W25,2026-06-19,8c1d0572ae,json,Databricks,Store_Relational,compiled,621,1203,51.62,150,232,64.66,1203,232
+2026-W25,2026-06-19,8c1d0572ae,json,Deephaven,Store_Deephaven,compiled,66,1203,5.49,29,232,12.5,675,125
+2026-W25,2026-06-19,8c1d0572ae,json,DuckDB,Store_Relational,compiled,935,1203,77.72,198,232,85.34,1203,232
+2026-W25,2026-06-19,8c1d0572ae,json,H2,Store_Relational,compiled,691,1203,57.44,157,232,67.67,1203,232
+2026-W25,2026-06-19,8c1d0572ae,json,Java,Platform,compiled,491,1203,40.81,145,232,62.5,1115,225
+2026-W25,2026-06-19,8c1d0572ae,json,MemSQL,Store_Relational,compiled,429,1203,35.66,119,232,51.29,1203,232
+2026-W25,2026-06-19,8c1d0572ae,json,Native (compiled),,compiled,1197,1203,99.5,232,232,100.0,1203,232
+2026-W25,2026-06-19,8c1d0572ae,json,Native (interpreted),,interpreted,1196,1203,99.42,232,232,100.0,1203,232
+2026-W25,2026-06-19,8c1d0572ae,json,Oracle,Store_Relational,compiled,513,1203,42.64,124,232,53.45,1203,232
+2026-W25,2026-06-19,8c1d0572ae,json,Postgres,Store_Relational,compiled,684,1203,56.86,153,232,65.95,1203,232
+2026-W25,2026-06-19,8c1d0572ae,json,PythonLegendQL,Reverse_PCT,compiled,608,1203,50.54,130,232,56.03,1197,226
+2026-W25,2026-06-19,8c1d0572ae,json,PythonPandasAPI,Reverse_PCT,compiled,610,1203,50.71,133,232,57.33,1197,226
+2026-W25,2026-06-19,8c1d0572ae,json,SQL,Reverse_PCT,compiled,474,1203,39.4,114,232,49.14,1197,226
+2026-W25,2026-06-19,8c1d0572ae,json,Snowflake,Store_Relational,compiled,916,1203,76.14,197,232,84.91,1203,232
+2026-W25,2026-06-19,8c1d0572ae,json,Spanner,Store_Relational,compiled,303,1203,25.19,95,232,40.95,1203,232
+2026-W25,2026-06-19,8c1d0572ae,json,SqlServer,Store_Relational,compiled,359,1203,29.84,102,232,43.97,1203,232
+2026-W25,2026-06-19,8c1d0572ae,json,Trino,Store_Relational,compiled,517,1203,42.98,133,232,57.33,1203,232
+2026-W26,2026-06-27,9902ac119e,json,ClickHouse,Store_Relational,compiled,550,1203,45.72,140,232,60.34,1203,232
+2026-W26,2026-06-27,9902ac119e,json,Databricks,Store_Relational,compiled,621,1203,51.62,150,232,64.66,1203,232
+2026-W26,2026-06-27,9902ac119e,json,Deephaven,Store_Deephaven,compiled,66,1203,5.49,29,232,12.5,675,125
+2026-W26,2026-06-27,9902ac119e,json,DuckDB,Store_Relational,compiled,935,1203,77.72,198,232,85.34,1203,232
+2026-W26,2026-06-27,9902ac119e,json,H2,Store_Relational,compiled,691,1203,57.44,157,232,67.67,1203,232
+2026-W26,2026-06-27,9902ac119e,json,Java,Platform,compiled,491,1203,40.81,145,232,62.5,1115,225
+2026-W26,2026-06-27,9902ac119e,json,MemSQL,Store_Relational,compiled,429,1203,35.66,119,232,51.29,1203,232
+2026-W26,2026-06-27,9902ac119e,json,Native (compiled),,compiled,1197,1203,99.5,232,232,100.0,1203,232
+2026-W26,2026-06-27,9902ac119e,json,Native (interpreted),,interpreted,1196,1203,99.42,232,232,100.0,1203,232
+2026-W26,2026-06-27,9902ac119e,json,Oracle,Store_Relational,compiled,513,1203,42.64,124,232,53.45,1203,232
+2026-W26,2026-06-27,9902ac119e,json,Postgres,Store_Relational,compiled,684,1203,56.86,153,232,65.95,1203,232
+2026-W26,2026-06-27,9902ac119e,json,PythonLegendQL,Reverse_PCT,compiled,608,1203,50.54,130,232,56.03,1197,226
+2026-W26,2026-06-27,9902ac119e,json,PythonPandasAPI,Reverse_PCT,compiled,610,1203,50.71,133,232,57.33,1197,226
+2026-W26,2026-06-27,9902ac119e,json,SQL,Reverse_PCT,compiled,474,1203,39.4,114,232,49.14,1197,226
+2026-W26,2026-06-27,9902ac119e,json,Snowflake,Store_Relational,compiled,916,1203,76.14,197,232,84.91,1203,232
+2026-W26,2026-06-27,9902ac119e,json,Spanner,Store_Relational,compiled,303,1203,25.19,95,232,40.95,1203,232
+2026-W26,2026-06-27,9902ac119e,json,SqlServer,Store_Relational,compiled,359,1203,29.84,102,232,43.97,1203,232
+2026-W26,2026-06-27,9902ac119e,json,Trino,Store_Relational,compiled,517,1203,42.98,133,232,57.33,1203,232
+2026-W27,2026-07-03,da3e2faa76,json,ClickHouse,Store_Relational,compiled,552,1203,45.89,142,232,61.21,1203,232
+2026-W27,2026-07-03,da3e2faa76,json,Databricks,Store_Relational,compiled,623,1203,51.79,150,232,64.66,1203,232
+2026-W27,2026-07-03,da3e2faa76,json,Deephaven,Store_Deephaven,compiled,66,1203,5.49,29,232,12.5,675,125
+2026-W27,2026-07-03,da3e2faa76,json,DuckDB,Store_Relational,compiled,937,1203,77.89,198,232,85.34,1203,232
+2026-W27,2026-07-03,da3e2faa76,json,H2,Store_Relational,compiled,693,1203,57.61,157,232,67.67,1203,232
+2026-W27,2026-07-03,da3e2faa76,json,Java,Platform,compiled,493,1203,40.98,145,232,62.5,1115,225
+2026-W27,2026-07-03,da3e2faa76,json,MemSQL,Store_Relational,compiled,429,1203,35.66,119,232,51.29,1203,232
+2026-W27,2026-07-03,da3e2faa76,json,Native (compiled),,compiled,1197,1203,99.5,232,232,100.0,1203,232
+2026-W27,2026-07-03,da3e2faa76,json,Native (interpreted),,interpreted,1196,1203,99.42,232,232,100.0,1203,232
+2026-W27,2026-07-03,da3e2faa76,json,Oracle,Store_Relational,compiled,513,1203,42.64,124,232,53.45,1203,232
+2026-W27,2026-07-03,da3e2faa76,json,Postgres,Store_Relational,compiled,686,1203,57.02,153,232,65.95,1203,232
+2026-W27,2026-07-03,da3e2faa76,json,PythonLegendQL,Reverse_PCT,compiled,608,1203,50.54,130,232,56.03,1197,226
+2026-W27,2026-07-03,da3e2faa76,json,PythonPandasAPI,Reverse_PCT,compiled,610,1203,50.71,133,232,57.33,1197,226
+2026-W27,2026-07-03,da3e2faa76,json,SQL,Reverse_PCT,compiled,474,1203,39.4,114,232,49.14,1197,226
+2026-W27,2026-07-03,da3e2faa76,json,Snowflake,Store_Relational,compiled,918,1203,76.31,197,232,84.91,1203,232
+2026-W27,2026-07-03,da3e2faa76,json,Spanner,Store_Relational,compiled,305,1203,25.35,95,232,40.95,1203,232
+2026-W27,2026-07-03,da3e2faa76,json,SqlServer,Store_Relational,compiled,359,1203,29.84,102,232,43.97,1203,232
+2026-W27,2026-07-03,da3e2faa76,json,Trino,Store_Relational,compiled,519,1203,43.14,133,232,57.33,1203,232
+2026-W28,2026-07-10,a17b4287f9,json,ClickHouse,Store_Relational,compiled,552,1203,45.89,142,232,61.21,1203,232
+2026-W28,2026-07-10,a17b4287f9,json,Databricks,Store_Relational,compiled,623,1203,51.79,150,232,64.66,1203,232
+2026-W28,2026-07-10,a17b4287f9,json,Deephaven,Store_Deephaven,compiled,66,1203,5.49,29,232,12.5,675,125
+2026-W28,2026-07-10,a17b4287f9,json,DuckDB,Store_Relational,compiled,937,1203,77.89,198,232,85.34,1203,232
+2026-W28,2026-07-10,a17b4287f9,json,H2,Store_Relational,compiled,693,1203,57.61,157,232,67.67,1203,232
+2026-W28,2026-07-10,a17b4287f9,json,Java,Platform,compiled,493,1203,40.98,145,232,62.5,1115,225
+2026-W28,2026-07-10,a17b4287f9,json,MemSQL,Store_Relational,compiled,429,1203,35.66,119,232,51.29,1203,232
+2026-W28,2026-07-10,a17b4287f9,json,Native (compiled),,compiled,1197,1203,99.5,232,232,100.0,1203,232
+2026-W28,2026-07-10,a17b4287f9,json,Native (interpreted),,interpreted,1196,1203,99.42,232,232,100.0,1203,232
+2026-W28,2026-07-10,a17b4287f9,json,Oracle,Store_Relational,compiled,513,1203,42.64,124,232,53.45,1203,232
+2026-W28,2026-07-10,a17b4287f9,json,Postgres,Store_Relational,compiled,686,1203,57.02,153,232,65.95,1203,232
+2026-W28,2026-07-10,a17b4287f9,json,PythonLegendQL,Reverse_PCT,compiled,608,1203,50.54,130,232,56.03,1197,226
+2026-W28,2026-07-10,a17b4287f9,json,PythonPandasAPI,Reverse_PCT,compiled,610,1203,50.71,133,232,57.33,1197,226
+2026-W28,2026-07-10,a17b4287f9,json,SQL,Reverse_PCT,compiled,477,1203,39.65,115,232,49.57,1197,226
+2026-W28,2026-07-10,a17b4287f9,json,Snowflake,Store_Relational,compiled,918,1203,76.31,197,232,84.91,1203,232
+2026-W28,2026-07-10,a17b4287f9,json,Spanner,Store_Relational,compiled,305,1203,25.35,95,232,40.95,1203,232
+2026-W28,2026-07-10,a17b4287f9,json,SqlServer,Store_Relational,compiled,359,1203,29.84,102,232,43.97,1203,232
+2026-W28,2026-07-10,a17b4287f9,json,Trino,Store_Relational,compiled,519,1203,43.14,133,232,57.33,1203,232
+2026-W29,2026-07-17,2b422dfae3,json,ClickHouse,Store_Relational,compiled,552,1205,45.81,142,232,61.21,1205,232
+2026-W29,2026-07-17,2b422dfae3,json,Databricks,Store_Relational,compiled,623,1205,51.7,150,232,64.66,1205,232
+2026-W29,2026-07-17,2b422dfae3,json,Deephaven,Store_Deephaven,compiled,66,1205,5.48,29,232,12.5,677,125
+2026-W29,2026-07-17,2b422dfae3,json,DuckDB,Store_Relational,compiled,939,1205,77.93,198,232,85.34,1205,232
+2026-W29,2026-07-17,2b422dfae3,json,H2,Store_Relational,compiled,693,1205,57.51,157,232,67.67,1205,232
+2026-W29,2026-07-17,2b422dfae3,json,Java,Platform,compiled,493,1205,40.91,145,232,62.5,1117,225
+2026-W29,2026-07-17,2b422dfae3,json,MemSQL,Store_Relational,compiled,429,1205,35.6,119,232,51.29,1205,232
+2026-W29,2026-07-17,2b422dfae3,json,Native (compiled),,compiled,1199,1205,99.5,232,232,100.0,1205,232
+2026-W29,2026-07-17,2b422dfae3,json,Native (interpreted),,interpreted,1198,1205,99.42,232,232,100.0,1205,232
+2026-W29,2026-07-17,2b422dfae3,json,Oracle,Store_Relational,compiled,513,1205,42.57,124,232,53.45,1205,232
+2026-W29,2026-07-17,2b422dfae3,json,Postgres,Store_Relational,compiled,686,1205,56.93,153,232,65.95,1205,232
+2026-W29,2026-07-17,2b422dfae3,json,PythonLegendQL,Reverse_PCT,compiled,608,1205,50.46,130,232,56.03,1199,226
+2026-W29,2026-07-17,2b422dfae3,json,PythonPandasAPI,Reverse_PCT,compiled,610,1205,50.62,133,232,57.33,1199,226
+2026-W29,2026-07-17,2b422dfae3,json,SQL,Reverse_PCT,compiled,477,1205,39.59,115,232,49.57,1199,226
+2026-W29,2026-07-17,2b422dfae3,json,Snowflake,Store_Relational,compiled,920,1205,76.35,197,232,84.91,1205,232
+2026-W29,2026-07-17,2b422dfae3,json,Spanner,Store_Relational,compiled,305,1205,25.31,95,232,40.95,1205,232
+2026-W29,2026-07-17,2b422dfae3,json,SqlServer,Store_Relational,compiled,359,1205,29.79,102,232,43.97,1205,232
+2026-W29,2026-07-17,2b422dfae3,json,Trino,Store_Relational,compiled,519,1205,43.07,133,232,57.33,1205,232
+2026-W30,2026-07-24,247392f2de,json,ClickHouse,Store_Relational,compiled,552,1205,45.81,142,232,61.21,1205,232
+2026-W30,2026-07-24,247392f2de,json,Databricks,Store_Relational,compiled,623,1205,51.7,150,232,64.66,1205,232
+2026-W30,2026-07-24,247392f2de,json,Deephaven,Store_Deephaven,compiled,66,1205,5.48,29,232,12.5,677,125
+2026-W30,2026-07-24,247392f2de,json,DuckDB,Store_Relational,compiled,939,1205,77.93,198,232,85.34,1205,232
+2026-W30,2026-07-24,247392f2de,json,H2,Store_Relational,compiled,693,1205,57.51,157,232,67.67,1205,232
+2026-W30,2026-07-24,247392f2de,json,Java,Platform,compiled,493,1205,40.91,145,232,62.5,1117,225
+2026-W30,2026-07-24,247392f2de,json,MemSQL,Store_Relational,compiled,429,1205,35.6,119,232,51.29,1205,232
+2026-W30,2026-07-24,247392f2de,json,Native (compiled),,compiled,1199,1205,99.5,232,232,100.0,1205,232
+2026-W30,2026-07-24,247392f2de,json,Native (interpreted),,interpreted,1198,1205,99.42,232,232,100.0,1205,232
+2026-W30,2026-07-24,247392f2de,json,Oracle,Store_Relational,compiled,513,1205,42.57,124,232,53.45,1205,232
+2026-W30,2026-07-24,247392f2de,json,Postgres,Store_Relational,compiled,686,1205,56.93,153,232,65.95,1205,232
+2026-W30,2026-07-24,247392f2de,json,PythonLegendQL,Reverse_PCT,compiled,608,1205,50.46,130,232,56.03,1199,226
+2026-W30,2026-07-24,247392f2de,json,PythonPandasAPI,Reverse_PCT,compiled,610,1205,50.62,133,232,57.33,1199,226
+2026-W30,2026-07-24,247392f2de,json,SQL,Reverse_PCT,compiled,477,1205,39.59,115,232,49.57,1199,226
+2026-W30,2026-07-24,247392f2de,json,Snowflake,Store_Relational,compiled,920,1205,76.35,197,232,84.91,1205,232
+2026-W30,2026-07-24,247392f2de,json,Spanner,Store_Relational,compiled,305,1205,25.31,95,232,40.95,1205,232
+2026-W30,2026-07-24,247392f2de,json,SqlServer,Store_Relational,compiled,359,1205,29.79,102,232,43.97,1205,232
+2026-W30,2026-07-24,247392f2de,json,Trino,Store_Relational,compiled,519,1205,43.07,133,232,57.33,1205,232
+2026-W31,2026-08-02,835f9f4c0a,json,ClickHouse,Store_Relational,compiled,552,1205,45.81,142,232,61.21,1205,232
+2026-W31,2026-08-02,835f9f4c0a,json,Databricks,Store_Relational,compiled,623,1205,51.7,150,232,64.66,1205,232
+2026-W31,2026-08-02,835f9f4c0a,json,Deephaven,Store_Deephaven,compiled,66,1205,5.48,29,232,12.5,677,125
+2026-W31,2026-08-02,835f9f4c0a,json,DuckDB,Store_Relational,compiled,939,1205,77.93,198,232,85.34,1205,232
+2026-W31,2026-08-02,835f9f4c0a,json,H2,Store_Relational,compiled,693,1205,57.51,157,232,67.67,1205,232
+2026-W31,2026-08-02,835f9f4c0a,json,Java,Platform,compiled,493,1205,40.91,145,232,62.5,1117,225
+2026-W31,2026-08-02,835f9f4c0a,json,MemSQL,Store_Relational,compiled,429,1205,35.6,119,232,51.29,1205,232
+2026-W31,2026-08-02,835f9f4c0a,json,Native (compiled),,compiled,1199,1205,99.5,232,232,100.0,1205,232
+2026-W31,2026-08-02,835f9f4c0a,json,Native (interpreted),,interpreted,1198,1205,99.42,232,232,100.0,1205,232
+2026-W31,2026-08-02,835f9f4c0a,json,Oracle,Store_Relational,compiled,513,1205,42.57,124,232,53.45,1205,232
+2026-W31,2026-08-02,835f9f4c0a,json,Postgres,Store_Relational,compiled,686,1205,56.93,153,232,65.95,1205,232
+2026-W31,2026-08-02,835f9f4c0a,json,PythonLegendQL,Reverse_PCT,compiled,608,1205,50.46,130,232,56.03,1199,226
+2026-W31,2026-08-02,835f9f4c0a,json,PythonPandasAPI,Reverse_PCT,compiled,610,1205,50.62,133,232,57.33,1199,226
+2026-W31,2026-08-02,835f9f4c0a,json,SQL,Reverse_PCT,compiled,477,1205,39.59,115,232,49.57,1199,226
+2026-W31,2026-08-02,835f9f4c0a,json,Snowflake,Store_Relational,compiled,920,1205,76.35,197,232,84.91,1205,232
+2026-W31,2026-08-02,835f9f4c0a,json,Spanner,Store_Relational,compiled,305,1205,25.31,95,232,40.95,1205,232
+2026-W31,2026-08-02,835f9f4c0a,json,SqlServer,Store_Relational,compiled,359,1205,29.79,102,232,43.97,1205,232
+2026-W31,2026-08-02,835f9f4c0a,json,Trino,Store_Relational,compiled,519,1205,43.07,133,232,57.33,1205,232
+2026-W32,2026-08-08,f962add013,json,ClickHouse,Store_Relational,compiled,571,1225,46.61,144,234,61.54,1225,234
+2026-W32,2026-08-08,f962add013,json,Databricks,Store_Relational,compiled,813,1225,66.37,189,234,80.77,1225,234
+2026-W32,2026-08-08,f962add013,json,Deephaven,Store_Deephaven,compiled,68,1225,5.55,30,234,12.82,700,129
+2026-W32,2026-08-08,f962add013,json,DuckDB,Store_Relational,compiled,963,1225,78.61,201,234,85.9,1225,234
+2026-W32,2026-08-08,f962add013,json,H2,Store_Relational,compiled,720,1225,58.78,160,234,68.38,1225,234
+2026-W32,2026-08-08,f962add013,json,Java,Platform,compiled,508,1225,41.47,147,234,62.82,1137,227
+2026-W32,2026-08-08,f962add013,json,MemSQL,Store_Relational,compiled,454,1225,37.06,121,234,51.71,1225,234
+2026-W32,2026-08-08,f962add013,json,Native (compiled),,compiled,1219,1225,99.51,234,234,100.0,1225,234
+2026-W32,2026-08-08,f962add013,json,Native (interpreted),,interpreted,1218,1225,99.43,234,234,100.0,1225,234
+2026-W32,2026-08-08,f962add013,json,Oracle,Store_Relational,compiled,527,1225,43.02,125,234,53.42,1225,234
+2026-W32,2026-08-08,f962add013,json,Postgres,Store_Relational,compiled,710,1225,57.96,156,234,66.67,1225,234
+2026-W32,2026-08-08,f962add013,json,PythonLegendQL,Reverse_PCT,compiled,602,1225,49.14,128,234,54.7,1219,228
+2026-W32,2026-08-08,f962add013,json,PythonPandasAPI,Reverse_PCT,compiled,604,1225,49.31,131,234,55.98,1219,228
+2026-W32,2026-08-08,f962add013,json,SQL,Reverse_PCT,compiled,471,1225,38.45,113,234,48.29,1219,228
+2026-W32,2026-08-08,f962add013,json,Snowflake,Store_Relational,compiled,948,1225,77.39,200,234,85.47,1225,234
+2026-W32,2026-08-08,f962add013,json,Spanner,Store_Relational,compiled,330,1225,26.94,97,234,41.45,1225,234
+2026-W32,2026-08-08,f962add013,json,SqlServer,Store_Relational,compiled,449,1225,36.65,122,234,52.14,1225,234
+2026-W32,2026-08-08,f962add013,json,Trino,Store_Relational,compiled,541,1225,44.16,135,234,57.69,1225,234

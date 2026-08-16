@@ -1,0 +1,60 @@
+name: Update PCT Coverage Trend
+
+# legend-engine publishes a fresh PCT report into website/static/pct on nearly every build, so
+# the git history of that directory is a weekly record of how much of the Pure function surface
+# each execution target supports. This job reads the weeks that have closed since it last ran,
+# appends them to the committed dataset, rebuilds the report page, and commits both back.
+#
+# Pushing with the FINOS PAT (rather than the default GITHUB_TOKEN) is load-bearing twice over:
+# master is protected, and a push made with the default token does not trigger other workflows --
+# which would leave Publish Website never running, and the page on the live site frozen.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC, after the previous ISO week has closed
+  workflow_dispatch: {}
+
+concurrency:
+  group: pct-coverage-trend
+  cancel-in-progress: false
+
+jobs:
+  update-trend:
+    name: Update PCT Coverage Trend
+    # There is currently no way to limit workflow dispatch to only allow default branch
+    # so we need to restrict it here
+    # See https://github.community/t/limit-branch-for-workflow-dispatch/122099
+    if: github.ref == 'refs/heads/master' && github.repository == 'finos/legend'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3.5.2
+        with:
+          token: ${{ secrets.FINOS_GITHUB_TOKEN }}
+          fetch-depth: 0 # the script reads every past revision of website/static/pct
+      - name: Configure Git
+        run: |
+          git config --global user.email "37706051+finos-admin@users.noreply.github.com"
+          git config --global user.name "FINOS Administrator"
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Update Coverage Trend
+        run: |
+          python3 scripts/pct-coverage-trend.py \
+            --summary "$GITHUB_STEP_SUMMARY" \
+            --delta-out "${RUNNER_TEMP}/delta.txt"
+      - name: Commit and Push
+        run: |
+          # Gate on the dataset, not the directory: the page carries its generation date, so it
+          # differs on every run. A Monday where no week closed with a new report should record
+          # nothing rather than commit a date bump and republish the whole site for it.
+          if git diff --quiet -- website/static/pct-coverage/pct-coverage-weekly.csv; then
+            echo "No new weeks to record." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          DELTA=$(cat "${RUNNER_TEMP}/delta.txt")
+          git add website/static/pct-coverage
+          git commit -m "maint: update PCT coverage trend (${DELTA%%;*})" -m "${DELTA}"
+          git push
