@@ -37,3 +37,6 @@ docs/models
 
 # Ignore Java generated files
 showcases/target/
+
+# Generated reports (scripts/pct-coverage-trend.py)
+/build
