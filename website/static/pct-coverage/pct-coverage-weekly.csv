@@ -918,3 +918,39 @@ week,week_ending,commit,era,adapter,group,platform,tests_passed,suite_tests,test
 2026-W32,2026-08-08,f962add013,json,Spanner,Store_Relational,compiled,330,1225,26.94,97,234,41.45,1225,234
 2026-W32,2026-08-08,f962add013,json,SqlServer,Store_Relational,compiled,449,1225,36.65,122,234,52.14,1225,234
 2026-W32,2026-08-08,f962add013,json,Trino,Store_Relational,compiled,541,1225,44.16,135,234,57.69,1225,234
+2026-W33,2026-08-15,50337bd4ec,json,ClickHouse,Store_Relational,compiled,691,1315,52.55,164,246,66.67,1315,246
+2026-W33,2026-08-15,50337bd4ec,json,Databricks,Store_Relational,compiled,848,1315,64.49,193,246,78.46,1315,246
+2026-W33,2026-08-15,50337bd4ec,json,Deephaven,Store_Deephaven,compiled,68,1315,5.17,30,246,12.2,790,141
+2026-W33,2026-08-15,50337bd4ec,json,DuckDB,Store_Relational,compiled,1052,1315,80.0,213,246,86.59,1315,246
+2026-W33,2026-08-15,50337bd4ec,json,H2,Store_Relational,compiled,813,1315,61.83,173,246,70.33,1315,246
+2026-W33,2026-08-15,50337bd4ec,json,Java,Platform,compiled,508,1315,38.63,147,246,59.76,1227,239
+2026-W33,2026-08-15,50337bd4ec,json,MemSQL,Store_Relational,compiled,532,1315,40.46,142,246,57.72,1315,246
+2026-W33,2026-08-15,50337bd4ec,json,Native (compiled),,compiled,1309,1315,99.54,246,246,100.0,1315,246
+2026-W33,2026-08-15,50337bd4ec,json,Native (interpreted),,interpreted,1308,1315,99.47,246,246,100.0,1315,246
+2026-W33,2026-08-15,50337bd4ec,json,Oracle,Store_Relational,compiled,685,1315,52.09,155,246,63.01,1315,246
+2026-W33,2026-08-15,50337bd4ec,json,Postgres,Store_Relational,compiled,798,1315,60.68,168,246,68.29,1315,246
+2026-W33,2026-08-15,50337bd4ec,json,PythonLegendQL,Reverse_PCT,compiled,602,1315,45.78,128,246,52.03,1309,240
+2026-W33,2026-08-15,50337bd4ec,json,PythonPandasAPI,Reverse_PCT,compiled,604,1315,45.93,131,246,53.25,1309,240
+2026-W33,2026-08-15,50337bd4ec,json,SQL,Reverse_PCT,compiled,473,1315,35.97,113,246,45.93,1309,240
+2026-W33,2026-08-15,50337bd4ec,json,Snowflake,Store_Relational,compiled,1037,1315,78.86,212,246,86.18,1315,246
+2026-W33,2026-08-15,50337bd4ec,json,Spanner,Store_Relational,compiled,381,1315,28.97,100,246,40.65,1315,246
+2026-W33,2026-08-15,50337bd4ec,json,SqlServer,Store_Relational,compiled,566,1315,43.04,134,246,54.47,1315,246
+2026-W33,2026-08-15,50337bd4ec,json,Trino,Store_Relational,compiled,662,1315,50.34,147,246,59.76,1315,246
+2026-W34,2026-08-22,0ff0650874,json,ClickHouse,Store_Relational,compiled,694,1327,52.3,164,247,66.4,1327,247
+2026-W34,2026-08-22,0ff0650874,json,Databricks,Store_Relational,compiled,868,1327,65.41,199,247,80.57,1327,247
+2026-W34,2026-08-22,0ff0650874,json,Deephaven,Store_Deephaven,compiled,68,1327,5.12,30,247,12.15,799,142
+2026-W34,2026-08-22,0ff0650874,json,DuckDB,Store_Relational,compiled,1066,1327,80.33,215,247,87.04,1327,247
+2026-W34,2026-08-22,0ff0650874,json,H2,Store_Relational,compiled,833,1327,62.77,175,247,70.85,1327,247
+2026-W34,2026-08-22,0ff0650874,json,Java,Platform,compiled,510,1327,38.43,147,247,59.51,1239,240
+2026-W34,2026-08-22,0ff0650874,json,MemSQL,Store_Relational,compiled,548,1327,41.3,146,247,59.11,1327,247
+2026-W34,2026-08-22,0ff0650874,json,Native (compiled),,compiled,1321,1327,99.55,247,247,100.0,1327,247
+2026-W34,2026-08-22,0ff0650874,json,Native (interpreted),,interpreted,1320,1327,99.47,247,247,100.0,1327,247
+2026-W34,2026-08-22,0ff0650874,json,Oracle,Store_Relational,compiled,698,1327,52.6,157,247,63.56,1327,247
+2026-W34,2026-08-22,0ff0650874,json,Postgres,Store_Relational,compiled,826,1327,62.25,174,247,70.45,1327,247
+2026-W34,2026-08-22,0ff0650874,json,PythonLegendQL,Reverse_PCT,compiled,602,1327,45.37,128,247,51.82,1321,241
+2026-W34,2026-08-22,0ff0650874,json,PythonPandasAPI,Reverse_PCT,compiled,604,1327,45.52,131,247,53.04,1321,241
+2026-W34,2026-08-22,0ff0650874,json,SQL,Reverse_PCT,compiled,473,1327,35.64,113,247,45.75,1321,241
+2026-W34,2026-08-22,0ff0650874,json,Snowflake,Store_Relational,compiled,1051,1327,79.2,214,247,86.64,1327,247
+2026-W34,2026-08-22,0ff0650874,json,Spanner,Store_Relational,compiled,396,1327,29.84,103,247,41.7,1327,247
+2026-W34,2026-08-22,0ff0650874,json,SqlServer,Store_Relational,compiled,567,1327,42.73,134,247,54.25,1327,247
+2026-W34,2026-08-22,0ff0650874,json,Trino,Store_Relational,compiled,681,1327,51.32,152,247,61.54,1327,247
