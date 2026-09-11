@@ -1,0 +1,1085 @@
+<!--
+ Copyright 2026 Goldman Sachs
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PCT Function Reference</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --bg-alt: #f6f7f9;
+            --bg-sunken: #eef0f3;
+            --border: #d9dde3;
+            --border-soft: #e8ebef;
+            --text: #1b1f24;
+            --text-muted: #5c6773;
+            --link: #0b62c4;
+            --pass: #167c3c;
+            --pass-bg: #e6f4ea;
+            --fail: #c0243c;
+            --fail-bg: #fdeaed;
+            --partial: #a35b00;
+            --partial-bg: #fdf1e0;
+            --none: #8b95a1;
+            --code-bg: #f4f5f7;
+            --accent: #0b62c4;
+            --sidebar-w: 330px;
+            --header-h: 52px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #14181d;
+                --bg-alt: #1a1f26;
+                --bg-sunken: #10141a;
+                --border: #2c333c;
+                --border-soft: #232930;
+                --text: #e4e8ed;
+                --text-muted: #99a3ae;
+                --link: #6cb0f5;
+                --pass: #5fd08a;
+                --pass-bg: #16301f;
+                --fail: #ff8095;
+                --fail-bg: #35171d;
+                --partial: #f0b45e;
+                --partial-bg: #33260f;
+                --none: #7a848f;
+                --code-bg: #1f252c;
+                --accent: #6cb0f5;
+            }
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        a { color: var(--link); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12.5px; }
+
+        header.top {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: var(--header-h);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 0 18px;
+            background: var(--bg-alt);
+            border-bottom: 1px solid var(--border);
+            z-index: 10;
+        }
+        header.top .title { font-weight: 600; white-space: nowrap; }
+        header.top .title a { color: var(--text); }
+        header.top .spacer { flex: 1; }
+        header.top .links { font-size: 12.5px; color: var(--text-muted); white-space: nowrap; }
+
+        #search {
+            width: 260px;
+            padding: 5px 9px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--bg);
+            color: var(--text);
+            font-size: 13px;
+        }
+
+        nav.sidebar {
+            position: fixed;
+            top: var(--header-h); bottom: 0; left: 0;
+            width: var(--sidebar-w);
+            overflow-y: auto;
+            border-right: 1px solid var(--border);
+            background: var(--bg-sunken);
+            padding: 12px 0 40px 0;
+        }
+
+        .nav-module {
+            padding: 7px 14px 3px 14px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .nav-pkg {
+            display: block;
+            padding: 3px 14px 3px 22px;
+            color: var(--text);
+            font-size: 13px;
+            cursor: pointer;
+        }
+        .nav-pkg:hover { background: var(--border-soft); text-decoration: none; }
+        .nav-pkg.selected { background: var(--border-soft); font-weight: 600; }
+        .nav-pkg .count { color: var(--text-muted); font-size: 11.5px; margin-left: 6px; }
+        .nav-fn {
+            display: block;
+            padding: 2px 14px 2px 36px;
+            color: var(--text);
+            font-size: 13px;
+        }
+        .nav-fn:hover { background: var(--border-soft); text-decoration: none; }
+        .nav-fn.selected { background: var(--accent); color: #fff; border-radius: 3px; }
+        .nav-empty { padding: 12px 16px; color: var(--text-muted); font-size: 13px; }
+
+        main {
+            margin-left: var(--sidebar-w);
+            padding: calc(var(--header-h) + 22px) 32px 80px 32px;
+            max-width: 1180px;
+        }
+
+        h1 { font-size: 24px; margin: 0 0 4px 0; }
+        h1 .kind { color: var(--text-muted); font-weight: 400; font-size: 15px; }
+        h2 {
+            font-size: 16px;
+            margin: 34px 0 10px 0;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--border);
+        }
+        h3 { font-size: 14px; margin: 22px 0 6px 0; }
+
+        .subtitle { color: var(--text-muted); font-size: 13px; margin-bottom: 18px; }
+        .subtitle .sep { margin: 0 8px; opacity: .5; }
+
+        .badge {
+            display: inline-block;
+            padding: 1px 7px;
+            border-radius: 10px;
+            background: var(--bg-sunken);
+            border: 1px solid var(--border);
+            font-size: 11px;
+            color: var(--text-muted);
+            vertical-align: 1px;
+        }
+
+        table { border-collapse: collapse; width: 100%; }
+        th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--border-soft); vertical-align: top; }
+        th { font-size: 11.5px; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); font-weight: 600; }
+        tbody tr:hover { background: var(--bg-alt); }
+
+        .scroll-x { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; }
+        .scroll-x table { min-width: 100%; }
+        .scroll-x th, .scroll-x td { white-space: nowrap; }
+        .scroll-x th.sticky-col, .scroll-x td.sticky-col {
+            position: sticky; left: 0;
+            background: var(--bg);
+            border-right: 1px solid var(--border-soft);
+            white-space: normal;
+            min-width: 260px;
+        }
+        .scroll-x tbody tr:hover td.sticky-col { background: var(--bg-alt); }
+        .scroll-x th.group-head { text-align: center; border-bottom: 1px solid var(--border); }
+        .scroll-x td.cell { text-align: center; }
+
+        .sig {
+            background: var(--code-bg);
+            border: 1px solid var(--border-soft);
+            border-left: 3px solid var(--accent);
+            border-radius: 5px;
+            padding: 7px 11px;
+            margin-bottom: 8px;
+            overflow-x: auto;
+            white-space: pre;
+        }
+
+        .overload { margin-bottom: 26px; scroll-margin-top: calc(var(--header-h) + 14px); }
+        .overload.target .sig { border-left-width: 6px; border-color: var(--accent); }
+        .sig-row { display: flex; align-items: flex-start; gap: 6px; }
+        .sig-row .sig { flex: 1; min-width: 0; }
+        .overload-link {
+            flex: none;
+            padding: 7px 2px;
+            color: var(--text-muted);
+            opacity: .35;
+            font-size: 13px;
+        }
+        .overload:hover .overload-link, .overload-link:focus { opacity: 1; }
+        .doc { margin-left: 3px; }
+        .doc p { margin: 8px 0; }
+        .doc ul { margin: 8px 0; padding-left: 22px; }
+        .doc li { margin: 2px 0; }
+        .doc code { background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+        .doc pre {
+            background: var(--code-bg);
+            border: 1px solid var(--border-soft);
+            border-radius: 6px;
+            padding: 9px 12px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        .doc pre code { background: none; padding: 0; }
+        .no-doc { color: var(--text-muted); font-style: italic; }
+
+        .chips { display: flex; flex-wrap: wrap; gap: 7px; margin: 4px 0 6px 0; }
+        .chip {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 6px;
+            padding: 3px 9px;
+            border-radius: 13px;
+            border: 1px solid var(--border);
+            font-size: 12px;
+            cursor: default;
+        }
+        .chip .n { font-weight: 600; }
+        .chip.pass { background: var(--pass-bg); border-color: transparent; color: var(--pass); }
+        .chip.partial { background: var(--partial-bg); border-color: transparent; color: var(--partial); }
+        .chip.fail { background: var(--fail-bg); border-color: transparent; color: var(--fail); }
+        .chip.none { color: var(--none); }
+
+        .mark { font-weight: 700; font-size: 16px; line-height: 1; }
+        .mark.pass { color: var(--pass); }
+        .mark.fail { color: var(--fail); cursor: pointer; text-decoration: underline dotted; }
+        .mark.partial { color: var(--partial); }
+        .mark.none { color: var(--none); }
+
+        .qualifier {
+            display: inline-block;
+            font-size: 10.5px;
+            padding: 0 6px;
+            border-radius: 8px;
+            background: var(--bg-sunken);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            margin-right: 4px;
+        }
+
+        .failures { margin: 4px 0 18px 0; }
+        .failures h3 { margin: 12px 0 4px 0; }
+
+        .err {
+            margin: 6px 0 2px 0;
+            padding: 7px 10px;
+            background: var(--fail-bg);
+            border-radius: 5px;
+            font-size: 12px;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .err .who { font-weight: 600; color: var(--fail); }
+
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+            padding: 9px 12px;
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 12.5px;
+        }
+        .toolbar label { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
+
+        footer.page {
+            margin-left: var(--sidebar-w);
+            padding: 18px 32px 40px 32px;
+            color: var(--text-muted);
+            font-size: 12px;
+            border-top: 1px solid var(--border-soft);
+        }
+
+        .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+        .card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 14px;
+            background: var(--bg-alt);
+        }
+        .card .name { font-weight: 600; margin-bottom: 2px; }
+        .card .meta { color: var(--text-muted); font-size: 12px; }
+
+        @media (max-width: 900px) {
+            nav.sidebar { position: static; width: auto; height: auto; max-height: 240px; border-right: none; border-bottom: 1px solid var(--border); }
+            main, footer.page { margin-left: 0; padding-left: 16px; padding-right: 16px; }
+            header.top { position: static; }
+            main { padding-top: 20px; }
+        }
+    </style>
+</head>
+<body>
+<header class="top">
+    <div class="title"><a href="#">Legend PCT Reference</a></div>
+    <input id="search" type="search" placeholder="Search functions…" autocomplete="off" spellcheck="false">
+    <div class="spacer"></div>
+    <div class="links"><a href="./PCT_Report_Compatibility.html">Compatibility matrix</a></div>
+</header>
+<nav class="sidebar" id="sidebar"></nav>
+<main id="content">Loading…</main>
+<footer class="page" id="footer"></footer>
+
+<script>
+    "use strict";
+
+    let doc = null;
+    let gitInfo = {};
+    let adapters = [];          // ordered AdapterKey list
+    // Keys are Pure identifiers — 'toString' and friends collide with Object.prototype, so these are all bare maps.
+    let byModulePackage = Object.create(null);   // module -> package -> [functionDocumentation]
+    let functionIndex = Object.create(null);     // route key -> functionDocumentation
+    let nameIndex = Object.create(null);         // function name -> [functionDocumentation]
+    let activeRoute = '';                        // full route of what is on screen, even when reached by a short link
+
+    /* ---------------------------------------------------------------- data */
+
+    async function load()
+    {
+        if (window.PCT_DATA)
+        {
+            doc = window.PCT_DATA;
+            gitInfo = window.PCT_GIT_INFO || {};
+        }
+        else
+        {
+            const [d, g] = await Promise.all([
+                fetch('./pct-docs.json').then(r => r.json()),
+                fetch('./git-info.json').then(r => r.json()).catch(() => ({}))
+            ]);
+            doc = d;
+            gitInfo = g || {};
+        }
+        index();
+        renderSidebar();
+        route();
+        window.addEventListener('hashchange', route);
+        document.getElementById('search').addEventListener('input', renderSidebar);
+        renderFooter();
+    }
+
+    function adapterKey(a)
+    {
+        return a.platform + ':' + a.adapter.group + ':' + a.adapter.name;
+    }
+
+    function adapterName(a)
+    {
+        return a.adapter.name === 'Native' ? 'Native (' + a.platform + ')' : a.adapter.name;
+    }
+
+    function adapterGroup(a)
+    {
+        return a.adapter.name === 'Native' ? 'Native' : a.adapter.group;
+    }
+
+    function functionRoute(fd)
+    {
+        return fd.reportScope.module + '/' + (fd.functionDefinition.name || 'composition-tests') + '/' + fd.functionDefinition.sourceId;
+    }
+
+    // Signatures nest types in <>, {} and [], and the arrow in Function<{T[1]->Boolean[1]}> carries a '>'
+    // that closes nothing, so both scans below track depth and skip a '>' that follows a '-'.
+    function closesGroup(text, i)
+    {
+        const c = text.charAt(i);
+        return c === ')' || c === ']' || c === '}' || (c === '>' && text.charAt(i - 1) !== '-');
+    }
+
+    function opensGroup(c)
+    {
+        return c === '(' || c === '[' || c === '{' || c === '<';
+    }
+
+    function parameterList(simple)
+    {
+        const open = simple.indexOf('(');
+        if (open < 0)
+        {
+            return null;
+        }
+        let depth = 0;
+        for (let i = open; i < simple.length; i++)
+        {
+            if (opensGroup(simple.charAt(i)))
+            {
+                depth++;
+            }
+            else if (closesGroup(simple, i) && --depth === 0)
+            {
+                return simple.substring(open + 1, i);
+            }
+        }
+        return null;
+    }
+
+    function splitParameters(list)
+    {
+        const parts = [];
+        let depth = 0;
+        let current = '';
+        for (let i = 0; i < list.length; i++)
+        {
+            const c = list.charAt(i);
+            if (opensGroup(c))
+            {
+                depth++;
+            }
+            else if (closesGroup(list, i))
+            {
+                depth--;
+            }
+            if (c === ',' && depth === 0)
+            {
+                parts.push(current);
+                current = '';
+            }
+            else
+            {
+                current += c;
+            }
+        }
+        if (current.trim())
+        {
+            parts.push(current);
+        }
+        return parts.map(p => p.trim().replace(/\s+/g, ''));
+    }
+
+    function overloadKey(signature, withMultiplicity)
+    {
+        const list = parameterList(signature.simple);
+        if (list === null)
+        {
+            return null;
+        }
+        return '(' + splitParameters(list)
+            .map(p => withMultiplicity ? p : p.replace(/\[[^\[\]]*\]$/, ''))
+            .join(',') + ')';
+    }
+
+    // Multiplicity is dropped where the parameter types alone tell the overloads apart, so most links read
+    // as times(Float); max keeps it, since max(Number[*]) and max(Number[1..*]) return different multiplicities.
+    function overloadKeys(def)
+    {
+        const signatures = def.signatures || [];
+        const short = signatures.map(s => overloadKey(s, false));
+        return short.every((k, i) => k === null || short.indexOf(k) === i)
+            ? short
+            : signatures.map(s => overloadKey(s, true));
+    }
+
+    // A link may carry the key this page uses, or either form of it — a hand-written times(Float), or the
+    // times(Float[*]) read off a quoted signature — so all three are accepted.
+    function overloadIndex(def, wanted)
+    {
+        const signatures = def.signatures || [];
+        const forms = [overloadKeys(def), signatures.map(s => overloadKey(s, false)), signatures.map(s => overloadKey(s, true))];
+        for (let i = 0; i < forms.length; i++)
+        {
+            const found = forms[i].indexOf(wanted);
+            if (found >= 0)
+            {
+                return found;
+            }
+        }
+        return -1;
+    }
+
+    // The shortest route that still lands where it should: the bare name when nothing else uses it, or when
+    // the overload alone tells it apart from its namesakes, and the full route otherwise.
+    function shareRoute(fd, key)
+    {
+        const name = fd.functionDefinition.name;
+        const suffix = key || '';
+        if (!name)
+        {
+            return functionRoute(fd);
+        }
+        const namesakes = nameIndex[name];
+        const settled = namesakes.length === 1
+            || (key && namesakes.filter(c => overloadIndex(c.functionDefinition, key) >= 0).length === 1);
+        return (settled ? name : functionRoute(fd)) + suffix;
+    }
+
+    function packageOf(fd)
+    {
+        return fd.functionDefinition._package || fd.reportScope._package || '(default)';
+    }
+
+    function index()
+    {
+        const groups = Object.create(null);
+        doc.adapters.forEach(a => (groups[adapterGroup(a)] = groups[adapterGroup(a)] || []).push(a));
+        adapters = Object.keys(groups).sort().flatMap(g => groups[g].sort((x, y) => adapterName(x).localeCompare(adapterName(y))));
+
+        doc.functionsDocumentation.forEach(fd =>
+        {
+            const module = fd.reportScope.module;
+            const pkg = packageOf(fd);
+            byModulePackage[module] = byModulePackage[module] || Object.create(null);
+            (byModulePackage[module][pkg] = byModulePackage[module][pkg] || []).push(fd);
+            functionIndex[functionRoute(fd)] = fd;
+            const name = fd.functionDefinition.name;
+            if (name)
+            {
+                (nameIndex[name] = nameIndex[name] || []).push(fd);
+            }
+        });
+        Object.values(byModulePackage).forEach(pkgs =>
+            Object.values(pkgs).forEach(fns => fns.sort((a, b) =>
+                (a.functionDefinition.name || '').localeCompare(b.functionDefinition.name || ''))));
+    }
+
+    /* ------------------------------------------------------------- results */
+
+    function testsFor(fd, a)
+    {
+        const results = fd.functionTestResults ? fd.functionTestResults[adapterKey(a)] : null;
+        return results && results.tests ? results.tests : null;
+    }
+
+    function isPlatformOnly(fd)
+    {
+        return (fd.functionDefinition.signatures || []).some(s => s.platformOnly);
+    }
+
+    // Mirrors the compatibility matrix: a status for one function on one adapter.
+    function status(fd, a)
+    {
+        const tests = testsFor(fd, a);
+        if (tests === null)
+        {
+            if (isPlatformOnly(fd))
+            {
+                const count = (fd.functionDefinition.tests || []).filter(t => !t.pct).length;
+                return a.adapter.name === 'Native'
+                    ? {kind: 'pass', pass: count, total: count, note: 'Platform function — tests run outside PCT'}
+                    : {kind: 'none', pass: 0, total: 0, note: 'Platform function — tests run outside PCT'};
+            }
+            return {kind: 'none', pass: 0, total: 0, note: 'No tests (or reports) were found'};
+        }
+        if (tests.length === 0)
+        {
+            return {kind: 'none', pass: 0, total: 0, note: 'Unknown — to define'};
+        }
+        const pass = tests.filter(t => t.success).length;
+        return {
+            kind: pass === tests.length ? 'pass' : pass === 0 ? 'fail' : 'partial',
+            pass: pass,
+            total: tests.length,
+            note: null
+        };
+    }
+
+    function aggregate(fds, a)
+    {
+        let pass = 0, total = 0;
+        fds.forEach(fd =>
+        {
+            const tests = testsFor(fd, a);
+            if (tests)
+            {
+                pass += tests.filter(t => t.success).length;
+                total += tests.length;
+            }
+        });
+        return {
+            kind: total === 0 ? 'none' : pass === total ? 'pass' : pass === 0 ? 'fail' : 'partial',
+            pass: pass,
+            total: total
+        };
+    }
+
+    /* -------------------------------------------------------------- render */
+
+    function escapeHtml(s)
+    {
+        return String(s).replace(/[&<>"']/g, m => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'})[m]);
+    }
+
+    // Minimal Markdown: fenced code, bullet lists, paragraphs, bold, inline code, links.
+    // Input is escaped first, so everything below operates on HTML-safe text.
+    function markdown(src, currentFd)
+    {
+        if (!src)
+        {
+            return '';
+        }
+        const lines = escapeHtml(src).split('\n');
+        const out = [];
+        let para = [];
+        let list = [];
+        let fence = null;
+
+        const flushPara = () =>
+        {
+            if (para.length)
+            {
+                out.push('<p>' + inline(para.join(' '), currentFd) + '</p>');
+                para = [];
+            }
+        };
+        const flushList = () =>
+        {
+            if (list.length)
+            {
+                out.push('<ul>' + list.map(i => '<li>' + inline(i, currentFd) + '</li>').join('') + '</ul>');
+                list = [];
+            }
+        };
+
+        lines.forEach(line =>
+        {
+            const fenceMatch = line.match(/^\s*```(\w*)\s*$/);
+            if (fence !== null)
+            {
+                if (fenceMatch)
+                {
+                    out.push('<pre><code>' + fence.join('\n') + '</code></pre>');
+                    fence = null;
+                }
+                else
+                {
+                    fence.push(line);
+                }
+                return;
+            }
+            if (fenceMatch)
+            {
+                flushPara();
+                flushList();
+                fence = [];
+                return;
+            }
+            const bullet = line.match(/^\s*[-*]\s+(.*)$/);
+            if (bullet)
+            {
+                flushPara();
+                list.push(bullet[1]);
+                return;
+            }
+            if (!line.trim())
+            {
+                flushPara();
+                flushList();
+                return;
+            }
+            flushList();
+            para.push(line.trim());
+        });
+        if (fence !== null)
+        {
+            out.push('<pre><code>' + fence.join('\n') + '</code></pre>');
+        }
+        flushPara();
+        flushList();
+        return out.join('');
+    }
+
+    function inline(text, currentFd)
+    {
+        return text
+            .replace(/`([^`]+)`/g, (m, code) => '<code>' + linkSignature(code, currentFd) + '</code>')
+            .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+            .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+    }
+
+    // Turns `median(Number[*]):Float[1]` inside documentation into a link to that function's page.
+    function linkSignature(code, currentFd)
+    {
+        const match = code.match(/^([\w:]+)\(/);
+        if (!match)
+        {
+            return code;
+        }
+        const parts = match[1].split('::');
+        const name = parts[parts.length - 1];
+        const candidates = nameIndex[name];
+        if (!candidates || !candidates.length)
+        {
+            return code;
+        }
+        let target = candidates[0];
+        if (candidates.length > 1 && currentFd)
+        {
+            target = candidates.find(c => packageOf(c) === packageOf(currentFd)) || candidates[0];
+        }
+        if (currentFd && functionRoute(target) === functionRoute(currentFd))
+        {
+            return code;
+        }
+        // "See also" and inline references quote a full signature, so they can land on the overload itself.
+        const keys = overloadKeys(target.functionDefinition);
+        const index = overloadIndex(target.functionDefinition, overloadKey({simple: code}, true));
+        const suffix = index >= 0 && keys[index] ? keys[index] : '';
+        return '<a href="#f/' + encodeURI(shareRoute(target, suffix)) + '">' + code + '</a>';
+    }
+
+    function sourceUrl(fd)
+    {
+        const commit = gitInfo['git.commit.id'] || 'master';
+        const moduleUrls = {
+            grammar: 'https://github.com/finos/legend-pure/tree/master/legend-pure-core/legend-pure-m3-core/src/main/resources',
+            essential: 'https://github.com/finos/legend-pure/tree/master/legend-pure-core/legend-pure-m3-core/src/main/resources',
+            standard: 'https://github.com/finos/legend-engine/tree/' + commit + '/legend-engine-core/legend-engine-core-pure/legend-engine-pure-code-functions-standard/legend-engine-pure-functions-standard-pure/src/main/resources',
+            relation: 'https://github.com/finos/legend-engine/tree/' + commit + '/legend-engine-core/legend-engine-core-pure/legend-engine-pure-code-functions-relation/legend-engine-pure-functions-relation-pure/src/main/resources',
+            unclassified: 'https://github.com/finos/legend-engine/tree/' + commit + '/legend-engine-core/legend-engine-core-pure/legend-engine-pure-code-functions-unclassified/legend-engine-pure-functions-unclassified-pure/src/main/resources',
+            variant: 'https://github.com/finos/legend-engine/tree/' + commit + '/legend-engine-core/legend-engine-core-pure/legend-engine-pure-code-functions-variant/legend-engine-pure-functions-variant-pure/src/main/resources',
+            scenario_quant: 'https://github.com/finos/legend-engine/tree/' + commit + '/legend-engine-core/legend-engine-core-pure/legend-engine-pure-code-scenario-quant-pure/src/main/resources'
+        };
+        const base = moduleUrls[fd.reportScope.module];
+        return base ? base + fd.functionDefinition.sourceId : null;
+    }
+
+    function renderSidebar()
+    {
+        const query = (document.getElementById('search').value || '').trim().toLowerCase();
+        const current = activeRoute;
+        const html = [];
+
+        Object.keys(byModulePackage).sort().forEach(module =>
+        {
+            const packages = byModulePackage[module];
+            const rows = [];
+            Object.keys(packages).sort().forEach(pkg =>
+            {
+                const fns = packages[pkg].filter(fd => !query
+                    || (fd.functionDefinition.name || '').toLowerCase().includes(query)
+                    || pkg.toLowerCase().includes(query));
+                if (!fns.length)
+                {
+                    return;
+                }
+                const pkgRoute = module + '/' + pkg;
+                rows.push('<a class="nav-pkg' + (current === pkgRoute ? ' selected' : '') + '" href="#p/' + encodeURI(pkgRoute) + '">'
+                    + escapeHtml(pkg) + '<span class="count">' + packages[pkg].length + '</span></a>');
+                if (query || current === pkgRoute || fns.some(fd => current === functionRoute(fd)))
+                {
+                    fns.forEach(fd => rows.push('<a class="nav-fn' + (current === functionRoute(fd) ? ' selected' : '') + '" href="#f/'
+                        + encodeURI(functionRoute(fd)) + '">' + escapeHtml(fd.functionDefinition.name || 'composition-tests') + '</a>'));
+                }
+            });
+            if (rows.length)
+            {
+                html.push('<div class="nav-module">' + escapeHtml(module) + '</div>' + rows.join(''));
+            }
+        });
+        document.getElementById('sidebar').innerHTML = html.length ? html.join('') : '<div class="nav-empty">No match.</div>';
+    }
+
+    function renderFooter()
+    {
+        const commit = gitInfo['git.commit.id'] || 'master';
+        document.getElementById('footer').innerHTML = 'PCT results as of ' + escapeHtml(gitInfo['git.commit.time'] || 'unknown')
+            + ' using commit <a href="https://github.com/finos/legend-engine/tree/' + encodeURIComponent(commit) + '" target="_blank" rel="noopener">'
+            + escapeHtml(commit) + '</a>.';
+    }
+
+    function toolbar()
+    {
+        return '<div class="toolbar"><span style="color:var(--text-muted)">' + adapters.length + ' adapters reporting</span></div>';
+    }
+
+    function chip(label, st)
+    {
+        const value = st.total === 0 ? '—' : st.pass + '/' + st.total;
+        return '<span class="chip ' + st.kind + '" title="' + escapeHtml(st.note || '') + '">' + escapeHtml(label) + ' <span class="n">' + value + '</span></span>';
+    }
+
+    function route()
+    {
+        const hash = location.hash;
+        const target = decodeURI(hash.replace(/^#[fp]\//, ''));
+        const parens = target.indexOf('(');
+        activeRoute = parens < 0 ? target : target.substring(0, parens);
+        if (hash.startsWith('#f/'))
+        {
+            renderFunction(activeRoute, parens < 0 ? null : target.substring(parens));
+        }
+        else if (hash.startsWith('#p/'))
+        {
+            renderPackage(activeRoute);
+        }
+        else
+        {
+            renderOverview();
+        }
+        renderSidebar();
+        const targeted = document.querySelector('.overload.target');
+        if (targeted)
+        {
+            targeted.scrollIntoView();
+        }
+        else
+        {
+            window.scrollTo(0, 0);
+        }
+    }
+
+    function renderOverview()
+    {
+        const all = doc.functionsDocumentation;
+        const groups = Object.create(null);
+        adapters.forEach(a => (groups[adapterGroup(a)] = groups[adapterGroup(a)] || []).push(a));
+
+        const modules = Object.keys(byModulePackage).sort().map(module =>
+        {
+            const packages = byModulePackage[module];
+            const count = Object.values(packages).reduce((n, fns) => n + fns.length, 0);
+            return '<div class="card"><div class="name">' + escapeHtml(module) + '</div><div class="meta">'
+                + count + ' functions in ' + Object.keys(packages).length + ' packages</div></div>';
+        }).join('');
+
+        document.getElementById('content').innerHTML =
+            '<h1>PCT Function Reference</h1>'
+            + '<div class="subtitle">Every function covered by the Pure Compatibility Test suite, its overloads, its test cases, '
+            + 'and how each store behaves on them. Pick a package on the left.</div>'
+            + toolbar()
+            + '<h2>Modules</h2><div class="cards">' + modules + '</div>'
+            + '<h2>Adapters</h2>'
+            + Object.keys(groups).sort().map(g =>
+                '<h3>' + escapeHtml(g) + '</h3><div class="chips">'
+                + groups[g].map(a => chip(adapterName(a), aggregate(all, a))).join('')
+                + '</div>').join('');
+    }
+
+    function renderPackage(route)
+    {
+        const slash = route.indexOf('/');
+        const module = route.substring(0, slash);
+        const pkg = route.substring(slash + 1);
+        const fns = (byModulePackage[module] || {})[pkg];
+        if (!fns)
+        {
+            document.getElementById('content').innerHTML = '<h1>Not found</h1><p>No package <code>' + escapeHtml(route) + '</code>.</p>';
+            return;
+        }
+
+        document.getElementById('content').innerHTML =
+            '<h1>' + escapeHtml(pkg) + ' <span class="kind">package</span></h1>'
+            + '<div class="subtitle"><span class="badge">' + escapeHtml(module) + '</span><span class="sep">·</span>' + fns.length + ' functions</div>'
+            + toolbar()
+            + '<h2>Functions</h2>'
+            + functionTable(fns, false);
+    }
+
+    function functionTable(fns, showLocation, overload)
+    {
+        const rows = fns.map(fd =>
+        {
+            const name = fd.functionDefinition.name || 'composition-tests';
+            const signatures = (fd.functionDefinition.signatures || []).length;
+            const tests = (fd.functionDefinition.tests || []).length;
+            const summary = adapters.map(a => status(fd, a)).filter(s => s.total > 0);
+            const passing = summary.filter(s => s.kind === 'pass').length;
+            const match = overload ? overloadIndex(fd.functionDefinition, overload) : -1;
+            const suffix = match >= 0 ? overloadKeys(fd.functionDefinition)[match] : '';
+            return '<tr><td><a href="#f/' + encodeURI(functionRoute(fd) + suffix) + '"><code>' + escapeHtml(name) + '</code></a></td>'
+                + (showLocation
+                    ? '<td><span class="badge">' + escapeHtml(fd.reportScope.module) + '</span></td>'
+                        + '<td><code>' + escapeHtml(packageOf(fd)) + '</code></td>'
+                    : '')
+                + '<td>' + signatures + '</td><td>' + tests + '</td>'
+                + '<td><span class="mark ' + (summary.length === 0 ? 'none' : passing === summary.length ? 'pass' : passing === 0 ? 'fail' : 'partial') + '">'
+                + (summary.length === 0 ? '—' : passing + '/' + summary.length) + '</span></td></tr>';
+        }).join('');
+
+        return '<table><thead><tr><th>Function</th>'
+            + (showLocation ? '<th>Module</th><th>Package</th>' : '')
+            + '<th>Overloads</th><th>Tests</th><th>Adapters fully passing</th></tr></thead><tbody>'
+            + rows + '</tbody></table>';
+    }
+
+    function renderNameChoice(name, matches, overload)
+    {
+        document.getElementById('content').innerHTML =
+            '<h1>' + escapeHtml(name) + escapeHtml(overload || '') + ' <span class="kind">function</span></h1>'
+            + '<div class="subtitle">' + matches.length + ' functions are named <code>' + escapeHtml(name) + '</code>. Pick the one you meant.</div>'
+            + functionTable(matches, true, overload);
+    }
+
+    function renderFunction(route, overload)
+    {
+        // A route is either the full module/name/sourceId key or just a function name, so that a
+        // shared link can stay short and survive the source file being moved.
+        let fd = functionIndex[route];
+        if (!fd)
+        {
+            let named = nameIndex[route] || [];
+            if (named.length > 1 && overload)
+            {
+                // The overload can settle a shared name on its own: only date::max takes a Date.
+                const carrying = named.filter(c => overloadIndex(c.functionDefinition, overload) >= 0);
+                named = carrying.length ? carrying : named;
+            }
+            if (named.length > 1)
+            {
+                renderNameChoice(route, named, overload);
+                return;
+            }
+            fd = named[0];
+        }
+        if (!fd)
+        {
+            document.getElementById('content').innerHTML = '<h1>Not found</h1><p>No function <code>' + escapeHtml(route) + '</code>.</p>';
+            return;
+        }
+        activeRoute = functionRoute(fd);
+        const def = fd.functionDefinition;
+        const name = def.name || 'composition-tests';
+        const url = sourceUrl(fd);
+
+        const keys = overloadKeys(def);
+        const wanted = overload ? overloadIndex(def, overload) : -1;
+        const overloads = (def.signatures || []).map((s, i) =>
+        {
+            const simple = def.name && s.simple.indexOf(def.name + '(') >= 0 ? s.simple.substring(s.simple.indexOf(def.name + '(')) : s.simple;
+            const anchor = keys[i]
+                ? '<a class="overload-link" href="#f/' + encodeURI(shareRoute(fd, keys[i])) + '" title="Link to this overload">#</a>'
+                : '';
+            return '<div class="overload' + (i === wanted ? ' target' : '') + '">'
+                + '<div class="sig-row"><div class="sig mono">' + escapeHtml(simple) + '</div>' + anchor + '</div>'
+                + (s.platformOnly ? '<div class="subtitle"><span class="badge">platform only</span> Tested outside PCT.</div>' : '')
+                + (s.documentation
+                    ? '<div class="doc">' + markdown(s.documentation, fd) + '</div>'
+                    : '<div class="doc no-doc">No documentation yet.</div>')
+                + '</div>';
+        }).join('');
+
+        const testDocs = Object.create(null);
+        (def.tests || []).forEach(t => (testDocs[t.name] = t));
+
+        // Union of test names seen across adapters, so a test only some adapters run still shows.
+        const testNames = [];
+        (def.tests || []).forEach(t => testNames.push(t.name));
+        adapters.forEach(a =>
+        {
+            const tests = testsFor(fd, a) || [];
+            tests.forEach(t =>
+            {
+                if (!testNames.includes(t.testName))
+                {
+                    testNames.push(t.testName);
+                }
+            });
+        });
+        testNames.sort();
+
+        const results = Object.create(null);   // testName -> adapterKey -> TestInfo
+        adapters.forEach(a =>
+        {
+            (testsFor(fd, a) || []).forEach(t =>
+            {
+                (results[t.testName] = results[t.testName] || Object.create(null))[adapterKey(a)] = t;
+            });
+        });
+
+        const groups = Object.create(null);
+        adapters.forEach(a => (groups[adapterGroup(a)] = groups[adapterGroup(a)] || []).push(a));
+        const groupNames = Object.keys(groups).sort();
+
+        const header =
+            '<tr><th class="sticky-col" rowspan="2">Test case</th>'
+            + groupNames.map(g => '<th class="group-head" colspan="' + groups[g].length + '">' + escapeHtml(g) + '</th>').join('')
+            + '</tr><tr>'
+            + adapters.map(a => '<th style="text-align:center">' + escapeHtml(a.adapter.name === 'Native' ? a.platform : a.adapter.name) + '</th>').join('')
+            + '</tr>';
+
+        const body = testNames.map((testName, i) =>
+        {
+            const definition = testDocs[testName] || {};
+            const qualifiers = new Set();
+            adapters.forEach(a =>
+            {
+                const t = (results[testName] || {})[adapterKey(a)];
+                (t && t.qualifiers || []).forEach(q => qualifiers.add(q));
+            });
+
+            const cells = adapters.map(a =>
+            {
+                const t = (results[testName] || {})[adapterKey(a)];
+                if (!t)
+                {
+                    return '<td class="cell"><span class="mark none" title="Not reported">–</span></td>';
+                }
+                if (t.success)
+                {
+                    return '<td class="cell"><span class="mark pass" title="Passing">✓</span></td>';
+                }
+                return '<td class="cell"><span class="mark fail" title="' + escapeHtml(t.errorMessage || 'Failing')
+                    + '" onclick="toggleErrors(' + i + ')">×</span></td>';
+            }).join('');
+
+            return '<tr><td class="sticky-col"><code>' + escapeHtml(testName) + '</code>'
+                + (definition.pct === false ? ' <span class="badge">non-PCT</span>' : '')
+                + (qualifiers.size ? '<div>' + Array.from(qualifiers).sort().map(q => '<span class="qualifier">' + escapeHtml(q) + '</span>').join('') + '</div>' : '')
+                + (definition.documentation ? '<div class="doc">' + markdown(definition.documentation, fd) + '</div>' : '')
+                + '</td>' + cells + '</tr>';
+        }).join('');
+
+        // Failure detail lives outside the scrolling table so long SQL errors stay readable.
+        const failures = testNames.map((testName, i) =>
+        {
+            const rows = adapters.map(a =>
+            {
+                const t = (results[testName] || {})[adapterKey(a)];
+                return t && !t.success
+                    ? '<div class="err"><span class="who">' + escapeHtml(adapterName(a)) + '</span> — ' + escapeHtml(t.errorMessage || 'no message') + '</div>'
+                    : '';
+            }).join('');
+            return rows
+                ? '<div class="failures" id="errors-' + i + '" style="display:none"><h3><code>' + escapeHtml(testName) + '</code> failures</h3>' + rows + '</div>'
+                : '';
+        }).join('');
+
+        document.getElementById('content').innerHTML =
+            '<h1><code>' + escapeHtml(name) + '</code> <span class="kind">function</span></h1>'
+            + '<div class="subtitle"><span class="badge">' + escapeHtml(fd.reportScope.module) + '</span><span class="sep">·</span>'
+            + '<a href="#p/' + encodeURI(fd.reportScope.module + '/' + packageOf(fd)) + '">' + escapeHtml(packageOf(fd)) + '</a>'
+            + '<span class="sep">·</span>' + (url
+                ? '<a href="' + url + '" target="_blank" rel="noopener">' + escapeHtml(def.sourceId) + '</a>'
+                : '<code>' + escapeHtml(def.sourceId) + '</code>')
+            + '<span class="sep">·</span><a href="#f/' + encodeURI(shareRoute(fd)) + '" title="Shortest link that opens this page">link</a>'
+            + '</div>'
+            + toolbar()
+            + '<h2>Compatibility</h2><div class="chips">' + adapters.map(a => chip(adapterName(a), status(fd, a))).join('') + '</div>'
+            + '<h2>Overloads</h2>' + (overloads || '<p class="no-doc">No signatures reported.</p>')
+            + '<h2>Test cases</h2>'
+            + (testNames.length
+                ? '<div class="scroll-x"><table><thead>' + header + '</thead><tbody>' + body + '</tbody></table></div>'
+                  + '<div class="subtitle" style="margin-top:8px">Click any <span class="mark fail">×</span> to read the failure.</div>'
+                  + failures
+                : '<p class="no-doc">No test cases reported.</p>');
+    }
+
+    function toggleErrors(i)
+    {
+        const panel = document.getElementById('errors-' + i);
+        if (panel)
+        {
+            const open = panel.style.display === 'none';
+            panel.style.display = open ? '' : 'none';
+            if (open)
+            {
+                panel.scrollIntoView({block: 'nearest'});
+            }
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', load);
+</script>
+</body>
+</html>

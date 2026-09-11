@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Legend SQL — Coverage Summary</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1300px; margin: 0 auto; padding: 32px 40px; line-height: 1.6; color: #1a1a2e; background-color: #fafbfc; }
+h1 { font-size: 1.8em; color: #1a1a2e; border-bottom: 3px solid #3498db; padding-bottom: 12px; margin-bottom: 24px; }
+h2 { font-size: 1.4em; color: #2c3e50; margin-top: 2.5em; margin-bottom: 0.6em; padding: 10px 16px; background: linear-gradient(135deg, #667eea11, #764ba211); border-left: 4px solid #3498db; border-radius: 4px; }
+h3 { font-size: 1.15em; color: #34495e; margin-top: 2em; padding: 8px 14px; background-color: #f0f4f8; border-radius: 6px; border-left: 4px solid #3498db; }
+h4 { font-size: 1.15em; margin-top: 2em; padding-bottom: 0.3em; border-bottom: 1px solid #e0e0e0; color: #2c3e50; }
+h4 code { font-size: 1.05em; background-color: #eef2f7; padding: 3px 8px; border-radius: 4px; }
+table { border-collapse: separate; border-spacing: 0; width: 100%; margin: 1em 0; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); border: 1px solid #e0e4e8; }
+th { background: linear-gradient(180deg, #f8f9fb, #eef0f4); color: #2c3e50; font-weight: 600; padding: 10px 12px; text-align: left; border-bottom: 2px solid #d0d5dd; font-size: 0.88em; }
+td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #eef0f4; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background-color: #f5f8fc; }
+tbody tr:nth-child(even) td { background-color: #fafbfd; }
+tbody tr:nth-child(even):hover td { background-color: #f0f4f8; }
+code { background-color: #eef2f7; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; color: #c0392b; }
+pre { background-color: #1e1e2e; color: #cdd6f4; padding: 16px 20px; border-radius: 8px; overflow-x: auto; font-size: 1em; box-shadow: 0 2px 6px rgba(0,0,0,0.15); margin: 0.6em 0 1em 0; }
+pre code { background: none; color: inherit; padding: 0; font-size: inherit; }
+blockquote { border-left: 4px solid #e74c3c; background-color: #fdf0ef; margin: 0.5em 0 1em 0; padding: 12px 18px; border-radius: 0 6px 6px 0; }
+blockquote p { margin: 0; line-height: 1.5; }
+hr { border: none; border-top: 1px solid #e0e4e8; margin: 2em 0; }
+strong { color: #2c3e50; }
+a { color: #2980b9; text-decoration: none; }
+a:hover { text-decoration: underline; color: #1a5276; }
+p { margin: 0.4em 0; }
+ul, ol { padding-left: 1.5em; }
+li { margin: 0.3em 0; }
+</style>
+</head>
+<body>
+<h1>Legend SQL — Coverage Summary</h1>
+<h2>Function Coverage</h2>
+<p>Coverage of Postgres built-in functions in Legend SQL.
+See <a href="function-coverage.html">full details</a> for per-function results.</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>TDS</th>
+<th>Relation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total signatures</td>
+<td>777</td>
+<td>777</td>
+</tr>
+<tr>
+<td>Unique function names</td>
+<td>417</td>
+<td>417</td>
+</tr>
+<tr>
+<td><strong>Supported functions (PASS/PARTIAL)</strong></td>
+<td><strong>183 (43.9%)</strong></td>
+<td><strong>193 (46.3%)</strong></td>
+</tr>
+<tr>
+<td>Total tests</td>
+<td>1066</td>
+<td>1066</td>
+</tr>
+<tr>
+<td>⚪ UNSUPPORTED</td>
+<td>62</td>
+<td>62</td>
+</tr>
+<tr>
+<td>✅ PASS</td>
+<td>310</td>
+<td>326</td>
+</tr>
+<tr>
+<td>⚠️ PARTIAL</td>
+<td>71</td>
+<td>76</td>
+</tr>
+<tr>
+<td>❌ FAIL</td>
+<td>9</td>
+<td>9</td>
+</tr>
+<tr>
+<td>💥 ERROR</td>
+<td>299</td>
+<td>278</td>
+</tr>
+<tr>
+<td>❓ UNTESTED</td>
+<td>26</td>
+<td>26</td>
+</tr>
+<tr>
+<td><strong>Full pass rate</strong></td>
+<td><strong>43.4%</strong></td>
+<td><strong>45.6%</strong></td>
+</tr>
+<tr>
+<td><strong>Pass + partial rate</strong></td>
+<td><strong>53.3%</strong></td>
+<td><strong>56.2%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>Percentages exclude unsupported functions from the denominator.</em></p>
+<p><strong>Failed tests:</strong></p>
+<ul>
+<li><a href="failure-details.html#fail-div__num_num__from_table-TDS">div__num_num__from_table [TDS]</a></li>
+<li><a href="failure-details.html#fail-div__num_num__from_table-Relation">div__num_num__from_table [Relation]</a></li>
+<li><a href="failure-details.html#fail-concat_ws__txt_variadic__from_table-TDS">concat_ws__txt_variadic__from_table [TDS]</a></li>
+<li><a href="failure-details.html#fail-concat_ws__txt_variadic__from_table-Relation">concat_ws__txt_variadic__from_table [Relation]</a></li>
+<li><a href="failure-details.html#fail-initcap__txt__from_table-TDS">initcap__txt__from_table [TDS]</a></li>
+<li><a href="failure-details.html#fail-initcap__txt__from_table-Relation">initcap__txt__from_table [Relation]</a></li>
+<li><a href="failure-details.html#fail-string_to_array__txt_txt__from_table-TDS">string_to_array__txt_txt__from_table [TDS]</a></li>
+<li><a href="failure-details.html#fail-string_to_array__txt_txt__from_table-Relation">string_to_array__txt_txt__from_table [Relation]</a></li>
+<li><a href="failure-details.html#fail-regexp_count__start_position__ignored_by_legend-TDS">regexp_count__start_position__ignored_by_legend [TDS]</a></li>
+<li><a href="failure-details.html#fail-regexp_count__start_position__ignored_by_legend-Relation">regexp_count__start_position__ignored_by_legend [Relation]</a></li>
+<li><a href="failure-details.html#fail-regexp_substr__start_position__ignored_by_legend-TDS">regexp_substr__start_position__ignored_by_legend [TDS]</a></li>
+<li><a href="failure-details.html#fail-regexp_substr__start_position__ignored_by_legend-Relation">regexp_substr__start_position__ignored_by_legend [Relation]</a></li>
+<li><a href="failure-details.html#fail-regexp_substr__nth_occurrence__ignored_by_legend-TDS">regexp_substr__nth_occurrence__ignored_by_legend [TDS]</a></li>
+<li><a href="failure-details.html#fail-regexp_substr__nth_occurrence__ignored_by_legend-Relation">regexp_substr__nth_occurrence__ignored_by_legend [Relation]</a></li>
+<li><a href="failure-details.html#fail-regexp_substr__nth_occurrence_last__ignored_by_legend-TDS">regexp_substr__nth_occurrence_last__ignored_by_legend [TDS]</a></li>
+<li><a href="failure-details.html#fail-regexp_substr__nth_occurrence_last__ignored_by_legend-Relation">regexp_substr__nth_occurrence_last__ignored_by_legend [Relation]</a></li>
+<li><a href="failure-details.html#fail-regexp_substr__start_and_nth__ignored_by_legend-TDS">regexp_substr__start_and_nth__ignored_by_legend [TDS]</a></li>
+<li><a href="failure-details.html#fail-regexp_substr__start_and_nth__ignored_by_legend-Relation">regexp_substr__start_and_nth__ignored_by_legend [Relation]</a></li>
+<li><a href="failure-details.html#fail-json_extract_path__from_column-Relation">json_extract_path__from_column [Relation]</a></li>
+<li><a href="failure-details.html#fail-json_arrow_get_index-Relation">json_arrow_get_index [Relation]</a></li>
+<li><a href="failure-details.html#fail-is_distinct_from__int__one_null-Relation">is_distinct_from__int__one_null [Relation]</a></li>
+<li><a href="failure-details.html#fail-gt__int__null-Relation">gt__int__null [Relation]</a></li>
+<li><a href="failure-details.html#fail-lt__int__null-Relation">lt__int__null [Relation]</a></li>
+<li><a href="failure-details.html#fail-between__int__null-TDS">between__int__null [TDS]</a></li>
+<li><a href="failure-details.html#fail-between__int__null-Relation">between__int__null [Relation]</a></li>
+<li><a href="failure-details.html#fail-jsonb_arrow_get_index-Relation">jsonb_arrow_get_index [Relation]</a></li>
+<li><a href="failure-details.html#fail-date_literal__fractional_6_digits-TDS">date_literal__fractional_6_digits [TDS]</a></li>
+<li><a href="failure-details.html#fail-date_literal__fractional_6_digits-Relation">date_literal__fractional_6_digits [Relation]</a></li>
+<li><a href="failure-details.html#fail-json_arrow_get_field-Relation">json_arrow_get_field [Relation]</a></li>
+<li><a href="failure-details.html#fail-date_literal__fractional_9_digits-TDS">date_literal__fractional_9_digits [TDS]</a></li>
+<li><a href="failure-details.html#fail-date_literal__fractional_9_digits-Relation">date_literal__fractional_9_digits [Relation]</a></li>
+<li><a href="failure-details.html#fail-neq__int__null-TDS">neq__int__null [TDS]</a></li>
+<li><a href="failure-details.html#fail-neq__int__null-Relation">neq__int__null [Relation]</a></li>
+<li><a href="failure-details.html#fail-neq__filter__int-TDS">neq__filter__int [TDS]</a></li>
+<li><a href="failure-details.html#fail-neq__filter__int-Relation">neq__filter__int [Relation]</a></li>
+<li><a href="failure-details.html#fail-concat_op__txt_txt__from_table-TDS">concat_op__txt_txt__from_table [TDS]</a></li>
+<li><a href="failure-details.html#fail-concat_op__mixed_types__null_handling-TDS">concat_op__mixed_types__null_handling [TDS]</a></li>
+<li><a href="failure-details.html#fail-eq__null_null-TDS">eq__null_null [TDS]</a></li>
+</ul>
+<hr />
+<h2>Structural Parity</h2>
+<p>Coverage of SQL structural features (joins, subqueries, aggregations, etc.).
+See <a href="structural-parity.html">full details</a> for per-feature results.</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>TDS</th>
+<th>Relation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total features</td>
+<td>551</td>
+<td>551</td>
+</tr>
+<tr>
+<td>Total tests</td>
+<td>627</td>
+<td>627</td>
+</tr>
+<tr>
+<td>⚪ UNSUPPORTED</td>
+<td>173</td>
+<td>73</td>
+</tr>
+<tr>
+<td>✅ PASS</td>
+<td>290</td>
+<td>367</td>
+</tr>
+<tr>
+<td>⚠️ PARTIAL</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>❌ FAIL</td>
+<td>12</td>
+<td>13</td>
+</tr>
+<tr>
+<td>💥 ERROR</td>
+<td>73</td>
+<td>94</td>
+</tr>
+<tr>
+<td>❓ UNTESTED</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Full pass rate</strong></td>
+<td><strong>76.7%</strong></td>
+<td><strong>76.8%</strong></td>
+</tr>
+<tr>
+<td><strong>Pass + partial rate</strong></td>
+<td><strong>77.5%</strong></td>
+<td><strong>77.6%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>Percentages exclude unsupported features from the denominator.</em></p>
+<p><strong>Failed tests:</strong></p>
+<ul>
+<li><a href="failure-details.html#fail-subquery_quant_all_empty_null_value-Relation">subquery_quant_all_empty_null_value [Relation]</a></li>
+<li><a href="failure-details.html#fail-null_equals_null-TDS">null_equals_null [TDS]</a></li>
+<li><a href="failure-details.html#fail-null_not_equals-TDS">null_not_equals [TDS]</a></li>
+<li><a href="failure-details.html#fail-null_concat-TDS">null_concat [TDS]</a></li>
+<li><a href="failure-details.html#fail-null_concat-Relation">null_concat [Relation]</a></li>
+<li><a href="failure-details.html#fail-where_not_between-TDS">where_not_between [TDS]</a></li>
+<li><a href="failure-details.html#fail-where_not_between-Relation">where_not_between [Relation]</a></li>
+<li><a href="failure-details.html#fail-where_not_in_list-TDS">where_not_in_list [TDS]</a></li>
+<li><a href="failure-details.html#fail-where_not_in_list-Relation">where_not_in_list [Relation]</a></li>
+<li><a href="failure-details.html#fail-where_not_compound-Relation">where_not_compound [Relation]</a></li>
+<li><a href="failure-details.html#fail-bool_null_and_false-TDS">bool_null_and_false [TDS]</a></li>
+<li><a href="failure-details.html#fail-bool_null_and_false-Relation">bool_null_and_false [Relation]</a></li>
+<li><a href="failure-details.html#fail-bool_null_or_true-TDS">bool_null_or_true [TDS]</a></li>
+<li><a href="failure-details.html#fail-bool_null_or_true-Relation">bool_null_or_true [Relation]</a></li>
+<li><a href="failure-details.html#fail-star_multiple_tables-TDS">star_multiple_tables [TDS]</a></li>
+<li><a href="failure-details.html#fail-star_multiple_tables-Relation">star_multiple_tables [Relation]</a></li>
+<li><a href="failure-details.html#fail-schema_information_tables-TDS">schema_information_tables [TDS]</a></li>
+<li><a href="failure-details.html#fail-schema_information_tables-Relation">schema_information_tables [Relation]</a></li>
+<li><a href="failure-details.html#fail-schema_information_columns-TDS">schema_information_columns [TDS]</a></li>
+<li><a href="failure-details.html#fail-schema_information_columns-Relation">schema_information_columns [Relation]</a></li>
+<li><a href="failure-details.html#fail-json_extract_array_index-Relation">json_extract_array_index [Relation]</a></li>
+<li><a href="failure-details.html#fail-json_extract_array_negative_index-Relation">json_extract_array_negative_index [Relation]</a></li>
+<li><a href="failure-details.html#fail-interval_compound_literal-TDS">interval_compound_literal [TDS]</a></li>
+<li><a href="failure-details.html#fail-interval_compound_literal-Relation">interval_compound_literal [Relation]</a></li>
+<li><a href="failure-details.html#fail-colres_e3_order_by_expression_over_join-TDS">colres_e3_order_by_expression_over_join [TDS]</a></li>
+<li><a href="failure-details.html#fail-colres_e3_order_by_expression_over_join-Relation">colres_e3_order_by_expression_over_join [Relation]</a></li>
+<li><a href="failure-details.html#fail-crcs_g4_order_by_expression_over_join-TDS">crcs_g4_order_by_expression_over_join [TDS]</a></li>
+<li><a href="failure-details.html#fail-crcs_g4_order_by_expression_over_join-Relation">crcs_g4_order_by_expression_over_join [Relation]</a></li>
+</ul>
+<hr />
+<h2>Overall</h2>
+<p>Combined pass rate across function coverage and structural parity.</p>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Pass</th>
+<th>Tested</th>
+<th>Pass Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TDS</td>
+<td>600</td>
+<td>1093</td>
+<td><strong>54.9%</strong></td>
+</tr>
+<tr>
+<td>Relation</td>
+<td>693</td>
+<td>1193</td>
+<td><strong>58.1%</strong></td>
+</tr>
+<tr>
+<td><strong>Combined</strong></td>
+<td><strong>1293</strong></td>
+<td><strong>2286</strong></td>
+<td><strong>56.6%</strong></td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>
