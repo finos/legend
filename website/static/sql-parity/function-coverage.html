@@ -56,8 +56,8 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><strong>Supported functions (PASS/PARTIAL)</strong></td>
-<td><strong>161 (38.6%)</strong></td>
-<td><strong>167 (40.0%)</strong></td>
+<td><strong>162 (38.8%)</strong></td>
+<td><strong>171 (41.0%)</strong></td>
 </tr>
 <tr>
 <td>Total tests</td>
@@ -66,17 +66,17 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td>PASS</td>
-<td>513</td>
-<td>527</td>
+<td>514</td>
+<td>531</td>
 </tr>
 <tr>
 <td>FAIL</td>
 <td>17</td>
-<td>21</td>
+<td>22</td>
 </tr>
 <tr>
 <td>ERROR</td>
-<td>114</td>
+<td>118</td>
 <td>96</td>
 </tr>
 <tr>
@@ -86,8 +86,8 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td>UNSUPPORTED</td>
-<td>337</td>
-<td>337</td>
+<td>333</td>
+<td>333</td>
 </tr>
 </tbody>
 </table>
@@ -107,13 +107,13 @@ li { margin: 0.3em 0; }
 <td><a href="#function-not-supported">FUNCTION_NOT_SUPPORTED</a></td>
 <td>Function name not recognized by Legend SQL</td>
 <td>174</td>
-<td>211</td>
+<td>208</td>
 </tr>
 <tr>
 <td><a href="#result-mismatch">RESULT_MISMATCH</a></td>
 <td>Query executes but results differ from Postgres</td>
 <td>13</td>
-<td>18</td>
+<td>20</td>
 </tr>
 <tr>
 <td><a href="#misc">MISC</a></td>
@@ -125,7 +125,7 @@ li { margin: 0.3em 0; }
 <td><a href="#unsupported-syntax">UNSUPPORTED_SYNTAX</a></td>
 <td>SQL construct recognized but not yet implemented</td>
 <td>51</td>
-<td>46</td>
+<td>44</td>
 </tr>
 <tr>
 <td><a href="#type-error">TYPE_ERROR</a></td>
@@ -276,12 +276,12 @@ li { margin: 0.3em 0; }
 <tr>
 <td><a href="#array-functions-and-operators-(9.19)">Array Functions and Operators (9.19)</a></td>
 <td>21</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>0</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -391,10 +391,10 @@ li { margin: 0.3em 0; }
 <td>111</td>
 <td>3</td>
 <td>3</td>
-<td>38</td>
+<td>41</td>
 <td>0</td>
-<td>113</td>
-<td>7</td>
+<td>115</td>
+<td>8</td>
 <td>4</td>
 <td>31</td>
 <td>0</td>
@@ -3425,13 +3425,13 @@ li { margin: 0.3em 0; }
 <td>Function not supported</td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🟢</td>
 <td><code>array_length</code></td>
 <td><code>array_length(anyarray, integer) → integer</code></td>
-<td>UNSUPPORTED</td>
-<td>UNSUPPORTED</td>
-<td><a href="#fail-array_length__anyarray_int__from_table-Relation">UNSUPPORTED_SYNTAX</a></td>
-<td>Unsupported feature</td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>⚪</td>
@@ -3457,7 +3457,7 @@ li { margin: 0.3em 0; }
 <td><code>array_position(anycompatiblearray, anycompatible) → integer</code></td>
 <td>UNSUPPORTED</td>
 <td>UNSUPPORTED</td>
-<td><a href="#fail-array_position__anycompatiblearray_anycompatible__from_table-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td><a href="#fail-array_position__anycompatiblearray_anycompatible__from_table-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-array_position__anycompatiblearray_anycompatible__from_table-Relation">RESULT_MISMATCH</a></td>
 <td>Unsupported feature</td>
 </tr>
 <tr>
@@ -6594,13 +6594,13 @@ li { margin: 0.3em 0; }
 <td></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🟡</td>
 <td><code>jsonb -&gt;&gt; text → text</code></td>
 <td><code>jsonb -&gt;&gt; text → text</code></td>
-<td>UNSUPPORTED</td>
-<td>UNSUPPORTED</td>
-<td><a href="#fail-jsonb_arrow_text_get_field-TDS">TYPE_ERROR</a>, <a href="#fail-jsonb_arrow_text_get_field-Relation">FUNCTION_NOT_SUPPORTED</a></td>
-<td>Function not supported</td>
+<td>ERROR (0/1)</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-jsonb_arrow_text_get_field-TDS">TYPE_ERROR</a></td>
+<td></td>
 </tr>
 <tr>
 <td>🔴</td>
@@ -7413,13 +7413,13 @@ li { margin: 0.3em 0; }
 <td></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🟡</td>
 <td><code>jsonb -&gt; text -&gt; text -&gt;&gt; text → text</code></td>
 <td><code>jsonb -&gt; text -&gt; text -&gt;&gt; text → text</code></td>
-<td>UNSUPPORTED</td>
-<td>UNSUPPORTED</td>
-<td><a href="#fail-jsonb_chained_arrow-TDS">TYPE_ERROR</a>, <a href="#fail-jsonb_chained_arrow-Relation">FUNCTION_NOT_SUPPORTED</a></td>
-<td>Function not supported</td>
+<td>ERROR (0/1)</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-jsonb_chained_arrow-TDS">TYPE_ERROR</a></td>
+<td></td>
 </tr>
 <tr>
 <td>🟢</td>
@@ -7503,13 +7503,13 @@ li { margin: 0.3em 0; }
 <td></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🟡</td>
 <td><code>jsonb -&gt; text → jsonb</code></td>
 <td><code>jsonb -&gt; text → jsonb</code></td>
-<td>UNSUPPORTED</td>
-<td>UNSUPPORTED</td>
-<td><a href="#fail-jsonb_arrow_get_field-TDS">TYPE_ERROR</a>, <a href="#fail-jsonb_arrow_get_field-Relation">FUNCTION_NOT_SUPPORTED</a></td>
-<td>Function not supported</td>
+<td>ERROR (0/2)</td>
+<td>PARTIAL (1/2)</td>
+<td><a href="#fail-jsonb_arrow_get_field-TDS">TYPE_ERROR</a>, <a href="#fail-jsonb_arrow_get_field-Relation">RESULT_MISMATCH</a></td>
+<td></td>
 </tr>
 <tr>
 <td>🟡</td>
@@ -7685,7 +7685,7 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
-<h2>Functions Not Implemented (275)</h2>
+<h2>Functions Not Implemented (271)</h2>
 <p>These Postgres functions are recognized in the catalog but Legend SQL does not implement them.
 They fail with &quot;No function matches the given name&quot;, &quot;No SQL translation exists&quot;, or &quot;Unsupported&quot; errors.</p>
 <h3>Mathematical Functions and Operators (9.3) (14)</h3>
@@ -8068,7 +8068,7 @@ They fail with &quot;No function matches the given name&quot;, &quot;No SQL tran
 </tr>
 </tbody>
 </table>
-<h3>Array Functions and Operators (9.19) (17)</h3>
+<h3>Array Functions and Operators (9.19) (16)</h3>
 <table>
 <thead>
 <tr>
@@ -8087,9 +8087,6 @@ They fail with &quot;No function matches the given name&quot;, &quot;No SQL tran
 </tr>
 <tr>
 <td><code>array_fill</code></td>
-</tr>
-<tr>
-<td><code>array_length</code></td>
 </tr>
 <tr>
 <td><code>array_lower</code></td>
@@ -8315,7 +8312,7 @@ They fail with &quot;No function matches the given name&quot;, &quot;No SQL tran
 </tr>
 </tbody>
 </table>
-<h3>Other Functions (14)</h3>
+<h3>Other Functions (11)</h3>
 <table>
 <thead>
 <tr>
@@ -8339,9 +8336,6 @@ They fail with &quot;No function matches the given name&quot;, &quot;No SQL tran
 <td>`jsonb</td>
 </tr>
 <tr>
-<td><code>jsonb -&gt;&gt; text → text</code></td>
-</tr>
-<tr>
 <td><code>jsonb[integer] → jsonb</code></td>
 </tr>
 <tr>
@@ -8357,12 +8351,6 @@ They fail with &quot;No function matches the given name&quot;, &quot;No SQL tran
 <td>`jsonb ?</td>
 </tr>
 <tr>
-<td><code>jsonb -&gt; text -&gt; text -&gt;&gt; text → text</code></td>
-</tr>
-<tr>
-<td><code>jsonb -&gt; text → jsonb</code></td>
-</tr>
-<tr>
 <td><code>jsonb[text][text][text] → jsonb</code></td>
 </tr>
 </tbody>
@@ -8370,7 +8358,7 @@ They fail with &quot;No function matches the given name&quot;, &quot;No SQL tran
 <hr />
 <h2>Error Details</h2>
 <p><a id="function-not-supported"></a></p>
-<h3>FUNCTION_NOT_SUPPORTED (243 tests)</h3>
+<h3>FUNCTION_NOT_SUPPORTED (239 tests)</h3>
 <h4><a id="fail-acosh__dp__from_table-TDS"></a><a id="fail-acosh__dp__from_table-Relation"></a><code>acosh__dp__from_table</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -12017,19 +12005,6 @@ They fail with &quot;No function matches the given name&quot;, &quot;No SQL tran
 <p>No function matches the given name &quot;GENERATE_SUBSCRIPTS&quot;</p>
 </blockquote>
 <br>
-<h4><a id="fail-jsonb_arrow_text_get_field-Relation"></a><code>jsonb_arrow_text_get_field</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val -&gt;&gt; 'b' AS result FROM json_data WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val -&gt;&gt; 'b' AS result FROM func('e2e::rel_json_data') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>ERROR: function json_extract_path(jsonb, text) does not exist\n  Hint: No function matches the given name and argument types. You might need to add explicit type casts.\n  Position: 83</p>
-</blockquote>
-<br>
 <h4><a id="fail-jsonb_path_query_first__from_column-Relation"></a><code>jsonb_path_query_first__from_column</code></h4>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -12042,47 +12017,8 @@ They fail with &quot;No function matches the given name&quot;, &quot;No SQL tran
 <blockquote>
 <p>No function matches the given name &quot;JSONB_PATH_QUERY_FIRST&quot;</p>
 </blockquote>
-<br>
-<h4><a id="fail-jsonb_chained_arrow-Relation"></a><code>jsonb_chained_arrow</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val -&gt; 'a' -&gt; 'b' -&gt;&gt; 'c' AS result FROM json_data WHERE id = 2
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val -&gt; 'a' -&gt; 'b' -&gt;&gt; 'c' AS result FROM func('e2e::rel_json_data') WHERE id = 2
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>ERROR: function json_extract_path(jsonb, text) does not exist\n  Hint: No function matches the given name and argument types. You might need to add explicit type casts.\n  Position: 139</p>
-</blockquote>
-<br>
-<h4><a id="fail-jsonb_arrow_get_field-Relation"></a><code>jsonb_arrow_get_field</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val -&gt; 'b' AS result FROM json_data WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val -&gt; 'b' AS result FROM func('e2e::rel_json_data') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>ERROR: function json_extract_path(jsonb, text) does not exist\n  Hint: No function matches the given name and argument types. You might need to add explicit type casts.\n  Position: 81</p>
-</blockquote>
-<br>
-<h4><a id="fail-jsonb_arrow_null-Relation"></a><code>jsonb_arrow_null</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val -&gt; 'a' AS result FROM json_data WHERE id = 5
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val -&gt; 'a' AS result FROM func('e2e::rel_json_data') WHERE id = 5
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>ERROR: function json_extract_path(jsonb, text) does not exist\n  Hint: No function matches the given name and argument types. You might need to add explicit type casts.\n  Position: 81</p>
-</blockquote>
 <p><a id="result-mismatch"></a></p>
-<h3>RESULT_MISMATCH (24 tests)</h3>
+<h3>RESULT_MISMATCH (26 tests)</h3>
 <h4><a id="fail-div__num_num__from_table-TDS"></a><a id="fail-div__num_num__from_table-Relation"></a><code>div__num_num__from_table</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -12234,6 +12170,19 @@ They fail with &quot;No function matches the given name&quot;, &quot;No SQL tran
 </code></pre>
 <p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT JSON_EXTRACT_PATH(json_val, 'a', 'b', 'c') AS result FROM func('e2e::rel_json_data') WHERE id = 2
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>null</p>
+</blockquote>
+<br>
+<h4><a id="fail-array_position__anycompatiblearray_anycompatible__from_table-Relation"></a><code>array_position__anycompatiblearray_anycompatible__from_table</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY_POSITION(ARRAY[1,2,3], 2) AS result FROM numbers WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY_POSITION(ARRAY[1, 2, 3], 2) AS result FROM func('e2e::rel_numbers') WHERE id = 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
@@ -12392,6 +12341,19 @@ They fail with &quot;No function matches the given name&quot;, &quot;No SQL tran
 </code></pre>
 <p><strong>Legend SQL (Relation):</strong></p>
 <pre><code class="language-sql">SELECT id, name FROM func('e2e::rel_persons') WHERE age &lt;&gt; 30 ORDER BY id
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>null</p>
+</blockquote>
+<br>
+<h4><a id="fail-jsonb_arrow_get_field-Relation"></a><code>jsonb_arrow_get_field</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val -&gt; 'b' AS result FROM json_data WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val -&gt; 'b' AS result FROM func('e2e::rel_json_data') WHERE id = 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
@@ -13567,7 +13529,7 @@ Position: 8</p>
 <p>ERROR: operator does not exist: text = boolean\n  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.\n  Position: 92</p>
 </blockquote>
 <p><a id="unsupported-syntax"></a></p>
-<h3>UNSUPPORTED_SYNTAX (66 tests)</h3>
+<h3>UNSUPPORTED_SYNTAX (65 tests)</h3>
 <h4><a id="fail-log__num_num__from_table-TDS"></a><a id="fail-log__num_num__from_table-Relation"></a><code>log__num_num__from_table</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -13764,20 +13726,7 @@ Position: 8</p>
 <p>Unsupported type on column: result (meta::pure::functions::collection::Map), only primitive types and enums are supported</p>
 </blockquote>
 <br>
-<h4><a id="fail-array_length__anyarray_int__from_table-Relation"></a><code>array_length__anyarray_int__from_table</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY_LENGTH(ARRAY[1,2,3], 1) AS result FROM numbers WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY_LENGTH(ARRAY[1, 2, 3], 1) AS result FROM func('e2e::rel_numbers') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>[unsupported-api] The function 'array_size' (state: [Select, false]) is not supported yet</p>
-</blockquote>
-<br>
-<h4><a id="fail-array_position__anycompatiblearray_anycompatible__from_table-TDS"></a><a id="fail-array_position__anycompatiblearray_anycompatible__from_table-Relation"></a><code>array_position__anycompatiblearray_anycompatible__from_table</code></h4>
+<h4><a id="fail-array_position__anycompatiblearray_anycompatible__from_table-TDS"></a><code>array_position__anycompatiblearray_anycompatible__from_table</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT ARRAY_POSITION(ARRAY[1,2,3], 2) AS result FROM numbers WHERE id = 1
@@ -13788,17 +13737,6 @@ Position: 8</p>
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>Unsupported: array_position only supported on relation inputs</p>
-</blockquote>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY_POSITION(ARRAY[1,2,3], 2) AS result FROM numbers WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY_POSITION(ARRAY[1, 2, 3], 2) AS result FROM func('e2e::rel_numbers') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>[unsupported-api] The function 'array_position' (state: [Select, false]) is not supported yet</p>
 </blockquote>
 <br>
 <h4><a id="fail-array_position__anycompatiblearray_anycompatible_int__with_start-TDS"></a><a id="fail-array_position__anycompatiblearray_anycompatible_int__with_start-Relation"></a><code>array_position__anycompatiblearray_anycompatible_int__with_start</code></h4>
@@ -16440,7 +16378,7 @@ Functions with at least one working overload (e.g., <code>length(text)</code>) a
 </tr>
 </tbody>
 </table>
-<h3>Array Functions and Operators (9.19) (17 unsupported)</h3>
+<h3>Array Functions and Operators (9.19) (16 unsupported)</h3>
 <table>
 <thead>
 <tr>
@@ -16464,10 +16402,6 @@ Functions with at least one working overload (e.g., <code>length(text)</code>) a
 <tr>
 <td><code>array_fill</code></td>
 <td>Function not supported</td>
-</tr>
-<tr>
-<td><code>array_length</code></td>
-<td>Unsupported feature</td>
 </tr>
 <tr>
 <td><code>array_lower</code></td>
@@ -16866,7 +16800,7 @@ Functions with at least one working overload (e.g., <code>length(text)</code>) a
 </tr>
 </tbody>
 </table>
-<h3>Other Functions (14 unsupported)</h3>
+<h3>Other Functions (11 unsupported)</h3>
 <table>
 <thead>
 <tr>
@@ -16896,10 +16830,6 @@ Functions with at least one working overload (e.g., <code>length(text)</code>) a
 <td></td>
 </tr>
 <tr>
-<td><code>jsonb -&gt;&gt; text → text</code></td>
-<td>Function not supported</td>
-</tr>
-<tr>
 <td><code>jsonb[integer] → jsonb</code></td>
 <td>Unsupported feature</td>
 </tr>
@@ -16918,14 +16848,6 @@ Functions with at least one working overload (e.g., <code>length(text)</code>) a
 <tr>
 <td>`jsonb ?</td>
 <td>text[] → boolean`</td>
-</tr>
-<tr>
-<td><code>jsonb -&gt; text -&gt; text -&gt;&gt; text → text</code></td>
-<td>Function not supported</td>
-</tr>
-<tr>
-<td><code>jsonb -&gt; text → jsonb</code></td>
-<td>Function not supported</td>
 </tr>
 <tr>
 <td><code>jsonb[text][text][text] → jsonb</code></td>

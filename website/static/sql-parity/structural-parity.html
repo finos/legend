@@ -57,12 +57,12 @@ li { margin: 0.3em 0; }
 <tr>
 <td>⚪ UNSUPPORTED</td>
 <td>194</td>
-<td>83</td>
+<td>82</td>
 </tr>
 <tr>
 <td>✅ PASS</td>
 <td>338 (78.1%)</td>
-<td>424 (77.9%)</td>
+<td>424 (77.8%)</td>
 </tr>
 <tr>
 <td>❌ FAIL</td>
@@ -72,7 +72,7 @@ li { margin: 0.3em 0; }
 <tr>
 <td>💥 ERROR</td>
 <td>82</td>
-<td>105</td>
+<td>106</td>
 </tr>
 <tr>
 <td>❓ SKIP</td>
@@ -82,7 +82,7 @@ li { margin: 0.3em 0; }
 <tr>
 <td><strong>Pass rate</strong></td>
 <td><strong>78.1%</strong></td>
-<td><strong>77.9%</strong></td>
+<td><strong>77.8%</strong></td>
 </tr>
 </tbody>
 </table>
@@ -115,13 +115,13 @@ li { margin: 0.3em 0; }
 <td><a href="#unsupported-syntax">UNSUPPORTED_SYNTAX</a></td>
 <td>SQL construct recognized but not yet implemented</td>
 <td>178</td>
-<td>66</td>
+<td>65</td>
 </tr>
 <tr>
 <td><a href="#type-error">TYPE_ERROR</a></td>
 <td>Type mismatch or cast error</td>
 <td>17</td>
-<td>13</td>
+<td>14</td>
 </tr>
 <tr>
 <td><a href="#function-not-supported">FUNCTION_NOT_SUPPORTED</a></td>
@@ -371,7 +371,7 @@ li { margin: 0.3em 0; }
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>11</td>
+<td>12</td>
 <td>0</td>
 </tr>
 <tr>
@@ -2526,12 +2526,12 @@ li { margin: 0.3em 0; }
 <td><a href="#fail-lateral_unnest_string_to_array-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-lateral_unnest_string_to_array-Relation">TYPE_ERROR</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🔴</td>
 <td>LATERAL UNNEST with STRING_TO_ARRAY on correlated column</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-lateral_unnest_string_to_array_correlated-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-lateral_unnest_string_to_array_correlated-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-lateral_unnest_string_to_array_correlated-Relation">TYPE_ERROR</a></td>
 </tr>
 <tr>
 <td>⚪</td>
@@ -7919,7 +7919,7 @@ li { margin: 0.3em 0; }
 <p>Unsupported: lateral only supported on relation inputs</p>
 </blockquote>
 <br>
-<h4><a id="fail-lateral_unnest_string_to_array_correlated-TDS"></a><a id="fail-lateral_unnest_string_to_array_correlated-Relation"></a><code>lateral_unnest_string_to_array_correlated</code></h4>
+<h4><a id="fail-lateral_unnest_string_to_array_correlated-TDS"></a><code>lateral_unnest_string_to_array_correlated</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT p.name, u.val FROM persons p CROSS JOIN LATERAL UNNEST(STRING_TO_ARRAY(p.name, '')) AS u(val) WHERE p.id &lt;= 2 ORDER BY 1, 2
@@ -7930,17 +7930,6 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>Unsupported: lateral only supported on relation inputs</p>
-</blockquote>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name, u.val FROM persons p CROSS JOIN LATERAL UNNEST(STRING_TO_ARRAY(p.name, '')) AS u(val) WHERE p.id &lt;= 2 ORDER BY 1, 2
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name, u.val FROM func('e2e::rel_persons') p CROSS JOIN LATERAL UNNEST(STRING_TO_ARRAY(p.name, '')) AS u(val) WHERE p.id &lt;= 2 ORDER BY 1, 2
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>[unsupported-api] Lateral operation not supported for Database Type: Postgres</p>
 </blockquote>
 <br>
 <h4><a id="fail-lateral_unnest_string_to_array_delimiter-TDS"></a><a id="fail-lateral_unnest_string_to_array_delimiter-Relation"></a><code>lateral_unnest_string_to_array_delimiter</code></h4>
@@ -9383,7 +9372,7 @@ li { margin: 0.3em 0; }
 <p>combining aggregations with window functions not currently supported</p>
 </blockquote>
 <p><a id="type-error"></a></p>
-<h3>TYPE_ERROR (19 tests)</h3>
+<h3>TYPE_ERROR (20 tests)</h3>
 <h4><a id="fail-union_dedup_null-TDS"></a><a id="fail-union_dedup_null-Relation"></a><code>union_dedup_null</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -9453,6 +9442,19 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:6660 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+</blockquote>
+<br>
+<h4><a id="fail-lateral_unnest_string_to_array_correlated-Relation"></a><code>lateral_unnest_string_to_array_correlated</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, u.val FROM persons p CROSS JOIN LATERAL UNNEST(STRING_TO_ARRAY(p.name, '')) AS u(val) WHERE p.id &lt;= 2 ORDER BY 1, 2
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, u.val FROM func('e2e::rel_persons') p CROSS JOIN LATERAL UNNEST(STRING_TO_ARRAY(p.name, '')) AS u(val) WHERE p.id &lt;= 2 ORDER BY 1, 2
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>ERROR: cannot cast type text[] to jsonb\n  Position: 256</p>
 </blockquote>
 <br>
 <h4><a id="fail-jsonb_delete_key-TDS"></a><a id="fail-jsonb_delete_key-Relation"></a><code>jsonb_delete_key</code></h4>

@@ -36,7 +36,7 @@ li { margin: 0.3em 0; }
 <h1>Failure Details — Result Set Comparisons</h1>
 <p>Full expected (Postgres) vs actual (Legend) result sets for every test where results differ.</p>
 <hr />
-<p><strong>Total result mismatches:</strong> 66</p>
+<p><strong>Total result mismatches:</strong> 68</p>
 <h2>Table of Contents</h2>
 <ul>
 <li><a href="#fail-div__num_num__from_table-TDS">div__num_num__from_table [TDS]</a></li>
@@ -74,9 +74,11 @@ li { margin: 0.3em 0; }
 <li><a href="#fail-date_literal__fractional_9_digits-TDS">date_literal__fractional_9_digits [TDS]</a></li>
 <li><a href="#fail-date_literal__fractional_9_digits-Relation">date_literal__fractional_9_digits [Relation]</a></li>
 <li><a href="#fail-json_arrow_get_field-Relation">json_arrow_get_field [Relation]</a></li>
+<li><a href="#fail-jsonb_arrow_get_field-Relation">jsonb_arrow_get_field [Relation]</a></li>
 <li><a href="#fail-json_arrow_get_index-Relation">json_arrow_get_index [Relation]</a></li>
 <li><a href="#fail-jsonb_arrow_get_index-Relation">jsonb_arrow_get_index [Relation]</a></li>
 <li><a href="#fail-json_extract_path__from_column-Relation">json_extract_path__from_column [Relation]</a></li>
+<li><a href="#fail-array_position__anycompatiblearray_anycompatible__from_table-Relation">array_position__anycompatiblearray_anycompatible__from_table [Relation]</a></li>
 <li><a href="#fail-subquery_quant_all_empty_null_value-Relation">subquery_quant_all_empty_null_value [Relation]</a></li>
 <li><a href="#fail-null_equals_null-TDS">null_equals_null [TDS]</a></li>
 <li><a href="#fail-null_not_equals-TDS">null_not_equals [TDS]</a></li>
@@ -718,7 +720,7 @@ li { margin: 0.3em 0; }
 <pre><code class="language-sql">SELECT CONCAT_WS(', ', val, nullable_val) AS result FROM func('e2e::rel_strings') ORDER BY 1
 </code></pre>
 <p><strong>SQL (Generated, executed against DB):</strong></p>
-<pre><code class="language-sql">select concat(Text'',Text', ',&quot;root&quot;.val,Text', ',&quot;root&quot;.nullable_val,Text', ',Text'') as &quot;result&quot; from public.strings as &quot;root&quot; order by &quot;result&quot;
+<pre><code class="language-sql">select concat(&quot;root&quot;.val,Text', ',&quot;root&quot;.nullable_val) as &quot;result&quot; from public.strings as &quot;root&quot; order by &quot;result&quot;
 </code></pre>
 <p><strong>Lambda (Pure expression):</strong></p>
 <pre><code class="language-json">|e2e::StringRow.all()-&gt;meta::pure::functions::relation::project(
@@ -742,16 +744,9 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
-<li>Row 0, column 'result': expected '' but got ',   spaces  , has spaces, '</li>
-<li>Row 1, column 'result': expected '  spaces  , has spaces' but got ', , , '</li>
-<li>Row 2, column 'result': expected 'MiXeD CaSe' but got ', MiXeD CaSe, , '</li>
-<li>Row 3, column 'result': expected 'UPPERCASE, lowercase' but got ', UPPERCASE, lowercase, '</li>
-<li>Row 4, column 'result': expected 'WORLD, test' but got ', WORLD, test, '</li>
-<li>Row 5, column 'result': expected 'abcdefghij, ABCDEFGHIJ' but got ', abcdefghij, ABCDEFGHIJ, '</li>
-<li>Row 6, column 'result': expected 'hello, world' but got ', hello, world, '</li>
-<li>Row 7, column 'result': expected 'repeat, repeat' but got ', repeat, repeat, '</li>
-<li>Row 8, column 'result': expected 'special!@#$%, 12345' but got ', special!@#$%, 12345, '</li>
-<li>Row 9, column 'result': expected 'the quick brown fox, jumps over' but got ', the quick brown fox, jumps over, '</li>
+<li>Row 0, column 'result': expected '' but got '  spaces  , has spaces'</li>
+<li>Row 1, column 'result': expected '  spaces  , has spaces' but got ', '</li>
+<li>Row 2, column 'result': expected 'MiXeD CaSe' but got 'MiXeD CaSe, '</li>
 </ul>
 <p><strong>Expected (Postgres):</strong></p>
 <table>
@@ -802,34 +797,34 @@ li { margin: 0.3em 0; }
 </thead>
 <tbody>
 <tr>
-<td>,   spaces  , has spaces,</td>
+<td>spaces  , has spaces</td>
 </tr>
 <tr>
-<td>, , ,</td>
+<td>,</td>
 </tr>
 <tr>
-<td>, MiXeD CaSe, ,</td>
+<td>MiXeD CaSe,</td>
 </tr>
 <tr>
-<td>, UPPERCASE, lowercase,</td>
+<td>UPPERCASE, lowercase</td>
 </tr>
 <tr>
-<td>, WORLD, test,</td>
+<td>WORLD, test</td>
 </tr>
 <tr>
-<td>, abcdefghij, ABCDEFGHIJ,</td>
+<td>abcdefghij, ABCDEFGHIJ</td>
 </tr>
 <tr>
-<td>, hello, world,</td>
+<td>hello, world</td>
 </tr>
 <tr>
-<td>, repeat, repeat,</td>
+<td>repeat, repeat</td>
 </tr>
 <tr>
-<td>, special!@#$%, 12345,</td>
+<td>special!@#$%, 12345</td>
 </tr>
 <tr>
-<td>, the quick brown fox, jumps over,</td>
+<td>the quick brown fox, jumps over</td>
 </tr>
 </tbody>
 </table>
@@ -976,7 +971,7 @@ li { margin: 0.3em 0; }
 <pre><code class="language-sql">SELECT INITCAP(val) AS result FROM func('e2e::rel_strings') ORDER BY 1
 </code></pre>
 <p><strong>SQL (Generated, executed against DB):</strong></p>
-<pre><code class="language-sql">select case when char_length(&quot;root&quot;.val) = 0 then &quot;root&quot;.val else concat(Text'', upper(left(&quot;root&quot;.val,1)), substring(&quot;root&quot;.val, 2), Text'') end as &quot;result&quot; from public.strings as &quot;root&quot; order by &quot;result&quot;
+<pre><code class="language-sql">select case when char_length(&quot;root&quot;.val) = 0 then &quot;root&quot;.val else concat(upper(left(&quot;root&quot;.val,1)), substring(&quot;root&quot;.val, 2)) end as &quot;result&quot; from public.strings as &quot;root&quot; order by &quot;result&quot;
 </code></pre>
 <p><strong>Lambda (Pure expression):</strong></p>
 <pre><code class="language-json">|e2e::StringRow.all()-&gt;meta::pure::functions::relation::project(
@@ -3173,7 +3168,7 @@ li { margin: 0.3em 0; }
 <pre><code class="language-sql">SELECT json_val -&gt; 'a' AS result FROM func('e2e::rel_json_data') WHERE id = 1
 </code></pre>
 <p><strong>SQL (Generated, executed against DB):</strong></p>
-<pre><code class="language-sql">select cast(cast(json_extract_path(&quot;json_data_0&quot;.json_val, Text'a') as TEXT) as JSON) as &quot;result&quot; from public.json_data as &quot;json_data_0&quot; where &quot;json_data_0&quot;.id = 1
+<pre><code class="language-sql">select jsonb_extract_path(cast(&quot;json_data_0&quot;.json_val as jsonb), Text'a') as &quot;result&quot; from public.json_data as &quot;json_data_0&quot; where &quot;json_data_0&quot;.id = 1
 </code></pre>
 <p><strong>Lambda (Pure expression):</strong></p>
 <pre><code class="language-json">|#&gt;{e2e::TestDB.public.json_data}#-&gt;meta::pure::functions::relation::filter(
@@ -3215,6 +3210,57 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-jsonb_arrow_get_field-Relation"></a></p>
+<h3>❌ jsonb_arrow_get_field [Relation]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val -&gt; 'b' AS result FROM json_data WHERE id = 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val -&gt; 'b' AS result FROM func('e2e::rel_json_data') WHERE id = 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select jsonb_extract_path(cast(&quot;json_data_0&quot;.jsonb_val as jsonb), Text'b') as &quot;result&quot; from public.json_data as &quot;json_data_0&quot; where &quot;json_data_0&quot;.id = 1
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">|#&gt;{e2e::TestDB.public.json_data}#-&gt;meta::pure::functions::relation::filter(
+  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 1
+)-&gt;meta::pure::functions::relation::project(
+  ~[
+     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.jsonb_val-&gt;meta::pure::functions::variant::navigation::get('b')
+   ]
+)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected '&quot;hello&quot;' but got '&quot;&quot;hello&quot;&quot;'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;hello&quot;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;&quot;hello&quot;&quot;</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-json_arrow_get_index-Relation"></a></p>
 <h3>❌ json_arrow_get_index [Relation]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -3224,7 +3270,7 @@ li { margin: 0.3em 0; }
 <pre><code class="language-sql">SELECT json_arr -&gt; 0 AS result FROM func('e2e::rel_json_data') WHERE id = 1
 </code></pre>
 <p><strong>SQL (Generated, executed against DB):</strong></p>
-<pre><code class="language-sql">select cast(cast((cast(cast(&quot;json_data_0&quot;.json_arr as TEXT) as JSON)-&gt;0) as TEXT) as JSON) as &quot;result&quot; from public.json_data as &quot;json_data_0&quot; where &quot;json_data_0&quot;.id = 1
+<pre><code class="language-sql">select (cast(&quot;json_data_0&quot;.json_arr as jsonb)-&gt;0) as &quot;result&quot; from public.json_data as &quot;json_data_0&quot; where &quot;json_data_0&quot;.id = 1
 </code></pre>
 <p><strong>Lambda (Pure expression):</strong></p>
 <pre><code class="language-json">|#&gt;{e2e::TestDB.public.json_data}#-&gt;meta::pure::functions::relation::filter(
@@ -3275,7 +3321,7 @@ li { margin: 0.3em 0; }
 <pre><code class="language-sql">SELECT jsonb_arr -&gt; 1 AS result FROM func('e2e::rel_json_data') WHERE id = 1
 </code></pre>
 <p><strong>SQL (Generated, executed against DB):</strong></p>
-<pre><code class="language-sql">select cast(cast((cast(cast(&quot;json_data_0&quot;.jsonb_arr as TEXT) as JSON)-&gt;1) as TEXT) as JSON) as &quot;result&quot; from public.json_data as &quot;json_data_0&quot; where &quot;json_data_0&quot;.id = 1
+<pre><code class="language-sql">select (cast(&quot;json_data_0&quot;.jsonb_arr as jsonb)-&gt;1) as &quot;result&quot; from public.json_data as &quot;json_data_0&quot; where &quot;json_data_0&quot;.id = 1
 </code></pre>
 <p><strong>Lambda (Pure expression):</strong></p>
 <pre><code class="language-json">|#&gt;{e2e::TestDB.public.json_data}#-&gt;meta::pure::functions::relation::filter(
@@ -3326,7 +3372,7 @@ li { margin: 0.3em 0; }
 <pre><code class="language-sql">SELECT JSON_EXTRACT_PATH(json_val, 'a', 'b', 'c') AS result FROM func('e2e::rel_json_data') WHERE id = 2
 </code></pre>
 <p><strong>SQL (Generated, executed against DB):</strong></p>
-<pre><code class="language-sql">select cast(cast(json_extract_path(cast(cast(json_extract_path(cast(cast(json_extract_path(&quot;json_data_0&quot;.json_val, Text'a') as TEXT) as JSON), Text'b') as TEXT) as JSON), Text'c') as TEXT) as JSON) as &quot;result&quot; from public.json_data as &quot;json_data_0&quot; where &quot;json_data_0&quot;.id = 2
+<pre><code class="language-sql">select jsonb_extract_path(cast(jsonb_extract_path(cast(jsonb_extract_path(cast(&quot;json_data_0&quot;.json_val as jsonb), Text'a') as jsonb), Text'b') as jsonb), Text'c') as &quot;result&quot; from public.json_data as &quot;json_data_0&quot; where &quot;json_data_0&quot;.id = 2
 </code></pre>
 <p><strong>Lambda (Pure expression):</strong></p>
 <pre><code class="language-json">|#&gt;{e2e::TestDB.public.json_data}#-&gt;meta::pure::functions::relation::filter(
@@ -3364,6 +3410,70 @@ li { margin: 0.3em 0; }
 <tbody>
 <tr>
 <td>&quot;&quot;nested&quot;&quot;</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-array_position__anycompatiblearray_anycompatible__from_table-Relation"></a></p>
+<h3>❌ array_position__anycompatiblearray_anycompatible__from_table [Relation]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT ARRAY_POSITION(ARRAY[1,2,3], 2) AS result FROM numbers WHERE id = 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT ARRAY_POSITION(ARRAY[1, 2, 3], 2) AS result FROM func('e2e::rel_numbers') WHERE id = 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select (coalesce((select min(t.o) from jsonb_array_elements(cast(cast(jsonb_build_array(1,2,3) as JSONB) as jsonb)) with ordinality t(v, o) where t.v = to_jsonb(2)), 0) - 1) as &quot;result&quot; from public.numbers as &quot;root&quot; where &quot;root&quot;.id = 1
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">|e2e::NumberRow.all()-&gt;meta::pure::functions::relation::project(
+  ~[
+     id: x: e2e::NumberRow[1]|$x.id,
+     int_val: x: e2e::NumberRow[1]|$x.intVal,
+     float_val: x: e2e::NumberRow[1]|$x.floatVal,
+     numeric_val: x: e2e::NumberRow[1]|$x.numericVal,
+     small_val: x: e2e::NumberRow[1]|$x.smallVal,
+     big_val: x: e2e::NumberRow[1]|$x.bigVal
+   ]
+)-&gt;meta::pure::functions::relation::filter(
+  x: (id:Integer[1], int_val:Integer, float_val:Float, numeric_val:Float, small_val:Integer, big_val:Integer)[1]|$x.id == 1
+)-&gt;meta::pure::functions::relation::project(
+  ~[
+     result: x: (id:Integer[1], int_val:Integer, float_val:Float, numeric_val:Float, small_val:Integer, big_val:Integer)[1]|[
+    1,
+    2,
+    3
+  ]-&gt;meta::pure::functions::collection::indexOf(2)
+   ]
+)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected '2' but got '1'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
 </tr>
 </tbody>
 </table>
@@ -3835,7 +3945,7 @@ li { margin: 0.3em 0; }
 <pre><code class="language-sql">SELECT name || ' age=' || CAST(age AS TEXT) AS result FROM func('e2e::rel_persons') ORDER BY 1
 </code></pre>
 <p><strong>SQL (Generated, executed against DB):</strong></p>
-<pre><code class="language-sql">select case when &quot;root&quot;.name is null then null else concat(Text'', &quot;root&quot;.name, Text' age=', cast(&quot;root&quot;.age as varchar), Text'') end as &quot;result&quot; from public.persons as &quot;root&quot; order by &quot;result&quot;
+<pre><code class="language-sql">select case when &quot;root&quot;.name is null then null else concat(&quot;root&quot;.name, Text' age=', cast(&quot;root&quot;.age as varchar)) end as &quot;result&quot; from public.persons as &quot;root&quot; order by &quot;result&quot;
 </code></pre>
 <p><strong>Lambda (Pure expression):</strong></p>
 <pre><code class="language-json">|e2e::Person.all()-&gt;meta::pure::functions::relation::project(
@@ -5464,7 +5574,7 @@ li { margin: 0.3em 0; }
 <pre><code class="language-sql">SELECT '[10,20,30]'::jsonb -&gt; 1 AS result FROM func('e2e::rel_persons') WHERE id = 1
 </code></pre>
 <p><strong>SQL (Generated, executed against DB):</strong></p>
-<pre><code class="language-sql">select cast(cast((cast(cast(cast(Text'[10,20,30]' as JSON) as TEXT) as JSON)-&gt;1) as TEXT) as JSON) as &quot;result&quot; from public.persons as &quot;root&quot; where &quot;root&quot;.id = 1
+<pre><code class="language-sql">select (cast(cast(Text'[10,20,30]' as JSONB) as jsonb)-&gt;1) as &quot;result&quot; from public.persons as &quot;root&quot; where &quot;root&quot;.id = 1
 </code></pre>
 <p><strong>Lambda (Pure expression):</strong></p>
 <pre><code class="language-json">|e2e::Person.all()-&gt;meta::pure::functions::relation::project(
@@ -5525,7 +5635,7 @@ li { margin: 0.3em 0; }
 <pre><code class="language-sql">SELECT '[10,20,30]'::jsonb -&gt; -1 AS result FROM func('e2e::rel_persons') WHERE id = 1
 </code></pre>
 <p><strong>SQL (Generated, executed against DB):</strong></p>
-<pre><code class="language-sql">select cast(cast((cast(cast(cast(Text'[10,20,30]' as JSON) as TEXT) as JSON)-&gt;-1) as TEXT) as JSON) as &quot;result&quot; from public.persons as &quot;root&quot; where &quot;root&quot;.id = 1
+<pre><code class="language-sql">select (cast(cast(Text'[10,20,30]' as JSONB) as jsonb)-&gt;-1) as &quot;result&quot; from public.persons as &quot;root&quot; where &quot;root&quot;.id = 1
 </code></pre>
 <p><strong>Lambda (Pure expression):</strong></p>
 <pre><code class="language-json">|e2e::Person.all()-&gt;meta::pure::functions::relation::project(
