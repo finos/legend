@@ -44,7 +44,6 @@
       "tutorials/studio-flat-data-schema",
       "tutorials/studio-text",
       "tutorials/studio-diagram",
-      "tutorials/query-dataspace",
       "tutorials/studio-schemaset",
       "tutorials/studio-binding",
       "tutorials/studio-persistence",
@@ -68,7 +67,7 @@
     "Reference Docs": [
       "reference/legend-language",
       "reference/released-functions",
-      "reference/upcoming-functions",
+      "reference/legend-sql",
       "reference/stores",
       "reference/external-format",
       "reference/query-protocol"

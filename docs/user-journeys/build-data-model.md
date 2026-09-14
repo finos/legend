@@ -81,7 +81,7 @@ _Coming soon_
 
 ## Legend standard library (Functions)
 
-See reference documentation on [released functions](../reference/released-functions.md) and [upcoming functions](../reference/upcoming-functions.md).
+See the [Function Reference](../reference/released-functions.md) for every function in the standard library, with per-store compatibility.
 
 ### Features
 - [Functions](../tutorials/studio-function.md)
