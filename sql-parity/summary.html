@@ -48,23 +48,23 @@ See <a href="function-coverage.html">full details</a> for per-function results.<
 <tbody>
 <tr>
 <td>Total signatures</td>
-<td>777</td>
-<td>777</td>
+<td>708</td>
+<td>708</td>
 </tr>
 <tr>
 <td>Unique function names</td>
-<td>417</td>
-<td>417</td>
+<td>346</td>
+<td>346</td>
 </tr>
 <tr>
 <td><strong>Supported functions (PASS/PARTIAL)</strong></td>
-<td><strong>183 (43.9%)</strong></td>
-<td><strong>197 (47.2%)</strong></td>
+<td><strong>145 (41.9%)</strong></td>
+<td><strong>151 (43.6%)</strong></td>
 </tr>
 <tr>
 <td>Total tests</td>
-<td>1066</td>
-<td>1066</td>
+<td>876</td>
+<td>876</td>
 </tr>
 <tr>
 <td>⚪ UNSUPPORTED</td>
@@ -73,38 +73,38 @@ See <a href="function-coverage.html">full details</a> for per-function results.<
 </tr>
 <tr>
 <td>✅ PASS</td>
-<td>310</td>
-<td>329</td>
+<td>234</td>
+<td>249</td>
 </tr>
 <tr>
 <td>⚠️ PARTIAL</td>
-<td>71</td>
-<td>77</td>
+<td>67</td>
+<td>68</td>
 </tr>
 <tr>
 <td>❌ FAIL</td>
-<td>9</td>
-<td>10</td>
+<td>8</td>
+<td>8</td>
 </tr>
 <tr>
 <td>💥 ERROR</td>
-<td>299</td>
-<td>273</td>
+<td>263</td>
+<td>247</td>
 </tr>
 <tr>
 <td>❓ UNTESTED</td>
-<td>26</td>
-<td>26</td>
+<td>74</td>
+<td>74</td>
 </tr>
 <tr>
 <td><strong>Full pass rate</strong></td>
-<td><strong>43.4%</strong></td>
-<td><strong>46.0%</strong></td>
+<td><strong>36.2%</strong></td>
+<td><strong>38.5%</strong></td>
 </tr>
 <tr>
 <td><strong>Pass + partial rate</strong></td>
-<td><strong>53.3%</strong></td>
-<td><strong>56.8%</strong></td>
+<td><strong>46.6%</strong></td>
+<td><strong>49.1%</strong></td>
 </tr>
 </tbody>
 </table>
@@ -131,27 +131,66 @@ See <a href="function-coverage.html">full details</a> for per-function results.<
 <li><a href="failure-details.html#fail-regexp_substr__start_and_nth__ignored_by_legend-Relation">regexp_substr__start_and_nth__ignored_by_legend [Relation]</a></li>
 <li><a href="failure-details.html#fail-json_extract_path__from_column-Relation">json_extract_path__from_column [Relation]</a></li>
 <li><a href="failure-details.html#fail-array_position__anycompatiblearray_anycompatible__from_table-Relation">array_position__anycompatiblearray_anycompatible__from_table [Relation]</a></li>
-<li><a href="failure-details.html#fail-json_arrow_get_index-Relation">json_arrow_get_index [Relation]</a></li>
-<li><a href="failure-details.html#fail-is_distinct_from__int__one_null-Relation">is_distinct_from__int__one_null [Relation]</a></li>
-<li><a href="failure-details.html#fail-gt__int__null-Relation">gt__int__null [Relation]</a></li>
-<li><a href="failure-details.html#fail-lt__int__null-Relation">lt__int__null [Relation]</a></li>
-<li><a href="failure-details.html#fail-between__int__null-TDS">between__int__null [TDS]</a></li>
-<li><a href="failure-details.html#fail-between__int__null-Relation">between__int__null [Relation]</a></li>
-<li><a href="failure-details.html#fail-jsonb_arrow_get_index-Relation">jsonb_arrow_get_index [Relation]</a></li>
 <li><a href="failure-details.html#fail-date_literal__fractional_6_digits-TDS">date_literal__fractional_6_digits [TDS]</a></li>
 <li><a href="failure-details.html#fail-date_literal__fractional_6_digits-Relation">date_literal__fractional_6_digits [Relation]</a></li>
-<li><a href="failure-details.html#fail-json_arrow_get_field-Relation">json_arrow_get_field [Relation]</a></li>
 <li><a href="failure-details.html#fail-date_literal__fractional_9_digits-TDS">date_literal__fractional_9_digits [TDS]</a></li>
 <li><a href="failure-details.html#fail-date_literal__fractional_9_digits-Relation">date_literal__fractional_9_digits [Relation]</a></li>
-<li><a href="failure-details.html#fail-neq__int__null-TDS">neq__int__null [TDS]</a></li>
-<li><a href="failure-details.html#fail-neq__int__null-Relation">neq__int__null [Relation]</a></li>
-<li><a href="failure-details.html#fail-neq__filter__int-TDS">neq__filter__int [TDS]</a></li>
-<li><a href="failure-details.html#fail-neq__filter__int-Relation">neq__filter__int [Relation]</a></li>
-<li><a href="failure-details.html#fail-jsonb_arrow_get_field-Relation">jsonb_arrow_get_field [Relation]</a></li>
-<li><a href="failure-details.html#fail-concat_op__txt_txt__from_table-TDS">concat_op__txt_txt__from_table [TDS]</a></li>
-<li><a href="failure-details.html#fail-concat_op__mixed_types__null_handling-TDS">concat_op__mixed_types__null_handling [TDS]</a></li>
-<li><a href="failure-details.html#fail-eq__null_null-TDS">eq__null_null [TDS]</a></li>
 </ul>
+<hr />
+<h2>Operator Coverage</h2>
+<p>Coverage of Postgres built-in operators in Legend SQL.
+See <a href="operator-coverage.html">full details</a> for per-operator results.</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>TDS</th>
+<th>Relation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total operators</td>
+<td>548</td>
+<td>548</td>
+</tr>
+<tr>
+<td>⚪ UNSUPPORTED</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>✅ PASS</td>
+<td>71</td>
+<td>74</td>
+</tr>
+<tr>
+<td>⚠️ PARTIAL</td>
+<td>7</td>
+<td>10</td>
+</tr>
+<tr>
+<td>❌ FAIL</td>
+<td>8</td>
+<td>4</td>
+</tr>
+<tr>
+<td>💥 ERROR</td>
+<td>456</td>
+<td>454</td>
+</tr>
+<tr>
+<td>❓ UNTESTED</td>
+<td>6</td>
+<td>6</td>
+</tr>
+<tr>
+<td><strong>Full pass rate</strong></td>
+<td><strong>13.0%</strong></td>
+<td><strong>13.5%</strong></td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2>Structural Parity</h2>
 <p>Coverage of SQL structural features (joins, subqueries, aggregations, etc.).
@@ -167,23 +206,23 @@ See <a href="structural-parity.html">full details</a> for per-feature results.</
 <tbody>
 <tr>
 <td>Total features</td>
-<td>551</td>
-<td>551</td>
+<td>576</td>
+<td>576</td>
 </tr>
 <tr>
 <td>Total tests</td>
-<td>627</td>
-<td>627</td>
+<td>652</td>
+<td>652</td>
 </tr>
 <tr>
 <td>⚪ UNSUPPORTED</td>
-<td>173</td>
-<td>72</td>
+<td>177</td>
+<td>75</td>
 </tr>
 <tr>
 <td>✅ PASS</td>
-<td>290</td>
-<td>367</td>
+<td>298</td>
+<td>376</td>
 </tr>
 <tr>
 <td>⚠️ PARTIAL</td>
@@ -192,13 +231,13 @@ See <a href="structural-parity.html">full details</a> for per-feature results.</
 </tr>
 <tr>
 <td>❌ FAIL</td>
-<td>12</td>
 <td>13</td>
+<td>14</td>
 </tr>
 <tr>
 <td>💥 ERROR</td>
-<td>73</td>
-<td>95</td>
+<td>85</td>
+<td>107</td>
 </tr>
 <tr>
 <td>❓ UNTESTED</td>
@@ -207,13 +246,13 @@ See <a href="structural-parity.html">full details</a> for per-feature results.</
 </tr>
 <tr>
 <td><strong>Full pass rate</strong></td>
-<td><strong>76.7%</strong></td>
-<td><strong>76.6%</strong></td>
+<td><strong>74.7%</strong></td>
+<td><strong>75.0%</strong></td>
 </tr>
 <tr>
 <td><strong>Pass + partial rate</strong></td>
-<td><strong>77.5%</strong></td>
-<td><strong>77.5%</strong></td>
+<td><strong>75.4%</strong></td>
+<td><strong>75.8%</strong></td>
 </tr>
 </tbody>
 </table>
@@ -244,11 +283,233 @@ See <a href="structural-parity.html">full details</a> for per-feature results.</
 <li><a href="failure-details.html#fail-json_extract_array_negative_index-Relation">json_extract_array_negative_index [Relation]</a></li>
 <li><a href="failure-details.html#fail-interval_compound_literal-TDS">interval_compound_literal [TDS]</a></li>
 <li><a href="failure-details.html#fail-interval_compound_literal-Relation">interval_compound_literal [Relation]</a></li>
-<li><a href="failure-details.html#fail-colres_e3_order_by_expression_over_join-TDS">colres_e3_order_by_expression_over_join [TDS]</a></li>
-<li><a href="failure-details.html#fail-colres_e3_order_by_expression_over_join-Relation">colres_e3_order_by_expression_over_join [Relation]</a></li>
-<li><a href="failure-details.html#fail-crcs_g4_order_by_expression_over_join-TDS">crcs_g4_order_by_expression_over_join [TDS]</a></li>
-<li><a href="failure-details.html#fail-crcs_g4_order_by_expression_over_join-Relation">crcs_g4_order_by_expression_over_join [Relation]</a></li>
+<li><a href="failure-details.html#fail-filter_clause_count-TDS">filter_clause_count [TDS]</a></li>
+<li><a href="failure-details.html#fail-filter_clause_count-Relation">filter_clause_count [Relation]</a></li>
+<li><a href="failure-details.html#fail-filter_clause_sum-TDS">filter_clause_sum [TDS]</a></li>
+<li><a href="failure-details.html#fail-filter_clause_sum-Relation">filter_clause_sum [Relation]</a></li>
+<li><a href="failure-details.html#fail-filter_clause_multiple_aggs-TDS">filter_clause_multiple_aggs [TDS]</a></li>
+<li><a href="failure-details.html#fail-filter_clause_multiple_aggs-Relation">filter_clause_multiple_aggs [Relation]</a></li>
 </ul>
+<hr />
+<h2>Format Token Coverage</h2>
+<p>Coverage of <code>to_char</code> template patterns and <code>EXTRACT</code>/<code>date_part</code> field keywords.
+See <a href="format-token-coverage.html">full details</a> for per-token results.</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>TDS</th>
+<th>Relation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total tokens</td>
+<td>80</td>
+<td>80</td>
+</tr>
+<tr>
+<td>✅ PASS</td>
+<td>76</td>
+<td>76</td>
+</tr>
+<tr>
+<td><strong>Pass rate</strong></td>
+<td><strong>95.0%</strong></td>
+<td><strong>95.0%</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Coverage vs. Postgres Docs</h2>
+<p>Fraction of cataloged functions/operators with <em>any</em> test at all — independent of
+pass/fail — showing where there is a testing gap vs. a behavioral gap.</p>
+<table>
+<thead>
+<tr>
+<th>Doc Section</th>
+<th>Tested</th>
+<th>Total</th>
+<th>Tested %</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-math.html">Mathematical Functions and Operators (9.3)</a></td>
+<td>72</td>
+<td>72</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-string.html">String Functions and Operators (9.4)</a></td>
+<td>107</td>
+<td>107</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-binarystring.html">Binary String Functions (9.5)</a></td>
+<td>9</td>
+<td>9</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-matching.html">Pattern Matching (9.7)</a></td>
+<td>12</td>
+<td>19</td>
+<td>63.2%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-formatting.html">Data Type Formatting (9.8)</a></td>
+<td>10</td>
+<td>10</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-datetime.html">Date/Time Functions and Operators (9.9)</a></td>
+<td>41</td>
+<td>41</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-conditional.html">Conditional Expressions (9.18)</a></td>
+<td>7</td>
+<td>7</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-json.html">JSON Functions and Operators (9.16)</a></td>
+<td>49</td>
+<td>94</td>
+<td>52.1%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-array.html">Array Functions and Operators (9.19)</a></td>
+<td>21</td>
+<td>21</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-aggregate.html">Aggregate Functions (9.21)</a></td>
+<td>157</td>
+<td>157</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-window.html">Window Functions (9.22)</a></td>
+<td>15</td>
+<td>15</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-net.html">Network Address Functions (9.12)</a></td>
+<td>21</td>
+<td>21</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-info.html">System Information Functions (9.26)</a></td>
+<td>41</td>
+<td>41</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-sequence.html">Sequence Manipulation Functions (9.17)</a></td>
+<td>5</td>
+<td>5</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-srf.html">Set Returning Functions (9.25)</a></td>
+<td>11</td>
+<td>11</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/pgcrypto.html">Cryptographic Functions (pgcrypto)</a></td>
+<td>1</td>
+<td>23</td>
+<td>4.3%</td>
+</tr>
+<tr>
+<td>Other Functions</td>
+<td>55</td>
+<td>55</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-logical.html">Logical Operators (9.1)</a></td>
+<td>3</td>
+<td>3</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-comparison.html">Comparison Operators (9.2)</a></td>
+<td>26</td>
+<td>26</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-math.html">Mathematical Operators (9.3)</a></td>
+<td>26</td>
+<td>26</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-string.html">String Operators (9.4)</a></td>
+<td>37</td>
+<td>37</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-bitstring.html">Bit String Operators (9.6)</a></td>
+<td>19</td>
+<td>19</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-array.html">Array Operators (9.19)</a></td>
+<td>20</td>
+<td>20</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/rangetypes.html">Range/Multirange Operators (9.19)</a></td>
+<td>54</td>
+<td>54</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-json.html">JSON/JSONB Operators (9.16)</a></td>
+<td>22</td>
+<td>22</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-net.html">Network Address Operators (9.12)</a></td>
+<td>36</td>
+<td>36</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/functions-geometry.html">Geometric Operators (9.11)</a></td>
+<td>157</td>
+<td>157</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td><a href="https://www.postgresql.org/docs/16/textsearch.html">Full Text Search Operators (9.13)</a></td>
+<td>24</td>
+<td>24</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td>Other Operators</td>
+<td>118</td>
+<td>124</td>
+<td>95.2%</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2>Overall</h2>
 <p>Combined pass rate across function coverage and structural parity.</p>
@@ -264,21 +525,21 @@ See <a href="structural-parity.html">full details</a> for per-feature results.</
 <tbody>
 <tr>
 <td>TDS</td>
-<td>600</td>
-<td>1093</td>
-<td><strong>54.9%</strong></td>
+<td>679</td>
+<td>1673</td>
+<td><strong>40.6%</strong></td>
 </tr>
 <tr>
 <td>Relation</td>
-<td>696</td>
-<td>1194</td>
-<td><strong>58.3%</strong></td>
+<td>775</td>
+<td>1775</td>
+<td><strong>43.7%</strong></td>
 </tr>
 <tr>
 <td><strong>Combined</strong></td>
-<td><strong>1296</strong></td>
-<td><strong>2287</strong></td>
-<td><strong>56.7%</strong></td>
+<td><strong>1454</strong></td>
+<td><strong>3368</strong></td>
+<td><strong>43.2%</strong></td>
 </tr>
 </tbody>
 </table>
