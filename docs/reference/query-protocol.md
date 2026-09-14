@@ -12,7 +12,10 @@ sidebar_label: Query Protocol
 _More content coming soon._
 
 ## SQL
-_Coming soon._
+
+Legend speaks the PostgreSQL wire protocol, so a Postgres client can query your model directly. See
+[Legend SQL](legend-sql.md) for how to connect, what a `FROM` clause names, and how much of Postgres is supported
+today.
 
 ## TDS
 _Coming soon._

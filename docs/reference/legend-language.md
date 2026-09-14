@@ -3,7 +3,7 @@ id: legend-language
 title: Legend Language
 sidebar_label: Language
 ---
-The Legend language is an an immutable functional language based on the Unified Modeling Language (UML) and inspired by Object Constraint Language (OCL). It provides an accelerated data modeling experience that enables:
+The Legend language is an immutable functional language based on the Unified Modeling Language (UML) and inspired by Object Constraint Language (OCL). It provides an accelerated data modeling experience that enables:
 
 -   Building of logical data models that can help describe business concepts and their data relationships.  
 -   Enrichment of the model with executable constraints, derivations, and model-to-model mappings.
@@ -74,7 +74,7 @@ Class Firm
 
 A subset of the available functions that can aid in the writing of model constraints, derivations, and model-to-model mappings are described below.  
 
-A full list of supported functions can be found at [Released functions](released-functions.md).
+A full list of supported functions can be found in the [Function Reference](released-functions.md).
 
 ### Variable
 
@@ -117,9 +117,9 @@ There's no control flow defined in the language. `If`, `map` and `filter` are im
 
     ```Legend
 
-    if ( <!condition>> ,
-        | <!resultIfTrue>> ,
-        | <!resultIfFalse>>
+    if ( <<condition>> ,
+        | <<resultIfTrue>> ,
+        | <<resultIfFalse>>
       );
 
     ```
@@ -152,7 +152,7 @@ Like UML, the Legend language supports the following extensions: stereotype, pro
 
 ```Legend
 
-Class <!extension.important>> Firm
+Class <<extension.important>> Firm
 {
   name:        String[1];  
   companyType: CompanyType[1];
@@ -164,7 +164,7 @@ Class <!extension.important>> Firm
 
 ```Legend
 
-Class <!extension.important>> {doc.doc = 'Represent a company.'} Firm
+Class <<extension.important>> {doc.doc = 'Represent a company.'} Firm
 {
   name:        String[1];  
   companyType: CompanyType[1];
@@ -176,7 +176,7 @@ Class <!extension.important>> {doc.doc = 'Represent a company.'} Firm
 
 ```Legend
 
-Class <!extension.important>> {doc.doc = 'Represent a company.'} Firm
+Class <<extension.important>> {doc.doc = 'Represent a company.'} Firm
 [
   isCorporation: $this.companyType == CompanyType.Corporation
 ]
@@ -191,7 +191,7 @@ Class <!extension.important>> {doc.doc = 'Represent a company.'} Firm
 
 ```Legend
 
-Class <!extension.important>> {doc.doc = 'Represent a company.'} Firm
+Class <<extension.important>> {doc.doc = 'Represent a company.'} Firm
 [
   isCorporation: $this.companyType == CompanyType.Corporation
 ]
@@ -210,7 +210,7 @@ Class <!extension.important>> {doc.doc = 'Represent a company.'} Firm
 
 ## Mappings
 
-The language offers a domain-specific language (DSL) that supports model-to-model mappings in the January pilot release.
+The language offers a domain-specific language (DSL) for defining mappings, including model-to-model mappings.
 
 ### Model-to-model mapping
 
