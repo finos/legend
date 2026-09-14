@@ -46,33 +46,33 @@ li { margin: 0.3em 0; }
 <tbody>
 <tr>
 <td>Total features</td>
-<td>551</td>
-<td>551</td>
+<td>576</td>
+<td>576</td>
 </tr>
 <tr>
 <td>Total tests</td>
-<td>627</td>
-<td>627</td>
+<td>652</td>
+<td>652</td>
 </tr>
 <tr>
 <td>⚪ UNSUPPORTED</td>
-<td>194</td>
-<td>82</td>
+<td>198</td>
+<td>85</td>
 </tr>
 <tr>
 <td>✅ PASS</td>
-<td>338 (78.1%)</td>
-<td>424 (77.8%)</td>
+<td>346 (76.2%)</td>
+<td>433 (76.4%)</td>
 </tr>
 <tr>
 <td>❌ FAIL</td>
-<td>13</td>
-<td>15</td>
+<td>14</td>
+<td>16</td>
 </tr>
 <tr>
 <td>💥 ERROR</td>
-<td>82</td>
-<td>106</td>
+<td>94</td>
+<td>118</td>
 </tr>
 <tr>
 <td>❓ SKIP</td>
@@ -81,8 +81,8 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><strong>Pass rate</strong></td>
-<td><strong>78.1%</strong></td>
-<td><strong>77.8%</strong></td>
+<td><strong>76.2%</strong></td>
+<td><strong>76.4%</strong></td>
 </tr>
 </tbody>
 </table>
@@ -114,7 +114,7 @@ li { margin: 0.3em 0; }
 <tr>
 <td><a href="#unsupported-syntax">UNSUPPORTED_SYNTAX</a></td>
 <td>SQL construct recognized but not yet implemented</td>
-<td>178</td>
+<td>179</td>
 <td>65</td>
 </tr>
 <tr>
@@ -126,20 +126,20 @@ li { margin: 0.3em 0; }
 <tr>
 <td><a href="#function-not-supported">FUNCTION_NOT_SUPPORTED</a></td>
 <td>Function name not recognized by Legend SQL</td>
-<td>16</td>
-<td>17</td>
+<td>19</td>
+<td>20</td>
 </tr>
 <tr>
 <td><a href="#result-mismatch">RESULT_MISMATCH</a></td>
 <td>Query executes but results differ from Postgres</td>
-<td>13</td>
-<td>15</td>
+<td>14</td>
+<td>16</td>
 </tr>
 <tr>
 <td><a href="#parse-error">PARSE_ERROR</a></td>
 <td>SQL syntax not parseable by Legend SQL parser</td>
-<td>16</td>
-<td>16</td>
+<td>28</td>
+<td>28</td>
 </tr>
 </tbody>
 </table>
@@ -453,14 +453,14 @@ li { margin: 0.3em 0; }
 <td><a href="#column_resolution">column_resolution</a></td>
 <td>33</td>
 <td>33</td>
-<td>30</td>
+<td>31</td>
 <td>0</td>
-<td>1</td>
+<td>0</td>
 <td>2</td>
 <td>0</td>
-<td>28</td>
+<td>29</td>
 <td>0</td>
-<td>1</td>
+<td>0</td>
 <td>4</td>
 <td>0</td>
 </tr>
@@ -468,15 +468,120 @@ li { margin: 0.3em 0; }
 <td><a href="#column_resolution_corpus">column_resolution_corpus</a></td>
 <td>119</td>
 <td>119</td>
-<td>69</td>
+<td>70</td>
 <td>0</td>
-<td>1</td>
+<td>0</td>
 <td>6</td>
 <td>0</td>
-<td>107</td>
+<td>108</td>
+<td>0</td>
+<td>0</td>
+<td>6</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="#grouping_sets">grouping_sets</a></td>
+<td>4</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="#filter_clause">filter_clause</a></td>
+<td>3</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="#within_group">within_group</a></td>
+<td>4</td>
+<td>4</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
 <td>0</td>
 <td>1</td>
-<td>6</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="#tablesample">tablesample</a></td>
+<td>3</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="#fetch_with_ties">fetch_with_ties</a></td>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="#recursive_ctes">recursive_ctes</a></td>
+<td>4</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="#values_clause">values_clause</a></td>
+<td>4</td>
+<td>4</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
 <td>0</td>
 </tr>
 <tr>
@@ -503,10 +608,10 @@ li { margin: 0.3em 0; }
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>12</td>
+<td>13</td>
 <td>0</td>
 <td>0</td>
-<td>1</td>
+<td>0</td>
 <td>0</td>
 </tr>
 <tr>
@@ -3438,12 +3543,12 @@ li { margin: 0.3em 0; }
 <td></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟢</td>
 <td>ORDER BY expression over a join</td>
 <td>1</td>
-<td>FAIL (0/1)</td>
-<td>FAIL (0/1)</td>
-<td><a href="#fail-colres_e3_order_by_expression_over_join-TDS">RESULT_MISMATCH</a></td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
 </tr>
 <tr>
 <td>🟢</td>
@@ -4190,12 +4295,12 @@ li { margin: 0.3em 0; }
 <td><a href="#fail-crcs_g4_order_by_column_projected_only_through_a_cast-TDS">ALIAS_NOT_FOUND</a></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟢</td>
 <td>statement ORDER BY an expression over a join</td>
 <td>1</td>
-<td>FAIL (0/1)</td>
-<td>FAIL (0/1)</td>
-<td><a href="#fail-crcs_g4_order_by_expression_over_join-TDS">RESULT_MISMATCH</a></td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
 </tr>
 <tr>
 <td>🟢</td>
@@ -4615,6 +4720,318 @@ li { margin: 0.3em 0; }
 </tr>
 </tbody>
 </table>
+<p><a id="grouping_sets"></a></p>
+<h2>grouping_sets</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Feature</th>
+<th>Tests</th>
+<th>TDS</th>
+<th>Relation</th>
+<th>Error Category</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔴</td>
+<td>GROUPING SETS</td>
+<td>1</td>
+<td>ERROR (0/1)</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-grouping_sets_basic-TDS">PARSE_ERROR</a></td>
+</tr>
+<tr>
+<td>⚪</td>
+<td>ROLLUP</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>UNTESTED</td>
+<td><a href="#fail-rollup_basic-TDS">FUNCTION_NOT_SUPPORTED</a></td>
+</tr>
+<tr>
+<td>⚪</td>
+<td>CUBE</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>UNTESTED</td>
+<td><a href="#fail-cube_basic-TDS">FUNCTION_NOT_SUPPORTED</a></td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>GROUPING function</td>
+<td>1</td>
+<td>ERROR (0/1)</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-grouping_sets_with_grouping_func-TDS">PARSE_ERROR</a></td>
+</tr>
+</tbody>
+</table>
+<p><a id="filter_clause"></a></p>
+<h2>filter_clause</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Feature</th>
+<th>Tests</th>
+<th>TDS</th>
+<th>Relation</th>
+<th>Error Category</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔴</td>
+<td>FILTER (WHERE ...) on COUNT</td>
+<td>1</td>
+<td>FAIL (0/1)</td>
+<td>FAIL (0/1)</td>
+<td><a href="#fail-filter_clause_count-TDS">RESULT_MISMATCH</a></td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>FILTER (WHERE ...) on SUM</td>
+<td>1</td>
+<td>FAIL (0/1)</td>
+<td>FAIL (0/1)</td>
+<td><a href="#fail-filter_clause_sum-TDS">RESULT_MISMATCH</a></td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>FILTER (WHERE ...) multiple aggregates</td>
+<td>1</td>
+<td>FAIL (0/1)</td>
+<td>FAIL (0/1)</td>
+<td><a href="#fail-filter_clause_multiple_aggs-TDS">RESULT_MISMATCH</a></td>
+</tr>
+</tbody>
+</table>
+<p><a id="within_group"></a></p>
+<h2>within_group</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Feature</th>
+<th>Tests</th>
+<th>TDS</th>
+<th>Relation</th>
+<th>Error Category</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🟢</td>
+<td>WITHIN GROUP percentile_cont</td>
+<td>1</td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
+</tr>
+<tr>
+<td>🟢</td>
+<td>WITHIN GROUP percentile_disc</td>
+<td>1</td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
+</tr>
+<tr>
+<td>⚪</td>
+<td>WITHIN GROUP mode</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>UNTESTED</td>
+<td><a href="#fail-within_group_mode-TDS">FUNCTION_NOT_SUPPORTED</a></td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>WITHIN GROUP hypothetical-set rank</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-within_group_rank_hypothetical-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-within_group_rank_hypothetical-Relation">MISC</a></td>
+</tr>
+</tbody>
+</table>
+<p><a id="tablesample"></a></p>
+<h2>tablesample</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Feature</th>
+<th>Tests</th>
+<th>TDS</th>
+<th>Relation</th>
+<th>Error Category</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔴</td>
+<td>TABLESAMPLE BERNOULLI</td>
+<td>1</td>
+<td>ERROR (0/1)</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-tablesample_bernoulli-TDS">PARSE_ERROR</a></td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>TABLESAMPLE SYSTEM</td>
+<td>1</td>
+<td>ERROR (0/1)</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-tablesample_system-TDS">PARSE_ERROR</a></td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>TABLESAMPLE without REPEATABLE</td>
+<td>1</td>
+<td>ERROR (0/1)</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-tablesample_no_repeatable-TDS">PARSE_ERROR</a></td>
+</tr>
+</tbody>
+</table>
+<p><a id="fetch_with_ties"></a></p>
+<h2>fetch_with_ties</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Feature</th>
+<th>Tests</th>
+<th>TDS</th>
+<th>Relation</th>
+<th>Error Category</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔴</td>
+<td>FETCH FIRST n ROWS WITH TIES</td>
+<td>1</td>
+<td>ERROR (0/1)</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-fetch_first_with_ties-TDS">PARSE_ERROR</a></td>
+</tr>
+<tr>
+<td>🟢</td>
+<td>FETCH FIRST n ROWS ONLY</td>
+<td>1</td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>OFFSET ... FETCH NEXT n ROWS WITH TIES</td>
+<td>1</td>
+<td>ERROR (0/1)</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-fetch_next_with_ties-TDS">PARSE_ERROR</a></td>
+</tr>
+</tbody>
+</table>
+<p><a id="recursive_ctes"></a></p>
+<h2>recursive_ctes</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Feature</th>
+<th>Tests</th>
+<th>TDS</th>
+<th>Relation</th>
+<th>Error Category</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔴</td>
+<td>WITH RECURSIVE simple series</td>
+<td>1</td>
+<td>ERROR (0/1)</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-recursive_cte_number_series-TDS">PARSE_ERROR</a></td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>WITH RECURSIVE self-join traversal</td>
+<td>1</td>
+<td>ERROR (0/1)</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-recursive_cte_hierarchy-TDS">PARSE_ERROR</a></td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>WITH ... AS MATERIALIZED</td>
+<td>1</td>
+<td>ERROR (0/1)</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-cte_materialized_hint-TDS">PARSE_ERROR</a></td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>WITH ... AS NOT MATERIALIZED</td>
+<td>1</td>
+<td>ERROR (0/1)</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-cte_not_materialized_hint-TDS">PARSE_ERROR</a></td>
+</tr>
+</tbody>
+</table>
+<p><a id="values_clause"></a></p>
+<h2>values_clause</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Feature</th>
+<th>Tests</th>
+<th>TDS</th>
+<th>Relation</th>
+<th>Error Category</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🟢</td>
+<td>standalone VALUES list</td>
+<td>1</td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
+</tr>
+<tr>
+<td>🟢</td>
+<td>VALUES as derived table with alias</td>
+<td>1</td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>VALUES combined with UNION</td>
+<td>1</td>
+<td>ERROR (0/1)</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-values_in_union-TDS">PARSE_ERROR</a></td>
+</tr>
+<tr>
+<td>🟢</td>
+<td>VALUES with explicit column typing</td>
+<td>1</td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p><a id="window_frames"></a></p>
 <h2>window_frames</h2>
 <table>
@@ -4918,12 +5335,12 @@ li { margin: 0.3em 0; }
 <td><a href="#fail-window_lead-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td>LAG with offset</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-window_lag_offset-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-window_lag_offset-Relation">MISC</a></td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-window_lag_offset-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
 <td>🟡</td>
@@ -5699,7 +6116,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:3676 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:3708 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -6411,6 +6828,19 @@ li { margin: 0.3em 0; }
 <p>Filter expressions are only supported for Primitives and Enums. Filter contains a parameter of type TabularDataSet</p>
 </blockquote>
 <br>
+<h4><a id="fail-within_group_rank_hypothetical-Relation"></a><code>within_group_rank_hypothetical</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT RANK(50000) WITHIN GROUP (ORDER BY salary) AS rank_at_50k FROM persons
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT RANK(50000) WITHIN GROUP (ORDER BY salary) AS rank_at_50k FROM func('e2e::rel_persons')
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Can't find variable class for variable 'p' in the graph</p>
+</blockquote>
+<br>
 <h4><a id="fail-frame_rows_unbounded_current-Relation"></a><code>frame_rows_unbounded_current</code></h4>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -6486,7 +6916,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1207 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1214 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-frame_multi_agg-Relation"></a><code>frame_multi_agg</code></h4>
@@ -6499,7 +6929,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1207 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1214 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-frame_rows_lookback_only-Relation"></a><code>frame_rows_lookback_only</code></h4>
@@ -6572,20 +7002,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1207 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
-</blockquote>
-<br>
-<h4><a id="fail-window_lag_offset-Relation"></a><code>window_lag_offset</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT name, salary, LAG(salary, 2, 0) OVER (ORDER BY name) AS prev2 FROM persons WHERE salary IS NOT NULL ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT name, salary, LAG(salary, 2, 0) OVER (ORDER BY name) AS prev2 FROM func('e2e::rel_persons') WHERE salary IS NOT NULL ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>incorrect number of args for lag</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1214 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-comp_three_table_agg-TDS"></a><code>comp_three_table_agg</code></h4>
@@ -6649,7 +7066,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1226 column:36), &quot;Match failure: null&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1233 column:36), &quot;Match failure: null&quot;</p>
 </blockquote>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -6660,7 +7077,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1207 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1214 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-nested_two_levels-Relation"></a><code>nested_two_levels</code></h4>
@@ -6713,7 +7130,7 @@ li { margin: 0.3em 0; }
 <p>Column 'id' of the enclosing query cannot be referenced from this subquery: both use the table alias 'root'</p>
 </blockquote>
 <p><a id="unsupported-syntax"></a></p>
-<h3>UNSUPPORTED_SYNTAX (178 tests)</h3>
+<h3>UNSUPPORTED_SYNTAX (179 tests)</h3>
 <h4><a id="fail-except_basic-TDS"></a><a id="fail-except_basic-Relation"></a><code>except_basic</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -8700,6 +9117,19 @@ li { margin: 0.3em 0; }
 <p>Unsupported: multiple window sort items not yet supported</p>
 </blockquote>
 <br>
+<h4><a id="fail-within_group_rank_hypothetical-TDS"></a><code>within_group_rank_hypothetical</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT RANK(50000) WITHIN GROUP (ORDER BY salary) AS rank_at_50k FROM persons
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT RANK(50000) WITHIN GROUP (ORDER BY salary) AS rank_at_50k FROM func('e2e::tds_persons')
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported type on column: rank_at_50k (meta::pure::functions::collection::Map), only primitive types and enums are supported</p>
+</blockquote>
+<br>
 <h4><a id="fail-frame_rows_unbounded_current-TDS"></a><code>frame_rows_unbounded_current</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -9666,7 +10096,7 @@ li { margin: 0.3em 0; }
 <p>Execution error at (resource:/core_relational/relational/functions/tableToTDS.pure line:48 column:108), &quot;Cast exception: Class cannot be cast to DataType&quot;</p>
 </blockquote>
 <p><a id="function-not-supported"></a></p>
-<h3>FUNCTION_NOT_SUPPORTED (17 tests)</h3>
+<h3>FUNCTION_NOT_SUPPORTED (20 tests)</h3>
 <h4><a id="fail-subquery_scalar_select-TDS"></a><a id="fail-subquery_scalar_select-Relation"></a><code>subquery_scalar_select</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -9853,6 +10283,54 @@ li { margin: 0.3em 0; }
 <p>No function matches the given name &quot;func&quot;</p>
 </blockquote>
 <br>
+<h4><a id="fail-rollup_basic-TDS"></a><a id="fail-rollup_basic-Relation"></a><code>rollup_basic</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, active, COUNT(*) AS cnt FROM persons GROUP BY ROLLUP (dept_id, active) ORDER BY 1, 2
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT dept_id, active, COUNT(*) AS cnt FROM func('e2e::tds_persons') GROUP BY ROLLUP(dept_id, active) ORDER BY 1, 2
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT dept_id, active, COUNT(*) AS cnt FROM func('e2e::rel_persons') GROUP BY ROLLUP(dept_id, active) ORDER BY 1, 2
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>No function matches the given name &quot;ROLLUP&quot;</p>
+</blockquote>
+<br>
+<h4><a id="fail-cube_basic-TDS"></a><a id="fail-cube_basic-Relation"></a><code>cube_basic</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, active, COUNT(*) AS cnt FROM persons GROUP BY CUBE (dept_id, active) ORDER BY 1, 2
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT dept_id, active, COUNT(*) AS cnt FROM func('e2e::tds_persons') GROUP BY CUBE(dept_id, active) ORDER BY 1, 2
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT dept_id, active, COUNT(*) AS cnt FROM func('e2e::rel_persons') GROUP BY CUBE(dept_id, active) ORDER BY 1, 2
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>No function matches the given name &quot;CUBE&quot;</p>
+</blockquote>
+<br>
+<h4><a id="fail-within_group_mode-TDS"></a><a id="fail-within_group_mode-Relation"></a><code>within_group_mode</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, MODE() WITHIN GROUP (ORDER BY age) AS common_age FROM persons GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT dept_id, MODE() WITHIN GROUP (ORDER BY age) AS common_age FROM func('e2e::tds_persons') GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT dept_id, MODE() WITHIN GROUP (ORDER BY age) AS common_age FROM func('e2e::rel_persons') GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>No function matches the given name &quot;MODE&quot;</p>
+</blockquote>
+<br>
 <h4><a id="fail-stress_zscore-TDS"></a><a id="fail-stress_zscore-Relation"></a><code>stress_zscore</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -9933,7 +10411,7 @@ li { margin: 0.3em 0; }
 <p>No function matches the given name &quot;func&quot;</p>
 </blockquote>
 <p><a id="result-mismatch"></a></p>
-<h3>RESULT_MISMATCH (17 tests)</h3>
+<h3>RESULT_MISMATCH (18 tests)</h3>
 <h4><a id="fail-subquery_quant_all_empty_null_value-Relation"></a><code>subquery_quant_all_empty_null_value</code></h4>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -10150,39 +10628,55 @@ li { margin: 0.3em 0; }
 <p>null</p>
 </blockquote>
 <br>
-<h4><a id="fail-colres_e3_order_by_expression_over_join-TDS"></a><a id="fail-colres_e3_order_by_expression_over_join-Relation"></a><code>colres_e3_order_by_expression_over_join</code></h4>
+<h4><a id="fail-filter_clause_count-TDS"></a><a id="fail-filter_clause_count-Relation"></a><code>filter_clause_count</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name, d.name AS dept_name FROM persons p INNER JOIN departments d ON p.dept_id = d.id ORDER BY UPPER(d.name), name
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) FILTER (WHERE active) AS active_cnt, COUNT(*) AS total_cnt FROM persons GROUP BY dept_id ORDER BY 1
 </code></pre>
 <p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name, d.name AS dept_name FROM func('e2e::tds_persons') p INNER JOIN func('e2e::tds_departments') d ON p.dept_id = d.id ORDER BY UPPER(d.name), name
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) FILTER (WHERE active) AS active_cnt, COUNT(*) AS total_cnt FROM func('e2e::tds_persons') GROUP BY dept_id ORDER BY 1
 </code></pre>
 <p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name, d.name AS dept_name FROM func('e2e::rel_persons') p INNER JOIN func('e2e::rel_departments') d ON p.dept_id = d.id ORDER BY UPPER(d.name), name
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) FILTER (WHERE active) AS active_cnt, COUNT(*) AS total_cnt FROM func('e2e::rel_persons') GROUP BY dept_id ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>null</p>
 </blockquote>
 <br>
-<h4><a id="fail-crcs_g4_order_by_expression_over_join-TDS"></a><a id="fail-crcs_g4_order_by_expression_over_join-Relation"></a><code>crcs_g4_order_by_expression_over_join</code></h4>
+<h4><a id="fail-filter_clause_sum-TDS"></a><a id="fail-filter_clause_sum-Relation"></a><code>filter_clause_sum</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name, d.name AS dept_name FROM persons p INNER JOIN departments d ON p.dept_id = d.id ORDER BY UPPER(d.name), p.name
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) FILTER (WHERE active) AS active_salary FROM persons GROUP BY dept_id ORDER BY 1
 </code></pre>
 <p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name, d.name AS dept_name FROM func('e2e::tds_persons') p INNER JOIN func('e2e::tds_departments') d ON p.dept_id = d.id ORDER BY UPPER(d.name), p.name
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) FILTER (WHERE active) AS active_salary FROM func('e2e::tds_persons') GROUP BY dept_id ORDER BY 1
 </code></pre>
 <p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name, d.name AS dept_name FROM func('e2e::rel_persons') p INNER JOIN func('e2e::rel_departments') d ON p.dept_id = d.id ORDER BY UPPER(d.name), p.name
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) FILTER (WHERE active) AS active_salary FROM func('e2e::rel_persons') GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>null</p>
+</blockquote>
+<br>
+<h4><a id="fail-filter_clause_multiple_aggs-TDS"></a><a id="fail-filter_clause_multiple_aggs-Relation"></a><code>filter_clause_multiple_aggs</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) FILTER (WHERE age &gt; 30) AS older, COUNT(*) FILTER (WHERE age &lt;= 30) AS younger FROM persons GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) FILTER (WHERE age &gt; 30) AS older, COUNT(*) FILTER (WHERE age &lt;= 30) AS younger FROM func('e2e::tds_persons') GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) FILTER (WHERE age &gt; 30) AS older, COUNT(*) FILTER (WHERE age &lt;= 30) AS younger FROM func('e2e::rel_persons') GROUP BY dept_id ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>null</p>
 </blockquote>
 <p><a id="parse-error"></a></p>
-<h3>PARSE_ERROR (16 tests)</h3>
+<h3>PARSE_ERROR (28 tests)</h3>
 <h4><a id="fail-cte_recursive-TDS"></a><a id="fail-cte_recursive-Relation"></a><code>cte_recursive</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -10272,6 +10766,162 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>Rewrite failed: no viable alternative at input '=&gt;'</p>
+</blockquote>
+<br>
+<h4><a id="fail-grouping_sets_basic-TDS"></a><a id="fail-grouping_sets_basic-Relation"></a><code>grouping_sets_basic</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, active, COUNT(*) AS cnt FROM persons GROUP BY GROUPING SETS ((dept_id), (active), ()) ORDER BY 1, 2
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">null
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Rewrite failed: no viable alternative at input 'GROUPING SETS'</p>
+</blockquote>
+<br>
+<h4><a id="fail-grouping_sets_with_grouping_func-TDS"></a><a id="fail-grouping_sets_with_grouping_func-Relation"></a><code>grouping_sets_with_grouping_func</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, active, GROUPING(dept_id) AS g, COUNT(*) AS cnt FROM persons GROUP BY GROUPING SETS ((dept_id), (active)) ORDER BY 1, 2
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">null
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Rewrite failed: no viable alternative at input 'GROUPING SETS'</p>
+</blockquote>
+<br>
+<h4><a id="fail-tablesample_bernoulli-TDS"></a><a id="fail-tablesample_bernoulli-Relation"></a><code>tablesample_bernoulli</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT COUNT(*) FROM persons TABLESAMPLE BERNOULLI (50) REPEATABLE (1)
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">null
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Rewrite failed: Unexpected token 'BERNOULLI'. Expected one of: {<EOF>, ';'} at line 1, column 42</p>
+</blockquote>
+<br>
+<h4><a id="fail-tablesample_system-TDS"></a><a id="fail-tablesample_system-Relation"></a><code>tablesample_system</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT COUNT(*) FROM persons TABLESAMPLE SYSTEM (50) REPEATABLE (1)
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">null
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Rewrite failed: Unexpected token 'SYSTEM'. Expected one of: {<EOF>, ';'} at line 1, column 42</p>
+</blockquote>
+<br>
+<h4><a id="fail-tablesample_no_repeatable-TDS"></a><a id="fail-tablesample_no_repeatable-Relation"></a><code>tablesample_no_repeatable</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT COUNT(*) FROM persons TABLESAMPLE BERNOULLI (10)
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">null
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Rewrite failed: Unexpected token 'BERNOULLI'. Expected one of: {<EOF>, ';'} at line 1, column 42</p>
+</blockquote>
+<br>
+<h4><a id="fail-fetch_first_with_ties-TDS"></a><a id="fail-fetch_first_with_ties-Relation"></a><code>fetch_first_with_ties</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, salary FROM persons ORDER BY salary DESC FETCH FIRST 3 ROWS WITH TIES
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">null
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Rewrite failed: no viable alternative at input 'FETCH FIRST 3 ROWS WITH'</p>
+</blockquote>
+<br>
+<h4><a id="fail-fetch_next_with_ties-TDS"></a><a id="fail-fetch_next_with_ties-Relation"></a><code>fetch_next_with_ties</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, salary FROM persons ORDER BY salary DESC OFFSET 1 FETCH NEXT 3 ROWS WITH TIES
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">null
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Rewrite failed: Unexpected token 'WITH'. Expected one of: ONLY at line 1, column 85</p>
+</blockquote>
+<br>
+<h4><a id="fail-recursive_cte_number_series-TDS"></a><a id="fail-recursive_cte_number_series-Relation"></a><code>recursive_cte_number_series</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH RECURSIVE t(n) AS (SELECT 1 UNION ALL SELECT n + 1 FROM t WHERE n &lt; 5) SELECT n FROM t ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">null
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Rewrite failed: Unexpected token 'RECURSIVE' at line 1, column 6</p>
+</blockquote>
+<br>
+<h4><a id="fail-recursive_cte_hierarchy-TDS"></a><a id="fail-recursive_cte_hierarchy-Relation"></a><code>recursive_cte_hierarchy</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH RECURSIVE org(id, name, dept_id, depth) AS (SELECT id, name, dept_id, 0 FROM persons WHERE dept_id = 1 UNION ALL SELECT p.id, p.name, p.dept_id, org.depth + 1 FROM persons p JOIN org ON p.dept_id = org.dept_id AND p.id &gt; org.id) SELECT * FROM org ORDER BY depth, id
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">null
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Rewrite failed: Unexpected token 'RECURSIVE' at line 1, column 6</p>
+</blockquote>
+<br>
+<h4><a id="fail-cte_materialized_hint-TDS"></a><a id="fail-cte_materialized_hint-Relation"></a><code>cte_materialized_hint</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH cte AS MATERIALIZED (SELECT dept_id, COUNT(*) AS cnt FROM persons GROUP BY dept_id) SELECT * FROM cte ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">null
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Rewrite failed: Unexpected token 'MATERIALIZED' at line 1, column 13</p>
+</blockquote>
+<br>
+<h4><a id="fail-cte_not_materialized_hint-TDS"></a><a id="fail-cte_not_materialized_hint-Relation"></a><code>cte_not_materialized_hint</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH cte AS NOT MATERIALIZED (SELECT dept_id, COUNT(*) AS cnt FROM persons GROUP BY dept_id) SELECT * FROM cte ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">null
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Rewrite failed: Unexpected token 'NOT'. Expected one of: '(' at line 1, column 13</p>
+</blockquote>
+<br>
+<h4><a id="fail-values_in_union-TDS"></a><a id="fail-values_in_union-Relation"></a><code>values_in_union</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">VALUES (1), (2) UNION SELECT id FROM persons WHERE id IN (1, 2, 3)
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">null
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Rewrite failed: Unexpected token 'UNION'. Expected one of: {<EOF>, ';'} at line 1, column 17</p>
 </blockquote>
 <br>
 <h4><a id="fail-frame_exclude_current_row-TDS"></a><a id="fail-frame_exclude_current_row-Relation"></a><code>frame_exclude_current_row</code></h4>
