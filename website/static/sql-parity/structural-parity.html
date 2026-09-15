@@ -56,13 +56,13 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td>⚪ UNSUPPORTED</td>
-<td>198</td>
-<td>85</td>
+<td>207</td>
+<td>83</td>
 </tr>
 <tr>
 <td>✅ PASS</td>
-<td>346 (76.2%)</td>
-<td>433 (76.4%)</td>
+<td>346 (77.8%)</td>
+<td>443 (77.9%)</td>
 </tr>
 <tr>
 <td>❌ FAIL</td>
@@ -71,8 +71,8 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td>💥 ERROR</td>
-<td>94</td>
-<td>118</td>
+<td>85</td>
+<td>110</td>
 </tr>
 <tr>
 <td>❓ SKIP</td>
@@ -81,8 +81,8 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><strong>Pass rate</strong></td>
-<td><strong>76.2%</strong></td>
-<td><strong>76.4%</strong></td>
+<td><strong>77.8%</strong></td>
+<td><strong>77.9%</strong></td>
 </tr>
 </tbody>
 </table>
@@ -102,19 +102,19 @@ li { margin: 0.3em 0; }
 <tr>
 <td><a href="#alias-not-found">ALIAS_NOT_FOUND</a></td>
 <td>Column or alias reference cannot be resolved</td>
-<td>8</td>
 <td>7</td>
+<td>2</td>
 </tr>
 <tr>
 <td><a href="#misc">MISC</a></td>
 <td>Other/uncategorized error</td>
-<td>41</td>
-<td>69</td>
+<td>33</td>
+<td>66</td>
 </tr>
 <tr>
 <td><a href="#unsupported-syntax">UNSUPPORTED_SYNTAX</a></td>
 <td>SQL construct recognized but not yet implemented</td>
-<td>179</td>
+<td>190</td>
 <td>65</td>
 </tr>
 <tr>
@@ -126,8 +126,8 @@ li { margin: 0.3em 0; }
 <tr>
 <td><a href="#function-not-supported">FUNCTION_NOT_SUPPORTED</a></td>
 <td>Function name not recognized by Legend SQL</td>
-<td>19</td>
-<td>20</td>
+<td>17</td>
+<td>18</td>
 </tr>
 <tr>
 <td><a href="#result-mismatch">RESULT_MISMATCH</a></td>
@@ -201,9 +201,9 @@ li { margin: 0.3em 0; }
 <td>5</td>
 <td>0</td>
 <td>0</td>
-<td>2</td>
 <td>0</td>
-<td>23</td>
+<td>0</td>
+<td>25</td>
 <td>1</td>
 <td>0</td>
 <td>5</td>
@@ -471,12 +471,12 @@ li { margin: 0.3em 0; }
 <td>70</td>
 <td>0</td>
 <td>0</td>
-<td>6</td>
+<td>1</td>
 <td>0</td>
-<td>108</td>
+<td>113</td>
 <td>0</td>
 <td>0</td>
-<td>6</td>
+<td>1</td>
 <td>0</td>
 </tr>
 <tr>
@@ -621,12 +621,12 @@ li { margin: 0.3em 0; }
 <td>16</td>
 <td>0</td>
 <td>0</td>
-<td>5</td>
-<td>0</td>
-<td>23</td>
-<td>1</td>
-<td>0</td>
 <td>4</td>
+<td>0</td>
+<td>25</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
 <td>0</td>
 </tr>
 </tbody>
@@ -882,25 +882,25 @@ li { margin: 0.3em 0; }
 <td>🔴</td>
 <td>Correlated subquery</td>
 <td>2</td>
+<td>UNTESTED</td>
 <td>ERROR (0/2)</td>
-<td>ERROR (0/2)</td>
-<td><a href="#fail-subquery_correlated-TDS">MISC</a>, <a href="#fail-subquery_correlated_count-TDS">FUNCTION_NOT_SUPPORTED</a></td>
+<td><a href="#fail-subquery_correlated-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-subquery_correlated-Relation">MISC</a>, <a href="#fail-subquery_correlated_count-TDS">FUNCTION_NOT_SUPPORTED</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>Subquery with aggregate comparison</td>
+<td>2</td>
+<td>UNTESTED</td>
+<td>PASS (2/2)</td>
+<td><a href="#fail-subquery_agg_comparison-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
 <td>🔴</td>
-<td>Subquery with aggregate comparison</td>
-<td>2</td>
-<td>ERROR (0/2)</td>
-<td>ERROR (0/2)</td>
-<td><a href="#fail-subquery_agg_comparison-TDS">MISC</a></td>
-</tr>
-<tr>
-<td>⚪</td>
 <td>Subquery in HAVING</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-subquery_in_having-TDS">FUNCTION_NOT_SUPPORTED</a></td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-subquery_in_having-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-subquery_in_having-Relation">MISC</a></td>
 </tr>
 <tr>
 <td>🟡</td>
@@ -943,12 +943,12 @@ li { margin: 0.3em 0; }
 <td><a href="#fail-subquery_exists_multi_cond-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🟡</td>
 <td>Subquery in CASE</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-subquery_in_case-TDS">FUNCTION_NOT_SUPPORTED</a></td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-subquery_in_case-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
 <td>🟡</td>
@@ -4367,28 +4367,28 @@ li { margin: 0.3em 0; }
 <td></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td>correlated subquery referencing an outer alias, outer is a comma join</td>
 <td>1</td>
-<td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-crcs_g5_correlated_subquery_outer_is_comma_join-TDS">MISC</a>, <a href="#fail-crcs_g5_correlated_subquery_outer_is_comma_join-Relation">ALIAS_NOT_FOUND</a></td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-crcs_g5_correlated_subquery_outer_is_comma_join-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td>correlated subquery referencing an outer alias, outer is an explicit join</td>
 <td>1</td>
-<td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-crcs_g5_correlated_subquery_outer_is_explicit_join-TDS">MISC</a>, <a href="#fail-crcs_g5_correlated_subquery_outer_is_explicit_join-Relation">ALIAS_NOT_FOUND</a></td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-crcs_g5_correlated_subquery_outer_is_explicit_join-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td>correlated subquery referencing both outer join sides</td>
 <td>1</td>
-<td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-crcs_g5_correlated_subquery_referencing_both_join_sides-TDS">ALIAS_NOT_FOUND</a></td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-crcs_g5_correlated_subquery_referencing_both_join_sides-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
 <td>⚪</td>
@@ -4415,12 +4415,12 @@ li { margin: 0.3em 0; }
 <td><a href="#fail-crcs_g5_in_subquery_correlated_over_join-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td>correlated MAX comparison against an outer alias, comma join</td>
 <td>1</td>
-<td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-crcs_g5_correlated_max_then_compare_comma_join-TDS">MISC</a>, <a href="#fail-crcs_g5_correlated_max_then_compare_comma_join-Relation">ALIAS_NOT_FOUND</a></td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-crcs_g5_correlated_max_then_compare_comma_join-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
 <td>🟢</td>
@@ -4671,12 +4671,12 @@ li { margin: 0.3em 0; }
 <td></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td>UNION ALL where one branch carries a correlated filter over a comma join</td>
 <td>1</td>
-<td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-crcs_g6_union_all_branches_with_correlated_filters-TDS">MISC</a>, <a href="#fail-crcs_g6_union_all_branches_with_correlated_filters-Relation">ALIAS_NOT_FOUND</a></td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-crcs_g6_union_all_branches_with_correlated_filters-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
 <td>🟢</td>
@@ -5575,20 +5575,20 @@ li { margin: 0.3em 0; }
 <td><a href="#fail-nested_corr_in_select-TDS">FUNCTION_NOT_SUPPORTED</a></td>
 </tr>
 <tr>
-<td>🟡</td>
+<td>🟢</td>
 <td>Multi-level nesting</td>
 <td>2</td>
 <td>PASS (1/2)</td>
-<td>PARTIAL (1/2)</td>
-<td><a href="#fail-nested_two_levels-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-nested_two_levels-Relation">MISC</a></td>
+<td>PASS (2/2)</td>
+<td><a href="#fail-nested_two_levels-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td>Subquery + JOIN</td>
 <td>1</td>
-<td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-nested_subquery_join-TDS">MISC</a></td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-nested_subquery_join-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
 <td>🔴</td>
@@ -5739,7 +5739,7 @@ li { margin: 0.3em 0; }
 <hr />
 <h2>Error Details</h2>
 <p><a id="alias-not-found"></a></p>
-<h3>ALIAS_NOT_FOUND (12 tests)</h3>
+<h3>ALIAS_NOT_FOUND (7 tests)</h3>
 <h4><a id="fail-union_multiple_mixed-TDS"></a><code>union_multiple_mixed</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -5852,84 +5852,8 @@ li { margin: 0.3em 0; }
 <blockquote>
 <p>The column 'id_p' can't be found in the relation (id_text:String[1], name:String)</p>
 </blockquote>
-<br>
-<h4><a id="fail-crcs_g5_correlated_subquery_outer_is_comma_join-Relation"></a><code>crcs_g5_correlated_subquery_outer_is_comma_join</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name FROM persons p, departments d WHERE p.dept_id = d.id AND p.salary = (SELECT MAX(p1.salary) FROM persons p1 WHERE p1.dept_id = p.dept_id) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name FROM func('e2e::rel_persons') p, func('e2e::rel_departments') d WHERE p.dept_id = d.id AND p.salary = (SELECT MAX(p1.salary) FROM func('e2e::rel_persons') p1 WHERE p1.dept_id = p.dept_id) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>The column 'dept_id_p' can't be found in the relation (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)</p>
-</blockquote>
-<br>
-<h4><a id="fail-crcs_g5_correlated_subquery_outer_is_explicit_join-Relation"></a><code>crcs_g5_correlated_subquery_outer_is_explicit_join</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name FROM persons p INNER JOIN departments d ON p.dept_id = d.id WHERE p.salary = (SELECT MAX(p1.salary) FROM persons p1 WHERE p1.dept_id = p.dept_id) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name FROM func('e2e::rel_persons') p INNER JOIN func('e2e::rel_departments') d ON p.dept_id = d.id WHERE p.salary = (SELECT MAX(p1.salary) FROM func('e2e::rel_persons') p1 WHERE p1.dept_id = p.dept_id) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>The column 'dept_id_p' can't be found in the relation (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)</p>
-</blockquote>
-<br>
-<h4><a id="fail-crcs_g5_correlated_subquery_referencing_both_join_sides-TDS"></a><a id="fail-crcs_g5_correlated_subquery_referencing_both_join_sides-Relation"></a><code>crcs_g5_correlated_subquery_referencing_both_join_sides</code></h4>
-<p>📘 <strong>TDS Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name FROM persons p INNER JOIN departments d ON p.dept_id = d.id WHERE p.salary &gt; (SELECT AVG(p1.salary) FROM persons p1 WHERE p1.dept_id = d.id) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name FROM func('e2e::tds_persons') p INNER JOIN func('e2e::tds_departments') d ON p.dept_id = d.id WHERE p.salary &gt; (SELECT AVG(p1.salary) FROM func('e2e::tds_persons') p1 WHERE p1.dept_id = d.id) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>The column '&quot;id_d&quot;' can't be found (&quot;id&quot;,&quot;name&quot;,&quot;age&quot;,&quot;salary&quot;,&quot;hire_date&quot;,&quot;active&quot;,&quot;dept_id&quot;)</p>
-</blockquote>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name FROM persons p INNER JOIN departments d ON p.dept_id = d.id WHERE p.salary &gt; (SELECT AVG(p1.salary) FROM persons p1 WHERE p1.dept_id = d.id) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name FROM func('e2e::rel_persons') p INNER JOIN func('e2e::rel_departments') d ON p.dept_id = d.id WHERE p.salary &gt; (SELECT AVG(p1.salary) FROM func('e2e::rel_persons') p1 WHERE p1.dept_id = d.id) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>The column 'id_d' can't be found in the relation (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)</p>
-</blockquote>
-<br>
-<h4><a id="fail-crcs_g5_correlated_max_then_compare_comma_join-Relation"></a><code>crcs_g5_correlated_max_then_compare_comma_join</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name, o.amount AS amount FROM persons p, orders o WHERE o.person_id = p.id AND o.amount = (SELECT MAX(o1.amount) FROM orders o1 WHERE o1.person_id = p.id) ORDER BY 1, 2
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name, o.amount AS amount FROM func('e2e::rel_persons') p, func('e2e::rel_orders') o WHERE o.person_id = p.id AND o.amount = (SELECT MAX(o1.amount) FROM func('e2e::rel_orders') o1 WHERE o1.person_id = p.id) ORDER BY 1, 2
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>The column 'id_p' can't be found in the relation (id:Integer[1], person_id:Integer, amount:Float, order_date:DateTime, status:String)</p>
-</blockquote>
-<br>
-<h4><a id="fail-crcs_g6_union_all_branches_with_correlated_filters-Relation"></a><code>crcs_g6_union_all_branches_with_correlated_filters</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT b.name AS name FROM (SELECT p.name AS name FROM persons p, departments d WHERE p.dept_id = d.id AND p.salary = (SELECT MAX(p1.salary) FROM persons p1 WHERE p1.dept_id = p.dept_id) UNION ALL SELECT p.name AS name FROM persons p WHERE p.dept_id IS NULL) b ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT b.name AS name FROM (SELECT p.name AS name FROM func('e2e::rel_persons') p, func('e2e::rel_departments') d WHERE p.dept_id = d.id AND p.salary = (SELECT MAX(p1.salary) FROM func('e2e::rel_persons') p1 WHERE p1.dept_id = p.dept_id) UNION ALL SELECT p.name AS name FROM func('e2e::rel_persons') p WHERE p.dept_id IS NULL) b ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>The column 'dept_id_p_1' can't be found in the relation (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)</p>
-</blockquote>
 <p><a id="misc"></a></p>
-<h3>MISC (78 tests)</h3>
+<h3>MISC (71 tests)</h3>
 <h4><a id="fail-union_multiple_mixed-Relation"></a><code>union_multiple_mixed</code></h4>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -5995,18 +5919,7 @@ li { margin: 0.3em 0; }
 <p>The two relations are incompatible and can't be concatenated (status:String[1], name:String) and (inactive:String[1], name:String)</p>
 </blockquote>
 <br>
-<h4><a id="fail-subquery_correlated-TDS"></a><a id="fail-subquery_correlated-Relation"></a><code>subquery_correlated</code></h4>
-<p>📘 <strong>TDS Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name, p.salary FROM persons p WHERE p.salary &gt; (SELECT AVG(salary) FROM persons WHERE dept_id = p.dept_id AND salary IS NOT NULL) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name, p.salary FROM func('e2e::tds_persons') p WHERE p.salary &gt; (SELECT AVG(salary) FROM func('e2e::tds_persons') WHERE dept_id = p.dept_id AND salary IS NOT NULL) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Execution error at (resource:/core_relational/relational/postprocessor/defaultPostProcessor/pushFiltersDownToJoin.pure line:206 column:113), &quot;The system is trying to get an element at offset 1 where the collection is of size 1&quot;</p>
-</blockquote>
+<h4><a id="fail-subquery_correlated-Relation"></a><code>subquery_correlated</code></h4>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT p.name, p.salary FROM persons p WHERE p.salary &gt; (SELECT AVG(salary) FROM persons WHERE dept_id = p.dept_id AND salary IS NOT NULL) ORDER BY 1
@@ -6016,55 +5929,20 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Can't find a match for function 'greaterThan(Float[0..1],Relation&lt;(AVG(salary):Float[1])&gt;[1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tgreaterThan(Boolean[1],Boolean[1]):Boolean[1]\n\t\tgreaterThan(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThan(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tgreaterThan(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThan(Date[1],Date[1]):Boolean[1]\n\t\tgreaterThan(Date[1],Date[0..1]):Boolean[1]\n\t\tgreaterThan(Date[0..1],Date[1]):Boolean[1]\n\t\tgreaterThan(Date[0..1],Date[0..1]):Boolean[1]\n\t\tgreaterThan(Number[1],Number[1]):Boolean[1]\n\t\tgreaterThan(Number[1],Number[0..1]):Boolean[1]\n\t\tgreaterThan(Number[0..1],Number[1]):Boolean[1]\n\t\tgreaterThan(Number[0..1],Number[0..1]):Boolean[1]\n\t\tgreaterThan(String[1],String[1]):Boolean[1]\n\t\tgreaterThan(String[1],String[0..1]):Boolean[1]\n\t\tgreaterThan(String[0..1],String[1]):Boolean[1]\n\t\tgreaterThan(String[0..1],String[0..1]):Boolean[1]\n</p>
+<p>Column 'dept_id' of the enclosing query cannot be referenced from this subquery: both use the table alias 'root'</p>
 </blockquote>
 <br>
-<h4><a id="fail-subquery_agg_comparison-TDS"></a><a id="fail-subquery_agg_comparison-Relation"></a><code>subquery_agg_comparison</code></h4>
-<p>📘 <strong>TDS Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT name, salary FROM persons WHERE salary &gt; (SELECT AVG(salary) FROM persons WHERE salary IS NOT NULL) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT name, salary FROM func('e2e::tds_persons') WHERE salary &gt; (SELECT AVG(salary) FROM func('e2e::tds_persons') WHERE salary IS NOT NULL) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Execution error at (resource:/core_relational/relational/postprocessor/defaultPostProcessor/pushFiltersDownToJoin.pure line:206 column:113), &quot;The system is trying to get an element at offset 1 where the collection is of size 1&quot;</p>
-</blockquote>
+<h4><a id="fail-subquery_in_having-Relation"></a><code>subquery_in_having</code></h4>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT name, salary FROM persons WHERE salary &gt; (SELECT AVG(salary) FROM persons WHERE salary IS NOT NULL) ORDER BY 1
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id HAVING COUNT(*) &gt; (SELECT AVG(cnt) FROM (SELECT COUNT(*) AS cnt FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id) sub) ORDER BY 1
 </code></pre>
 <p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT name, salary FROM func('e2e::rel_persons') WHERE salary &gt; (SELECT AVG(salary) FROM func('e2e::rel_persons') WHERE salary IS NOT NULL) ORDER BY 1
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id HAVING COUNT(*) &gt; (SELECT AVG(cnt) FROM (SELECT COUNT(*) AS cnt FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id) sub) ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Can't find a match for function 'greaterThan(Float[0..1],Relation&lt;(AVG(salary):Float[1])&gt;[1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tgreaterThan(Boolean[1],Boolean[1]):Boolean[1]\n\t\tgreaterThan(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThan(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tgreaterThan(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThan(Date[1],Date[1]):Boolean[1]\n\t\tgreaterThan(Date[1],Date[0..1]):Boolean[1]\n\t\tgreaterThan(Date[0..1],Date[1]):Boolean[1]\n\t\tgreaterThan(Date[0..1],Date[0..1]):Boolean[1]\n\t\tgreaterThan(Number[1],Number[1]):Boolean[1]\n\t\tgreaterThan(Number[1],Number[0..1]):Boolean[1]\n\t\tgreaterThan(Number[0..1],Number[1]):Boolean[1]\n\t\tgreaterThan(Number[0..1],Number[0..1]):Boolean[1]\n\t\tgreaterThan(String[1],String[1]):Boolean[1]\n\t\tgreaterThan(String[1],String[0..1]):Boolean[1]\n\t\tgreaterThan(String[0..1],String[1]):Boolean[1]\n\t\tgreaterThan(String[0..1],String[0..1]):Boolean[1]\n</p>
-</blockquote>
-<br>
-<h4><a id="fail-subquery_agg_min-TDS"></a><a id="fail-subquery_agg_min-Relation"></a><code>subquery_agg_min</code></h4>
-<p>📘 <strong>TDS Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT name, salary FROM persons WHERE salary = (SELECT MIN(salary) FROM persons WHERE salary IS NOT NULL) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT name, salary FROM func('e2e::tds_persons') WHERE salary = (SELECT MIN(salary) FROM func('e2e::tds_persons') WHERE salary IS NOT NULL) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Filter expressions are only supported for Primitives and Enums. Filter contains a parameter of type TabularDataSet</p>
-</blockquote>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT name, salary FROM persons WHERE salary = (SELECT MIN(salary) FROM persons WHERE salary IS NOT NULL) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT name, salary FROM func('e2e::rel_persons') WHERE salary = (SELECT MIN(salary) FROM func('e2e::rel_persons') WHERE salary IS NOT NULL) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Filter expressions are only supported for Primitives and Enums. Filter contains a parameter of type Relation</p>
+<p>restrict__d#4_e1_d#2 not found</p>
 </blockquote>
 <br>
 <h4><a id="fail-subquery_exists_grouped-Relation"></a><code>subquery_exists_grouped</code></h4>
@@ -6116,7 +5994,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:3708 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:3780 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -6776,58 +6654,6 @@ li { margin: 0.3em 0; }
 <p>no column found named: 'age'. Available columns: [name]</p>
 </blockquote>
 <br>
-<h4><a id="fail-crcs_g5_correlated_subquery_outer_is_comma_join-TDS"></a><code>crcs_g5_correlated_subquery_outer_is_comma_join</code></h4>
-<p>📘 <strong>TDS Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name FROM persons p, departments d WHERE p.dept_id = d.id AND p.salary = (SELECT MAX(p1.salary) FROM persons p1 WHERE p1.dept_id = p.dept_id) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name FROM func('e2e::tds_persons') p, func('e2e::tds_departments') d WHERE p.dept_id = d.id AND p.salary = (SELECT MAX(p1.salary) FROM func('e2e::tds_persons') p1 WHERE p1.dept_id = p.dept_id) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Filter expressions are only supported for Primitives and Enums. Filter contains a parameter of type TabularDataSet</p>
-</blockquote>
-<br>
-<h4><a id="fail-crcs_g5_correlated_subquery_outer_is_explicit_join-TDS"></a><code>crcs_g5_correlated_subquery_outer_is_explicit_join</code></h4>
-<p>📘 <strong>TDS Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name FROM persons p INNER JOIN departments d ON p.dept_id = d.id WHERE p.salary = (SELECT MAX(p1.salary) FROM persons p1 WHERE p1.dept_id = p.dept_id) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name FROM func('e2e::tds_persons') p INNER JOIN func('e2e::tds_departments') d ON p.dept_id = d.id WHERE p.salary = (SELECT MAX(p1.salary) FROM func('e2e::tds_persons') p1 WHERE p1.dept_id = p.dept_id) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Filter expressions are only supported for Primitives and Enums. Filter contains a parameter of type TabularDataSet</p>
-</blockquote>
-<br>
-<h4><a id="fail-crcs_g5_correlated_max_then_compare_comma_join-TDS"></a><code>crcs_g5_correlated_max_then_compare_comma_join</code></h4>
-<p>📘 <strong>TDS Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name, o.amount AS amount FROM persons p, orders o WHERE o.person_id = p.id AND o.amount = (SELECT MAX(o1.amount) FROM orders o1 WHERE o1.person_id = p.id) ORDER BY 1, 2
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name AS name, o.amount AS amount FROM func('e2e::tds_persons') p, func('e2e::tds_orders') o WHERE o.person_id = p.id AND o.amount = (SELECT MAX(o1.amount) FROM func('e2e::tds_orders') o1 WHERE o1.person_id = p.id) ORDER BY 1, 2
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Filter expressions are only supported for Primitives and Enums. Filter contains a parameter of type TabularDataSet</p>
-</blockquote>
-<br>
-<h4><a id="fail-crcs_g6_union_all_branches_with_correlated_filters-TDS"></a><code>crcs_g6_union_all_branches_with_correlated_filters</code></h4>
-<p>📘 <strong>TDS Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT b.name AS name FROM (SELECT p.name AS name FROM persons p, departments d WHERE p.dept_id = d.id AND p.salary = (SELECT MAX(p1.salary) FROM persons p1 WHERE p1.dept_id = p.dept_id) UNION ALL SELECT p.name AS name FROM persons p WHERE p.dept_id IS NULL) b ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT b.name AS name FROM (SELECT p.name AS name FROM func('e2e::tds_persons') p, func('e2e::tds_departments') d WHERE p.dept_id = d.id AND p.salary = (SELECT MAX(p1.salary) FROM func('e2e::tds_persons') p1 WHERE p1.dept_id = p.dept_id) UNION ALL SELECT p.name AS name FROM func('e2e::tds_persons') p WHERE p.dept_id IS NULL) b ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Filter expressions are only supported for Primitives and Enums. Filter contains a parameter of type TabularDataSet</p>
-</blockquote>
-<br>
 <h4><a id="fail-within_group_rank_hypothetical-Relation"></a><code>within_group_rank_hypothetical</code></h4>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -7080,43 +6906,6 @@ li { margin: 0.3em 0; }
 <p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1214 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <br>
-<h4><a id="fail-nested_two_levels-Relation"></a><code>nested_two_levels</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT name, salary FROM persons WHERE dept_id IN (SELECT dept_id FROM persons WHERE salary &gt; (SELECT AVG(salary) FROM persons WHERE salary IS NOT NULL) AND dept_id IS NOT NULL GROUP BY dept_id) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT name, salary FROM func('e2e::rel_persons') WHERE dept_id IN (SELECT dept_id FROM func('e2e::rel_persons') WHERE salary &gt; (SELECT AVG(salary) FROM func('e2e::rel_persons') WHERE salary IS NOT NULL) AND dept_id IS NOT NULL GROUP BY dept_id) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Can't find a match for function 'greaterThan(Float[0..1],Relation&lt;(AVG(salary):Float[1])&gt;[1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tgreaterThan(Boolean[1],Boolean[1]):Boolean[1]\n\t\tgreaterThan(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThan(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tgreaterThan(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThan(Date[1],Date[1]):Boolean[1]\n\t\tgreaterThan(Date[1],Date[0..1]):Boolean[1]\n\t\tgreaterThan(Date[0..1],Date[1]):Boolean[1]\n\t\tgreaterThan(Date[0..1],Date[0..1]):Boolean[1]\n\t\tgreaterThan(Number[1],Number[1]):Boolean[1]\n\t\tgreaterThan(Number[1],Number[0..1]):Boolean[1]\n\t\tgreaterThan(Number[0..1],Number[1]):Boolean[1]\n\t\tgreaterThan(Number[0..1],Number[0..1]):Boolean[1]\n\t\tgreaterThan(String[1],String[1]):Boolean[1]\n\t\tgreaterThan(String[1],String[0..1]):Boolean[1]\n\t\tgreaterThan(String[0..1],String[1]):Boolean[1]\n\t\tgreaterThan(String[0..1],String[0..1]):Boolean[1]\n</p>
-</blockquote>
-<br>
-<h4><a id="fail-nested_subquery_join-TDS"></a><a id="fail-nested_subquery_join-Relation"></a><code>nested_subquery_join</code></h4>
-<p>📘 <strong>TDS Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name, p.salary, d.name AS dept FROM persons p INNER JOIN departments d ON p.dept_id = d.id WHERE p.salary &gt; (SELECT AVG(salary) FROM persons WHERE salary IS NOT NULL) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name, p.salary, d.name AS dept FROM func('e2e::tds_persons') p INNER JOIN func('e2e::tds_departments') d ON p.dept_id = d.id WHERE p.salary &gt; (SELECT AVG(salary) FROM func('e2e::tds_persons') WHERE salary IS NOT NULL) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Execution error at (resource:/core_relational/relational/postprocessor/defaultPostProcessor/pushFiltersDownToJoin.pure line:206 column:113), &quot;The system is trying to get an element at offset 1 where the collection is of size 1&quot;</p>
-</blockquote>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name, p.salary, d.name AS dept FROM persons p INNER JOIN departments d ON p.dept_id = d.id WHERE p.salary &gt; (SELECT AVG(salary) FROM persons WHERE salary IS NOT NULL) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name, p.salary, d.name AS dept FROM func('e2e::rel_persons') p INNER JOIN func('e2e::rel_departments') d ON p.dept_id = d.id WHERE p.salary &gt; (SELECT AVG(salary) FROM func('e2e::rel_persons') WHERE salary IS NOT NULL) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Can't find a match for function 'greaterThan(Float[0..1],Relation&lt;(AVG(salary):Float[1])&gt;[1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tgreaterThan(Boolean[1],Boolean[1]):Boolean[1]\n\t\tgreaterThan(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThan(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tgreaterThan(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThan(Date[1],Date[1]):Boolean[1]\n\t\tgreaterThan(Date[1],Date[0..1]):Boolean[1]\n\t\tgreaterThan(Date[0..1],Date[1]):Boolean[1]\n\t\tgreaterThan(Date[0..1],Date[0..1]):Boolean[1]\n\t\tgreaterThan(Number[1],Number[1]):Boolean[1]\n\t\tgreaterThan(Number[1],Number[0..1]):Boolean[1]\n\t\tgreaterThan(Number[0..1],Number[1]):Boolean[1]\n\t\tgreaterThan(Number[0..1],Number[0..1]):Boolean[1]\n\t\tgreaterThan(String[1],String[1]):Boolean[1]\n\t\tgreaterThan(String[1],String[0..1]):Boolean[1]\n\t\tgreaterThan(String[0..1],String[1]):Boolean[1]\n\t\tgreaterThan(String[0..1],String[0..1]):Boolean[1]\n</p>
-</blockquote>
-<br>
 <h4><a id="fail-nested_exists_agg-Relation"></a><code>nested_exists_agg</code></h4>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -7130,7 +6919,7 @@ li { margin: 0.3em 0; }
 <p>Column 'id' of the enclosing query cannot be referenced from this subquery: both use the table alias 'root'</p>
 </blockquote>
 <p><a id="unsupported-syntax"></a></p>
-<h3>UNSUPPORTED_SYNTAX (179 tests)</h3>
+<h3>UNSUPPORTED_SYNTAX (190 tests)</h3>
 <h4><a id="fail-except_basic-TDS"></a><a id="fail-except_basic-Relation"></a><code>except_basic</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -7276,6 +7065,58 @@ li { margin: 0.3em 0; }
 <p>Unsupported: exists only supported on relation inputs</p>
 </blockquote>
 <br>
+<h4><a id="fail-subquery_correlated-TDS"></a><code>subquery_correlated</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, p.salary FROM persons p WHERE p.salary &gt; (SELECT AVG(salary) FROM persons WHERE dept_id = p.dept_id AND salary IS NOT NULL) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, p.salary FROM func('e2e::tds_persons') p WHERE p.salary &gt; (SELECT AVG(salary) FROM func('e2e::tds_persons') WHERE dept_id = p.dept_id AND salary IS NOT NULL) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: scalar subquery comparison only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-subquery_agg_comparison-TDS"></a><code>subquery_agg_comparison</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT name, salary FROM persons WHERE salary &gt; (SELECT AVG(salary) FROM persons WHERE salary IS NOT NULL) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT name, salary FROM func('e2e::tds_persons') WHERE salary &gt; (SELECT AVG(salary) FROM func('e2e::tds_persons') WHERE salary IS NOT NULL) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: scalar subquery comparison only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-subquery_agg_min-TDS"></a><code>subquery_agg_min</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT name, salary FROM persons WHERE salary = (SELECT MIN(salary) FROM persons WHERE salary IS NOT NULL) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT name, salary FROM func('e2e::tds_persons') WHERE salary = (SELECT MIN(salary) FROM func('e2e::tds_persons') WHERE salary IS NOT NULL) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: scalar subquery comparison only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-subquery_in_having-TDS"></a><code>subquery_in_having</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id HAVING COUNT(*) &gt; (SELECT AVG(cnt) FROM (SELECT COUNT(*) AS cnt FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id) sub) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id HAVING COUNT(*) &gt; (SELECT AVG(cnt) FROM (SELECT COUNT(*) AS cnt FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id) sub) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: scalar subquery comparison only supported on relation inputs</p>
+</blockquote>
+<br>
 <h4><a id="fail-subquery_union-TDS"></a><code>subquery_union</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -7313,6 +7154,19 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>Unsupported: exists only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-subquery_in_case-TDS"></a><code>subquery_in_case</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT name, CASE WHEN salary &gt; (SELECT AVG(salary) FROM persons WHERE salary IS NOT NULL) THEN 'Above' ELSE 'Below' END AS vs_avg FROM persons WHERE salary IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT name, CASE WHEN salary &gt; (SELECT AVG(salary) FROM func('e2e::tds_persons') WHERE salary IS NOT NULL) THEN 'Above' ELSE 'Below' END AS vs_avg FROM func('e2e::tds_persons') WHERE salary IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: scalar subquery comparison only supported on relation inputs</p>
 </blockquote>
 <br>
 <h4><a id="fail-subquery_exists_uncorrelated-TDS"></a><code>subquery_exists_uncorrelated</code></h4>
@@ -8980,6 +8834,45 @@ li { margin: 0.3em 0; }
 <p>Unsupported: multiple window sort items not yet supported</p>
 </blockquote>
 <br>
+<h4><a id="fail-crcs_g5_correlated_subquery_outer_is_comma_join-TDS"></a><code>crcs_g5_correlated_subquery_outer_is_comma_join</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name AS name FROM persons p, departments d WHERE p.dept_id = d.id AND p.salary = (SELECT MAX(p1.salary) FROM persons p1 WHERE p1.dept_id = p.dept_id) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name AS name FROM func('e2e::tds_persons') p, func('e2e::tds_departments') d WHERE p.dept_id = d.id AND p.salary = (SELECT MAX(p1.salary) FROM func('e2e::tds_persons') p1 WHERE p1.dept_id = p.dept_id) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: scalar subquery comparison only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-crcs_g5_correlated_subquery_outer_is_explicit_join-TDS"></a><code>crcs_g5_correlated_subquery_outer_is_explicit_join</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name AS name FROM persons p INNER JOIN departments d ON p.dept_id = d.id WHERE p.salary = (SELECT MAX(p1.salary) FROM persons p1 WHERE p1.dept_id = p.dept_id) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name AS name FROM func('e2e::tds_persons') p INNER JOIN func('e2e::tds_departments') d ON p.dept_id = d.id WHERE p.salary = (SELECT MAX(p1.salary) FROM func('e2e::tds_persons') p1 WHERE p1.dept_id = p.dept_id) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: scalar subquery comparison only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-crcs_g5_correlated_subquery_referencing_both_join_sides-TDS"></a><code>crcs_g5_correlated_subquery_referencing_both_join_sides</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name AS name FROM persons p INNER JOIN departments d ON p.dept_id = d.id WHERE p.salary &gt; (SELECT AVG(p1.salary) FROM persons p1 WHERE p1.dept_id = d.id) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name AS name FROM func('e2e::tds_persons') p INNER JOIN func('e2e::tds_departments') d ON p.dept_id = d.id WHERE p.salary &gt; (SELECT AVG(p1.salary) FROM func('e2e::tds_persons') p1 WHERE p1.dept_id = d.id) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: scalar subquery comparison only supported on relation inputs</p>
+</blockquote>
+<br>
 <h4><a id="fail-crcs_g5_exists_correlated_over_join-TDS"></a><code>crcs_g5_exists_correlated_over_join</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -9004,6 +8897,19 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>Unsupported: in (subquery) only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-crcs_g5_correlated_max_then_compare_comma_join-TDS"></a><code>crcs_g5_correlated_max_then_compare_comma_join</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name AS name, o.amount AS amount FROM persons p, orders o WHERE o.person_id = p.id AND o.amount = (SELECT MAX(o1.amount) FROM orders o1 WHERE o1.person_id = p.id) ORDER BY 1, 2
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name AS name, o.amount AS amount FROM func('e2e::tds_persons') p, func('e2e::tds_orders') o WHERE o.person_id = p.id AND o.amount = (SELECT MAX(o1.amount) FROM func('e2e::tds_orders') o1 WHERE o1.person_id = p.id) ORDER BY 1, 2
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: scalar subquery comparison only supported on relation inputs</p>
 </blockquote>
 <br>
 <h4><a id="fail-crcs_g5_two_derived_sides_sharing_a_column_name_with_window-TDS"></a><code>crcs_g5_two_derived_sides_sharing_a_column_name_with_window</code></h4>
@@ -9089,6 +8995,19 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>select * not currently supported for index group by</p>
+</blockquote>
+<br>
+<h4><a id="fail-crcs_g6_union_all_branches_with_correlated_filters-TDS"></a><code>crcs_g6_union_all_branches_with_correlated_filters</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT b.name AS name FROM (SELECT p.name AS name FROM persons p, departments d WHERE p.dept_id = d.id AND p.salary = (SELECT MAX(p1.salary) FROM persons p1 WHERE p1.dept_id = p.dept_id) UNION ALL SELECT p.name AS name FROM persons p WHERE p.dept_id IS NULL) b ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT b.name AS name FROM (SELECT p.name AS name FROM func('e2e::tds_persons') p, func('e2e::tds_departments') d WHERE p.dept_id = d.id AND p.salary = (SELECT MAX(p1.salary) FROM func('e2e::tds_persons') p1 WHERE p1.dept_id = p.dept_id) UNION ALL SELECT p.name AS name FROM func('e2e::tds_persons') p WHERE p.dept_id IS NULL) b ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: scalar subquery comparison only supported on relation inputs</p>
 </blockquote>
 <br>
 <h4><a id="fail-crcs_g6_self_join_with_window_expression_key-TDS"></a><code>crcs_g6_self_join_with_window_expression_key</code></h4>
@@ -9558,6 +9477,19 @@ li { margin: 0.3em 0; }
 <p>Unsupported: in (subquery) only supported on relation inputs</p>
 </blockquote>
 <br>
+<h4><a id="fail-nested_subquery_join-TDS"></a><code>nested_subquery_join</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, p.salary, d.name AS dept FROM persons p INNER JOIN departments d ON p.dept_id = d.id WHERE p.salary &gt; (SELECT AVG(salary) FROM persons WHERE salary IS NOT NULL) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, p.salary, d.name AS dept FROM func('e2e::tds_persons') p INNER JOIN func('e2e::tds_departments') d ON p.dept_id = d.id WHERE p.salary &gt; (SELECT AVG(salary) FROM func('e2e::tds_persons') WHERE salary IS NOT NULL) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: scalar subquery comparison only supported on relation inputs</p>
+</blockquote>
+<br>
 <h4><a id="fail-nested_exists_agg-TDS"></a><code>nested_exists_agg</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -9858,7 +9790,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:6724 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:6778 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-lateral_unnest_string_to_array-Relation"></a><code>lateral_unnest_string_to_array</code></h4>
@@ -9871,7 +9803,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:6724 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:6778 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-lateral_unnest_string_to_array_correlated-Relation"></a><code>lateral_unnest_string_to_array_correlated</code></h4>
@@ -10096,7 +10028,7 @@ li { margin: 0.3em 0; }
 <p>Execution error at (resource:/core_relational/relational/functions/tableToTDS.pure line:48 column:108), &quot;Cast exception: Class cannot be cast to DataType&quot;</p>
 </blockquote>
 <p><a id="function-not-supported"></a></p>
-<h3>FUNCTION_NOT_SUPPORTED (20 tests)</h3>
+<h3>FUNCTION_NOT_SUPPORTED (18 tests)</h3>
 <h4><a id="fail-subquery_scalar_select-TDS"></a><a id="fail-subquery_scalar_select-Relation"></a><code>subquery_scalar_select</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -10145,22 +10077,6 @@ li { margin: 0.3em 0; }
 <p>No function matches the given name &quot;func&quot;</p>
 </blockquote>
 <br>
-<h4><a id="fail-subquery_in_having-TDS"></a><a id="fail-subquery_in_having-Relation"></a><code>subquery_in_having</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id HAVING COUNT(*) &gt; (SELECT AVG(cnt) FROM (SELECT COUNT(*) AS cnt FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id) sub) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id HAVING COUNT(*) &gt; (SELECT AVG(cnt) FROM (SELECT COUNT(*) AS cnt FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id) sub) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id HAVING COUNT(*) &gt; (SELECT AVG(cnt) FROM (SELECT COUNT(*) AS cnt FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id) sub) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>No function matches the given name &quot;func&quot;</p>
-</blockquote>
-<br>
 <h4><a id="fail-subquery_scalar_arithmetic-TDS"></a><a id="fail-subquery_scalar_arithmetic-Relation"></a><code>subquery_scalar_arithmetic</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -10171,22 +10087,6 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Legend SQL (Relation):</strong></p>
 <pre><code class="language-sql">SELECT name, salary - (SELECT MIN(salary) FROM func('e2e::rel_persons') WHERE salary IS NOT NULL) AS above_min FROM func('e2e::rel_persons') WHERE salary IS NOT NULL ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>No function matches the given name &quot;func&quot;</p>
-</blockquote>
-<br>
-<h4><a id="fail-subquery_in_case-TDS"></a><a id="fail-subquery_in_case-Relation"></a><code>subquery_in_case</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT name, CASE WHEN salary &gt; (SELECT AVG(salary) FROM persons WHERE salary IS NOT NULL) THEN 'Above' ELSE 'Below' END AS vs_avg FROM persons WHERE salary IS NOT NULL ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT name, CASE WHEN salary &gt; (SELECT AVG(salary) FROM func('e2e::tds_persons') WHERE salary IS NOT NULL) THEN 'Above' ELSE 'Below' END AS vs_avg FROM func('e2e::tds_persons') WHERE salary IS NOT NULL ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT name, CASE WHEN salary &gt; (SELECT AVG(salary) FROM func('e2e::rel_persons') WHERE salary IS NOT NULL) THEN 'Above' ELSE 'Below' END AS vs_avg FROM func('e2e::rel_persons') WHERE salary IS NOT NULL ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
