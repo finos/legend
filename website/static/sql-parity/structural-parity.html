@@ -56,18 +56,18 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td>⚪ UNSUPPORTED</td>
-<td>207</td>
+<td>210</td>
 <td>83</td>
 </tr>
 <tr>
 <td>✅ PASS</td>
-<td>346 (77.8%)</td>
-<td>443 (77.9%)</td>
+<td>346 (78.3%)</td>
+<td>446 (78.4%)</td>
 </tr>
 <tr>
 <td>❌ FAIL</td>
-<td>14</td>
-<td>16</td>
+<td>11</td>
+<td>13</td>
 </tr>
 <tr>
 <td>💥 ERROR</td>
@@ -81,8 +81,8 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><strong>Pass rate</strong></td>
-<td><strong>77.8%</strong></td>
-<td><strong>77.9%</strong></td>
+<td><strong>78.3%</strong></td>
+<td><strong>78.4%</strong></td>
 </tr>
 </tbody>
 </table>
@@ -114,7 +114,7 @@ li { margin: 0.3em 0; }
 <tr>
 <td><a href="#unsupported-syntax">UNSUPPORTED_SYNTAX</a></td>
 <td>SQL construct recognized but not yet implemented</td>
-<td>190</td>
+<td>193</td>
 <td>65</td>
 </tr>
 <tr>
@@ -132,8 +132,8 @@ li { margin: 0.3em 0; }
 <tr>
 <td><a href="#result-mismatch">RESULT_MISMATCH</a></td>
 <td>Query executes but results differ from Postgres</td>
-<td>14</td>
-<td>16</td>
+<td>11</td>
+<td>13</td>
 </tr>
 <tr>
 <td><a href="#parse-error">PARSE_ERROR</a></td>
@@ -500,12 +500,12 @@ li { margin: 0.3em 0; }
 <td>3</td>
 <td>0</td>
 <td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
 <td>3</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>0</td>
-<td>3</td>
 <td>0</td>
 <td>0</td>
 </tr>
@@ -4783,28 +4783,28 @@ li { margin: 0.3em 0; }
 </thead>
 <tbody>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td>FILTER (WHERE ...) on COUNT</td>
 <td>1</td>
-<td>FAIL (0/1)</td>
-<td>FAIL (0/1)</td>
-<td><a href="#fail-filter_clause_count-TDS">RESULT_MISMATCH</a></td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-filter_clause_count-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td>FILTER (WHERE ...) on SUM</td>
 <td>1</td>
-<td>FAIL (0/1)</td>
-<td>FAIL (0/1)</td>
-<td><a href="#fail-filter_clause_sum-TDS">RESULT_MISMATCH</a></td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-filter_clause_sum-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td>FILTER (WHERE ...) multiple aggregates</td>
 <td>1</td>
-<td>FAIL (0/1)</td>
-<td>FAIL (0/1)</td>
-<td><a href="#fail-filter_clause_multiple_aggs-TDS">RESULT_MISMATCH</a></td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-filter_clause_multiple_aggs-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 </tbody>
 </table>
@@ -5994,7 +5994,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:3780 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:3801 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -6742,7 +6742,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1214 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1235 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-frame_multi_agg-Relation"></a><code>frame_multi_agg</code></h4>
@@ -6755,7 +6755,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1214 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1235 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-frame_rows_lookback_only-Relation"></a><code>frame_rows_lookback_only</code></h4>
@@ -6828,7 +6828,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1214 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1235 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-comp_three_table_agg-TDS"></a><code>comp_three_table_agg</code></h4>
@@ -6892,7 +6892,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1233 column:36), &quot;Match failure: null&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1254 column:36), &quot;Match failure: null&quot;</p>
 </blockquote>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -6903,7 +6903,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1214 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1235 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-nested_exists_agg-Relation"></a><code>nested_exists_agg</code></h4>
@@ -6919,7 +6919,7 @@ li { margin: 0.3em 0; }
 <p>Column 'id' of the enclosing query cannot be referenced from this subquery: both use the table alias 'root'</p>
 </blockquote>
 <p><a id="unsupported-syntax"></a></p>
-<h3>UNSUPPORTED_SYNTAX (190 tests)</h3>
+<h3>UNSUPPORTED_SYNTAX (193 tests)</h3>
 <h4><a id="fail-except_basic-TDS"></a><a id="fail-except_basic-Relation"></a><code>except_basic</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -9036,6 +9036,45 @@ li { margin: 0.3em 0; }
 <p>Unsupported: multiple window sort items not yet supported</p>
 </blockquote>
 <br>
+<h4><a id="fail-filter_clause_count-TDS"></a><code>filter_clause_count</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) FILTER (WHERE active) AS active_cnt, COUNT(*) AS total_cnt FROM persons GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) FILTER (WHERE active) AS active_cnt, COUNT(*) AS total_cnt FROM func('e2e::tds_persons') GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: ordered or filtered aggregation is only supported on relations</p>
+</blockquote>
+<br>
+<h4><a id="fail-filter_clause_sum-TDS"></a><code>filter_clause_sum</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) FILTER (WHERE active) AS active_salary FROM persons GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) FILTER (WHERE active) AS active_salary FROM func('e2e::tds_persons') GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: ordered or filtered aggregation is only supported on relations</p>
+</blockquote>
+<br>
+<h4><a id="fail-filter_clause_multiple_aggs-TDS"></a><code>filter_clause_multiple_aggs</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) FILTER (WHERE age &gt; 30) AS older, COUNT(*) FILTER (WHERE age &lt;= 30) AS younger FROM persons GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) FILTER (WHERE age &gt; 30) AS older, COUNT(*) FILTER (WHERE age &lt;= 30) AS younger FROM func('e2e::tds_persons') GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: ordered or filtered aggregation is only supported on relations</p>
+</blockquote>
+<br>
 <h4><a id="fail-within_group_rank_hypothetical-TDS"></a><code>within_group_rank_hypothetical</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -9748,7 +9787,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:2947 column:77), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:2948 column:77), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-cast_numeric_to_int-TDS"></a><a id="fail-cast_numeric_to_int-Relation"></a><code>cast_numeric_to_int</code></h4>
@@ -9790,7 +9829,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:6778 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:6825 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-lateral_unnest_string_to_array-Relation"></a><code>lateral_unnest_string_to_array</code></h4>
@@ -9803,7 +9842,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:6778 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:6825 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-lateral_unnest_string_to_array_correlated-Relation"></a><code>lateral_unnest_string_to_array_correlated</code></h4>
@@ -10311,7 +10350,7 @@ li { margin: 0.3em 0; }
 <p>No function matches the given name &quot;func&quot;</p>
 </blockquote>
 <p><a id="result-mismatch"></a></p>
-<h3>RESULT_MISMATCH (18 tests)</h3>
+<h3>RESULT_MISMATCH (15 tests)</h3>
 <h4><a id="fail-subquery_quant_all_empty_null_value-Relation"></a><code>subquery_quant_all_empty_null_value</code></h4>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -10522,54 +10561,6 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Legend SQL (Relation):</strong></p>
 <pre><code class="language-sql">SELECT d + INTERVAL '1 year 2 months 3 days' AS result FROM func('e2e::rel_dates') WHERE d IS NOT NULL ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>null</p>
-</blockquote>
-<br>
-<h4><a id="fail-filter_clause_count-TDS"></a><a id="fail-filter_clause_count-Relation"></a><code>filter_clause_count</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT dept_id, COUNT(*) FILTER (WHERE active) AS active_cnt, COUNT(*) AS total_cnt FROM persons GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, COUNT(*) FILTER (WHERE active) AS active_cnt, COUNT(*) AS total_cnt FROM func('e2e::tds_persons') GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, COUNT(*) FILTER (WHERE active) AS active_cnt, COUNT(*) AS total_cnt FROM func('e2e::rel_persons') GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>null</p>
-</blockquote>
-<br>
-<h4><a id="fail-filter_clause_sum-TDS"></a><a id="fail-filter_clause_sum-Relation"></a><code>filter_clause_sum</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT dept_id, SUM(salary) FILTER (WHERE active) AS active_salary FROM persons GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, SUM(salary) FILTER (WHERE active) AS active_salary FROM func('e2e::tds_persons') GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, SUM(salary) FILTER (WHERE active) AS active_salary FROM func('e2e::rel_persons') GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>null</p>
-</blockquote>
-<br>
-<h4><a id="fail-filter_clause_multiple_aggs-TDS"></a><a id="fail-filter_clause_multiple_aggs-Relation"></a><code>filter_clause_multiple_aggs</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT dept_id, COUNT(*) FILTER (WHERE age &gt; 30) AS older, COUNT(*) FILTER (WHERE age &lt;= 30) AS younger FROM persons GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, COUNT(*) FILTER (WHERE age &gt; 30) AS older, COUNT(*) FILTER (WHERE age &lt;= 30) AS younger FROM func('e2e::tds_persons') GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, COUNT(*) FILTER (WHERE age &gt; 30) AS older, COUNT(*) FILTER (WHERE age &lt;= 30) AS younger FROM func('e2e::rel_persons') GROUP BY dept_id ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
