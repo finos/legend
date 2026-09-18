@@ -46,8 +46,8 @@ li { margin: 0.3em 0; }
 <tbody>
 <tr>
 <td>Total signatures</td>
-<td>708</td>
-<td>708</td>
+<td>709</td>
+<td>709</td>
 </tr>
 <tr>
 <td>Unique function names</td>
@@ -61,13 +61,13 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td>Total tests</td>
-<td>876</td>
-<td>876</td>
+<td>880</td>
+<td>880</td>
 </tr>
 <tr>
 <td>PASS</td>
-<td>379</td>
-<td>389</td>
+<td>378</td>
+<td>388</td>
 </tr>
 <tr>
 <td>FAIL</td>
@@ -86,8 +86,8 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td>UNSUPPORTED</td>
-<td>326</td>
-<td>326</td>
+<td>328</td>
+<td>328</td>
 </tr>
 </tbody>
 </table>
@@ -124,7 +124,7 @@ li { margin: 0.3em 0; }
 <tr>
 <td><a href="#unsupported-syntax">UNSUPPORTED_SYNTAX</a></td>
 <td>SQL construct recognized but not yet implemented</td>
-<td>49</td>
+<td>51</td>
 <td>35</td>
 </tr>
 <tr>
@@ -290,12 +290,12 @@ li { margin: 0.3em 0; }
 <tr>
 <td><a href="https://www.postgresql.org/docs/16/functions-aggregate.html">Aggregate Functions (9.21)</a> / <a href="#aggregate-functions-(9.21)">details</a></td>
 <td>157</td>
-<td>77</td>
+<td>76</td>
 <td>4</td>
 <td>0</td>
 <td>6</td>
 <td>0</td>
-<td>77</td>
+<td>76</td>
 <td>4</td>
 <td>0</td>
 <td>6</td>
@@ -387,7 +387,7 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><a href="#other-functions">Other Functions</a></td>
-<td>55</td>
+<td>56</td>
 <td>38</td>
 <td>0</td>
 <td>2</td>
@@ -5171,13 +5171,13 @@ li { margin: 0.3em 0; }
 <td>Unsupported feature</td>
 </tr>
 <tr>
-<td>🟢</td>
+<td>⚪</td>
 <td><code>sum</code></td>
 <td><code>sum(bigint) → numeric</code></td>
-<td>PASS (1/1)</td>
-<td>PASS (1/1)</td>
-<td></td>
-<td></td>
+<td>UNSUPPORTED</td>
+<td>UNSUPPORTED</td>
+<td><a href="#fail-sum__big__group_by_filtered-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>Unsupported feature</td>
 </tr>
 <tr>
 <td>🟢</td>
@@ -6916,6 +6916,15 @@ li { margin: 0.3em 0; }
 <td></td>
 </tr>
 <tr>
+<td>⚪</td>
+<td><code>count</code></td>
+<td><code>count(*) → bigint</code></td>
+<td>UNSUPPORTED</td>
+<td>UNSUPPORTED</td>
+<td><a href="#fail-count__any__group_by_filtered-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>Unsupported feature</td>
+</tr>
+<tr>
 <td>🟢</td>
 <td><code>TIMESTAMP 'HH:MI'</code></td>
 <td><code>TIMESTAMP 'HH:MI'</code></td>
@@ -7080,7 +7089,7 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
-<h2>Functions Not Implemented (264)</h2>
+<h2>Functions Not Implemented (266)</h2>
 <p>These Postgres functions are recognized in the catalog but Legend SQL does not implement them.
 They fail with &quot;No function matches the given name&quot;, &quot;No SQL translation exists&quot;, or &quot;Unsupported&quot; errors.</p>
 <h3>Mathematical Functions and Operators (9.3) (14)</h3>
@@ -7713,7 +7722,7 @@ They fail with &quot;No function matches the given name&quot;, &quot;No SQL tran
 </tr>
 </tbody>
 </table>
-<h3>Other Functions (2)</h3>
+<h3>Other Functions (3)</h3>
 <table>
 <thead>
 <tr>
@@ -7726,6 +7735,9 @@ They fail with &quot;No function matches the given name&quot;, &quot;No SQL tran
 </tr>
 <tr>
 <td><code>jsonb_path_query_first</code></td>
+</tr>
+<tr>
+<td><code>count</code></td>
 </tr>
 </tbody>
 </table>
@@ -13288,7 +13300,7 @@ Position: 13</p>
 <p>Rewrite failed:</p>
 </blockquote>
 <p><a id="unsupported-syntax"></a></p>
-<h3>UNSUPPORTED_SYNTAX (56 tests)</h3>
+<h3>UNSUPPORTED_SYNTAX (60 tests)</h3>
 <h4><a id="fail-log__num_num__from_table-TDS"></a><a id="fail-log__num_num__from_table-Relation"></a><code>log__num_num__from_table</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -13888,7 +13900,7 @@ Position: 13</p>
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Unsupported: ordered aggregation is only supported on relations</p>
+<p>Unsupported: ordered or filtered aggregation is only supported on relations</p>
 </blockquote>
 <br>
 <h4><a id="fail-string_agg__txt_txt__group_by_ordered-TDS"></a><code>string_agg__txt_txt__group_by_ordered</code></h4>
@@ -13901,7 +13913,7 @@ Position: 13</p>
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Unsupported: ordered aggregation is only supported on relations</p>
+<p>Unsupported: ordered or filtered aggregation is only supported on relations</p>
 </blockquote>
 <br>
 <h4><a id="fail-string_agg__txt_txt__group_by_ordered_multiple_keys-TDS"></a><code>string_agg__txt_txt__group_by_ordered_multiple_keys</code></h4>
@@ -13914,7 +13926,7 @@ Position: 13</p>
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Unsupported: ordered aggregation is only supported on relations</p>
+<p>Unsupported: ordered or filtered aggregation is only supported on relations</p>
 </blockquote>
 <br>
 <h4><a id="fail-string_agg__txt_txt__group_by_ordered_mixed-TDS"></a><code>string_agg__txt_txt__group_by_ordered_mixed</code></h4>
@@ -13927,7 +13939,46 @@ Position: 13</p>
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Unsupported: ordered aggregation is only supported on relations</p>
+<p>Unsupported: ordered or filtered aggregation is only supported on relations</p>
+</blockquote>
+<br>
+<h4><a id="fail-string_agg__txt_txt__group_by_filtered-TDS"></a><code>string_agg__txt_txt__group_by_filtered</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, STRING_AGG(name, ',' ORDER BY id DESC) FILTER (WHERE salary &gt; 50000) AS result FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, STRING_AGG(name, ',' ORDER BY id DESC) FILTER (WHERE salary &gt; 50000) AS result FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: ordered or filtered aggregation is only supported on relations</p>
+</blockquote>
+<br>
+<h4><a id="fail-sum__big__group_by_filtered-TDS"></a><code>sum__big__group_by_filtered</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) FILTER (WHERE active) AS result FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) FILTER (WHERE active) AS result FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: ordered or filtered aggregation is only supported on relations</p>
+</blockquote>
+<br>
+<h4><a id="fail-sum__big__group_by_filtered_alongside_unfiltered-TDS"></a><code>sum__big__group_by_filtered_alongside_unfiltered</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) FILTER (WHERE active) AS filtered, SUM(salary) AS total FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) FILTER (WHERE active) AS filtered, SUM(salary) AS total FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: ordered or filtered aggregation is only supported on relations</p>
 </blockquote>
 <br>
 <h4><a id="fail-sum__intv__from_table-TDS"></a><a id="fail-sum__intv__from_table-Relation"></a><code>sum__intv__from_table</code></h4>
@@ -14116,6 +14167,19 @@ Position: 13</p>
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>Execution error at ??, &quot;Infinity dates are not supported in Pure&quot;</p>
+</blockquote>
+<br>
+<h4><a id="fail-count__any__group_by_filtered-TDS"></a><code>count__any__group_by_filtered</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) FILTER (WHERE active) AS result FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) FILTER (WHERE active) AS result FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: ordered or filtered aggregation is only supported on relations</p>
 </blockquote>
 <p><a id="type-error"></a></p>
 <h3>TYPE_ERROR (62 tests)</h3>
