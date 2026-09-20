@@ -944,6 +944,102 @@ over: `level : e | 1` is `[1]` because it comes from a literal, so the recursive
 `[1]` too — hence the `->toOne()` on a column that is otherwise `[0..1]`. Where the two will not line
 up on their own, declare the type (`~title : String[1]`).
 
+## Writing SQL directly
+
+Sometimes SQL is simply the clearer way to say it. `#SQL{…}#` embeds a SQL query as a relation, and —
+this is the point — **the result is an ordinary relation**, so it composes with everything on this
+page.
+
+```Legend
+#SQL{select SYMBOL, QTY from tb('guide::store::MarketDB.TRADES')}#
+  ->filter(t | $t.QTY > 100)
+  ->from(guide::rt())
+```
+
+The Pure `filter` is not wrapped around the SQL — it is **fused into it**. One statement goes to the
+database:
+
+```sql
+-- equivalent DuckDB SQL
+SELECT SYMBOL, QTY FROM TRADES WHERE QTY > 100
+```
+
+So you can drop into SQL for the part SQL says best, then carry on in Pure for the part Pure says
+best — windows, as-of joins, variant navigation — and still send a single query. The two are the same
+API wearing different syntax, as the last part of this section explains.
+
+### Naming things inside the SQL
+
+Four table functions connect the SQL back to the Legend world:
+
+| Inside `#SQL{…}#` | Refers to |
+| --- | --- |
+| `tb('pack::DB.myTab')` | A table in a `Database` |
+| `func('pack::f__Relation_1_')` | A Pure function returning a relation |
+| `func('pack::f_Relation_1__Relation_1_', r => (select …))` | The same, passing a relation as a named argument |
+| `var('r')` | A relation-typed parameter of the enclosing Pure function |
+| `csv('a,b\n1,2\n3,4')` | An inline CSV literal, for trying things out |
+
+So the composition runs both ways: Pure calls SQL with `#SQL{…}#`, and SQL calls Pure with `func(…)`.
+A Pure function that takes a relation can be invoked from inside a SQL statement, with its argument
+supplied as a subquery.
+
+### It is checked, not pasted
+
+The SQL is parsed and transpiled at **compile** time, and its output columns become the relation's
+row type — so the Pure that follows is type-checked against them:
+
+```Legend
+#SQL{select a from csv('a,b\n1,2\n3,4')}#->filter(x | $x.ba == 1)
+```
+
+```
+COMPILATION error: The column 'ba' can't be found in the relation (a:Integer)
+```
+
+Errors inside the SQL surface the same way, with position information — a malformed statement is a
+parser error and an unknown table is a compilation error, both before anything runs. This is not a
+string handed to the driver.
+
+Ordinary SQL constructs work as you would expect, including CTEs:
+
+```Legend
+#SQL{with q as (select name from tb('pack::DB.myTab')) select name from q as t where t.name = 'www'}#
+  ->from(test::test)
+```
+
+Two `#SQL{…}#` relations join with the Pure [`join`](pathname:///pct/PCT_Report_Functions.html#f/join) like any other pair:
+
+```Legend
+#SQL{select FIRSTNAME, FIRMID from tb('test::db.personTable')}#
+  ->join(#SQL{select FIRM_ID, NAME from tb('test::db.firmTable')}#,
+         JoinKind.INNER,
+         {x, y | $x.FIRMID == $y.FIRM_ID})
+```
+
+### It is a second syntax, not a second engine
+
+Worth being clear about what `#SQL{…}#` is and is not, because the name invites the wrong assumption.
+
+The SQL is **transpiled into a Pure relation expression at compile time**. `SQLExpression<T>` is
+declared as a subtype of `Relation<T>`, and it carries the Pure function the compiler built from your
+SQL; that function is what plans and runs. Nothing hands your SQL text to the driver.
+
+The consequence: **`#SQL{…}#` cannot express anything the relation functions cannot.** It is a
+front-end over a subset of this API, so it is not an escape hatch to a dialect feature — if the
+relation functions cannot say it, neither can the SQL, and you will get a transpiler error rather than
+a passthrough. That also explains the fusion above: both sides are relation expressions before
+planning starts, so there is nothing to fuse *across*.
+
+What it is good for is **saying the same thing more legibly**:
+
+- A query that already exists and is known to work, ported without being re-derived.
+- A shape most readers of the code will parse faster as SQL — a multi-CTE chain, say.
+- Teams who think in SQL, writing against the same model and getting the same plan.
+
+Pick per expression, not per project. `#SQL{…}#` returns a relation, so the two styles interleave
+freely in one pipeline — which is the whole point of the construct.
+
 ## Semi-structured data
 
 A column does not have to be flat. A `SEMISTRUCTURED` column — JSON in the database — reads in Pure as
