@@ -66,6 +66,7 @@
     ],
     "Reference Docs": [
       "reference/legend-language",
+      "reference/legend-relation",
       "reference/released-functions",
       "reference/legend-sql",
       "reference/stores",

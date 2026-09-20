@@ -77,7 +77,7 @@ columns:
 
 - **TDS** — the function returns `meta::pure::tds::TabularDataSet`, the original tabular API.
 - **Relation** — the function returns `meta::pure::metamodel::relation::Relation<(…)>`, the newer, compile-time-typed
-  API preferred for new code.
+  API preferred for new code. See [Relation Functions](legend-relation.md) for a guide to writing it.
 
 Each function, operator, and construct lands in one of six states:
 

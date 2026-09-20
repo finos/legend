@@ -58,6 +58,7 @@ see the [PCT documentation guide](https://github.com/finos/legend-engine/blob/ma
 to document a function you have contributed.
 
 ## More
+- [Relation Functions](legend-relation.md) — a guide to the relation (data frame) API
 - [Legend language](legend-language.md)
 - [Showcase projects](../showcases/showcase-projects.md)
 - [Legend features](../overview/legend-features.md)
