@@ -46,13 +46,13 @@ li { margin: 0.3em 0; }
 <tbody>
 <tr>
 <td>Total features</td>
-<td>576</td>
-<td>576</td>
+<td>578</td>
+<td>578</td>
 </tr>
 <tr>
 <td>Total tests</td>
-<td>652</td>
-<td>652</td>
+<td>655</td>
+<td>655</td>
 </tr>
 <tr>
 <td>⚪ UNSUPPORTED</td>
@@ -61,8 +61,8 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td>✅ PASS</td>
-<td>346 (78.3%)</td>
-<td>446 (78.4%)</td>
+<td>349 (78.4%)</td>
+<td>449 (78.5%)</td>
 </tr>
 <tr>
 <td>❌ FAIL</td>
@@ -81,8 +81,8 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><strong>Pass rate</strong></td>
-<td><strong>78.3%</strong></td>
 <td><strong>78.4%</strong></td>
+<td><strong>78.5%</strong></td>
 </tr>
 </tbody>
 </table>
@@ -166,14 +166,14 @@ li { margin: 0.3em 0; }
 <tbody>
 <tr>
 <td><a href="#joins">joins</a></td>
-<td>8</td>
-<td>21</td>
-<td>8</td>
+<td>10</td>
+<td>24</td>
+<td>10</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>8</td>
+<td>10</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -708,6 +708,22 @@ li { margin: 0.3em 0; }
 <td>3</td>
 <td>PASS (3/3)</td>
 <td>PASS (3/3)</td>
+<td></td>
+</tr>
+<tr>
+<td>🟢</td>
+<td>JOIN on derived table re-binding an outer alias</td>
+<td>2</td>
+<td>PASS (2/2)</td>
+<td>PASS (2/2)</td>
+<td></td>
+</tr>
+<tr>
+<td>🟢</td>
+<td>JOIN on derived table whose inner scope collides with an outer alias</td>
+<td>1</td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
 <td></td>
 </tr>
 </tbody>
@@ -5994,7 +6010,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:3801 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:3812 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
