@@ -46,23 +46,23 @@ li { margin: 0.3em 0; }
 <tbody>
 <tr>
 <td>Total features</td>
-<td>578</td>
-<td>578</td>
+<td>583</td>
+<td>583</td>
 </tr>
 <tr>
 <td>Total tests</td>
-<td>655</td>
-<td>655</td>
+<td>660</td>
+<td>660</td>
 </tr>
 <tr>
 <td>⚪ UNSUPPORTED</td>
-<td>210</td>
-<td>83</td>
+<td>206</td>
+<td>73</td>
 </tr>
 <tr>
 <td>✅ PASS</td>
-<td>349 (78.4%)</td>
-<td>449 (78.5%)</td>
+<td>349 (76.9%)</td>
+<td>465 (79.2%)</td>
 </tr>
 <tr>
 <td>❌ FAIL</td>
@@ -71,8 +71,8 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td>💥 ERROR</td>
-<td>85</td>
-<td>110</td>
+<td>94</td>
+<td>109</td>
 </tr>
 <tr>
 <td>❓ SKIP</td>
@@ -81,8 +81,8 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><strong>Pass rate</strong></td>
-<td><strong>78.4%</strong></td>
-<td><strong>78.5%</strong></td>
+<td><strong>76.9%</strong></td>
+<td><strong>79.2%</strong></td>
 </tr>
 </tbody>
 </table>
@@ -108,19 +108,19 @@ li { margin: 0.3em 0; }
 <tr>
 <td><a href="#misc">MISC</a></td>
 <td>Other/uncategorized error</td>
-<td>33</td>
-<td>66</td>
+<td>43</td>
+<td>68</td>
 </tr>
 <tr>
 <td><a href="#unsupported-syntax">UNSUPPORTED_SYNTAX</a></td>
 <td>SQL construct recognized but not yet implemented</td>
-<td>193</td>
-<td>65</td>
+<td>189</td>
+<td>54</td>
 </tr>
 <tr>
 <td><a href="#type-error">TYPE_ERROR</a></td>
 <td>Type mismatch or cast error</td>
-<td>17</td>
+<td>19</td>
 <td>14</td>
 </tr>
 <tr>
@@ -136,10 +136,16 @@ li { margin: 0.3em 0; }
 <td>13</td>
 </tr>
 <tr>
+<td><a href="#function-no-sql-translation">FUNCTION_NO_SQL_TRANSLATION</a></td>
+<td>Pure function exists but has no SQL translation</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
 <td><a href="#parse-error">PARSE_ERROR</a></td>
 <td>SQL syntax not parseable by Legend SQL parser</td>
-<td>28</td>
-<td>28</td>
+<td>25</td>
+<td>25</td>
 </tr>
 </tbody>
 </table>
@@ -211,14 +217,14 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><a href="#ctes">ctes</a></td>
-<td>11</td>
-<td>14</td>
+<td>10</td>
+<td>13</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>1</td>
+<td>7</td>
 <td>0</td>
-<td>0</td>
+<td>7</td>
 <td>0</td>
 <td>0</td>
 <td>1</td>
@@ -396,9 +402,9 @@ li { margin: 0.3em 0; }
 <td>6</td>
 <td>0</td>
 <td>1</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
-<td>6</td>
+<td>7</td>
 <td>0</td>
 <td>1</td>
 <td>0</td>
@@ -556,17 +562,17 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><a href="#recursive_ctes">recursive_ctes</a></td>
-<td>4</td>
-<td>4</td>
+<td>10</td>
+<td>10</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>4</td>
+<td>3</td>
+<td>0</td>
+<td>6</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>0</td>
-<td>4</td>
+<td>3</td>
 <td>0</td>
 </tr>
 <tr>
@@ -1135,44 +1141,44 @@ li { margin: 0.3em 0; }
 </thead>
 <tbody>
 <tr>
-<td>⚪</td>
+<td>🟡</td>
 <td>Basic CTE</td>
 <td>2</td>
-<td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-cte_basic-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>ERROR (0/2)</td>
+<td>PASS (2/2)</td>
+<td><a href="#fail-cte_basic-TDS">MISC</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🟡</td>
 <td>Multiple CTEs</td>
 <td>1</td>
-<td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-cte_multiple-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>ERROR (0/1)</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-cte_multiple-TDS">MISC</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🟡</td>
 <td>CTE referencing CTE</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
+<td>PASS (1/1)</td>
 <td><a href="#fail-cte_chained-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🟡</td>
 <td>CTE with aggregation</td>
 <td>2</td>
-<td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-cte_with_agg-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>ERROR (0/2)</td>
+<td>PASS (2/2)</td>
+<td><a href="#fail-cte_with_agg-TDS">MISC</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🔴</td>
 <td>CTE in JOIN</td>
 <td>2</td>
+<td>ERROR (0/2)</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-cte_in_join-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td><a href="#fail-cte_in_join-TDS">TYPE_ERROR</a>, <a href="#fail-cte_in_join-Relation">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
 <td>⚪</td>
@@ -1180,46 +1186,38 @@ li { margin: 0.3em 0; }
 <td>1</td>
 <td>UNTESTED</td>
 <td>UNTESTED</td>
-<td><a href="#fail-cte_used_twice-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td><a href="#fail-cte_used_twice-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-cte_used_twice-Relation">FUNCTION_NO_SQL_TRANSLATION</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>CTE with window function</td>
+<td>1</td>
+<td>ERROR (0/1)</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-cte_with_window-TDS">MISC</a></td>
 </tr>
 <tr>
 <td>🔴</td>
-<td>Recursive CTE</td>
-<td>1</td>
-<td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-cte_recursive-TDS">PARSE_ERROR</a></td>
-</tr>
-<tr>
-<td>⚪</td>
-<td>CTE with window function</td>
-<td>1</td>
-<td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-cte_with_window-TDS">UNSUPPORTED_SYNTAX</a></td>
-</tr>
-<tr>
-<td>⚪</td>
 <td>CTE with UNION</td>
 <td>1</td>
-<td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-cte_with_union-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>ERROR (0/1)</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-cte_with_union-TDS">MISC</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🟡</td>
 <td>CTE filter on aggregate</td>
 <td>1</td>
-<td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-cte_filter_agg-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>ERROR (0/1)</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-cte_filter_agg-TDS">MISC</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🟡</td>
 <td>CTE with CASE</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
+<td>PASS (1/1)</td>
 <td><a href="#fail-cte_with_case-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 </tbody>
@@ -2871,12 +2869,12 @@ li { margin: 0.3em 0; }
 <td></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🟡</td>
 <td>SELECT * from CTE</td>
 <td>1</td>
-<td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-star_from_cte-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>ERROR (0/1)</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-star_from_cte-TDS">MISC</a></td>
 </tr>
 <tr>
 <td>🟢</td>
@@ -4967,20 +4965,20 @@ li { margin: 0.3em 0; }
 </thead>
 <tbody>
 <tr>
-<td>🔴</td>
+<td>⚪</td>
 <td>WITH RECURSIVE simple series</td>
 <td>1</td>
-<td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-recursive_cte_number_series-TDS">PARSE_ERROR</a></td>
+<td>UNTESTED</td>
+<td>UNTESTED</td>
+<td><a href="#fail-recursive_cte_number_series-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td>WITH RECURSIVE self-join traversal</td>
 <td>1</td>
-<td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-recursive_cte_hierarchy-TDS">PARSE_ERROR</a></td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-recursive_cte_hierarchy-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
 <td>🔴</td>
@@ -4997,6 +4995,54 @@ li { margin: 0.3em 0; }
 <td>ERROR (0/1)</td>
 <td>ERROR (0/1)</td>
 <td><a href="#fail-cte_not_materialized_hint-TDS">PARSE_ERROR</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>WITH RECURSIVE over a table-backed anchor</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-recursive_cte_from_table_anchor-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>WITH RECURSIVE feeding a downstream filter</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-recursive_cte_downstream_filter-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>WITH RECURSIVE feeding a downstream aggregate</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-recursive_cte_downstream_aggregate-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>WITH RECURSIVE using UNION rather than UNION ALL</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-recursive_cte_union_distinct_unsupported-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-recursive_cte_union_distinct_unsupported-Relation">MISC</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>WITH RECURSIVE list mixing a recursive and a plain member</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-recursive_cte_mixed_with_plain-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>WITH RECURSIVE with no self-referencing member</td>
+<td>1</td>
+<td>ERROR (0/1)</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-recursive_keyword_without_recursion-TDS">MISC</a></td>
 </tr>
 </tbody>
 </table>
@@ -5869,7 +5915,7 @@ li { margin: 0.3em 0; }
 <p>The column 'id_p' can't be found in the relation (id_text:String[1], name:String)</p>
 </blockquote>
 <p><a id="misc"></a></p>
-<h3>MISC (71 tests)</h3>
+<h3>MISC (82 tests)</h3>
 <h4><a id="fail-union_multiple_mixed-Relation"></a><code>union_multiple_mixed</code></h4>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -6000,6 +6046,121 @@ li { margin: 0.3em 0; }
 <p>Column 'id' of the enclosing query cannot be referenced from this subquery: both use the table alias 'root'</p>
 </blockquote>
 <br>
+<h4><a id="fail-cte_basic-TDS"></a><code>cte_basic</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH active_persons AS (SELECT name, salary FROM persons WHERE active = true) SELECT name, salary FROM active_persons ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">WITH active_persons AS (SELECT name, salary FROM func('e2e::tds_persons') WHERE active = true) SELECT name, salary FROM active_persons ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unhandled value type: meta::pure::tds::SortInformation</p>
+</blockquote>
+<br>
+<h4><a id="fail-cte_basic_filter-TDS"></a><code>cte_basic_filter</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH high_earners AS (SELECT name, salary FROM persons WHERE salary &gt; 70000) SELECT name, salary FROM high_earners ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">WITH high_earners AS (SELECT name, salary FROM func('e2e::tds_persons') WHERE salary &gt; 70000) SELECT name, salary FROM high_earners ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unhandled value type: meta::pure::tds::SortInformation</p>
+</blockquote>
+<br>
+<h4><a id="fail-cte_multiple-TDS"></a><code>cte_multiple</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH dept_stats AS (SELECT dept_id, AVG(salary) AS avg_sal FROM persons WHERE salary IS NOT NULL GROUP BY dept_id), high_earners AS (SELECT name, salary, dept_id FROM persons WHERE salary &gt; 70000) SELECT h.name, h.salary, d.avg_sal FROM high_earners h INNER JOIN dept_stats d ON h.dept_id = d.dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">WITH dept_stats AS (SELECT dept_id, AVG(salary) AS avg_sal FROM func('e2e::tds_persons') WHERE salary IS NOT NULL GROUP BY dept_id), high_earners AS (SELECT name, salary, dept_id FROM func('e2e::tds_persons') WHERE salary &gt; 70000) SELECT h.name, h.salary, d.avg_sal FROM high_earners h INNER JOIN dept_stats d ON h.dept_id = d.dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Function with parameters not yet handled</p>
+</blockquote>
+<br>
+<h4><a id="fail-cte_with_agg-TDS"></a><code>cte_with_agg</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH dept_summary AS (SELECT dept_id, COUNT(*) AS cnt, SUM(salary) AS total FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id) SELECT dept_id, cnt, total FROM dept_summary ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">WITH dept_summary AS (SELECT dept_id, COUNT(*) AS cnt, SUM(salary) AS total FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id) SELECT dept_id, cnt, total FROM dept_summary ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unhandled value type: meta::pure::tds::SortInformation</p>
+</blockquote>
+<br>
+<h4><a id="fail-cte_with_agg_having-TDS"></a><code>cte_with_agg_having</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH dept_counts AS (SELECT dept_id, COUNT(*) AS cnt FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id HAVING COUNT(*) &gt; 2) SELECT dept_id, cnt FROM dept_counts ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">WITH dept_counts AS (SELECT dept_id, COUNT(*) AS cnt FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id HAVING COUNT(*) &gt; 2) SELECT dept_id, cnt FROM dept_counts ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unhandled value type: meta::pure::tds::SortInformation</p>
+</blockquote>
+<br>
+<h4><a id="fail-cte_with_window-TDS"></a><code>cte_with_window</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH ranked AS (SELECT name, salary, RANK() OVER (ORDER BY salary DESC) AS rnk FROM persons WHERE salary IS NOT NULL) SELECT name, salary, rnk FROM ranked WHERE rnk &lt;= 3 ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">WITH ranked AS (SELECT name, salary, RANK() OVER (ORDER BY salary DESC) AS rnk FROM func('e2e::tds_persons') WHERE salary IS NOT NULL) SELECT name, salary, rnk FROM ranked WHERE rnk &lt;= 3 ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Function with parameters not yet handled</p>
+</blockquote>
+<br>
+<h4><a id="fail-cte_with_union-TDS"></a><a id="fail-cte_with_union-Relation"></a><code>cte_with_union</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH high AS (SELECT name, salary FROM persons WHERE salary &gt; 70000), low AS (SELECT name, salary FROM persons WHERE salary &lt;= 70000 AND salary IS NOT NULL) SELECT name, salary, 'high' AS band FROM high UNION ALL SELECT name, salary, 'low' FROM low ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">WITH high AS (SELECT name, salary FROM func('e2e::tds_persons') WHERE salary &gt; 70000), low AS (SELECT name, salary FROM func('e2e::tds_persons') WHERE salary &lt;= 70000 AND salary IS NOT NULL) SELECT name, salary, 'high' AS band FROM high UNION ALL SELECT name, salary, 'low' FROM low ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unhandled value type: meta::pure::tds::BasicColumnSpecification</p>
+</blockquote>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH high AS (SELECT name, salary FROM persons WHERE salary &gt; 70000), low AS (SELECT name, salary FROM persons WHERE salary &lt;= 70000 AND salary IS NOT NULL) SELECT name, salary, 'high' AS band FROM high UNION ALL SELECT name, salary, 'low' FROM low ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">WITH high AS (SELECT name, salary FROM func('e2e::rel_persons') WHERE salary &gt; 70000), low AS (SELECT name, salary FROM func('e2e::rel_persons') WHERE salary &lt;= 70000 AND salary IS NOT NULL) SELECT name, salary, 'high' AS band FROM high UNION ALL SELECT name, salary, 'low' FROM low ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>The two relations are incompatible and can't be concatenated (name:String, salary:Float, band:String[1]) and (name:String, salary:Float, low:String[1])</p>
+</blockquote>
+<br>
+<h4><a id="fail-cte_filter_agg-TDS"></a><code>cte_filter_agg</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH dept_stats AS (SELECT dept_id, COUNT(*) AS cnt, AVG(salary) AS avg_sal FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id) SELECT dept_id, cnt, avg_sal FROM dept_stats WHERE cnt &gt; 2 ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">WITH dept_stats AS (SELECT dept_id, COUNT(*) AS cnt, AVG(salary) AS avg_sal FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id) SELECT dept_id, cnt, avg_sal FROM dept_stats WHERE cnt &gt; 2 ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Function with parameters not yet handled</p>
+</blockquote>
+<br>
 <h4><a id="fail-alias_subquery_column_list-TDS"></a><a id="fail-alias_subquery_column_list-Relation"></a><code>alias_subquery_column_list</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -6010,7 +6171,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:3812 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:3961 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -6173,6 +6334,19 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>Can't find a match for function 'meta::pure::functions::relation::filter(Relation&lt;(id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)&gt;[1],LambdaFunction&lt;{(id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]-&gt;Boolean[0..1]}&gt;[1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tfilter(Relation<T>[1],Function&lt;{T[1]-&gt;Boolean[1]}&gt;[1]):Relation<T>[1]\n\t\tfilter(TabularDataSet[1],Function&lt;{TDSRow[1]-&gt;Boolean[1]}&gt;[1]):TabularDataSet[1]\n\t\tfilter(T[<em>],Function&lt;{T[1]-&gt;Boolean[1]}&gt;[1]):T[</em>]\n</p>
+</blockquote>
+<br>
+<h4><a id="fail-star_from_cte-TDS"></a><code>star_from_cte</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH cte AS (SELECT name, dept_id FROM persons WHERE dept_id IS NOT NULL) SELECT * FROM cte ORDER BY name
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">WITH cte AS (SELECT name, dept_id FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL) SELECT * FROM cte ORDER BY name
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unhandled value type: meta::pure::tds::SortInformation</p>
 </blockquote>
 <br>
 <h4><a id="fail-json_extract_field-TDS"></a><a id="fail-json_extract_field-Relation"></a><code>json_extract_field</code></h4>
@@ -6683,6 +6857,32 @@ li { margin: 0.3em 0; }
 <p>Can't find variable class for variable 'p' in the graph</p>
 </blockquote>
 <br>
+<h4><a id="fail-recursive_cte_union_distinct_unsupported-Relation"></a><code>recursive_cte_union_distinct_unsupported</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH RECURSIVE t(n) AS (SELECT id FROM persons WHERE id = 1 UNION SELECT n + 1 FROM t WHERE n &lt; 5) SELECT n FROM t ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">WITH RECURSIVE t (n) AS (SELECT id FROM func('e2e::rel_persons') WHERE id = 1 UNION SELECT n + 1 FROM t WHERE n &lt; 5) SELECT n FROM t ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>WITH RECURSIVE requires UNION ALL; UNION would have to de-duplicate across rounds, which recurse() does not do</p>
+</blockquote>
+<br>
+<h4><a id="fail-recursive_keyword_without_recursion-TDS"></a><code>recursive_keyword_without_recursion</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH RECURSIVE t AS (SELECT name, salary FROM persons WHERE salary &gt; 70000) SELECT name, salary FROM t ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">WITH RECURSIVE t AS (SELECT name, salary FROM func('e2e::tds_persons') WHERE salary &gt; 70000) SELECT name, salary FROM t ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unhandled value type: meta::pure::tds::SortInformation</p>
+</blockquote>
+<br>
 <h4><a id="fail-frame_rows_unbounded_current-Relation"></a><code>frame_rows_unbounded_current</code></h4>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -6758,7 +6958,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1235 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1383 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-frame_multi_agg-Relation"></a><code>frame_multi_agg</code></h4>
@@ -6771,7 +6971,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1235 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1383 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-frame_rows_lookback_only-Relation"></a><code>frame_rows_lookback_only</code></h4>
@@ -6844,7 +7044,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1235 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1383 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-comp_three_table_agg-TDS"></a><code>comp_three_table_agg</code></h4>
@@ -6908,7 +7108,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1254 column:36), &quot;Match failure: null&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1402 column:36), &quot;Match failure: null&quot;</p>
 </blockquote>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -6919,7 +7119,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1235 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1383 column:48), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-nested_exists_agg-Relation"></a><code>nested_exists_agg</code></h4>
@@ -6935,7 +7135,7 @@ li { margin: 0.3em 0; }
 <p>Column 'id' of the enclosing query cannot be referenced from this subquery: both use the table alias 'root'</p>
 </blockquote>
 <p><a id="unsupported-syntax"></a></p>
-<h3>UNSUPPORTED_SYNTAX (193 tests)</h3>
+<h3>UNSUPPORTED_SYNTAX (191 tests)</h3>
 <h4><a id="fail-except_basic-TDS"></a><a id="fail-except_basic-Relation"></a><code>except_basic</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -7484,212 +7684,69 @@ li { margin: 0.3em 0; }
 <p>Unsupported: exists only supported on relation inputs</p>
 </blockquote>
 <br>
-<h4><a id="fail-cte_basic-TDS"></a><a id="fail-cte_basic-Relation"></a><code>cte_basic</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">WITH active_persons AS (SELECT name, salary FROM persons WHERE active = true) SELECT name, salary FROM active_persons ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">WITH active_persons AS (SELECT name, salary FROM func('e2e::tds_persons') WHERE active = true) SELECT name, salary FROM active_persons ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">WITH active_persons AS (SELECT name, salary FROM func('e2e::rel_persons') WHERE active = true) SELECT name, salary FROM active_persons ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>with queries currently not supported</p>
-</blockquote>
-<br>
-<h4><a id="fail-cte_basic_filter-TDS"></a><a id="fail-cte_basic_filter-Relation"></a><code>cte_basic_filter</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">WITH high_earners AS (SELECT name, salary FROM persons WHERE salary &gt; 70000) SELECT name, salary FROM high_earners ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">WITH high_earners AS (SELECT name, salary FROM func('e2e::tds_persons') WHERE salary &gt; 70000) SELECT name, salary FROM high_earners ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">WITH high_earners AS (SELECT name, salary FROM func('e2e::rel_persons') WHERE salary &gt; 70000) SELECT name, salary FROM high_earners ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>with queries currently not supported</p>
-</blockquote>
-<br>
-<h4><a id="fail-cte_multiple-TDS"></a><a id="fail-cte_multiple-Relation"></a><code>cte_multiple</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">WITH dept_stats AS (SELECT dept_id, AVG(salary) AS avg_sal FROM persons WHERE salary IS NOT NULL GROUP BY dept_id), high_earners AS (SELECT name, salary, dept_id FROM persons WHERE salary &gt; 70000) SELECT h.name, h.salary, d.avg_sal FROM high_earners h INNER JOIN dept_stats d ON h.dept_id = d.dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">WITH dept_stats AS (SELECT dept_id, AVG(salary) AS avg_sal FROM func('e2e::tds_persons') WHERE salary IS NOT NULL GROUP BY dept_id), high_earners AS (SELECT name, salary, dept_id FROM func('e2e::tds_persons') WHERE salary &gt; 70000) SELECT h.name, h.salary, d.avg_sal FROM high_earners h INNER JOIN dept_stats d ON h.dept_id = d.dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">WITH dept_stats AS (SELECT dept_id, AVG(salary) AS avg_sal FROM func('e2e::rel_persons') WHERE salary IS NOT NULL GROUP BY dept_id), high_earners AS (SELECT name, salary, dept_id FROM func('e2e::rel_persons') WHERE salary &gt; 70000) SELECT h.name, h.salary, d.avg_sal FROM high_earners h INNER JOIN dept_stats d ON h.dept_id = d.dept_id ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>with queries currently not supported</p>
-</blockquote>
-<br>
-<h4><a id="fail-cte_chained-TDS"></a><a id="fail-cte_chained-Relation"></a><code>cte_chained</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-cte_chained-TDS"></a><code>cte_chained</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">WITH base AS (SELECT id, name, salary FROM persons WHERE salary IS NOT NULL), ranked AS (SELECT name, salary, ROW_NUMBER() OVER (ORDER BY salary DESC) AS rn FROM base) SELECT name, salary, rn FROM ranked WHERE rn &lt;= 5 ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">WITH base AS (SELECT id, name, salary FROM func('e2e::tds_persons') WHERE salary IS NOT NULL), ranked AS (SELECT name, salary, ROW_NUMBER() OVER (ORDER BY salary DESC) AS rn FROM base) SELECT name, salary, rn FROM ranked WHERE rn &lt;= 5 ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">WITH base AS (SELECT id, name, salary FROM func('e2e::rel_persons') WHERE salary IS NOT NULL), ranked AS (SELECT name, salary, ROW_NUMBER() OVER (ORDER BY salary DESC) AS rn FROM base) SELECT name, salary, rn FROM ranked WHERE rn &lt;= 5 ORDER BY 1
-</code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>with queries currently not supported</p>
+<p>Generics not supported (function: meta::pure::tds::olapGroupBy_TabularDataSet_1__String_MANY__SortInformation_$0_1$_<em>OlapOperation_1__String_1__TabularDataSet_1</em>)</p>
 </blockquote>
 <br>
-<h4><a id="fail-cte_with_agg-TDS"></a><a id="fail-cte_with_agg-Relation"></a><code>cte_with_agg</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">WITH dept_summary AS (SELECT dept_id, COUNT(*) AS cnt, SUM(salary) AS total FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id) SELECT dept_id, cnt, total FROM dept_summary ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">WITH dept_summary AS (SELECT dept_id, COUNT(*) AS cnt, SUM(salary) AS total FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id) SELECT dept_id, cnt, total FROM dept_summary ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">WITH dept_summary AS (SELECT dept_id, COUNT(*) AS cnt, SUM(salary) AS total FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id) SELECT dept_id, cnt, total FROM dept_summary ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>with queries currently not supported</p>
-</blockquote>
-<br>
-<h4><a id="fail-cte_with_agg_having-TDS"></a><a id="fail-cte_with_agg_having-Relation"></a><code>cte_with_agg_having</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">WITH dept_counts AS (SELECT dept_id, COUNT(*) AS cnt FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id HAVING COUNT(*) &gt; 2) SELECT dept_id, cnt FROM dept_counts ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">WITH dept_counts AS (SELECT dept_id, COUNT(*) AS cnt FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id HAVING COUNT(*) &gt; 2) SELECT dept_id, cnt FROM dept_counts ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">WITH dept_counts AS (SELECT dept_id, COUNT(*) AS cnt FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id HAVING COUNT(*) &gt; 2) SELECT dept_id, cnt FROM dept_counts ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>with queries currently not supported</p>
-</blockquote>
-<br>
-<h4><a id="fail-cte_in_join-TDS"></a><a id="fail-cte_in_join-Relation"></a><code>cte_in_join</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-cte_in_join-Relation"></a><code>cte_in_join</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">WITH order_totals AS (SELECT person_id, SUM(amount) AS total_orders FROM orders GROUP BY person_id) SELECT p.name, COALESCE(o.total_orders, 0) AS total FROM persons p LEFT JOIN order_totals o ON p.id = o.person_id ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">WITH order_totals AS (SELECT person_id, SUM(amount) AS total_orders FROM func('e2e::tds_orders') GROUP BY person_id) SELECT p.name, COALESCE(o.total_orders, 0) AS total FROM func('e2e::tds_persons') p LEFT JOIN order_totals o ON p.id = o.person_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">WITH order_totals AS (SELECT person_id, SUM(amount) AS total_orders FROM func('e2e::rel_orders') GROUP BY person_id) SELECT p.name, COALESCE(o.total_orders, 0) AS total FROM func('e2e::rel_persons') p LEFT JOIN order_totals o ON p.id = o.person_id ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>with queries currently not supported</p>
+<p>Function definition on -&gt;with(..) accesses multiple stores and runtimes, and this is not supported:\n{Platform&gt; [strategy_wrapper /let order_totals = {e2e::TestDB&gt; [1 e2e_Order/[1 e2e_Order/Class Order].all()] -&gt; project(~[id:id(),person_id:personId(),amount:amount(),order_date:orderDate(),status:status()]) -&gt; groupBy(ColSpecArray , ~[total_orders:amount():sum_Float_MANY__Float_1_()])}]},\n{e2e::TestDB&gt; [strategy_wrapper /[2 e2e_Person/[2 e2e_Person/Class Person].all()] -&gt; project(~[id:id(),name:name(),age:age(),salary:salary(),hire_date:hireDate(),active:active(),dept_id:deptId()]) -&gt; rename(ColSpec , ColSpec ) -&gt; rename(ColSpec , ColSpec ) -&gt; rename(ColSpec , ColSpec ) -&gt; rename(ColSpec , ColSpec ) -&gt; rename(ColSpec , ColSpec ) -&gt; rename(ColSpec , ColSpec ) -&gt; rename(ColSpec , ColSpec ) -&gt; join($order_totals -&gt; rename(ColSpec , ColSpec ) -&gt; rename(ColSpec , ColSpec ), JoinKind LEFT, [Routed Func:row1:(id_p:Integer[1], name_p:String[0..1], age_p:Integer[0..1], salary_p:Float[0..1], hire_date_p:StrictDate[0..1], active_p:Boolean[0..1], dept_id_p:Integer[0..1])[1],row2:(person_id_o:Integer[0..1], total_orders_o:Float[1])[1] | $row1.id_p == $row2.person_id_o;]) -&gt; project(~[name:name_p(),total:coalesce_T_$0_1$_<em>T</em>$0_1$_<em>T</em>$0_1$_<em>T</em>$0_1$_(total_orders_o(),0,)]) -&gt; sort(SortInfo )]}</p>
 </blockquote>
 <br>
-<h4><a id="fail-cte_in_join_dept-TDS"></a><a id="fail-cte_in_join_dept-Relation"></a><code>cte_in_join_dept</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-cte_in_join_dept-Relation"></a><code>cte_in_join_dept</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">WITH dept_avg AS (SELECT dept_id, AVG(salary) AS avg_sal FROM persons WHERE salary IS NOT NULL GROUP BY dept_id) SELECT d.name, COALESCE(da.avg_sal, 0) AS avg_salary FROM departments d LEFT JOIN dept_avg da ON d.id = da.dept_id ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">WITH dept_avg AS (SELECT dept_id, AVG(salary) AS avg_sal FROM func('e2e::tds_persons') WHERE salary IS NOT NULL GROUP BY dept_id) SELECT d.name, COALESCE(da.avg_sal, 0) AS avg_salary FROM func('e2e::tds_departments') d LEFT JOIN dept_avg da ON d.id = da.dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">WITH dept_avg AS (SELECT dept_id, AVG(salary) AS avg_sal FROM func('e2e::rel_persons') WHERE salary IS NOT NULL GROUP BY dept_id) SELECT d.name, COALESCE(da.avg_sal, 0) AS avg_salary FROM func('e2e::rel_departments') d LEFT JOIN dept_avg da ON d.id = da.dept_id ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>with queries currently not supported</p>
+<p>Function definition on -&gt;with(..) accesses multiple stores and runtimes, and this is not supported:\n{Platform&gt; [strategy_wrapper /let dept_avg = {e2e::TestDB&gt; [1 e2e_Person/[1 e2e_Person/Class Person].all()] -&gt; project(~[id:id(),name:name(),age:age(),salary:salary(),hire_date:hireDate(),active:active(),dept_id:deptId()]) -&gt; filter([Routed Func:x:(id:Integer[1], name:String[0..1], age:Integer[0..1], salary:Float[0..1], hire_date:StrictDate[0..1], active:Boolean[0..1], dept_id:Integer[0..1])[1] | $x.salary -&gt; isNotEmpty();]) -&gt; groupBy(ColSpecArray , ~[avg_sal:salary():average_Float_MANY__Float_1_()])}]},\n{e2e::TestDB&gt; [strategy_wrapper /[2 e2e_Department/[2 e2e_Department/Class Department].all()] -&gt; project(~[id:id(),name:name(),budget:budget(),created_at:createdAt()]) -&gt; rename(ColSpec , ColSpec ) -&gt; rename(ColSpec , ColSpec ) -&gt; rename(ColSpec , ColSpec ) -&gt; rename(ColSpec , ColSpec ) -&gt; join($dept_avg -&gt; rename(ColSpec , ColSpec ) -&gt; rename(ColSpec , ColSpec ), JoinKind LEFT, [Routed Func:row1:(id_d:Integer[1], name_d:String[0..1], budget_d:Float[0..1], created_at_d:DateTime[0..1])[1],row2:(dept_id_da:Integer[0..1], avg_sal_da:Float[1])[1] | $row1.id_d == $row2.dept_id_da;]) -&gt; project(~[name:name_d(),avg_salary:coalesce_T_$0_1$_<em>T</em>$0_1$_<em>T</em>$0_1$_<em>T</em>$0_1$_(avg_sal_da(),0,)]) -&gt; sort(SortInfo )]}</p>
 </blockquote>
 <br>
-<h4><a id="fail-cte_used_twice-TDS"></a><a id="fail-cte_used_twice-Relation"></a><code>cte_used_twice</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-cte_used_twice-TDS"></a><code>cte_used_twice</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">WITH emp_data AS (SELECT dept_id, salary FROM persons WHERE salary IS NOT NULL AND dept_id IS NOT NULL) SELECT (SELECT COUNT(*) FROM emp_data) AS total_emps, (SELECT AVG(salary) FROM emp_data) AS avg_salary
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">WITH emp_data AS (SELECT dept_id, salary FROM func('e2e::tds_persons') WHERE salary IS NOT NULL AND dept_id IS NOT NULL) SELECT (SELECT COUNT(*) FROM emp_data) AS total_emps, (SELECT AVG(salary) FROM emp_data) AS avg_salary
 </code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">WITH emp_data AS (SELECT dept_id, salary FROM func('e2e::rel_persons') WHERE salary IS NOT NULL AND dept_id IS NOT NULL) SELECT (SELECT COUNT(*) FROM emp_data) AS total_emps, (SELECT AVG(salary) FROM emp_data) AS avg_salary
-</code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>with queries currently not supported</p>
+<p>meta::pure::functions::relation::wrapPrimitiveInTDS_T_MANY__T_1__TDS_1_ is not supported yet!</p>
 </blockquote>
 <br>
-<h4><a id="fail-cte_with_window-TDS"></a><a id="fail-cte_with_window-Relation"></a><code>cte_with_window</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">WITH ranked AS (SELECT name, salary, RANK() OVER (ORDER BY salary DESC) AS rnk FROM persons WHERE salary IS NOT NULL) SELECT name, salary, rnk FROM ranked WHERE rnk &lt;= 3 ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">WITH ranked AS (SELECT name, salary, RANK() OVER (ORDER BY salary DESC) AS rnk FROM func('e2e::tds_persons') WHERE salary IS NOT NULL) SELECT name, salary, rnk FROM ranked WHERE rnk &lt;= 3 ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">WITH ranked AS (SELECT name, salary, RANK() OVER (ORDER BY salary DESC) AS rnk FROM func('e2e::rel_persons') WHERE salary IS NOT NULL) SELECT name, salary, rnk FROM ranked WHERE rnk &lt;= 3 ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>with queries currently not supported</p>
-</blockquote>
-<br>
-<h4><a id="fail-cte_with_union-TDS"></a><a id="fail-cte_with_union-Relation"></a><code>cte_with_union</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">WITH high AS (SELECT name, salary FROM persons WHERE salary &gt; 70000), low AS (SELECT name, salary FROM persons WHERE salary &lt;= 70000 AND salary IS NOT NULL) SELECT name, salary, 'high' AS band FROM high UNION ALL SELECT name, salary, 'low' FROM low ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">WITH high AS (SELECT name, salary FROM func('e2e::tds_persons') WHERE salary &gt; 70000), low AS (SELECT name, salary FROM func('e2e::tds_persons') WHERE salary &lt;= 70000 AND salary IS NOT NULL) SELECT name, salary, 'high' AS band FROM high UNION ALL SELECT name, salary, 'low' FROM low ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">WITH high AS (SELECT name, salary FROM func('e2e::rel_persons') WHERE salary &gt; 70000), low AS (SELECT name, salary FROM func('e2e::rel_persons') WHERE salary &lt;= 70000 AND salary IS NOT NULL) SELECT name, salary, 'high' AS band FROM high UNION ALL SELECT name, salary, 'low' FROM low ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>with queries currently not supported</p>
-</blockquote>
-<br>
-<h4><a id="fail-cte_filter_agg-TDS"></a><a id="fail-cte_filter_agg-Relation"></a><code>cte_filter_agg</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">WITH dept_stats AS (SELECT dept_id, COUNT(*) AS cnt, AVG(salary) AS avg_sal FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id) SELECT dept_id, cnt, avg_sal FROM dept_stats WHERE cnt &gt; 2 ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">WITH dept_stats AS (SELECT dept_id, COUNT(*) AS cnt, AVG(salary) AS avg_sal FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id) SELECT dept_id, cnt, avg_sal FROM dept_stats WHERE cnt &gt; 2 ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">WITH dept_stats AS (SELECT dept_id, COUNT(*) AS cnt, AVG(salary) AS avg_sal FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id) SELECT dept_id, cnt, avg_sal FROM dept_stats WHERE cnt &gt; 2 ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>with queries currently not supported</p>
-</blockquote>
-<br>
-<h4><a id="fail-cte_with_case-TDS"></a><a id="fail-cte_with_case-Relation"></a><code>cte_with_case</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-cte_with_case-TDS"></a><code>cte_with_case</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">WITH categorized AS (SELECT name, salary, CASE WHEN salary &gt; 80000 THEN 'Senior' WHEN salary &gt; 50000 THEN 'Mid' ELSE 'Junior' END AS band FROM persons WHERE salary IS NOT NULL) SELECT band, COUNT(*) AS cnt FROM categorized GROUP BY band ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">WITH categorized AS (SELECT name, salary, CASE WHEN salary &gt; 80000 THEN 'Senior' WHEN salary &gt; 50000 THEN 'Mid' ELSE 'Junior' END AS band FROM func('e2e::tds_persons') WHERE salary IS NOT NULL) SELECT band, COUNT(*) AS cnt FROM categorized GROUP BY band ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">WITH categorized AS (SELECT name, salary, CASE WHEN salary &gt; 80000 THEN 'Senior' WHEN salary &gt; 50000 THEN 'Mid' ELSE 'Junior' END AS band FROM func('e2e::rel_persons') WHERE salary IS NOT NULL) SELECT band, COUNT(*) AS cnt FROM categorized GROUP BY band ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>with queries currently not supported</p>
+<p>Generics not supported (function: meta::pure::tds::groupBy_TabularDataSet_1__String_MANY__AggregateValue_MANY__TabularDataSet_1_)</p>
 </blockquote>
 <br>
 <h4><a id="fail-where_in_subquery-TDS"></a><code>where_in_subquery</code></h4>
@@ -8230,22 +8287,6 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>Unsupported: unnest only supported on relation inputs</p>
-</blockquote>
-<br>
-<h4><a id="fail-star_from_cte-TDS"></a><a id="fail-star_from_cte-Relation"></a><code>star_from_cte</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">WITH cte AS (SELECT name, dept_id FROM persons WHERE dept_id IS NOT NULL) SELECT * FROM cte ORDER BY name
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">WITH cte AS (SELECT name, dept_id FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL) SELECT * FROM cte ORDER BY name
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">WITH cte AS (SELECT name, dept_id FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL) SELECT * FROM cte ORDER BY name
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>with queries currently not supported</p>
 </blockquote>
 <br>
 <h4><a id="fail-schema_qualified_subquery-TDS"></a><code>schema_qualified_subquery</code></h4>
@@ -9104,6 +9145,97 @@ li { margin: 0.3em 0; }
 <p>Unsupported type on column: rank_at_50k (meta::pure::functions::collection::Map), only primitive types and enums are supported</p>
 </blockquote>
 <br>
+<h4><a id="fail-recursive_cte_number_series-TDS"></a><a id="fail-recursive_cte_number_series-Relation"></a><code>recursive_cte_number_series</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH RECURSIVE t(n) AS (SELECT 1 UNION ALL SELECT n + 1 FROM t WHERE n &lt; 5) SELECT n FROM t ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">WITH RECURSIVE t (n) AS (SELECT 1 UNION ALL SELECT n + 1 FROM t WHERE n &lt; 5) SELECT n FROM t ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: WITH RECURSIVE only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-recursive_cte_hierarchy-TDS"></a><code>recursive_cte_hierarchy</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH RECURSIVE org(id, name, dept_id, depth) AS (SELECT id, name, dept_id, 0 FROM persons WHERE dept_id = 1 UNION ALL SELECT p.id, p.name, p.dept_id, org.depth + 1 FROM persons p JOIN org ON p.dept_id = org.dept_id AND p.id &gt; org.id) SELECT * FROM org ORDER BY depth, id
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">WITH RECURSIVE org (id, name, dept_id, depth) AS (SELECT id, name, dept_id, 0 FROM func('e2e::tds_persons') WHERE dept_id = 1 UNION ALL SELECT p.id, p.name, p.dept_id, org.depth + 1 FROM func('e2e::tds_persons') p JOIN org ON p.dept_id = org.dept_id AND p.id &gt; org.id) SELECT * FROM org ORDER BY depth, id
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: WITH RECURSIVE only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-recursive_cte_from_table_anchor-TDS"></a><code>recursive_cte_from_table_anchor</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH RECURSIVE t(n) AS (SELECT id FROM persons WHERE id = 1 UNION ALL SELECT n + 1 FROM t WHERE n &lt; 5) SELECT n FROM t ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">WITH RECURSIVE t (n) AS (SELECT id FROM func('e2e::tds_persons') WHERE id = 1 UNION ALL SELECT n + 1 FROM t WHERE n &lt; 5) SELECT n FROM t ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: WITH RECURSIVE only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-recursive_cte_downstream_filter-TDS"></a><code>recursive_cte_downstream_filter</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH RECURSIVE t(n) AS (SELECT id FROM persons WHERE id = 1 UNION ALL SELECT n + 1 FROM t WHERE n &lt; 5) SELECT n FROM t WHERE n &gt; 2 ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">WITH RECURSIVE t (n) AS (SELECT id FROM func('e2e::tds_persons') WHERE id = 1 UNION ALL SELECT n + 1 FROM t WHERE n &lt; 5) SELECT n FROM t WHERE n &gt; 2 ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: WITH RECURSIVE only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-recursive_cte_downstream_aggregate-TDS"></a><code>recursive_cte_downstream_aggregate</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH RECURSIVE t(n) AS (SELECT id FROM persons WHERE id = 1 UNION ALL SELECT n + 1 FROM t WHERE n &lt; 5) SELECT COUNT(*) AS cnt FROM t
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">WITH RECURSIVE t (n) AS (SELECT id FROM func('e2e::tds_persons') WHERE id = 1 UNION ALL SELECT n + 1 FROM t WHERE n &lt; 5) SELECT COUNT(*) AS cnt FROM t
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: WITH RECURSIVE only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-recursive_cte_union_distinct_unsupported-TDS"></a><code>recursive_cte_union_distinct_unsupported</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH RECURSIVE t(n) AS (SELECT id FROM persons WHERE id = 1 UNION SELECT n + 1 FROM t WHERE n &lt; 5) SELECT n FROM t ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">WITH RECURSIVE t (n) AS (SELECT id FROM func('e2e::tds_persons') WHERE id = 1 UNION SELECT n + 1 FROM t WHERE n &lt; 5) SELECT n FROM t ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: WITH RECURSIVE only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-recursive_cte_mixed_with_plain-TDS"></a><code>recursive_cte_mixed_with_plain</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH RECURSIVE t(n) AS (SELECT id FROM persons WHERE id = 1 UNION ALL SELECT n + 1 FROM t WHERE n &lt; 5), summary AS (SELECT n FROM t WHERE n &gt; 2) SELECT n FROM summary ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">WITH RECURSIVE t (n) AS (SELECT id FROM func('e2e::tds_persons') WHERE id = 1 UNION ALL SELECT n + 1 FROM t WHERE n &lt; 5), summary AS (SELECT n FROM t WHERE n &gt; 2) SELECT n FROM summary ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: WITH RECURSIVE only supported on relation inputs</p>
+</blockquote>
+<br>
 <h4><a id="fail-frame_rows_unbounded_current-TDS"></a><code>frame_rows_unbounded_current</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -9789,7 +9921,7 @@ li { margin: 0.3em 0; }
 <p>combining aggregations with window functions not currently supported</p>
 </blockquote>
 <p><a id="type-error"></a></p>
-<h3>TYPE_ERROR (20 tests)</h3>
+<h3>TYPE_ERROR (22 tests)</h3>
 <h4><a id="fail-union_dedup_null-TDS"></a><a id="fail-union_dedup_null-Relation"></a><code>union_dedup_null</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -9803,7 +9935,33 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:3010 column:77), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:3019 column:77), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+</blockquote>
+<br>
+<h4><a id="fail-cte_in_join-TDS"></a><code>cte_in_join</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH order_totals AS (SELECT person_id, SUM(amount) AS total_orders FROM orders GROUP BY person_id) SELECT p.name, COALESCE(o.total_orders, 0) AS total FROM persons p LEFT JOIN order_totals o ON p.id = o.person_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">WITH order_totals AS (SELECT person_id, SUM(amount) AS total_orders FROM func('e2e::tds_orders') GROUP BY person_id) SELECT p.name, COALESCE(o.total_orders, 0) AS total FROM func('e2e::tds_persons') p LEFT JOIN order_totals o ON p.id = o.person_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7495 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
+</blockquote>
+<br>
+<h4><a id="fail-cte_in_join_dept-TDS"></a><code>cte_in_join_dept</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">WITH dept_avg AS (SELECT dept_id, AVG(salary) AS avg_sal FROM persons WHERE salary IS NOT NULL GROUP BY dept_id) SELECT d.name, COALESCE(da.avg_sal, 0) AS avg_salary FROM departments d LEFT JOIN dept_avg da ON d.id = da.dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">WITH dept_avg AS (SELECT dept_id, AVG(salary) AS avg_sal FROM func('e2e::tds_persons') WHERE salary IS NOT NULL GROUP BY dept_id) SELECT d.name, COALESCE(da.avg_sal, 0) AS avg_salary FROM func('e2e::tds_departments') d LEFT JOIN dept_avg da ON d.id = da.dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7495 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-cast_numeric_to_int-TDS"></a><a id="fail-cast_numeric_to_int-Relation"></a><code>cast_numeric_to_int</code></h4>
@@ -9845,7 +10003,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:6893 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7054 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-lateral_unnest_string_to_array-Relation"></a><code>lateral_unnest_string_to_array</code></h4>
@@ -9858,7 +10016,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:6893 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7054 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-lateral_unnest_string_to_array_correlated-Relation"></a><code>lateral_unnest_string_to_array_correlated</code></h4>
@@ -10582,21 +10740,22 @@ li { margin: 0.3em 0; }
 <blockquote>
 <p>null</p>
 </blockquote>
-<p><a id="parse-error"></a></p>
-<h3>PARSE_ERROR (28 tests)</h3>
-<h4><a id="fail-cte_recursive-TDS"></a><a id="fail-cte_recursive-Relation"></a><code>cte_recursive</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><a id="function-no-sql-translation"></a></p>
+<h3>FUNCTION_NO_SQL_TRANSLATION (1 tests)</h3>
+<h4><a id="fail-cte_used_twice-Relation"></a><code>cte_used_twice</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">WITH RECURSIVE cnt(x) AS (SELECT 1 UNION ALL SELECT x + 1 FROM cnt WHERE x &lt; 5) SELECT x FROM cnt ORDER BY 1
+<pre><code class="language-sql">WITH emp_data AS (SELECT dept_id, salary FROM persons WHERE salary IS NOT NULL AND dept_id IS NOT NULL) SELECT (SELECT COUNT(*) FROM emp_data) AS total_emps, (SELECT AVG(salary) FROM emp_data) AS avg_salary
 </code></pre>
 <p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">null
+<pre><code class="language-sql">WITH emp_data AS (SELECT dept_id, salary FROM func('e2e::rel_persons') WHERE salary IS NOT NULL AND dept_id IS NOT NULL) SELECT (SELECT COUNT(*) FROM emp_data) AS total_emps, (SELECT AVG(salary) FROM emp_data) AS avg_salary
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Rewrite failed: Unexpected token 'RECURSIVE' at line 1, column 6</p>
+<p>No SQL translation exists for the PURE function 'wrapPrimitiveInTDS_T_MANY__T_1__TDS_1_'. \nIf you would like to add a SQL translation for the function then follow the step-by-step guide on the PURE wiki.</p>
 </blockquote>
-<br>
+<p><a id="parse-error"></a></p>
+<h3>PARSE_ERROR (25 tests)</h3>
 <h4><a id="fail-distinct_on-TDS"></a><a id="fail-distinct_on-Relation"></a><code>distinct_on</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -10764,32 +10923,6 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>Rewrite failed: Unexpected token 'WITH'. Expected one of: ONLY at line 1, column 85</p>
-</blockquote>
-<br>
-<h4><a id="fail-recursive_cte_number_series-TDS"></a><a id="fail-recursive_cte_number_series-Relation"></a><code>recursive_cte_number_series</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">WITH RECURSIVE t(n) AS (SELECT 1 UNION ALL SELECT n + 1 FROM t WHERE n &lt; 5) SELECT n FROM t ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">null
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Rewrite failed: Unexpected token 'RECURSIVE' at line 1, column 6</p>
-</blockquote>
-<br>
-<h4><a id="fail-recursive_cte_hierarchy-TDS"></a><a id="fail-recursive_cte_hierarchy-Relation"></a><code>recursive_cte_hierarchy</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">WITH RECURSIVE org(id, name, dept_id, depth) AS (SELECT id, name, dept_id, 0 FROM persons WHERE dept_id = 1 UNION ALL SELECT p.id, p.name, p.dept_id, org.depth + 1 FROM persons p JOIN org ON p.dept_id = org.dept_id AND p.id &gt; org.id) SELECT * FROM org ORDER BY depth, id
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">null
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Rewrite failed: Unexpected token 'RECURSIVE' at line 1, column 6</p>
 </blockquote>
 <br>
 <h4><a id="fail-cte_materialized_hint-TDS"></a><a id="fail-cte_materialized_hint-Relation"></a><code>cte_materialized_hint</code></h4>
