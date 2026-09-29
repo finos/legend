@@ -57,12 +57,12 @@ li { margin: 0.3em 0; }
 <tr>
 <td>⚪ UNSUPPORTED</td>
 <td>206</td>
-<td>73</td>
+<td>70</td>
 </tr>
 <tr>
 <td>✅ PASS</td>
 <td>349 (76.9%)</td>
-<td>465 (79.2%)</td>
+<td>468 (79.3%)</td>
 </tr>
 <tr>
 <td>❌ FAIL</td>
@@ -82,7 +82,7 @@ li { margin: 0.3em 0; }
 <tr>
 <td><strong>Pass rate</strong></td>
 <td><strong>76.9%</strong></td>
-<td><strong>79.2%</strong></td>
+<td><strong>79.3%</strong></td>
 </tr>
 </tbody>
 </table>
@@ -115,7 +115,7 @@ li { margin: 0.3em 0; }
 <td><a href="#unsupported-syntax">UNSUPPORTED_SYNTAX</a></td>
 <td>SQL construct recognized but not yet implemented</td>
 <td>189</td>
-<td>54</td>
+<td>51</td>
 </tr>
 <tr>
 <td><a href="#type-error">TYPE_ERROR</a></td>
@@ -209,7 +209,7 @@ li { margin: 0.3em 0; }
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>25</td>
+<td>26</td>
 <td>1</td>
 <td>0</td>
 <td>5</td>
@@ -329,7 +329,7 @@ li { margin: 0.3em 0; }
 <td>2</td>
 <td>0</td>
 <td>0</td>
-<td>16</td>
+<td>17</td>
 <td>0</td>
 <td>3</td>
 <td>0</td>
@@ -869,11 +869,11 @@ li { margin: 0.3em 0; }
 <td><a href="#fail-subquery_in_where-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🟡</td>
 <td>Subquery with NOT IN</td>
 <td>2</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
+<td>PASS (2/2)</td>
 <td><a href="#fail-subquery_not_in-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
@@ -2077,11 +2077,11 @@ li { margin: 0.3em 0; }
 <td><a href="#fail-where_in_subquery-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🟡</td>
 <td>NOT IN (subquery)</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
+<td>PASS (1/1)</td>
 <td><a href="#fail-where_not_in_subquery-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
@@ -6171,7 +6171,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:3966 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4037 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -7192,7 +7192,7 @@ li { margin: 0.3em 0; }
 <p>Unsupported: in (subquery) only supported on relation inputs</p>
 </blockquote>
 <br>
-<h4><a id="fail-subquery_not_in-TDS"></a><a id="fail-subquery_not_in-Relation"></a><code>subquery_not_in</code></h4>
+<h4><a id="fail-subquery_not_in-TDS"></a><code>subquery_not_in</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT name FROM persons WHERE id NOT IN (SELECT person_id FROM orders WHERE person_id IS NOT NULL) ORDER BY 1
@@ -7202,21 +7202,10 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Unsupported: in (subquery) only supported on relation inputs</p>
-</blockquote>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT name FROM persons WHERE id NOT IN (SELECT person_id FROM orders WHERE person_id IS NOT NULL) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT name FROM func('e2e::rel_persons') WHERE id NOT IN (SELECT person_id FROM func('e2e::rel_orders') WHERE person_id IS NOT NULL) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Negating in(value, Relation) is not supported on relational stores. Use not exists instead, for example replace !$d.departmentId-&gt;in($employees-&gt;select(~department)) with $d.departmentId-&gt;isEmpty() || !$employees-&gt;exists(e | $e.department == $d.departmentId)</p>
+<p>Unsupported: not in (subquery) only supported on relation inputs</p>
 </blockquote>
 <br>
-<h4><a id="fail-subquery_not_in_dept-TDS"></a><a id="fail-subquery_not_in_dept-Relation"></a><code>subquery_not_in_dept</code></h4>
+<h4><a id="fail-subquery_not_in_dept-TDS"></a><code>subquery_not_in_dept</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT name FROM persons WHERE dept_id NOT IN (SELECT id FROM departments WHERE budget &lt; 600000) AND dept_id IS NOT NULL ORDER BY 1
@@ -7226,18 +7215,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Unsupported: in (subquery) only supported on relation inputs</p>
-</blockquote>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT name FROM persons WHERE dept_id NOT IN (SELECT id FROM departments WHERE budget &lt; 600000) AND dept_id IS NOT NULL ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT name FROM func('e2e::rel_persons') WHERE dept_id NOT IN (SELECT id FROM func('e2e::rel_departments') WHERE budget &lt; 600000) AND dept_id IS NOT NULL ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Negating in(value, Relation) is not supported on relational stores. Use not exists instead, for example replace !$d.departmentId-&gt;in($employees-&gt;select(~department)) with $d.departmentId-&gt;isEmpty() || !$employees-&gt;exists(e | $e.department == $d.departmentId)</p>
+<p>Unsupported: not in (subquery) only supported on relation inputs</p>
 </blockquote>
 <br>
 <h4><a id="fail-subquery_exists-TDS"></a><code>subquery_exists</code></h4>
@@ -7760,7 +7738,7 @@ li { margin: 0.3em 0; }
 <p>Unsupported: in (subquery) only supported on relation inputs</p>
 </blockquote>
 <br>
-<h4><a id="fail-where_not_in_subquery-TDS"></a><a id="fail-where_not_in_subquery-Relation"></a><code>where_not_in_subquery</code></h4>
+<h4><a id="fail-where_not_in_subquery-TDS"></a><code>where_not_in_subquery</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT name FROM persons WHERE dept_id NOT IN (SELECT id FROM departments WHERE name = 'Engineering') ORDER BY 1
@@ -7770,18 +7748,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Unsupported: in (subquery) only supported on relation inputs</p>
-</blockquote>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT name FROM persons WHERE dept_id NOT IN (SELECT id FROM departments WHERE name = 'Engineering') ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT name FROM func('e2e::rel_persons') WHERE dept_id NOT IN (SELECT id FROM func('e2e::rel_departments') WHERE name = 'Engineering') ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Negating in(value, Relation) is not supported on relational stores. Use not exists instead, for example replace !$d.departmentId-&gt;in($employees-&gt;select(~department)) with $d.departmentId-&gt;isEmpty() || !$employees-&gt;exists(e | $e.department == $d.departmentId)</p>
+<p>Unsupported: not in (subquery) only supported on relation inputs</p>
 </blockquote>
 <br>
 <h4><a id="fail-where_exists-TDS"></a><code>where_exists</code></h4>
@@ -9946,7 +9913,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7527 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7666 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-cte_in_join_dept-TDS"></a><code>cte_in_join_dept</code></h4>
@@ -9959,7 +9926,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7527 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7666 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-cast_numeric_to_int-TDS"></a><a id="fail-cast_numeric_to_int-Relation"></a><code>cast_numeric_to_int</code></h4>
@@ -10001,7 +9968,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7086 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7175 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-lateral_unnest_string_to_array-Relation"></a><code>lateral_unnest_string_to_array</code></h4>
@@ -10014,7 +9981,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7086 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7175 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-lateral_unnest_string_to_array_correlated-Relation"></a><code>lateral_unnest_string_to_array_correlated</code></h4>
