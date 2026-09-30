@@ -46,23 +46,23 @@ li { margin: 0.3em 0; }
 <tbody>
 <tr>
 <td>Total features</td>
-<td>583</td>
-<td>583</td>
+<td>593</td>
+<td>593</td>
 </tr>
 <tr>
 <td>Total tests</td>
-<td>660</td>
-<td>660</td>
+<td>670</td>
+<td>670</td>
 </tr>
 <tr>
 <td>⚪ UNSUPPORTED</td>
-<td>206</td>
-<td>70</td>
+<td>216</td>
+<td>54</td>
 </tr>
 <tr>
 <td>✅ PASS</td>
 <td>349 (76.9%)</td>
-<td>468 (79.3%)</td>
+<td>478 (77.6%)</td>
 </tr>
 <tr>
 <td>❌ FAIL</td>
@@ -72,7 +72,7 @@ li { margin: 0.3em 0; }
 <tr>
 <td>💥 ERROR</td>
 <td>94</td>
-<td>109</td>
+<td>125</td>
 </tr>
 <tr>
 <td>❓ SKIP</td>
@@ -82,7 +82,7 @@ li { margin: 0.3em 0; }
 <tr>
 <td><strong>Pass rate</strong></td>
 <td><strong>76.9%</strong></td>
-<td><strong>79.3%</strong></td>
+<td><strong>77.6%</strong></td>
 </tr>
 </tbody>
 </table>
@@ -103,19 +103,19 @@ li { margin: 0.3em 0; }
 <td><a href="#alias-not-found">ALIAS_NOT_FOUND</a></td>
 <td>Column or alias reference cannot be resolved</td>
 <td>7</td>
-<td>2</td>
+<td>6</td>
 </tr>
 <tr>
 <td><a href="#misc">MISC</a></td>
 <td>Other/uncategorized error</td>
 <td>43</td>
-<td>68</td>
+<td>80</td>
 </tr>
 <tr>
 <td><a href="#unsupported-syntax">UNSUPPORTED_SYNTAX</a></td>
 <td>SQL construct recognized but not yet implemented</td>
-<td>189</td>
-<td>51</td>
+<td>199</td>
+<td>35</td>
 </tr>
 <tr>
 <td><a href="#type-error">TYPE_ERROR</a></td>
@@ -457,14 +457,14 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><a href="#column_resolution">column_resolution</a></td>
-<td>33</td>
-<td>33</td>
+<td>35</td>
+<td>35</td>
 <td>31</td>
 <td>0</td>
 <td>0</td>
 <td>2</td>
 <td>0</td>
-<td>29</td>
+<td>31</td>
 <td>0</td>
 <td>0</td>
 <td>4</td>
@@ -472,8 +472,8 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><a href="#column_resolution_corpus">column_resolution_corpus</a></td>
-<td>119</td>
-<td>119</td>
+<td>120</td>
+<td>120</td>
 <td>70</td>
 <td>0</td>
 <td>0</td>
@@ -482,7 +482,7 @@ li { margin: 0.3em 0; }
 <td>113</td>
 <td>0</td>
 <td>0</td>
-<td>1</td>
+<td>2</td>
 <td>0</td>
 </tr>
 <tr>
@@ -622,17 +622,17 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><a href="#compositions">compositions</a></td>
-<td>46</td>
-<td>52</td>
+<td>53</td>
+<td>59</td>
 <td>16</td>
 <td>0</td>
 <td>0</td>
 <td>4</td>
 <td>0</td>
-<td>25</td>
+<td>32</td>
 <td>0</td>
 <td>0</td>
-<td>3</td>
+<td>17</td>
 <td>0</td>
 </tr>
 </tbody>
@@ -3726,6 +3726,22 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td>🟡</td>
+<td>non-aggregate window argument naming a column the select list also renames</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-colres_e2_window_argument_renamed_column-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>non-aggregate window argument over a self-join, both sides realiased</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-colres_e2_window_argument_renamed_column_self_join-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
+<tr>
+<td>🟡</td>
 <td>window partition key when both join sides expose the same column name</td>
 <td>1</td>
 <td>PASS (1/1)</td>
@@ -4732,6 +4748,14 @@ li { margin: 0.3em 0; }
 <td>PASS (1/1)</td>
 <td><a href="#fail-crcs_g6_self_join_with_null_ordered_window_key-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
+<tr>
+<td>🔴</td>
+<td>aggregate + window over a join</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-crcs_g2_agg_win_over_join-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-crcs_g2_agg_win_over_join-Relation">ALIAS_NOT_FOUND</a></td>
+</tr>
 </tbody>
 </table>
 <p><a id="grouping_sets"></a></p>
@@ -5429,12 +5453,12 @@ li { margin: 0.3em 0; }
 </thead>
 <tbody>
 <tr>
-<td>⚪</td>
+<td>🔴</td>
 <td>Window over aggregate</td>
 <td>2</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-comp_agg_window_dept_pct-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>ERROR (0/2)</td>
+<td><a href="#fail-comp_agg_window_dept_pct-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-comp_agg_window_dept_pct-Relation">MISC</a></td>
 </tr>
 <tr>
 <td>🟢</td>
@@ -5475,6 +5499,62 @@ li { margin: 0.3em 0; }
 <td>PASS (1/1)</td>
 <td>PASS (1/1)</td>
 <td></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>Aggregate + window disjoint keys</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-comp_agg_win_disjoint_keys-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>Aggregate + window partition is group key</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-comp_agg_win_partition_is_group_key-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>Aggregate + window ORDER BY names aggregate output</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-comp_agg_win_order_names_aggregate_output-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>Implicit aggregate + window</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-comp_agg_win_implicit_aggregate-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-comp_agg_win_implicit_aggregate-Relation">MISC</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>Aggregate + window + HAVING</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-comp_agg_win_with_having-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>Aggregate + window used in outer expression</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-comp_agg_win_outer_expression-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-comp_agg_win_outer_expression-Relation">MISC</a></td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>Aggregate + window multi-key ORDER BY with NULLS LAST</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-comp_agg_win_multi_key_order_relation_only-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-comp_agg_win_multi_key_order_relation_only-Relation">ALIAS_NOT_FOUND</a></td>
 </tr>
 <tr>
 <td>🟡</td>
@@ -5549,12 +5629,12 @@ li { margin: 0.3em 0; }
 <td></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🔴</td>
 <td>JOIN + window + aggregate + CASE</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-stress_dashboard-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-stress_dashboard-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-stress_dashboard-Relation">ALIAS_NOT_FOUND</a></td>
 </tr>
 <tr>
 <td>⚪</td>
@@ -5605,12 +5685,12 @@ li { margin: 0.3em 0; }
 <td><a href="#fail-stress_cume_dist-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🔴</td>
 <td>LAG comparison over aggregates</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-stress_lag_comparison-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-stress_lag_comparison-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-stress_lag_comparison-Relation">MISC</a></td>
 </tr>
 <tr>
 <td>🟢</td>
@@ -5709,99 +5789,99 @@ li { margin: 0.3em 0; }
 <td><a href="#fail-nested_scalar_coalesce-TDS">FUNCTION_NOT_SUPPORTED</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🟡</td>
 <td>RANK over GROUP BY aggregate</td>
 <td>2</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
+<td>PASS (2/2)</td>
 <td><a href="#fail-window_over_agg_rank_sum-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🔴</td>
 <td>Percentage of total across groups</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-window_over_agg_cum_pct-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-window_over_agg_cum_pct-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-window_over_agg_cum_pct-Relation">MISC</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🔴</td>
 <td>Running total over groups</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-window_over_agg_running-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-window_over_agg_running-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-window_over_agg_running-Relation">MISC</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🔴</td>
 <td>LAG over GROUP BY result</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-window_over_agg_lag-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-window_over_agg_lag-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-window_over_agg_lag-Relation">MISC</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🔴</td>
 <td>LEAD over GROUP BY result</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-window_over_agg_lead-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-window_over_agg_lead-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-window_over_agg_lead-Relation">ALIAS_NOT_FOUND</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🟡</td>
 <td>Top-N groups via window over aggregate</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
+<td>PASS (1/1)</td>
 <td><a href="#fail-window_over_agg_topn-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🟡</td>
 <td>NTILE over GROUP BY aggregate</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
+<td>PASS (1/1)</td>
 <td><a href="#fail-window_over_agg_ntile-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🔴</td>
 <td>MIN/MAX over GROUP BY aggregate</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-window_over_agg_minmax-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-window_over_agg_minmax-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-window_over_agg_minmax-Relation">MISC</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🔴</td>
 <td>AVG over GROUP BY aggregate</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-window_over_agg_avg-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-window_over_agg_avg-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-window_over_agg_avg-Relation">MISC</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🔴</td>
 <td>FIRST_VALUE over GROUP BY aggregate</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-window_over_agg_first_value-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-window_over_agg_first_value-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-window_over_agg_first_value-Relation">MISC</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🔴</td>
 <td>LAST_VALUE over GROUP BY aggregate</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-window_over_agg_last_value-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-window_over_agg_last_value-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-window_over_agg_last_value-Relation">MISC</a></td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2>Error Details</h2>
 <p><a id="alias-not-found"></a></p>
-<h3>ALIAS_NOT_FOUND (7 tests)</h3>
+<h3>ALIAS_NOT_FOUND (11 tests)</h3>
 <h4><a id="fail-union_multiple_mixed-TDS"></a><code>union_multiple_mixed</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -5914,8 +5994,60 @@ li { margin: 0.3em 0; }
 <blockquote>
 <p>The column 'id_p' can't be found in the relation (id_text:String[1], name:String)</p>
 </blockquote>
+<br>
+<h4><a id="fail-crcs_g2_agg_win_over_join-Relation"></a><code>crcs_g2_agg_win_over_join</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.dept_id AS dept_id, d.name AS dept_name, SUM(p.salary) AS s, RANK() OVER (PARTITION BY p.dept_id ORDER BY p.dept_id) AS r FROM persons p INNER JOIN departments d ON p.dept_id = d.id WHERE p.salary IS NOT NULL GROUP BY p.dept_id, d.name ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.dept_id AS dept_id, d.name AS dept_name, SUM(p.salary) AS s, RANK() OVER (PARTITION BY p.dept_id ORDER BY p.dept_id) AS r FROM func('e2e::rel_persons') p INNER JOIN func('e2e::rel_departments') d ON p.dept_id = d.id WHERE p.salary IS NOT NULL GROUP BY p.dept_id, d.name ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>The column 'SUM(salary)' can't be found in the relation (dept_id:Integer, name_d:String, dept_name:String, s:Float[1])</p>
+</blockquote>
+<br>
+<h4><a id="fail-comp_agg_win_multi_key_order_relation_only-Relation"></a><code>comp_agg_win_multi_key_order_relation_only</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS s, ROW_NUMBER() OVER (PARTITION BY dept_id ORDER BY MAX(hire_date) DESC NULLS LAST, dept_id ASC) AS rn FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS s, ROW_NUMBER() OVER (PARTITION BY dept_id ORDER BY MAX(hire_date) DESC NULLS LAST, dept_id ASC) AS rn FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>The column 'MAX(hire_date)' can't be found (&quot;dept_id&quot;,&quot;s&quot;)</p>
+</blockquote>
+<br>
+<h4><a id="fail-stress_dashboard-Relation"></a><code>stress_dashboard</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT d.name AS department, p.name AS employee, p.salary, RANK() OVER (PARTITION BY d.name ORDER BY p.salary DESC) AS dept_rank, CASE WHEN p.salary &gt; 80000 THEN 'Senior' WHEN p.salary &gt; 50000 THEN 'Mid' ELSE 'Junior' END AS band, COUNT(o.id) AS order_count, COALESCE(SUM(o.amount), 0) AS total_orders FROM persons p INNER JOIN departments d ON p.dept_id = d.id LEFT JOIN orders o ON o.person_id = p.id WHERE p.salary IS NOT NULL GROUP BY d.name, p.name, p.salary ORDER BY 1, 4
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT d.name AS department, p.name AS employee, p.salary, RANK() OVER (PARTITION BY d.name ORDER BY p.salary DESC) AS dept_rank, CASE WHEN p.salary &gt; 80000 THEN 'Senior' WHEN p.salary &gt; 50000 THEN 'Mid' ELSE 'Junior' END AS band, COUNT(o.id) AS order_count, COALESCE(SUM(o.amount), 0) AS total_orders FROM func('e2e::rel_persons') p INNER JOIN func('e2e::rel_departments') d ON p.dept_id = d.id LEFT JOIN func('e2e::rel_orders') o ON o.person_id = p.id WHERE p.salary IS NOT NULL GROUP BY d.name, p.name, p.salary ORDER BY 1, 4
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>The column 'RANK()' can't be found in the relation (name_d:String, name_p:String, salary_p:Float, department:String, employee:String, band:String[1], order_count:Integer[1], total_orders:Number)</p>
+</blockquote>
+<br>
+<h4><a id="fail-window_over_agg_lead-Relation"></a><code>window_over_agg_lead</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt, LEAD(COUNT(*)) OVER (ORDER BY dept_id) AS next_cnt FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt, LEAD(COUNT(*)) OVER (ORDER BY dept_id) AS next_cnt FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>The column 'offset_Relation_1__T_1__Integer_1__T_$0_1$_' can't be found (&quot;dept_id&quot;,&quot;cnt&quot;)</p>
+</blockquote>
 <p><a id="misc"></a></p>
-<h3>MISC (82 tests)</h3>
+<h3>MISC (94 tests)</h3>
 <h4><a id="fail-union_multiple_mixed-Relation"></a><code>union_multiple_mixed</code></h4>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -6171,7 +6303,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4037 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4192 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -7045,6 +7177,58 @@ li { margin: 0.3em 0; }
 <blockquote>
 </blockquote>
 <br>
+<h4><a id="fail-comp_agg_window_dept_pct-Relation"></a><code>comp_agg_window_dept_pct</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS dept_total, SUM(SUM(salary)) OVER () AS grand_total FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS dept_total, SUM(SUM(salary)) OVER () AS grand_total FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>no column found named: 'salary'. Available columns: [dept_id, dept_total]</p>
+</blockquote>
+<br>
+<h4><a id="fail-comp_agg_window_running-Relation"></a><code>comp_agg_window_running</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt, SUM(COUNT(*)) OVER (ORDER BY dept_id) AS running_cnt FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt, SUM(COUNT(*)) OVER (ORDER BY dept_id) AS running_cnt FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Can't find a match for function 'meta::pure::functions::collection::count()'.\nFunctions that can match if number of parameters are changed:\n\t\tcount(Any[*]):Integer[1]\n</p>
+</blockquote>
+<br>
+<h4><a id="fail-comp_agg_win_implicit_aggregate-Relation"></a><code>comp_agg_win_implicit_aggregate</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT SUM(salary) AS s, AVG(salary) OVER () AS a FROM persons WHERE salary IS NOT NULL
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT SUM(salary) AS s, AVG(salary) OVER () AS a FROM func('e2e::rel_persons') WHERE salary IS NOT NULL
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>no column found named: 'salary'. Available columns: [s]</p>
+</blockquote>
+<br>
+<h4><a id="fail-comp_agg_win_outer_expression-Relation"></a><code>comp_agg_win_outer_expression</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS s, SUM(salary) - AVG(SUM(salary)) OVER () AS diff FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS s, SUM(salary) - AVG(SUM(salary)) OVER () AS diff FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>no column found named: 'salary'. Available columns: [dept_id, s]</p>
+</blockquote>
+<br>
 <h4><a id="fail-comp_three_table_agg-TDS"></a><code>comp_three_table_agg</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -7106,7 +7290,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1402 column:36), &quot;Match failure: null&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1547 column:36), &quot;Match failure: null&quot;</p>
 </blockquote>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -7118,6 +7302,19 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>Can't find a match for function 'meta::pure::functions::math::round(Number[1],Integer[1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tround(Float[1],Integer[1]):Float[1]\n\t\tround(Decimal[1],Integer[1]):Decimal[1]\nFunctions that can match if number of parameters are changed:\n\t\tround(Number[1]):Integer[1]\n</p>
+</blockquote>
+<br>
+<h4><a id="fail-stress_lag_comparison-Relation"></a><code>stress_lag_comparison</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, LAG(SUM(salary)) OVER (ORDER BY dept_id) AS prev, SUM(salary) - COALESCE(LAG(SUM(salary)) OVER (ORDER BY dept_id), 0) AS diff FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, LAG(SUM(salary)) OVER (ORDER BY dept_id) AS prev, SUM(salary) - COALESCE(LAG(SUM(salary)) OVER (ORDER BY dept_id), 0) AS diff FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>no column found named: 'salary'. Available columns: [dept_id, total]</p>
 </blockquote>
 <br>
 <h4><a id="fail-nested_exists_agg-Relation"></a><code>nested_exists_agg</code></h4>
@@ -7132,8 +7329,99 @@ li { margin: 0.3em 0; }
 <blockquote>
 <p>Column 'id' of the enclosing query cannot be referenced from this subquery: both use the table alias 'root'</p>
 </blockquote>
+<br>
+<h4><a id="fail-window_over_agg_cum_pct-Relation"></a><code>window_over_agg_cum_pct</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, ROUND(SUM(salary) * 100.0 / SUM(SUM(salary)) OVER (), 2) AS pct FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, ROUND(SUM(salary) * 100.0 / SUM(SUM(salary)) OVER (), 2) AS pct FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>no column found named: 'salary'. Available columns: [dept_id, total]</p>
+</blockquote>
+<br>
+<h4><a id="fail-window_over_agg_running-Relation"></a><code>window_over_agg_running</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, SUM(SUM(salary)) OVER (ORDER BY dept_id) AS running_total FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, SUM(SUM(salary)) OVER (ORDER BY dept_id) AS running_total FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>no column found named: 'salary'. Available columns: [dept_id, total]</p>
+</blockquote>
+<br>
+<h4><a id="fail-window_over_agg_lag-Relation"></a><code>window_over_agg_lag</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, LAG(SUM(salary)) OVER (ORDER BY dept_id) AS prev_total FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, LAG(SUM(salary)) OVER (ORDER BY dept_id) AS prev_total FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>no column found named: 'salary'. Available columns: [dept_id, total]</p>
+</blockquote>
+<br>
+<h4><a id="fail-window_over_agg_minmax-Relation"></a><code>window_over_agg_minmax</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt, MIN(COUNT(*)) OVER () AS min_cnt, MAX(COUNT(*)) OVER () AS max_cnt FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt, MIN(COUNT(*)) OVER () AS min_cnt, MAX(COUNT(*)) OVER () AS max_cnt FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Can't find a match for function 'meta::pure::functions::collection::count()'.\nFunctions that can match if number of parameters are changed:\n\t\tcount(Any[*]):Integer[1]\n</p>
+</blockquote>
+<br>
+<h4><a id="fail-window_over_agg_avg-Relation"></a><code>window_over_agg_avg</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, AVG(SUM(salary)) OVER () AS avg_total FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, AVG(SUM(salary)) OVER () AS avg_total FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>no column found named: 'salary'. Available columns: [dept_id, total]</p>
+</blockquote>
+<br>
+<h4><a id="fail-window_over_agg_first_value-Relation"></a><code>window_over_agg_first_value</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, FIRST_VALUE(SUM(salary)) OVER (ORDER BY SUM(salary) DESC) AS highest FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, FIRST_VALUE(SUM(salary)) OVER (ORDER BY SUM(salary) DESC) AS highest FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>no column found named: 'salary'. Available columns: [dept_id, total]</p>
+</blockquote>
+<br>
+<h4><a id="fail-window_over_agg_last_value-Relation"></a><code>window_over_agg_last_value</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, LAST_VALUE(SUM(salary)) OVER (ORDER BY SUM(salary) DESC ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS lowest FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, LAST_VALUE(SUM(salary)) OVER (ORDER BY SUM(salary) DESC ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS lowest FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>no column found named: 'salary'. Available columns: [dept_id, total]</p>
+</blockquote>
 <p><a id="unsupported-syntax"></a></p>
-<h3>UNSUPPORTED_SYNTAX (191 tests)</h3>
+<h3>UNSUPPORTED_SYNTAX (201 tests)</h3>
 <h4><a id="fail-except_basic-TDS"></a><a id="fail-except_basic-Relation"></a><code>except_basic</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -8427,6 +8715,32 @@ li { margin: 0.3em 0; }
 <p>arithmetic type DIVIDE not currently supported for dates</p>
 </blockquote>
 <br>
+<h4><a id="fail-colres_e2_window_argument_renamed_column-TDS"></a><code>colres_e2_window_argument_renamed_column</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name AS name, LAG(p.name) OVER (ORDER BY p.id) AS prev_name FROM persons p INNER JOIN departments d ON p.dept_id = d.id ORDER BY 1, 2
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name AS name, LAG(p.name) OVER (ORDER BY p.id) AS prev_name FROM func('e2e::tds_persons') p INNER JOIN func('e2e::tds_departments') d ON p.dept_id = d.id ORDER BY 1, 2
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: lag only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-colres_e2_window_argument_renamed_column_self_join-TDS"></a><code>colres_e2_window_argument_renamed_column_self_join</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT b.salary AS salary, LAG(b.salary) OVER (ORDER BY a.id) AS prev_salary FROM persons a INNER JOIN persons b ON a.dept_id = b.dept_id AND a.id &lt; b.id ORDER BY 1, 2
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT b.salary AS salary, LAG(b.salary) OVER (ORDER BY a.id) AS prev_salary FROM func('e2e::tds_persons') a INNER JOIN func('e2e::tds_persons') b ON a.dept_id = b.dept_id AND a.id &lt; b.id ORDER BY 1, 2
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: lag only supported on relation inputs</p>
+</blockquote>
+<br>
 <h4><a id="fail-crcs_g1a_win_order_nulls_last_then_plain_key-TDS"></a><code>crcs_g1a_win_order_nulls_last_then_plain_key</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -9058,6 +9372,19 @@ li { margin: 0.3em 0; }
 <p>Unsupported: multiple window sort items not yet supported</p>
 </blockquote>
 <br>
+<h4><a id="fail-crcs_g2_agg_win_over_join-TDS"></a><code>crcs_g2_agg_win_over_join</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.dept_id AS dept_id, d.name AS dept_name, SUM(p.salary) AS s, RANK() OVER (PARTITION BY p.dept_id ORDER BY p.dept_id) AS r FROM persons p INNER JOIN departments d ON p.dept_id = d.id WHERE p.salary IS NOT NULL GROUP BY p.dept_id, d.name ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.dept_id AS dept_id, d.name AS dept_name, SUM(p.salary) AS s, RANK() OVER (PARTITION BY p.dept_id ORDER BY p.dept_id) AS r FROM func('e2e::tds_persons') p INNER JOIN func('e2e::tds_departments') d ON p.dept_id = d.id WHERE p.salary IS NOT NULL GROUP BY p.dept_id, d.name ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>combining aggregations with window functions not currently supported</p>
+</blockquote>
+<br>
 <h4><a id="fail-filter_clause_count-TDS"></a><code>filter_clause_count</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -9513,48 +9840,130 @@ li { margin: 0.3em 0; }
 <p>Unsupported: first_value only supported on relation inputs</p>
 </blockquote>
 <br>
-<h4><a id="fail-comp_agg_window_dept_pct-TDS"></a><a id="fail-comp_agg_window_dept_pct-Relation"></a><code>comp_agg_window_dept_pct</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-comp_agg_window_dept_pct-TDS"></a><code>comp_agg_window_dept_pct</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, SUM(salary) AS dept_total, SUM(SUM(salary)) OVER () AS grand_total FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, SUM(salary) AS dept_total, SUM(SUM(salary)) OVER () AS grand_total FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS dept_total, SUM(SUM(salary)) OVER () AS grand_total FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>combining aggregations with window functions not currently supported</p>
 </blockquote>
 <br>
-<h4><a id="fail-comp_agg_window_running-TDS"></a><a id="fail-comp_agg_window_running-Relation"></a><code>comp_agg_window_running</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-comp_agg_window_running-TDS"></a><code>comp_agg_window_running</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt, SUM(COUNT(*)) OVER (ORDER BY dept_id) AS running_cnt FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt, SUM(COUNT(*)) OVER (ORDER BY dept_id) AS running_cnt FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt, SUM(COUNT(*)) OVER (ORDER BY dept_id) AS running_cnt FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>combining aggregations with window functions not currently supported</p>
 </blockquote>
 <br>
-<h4><a id="fail-stress_dashboard-TDS"></a><a id="fail-stress_dashboard-Relation"></a><code>stress_dashboard</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-comp_agg_win_disjoint_keys-TDS"></a><code>comp_agg_win_disjoint_keys</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS s, ROW_NUMBER() OVER (ORDER BY dept_id) AS rn FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS s, ROW_NUMBER() OVER (ORDER BY dept_id) AS rn FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>combining aggregations with window functions not currently supported</p>
+</blockquote>
+<br>
+<h4><a id="fail-comp_agg_win_partition_is_group_key-TDS"></a><code>comp_agg_win_partition_is_group_key</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS s, RANK() OVER (PARTITION BY dept_id ORDER BY dept_id) AS r FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS s, RANK() OVER (PARTITION BY dept_id ORDER BY dept_id) AS r FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>combining aggregations with window functions not currently supported</p>
+</blockquote>
+<br>
+<h4><a id="fail-comp_agg_win_order_names_aggregate_output-TDS"></a><code>comp_agg_win_order_names_aggregate_output</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS s, RANK() OVER (ORDER BY SUM(salary) DESC) AS r FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS s, RANK() OVER (ORDER BY SUM(salary) DESC) AS r FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>combining aggregations with window functions not currently supported</p>
+</blockquote>
+<br>
+<h4><a id="fail-comp_agg_win_implicit_aggregate-TDS"></a><code>comp_agg_win_implicit_aggregate</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT SUM(salary) AS s, AVG(salary) OVER () AS a FROM persons WHERE salary IS NOT NULL
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT SUM(salary) AS s, AVG(salary) OVER () AS a FROM func('e2e::tds_persons') WHERE salary IS NOT NULL
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>combining aggregations with window functions not currently supported</p>
+</blockquote>
+<br>
+<h4><a id="fail-comp_agg_win_with_having-TDS"></a><code>comp_agg_win_with_having</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS s, RANK() OVER (ORDER BY dept_id) AS r FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id HAVING SUM(salary) &gt; 100000 ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS s, RANK() OVER (ORDER BY dept_id) AS r FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id HAVING SUM(salary) &gt; 100000 ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>combining aggregations with window functions not currently supported</p>
+</blockquote>
+<br>
+<h4><a id="fail-comp_agg_win_outer_expression-TDS"></a><code>comp_agg_win_outer_expression</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS s, SUM(salary) - AVG(SUM(salary)) OVER () AS diff FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS s, SUM(salary) - AVG(SUM(salary)) OVER () AS diff FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>combining aggregations with window functions not currently supported</p>
+</blockquote>
+<br>
+<h4><a id="fail-comp_agg_win_multi_key_order_relation_only-TDS"></a><code>comp_agg_win_multi_key_order_relation_only</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS s, ROW_NUMBER() OVER (PARTITION BY dept_id ORDER BY MAX(hire_date) DESC NULLS LAST, dept_id ASC) AS rn FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS s, ROW_NUMBER() OVER (PARTITION BY dept_id ORDER BY MAX(hire_date) DESC NULLS LAST, dept_id ASC) AS rn FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>combining aggregations with window functions not currently supported</p>
+</blockquote>
+<br>
+<h4><a id="fail-stress_dashboard-TDS"></a><code>stress_dashboard</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT d.name AS department, p.name AS employee, p.salary, RANK() OVER (PARTITION BY d.name ORDER BY p.salary DESC) AS dept_rank, CASE WHEN p.salary &gt; 80000 THEN 'Senior' WHEN p.salary &gt; 50000 THEN 'Mid' ELSE 'Junior' END AS band, COUNT(o.id) AS order_count, COALESCE(SUM(o.amount), 0) AS total_orders FROM persons p INNER JOIN departments d ON p.dept_id = d.id LEFT JOIN orders o ON o.person_id = p.id WHERE p.salary IS NOT NULL GROUP BY d.name, p.name, p.salary ORDER BY 1, 4
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT d.name AS department, p.name AS employee, p.salary, RANK() OVER (PARTITION BY d.name ORDER BY p.salary DESC) AS dept_rank, CASE WHEN p.salary &gt; 80000 THEN 'Senior' WHEN p.salary &gt; 50000 THEN 'Mid' ELSE 'Junior' END AS band, COUNT(o.id) AS order_count, COALESCE(SUM(o.amount), 0) AS total_orders FROM func('e2e::tds_persons') p INNER JOIN func('e2e::tds_departments') d ON p.dept_id = d.id LEFT JOIN func('e2e::tds_orders') o ON o.person_id = p.id WHERE p.salary IS NOT NULL GROUP BY d.name, p.name, p.salary ORDER BY 1, 4
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT d.name AS department, p.name AS employee, p.salary, RANK() OVER (PARTITION BY d.name ORDER BY p.salary DESC) AS dept_rank, CASE WHEN p.salary &gt; 80000 THEN 'Senior' WHEN p.salary &gt; 50000 THEN 'Mid' ELSE 'Junior' END AS band, COUNT(o.id) AS order_count, COALESCE(SUM(o.amount), 0) AS total_orders FROM func('e2e::rel_persons') p INNER JOIN func('e2e::rel_departments') d ON p.dept_id = d.id LEFT JOIN func('e2e::rel_orders') o ON o.person_id = p.id WHERE p.salary IS NOT NULL GROUP BY d.name, p.name, p.salary ORDER BY 1, 4
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
@@ -9587,16 +9996,13 @@ li { margin: 0.3em 0; }
 <p>Unsupported: cume_dist only supported on relation inputs</p>
 </blockquote>
 <br>
-<h4><a id="fail-stress_lag_comparison-TDS"></a><a id="fail-stress_lag_comparison-Relation"></a><code>stress_lag_comparison</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-stress_lag_comparison-TDS"></a><code>stress_lag_comparison</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, LAG(SUM(salary)) OVER (ORDER BY dept_id) AS prev, SUM(salary) - COALESCE(LAG(SUM(salary)) OVER (ORDER BY dept_id), 0) AS diff FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, LAG(SUM(salary)) OVER (ORDER BY dept_id) AS prev, SUM(salary) - COALESCE(LAG(SUM(salary)) OVER (ORDER BY dept_id), 0) AS diff FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, LAG(SUM(salary)) OVER (ORDER BY dept_id) AS prev, SUM(salary) - COALESCE(LAG(SUM(salary)) OVER (ORDER BY dept_id), 0) AS diff FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
@@ -9694,192 +10100,156 @@ li { margin: 0.3em 0; }
 <p>Unsupported: exists only supported on relation inputs</p>
 </blockquote>
 <br>
-<h4><a id="fail-window_over_agg_rank_sum-TDS"></a><a id="fail-window_over_agg_rank_sum-Relation"></a><code>window_over_agg_rank_sum</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-window_over_agg_rank_sum-TDS"></a><code>window_over_agg_rank_sum</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, RANK() OVER (ORDER BY SUM(salary) DESC) AS salary_rank FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, RANK() OVER (ORDER BY SUM(salary) DESC) AS salary_rank FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, RANK() OVER (ORDER BY SUM(salary) DESC) AS salary_rank FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>combining aggregations with window functions not currently supported</p>
 </blockquote>
 <br>
-<h4><a id="fail-window_over_agg_dense_rank-TDS"></a><a id="fail-window_over_agg_dense_rank-Relation"></a><code>window_over_agg_dense_rank</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-window_over_agg_dense_rank-TDS"></a><code>window_over_agg_dense_rank</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt, DENSE_RANK() OVER (ORDER BY COUNT(*) DESC) AS cnt_rank FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt, DENSE_RANK() OVER (ORDER BY COUNT(*) DESC) AS cnt_rank FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt, DENSE_RANK() OVER (ORDER BY COUNT(*) DESC) AS cnt_rank FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>combining aggregations with window functions not currently supported</p>
 </blockquote>
 <br>
-<h4><a id="fail-window_over_agg_cum_pct-TDS"></a><a id="fail-window_over_agg_cum_pct-Relation"></a><code>window_over_agg_cum_pct</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-window_over_agg_cum_pct-TDS"></a><code>window_over_agg_cum_pct</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, ROUND(SUM(salary) * 100.0 / SUM(SUM(salary)) OVER (), 2) AS pct FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, ROUND(SUM(salary) * 100.0 / SUM(SUM(salary)) OVER (), 2) AS pct FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, ROUND(SUM(salary) * 100.0 / SUM(SUM(salary)) OVER (), 2) AS pct FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>combining aggregations with window functions not currently supported</p>
 </blockquote>
 <br>
-<h4><a id="fail-window_over_agg_running-TDS"></a><a id="fail-window_over_agg_running-Relation"></a><code>window_over_agg_running</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-window_over_agg_running-TDS"></a><code>window_over_agg_running</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, SUM(SUM(salary)) OVER (ORDER BY dept_id) AS running_total FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, SUM(SUM(salary)) OVER (ORDER BY dept_id) AS running_total FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, SUM(SUM(salary)) OVER (ORDER BY dept_id) AS running_total FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>combining aggregations with window functions not currently supported</p>
 </blockquote>
 <br>
-<h4><a id="fail-window_over_agg_lag-TDS"></a><a id="fail-window_over_agg_lag-Relation"></a><code>window_over_agg_lag</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-window_over_agg_lag-TDS"></a><code>window_over_agg_lag</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, LAG(SUM(salary)) OVER (ORDER BY dept_id) AS prev_total FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, LAG(SUM(salary)) OVER (ORDER BY dept_id) AS prev_total FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, LAG(SUM(salary)) OVER (ORDER BY dept_id) AS prev_total FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>combining aggregations with window functions not currently supported</p>
 </blockquote>
 <br>
-<h4><a id="fail-window_over_agg_lead-TDS"></a><a id="fail-window_over_agg_lead-Relation"></a><code>window_over_agg_lead</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-window_over_agg_lead-TDS"></a><code>window_over_agg_lead</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt, LEAD(COUNT(*)) OVER (ORDER BY dept_id) AS next_cnt FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt, LEAD(COUNT(*)) OVER (ORDER BY dept_id) AS next_cnt FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt, LEAD(COUNT(*)) OVER (ORDER BY dept_id) AS next_cnt FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>combining aggregations with window functions not currently supported</p>
 </blockquote>
 <br>
-<h4><a id="fail-window_over_agg_topn-TDS"></a><a id="fail-window_over_agg_topn-Relation"></a><code>window_over_agg_topn</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-window_over_agg_topn-TDS"></a><code>window_over_agg_topn</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, total FROM (SELECT dept_id, SUM(salary) AS total, ROW_NUMBER() OVER (ORDER BY SUM(salary) DESC) AS rn FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id) sub WHERE rn &lt;= 2 ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, total FROM (SELECT dept_id, SUM(salary) AS total, ROW_NUMBER() OVER (ORDER BY SUM(salary) DESC) AS rn FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id) sub WHERE rn &lt;= 2 ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, total FROM (SELECT dept_id, SUM(salary) AS total, ROW_NUMBER() OVER (ORDER BY SUM(salary) DESC) AS rn FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id) sub WHERE rn &lt;= 2 ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>combining aggregations with window functions not currently supported</p>
 </blockquote>
 <br>
-<h4><a id="fail-window_over_agg_ntile-TDS"></a><a id="fail-window_over_agg_ntile-Relation"></a><code>window_over_agg_ntile</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-window_over_agg_ntile-TDS"></a><code>window_over_agg_ntile</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, NTILE(2) OVER (ORDER BY SUM(salary) DESC) AS bucket FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, NTILE(2) OVER (ORDER BY SUM(salary) DESC) AS bucket FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, NTILE(2) OVER (ORDER BY SUM(salary) DESC) AS bucket FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>combining aggregations with window functions not currently supported</p>
 </blockquote>
 <br>
-<h4><a id="fail-window_over_agg_minmax-TDS"></a><a id="fail-window_over_agg_minmax-Relation"></a><code>window_over_agg_minmax</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-window_over_agg_minmax-TDS"></a><code>window_over_agg_minmax</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt, MIN(COUNT(*)) OVER () AS min_cnt, MAX(COUNT(*)) OVER () AS max_cnt FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt, MIN(COUNT(*)) OVER () AS min_cnt, MAX(COUNT(*)) OVER () AS max_cnt FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, COUNT(*) AS cnt, MIN(COUNT(*)) OVER () AS min_cnt, MAX(COUNT(*)) OVER () AS max_cnt FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>combining aggregations with window functions not currently supported</p>
 </blockquote>
 <br>
-<h4><a id="fail-window_over_agg_avg-TDS"></a><a id="fail-window_over_agg_avg-Relation"></a><code>window_over_agg_avg</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-window_over_agg_avg-TDS"></a><code>window_over_agg_avg</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, AVG(SUM(salary)) OVER () AS avg_total FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, AVG(SUM(salary)) OVER () AS avg_total FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, AVG(SUM(salary)) OVER () AS avg_total FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>combining aggregations with window functions not currently supported</p>
 </blockquote>
 <br>
-<h4><a id="fail-window_over_agg_first_value-TDS"></a><a id="fail-window_over_agg_first_value-Relation"></a><code>window_over_agg_first_value</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-window_over_agg_first_value-TDS"></a><code>window_over_agg_first_value</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, FIRST_VALUE(SUM(salary)) OVER (ORDER BY SUM(salary) DESC) AS highest FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, FIRST_VALUE(SUM(salary)) OVER (ORDER BY SUM(salary) DESC) AS highest FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, FIRST_VALUE(SUM(salary)) OVER (ORDER BY SUM(salary) DESC) AS highest FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>combining aggregations with window functions not currently supported</p>
 </blockquote>
 <br>
-<h4><a id="fail-window_over_agg_last_value-TDS"></a><a id="fail-window_over_agg_last_value-Relation"></a><code>window_over_agg_last_value</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-window_over_agg_last_value-TDS"></a><code>window_over_agg_last_value</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, LAST_VALUE(SUM(salary)) OVER (ORDER BY SUM(salary) DESC ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS lowest FROM persons WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, LAST_VALUE(SUM(salary)) OVER (ORDER BY SUM(salary) DESC ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS lowest FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id, SUM(salary) AS total, LAST_VALUE(SUM(salary)) OVER (ORDER BY SUM(salary) DESC ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS lowest FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary IS NOT NULL GROUP BY dept_id ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
