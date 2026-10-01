@@ -36,7 +36,7 @@ li { margin: 0.3em 0; }
 <h1>Failure Details — Result Set Comparisons</h1>
 <p>Full expected (Postgres) vs actual (Legend) result sets for every test where results differ.</p>
 <hr />
-<p><strong>Total result mismatches:</strong> 91</p>
+<p><strong>Total result mismatches:</strong> 82</p>
 <h2>Table of Contents</h2>
 <ul>
 <li><a href="#fail-div__num_num__from_table-TDS">div__num_num__from_table [TDS]</a></li>
@@ -57,10 +57,6 @@ li { margin: 0.3em 0; }
 <li><a href="#fail-regexp_count__start_position__ignored_by_legend-Relation">regexp_count__start_position__ignored_by_legend [Relation]</a></li>
 <li><a href="#fail-string_to_array__txt_txt__from_table-TDS">string_to_array__txt_txt__from_table [TDS]</a></li>
 <li><a href="#fail-string_to_array__txt_txt__from_table-Relation">string_to_array__txt_txt__from_table [Relation]</a></li>
-<li><a href="#fail-date_literal__fractional_6_digits-TDS">date_literal__fractional_6_digits [TDS]</a></li>
-<li><a href="#fail-date_literal__fractional_6_digits-Relation">date_literal__fractional_6_digits [Relation]</a></li>
-<li><a href="#fail-date_literal__fractional_9_digits-TDS">date_literal__fractional_9_digits [TDS]</a></li>
-<li><a href="#fail-date_literal__fractional_9_digits-Relation">date_literal__fractional_9_digits [Relation]</a></li>
 <li><a href="#fail-json_extract_path__from_column-Relation">json_extract_path__from_column [Relation]</a></li>
 <li><a href="#fail-array_position__anycompatiblearray_anycompatible__from_table-Relation">array_position__anycompatiblearray_anycompatible__from_table [Relation]</a></li>
 <li><a href="#fail-op_div__int__truncates_toward_zero-TDS">op_div__int__truncates_toward_zero [TDS]</a></li>
@@ -70,8 +66,6 @@ li { margin: 0.3em 0; }
 <li><a href="#fail-op_mod__negative__basic-TDS">op_mod__negative__basic [TDS]</a></li>
 <li><a href="#fail-op_mod__negative__basic-Relation">op_mod__negative__basic [Relation]</a></li>
 <li><a href="#fail-op_mod__numeric__basic-TDS">op_mod__numeric__basic [TDS]</a></li>
-<li><a href="#fail-op_add__date_plus_int_days-TDS">op_add__date_plus_int_days [TDS]</a></li>
-<li><a href="#fail-op_add__date_plus_int_days-Relation">op_add__date_plus_int_days [Relation]</a></li>
 <li><a href="#fail-op_sub__date_minus_int_days-TDS">op_sub__date_minus_int_days [TDS]</a></li>
 <li><a href="#fail-op_sub__date_minus_int_days-Relation">op_sub__date_minus_int_days [Relation]</a></li>
 <li><a href="#fail-concat_op__txt_txt__from_table-TDS">concat_op__txt_txt__from_table [TDS]</a></li>
@@ -91,6 +85,8 @@ li { margin: 0.3em 0; }
 <li><a href="#fail-jsonb_arrow_get_field-Relation">jsonb_arrow_get_field [Relation]</a></li>
 <li><a href="#fail-json_arrow_get_index-Relation">json_arrow_get_index [Relation]</a></li>
 <li><a href="#fail-jsonb_arrow_get_index-Relation">jsonb_arrow_get_index [Relation]</a></li>
+<li><a href="#fail-json_hash_arrow_path-Relation">json_hash_arrow_path [Relation]</a></li>
+<li><a href="#fail-jsonb_hash_arrow_path-Relation">jsonb_hash_arrow_path [Relation]</a></li>
 <li><a href="#fail-array_gt-TDS">array_gt [TDS]</a></li>
 <li><a href="#fail-anycompatible_concat_scalar_array-TDS">anycompatible_concat_scalar_array [TDS]</a></li>
 <li><a href="#fail-anycompatible_concat_array_scalar-TDS">anycompatible_concat_array_scalar [TDS]</a></li>
@@ -98,14 +94,9 @@ li { margin: 0.3em 0; }
 <li><a href="#fail-between__int__null-TDS">between__int__null [TDS]</a></li>
 <li><a href="#fail-between__int__null-Relation">between__int__null [Relation]</a></li>
 <li><a href="#fail-is_distinct_from__int__one_null-Relation">is_distinct_from__int__one_null [Relation]</a></li>
-<li><a href="#fail-to_char_token__FF1-TDS">to_char_token__FF1 [TDS]</a></li>
-<li><a href="#fail-to_char_token__FF1-Relation">to_char_token__FF1 [Relation]</a></li>
-<li><a href="#fail-to_char_token__FF6-TDS">to_char_token__FF6 [TDS]</a></li>
-<li><a href="#fail-to_char_token__FF6-Relation">to_char_token__FF6 [Relation]</a></li>
-<li><a href="#fail-to_char_token__TZH-TDS">to_char_token__TZH [TDS]</a></li>
-<li><a href="#fail-to_char_token__TZH-Relation">to_char_token__TZH [Relation]</a></li>
-<li><a href="#fail-to_char_token__TZM-TDS">to_char_token__TZM [TDS]</a></li>
-<li><a href="#fail-to_char_token__TZM-Relation">to_char_token__TZM [Relation]</a></li>
+<li><a href="#fail-to_char_token__YYY-TDS">to_char_token__YYY [TDS]</a></li>
+<li><a href="#fail-to_char_token__D-TDS">to_char_token__D [TDS]</a></li>
+<li><a href="#fail-to_char_token__D-Relation">to_char_token__D [Relation]</a></li>
 <li><a href="#fail-subquery_quant_all_empty_null_value-Relation">subquery_quant_all_empty_null_value [Relation]</a></li>
 <li><a href="#fail-null_equals_null-TDS">null_equals_null [TDS]</a></li>
 <li><a href="#fail-null_not_equals-TDS">null_not_equals [TDS]</a></li>
@@ -1840,256 +1831,6 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
-<p><a id="fail-date_literal__fractional_6_digits-TDS"></a></p>
-<h3>❌ date_literal__fractional_6_digits [TDS]</h3>
-<p><strong>SQL (Postgres):</strong></p>
-<pre><code class="language-sql">SELECT TIMESTAMP '1999-01-08 04:05:06.123456' AS result FROM dates LIMIT 1
-</code></pre>
-<p><strong>SQL (Legend, rewritten):</strong></p>
-<pre><code class="language-sql">SELECT TIMESTAMP '1999-01-08 04:05:06.123456' AS result FROM func('e2e::tds_dates') LIMIT 1
-</code></pre>
-<p><strong>SQL (Generated, executed against DB):</strong></p>
-<pre><code class="language-sql">select Timestamp'1999-01-08 04:05:06.123456' as &quot;result&quot; from public.dates as &quot;root&quot; limit 1
-</code></pre>
-<p><strong>Lambda (Pure expression):</strong></p>
-<pre><code class="language-json">|e2e::DateRow.all()-&gt;meta::pure::tds::project(
-  [
-    meta::pure::tds::col(
-      x: e2e::DateRow[1]|$x.id,
-      'id'
-    ),
-    meta::pure::tds::col(
-      x: e2e::DateRow[1]|$x.d,
-      'd'
-    ),
-    meta::pure::tds::col(
-      x: e2e::DateRow[1]|$x.ts,
-      'ts'
-    ),
-    meta::pure::tds::col(
-      x: e2e::DateRow[1]|$x.tsz,
-      'tsz'
-    )
-  ]
-)-&gt;meta::pure::tds::project(
-  meta::pure::tds::col(
-      row: meta::pure::tds::TDSRow[1]|%1999-01-08T04:05:06.123456+0000,
-      'result'
-    )
-)-&gt;meta::pure::tds::limit(1)
-</code></pre>
-<p><strong>Differences:</strong></p>
-<ul>
-<li>Row 0, column 'result': expected '1999-01-08 04:05:06.123456' but got '1999-01-08 04:05:06.123'</li>
-</ul>
-<p><strong>Expected (Postgres):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1999-01-08 04:05:06.123456</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Actual (Legend):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1999-01-08 04:05:06.123</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p><a id="fail-date_literal__fractional_6_digits-Relation"></a></p>
-<h3>❌ date_literal__fractional_6_digits [Relation]</h3>
-<p><strong>SQL (Postgres):</strong></p>
-<pre><code class="language-sql">SELECT TIMESTAMP '1999-01-08 04:05:06.123456' AS result FROM dates LIMIT 1
-</code></pre>
-<p><strong>SQL (Legend, rewritten):</strong></p>
-<pre><code class="language-sql">SELECT TIMESTAMP '1999-01-08 04:05:06.123456' AS result FROM func('e2e::rel_dates') LIMIT 1
-</code></pre>
-<p><strong>SQL (Generated, executed against DB):</strong></p>
-<pre><code class="language-sql">select Timestamp'1999-01-08 04:05:06.123456' as &quot;result&quot; from public.dates as &quot;root&quot; limit 1
-</code></pre>
-<p><strong>Lambda (Pure expression):</strong></p>
-<pre><code class="language-json">|e2e::DateRow.all()-&gt;meta::pure::functions::relation::project(
-  ~[
-     id: x: e2e::DateRow[1]|$x.id,
-     d: x: e2e::DateRow[1]|$x.d,
-     ts: x: e2e::DateRow[1]|$x.ts,
-     tsz: x: e2e::DateRow[1]|$x.tsz
-   ]
-)-&gt;meta::pure::functions::relation::project(
-  ~[
-     result: x: (id:Integer[1], d:StrictDate, ts:DateTime, tsz:DateTime)[1]|%1999-01-08T04:05:06.123456+0000
-   ]
-)-&gt;meta::pure::functions::relation::limit(1)
-</code></pre>
-<p><strong>Differences:</strong></p>
-<ul>
-<li>Row 0, column 'result': expected '1999-01-08 04:05:06.123456' but got '1999-01-08 04:05:06.123'</li>
-</ul>
-<p><strong>Expected (Postgres):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1999-01-08 04:05:06.123456</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Actual (Legend):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1999-01-08 04:05:06.123</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p><a id="fail-date_literal__fractional_9_digits-TDS"></a></p>
-<h3>❌ date_literal__fractional_9_digits [TDS]</h3>
-<p><strong>SQL (Postgres):</strong></p>
-<pre><code class="language-sql">SELECT TIMESTAMP '1999-01-08 04:05:06.123456789' AS result FROM dates LIMIT 1
-</code></pre>
-<p><strong>SQL (Legend, rewritten):</strong></p>
-<pre><code class="language-sql">SELECT TIMESTAMP '1999-01-08 04:05:06.123456789' AS result FROM func('e2e::tds_dates') LIMIT 1
-</code></pre>
-<p><strong>SQL (Generated, executed against DB):</strong></p>
-<pre><code class="language-sql">select Timestamp'1999-01-08 04:05:06.123456789' as &quot;result&quot; from public.dates as &quot;root&quot; limit 1
-</code></pre>
-<p><strong>Lambda (Pure expression):</strong></p>
-<pre><code class="language-json">|e2e::DateRow.all()-&gt;meta::pure::tds::project(
-  [
-    meta::pure::tds::col(
-      x: e2e::DateRow[1]|$x.id,
-      'id'
-    ),
-    meta::pure::tds::col(
-      x: e2e::DateRow[1]|$x.d,
-      'd'
-    ),
-    meta::pure::tds::col(
-      x: e2e::DateRow[1]|$x.ts,
-      'ts'
-    ),
-    meta::pure::tds::col(
-      x: e2e::DateRow[1]|$x.tsz,
-      'tsz'
-    )
-  ]
-)-&gt;meta::pure::tds::project(
-  meta::pure::tds::col(
-      row: meta::pure::tds::TDSRow[1]|%1999-01-08T04:05:06.123456789+0000,
-      'result'
-    )
-)-&gt;meta::pure::tds::limit(1)
-</code></pre>
-<p><strong>Differences:</strong></p>
-<ul>
-<li>Row 0, column 'result': expected '1999-01-08 04:05:06.123457' but got '1999-01-08 04:05:06.123'</li>
-</ul>
-<p><strong>Expected (Postgres):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1999-01-08 04:05:06.123457</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Actual (Legend):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1999-01-08 04:05:06.123</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p><a id="fail-date_literal__fractional_9_digits-Relation"></a></p>
-<h3>❌ date_literal__fractional_9_digits [Relation]</h3>
-<p><strong>SQL (Postgres):</strong></p>
-<pre><code class="language-sql">SELECT TIMESTAMP '1999-01-08 04:05:06.123456789' AS result FROM dates LIMIT 1
-</code></pre>
-<p><strong>SQL (Legend, rewritten):</strong></p>
-<pre><code class="language-sql">SELECT TIMESTAMP '1999-01-08 04:05:06.123456789' AS result FROM func('e2e::rel_dates') LIMIT 1
-</code></pre>
-<p><strong>SQL (Generated, executed against DB):</strong></p>
-<pre><code class="language-sql">select Timestamp'1999-01-08 04:05:06.123456789' as &quot;result&quot; from public.dates as &quot;root&quot; limit 1
-</code></pre>
-<p><strong>Lambda (Pure expression):</strong></p>
-<pre><code class="language-json">|e2e::DateRow.all()-&gt;meta::pure::functions::relation::project(
-  ~[
-     id: x: e2e::DateRow[1]|$x.id,
-     d: x: e2e::DateRow[1]|$x.d,
-     ts: x: e2e::DateRow[1]|$x.ts,
-     tsz: x: e2e::DateRow[1]|$x.tsz
-   ]
-)-&gt;meta::pure::functions::relation::project(
-  ~[
-     result: x: (id:Integer[1], d:StrictDate, ts:DateTime, tsz:DateTime)[1]|%1999-01-08T04:05:06.123456789+0000
-   ]
-)-&gt;meta::pure::functions::relation::limit(1)
-</code></pre>
-<p><strong>Differences:</strong></p>
-<ul>
-<li>Row 0, column 'result': expected '1999-01-08 04:05:06.123457' but got '1999-01-08 04:05:06.123'</li>
-</ul>
-<p><strong>Expected (Postgres):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1999-01-08 04:05:06.123457</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Actual (Legend):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1999-01-08 04:05:06.123</td>
-</tr>
-</tbody>
-</table>
-<hr />
 <p><a id="fail-json_extract_path__from_column-Relation"></a></p>
 <h3>❌ json_extract_path__from_column [Relation]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -2752,141 +2493,6 @@ li { margin: 0.3em 0; }
 <tr>
 <td>1</td>
 <td>0</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p><a id="fail-op_add__date_plus_int_days-TDS"></a></p>
-<h3>❌ op_add__date_plus_int_days [TDS]</h3>
-<p><strong>SQL (Postgres):</strong></p>
-<pre><code class="language-sql">SELECT d + 5 AS result FROM dates WHERE id = 1
-</code></pre>
-<p><strong>SQL (Legend, rewritten):</strong></p>
-<pre><code class="language-sql">SELECT d + 5 AS result FROM func('e2e::tds_dates') WHERE id = 1
-</code></pre>
-<p><strong>SQL (Generated, executed against DB):</strong></p>
-<pre><code class="language-sql">select (&quot;root&quot;.d + (INTERVAL '1 DAYS' * 5)) as &quot;result&quot; from public.dates as &quot;root&quot; where &quot;root&quot;.id = 1
-</code></pre>
-<p><strong>Lambda (Pure expression):</strong></p>
-<pre><code class="language-json">|e2e::DateRow.all()-&gt;meta::pure::tds::project(
-  [
-    meta::pure::tds::col(
-      x: e2e::DateRow[1]|$x.id,
-      'id'
-    ),
-    meta::pure::tds::col(
-      x: e2e::DateRow[1]|$x.d,
-      'd'
-    ),
-    meta::pure::tds::col(
-      x: e2e::DateRow[1]|$x.ts,
-      'ts'
-    ),
-    meta::pure::tds::col(
-      x: e2e::DateRow[1]|$x.tsz,
-      'tsz'
-    )
-  ]
-)-&gt;meta::pure::tds::filter(
-  row: meta::pure::tds::TDSRow[1]|$row.getInteger('id') == 1
-)-&gt;meta::pure::tds::project(
-  meta::pure::tds::col(
-      row: meta::pure::tds::TDSRow[1]|$row.getStrictDate('d')-&gt;meta::pure::functions::date::adjust(
-        5,
-        meta::pure::functions::date::DurationUnit.DAYS
-      ),
-      'result'
-    )
-)
-</code></pre>
-<p><strong>Differences:</strong></p>
-<ul>
-<li>Row 0, column 'result': expected '2023-01-20' but got '2023-01-20 00:00:00.0'</li>
-</ul>
-<p><strong>Expected (Postgres):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2023-01-20</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Actual (Legend):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2023-01-20 00:00:00.0</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p><a id="fail-op_add__date_plus_int_days-Relation"></a></p>
-<h3>❌ op_add__date_plus_int_days [Relation]</h3>
-<p><strong>SQL (Postgres):</strong></p>
-<pre><code class="language-sql">SELECT d + 5 AS result FROM dates WHERE id = 1
-</code></pre>
-<p><strong>SQL (Legend, rewritten):</strong></p>
-<pre><code class="language-sql">SELECT d + 5 AS result FROM func('e2e::rel_dates') WHERE id = 1
-</code></pre>
-<p><strong>SQL (Generated, executed against DB):</strong></p>
-<pre><code class="language-sql">select (&quot;root&quot;.d + (INTERVAL '1 DAYS' * 5)) as &quot;result&quot; from public.dates as &quot;root&quot; where &quot;root&quot;.id = 1
-</code></pre>
-<p><strong>Lambda (Pure expression):</strong></p>
-<pre><code class="language-json">|e2e::DateRow.all()-&gt;meta::pure::functions::relation::project(
-  ~[
-     id: x: e2e::DateRow[1]|$x.id,
-     d: x: e2e::DateRow[1]|$x.d,
-     ts: x: e2e::DateRow[1]|$x.ts,
-     tsz: x: e2e::DateRow[1]|$x.tsz
-   ]
-)-&gt;meta::pure::functions::relation::filter(
-  x: (id:Integer[1], d:StrictDate, ts:DateTime, tsz:DateTime)[1]|$x.id == 1
-)-&gt;meta::pure::functions::relation::project(
-  ~[
-     result: x: (id:Integer[1], d:StrictDate, ts:DateTime, tsz:DateTime)[1]|$x.d-&gt;meta::pure::functions::multiplicity::toOne()-&gt;meta::pure::functions::date::adjust(
-    5,
-    meta::pure::functions::date::DurationUnit.DAYS
-  )
-   ]
-)
-</code></pre>
-<p><strong>Differences:</strong></p>
-<ul>
-<li>Row 0, column 'result': expected '2023-01-20' but got '2023-01-20 00:00:00.0'</li>
-</ul>
-<p><strong>Expected (Postgres):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2023-01-20</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Actual (Legend):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2023-01-20 00:00:00.0</td>
 </tr>
 </tbody>
 </table>
@@ -4383,6 +3989,108 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-json_hash_arrow_path-Relation"></a></p>
+<h3>❌ json_hash_arrow_path [Relation]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT json_val #&gt; '{a,b,c}' AS result FROM json_data WHERE id = 2
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT json_val #&gt; '{a,b,c}' AS result FROM func('e2e::rel_json_data') WHERE id = 2
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select jsonb_extract_path(cast(jsonb_extract_path(cast(jsonb_extract_path(cast(&quot;json_data_0&quot;.json_val as jsonb), Text'a') as jsonb), Text'b') as jsonb), Text'c') as &quot;result&quot; from public.json_data as &quot;json_data_0&quot; where &quot;json_data_0&quot;.id = 2
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">|#&gt;{e2e::TestDB.public.json_data}#-&gt;meta::pure::functions::relation::filter(
+  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 2
+)-&gt;meta::pure::functions::relation::project(
+  ~[
+     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.json_val-&gt;meta::pure::functions::variant::navigation::get('a')-&gt;meta::pure::functions::variant::navigation::get('b')-&gt;meta::pure::functions::variant::navigation::get('c')
+   ]
+)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected '&quot;nested&quot;' but got '&quot;&quot;nested&quot;&quot;'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;nested&quot;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;&quot;nested&quot;&quot;</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-jsonb_hash_arrow_path-Relation"></a></p>
+<h3>❌ jsonb_hash_arrow_path [Relation]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val #&gt; '{a,b,c}' AS result FROM json_data WHERE id = 2
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val #&gt; '{a,b,c}' AS result FROM func('e2e::rel_json_data') WHERE id = 2
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select jsonb_extract_path(cast(jsonb_extract_path(cast(jsonb_extract_path(cast(&quot;json_data_0&quot;.jsonb_val as jsonb), Text'a') as jsonb), Text'b') as jsonb), Text'c') as &quot;result&quot; from public.json_data as &quot;json_data_0&quot; where &quot;json_data_0&quot;.id = 2
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">|#&gt;{e2e::TestDB.public.json_data}#-&gt;meta::pure::functions::relation::filter(
+  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 2
+)-&gt;meta::pure::functions::relation::project(
+  ~[
+     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.jsonb_val-&gt;meta::pure::functions::variant::navigation::get('a')-&gt;meta::pure::functions::variant::navigation::get('b')-&gt;meta::pure::functions::variant::navigation::get('c')
+   ]
+)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected '&quot;nested&quot;' but got '&quot;&quot;nested&quot;&quot;'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;nested&quot;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;&quot;nested&quot;&quot;</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-array_gt-TDS"></a></p>
 <h3>❌ array_gt [TDS]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -4963,14 +4671,52 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
-<p><a id="fail-to_char_token__FF1-TDS"></a></p>
-<h3>❌ to_char_token__FF1 [TDS]</h3>
+<p><a id="fail-to_char_token__YYY-TDS"></a></p>
+<h3>❌ to_char_token__YYY [TDS]</h3>
 <p><strong>SQL (Postgres):</strong></p>
-<pre><code class="language-sql">SELECT to_char(TIMESTAMP '2024-06-15 13:45:22.123456', 'FF1') AS result
+<pre><code class="language-sql">SELECT to_char(TIMESTAMP '2024-06-15 13:45:22', 'YYY') AS result FROM dates WHERE id = 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT to_char(TIMESTAMP '2024-06-15 13:45:22', 'YYY') AS result FROM func('e2e::tds_dates') WHERE id = 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select Text'2' as &quot;result&quot; from public.dates as &quot;root&quot; where &quot;root&quot;.id = 1
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">|e2e::DateRow.all()-&gt;meta::pure::tds::project(
+  [
+    meta::pure::tds::col(
+      x: e2e::DateRow[1]|$x.id,
+      'id'
+    ),
+    meta::pure::tds::col(
+      x: e2e::DateRow[1]|$x.d,
+      'd'
+    ),
+    meta::pure::tds::col(
+      x: e2e::DateRow[1]|$x.ts,
+      'ts'
+    ),
+    meta::pure::tds::col(
+      x: e2e::DateRow[1]|$x.tsz,
+      'tsz'
+    )
+  ]
+)-&gt;meta::pure::tds::filter(
+  row: meta::pure::tds::TDSRow[1]|$row.getInteger('id') == 1
+)-&gt;meta::pure::tds::project(
+  meta::pure::tds::col(
+      row: meta::pure::tds::TDSRow[1]|meta::pure::functions::date::year(%2024-06-15T13:45:22+0000)-&gt;meta::pure::functions::string::toString()-&gt;meta::pure::functions::string::substring(
+        2,
+        3
+      ),
+      'result'
+    )
+)
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
-<li>Row 0, column 'result': expected '1' but got 'FF1'</li>
+<li>Row 0, column 'result': expected '024' but got '2'</li>
 </ul>
 <p><strong>Expected (Postgres):</strong></p>
 <table>
@@ -4981,7 +4727,7 @@ li { margin: 0.3em 0; }
 </thead>
 <tbody>
 <tr>
-<td>1</td>
+<td>024</td>
 </tr>
 </tbody>
 </table>
@@ -4994,19 +4740,54 @@ li { margin: 0.3em 0; }
 </thead>
 <tbody>
 <tr>
-<td>FF1</td>
+<td>2</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<p><a id="fail-to_char_token__FF1-Relation"></a></p>
-<h3>❌ to_char_token__FF1 [Relation]</h3>
+<p><a id="fail-to_char_token__D-TDS"></a></p>
+<h3>❌ to_char_token__D [TDS]</h3>
 <p><strong>SQL (Postgres):</strong></p>
-<pre><code class="language-sql">SELECT to_char(TIMESTAMP '2024-06-15 13:45:22.123456', 'FF1') AS result
+<pre><code class="language-sql">SELECT to_char(TIMESTAMP '2024-06-15 13:45:22', 'D') AS result FROM dates WHERE id = 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT to_char(TIMESTAMP '2024-06-15 13:45:22', 'D') AS result FROM func('e2e::tds_dates') WHERE id = 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select Text'6' as &quot;result&quot; from public.dates as &quot;root&quot; where &quot;root&quot;.id = 1
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">|e2e::DateRow.all()-&gt;meta::pure::tds::project(
+  [
+    meta::pure::tds::col(
+      x: e2e::DateRow[1]|$x.id,
+      'id'
+    ),
+    meta::pure::tds::col(
+      x: e2e::DateRow[1]|$x.d,
+      'd'
+    ),
+    meta::pure::tds::col(
+      x: e2e::DateRow[1]|$x.ts,
+      'ts'
+    ),
+    meta::pure::tds::col(
+      x: e2e::DateRow[1]|$x.tsz,
+      'tsz'
+    )
+  ]
+)-&gt;meta::pure::tds::filter(
+  row: meta::pure::tds::TDSRow[1]|$row.getInteger('id') == 1
+)-&gt;meta::pure::tds::project(
+  meta::pure::tds::col(
+      row: meta::pure::tds::TDSRow[1]|meta::pure::functions::date::dayOfWeekNumber(%2024-06-15T13:45:22+0000)-&gt;meta::pure::functions::string::toString(),
+      'result'
+    )
+)
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
-<li>Row 0, column 'result': expected '1' but got 'FF1'</li>
+<li>Row 0, column 'result': expected '7' but got '6'</li>
 </ul>
 <p><strong>Expected (Postgres):</strong></p>
 <table>
@@ -5017,7 +4798,7 @@ li { margin: 0.3em 0; }
 </thead>
 <tbody>
 <tr>
-<td>1</td>
+<td>7</td>
 </tr>
 </tbody>
 </table>
@@ -5030,19 +4811,41 @@ li { margin: 0.3em 0; }
 </thead>
 <tbody>
 <tr>
-<td>FF1</td>
+<td>6</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<p><a id="fail-to_char_token__FF6-TDS"></a></p>
-<h3>❌ to_char_token__FF6 [TDS]</h3>
+<p><a id="fail-to_char_token__D-Relation"></a></p>
+<h3>❌ to_char_token__D [Relation]</h3>
 <p><strong>SQL (Postgres):</strong></p>
-<pre><code class="language-sql">SELECT to_char(TIMESTAMP '2024-06-15 13:45:22.123456', 'FF6') AS result
+<pre><code class="language-sql">SELECT to_char(TIMESTAMP '2024-06-15 13:45:22', 'D') AS result FROM dates WHERE id = 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT to_char(TIMESTAMP '2024-06-15 13:45:22', 'D') AS result FROM func('e2e::rel_dates') WHERE id = 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select cast(date_part('dow', Timestamp'2024-06-15 13:45:22') as varchar) as &quot;result&quot; from public.dates as &quot;root&quot; where &quot;root&quot;.id = 1
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">|e2e::DateRow.all()-&gt;meta::pure::functions::relation::project(
+  ~[
+     id: x: e2e::DateRow[1]|$x.id,
+     d: x: e2e::DateRow[1]|$x.d,
+     ts: x: e2e::DateRow[1]|$x.ts,
+     tsz: x: e2e::DateRow[1]|$x.tsz
+   ]
+)-&gt;meta::pure::functions::relation::filter(
+  x: (id:Integer[1], d:StrictDate, ts:DateTime, tsz:DateTime)[1]|$x.id == 1
+)-&gt;meta::pure::functions::relation::project(
+  ~[
+     result: x: (id:Integer[1], d:StrictDate, ts:DateTime, tsz:DateTime)[1]|meta::pure::functions::date::dayOfWeekNumber(%2024-06-15T13:45:22+0000)-&gt;meta::pure::functions::string::toString()
+   ]
+)
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
-<li>Row 0, column 'result': expected '123456' but got 'FF6'</li>
+<li>Row 0, column 'result': expected '7' but got '6'</li>
 </ul>
 <p><strong>Expected (Postgres):</strong></p>
 <table>
@@ -5053,7 +4856,7 @@ li { margin: 0.3em 0; }
 </thead>
 <tbody>
 <tr>
-<td>123456</td>
+<td>7</td>
 </tr>
 </tbody>
 </table>
@@ -5066,187 +4869,7 @@ li { margin: 0.3em 0; }
 </thead>
 <tbody>
 <tr>
-<td>FF6</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p><a id="fail-to_char_token__FF6-Relation"></a></p>
-<h3>❌ to_char_token__FF6 [Relation]</h3>
-<p><strong>SQL (Postgres):</strong></p>
-<pre><code class="language-sql">SELECT to_char(TIMESTAMP '2024-06-15 13:45:22.123456', 'FF6') AS result
-</code></pre>
-<p><strong>Differences:</strong></p>
-<ul>
-<li>Row 0, column 'result': expected '123456' but got 'FF6'</li>
-</ul>
-<p><strong>Expected (Postgres):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>123456</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Actual (Legend):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>FF6</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p><a id="fail-to_char_token__TZH-TDS"></a></p>
-<h3>❌ to_char_token__TZH [TDS]</h3>
-<p><strong>SQL (Postgres):</strong></p>
-<pre><code class="language-sql">SELECT to_char(TIMESTAMPTZ '2024-06-15 13:45:22+02', 'TZH') AS result
-</code></pre>
-<p><strong>Differences:</strong></p>
-<ul>
-<li>Row 0, column 'result': expected '+00' but got 'GMTH'</li>
-</ul>
-<p><strong>Expected (Postgres):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>+00</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Actual (Legend):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GMTH</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p><a id="fail-to_char_token__TZH-Relation"></a></p>
-<h3>❌ to_char_token__TZH [Relation]</h3>
-<p><strong>SQL (Postgres):</strong></p>
-<pre><code class="language-sql">SELECT to_char(TIMESTAMPTZ '2024-06-15 13:45:22+02', 'TZH') AS result
-</code></pre>
-<p><strong>Differences:</strong></p>
-<ul>
-<li>Row 0, column 'result': expected '+00' but got 'GMTH'</li>
-</ul>
-<p><strong>Expected (Postgres):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>+00</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Actual (Legend):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GMTH</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p><a id="fail-to_char_token__TZM-TDS"></a></p>
-<h3>❌ to_char_token__TZM [TDS]</h3>
-<p><strong>SQL (Postgres):</strong></p>
-<pre><code class="language-sql">SELECT to_char(TIMESTAMPTZ '2024-06-15 13:45:22+02', 'TZM') AS result
-</code></pre>
-<p><strong>Differences:</strong></p>
-<ul>
-<li>Row 0, column 'result': expected '00' but got 'GMTM'</li>
-</ul>
-<p><strong>Expected (Postgres):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>00</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Actual (Legend):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GMTM</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p><a id="fail-to_char_token__TZM-Relation"></a></p>
-<h3>❌ to_char_token__TZM [Relation]</h3>
-<p><strong>SQL (Postgres):</strong></p>
-<pre><code class="language-sql">SELECT to_char(TIMESTAMPTZ '2024-06-15 13:45:22+02', 'TZM') AS result
-</code></pre>
-<p><strong>Differences:</strong></p>
-<ul>
-<li>Row 0, column 'result': expected '00' but got 'GMTM'</li>
-</ul>
-<p><strong>Expected (Postgres):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>00</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Actual (Legend):</strong></p>
-<table>
-<thead>
-<tr>
-<th>result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GMTM</td>
+<td>6</td>
 </tr>
 </tbody>
 </table>

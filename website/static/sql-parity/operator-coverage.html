@@ -52,22 +52,22 @@ li { margin: 0.3em 0; }
 <tbody>
 <tr>
 <td>TDS</td>
-<td>71</td>
+<td>72</td>
 <td>7</td>
-<td>8</td>
-<td>350</td>
+<td>7</td>
+<td>348</td>
 <td>6</td>
-<td>106</td>
+<td>108</td>
 <td>548</td>
 </tr>
 <tr>
 <td>Relation</td>
-<td>74</td>
+<td>77</td>
 <td>10</td>
-<td>4</td>
-<td>348</td>
+<td>5</td>
+<td>342</td>
 <td>6</td>
-<td>106</td>
+<td>108</td>
 <td>548</td>
 </tr>
 </tbody>
@@ -87,32 +87,32 @@ li { margin: 0.3em 0; }
 <tr>
 <td><a href="#result-mismatch">RESULT_MISMATCH</a></td>
 <td>Query executes but results differ from Postgres</td>
-<td>14</td>
 <td>13</td>
+<td>14</td>
 </tr>
 <tr>
 <td><a href="#type-error">TYPE_ERROR</a></td>
 <td>Type mismatch or cast error</td>
-<td>200</td>
-<td>175</td>
-</tr>
-<tr>
-<td><a href="#misc">MISC</a></td>
-<td>Other/uncategorized error</td>
-<td>33</td>
-<td>49</td>
+<td>207</td>
+<td>178</td>
 </tr>
 <tr>
 <td><a href="#unsupported-syntax">UNSUPPORTED_SYNTAX</a></td>
 <td>SQL construct recognized but not yet implemented</td>
-<td>36</td>
-<td>43</td>
+<td>38</td>
+<td>45</td>
+</tr>
+<tr>
+<td><a href="#misc">MISC</a></td>
+<td>Other/uncategorized error</td>
+<td>18</td>
+<td>34</td>
 </tr>
 <tr>
 <td><a href="#parse-error">PARSE_ERROR</a></td>
 <td>SQL syntax not parseable by Legend SQL parser</td>
-<td>125</td>
-<td>125</td>
+<td>131</td>
+<td>131</td>
 </tr>
 <tr>
 <td><a href="#function-not-supported">FUNCTION_NOT_SUPPORTED</a></td>
@@ -173,15 +173,15 @@ li { margin: 0.3em 0; }
 <tr>
 <td><a href="#mathematical-operators-93">Mathematical Operators (9.3)</a></td>
 <td>26</td>
-<td>6</td>
+<td>7</td>
 <td>2</td>
-<td>2</td>
-<td>9</td>
+<td>1</td>
+<td>8</td>
 <td>0</td>
-<td>6</td>
+<td>7</td>
 <td>2</td>
-<td>2</td>
-<td>9</td>
+<td>1</td>
+<td>8</td>
 <td>0</td>
 </tr>
 <tr>
@@ -204,12 +204,12 @@ li { margin: 0.3em 0; }
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>2</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>2</td>
+<td>1</td>
 <td>0</td>
 </tr>
 <tr>
@@ -220,10 +220,10 @@ li { margin: 0.3em 0; }
 <td>1</td>
 <td>13</td>
 <td>0</td>
+<td>2</td>
 <td>0</td>
-<td>0</td>
-<td>0</td>
-<td>18</td>
+<td>2</td>
+<td>14</td>
 <td>0</td>
 </tr>
 <tr>
@@ -624,13 +624,13 @@ li { margin: 0.3em 0; }
 </thead>
 <tbody>
 <tr>
-<td>🔴</td>
+<td>⚪</td>
 <td><code>#</code></td>
 <td><code>#(numeric, numeric) → numeric</code></td>
-<td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-op_bitxor__int__basic-TDS">MISC</a></td>
-<td></td>
+<td>UNSUPPORTED</td>
+<td>UNSUPPORTED</td>
+<td><a href="#fail-op_bitxor__int__basic-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>Unsupported feature</td>
 </tr>
 <tr>
 <td>🟡</td>
@@ -687,12 +687,12 @@ li { margin: 0.3em 0; }
 <td></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟢</td>
 <td><code>+</code></td>
 <td><code>+(datetime, numeric) → datetime</code></td>
-<td>FAIL (0/1)</td>
-<td>FAIL (0/1)</td>
-<td><a href="#fail-op_add__date_plus_int_days-TDS">RESULT_MISMATCH</a></td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
 <td></td>
 </tr>
 <tr>
@@ -1225,13 +1225,13 @@ li { margin: 0.3em 0; }
 </thead>
 <tbody>
 <tr>
-<td>🔴</td>
+<td>⚪</td>
 <td><code>#</code></td>
 <td><code>#(bit, bit) → bit</code></td>
-<td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-bit_xor-TDS">TYPE_ERROR</a></td>
-<td></td>
+<td>UNSUPPORTED</td>
+<td>UNSUPPORTED</td>
+<td><a href="#fail-bit_xor-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>Unsupported feature</td>
 </tr>
 <tr>
 <td>⚪</td>
@@ -1418,7 +1418,7 @@ li { margin: 0.3em 0; }
 <td><code>#-(jsonb, anyarray) → jsonb</code></td>
 <td>ERROR (0/1)</td>
 <td>ERROR (0/1)</td>
-<td><a href="#fail-jsonb_delete_path_column-TDS">MISC</a></td>
+<td><a href="#fail-jsonb_delete_path_column-TDS">TYPE_ERROR</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1426,8 +1426,8 @@ li { margin: 0.3em 0; }
 <td><code>#&gt;</code></td>
 <td><code>#&gt;(json, anyarray) → json</code></td>
 <td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-json_hash_arrow_path-TDS">MISC</a></td>
+<td>FAIL (0/1)</td>
+<td><a href="#fail-json_hash_arrow_path-TDS">TYPE_ERROR</a>, <a href="#fail-json_hash_arrow_path-Relation">RESULT_MISMATCH</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1435,26 +1435,26 @@ li { margin: 0.3em 0; }
 <td><code>#&gt;</code></td>
 <td><code>#&gt;(jsonb, anyarray) → jsonb</code></td>
 <td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-jsonb_hash_arrow_path-TDS">MISC</a></td>
+<td>FAIL (0/1)</td>
+<td><a href="#fail-jsonb_hash_arrow_path-TDS">TYPE_ERROR</a>, <a href="#fail-jsonb_hash_arrow_path-Relation">RESULT_MISMATCH</a></td>
 <td></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td><code>#&gt;&gt;</code></td>
 <td><code>#&gt;&gt;(json, anyarray) → text</code></td>
 <td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-json_hash_arrow_text_path-TDS">MISC</a></td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-json_hash_arrow_text_path-TDS">TYPE_ERROR</a></td>
 <td></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td><code>#&gt;&gt;</code></td>
 <td><code>#&gt;&gt;(jsonb, anyarray) → text</code></td>
 <td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-jsonb_hash_arrow_text_path-TDS">MISC</a></td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-jsonb_hash_arrow_text_path-TDS">TYPE_ERROR</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2692,7 +2692,7 @@ li { margin: 0.3em 0; }
 <td><code>#(box, box) → box</code></td>
 <td>ERROR (0/1)</td>
 <td>ERROR (0/1)</td>
-<td><a href="#fail-geo_hash__box_intersection-TDS">MISC</a></td>
+<td><a href="#fail-geo_hash__box_intersection-TDS">TYPE_ERROR</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2701,7 +2701,7 @@ li { margin: 0.3em 0; }
 <td><code>#(line, line) → point</code></td>
 <td>ERROR (0/1)</td>
 <td>ERROR (0/1)</td>
-<td><a href="#fail-geo_hash__line_intersection-TDS">MISC</a></td>
+<td><a href="#fail-geo_hash__line_intersection-TDS">TYPE_ERROR</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2710,7 +2710,7 @@ li { margin: 0.3em 0; }
 <td><code>#(lseg, lseg) → point</code></td>
 <td>ERROR (0/1)</td>
 <td>ERROR (0/1)</td>
-<td><a href="#fail-geo_hash__lseg_intersection-TDS">MISC</a></td>
+<td><a href="#fail-geo_hash__lseg_intersection-TDS">TYPE_ERROR</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2719,7 +2719,7 @@ li { margin: 0.3em 0; }
 <td><code>##(line, lseg) → point</code></td>
 <td>ERROR (0/1)</td>
 <td>ERROR (0/1)</td>
-<td><a href="#fail-geo_hashhash__line_lseg-TDS">MISC</a></td>
+<td><a href="#fail-geo_hashhash__line_lseg-TDS">PARSE_ERROR</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2728,7 +2728,7 @@ li { margin: 0.3em 0; }
 <td><code>##(lseg, box) → point</code></td>
 <td>ERROR (0/1)</td>
 <td>ERROR (0/1)</td>
-<td><a href="#fail-geo_hashhash__lseg_box-TDS">MISC</a></td>
+<td><a href="#fail-geo_hashhash__lseg_box-TDS">PARSE_ERROR</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2737,7 +2737,7 @@ li { margin: 0.3em 0; }
 <td><code>##(lseg, lseg) → point</code></td>
 <td>ERROR (0/1)</td>
 <td>ERROR (0/1)</td>
-<td><a href="#fail-geo_hashhash__lseg_lseg-TDS">MISC</a></td>
+<td><a href="#fail-geo_hashhash__lseg_lseg-TDS">PARSE_ERROR</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2746,7 +2746,7 @@ li { margin: 0.3em 0; }
 <td><code>##(point, box) → point</code></td>
 <td>ERROR (0/1)</td>
 <td>ERROR (0/1)</td>
-<td><a href="#fail-geo_hashhash__point_box-TDS">MISC</a></td>
+<td><a href="#fail-geo_hashhash__point_box-TDS">PARSE_ERROR</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2755,7 +2755,7 @@ li { margin: 0.3em 0; }
 <td><code>##(point, line) → point</code></td>
 <td>ERROR (0/1)</td>
 <td>ERROR (0/1)</td>
-<td><a href="#fail-geo_hashhash__point_line-TDS">MISC</a></td>
+<td><a href="#fail-geo_hashhash__point_line-TDS">PARSE_ERROR</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2764,7 +2764,7 @@ li { margin: 0.3em 0; }
 <td><code>##(point, lseg) → point</code></td>
 <td>ERROR (0/1)</td>
 <td>ERROR (0/1)</td>
-<td><a href="#fail-geo_hashhash__point_lseg-TDS">MISC</a></td>
+<td><a href="#fail-geo_hashhash__point_lseg-TDS">PARSE_ERROR</a></td>
 <td></td>
 </tr>
 <tr>
@@ -5451,7 +5451,7 @@ li { margin: 0.3em 0; }
 <hr />
 <h2>Error Details</h2>
 <p><a id="result-mismatch"></a></p>
-<h3>RESULT_MISMATCH (23 tests)</h3>
+<h3>RESULT_MISMATCH (24 tests)</h3>
 <h4><a id="fail-and__false_null-TDS"></a><a id="fail-and__false_null-Relation"></a><code>and__false_null</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -5571,22 +5571,6 @@ li { margin: 0.3em 0; }
 <p>null</p>
 </blockquote>
 <br>
-<h4><a id="fail-op_add__date_plus_int_days-TDS"></a><a id="fail-op_add__date_plus_int_days-Relation"></a><code>op_add__date_plus_int_days</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT d + 5 AS result FROM dates WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT d + 5 AS result FROM func('e2e::tds_dates') WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT d + 5 AS result FROM func('e2e::rel_dates') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>null</p>
-</blockquote>
-<br>
 <h4><a id="fail-op_sub__date_minus_int_days-TDS"></a><a id="fail-op_sub__date_minus_int_days-Relation"></a><code>op_sub__date_minus_int_days</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -5642,6 +5626,32 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT val || '-' || nullable_val AS result FROM func('e2e::tds_strings') ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>null</p>
+</blockquote>
+<br>
+<h4><a id="fail-json_hash_arrow_path-Relation"></a><code>json_hash_arrow_path</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT json_val #&gt; '{a,b,c}' AS result FROM json_data WHERE id = 2
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT json_val #&gt; '{a,b,c}' AS result FROM func('e2e::rel_json_data') WHERE id = 2
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>null</p>
+</blockquote>
+<br>
+<h4><a id="fail-jsonb_hash_arrow_path-Relation"></a><code>jsonb_hash_arrow_path</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val #&gt; '{a,b,c}' AS result FROM json_data WHERE id = 2
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val #&gt; '{a,b,c}' AS result FROM func('e2e::rel_json_data') WHERE id = 2
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
@@ -5778,7 +5788,7 @@ li { margin: 0.3em 0; }
 <p>null</p>
 </blockquote>
 <p><a id="type-error"></a></p>
-<h3>TYPE_ERROR (202 tests)</h3>
+<h3>TYPE_ERROR (209 tests)</h3>
 <h4><a id="fail-neq__xid_vs_numeric-TDS"></a><a id="fail-neq__xid_vs_numeric-Relation"></a><code>neq__xid_vs_numeric</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -5987,17 +5997,80 @@ li { margin: 0.3em 0; }
 <p>No value found for NAME</p>
 </blockquote>
 <br>
-<h4><a id="fail-bit_xor-TDS"></a><a id="fail-bit_xor-Relation"></a><code>bit_xor</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-jsonb_delete_path_column-TDS"></a><a id="fail-jsonb_delete_path_column-Relation"></a><code>jsonb_delete_path_column</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT CAST(B'1010' AS bit(4))
+<pre><code class="language-sql">SELECT jsonb_val #- '{a,b}' AS result FROM json_data WHERE id = 2
 </code></pre>
 <p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT CAST(B'1010' AS bit(4))
+<pre><code class="language-sql">SELECT jsonb_val #- '{a,b}' AS result FROM func('e2e::tds_json_data') WHERE id = 2
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>ERROR: java.lang.ClassCastException: class org.postgresql.util.PGobject cannot be cast to class java.lang.Boolean (org.postgresql.util.PGobject is in unnamed module of loader 'app'; java.lang.Boolean is in module java.base of loader 'bootstrap')</p>
+<p>Execution error at (resource:/core_relational/relational/functions/tableToTDS.pure line:48 column:108), &quot;Cast exception: Class cannot be cast to DataType&quot;</p>
+</blockquote>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val #- '{a,b}' AS result FROM json_data WHERE id = 2
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val #- '{a,b}' AS result FROM func('e2e::rel_json_data') WHERE id = 2
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>No value found for JSONB_PATH_DELETE</p>
+</blockquote>
+<br>
+<h4><a id="fail-json_hash_arrow_path-TDS"></a><code>json_hash_arrow_path</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT json_val #&gt; '{a,b,c}' AS result FROM json_data WHERE id = 2
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT json_val #&gt; '{a,b,c}' AS result FROM func('e2e::tds_json_data') WHERE id = 2
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Execution error at (resource:/core_relational/relational/functions/tableToTDS.pure line:48 column:108), &quot;Cast exception: Class cannot be cast to DataType&quot;</p>
+</blockquote>
+<br>
+<h4><a id="fail-jsonb_hash_arrow_path-TDS"></a><code>jsonb_hash_arrow_path</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val #&gt; '{a,b,c}' AS result FROM json_data WHERE id = 2
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val #&gt; '{a,b,c}' AS result FROM func('e2e::tds_json_data') WHERE id = 2
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Execution error at (resource:/core_relational/relational/functions/tableToTDS.pure line:48 column:108), &quot;Cast exception: Class cannot be cast to DataType&quot;</p>
+</blockquote>
+<br>
+<h4><a id="fail-json_hash_arrow_text_path-TDS"></a><code>json_hash_arrow_text_path</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT json_val #&gt;&gt; '{a,b,c}' AS result FROM json_data WHERE id = 2
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT json_val #&gt;&gt; '{a,b,c}' AS result FROM func('e2e::tds_json_data') WHERE id = 2
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Execution error at (resource:/core_relational/relational/functions/tableToTDS.pure line:48 column:108), &quot;Cast exception: Class cannot be cast to DataType&quot;</p>
+</blockquote>
+<br>
+<h4><a id="fail-jsonb_hash_arrow_text_path-TDS"></a><code>jsonb_hash_arrow_text_path</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val #&gt;&gt; '{a,b,c}' AS result FROM json_data WHERE id = 2
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val #&gt;&gt; '{a,b,c}' AS result FROM func('e2e::tds_json_data') WHERE id = 2
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Execution error at (resource:/core_relational/relational/functions/tableToTDS.pure line:48 column:108), &quot;Cast exception: Class cannot be cast to DataType&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-aclitem_array_append-TDS"></a><a id="fail-aclitem_array_append-Relation"></a><code>aclitem_array_append</code></h4>
@@ -6884,6 +6957,54 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>No value found for MACADDR8, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]</p>
+</blockquote>
+<br>
+<h4><a id="fail-geo_hash__box_intersection-TDS"></a><a id="fail-geo_hash__box_intersection-Relation"></a><code>geo_hash__box_intersection</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT box '(3,3),(1,1)' # box '(4,4),(2,2)' AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT box '(3,3),(1,1)' # box '(4,4),(2,2)' AS result FROM func('e2e::tds_persons') WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT box '(3,3),(1,1)' # box '(4,4),(2,2)' AS result FROM func('e2e::rel_persons') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>No value found for BOX, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]</p>
+</blockquote>
+<br>
+<h4><a id="fail-geo_hash__line_intersection-TDS"></a><a id="fail-geo_hash__line_intersection-Relation"></a><code>geo_hash__line_intersection</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT line '{1,0,0}' # line '{0,1,0}' AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT line '{1,0,0}' # line '{0,1,0}' AS result FROM func('e2e::tds_persons') WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT line '{1,0,0}' # line '{0,1,0}' AS result FROM func('e2e::rel_persons') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>No value found for LINE, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]</p>
+</blockquote>
+<br>
+<h4><a id="fail-geo_hash__lseg_intersection-TDS"></a><a id="fail-geo_hash__lseg_intersection-Relation"></a><code>geo_hash__lseg_intersection</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT lseg '[(0,0),(2,2)]' # lseg '[(0,2),(2,0)]' AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT lseg '[(0,0),(2,2)]' # lseg '[(0,2),(2,0)]' AS result FROM func('e2e::tds_persons') WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT lseg '[(0,0),(2,2)]' # lseg '[(0,2),(2,0)]' AS result FROM func('e2e::rel_persons') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>No value found for LSEG, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]</p>
 </blockquote>
 <br>
 <h4><a id="fail-geo_mul__box_point-TDS"></a><a id="fail-geo_mul__box_point-Relation"></a><code>geo_mul__box_point</code></h4>
@@ -8950,790 +9071,24 @@ li { margin: 0.3em 0; }
 <blockquote>
 <p>Execution error at (resource:/core_relational/relational/functions/tableToTDS.pure line:48 column:108), &quot;Cast exception: Class cannot be cast to DataType&quot;</p>
 </blockquote>
-<p><a id="misc"></a></p>
-<h3>MISC (52 tests)</h3>
+<p><a id="unsupported-syntax"></a></p>
+<h3>UNSUPPORTED_SYNTAX (46 tests)</h3>
 <h4><a id="fail-op_bitxor__int__basic-TDS"></a><a id="fail-op_bitxor__int__basic-Relation"></a><code>op_bitxor__int__basic</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT id, int_val
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT id, int_val
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Postgres: ERROR: column &quot;id&quot; does not exist
-Position: 8 | Legend: ERROR: org.postgresql.util.PSQLException: ERROR: column &quot;id&quot; does not exist
-Position: 8</p>
-</blockquote>
-<br>
-<h4><a id="fail-op_mod__by_zero__error-TDS"></a><a id="fail-op_mod__by_zero__error-Relation"></a><code>op_mod__by_zero__error</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT id, int_val % 0 AS result FROM numbers WHERE id = 1
+<pre><code class="language-sql">SELECT id, int_val # small_val AS result FROM numbers WHERE id = 1
 </code></pre>
 <p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT id, int_val % 0 AS result FROM func('e2e::tds_numbers') WHERE id = 1
+<pre><code class="language-sql">SELECT id, int_val # small_val AS result FROM func('e2e::tds_numbers') WHERE id = 1
 </code></pre>
 <p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT id, int_val % 0 AS result FROM func('e2e::rel_numbers') WHERE id = 1
+<pre><code class="language-sql">SELECT id, int_val # small_val AS result FROM func('e2e::rel_numbers') WHERE id = 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>ERROR: division by zero</p>
+<p>[unsupported-api] The function 'bitXor' (state: [Select, false]) is not supported yet</p>
 </blockquote>
 <br>
-<h4><a id="fail-op_mod__numeric__basic-Relation"></a><code>op_mod__numeric__basic</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT id, numeric_val % 3 AS result FROM numbers WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT id, numeric_val % 3 AS result FROM func('e2e::rel_numbers') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Can't find a match for function 'meta::pure::functions::math::mod(Float[1],Integer[1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tmod(Integer[1],Integer[1]):Integer[1]\n</p>
-</blockquote>
-<br>
-<h4><a id="fail-op_add__int_plus_date_days-TDS"></a><a id="fail-op_add__int_plus_date_days-Relation"></a><code>op_add__int_plus_date_days</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT 5 + d AS result FROM dates WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT 5 + d AS result FROM func('e2e::tds_dates') WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT 5 + d AS result FROM func('e2e::rel_dates') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>left side of date arithmetic must be non interval date</p>
-</blockquote>
-<br>
-<h4><a id="fail-op_div__by_zero__error-TDS"></a><a id="fail-op_div__by_zero__error-Relation"></a><code>op_div__by_zero__error</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT id, int_val / 0 AS result FROM numbers WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT id, int_val / 0 AS result FROM func('e2e::tds_numbers') WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT id, int_val / 0 AS result FROM func('e2e::rel_numbers') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>ERROR: division by zero</p>
-</blockquote>
-<br>
-<h4><a id="fail-text_fts_match_op-TDS"></a><a id="fail-text_fts_match_op-Relation"></a><code>text_fts_match_op</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT val @@ 'hello' AS result FROM strings WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT val @@ 'hello' AS result FROM func('e2e::tds_strings') WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT val @@ 'hello' AS result FROM func('e2e::rel_strings') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>json operation left side must be variant</p>
-</blockquote>
-<br>
-<h4><a id="fail-jsonb_delete_path_column-TDS"></a><a id="fail-jsonb_delete_path_column-Relation"></a><code>jsonb_delete_path_column</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Postgres: ERROR: column &quot;jsonb_val&quot; does not exist
-Position: 8 | Legend: ERROR: org.postgresql.util.PSQLException: ERROR: column &quot;jsonb_val&quot; does not exist
-Position: 8</p>
-</blockquote>
-<br>
-<h4><a id="fail-json_hash_arrow_path-TDS"></a><a id="fail-json_hash_arrow_path-Relation"></a><code>json_hash_arrow_path</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT json_val
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT json_val
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Postgres: ERROR: column &quot;json_val&quot; does not exist
-Position: 8 | Legend: ERROR: org.postgresql.util.PSQLException: ERROR: column &quot;json_val&quot; does not exist
-Position: 8</p>
-</blockquote>
-<br>
-<h4><a id="fail-jsonb_hash_arrow_path-TDS"></a><a id="fail-jsonb_hash_arrow_path-Relation"></a><code>jsonb_hash_arrow_path</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Postgres: ERROR: column &quot;jsonb_val&quot; does not exist
-Position: 8 | Legend: ERROR: org.postgresql.util.PSQLException: ERROR: column &quot;jsonb_val&quot; does not exist
-Position: 8</p>
-</blockquote>
-<br>
-<h4><a id="fail-json_hash_arrow_text_path-TDS"></a><a id="fail-json_hash_arrow_text_path-Relation"></a><code>json_hash_arrow_text_path</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT json_val
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT json_val
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Postgres: ERROR: column &quot;json_val&quot; does not exist
-Position: 8 | Legend: ERROR: org.postgresql.util.PSQLException: ERROR: column &quot;json_val&quot; does not exist
-Position: 8</p>
-</blockquote>
-<br>
-<h4><a id="fail-jsonb_hash_arrow_text_path-TDS"></a><a id="fail-jsonb_hash_arrow_text_path-Relation"></a><code>jsonb_hash_arrow_text_path</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Postgres: ERROR: column &quot;jsonb_val&quot; does not exist
-Position: 8 | Legend: ERROR: org.postgresql.util.PSQLException: ERROR: column &quot;jsonb_val&quot; does not exist
-Position: 8</p>
-</blockquote>
-<br>
-<h4><a id="fail-array_lt-TDS"></a><a id="fail-array_lt-Relation"></a><code>array_lt</code></h4>
-<p>📘 <strong>TDS Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[1,2] &lt; ARRAY[1,3] AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[1, 2] &lt; ARRAY[1, 3] AS result FROM func('e2e::tds_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Execution error at ??, &quot;Cannot cast a collection of size 2 to multiplicity [1]&quot;</p>
-</blockquote>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[1,2] &lt; ARRAY[1,3] AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[1, 2] &lt; ARRAY[1, 3] AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Can't find a match for function 'lessThan(Integer[2],Integer[2])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tlessThan(U[0..1],Relation&lt;Z=(?:U)&gt;[1]):Boolean[1]\n\t\tlessThan(Boolean[1],Boolean[1]):Boolean[1]\n\t\tlessThan(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tlessThan(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tlessThan(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tlessThan(Date[1],Date[1]):Boolean[1]\n\t\tlessThan(Date[1],Date[0..1]):Boolean[1]\n\t\tlessThan(Date[0..1],Date[1]):Boolean[1]\n\t\tlessThan(Date[0..1],Date[0..1]):Boolean[1]\n\t\tlessThan(Number[1],Number[1]):Boolean[1]\n\t\tlessThan(Number[1],Number[0..1]):Boolean[1]\n\t\tlessThan(Number[0..1],Number[1]):Boolean[1]\n\t\tlessThan(Number[0..1],Number[0..1]):Boolean[1]\n\t\tlessThan(String[1],String[1]):Boolean[1]\n\t\tlessThan(String[1],String[0..1]):Boolean[1]\n\t\tlessThan(String[0..1],String[1]):Boolean[1]\n\t\tlessThan(String[0..1],String[0..1]):Boolean[1]\n</p>
-</blockquote>
-<br>
-<h4><a id="fail-array_lte-Relation"></a><code>array_lte</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[1,2] &lt;= ARRAY[1,3] AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[1, 2] &lt;= ARRAY[1, 3] AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Can't find a match for function 'lessThanEqual(Integer[2],Integer[2])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tlessThanEqual(U[0..1],Relation&lt;Z=(?:U)&gt;[1]):Boolean[1]\n\t\tlessThanEqual(Boolean[1],Boolean[1]):Boolean[1]\n\t\tlessThanEqual(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tlessThanEqual(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tlessThanEqual(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tlessThanEqual(Date[1],Date[1]):Boolean[1]\n\t\tlessThanEqual(Date[1],Date[0..1]):Boolean[1]\n\t\tlessThanEqual(Date[0..1],Date[1]):Boolean[1]\n\t\tlessThanEqual(Date[0..1],Date[0..1]):Boolean[1]\n\t\tlessThanEqual(Number[1],Number[1]):Boolean[1]\n\t\tlessThanEqual(Number[1],Number[0..1]):Boolean[1]\n\t\tlessThanEqual(Number[0..1],Number[1]):Boolean[1]\n\t\tlessThanEqual(Number[0..1],Number[0..1]):Boolean[1]\n\t\tlessThanEqual(String[1],String[1]):Boolean[1]\n\t\tlessThanEqual(String[1],String[0..1]):Boolean[1]\n\t\tlessThanEqual(String[0..1],String[1]):Boolean[1]\n\t\tlessThanEqual(String[0..1],String[0..1]):Boolean[1]\n</p>
-</blockquote>
-<br>
-<h4><a id="fail-array_neq-Relation"></a><code>array_neq</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[1,2,3] &lt;&gt; ARRAY[4,5,6] AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[1, 2, 3] &lt;&gt; ARRAY[4, 5, 6] AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Left multiplicity error. Please use 'exists' instead of '==' in the expression: [1, 2, 3] == [4, 5, 6]</p>
-</blockquote>
-<br>
-<h4><a id="fail-array_contained_by-TDS"></a><a id="fail-array_contained_by-Relation"></a><code>array_contained_by</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[2,3] &lt;@ ARRAY[1,2,3] AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[2, 3] &lt;@ ARRAY[1, 2, 3] AS result FROM func('e2e::tds_persons') WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[2, 3] &lt;@ ARRAY[1, 2, 3] AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>json operation left side must be variant</p>
-</blockquote>
-<br>
-<h4><a id="fail-array_eq-Relation"></a><code>array_eq</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[1,2,3] = ARRAY[1,2,3] AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[1, 2, 3] = ARRAY[1, 2, 3] AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Left multiplicity error. Please use 'exists' instead of '==' in the expression: [1, 2, 3] == [1, 2, 3]</p>
-</blockquote>
-<br>
-<h4><a id="fail-array_gt-Relation"></a><code>array_gt</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[1,3] &gt; ARRAY[1,2] AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[1, 3] &gt; ARRAY[1, 2] AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Can't find a match for function 'greaterThan(Integer[2],Integer[2])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tgreaterThan(U[0..1],Relation&lt;Z=(?:U)&gt;[1]):Boolean[1]\n\t\tgreaterThan(Boolean[1],Boolean[1]):Boolean[1]\n\t\tgreaterThan(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThan(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tgreaterThan(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThan(Date[1],Date[1]):Boolean[1]\n\t\tgreaterThan(Date[1],Date[0..1]):Boolean[1]\n\t\tgreaterThan(Date[0..1],Date[1]):Boolean[1]\n\t\tgreaterThan(Date[0..1],Date[0..1]):Boolean[1]\n\t\tgreaterThan(Number[1],Number[1]):Boolean[1]\n\t\tgreaterThan(Number[1],Number[0..1]):Boolean[1]\n\t\tgreaterThan(Number[0..1],Number[1]):Boolean[1]\n\t\tgreaterThan(Number[0..1],Number[0..1]):Boolean[1]\n\t\tgreaterThan(String[1],String[1]):Boolean[1]\n\t\tgreaterThan(String[1],String[0..1]):Boolean[1]\n\t\tgreaterThan(String[0..1],String[1]):Boolean[1]\n\t\tgreaterThan(String[0..1],String[0..1]):Boolean[1]\n</p>
-</blockquote>
-<br>
-<h4><a id="fail-array_gte-Relation"></a><code>array_gte</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[1,3] &gt;= ARRAY[1,2] AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[1, 3] &gt;= ARRAY[1, 2] AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Can't find a match for function 'greaterThanEqual(Integer[2],Integer[2])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tgreaterThanEqual(U[0..1],Relation&lt;Z=(?:U)&gt;[1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[1],Boolean[1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Date[1],Date[1]):Boolean[1]\n\t\tgreaterThanEqual(Date[1],Date[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Date[0..1],Date[1]):Boolean[1]\n\t\tgreaterThanEqual(Date[0..1],Date[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Number[1],Number[1]):Boolean[1]\n\t\tgreaterThanEqual(Number[1],Number[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Number[0..1],Number[1]):Boolean[1]\n\t\tgreaterThanEqual(Number[0..1],Number[0..1]):Boolean[1]\n\t\tgreaterThanEqual(String[1],String[1]):Boolean[1]\n\t\tgreaterThanEqual(String[1],String[0..1]):Boolean[1]\n\t\tgreaterThanEqual(String[0..1],String[1]):Boolean[1]\n\t\tgreaterThanEqual(String[0..1],String[0..1]):Boolean[1]\n</p>
-</blockquote>
-<br>
-<h4><a id="fail-jsonb_exists_all-Relation"></a><code>jsonb_exists_all</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val ?&amp; array['a','b'] AS result FROM json_data WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val ?&amp; ARRAY['a', 'b'] AS result FROM func('e2e::rel_json_data') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>json operation right side must be integer or string</p>
-</blockquote>
-<br>
-<h4><a id="fail-array_contains-TDS"></a><a id="fail-array_contains-Relation"></a><code>array_contains</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[1,2,3] @&gt; ARRAY[2,3] AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[1, 2, 3] @&gt; ARRAY[2, 3] AS result FROM func('e2e::tds_persons') WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[1, 2, 3] @&gt; ARRAY[2, 3] AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>json operation left side must be variant</p>
-</blockquote>
-<br>
-<h4><a id="fail-jsonb_lt-Relation"></a><code>jsonb_lt</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val &lt; '{&quot;z&quot;:9}' AS result FROM json_data WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val &lt; '{&quot;z&quot;:9}' AS result FROM func('e2e::rel_json_data') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Can't find a match for function 'lessThan(Variant[0..1],String[1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tlessThan(U[0..1],Relation&lt;Z=(?:U)&gt;[1]):Boolean[1]\n\t\tlessThan(Boolean[1],Boolean[1]):Boolean[1]\n\t\tlessThan(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tlessThan(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tlessThan(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tlessThan(Date[1],Date[1]):Boolean[1]\n\t\tlessThan(Date[1],Date[0..1]):Boolean[1]\n\t\tlessThan(Date[0..1],Date[1]):Boolean[1]\n\t\tlessThan(Date[0..1],Date[0..1]):Boolean[1]\n\t\tlessThan(Number[1],Number[1]):Boolean[1]\n\t\tlessThan(Number[1],Number[0..1]):Boolean[1]\n\t\tlessThan(Number[0..1],Number[1]):Boolean[1]\n\t\tlessThan(Number[0..1],Number[0..1]):Boolean[1]\n\t\tlessThan(String[1],String[1]):Boolean[1]\n\t\tlessThan(String[1],String[0..1]):Boolean[1]\n\t\tlessThan(String[0..1],String[1]):Boolean[1]\n\t\tlessThan(String[0..1],String[0..1]):Boolean[1]\n</p>
-</blockquote>
-<br>
-<h4><a id="fail-jsonb_lte-Relation"></a><code>jsonb_lte</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val &lt;= '{&quot;z&quot;:9}' AS result FROM json_data WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val &lt;= '{&quot;z&quot;:9}' AS result FROM func('e2e::rel_json_data') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Can't find a match for function 'lessThanEqual(Variant[0..1],String[1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tlessThanEqual(U[0..1],Relation&lt;Z=(?:U)&gt;[1]):Boolean[1]\n\t\tlessThanEqual(Boolean[1],Boolean[1]):Boolean[1]\n\t\tlessThanEqual(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tlessThanEqual(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tlessThanEqual(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tlessThanEqual(Date[1],Date[1]):Boolean[1]\n\t\tlessThanEqual(Date[1],Date[0..1]):Boolean[1]\n\t\tlessThanEqual(Date[0..1],Date[1]):Boolean[1]\n\t\tlessThanEqual(Date[0..1],Date[0..1]):Boolean[1]\n\t\tlessThanEqual(Number[1],Number[1]):Boolean[1]\n\t\tlessThanEqual(Number[1],Number[0..1]):Boolean[1]\n\t\tlessThanEqual(Number[0..1],Number[1]):Boolean[1]\n\t\tlessThanEqual(Number[0..1],Number[0..1]):Boolean[1]\n\t\tlessThanEqual(String[1],String[1]):Boolean[1]\n\t\tlessThanEqual(String[1],String[0..1]):Boolean[1]\n\t\tlessThanEqual(String[0..1],String[1]):Boolean[1]\n\t\tlessThanEqual(String[0..1],String[0..1]):Boolean[1]\n</p>
-</blockquote>
-<br>
-<h4><a id="fail-jsonb_neq-Relation"></a><code>jsonb_neq</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val &lt;&gt; '{&quot;a&quot;:1}' AS result FROM json_data WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val &lt;&gt; '{&quot;a&quot;:1}' AS result FROM func('e2e::rel_json_data') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>ERROR: operator does not exist: jsonb = text\n  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.\n  Position: 95</p>
-</blockquote>
-<br>
-<h4><a id="fail-jsonb_contained_by_column-Relation"></a><code>jsonb_contained_by_column</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:1}' &lt;@ jsonb_val AS result FROM json_data WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:1}' &lt;@ jsonb_val AS result FROM func('e2e::rel_json_data') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>json operation left side must be variant</p>
-</blockquote>
-<br>
-<h4><a id="fail-jsonb_eq-Relation"></a><code>jsonb_eq</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val = '{&quot;a&quot;:1,&quot;b&quot;:&quot;hello&quot;,&quot;c&quot;:null}' AS result FROM json_data WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val = '{&quot;a&quot;:1,&quot;b&quot;:&quot;hello&quot;,&quot;c&quot;:null}' AS result FROM func('e2e::rel_json_data') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>ERROR: operator does not exist: jsonb = text\n  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.\n  Position: 95</p>
-</blockquote>
-<br>
-<h4><a id="fail-jsonb_gt-Relation"></a><code>jsonb_gt</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val &gt; '{&quot;a&quot;:0}' AS result FROM json_data WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val &gt; '{&quot;a&quot;:0}' AS result FROM func('e2e::rel_json_data') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Can't find a match for function 'greaterThan(Variant[0..1],String[1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tgreaterThan(U[0..1],Relation&lt;Z=(?:U)&gt;[1]):Boolean[1]\n\t\tgreaterThan(Boolean[1],Boolean[1]):Boolean[1]\n\t\tgreaterThan(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThan(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tgreaterThan(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThan(Date[1],Date[1]):Boolean[1]\n\t\tgreaterThan(Date[1],Date[0..1]):Boolean[1]\n\t\tgreaterThan(Date[0..1],Date[1]):Boolean[1]\n\t\tgreaterThan(Date[0..1],Date[0..1]):Boolean[1]\n\t\tgreaterThan(Number[1],Number[1]):Boolean[1]\n\t\tgreaterThan(Number[1],Number[0..1]):Boolean[1]\n\t\tgreaterThan(Number[0..1],Number[1]):Boolean[1]\n\t\tgreaterThan(Number[0..1],Number[0..1]):Boolean[1]\n\t\tgreaterThan(String[1],String[1]):Boolean[1]\n\t\tgreaterThan(String[1],String[0..1]):Boolean[1]\n\t\tgreaterThan(String[0..1],String[1]):Boolean[1]\n\t\tgreaterThan(String[0..1],String[0..1]):Boolean[1]\n</p>
-</blockquote>
-<br>
-<h4><a id="fail-jsonb_gte-Relation"></a><code>jsonb_gte</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val &gt;= '{&quot;a&quot;:0}' AS result FROM json_data WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val &gt;= '{&quot;a&quot;:0}' AS result FROM func('e2e::rel_json_data') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Can't find a match for function 'greaterThanEqual(Variant[0..1],String[1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tgreaterThanEqual(U[0..1],Relation&lt;Z=(?:U)&gt;[1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[1],Boolean[1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Date[1],Date[1]):Boolean[1]\n\t\tgreaterThanEqual(Date[1],Date[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Date[0..1],Date[1]):Boolean[1]\n\t\tgreaterThanEqual(Date[0..1],Date[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Number[1],Number[1]):Boolean[1]\n\t\tgreaterThanEqual(Number[1],Number[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Number[0..1],Number[1]):Boolean[1]\n\t\tgreaterThanEqual(Number[0..1],Number[0..1]):Boolean[1]\n\t\tgreaterThanEqual(String[1],String[1]):Boolean[1]\n\t\tgreaterThanEqual(String[1],String[0..1]):Boolean[1]\n\t\tgreaterThanEqual(String[0..1],String[1]):Boolean[1]\n\t\tgreaterThanEqual(String[0..1],String[0..1]):Boolean[1]\n</p>
-</blockquote>
-<br>
-<h4><a id="fail-geo_hash__box_intersection-TDS"></a><a id="fail-geo_hash__box_intersection-Relation"></a><code>geo_hash__box_intersection</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT box '(3,3),(1,1)'
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT box '(3,3),(1,1)'
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>ERROR: org.postgresql.util.PSQLException: ERROR: relation &quot;metadata_1.namespace&quot; does not exist
-Position: 100</p>
-</blockquote>
-<br>
-<h4><a id="fail-geo_hash__line_intersection-TDS"></a><a id="fail-geo_hash__line_intersection-Relation"></a><code>geo_hash__line_intersection</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT line '{1,0,0}'
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT line '{1,0,0}'
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>ERROR: org.postgresql.util.PSQLException: ERROR: relation &quot;metadata_1.namespace&quot; does not exist
-Position: 100</p>
-</blockquote>
-<br>
-<h4><a id="fail-geo_hash__lseg_intersection-TDS"></a><a id="fail-geo_hash__lseg_intersection-Relation"></a><code>geo_hash__lseg_intersection</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT lseg '[(0,0),(2,2)]'
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT lseg '[(0,0),(2,2)]'
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>ERROR: org.postgresql.util.PSQLException: ERROR: relation &quot;metadata_1.namespace&quot; does not exist
-Position: 100</p>
-</blockquote>
-<br>
-<h4><a id="fail-geo_hashhash__line_lseg-TDS"></a><a id="fail-geo_hashhash__line_lseg-Relation"></a><code>geo_hashhash__line_lseg</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT line '{1,0,0}'
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT line '{1,0,0}'
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>ERROR: org.postgresql.util.PSQLException: ERROR: relation &quot;metadata_1.namespace&quot; does not exist
-Position: 100</p>
-</blockquote>
-<br>
-<h4><a id="fail-geo_hashhash__lseg_box-TDS"></a><a id="fail-geo_hashhash__lseg_box-Relation"></a><code>geo_hashhash__lseg_box</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT lseg '[(0,0),(5,5)]'
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT lseg '[(0,0),(5,5)]'
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>ERROR: org.postgresql.util.PSQLException: ERROR: relation &quot;metadata_1.namespace&quot; does not exist
-Position: 100</p>
-</blockquote>
-<br>
-<h4><a id="fail-geo_hashhash__lseg_lseg-TDS"></a><a id="fail-geo_hashhash__lseg_lseg-Relation"></a><code>geo_hashhash__lseg_lseg</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT lseg '[(0,0),(2,2)]'
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT lseg '[(0,0),(2,2)]'
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>ERROR: org.postgresql.util.PSQLException: ERROR: relation &quot;metadata_1.namespace&quot; does not exist
-Position: 100</p>
-</blockquote>
-<br>
-<h4><a id="fail-geo_hashhash__point_box-TDS"></a><a id="fail-geo_hashhash__point_box-Relation"></a><code>geo_hashhash__point_box</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT point '(0,0)'
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT point '(0,0)'
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>ERROR: org.postgresql.util.PSQLException: ERROR: relation &quot;metadata_1.namespace&quot; does not exist
-Position: 100</p>
-</blockquote>
-<br>
-<h4><a id="fail-geo_hashhash__point_line-TDS"></a><a id="fail-geo_hashhash__point_line-Relation"></a><code>geo_hashhash__point_line</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT point '(0,0)'
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT point '(0,0)'
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>ERROR: org.postgresql.util.PSQLException: ERROR: relation &quot;metadata_1.namespace&quot; does not exist
-Position: 100</p>
-</blockquote>
-<br>
-<h4><a id="fail-geo_hashhash__point_lseg-TDS"></a><a id="fail-geo_hashhash__point_lseg-Relation"></a><code>geo_hashhash__point_lseg</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT point '(0,0)'
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT point '(0,0)'
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>ERROR: org.postgresql.util.PSQLException: ERROR: relation &quot;metadata_1.namespace&quot; does not exist
-Position: 100</p>
-</blockquote>
-<br>
-<h4><a id="fail-geo_vertical__line-TDS"></a><a id="fail-geo_vertical__line-Relation"></a><code>geo_vertical__line</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT ?| line '{1,0,0}' AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT ? | line '{1,0,0}' AS result FROM func('e2e::tds_persons') WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT ? | line '{1,0,0}' AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>cannot determine type for positional parameter 1</p>
-</blockquote>
-<br>
-<h4><a id="fail-geo_vertical__lseg-TDS"></a><a id="fail-geo_vertical__lseg-Relation"></a><code>geo_vertical__lseg</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT ?| lseg '[(0,0),(0,5)]' AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT ? | lseg '[(0,0),(0,5)]' AS result FROM func('e2e::tds_persons') WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT ? | lseg '[(0,0),(0,5)]' AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>cannot determine type for positional parameter 1</p>
-</blockquote>
-<br>
-<h4><a id="fail-op_add__interval_plus_date-TDS"></a><a id="fail-op_add__interval_plus_date-Relation"></a><code>op_add__interval_plus_date</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT INTERVAL '1 day' + d AS result FROM dates WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT INTERVAL '1 day' + d AS result FROM func('e2e::tds_dates') WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT INTERVAL '1 day' + d AS result FROM func('e2e::rel_dates') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>right side of date arithmetic must be numeric or interval</p>
-</blockquote>
-<br>
-<h4><a id="fail-op_add__interval_plus_interval-TDS"></a><a id="fail-op_add__interval_plus_interval-Relation"></a><code>op_add__interval_plus_interval</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT INTERVAL '1 day' + INTERVAL '2 hours' AS result FROM dates WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT INTERVAL '1 day' + INTERVAL '2 hours' AS result FROM func('e2e::tds_dates') WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT INTERVAL '1 day' + INTERVAL '2 hours' AS result FROM func('e2e::rel_dates') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5210 column:13), &quot;Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper&quot;</p>
-</blockquote>
-<br>
-<h4><a id="fail-op_add__interval_plus_timestamp-TDS"></a><a id="fail-op_add__interval_plus_timestamp-Relation"></a><code>op_add__interval_plus_timestamp</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT INTERVAL '1 day' + ts AS result FROM dates WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT INTERVAL '1 day' + ts AS result FROM func('e2e::tds_dates') WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT INTERVAL '1 day' + ts AS result FROM func('e2e::rel_dates') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>right side of date arithmetic must be numeric or interval</p>
-</blockquote>
-<br>
-<h4><a id="fail-op_add__interval_plus_timestamptz-TDS"></a><a id="fail-op_add__interval_plus_timestamptz-Relation"></a><code>op_add__interval_plus_timestamptz</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT INTERVAL '1 day' + tsz AS result FROM dates WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT INTERVAL '1 day' + tsz AS result FROM func('e2e::tds_dates') WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT INTERVAL '1 day' + tsz AS result FROM func('e2e::rel_dates') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>right side of date arithmetic must be numeric or interval</p>
-</blockquote>
-<br>
-<h4><a id="fail-op_unary_minus__interval-TDS"></a><a id="fail-op_unary_minus__interval-Relation"></a><code>op_unary_minus__interval</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT -INTERVAL '1 day' AS result FROM dates WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT -INTERVAL '1 day' AS result FROM func('e2e::tds_dates') WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT -INTERVAL '1 day' AS result FROM func('e2e::rel_dates') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>interval literal only supported in certain contexts</p>
-</blockquote>
-<br>
-<h4><a id="fail-op_sub__interval_minus_interval-TDS"></a><a id="fail-op_sub__interval_minus_interval-Relation"></a><code>op_sub__interval_minus_interval</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT INTERVAL '1 day' - INTERVAL '2 hours' AS result FROM dates WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT INTERVAL '1 day' - INTERVAL '2 hours' AS result FROM func('e2e::tds_dates') WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT INTERVAL '1 day' - INTERVAL '2 hours' AS result FROM func('e2e::rel_dates') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5210 column:13), &quot;Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper&quot;</p>
-</blockquote>
-<br>
-<h4><a id="fail-op_sub__timestamp_minus_timestamp-TDS"></a><a id="fail-op_sub__timestamp_minus_timestamp-Relation"></a><code>op_sub__timestamp_minus_timestamp</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT ts - TIMESTAMP '2000-01-01 00:00:00' AS result FROM dates WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT ts - TIMESTAMP '2000-01-01 00:00:00' AS result FROM func('e2e::tds_dates') WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT ts - TIMESTAMP '2000-01-01 00:00:00' AS result FROM func('e2e::rel_dates') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>ERROR: Error while retrieving a row</p>
-</blockquote>
-<br>
-<h4><a id="fail-anycompatible_concat_scalar_array-Relation"></a><code>anycompatible_concat_scalar_array</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT 4 || ARRAY[1,2,3] AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT 4 || ARRAY[1, 2, 3] AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Can't find a match for function 'meta::pure::functions::string::toString(Integer[3])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\ttoString(Any[1]):String[1]\n</p>
-</blockquote>
-<br>
-<h4><a id="fail-anycompatible_concat_array_scalar-Relation"></a><code>anycompatible_concat_array_scalar</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[1,2,3] || 4 AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[1, 2, 3] || 4 AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Can't find a match for function 'meta::pure::functions::string::toString(Integer[3])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\ttoString(Any[1]):String[1]\n</p>
-</blockquote>
-<br>
-<h4><a id="fail-anycompatible_concat_array_array-Relation"></a><code>anycompatible_concat_array_array</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[1,2] || ARRAY[3,4] AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT ARRAY[1, 2] || ARRAY[3, 4] AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Can't find a match for function 'meta::pure::functions::string::toString(Integer[2])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\ttoString(Any[1]):String[1]\n</p>
-</blockquote>
-<br>
-<h4><a id="fail-comparison__select__multi_type-TDS"></a><a id="fail-comparison__select__multi_type-Relation"></a><code>comparison__select__multi_type</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT id, int_val &gt; 0 AS positive, float_val &gt; 0 AS float_positive, name &gt; 'D' AS name_after_d FROM persons WHERE id IN (1, 3, 5) ORDER BY id
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT id, int_val &gt; 0 AS positive, float_val &gt; 0 AS float_positive, name &gt; 'D' AS name_after_d FROM func('e2e::tds_persons') WHERE id IN (1, 3, 5) ORDER BY id
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT id, int_val &gt; 0 AS positive, float_val &gt; 0 AS float_positive, name &gt; 'D' AS name_after_d FROM func('e2e::rel_persons') WHERE id IN (1, 3, 5) ORDER BY id
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>no column found named: 'int_val'. Available columns: [id, name, age, salary, hire_date, active, dept_id]</p>
-</blockquote>
-<br>
-<h4><a id="fail-lt__string_literal_int__pg_unknown_cast-TDS"></a><a id="fail-lt__string_literal_int__pg_unknown_cast-Relation"></a><code>lt__string_literal_int__pg_unknown_cast</code></h4>
-<p>📘 <strong>TDS Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT CASE WHEN '5' &lt; int_val THEN true ELSE false END AS result FROM numbers WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT CASE WHEN '5' &lt; int_val THEN true ELSE false END AS result FROM func('e2e::tds_numbers') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>ERROR: operator does not exist: text &lt; integer\n  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.\n  Position: 89</p>
-</blockquote>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT CASE WHEN '5' &lt; int_val THEN true ELSE false END AS result FROM numbers WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT CASE WHEN '5' &lt; int_val THEN true ELSE false END AS result FROM func('e2e::rel_numbers') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Can't find a match for function 'lessThan(String[1],Integer[0..1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tlessThan(U[0..1],Relation&lt;Z=(?:U)&gt;[1]):Boolean[1]\n\t\tlessThan(Boolean[1],Boolean[1]):Boolean[1]\n\t\tlessThan(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tlessThan(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tlessThan(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tlessThan(Date[1],Date[1]):Boolean[1]\n\t\tlessThan(Date[1],Date[0..1]):Boolean[1]\n\t\tlessThan(Date[0..1],Date[1]):Boolean[1]\n\t\tlessThan(Date[0..1],Date[0..1]):Boolean[1]\n\t\tlessThan(Number[1],Number[1]):Boolean[1]\n\t\tlessThan(Number[1],Number[0..1]):Boolean[1]\n\t\tlessThan(Number[0..1],Number[1]):Boolean[1]\n\t\tlessThan(Number[0..1],Number[0..1]):Boolean[1]\n\t\tlessThan(String[1],String[1]):Boolean[1]\n\t\tlessThan(String[1],String[0..1]):Boolean[1]\n\t\tlessThan(String[0..1],String[1]):Boolean[1]\n\t\tlessThan(String[0..1],String[0..1]):Boolean[1]\n</p>
-</blockquote>
-<br>
-<h4><a id="fail-gte__string_literal_decimal__pg_unknown_cast-TDS"></a><a id="fail-gte__string_literal_decimal__pg_unknown_cast-Relation"></a><code>gte__string_literal_decimal__pg_unknown_cast</code></h4>
-<p>📘 <strong>TDS Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT CASE WHEN '50000.00' &gt;= salary THEN true ELSE false END AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT CASE WHEN '50000.00' &gt;= salary THEN true ELSE false END AS result FROM func('e2e::tds_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>ERROR: operator does not exist: text &gt;= numeric\n  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.\n  Position: 96</p>
-</blockquote>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT CASE WHEN '50000.00' &gt;= salary THEN true ELSE false END AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT CASE WHEN '50000.00' &gt;= salary THEN true ELSE false END AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Can't find a match for function 'greaterThanEqual(String[1],Float[0..1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tgreaterThanEqual(U[0..1],Relation&lt;Z=(?:U)&gt;[1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[1],Boolean[1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Date[1],Date[1]):Boolean[1]\n\t\tgreaterThanEqual(Date[1],Date[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Date[0..1],Date[1]):Boolean[1]\n\t\tgreaterThanEqual(Date[0..1],Date[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Number[1],Number[1]):Boolean[1]\n\t\tgreaterThanEqual(Number[1],Number[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Number[0..1],Number[1]):Boolean[1]\n\t\tgreaterThanEqual(Number[0..1],Number[0..1]):Boolean[1]\n\t\tgreaterThanEqual(String[1],String[1]):Boolean[1]\n\t\tgreaterThanEqual(String[1],String[0..1]):Boolean[1]\n\t\tgreaterThanEqual(String[0..1],String[1]):Boolean[1]\n\t\tgreaterThanEqual(String[0..1],String[0..1]):Boolean[1]\n</p>
-</blockquote>
-<br>
-<h4><a id="fail-eq__string_literal_boolean__pg_unknown_cast-TDS"></a><a id="fail-eq__string_literal_boolean__pg_unknown_cast-Relation"></a><code>eq__string_literal_boolean__pg_unknown_cast</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT CASE WHEN 'true' = active THEN 'match' ELSE 'no match' END AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT CASE WHEN 'true' = active THEN 'match' ELSE 'no match' END AS result FROM func('e2e::tds_persons') WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT CASE WHEN 'true' = active THEN 'match' ELSE 'no match' END AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>ERROR: operator does not exist: text = boolean\n  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.\n  Position: 92</p>
-</blockquote>
-<p><a id="unsupported-syntax"></a></p>
-<h3>UNSUPPORTED_SYNTAX (44 tests)</h3>
 <h4><a id="fail-op_bitand__bigint__basic-TDS"></a><a id="fail-op_bitand__bigint__basic-Relation"></a><code>op_bitand__bigint__basic</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -9988,6 +9343,22 @@ Position: 100</p>
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>parameters not currently supported for this cast type</p>
+</blockquote>
+<br>
+<h4><a id="fail-bit_xor-TDS"></a><a id="fail-bit_xor-Relation"></a><code>bit_xor</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT CAST(B'1010' AS bit(4)) # CAST(B'0110' AS bit(4)) AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT CAST(B'1010' AS bit(4)) # CAST(B'0110' AS bit(4)) AS result FROM func('e2e::tds_persons') WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT CAST(B'1010' AS bit(4)) # CAST(B'0110' AS bit(4)) AS result FROM func('e2e::rel_persons') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported Operation: Bit String</p>
 </blockquote>
 <br>
 <h4><a id="fail-bit_and-TDS"></a><a id="fail-bit_and-Relation"></a><code>bit_and</code></h4>
@@ -10416,8 +9787,574 @@ Position: 100</p>
 <blockquote>
 <p>subscript on variant not supported</p>
 </blockquote>
+<p><a id="misc"></a></p>
+<h3>MISC (37 tests)</h3>
+<h4><a id="fail-op_mod__by_zero__error-TDS"></a><a id="fail-op_mod__by_zero__error-Relation"></a><code>op_mod__by_zero__error</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT id, int_val % 0 AS result FROM numbers WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val % 0 AS result FROM func('e2e::tds_numbers') WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val % 0 AS result FROM func('e2e::rel_numbers') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>ERROR: division by zero</p>
+</blockquote>
+<br>
+<h4><a id="fail-op_mod__numeric__basic-Relation"></a><code>op_mod__numeric__basic</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT id, numeric_val % 3 AS result FROM numbers WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT id, numeric_val % 3 AS result FROM func('e2e::rel_numbers') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Can't find a match for function 'meta::pure::functions::math::mod(Float[1],Integer[1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tmod(Integer[1],Integer[1]):Integer[1]\n</p>
+</blockquote>
+<br>
+<h4><a id="fail-op_add__int_plus_date_days-TDS"></a><a id="fail-op_add__int_plus_date_days-Relation"></a><code>op_add__int_plus_date_days</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT 5 + d AS result FROM dates WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT 5 + d AS result FROM func('e2e::tds_dates') WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT 5 + d AS result FROM func('e2e::rel_dates') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>left side of date arithmetic must be non interval date</p>
+</blockquote>
+<br>
+<h4><a id="fail-op_div__by_zero__error-TDS"></a><a id="fail-op_div__by_zero__error-Relation"></a><code>op_div__by_zero__error</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT id, int_val / 0 AS result FROM numbers WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val / 0 AS result FROM func('e2e::tds_numbers') WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val / 0 AS result FROM func('e2e::rel_numbers') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>ERROR: division by zero</p>
+</blockquote>
+<br>
+<h4><a id="fail-text_fts_match_op-TDS"></a><a id="fail-text_fts_match_op-Relation"></a><code>text_fts_match_op</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT val @@ 'hello' AS result FROM strings WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT val @@ 'hello' AS result FROM func('e2e::tds_strings') WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT val @@ 'hello' AS result FROM func('e2e::rel_strings') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>json operation left side must be variant</p>
+</blockquote>
+<br>
+<h4><a id="fail-array_lt-TDS"></a><a id="fail-array_lt-Relation"></a><code>array_lt</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[1,2] &lt; ARRAY[1,3] AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[1, 2] &lt; ARRAY[1, 3] AS result FROM func('e2e::tds_persons') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Execution error at ??, &quot;Cannot cast a collection of size 2 to multiplicity [1]&quot;</p>
+</blockquote>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[1,2] &lt; ARRAY[1,3] AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[1, 2] &lt; ARRAY[1, 3] AS result FROM func('e2e::rel_persons') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Can't find a match for function 'lessThan(Integer[2],Integer[2])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tlessThan(U[0..1],Relation&lt;Z=(?:U)&gt;[1]):Boolean[1]\n\t\tlessThan(Boolean[1],Boolean[1]):Boolean[1]\n\t\tlessThan(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tlessThan(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tlessThan(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tlessThan(Date[1],Date[1]):Boolean[1]\n\t\tlessThan(Date[1],Date[0..1]):Boolean[1]\n\t\tlessThan(Date[0..1],Date[1]):Boolean[1]\n\t\tlessThan(Date[0..1],Date[0..1]):Boolean[1]\n\t\tlessThan(Number[1],Number[1]):Boolean[1]\n\t\tlessThan(Number[1],Number[0..1]):Boolean[1]\n\t\tlessThan(Number[0..1],Number[1]):Boolean[1]\n\t\tlessThan(Number[0..1],Number[0..1]):Boolean[1]\n\t\tlessThan(String[1],String[1]):Boolean[1]\n\t\tlessThan(String[1],String[0..1]):Boolean[1]\n\t\tlessThan(String[0..1],String[1]):Boolean[1]\n\t\tlessThan(String[0..1],String[0..1]):Boolean[1]\n</p>
+</blockquote>
+<br>
+<h4><a id="fail-array_lte-Relation"></a><code>array_lte</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[1,2] &lt;= ARRAY[1,3] AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[1, 2] &lt;= ARRAY[1, 3] AS result FROM func('e2e::rel_persons') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Can't find a match for function 'lessThanEqual(Integer[2],Integer[2])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tlessThanEqual(U[0..1],Relation&lt;Z=(?:U)&gt;[1]):Boolean[1]\n\t\tlessThanEqual(Boolean[1],Boolean[1]):Boolean[1]\n\t\tlessThanEqual(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tlessThanEqual(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tlessThanEqual(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tlessThanEqual(Date[1],Date[1]):Boolean[1]\n\t\tlessThanEqual(Date[1],Date[0..1]):Boolean[1]\n\t\tlessThanEqual(Date[0..1],Date[1]):Boolean[1]\n\t\tlessThanEqual(Date[0..1],Date[0..1]):Boolean[1]\n\t\tlessThanEqual(Number[1],Number[1]):Boolean[1]\n\t\tlessThanEqual(Number[1],Number[0..1]):Boolean[1]\n\t\tlessThanEqual(Number[0..1],Number[1]):Boolean[1]\n\t\tlessThanEqual(Number[0..1],Number[0..1]):Boolean[1]\n\t\tlessThanEqual(String[1],String[1]):Boolean[1]\n\t\tlessThanEqual(String[1],String[0..1]):Boolean[1]\n\t\tlessThanEqual(String[0..1],String[1]):Boolean[1]\n\t\tlessThanEqual(String[0..1],String[0..1]):Boolean[1]\n</p>
+</blockquote>
+<br>
+<h4><a id="fail-array_neq-Relation"></a><code>array_neq</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[1,2,3] &lt;&gt; ARRAY[4,5,6] AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[1, 2, 3] &lt;&gt; ARRAY[4, 5, 6] AS result FROM func('e2e::rel_persons') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Left multiplicity error. Please use 'exists' instead of '==' in the expression: [1, 2, 3] == [4, 5, 6]</p>
+</blockquote>
+<br>
+<h4><a id="fail-array_contained_by-TDS"></a><a id="fail-array_contained_by-Relation"></a><code>array_contained_by</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[2,3] &lt;@ ARRAY[1,2,3] AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[2, 3] &lt;@ ARRAY[1, 2, 3] AS result FROM func('e2e::tds_persons') WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[2, 3] &lt;@ ARRAY[1, 2, 3] AS result FROM func('e2e::rel_persons') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>json operation left side must be variant</p>
+</blockquote>
+<br>
+<h4><a id="fail-array_eq-Relation"></a><code>array_eq</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[1,2,3] = ARRAY[1,2,3] AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[1, 2, 3] = ARRAY[1, 2, 3] AS result FROM func('e2e::rel_persons') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Left multiplicity error. Please use 'exists' instead of '==' in the expression: [1, 2, 3] == [1, 2, 3]</p>
+</blockquote>
+<br>
+<h4><a id="fail-array_gt-Relation"></a><code>array_gt</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[1,3] &gt; ARRAY[1,2] AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[1, 3] &gt; ARRAY[1, 2] AS result FROM func('e2e::rel_persons') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Can't find a match for function 'greaterThan(Integer[2],Integer[2])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tgreaterThan(U[0..1],Relation&lt;Z=(?:U)&gt;[1]):Boolean[1]\n\t\tgreaterThan(Boolean[1],Boolean[1]):Boolean[1]\n\t\tgreaterThan(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThan(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tgreaterThan(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThan(Date[1],Date[1]):Boolean[1]\n\t\tgreaterThan(Date[1],Date[0..1]):Boolean[1]\n\t\tgreaterThan(Date[0..1],Date[1]):Boolean[1]\n\t\tgreaterThan(Date[0..1],Date[0..1]):Boolean[1]\n\t\tgreaterThan(Number[1],Number[1]):Boolean[1]\n\t\tgreaterThan(Number[1],Number[0..1]):Boolean[1]\n\t\tgreaterThan(Number[0..1],Number[1]):Boolean[1]\n\t\tgreaterThan(Number[0..1],Number[0..1]):Boolean[1]\n\t\tgreaterThan(String[1],String[1]):Boolean[1]\n\t\tgreaterThan(String[1],String[0..1]):Boolean[1]\n\t\tgreaterThan(String[0..1],String[1]):Boolean[1]\n\t\tgreaterThan(String[0..1],String[0..1]):Boolean[1]\n</p>
+</blockquote>
+<br>
+<h4><a id="fail-array_gte-Relation"></a><code>array_gte</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[1,3] &gt;= ARRAY[1,2] AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[1, 3] &gt;= ARRAY[1, 2] AS result FROM func('e2e::rel_persons') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Can't find a match for function 'greaterThanEqual(Integer[2],Integer[2])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tgreaterThanEqual(U[0..1],Relation&lt;Z=(?:U)&gt;[1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[1],Boolean[1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Date[1],Date[1]):Boolean[1]\n\t\tgreaterThanEqual(Date[1],Date[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Date[0..1],Date[1]):Boolean[1]\n\t\tgreaterThanEqual(Date[0..1],Date[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Number[1],Number[1]):Boolean[1]\n\t\tgreaterThanEqual(Number[1],Number[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Number[0..1],Number[1]):Boolean[1]\n\t\tgreaterThanEqual(Number[0..1],Number[0..1]):Boolean[1]\n\t\tgreaterThanEqual(String[1],String[1]):Boolean[1]\n\t\tgreaterThanEqual(String[1],String[0..1]):Boolean[1]\n\t\tgreaterThanEqual(String[0..1],String[1]):Boolean[1]\n\t\tgreaterThanEqual(String[0..1],String[0..1]):Boolean[1]\n</p>
+</blockquote>
+<br>
+<h4><a id="fail-jsonb_exists_all-Relation"></a><code>jsonb_exists_all</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val ?&amp; array['a','b'] AS result FROM json_data WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val ?&amp; ARRAY['a', 'b'] AS result FROM func('e2e::rel_json_data') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>json operation right side must be integer or string</p>
+</blockquote>
+<br>
+<h4><a id="fail-array_contains-TDS"></a><a id="fail-array_contains-Relation"></a><code>array_contains</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[1,2,3] @&gt; ARRAY[2,3] AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[1, 2, 3] @&gt; ARRAY[2, 3] AS result FROM func('e2e::tds_persons') WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[1, 2, 3] @&gt; ARRAY[2, 3] AS result FROM func('e2e::rel_persons') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>json operation left side must be variant</p>
+</blockquote>
+<br>
+<h4><a id="fail-jsonb_lt-Relation"></a><code>jsonb_lt</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val &lt; '{&quot;z&quot;:9}' AS result FROM json_data WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val &lt; '{&quot;z&quot;:9}' AS result FROM func('e2e::rel_json_data') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Can't find a match for function 'lessThan(Variant[0..1],String[1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tlessThan(U[0..1],Relation&lt;Z=(?:U)&gt;[1]):Boolean[1]\n\t\tlessThan(Boolean[1],Boolean[1]):Boolean[1]\n\t\tlessThan(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tlessThan(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tlessThan(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tlessThan(Date[1],Date[1]):Boolean[1]\n\t\tlessThan(Date[1],Date[0..1]):Boolean[1]\n\t\tlessThan(Date[0..1],Date[1]):Boolean[1]\n\t\tlessThan(Date[0..1],Date[0..1]):Boolean[1]\n\t\tlessThan(Number[1],Number[1]):Boolean[1]\n\t\tlessThan(Number[1],Number[0..1]):Boolean[1]\n\t\tlessThan(Number[0..1],Number[1]):Boolean[1]\n\t\tlessThan(Number[0..1],Number[0..1]):Boolean[1]\n\t\tlessThan(String[1],String[1]):Boolean[1]\n\t\tlessThan(String[1],String[0..1]):Boolean[1]\n\t\tlessThan(String[0..1],String[1]):Boolean[1]\n\t\tlessThan(String[0..1],String[0..1]):Boolean[1]\n</p>
+</blockquote>
+<br>
+<h4><a id="fail-jsonb_lte-Relation"></a><code>jsonb_lte</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val &lt;= '{&quot;z&quot;:9}' AS result FROM json_data WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val &lt;= '{&quot;z&quot;:9}' AS result FROM func('e2e::rel_json_data') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Can't find a match for function 'lessThanEqual(Variant[0..1],String[1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tlessThanEqual(U[0..1],Relation&lt;Z=(?:U)&gt;[1]):Boolean[1]\n\t\tlessThanEqual(Boolean[1],Boolean[1]):Boolean[1]\n\t\tlessThanEqual(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tlessThanEqual(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tlessThanEqual(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tlessThanEqual(Date[1],Date[1]):Boolean[1]\n\t\tlessThanEqual(Date[1],Date[0..1]):Boolean[1]\n\t\tlessThanEqual(Date[0..1],Date[1]):Boolean[1]\n\t\tlessThanEqual(Date[0..1],Date[0..1]):Boolean[1]\n\t\tlessThanEqual(Number[1],Number[1]):Boolean[1]\n\t\tlessThanEqual(Number[1],Number[0..1]):Boolean[1]\n\t\tlessThanEqual(Number[0..1],Number[1]):Boolean[1]\n\t\tlessThanEqual(Number[0..1],Number[0..1]):Boolean[1]\n\t\tlessThanEqual(String[1],String[1]):Boolean[1]\n\t\tlessThanEqual(String[1],String[0..1]):Boolean[1]\n\t\tlessThanEqual(String[0..1],String[1]):Boolean[1]\n\t\tlessThanEqual(String[0..1],String[0..1]):Boolean[1]\n</p>
+</blockquote>
+<br>
+<h4><a id="fail-jsonb_neq-Relation"></a><code>jsonb_neq</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val &lt;&gt; '{&quot;a&quot;:1}' AS result FROM json_data WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val &lt;&gt; '{&quot;a&quot;:1}' AS result FROM func('e2e::rel_json_data') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>ERROR: operator does not exist: jsonb = text\n  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.\n  Position: 95</p>
+</blockquote>
+<br>
+<h4><a id="fail-jsonb_contained_by_column-Relation"></a><code>jsonb_contained_by_column</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT '{&quot;a&quot;:1}' &lt;@ jsonb_val AS result FROM json_data WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT '{&quot;a&quot;:1}' &lt;@ jsonb_val AS result FROM func('e2e::rel_json_data') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>json operation left side must be variant</p>
+</blockquote>
+<br>
+<h4><a id="fail-jsonb_eq-Relation"></a><code>jsonb_eq</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val = '{&quot;a&quot;:1,&quot;b&quot;:&quot;hello&quot;,&quot;c&quot;:null}' AS result FROM json_data WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val = '{&quot;a&quot;:1,&quot;b&quot;:&quot;hello&quot;,&quot;c&quot;:null}' AS result FROM func('e2e::rel_json_data') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>ERROR: operator does not exist: jsonb = text\n  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.\n  Position: 95</p>
+</blockquote>
+<br>
+<h4><a id="fail-jsonb_gt-Relation"></a><code>jsonb_gt</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val &gt; '{&quot;a&quot;:0}' AS result FROM json_data WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val &gt; '{&quot;a&quot;:0}' AS result FROM func('e2e::rel_json_data') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Can't find a match for function 'greaterThan(Variant[0..1],String[1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tgreaterThan(U[0..1],Relation&lt;Z=(?:U)&gt;[1]):Boolean[1]\n\t\tgreaterThan(Boolean[1],Boolean[1]):Boolean[1]\n\t\tgreaterThan(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThan(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tgreaterThan(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThan(Date[1],Date[1]):Boolean[1]\n\t\tgreaterThan(Date[1],Date[0..1]):Boolean[1]\n\t\tgreaterThan(Date[0..1],Date[1]):Boolean[1]\n\t\tgreaterThan(Date[0..1],Date[0..1]):Boolean[1]\n\t\tgreaterThan(Number[1],Number[1]):Boolean[1]\n\t\tgreaterThan(Number[1],Number[0..1]):Boolean[1]\n\t\tgreaterThan(Number[0..1],Number[1]):Boolean[1]\n\t\tgreaterThan(Number[0..1],Number[0..1]):Boolean[1]\n\t\tgreaterThan(String[1],String[1]):Boolean[1]\n\t\tgreaterThan(String[1],String[0..1]):Boolean[1]\n\t\tgreaterThan(String[0..1],String[1]):Boolean[1]\n\t\tgreaterThan(String[0..1],String[0..1]):Boolean[1]\n</p>
+</blockquote>
+<br>
+<h4><a id="fail-jsonb_gte-Relation"></a><code>jsonb_gte</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val &gt;= '{&quot;a&quot;:0}' AS result FROM json_data WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT jsonb_val &gt;= '{&quot;a&quot;:0}' AS result FROM func('e2e::rel_json_data') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Can't find a match for function 'greaterThanEqual(Variant[0..1],String[1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tgreaterThanEqual(U[0..1],Relation&lt;Z=(?:U)&gt;[1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[1],Boolean[1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Date[1],Date[1]):Boolean[1]\n\t\tgreaterThanEqual(Date[1],Date[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Date[0..1],Date[1]):Boolean[1]\n\t\tgreaterThanEqual(Date[0..1],Date[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Number[1],Number[1]):Boolean[1]\n\t\tgreaterThanEqual(Number[1],Number[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Number[0..1],Number[1]):Boolean[1]\n\t\tgreaterThanEqual(Number[0..1],Number[0..1]):Boolean[1]\n\t\tgreaterThanEqual(String[1],String[1]):Boolean[1]\n\t\tgreaterThanEqual(String[1],String[0..1]):Boolean[1]\n\t\tgreaterThanEqual(String[0..1],String[1]):Boolean[1]\n\t\tgreaterThanEqual(String[0..1],String[0..1]):Boolean[1]\n</p>
+</blockquote>
+<br>
+<h4><a id="fail-geo_vertical__line-TDS"></a><a id="fail-geo_vertical__line-Relation"></a><code>geo_vertical__line</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT ?| line '{1,0,0}' AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT ? | line '{1,0,0}' AS result FROM func('e2e::tds_persons') WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT ? | line '{1,0,0}' AS result FROM func('e2e::rel_persons') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>cannot determine type for positional parameter 1</p>
+</blockquote>
+<br>
+<h4><a id="fail-geo_vertical__lseg-TDS"></a><a id="fail-geo_vertical__lseg-Relation"></a><code>geo_vertical__lseg</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT ?| lseg '[(0,0),(0,5)]' AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT ? | lseg '[(0,0),(0,5)]' AS result FROM func('e2e::tds_persons') WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT ? | lseg '[(0,0),(0,5)]' AS result FROM func('e2e::rel_persons') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>cannot determine type for positional parameter 1</p>
+</blockquote>
+<br>
+<h4><a id="fail-op_add__interval_plus_date-TDS"></a><a id="fail-op_add__interval_plus_date-Relation"></a><code>op_add__interval_plus_date</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT INTERVAL '1 day' + d AS result FROM dates WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT INTERVAL '1 day' + d AS result FROM func('e2e::tds_dates') WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT INTERVAL '1 day' + d AS result FROM func('e2e::rel_dates') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>right side of date arithmetic must be numeric or interval</p>
+</blockquote>
+<br>
+<h4><a id="fail-op_add__interval_plus_interval-TDS"></a><a id="fail-op_add__interval_plus_interval-Relation"></a><code>op_add__interval_plus_interval</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT INTERVAL '1 day' + INTERVAL '2 hours' AS result FROM dates WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT INTERVAL '1 day' + INTERVAL '2 hours' AS result FROM func('e2e::tds_dates') WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT INTERVAL '1 day' + INTERVAL '2 hours' AS result FROM func('e2e::rel_dates') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5210 column:13), &quot;Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper&quot;</p>
+</blockquote>
+<br>
+<h4><a id="fail-op_add__interval_plus_timestamp-TDS"></a><a id="fail-op_add__interval_plus_timestamp-Relation"></a><code>op_add__interval_plus_timestamp</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT INTERVAL '1 day' + ts AS result FROM dates WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT INTERVAL '1 day' + ts AS result FROM func('e2e::tds_dates') WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT INTERVAL '1 day' + ts AS result FROM func('e2e::rel_dates') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>right side of date arithmetic must be numeric or interval</p>
+</blockquote>
+<br>
+<h4><a id="fail-op_add__interval_plus_timestamptz-TDS"></a><a id="fail-op_add__interval_plus_timestamptz-Relation"></a><code>op_add__interval_plus_timestamptz</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT INTERVAL '1 day' + tsz AS result FROM dates WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT INTERVAL '1 day' + tsz AS result FROM func('e2e::tds_dates') WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT INTERVAL '1 day' + tsz AS result FROM func('e2e::rel_dates') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>right side of date arithmetic must be numeric or interval</p>
+</blockquote>
+<br>
+<h4><a id="fail-op_unary_minus__interval-TDS"></a><a id="fail-op_unary_minus__interval-Relation"></a><code>op_unary_minus__interval</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT -INTERVAL '1 day' AS result FROM dates WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT -INTERVAL '1 day' AS result FROM func('e2e::tds_dates') WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT -INTERVAL '1 day' AS result FROM func('e2e::rel_dates') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>interval literal only supported in certain contexts</p>
+</blockquote>
+<br>
+<h4><a id="fail-op_sub__interval_minus_interval-TDS"></a><a id="fail-op_sub__interval_minus_interval-Relation"></a><code>op_sub__interval_minus_interval</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT INTERVAL '1 day' - INTERVAL '2 hours' AS result FROM dates WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT INTERVAL '1 day' - INTERVAL '2 hours' AS result FROM func('e2e::tds_dates') WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT INTERVAL '1 day' - INTERVAL '2 hours' AS result FROM func('e2e::rel_dates') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5210 column:13), &quot;Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper&quot;</p>
+</blockquote>
+<br>
+<h4><a id="fail-op_sub__timestamp_minus_timestamp-TDS"></a><a id="fail-op_sub__timestamp_minus_timestamp-Relation"></a><code>op_sub__timestamp_minus_timestamp</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT ts - TIMESTAMP '2000-01-01 00:00:00' AS result FROM dates WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT ts - TIMESTAMP '2000-01-01 00:00:00' AS result FROM func('e2e::tds_dates') WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT ts - TIMESTAMP '2000-01-01 00:00:00' AS result FROM func('e2e::rel_dates') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>ERROR: Error while retrieving a row</p>
+</blockquote>
+<br>
+<h4><a id="fail-anycompatible_concat_scalar_array-Relation"></a><code>anycompatible_concat_scalar_array</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT 4 || ARRAY[1,2,3] AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT 4 || ARRAY[1, 2, 3] AS result FROM func('e2e::rel_persons') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Can't find a match for function 'meta::pure::functions::string::toString(Integer[3])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\ttoString(Any[1]):String[1]\n</p>
+</blockquote>
+<br>
+<h4><a id="fail-anycompatible_concat_array_scalar-Relation"></a><code>anycompatible_concat_array_scalar</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[1,2,3] || 4 AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[1, 2, 3] || 4 AS result FROM func('e2e::rel_persons') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Can't find a match for function 'meta::pure::functions::string::toString(Integer[3])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\ttoString(Any[1]):String[1]\n</p>
+</blockquote>
+<br>
+<h4><a id="fail-anycompatible_concat_array_array-Relation"></a><code>anycompatible_concat_array_array</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[1,2] || ARRAY[3,4] AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT ARRAY[1, 2] || ARRAY[3, 4] AS result FROM func('e2e::rel_persons') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Can't find a match for function 'meta::pure::functions::string::toString(Integer[2])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\ttoString(Any[1]):String[1]\n</p>
+</blockquote>
+<br>
+<h4><a id="fail-comparison__select__multi_type-TDS"></a><a id="fail-comparison__select__multi_type-Relation"></a><code>comparison__select__multi_type</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT id, int_val &gt; 0 AS positive, float_val &gt; 0 AS float_positive, name &gt; 'D' AS name_after_d FROM persons WHERE id IN (1, 3, 5) ORDER BY id
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val &gt; 0 AS positive, float_val &gt; 0 AS float_positive, name &gt; 'D' AS name_after_d FROM func('e2e::tds_persons') WHERE id IN (1, 3, 5) ORDER BY id
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val &gt; 0 AS positive, float_val &gt; 0 AS float_positive, name &gt; 'D' AS name_after_d FROM func('e2e::rel_persons') WHERE id IN (1, 3, 5) ORDER BY id
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>no column found named: 'int_val'. Available columns: [id, name, age, salary, hire_date, active, dept_id]</p>
+</blockquote>
+<br>
+<h4><a id="fail-lt__string_literal_int__pg_unknown_cast-TDS"></a><a id="fail-lt__string_literal_int__pg_unknown_cast-Relation"></a><code>lt__string_literal_int__pg_unknown_cast</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT CASE WHEN '5' &lt; int_val THEN true ELSE false END AS result FROM numbers WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT CASE WHEN '5' &lt; int_val THEN true ELSE false END AS result FROM func('e2e::tds_numbers') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>ERROR: operator does not exist: text &lt; integer\n  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.\n  Position: 89</p>
+</blockquote>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT CASE WHEN '5' &lt; int_val THEN true ELSE false END AS result FROM numbers WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT CASE WHEN '5' &lt; int_val THEN true ELSE false END AS result FROM func('e2e::rel_numbers') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Can't find a match for function 'lessThan(String[1],Integer[0..1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tlessThan(U[0..1],Relation&lt;Z=(?:U)&gt;[1]):Boolean[1]\n\t\tlessThan(Boolean[1],Boolean[1]):Boolean[1]\n\t\tlessThan(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tlessThan(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tlessThan(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tlessThan(Date[1],Date[1]):Boolean[1]\n\t\tlessThan(Date[1],Date[0..1]):Boolean[1]\n\t\tlessThan(Date[0..1],Date[1]):Boolean[1]\n\t\tlessThan(Date[0..1],Date[0..1]):Boolean[1]\n\t\tlessThan(Number[1],Number[1]):Boolean[1]\n\t\tlessThan(Number[1],Number[0..1]):Boolean[1]\n\t\tlessThan(Number[0..1],Number[1]):Boolean[1]\n\t\tlessThan(Number[0..1],Number[0..1]):Boolean[1]\n\t\tlessThan(String[1],String[1]):Boolean[1]\n\t\tlessThan(String[1],String[0..1]):Boolean[1]\n\t\tlessThan(String[0..1],String[1]):Boolean[1]\n\t\tlessThan(String[0..1],String[0..1]):Boolean[1]\n</p>
+</blockquote>
+<br>
+<h4><a id="fail-gte__string_literal_decimal__pg_unknown_cast-TDS"></a><a id="fail-gte__string_literal_decimal__pg_unknown_cast-Relation"></a><code>gte__string_literal_decimal__pg_unknown_cast</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT CASE WHEN '50000.00' &gt;= salary THEN true ELSE false END AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT CASE WHEN '50000.00' &gt;= salary THEN true ELSE false END AS result FROM func('e2e::tds_persons') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>ERROR: operator does not exist: text &gt;= numeric\n  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.\n  Position: 96</p>
+</blockquote>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT CASE WHEN '50000.00' &gt;= salary THEN true ELSE false END AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT CASE WHEN '50000.00' &gt;= salary THEN true ELSE false END AS result FROM func('e2e::rel_persons') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Can't find a match for function 'greaterThanEqual(String[1],Float[0..1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tgreaterThanEqual(U[0..1],Relation&lt;Z=(?:U)&gt;[1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[1],Boolean[1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[0..1],Boolean[1]):Boolean[1]\n\t\tgreaterThanEqual(Boolean[0..1],Boolean[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Date[1],Date[1]):Boolean[1]\n\t\tgreaterThanEqual(Date[1],Date[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Date[0..1],Date[1]):Boolean[1]\n\t\tgreaterThanEqual(Date[0..1],Date[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Number[1],Number[1]):Boolean[1]\n\t\tgreaterThanEqual(Number[1],Number[0..1]):Boolean[1]\n\t\tgreaterThanEqual(Number[0..1],Number[1]):Boolean[1]\n\t\tgreaterThanEqual(Number[0..1],Number[0..1]):Boolean[1]\n\t\tgreaterThanEqual(String[1],String[1]):Boolean[1]\n\t\tgreaterThanEqual(String[1],String[0..1]):Boolean[1]\n\t\tgreaterThanEqual(String[0..1],String[1]):Boolean[1]\n\t\tgreaterThanEqual(String[0..1],String[0..1]):Boolean[1]\n</p>
+</blockquote>
+<br>
+<h4><a id="fail-eq__string_literal_boolean__pg_unknown_cast-TDS"></a><a id="fail-eq__string_literal_boolean__pg_unknown_cast-Relation"></a><code>eq__string_literal_boolean__pg_unknown_cast</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT CASE WHEN 'true' = active THEN 'match' ELSE 'no match' END AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT CASE WHEN 'true' = active THEN 'match' ELSE 'no match' END AS result FROM func('e2e::tds_persons') WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT CASE WHEN 'true' = active THEN 'match' ELSE 'no match' END AS result FROM func('e2e::rel_persons') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>ERROR: operator does not exist: text = boolean\n  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.\n  Position: 92</p>
+</blockquote>
 <p><a id="parse-error"></a></p>
-<h3>PARSE_ERROR (126 tests)</h3>
+<h3>PARSE_ERROR (132 tests)</h3>
 <h4><a id="fail-op_abs__int__prefix-TDS"></a><a id="fail-op_abs__int__prefix-Relation"></a><code>op_abs__int__prefix</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -10902,27 +10839,105 @@ Position: 100</p>
 <h4><a id="fail-geo_hash__path_npoints-TDS"></a><a id="fail-geo_hash__path_npoints-Relation"></a><code>geo_hash__path_npoints</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT
+<pre><code class="language-sql">SELECT # path '((1,1),(2,2),(3,1))' AS result FROM persons WHERE id = 1
 </code></pre>
 <p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">null
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Rewrite failed: Unexpected token '<EOF>'. Expected one of: {AUTHORIZATION, TO, AT, ALL, DEALLOCATE, DISTINCT, NOT, EXISTS, ILIKE, NULL, TRUE, FALSE, IGNORE, RESPECT, FETCH, NEXT, SUBSTRING, TRIM, LEADING, TRAILING, BOTH, TIME, ZONE, YEAR, MONTH, DAY, HOUR, MINUTE, SECOND, CURRENT_DATE, CURRENT_TIME, CURRENT_TIMESTAMP, CURRENT_SCHEMA, CURRENT_USER, SESSION_USER, EXTRACT, CASE, IF, INTERVAL, LEFT, RIGHT, OVER, WINDOW, PARTITION, PROMOTE, RANGE, ROWS, PRECEDING, FOLLOWING, CURRENT, ROW, WITHOUT, BLOB, SWAP, GC, DANGLING, ARTIFACTS, DECOMMISSION, CLUSTER, REPOSITORY, SNAPSHOT, KILL, ONLY, OPEN, CLOSE, RENAME, REROUTE, MOVE, SHARD, ALLOCATE, REPLICA, CANCEL, RETRY, FAILED, BOOLEAN, BYTE, SHORT, INTEGER, INT, LONG, FLOAT, DOUBLE, PRECISION, TIMESTAMP, IP, CHARACTER, '&quot;CHAR&quot;', VARYING, OBJECT, STRING_TYPE, GEO_POINT, GEO_SHAPE, GLOBAL, SESSION, LOCAL, LICENSE, BEGIN, START, COMMIT, WORK, TRANSACTION, TRANSACTION_ISOLATION, CHARACTERISTICS, ISOLATION, LEVEL, SERIALIZABLE, REPEATABLE, COMMITTED, UNCOMMITTED, READ, WRITE, DEFERRABLE, REPLACE, LANGUAGE, ANALYZE, DISCARD, PLANS, SEQUENCES, TEMPORARY, TEMP, CHECK, EXPLAIN, FORMAT, TYPE, TEXT, GRAPHVIZ, LOGICAL, DISTRIBUTED, CAST, TRY_CAST, SHOW, TABLES, SCHEMAS, CATALOGS, COLUMNS, PARTITIONS, FUNCTIONS, MATERIALIZED, VIEW, OPTIMIZE, REFRESH, RESTORE, ALIAS, SYSTEM, BERNOULLI, TABLESAMPLE, VALUES, KEY, DUPLICATE, CONFLICT, DO, NOTHING, COPY, CLUSTERED, SHARDS, OFF, FULLTEXT, FILTER, PLAIN, STORAGE, RETURNING, DYNAMIC, STRICT, IGNORED, ARRAY, ANALYZER, EXTENDS, TOKENIZER, TOKEN_FILTERS, CHAR_FILTERS, PARTITIONED, PREPARE, MATCH, GENERATED, ALWAYS, USER, PRIVILEGES, SCHEMA, RETURN, SUMMARY, METADATA, PUBLICATION, SUBSCRIPTION, CONNECTION, ENABLE, DISABLE, DECLARE, CURSOR, ASENSITIVE, INSENSITIVE, BINARY, NO, SCROLL, HOLD, ABSOLUTE, FORWARD, BACKWARD, RELATIVE, PRIOR, '+', '-', '*', '(', '{', '[', '[]', '?', '$', STRING, ESCAPED_STRING, BIT_STRING, INTEGER_VALUE, DECIMAL_VALUE, IDENTIFIER, DIGIT_IDENTIFIER, QUOTED_IDENTIFIER, BACKQUOTED_IDENTIFIER, BEGIN_DOLLAR_QUOTED_STRING} at line 1, column 7</p>
+<p>Rewrite failed: Unexpected token '#' at line 1, column 8</p>
 </blockquote>
 <br>
 <h4><a id="fail-geo_hash__polygon_npoints-TDS"></a><a id="fail-geo_hash__polygon_npoints-Relation"></a><code>geo_hash__polygon_npoints</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT
+<pre><code class="language-sql">SELECT # polygon '((0,0),(0,1),(1,1),(1,0))' AS result FROM persons WHERE id = 1
 </code></pre>
 <p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">null
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Rewrite failed: Unexpected token '<EOF>'. Expected one of: {AUTHORIZATION, TO, AT, ALL, DEALLOCATE, DISTINCT, NOT, EXISTS, ILIKE, NULL, TRUE, FALSE, IGNORE, RESPECT, FETCH, NEXT, SUBSTRING, TRIM, LEADING, TRAILING, BOTH, TIME, ZONE, YEAR, MONTH, DAY, HOUR, MINUTE, SECOND, CURRENT_DATE, CURRENT_TIME, CURRENT_TIMESTAMP, CURRENT_SCHEMA, CURRENT_USER, SESSION_USER, EXTRACT, CASE, IF, INTERVAL, LEFT, RIGHT, OVER, WINDOW, PARTITION, PROMOTE, RANGE, ROWS, PRECEDING, FOLLOWING, CURRENT, ROW, WITHOUT, BLOB, SWAP, GC, DANGLING, ARTIFACTS, DECOMMISSION, CLUSTER, REPOSITORY, SNAPSHOT, KILL, ONLY, OPEN, CLOSE, RENAME, REROUTE, MOVE, SHARD, ALLOCATE, REPLICA, CANCEL, RETRY, FAILED, BOOLEAN, BYTE, SHORT, INTEGER, INT, LONG, FLOAT, DOUBLE, PRECISION, TIMESTAMP, IP, CHARACTER, '&quot;CHAR&quot;', VARYING, OBJECT, STRING_TYPE, GEO_POINT, GEO_SHAPE, GLOBAL, SESSION, LOCAL, LICENSE, BEGIN, START, COMMIT, WORK, TRANSACTION, TRANSACTION_ISOLATION, CHARACTERISTICS, ISOLATION, LEVEL, SERIALIZABLE, REPEATABLE, COMMITTED, UNCOMMITTED, READ, WRITE, DEFERRABLE, REPLACE, LANGUAGE, ANALYZE, DISCARD, PLANS, SEQUENCES, TEMPORARY, TEMP, CHECK, EXPLAIN, FORMAT, TYPE, TEXT, GRAPHVIZ, LOGICAL, DISTRIBUTED, CAST, TRY_CAST, SHOW, TABLES, SCHEMAS, CATALOGS, COLUMNS, PARTITIONS, FUNCTIONS, MATERIALIZED, VIEW, OPTIMIZE, REFRESH, RESTORE, ALIAS, SYSTEM, BERNOULLI, TABLESAMPLE, VALUES, KEY, DUPLICATE, CONFLICT, DO, NOTHING, COPY, CLUSTERED, SHARDS, OFF, FULLTEXT, FILTER, PLAIN, STORAGE, RETURNING, DYNAMIC, STRICT, IGNORED, ARRAY, ANALYZER, EXTENDS, TOKENIZER, TOKEN_FILTERS, CHAR_FILTERS, PARTITIONED, PREPARE, MATCH, GENERATED, ALWAYS, USER, PRIVILEGES, SCHEMA, RETURN, SUMMARY, METADATA, PUBLICATION, SUBSCRIPTION, CONNECTION, ENABLE, DISABLE, DECLARE, CURSOR, ASENSITIVE, INSENSITIVE, BINARY, NO, SCROLL, HOLD, ABSOLUTE, FORWARD, BACKWARD, RELATIVE, PRIOR, '+', '-', '*', '(', '{', '[', '[]', '?', '$', STRING, ESCAPED_STRING, BIT_STRING, INTEGER_VALUE, DECIMAL_VALUE, IDENTIFIER, DIGIT_IDENTIFIER, QUOTED_IDENTIFIER, BACKQUOTED_IDENTIFIER, BEGIN_DOLLAR_QUOTED_STRING} at line 1, column 7</p>
+<p>Rewrite failed: Unexpected token '#' at line 1, column 8</p>
+</blockquote>
+<br>
+<h4><a id="fail-geo_hashhash__line_lseg-TDS"></a><a id="fail-geo_hashhash__line_lseg-Relation"></a><code>geo_hashhash__line_lseg</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT line '{1,0,0}' ## lseg '[(1,1),(1,5)]' AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">null
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Rewrite failed: Unexpected token '#' at line 1, column 24</p>
+</blockquote>
+<br>
+<h4><a id="fail-geo_hashhash__lseg_box-TDS"></a><a id="fail-geo_hashhash__lseg_box-Relation"></a><code>geo_hashhash__lseg_box</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT lseg '[(0,0),(5,5)]' ## box '(3,3),(1,1)' AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">null
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Rewrite failed: Unexpected token '#' at line 1, column 30</p>
+</blockquote>
+<br>
+<h4><a id="fail-geo_hashhash__lseg_lseg-TDS"></a><a id="fail-geo_hashhash__lseg_lseg-Relation"></a><code>geo_hashhash__lseg_lseg</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT lseg '[(0,0),(2,2)]' ## lseg '[(0,2),(2,0)]' AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">null
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Rewrite failed: Unexpected token '#' at line 1, column 30</p>
+</blockquote>
+<br>
+<h4><a id="fail-geo_hashhash__point_box-TDS"></a><a id="fail-geo_hashhash__point_box-Relation"></a><code>geo_hashhash__point_box</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT point '(0,0)' ## box '(3,3),(1,1)' AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">null
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Rewrite failed: Unexpected token '#' at line 1, column 23</p>
+</blockquote>
+<br>
+<h4><a id="fail-geo_hashhash__point_line-TDS"></a><a id="fail-geo_hashhash__point_line-Relation"></a><code>geo_hashhash__point_line</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT point '(0,0)' ## line '{1,0,-5}' AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">null
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Rewrite failed: Unexpected token '#' at line 1, column 23</p>
+</blockquote>
+<br>
+<h4><a id="fail-geo_hashhash__point_lseg-TDS"></a><a id="fail-geo_hashhash__point_lseg-Relation"></a><code>geo_hashhash__point_lseg</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT point '(0,0)' ## lseg '[(1,1),(1,5)]' AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">null
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Rewrite failed: Unexpected token '#' at line 1, column 23</p>
 </blockquote>
 <br>
 <h4><a id="fail-geo_overlap__box_box-TDS"></a><a id="fail-geo_overlap__box_box-Relation"></a><code>geo_overlap__box_box</code></h4>
