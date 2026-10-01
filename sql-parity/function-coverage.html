@@ -56,8 +56,8 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><strong>Supported functions (PASS/PARTIAL)</strong></td>
-<td><strong>124 (35.8%)</strong></td>
-<td><strong>125 (36.1%)</strong></td>
+<td><strong>126 (36.4%)</strong></td>
+<td><strong>127 (36.7%)</strong></td>
 </tr>
 <tr>
 <td>Total tests</td>
@@ -66,13 +66,13 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td>PASS</td>
-<td>380</td>
-<td>390</td>
+<td>382</td>
+<td>392</td>
 </tr>
 <tr>
 <td>FAIL</td>
-<td>11</td>
-<td>12</td>
+<td>9</td>
+<td>10</td>
 </tr>
 <tr>
 <td>ERROR</td>
@@ -112,8 +112,8 @@ li { margin: 0.3em 0; }
 <tr>
 <td><a href="#result-mismatch">RESULT_MISMATCH</a></td>
 <td>Query executes but results differ from Postgres</td>
+<td>7</td>
 <td>9</td>
-<td>11</td>
 </tr>
 <tr>
 <td><a href="#misc">MISC</a></td>
@@ -388,14 +388,14 @@ li { margin: 0.3em 0; }
 <tr>
 <td><a href="#other-functions">Other Functions</a></td>
 <td>56</td>
-<td>38</td>
+<td>40</td>
 <td>0</td>
-<td>2</td>
+<td>0</td>
 <td>13</td>
 <td>0</td>
-<td>38</td>
+<td>40</td>
 <td>0</td>
-<td>2</td>
+<td>0</td>
 <td>13</td>
 <td>0</td>
 </tr>
@@ -3961,7 +3961,7 @@ li { margin: 0.3em 0; }
 <td><code>unnest(anyarray) → SETOF anyelement</code></td>
 <td>UNSUPPORTED</td>
 <td>UNSUPPORTED</td>
-<td><a href="#fail-unnest_anyarray_cov-TDS">FUNCTION_NOT_SUPPORTED</a></td>
+<td><a href="#fail-unnest__anyarray__from_table-TDS">FUNCTION_NOT_SUPPORTED</a></td>
 <td>Function not supported</td>
 </tr>
 <tr>
@@ -6952,12 +6952,12 @@ li { margin: 0.3em 0; }
 <td></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟢</td>
 <td><code>TIMESTAMP 'SS.SSSSSS'</code></td>
 <td><code>TIMESTAMP 'SS.SSSSSS'</code></td>
-<td>FAIL (0/1)</td>
-<td>FAIL (0/1)</td>
-<td><a href="#fail-date_literal__fractional_6_digits-TDS">RESULT_MISMATCH</a></td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
 <td></td>
 </tr>
 <tr>
@@ -6970,12 +6970,12 @@ li { margin: 0.3em 0; }
 <td></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟢</td>
 <td><code>TIMESTAMP 'SS.SSSSSSSSS'</code></td>
 <td><code>TIMESTAMP 'SS.SSSSSSSSS'</code></td>
-<td>FAIL (0/1)</td>
-<td>FAIL (0/1)</td>
-<td><a href="#fail-date_literal__fractional_9_digits-TDS">RESULT_MISMATCH</a></td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
 <td></td>
 </tr>
 <tr>
@@ -8501,7 +8501,7 @@ Functions with at least one working overload (e.g., <code>length(text)</code>) a
 </table>
 <h2>Error Details</h2>
 <p><a id="function-not-supported"></a></p>
-<h3>FUNCTION_NOT_SUPPORTED (239 tests)</h3>
+<h3>FUNCTION_NOT_SUPPORTED (240 tests)</h3>
 <h4><a id="fail-acosh__dp__from_table-TDS"></a><a id="fail-acosh__dp__from_table-Relation"></a><code>acosh__dp__from_table</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -11169,6 +11169,22 @@ Functions with at least one working overload (e.g., <code>length(text)</code>) a
 <p>No function matches the given name &quot;CARDINALITY&quot;</p>
 </blockquote>
 <br>
+<h4><a id="fail-unnest__anyarray__from_table-TDS"></a><a id="fail-unnest__anyarray__from_table-Relation"></a><code>unnest__anyarray__from_table</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT UNNEST(ARRAY[1,2,3]) AS result FROM dates WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT UNNEST(ARRAY[1, 2, 3]) AS result FROM func('e2e::tds_dates') WHERE id = 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT UNNEST(ARRAY[1, 2, 3]) AS result FROM func('e2e::rel_dates') WHERE id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>No function matches the given name &quot;UNNEST&quot;</p>
+</blockquote>
+<br>
 <h4><a id="fail-unnest_anyarray_cov-TDS"></a><a id="fail-unnest_anyarray_cov-Relation"></a><code>unnest_anyarray_cov</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -12161,7 +12177,7 @@ Functions with at least one working overload (e.g., <code>length(text)</code>) a
 <p>No function matches the given name &quot;JSONB_PATH_QUERY_FIRST&quot;</p>
 </blockquote>
 <p><a id="result-mismatch"></a></p>
-<h3>RESULT_MISMATCH (13 tests)</h3>
+<h3>RESULT_MISMATCH (11 tests)</h3>
 <h4><a id="fail-div__num_num__from_table-TDS"></a><a id="fail-div__num_num__from_table-Relation"></a><code>div__num_num__from_table</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -12326,38 +12342,6 @@ Functions with at least one working overload (e.g., <code>length(text)</code>) a
 </code></pre>
 <p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT ARRAY_POSITION(ARRAY[1, 2, 3], 2) AS result FROM func('e2e::rel_numbers') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>null</p>
-</blockquote>
-<br>
-<h4><a id="fail-date_literal__fractional_6_digits-TDS"></a><a id="fail-date_literal__fractional_6_digits-Relation"></a><code>date_literal__fractional_6_digits</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT TIMESTAMP '1999-01-08 04:05:06.123456' AS result FROM dates LIMIT 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT TIMESTAMP '1999-01-08 04:05:06.123456' AS result FROM func('e2e::tds_dates') LIMIT 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT TIMESTAMP '1999-01-08 04:05:06.123456' AS result FROM func('e2e::rel_dates') LIMIT 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>null</p>
-</blockquote>
-<br>
-<h4><a id="fail-date_literal__fractional_9_digits-TDS"></a><a id="fail-date_literal__fractional_9_digits-Relation"></a><code>date_literal__fractional_9_digits</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT TIMESTAMP '1999-01-08 04:05:06.123456789' AS result FROM dates LIMIT 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT TIMESTAMP '1999-01-08 04:05:06.123456789' AS result FROM func('e2e::tds_dates') LIMIT 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT TIMESTAMP '1999-01-08 04:05:06.123456789' AS result FROM func('e2e::rel_dates') LIMIT 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
