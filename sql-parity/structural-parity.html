@@ -46,13 +46,13 @@ li { margin: 0.3em 0; }
 <tbody>
 <tr>
 <td>Total features</td>
-<td>593</td>
-<td>593</td>
+<td>598</td>
+<td>598</td>
 </tr>
 <tr>
 <td>Total tests</td>
-<td>670</td>
-<td>670</td>
+<td>675</td>
+<td>675</td>
 </tr>
 <tr>
 <td>⚪ UNSUPPORTED</td>
@@ -61,8 +61,8 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td>✅ PASS</td>
-<td>349 (76.9%)</td>
-<td>478 (77.6%)</td>
+<td>354 (77.1%)</td>
+<td>483 (77.8%)</td>
 </tr>
 <tr>
 <td>❌ FAIL</td>
@@ -81,8 +81,8 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><strong>Pass rate</strong></td>
-<td><strong>76.9%</strong></td>
-<td><strong>77.6%</strong></td>
+<td><strong>77.1%</strong></td>
+<td><strong>77.8%</strong></td>
 </tr>
 </tbody>
 </table>
@@ -337,14 +337,14 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><a href="#aliases">aliases</a></td>
-<td>11</td>
-<td>11</td>
-<td>10</td>
+<td>15</td>
+<td>15</td>
+<td>14</td>
 <td>0</td>
 <td>0</td>
 <td>1</td>
 <td>0</td>
-<td>10</td>
+<td>14</td>
 <td>0</td>
 <td>0</td>
 <td>1</td>
@@ -472,14 +472,14 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><a href="#column_resolution_corpus">column_resolution_corpus</a></td>
-<td>120</td>
-<td>120</td>
-<td>70</td>
+<td>121</td>
+<td>121</td>
+<td>71</td>
 <td>0</td>
 <td>0</td>
 <td>1</td>
 <td>0</td>
-<td>113</td>
+<td>114</td>
 <td>0</td>
 <td>0</td>
 <td>2</td>
@@ -2292,6 +2292,38 @@ li { margin: 0.3em 0; }
 <td>ERROR (0/1)</td>
 <td><a href="#fail-alias_subquery_column_list-TDS">MISC</a></td>
 </tr>
+<tr>
+<td>🟢</td>
+<td>sibling select item reads the displaced base column</td>
+<td>1</td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
+</tr>
+<tr>
+<td>🟢</td>
+<td>displaced column must not escape the subquery</td>
+<td>1</td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
+</tr>
+<tr>
+<td>🟢</td>
+<td>two computed columns aliased over two source columns</td>
+<td>1</td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
+</tr>
+<tr>
+<td>🟢</td>
+<td>control - no collision, no displacement</td>
+<td>1</td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <p><a id="having"></a></p>
@@ -4007,6 +4039,14 @@ li { margin: 0.3em 0; }
 <tr>
 <td>🟢</td>
 <td>window ORDER BY UPPER(col) over a join</td>
+<td>1</td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
+</tr>
+<tr>
+<td>🟢</td>
+<td>two window sort keys whose expressions differ only by table qualifier</td>
 <td>1</td>
 <td>PASS (1/1)</td>
 <td>PASS (1/1)</td>
@@ -6303,7 +6343,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4192 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4220 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -7290,7 +7330,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1547 column:36), &quot;Match failure: null&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1575 column:36), &quot;Match failure: null&quot;</p>
 </blockquote>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
