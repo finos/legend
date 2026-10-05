@@ -1027,3 +1027,22 @@ week,week_ending,commit,era,adapter,group,platform,tests_passed,suite_tests,test
 2026-W39,2026-09-26,2356add6ae,json,Spanner,Store_Relational,compiled,471,1415,33.29,110,253,43.48,1415,253
 2026-W39,2026-09-26,2356add6ae,json,SqlServer,Store_Relational,compiled,633,1415,44.73,142,253,56.13,1415,253
 2026-W39,2026-09-26,2356add6ae,json,Trino,Store_Relational,compiled,760,1415,53.71,160,253,63.24,1415,253
+2026-W40,2026-10-04,2e0eca2ed5,json,ClickHouse,Store_Relational,compiled,779,1437,54.21,174,253,68.77,1437,253
+2026-W40,2026-10-04,2e0eca2ed5,json,DB2,Store_Relational,compiled,839,1437,58.39,164,253,64.82,1437,253
+2026-W40,2026-10-04,2e0eca2ed5,json,Databricks,Store_Relational,compiled,1148,1437,79.89,224,253,88.54,1437,253
+2026-W40,2026-10-04,2e0eca2ed5,json,Deephaven,Store_Deephaven,compiled,72,1437,5.01,30,253,11.86,907,148
+2026-W40,2026-10-04,2e0eca2ed5,json,DuckDB,Store_Relational,compiled,1178,1437,81.98,223,253,88.14,1437,253
+2026-W40,2026-10-04,2e0eca2ed5,json,H2,Store_Relational,compiled,945,1437,65.76,183,253,72.33,1437,253
+2026-W40,2026-10-04,2e0eca2ed5,json,Java,Platform,compiled,512,1437,35.63,147,253,58.1,1349,246
+2026-W40,2026-10-04,2e0eca2ed5,json,MemSQL,Store_Relational,compiled,587,1437,40.85,148,253,58.5,1437,253
+2026-W40,2026-10-04,2e0eca2ed5,json,Native (compiled),,compiled,1431,1437,99.58,253,253,100.0,1437,253
+2026-W40,2026-10-04,2e0eca2ed5,json,Native (interpreted),,interpreted,1430,1437,99.51,253,253,100.0,1437,253
+2026-W40,2026-10-04,2e0eca2ed5,json,Oracle,Store_Relational,compiled,799,1437,55.6,165,253,65.22,1437,253
+2026-W40,2026-10-04,2e0eca2ed5,json,Postgres,Store_Relational,compiled,1063,1437,73.97,204,253,80.63,1437,253
+2026-W40,2026-10-04,2e0eca2ed5,json,PythonLegendQL,Reverse_PCT,compiled,599,1437,41.68,126,253,49.8,1431,247
+2026-W40,2026-10-04,2e0eca2ed5,json,PythonPandasAPI,Reverse_PCT,compiled,601,1437,41.82,129,253,50.99,1431,247
+2026-W40,2026-10-04,2e0eca2ed5,json,SQL,Reverse_PCT,compiled,482,1437,33.54,114,253,45.06,1431,247
+2026-W40,2026-10-04,2e0eca2ed5,json,Snowflake,Store_Relational,compiled,1159,1437,80.65,222,253,87.75,1437,253
+2026-W40,2026-10-04,2e0eca2ed5,json,Spanner,Store_Relational,compiled,492,1437,34.24,110,253,43.48,1437,253
+2026-W40,2026-10-04,2e0eca2ed5,json,SqlServer,Store_Relational,compiled,652,1437,45.37,142,253,56.13,1437,253
+2026-W40,2026-10-04,2e0eca2ed5,json,Trino,Store_Relational,compiled,781,1437,54.35,160,253,63.24,1437,253
