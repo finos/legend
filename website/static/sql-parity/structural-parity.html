@@ -46,23 +46,23 @@ li { margin: 0.3em 0; }
 <tbody>
 <tr>
 <td>Total features</td>
-<td>598</td>
-<td>598</td>
+<td>612</td>
+<td>612</td>
 </tr>
 <tr>
 <td>Total tests</td>
-<td>675</td>
-<td>675</td>
+<td>691</td>
+<td>691</td>
 </tr>
 <tr>
 <td>⚪ UNSUPPORTED</td>
-<td>216</td>
-<td>54</td>
+<td>232</td>
+<td>52</td>
 </tr>
 <tr>
 <td>✅ PASS</td>
 <td>354 (77.1%)</td>
-<td>483 (77.8%)</td>
+<td>497 (77.8%)</td>
 </tr>
 <tr>
 <td>❌ FAIL</td>
@@ -72,7 +72,7 @@ li { margin: 0.3em 0; }
 <tr>
 <td>💥 ERROR</td>
 <td>94</td>
-<td>125</td>
+<td>129</td>
 </tr>
 <tr>
 <td>❓ SKIP</td>
@@ -109,19 +109,19 @@ li { margin: 0.3em 0; }
 <td><a href="#misc">MISC</a></td>
 <td>Other/uncategorized error</td>
 <td>43</td>
-<td>80</td>
+<td>85</td>
 </tr>
 <tr>
 <td><a href="#unsupported-syntax">UNSUPPORTED_SYNTAX</a></td>
 <td>SQL construct recognized but not yet implemented</td>
-<td>199</td>
-<td>35</td>
+<td>215</td>
+<td>33</td>
 </tr>
 <tr>
 <td><a href="#type-error">TYPE_ERROR</a></td>
 <td>Type mismatch or cast error</td>
 <td>19</td>
-<td>14</td>
+<td>13</td>
 </tr>
 <tr>
 <td><a href="#function-not-supported">FUNCTION_NOT_SUPPORTED</a></td>
@@ -187,17 +187,17 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><a href="#set_operations">set_operations</a></td>
-<td>11</td>
+<td>25</td>
+<td>32</td>
+<td>4</td>
+<td>1</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
 <td>16</td>
-<td>4</td>
 <td>1</td>
 <td>0</td>
-<td>4</td>
-<td>0</td>
-<td>4</td>
-<td>1</td>
-<td>0</td>
-<td>4</td>
+<td>8</td>
 <td>0</td>
 </tr>
 <tr>
@@ -781,20 +781,132 @@ li { margin: 0.3em 0; }
 <td><a href="#fail-union_with_agg-TDS">ALIAS_NOT_FOUND</a>, <a href="#fail-union_with_agg-Relation">MISC</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🟡</td>
 <td>EXCEPT</td>
-<td>1</td>
+<td>2</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
+<td>PASS (2/2)</td>
 <td><a href="#fail-except_basic-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
-<td>⚪</td>
-<td>INTERSECT</td>
+<td>🟡</td>
+<td>EXCEPT with LIMIT</td>
 <td>1</td>
 <td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-except_with_limit-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>Multiple EXCEPT</td>
+<td>1</td>
 <td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-except_multiple-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>EXCEPT with NULLs</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-except_nulls-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>EXCEPT with aggregates</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-except_with_agg-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-except_with_agg-Relation">MISC</a></td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>EXCEPT with expressions</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-except_expression-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-except_expression-Relation">MISC</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>EXCEPT count</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-except_count-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>INTERSECT</td>
+<td>2</td>
+<td>UNTESTED</td>
+<td>PASS (2/2)</td>
 <td><a href="#fail-intersect_basic-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>INTERSECT with LIMIT</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-intersect_with_limit-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>Multiple INTERSECT</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-intersect_multiple-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>INTERSECT with NULLs</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-intersect_nulls-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>INTERSECT with aggregates</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-intersect_with_agg-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-intersect_with_agg-Relation">MISC</a></td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>INTERSECT with expressions</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-intersect_expression-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-intersect_expression-Relation">MISC</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>INTERSECT count</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-intersect_count-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>EXCEPT with INTERSECT</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-except_then_intersect-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>UNION with EXCEPT</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-union_then_except-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
 <td>🟢</td>
@@ -834,7 +946,7 @@ li { margin: 0.3em 0; }
 <td>1</td>
 <td>ERROR (0/1)</td>
 <td>ERROR (0/1)</td>
-<td><a href="#fail-union_dedup_null-TDS">TYPE_ERROR</a></td>
+<td><a href="#fail-union_dedup_null-TDS">TYPE_ERROR</a>, <a href="#fail-union_dedup_null-Relation">MISC</a></td>
 </tr>
 </tbody>
 </table>
@@ -6087,7 +6199,7 @@ li { margin: 0.3em 0; }
 <p>The column 'offset_Relation_1__T_1__Integer_1__T_$0_1$_' can't be found (&quot;dept_id&quot;,&quot;cnt&quot;)</p>
 </blockquote>
 <p><a id="misc"></a></p>
-<h3>MISC (94 tests)</h3>
+<h3>MISC (99 tests)</h3>
 <h4><a id="fail-union_multiple_mixed-Relation"></a><code>union_multiple_mixed</code></h4>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -6098,7 +6210,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>The two relations are incompatible and can't be concatenated (src:String[1], name:String) and (dept2:String[1], name:String)</p>
+<p>The two relations are incompatible and can't be unioned (src:String[1], name:String) and (dept2:String[1], name:String)</p>
 </blockquote>
 <br>
 <h4><a id="fail-union_with_agg-Relation"></a><code>union_with_agg</code></h4>
@@ -6111,7 +6223,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>The two relations are incompatible and can't be concatenated (dept_id:Integer, cnt:Integer[1]) and (NULL:String[0], COUNT():Integer[1])</p>
+<p>The two relations are incompatible and can't be unioned (dept_id:Integer, cnt:Integer[1]) and (NULL:String[0], COUNT():Integer[1])</p>
 </blockquote>
 <br>
 <h4><a id="fail-union_with_agg_sum-Relation"></a><code>union_with_agg_sum</code></h4>
@@ -6124,7 +6236,59 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>The two relations are incompatible and can't be concatenated (label:String[1], dept_id:Integer, total:Float[1]) and (overall:String[1], NULL:String[0], SUM(salary):Float[1])</p>
+<p>The two relations are incompatible and can't be unioned (label:String[1], dept_id:Integer, total:Float[1]) and (overall:String[1], NULL:String[0], SUM(salary):Float[1])</p>
+</blockquote>
+<br>
+<h4><a id="fail-except_with_agg-Relation"></a><code>except_with_agg</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id EXCEPT SELECT id FROM departments WHERE budget &lt; 600000 ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id EXCEPT SELECT id FROM func('e2e::rel_departments') WHERE budget &lt; 600000 ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>The two relations are incompatible and can't be excepted (dept_id:Integer) and (id:Integer[1])</p>
+</blockquote>
+<br>
+<h4><a id="fail-except_expression-Relation"></a><code>except_expression</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT salary * 1.1 AS adjusted FROM persons WHERE dept_id = 1 AND salary IS NOT NULL EXCEPT SELECT salary * 0.9 FROM persons WHERE dept_id = 2 AND salary IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT salary * 1.1 AS adjusted FROM func('e2e::rel_persons') WHERE dept_id = 1 AND salary IS NOT NULL EXCEPT SELECT salary * 0.9 FROM func('e2e::rel_persons') WHERE dept_id = 2 AND salary IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>The two relations are incompatible and can't be excepted (adjusted:Float) and (salary * 0.9:Float)</p>
+</blockquote>
+<br>
+<h4><a id="fail-intersect_with_agg-Relation"></a><code>intersect_with_agg</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id INTERSECT SELECT id FROM departments WHERE budget &gt; 400000 ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id INTERSECT SELECT id FROM func('e2e::rel_departments') WHERE budget &gt; 400000 ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>The two relations are incompatible and can't be intersected (dept_id:Integer) and (id:Integer[1])</p>
+</blockquote>
+<br>
+<h4><a id="fail-intersect_expression-Relation"></a><code>intersect_expression</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT salary * 1.1 AS adjusted FROM persons WHERE dept_id = 1 AND salary IS NOT NULL INTERSECT SELECT salary * 0.9 FROM persons WHERE dept_id = 2 AND salary IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT salary * 1.1 AS adjusted FROM func('e2e::rel_persons') WHERE dept_id = 1 AND salary IS NOT NULL INTERSECT SELECT salary * 0.9 FROM func('e2e::rel_persons') WHERE dept_id = 2 AND salary IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>The two relations are incompatible and can't be intersected (adjusted:Float) and (salary * 0.9:Float)</p>
 </blockquote>
 <br>
 <h4><a id="fail-union_all_expression-Relation"></a><code>union_all_expression</code></h4>
@@ -6137,7 +6301,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>The two relations are incompatible and can't be concatenated (name:String, adjusted:Float) and (name:String, salary * 0.9:Float)</p>
+<p>The two relations are incompatible and can't be unioned (name:String, adjusted:Float) and (name:String, salary * 0.9:Float)</p>
 </blockquote>
 <br>
 <h4><a id="fail-union_with_case-Relation"></a><code>union_with_case</code></h4>
@@ -6150,7 +6314,20 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>The two relations are incompatible and can't be concatenated (status:String[1], name:String) and (inactive:String[1], name:String)</p>
+<p>The two relations are incompatible and can't be unioned (status:String[1], name:String) and (inactive:String[1], name:String)</p>
+</blockquote>
+<br>
+<h4><a id="fail-union_dedup_null-Relation"></a><code>union_dedup_null</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM persons UNION SELECT NULL ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM func('e2e::rel_persons') UNION SELECT NULL ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>The two relations are incompatible and can't be unioned (dept_id:Integer) and (value:String[1])</p>
 </blockquote>
 <br>
 <h4><a id="fail-subquery_correlated-Relation"></a><code>subquery_correlated</code></h4>
@@ -6317,7 +6494,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>The two relations are incompatible and can't be concatenated (name:String, salary:Float, band:String[1]) and (name:String, salary:Float, low:String[1])</p>
+<p>The two relations are incompatible and can't be unioned (name:String, salary:Float, band:String[1]) and (name:String, salary:Float, low:String[1])</p>
 </blockquote>
 <br>
 <h4><a id="fail-cte_filter_agg-TDS"></a><code>cte_filter_agg</code></h4>
@@ -6343,7 +6520,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4220 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4238 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -7330,7 +7507,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1575 column:36), &quot;Match failure: null&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1593 column:36), &quot;Match failure: null&quot;</p>
 </blockquote>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -7461,37 +7638,239 @@ li { margin: 0.3em 0; }
 <p>no column found named: 'salary'. Available columns: [dept_id, total]</p>
 </blockquote>
 <p><a id="unsupported-syntax"></a></p>
-<h3>UNSUPPORTED_SYNTAX (201 tests)</h3>
-<h4><a id="fail-except_basic-TDS"></a><a id="fail-except_basic-Relation"></a><code>except_basic</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h3>UNSUPPORTED_SYNTAX (217 tests)</h3>
+<h4><a id="fail-except_basic-TDS"></a><code>except_basic</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT dept_id FROM persons WHERE dept_id IS NOT NULL EXCEPT SELECT id FROM departments WHERE budget &lt; 600000 ORDER BY 1
+<pre><code class="language-sql">SELECT dept_id FROM persons WHERE dept_id IS NOT NULL EXCEPT SELECT id as dept_id FROM departments WHERE budget &lt; 600000 ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT dept_id FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL EXCEPT SELECT id FROM func('e2e::tds_departments') WHERE budget &lt; 600000 ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL EXCEPT SELECT id FROM func('e2e::rel_departments') WHERE budget &lt; 600000 ORDER BY 1
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL EXCEPT SELECT id AS dept_id FROM func('e2e::tds_departments') WHERE budget &lt; 600000 ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Unsupported: Except</p>
+<p>Unsupported: except only supported on relation inputs</p>
 </blockquote>
 <br>
-<h4><a id="fail-intersect_basic-TDS"></a><a id="fail-intersect_basic-Relation"></a><code>intersect_basic</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-except_strings-TDS"></a><code>except_strings</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT name FROM persons WHERE dept_id = 1 EXCEPT SELECT name FROM persons WHERE salary &gt; 70000 ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT name FROM func('e2e::tds_persons') WHERE dept_id = 1 EXCEPT SELECT name FROM func('e2e::tds_persons') WHERE salary &gt; 70000 ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: except only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-except_with_limit-TDS"></a><code>except_with_limit</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM persons WHERE dept_id IS NOT NULL EXCEPT SELECT id as dept_id FROM departments WHERE budget &lt; 600000 ORDER BY 1 LIMIT 5
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL EXCEPT SELECT id AS dept_id FROM func('e2e::tds_departments') WHERE budget &lt; 600000 ORDER BY 1 LIMIT 5
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: except only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-except_multiple-TDS"></a><code>except_multiple</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM persons WHERE dept_id IS NOT NULL EXCEPT SELECT id as dept_id FROM departments WHERE budget &lt; 400000 EXCEPT SELECT id as dept_id FROM departments WHERE budget &gt; 900000 ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL EXCEPT SELECT id AS dept_id FROM func('e2e::tds_departments') WHERE budget &lt; 400000 EXCEPT SELECT id AS dept_id FROM func('e2e::tds_departments') WHERE budget &gt; 900000 ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: except only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-except_nulls-TDS"></a><code>except_nulls</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT age FROM persons EXCEPT SELECT age FROM persons WHERE age &gt; 40 ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT age FROM func('e2e::tds_persons') EXCEPT SELECT age FROM func('e2e::tds_persons') WHERE age &gt; 40 ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: except only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-except_with_agg-TDS"></a><code>except_with_agg</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id EXCEPT SELECT id FROM departments WHERE budget &lt; 600000 ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id EXCEPT SELECT id FROM func('e2e::tds_departments') WHERE budget &lt; 600000 ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: except only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-except_expression-TDS"></a><code>except_expression</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT salary * 1.1 AS adjusted FROM persons WHERE dept_id = 1 AND salary IS NOT NULL EXCEPT SELECT salary * 0.9 FROM persons WHERE dept_id = 2 AND salary IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT salary * 1.1 AS adjusted FROM func('e2e::tds_persons') WHERE dept_id = 1 AND salary IS NOT NULL EXCEPT SELECT salary * 0.9 FROM func('e2e::tds_persons') WHERE dept_id = 2 AND salary IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: except only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-except_count-TDS"></a><code>except_count</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT COUNT(*) AS total FROM (SELECT dept_id FROM persons WHERE dept_id IS NOT NULL EXCEPT SELECT id as dept_id FROM departments WHERE budget &lt; 600000) sub
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT COUNT(*) AS total FROM (SELECT dept_id FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL EXCEPT SELECT id AS dept_id FROM func('e2e::tds_departments') WHERE budget &lt; 600000) sub
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: except only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-intersect_basic-TDS"></a><code>intersect_basic</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id FROM persons WHERE dept_id IS NOT NULL AND salary &gt; 50000 INTERSECT SELECT dept_id FROM persons WHERE dept_id IS NOT NULL AND age &gt; 30 ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary &gt; 50000 INTERSECT SELECT dept_id FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND age &gt; 30 ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND salary &gt; 50000 INTERSECT SELECT dept_id FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL AND age &gt; 30 ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Unsupported: Intersect</p>
+<p>Unsupported: except only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-intersect_strings-TDS"></a><code>intersect_strings</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT name FROM persons WHERE age &gt; 30 INTERSECT SELECT name FROM persons WHERE salary &gt; 70000 ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT name FROM func('e2e::tds_persons') WHERE age &gt; 30 INTERSECT SELECT name FROM func('e2e::tds_persons') WHERE salary &gt; 70000 ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: except only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-intersect_with_limit-TDS"></a><code>intersect_with_limit</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM persons WHERE dept_id IS NOT NULL AND salary &gt; 50000 INTERSECT SELECT dept_id FROM persons WHERE dept_id IS NOT NULL AND age &gt; 30 ORDER BY 1 LIMIT 5
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary &gt; 50000 INTERSECT SELECT dept_id FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND age &gt; 30 ORDER BY 1 LIMIT 5
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: except only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-intersect_multiple-TDS"></a><code>intersect_multiple</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM persons WHERE dept_id IS NOT NULL INTERSECT SELECT dept_id FROM persons WHERE salary &gt; 50000 INTERSECT SELECT dept_id FROM persons WHERE age &gt; 30 ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL INTERSECT SELECT dept_id FROM func('e2e::tds_persons') WHERE salary &gt; 50000 INTERSECT SELECT dept_id FROM func('e2e::tds_persons') WHERE age &gt; 30 ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: except only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-intersect_nulls-TDS"></a><code>intersect_nulls</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT age FROM persons INTERSECT SELECT age FROM persons WHERE age IS NULL ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT age FROM func('e2e::tds_persons') INTERSECT SELECT age FROM func('e2e::tds_persons') WHERE age IS NULL ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: except only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-intersect_with_agg-TDS"></a><code>intersect_with_agg</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id INTERSECT SELECT id FROM departments WHERE budget &gt; 400000 ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id INTERSECT SELECT id FROM func('e2e::tds_departments') WHERE budget &gt; 400000 ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: except only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-intersect_expression-TDS"></a><code>intersect_expression</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT salary * 1.1 AS adjusted FROM persons WHERE dept_id = 1 AND salary IS NOT NULL INTERSECT SELECT salary * 0.9 FROM persons WHERE dept_id = 2 AND salary IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT salary * 1.1 AS adjusted FROM func('e2e::tds_persons') WHERE dept_id = 1 AND salary IS NOT NULL INTERSECT SELECT salary * 0.9 FROM func('e2e::tds_persons') WHERE dept_id = 2 AND salary IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: except only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-intersect_count-TDS"></a><code>intersect_count</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT COUNT(*) AS total FROM (SELECT dept_id FROM persons WHERE dept_id IS NOT NULL AND salary &gt; 50000 INTERSECT SELECT dept_id FROM persons WHERE dept_id IS NOT NULL AND age &gt; 30) sub
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT COUNT(*) AS total FROM (SELECT dept_id FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND salary &gt; 50000 INTERSECT SELECT dept_id FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL AND age &gt; 30) sub
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: except only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-except_then_intersect-TDS"></a><code>except_then_intersect</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM persons WHERE dept_id IS NOT NULL EXCEPT SELECT id as dept_id FROM departments WHERE budget &lt; 400000 INTERSECT SELECT dept_id FROM persons WHERE salary &gt; 50000 ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL EXCEPT SELECT id AS dept_id FROM func('e2e::tds_departments') WHERE budget &lt; 400000 INTERSECT SELECT dept_id FROM func('e2e::tds_persons') WHERE salary &gt; 50000 ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: except only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-union_then_except-TDS"></a><code>union_then_except</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM persons WHERE dept_id = 1 UNION ALL SELECT dept_id FROM persons WHERE dept_id = 2 EXCEPT SELECT id as dept_id FROM departments WHERE budget &lt; 400000 ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT dept_id FROM func('e2e::tds_persons') WHERE dept_id = 1 UNION ALL SELECT dept_id FROM func('e2e::tds_persons') WHERE dept_id = 2 EXCEPT SELECT id AS dept_id FROM func('e2e::tds_departments') WHERE budget &lt; 400000 ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: except only supported on relation inputs</p>
 </blockquote>
 <br>
 <h4><a id="fail-subquery_in_where-TDS"></a><code>subquery_in_where</code></h4>
@@ -10297,20 +10676,17 @@ li { margin: 0.3em 0; }
 </blockquote>
 <p><a id="type-error"></a></p>
 <h3>TYPE_ERROR (22 tests)</h3>
-<h4><a id="fail-union_dedup_null-TDS"></a><a id="fail-union_dedup_null-Relation"></a><code>union_dedup_null</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-union_dedup_null-TDS"></a><code>union_dedup_null</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id FROM persons UNION SELECT NULL ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT dept_id FROM func('e2e::tds_persons') UNION SELECT NULL ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT dept_id FROM func('e2e::rel_persons') UNION SELECT NULL ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:3065 column:77), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:3177 column:77), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-cte_in_join-TDS"></a><code>cte_in_join</code></h4>
@@ -10323,7 +10699,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7699 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7797 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-cte_in_join_dept-TDS"></a><code>cte_in_join_dept</code></h4>
@@ -10336,7 +10712,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7699 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7797 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-cast_numeric_to_int-TDS"></a><a id="fail-cast_numeric_to_int-Relation"></a><code>cast_numeric_to_int</code></h4>
@@ -10378,7 +10754,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7208 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7306 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-lateral_unnest_string_to_array-Relation"></a><code>lateral_unnest_string_to_array</code></h4>
@@ -10391,7 +10767,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7208 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7306 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-lateral_unnest_string_to_array_correlated-Relation"></a><code>lateral_unnest_string_to_array_correlated</code></h4>
