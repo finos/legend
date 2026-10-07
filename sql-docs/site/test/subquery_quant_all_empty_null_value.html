@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>subquery_quant_all_empty_null_value &middot; Legend SQL</title><link rel="stylesheet" href="../assets/app.css"/></head><body><header class="site-header"><a href="../index.html">Legend SQL &#8680; PostgreSQL Parity</a></header><main><h1>subquery_quant_all_empty_null_value</h1><table class="kv"><tr><th>Category</th><td>subqueries</td></tr><tr><th>Feature</th><td>Quantified comparison ALL over an empty subquery</td></tr><tr><th>Function</th><td>-</td></tr><tr><th>Operator</th><td>-</td></tr><tr><th>Format token</th><td>-</td></tr><tr><th>Signature</th><td>-</td></tr></table><table class="status-table"><tr><th>Path</th><th>Status</th><th>Expected</th></tr><tr><td>TDS</td><td class="status-fail" aria-label="Error">❌ ERROR</td><td>ERROR</td></tr><tr><td>Relation</td><td class="status-fail" aria-label="Fail">❌ FAIL</td><td>FAIL</td></tr></table><h2>Reference SQL</h2><pre class="sql">SELECT p.name FROM persons p WHERE p.age &gt; ALL (SELECT p2.age FROM persons p2 WHERE p2.id &gt; 100) ORDER BY 1</pre><h2 id="tds">TDS path &mdash; <span class="status-fail">❌ ERROR</span></h2><h3>Input SQL</h3><pre class="sql">SELECT p.name FROM persons p WHERE p.age &gt; ALL (SELECT p2.age FROM persons p2 WHERE p2.id &gt; 100) ORDER BY 1</pre><h3>Legend SQL (rewritten)</h3><pre class="sql">SELECT p.name FROM func(&#39;e2e::tds_persons&#39;) p WHERE p.age &gt; ALL(SELECT p2.age FROM func(&#39;e2e::tds_persons&#39;) p2 WHERE p2.id &gt; 100) ORDER BY 1</pre><h3 id="error-tds">Error</h3><pre class="err">Unsupported: quantified comparison only supported on relation inputs</pre><h2 id="relation">Relation path &mdash; <span class="status-fail">❌ FAIL</span></h2><h3>Input SQL</h3><pre class="sql">SELECT p.name FROM persons p WHERE p.age &gt; ALL (SELECT p2.age FROM persons p2 WHERE p2.id &gt; 100) ORDER BY 1</pre><h3>Legend SQL (rewritten)</h3><pre class="sql">SELECT p.name FROM func(&#39;e2e::rel_persons&#39;) p WHERE p.age &gt; ALL(SELECT p2.age FROM func(&#39;e2e::rel_persons&#39;) p2 WHERE p2.id &gt; 100) ORDER BY 1</pre><h3 id="diffs-relation">Differences</h3><ul class="diffs"><li>Row count mismatch: expected 10 but got 9</li></ul><h3>Generated SQL (executed against Postgres)</h3><pre class="sql">select &quot;root&quot;.name as &quot;name&quot; from public.persons as &quot;root&quot; where ((&quot;root&quot;.age is not null and &quot;root&quot;.age &gt; all (select &quot;persons_1&quot;.age as &quot;age&quot; from public.persons as &quot;persons_1&quot; where &quot;persons_1&quot;.age is not null and &quot;persons_1&quot;.id &gt; 100)) and not exists(select 1 from public.persons as &quot;persons_2&quot; where &quot;persons_2&quot;.id &gt; 100 and &quot;persons_2&quot;.age is null)) order by &quot;name&quot;</pre><h3>Generated Lambda (Pure expression)</h3><pre class="sql">|e2e::Person.all()-&gt;meta::pure::functions::relation::project(
+  ~[
+     id: x: e2e::Person[1]|$x.id,
+     name: x: e2e::Person[1]|$x.name,
+     age: x: e2e::Person[1]|$x.age,
+     salary: x: e2e::Person[1]|$x.salary,
+     hire_date: x: e2e::Person[1]|$x.hireDate,
+     active: x: e2e::Person[1]|$x.active,
+     dept_id: x: e2e::Person[1]|$x.deptId
+   ]
+)-&gt;meta::pure::functions::relation::filter(
+  x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|$x.age-&gt;meta::pure::functions::relation::greaterThanAll(
+    e2e::Person.all()-&gt;meta::pure::functions::relation::project(
+      ~[
+         id: x: e2e::Person[1]|$x.id,
+         name: x: e2e::Person[1]|$x.name,
+         age: x: e2e::Person[1]|$x.age,
+         salary: x: e2e::Person[1]|$x.salary,
+         hire_date: x: e2e::Person[1]|$x.hireDate,
+         active: x: e2e::Person[1]|$x.active,
+         dept_id: x: e2e::Person[1]|$x.deptId
+       ]
+    )-&gt;meta::pure::functions::relation::filter(
+      e: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|$e.id &gt; 100
+    )-&gt;meta::pure::functions::relation::select(
+      ~[
+         age
+       ]
+    )
+  ) &amp;&amp;
+    !e2e::Person.all()-&gt;meta::pure::functions::relation::project(
+    ~[
+       id: x: e2e::Person[1]|$x.id,
+       name: x: e2e::Person[1]|$x.name,
+       age: x: e2e::Person[1]|$x.age,
+       salary: x: e2e::Person[1]|$x.salary,
+       hire_date: x: e2e::Person[1]|$x.hireDate,
+       active: x: e2e::Person[1]|$x.active,
+       dept_id: x: e2e::Person[1]|$x.deptId
+     ]
+  )-&gt;meta::pure::functions::relation::filter(
+    e: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|$e.id &gt; 100
+  )-&gt;meta::pure::functions::relation::select(
+    ~[
+       age
+     ]
+  )-&gt;meta::pure::functions::relation::exists(
+    e: (age:Integer)[1]|$e.age-&gt;meta::pure::functions::collection::isEmpty()
+  )
+)-&gt;meta::pure::functions::relation::select(
+  ~[
+     name
+   ]
+)-&gt;meta::pure::functions::relation::sort(
+  ~name-&gt;meta::pure::functions::relation::ascending()
+)</pre><h3 id="expected-relation">Expected (Postgres)</h3><div class="matrix-wrap"><table class="matrix"><thead><tr><th>name</th></tr></thead><tbody><tr><td>Alice</td></tr><tr><td>Bob</td></tr><tr><td>Charlie</td></tr><tr><td>Diana</td></tr><tr><td>Eve</td></tr><tr><td>Frank</td></tr><tr><td>Grace</td></tr><tr><td>Hank</td></tr><tr><td>Ivy</td></tr><tr><td>Jack</td></tr></tbody></table></div><h3 id="actual-relation">Actual (Legend)</h3><div class="matrix-wrap"><table class="matrix"><thead><tr><th>name</th></tr></thead><tbody><tr><td>Alice</td></tr><tr><td>Bob</td></tr><tr><td>Charlie</td></tr><tr><td>Diana</td></tr><tr><td>Eve</td></tr><tr><td>Frank</td></tr><tr><td>Hank</td></tr><tr><td>Ivy</td></tr><tr><td>Jack</td></tr></tbody></table></div></main><script src="../assets/app.js"></script></body></html>
