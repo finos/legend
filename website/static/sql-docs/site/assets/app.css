@@ -1,0 +1,176 @@
+/* Legend SQL Parity site ? minimal styling, no framework (plan §6). */
+:root {
+    --pass: #1a7f37;
+    --partial: #9a6700;
+    --fail: #cf222e;
+    --na: #6e7781;
+    --untested: #8c959f;
+    --border: #d0d7de;
+    --bg-header: #0d1117;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    margin: 0;
+    color: #1f2328;
+    background: #ffffff;
+    height: 100%;
+}
+
+html { height: 100%; }
+
+header.site-header {
+    background: var(--bg-header);
+    color: #fff;
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+    height: 20px;
+    box-sizing: content-box;
+}
+
+header.site-header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 1.25rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+main.md-main {
+    padding: 0;
+    max-width: none;
+    margin: 0;
+    height: calc(100vh - 51.5px);
+}
+
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.2rem; margin-top: 2rem; }
+h3 { font-size: 1rem; }
+
+p.meta, p.pg-doc-link { color: #57606a; }
+
+table { border-collapse: collapse; width: 100%; margin: 0.5rem 0 1.5rem; }
+th, td { border: 1px solid var(--border); padding: 0.35rem 0.6rem; text-align: left; font-size: 0.9rem; }
+th { background: #f6f8fa; }
+
+table.kv th { width: 160px; background: #f6f8fa; }
+
+.status-pass { color: var(--pass); font-weight: 600; }
+.status-partial { color: var(--partial); font-weight: 600; }
+.status-fail { color: var(--fail); font-weight: 600; }
+.status-na { color: var(--na); }
+.status-untested { color: var(--untested); }
+
+.entry-row[data-untested="true"] { display: none; }
+.entry-row[data-untested="true"].show-untested-visible { display: table-row; }
+.entry-row.filtered-hidden { display: none !important; }
+
+.filter-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+label.show-untested { display: inline-block; margin-bottom: 0.75rem; font-size: 0.9rem; }
+
+.bar-row { display: flex; align-items: center; gap: 0.6rem; margin: 0.3rem 0; }
+.bar-label { width: 80px; font-weight: 600; }
+.bar { flex: 1; max-width: 400px; background: #eaeef2; border-radius: 6px; height: 14px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--pass); }
+.bar-pct { width: 140px; }
+
+pre.sql, pre.err {
+    background: #f6f8fa;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.75rem;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+pre.err { color: var(--fail); }
+
+ul.diffs { background: #fff8f6; border: 1px solid var(--fail); border-radius: 6px; padding: 0.75rem 1.5rem; }
+ul.diffs li { margin: 0.2rem 0; color: var(--fail); }
+
+.matrix-wrap { overflow-x: auto; max-height: 480px; overflow-y: auto; }
+table.matrix thead th { position: sticky; top: 0; background: #f6f8fa; }
+table.matrix tr { content-visibility: auto; }
+
+td.sig { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 0.85rem; }
+
+/* Master-detail index page: sidebar navigation + detail iframe (plan follow-up). */
+.master-detail {
+    display: flex;
+    height: 100%;
+    align-items: stretch;
+}
+
+.sidebar {
+    width: 280px;
+    flex: 0 0 280px;
+    overflow-y: auto;
+    border-right: 1px solid var(--border);
+    padding: 0.75rem 0.5rem;
+    background: #f6f8fa;
+}
+
+.sidebar a.nav-overview {
+    display: block;
+    padding: 0.4rem 0.6rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #1f2328;
+}
+
+.nav-area-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    color: #57606a;
+    margin: 1rem 0.6rem 0.25rem;
+}
+
+ul.nav-list { list-style: none; margin: 0; padding: 0; }
+
+ul.nav-list li a {
+    display: block;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #1f2328;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sidebar a:hover { background: #eaeef2; }
+
+.sidebar a.active,
+.sidebar a.nav-overview.active {
+    background: var(--bg-header);
+    color: #fff;
+}
+
+.detail-frame {
+    flex: 1 1 auto;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #fff;
+}
+

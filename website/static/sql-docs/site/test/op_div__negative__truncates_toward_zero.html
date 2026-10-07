@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>op_div__negative__truncates_toward_zero &middot; Legend SQL</title><link rel="stylesheet" href="../assets/app.css"/></head><body><header class="site-header"><a href="../index.html">Legend SQL &#8680; PostgreSQL Parity</a></header><main><h1>op_div__negative__truncates_toward_zero</h1><table class="kv"><tr><th>Category</th><td>-</td></tr><tr><th>Feature</th><td>-</td></tr><tr><th>Function</th><td>-</td></tr><tr><th>Operator</th><td>/</td></tr><tr><th>Format token</th><td>-</td></tr><tr><th>Signature</th><td>/(int4, int4) → int4</td></tr></table><table class="status-table"><tr><th>Path</th><th>Status</th><th>Expected</th></tr><tr><td>TDS</td><td class="status-fail" aria-label="Fail">❌ FAIL</td><td>FAIL</td></tr><tr><td>Relation</td><td class="status-fail" aria-label="Fail">❌ FAIL</td><td>FAIL</td></tr></table><h2>Reference SQL</h2><pre class="sql">SELECT id, int_val / 3 AS result FROM numbers WHERE id = 2</pre><h2 id="tds">TDS path &mdash; <span class="status-fail">❌ FAIL</span></h2><h3>Input SQL</h3><pre class="sql">SELECT id, int_val / 3 AS result FROM numbers WHERE id = 2</pre><h3>Legend SQL (rewritten)</h3><pre class="sql">SELECT id, int_val / 3 AS result FROM func(&#39;e2e::tds_numbers&#39;) WHERE id = 2</pre><h3 id="diffs-tds">Differences</h3><ul class="diffs"><li>Row 0, column &#39;result&#39;: expected &#39;-3&#39; but got &#39;-3.3333333333333335&#39;</li></ul><h3>Generated SQL (executed against Postgres)</h3><pre class="sql">select &quot;root&quot;.id as &quot;id&quot;, ((1.0 * &quot;root&quot;.int_val) / 3) as &quot;result&quot; from public.numbers as &quot;root&quot; where &quot;root&quot;.id = 2</pre><h3>Generated Lambda (Pure expression)</h3><pre class="sql">|e2e::NumberRow.all()-&gt;meta::pure::tds::project(
+  [
+    meta::pure::tds::col(
+      x: e2e::NumberRow[1]|$x.id,
+      &#39;id&#39;
+    ),
+    meta::pure::tds::col(
+      x: e2e::NumberRow[1]|$x.intVal,
+      &#39;int_val&#39;
+    ),
+    meta::pure::tds::col(
+      x: e2e::NumberRow[1]|$x.floatVal,
+      &#39;float_val&#39;
+    ),
+    meta::pure::tds::col(
+      x: e2e::NumberRow[1]|$x.numericVal,
+      &#39;numeric_val&#39;
+    ),
+    meta::pure::tds::col(
+      x: e2e::NumberRow[1]|$x.smallVal,
+      &#39;small_val&#39;
+    ),
+    meta::pure::tds::col(
+      x: e2e::NumberRow[1]|$x.bigVal,
+      &#39;big_val&#39;
+    )
+  ]
+)-&gt;meta::pure::tds::filter(
+  row: meta::pure::tds::TDSRow[1]|$row.getInteger(&#39;id&#39;) == 2
+)-&gt;meta::pure::tds::project(
+  [
+    meta::pure::tds::col(
+      row: meta::pure::tds::TDSRow[1]|$row.getInteger(&#39;id&#39;),
+      &#39;id&#39;
+    ),
+    meta::pure::tds::col(
+      row: meta::pure::tds::TDSRow[1]|$row.getInteger(&#39;int_val&#39;) / 3,
+      &#39;result&#39;
+    )
+  ]
+)</pre><h3 id="expected-tds">Expected (Postgres)</h3><div class="matrix-wrap"><table class="matrix"><thead><tr><th>id</th><th>result</th></tr></thead><tbody><tr><td>2</td><td>-3</td></tr></tbody></table></div><h3 id="actual-tds">Actual (Legend)</h3><div class="matrix-wrap"><table class="matrix"><thead><tr><th>id</th><th>result</th></tr></thead><tbody><tr><td>2</td><td>-3.3333333333333335</td></tr></tbody></table></div><h2 id="relation">Relation path &mdash; <span class="status-fail">❌ FAIL</span></h2><h3>Input SQL</h3><pre class="sql">SELECT id, int_val / 3 AS result FROM numbers WHERE id = 2</pre><h3>Legend SQL (rewritten)</h3><pre class="sql">SELECT id, int_val / 3 AS result FROM func(&#39;e2e::rel_numbers&#39;) WHERE id = 2</pre><h3 id="diffs-relation">Differences</h3><ul class="diffs"><li>Row 0, column &#39;result&#39;: expected &#39;-3&#39; but got &#39;-3.3333333333333335&#39;</li></ul><h3>Generated SQL (executed against Postgres)</h3><pre class="sql">select &quot;root&quot;.id as &quot;id&quot;, ((1.0 * &quot;root&quot;.int_val) / 3) as &quot;result&quot; from public.numbers as &quot;root&quot; where &quot;root&quot;.id = 2</pre><h3>Generated Lambda (Pure expression)</h3><pre class="sql">|e2e::NumberRow.all()-&gt;meta::pure::functions::relation::project(
+  ~[
+     id: x: e2e::NumberRow[1]|$x.id,
+     int_val: x: e2e::NumberRow[1]|$x.intVal,
+     float_val: x: e2e::NumberRow[1]|$x.floatVal,
+     numeric_val: x: e2e::NumberRow[1]|$x.numericVal,
+     small_val: x: e2e::NumberRow[1]|$x.smallVal,
+     big_val: x: e2e::NumberRow[1]|$x.bigVal
+   ]
+)-&gt;meta::pure::functions::relation::filter(
+  x: (id:Integer[1], int_val:Integer, float_val:Float, numeric_val:Float, small_val:Integer, big_val:Integer)[1]|$x.id == 2
+)-&gt;meta::pure::functions::relation::project(
+  ~[
+     id: x: (id:Integer[1], int_val:Integer, float_val:Float, numeric_val:Float, small_val:Integer, big_val:Integer)[1]|$x.id,
+     result: x: (id:Integer[1], int_val:Integer, float_val:Float, numeric_val:Float, small_val:Integer, big_val:Integer)[1]|$x.int_val-&gt;meta::pure::functions::multiplicity::toOne() / 3
+   ]
+)</pre><h3 id="expected-relation">Expected (Postgres)</h3><div class="matrix-wrap"><table class="matrix"><thead><tr><th>id</th><th>result</th></tr></thead><tbody><tr><td>2</td><td>-3</td></tr></tbody></table></div><h3 id="actual-relation">Actual (Legend)</h3><div class="matrix-wrap"><table class="matrix"><thead><tr><th>id</th><th>result</th></tr></thead><tbody><tr><td>2</td><td>-3.3333333333333335</td></tr></tbody></table></div></main><script src="../assets/app.js"></script></body></html>

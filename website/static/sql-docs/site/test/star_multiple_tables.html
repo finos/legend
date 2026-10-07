@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>star_multiple_tables &middot; Legend SQL</title><link rel="stylesheet" href="../assets/app.css"/></head><body><header class="site-header"><a href="../index.html">Legend SQL &#8680; PostgreSQL Parity</a></header><main><h1>star_multiple_tables</h1><table class="kv"><tr><th>Category</th><td>select_star</td></tr><tr><th>Feature</th><td>SELECT multiple table.*</td></tr><tr><th>Function</th><td>-</td></tr><tr><th>Operator</th><td>-</td></tr><tr><th>Format token</th><td>-</td></tr><tr><th>Signature</th><td>-</td></tr></table><table class="status-table"><tr><th>Path</th><th>Status</th><th>Expected</th></tr><tr><td>TDS</td><td class="status-fail" aria-label="Fail">❌ FAIL</td><td>FAIL</td></tr><tr><td>Relation</td><td class="status-fail" aria-label="Fail">❌ FAIL</td><td>FAIL</td></tr></table><h2>Reference SQL</h2><pre class="sql">SELECT p.*, d.* FROM persons p JOIN departments d ON p.dept_id = d.id WHERE p.id &lt;= 3 ORDER BY p.id</pre><h2 id="tds">TDS path &mdash; <span class="status-fail">❌ FAIL</span></h2><h3>Input SQL</h3><pre class="sql">SELECT p.*, d.* FROM persons p JOIN departments d ON p.dept_id = d.id WHERE p.id &lt;= 3 ORDER BY p.id</pre><h3>Legend SQL (rewritten)</h3><pre class="sql">SELECT p.*, d.* FROM func(&#39;e2e::tds_persons&#39;) p JOIN func(&#39;e2e::tds_departments&#39;) d ON p.dept_id = d.id WHERE p.id &lt;= 3 ORDER BY p.id</pre><h3 id="diffs-tds">Differences</h3><ul class="diffs"><li>Column count mismatch: expected 11 but got 9</li></ul><h3>Generated SQL (executed against Postgres)</h3><pre class="sql">select &quot;persons_0&quot;.&quot;id_p&quot; as &quot;id&quot;, &quot;persons_0&quot;.&quot;name_p&quot; as &quot;name&quot;, &quot;persons_0&quot;.&quot;age_p&quot; as &quot;age&quot;, &quot;persons_0&quot;.&quot;salary_p&quot; as &quot;salary&quot;, &quot;persons_0&quot;.&quot;hire_date_p&quot; as &quot;hire_date&quot;, &quot;persons_0&quot;.&quot;active_p&quot; as &quot;active&quot;, &quot;persons_0&quot;.&quot;dept_id_p&quot; as &quot;dept_id&quot;, &quot;persons_0&quot;.&quot;budget_d&quot; as &quot;budget&quot;, &quot;persons_0&quot;.&quot;created_at_d&quot; as &quot;created_at&quot; from (select &quot;persons_1&quot;.&quot;id_p&quot; as &quot;id_p&quot;, &quot;persons_1&quot;.&quot;name_p&quot; as &quot;name_p&quot;, &quot;persons_1&quot;.&quot;age_p&quot; as &quot;age_p&quot;, &quot;persons_1&quot;.&quot;salary_p&quot; as &quot;salary_p&quot;, &quot;persons_1&quot;.&quot;hire_date_p&quot; as &quot;hire_date_p&quot;, &quot;persons_1&quot;.&quot;active_p&quot; as &quot;active_p&quot;, &quot;persons_1&quot;.&quot;dept_id_p&quot; as &quot;dept_id_p&quot;, &quot;persons_1&quot;.&quot;budget_d&quot; as &quot;budget_d&quot;, &quot;persons_1&quot;.&quot;created_at_d&quot; as &quot;created_at_d&quot; from (select * from (select &quot;persons_3&quot;.&quot;id&quot; as &quot;id_p&quot;, &quot;persons_3&quot;.&quot;name&quot; as &quot;name_p&quot;, &quot;persons_3&quot;.&quot;age&quot; as &quot;age_p&quot;, &quot;persons_3&quot;.&quot;salary&quot; as &quot;salary_p&quot;, &quot;persons_3&quot;.&quot;hire_date&quot; as &quot;hire_date_p&quot;, &quot;persons_3&quot;.&quot;active&quot; as &quot;active_p&quot;, &quot;persons_3&quot;.&quot;dept_id&quot; as &quot;dept_id_p&quot; from (select &quot;root&quot;.id as &quot;id&quot;, &quot;root&quot;.name as &quot;name&quot;, &quot;root&quot;.age as &quot;age&quot;, &quot;root&quot;.salary as &quot;salary&quot;, &quot;root&quot;.hire_date as &quot;hire_date&quot;, &quot;root&quot;.active as &quot;active&quot;, &quot;root&quot;.dept_id as &quot;dept_id&quot; from public.persons as &quot;root&quot;) as &quot;persons_3&quot;) as &quot;persons_2&quot; inner join (select &quot;departments_1&quot;.&quot;id&quot; as &quot;id_d&quot;, &quot;departments_1&quot;.&quot;name&quot; as &quot;name_d&quot;, &quot;departments_1&quot;.&quot;budget&quot; as &quot;budget_d&quot;, &quot;departments_1&quot;.&quot;created_at&quot; as &quot;created_at_d&quot; from (select &quot;root&quot;.id as &quot;id&quot;, &quot;root&quot;.name as &quot;name&quot;, &quot;root&quot;.budget as &quot;budget&quot;, &quot;root&quot;.created_at as &quot;created_at&quot; from public.departments as &quot;root&quot;) as &quot;departments_1&quot;) as &quot;departments_0&quot; on (&quot;persons_2&quot;.&quot;dept_id_p&quot; = &quot;departments_0&quot;.&quot;id_d&quot;)) as &quot;persons_1&quot; where &quot;persons_1&quot;.&quot;id_p&quot; &lt;= 3 order by &quot;id_p&quot;) as &quot;persons_0&quot;</pre><h3>Generated Lambda (Pure expression)</h3><pre class="sql">|e2e::Person.all()-&gt;meta::pure::tds::project(
+  [
+    meta::pure::tds::col(
+      x: e2e::Person[1]|$x.id,
+      &#39;id&#39;
+    ),
+    meta::pure::tds::col(
+      x: e2e::Person[1]|$x.name,
+      &#39;name&#39;
+    ),
+    meta::pure::tds::col(
+      x: e2e::Person[1]|$x.age,
+      &#39;age&#39;
+    ),
+    meta::pure::tds::col(
+      x: e2e::Person[1]|$x.salary,
+      &#39;salary&#39;
+    ),
+    meta::pure::tds::col(
+      x: e2e::Person[1]|$x.hireDate,
+      &#39;hire_date&#39;
+    ),
+    meta::pure::tds::col(
+      x: e2e::Person[1]|$x.active,
+      &#39;active&#39;
+    ),
+    meta::pure::tds::col(
+      x: e2e::Person[1]|$x.deptId,
+      &#39;dept_id&#39;
+    )
+  ]
+)-&gt;meta::pure::tds::renameColumns(
+  [
+    &#39;id&#39;-&gt;meta::pure::functions::collection::pair(&#39;id_p&#39;),
+    &#39;name&#39;-&gt;meta::pure::functions::collection::pair(&#39;name_p&#39;),
+    &#39;age&#39;-&gt;meta::pure::functions::collection::pair(&#39;age_p&#39;),
+    &#39;salary&#39;-&gt;meta::pure::functions::collection::pair(&#39;salary_p&#39;),
+    &#39;hire_date&#39;-&gt;meta::pure::functions::collection::pair(&#39;hire_date_p&#39;),
+    &#39;active&#39;-&gt;meta::pure::functions::collection::pair(&#39;active_p&#39;),
+    &#39;dept_id&#39;-&gt;meta::pure::functions::collection::pair(&#39;dept_id_p&#39;)
+  ]
+)-&gt;meta::pure::tds::join(
+  e2e::Department.all()-&gt;meta::pure::tds::project(
+    [
+      meta::pure::tds::col(
+        x: e2e::Department[1]|$x.id,
+        &#39;id&#39;
+      ),
+      meta::pure::tds::col(
+        x: e2e::Department[1]|$x.name,
+        &#39;name&#39;
+      ),
+      meta::pure::tds::col(
+        x: e2e::Department[1]|$x.budget,
+        &#39;budget&#39;
+      ),
+      meta::pure::tds::col(
+        x: e2e::Department[1]|$x.createdAt,
+        &#39;created_at&#39;
+      )
+    ]
+  )-&gt;meta::pure::tds::renameColumns(
+    [
+      &#39;id&#39;-&gt;meta::pure::functions::collection::pair(&#39;id_d&#39;),
+      &#39;name&#39;-&gt;meta::pure::functions::collection::pair(&#39;name_d&#39;),
+      &#39;budget&#39;-&gt;meta::pure::functions::collection::pair(&#39;budget_d&#39;),
+      &#39;created_at&#39;-&gt;meta::pure::functions::collection::pair(&#39;created_at_d&#39;)
+    ]
+  ),
+  meta::relational::metamodel::join::JoinType.INNER,
+  {row1: meta::pure::tds::TDSRow[1], row2: meta::pure::tds::TDSRow[1]|$row1.getInteger(&#39;dept_id_p&#39;) ==
+    $row2.getInteger(&#39;id_d&#39;)  }
+)-&gt;meta::pure::tds::filter(
+  row: meta::pure::tds::TDSRow[1]|$row.getInteger(&#39;id_p&#39;) &lt;= 3
+)-&gt;meta::pure::tds::sort(
+  meta::pure::tds::asc(&#39;id_p&#39;)
+)-&gt;meta::pure::tds::restrict(
+  [
+    &#39;id_p&#39;,
+    &#39;name_p&#39;,
+    &#39;age_p&#39;,
+    &#39;salary_p&#39;,
+    &#39;hire_date_p&#39;,
+    &#39;active_p&#39;,
+    &#39;dept_id_p&#39;,
+    &#39;budget_d&#39;,
+    &#39;created_at_d&#39;
+  ]
+)-&gt;meta::pure::tds::renameColumns(
+  [
+    &#39;id_p&#39;-&gt;meta::pure::functions::collection::pair(&#39;id&#39;),
+    &#39;name_p&#39;-&gt;meta::pure::functions::collection::pair(&#39;name&#39;),
+    &#39;age_p&#39;-&gt;meta::pure::functions::collection::pair(&#39;age&#39;),
+    &#39;salary_p&#39;-&gt;meta::pure::functions::collection::pair(&#39;salary&#39;),
+    &#39;hire_date_p&#39;-&gt;meta::pure::functions::collection::pair(&#39;hire_date&#39;),
+    &#39;active_p&#39;-&gt;meta::pure::functions::collection::pair(&#39;active&#39;),
+    &#39;dept_id_p&#39;-&gt;meta::pure::functions::collection::pair(&#39;dept_id&#39;),
+    &#39;budget_d&#39;-&gt;meta::pure::functions::collection::pair(&#39;budget&#39;),
+    &#39;created_at_d&#39;-&gt;meta::pure::functions::collection::pair(&#39;created_at&#39;)
+  ]
+)</pre><h3 id="expected-tds">Expected (Postgres)</h3><div class="matrix-wrap"><table class="matrix"><thead><tr><th>id</th><th>name</th><th>age</th><th>salary</th><th>hire_date</th><th>active</th><th>dept_id</th><th>id</th><th>name</th><th>budget</th><th>created_at</th></tr></thead><tbody><tr><td>1</td><td>Alice</td><td>30</td><td>50000.00</td><td>2020-01-15</td><td>true</td><td>1</td><td>1</td><td>Engineering</td><td>1000000.00</td><td>2015-01-01 09:00:00.0</td></tr><tr><td>2</td><td>Bob</td><td>25</td><td>60000.50</td><td>2021-03-20</td><td>true</td><td>1</td><td>1</td><td>Engineering</td><td>1000000.00</td><td>2015-01-01 09:00:00.0</td></tr><tr><td>3</td><td>Charlie</td><td>35</td><td>75000.75</td><td>2019-06-10</td><td>false</td><td>2</td><td>2</td><td>Marketing</td><td>500000.00</td><td>2016-06-15 10:30:00.0</td></tr></tbody></table></div><h3 id="actual-tds">Actual (Legend)</h3><div class="matrix-wrap"><table class="matrix"><thead><tr><th>id</th><th>name</th><th>age</th><th>salary</th><th>hire_date</th><th>active</th><th>dept_id</th><th>budget</th><th>created_at</th></tr></thead><tbody><tr><td>1</td><td>Alice</td><td>30</td><td>50000.0</td><td>2020-01-15</td><td>true</td><td>1</td><td>1000000.0</td><td>2015-01-01 09:00:00.0</td></tr><tr><td>2</td><td>Bob</td><td>25</td><td>60000.5</td><td>2021-03-20</td><td>true</td><td>1</td><td>1000000.0</td><td>2015-01-01 09:00:00.0</td></tr><tr><td>3</td><td>Charlie</td><td>35</td><td>75000.75</td><td>2019-06-10</td><td>false</td><td>2</td><td>500000.0</td><td>2016-06-15 10:30:00.0</td></tr></tbody></table></div><h2 id="relation">Relation path &mdash; <span class="status-fail">❌ FAIL</span></h2><h3>Input SQL</h3><pre class="sql">SELECT p.*, d.* FROM persons p JOIN departments d ON p.dept_id = d.id WHERE p.id &lt;= 3 ORDER BY p.id</pre><h3>Legend SQL (rewritten)</h3><pre class="sql">SELECT p.*, d.* FROM func(&#39;e2e::rel_persons&#39;) p JOIN func(&#39;e2e::rel_departments&#39;) d ON p.dept_id = d.id WHERE p.id &lt;= 3 ORDER BY p.id</pre><h3 id="diffs-relation">Differences</h3><ul class="diffs"><li>Column count mismatch: expected 11 but got 9</li></ul><h3>Generated SQL (executed against Postgres)</h3><pre class="sql">select &quot;persons_0&quot;.&quot;id_p&quot; as &quot;id&quot;, &quot;persons_0&quot;.&quot;name_p&quot; as &quot;name&quot;, &quot;persons_0&quot;.&quot;age_p&quot; as &quot;age&quot;, &quot;persons_0&quot;.&quot;salary_p&quot; as &quot;salary&quot;, &quot;persons_0&quot;.&quot;hire_date_p&quot; as &quot;hire_date&quot;, &quot;persons_0&quot;.&quot;active_p&quot; as &quot;active&quot;, &quot;persons_0&quot;.&quot;dept_id_p&quot; as &quot;dept_id&quot;, &quot;persons_0&quot;.&quot;budget_d&quot; as &quot;budget&quot;, &quot;persons_0&quot;.&quot;created_at_d&quot; as &quot;created_at&quot; from (select &quot;persons_1&quot;.&quot;id_p&quot; as &quot;id_p&quot;, &quot;persons_1&quot;.&quot;name_p&quot; as &quot;name_p&quot;, &quot;persons_1&quot;.&quot;age_p&quot; as &quot;age_p&quot;, &quot;persons_1&quot;.&quot;salary_p&quot; as &quot;salary_p&quot;, &quot;persons_1&quot;.&quot;hire_date_p&quot; as &quot;hire_date_p&quot;, &quot;persons_1&quot;.&quot;active_p&quot; as &quot;active_p&quot;, &quot;persons_1&quot;.&quot;dept_id_p&quot; as &quot;dept_id_p&quot;, &quot;persons_1&quot;.&quot;budget_d&quot; as &quot;budget_d&quot;, &quot;persons_1&quot;.&quot;created_at_d&quot; as &quot;created_at_d&quot; from (select * from (select &quot;persons_3&quot;.&quot;id&quot; as &quot;id_p&quot;, &quot;persons_3&quot;.&quot;name&quot; as &quot;name_p&quot;, &quot;persons_3&quot;.&quot;age&quot; as &quot;age_p&quot;, &quot;persons_3&quot;.&quot;salary&quot; as &quot;salary_p&quot;, &quot;persons_3&quot;.&quot;hire_date&quot; as &quot;hire_date_p&quot;, &quot;persons_3&quot;.&quot;active&quot; as &quot;active_p&quot;, &quot;persons_3&quot;.&quot;dept_id&quot; as &quot;dept_id_p&quot; from (select &quot;root&quot;.id as &quot;id&quot;, &quot;root&quot;.name as &quot;name&quot;, &quot;root&quot;.age as &quot;age&quot;, &quot;root&quot;.salary as &quot;salary&quot;, &quot;root&quot;.hire_date as &quot;hire_date&quot;, &quot;root&quot;.active as &quot;active&quot;, &quot;root&quot;.dept_id as &quot;dept_id&quot; from public.persons as &quot;root&quot;) as &quot;persons_3&quot;) as &quot;persons_2&quot; inner join (select &quot;departments_1&quot;.&quot;id&quot; as &quot;id_d&quot;, &quot;departments_1&quot;.&quot;name&quot; as &quot;name_d&quot;, &quot;departments_1&quot;.&quot;budget&quot; as &quot;budget_d&quot;, &quot;departments_1&quot;.&quot;created_at&quot; as &quot;created_at_d&quot; from (select &quot;root&quot;.id as &quot;id&quot;, &quot;root&quot;.name as &quot;name&quot;, &quot;root&quot;.budget as &quot;budget&quot;, &quot;root&quot;.created_at as &quot;created_at&quot; from public.departments as &quot;root&quot;) as &quot;departments_1&quot;) as &quot;departments_0&quot; on (&quot;persons_2&quot;.&quot;dept_id_p&quot; = &quot;departments_0&quot;.&quot;id_d&quot;)) as &quot;persons_1&quot; where &quot;persons_1&quot;.&quot;id_p&quot; &lt;= 3 order by &quot;id_p&quot;) as &quot;persons_0&quot;</pre><h3>Generated Lambda (Pure expression)</h3><pre class="sql">|e2e::Person.all()-&gt;meta::pure::functions::relation::project(
+  ~[
+     id: x: e2e::Person[1]|$x.id,
+     name: x: e2e::Person[1]|$x.name,
+     age: x: e2e::Person[1]|$x.age,
+     salary: x: e2e::Person[1]|$x.salary,
+     hire_date: x: e2e::Person[1]|$x.hireDate,
+     active: x: e2e::Person[1]|$x.active,
+     dept_id: x: e2e::Person[1]|$x.deptId
+   ]
+)-&gt;meta::pure::functions::relation::rename(
+  ~id,
+  ~id_p
+)-&gt;meta::pure::functions::relation::rename(
+  ~name,
+  ~name_p
+)-&gt;meta::pure::functions::relation::rename(
+  ~age,
+  ~age_p
+)-&gt;meta::pure::functions::relation::rename(
+  ~salary,
+  ~salary_p
+)-&gt;meta::pure::functions::relation::rename(
+  ~hire_date,
+  ~hire_date_p
+)-&gt;meta::pure::functions::relation::rename(
+  ~active,
+  ~active_p
+)-&gt;meta::pure::functions::relation::rename(
+  ~dept_id,
+  ~dept_id_p
+)-&gt;meta::pure::functions::relation::join(
+  e2e::Department.all()-&gt;meta::pure::functions::relation::project(
+    ~[
+       id: x: e2e::Department[1]|$x.id,
+       name: x: e2e::Department[1]|$x.name,
+       budget: x: e2e::Department[1]|$x.budget,
+       created_at: x: e2e::Department[1]|$x.createdAt
+     ]
+  )-&gt;meta::pure::functions::relation::rename(
+    ~id,
+    ~id_d
+  )-&gt;meta::pure::functions::relation::rename(
+    ~name,
+    ~name_d
+  )-&gt;meta::pure::functions::relation::rename(
+    ~budget,
+    ~budget_d
+  )-&gt;meta::pure::functions::relation::rename(
+    ~created_at,
+    ~created_at_d
+  ),
+  meta::pure::functions::relation::JoinKind.INNER,
+  {row1: (id_p:Integer[1], name_p:String, age_p:Integer, salary_p:Float, hire_date_p:StrictDate, active_p:Boolean, dept_id_p:Integer)[1], row2: (id_d:Integer[1], name_d:String, budget_d:Float, created_at_d:DateTime)[1]|$row1.dept_id_p ==
+    $row2.id_d  }
+)-&gt;meta::pure::functions::relation::filter(
+  x: (id_p:Integer[1], name_p:String, age_p:Integer, salary_p:Float, hire_date_p:StrictDate, active_p:Boolean, dept_id_p:Integer, id_d:Integer[1], name_d:String, budget_d:Float, created_at_d:DateTime)[1]|$x.id_p &lt;= 3
+)-&gt;meta::pure::functions::relation::sort(
+  ~id_p-&gt;meta::pure::functions::relation::ascending()
+)-&gt;meta::pure::functions::relation::select(
+  ~[
+     id_p,
+     name_p,
+     age_p,
+     salary_p,
+     hire_date_p,
+     active_p,
+     dept_id_p,
+     budget_d,
+     created_at_d
+   ]
+)-&gt;meta::pure::functions::relation::rename(
+  ~id_p,
+  ~id
+)-&gt;meta::pure::functions::relation::rename(
+  ~name_p,
+  ~name
+)-&gt;meta::pure::functions::relation::rename(
+  ~age_p,
+  ~age
+)-&gt;meta::pure::functions::relation::rename(
+  ~salary_p,
+  ~salary
+)-&gt;meta::pure::functions::relation::rename(
+  ~hire_date_p,
+  ~hire_date
+)-&gt;meta::pure::functions::relation::rename(
+  ~active_p,
+  ~active
+)-&gt;meta::pure::functions::relation::rename(
+  ~dept_id_p,
+  ~dept_id
+)-&gt;meta::pure::functions::relation::rename(
+  ~budget_d,
+  ~budget
+)-&gt;meta::pure::functions::relation::rename(
+  ~created_at_d,
+  ~created_at
+)</pre><h3 id="expected-relation">Expected (Postgres)</h3><div class="matrix-wrap"><table class="matrix"><thead><tr><th>id</th><th>name</th><th>age</th><th>salary</th><th>hire_date</th><th>active</th><th>dept_id</th><th>id</th><th>name</th><th>budget</th><th>created_at</th></tr></thead><tbody><tr><td>1</td><td>Alice</td><td>30</td><td>50000.00</td><td>2020-01-15</td><td>true</td><td>1</td><td>1</td><td>Engineering</td><td>1000000.00</td><td>2015-01-01 09:00:00.0</td></tr><tr><td>2</td><td>Bob</td><td>25</td><td>60000.50</td><td>2021-03-20</td><td>true</td><td>1</td><td>1</td><td>Engineering</td><td>1000000.00</td><td>2015-01-01 09:00:00.0</td></tr><tr><td>3</td><td>Charlie</td><td>35</td><td>75000.75</td><td>2019-06-10</td><td>false</td><td>2</td><td>2</td><td>Marketing</td><td>500000.00</td><td>2016-06-15 10:30:00.0</td></tr></tbody></table></div><h3 id="actual-relation">Actual (Legend)</h3><div class="matrix-wrap"><table class="matrix"><thead><tr><th>id</th><th>name</th><th>age</th><th>salary</th><th>hire_date</th><th>active</th><th>dept_id</th><th>budget</th><th>created_at</th></tr></thead><tbody><tr><td>1</td><td>Alice</td><td>30</td><td>50000.0</td><td>2020-01-15</td><td>true</td><td>1</td><td>1000000.0</td><td>2015-01-01 09:00:00.0</td></tr><tr><td>2</td><td>Bob</td><td>25</td><td>60000.5</td><td>2021-03-20</td><td>true</td><td>1</td><td>1000000.0</td><td>2015-01-01 09:00:00.0</td></tr><tr><td>3</td><td>Charlie</td><td>35</td><td>75000.75</td><td>2019-06-10</td><td>false</td><td>2</td><td>500000.0</td><td>2016-06-15 10:30:00.0</td></tr></tbody></table></div></main><script src="../assets/app.js"></script></body></html>
