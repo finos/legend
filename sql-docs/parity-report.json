@@ -3,18 +3,18 @@
     "tds" : {
       "pass" : 925,
       "fail" : 41,
-      "error" : 1222,
+      "error" : 1224,
       "skip" : 62,
       "bug" : 88,
-      "total" : 2338
+      "total" : 2340
     },
     "relation" : {
-      "pass" : 1105,
+      "pass" : 1106,
       "fail" : 45,
-      "error" : 1038,
+      "error" : 1039,
       "skip" : 62,
       "bug" : 88,
-      "total" : 2338
+      "total" : 2340
     }
   },
   "failures" : [ {
@@ -12390,7 +12390,7 @@
     "rewrittenSql" : "SELECT INTERVAL '1 day' + INTERVAL '2 hours' AS result FROM func('e2e::tds_dates') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5256 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5263 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
     "diffs" : null
   }, {
     "id" : "op_add__interval_plus_interval",
@@ -12401,7 +12401,7 @@
     "rewrittenSql" : "SELECT INTERVAL '1 day' + INTERVAL '2 hours' AS result FROM func('e2e::rel_dates') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5256 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5263 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
     "diffs" : null
   }, {
     "id" : "op_add__interval_plus_time",
@@ -12610,7 +12610,7 @@
     "rewrittenSql" : "SELECT INTERVAL '1 day' - INTERVAL '2 hours' AS result FROM func('e2e::tds_dates') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5256 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5263 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
     "diffs" : null
   }, {
     "id" : "op_sub__interval_minus_interval",
@@ -12621,7 +12621,7 @@
     "rewrittenSql" : "SELECT INTERVAL '1 day' - INTERVAL '2 hours' AS result FROM func('e2e::rel_dates') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5256 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5263 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
     "diffs" : null
   }, {
     "id" : "op_sub__pg_lsn_minus_pg_lsn",
@@ -23302,7 +23302,7 @@
     "rewrittenSql" : "SELECT s.n, s.s FROM (SELECT name, salary FROM func('e2e::tds_persons')) s(n, s) WHERE s.s IS NOT NULL ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4238 column:28), \"Cannot cast a collection of size 0 to multiplicity [1]\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4245 column:28), \"Cannot cast a collection of size 0 to multiplicity [1]\"",
     "diffs" : null
   }, {
     "id" : "alias_subquery_column_list",
@@ -26000,6 +26000,39 @@
     "error" : "The column 'SUM(salary)' can't be found in the relation (dept_id:Integer, name_d:String, dept_name:String, s:Float[1])",
     "diffs" : null
   }, {
+    "id" : "crcs_g9_chained_lateral_unnest_both_default_to_value",
+    "category" : "structural/column_resolution_corpus_shapes",
+    "path" : "TDS",
+    "state" : "ERROR",
+    "sql" : "SELECT p.name AS name, b.value AS word FROM persons p, LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS a(value), LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS b(value) WHERE p.id = 1",
+    "rewrittenSql" : "SELECT p.name AS name, b.value AS word FROM func('e2e::tds_persons') p, LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS a(value), LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS b(value) WHERE p.id = 1",
+    "generatedSql" : null,
+    "generatedLambda" : null,
+    "error" : "Unsupported: lateral only supported on relation inputs",
+    "diffs" : null
+  }, {
+    "id" : "crcs_g9_chained_lateral_unnest_both_default_to_value",
+    "category" : "structural/column_resolution_corpus_shapes",
+    "path" : "Relation",
+    "state" : "ERROR",
+    "sql" : "SELECT p.name AS name, b.value AS word FROM persons p, LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS a(value), LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS b(value) WHERE p.id = 1",
+    "rewrittenSql" : "SELECT p.name AS name, b.value AS word FROM func('e2e::rel_persons') p, LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS a(value), LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS b(value) WHERE p.id = 1",
+    "generatedSql" : null,
+    "generatedLambda" : null,
+    "error" : "ERROR: cannot cast type text[] to jsonb\\n  Position: 316",
+    "diffs" : null
+  }, {
+    "id" : "crcs_g9_chained_lateral_subquery_both_default_to_value",
+    "category" : "structural/column_resolution_corpus_shapes",
+    "path" : "TDS",
+    "state" : "ERROR",
+    "sql" : "SELECT p.name AS name, b.value AS v2 FROM persons p, LATERAL (SELECT MAX(salary) AS value FROM persons) AS a, LATERAL (SELECT MIN(salary) AS value FROM persons) AS b WHERE p.id = 1",
+    "rewrittenSql" : "SELECT p.name AS name, b.value AS v2 FROM func('e2e::tds_persons') p, LATERAL (SELECT MAX(salary) AS value FROM func('e2e::tds_persons')) AS a, LATERAL (SELECT MIN(salary) AS value FROM func('e2e::tds_persons')) AS b WHERE p.id = 1",
+    "generatedSql" : null,
+    "generatedLambda" : null,
+    "error" : "Unsupported: lateral only supported on relation inputs",
+    "diffs" : null
+  }, {
     "id" : "grouping_sets_basic",
     "category" : "structural/grouping_sets",
     "path" : "TDS",
@@ -28160,19 +28193,19 @@
     "tds" : {
       "pass" : 71,
       "fail" : 0,
-      "error" : 50,
+      "error" : 52,
       "skip" : 0,
       "bug" : 0,
-      "total" : 121
+      "total" : 123
     },
     "name" : "structural/column_resolution_corpus_shapes",
     "relation" : {
-      "pass" : 114,
+      "pass" : 115,
       "fail" : 0,
-      "error" : 7,
+      "error" : 8,
       "skip" : 0,
       "bug" : 0,
-      "total" : 121
+      "total" : 123
     }
   }, {
     "tds" : {
@@ -55207,6 +55240,30 @@
     "state" : "ERROR",
     "rewrittenSql" : "SELECT p.dept_id AS dept_id, d.name AS dept_name, SUM(p.salary) AS s, RANK() OVER (PARTITION BY p.dept_id ORDER BY p.dept_id) AS r FROM func('e2e::rel_persons') p INNER JOIN func('e2e::rel_departments') d ON p.dept_id = d.id WHERE p.salary IS NOT NULL GROUP BY p.dept_id, d.name ORDER BY 1",
     "sql" : "SELECT p.dept_id AS dept_id, d.name AS dept_name, SUM(p.salary) AS s, RANK() OVER (PARTITION BY p.dept_id ORDER BY p.dept_id) AS r FROM persons p INNER JOIN departments d ON p.dept_id = d.id WHERE p.salary IS NOT NULL GROUP BY p.dept_id, d.name ORDER BY 1"
+  }, {
+    "path" : "TDS",
+    "id" : "crcs_g9_chained_lateral_unnest_both_default_to_value",
+    "state" : "ERROR",
+    "rewrittenSql" : "SELECT p.name AS name, b.value AS word FROM func('e2e::tds_persons') p, LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS a(value), LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS b(value) WHERE p.id = 1",
+    "sql" : "SELECT p.name AS name, b.value AS word FROM persons p, LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS a(value), LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS b(value) WHERE p.id = 1"
+  }, {
+    "path" : "Relation",
+    "id" : "crcs_g9_chained_lateral_unnest_both_default_to_value",
+    "state" : "ERROR",
+    "rewrittenSql" : "SELECT p.name AS name, b.value AS word FROM func('e2e::rel_persons') p, LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS a(value), LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS b(value) WHERE p.id = 1",
+    "sql" : "SELECT p.name AS name, b.value AS word FROM persons p, LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS a(value), LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS b(value) WHERE p.id = 1"
+  }, {
+    "path" : "TDS",
+    "id" : "crcs_g9_chained_lateral_subquery_both_default_to_value",
+    "state" : "ERROR",
+    "rewrittenSql" : "SELECT p.name AS name, b.value AS v2 FROM func('e2e::tds_persons') p, LATERAL (SELECT MAX(salary) AS value FROM func('e2e::tds_persons')) AS a, LATERAL (SELECT MIN(salary) AS value FROM func('e2e::tds_persons')) AS b WHERE p.id = 1",
+    "sql" : "SELECT p.name AS name, b.value AS v2 FROM persons p, LATERAL (SELECT MAX(salary) AS value FROM persons) AS a, LATERAL (SELECT MIN(salary) AS value FROM persons) AS b WHERE p.id = 1"
+  }, {
+    "path" : "Relation",
+    "id" : "crcs_g9_chained_lateral_subquery_both_default_to_value",
+    "state" : "PASS",
+    "rewrittenSql" : "SELECT p.name AS name, b.value AS v2 FROM func('e2e::rel_persons') p, LATERAL (SELECT MAX(salary) AS value FROM func('e2e::rel_persons')) AS a, LATERAL (SELECT MIN(salary) AS value FROM func('e2e::rel_persons')) AS b WHERE p.id = 1",
+    "sql" : "SELECT p.name AS name, b.value AS v2 FROM persons p, LATERAL (SELECT MAX(salary) AS value FROM persons) AS a, LATERAL (SELECT MIN(salary) AS value FROM persons) AS b WHERE p.id = 1"
   }, {
     "path" : "TDS",
     "id" : "grouping_sets_basic",

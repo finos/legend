@@ -4,14 +4,14 @@
 
 | Metric | TDS | Relation |
 |--------|-----|----------|
-| Total features | 612 | 612 |
-| Total tests | 691 | 691 |
-| ⚪ UNSUPPORTED | 232 | 52 |
-| ✅ PASS | 354 (77.1%) | 497 (77.8%) |
+| Total features | 614 | 614 |
+| Total tests | 693 | 693 |
+| ⚪ UNSUPPORTED | 234 | 52 |
+| ✅ PASS | 354 (77.1%) | 498 (77.7%) |
 | ❌ FAIL | 11 | 13 |
-| 💥 ERROR | 94 | 129 |
+| 💥 ERROR | 94 | 130 |
 | ❓ SKIP | 0 | 0 |
-| **Pass rate** | **77.1%** | **77.8%** |
+| **Pass rate** | **77.1%** | **77.7%** |
 
 _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 
@@ -23,8 +23,8 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 |----------|-------------|-----|----------|
 | [ALIAS_NOT_FOUND](#alias-not-found) | Column or alias reference cannot be resolved | 7 | 6 |
 | [MISC](#misc) | Other/uncategorized error | 43 | 85 |
-| [UNSUPPORTED_SYNTAX](#unsupported-syntax) | SQL construct recognized but not yet implemented | 215 | 33 |
-| [TYPE_ERROR](#type-error) | Type mismatch or cast error | 19 | 13 |
+| [UNSUPPORTED_SYNTAX](#unsupported-syntax) | SQL construct recognized but not yet implemented | 217 | 33 |
+| [TYPE_ERROR](#type-error) | Type mismatch or cast error | 19 | 14 |
 | [FUNCTION_NOT_SUPPORTED](#function-not-supported) | Function name not recognized by Legend SQL | 17 | 18 |
 | [RESULT_MISMATCH](#result-mismatch) | Query executes but results differ from Postgres | 11 | 13 |
 | [FUNCTION_NO_SQL_TRANSLATION](#function-no-sql-translation) | Pure function exists but has no SQL translation | 0 | 1 |
@@ -56,7 +56,7 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 | [json_operators](#json_operators) | 46 | 46 | 8 | 0 | 0 | 30 | 0 | 7 | 0 | 2 | 29 | 0 |
 | [interval_arithmetic](#interval_arithmetic) | 16 | 25 | 8 | 2 | 0 | 4 | 0 | 8 | 1 | 0 | 5 | 0 |
 | [column_resolution](#column_resolution) | 35 | 35 | 31 | 0 | 0 | 2 | 0 | 31 | 0 | 0 | 4 | 0 |
-| [column_resolution_corpus](#column_resolution_corpus) | 121 | 121 | 71 | 0 | 0 | 1 | 0 | 114 | 0 | 0 | 2 | 0 |
+| [column_resolution_corpus](#column_resolution_corpus) | 123 | 123 | 71 | 0 | 0 | 1 | 0 | 115 | 0 | 0 | 3 | 0 |
 | [grouping_sets](#grouping_sets) | 4 | 4 | 0 | 0 | 0 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
 | [filter_clause](#filter_clause) | 3 | 3 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 0 | 0 | 0 |
 | [within_group](#within_group) | 4 | 4 | 2 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | 0 |
@@ -708,6 +708,8 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 | 🟡 | self join with an expression key in the window ORDER BY | 1 | UNTESTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-crcs_g6_self_join_with_window_expression_key-TDS) |
 | 🟡 | self join with NULLS LAST in the window ORDER BY | 1 | UNTESTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-crcs_g6_self_join_with_null_ordered_window_key-TDS) |
 | 🔴 | aggregate + window over a join | 1 | UNTESTED | ERROR (0/1) | [UNSUPPORTED_SYNTAX](#fail-crcs_g2_agg_win_over_join-TDS), [ALIAS_NOT_FOUND](#fail-crcs_g2_agg_win_over_join-Relation) |
+| 🔴 | two chained LATERAL UNNESTs that both default to a column named VALUE | 1 | UNTESTED | ERROR (0/1) | [UNSUPPORTED_SYNTAX](#fail-crcs_g9_chained_lateral_unnest_both_default_to_value-TDS), [TYPE_ERROR](#fail-crcs_g9_chained_lateral_unnest_both_default_to_value-Relation) |
+| 🟡 | two chained non-correlated LATERAL subqueries that both default to a column named VALUE | 1 | UNTESTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-crcs_g9_chained_lateral_subquery_both_default_to_value-TDS) |
 
 <a id="grouping_sets"></a>
 
@@ -1649,7 +1651,7 @@ SELECT s.n, s.s FROM (SELECT name, salary FROM func('e2e::tds_persons')) s(n, s)
 ```
 
 **Error:**
-> Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4238 column:28), "Cannot cast a collection of size 0 to multiplicity [1]"
+> Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4245 column:28), "Cannot cast a collection of size 0 to multiplicity [1]"
 
 📗 **Relation Path**
 
@@ -3374,7 +3376,7 @@ SELECT dept_id, SUM(salary) AS total, LAST_VALUE(SUM(salary)) OVER (ORDER BY SUM
 
 <a id="unsupported-syntax"></a>
 
-### UNSUPPORTED_SYNTAX (217 tests)
+### UNSUPPORTED_SYNTAX (219 tests)
 
 #### <a id="fail-except_basic-TDS"></a>`except_basic`
 
@@ -6681,6 +6683,46 @@ SELECT p.dept_id AS dept_id, d.name AS dept_name, SUM(p.salary) AS s, RANK() OVE
 
 <br>
 
+#### <a id="fail-crcs_g9_chained_lateral_unnest_both_default_to_value-TDS"></a>`crcs_g9_chained_lateral_unnest_both_default_to_value`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT p.name AS name, b.value AS word FROM persons p, LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS a(value), LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS b(value) WHERE p.id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT p.name AS name, b.value AS word FROM func('e2e::tds_persons') p, LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS a(value), LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS b(value) WHERE p.id = 1
+```
+
+**Error:**
+> Unsupported: lateral only supported on relation inputs
+
+
+<br>
+
+#### <a id="fail-crcs_g9_chained_lateral_subquery_both_default_to_value-TDS"></a>`crcs_g9_chained_lateral_subquery_both_default_to_value`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT p.name AS name, b.value AS v2 FROM persons p, LATERAL (SELECT MAX(salary) AS value FROM persons) AS a, LATERAL (SELECT MIN(salary) AS value FROM persons) AS b WHERE p.id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT p.name AS name, b.value AS v2 FROM func('e2e::tds_persons') p, LATERAL (SELECT MAX(salary) AS value FROM func('e2e::tds_persons')) AS a, LATERAL (SELECT MIN(salary) AS value FROM func('e2e::tds_persons')) AS b WHERE p.id = 1
+```
+
+**Error:**
+> Unsupported: lateral only supported on relation inputs
+
+
+<br>
+
 #### <a id="fail-filter_clause_count-TDS"></a>`filter_clause_count`
 
 📘 **TDS Path**
@@ -8021,7 +8063,7 @@ SELECT dept_id, SUM(salary) AS total, LAST_VALUE(SUM(salary)) OVER (ORDER BY SUM
 
 <a id="type-error"></a>
 
-### TYPE_ERROR (22 tests)
+### TYPE_ERROR (23 tests)
 
 #### <a id="fail-union_dedup_null-TDS"></a>`union_dedup_null`
 
@@ -8509,6 +8551,26 @@ SELECT id, json_val -> 'a' -> 'b' AS nested FROM func('e2e::tds_json_data') WHER
 
 **Error:**
 > Execution error at (resource:/core_relational/relational/functions/tableToTDS.pure line:48 column:108), "Cast exception: Class cannot be cast to DataType"
+
+
+<br>
+
+#### <a id="fail-crcs_g9_chained_lateral_unnest_both_default_to_value-Relation"></a>`crcs_g9_chained_lateral_unnest_both_default_to_value`
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT p.name AS name, b.value AS word FROM persons p, LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS a(value), LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS b(value) WHERE p.id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT p.name AS name, b.value AS word FROM func('e2e::rel_persons') p, LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS a(value), LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS b(value) WHERE p.id = 1
+```
+
+**Error:**
+> ERROR: cannot cast type text[] to jsonb\n  Position: 316
 
 
 <a id="function-not-supported"></a>
