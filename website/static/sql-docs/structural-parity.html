@@ -46,23 +46,23 @@ li { margin: 0.3em 0; }
 <tbody>
 <tr>
 <td>Total features</td>
-<td>612</td>
-<td>612</td>
+<td>614</td>
+<td>614</td>
 </tr>
 <tr>
 <td>Total tests</td>
-<td>691</td>
-<td>691</td>
+<td>693</td>
+<td>693</td>
 </tr>
 <tr>
 <td>⚪ UNSUPPORTED</td>
-<td>232</td>
+<td>234</td>
 <td>52</td>
 </tr>
 <tr>
 <td>✅ PASS</td>
 <td>354 (77.1%)</td>
-<td>497 (77.8%)</td>
+<td>498 (77.7%)</td>
 </tr>
 <tr>
 <td>❌ FAIL</td>
@@ -72,7 +72,7 @@ li { margin: 0.3em 0; }
 <tr>
 <td>💥 ERROR</td>
 <td>94</td>
-<td>129</td>
+<td>130</td>
 </tr>
 <tr>
 <td>❓ SKIP</td>
@@ -82,7 +82,7 @@ li { margin: 0.3em 0; }
 <tr>
 <td><strong>Pass rate</strong></td>
 <td><strong>77.1%</strong></td>
-<td><strong>77.8%</strong></td>
+<td><strong>77.7%</strong></td>
 </tr>
 </tbody>
 </table>
@@ -114,14 +114,14 @@ li { margin: 0.3em 0; }
 <tr>
 <td><a href="#unsupported-syntax">UNSUPPORTED_SYNTAX</a></td>
 <td>SQL construct recognized but not yet implemented</td>
-<td>215</td>
+<td>217</td>
 <td>33</td>
 </tr>
 <tr>
 <td><a href="#type-error">TYPE_ERROR</a></td>
 <td>Type mismatch or cast error</td>
 <td>19</td>
-<td>13</td>
+<td>14</td>
 </tr>
 <tr>
 <td><a href="#function-not-supported">FUNCTION_NOT_SUPPORTED</a></td>
@@ -472,17 +472,17 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><a href="#column_resolution_corpus">column_resolution_corpus</a></td>
-<td>121</td>
-<td>121</td>
+<td>123</td>
+<td>123</td>
 <td>71</td>
 <td>0</td>
 <td>0</td>
 <td>1</td>
 <td>0</td>
-<td>114</td>
+<td>115</td>
 <td>0</td>
 <td>0</td>
-<td>2</td>
+<td>3</td>
 <td>0</td>
 </tr>
 <tr>
@@ -4908,6 +4908,22 @@ li { margin: 0.3em 0; }
 <td>ERROR (0/1)</td>
 <td><a href="#fail-crcs_g2_agg_win_over_join-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-crcs_g2_agg_win_over_join-Relation">ALIAS_NOT_FOUND</a></td>
 </tr>
+<tr>
+<td>🔴</td>
+<td>two chained LATERAL UNNESTs that both default to a column named VALUE</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>ERROR (0/1)</td>
+<td><a href="#fail-crcs_g9_chained_lateral_unnest_both_default_to_value-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-crcs_g9_chained_lateral_unnest_both_default_to_value-Relation">TYPE_ERROR</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>two chained non-correlated LATERAL subqueries that both default to a column named VALUE</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-crcs_g9_chained_lateral_subquery_both_default_to_value-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
 </tbody>
 </table>
 <p><a id="grouping_sets"></a></p>
@@ -6520,7 +6536,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4238 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4245 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -7638,7 +7654,7 @@ li { margin: 0.3em 0; }
 <p>no column found named: 'salary'. Available columns: [dept_id, total]</p>
 </blockquote>
 <p><a id="unsupported-syntax"></a></p>
-<h3>UNSUPPORTED_SYNTAX (217 tests)</h3>
+<h3>UNSUPPORTED_SYNTAX (219 tests)</h3>
 <h4><a id="fail-except_basic-TDS"></a><code>except_basic</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -9804,6 +9820,32 @@ li { margin: 0.3em 0; }
 <p>combining aggregations with window functions not currently supported</p>
 </blockquote>
 <br>
+<h4><a id="fail-crcs_g9_chained_lateral_unnest_both_default_to_value-TDS"></a><code>crcs_g9_chained_lateral_unnest_both_default_to_value</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name AS name, b.value AS word FROM persons p, LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS a(value), LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS b(value) WHERE p.id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name AS name, b.value AS word FROM func('e2e::tds_persons') p, LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS a(value), LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS b(value) WHERE p.id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: lateral only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-crcs_g9_chained_lateral_subquery_both_default_to_value-TDS"></a><code>crcs_g9_chained_lateral_subquery_both_default_to_value</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name AS name, b.value AS v2 FROM persons p, LATERAL (SELECT MAX(salary) AS value FROM persons) AS a, LATERAL (SELECT MIN(salary) AS value FROM persons) AS b WHERE p.id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name AS name, b.value AS v2 FROM func('e2e::tds_persons') p, LATERAL (SELECT MAX(salary) AS value FROM func('e2e::tds_persons')) AS a, LATERAL (SELECT MIN(salary) AS value FROM func('e2e::tds_persons')) AS b WHERE p.id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: lateral only supported on relation inputs</p>
+</blockquote>
+<br>
 <h4><a id="fail-filter_clause_count-TDS"></a><code>filter_clause_count</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -10675,7 +10717,7 @@ li { margin: 0.3em 0; }
 <p>combining aggregations with window functions not currently supported</p>
 </blockquote>
 <p><a id="type-error"></a></p>
-<h3>TYPE_ERROR (22 tests)</h3>
+<h3>TYPE_ERROR (23 tests)</h3>
 <h4><a id="fail-union_dedup_null-TDS"></a><code>union_dedup_null</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -10990,6 +11032,19 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>Execution error at (resource:/core_relational/relational/functions/tableToTDS.pure line:48 column:108), &quot;Cast exception: Class cannot be cast to DataType&quot;</p>
+</blockquote>
+<br>
+<h4><a id="fail-crcs_g9_chained_lateral_unnest_both_default_to_value-Relation"></a><code>crcs_g9_chained_lateral_unnest_both_default_to_value</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name AS name, b.value AS word FROM persons p, LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS a(value), LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS b(value) WHERE p.id = 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name AS name, b.value AS word FROM func('e2e::rel_persons') p, LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS a(value), LATERAL UNNEST(STRING_TO_ARRAY(p.name, ',')) AS b(value) WHERE p.id = 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>ERROR: cannot cast type text[] to jsonb\n  Position: 316</p>
 </blockquote>
 <p><a id="function-not-supported"></a></p>
 <h3>FUNCTION_NOT_SUPPORTED (18 tests)</h3>
