@@ -22939,7 +22939,7 @@
     "rewrittenSql" : "WITH order_totals AS (SELECT person_id, SUM(amount) AS total_orders FROM func('e2e::tds_orders') GROUP BY person_id) SELECT p.name, COALESCE(o.total_orders, 0) AS total FROM func('e2e::tds_persons') p LEFT JOIN order_totals o ON p.id = o.person_id ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7797 column:36), \"Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery\"",
+    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7852 column:36), \"Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery\"",
     "diffs" : null
   }, {
     "id" : "cte_in_join",
@@ -22961,7 +22961,7 @@
     "rewrittenSql" : "WITH dept_avg AS (SELECT dept_id, AVG(salary) AS avg_sal FROM func('e2e::tds_persons') WHERE salary IS NOT NULL GROUP BY dept_id) SELECT d.name, COALESCE(da.avg_sal, 0) AS avg_salary FROM func('e2e::tds_departments') d LEFT JOIN dept_avg da ON d.id = da.dept_id ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7797 column:36), \"Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery\"",
+    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7852 column:36), \"Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery\"",
     "diffs" : null
   }, {
     "id" : "cte_in_join_dept",
@@ -23709,7 +23709,7 @@
     "rewrittenSql" : "SELECT p.name, COUNT(*) AS cnt FROM func('e2e::rel_persons') p CROSS JOIN LATERAL UNNEST(ARRAY[1, 2, 3]) AS u(val) WHERE p.id <= 2 GROUP BY p.name ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7306 column:21), \"Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor\"",
+    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7361 column:21), \"Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor\"",
     "diffs" : null
   }, {
     "id" : "lateral_unnest_aggregate_sum",
@@ -23951,7 +23951,7 @@
     "rewrittenSql" : "SELECT p.name, u.val FROM func('e2e::rel_persons') p CROSS JOIN LATERAL UNNEST(STRING_TO_ARRAY('a,b,c', ',')) AS u(val) WHERE p.id = 1 ORDER BY 2",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7306 column:21), \"Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor\"",
+    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7361 column:21), \"Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor\"",
     "diffs" : null
   }, {
     "id" : "lateral_unnest_string_to_array_correlated",
