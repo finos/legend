@@ -8100,7 +8100,7 @@ WITH order_totals AS (SELECT person_id, SUM(amount) AS total_orders FROM func('e
 ```
 
 **Error:**
-> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7797 column:36), "Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery"
+> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7852 column:36), "Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery"
 
 
 <br>
@@ -8120,7 +8120,7 @@ WITH dept_avg AS (SELECT dept_id, AVG(salary) AS avg_sal FROM func('e2e::tds_per
 ```
 
 **Error:**
-> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7797 column:36), "Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery"
+> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7852 column:36), "Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery"
 
 
 <br>
@@ -8185,7 +8185,7 @@ SELECT p.name, COUNT(*) AS cnt FROM func('e2e::rel_persons') p CROSS JOIN LATERA
 ```
 
 **Error:**
-> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7306 column:21), "Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor"
+> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7361 column:21), "Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor"
 
 
 <br>
@@ -8205,7 +8205,7 @@ SELECT p.name, u.val FROM func('e2e::rel_persons') p CROSS JOIN LATERAL UNNEST(S
 ```
 
 **Error:**
-> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7306 column:21), "Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor"
+> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7361 column:21), "Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor"
 
 
 <br>
