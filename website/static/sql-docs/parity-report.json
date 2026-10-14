@@ -3,18 +3,18 @@
     "tds" : {
       "pass" : 925,
       "fail" : 41,
-      "error" : 1224,
+      "error" : 1226,
       "skip" : 62,
       "bug" : 88,
-      "total" : 2340
+      "total" : 2342
     },
     "relation" : {
-      "pass" : 1106,
+      "pass" : 1109,
       "fail" : 45,
-      "error" : 1039,
+      "error" : 1038,
       "skip" : 62,
       "bug" : 88,
-      "total" : 2340
+      "total" : 2342
     }
   },
   "failures" : [ {
@@ -12390,7 +12390,7 @@
     "rewrittenSql" : "SELECT INTERVAL '1 day' + INTERVAL '2 hours' AS result FROM func('e2e::tds_dates') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5263 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5271 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
     "diffs" : null
   }, {
     "id" : "op_add__interval_plus_interval",
@@ -12401,7 +12401,7 @@
     "rewrittenSql" : "SELECT INTERVAL '1 day' + INTERVAL '2 hours' AS result FROM func('e2e::rel_dates') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5263 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5271 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
     "diffs" : null
   }, {
     "id" : "op_add__interval_plus_time",
@@ -12610,7 +12610,7 @@
     "rewrittenSql" : "SELECT INTERVAL '1 day' - INTERVAL '2 hours' AS result FROM func('e2e::tds_dates') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5263 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5271 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
     "diffs" : null
   }, {
     "id" : "op_sub__interval_minus_interval",
@@ -12621,7 +12621,7 @@
     "rewrittenSql" : "SELECT INTERVAL '1 day' - INTERVAL '2 hours' AS result FROM func('e2e::rel_dates') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5263 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5271 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
     "diffs" : null
   }, {
     "id" : "op_sub__pg_lsn_minus_pg_lsn",
@@ -22279,7 +22279,7 @@
     "rewrittenSql" : "SELECT dept_id FROM func('e2e::tds_persons') UNION SELECT NULL ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:3177 column:77), \"Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor\"",
+    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:3182 column:77), \"Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor\"",
     "diffs" : null
   }, {
     "id" : "union_dedup_null",
@@ -22939,7 +22939,7 @@
     "rewrittenSql" : "WITH order_totals AS (SELECT person_id, SUM(amount) AS total_orders FROM func('e2e::tds_orders') GROUP BY person_id) SELECT p.name, COALESCE(o.total_orders, 0) AS total FROM func('e2e::tds_persons') p LEFT JOIN order_totals o ON p.id = o.person_id ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7852 column:36), \"Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery\"",
+    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7857 column:36), \"Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery\"",
     "diffs" : null
   }, {
     "id" : "cte_in_join",
@@ -22961,7 +22961,7 @@
     "rewrittenSql" : "WITH dept_avg AS (SELECT dept_id, AVG(salary) AS avg_sal FROM func('e2e::tds_persons') WHERE salary IS NOT NULL GROUP BY dept_id) SELECT d.name, COALESCE(da.avg_sal, 0) AS avg_salary FROM func('e2e::tds_departments') d LEFT JOIN dept_avg da ON d.id = da.dept_id ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7852 column:36), \"Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery\"",
+    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7857 column:36), \"Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery\"",
     "diffs" : null
   }, {
     "id" : "cte_in_join_dept",
@@ -23302,7 +23302,7 @@
     "rewrittenSql" : "SELECT s.n, s.s FROM (SELECT name, salary FROM func('e2e::tds_persons')) s(n, s) WHERE s.s IS NOT NULL ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4245 column:28), \"Cannot cast a collection of size 0 to multiplicity [1]\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4253 column:28), \"Cannot cast a collection of size 0 to multiplicity [1]\"",
     "diffs" : null
   }, {
     "id" : "alias_subquery_column_list",
@@ -23709,7 +23709,7 @@
     "rewrittenSql" : "SELECT p.name, COUNT(*) AS cnt FROM func('e2e::rel_persons') p CROSS JOIN LATERAL UNNEST(ARRAY[1, 2, 3]) AS u(val) WHERE p.id <= 2 GROUP BY p.name ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7361 column:21), \"Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor\"",
+    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7366 column:21), \"Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor\"",
     "diffs" : null
   }, {
     "id" : "lateral_unnest_aggregate_sum",
@@ -23951,7 +23951,7 @@
     "rewrittenSql" : "SELECT p.name, u.val FROM func('e2e::rel_persons') p CROSS JOIN LATERAL UNNEST(STRING_TO_ARRAY('a,b,c', ',')) AS u(val) WHERE p.id = 1 ORDER BY 2",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7361 column:21), \"Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor\"",
+    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7366 column:21), \"Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor\"",
     "diffs" : null
   }, {
     "id" : "lateral_unnest_string_to_array_correlated",
@@ -23996,6 +23996,17 @@
     "generatedSql" : null,
     "generatedLambda" : null,
     "error" : "Unsupported: unnest only supported on relation inputs",
+    "diffs" : null
+  }, {
+    "id" : "lateral_unqualified_correlated_column",
+    "category" : "structural/lateral_joins",
+    "path" : "TDS",
+    "state" : "ERROR",
+    "sql" : "SELECT x.c FROM (SELECT name AS nm FROM persons) A INNER JOIN (SELECT name AS dn FROM departments) B ON A.nm = B.dn CROSS JOIN LATERAL (SELECT p2.name AS c FROM persons p2 WHERE p2.name = dn) x ORDER BY 1",
+    "rewrittenSql" : "SELECT x.c FROM (SELECT name AS nm FROM func('e2e::tds_persons')) A INNER JOIN (SELECT name AS dn FROM func('e2e::tds_departments')) B ON A.nm = B.dn CROSS JOIN LATERAL (SELECT p2.name AS c FROM func('e2e::tds_persons') p2 WHERE p2.name = dn) x ORDER BY 1",
+    "generatedSql" : null,
+    "generatedLambda" : null,
+    "error" : "Unsupported: lateral only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "bool_column_implicit",
@@ -25989,17 +26000,6 @@
     "error" : "combining aggregations with window functions not currently supported",
     "diffs" : null
   }, {
-    "id" : "crcs_g2_agg_win_over_join",
-    "category" : "structural/column_resolution_corpus_shapes",
-    "path" : "Relation",
-    "state" : "ERROR",
-    "sql" : "SELECT p.dept_id AS dept_id, d.name AS dept_name, SUM(p.salary) AS s, RANK() OVER (PARTITION BY p.dept_id ORDER BY p.dept_id) AS r FROM persons p INNER JOIN departments d ON p.dept_id = d.id WHERE p.salary IS NOT NULL GROUP BY p.dept_id, d.name ORDER BY 1",
-    "rewrittenSql" : "SELECT p.dept_id AS dept_id, d.name AS dept_name, SUM(p.salary) AS s, RANK() OVER (PARTITION BY p.dept_id ORDER BY p.dept_id) AS r FROM func('e2e::rel_persons') p INNER JOIN func('e2e::rel_departments') d ON p.dept_id = d.id WHERE p.salary IS NOT NULL GROUP BY p.dept_id, d.name ORDER BY 1",
-    "generatedSql" : null,
-    "generatedLambda" : null,
-    "error" : "The column 'SUM(salary)' can't be found in the relation (dept_id:Integer, name_d:String, dept_name:String, s:Float[1])",
-    "diffs" : null
-  }, {
     "id" : "crcs_g9_chained_lateral_unnest_both_default_to_value",
     "category" : "structural/column_resolution_corpus_shapes",
     "path" : "TDS",
@@ -27133,6 +27133,17 @@
     "error" : "Can't find a match for function 'meta::pure::functions::collection::count()'.\\nFunctions that can match if number of parameters are changed:\\n\\t\\tcount(Any[*]):Integer[1]\\n",
     "diffs" : null
   }, {
+    "id" : "comp_window_arg_is_grouping_column_over_join",
+    "category" : "compositions/agg_window_mix",
+    "path" : "TDS",
+    "state" : "ERROR",
+    "sql" : "SELECT a.mx FROM (SELECT q.salary AS sal, MAX(salary) OVER (ORDER BY q.id) AS mx FROM persons q LEFT JOIN departments d ON q.dept_id = d.id GROUP BY q.id, q.salary) a ORDER BY 1",
+    "rewrittenSql" : "SELECT a.mx FROM (SELECT q.salary AS sal, MAX(salary) OVER (ORDER BY q.id) AS mx FROM func('e2e::tds_persons') q LEFT JOIN func('e2e::tds_departments') d ON q.dept_id = d.id GROUP BY q.id, q.salary) a ORDER BY 1",
+    "generatedSql" : null,
+    "generatedLambda" : null,
+    "error" : "combining aggregations with window functions not currently supported",
+    "diffs" : null
+  }, {
     "id" : "comp_agg_win_disjoint_keys",
     "category" : "compositions/agg_window_mix",
     "path" : "TDS",
@@ -27284,7 +27295,7 @@
     "rewrittenSql" : "SELECT d.name AS department, p.name AS employee, p.salary, RANK() OVER (PARTITION BY d.name ORDER BY p.salary DESC) AS dept_rank, CASE WHEN p.salary > 80000 THEN 'Senior' WHEN p.salary > 50000 THEN 'Mid' ELSE 'Junior' END AS band, COUNT(o.id) AS order_count, COALESCE(SUM(o.amount), 0) AS total_orders FROM func('e2e::rel_persons') p INNER JOIN func('e2e::rel_departments') d ON p.dept_id = d.id LEFT JOIN func('e2e::rel_orders') o ON o.person_id = p.id WHERE p.salary IS NOT NULL GROUP BY d.name, p.name, p.salary ORDER BY 1, 4",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "The column 'RANK()' can't be found in the relation (name_d:String, name_p:String, salary_p:Float, department:String, employee:String, band:String[1], order_count:Integer[1], total_orders:Number)",
+    "error" : "The column 'COUNT(id)' can't be found in the relation (name_d:String, name_p:String, salary_p:Float, department:String, employee:String, band:String[1], order_count:Integer[1], total_orders:Number)",
     "diffs" : null
   }, {
     "id" : "stress_zscore",
@@ -27350,7 +27361,7 @@
     "rewrittenSql" : "SELECT name, salary, ROUND(CAST(rn AS NUMERIC) / cnt * 100, 1) AS percentile FROM (SELECT name, salary, ROW_NUMBER() OVER (ORDER BY salary) AS rn, COUNT(*) OVER () AS cnt FROM func('e2e::tds_persons') WHERE salary IS NOT NULL) sub ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1593 column:36), \"Match failure: null\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1601 column:36), \"Match failure: null\"",
     "diffs" : null
   }, {
     "id" : "stress_percentile_sim",
@@ -28200,9 +28211,9 @@
     },
     "name" : "structural/column_resolution_corpus_shapes",
     "relation" : {
-      "pass" : 115,
+      "pass" : 116,
       "fail" : 0,
-      "error" : 8,
+      "error" : 7,
       "skip" : 0,
       "bug" : 0,
       "total" : 123
@@ -28391,19 +28402,19 @@
     "tds" : {
       "pass" : 0,
       "fail" : 0,
-      "error" : 31,
+      "error" : 32,
       "skip" : 0,
       "bug" : 0,
-      "total" : 31
+      "total" : 32
     },
     "name" : "structural/lateral_joins",
     "relation" : {
-      "pass" : 0,
+      "pass" : 1,
       "fail" : 0,
       "error" : 31,
       "skip" : 0,
       "bug" : 0,
-      "total" : 31
+      "total" : 32
     }
   }, {
     "tds" : {
@@ -28643,19 +28654,19 @@
     "tds" : {
       "pass" : 7,
       "fail" : 0,
-      "error" : 8,
+      "error" : 9,
       "skip" : 0,
       "bug" : 1,
-      "total" : 16
+      "total" : 17
     },
     "name" : "compositions/agg_window_mix",
     "relation" : {
-      "pass" : 11,
+      "pass" : 12,
       "fail" : 0,
       "error" : 4,
       "skip" : 0,
       "bug" : 1,
-      "total" : 16
+      "total" : 17
     }
   }, {
     "tds" : {
@@ -52136,6 +52147,18 @@
     "sql" : "SELECT u.val FROM UNNEST(STRING_TO_ARRAY('one|two|three|four', '|')) AS u(val) ORDER BY 1"
   }, {
     "path" : "TDS",
+    "id" : "lateral_unqualified_correlated_column",
+    "state" : "ERROR",
+    "rewrittenSql" : "SELECT x.c FROM (SELECT name AS nm FROM func('e2e::tds_persons')) A INNER JOIN (SELECT name AS dn FROM func('e2e::tds_departments')) B ON A.nm = B.dn CROSS JOIN LATERAL (SELECT p2.name AS c FROM func('e2e::tds_persons') p2 WHERE p2.name = dn) x ORDER BY 1",
+    "sql" : "SELECT x.c FROM (SELECT name AS nm FROM persons) A INNER JOIN (SELECT name AS dn FROM departments) B ON A.nm = B.dn CROSS JOIN LATERAL (SELECT p2.name AS c FROM persons p2 WHERE p2.name = dn) x ORDER BY 1"
+  }, {
+    "path" : "Relation",
+    "id" : "lateral_unqualified_correlated_column",
+    "state" : "PASS",
+    "rewrittenSql" : "SELECT x.c FROM (SELECT name AS nm FROM func('e2e::rel_persons')) A INNER JOIN (SELECT name AS dn FROM func('e2e::rel_departments')) B ON A.nm = B.dn CROSS JOIN LATERAL (SELECT p2.name AS c FROM func('e2e::rel_persons') p2 WHERE p2.name = dn) x ORDER BY 1",
+    "sql" : "SELECT x.c FROM (SELECT name AS nm FROM persons) A INNER JOIN (SELECT name AS dn FROM departments) B ON A.nm = B.dn CROSS JOIN LATERAL (SELECT p2.name AS c FROM persons p2 WHERE p2.name = dn) x ORDER BY 1"
+  }, {
+    "path" : "TDS",
     "id" : "bool_literal_true",
     "state" : "PASS",
     "rewrittenSql" : "SELECT name FROM func('e2e::tds_persons') WHERE TRUE ORDER BY 1",
@@ -55237,7 +55260,7 @@
   }, {
     "path" : "Relation",
     "id" : "crcs_g2_agg_win_over_join",
-    "state" : "ERROR",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT p.dept_id AS dept_id, d.name AS dept_name, SUM(p.salary) AS s, RANK() OVER (PARTITION BY p.dept_id ORDER BY p.dept_id) AS r FROM func('e2e::rel_persons') p INNER JOIN func('e2e::rel_departments') d ON p.dept_id = d.id WHERE p.salary IS NOT NULL GROUP BY p.dept_id, d.name ORDER BY 1",
     "sql" : "SELECT p.dept_id AS dept_id, d.name AS dept_name, SUM(p.salary) AS s, RANK() OVER (PARTITION BY p.dept_id ORDER BY p.dept_id) AS r FROM persons p INNER JOIN departments d ON p.dept_id = d.id WHERE p.salary IS NOT NULL GROUP BY p.dept_id, d.name ORDER BY 1"
   }, {
@@ -56150,6 +56173,18 @@
     "state" : "ERROR",
     "rewrittenSql" : "SELECT dept_id, COUNT(*) AS cnt, SUM(COUNT(*)) OVER (ORDER BY dept_id) AS running_cnt FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1",
     "sql" : "SELECT dept_id, COUNT(*) AS cnt, SUM(COUNT(*)) OVER (ORDER BY dept_id) AS running_cnt FROM persons WHERE dept_id IS NOT NULL GROUP BY dept_id ORDER BY 1"
+  }, {
+    "path" : "TDS",
+    "id" : "comp_window_arg_is_grouping_column_over_join",
+    "state" : "ERROR",
+    "rewrittenSql" : "SELECT a.mx FROM (SELECT q.salary AS sal, MAX(salary) OVER (ORDER BY q.id) AS mx FROM func('e2e::tds_persons') q LEFT JOIN func('e2e::tds_departments') d ON q.dept_id = d.id GROUP BY q.id, q.salary) a ORDER BY 1",
+    "sql" : "SELECT a.mx FROM (SELECT q.salary AS sal, MAX(salary) OVER (ORDER BY q.id) AS mx FROM persons q LEFT JOIN departments d ON q.dept_id = d.id GROUP BY q.id, q.salary) a ORDER BY 1"
+  }, {
+    "path" : "Relation",
+    "id" : "comp_window_arg_is_grouping_column_over_join",
+    "state" : "PASS",
+    "rewrittenSql" : "SELECT a.mx FROM (SELECT q.salary AS sal, MAX(salary) OVER (ORDER BY q.id) AS mx FROM func('e2e::rel_persons') q LEFT JOIN func('e2e::rel_departments') d ON q.dept_id = d.id GROUP BY q.id, q.salary) a ORDER BY 1",
+    "sql" : "SELECT a.mx FROM (SELECT q.salary AS sal, MAX(salary) OVER (ORDER BY q.id) AS mx FROM persons q LEFT JOIN departments d ON q.dept_id = d.id GROUP BY q.id, q.salary) a ORDER BY 1"
   }, {
     "path" : "TDS",
     "id" : "comp_running_pct",

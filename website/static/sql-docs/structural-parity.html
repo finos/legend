@@ -46,23 +46,23 @@ li { margin: 0.3em 0; }
 <tbody>
 <tr>
 <td>Total features</td>
-<td>614</td>
-<td>614</td>
+<td>616</td>
+<td>616</td>
 </tr>
 <tr>
 <td>Total tests</td>
-<td>693</td>
-<td>693</td>
+<td>695</td>
+<td>695</td>
 </tr>
 <tr>
 <td>⚪ UNSUPPORTED</td>
-<td>234</td>
+<td>236</td>
 <td>52</td>
 </tr>
 <tr>
 <td>✅ PASS</td>
 <td>354 (77.1%)</td>
-<td>498 (77.7%)</td>
+<td>501 (77.9%)</td>
 </tr>
 <tr>
 <td>❌ FAIL</td>
@@ -72,7 +72,7 @@ li { margin: 0.3em 0; }
 <tr>
 <td>💥 ERROR</td>
 <td>94</td>
-<td>130</td>
+<td>129</td>
 </tr>
 <tr>
 <td>❓ SKIP</td>
@@ -82,7 +82,7 @@ li { margin: 0.3em 0; }
 <tr>
 <td><strong>Pass rate</strong></td>
 <td><strong>77.1%</strong></td>
-<td><strong>77.7%</strong></td>
+<td><strong>77.9%</strong></td>
 </tr>
 </tbody>
 </table>
@@ -103,7 +103,7 @@ li { margin: 0.3em 0; }
 <td><a href="#alias-not-found">ALIAS_NOT_FOUND</a></td>
 <td>Column or alias reference cannot be resolved</td>
 <td>7</td>
-<td>6</td>
+<td>5</td>
 </tr>
 <tr>
 <td><a href="#misc">MISC</a></td>
@@ -114,7 +114,7 @@ li { margin: 0.3em 0; }
 <tr>
 <td><a href="#unsupported-syntax">UNSUPPORTED_SYNTAX</a></td>
 <td>SQL construct recognized but not yet implemented</td>
-<td>217</td>
+<td>219</td>
 <td>33</td>
 </tr>
 <tr>
@@ -367,14 +367,14 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><a href="#lateral_joins">lateral_joins</a></td>
-<td>31</td>
-<td>31</td>
+<td>32</td>
+<td>32</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>7</td>
 <td>0</td>
-<td>0</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
 <td>12</td>
@@ -479,10 +479,10 @@ li { margin: 0.3em 0; }
 <td>0</td>
 <td>1</td>
 <td>0</td>
-<td>115</td>
+<td>116</td>
 <td>0</td>
 <td>0</td>
-<td>3</td>
+<td>2</td>
 <td>0</td>
 </tr>
 <tr>
@@ -633,6 +633,21 @@ li { margin: 0.3em 0; }
 <td>0</td>
 <td>0</td>
 <td>17</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="#agg_window_mix">agg_window_mix</a></td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
 <td>0</td>
 </tr>
 </tbody>
@@ -2804,6 +2819,14 @@ li { margin: 0.3em 0; }
 <td>UNTESTED</td>
 <td><a href="#fail-lateral_unnest_string_to_array_delimiter-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
+<tr>
+<td>🟡</td>
+<td>unqualified correlated reference inside LATERAL over a realiased join</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-lateral_unqualified_correlated_column-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
 </tbody>
 </table>
 <p><a id="boolean_logic"></a></p>
@@ -4901,12 +4924,12 @@ li { margin: 0.3em 0; }
 <td><a href="#fail-crcs_g6_self_join_with_null_ordered_window_key-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td>aggregate + window over a join</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-crcs_g2_agg_win_over_join-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-crcs_g2_agg_win_over_join-Relation">ALIAS_NOT_FOUND</a></td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-crcs_g2_agg_win_over_join-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
 <td>🔴</td>
@@ -6046,10 +6069,34 @@ li { margin: 0.3em 0; }
 </tr>
 </tbody>
 </table>
+<p><a id="agg_window_mix"></a></p>
+<h2>agg_window_mix</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Feature</th>
+<th>Tests</th>
+<th>TDS</th>
+<th>Relation</th>
+<th>Error Category</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🟡</td>
+<td>window argument is a grouping column, over a realiased join</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-comp_window_arg_is_grouping_column_over_join-TDS">UNSUPPORTED_SYNTAX</a></td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2>Error Details</h2>
 <p><a id="alias-not-found"></a></p>
-<h3>ALIAS_NOT_FOUND (11 tests)</h3>
+<h3>ALIAS_NOT_FOUND (10 tests)</h3>
 <h4><a id="fail-union_multiple_mixed-TDS"></a><code>union_multiple_mixed</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -6163,19 +6210,6 @@ li { margin: 0.3em 0; }
 <p>The column 'id_p' can't be found in the relation (id_text:String[1], name:String)</p>
 </blockquote>
 <br>
-<h4><a id="fail-crcs_g2_agg_win_over_join-Relation"></a><code>crcs_g2_agg_win_over_join</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.dept_id AS dept_id, d.name AS dept_name, SUM(p.salary) AS s, RANK() OVER (PARTITION BY p.dept_id ORDER BY p.dept_id) AS r FROM persons p INNER JOIN departments d ON p.dept_id = d.id WHERE p.salary IS NOT NULL GROUP BY p.dept_id, d.name ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.dept_id AS dept_id, d.name AS dept_name, SUM(p.salary) AS s, RANK() OVER (PARTITION BY p.dept_id ORDER BY p.dept_id) AS r FROM func('e2e::rel_persons') p INNER JOIN func('e2e::rel_departments') d ON p.dept_id = d.id WHERE p.salary IS NOT NULL GROUP BY p.dept_id, d.name ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>The column 'SUM(salary)' can't be found in the relation (dept_id:Integer, name_d:String, dept_name:String, s:Float[1])</p>
-</blockquote>
-<br>
 <h4><a id="fail-comp_agg_win_multi_key_order_relation_only-Relation"></a><code>comp_agg_win_multi_key_order_relation_only</code></h4>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -6199,7 +6233,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>The column 'RANK()' can't be found in the relation (name_d:String, name_p:String, salary_p:Float, department:String, employee:String, band:String[1], order_count:Integer[1], total_orders:Number)</p>
+<p>The column 'COUNT(id)' can't be found in the relation (name_d:String, name_p:String, salary_p:Float, department:String, employee:String, band:String[1], order_count:Integer[1], total_orders:Number)</p>
 </blockquote>
 <br>
 <h4><a id="fail-window_over_agg_lead-Relation"></a><code>window_over_agg_lead</code></h4>
@@ -6536,7 +6570,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4245 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4253 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -7523,7 +7557,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1593 column:36), &quot;Match failure: null&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1601 column:36), &quot;Match failure: null&quot;</p>
 </blockquote>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -7654,7 +7688,7 @@ li { margin: 0.3em 0; }
 <p>no column found named: 'salary'. Available columns: [dept_id, total]</p>
 </blockquote>
 <p><a id="unsupported-syntax"></a></p>
-<h3>UNSUPPORTED_SYNTAX (219 tests)</h3>
+<h3>UNSUPPORTED_SYNTAX (221 tests)</h3>
 <h4><a id="fail-except_basic-TDS"></a><code>except_basic</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -8975,6 +9009,19 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>Unsupported: unnest only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-lateral_unqualified_correlated_column-TDS"></a><code>lateral_unqualified_correlated_column</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT x.c FROM (SELECT name AS nm FROM persons) A INNER JOIN (SELECT name AS dn FROM departments) B ON A.nm = B.dn CROSS JOIN LATERAL (SELECT p2.name AS c FROM persons p2 WHERE p2.name = dn) x ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT x.c FROM (SELECT name AS nm FROM func('e2e::tds_persons')) A INNER JOIN (SELECT name AS dn FROM func('e2e::tds_departments')) B ON A.nm = B.dn CROSS JOIN LATERAL (SELECT p2.name AS c FROM func('e2e::tds_persons') p2 WHERE p2.name = dn) x ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: lateral only supported on relation inputs</p>
 </blockquote>
 <br>
 <h4><a id="fail-schema_qualified_subquery-TDS"></a><code>schema_qualified_subquery</code></h4>
@@ -10716,6 +10763,19 @@ li { margin: 0.3em 0; }
 <blockquote>
 <p>combining aggregations with window functions not currently supported</p>
 </blockquote>
+<br>
+<h4><a id="fail-comp_window_arg_is_grouping_column_over_join-TDS"></a><code>comp_window_arg_is_grouping_column_over_join</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT a.mx FROM (SELECT q.salary AS sal, MAX(salary) OVER (ORDER BY q.id) AS mx FROM persons q LEFT JOIN departments d ON q.dept_id = d.id GROUP BY q.id, q.salary) a ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT a.mx FROM (SELECT q.salary AS sal, MAX(salary) OVER (ORDER BY q.id) AS mx FROM func('e2e::tds_persons') q LEFT JOIN func('e2e::tds_departments') d ON q.dept_id = d.id GROUP BY q.id, q.salary) a ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>combining aggregations with window functions not currently supported</p>
+</blockquote>
 <p><a id="type-error"></a></p>
 <h3>TYPE_ERROR (23 tests)</h3>
 <h4><a id="fail-union_dedup_null-TDS"></a><code>union_dedup_null</code></h4>
@@ -10728,7 +10788,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:3177 column:77), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:3182 column:77), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-cte_in_join-TDS"></a><code>cte_in_join</code></h4>
@@ -10741,7 +10801,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7852 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7857 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-cte_in_join_dept-TDS"></a><code>cte_in_join_dept</code></h4>
@@ -10754,7 +10814,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7852 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7857 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-cast_numeric_to_int-TDS"></a><a id="fail-cast_numeric_to_int-Relation"></a><code>cast_numeric_to_int</code></h4>
@@ -10796,7 +10856,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7361 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7366 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-lateral_unnest_string_to_array-Relation"></a><code>lateral_unnest_string_to_array</code></h4>
@@ -10809,7 +10869,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7361 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7366 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-lateral_unnest_string_to_array_correlated-Relation"></a><code>lateral_unnest_string_to_array_correlated</code></h4>
