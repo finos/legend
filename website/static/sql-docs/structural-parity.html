@@ -46,23 +46,23 @@ li { margin: 0.3em 0; }
 <tbody>
 <tr>
 <td>Total features</td>
-<td>616</td>
-<td>616</td>
+<td>617</td>
+<td>617</td>
 </tr>
 <tr>
 <td>Total tests</td>
-<td>695</td>
-<td>695</td>
+<td>696</td>
+<td>696</td>
 </tr>
 <tr>
 <td>⚪ UNSUPPORTED</td>
-<td>236</td>
-<td>52</td>
+<td>243</td>
+<td>55</td>
 </tr>
 <tr>
 <td>✅ PASS</td>
-<td>354 (77.1%)</td>
-<td>501 (77.9%)</td>
+<td>354 (78.1%)</td>
+<td>502 (78.3%)</td>
 </tr>
 <tr>
 <td>❌ FAIL</td>
@@ -71,8 +71,8 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td>💥 ERROR</td>
-<td>94</td>
-<td>129</td>
+<td>88</td>
+<td>126</td>
 </tr>
 <tr>
 <td>❓ SKIP</td>
@@ -81,8 +81,8 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><strong>Pass rate</strong></td>
-<td><strong>77.1%</strong></td>
-<td><strong>77.9%</strong></td>
+<td><strong>78.1%</strong></td>
+<td><strong>78.3%</strong></td>
 </tr>
 </tbody>
 </table>
@@ -103,19 +103,19 @@ li { margin: 0.3em 0; }
 <td><a href="#alias-not-found">ALIAS_NOT_FOUND</a></td>
 <td>Column or alias reference cannot be resolved</td>
 <td>7</td>
-<td>5</td>
+<td>6</td>
 </tr>
 <tr>
 <td><a href="#misc">MISC</a></td>
 <td>Other/uncategorized error</td>
-<td>43</td>
-<td>85</td>
+<td>37</td>
+<td>81</td>
 </tr>
 <tr>
 <td><a href="#unsupported-syntax">UNSUPPORTED_SYNTAX</a></td>
 <td>SQL construct recognized but not yet implemented</td>
-<td>219</td>
-<td>33</td>
+<td>226</td>
+<td>36</td>
 </tr>
 <tr>
 <td><a href="#type-error">TYPE_ERROR</a></td>
@@ -202,14 +202,14 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><a href="#subqueries">subqueries</a></td>
-<td>34</td>
-<td>48</td>
+<td>35</td>
+<td>49</td>
 <td>5</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>26</td>
+<td>27</td>
 <td>1</td>
 <td>0</td>
 <td>5</td>
@@ -372,12 +372,12 @@ li { margin: 0.3em 0; }
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>7</td>
+<td>1</td>
 <td>0</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
-<td>12</td>
+<td>9</td>
 <td>0</td>
 </tr>
 <tr>
@@ -1034,6 +1034,14 @@ li { margin: 0.3em 0; }
 <td>UNTESTED</td>
 <td>ERROR (0/2)</td>
 <td><a href="#fail-subquery_correlated-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-subquery_correlated-Relation">MISC</a>, <a href="#fail-subquery_correlated_count-TDS">FUNCTION_NOT_SUPPORTED</a></td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>Correlated reference into a derived table inside EXISTS</td>
+<td>1</td>
+<td>UNTESTED</td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-subquery_exists_correlated_into_nested_derived_table-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
 <td>🟡</td>
@@ -2583,33 +2591,33 @@ li { margin: 0.3em 0; }
 <td>🔴</td>
 <td>CROSS JOIN LATERAL subquery</td>
 <td>1</td>
+<td>UNTESTED</td>
 <td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-lateral_cross_subquery-TDS">MISC</a></td>
+<td><a href="#fail-lateral_cross_subquery-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-lateral_cross_subquery-Relation">MISC</a></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>⚪</td>
 <td>LEFT JOIN LATERAL</td>
 <td>1</td>
-<td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-lateral_left_join-TDS">MISC</a></td>
+<td>UNTESTED</td>
+<td>UNTESTED</td>
+<td><a href="#fail-lateral_left_join-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>⚪</td>
 <td>LEFT JOIN LATERAL with no match</td>
 <td>1</td>
-<td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-lateral_left_join_no_match-TDS">MISC</a></td>
+<td>UNTESTED</td>
+<td>UNTESTED</td>
+<td><a href="#fail-lateral_left_join_no_match-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
 <td>🔴</td>
 <td>LATERAL top-N per group</td>
 <td>1</td>
+<td>UNTESTED</td>
 <td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-lateral_top_n-TDS">MISC</a></td>
+<td><a href="#fail-lateral_top_n-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-lateral_top_n-Relation">ALIAS_NOT_FOUND</a></td>
 </tr>
 <tr>
 <td>⚪</td>
@@ -2631,9 +2639,9 @@ li { margin: 0.3em 0; }
 <td>🔴</td>
 <td>LATERAL with aggregation</td>
 <td>1</td>
+<td>UNTESTED</td>
 <td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-lateral_aggregate-TDS">MISC</a></td>
+<td><a href="#fail-lateral_aggregate-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-lateral_aggregate-Relation">MISC</a></td>
 </tr>
 <tr>
 <td>⚪</td>
@@ -2756,12 +2764,12 @@ li { margin: 0.3em 0; }
 <td><a href="#fail-lateral_unnest_mixed_expressions-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>⚪</td>
 <td>LATERAL UNNEST for top-N per array element</td>
 <td>1</td>
-<td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-lateral_unnest_top_n_per_array_element-TDS">MISC</a></td>
+<td>UNTESTED</td>
+<td>UNTESTED</td>
+<td><a href="#fail-lateral_unnest_top_n_per_array_element-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
 <td>⚪</td>
@@ -6096,7 +6104,7 @@ li { margin: 0.3em 0; }
 <hr />
 <h2>Error Details</h2>
 <p><a id="alias-not-found"></a></p>
-<h3>ALIAS_NOT_FOUND (10 tests)</h3>
+<h3>ALIAS_NOT_FOUND (11 tests)</h3>
 <h4><a id="fail-union_multiple_mixed-TDS"></a><code>union_multiple_mixed</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -6160,6 +6168,19 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>Column 'inactive' (case sensitive? true) not found among: [status, name]</p>
+</blockquote>
+<br>
+<h4><a id="fail-lateral_top_n-Relation"></a><code>lateral_top_n</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT d.name AS dept, sub.person_name FROM departments d CROSS JOIN LATERAL (SELECT p.name AS person_name FROM persons p WHERE p.dept_id = d.id ORDER BY p.salary DESC LIMIT 2) sub ORDER BY 1, 2
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT d.name AS dept, sub.person_name FROM func('e2e::rel_departments') d CROSS JOIN LATERAL (SELECT p.name AS person_name FROM func('e2e::rel_persons') p WHERE p.dept_id = d.id ORDER BY p.salary DESC LIMIT 2) sub ORDER BY 1, 2
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>The column 'salary' can't be found in the relation (person_name:String)</p>
 </blockquote>
 <br>
 <h4><a id="fail-colres_gap_order_by_expression_in_window_query-TDS"></a><a id="fail-colres_gap_order_by_expression_in_window_query-Relation"></a><code>colres_gap_order_by_expression_in_window_query</code></h4>
@@ -6249,7 +6270,7 @@ li { margin: 0.3em 0; }
 <p>The column 'offset_Relation_1__T_1__Integer_1__T_$0_1$_' can't be found (&quot;dept_id&quot;,&quot;cnt&quot;)</p>
 </blockquote>
 <p><a id="misc"></a></p>
-<h3>MISC (99 tests)</h3>
+<h3>MISC (95 tests)</h3>
 <h4><a id="fail-union_multiple_mixed-Relation"></a><code>union_multiple_mixed</code></h4>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -6570,7 +6591,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4253 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4263 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -6584,84 +6605,30 @@ li { margin: 0.3em 0; }
 <p>Column type is empty for col: n</p>
 </blockquote>
 <br>
-<h4><a id="fail-lateral_cross_subquery-TDS"></a><a id="fail-lateral_cross_subquery-Relation"></a><code>lateral_cross_subquery</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-lateral_cross_subquery-Relation"></a><code>lateral_cross_subquery</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT p.name, sub.colleague FROM persons p CROSS JOIN LATERAL (SELECT p2.name AS colleague FROM persons p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id) sub WHERE p.id &lt;= 3 ORDER BY 1, 2
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT p.name, sub.colleague FROM func('e2e::tds_persons') p CROSS JOIN LATERAL (SELECT p2.name AS colleague FROM func('e2e::tds_persons') p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id) sub WHERE p.id &lt;= 3 ORDER BY 1, 2
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT p.name, sub.colleague FROM func('e2e::rel_persons') p CROSS JOIN LATERAL (SELECT p2.name AS colleague FROM func('e2e::rel_persons') p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id) sub WHERE p.id &lt;= 3 ORDER BY 1, 2
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>no named relation found for 'p', ensure you have aliased the correct table/subquery</p>
+<p>Column 'dept_id' of the enclosing query cannot be referenced from this subquery: both use the table alias 'root'</p>
 </blockquote>
 <br>
-<h4><a id="fail-lateral_left_join-TDS"></a><a id="fail-lateral_left_join-Relation"></a><code>lateral_left_join</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name, sub.top_sal FROM persons p LEFT JOIN LATERAL (SELECT MAX(salary) AS top_sal FROM persons p2 WHERE p2.dept_id = p.dept_id) sub ON TRUE WHERE p.id &lt;= 5 ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT p.name, sub.top_sal FROM func('e2e::tds_persons') p LEFT JOIN LATERAL (SELECT MAX(salary) AS top_sal FROM func('e2e::tds_persons') p2 WHERE p2.dept_id = p.dept_id) sub ON TRUE WHERE p.id &lt;= 5 ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT p.name, sub.top_sal FROM func('e2e::rel_persons') p LEFT JOIN LATERAL (SELECT MAX(salary) AS top_sal FROM func('e2e::rel_persons') p2 WHERE p2.dept_id = p.dept_id) sub ON TRUE WHERE p.id &lt;= 5 ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>no named relation found for 'p', ensure you have aliased the correct table/subquery</p>
-</blockquote>
-<br>
-<h4><a id="fail-lateral_left_join_no_match-TDS"></a><a id="fail-lateral_left_join_no_match-Relation"></a><code>lateral_left_join_no_match</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name, sub.colleague FROM persons p LEFT JOIN LATERAL (SELECT p2.name AS colleague FROM persons p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id AND p2.salary &gt; 999999) sub ON TRUE WHERE p.id &lt;= 3 ORDER BY 1, 2
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT p.name, sub.colleague FROM func('e2e::tds_persons') p LEFT JOIN LATERAL (SELECT p2.name AS colleague FROM func('e2e::tds_persons') p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id AND p2.salary &gt; 999999) sub ON TRUE WHERE p.id &lt;= 3 ORDER BY 1, 2
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT p.name, sub.colleague FROM func('e2e::rel_persons') p LEFT JOIN LATERAL (SELECT p2.name AS colleague FROM func('e2e::rel_persons') p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id AND p2.salary &gt; 999999) sub ON TRUE WHERE p.id &lt;= 3 ORDER BY 1, 2
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>no named relation found for 'p', ensure you have aliased the correct table/subquery</p>
-</blockquote>
-<br>
-<h4><a id="fail-lateral_top_n-TDS"></a><a id="fail-lateral_top_n-Relation"></a><code>lateral_top_n</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT d.name AS dept, sub.person_name FROM departments d CROSS JOIN LATERAL (SELECT p.name AS person_name FROM persons p WHERE p.dept_id = d.id ORDER BY p.salary DESC LIMIT 2) sub ORDER BY 1, 2
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT d.name AS dept, sub.person_name FROM func('e2e::tds_departments') d CROSS JOIN LATERAL (SELECT p.name AS person_name FROM func('e2e::tds_persons') p WHERE p.dept_id = d.id ORDER BY p.salary DESC LIMIT 2) sub ORDER BY 1, 2
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT d.name AS dept, sub.person_name FROM func('e2e::rel_departments') d CROSS JOIN LATERAL (SELECT p.name AS person_name FROM func('e2e::rel_persons') p WHERE p.dept_id = d.id ORDER BY p.salary DESC LIMIT 2) sub ORDER BY 1, 2
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>no named relation found for 'd', ensure you have aliased the correct table/subquery</p>
-</blockquote>
-<br>
-<h4><a id="fail-lateral_aggregate-TDS"></a><a id="fail-lateral_aggregate-Relation"></a><code>lateral_aggregate</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<h4><a id="fail-lateral_aggregate-Relation"></a><code>lateral_aggregate</code></h4>
+<p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT p.name, sub.dept_count FROM persons p CROSS JOIN LATERAL (SELECT COUNT(*) AS dept_count FROM persons p2 WHERE p2.dept_id = p.dept_id) sub WHERE p.id &lt;= 5 ORDER BY 1
 </code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT p.name, sub.dept_count FROM func('e2e::tds_persons') p CROSS JOIN LATERAL (SELECT COUNT(*) AS dept_count FROM func('e2e::tds_persons') p2 WHERE p2.dept_id = p.dept_id) sub WHERE p.id &lt;= 5 ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
+<p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT p.name, sub.dept_count FROM func('e2e::rel_persons') p CROSS JOIN LATERAL (SELECT COUNT(*) AS dept_count FROM func('e2e::rel_persons') p2 WHERE p2.dept_id = p.dept_id) sub WHERE p.id &lt;= 5 ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>no named relation found for 'p', ensure you have aliased the correct table/subquery</p>
+<p>Column 'dept_id' of the enclosing query cannot be referenced from this subquery: both use the table alias 'root'</p>
 </blockquote>
 <br>
 <h4><a id="fail-lateral_unnest_with_ordinality-TDS"></a><a id="fail-lateral_unnest_with_ordinality-Relation"></a><code>lateral_unnest_with_ordinality</code></h4>
@@ -6704,22 +6671,6 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>no alias found with name: u1.val alias: val1</p>
-</blockquote>
-<br>
-<h4><a id="fail-lateral_unnest_top_n_per_array_element-TDS"></a><a id="fail-lateral_unnest_top_n_per_array_element-Relation"></a><code>lateral_unnest_top_n_per_array_element</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT u.val, p.name FROM UNNEST(ARRAY[1, 2, 3]) AS u(val) CROSS JOIN LATERAL (SELECT name FROM persons WHERE dept_id = u.val ORDER BY salary DESC LIMIT 1) p ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT u.val, p.name FROM UNNEST(ARRAY[1, 2, 3]) AS u(val) CROSS JOIN LATERAL (SELECT name FROM func('e2e::tds_persons') WHERE dept_id = u.val ORDER BY salary DESC LIMIT 1) p ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT u.val, p.name FROM UNNEST(ARRAY[1, 2, 3]) AS u(val) CROSS JOIN LATERAL (SELECT name FROM func('e2e::rel_persons') WHERE dept_id = u.val ORDER BY salary DESC LIMIT 1) p ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>no named relation found for 'u', ensure you have aliased the correct table/subquery</p>
 </blockquote>
 <br>
 <h4><a id="fail-bool_column_implicit-Relation"></a><code>bool_column_implicit</code></h4>
@@ -7688,7 +7639,7 @@ li { margin: 0.3em 0; }
 <p>no column found named: 'salary'. Available columns: [dept_id, total]</p>
 </blockquote>
 <p><a id="unsupported-syntax"></a></p>
-<h3>UNSUPPORTED_SYNTAX (221 tests)</h3>
+<h3>UNSUPPORTED_SYNTAX (228 tests)</h3>
 <h4><a id="fail-except_basic-TDS"></a><code>except_basic</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -8025,6 +7976,19 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>Unsupported: scalar subquery comparison only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-subquery_exists_correlated_into_nested_derived_table-TDS"></a><code>subquery_exists_correlated_into_nested_derived_table</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT abt.nm FROM (SELECT name AS nm, dept_id AS dk FROM persons GROUP BY name, dept_id) AS abt WHERE EXISTS (SELECT hist.b FROM (SELECT d.id AS b FROM departments d INNER JOIN persons q ON q.dept_id = d.id WHERE d.id = abt.dk) AS hist) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT abt.nm FROM (SELECT name AS nm, dept_id AS dk FROM func('e2e::tds_persons') GROUP BY name, dept_id) AS abt WHERE EXISTS (SELECT hist.b FROM (SELECT d.id AS b FROM func('e2e::tds_departments') d INNER JOIN func('e2e::tds_persons') q ON q.dept_id = d.id WHERE d.id = abt.dk) AS hist) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: exists only supported on relation inputs</p>
 </blockquote>
 <br>
 <h4><a id="fail-subquery_agg_comparison-TDS"></a><code>subquery_agg_comparison</code></h4>
@@ -8573,6 +8537,93 @@ li { margin: 0.3em 0; }
 <p>Unsupported: lateral only supported on relation inputs</p>
 </blockquote>
 <br>
+<h4><a id="fail-lateral_cross_subquery-TDS"></a><code>lateral_cross_subquery</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, sub.colleague FROM persons p CROSS JOIN LATERAL (SELECT p2.name AS colleague FROM persons p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id) sub WHERE p.id &lt;= 3 ORDER BY 1, 2
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, sub.colleague FROM func('e2e::tds_persons') p CROSS JOIN LATERAL (SELECT p2.name AS colleague FROM func('e2e::tds_persons') p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id) sub WHERE p.id &lt;= 3 ORDER BY 1, 2
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: lateral only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-lateral_left_join-TDS"></a><a id="fail-lateral_left_join-Relation"></a><code>lateral_left_join</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, sub.top_sal FROM persons p LEFT JOIN LATERAL (SELECT MAX(salary) AS top_sal FROM persons p2 WHERE p2.dept_id = p.dept_id) sub ON TRUE WHERE p.id &lt;= 5 ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, sub.top_sal FROM func('e2e::tds_persons') p LEFT JOIN LATERAL (SELECT MAX(salary) AS top_sal FROM func('e2e::tds_persons') p2 WHERE p2.dept_id = p.dept_id) sub ON TRUE WHERE p.id &lt;= 5 ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: lateral only supported on relation inputs</p>
+</blockquote>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, sub.top_sal FROM persons p LEFT JOIN LATERAL (SELECT MAX(salary) AS top_sal FROM persons p2 WHERE p2.dept_id = p.dept_id) sub ON TRUE WHERE p.id &lt;= 5 ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, sub.top_sal FROM func('e2e::rel_persons') p LEFT JOIN LATERAL (SELECT MAX(salary) AS top_sal FROM func('e2e::rel_persons') p2 WHERE p2.dept_id = p.dept_id) sub ON TRUE WHERE p.id &lt;= 5 ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>LEFT join lateral is not supported; use cross join, inner join, or comma syntax instead</p>
+</blockquote>
+<br>
+<h4><a id="fail-lateral_left_join_no_match-TDS"></a><a id="fail-lateral_left_join_no_match-Relation"></a><code>lateral_left_join_no_match</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, sub.colleague FROM persons p LEFT JOIN LATERAL (SELECT p2.name AS colleague FROM persons p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id AND p2.salary &gt; 999999) sub ON TRUE WHERE p.id &lt;= 3 ORDER BY 1, 2
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, sub.colleague FROM func('e2e::tds_persons') p LEFT JOIN LATERAL (SELECT p2.name AS colleague FROM func('e2e::tds_persons') p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id AND p2.salary &gt; 999999) sub ON TRUE WHERE p.id &lt;= 3 ORDER BY 1, 2
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: lateral only supported on relation inputs</p>
+</blockquote>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, sub.colleague FROM persons p LEFT JOIN LATERAL (SELECT p2.name AS colleague FROM persons p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id AND p2.salary &gt; 999999) sub ON TRUE WHERE p.id &lt;= 3 ORDER BY 1, 2
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, sub.colleague FROM func('e2e::rel_persons') p LEFT JOIN LATERAL (SELECT p2.name AS colleague FROM func('e2e::rel_persons') p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id AND p2.salary &gt; 999999) sub ON TRUE WHERE p.id &lt;= 3 ORDER BY 1, 2
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>LEFT join lateral is not supported; use cross join, inner join, or comma syntax instead</p>
+</blockquote>
+<br>
+<h4><a id="fail-lateral_top_n-TDS"></a><code>lateral_top_n</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT d.name AS dept, sub.person_name FROM departments d CROSS JOIN LATERAL (SELECT p.name AS person_name FROM persons p WHERE p.dept_id = d.id ORDER BY p.salary DESC LIMIT 2) sub ORDER BY 1, 2
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT d.name AS dept, sub.person_name FROM func('e2e::tds_departments') d CROSS JOIN LATERAL (SELECT p.name AS person_name FROM func('e2e::tds_persons') p WHERE p.dept_id = d.id ORDER BY p.salary DESC LIMIT 2) sub ORDER BY 1, 2
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: lateral only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-lateral_aggregate-TDS"></a><code>lateral_aggregate</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, sub.dept_count FROM persons p CROSS JOIN LATERAL (SELECT COUNT(*) AS dept_count FROM persons p2 WHERE p2.dept_id = p.dept_id) sub WHERE p.id &lt;= 5 ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, sub.dept_count FROM func('e2e::tds_persons') p CROSS JOIN LATERAL (SELECT COUNT(*) AS dept_count FROM func('e2e::tds_persons') p2 WHERE p2.dept_id = p.dept_id) sub WHERE p.id &lt;= 5 ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: lateral only supported on relation inputs</p>
+</blockquote>
+<br>
 <h4><a id="fail-lateral_unnest_array_literal-TDS"></a><a id="fail-lateral_unnest_array_literal-Relation"></a><code>lateral_unnest_array_literal</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -8874,6 +8925,30 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>Unsupported type on column: val (meta::pure::metamodel::valuespecification::SimpleFunctionExpression), only primitive types and enums are supported</p>
+</blockquote>
+<br>
+<h4><a id="fail-lateral_unnest_top_n_per_array_element-TDS"></a><a id="fail-lateral_unnest_top_n_per_array_element-Relation"></a><code>lateral_unnest_top_n_per_array_element</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT u.val, p.name FROM UNNEST(ARRAY[1, 2, 3]) AS u(val) CROSS JOIN LATERAL (SELECT name FROM persons WHERE dept_id = u.val ORDER BY salary DESC LIMIT 1) p ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT u.val, p.name FROM UNNEST(ARRAY[1, 2, 3]) AS u(val) CROSS JOIN LATERAL (SELECT name FROM func('e2e::tds_persons') WHERE dept_id = u.val ORDER BY salary DESC LIMIT 1) p ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: lateral only supported on relation inputs</p>
+</blockquote>
+<p>📗 <strong>Relation Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT u.val, p.name FROM UNNEST(ARRAY[1, 2, 3]) AS u(val) CROSS JOIN LATERAL (SELECT name FROM persons WHERE dept_id = u.val ORDER BY salary DESC LIMIT 1) p ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT u.val, p.name FROM UNNEST(ARRAY[1, 2, 3]) AS u(val) CROSS JOIN LATERAL (SELECT name FROM func('e2e::rel_persons') WHERE dept_id = u.val ORDER BY salary DESC LIMIT 1) p ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported type on column: val (meta::pure::metamodel::valuespecification::InstanceValue), only primitive types and enums are supported</p>
 </blockquote>
 <br>
 <h4><a id="fail-lateral_unnest_with_case-TDS"></a><a id="fail-lateral_unnest_with_case-Relation"></a><code>lateral_unnest_with_case</code></h4>
