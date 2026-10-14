@@ -5031,7 +5031,7 @@
     "rewrittenSql" : "SELECT COALESCE(NULL, NULL, NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core/pure/tds/tdsSchema.pure line:359 column:135), \"Cannot cast a collection of size 0 to multiplicity [1]\"",
+    "error" : "Execution error at (resource:/core/pure/tds/tdsSchema.pure line:410 column:135), \"Cannot cast a collection of size 0 to multiplicity [1]\"",
     "diffs" : null
   }, {
     "id" : "coalesce__all_null",

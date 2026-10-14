@@ -8717,7 +8717,7 @@ SELECT COALESCE(NULL, NULL, NULL) AS result FROM func('e2e::tds_persons') WHERE 
 ```
 
 **Error:**
-> Execution error at (resource:/core/pure/tds/tdsSchema.pure line:359 column:135), "Cannot cast a collection of size 0 to multiplicity [1]"
+> Execution error at (resource:/core/pure/tds/tdsSchema.pure line:410 column:135), "Cannot cast a collection of size 0 to multiplicity [1]"
 
 📗 **Relation Path**
 
