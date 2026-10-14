@@ -1662,7 +1662,7 @@ SELECT s.n, s.s FROM (SELECT name, salary FROM func('e2e::tds_persons')) s(n, s)
 ```
 
 **Error:**
-> Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4263 column:28), "Cannot cast a collection of size 0 to multiplicity [1]"
+> Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4271 column:28), "Cannot cast a collection of size 0 to multiplicity [1]"
 
 📗 **Relation Path**
 
@@ -3077,7 +3077,7 @@ SELECT name, salary, ROUND(CAST(rn AS NUMERIC) / cnt * 100, 1) AS percentile FRO
 ```
 
 **Error:**
-> Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1601 column:36), "Match failure: null"
+> Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1609 column:36), "Match failure: null"
 
 📗 **Relation Path**
 

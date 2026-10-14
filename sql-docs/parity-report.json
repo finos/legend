@@ -12390,7 +12390,7 @@
     "rewrittenSql" : "SELECT INTERVAL '1 day' + INTERVAL '2 hours' AS result FROM func('e2e::tds_dates') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5281 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5289 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
     "diffs" : null
   }, {
     "id" : "op_add__interval_plus_interval",
@@ -12401,7 +12401,7 @@
     "rewrittenSql" : "SELECT INTERVAL '1 day' + INTERVAL '2 hours' AS result FROM func('e2e::rel_dates') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5281 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5289 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
     "diffs" : null
   }, {
     "id" : "op_add__interval_plus_time",
@@ -12610,7 +12610,7 @@
     "rewrittenSql" : "SELECT INTERVAL '1 day' - INTERVAL '2 hours' AS result FROM func('e2e::tds_dates') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5281 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5289 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
     "diffs" : null
   }, {
     "id" : "op_sub__interval_minus_interval",
@@ -12621,7 +12621,7 @@
     "rewrittenSql" : "SELECT INTERVAL '1 day' - INTERVAL '2 hours' AS result FROM func('e2e::rel_dates') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5281 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5289 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
     "diffs" : null
   }, {
     "id" : "op_sub__pg_lsn_minus_pg_lsn",
@@ -23313,7 +23313,7 @@
     "rewrittenSql" : "SELECT s.n, s.s FROM (SELECT name, salary FROM func('e2e::tds_persons')) s(n, s) WHERE s.s IS NOT NULL ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4263 column:28), \"Cannot cast a collection of size 0 to multiplicity [1]\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4271 column:28), \"Cannot cast a collection of size 0 to multiplicity [1]\"",
     "diffs" : null
   }, {
     "id" : "alias_subquery_column_list",
@@ -27372,7 +27372,7 @@
     "rewrittenSql" : "SELECT name, salary, ROUND(CAST(rn AS NUMERIC) / cnt * 100, 1) AS percentile FROM (SELECT name, salary, ROW_NUMBER() OVER (ORDER BY salary) AS rn, COUNT(*) OVER () AS cnt FROM func('e2e::tds_persons') WHERE salary IS NOT NULL) sub ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1601 column:36), \"Match failure: null\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1609 column:36), \"Match failure: null\"",
     "diffs" : null
   }, {
     "id" : "stress_percentile_sim",
