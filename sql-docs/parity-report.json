@@ -3,18 +3,18 @@
     "tds" : {
       "pass" : 925,
       "fail" : 41,
-      "error" : 1226,
+      "error" : 1227,
       "skip" : 62,
       "bug" : 88,
-      "total" : 2342
+      "total" : 2343
     },
     "relation" : {
-      "pass" : 1109,
+      "pass" : 1110,
       "fail" : 45,
       "error" : 1038,
       "skip" : 62,
       "bug" : 88,
-      "total" : 2342
+      "total" : 2343
     }
   },
   "failures" : [ {
@@ -12390,7 +12390,7 @@
     "rewrittenSql" : "SELECT INTERVAL '1 day' + INTERVAL '2 hours' AS result FROM func('e2e::tds_dates') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5271 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5281 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
     "diffs" : null
   }, {
     "id" : "op_add__interval_plus_interval",
@@ -12401,7 +12401,7 @@
     "rewrittenSql" : "SELECT INTERVAL '1 day' + INTERVAL '2 hours' AS result FROM func('e2e::rel_dates') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5271 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5281 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
     "diffs" : null
   }, {
     "id" : "op_add__interval_plus_time",
@@ -12610,7 +12610,7 @@
     "rewrittenSql" : "SELECT INTERVAL '1 day' - INTERVAL '2 hours' AS result FROM func('e2e::tds_dates') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5271 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5281 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
     "diffs" : null
   }, {
     "id" : "op_sub__interval_minus_interval",
@@ -12621,7 +12621,7 @@
     "rewrittenSql" : "SELECT INTERVAL '1 day' - INTERVAL '2 hours' AS result FROM func('e2e::rel_dates') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5271 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5281 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
     "diffs" : null
   }, {
     "id" : "op_sub__pg_lsn_minus_pg_lsn",
@@ -22458,6 +22458,17 @@
     "error" : "No function matches the given name \"func\"",
     "diffs" : null
   }, {
+    "id" : "subquery_exists_correlated_into_nested_derived_table",
+    "category" : "structural/subqueries",
+    "path" : "TDS",
+    "state" : "ERROR",
+    "sql" : "SELECT abt.nm FROM (SELECT name AS nm, dept_id AS dk FROM persons GROUP BY name, dept_id) AS abt WHERE EXISTS (SELECT hist.b FROM (SELECT d.id AS b FROM departments d INNER JOIN persons q ON q.dept_id = d.id WHERE d.id = abt.dk) AS hist) ORDER BY 1",
+    "rewrittenSql" : "SELECT abt.nm FROM (SELECT name AS nm, dept_id AS dk FROM func('e2e::tds_persons') GROUP BY name, dept_id) AS abt WHERE EXISTS (SELECT hist.b FROM (SELECT d.id AS b FROM func('e2e::tds_departments') d INNER JOIN func('e2e::tds_persons') q ON q.dept_id = d.id WHERE d.id = abt.dk) AS hist) ORDER BY 1",
+    "generatedSql" : null,
+    "generatedLambda" : null,
+    "error" : "Unsupported: exists only supported on relation inputs",
+    "diffs" : null
+  }, {
     "id" : "subquery_agg_comparison",
     "category" : "structural/subqueries",
     "path" : "TDS",
@@ -23302,7 +23313,7 @@
     "rewrittenSql" : "SELECT s.n, s.s FROM (SELECT name, salary FROM func('e2e::tds_persons')) s(n, s) WHERE s.s IS NOT NULL ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4253 column:28), \"Cannot cast a collection of size 0 to multiplicity [1]\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4263 column:28), \"Cannot cast a collection of size 0 to multiplicity [1]\"",
     "diffs" : null
   }, {
     "id" : "alias_subquery_column_list",
@@ -23346,7 +23357,7 @@
     "rewrittenSql" : "SELECT p.name, sub.colleague FROM func('e2e::tds_persons') p CROSS JOIN LATERAL (SELECT p2.name AS colleague FROM func('e2e::tds_persons') p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id) sub WHERE p.id <= 3 ORDER BY 1, 2",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "no named relation found for 'p', ensure you have aliased the correct table/subquery",
+    "error" : "Unsupported: lateral only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "lateral_cross_subquery",
@@ -23357,7 +23368,7 @@
     "rewrittenSql" : "SELECT p.name, sub.colleague FROM func('e2e::rel_persons') p CROSS JOIN LATERAL (SELECT p2.name AS colleague FROM func('e2e::rel_persons') p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id) sub WHERE p.id <= 3 ORDER BY 1, 2",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "no named relation found for 'p', ensure you have aliased the correct table/subquery",
+    "error" : "Column 'dept_id' of the enclosing query cannot be referenced from this subquery: both use the table alias 'root'",
     "diffs" : null
   }, {
     "id" : "lateral_left_join",
@@ -23368,7 +23379,7 @@
     "rewrittenSql" : "SELECT p.name, sub.top_sal FROM func('e2e::tds_persons') p LEFT JOIN LATERAL (SELECT MAX(salary) AS top_sal FROM func('e2e::tds_persons') p2 WHERE p2.dept_id = p.dept_id) sub ON TRUE WHERE p.id <= 5 ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "no named relation found for 'p', ensure you have aliased the correct table/subquery",
+    "error" : "Unsupported: lateral only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "lateral_left_join",
@@ -23379,7 +23390,7 @@
     "rewrittenSql" : "SELECT p.name, sub.top_sal FROM func('e2e::rel_persons') p LEFT JOIN LATERAL (SELECT MAX(salary) AS top_sal FROM func('e2e::rel_persons') p2 WHERE p2.dept_id = p.dept_id) sub ON TRUE WHERE p.id <= 5 ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "no named relation found for 'p', ensure you have aliased the correct table/subquery",
+    "error" : "LEFT join lateral is not supported; use cross join, inner join, or comma syntax instead",
     "diffs" : null
   }, {
     "id" : "lateral_left_join_no_match",
@@ -23390,7 +23401,7 @@
     "rewrittenSql" : "SELECT p.name, sub.colleague FROM func('e2e::tds_persons') p LEFT JOIN LATERAL (SELECT p2.name AS colleague FROM func('e2e::tds_persons') p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id AND p2.salary > 999999) sub ON TRUE WHERE p.id <= 3 ORDER BY 1, 2",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "no named relation found for 'p', ensure you have aliased the correct table/subquery",
+    "error" : "Unsupported: lateral only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "lateral_left_join_no_match",
@@ -23401,7 +23412,7 @@
     "rewrittenSql" : "SELECT p.name, sub.colleague FROM func('e2e::rel_persons') p LEFT JOIN LATERAL (SELECT p2.name AS colleague FROM func('e2e::rel_persons') p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id AND p2.salary > 999999) sub ON TRUE WHERE p.id <= 3 ORDER BY 1, 2",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "no named relation found for 'p', ensure you have aliased the correct table/subquery",
+    "error" : "LEFT join lateral is not supported; use cross join, inner join, or comma syntax instead",
     "diffs" : null
   }, {
     "id" : "lateral_top_n",
@@ -23412,7 +23423,7 @@
     "rewrittenSql" : "SELECT d.name AS dept, sub.person_name FROM func('e2e::tds_departments') d CROSS JOIN LATERAL (SELECT p.name AS person_name FROM func('e2e::tds_persons') p WHERE p.dept_id = d.id ORDER BY p.salary DESC LIMIT 2) sub ORDER BY 1, 2",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "no named relation found for 'd', ensure you have aliased the correct table/subquery",
+    "error" : "Unsupported: lateral only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "lateral_top_n",
@@ -23423,7 +23434,7 @@
     "rewrittenSql" : "SELECT d.name AS dept, sub.person_name FROM func('e2e::rel_departments') d CROSS JOIN LATERAL (SELECT p.name AS person_name FROM func('e2e::rel_persons') p WHERE p.dept_id = d.id ORDER BY p.salary DESC LIMIT 2) sub ORDER BY 1, 2",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "no named relation found for 'd', ensure you have aliased the correct table/subquery",
+    "error" : "The column 'salary' can't be found in the relation (person_name:String)",
     "diffs" : null
   }, {
     "id" : "lateral_function_in_from",
@@ -23478,7 +23489,7 @@
     "rewrittenSql" : "SELECT p.name, sub.dept_count FROM func('e2e::tds_persons') p CROSS JOIN LATERAL (SELECT COUNT(*) AS dept_count FROM func('e2e::tds_persons') p2 WHERE p2.dept_id = p.dept_id) sub WHERE p.id <= 5 ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "no named relation found for 'p', ensure you have aliased the correct table/subquery",
+    "error" : "Unsupported: lateral only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "lateral_aggregate",
@@ -23489,7 +23500,7 @@
     "rewrittenSql" : "SELECT p.name, sub.dept_count FROM func('e2e::rel_persons') p CROSS JOIN LATERAL (SELECT COUNT(*) AS dept_count FROM func('e2e::rel_persons') p2 WHERE p2.dept_id = p.dept_id) sub WHERE p.id <= 5 ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "no named relation found for 'p', ensure you have aliased the correct table/subquery",
+    "error" : "Column 'dept_id' of the enclosing query cannot be referenced from this subquery: both use the table alias 'root'",
     "diffs" : null
   }, {
     "id" : "lateral_unnest_array_literal",
@@ -23830,7 +23841,7 @@
     "rewrittenSql" : "SELECT u.val, p.name FROM UNNEST(ARRAY[1, 2, 3]) AS u(val) CROSS JOIN LATERAL (SELECT name FROM func('e2e::tds_persons') WHERE dept_id = u.val ORDER BY salary DESC LIMIT 1) p ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "no named relation found for 'u', ensure you have aliased the correct table/subquery",
+    "error" : "Unsupported: lateral only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "lateral_unnest_top_n_per_array_element",
@@ -23841,7 +23852,7 @@
     "rewrittenSql" : "SELECT u.val, p.name FROM UNNEST(ARRAY[1, 2, 3]) AS u(val) CROSS JOIN LATERAL (SELECT name FROM func('e2e::rel_persons') WHERE dept_id = u.val ORDER BY salary DESC LIMIT 1) p ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "no named relation found for 'u', ensure you have aliased the correct table/subquery",
+    "error" : "Unsupported type on column: val (meta::pure::metamodel::valuespecification::InstanceValue), only primitive types and enums are supported",
     "diffs" : null
   }, {
     "id" : "lateral_unnest_with_case",
@@ -28024,19 +28035,19 @@
     "tds" : {
       "pass" : 6,
       "fail" : 0,
-      "error" : 42,
+      "error" : 43,
       "skip" : 0,
       "bug" : 0,
-      "total" : 48
+      "total" : 49
     },
     "name" : "structural/subqueries",
     "relation" : {
-      "pass" : 38,
+      "pass" : 39,
       "fail" : 1,
       "error" : 9,
       "skip" : 0,
       "bug" : 0,
-      "total" : 48
+      "total" : 49
     }
   }, {
     "tds" : {
@@ -49367,6 +49378,18 @@
     "state" : "ERROR",
     "rewrittenSql" : "SELECT p.name, (SELECT COUNT(*) FROM func('e2e::rel_orders') o WHERE o.person_id = p.id) AS order_count FROM func('e2e::rel_persons') p ORDER BY 1",
     "sql" : "SELECT p.name, (SELECT COUNT(*) FROM orders o WHERE o.person_id = p.id) AS order_count FROM persons p ORDER BY 1"
+  }, {
+    "path" : "TDS",
+    "id" : "subquery_exists_correlated_into_nested_derived_table",
+    "state" : "ERROR",
+    "rewrittenSql" : "SELECT abt.nm FROM (SELECT name AS nm, dept_id AS dk FROM func('e2e::tds_persons') GROUP BY name, dept_id) AS abt WHERE EXISTS (SELECT hist.b FROM (SELECT d.id AS b FROM func('e2e::tds_departments') d INNER JOIN func('e2e::tds_persons') q ON q.dept_id = d.id WHERE d.id = abt.dk) AS hist) ORDER BY 1",
+    "sql" : "SELECT abt.nm FROM (SELECT name AS nm, dept_id AS dk FROM persons GROUP BY name, dept_id) AS abt WHERE EXISTS (SELECT hist.b FROM (SELECT d.id AS b FROM departments d INNER JOIN persons q ON q.dept_id = d.id WHERE d.id = abt.dk) AS hist) ORDER BY 1"
+  }, {
+    "path" : "Relation",
+    "id" : "subquery_exists_correlated_into_nested_derived_table",
+    "state" : "PASS",
+    "rewrittenSql" : "SELECT abt.nm FROM (SELECT name AS nm, dept_id AS dk FROM func('e2e::rel_persons') GROUP BY name, dept_id) AS abt WHERE EXISTS (SELECT hist.b FROM (SELECT d.id AS b FROM func('e2e::rel_departments') d INNER JOIN func('e2e::rel_persons') q ON q.dept_id = d.id WHERE d.id = abt.dk) AS hist) ORDER BY 1",
+    "sql" : "SELECT abt.nm FROM (SELECT name AS nm, dept_id AS dk FROM persons GROUP BY name, dept_id) AS abt WHERE EXISTS (SELECT hist.b FROM (SELECT d.id AS b FROM departments d INNER JOIN persons q ON q.dept_id = d.id WHERE d.id = abt.dk) AS hist) ORDER BY 1"
   }, {
     "path" : "TDS",
     "id" : "subquery_agg_comparison",

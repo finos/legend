@@ -4,14 +4,14 @@
 
 | Metric | TDS | Relation |
 |--------|-----|----------|
-| Total features | 616 | 616 |
-| Total tests | 695 | 695 |
-| ⚪ UNSUPPORTED | 236 | 52 |
-| ✅ PASS | 354 (77.1%) | 501 (77.9%) |
+| Total features | 617 | 617 |
+| Total tests | 696 | 696 |
+| ⚪ UNSUPPORTED | 243 | 55 |
+| ✅ PASS | 354 (78.1%) | 502 (78.3%) |
 | ❌ FAIL | 11 | 13 |
-| 💥 ERROR | 94 | 129 |
+| 💥 ERROR | 88 | 126 |
 | ❓ SKIP | 0 | 0 |
-| **Pass rate** | **77.1%** | **77.9%** |
+| **Pass rate** | **78.1%** | **78.3%** |
 
 _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 
@@ -21,9 +21,9 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 
 | Category | Description | TDS | Relation |
 |----------|-------------|-----|----------|
-| [ALIAS_NOT_FOUND](#alias-not-found) | Column or alias reference cannot be resolved | 7 | 5 |
-| [MISC](#misc) | Other/uncategorized error | 43 | 85 |
-| [UNSUPPORTED_SYNTAX](#unsupported-syntax) | SQL construct recognized but not yet implemented | 219 | 33 |
+| [ALIAS_NOT_FOUND](#alias-not-found) | Column or alias reference cannot be resolved | 7 | 6 |
+| [MISC](#misc) | Other/uncategorized error | 37 | 81 |
+| [UNSUPPORTED_SYNTAX](#unsupported-syntax) | SQL construct recognized but not yet implemented | 226 | 36 |
 | [TYPE_ERROR](#type-error) | Type mismatch or cast error | 19 | 14 |
 | [FUNCTION_NOT_SUPPORTED](#function-not-supported) | Function name not recognized by Legend SQL | 17 | 18 |
 | [RESULT_MISMATCH](#result-mismatch) | Query executes but results differ from Postgres | 11 | 13 |
@@ -38,7 +38,7 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 |----------|----------|-------|----------|-------------|----------|-----------|--------------|----------|-------------|----------|-----------|-------------|
 | [joins](#joins) | 10 | 24 | 10 | 0 | 0 | 0 | 0 | 10 | 0 | 0 | 0 | 0 |
 | [set_operations](#set_operations) | 25 | 32 | 4 | 1 | 0 | 4 | 0 | 16 | 1 | 0 | 8 | 0 |
-| [subqueries](#subqueries) | 34 | 48 | 5 | 0 | 0 | 0 | 0 | 26 | 1 | 0 | 5 | 0 |
+| [subqueries](#subqueries) | 35 | 49 | 5 | 0 | 0 | 0 | 0 | 27 | 1 | 0 | 5 | 0 |
 | [ctes](#ctes) | 10 | 13 | 0 | 0 | 0 | 7 | 0 | 7 | 0 | 0 | 1 | 0 |
 | [order_limit_offset](#order_limit_offset) | 20 | 30 | 20 | 0 | 0 | 0 | 0 | 20 | 0 | 0 | 0 | 0 |
 | [group_by](#group_by) | 12 | 17 | 12 | 0 | 0 | 0 | 0 | 12 | 0 | 0 | 0 | 0 |
@@ -49,7 +49,7 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 | [where_predicates](#where_predicates) | 20 | 20 | 12 | 0 | 2 | 0 | 0 | 17 | 0 | 3 | 0 | 0 |
 | [aliases](#aliases) | 15 | 15 | 14 | 0 | 0 | 1 | 0 | 14 | 0 | 0 | 1 | 0 |
 | [having](#having) | 11 | 11 | 11 | 0 | 0 | 0 | 0 | 11 | 0 | 0 | 0 | 0 |
-| [lateral_joins](#lateral_joins) | 32 | 32 | 0 | 0 | 0 | 7 | 0 | 1 | 0 | 0 | 12 | 0 |
+| [lateral_joins](#lateral_joins) | 32 | 32 | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 0 | 9 | 0 |
 | [boolean_logic](#boolean_logic) | 16 | 16 | 10 | 0 | 2 | 4 | 0 | 9 | 0 | 2 | 5 | 0 |
 | [select_star](#select_star) | 8 | 8 | 6 | 0 | 1 | 1 | 0 | 7 | 0 | 1 | 0 | 0 |
 | [multiple_schemas](#multiple_schemas) | 7 | 7 | 4 | 0 | 2 | 0 | 0 | 5 | 0 | 2 | 0 | 0 |
@@ -133,6 +133,7 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 | 🟡 | Subquery with NOT EXISTS | 1 | UNTESTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-subquery_not_exists-TDS) |
 | 🟢 | Derived table (subquery in FROM) | 2 | PASS (2/2) | PASS (2/2) |  |
 | 🔴 | Correlated subquery | 2 | UNTESTED | ERROR (0/2) | [UNSUPPORTED_SYNTAX](#fail-subquery_correlated-TDS), [MISC](#fail-subquery_correlated-Relation), [FUNCTION_NOT_SUPPORTED](#fail-subquery_correlated_count-TDS) |
+| 🟡 | Correlated reference into a derived table inside EXISTS | 1 | UNTESTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-subquery_exists_correlated_into_nested_derived_table-TDS) |
 | 🟡 | Subquery with aggregate comparison | 2 | UNTESTED | PASS (2/2) | [UNSUPPORTED_SYNTAX](#fail-subquery_agg_comparison-TDS) |
 | 🔴 | Subquery in HAVING | 1 | UNTESTED | ERROR (0/1) | [UNSUPPORTED_SYNTAX](#fail-subquery_in_having-TDS), [MISC](#fail-subquery_in_having-Relation) |
 | 🟡 | Subquery with UNION | 1 | UNTESTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-subquery_union-TDS) |
@@ -381,13 +382,13 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 | | Feature | Tests | TDS | Relation | Error Category |
 |--|---------|-------|-----|----------|----------------|
 | ⚪ | CROSS JOIN LATERAL | 1 | UNTESTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-lateral_cross_basic-TDS), [FUNCTION_NOT_SUPPORTED](#fail-lateral_cross_basic-Relation) |
-| 🔴 | CROSS JOIN LATERAL subquery | 1 | ERROR (0/1) | ERROR (0/1) | [MISC](#fail-lateral_cross_subquery-TDS) |
-| 🔴 | LEFT JOIN LATERAL | 1 | ERROR (0/1) | ERROR (0/1) | [MISC](#fail-lateral_left_join-TDS) |
-| 🔴 | LEFT JOIN LATERAL with no match | 1 | ERROR (0/1) | ERROR (0/1) | [MISC](#fail-lateral_left_join_no_match-TDS) |
-| 🔴 | LATERAL top-N per group | 1 | ERROR (0/1) | ERROR (0/1) | [MISC](#fail-lateral_top_n-TDS) |
+| 🔴 | CROSS JOIN LATERAL subquery | 1 | UNTESTED | ERROR (0/1) | [UNSUPPORTED_SYNTAX](#fail-lateral_cross_subquery-TDS), [MISC](#fail-lateral_cross_subquery-Relation) |
+| ⚪ | LEFT JOIN LATERAL | 1 | UNTESTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-lateral_left_join-TDS) |
+| ⚪ | LEFT JOIN LATERAL with no match | 1 | UNTESTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-lateral_left_join_no_match-TDS) |
+| 🔴 | LATERAL top-N per group | 1 | UNTESTED | ERROR (0/1) | [UNSUPPORTED_SYNTAX](#fail-lateral_top_n-TDS), [ALIAS_NOT_FOUND](#fail-lateral_top_n-Relation) |
 | ⚪ | function in FROM | 1 | UNTESTED | UNTESTED | [FUNCTION_NOT_SUPPORTED](#fail-lateral_function_in_from-TDS) |
 | ⚪ | function in FROM with cross join | 1 | UNTESTED | UNTESTED | [FUNCTION_NOT_SUPPORTED](#fail-lateral_function_cross_join-TDS) |
-| 🔴 | LATERAL with aggregation | 1 | ERROR (0/1) | ERROR (0/1) | [MISC](#fail-lateral_aggregate-TDS) |
+| 🔴 | LATERAL with aggregation | 1 | UNTESTED | ERROR (0/1) | [UNSUPPORTED_SYNTAX](#fail-lateral_aggregate-TDS), [MISC](#fail-lateral_aggregate-Relation) |
 | ⚪ | LATERAL UNNEST with array literal | 1 | UNTESTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-lateral_unnest_array_literal-TDS) |
 | ⚪ | LATERAL UNNEST with string array | 1 | UNTESTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-lateral_unnest_string_array-TDS) |
 | 🔴 | LATERAL UNNEST with ordinality | 1 | ERROR (0/1) | ERROR (0/1) | [MISC](#fail-lateral_unnest_with_ordinality-TDS) |
@@ -403,7 +404,7 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 | ⚪ | LATERAL UNNEST in subquery | 1 | UNTESTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-lateral_unnest_nested-TDS) |
 | ⚪ | LATERAL UNNEST with decimal array | 1 | UNTESTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-lateral_unnest_decimal_array-TDS) |
 | ⚪ | LATERAL UNNEST with expression array | 1 | UNTESTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-lateral_unnest_mixed_expressions-TDS) |
-| 🔴 | LATERAL UNNEST for top-N per array element | 1 | ERROR (0/1) | ERROR (0/1) | [MISC](#fail-lateral_unnest_top_n_per_array_element-TDS) |
+| ⚪ | LATERAL UNNEST for top-N per array element | 1 | UNTESTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-lateral_unnest_top_n_per_array_element-TDS) |
 | ⚪ | LATERAL UNNEST with CASE expression | 1 | UNTESTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-lateral_unnest_with_case-TDS) |
 | ⚪ | LATERAL UNNEST with self-join | 1 | UNTESTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-lateral_unnest_self_join-TDS) |
 | ⚪ | LATERAL UNNEST with NULL values in array | 1 | UNTESTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-lateral_unnest_array_with_nulls-TDS) |
@@ -917,7 +918,7 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 
 <a id="alias-not-found"></a>
 
-### ALIAS_NOT_FOUND (10 tests)
+### ALIAS_NOT_FOUND (11 tests)
 
 #### <a id="fail-union_multiple_mixed-TDS"></a>`union_multiple_mixed`
 
@@ -1015,6 +1016,26 @@ SELECT 'active' AS status, name FROM func('e2e::tds_persons') WHERE active = tru
 
 **Error:**
 > Column 'inactive' (case sensitive? true) not found among: [status, name]
+
+
+<br>
+
+#### <a id="fail-lateral_top_n-Relation"></a>`lateral_top_n`
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT d.name AS dept, sub.person_name FROM departments d CROSS JOIN LATERAL (SELECT p.name AS person_name FROM persons p WHERE p.dept_id = d.id ORDER BY p.salary DESC LIMIT 2) sub ORDER BY 1, 2
+```
+
+**Legend SQL:**
+```sql
+SELECT d.name AS dept, sub.person_name FROM func('e2e::rel_departments') d CROSS JOIN LATERAL (SELECT p.name AS person_name FROM func('e2e::rel_persons') p WHERE p.dept_id = d.id ORDER BY p.salary DESC LIMIT 2) sub ORDER BY 1, 2
+```
+
+**Error:**
+> The column 'salary' can't be found in the relation (person_name:String)
 
 
 <br>
@@ -1149,7 +1170,7 @@ SELECT dept_id, COUNT(*) AS cnt, LEAD(COUNT(*)) OVER (ORDER BY dept_id) AS next_
 
 <a id="misc"></a>
 
-### MISC (99 tests)
+### MISC (95 tests)
 
 #### <a id="fail-union_multiple_mixed-Relation"></a>`union_multiple_mixed`
 
@@ -1641,7 +1662,7 @@ SELECT s.n, s.s FROM (SELECT name, salary FROM func('e2e::tds_persons')) s(n, s)
 ```
 
 **Error:**
-> Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4253 column:28), "Cannot cast a collection of size 0 to multiplicity [1]"
+> Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4263 column:28), "Cannot cast a collection of size 0 to multiplicity [1]"
 
 📗 **Relation Path**
 
@@ -1661,127 +1682,42 @@ SELECT s.n, s.s FROM (SELECT name, salary FROM func('e2e::rel_persons')) s(n, s)
 
 <br>
 
-#### <a id="fail-lateral_cross_subquery-TDS"></a><a id="fail-lateral_cross_subquery-Relation"></a>`lateral_cross_subquery`
+#### <a id="fail-lateral_cross_subquery-Relation"></a>`lateral_cross_subquery`
 
-🔴 **Failed in both TDS and Relation**
+📗 **Relation Path**
 
 **Input SQL:**
 ```sql
 SELECT p.name, sub.colleague FROM persons p CROSS JOIN LATERAL (SELECT p2.name AS colleague FROM persons p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id) sub WHERE p.id <= 3 ORDER BY 1, 2
 ```
 
-**Legend SQL (TDS):**
-```sql
-SELECT p.name, sub.colleague FROM func('e2e::tds_persons') p CROSS JOIN LATERAL (SELECT p2.name AS colleague FROM func('e2e::tds_persons') p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id) sub WHERE p.id <= 3 ORDER BY 1, 2
-```
-
-**Legend SQL (Relation):**
+**Legend SQL:**
 ```sql
 SELECT p.name, sub.colleague FROM func('e2e::rel_persons') p CROSS JOIN LATERAL (SELECT p2.name AS colleague FROM func('e2e::rel_persons') p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id) sub WHERE p.id <= 3 ORDER BY 1, 2
 ```
 
 **Error:**
-> no named relation found for 'p', ensure you have aliased the correct table/subquery
+> Column 'dept_id' of the enclosing query cannot be referenced from this subquery: both use the table alias 'root'
 
 
 <br>
 
-#### <a id="fail-lateral_left_join-TDS"></a><a id="fail-lateral_left_join-Relation"></a>`lateral_left_join`
+#### <a id="fail-lateral_aggregate-Relation"></a>`lateral_aggregate`
 
-🔴 **Failed in both TDS and Relation**
-
-**Input SQL:**
-```sql
-SELECT p.name, sub.top_sal FROM persons p LEFT JOIN LATERAL (SELECT MAX(salary) AS top_sal FROM persons p2 WHERE p2.dept_id = p.dept_id) sub ON TRUE WHERE p.id <= 5 ORDER BY 1
-```
-
-**Legend SQL (TDS):**
-```sql
-SELECT p.name, sub.top_sal FROM func('e2e::tds_persons') p LEFT JOIN LATERAL (SELECT MAX(salary) AS top_sal FROM func('e2e::tds_persons') p2 WHERE p2.dept_id = p.dept_id) sub ON TRUE WHERE p.id <= 5 ORDER BY 1
-```
-
-**Legend SQL (Relation):**
-```sql
-SELECT p.name, sub.top_sal FROM func('e2e::rel_persons') p LEFT JOIN LATERAL (SELECT MAX(salary) AS top_sal FROM func('e2e::rel_persons') p2 WHERE p2.dept_id = p.dept_id) sub ON TRUE WHERE p.id <= 5 ORDER BY 1
-```
-
-**Error:**
-> no named relation found for 'p', ensure you have aliased the correct table/subquery
-
-
-<br>
-
-#### <a id="fail-lateral_left_join_no_match-TDS"></a><a id="fail-lateral_left_join_no_match-Relation"></a>`lateral_left_join_no_match`
-
-🔴 **Failed in both TDS and Relation**
-
-**Input SQL:**
-```sql
-SELECT p.name, sub.colleague FROM persons p LEFT JOIN LATERAL (SELECT p2.name AS colleague FROM persons p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id AND p2.salary > 999999) sub ON TRUE WHERE p.id <= 3 ORDER BY 1, 2
-```
-
-**Legend SQL (TDS):**
-```sql
-SELECT p.name, sub.colleague FROM func('e2e::tds_persons') p LEFT JOIN LATERAL (SELECT p2.name AS colleague FROM func('e2e::tds_persons') p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id AND p2.salary > 999999) sub ON TRUE WHERE p.id <= 3 ORDER BY 1, 2
-```
-
-**Legend SQL (Relation):**
-```sql
-SELECT p.name, sub.colleague FROM func('e2e::rel_persons') p LEFT JOIN LATERAL (SELECT p2.name AS colleague FROM func('e2e::rel_persons') p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id AND p2.salary > 999999) sub ON TRUE WHERE p.id <= 3 ORDER BY 1, 2
-```
-
-**Error:**
-> no named relation found for 'p', ensure you have aliased the correct table/subquery
-
-
-<br>
-
-#### <a id="fail-lateral_top_n-TDS"></a><a id="fail-lateral_top_n-Relation"></a>`lateral_top_n`
-
-🔴 **Failed in both TDS and Relation**
-
-**Input SQL:**
-```sql
-SELECT d.name AS dept, sub.person_name FROM departments d CROSS JOIN LATERAL (SELECT p.name AS person_name FROM persons p WHERE p.dept_id = d.id ORDER BY p.salary DESC LIMIT 2) sub ORDER BY 1, 2
-```
-
-**Legend SQL (TDS):**
-```sql
-SELECT d.name AS dept, sub.person_name FROM func('e2e::tds_departments') d CROSS JOIN LATERAL (SELECT p.name AS person_name FROM func('e2e::tds_persons') p WHERE p.dept_id = d.id ORDER BY p.salary DESC LIMIT 2) sub ORDER BY 1, 2
-```
-
-**Legend SQL (Relation):**
-```sql
-SELECT d.name AS dept, sub.person_name FROM func('e2e::rel_departments') d CROSS JOIN LATERAL (SELECT p.name AS person_name FROM func('e2e::rel_persons') p WHERE p.dept_id = d.id ORDER BY p.salary DESC LIMIT 2) sub ORDER BY 1, 2
-```
-
-**Error:**
-> no named relation found for 'd', ensure you have aliased the correct table/subquery
-
-
-<br>
-
-#### <a id="fail-lateral_aggregate-TDS"></a><a id="fail-lateral_aggregate-Relation"></a>`lateral_aggregate`
-
-🔴 **Failed in both TDS and Relation**
+📗 **Relation Path**
 
 **Input SQL:**
 ```sql
 SELECT p.name, sub.dept_count FROM persons p CROSS JOIN LATERAL (SELECT COUNT(*) AS dept_count FROM persons p2 WHERE p2.dept_id = p.dept_id) sub WHERE p.id <= 5 ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
-```sql
-SELECT p.name, sub.dept_count FROM func('e2e::tds_persons') p CROSS JOIN LATERAL (SELECT COUNT(*) AS dept_count FROM func('e2e::tds_persons') p2 WHERE p2.dept_id = p.dept_id) sub WHERE p.id <= 5 ORDER BY 1
-```
-
-**Legend SQL (Relation):**
+**Legend SQL:**
 ```sql
 SELECT p.name, sub.dept_count FROM func('e2e::rel_persons') p CROSS JOIN LATERAL (SELECT COUNT(*) AS dept_count FROM func('e2e::rel_persons') p2 WHERE p2.dept_id = p.dept_id) sub WHERE p.id <= 5 ORDER BY 1
 ```
 
 **Error:**
-> no named relation found for 'p', ensure you have aliased the correct table/subquery
+> Column 'dept_id' of the enclosing query cannot be referenced from this subquery: both use the table alias 'root'
 
 
 <br>
@@ -1847,31 +1783,6 @@ SELECT p.name, u1.val AS val1, u2.val AS val2 FROM func('e2e::rel_persons') p CR
 
 **Error:**
 > no alias found with name: u1.val alias: val1
-
-
-<br>
-
-#### <a id="fail-lateral_unnest_top_n_per_array_element-TDS"></a><a id="fail-lateral_unnest_top_n_per_array_element-Relation"></a>`lateral_unnest_top_n_per_array_element`
-
-🔴 **Failed in both TDS and Relation**
-
-**Input SQL:**
-```sql
-SELECT u.val, p.name FROM UNNEST(ARRAY[1, 2, 3]) AS u(val) CROSS JOIN LATERAL (SELECT name FROM persons WHERE dept_id = u.val ORDER BY salary DESC LIMIT 1) p ORDER BY 1
-```
-
-**Legend SQL (TDS):**
-```sql
-SELECT u.val, p.name FROM UNNEST(ARRAY[1, 2, 3]) AS u(val) CROSS JOIN LATERAL (SELECT name FROM func('e2e::tds_persons') WHERE dept_id = u.val ORDER BY salary DESC LIMIT 1) p ORDER BY 1
-```
-
-**Legend SQL (Relation):**
-```sql
-SELECT u.val, p.name FROM UNNEST(ARRAY[1, 2, 3]) AS u(val) CROSS JOIN LATERAL (SELECT name FROM func('e2e::rel_persons') WHERE dept_id = u.val ORDER BY salary DESC LIMIT 1) p ORDER BY 1
-```
-
-**Error:**
-> no named relation found for 'u', ensure you have aliased the correct table/subquery
 
 
 <br>
@@ -3366,7 +3277,7 @@ SELECT dept_id, SUM(salary) AS total, LAST_VALUE(SUM(salary)) OVER (ORDER BY SUM
 
 <a id="unsupported-syntax"></a>
 
-### UNSUPPORTED_SYNTAX (221 tests)
+### UNSUPPORTED_SYNTAX (228 tests)
 
 #### <a id="fail-except_basic-TDS"></a>`except_basic`
 
@@ -3884,6 +3795,26 @@ SELECT p.name, p.salary FROM func('e2e::tds_persons') p WHERE p.salary > (SELECT
 
 **Error:**
 > Unsupported: scalar subquery comparison only supported on relation inputs
+
+
+<br>
+
+#### <a id="fail-subquery_exists_correlated_into_nested_derived_table-TDS"></a>`subquery_exists_correlated_into_nested_derived_table`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT abt.nm FROM (SELECT name AS nm, dept_id AS dk FROM persons GROUP BY name, dept_id) AS abt WHERE EXISTS (SELECT hist.b FROM (SELECT d.id AS b FROM departments d INNER JOIN persons q ON q.dept_id = d.id WHERE d.id = abt.dk) AS hist) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT abt.nm FROM (SELECT name AS nm, dept_id AS dk FROM func('e2e::tds_persons') GROUP BY name, dept_id) AS abt WHERE EXISTS (SELECT hist.b FROM (SELECT d.id AS b FROM func('e2e::tds_departments') d INNER JOIN func('e2e::tds_persons') q ON q.dept_id = d.id WHERE d.id = abt.dk) AS hist) ORDER BY 1
+```
+
+**Error:**
+> Unsupported: exists only supported on relation inputs
 
 
 <br>
@@ -4728,6 +4659,136 @@ SELECT p.name, g.val FROM func('e2e::tds_persons') p CROSS JOIN LATERAL GENERATE
 
 <br>
 
+#### <a id="fail-lateral_cross_subquery-TDS"></a>`lateral_cross_subquery`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT p.name, sub.colleague FROM persons p CROSS JOIN LATERAL (SELECT p2.name AS colleague FROM persons p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id) sub WHERE p.id <= 3 ORDER BY 1, 2
+```
+
+**Legend SQL:**
+```sql
+SELECT p.name, sub.colleague FROM func('e2e::tds_persons') p CROSS JOIN LATERAL (SELECT p2.name AS colleague FROM func('e2e::tds_persons') p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id) sub WHERE p.id <= 3 ORDER BY 1, 2
+```
+
+**Error:**
+> Unsupported: lateral only supported on relation inputs
+
+
+<br>
+
+#### <a id="fail-lateral_left_join-TDS"></a><a id="fail-lateral_left_join-Relation"></a>`lateral_left_join`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT p.name, sub.top_sal FROM persons p LEFT JOIN LATERAL (SELECT MAX(salary) AS top_sal FROM persons p2 WHERE p2.dept_id = p.dept_id) sub ON TRUE WHERE p.id <= 5 ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT p.name, sub.top_sal FROM func('e2e::tds_persons') p LEFT JOIN LATERAL (SELECT MAX(salary) AS top_sal FROM func('e2e::tds_persons') p2 WHERE p2.dept_id = p.dept_id) sub ON TRUE WHERE p.id <= 5 ORDER BY 1
+```
+
+**Error:**
+> Unsupported: lateral only supported on relation inputs
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT p.name, sub.top_sal FROM persons p LEFT JOIN LATERAL (SELECT MAX(salary) AS top_sal FROM persons p2 WHERE p2.dept_id = p.dept_id) sub ON TRUE WHERE p.id <= 5 ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT p.name, sub.top_sal FROM func('e2e::rel_persons') p LEFT JOIN LATERAL (SELECT MAX(salary) AS top_sal FROM func('e2e::rel_persons') p2 WHERE p2.dept_id = p.dept_id) sub ON TRUE WHERE p.id <= 5 ORDER BY 1
+```
+
+**Error:**
+> LEFT join lateral is not supported; use cross join, inner join, or comma syntax instead
+
+
+<br>
+
+#### <a id="fail-lateral_left_join_no_match-TDS"></a><a id="fail-lateral_left_join_no_match-Relation"></a>`lateral_left_join_no_match`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT p.name, sub.colleague FROM persons p LEFT JOIN LATERAL (SELECT p2.name AS colleague FROM persons p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id AND p2.salary > 999999) sub ON TRUE WHERE p.id <= 3 ORDER BY 1, 2
+```
+
+**Legend SQL:**
+```sql
+SELECT p.name, sub.colleague FROM func('e2e::tds_persons') p LEFT JOIN LATERAL (SELECT p2.name AS colleague FROM func('e2e::tds_persons') p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id AND p2.salary > 999999) sub ON TRUE WHERE p.id <= 3 ORDER BY 1, 2
+```
+
+**Error:**
+> Unsupported: lateral only supported on relation inputs
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT p.name, sub.colleague FROM persons p LEFT JOIN LATERAL (SELECT p2.name AS colleague FROM persons p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id AND p2.salary > 999999) sub ON TRUE WHERE p.id <= 3 ORDER BY 1, 2
+```
+
+**Legend SQL:**
+```sql
+SELECT p.name, sub.colleague FROM func('e2e::rel_persons') p LEFT JOIN LATERAL (SELECT p2.name AS colleague FROM func('e2e::rel_persons') p2 WHERE p2.dept_id = p.dept_id AND p2.id != p.id AND p2.salary > 999999) sub ON TRUE WHERE p.id <= 3 ORDER BY 1, 2
+```
+
+**Error:**
+> LEFT join lateral is not supported; use cross join, inner join, or comma syntax instead
+
+
+<br>
+
+#### <a id="fail-lateral_top_n-TDS"></a>`lateral_top_n`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT d.name AS dept, sub.person_name FROM departments d CROSS JOIN LATERAL (SELECT p.name AS person_name FROM persons p WHERE p.dept_id = d.id ORDER BY p.salary DESC LIMIT 2) sub ORDER BY 1, 2
+```
+
+**Legend SQL:**
+```sql
+SELECT d.name AS dept, sub.person_name FROM func('e2e::tds_departments') d CROSS JOIN LATERAL (SELECT p.name AS person_name FROM func('e2e::tds_persons') p WHERE p.dept_id = d.id ORDER BY p.salary DESC LIMIT 2) sub ORDER BY 1, 2
+```
+
+**Error:**
+> Unsupported: lateral only supported on relation inputs
+
+
+<br>
+
+#### <a id="fail-lateral_aggregate-TDS"></a>`lateral_aggregate`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT p.name, sub.dept_count FROM persons p CROSS JOIN LATERAL (SELECT COUNT(*) AS dept_count FROM persons p2 WHERE p2.dept_id = p.dept_id) sub WHERE p.id <= 5 ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT p.name, sub.dept_count FROM func('e2e::tds_persons') p CROSS JOIN LATERAL (SELECT COUNT(*) AS dept_count FROM func('e2e::tds_persons') p2 WHERE p2.dept_id = p.dept_id) sub WHERE p.id <= 5 ORDER BY 1
+```
+
+**Error:**
+> Unsupported: lateral only supported on relation inputs
+
+
+<br>
+
 #### <a id="fail-lateral_unnest_array_literal-TDS"></a><a id="fail-lateral_unnest_array_literal-Relation"></a>`lateral_unnest_array_literal`
 
 📘 **TDS Path**
@@ -5169,6 +5230,41 @@ SELECT p.name, u.val FROM func('e2e::rel_persons') p CROSS JOIN LATERAL UNNEST(A
 
 **Error:**
 > Unsupported type on column: val (meta::pure::metamodel::valuespecification::SimpleFunctionExpression), only primitive types and enums are supported
+
+
+<br>
+
+#### <a id="fail-lateral_unnest_top_n_per_array_element-TDS"></a><a id="fail-lateral_unnest_top_n_per_array_element-Relation"></a>`lateral_unnest_top_n_per_array_element`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT u.val, p.name FROM UNNEST(ARRAY[1, 2, 3]) AS u(val) CROSS JOIN LATERAL (SELECT name FROM persons WHERE dept_id = u.val ORDER BY salary DESC LIMIT 1) p ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT u.val, p.name FROM UNNEST(ARRAY[1, 2, 3]) AS u(val) CROSS JOIN LATERAL (SELECT name FROM func('e2e::tds_persons') WHERE dept_id = u.val ORDER BY salary DESC LIMIT 1) p ORDER BY 1
+```
+
+**Error:**
+> Unsupported: lateral only supported on relation inputs
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT u.val, p.name FROM UNNEST(ARRAY[1, 2, 3]) AS u(val) CROSS JOIN LATERAL (SELECT name FROM persons WHERE dept_id = u.val ORDER BY salary DESC LIMIT 1) p ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT u.val, p.name FROM UNNEST(ARRAY[1, 2, 3]) AS u(val) CROSS JOIN LATERAL (SELECT name FROM func('e2e::rel_persons') WHERE dept_id = u.val ORDER BY salary DESC LIMIT 1) p ORDER BY 1
+```
+
+**Error:**
+> Unsupported type on column: val (meta::pure::metamodel::valuespecification::InstanceValue), only primitive types and enums are supported
 
 
 <br>
