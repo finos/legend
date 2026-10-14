@@ -76,16 +76,16 @@ See [full details](structural-parity.md) for per-feature results.
 
 | Metric | TDS | Relation |
 |--------|-----|----------|
-| Total features | 614 | 614 |
-| Total tests | 693 | 693 |
-| ⚪ UNSUPPORTED | 213 | 47 |
-| ✅ PASS | 305 | 433 |
+| Total features | 616 | 616 |
+| Total tests | 695 | 695 |
+| ⚪ UNSUPPORTED | 215 | 47 |
+| ✅ PASS | 305 | 436 |
 | ⚠️ PARTIAL | 3 | 3 |
 | ❌ FAIL | 10 | 11 |
-| 💥 ERROR | 83 | 120 |
+| 💥 ERROR | 83 | 119 |
 | ❓ UNTESTED | 0 | 0 |
-| **Full pass rate** | **76.1%** | **76.4%** |
-| **Pass + partial rate** | **76.8%** | **76.9%** |
+| **Full pass rate** | **76.1%** | **76.6%** |
+| **Pass + partial rate** | **76.8%** | **77.2%** |
 
 _Percentages exclude unsupported features from the denominator._
 
@@ -177,6 +177,6 @@ Combined pass rate across function coverage and structural parity.
 | Path | Pass | Tested | Pass Rate |
 |------|------|--------|-----------|
 | TDS | 618 | 1627 | **38.0%** |
-| Relation | 771 | 1793 | **43.0%** |
-| **Combined** | **1389** | **3340** | **41.6%** |
+| Relation | 774 | 1795 | **43.1%** |
+| **Combined** | **1392** | **3342** | **41.7%** |
 

@@ -4,14 +4,14 @@
 
 | Metric | TDS | Relation |
 |--------|-----|----------|
-| Total features | 614 | 614 |
-| Total tests | 693 | 693 |
-| ⚪ UNSUPPORTED | 234 | 52 |
-| ✅ PASS | 354 (77.1%) | 498 (77.7%) |
+| Total features | 616 | 616 |
+| Total tests | 695 | 695 |
+| ⚪ UNSUPPORTED | 236 | 52 |
+| ✅ PASS | 354 (77.1%) | 501 (77.9%) |
 | ❌ FAIL | 11 | 13 |
-| 💥 ERROR | 94 | 130 |
+| 💥 ERROR | 94 | 129 |
 | ❓ SKIP | 0 | 0 |
-| **Pass rate** | **77.1%** | **77.7%** |
+| **Pass rate** | **77.1%** | **77.9%** |
 
 _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 
@@ -21,9 +21,9 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 
 | Category | Description | TDS | Relation |
 |----------|-------------|-----|----------|
-| [ALIAS_NOT_FOUND](#alias-not-found) | Column or alias reference cannot be resolved | 7 | 6 |
+| [ALIAS_NOT_FOUND](#alias-not-found) | Column or alias reference cannot be resolved | 7 | 5 |
 | [MISC](#misc) | Other/uncategorized error | 43 | 85 |
-| [UNSUPPORTED_SYNTAX](#unsupported-syntax) | SQL construct recognized but not yet implemented | 217 | 33 |
+| [UNSUPPORTED_SYNTAX](#unsupported-syntax) | SQL construct recognized but not yet implemented | 219 | 33 |
 | [TYPE_ERROR](#type-error) | Type mismatch or cast error | 19 | 14 |
 | [FUNCTION_NOT_SUPPORTED](#function-not-supported) | Function name not recognized by Legend SQL | 17 | 18 |
 | [RESULT_MISMATCH](#result-mismatch) | Query executes but results differ from Postgres | 11 | 13 |
@@ -49,14 +49,14 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 | [where_predicates](#where_predicates) | 20 | 20 | 12 | 0 | 2 | 0 | 0 | 17 | 0 | 3 | 0 | 0 |
 | [aliases](#aliases) | 15 | 15 | 14 | 0 | 0 | 1 | 0 | 14 | 0 | 0 | 1 | 0 |
 | [having](#having) | 11 | 11 | 11 | 0 | 0 | 0 | 0 | 11 | 0 | 0 | 0 | 0 |
-| [lateral_joins](#lateral_joins) | 31 | 31 | 0 | 0 | 0 | 7 | 0 | 0 | 0 | 0 | 12 | 0 |
+| [lateral_joins](#lateral_joins) | 32 | 32 | 0 | 0 | 0 | 7 | 0 | 1 | 0 | 0 | 12 | 0 |
 | [boolean_logic](#boolean_logic) | 16 | 16 | 10 | 0 | 2 | 4 | 0 | 9 | 0 | 2 | 5 | 0 |
 | [select_star](#select_star) | 8 | 8 | 6 | 0 | 1 | 1 | 0 | 7 | 0 | 1 | 0 | 0 |
 | [multiple_schemas](#multiple_schemas) | 7 | 7 | 4 | 0 | 2 | 0 | 0 | 5 | 0 | 2 | 0 | 0 |
 | [json_operators](#json_operators) | 46 | 46 | 8 | 0 | 0 | 30 | 0 | 7 | 0 | 2 | 29 | 0 |
 | [interval_arithmetic](#interval_arithmetic) | 16 | 25 | 8 | 2 | 0 | 4 | 0 | 8 | 1 | 0 | 5 | 0 |
 | [column_resolution](#column_resolution) | 35 | 35 | 31 | 0 | 0 | 2 | 0 | 31 | 0 | 0 | 4 | 0 |
-| [column_resolution_corpus](#column_resolution_corpus) | 123 | 123 | 71 | 0 | 0 | 1 | 0 | 115 | 0 | 0 | 3 | 0 |
+| [column_resolution_corpus](#column_resolution_corpus) | 123 | 123 | 71 | 0 | 0 | 1 | 0 | 116 | 0 | 0 | 2 | 0 |
 | [grouping_sets](#grouping_sets) | 4 | 4 | 0 | 0 | 0 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
 | [filter_clause](#filter_clause) | 3 | 3 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 0 | 0 | 0 |
 | [within_group](#within_group) | 4 | 4 | 2 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | 0 |
@@ -67,6 +67,7 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 | [window_frames](#window_frames) | 23 | 30 | 3 | 0 | 0 | 4 | 0 | 7 | 0 | 0 | 16 | 0 |
 | [window_partitioning](#window_partitioning) | 13 | 14 | 6 | 0 | 0 | 0 | 0 | 13 | 0 | 0 | 0 | 0 |
 | [compositions](#compositions) | 53 | 59 | 16 | 0 | 0 | 4 | 0 | 32 | 0 | 0 | 17 | 0 |
+| [agg_window_mix](#agg_window_mix) | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 |
 
 ---
 
@@ -410,6 +411,7 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 | 🔴 | LATERAL UNNEST with STRING_TO_ARRAY | 1 | UNTESTED | ERROR (0/1) | [UNSUPPORTED_SYNTAX](#fail-lateral_unnest_string_to_array-TDS), [TYPE_ERROR](#fail-lateral_unnest_string_to_array-Relation) |
 | 🔴 | LATERAL UNNEST with STRING_TO_ARRAY on correlated column | 1 | UNTESTED | ERROR (0/1) | [UNSUPPORTED_SYNTAX](#fail-lateral_unnest_string_to_array_correlated-TDS), [TYPE_ERROR](#fail-lateral_unnest_string_to_array_correlated-Relation) |
 | ⚪ | LATERAL UNNEST with STRING_TO_ARRAY custom delimiter | 1 | UNTESTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-lateral_unnest_string_to_array_delimiter-TDS) |
+| 🟡 | unqualified correlated reference inside LATERAL over a realiased join | 1 | UNTESTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-lateral_unqualified_correlated_column-TDS) |
 
 <a id="boolean_logic"></a>
 
@@ -707,7 +709,7 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 | 🟢 | colliding base names with a window partitioned on the colliding column | 1 | PASS (1/1) | PASS (1/1) |  |
 | 🟡 | self join with an expression key in the window ORDER BY | 1 | UNTESTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-crcs_g6_self_join_with_window_expression_key-TDS) |
 | 🟡 | self join with NULLS LAST in the window ORDER BY | 1 | UNTESTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-crcs_g6_self_join_with_null_ordered_window_key-TDS) |
-| 🔴 | aggregate + window over a join | 1 | UNTESTED | ERROR (0/1) | [UNSUPPORTED_SYNTAX](#fail-crcs_g2_agg_win_over_join-TDS), [ALIAS_NOT_FOUND](#fail-crcs_g2_agg_win_over_join-Relation) |
+| 🟡 | aggregate + window over a join | 1 | UNTESTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-crcs_g2_agg_win_over_join-TDS) |
 | 🔴 | two chained LATERAL UNNESTs that both default to a column named VALUE | 1 | UNTESTED | ERROR (0/1) | [UNSUPPORTED_SYNTAX](#fail-crcs_g9_chained_lateral_unnest_both_default_to_value-TDS), [TYPE_ERROR](#fail-crcs_g9_chained_lateral_unnest_both_default_to_value-Relation) |
 | 🟡 | two chained non-correlated LATERAL subqueries that both default to a column named VALUE | 1 | UNTESTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-crcs_g9_chained_lateral_subquery_both_default_to_value-TDS) |
 
@@ -901,13 +903,21 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 | 🔴 | FIRST_VALUE over GROUP BY aggregate | 1 | UNTESTED | ERROR (0/1) | [UNSUPPORTED_SYNTAX](#fail-window_over_agg_first_value-TDS), [MISC](#fail-window_over_agg_first_value-Relation) |
 | 🔴 | LAST_VALUE over GROUP BY aggregate | 1 | UNTESTED | ERROR (0/1) | [UNSUPPORTED_SYNTAX](#fail-window_over_agg_last_value-TDS), [MISC](#fail-window_over_agg_last_value-Relation) |
 
+<a id="agg_window_mix"></a>
+
+## agg_window_mix
+
+| | Feature | Tests | TDS | Relation | Error Category |
+|--|---------|-------|-----|----------|----------------|
+| 🟡 | window argument is a grouping column, over a realiased join | 1 | UNTESTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-comp_window_arg_is_grouping_column_over_join-TDS) |
+
 ---
 
 ## Error Details
 
 <a id="alias-not-found"></a>
 
-### ALIAS_NOT_FOUND (11 tests)
+### ALIAS_NOT_FOUND (10 tests)
 
 #### <a id="fail-union_multiple_mixed-TDS"></a>`union_multiple_mixed`
 
@@ -1079,26 +1089,6 @@ SELECT CAST(p.id AS VARCHAR(10)) AS id_text, p.name AS name FROM func('e2e::rel_
 
 <br>
 
-#### <a id="fail-crcs_g2_agg_win_over_join-Relation"></a>`crcs_g2_agg_win_over_join`
-
-📗 **Relation Path**
-
-**Input SQL:**
-```sql
-SELECT p.dept_id AS dept_id, d.name AS dept_name, SUM(p.salary) AS s, RANK() OVER (PARTITION BY p.dept_id ORDER BY p.dept_id) AS r FROM persons p INNER JOIN departments d ON p.dept_id = d.id WHERE p.salary IS NOT NULL GROUP BY p.dept_id, d.name ORDER BY 1
-```
-
-**Legend SQL:**
-```sql
-SELECT p.dept_id AS dept_id, d.name AS dept_name, SUM(p.salary) AS s, RANK() OVER (PARTITION BY p.dept_id ORDER BY p.dept_id) AS r FROM func('e2e::rel_persons') p INNER JOIN func('e2e::rel_departments') d ON p.dept_id = d.id WHERE p.salary IS NOT NULL GROUP BY p.dept_id, d.name ORDER BY 1
-```
-
-**Error:**
-> The column 'SUM(salary)' can't be found in the relation (dept_id:Integer, name_d:String, dept_name:String, s:Float[1])
-
-
-<br>
-
 #### <a id="fail-comp_agg_win_multi_key_order_relation_only-Relation"></a>`comp_agg_win_multi_key_order_relation_only`
 
 📗 **Relation Path**
@@ -1134,7 +1124,7 @@ SELECT d.name AS department, p.name AS employee, p.salary, RANK() OVER (PARTITIO
 ```
 
 **Error:**
-> The column 'RANK()' can't be found in the relation (name_d:String, name_p:String, salary_p:Float, department:String, employee:String, band:String[1], order_count:Integer[1], total_orders:Number)
+> The column 'COUNT(id)' can't be found in the relation (name_d:String, name_p:String, salary_p:Float, department:String, employee:String, band:String[1], order_count:Integer[1], total_orders:Number)
 
 
 <br>
@@ -1651,7 +1641,7 @@ SELECT s.n, s.s FROM (SELECT name, salary FROM func('e2e::tds_persons')) s(n, s)
 ```
 
 **Error:**
-> Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4245 column:28), "Cannot cast a collection of size 0 to multiplicity [1]"
+> Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4253 column:28), "Cannot cast a collection of size 0 to multiplicity [1]"
 
 📗 **Relation Path**
 
@@ -3176,7 +3166,7 @@ SELECT name, salary, ROUND(CAST(rn AS NUMERIC) / cnt * 100, 1) AS percentile FRO
 ```
 
 **Error:**
-> Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1593 column:36), "Match failure: null"
+> Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:1601 column:36), "Match failure: null"
 
 📗 **Relation Path**
 
@@ -3376,7 +3366,7 @@ SELECT dept_id, SUM(salary) AS total, LAST_VALUE(SUM(salary)) OVER (ORDER BY SUM
 
 <a id="unsupported-syntax"></a>
 
-### UNSUPPORTED_SYNTAX (219 tests)
+### UNSUPPORTED_SYNTAX (221 tests)
 
 #### <a id="fail-except_basic-TDS"></a>`except_basic`
 
@@ -5379,6 +5369,26 @@ SELECT u.val FROM UNNEST(STRING_TO_ARRAY('one|two|three|four', '|')) AS u(val) O
 
 **Error:**
 > Unsupported: unnest only supported on relation inputs
+
+
+<br>
+
+#### <a id="fail-lateral_unqualified_correlated_column-TDS"></a>`lateral_unqualified_correlated_column`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT x.c FROM (SELECT name AS nm FROM persons) A INNER JOIN (SELECT name AS dn FROM departments) B ON A.nm = B.dn CROSS JOIN LATERAL (SELECT p2.name AS c FROM persons p2 WHERE p2.name = dn) x ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT x.c FROM (SELECT name AS nm FROM func('e2e::tds_persons')) A INNER JOIN (SELECT name AS dn FROM func('e2e::tds_departments')) B ON A.nm = B.dn CROSS JOIN LATERAL (SELECT p2.name AS c FROM func('e2e::tds_persons') p2 WHERE p2.name = dn) x ORDER BY 1
+```
+
+**Error:**
+> Unsupported: lateral only supported on relation inputs
 
 
 <br>
@@ -8061,6 +8071,26 @@ SELECT dept_id, SUM(salary) AS total, LAST_VALUE(SUM(salary)) OVER (ORDER BY SUM
 > combining aggregations with window functions not currently supported
 
 
+<br>
+
+#### <a id="fail-comp_window_arg_is_grouping_column_over_join-TDS"></a>`comp_window_arg_is_grouping_column_over_join`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT a.mx FROM (SELECT q.salary AS sal, MAX(salary) OVER (ORDER BY q.id) AS mx FROM persons q LEFT JOIN departments d ON q.dept_id = d.id GROUP BY q.id, q.salary) a ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT a.mx FROM (SELECT q.salary AS sal, MAX(salary) OVER (ORDER BY q.id) AS mx FROM func('e2e::tds_persons') q LEFT JOIN func('e2e::tds_departments') d ON q.dept_id = d.id GROUP BY q.id, q.salary) a ORDER BY 1
+```
+
+**Error:**
+> combining aggregations with window functions not currently supported
+
+
 <a id="type-error"></a>
 
 ### TYPE_ERROR (23 tests)
@@ -8080,7 +8110,7 @@ SELECT dept_id FROM func('e2e::tds_persons') UNION SELECT NULL ORDER BY 1
 ```
 
 **Error:**
-> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:3177 column:77), "Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor"
+> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:3182 column:77), "Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor"
 
 
 <br>
@@ -8100,7 +8130,7 @@ WITH order_totals AS (SELECT person_id, SUM(amount) AS total_orders FROM func('e
 ```
 
 **Error:**
-> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7852 column:36), "Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery"
+> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7857 column:36), "Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery"
 
 
 <br>
@@ -8120,7 +8150,7 @@ WITH dept_avg AS (SELECT dept_id, AVG(salary) AS avg_sal FROM func('e2e::tds_per
 ```
 
 **Error:**
-> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7852 column:36), "Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery"
+> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7857 column:36), "Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery"
 
 
 <br>
@@ -8185,7 +8215,7 @@ SELECT p.name, COUNT(*) AS cnt FROM func('e2e::rel_persons') p CROSS JOIN LATERA
 ```
 
 **Error:**
-> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7361 column:21), "Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor"
+> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7366 column:21), "Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor"
 
 
 <br>
@@ -8205,7 +8235,7 @@ SELECT p.name, u.val FROM func('e2e::rel_persons') p CROSS JOIN LATERAL UNNEST(S
 ```
 
 **Error:**
-> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7361 column:21), "Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor"
+> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7366 column:21), "Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor"
 
 
 <br>
