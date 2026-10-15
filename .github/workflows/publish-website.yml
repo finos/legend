@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - master
+  # daily, and on demand, for the user guides in finos/legend-studio
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
 
 env:
   # Used by docusaurus `publish-site` step
@@ -21,6 +25,12 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3.5.2
+      - name: Checkout Legend Studio's user guides
+        uses: actions/checkout@v3.5.2
+        with:
+          repository: finos/legend-studio
+          path: website/external/legend-studio
+          sparse-checkout: docs/user-guide
       - name: Setup Node
         uses: actions/setup-node@v3.6.0
         with:

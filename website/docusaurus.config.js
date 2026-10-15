@@ -1,4 +1,30 @@
+const fs = require("fs");
+const path = require("path");
 const pureHighlighter = require("../website/pureHighlighter");
+
+// User guides kept with their application's code, in finos/legend-studio's
+// docs/user-guide, which the website's workflows check out into
+// website/external/legend-studio before they build. Each guide is a docs
+// section of its own, its sidebar made from its folder. One that isn't there
+// (e.g. a local build without the checkout) is left out.
+const LEGEND_STUDIO_USER_GUIDES = path.resolve(
+  __dirname,
+  "external/legend-studio/docs/user-guide"
+);
+const USER_GUIDES = [
+  { id: "cube", label: "Legend Cube", folder: "cube" },
+]
+  .map((guide) => ({
+    ...guide,
+    path: path.resolve(LEGEND_STUDIO_USER_GUIDES, guide.folder),
+  }))
+  .filter((guide) => {
+    const found = fs.existsSync(guide.path);
+    if (!found) {
+      console.warn(`User guide "${guide.label}" not found at ${guide.path}: left out`);
+    }
+    return found;
+  });
 
 module.exports = {
   title: "Legend",
@@ -53,6 +79,17 @@ module.exports = {
     ],
   ],
   plugins: [
+    ...USER_GUIDES.map((guide) => [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: guide.id,
+        path: guide.path,
+        routeBasePath: guide.id,
+        // a page's own file in finos/legend-studio
+        editUrl: ({ docPath }) =>
+          `https://github.com/finos/legend-studio/edit/master/docs/user-guide/${guide.folder}/${docPath}`,
+      },
+    ]),
     async function myPlugin(context, options) {
       // ...
       return {
@@ -119,6 +156,11 @@ module.exports = {
           label: "Docs",
           position: "right",
         },
+        ...USER_GUIDES.map((guide) => ({
+          to: guide.id,
+          label: guide.label,
+          position: "right",
+        })),
         {
           to: "releases",
           label: "Releases",
