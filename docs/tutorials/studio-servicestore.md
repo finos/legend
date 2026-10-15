@@ -4,7 +4,7 @@ title: Service Store
 sidebar_label: Service Store
 ---
 
-This tutorial demonstrates the use of the [Service Store](../overview/legend-features.md/#service-store) feature.
+This tutorial demonstrates the use of the [Service Store](../overview/legend-features.md#service-store) feature.
 
 ### Requirements 
 

@@ -10,20 +10,16 @@ There are many ways to contribute to Legend and many of them don't involve writi
 ### 1. Contribute code
 [Contribute code](contribute-to-legend.md#contribute-code) to any of the Legend components by submitting a pull request.
 
-### 2. Contribute to existing models
-Start using Legend Studio to provide feedback, [and contribute to, existing models](contribute-to-legend.md#contribute-to-models). 
-Request access to the modeling instance at https://www.finos.org/legend and go [through our Getting started guide](../tutorials/studio-workspace.md). If you encounter an issue, let us know by [opening an issue](https://github.com/finos/legend/issues/new/choose).
-
-### 3. Contribute documentation
+### 2. Contribute documentation
 [Help build out the documentation](contribute-to-legend.md#contribute-documentation). 
 If you find anything that's confusing or can be improved, submit a pull request. 
 
-### 4. Contribute issues 
+### 3. Contribute issues 
 [Contribute issues: identify bugs, suggest new features, and provide feedback on prioritization](contribute-to-legend.md#contribute-issues). Look through the [open issues](https://github.com/finos/legend/issues?q=is%3Aissue+is%3Aopen+). Provide workarounds, ask for clarification, or suggest labels. If you find an issue you'd like to fix, [open a pull request](https://github.com/finos/legend/pulls). Start with issues tagged as **Good first issue**. Take a look at the features requested by others in the community and consider opening a pull request if you see something you want to work on.
 
 ## Prerequisites
 
-To create and/or edit models in the Legend hosted instance or to make code contributions, you need to have a GitHub Account. 
+To make contributions, you need a GitHub account.
 
 ### GitHub account setup
 
@@ -101,22 +97,6 @@ Consider browsing through issues labeled as "good first issue" in the respective
 -   Legend SDLC [good first issues](https://github.com/finos/legend-sdlc/labels/good%20first%20issue).
 -   Legend Engine [good first issues](https://github.com/finos/legend-engine/labels/good%20first%20issue).
 
-## Contribute to models
-
-FINOS hosts a shared version of Legend Studio in the public cloud, which is available to prototype collaborative data modeling, at . If you'd like to access the existing models, **request access to the modeling instance** at [finos.org/legend](https://www.finos.org/legend).
-
-Once you've requested access to the modeling instance, you can get started and [create a model](../tutorials/studio-workspace.md).
-
-**Important Note:** The shared instance of [Legend Studio](https://legend.finos.org/studio) should only be used for public modeling initiatives. Every Studio project maps to a GitLab project in which the data model code could be reviewed by the general public.
-
-If you have questions or encounter any issues, raise an issue at .
-
-If you have suggestions or ideas for modeling use cases for which Legend may be appropriate, we'd love to hear your ideas -- send a note with your suggestion to the [Legend General List](mailto:legend@finos.org) or raise a GitHub issue in the [Financial Objects Repository](https://github.com/finos/finos-fo/issues/new?assignees=&labels=&template=Support_question.md) with your proposal and the FINOS team will gauge interest from the community.
-
-### Background: The Legend Pilot—Shared modeling in Legend (January - September 2020)
-
-In January 2020, FINOS launched a pilot with FINOS member organizations interested in evaluating Legend. Modeling occurred on the FINOS hosted, shared version of Legend Studio in the public cloud, which was used by FINOS members to collaborate on Legend Studio by building extensions to the [ISDA Common Domain Model (CDM)](https://www.isda.org/2018/11/22/isda-cdm-factsheet/). Modeling occurred in two workstreams: **FX Options** and **Commodities Reference Data**, which concluded their work in September 2020. Read the FINOS Legend Pilot Case Study [here](https://www.finos.org/hubfs/FINOS/assets/FINOS%20Legend%20Case%20Study%202021.pdf). Further working groups are using Legend for data modeling within the [Financial Objects Special Interest Group](https://github.com/finos/financial-objects).
-
 ## Contribute documentation
 
 ### Suggest documentation content
@@ -127,16 +107,23 @@ You can get involved with Legend by suggesting documentation topics you would li
 #### **Step 1. Run the website locally**
 To make edits to the website itself, you need to run the website locally. You must have:
 
--   A Git client installed to checkout the code from github.com/finos/legend (`` branch). The `` command must be available via command-line, as it's needed to run the `` script.
+-   A Git client, to check out your fork of github.com/finos/legend.
+-   Node.js 21 or later.
 
-The following code automatically launches a browser and takes you to the staging website, located at http://localhost:3000. File changes are live rendered, speeding up the editorial workflow.
+The following commands start the website at http://localhost:3000. File changes are rendered live, speeding up the editorial workflow.
 
-```git
+```sh
 git clone git@github.com:<yourfork>/legend.git
+cd legend
 git checkout -b feature/myProposedDocChanges
-cd legend ; ./scripts/build-site.sh
-cd website ; npm run start
+cd website
+npm install
+npm run start
 ```
+
+A broken link or anchor fails `npm run build`, so run it before you open a pull request.
+
+The guides to Legend's applications, such as [Legend Cube](https://legend.finos.org/cube), are written next to the applications' code, in [finos/legend-studio's `docs/user-guide`](https://github.com/finos/legend-studio/tree/master/docs/user-guide). The site's build checks that folder out into `website/external/legend-studio`; propose changes to those guides in finos/legend-studio.
 #### **Step 2. Create a showcase project**
 
 ##### Before you start
@@ -181,8 +168,6 @@ To learn more about Docusaurus, read the following resources:
 -   [Docusaurus home](https://docusaurus.io)
 
 
-**Note:** [The documentation build script](https://github.com/finos/legend/blob/master/scripts/build-site.sh) can be configured to pull in and include files from GitLab repositories housing modeling documentation into the GitHub pages/Docusaurus-powered site.
-
 ## Contribute issues
 
 View the prerequisites and steps to report an issue in GitHub.
@@ -198,7 +183,7 @@ View the prerequisites and steps to report an issue in GitHub.
 1.  Create your issue [in GitHub](https://github.com/finos/legend/issues/new).
 2.  New issues contain two templates in the description: bug report and enhancement request. Select the most appropriate for your issue, _then delete the other_.
 3.  Tag the new issue with either **Bug** or **Enhancement**.
-4.  Use [Markdown formatting](https://help.github.com/categories/writing-on-github/) to improve readability. For example, use [code fences](https://help.github.com/articles/creating-and-highlighting-code-blocks/) for exception stack traces and log entries.
+4.  Use [Markdown formatting](https://docs.github.com/en/get-started/writing-on-github) to improve readability. For example, use [code fences](https://help.github.com/articles/creating-and-highlighting-code-blocks/) for exception stack traces and log entries.
 
 ## Stay up to date
 
@@ -210,9 +195,7 @@ To receive updates on Legend, subscribe to these lists:
     -   Subscribe w/ email to [legend+subscribe@finos.org](mailto:legend+subscribe@finos.org)
     -   Post with email to [legend@finos.org](mailto:legend@finos.org)
 
--   GitHub / GitLab Issues & Kanban
-    -   [GitHub Issues](https://github.com/finos/legend/issues)
-    -   [GitHub Kanban](https://github.com/orgs/finos/projects/5)
+-   [GitHub Issues](https://github.com/finos/legend/issues)
 
 -   Legend Updates from FINOS
     -   [Subscribe at https://www.finos.org/legend](https://www.finos.org/legend)

@@ -19,7 +19,7 @@ Constants are static values set to a variable name that can be leveraged within 
 
 Constraints are governance tools added on top of quality controls. Use constraints to define a validation or condition on the model that's expected to be met.
 
-[Add a constraint](../tutorials/studio-class.md/#constraint)
+[Add a constraint](../tutorials/studio-class.md#constraint)
 
 ## Data model
 
@@ -33,7 +33,7 @@ _Coming soon._
 
 Derived properties use functions to operate on other attributes in the data model.
 
-[Create a derived property](../tutorials/studio-class.md/#derived-property)
+[Create a derived property](../tutorials/studio-class.md#derived-property)
 
 ## Diagram
  
@@ -74,7 +74,7 @@ Parameters are variables assigned to your query. They are dynamic in nature and 
 
 Properties are components of classes that define the attributes of a business concept. Properties can be both primitives (like strings or integers) or other properties. Use properties in a class to define attributes of the business concept.
 
-[Create a property](../tutorials/studio-class.md/#property---non-primitive-data-type)
+[Create a property](../tutorials/studio-class.md#property---non-primitive-data-type)
 
 ## Relational database
 
@@ -84,13 +84,13 @@ _Coming soon._
 
 Stereotypes allow you to extend metadata information about a model.
 
-[Create a stereotype](../tutorials/studio-class.md/#class-stereotype).
+[Create a stereotype](../tutorials/studio-profile.md#stereotype).
 
 ## Super type
 
 Super types show a relationship between classes or business concepts within a model. 
 
-[Create a super type](../tutorials/studio-class.md/#supertype).
+[Create a super type](../tutorials/studio-profile.md#supertype).
 
 ## More
 

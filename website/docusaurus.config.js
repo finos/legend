@@ -51,11 +51,15 @@ module.exports = {
       },
     },
   },
-  onBrokenLinks: "warn",
-  onBrokenMarkdownLinks: "warn",
+  // a broken link or anchor fails the build, so it never reaches the site
+  onBrokenLinks: "throw",
+  onBrokenAnchors: "throw",
   onDuplicateRoutes: process.env.NODE_ENV === "production" ? "throw" : "warn",
   markdown: {
     format: 'detect',
+    hooks: {
+      onBrokenMarkdownLinks: "throw",
+    },
   },
   presets: [
     [
@@ -90,44 +94,6 @@ module.exports = {
           `https://github.com/finos/legend-studio/edit/master/docs/user-guide/${guide.folder}/${docPath}`,
       },
     ]),
-    async function myPlugin(context, options) {
-      // ...
-      return {
-        name: "docusaurus-releases-plugin",
-        async loadContent() {
-          const path = require("path");
-          const fs = require("fs");
-          const releases = fs
-            .readdirSync(path.resolve(__dirname, "../releases"))
-            .map((dir) => {
-              console.log(dir);
-              const fullDir = path.resolve(__dirname, `../releases/${dir}`);
-              if (!fs.lstatSync(fullDir).isDirectory()) {
-                return undefined;
-              }
-              return require(`${fullDir}/manifest.json`);
-            })
-            .filter(Boolean);
-          return releases;
-        },
-        async contentLoaded({ content, actions }) {
-          const { createData, addRoute } = actions;
-          const releaseJSONPath = await createData(
-            "releasesData.json",
-            JSON.stringify(content)
-          );
-          // Add the '/releases' routes, and ensure it receives the releases props
-          addRoute({
-            path: "/releases",
-            component: "@site/src/components/releases.js",
-            modules: {
-              releasesData: releaseJSONPath,
-            },
-            exact: true,
-          });
-        },
-      };
-    },
   ],
   themeConfig: {
     // prism: {
@@ -161,11 +127,6 @@ module.exports = {
           label: guide.label,
           position: "right",
         })),
-        {
-          to: "releases",
-          label: "Releases",
-          position: "right",
-        },
       ],
     },
 

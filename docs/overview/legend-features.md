@@ -36,7 +36,7 @@ _Coming soon._
 
 Legend data models have built-in governance features, called _data quality controls_. You create data quality controls every time you define a model. Constraints are governance tools added on top of quality controls. Use constraints to define a validation or condition on the model that's expected to be met.
 
-[Create a constraint](../tutorials/studio-class.md/#constraint)
+[Create a constraint](../tutorials/studio-class.md#constraint)
 
 ## Dataspace
 
@@ -131,7 +131,7 @@ _Coming soon._
 
 Group workspaces allow collaboration on the same workspace. Changes made in group workspaces are visible to other users without the need to merge to master. 
 
-[Create a group workspace](../tutorials/studio-workspace.md/#group-workspace)
+[Create a group workspace](../tutorials/studio-workspace.md#group-workspace)
 
 ## Mapping Editor
 
@@ -177,7 +177,7 @@ Capture additional information (metadata) about the data model by creating a Pro
 
 Properties are components of classes that define the attributes of a business concept. Properties can be both primitives (like strings or integers) or other properties. Use properties in a class to define attributes of the business concept.
 
-[Create a property](../tutorials/studio-class.md/#property---non-primitive-data-type)
+[Create a property](../tutorials/studio-class.md#property---non-primitive-data-type)
 
 ## Query Builder
 
@@ -237,7 +237,7 @@ Text Mode allows you to see the entirety of your workplace's code and edit your 
 
 Text Mode will also parse and compile your code. If the code compiles, your GUI graph will be updated and the changes will be updated in your forms.
 
-[Access or exit Text Mode](../tutorials/studio-workspace.md/#text-mode)
+[Access or exit Text Mode](../tutorials/studio-workspace.md#text-mode)
 
 ## Watermark
 

@@ -6,7 +6,7 @@ sidebar_label: Services
 
 ## Create a Service 
 
-Build services on top of data queries to consume modeled data systematically. To create a service select <kbd>New Service</kbd> from the drop down menu to launch the [Service Editor](../overview/legend-features.md/#service-editor)
+Build services on top of data queries to consume modeled data systematically. To create a service select <kbd>New Service</kbd> from the drop down menu to launch the [Service Editor](../overview/legend-features.md#service-editor)
 
 ### General Tab
 
@@ -109,7 +109,7 @@ Consume data services via <kbd>executable service JAR files</kbd>. As part of th
    * Data modeling with Legend services
 
 #### Showcase project 
-- [Service Execution JAR showcase project](../showcases/showcase-projects.md/#service-execution-jar)  
+- [Service Execution JAR showcase project](../showcases/showcase-projects.md)  
 
 ### 1. Service Execution Primer
 A "service execution" jar is a Java library generated from a Legend model.
@@ -154,7 +154,6 @@ To generate a service execution jar using Legend SDLC:
 * The Gitlab pipeline also publishes the generated jar to a Gitlab Maven registry.
 
 As a concrete example:
-* [Legend Studio Project](https://legend.finos.org/studio/-/view/UAT-29500652)
 * [Legend Studio Project Pipeline](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project2/-/pipelines)
 * [Legend SDLC Generated Artifacts](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project2/-/packages)
 

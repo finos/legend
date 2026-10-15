@@ -262,7 +262,7 @@
     },
     "question.how-to-write-test-data": {
       "title": "How do I create test data?",
-      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-test-data"
+      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#create-connection-test-data"
     },
     "question.how-to-write-service-connection-test-data": {
       "title": "How do I specify service connection test data?",
@@ -295,11 +295,11 @@
     },
     "question.how-to-add-parameters-to-query": {
       "title": "How do I add parameters to my Query?",
-      "url": "https://legend.finos.org/docs/tutorials/query-tutorial#parameters"
+      "url": "https://legend.finos.org/docs/tutorials/query-builder#parameters"
     },
     "question.how-to-add-constants-to-query": {
       "title": "How do I add constants to my Query?",
-      "url": "https://legend.finos.org/docs/tutorials/query-tutorial#constants"
+      "url": "https://legend.finos.org/docs/tutorials/query-builder#constants"
     },
     "context.class-editor": {
       "related": [

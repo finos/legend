@@ -17,15 +17,13 @@ The Legend platform consists of many products, features and integrations. The go
 -   [Extracting value out of models](#model-extract-value)
 -   [And ... there's more](#theres-more)
 
-<a name="data-models">
-
-# Data models
+## Data models {#data-models}
 
 Everything in Legend revolves around a data model. A Legend data model is a systematic way of describing business concepts and the relationships between them. 
 
 One way to create a data model in Legend is to use Legend Studio. Studio is a browser based, rich modeling application that allows users to create and interact with data models. 
 
-## Firm-Employee model
+### Firm-Employee model
 
 Let's say we are trying to model a Firm and its Employees
 
@@ -58,11 +56,9 @@ Association domain::Firm_Person
 
 ```
 
-You can see the full model in the ["Legend Showcase - Guided Tour" Studio project](https://legend.finos.org/studio/view/UAT-38029096/entity/domain::Firm)
+You can see the full model in the ["Legend Showcase - Guided Tour" project](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project-guided-tour)
 
-</a><a name="why-models">
-
-# Do we even need a data model ?
+## Do we even need a data model ? {#why-models}
 
 This question deserves its own blog post/article. But in brief, a data model allows all participants in a data flow to have the same view of the data. This includes concepts, relationships, attributes etc.
 
@@ -70,9 +66,7 @@ This common understanding prevents/reduces data corruption/inconsistencies, allo
 
 To learn more about the benefits of data modeling, check out [Pierre DeBelen's keynote at the 2020 Open Source Strategy Forum](https://www.youtube.com/watch?v=93c966jNzYo).
 
-</a><a name="model-communication">
-
-# Communicating with models
+## Communicating with models {#model-communication}
 
 A huge benefit of a model is that it allows teams to more efficiently communicate about data. 
 
@@ -81,11 +75,7 @@ previous step
 
 ![Firm Person Model Diagram](images/diagram.png).
 
-You can navigate to the live diagram by following this [link](https://legend.finos.org/studio/view/UAT-38029096/entity/diagram:all).
-
-</a><a name="model-transformation">
-
-# Transforming data with models
+## Transforming data with models {#model-transformation}
 
 More often than not, data exists in a shape that is not ideal. In which case we have to transform the data from the shape it is currently in to the shape that we desire.  In Legend, we call this a "model to model mapping". 
 
@@ -95,11 +85,7 @@ We have a model of the shape the data should be in, the target model. We have a 
 
 Once these rules have been defined, Legend can automatically execute the mapping or data transformation.
 
-You can navigate to the live mapping by following this [link](https://legend.finos.org/studio/view/UAT-38029096/entity/mapping::m2m::Firm_Person).
-
-</a><a name="model-testing">
-
-# Testing with models
+## Testing with models {#model-testing}
 
 In Legend, we treat models as software. 
 
@@ -109,9 +95,7 @@ In Legend, model elements are `Testable`. As a concrete example, a model to mode
 
 ![Model To Model Diagram](images/m2mtesting.png).
 
-</a><a name="model-evolution">
-
-# Managing model evolution
+## Managing model evolution {#model-evolution}
 
 Models change over time to accommodate new/changing business requirements. Legend not only provides best-in-class modelling capabilities, but also integrates with your source control system to provide source control for the data models.
 
@@ -123,9 +107,7 @@ While Legend currently only supports Gitlab, support for other source control sy
 
 The Gitlab project for the "Legend Showcase - Guided Tour" project can be found here - [https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project-guided-tour](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project-guided-tour).
 
-</a><a name="model-execution">
-
-# Executing with models
+## Executing with models {#model-execution}
 
 So far we have been executing models by running transformations etc. in the Studio application. 
 
@@ -153,9 +135,7 @@ Execution is then just a question of downloading and executing this jar.
 
 An example Maven Java project that uses a service execution jar can be found here [https://github.com/finos/legend/tree/master/examples/service-execution-jar/legend-guided-tour-application](https://github.com/finos/legend/tree/master/examples/service-execution-jar/legend-guided-tour-application).
 
-</a><a name="connect-databases">
-
-# Connecting to data(bases)
+## Connecting to data(bases) {#connect-database}
 
 Executing a query requires sourcing data from a "database". Legend supports a variety of relational databases where Legend converts a Pure query into a SQL query that is executed against the database. 
 
@@ -165,21 +145,15 @@ In other words the model allows users to say "My Firm class has a legal name att
 
 ![Model To Model Diagram](images/relationalmapping.png).
 
-You can navigate to the live mapping by following this [link](https://legend.finos.org/studio/view/UAT-38029096/entity/mapping::m2m::Firm_Person)
-
 Continuing with our test first approach, Legend supports "in-memory test databases". The Legend tests can define an in memory database along with test data. During test execution, Legend spins up an in-memory database with the test data before executing the plan.
 
-</a><a name="connect-apis">
-
-# Connecting to data(systems/APIs)
+## Connecting to data(systems/APIs) {#connect-apis}
 
 Data does not exist only in relational databases. 
 
 A cool feature of Legend is "Service Store Connections". In a service store connection, instead of mapping a logical model to relational model, we map the model to the data returned by an HTTP/S API.
 
-</a><a name="model-extract-value">
-
-# Extracting value out of models
+## Extracting value out of models {#model-extract-value}
 
 A model is a gift that keeps on giving. Also, the Legend platform is a gift that keeps on giving.
 
@@ -195,9 +169,7 @@ The image below shows OpenAPI specifications generated out of the model:
 
 ![Open API Generation](images/openapi.png).
 
-</a><a name="theres-more">
-
-# And ... there's more
+## And ... there's more {#theres-more}
 
 We have barely scratched the surface of Legend. Legend offers many products and features that can help streamline your data processing.
 
@@ -219,4 +191,3 @@ The Legend documentation site has links to tutorials and other documentation.[ht
 ### Join us
 
 Join us at [https://github.com/finos/legend](https://github.com/finos/legend).
-</a>
