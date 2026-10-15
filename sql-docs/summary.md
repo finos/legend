@@ -9,16 +9,16 @@ See [full details](function-coverage.md) for per-function results.
 |--------|-----|----------|
 | Total signatures | 660 | 660 |
 | Unique function names | 346 | 346 |
-| **Supported functions (PASS/PARTIAL)** | **123 (35.5%)** | **132 (38.2%)** |
+| **Supported functions (PASS/PARTIAL)** | **123 (35.5%)** | **133 (38.4%)** |
 | Total tests | 882 | 882 |
 | ⚪ UNSUPPORTED | 62 | 62 |
 | ✅ PASS | 209 | 226 |
-| ⚠️ PARTIAL | 31 | 31 |
+| ⚠️ PARTIAL | 31 | 32 |
 | ❌ FAIL | 8 | 8 |
 | 💥 ERROR | 0 | 0 |
-| ❓ UNTESTED | 350 | 333 |
+| ❓ UNTESTED | 350 | 332 |
 | **Full pass rate** | **34.9%** | **37.8%** |
-| **Pass + partial rate** | **40.1%** | **43.0%** |
+| **Pass + partial rate** | **40.1%** | **43.1%** |
 
 _Percentages exclude unsupported functions from the denominator._
 
@@ -78,14 +78,14 @@ See [full details](structural-parity.md) for per-feature results.
 |--------|-----|----------|
 | Total features | 617 | 617 |
 | Total tests | 696 | 696 |
-| ⚪ UNSUPPORTED | 222 | 50 |
-| ✅ PASS | 305 | 437 |
+| ⚪ UNSUPPORTED | 222 | 48 |
+| ✅ PASS | 305 | 439 |
 | ⚠️ PARTIAL | 3 | 3 |
 | ❌ FAIL | 10 | 11 |
 | 💥 ERROR | 77 | 116 |
 | ❓ UNTESTED | 0 | 0 |
-| **Full pass rate** | **77.2%** | **77.1%** |
-| **Pass + partial rate** | **78.0%** | **77.6%** |
+| **Full pass rate** | **77.2%** | **77.2%** |
+| **Pass + partial rate** | **78.0%** | **77.7%** |
 
 _Percentages exclude unsupported features from the denominator._
 
@@ -177,6 +177,6 @@ Combined pass rate across function coverage and structural parity.
 | Path | Pass | Tested | Pass Rate |
 |------|------|--------|-----------|
 | TDS | 618 | 1621 | **38.1%** |
-| Relation | 775 | 1793 | **43.2%** |
-| **Combined** | **1393** | **3334** | **41.8%** |
+| Relation | 777 | 1795 | **43.3%** |
+| **Combined** | **1395** | **3336** | **41.8%** |
 
