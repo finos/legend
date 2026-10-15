@@ -23,7 +23,17 @@ Review the step by step tutorials for [Studio](../tutorials/studio-workspace) an
 
 ## Start Using Legend Today
 
-There are two ways to get started with Legend: using Legend Omnibus to get the Legend environment up and running locally, or installing Legend.
+There are multiple ways to get started with Legend: getting access to the Studio hosted instance, using Legend Omnibus to get the Legend environment up and running locally, or installing Legend.
+
+### Studio hosted instance
+
+This is the easiest way to get started with Legend as it does not involve any installation steps.
+
+FINOS hosts a free instance of Legend to be used for shared modeling efforts.
+
+Instructions to sign up and use this instance are available on the [FINOS website](https://www.finos.org/legend).
+
+**Note: This is a shared instance which might not be appropriate for proprietary data models.**
 
 ### Using Legend Omnibus
 

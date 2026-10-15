@@ -56,7 +56,7 @@ Association domain::Firm_Person
 
 ```
 
-You can see the full model in the ["Legend Showcase - Guided Tour" project](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project-guided-tour)
+You can see the full model in the ["Legend Showcase - Guided Tour" Studio project](https://legend.finos.org/studio/view/UAT-38029096/entity/domain::Firm)
 
 ## Do we even need a data model ? {#why-models}
 
@@ -75,6 +75,8 @@ previous step
 
 ![Firm Person Model Diagram](images/diagram.png).
 
+You can navigate to the live diagram by following this [link](https://legend.finos.org/studio/view/UAT-38029096/entity/diagram:all).
+
 ## Transforming data with models {#model-transformation}
 
 More often than not, data exists in a shape that is not ideal. In which case we have to transform the data from the shape it is currently in to the shape that we desire.  In Legend, we call this a "model to model mapping". 
@@ -84,6 +86,8 @@ We have a model of the shape the data should be in, the target model. We have a 
 ![Model To Model Diagram](images/m2mmapping.png).
 
 Once these rules have been defined, Legend can automatically execute the mapping or data transformation.
+
+You can navigate to the live mapping by following this [link](https://legend.finos.org/studio/view/UAT-38029096/entity/mapping::m2m::Firm_Person).
 
 ## Testing with models {#model-testing}
 
@@ -144,6 +148,8 @@ Querying data from a relational database requires a model to model mapping as we
 In other words the model allows users to say "My Firm class has a legal name attribute. Data for the Firm class is in the FIRM database table in a database at mydatabase.com".
 
 ![Model To Model Diagram](images/relationalmapping.png).
+
+You can navigate to the live mapping by following this [link](https://legend.finos.org/studio/view/UAT-38029096/entity/mapping::m2m::Firm_Person)
 
 Continuing with our test first approach, Legend supports "in-memory test databases". The Legend tests can define an in memory database along with test data. During test execution, Legend spins up an in-memory database with the test data before executing the plan.
 

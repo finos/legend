@@ -7,7 +7,7 @@ sidebar_label: Studio
 
 Start working on your data model by creating a workspace. A workspace is a copy of a project which can be later merged back into the main project. It represents a branch in the underlying GitLab project. To create a workspace:
 
-1.  Select an existing (GitLab) project or select **+** to start working on a new one.
+1.  Select an existing (GitLab) project or select **+** to start working on a new one. Please note that the FINOS hosted version of [Legend Studio](https://legend.finos.org/studio/-/setup) does **not** support creating a new project at this time.
 
 2.  Create a workspace.
 

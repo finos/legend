@@ -8,6 +8,9 @@ sidebar_label: Showcase Projects
 
 Legend showcase projects are hosted [here](https://github.com/finos/legend/tree/master/showcases) and accessible via the Studio UI.
 
+### :warning: Prerequisites
+Some legacy showcase projects are hosted on the [Legend hosted instance](https://finos.org/legend). Request **free** access to the Legend hosted instance [here](https://finos.org/legend).
+
 Get started with the [Legend showcase guided tour](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project-guided-tour). 
 
 For step by step tutorials, see [Legend tutorials](../tutorials/studio-workspace.md).

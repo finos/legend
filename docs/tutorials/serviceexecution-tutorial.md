@@ -64,6 +64,7 @@ To generate a service execution jar using Legend SDLC
 * The Gitlab pipeline also publishes the generated jar to a Gitlab Maven registry.
 
 As a concrete example
+* Legend Studio Project https://legend.finos.org/studio/-/view/UAT-29500652
 * Legend Studio Project Pipeline https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project2/-/pipelines
 * Legend SDLC Generated Artifacts https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project2/-/packages
 
