@@ -9,9 +9,9 @@
       "total" : 2343
     },
     "relation" : {
-      "pass" : 1110,
+      "pass" : 1113,
       "fail" : 45,
-      "error" : 1038,
+      "error" : 1035,
       "skip" : 62,
       "bug" : 88,
       "total" : 2343
@@ -9805,7 +9805,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES(1::bigint, 5::bigint) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "generate_series__big_big__from_table",
@@ -9816,7 +9816,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES(1::bigint, 5::bigint) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "generate_series__big_big_big__from_table",
@@ -9827,7 +9827,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES(1::bigint, 10::bigint, 2::bigint) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "generate_series__big_big_big__from_table",
@@ -9838,7 +9838,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES(1::bigint, 10::bigint, 2::bigint) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "generate_series__int_int__from_table",
@@ -9849,7 +9849,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES(1, 5) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "generate_series__int_int__from_table",
@@ -9860,7 +9860,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES(1, 5) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "generate_series__int_int_int__from_table",
@@ -9871,7 +9871,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES(0, 20, 5) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "generate_series__int_int_int__from_table",
@@ -9882,7 +9882,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES(0, 20, 5) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "generate_series__num_num__from_table",
@@ -9893,7 +9893,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES(1::numeric, 5::numeric) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "generate_series__num_num__from_table",
@@ -9904,7 +9904,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES(1::numeric, 5::numeric) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "generate_series__num_num_num__from_table",
@@ -9915,7 +9915,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES(0::numeric, 2::numeric, 0.5::numeric) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "generate_series__num_num_num__from_table",
@@ -9926,7 +9926,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES(0::numeric, 2::numeric, 0.5::numeric) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "generate_series__tstz_tstz_intv__from_table",
@@ -9937,7 +9937,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-05'::timestamptz, '1 day'::interval) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "No value found for TIMESTAMPTZ",
     "diffs" : null
   }, {
     "id" : "generate_series__tstz_tstz_intv__from_table",
@@ -9948,7 +9948,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-05'::timestamptz, '1 day'::interval) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "No value found for TIMESTAMPTZ",
     "diffs" : null
   }, {
     "id" : "generate_series__tstz_tstz_intv_txt__from_table",
@@ -9959,7 +9959,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-05'::timestamptz, '1 day'::interval, 'UTC') AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "No value found for TIMESTAMPTZ",
     "diffs" : null
   }, {
     "id" : "generate_series__tstz_tstz_intv_txt__from_table",
@@ -9970,7 +9970,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-05'::timestamptz, '1 day'::interval, 'UTC') AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "No value found for TIMESTAMPTZ",
     "diffs" : null
   }, {
     "id" : "generate_series__ts_ts_intv__from_table",
@@ -9981,7 +9981,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamp, '2023-01-05'::timestamp, '1 day'::interval) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "No value found for INTERVAL",
     "diffs" : null
   }, {
     "id" : "generate_series__ts_ts_intv__from_table",
@@ -9992,7 +9992,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamp, '2023-01-05'::timestamp, '1 day'::interval) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "No value found for INTERVAL",
     "diffs" : null
   }, {
     "id" : "generate_series_empty_result",
@@ -10003,7 +10003,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES(5, 1) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "generate_series_empty_result",
@@ -10014,7 +10014,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES(5, 1) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "generate_series_negative_step",
@@ -10025,7 +10025,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES(5, 1, -1) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "generate_series_negative_step",
@@ -10036,7 +10036,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES(5, 1, -1) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "generate_series_single_value",
@@ -10047,7 +10047,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES(1, 1) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "generate_series_single_value",
@@ -10058,7 +10058,7 @@
     "rewrittenSql" : "SELECT g.val AS result FROM GENERATE_SERIES(1, 1) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "generate_series_in_from",
@@ -10069,7 +10069,7 @@
     "rewrittenSql" : "SELECT g.result FROM GENERATE_SERIES(1, 3) AS g(result) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "generate_series_in_from",
@@ -10080,7 +10080,7 @@
     "rewrittenSql" : "SELECT g.result FROM GENERATE_SERIES(1, 3) AS g(result) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "generate_series_cross_join",
@@ -10091,18 +10091,7 @@
     "rewrittenSql" : "SELECT p.name, g.val FROM func('e2e::tds_persons') p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id <= 2 ORDER BY 1, 2",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
-    "diffs" : null
-  }, {
-    "id" : "generate_series_cross_join",
-    "category" : "functions/set_returning_functions",
-    "path" : "Relation",
-    "state" : "ERROR",
-    "sql" : "SELECT p.name, g.val FROM persons p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id <= 2 ORDER BY 1, 2",
-    "rewrittenSql" : "SELECT p.name, g.val FROM func('e2e::rel_persons') p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id <= 2 ORDER BY 1, 2",
-    "generatedSql" : null,
-    "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "generate_subscripts__anyarray_int__from_table",
@@ -22950,7 +22939,7 @@
     "rewrittenSql" : "WITH order_totals AS (SELECT person_id, SUM(amount) AS total_orders FROM func('e2e::tds_orders') GROUP BY person_id) SELECT p.name, COALESCE(o.total_orders, 0) AS total FROM func('e2e::tds_persons') p LEFT JOIN order_totals o ON p.id = o.person_id ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7857 column:36), \"Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery\"",
+    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7858 column:36), \"Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery\"",
     "diffs" : null
   }, {
     "id" : "cte_in_join",
@@ -22972,7 +22961,7 @@
     "rewrittenSql" : "WITH dept_avg AS (SELECT dept_id, AVG(salary) AS avg_sal FROM func('e2e::tds_persons') WHERE salary IS NOT NULL GROUP BY dept_id) SELECT d.name, COALESCE(da.avg_sal, 0) AS avg_salary FROM func('e2e::tds_departments') d LEFT JOIN dept_avg da ON d.id = da.dept_id ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7857 column:36), \"Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery\"",
+    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7858 column:36), \"Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery\"",
     "diffs" : null
   }, {
     "id" : "cte_in_join_dept",
@@ -23338,17 +23327,6 @@
     "error" : "Unsupported: lateral only supported on relation inputs",
     "diffs" : null
   }, {
-    "id" : "lateral_cross_basic",
-    "category" : "structural/lateral_joins",
-    "path" : "Relation",
-    "state" : "ERROR",
-    "sql" : "SELECT p.name, g.val FROM persons p CROSS JOIN LATERAL GENERATE_SERIES(1, p.dept_id) AS g(val) WHERE p.id <= 3 ORDER BY 1, 2",
-    "rewrittenSql" : "SELECT p.name, g.val FROM func('e2e::rel_persons') p CROSS JOIN LATERAL GENERATE_SERIES(1, p.dept_id) AS g(val) WHERE p.id <= 3 ORDER BY 1, 2",
-    "generatedSql" : null,
-    "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
-    "diffs" : null
-  }, {
     "id" : "lateral_cross_subquery",
     "category" : "structural/lateral_joins",
     "path" : "TDS",
@@ -23445,7 +23423,7 @@
     "rewrittenSql" : "SELECT g.val FROM GENERATE_SERIES(1, 5) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "lateral_function_in_from",
@@ -23456,7 +23434,7 @@
     "rewrittenSql" : "SELECT g.val FROM GENERATE_SERIES(1, 5) AS g(val) ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "lateral_function_cross_join",
@@ -23467,18 +23445,7 @@
     "rewrittenSql" : "SELECT p.name, g.val FROM func('e2e::tds_persons') p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id <= 2 ORDER BY 1, 2",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
-    "diffs" : null
-  }, {
-    "id" : "lateral_function_cross_join",
-    "category" : "structural/lateral_joins",
-    "path" : "Relation",
-    "state" : "ERROR",
-    "sql" : "SELECT p.name, g.val FROM persons p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id <= 2 ORDER BY 1, 2",
-    "rewrittenSql" : "SELECT p.name, g.val FROM func('e2e::rel_persons') p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id <= 2 ORDER BY 1, 2",
-    "generatedSql" : null,
-    "generatedLambda" : null,
-    "error" : "No function matches the given name \"GENERATE_SERIES\"",
+    "error" : "Unsupported: generate_series only supported on relation inputs",
     "diffs" : null
   }, {
     "id" : "lateral_aggregate",
@@ -23720,7 +23687,7 @@
     "rewrittenSql" : "SELECT p.name, COUNT(*) AS cnt FROM func('e2e::rel_persons') p CROSS JOIN LATERAL UNNEST(ARRAY[1, 2, 3]) AS u(val) WHERE p.id <= 2 GROUP BY p.name ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7366 column:21), \"Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor\"",
+    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7367 column:21), \"Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor\"",
     "diffs" : null
   }, {
     "id" : "lateral_unnest_aggregate_sum",
@@ -23962,7 +23929,7 @@
     "rewrittenSql" : "SELECT p.name, u.val FROM func('e2e::rel_persons') p CROSS JOIN LATERAL UNNEST(STRING_TO_ARRAY('a,b,c', ',')) AS u(val) WHERE p.id = 1 ORDER BY 2",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7366 column:21), \"Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor\"",
+    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7367 column:21), \"Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor\"",
     "diffs" : null
   }, {
     "id" : "lateral_unnest_string_to_array_correlated",
@@ -28420,9 +28387,9 @@
     },
     "name" : "structural/lateral_joins",
     "relation" : {
-      "pass" : 1,
+      "pass" : 3,
       "fail" : 0,
-      "error" : 31,
+      "error" : 29,
       "skip" : 0,
       "bug" : 0,
       "total" : 32
@@ -28546,9 +28513,9 @@
     },
     "name" : "functions/set_returning_functions",
     "relation" : {
-      "pass" : 0,
+      "pass" : 1,
       "fail" : 0,
-      "error" : 16,
+      "error" : 15,
       "skip" : 0,
       "bug" : 0,
       "total" : 16
@@ -39673,7 +39640,7 @@
   }, {
     "path" : "Relation",
     "id" : "generate_series_cross_join",
-    "state" : "ERROR",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT p.name, g.val FROM func('e2e::rel_persons') p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id <= 2 ORDER BY 1, 2",
     "sql" : "SELECT p.name, g.val FROM persons p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id <= 2 ORDER BY 1, 2"
   }, {
@@ -51805,7 +51772,7 @@
   }, {
     "path" : "Relation",
     "id" : "lateral_cross_basic",
-    "state" : "ERROR",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT p.name, g.val FROM func('e2e::rel_persons') p CROSS JOIN LATERAL GENERATE_SERIES(1, p.dept_id) AS g(val) WHERE p.id <= 3 ORDER BY 1, 2",
     "sql" : "SELECT p.name, g.val FROM persons p CROSS JOIN LATERAL GENERATE_SERIES(1, p.dept_id) AS g(val) WHERE p.id <= 3 ORDER BY 1, 2"
   }, {
@@ -51877,7 +51844,7 @@
   }, {
     "path" : "Relation",
     "id" : "lateral_function_cross_join",
-    "state" : "ERROR",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT p.name, g.val FROM func('e2e::rel_persons') p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id <= 2 ORDER BY 1, 2",
     "sql" : "SELECT p.name, g.val FROM persons p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id <= 2 ORDER BY 1, 2"
   }, {

@@ -57,12 +57,12 @@ li { margin: 0.3em 0; }
 <tr>
 <td>⚪ UNSUPPORTED</td>
 <td>243</td>
-<td>55</td>
+<td>53</td>
 </tr>
 <tr>
 <td>✅ PASS</td>
 <td>354 (78.1%)</td>
-<td>502 (78.3%)</td>
+<td>504 (78.4%)</td>
 </tr>
 <tr>
 <td>❌ FAIL</td>
@@ -82,7 +82,7 @@ li { margin: 0.3em 0; }
 <tr>
 <td><strong>Pass rate</strong></td>
 <td><strong>78.1%</strong></td>
-<td><strong>78.3%</strong></td>
+<td><strong>78.4%</strong></td>
 </tr>
 </tbody>
 </table>
@@ -114,8 +114,8 @@ li { margin: 0.3em 0; }
 <tr>
 <td><a href="#unsupported-syntax">UNSUPPORTED_SYNTAX</a></td>
 <td>SQL construct recognized but not yet implemented</td>
-<td>226</td>
-<td>36</td>
+<td>228</td>
+<td>37</td>
 </tr>
 <tr>
 <td><a href="#type-error">TYPE_ERROR</a></td>
@@ -126,8 +126,8 @@ li { margin: 0.3em 0; }
 <tr>
 <td><a href="#function-not-supported">FUNCTION_NOT_SUPPORTED</a></td>
 <td>Function name not recognized by Legend SQL</td>
-<td>17</td>
-<td>18</td>
+<td>15</td>
+<td>15</td>
 </tr>
 <tr>
 <td><a href="#result-mismatch">RESULT_MISMATCH</a></td>
@@ -374,7 +374,7 @@ li { margin: 0.3em 0; }
 <td>0</td>
 <td>1</td>
 <td>0</td>
-<td>1</td>
+<td>3</td>
 <td>0</td>
 <td>0</td>
 <td>9</td>
@@ -2580,12 +2580,12 @@ li { margin: 0.3em 0; }
 </thead>
 <tbody>
 <tr>
-<td>⚪</td>
+<td>🟡</td>
 <td>CROSS JOIN LATERAL</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-lateral_cross_basic-TDS">UNSUPPORTED_SYNTAX</a>, <a href="#fail-lateral_cross_basic-Relation">FUNCTION_NOT_SUPPORTED</a></td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-lateral_cross_basic-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
 <td>🔴</td>
@@ -2625,15 +2625,15 @@ li { margin: 0.3em 0; }
 <td>1</td>
 <td>UNTESTED</td>
 <td>UNTESTED</td>
-<td><a href="#fail-lateral_function_in_from-TDS">FUNCTION_NOT_SUPPORTED</a></td>
+<td><a href="#fail-lateral_function_in_from-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
-<td>⚪</td>
+<td>🟡</td>
 <td>function in FROM with cross join</td>
 <td>1</td>
 <td>UNTESTED</td>
-<td>UNTESTED</td>
-<td><a href="#fail-lateral_function_cross_join-TDS">FUNCTION_NOT_SUPPORTED</a></td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-lateral_function_cross_join-TDS">UNSUPPORTED_SYNTAX</a></td>
 </tr>
 <tr>
 <td>🔴</td>
@@ -7639,7 +7639,7 @@ li { margin: 0.3em 0; }
 <p>no column found named: 'salary'. Available columns: [dept_id, total]</p>
 </blockquote>
 <p><a id="unsupported-syntax"></a></p>
-<h3>UNSUPPORTED_SYNTAX (228 tests)</h3>
+<h3>UNSUPPORTED_SYNTAX (230 tests)</h3>
 <h4><a id="fail-except_basic-TDS"></a><code>except_basic</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -8609,6 +8609,32 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>Unsupported: lateral only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-lateral_function_in_from-TDS"></a><a id="fail-lateral_function_in_from-Relation"></a><code>lateral_function_in_from</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val FROM GENERATE_SERIES(1, 5) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val FROM GENERATE_SERIES(1, 5) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: generate_series only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-lateral_function_cross_join-TDS"></a><code>lateral_function_cross_join</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, g.val FROM persons p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id &lt;= 2 ORDER BY 1, 2
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, g.val FROM func('e2e::tds_persons') p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id &lt;= 2 ORDER BY 1, 2
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: generate_series only supported on relation inputs</p>
 </blockquote>
 <br>
 <h4><a id="fail-lateral_aggregate-TDS"></a><code>lateral_aggregate</code></h4>
@@ -10876,7 +10902,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7857 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7858 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-cte_in_join_dept-TDS"></a><code>cte_in_join_dept</code></h4>
@@ -10889,7 +10915,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7857 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7858 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-cast_numeric_to_int-TDS"></a><a id="fail-cast_numeric_to_int-Relation"></a><code>cast_numeric_to_int</code></h4>
@@ -10931,7 +10957,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7366 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7367 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-lateral_unnest_string_to_array-Relation"></a><code>lateral_unnest_string_to_array</code></h4>
@@ -10944,7 +10970,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7366 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7367 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-lateral_unnest_string_to_array_correlated-Relation"></a><code>lateral_unnest_string_to_array_correlated</code></h4>
@@ -11182,7 +11208,7 @@ li { margin: 0.3em 0; }
 <p>ERROR: cannot cast type text[] to jsonb\n  Position: 316</p>
 </blockquote>
 <p><a id="function-not-supported"></a></p>
-<h3>FUNCTION_NOT_SUPPORTED (18 tests)</h3>
+<h3>FUNCTION_NOT_SUPPORTED (15 tests)</h3>
 <h4><a id="fail-subquery_scalar_select-TDS"></a><a id="fail-subquery_scalar_select-Relation"></a><code>subquery_scalar_select</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -11261,48 +11287,6 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>No function matches the given name &quot;NULLIF&quot;</p>
-</blockquote>
-<br>
-<h4><a id="fail-lateral_cross_basic-Relation"></a><code>lateral_cross_basic</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name, g.val FROM persons p CROSS JOIN LATERAL GENERATE_SERIES(1, p.dept_id) AS g(val) WHERE p.id &lt;= 3 ORDER BY 1, 2
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name, g.val FROM func('e2e::rel_persons') p CROSS JOIN LATERAL GENERATE_SERIES(1, p.dept_id) AS g(val) WHERE p.id &lt;= 3 ORDER BY 1, 2
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>No function matches the given name &quot;GENERATE_SERIES&quot;</p>
-</blockquote>
-<br>
-<h4><a id="fail-lateral_function_in_from-TDS"></a><a id="fail-lateral_function_in_from-Relation"></a><code>lateral_function_in_from</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val FROM GENERATE_SERIES(1, 5) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val FROM GENERATE_SERIES(1, 5) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>No function matches the given name &quot;GENERATE_SERIES&quot;</p>
-</blockquote>
-<br>
-<h4><a id="fail-lateral_function_cross_join-TDS"></a><a id="fail-lateral_function_cross_join-Relation"></a><code>lateral_function_cross_join</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name, g.val FROM persons p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id &lt;= 2 ORDER BY 1, 2
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT p.name, g.val FROM func('e2e::tds_persons') p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id &lt;= 2 ORDER BY 1, 2
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT p.name, g.val FROM func('e2e::rel_persons') p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id &lt;= 2 ORDER BY 1, 2
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>No function matches the given name &quot;GENERATE_SERIES&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-interval_in_where_ts-TDS"></a><a id="fail-interval_in_where_ts-Relation"></a><code>interval_in_where_ts</code></h4>

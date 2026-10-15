@@ -76,8 +76,8 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td>ERROR</td>
-<td>84</td>
-<td>73</td>
+<td>87</td>
+<td>76</td>
 </tr>
 <tr>
 <td>SKIP</td>
@@ -86,8 +86,8 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td>UNSUPPORTED</td>
-<td>351</td>
-<td>351</td>
+<td>348</td>
+<td>348</td>
 </tr>
 </tbody>
 </table>
@@ -106,8 +106,8 @@ li { margin: 0.3em 0; }
 <tr>
 <td><a href="#function-not-supported">FUNCTION_NOT_SUPPORTED</a></td>
 <td>Function name not recognized by Legend SQL</td>
-<td>169</td>
-<td>203</td>
+<td>160</td>
+<td>194</td>
 </tr>
 <tr>
 <td><a href="#result-mismatch">RESULT_MISMATCH</a></td>
@@ -124,14 +124,14 @@ li { margin: 0.3em 0; }
 <tr>
 <td><a href="#unsupported-syntax">UNSUPPORTED_SYNTAX</a></td>
 <td>SQL construct recognized but not yet implemented</td>
-<td>59</td>
-<td>43</td>
+<td>65</td>
+<td>49</td>
 </tr>
 <tr>
 <td><a href="#type-error">TYPE_ERROR</a></td>
 <td>Type mismatch or cast error</td>
-<td>81</td>
-<td>41</td>
+<td>84</td>
+<td>44</td>
 </tr>
 <tr>
 <td><a href="#parse-error">PARSE_ERROR</a></td>
@@ -364,12 +364,12 @@ li { margin: 0.3em 0; }
 <td>0</td>
 <td>0</td>
 <td>0</td>
+<td>3</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>0</td>
+<td>3</td>
 </tr>
 <tr>
 <td><a href="https://www.postgresql.org/docs/16/pgcrypto.html">Cryptographic Functions (pgcrypto)</a> / <a href="#cryptographic-functions-(pgcrypto)">details</a></td>
@@ -5815,8 +5815,8 @@ li { margin: 0.3em 0; }
 <td><code>generate_series(bigint, bigint) → SETOF bigint</code></td>
 <td>UNSUPPORTED</td>
 <td>UNSUPPORTED</td>
-<td><a href="#fail-generate_series__big_big__from_table-TDS">FUNCTION_NOT_SUPPORTED</a></td>
-<td>Function not supported</td>
+<td><a href="#fail-generate_series__big_big__from_table-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>Unsupported feature</td>
 </tr>
 <tr>
 <td>⚪</td>
@@ -5824,8 +5824,8 @@ li { margin: 0.3em 0; }
 <td><code>generate_series(bigint, bigint, bigint) → SETOF bigint</code></td>
 <td>UNSUPPORTED</td>
 <td>UNSUPPORTED</td>
-<td><a href="#fail-generate_series__big_big_big__from_table-TDS">FUNCTION_NOT_SUPPORTED</a></td>
-<td>Function not supported</td>
+<td><a href="#fail-generate_series__big_big_big__from_table-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>Unsupported feature</td>
 </tr>
 <tr>
 <td>⚪</td>
@@ -5833,8 +5833,8 @@ li { margin: 0.3em 0; }
 <td><code>generate_series(integer, integer) → SETOF integer</code></td>
 <td>UNSUPPORTED</td>
 <td>UNSUPPORTED</td>
-<td><a href="#fail-generate_series__int_int__from_table-TDS">FUNCTION_NOT_SUPPORTED</a></td>
-<td>Function not supported</td>
+<td><a href="#fail-generate_series__int_int__from_table-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>Unsupported feature</td>
 </tr>
 <tr>
 <td>⚪</td>
@@ -5842,8 +5842,8 @@ li { margin: 0.3em 0; }
 <td><code>generate_series(integer, integer, integer) → SETOF integer</code></td>
 <td>UNSUPPORTED</td>
 <td>UNSUPPORTED</td>
-<td><a href="#fail-generate_series__int_int_int__from_table-TDS">FUNCTION_NOT_SUPPORTED</a></td>
-<td>Function not supported</td>
+<td><a href="#fail-generate_series__int_int_int__from_table-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>Unsupported feature</td>
 </tr>
 <tr>
 <td>⚪</td>
@@ -5851,8 +5851,8 @@ li { margin: 0.3em 0; }
 <td><code>generate_series(numeric, numeric) → SETOF numeric</code></td>
 <td>UNSUPPORTED</td>
 <td>UNSUPPORTED</td>
-<td><a href="#fail-generate_series__num_num__from_table-TDS">FUNCTION_NOT_SUPPORTED</a></td>
-<td>Function not supported</td>
+<td><a href="#fail-generate_series__num_num__from_table-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>Unsupported feature</td>
 </tr>
 <tr>
 <td>⚪</td>
@@ -5860,35 +5860,35 @@ li { margin: 0.3em 0; }
 <td><code>generate_series(numeric, numeric, numeric) → SETOF numeric</code></td>
 <td>UNSUPPORTED</td>
 <td>UNSUPPORTED</td>
-<td><a href="#fail-generate_series__num_num_num__from_table-TDS">FUNCTION_NOT_SUPPORTED</a></td>
-<td>Function not supported</td>
+<td><a href="#fail-generate_series__num_num_num__from_table-TDS">UNSUPPORTED_SYNTAX</a></td>
+<td>Unsupported feature</td>
 </tr>
 <tr>
 <td>⚪</td>
 <td><code>generate_series</code></td>
 <td><code>generate_series(timestamp with time zone, timestamp with time zone, interval) → SETOF timestamp with time zone</code></td>
-<td>UNSUPPORTED</td>
-<td>UNSUPPORTED</td>
-<td><a href="#fail-generate_series__tstz_tstz_intv__from_table-TDS">FUNCTION_NOT_SUPPORTED</a></td>
-<td>Function not supported</td>
+<td>UNTESTED</td>
+<td>UNTESTED</td>
+<td><a href="#fail-generate_series__tstz_tstz_intv__from_table-TDS">TYPE_ERROR</a></td>
+<td></td>
 </tr>
 <tr>
 <td>⚪</td>
 <td><code>generate_series</code></td>
 <td><code>generate_series(timestamp with time zone, timestamp with time zone, interval, text) → SETOF timestamp with time zone</code></td>
-<td>UNSUPPORTED</td>
-<td>UNSUPPORTED</td>
-<td><a href="#fail-generate_series__tstz_tstz_intv_txt__from_table-TDS">FUNCTION_NOT_SUPPORTED</a></td>
-<td>Function not supported</td>
+<td>UNTESTED</td>
+<td>UNTESTED</td>
+<td><a href="#fail-generate_series__tstz_tstz_intv_txt__from_table-TDS">TYPE_ERROR</a></td>
+<td></td>
 </tr>
 <tr>
 <td>⚪</td>
 <td><code>generate_series</code></td>
 <td><code>generate_series(timestamp without time zone, timestamp without time zone, interval) → SETOF timestamp without time zone</code></td>
-<td>UNSUPPORTED</td>
-<td>UNSUPPORTED</td>
-<td><a href="#fail-generate_series__ts_ts_intv__from_table-TDS">FUNCTION_NOT_SUPPORTED</a></td>
-<td>Function not supported</td>
+<td>UNTESTED</td>
+<td>UNTESTED</td>
+<td><a href="#fail-generate_series__ts_ts_intv__from_table-TDS">TYPE_ERROR</a></td>
+<td></td>
 </tr>
 <tr>
 <td>⚪</td>
@@ -6648,7 +6648,7 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
-<h2>Functions Not Implemented (289)</h2>
+<h2>Functions Not Implemented (286)</h2>
 <p>These Postgres functions are recognized in the catalog but Legend SQL does not implement them.
 They fail with &quot;No function matches the given name&quot;, &quot;No SQL translation exists&quot;, or &quot;Unsupported&quot; errors.</p>
 <h3>Mathematical Functions and Operators (9.3) (14)</h3>
@@ -8183,7 +8183,7 @@ Functions with at least one working overload (e.g., <code>length(text)</code>) a
 </tr>
 </tbody>
 </table>
-<h3>Set Returning Functions (9.25) (2 unsupported)</h3>
+<h3>Set Returning Functions (9.25) (1 unsupported)</h3>
 <table>
 <thead>
 <tr>
@@ -8192,10 +8192,6 @@ Functions with at least one working overload (e.g., <code>length(text)</code>) a
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>generate_series</code></td>
-<td>Function not supported</td>
-</tr>
 <tr>
 <td><code>generate_subscripts</code></td>
 <td>Function not supported</td>
@@ -8223,7 +8219,7 @@ Functions with at least one working overload (e.g., <code>length(text)</code>) a
 </table>
 <h2>Error Details</h2>
 <p><a id="function-not-supported"></a></p>
-<h3>FUNCTION_NOT_SUPPORTED (264 tests)</h3>
+<h3>FUNCTION_NOT_SUPPORTED (250 tests)</h3>
 <h4><a id="fail-acosh__dp__from_table-TDS"></a><a id="fail-acosh__dp__from_table-Relation"></a><code>acosh__dp__from_table</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -12059,191 +12055,6 @@ Functions with at least one working overload (e.g., <code>length(text)</code>) a
 <p>No function matches the given name &quot;XMLAGG&quot;</p>
 </blockquote>
 <br>
-<h4><a id="fail-generate_series__big_big__from_table-TDS"></a><a id="fail-generate_series__big_big__from_table-Relation"></a><code>generate_series__big_big__from_table</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(1::bigint, 5::bigint) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(1::bigint, 5::bigint) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>No function matches the given name &quot;GENERATE_SERIES&quot;</p>
-</blockquote>
-<br>
-<h4><a id="fail-generate_series__big_big_big__from_table-TDS"></a><a id="fail-generate_series__big_big_big__from_table-Relation"></a><code>generate_series__big_big_big__from_table</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(1::bigint, 10::bigint, 2::bigint) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(1::bigint, 10::bigint, 2::bigint) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>No function matches the given name &quot;GENERATE_SERIES&quot;</p>
-</blockquote>
-<br>
-<h4><a id="fail-generate_series__int_int__from_table-TDS"></a><a id="fail-generate_series__int_int__from_table-Relation"></a><code>generate_series__int_int__from_table</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(1, 5) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(1, 5) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>No function matches the given name &quot;GENERATE_SERIES&quot;</p>
-</blockquote>
-<br>
-<h4><a id="fail-generate_series_empty_result-TDS"></a><a id="fail-generate_series_empty_result-Relation"></a><code>generate_series_empty_result</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(5, 1) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(5, 1) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>No function matches the given name &quot;GENERATE_SERIES&quot;</p>
-</blockquote>
-<br>
-<h4><a id="fail-generate_series_single_value-TDS"></a><a id="fail-generate_series_single_value-Relation"></a><code>generate_series_single_value</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(1, 1) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(1, 1) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>No function matches the given name &quot;GENERATE_SERIES&quot;</p>
-</blockquote>
-<br>
-<h4><a id="fail-generate_series_in_from-TDS"></a><a id="fail-generate_series_in_from-Relation"></a><code>generate_series_in_from</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.result FROM GENERATE_SERIES(1, 3) AS g(result) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.result FROM GENERATE_SERIES(1, 3) AS g(result) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>No function matches the given name &quot;GENERATE_SERIES&quot;</p>
-</blockquote>
-<br>
-<h4><a id="fail-generate_series_cross_join-TDS"></a><a id="fail-generate_series_cross_join-Relation"></a><code>generate_series_cross_join</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT p.name, g.val FROM persons p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id &lt;= 2 ORDER BY 1, 2
-</code></pre>
-<p><strong>Legend SQL (TDS):</strong></p>
-<pre><code class="language-sql">SELECT p.name, g.val FROM func('e2e::tds_persons') p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id &lt;= 2 ORDER BY 1, 2
-</code></pre>
-<p><strong>Legend SQL (Relation):</strong></p>
-<pre><code class="language-sql">SELECT p.name, g.val FROM func('e2e::rel_persons') p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id &lt;= 2 ORDER BY 1, 2
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>No function matches the given name &quot;GENERATE_SERIES&quot;</p>
-</blockquote>
-<br>
-<h4><a id="fail-generate_series__int_int_int__from_table-TDS"></a><a id="fail-generate_series__int_int_int__from_table-Relation"></a><code>generate_series__int_int_int__from_table</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(0, 20, 5) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(0, 20, 5) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>No function matches the given name &quot;GENERATE_SERIES&quot;</p>
-</blockquote>
-<br>
-<h4><a id="fail-generate_series_negative_step-TDS"></a><a id="fail-generate_series_negative_step-Relation"></a><code>generate_series_negative_step</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(5, 1, -1) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(5, 1, -1) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>No function matches the given name &quot;GENERATE_SERIES&quot;</p>
-</blockquote>
-<br>
-<h4><a id="fail-generate_series__num_num__from_table-TDS"></a><a id="fail-generate_series__num_num__from_table-Relation"></a><code>generate_series__num_num__from_table</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(1::numeric, 5::numeric) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(1::numeric, 5::numeric) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>No function matches the given name &quot;GENERATE_SERIES&quot;</p>
-</blockquote>
-<br>
-<h4><a id="fail-generate_series__num_num_num__from_table-TDS"></a><a id="fail-generate_series__num_num_num__from_table-Relation"></a><code>generate_series__num_num_num__from_table</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(0::numeric, 2::numeric, 0.5::numeric) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(0::numeric, 2::numeric, 0.5::numeric) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>No function matches the given name &quot;GENERATE_SERIES&quot;</p>
-</blockquote>
-<br>
-<h4><a id="fail-generate_series__tstz_tstz_intv__from_table-TDS"></a><a id="fail-generate_series__tstz_tstz_intv__from_table-Relation"></a><code>generate_series__tstz_tstz_intv__from_table</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-05'::timestamptz, '1 day'::interval) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-05'::timestamptz, '1 day'::interval) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>No function matches the given name &quot;GENERATE_SERIES&quot;</p>
-</blockquote>
-<br>
-<h4><a id="fail-generate_series__tstz_tstz_intv_txt__from_table-TDS"></a><a id="fail-generate_series__tstz_tstz_intv_txt__from_table-Relation"></a><code>generate_series__tstz_tstz_intv_txt__from_table</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-05'::timestamptz, '1 day'::interval, 'UTC') AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-05'::timestamptz, '1 day'::interval, 'UTC') AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>No function matches the given name &quot;GENERATE_SERIES&quot;</p>
-</blockquote>
-<br>
-<h4><a id="fail-generate_series__ts_ts_intv__from_table-TDS"></a><a id="fail-generate_series__ts_ts_intv__from_table-Relation"></a><code>generate_series__ts_ts_intv__from_table</code></h4>
-<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamp, '2023-01-05'::timestamp, '1 day'::interval) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamp, '2023-01-05'::timestamp, '1 day'::interval) AS g(val) ORDER BY 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>No function matches the given name &quot;GENERATE_SERIES&quot;</p>
-</blockquote>
-<br>
 <h4><a id="fail-generate_subscripts__anyarray_int__from_table-TDS"></a><a id="fail-generate_subscripts__anyarray_int__from_table-Relation"></a><code>generate_subscripts__anyarray_int__from_table</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -13522,7 +13333,7 @@ Position: 13</p>
 <p>Rewrite failed:</p>
 </blockquote>
 <p><a id="unsupported-syntax"></a></p>
-<h3>UNSUPPORTED_SYNTAX (88 tests)</h3>
+<h3>UNSUPPORTED_SYNTAX (99 tests)</h3>
 <h4><a id="fail-log__num_num__from_table-TDS"></a><a id="fail-log__num_num__from_table-Relation"></a><code>log__num_num__from_table</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -14811,6 +14622,149 @@ Position: 13</p>
 <p>Unsupported: percent_rank only supported on relation inputs</p>
 </blockquote>
 <br>
+<h4><a id="fail-generate_series__big_big__from_table-TDS"></a><a id="fail-generate_series__big_big__from_table-Relation"></a><code>generate_series__big_big__from_table</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(1::bigint, 5::bigint) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(1::bigint, 5::bigint) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: generate_series only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-generate_series__big_big_big__from_table-TDS"></a><a id="fail-generate_series__big_big_big__from_table-Relation"></a><code>generate_series__big_big_big__from_table</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(1::bigint, 10::bigint, 2::bigint) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(1::bigint, 10::bigint, 2::bigint) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: generate_series only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-generate_series__int_int__from_table-TDS"></a><a id="fail-generate_series__int_int__from_table-Relation"></a><code>generate_series__int_int__from_table</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(1, 5) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(1, 5) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: generate_series only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-generate_series_empty_result-TDS"></a><a id="fail-generate_series_empty_result-Relation"></a><code>generate_series_empty_result</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(5, 1) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(5, 1) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: generate_series only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-generate_series_single_value-TDS"></a><a id="fail-generate_series_single_value-Relation"></a><code>generate_series_single_value</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(1, 1) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(1, 1) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: generate_series only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-generate_series_in_from-TDS"></a><a id="fail-generate_series_in_from-Relation"></a><code>generate_series_in_from</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.result FROM GENERATE_SERIES(1, 3) AS g(result) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.result FROM GENERATE_SERIES(1, 3) AS g(result) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: generate_series only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-generate_series_cross_join-TDS"></a><code>generate_series_cross_join</code></h4>
+<p>📘 <strong>TDS Path</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, g.val FROM persons p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id &lt;= 2 ORDER BY 1, 2
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT p.name, g.val FROM func('e2e::tds_persons') p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id &lt;= 2 ORDER BY 1, 2
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: generate_series only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-generate_series__int_int_int__from_table-TDS"></a><a id="fail-generate_series__int_int_int__from_table-Relation"></a><code>generate_series__int_int_int__from_table</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(0, 20, 5) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(0, 20, 5) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: generate_series only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-generate_series_negative_step-TDS"></a><a id="fail-generate_series_negative_step-Relation"></a><code>generate_series_negative_step</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(5, 1, -1) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(5, 1, -1) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: generate_series only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-generate_series__num_num__from_table-TDS"></a><a id="fail-generate_series__num_num__from_table-Relation"></a><code>generate_series__num_num__from_table</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(1::numeric, 5::numeric) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(1::numeric, 5::numeric) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: generate_series only supported on relation inputs</p>
+</blockquote>
+<br>
+<h4><a id="fail-generate_series__num_num_num__from_table-TDS"></a><a id="fail-generate_series__num_num_num__from_table-Relation"></a><code>generate_series__num_num_num__from_table</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(0::numeric, 2::numeric, 0.5::numeric) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES(0::numeric, 2::numeric, 0.5::numeric) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>Unsupported: generate_series only supported on relation inputs</p>
+</blockquote>
+<br>
 <h4><a id="fail-date_literal__infinity-TDS"></a><a id="fail-date_literal__infinity-Relation"></a><code>date_literal__infinity</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -14840,7 +14794,7 @@ Position: 13</p>
 <p>Unsupported: ordered or filtered aggregation is only supported on relations</p>
 </blockquote>
 <p><a id="type-error"></a></p>
-<h3>TYPE_ERROR (87 tests)</h3>
+<h3>TYPE_ERROR (90 tests)</h3>
 <h4><a id="fail-trunc__macaddr__unsupported_type-TDS"></a><a id="fail-trunc__macaddr__unsupported_type-Relation"></a><code>trunc__macaddr__unsupported_type</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -16064,6 +16018,45 @@ Position: 13</p>
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>No value found for REAL, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]</p>
+</blockquote>
+<br>
+<h4><a id="fail-generate_series__tstz_tstz_intv__from_table-TDS"></a><a id="fail-generate_series__tstz_tstz_intv__from_table-Relation"></a><code>generate_series__tstz_tstz_intv__from_table</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-05'::timestamptz, '1 day'::interval) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-05'::timestamptz, '1 day'::interval) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>No value found for TIMESTAMPTZ</p>
+</blockquote>
+<br>
+<h4><a id="fail-generate_series__tstz_tstz_intv_txt__from_table-TDS"></a><a id="fail-generate_series__tstz_tstz_intv_txt__from_table-Relation"></a><code>generate_series__tstz_tstz_intv_txt__from_table</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-05'::timestamptz, '1 day'::interval, 'UTC') AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-05'::timestamptz, '1 day'::interval, 'UTC') AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>No value found for TIMESTAMPTZ</p>
+</blockquote>
+<br>
+<h4><a id="fail-generate_series__ts_ts_intv__from_table-TDS"></a><a id="fail-generate_series__ts_ts_intv__from_table-Relation"></a><code>generate_series__ts_ts_intv__from_table</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamp, '2023-01-05'::timestamp, '1 day'::interval) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL:</strong></p>
+<pre><code class="language-sql">SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamp, '2023-01-05'::timestamp, '1 day'::interval) AS g(val) ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>No value found for INTERVAL</p>
 </blockquote>
 <br>
 <h4><a id="fail-date_literal__cast_string_to_timestamptz-TDS"></a><a id="fail-date_literal__cast_string_to_timestamptz-Relation"></a><code>date_literal__cast_string_to_timestamptz</code></h4>

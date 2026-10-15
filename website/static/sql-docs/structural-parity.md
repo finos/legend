@@ -6,12 +6,12 @@
 |--------|-----|----------|
 | Total features | 617 | 617 |
 | Total tests | 696 | 696 |
-| ⚪ UNSUPPORTED | 243 | 55 |
-| ✅ PASS | 354 (78.1%) | 502 (78.3%) |
+| ⚪ UNSUPPORTED | 243 | 53 |
+| ✅ PASS | 354 (78.1%) | 504 (78.4%) |
 | ❌ FAIL | 11 | 13 |
 | 💥 ERROR | 88 | 126 |
 | ❓ SKIP | 0 | 0 |
-| **Pass rate** | **78.1%** | **78.3%** |
+| **Pass rate** | **78.1%** | **78.4%** |
 
 _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 
@@ -23,9 +23,9 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 |----------|-------------|-----|----------|
 | [ALIAS_NOT_FOUND](#alias-not-found) | Column or alias reference cannot be resolved | 7 | 6 |
 | [MISC](#misc) | Other/uncategorized error | 37 | 81 |
-| [UNSUPPORTED_SYNTAX](#unsupported-syntax) | SQL construct recognized but not yet implemented | 226 | 36 |
+| [UNSUPPORTED_SYNTAX](#unsupported-syntax) | SQL construct recognized but not yet implemented | 228 | 37 |
 | [TYPE_ERROR](#type-error) | Type mismatch or cast error | 19 | 14 |
-| [FUNCTION_NOT_SUPPORTED](#function-not-supported) | Function name not recognized by Legend SQL | 17 | 18 |
+| [FUNCTION_NOT_SUPPORTED](#function-not-supported) | Function name not recognized by Legend SQL | 15 | 15 |
 | [RESULT_MISMATCH](#result-mismatch) | Query executes but results differ from Postgres | 11 | 13 |
 | [FUNCTION_NO_SQL_TRANSLATION](#function-no-sql-translation) | Pure function exists but has no SQL translation | 0 | 1 |
 | [PARSE_ERROR](#parse-error) | SQL syntax not parseable by Legend SQL parser | 25 | 25 |
@@ -49,7 +49,7 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 | [where_predicates](#where_predicates) | 20 | 20 | 12 | 0 | 2 | 0 | 0 | 17 | 0 | 3 | 0 | 0 |
 | [aliases](#aliases) | 15 | 15 | 14 | 0 | 0 | 1 | 0 | 14 | 0 | 0 | 1 | 0 |
 | [having](#having) | 11 | 11 | 11 | 0 | 0 | 0 | 0 | 11 | 0 | 0 | 0 | 0 |
-| [lateral_joins](#lateral_joins) | 32 | 32 | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 0 | 9 | 0 |
+| [lateral_joins](#lateral_joins) | 32 | 32 | 0 | 0 | 0 | 1 | 0 | 3 | 0 | 0 | 9 | 0 |
 | [boolean_logic](#boolean_logic) | 16 | 16 | 10 | 0 | 2 | 4 | 0 | 9 | 0 | 2 | 5 | 0 |
 | [select_star](#select_star) | 8 | 8 | 6 | 0 | 1 | 1 | 0 | 7 | 0 | 1 | 0 | 0 |
 | [multiple_schemas](#multiple_schemas) | 7 | 7 | 4 | 0 | 2 | 0 | 0 | 5 | 0 | 2 | 0 | 0 |
@@ -381,13 +381,13 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 
 | | Feature | Tests | TDS | Relation | Error Category |
 |--|---------|-------|-----|----------|----------------|
-| ⚪ | CROSS JOIN LATERAL | 1 | UNTESTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-lateral_cross_basic-TDS), [FUNCTION_NOT_SUPPORTED](#fail-lateral_cross_basic-Relation) |
+| 🟡 | CROSS JOIN LATERAL | 1 | UNTESTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-lateral_cross_basic-TDS) |
 | 🔴 | CROSS JOIN LATERAL subquery | 1 | UNTESTED | ERROR (0/1) | [UNSUPPORTED_SYNTAX](#fail-lateral_cross_subquery-TDS), [MISC](#fail-lateral_cross_subquery-Relation) |
 | ⚪ | LEFT JOIN LATERAL | 1 | UNTESTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-lateral_left_join-TDS) |
 | ⚪ | LEFT JOIN LATERAL with no match | 1 | UNTESTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-lateral_left_join_no_match-TDS) |
 | 🔴 | LATERAL top-N per group | 1 | UNTESTED | ERROR (0/1) | [UNSUPPORTED_SYNTAX](#fail-lateral_top_n-TDS), [ALIAS_NOT_FOUND](#fail-lateral_top_n-Relation) |
-| ⚪ | function in FROM | 1 | UNTESTED | UNTESTED | [FUNCTION_NOT_SUPPORTED](#fail-lateral_function_in_from-TDS) |
-| ⚪ | function in FROM with cross join | 1 | UNTESTED | UNTESTED | [FUNCTION_NOT_SUPPORTED](#fail-lateral_function_cross_join-TDS) |
+| ⚪ | function in FROM | 1 | UNTESTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-lateral_function_in_from-TDS) |
+| 🟡 | function in FROM with cross join | 1 | UNTESTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-lateral_function_cross_join-TDS) |
 | 🔴 | LATERAL with aggregation | 1 | UNTESTED | ERROR (0/1) | [UNSUPPORTED_SYNTAX](#fail-lateral_aggregate-TDS), [MISC](#fail-lateral_aggregate-Relation) |
 | ⚪ | LATERAL UNNEST with array literal | 1 | UNTESTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-lateral_unnest_array_literal-TDS) |
 | ⚪ | LATERAL UNNEST with string array | 1 | UNTESTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-lateral_unnest_string_array-TDS) |
@@ -3277,7 +3277,7 @@ SELECT dept_id, SUM(salary) AS total, LAST_VALUE(SUM(salary)) OVER (ORDER BY SUM
 
 <a id="unsupported-syntax"></a>
 
-### UNSUPPORTED_SYNTAX (228 tests)
+### UNSUPPORTED_SYNTAX (230 tests)
 
 #### <a id="fail-except_basic-TDS"></a>`except_basic`
 
@@ -4765,6 +4765,46 @@ SELECT d.name AS dept, sub.person_name FROM func('e2e::tds_departments') d CROSS
 
 **Error:**
 > Unsupported: lateral only supported on relation inputs
+
+
+<br>
+
+#### <a id="fail-lateral_function_in_from-TDS"></a><a id="fail-lateral_function_in_from-Relation"></a>`lateral_function_in_from`
+
+🔴 **Failed in both TDS and Relation**
+
+**Input SQL:**
+```sql
+SELECT g.val FROM GENERATE_SERIES(1, 5) AS g(val) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT g.val FROM GENERATE_SERIES(1, 5) AS g(val) ORDER BY 1
+```
+
+**Error:**
+> Unsupported: generate_series only supported on relation inputs
+
+
+<br>
+
+#### <a id="fail-lateral_function_cross_join-TDS"></a>`lateral_function_cross_join`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT p.name, g.val FROM persons p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id <= 2 ORDER BY 1, 2
+```
+
+**Legend SQL:**
+```sql
+SELECT p.name, g.val FROM func('e2e::tds_persons') p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id <= 2 ORDER BY 1, 2
+```
+
+**Error:**
+> Unsupported: generate_series only supported on relation inputs
 
 
 <br>
@@ -8226,7 +8266,7 @@ WITH order_totals AS (SELECT person_id, SUM(amount) AS total_orders FROM func('e
 ```
 
 **Error:**
-> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7857 column:36), "Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery"
+> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7858 column:36), "Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery"
 
 
 <br>
@@ -8246,7 +8286,7 @@ WITH dept_avg AS (SELECT dept_id, AVG(salary) AS avg_sal FROM func('e2e::tds_per
 ```
 
 **Error:**
-> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7857 column:36), "Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery"
+> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7858 column:36), "Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery"
 
 
 <br>
@@ -8311,7 +8351,7 @@ SELECT p.name, COUNT(*) AS cnt FROM func('e2e::rel_persons') p CROSS JOIN LATERA
 ```
 
 **Error:**
-> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7366 column:21), "Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor"
+> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7367 column:21), "Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor"
 
 
 <br>
@@ -8331,7 +8371,7 @@ SELECT p.name, u.val FROM func('e2e::rel_persons') p CROSS JOIN LATERAL UNNEST(S
 ```
 
 **Error:**
-> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7366 column:21), "Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor"
+> Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7367 column:21), "Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor"
 
 
 <br>
@@ -8701,7 +8741,7 @@ SELECT p.name AS name, b.value AS word FROM func('e2e::rel_persons') p, LATERAL 
 
 <a id="function-not-supported"></a>
 
-### FUNCTION_NOT_SUPPORTED (18 tests)
+### FUNCTION_NOT_SUPPORTED (15 tests)
 
 #### <a id="fail-subquery_scalar_select-TDS"></a><a id="fail-subquery_scalar_select-Relation"></a>`subquery_scalar_select`
 
@@ -8824,71 +8864,6 @@ SELECT NULLIF(dept_id, 1) AS result FROM func('e2e::rel_persons') WHERE dept_id 
 
 **Error:**
 > No function matches the given name "NULLIF"
-
-
-<br>
-
-#### <a id="fail-lateral_cross_basic-Relation"></a>`lateral_cross_basic`
-
-📗 **Relation Path**
-
-**Input SQL:**
-```sql
-SELECT p.name, g.val FROM persons p CROSS JOIN LATERAL GENERATE_SERIES(1, p.dept_id) AS g(val) WHERE p.id <= 3 ORDER BY 1, 2
-```
-
-**Legend SQL:**
-```sql
-SELECT p.name, g.val FROM func('e2e::rel_persons') p CROSS JOIN LATERAL GENERATE_SERIES(1, p.dept_id) AS g(val) WHERE p.id <= 3 ORDER BY 1, 2
-```
-
-**Error:**
-> No function matches the given name "GENERATE_SERIES"
-
-
-<br>
-
-#### <a id="fail-lateral_function_in_from-TDS"></a><a id="fail-lateral_function_in_from-Relation"></a>`lateral_function_in_from`
-
-🔴 **Failed in both TDS and Relation**
-
-**Input SQL:**
-```sql
-SELECT g.val FROM GENERATE_SERIES(1, 5) AS g(val) ORDER BY 1
-```
-
-**Legend SQL:**
-```sql
-SELECT g.val FROM GENERATE_SERIES(1, 5) AS g(val) ORDER BY 1
-```
-
-**Error:**
-> No function matches the given name "GENERATE_SERIES"
-
-
-<br>
-
-#### <a id="fail-lateral_function_cross_join-TDS"></a><a id="fail-lateral_function_cross_join-Relation"></a>`lateral_function_cross_join`
-
-🔴 **Failed in both TDS and Relation**
-
-**Input SQL:**
-```sql
-SELECT p.name, g.val FROM persons p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id <= 2 ORDER BY 1, 2
-```
-
-**Legend SQL (TDS):**
-```sql
-SELECT p.name, g.val FROM func('e2e::tds_persons') p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id <= 2 ORDER BY 1, 2
-```
-
-**Legend SQL (Relation):**
-```sql
-SELECT p.name, g.val FROM func('e2e::rel_persons') p, GENERATE_SERIES(1, 2) AS g(val) WHERE p.id <= 2 ORDER BY 1, 2
-```
-
-**Error:**
-> No function matches the given name "GENERATE_SERIES"
 
 
 <br>
