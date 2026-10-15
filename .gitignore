@@ -16,6 +16,9 @@ Thumbs.db
 
 # Temp
 /temp
+
+# User guides checked out from finos/legend-studio (website/docusaurus.config.js)
+/website/external/
 installers/docker-compose/*/build
 
 # Generated contents
