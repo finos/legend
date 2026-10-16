@@ -4,7 +4,7 @@ Full expected (Postgres) vs actual (Legend) result sets for every test where res
 
 ---
 
-**Total result mismatches:** 86
+**Total result mismatches:** 88
 
 ## Table of Contents
 
@@ -94,6 +94,8 @@ Full expected (Postgres) vs actual (Legend) result sets for every test where res
 - [json_extract_array_negative_index \[Relation\]](#fail-json_extract_array_negative_index-Relation)
 - [interval_compound_literal \[TDS\]](#fail-interval_compound_literal-TDS)
 - [interval_compound_literal \[Relation\]](#fail-interval_compound_literal-Relation)
+- [interval_range_year_to_month \[TDS\]](#fail-interval_range_year_to_month-TDS)
+- [interval_range_year_to_month \[Relation\]](#fail-interval_range_year_to_month-Relation)
 
 ---
 
@@ -6259,6 +6261,175 @@ select ((("root".d + (INTERVAL '1 YEARS' * 1)) + (INTERVAL '1 MONTHS' * 2)) + (I
 | 2025-08-18 00:00:00.0 |
 | 2027-02-28 00:00:00.0 |
 | 2027-03-04 00:00:00.0 |
+
+---
+
+<a id="fail-interval_range_year_to_month-TDS"></a>
+
+### ❌ interval_range_year_to_month [TDS]
+
+**SQL (Postgres):**
+```sql
+SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM dates WHERE d IS NOT NULL ORDER BY 1
+```
+
+**SQL (Legend, rewritten):**
+```sql
+SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM func('e2e::tds_dates') WHERE d IS NOT NULL ORDER BY 1
+```
+
+**SQL (Generated, executed against DB):**
+```sql
+select (("root".d + (INTERVAL '1 YEARS' * 1)) + (INTERVAL '1 MONTHS' * 2)) as "result" from public.dates as "root" where "root".d is not null order by "result"
+```
+
+**Lambda (Pure expression):**
+```json
+|e2e::DateRow.all()->meta::pure::tds::project(
+  [
+    meta::pure::tds::col(
+      x: e2e::DateRow[1]|$x.id,
+      'id'
+    ),
+    meta::pure::tds::col(
+      x: e2e::DateRow[1]|$x.d,
+      'd'
+    ),
+    meta::pure::tds::col(
+      x: e2e::DateRow[1]|$x.ts,
+      'ts'
+    ),
+    meta::pure::tds::col(
+      x: e2e::DateRow[1]|$x.tsz,
+      'tsz'
+    )
+  ]
+)->meta::pure::tds::filter(
+  row: meta::pure::tds::TDSRow[1]|$row.getStrictDate('d')->meta::pure::functions::collection::isNotEmpty()
+)->meta::pure::tds::project(
+  meta::pure::tds::col(
+      row: meta::pure::tds::TDSRow[1]|$row.getStrictDate('d')->meta::pure::functions::date::adjust(
+        1,
+        meta::pure::functions::date::DurationUnit.YEARS
+      )->meta::pure::functions::date::adjust(
+        2,
+        meta::pure::functions::date::DurationUnit.MONTHS
+      ),
+      'result'
+    )
+)->meta::pure::tds::sort(
+  meta::pure::tds::asc('result')
+)
+```
+
+**Differences:**
+- Row 3, column 'result': expected '2021-04-29 00:00:00.0' but got '2021-04-28 00:00:00.0'
+
+**Expected (Postgres):**
+
+| result |
+| --- |
+| 1971-03-01 00:00:00.0 |
+| 2001-02-28 00:00:00.0 |
+| 2001-03-01 00:00:00.0 |
+| 2021-04-29 00:00:00.0 |
+| 2024-03-15 00:00:00.0 |
+| 2024-09-04 00:00:00.0 |
+| 2025-08-15 00:00:00.0 |
+| 2027-02-25 00:00:00.0 |
+| 2027-03-01 00:00:00.0 |
+
+**Actual (Legend):**
+
+| result |
+| --- |
+| 1971-03-01 00:00:00.0 |
+| 2001-02-28 00:00:00.0 |
+| 2001-03-01 00:00:00.0 |
+| 2021-04-28 00:00:00.0 |
+| 2024-03-15 00:00:00.0 |
+| 2024-09-04 00:00:00.0 |
+| 2025-08-15 00:00:00.0 |
+| 2027-02-25 00:00:00.0 |
+| 2027-03-01 00:00:00.0 |
+
+---
+
+<a id="fail-interval_range_year_to_month-Relation"></a>
+
+### ❌ interval_range_year_to_month [Relation]
+
+**SQL (Postgres):**
+```sql
+SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM dates WHERE d IS NOT NULL ORDER BY 1
+```
+
+**SQL (Legend, rewritten):**
+```sql
+SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM func('e2e::rel_dates') WHERE d IS NOT NULL ORDER BY 1
+```
+
+**SQL (Generated, executed against DB):**
+```sql
+select (("root".d + (INTERVAL '1 YEARS' * 1)) + (INTERVAL '1 MONTHS' * 2)) as "result" from public.dates as "root" where "root".d is not null order by "result"
+```
+
+**Lambda (Pure expression):**
+```json
+|e2e::DateRow.all()->meta::pure::functions::relation::project(
+  ~[
+     id: x: e2e::DateRow[1]|$x.id,
+     d: x: e2e::DateRow[1]|$x.d,
+     ts: x: e2e::DateRow[1]|$x.ts,
+     tsz: x: e2e::DateRow[1]|$x.tsz
+   ]
+)->meta::pure::functions::relation::filter(
+  x: (id:Integer[1], d:StrictDate, ts:DateTime, tsz:DateTime)[1]|$x.d->meta::pure::functions::collection::isNotEmpty()
+)->meta::pure::functions::relation::project(
+  ~[
+     result: x: (id:Integer[1], d:StrictDate, ts:DateTime, tsz:DateTime)[1]|$x.d->meta::pure::functions::multiplicity::toOne()->meta::pure::functions::date::adjust(
+    1,
+    meta::pure::functions::date::DurationUnit.YEARS
+  )->meta::pure::functions::date::adjust(
+    2,
+    meta::pure::functions::date::DurationUnit.MONTHS
+  )
+   ]
+)->meta::pure::functions::relation::sort(
+  ~result->meta::pure::functions::relation::ascending()
+)
+```
+
+**Differences:**
+- Row 3, column 'result': expected '2021-04-29 00:00:00.0' but got '2021-04-28 00:00:00.0'
+
+**Expected (Postgres):**
+
+| result |
+| --- |
+| 1971-03-01 00:00:00.0 |
+| 2001-02-28 00:00:00.0 |
+| 2001-03-01 00:00:00.0 |
+| 2021-04-29 00:00:00.0 |
+| 2024-03-15 00:00:00.0 |
+| 2024-09-04 00:00:00.0 |
+| 2025-08-15 00:00:00.0 |
+| 2027-02-25 00:00:00.0 |
+| 2027-03-01 00:00:00.0 |
+
+**Actual (Legend):**
+
+| result |
+| --- |
+| 1971-03-01 00:00:00.0 |
+| 2001-02-28 00:00:00.0 |
+| 2001-03-01 00:00:00.0 |
+| 2021-04-28 00:00:00.0 |
+| 2024-03-15 00:00:00.0 |
+| 2024-09-04 00:00:00.0 |
+| 2025-08-15 00:00:00.0 |
+| 2027-02-25 00:00:00.0 |
+| 2027-03-01 00:00:00.0 |
 
 ---
 

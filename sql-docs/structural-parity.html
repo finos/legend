@@ -46,13 +46,13 @@ li { margin: 0.3em 0; }
 <tbody>
 <tr>
 <td>Total features</td>
-<td>617</td>
-<td>617</td>
+<td>621</td>
+<td>621</td>
 </tr>
 <tr>
 <td>Total tests</td>
-<td>696</td>
-<td>696</td>
+<td>700</td>
+<td>700</td>
 </tr>
 <tr>
 <td>⚪ UNSUPPORTED</td>
@@ -61,13 +61,13 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td>✅ PASS</td>
-<td>354 (78.1%)</td>
-<td>504 (78.4%)</td>
+<td>357 (78.1%)</td>
+<td>507 (78.4%)</td>
 </tr>
 <tr>
 <td>❌ FAIL</td>
-<td>11</td>
-<td>13</td>
+<td>12</td>
+<td>14</td>
 </tr>
 <tr>
 <td>💥 ERROR</td>
@@ -132,8 +132,8 @@ li { margin: 0.3em 0; }
 <tr>
 <td><a href="#result-mismatch">RESULT_MISMATCH</a></td>
 <td>Query executes but results differ from Postgres</td>
-<td>11</td>
-<td>13</td>
+<td>12</td>
+<td>14</td>
 </tr>
 <tr>
 <td><a href="#function-no-sql-translation">FUNCTION_NO_SQL_TRANSLATION</a></td>
@@ -442,16 +442,16 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><a href="#interval_arithmetic">interval_arithmetic</a></td>
-<td>16</td>
-<td>25</td>
-<td>8</td>
+<td>20</td>
+<td>29</td>
+<td>11</td>
 <td>2</td>
-<td>0</td>
+<td>1</td>
 <td>4</td>
 <td>0</td>
-<td>8</td>
+<td>11</td>
 <td>1</td>
-<td>0</td>
+<td>1</td>
 <td>5</td>
 <td>0</td>
 </tr>
@@ -3549,6 +3549,22 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td>🟢</td>
+<td>date + unqualified interval (defaults to seconds)</td>
+<td>1</td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
+</tr>
+<tr>
+<td>🟢</td>
+<td>date + interval with separate unit token</td>
+<td>1</td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
+</tr>
+<tr>
+<td>🟢</td>
 <td>timestamp + interval</td>
 <td>3</td>
 <td>PASS (3/3)</td>
@@ -3602,6 +3618,22 @@ li { margin: 0.3em 0; }
 <td>PARTIAL (1/2)</td>
 <td>PARTIAL (1/2)</td>
 <td><a href="#fail-interval_compound_literal-TDS">RESULT_MISMATCH</a></td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>ranged interval literal YEAR TO MONTH</td>
+<td>1</td>
+<td>FAIL (0/1)</td>
+<td>FAIL (0/1)</td>
+<td><a href="#fail-interval_range_year_to_month-TDS">RESULT_MISMATCH</a></td>
+</tr>
+<tr>
+<td>🟢</td>
+<td>ranged interval literal DAY TO MINUTE</td>
+<td>1</td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
 </tr>
 <tr>
 <td>🟢</td>
@@ -11449,7 +11481,7 @@ li { margin: 0.3em 0; }
 <p>No function matches the given name &quot;func&quot;</p>
 </blockquote>
 <p><a id="result-mismatch"></a></p>
-<h3>RESULT_MISMATCH (15 tests)</h3>
+<h3>RESULT_MISMATCH (16 tests)</h3>
 <h4><a id="fail-subquery_quant_all_empty_null_value-Relation"></a><code>subquery_quant_all_empty_null_value</code></h4>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -11660,6 +11692,22 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Legend SQL (Relation):</strong></p>
 <pre><code class="language-sql">SELECT d + INTERVAL '1 year 2 months 3 days' AS result FROM func('e2e::rel_dates') WHERE d IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>Error:</strong></p>
+<blockquote>
+<p>null</p>
+</blockquote>
+<br>
+<h4><a id="fail-interval_range_year_to_month-TDS"></a><a id="fail-interval_range_year_to_month-Relation"></a><code>interval_range_year_to_month</code></h4>
+<p>🔴 <strong>Failed in both TDS and Relation</strong></p>
+<p><strong>Input SQL:</strong></p>
+<pre><code class="language-sql">SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM dates WHERE d IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL (TDS):</strong></p>
+<pre><code class="language-sql">SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM func('e2e::tds_dates') WHERE d IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>Legend SQL (Relation):</strong></p>
+<pre><code class="language-sql">SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM func('e2e::rel_dates') WHERE d IS NOT NULL ORDER BY 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>

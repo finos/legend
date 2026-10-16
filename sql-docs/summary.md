@@ -76,16 +76,16 @@ See [full details](structural-parity.md) for per-feature results.
 
 | Metric | TDS | Relation |
 |--------|-----|----------|
-| Total features | 617 | 617 |
-| Total tests | 696 | 696 |
+| Total features | 621 | 621 |
+| Total tests | 700 | 700 |
 | ⚪ UNSUPPORTED | 222 | 48 |
-| ✅ PASS | 305 | 439 |
+| ✅ PASS | 308 | 442 |
 | ⚠️ PARTIAL | 3 | 3 |
-| ❌ FAIL | 10 | 11 |
+| ❌ FAIL | 11 | 12 |
 | 💥 ERROR | 77 | 116 |
 | ❓ UNTESTED | 0 | 0 |
-| **Full pass rate** | **77.2%** | **77.2%** |
-| **Pass + partial rate** | **78.0%** | **77.7%** |
+| **Full pass rate** | **77.2%** | **77.1%** |
+| **Pass + partial rate** | **77.9%** | **77.7%** |
 
 _Percentages exclude unsupported features from the denominator._
 
@@ -115,6 +115,8 @@ _Percentages exclude unsupported features from the denominator._
 - [json_extract_array_negative_index \[Relation\]](failure-details.md#fail-json_extract_array_negative_index-Relation)
 - [interval_compound_literal \[TDS\]](failure-details.md#fail-interval_compound_literal-TDS)
 - [interval_compound_literal \[Relation\]](failure-details.md#fail-interval_compound_literal-Relation)
+- [interval_range_year_to_month \[TDS\]](failure-details.md#fail-interval_range_year_to_month-TDS)
+- [interval_range_year_to_month \[Relation\]](failure-details.md#fail-interval_range_year_to_month-Relation)
 
 ---
 
@@ -176,7 +178,7 @@ Combined pass rate across function coverage and structural parity.
 
 | Path | Pass | Tested | Pass Rate |
 |------|------|--------|-----------|
-| TDS | 618 | 1621 | **38.1%** |
-| Relation | 777 | 1795 | **43.3%** |
-| **Combined** | **1395** | **3336** | **41.8%** |
+| TDS | 621 | 1625 | **38.2%** |
+| Relation | 780 | 1799 | **43.4%** |
+| **Combined** | **1401** | **3344** | **41.9%** |
 
