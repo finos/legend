@@ -4,11 +4,11 @@
 
 | Metric | TDS | Relation |
 |--------|-----|----------|
-| Total features | 617 | 617 |
-| Total tests | 696 | 696 |
+| Total features | 621 | 621 |
+| Total tests | 700 | 700 |
 | ⚪ UNSUPPORTED | 243 | 53 |
-| ✅ PASS | 354 (78.1%) | 504 (78.4%) |
-| ❌ FAIL | 11 | 13 |
+| ✅ PASS | 357 (78.1%) | 507 (78.4%) |
+| ❌ FAIL | 12 | 14 |
 | 💥 ERROR | 88 | 126 |
 | ❓ SKIP | 0 | 0 |
 | **Pass rate** | **78.1%** | **78.4%** |
@@ -26,7 +26,7 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 | [UNSUPPORTED_SYNTAX](#unsupported-syntax) | SQL construct recognized but not yet implemented | 228 | 37 |
 | [TYPE_ERROR](#type-error) | Type mismatch or cast error | 19 | 14 |
 | [FUNCTION_NOT_SUPPORTED](#function-not-supported) | Function name not recognized by Legend SQL | 15 | 15 |
-| [RESULT_MISMATCH](#result-mismatch) | Query executes but results differ from Postgres | 11 | 13 |
+| [RESULT_MISMATCH](#result-mismatch) | Query executes but results differ from Postgres | 12 | 14 |
 | [FUNCTION_NO_SQL_TRANSLATION](#function-no-sql-translation) | Pure function exists but has no SQL translation | 0 | 1 |
 | [PARSE_ERROR](#parse-error) | SQL syntax not parseable by Legend SQL parser | 25 | 25 |
 
@@ -54,7 +54,7 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 | [select_star](#select_star) | 8 | 8 | 6 | 0 | 1 | 1 | 0 | 7 | 0 | 1 | 0 | 0 |
 | [multiple_schemas](#multiple_schemas) | 7 | 7 | 4 | 0 | 2 | 0 | 0 | 5 | 0 | 2 | 0 | 0 |
 | [json_operators](#json_operators) | 46 | 46 | 8 | 0 | 0 | 30 | 0 | 7 | 0 | 2 | 29 | 0 |
-| [interval_arithmetic](#interval_arithmetic) | 16 | 25 | 8 | 2 | 0 | 4 | 0 | 8 | 1 | 0 | 5 | 0 |
+| [interval_arithmetic](#interval_arithmetic) | 20 | 29 | 11 | 2 | 1 | 4 | 0 | 11 | 1 | 1 | 5 | 0 |
 | [column_resolution](#column_resolution) | 35 | 35 | 31 | 0 | 0 | 2 | 0 | 31 | 0 | 0 | 4 | 0 |
 | [column_resolution_corpus](#column_resolution_corpus) | 123 | 123 | 71 | 0 | 0 | 1 | 0 | 116 | 0 | 0 | 2 | 0 |
 | [grouping_sets](#grouping_sets) | 4 | 4 | 0 | 0 | 0 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
@@ -527,6 +527,8 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 |--|---------|-------|-----|----------|----------------|
 | 🟢 | date + interval | 3 | PASS (3/3) | PASS (3/3) |  |
 | 🟢 | date - interval | 2 | PASS (2/2) | PASS (2/2) |  |
+| 🟢 | date + unqualified interval (defaults to seconds) | 1 | PASS (1/1) | PASS (1/1) |  |
+| 🟢 | date + interval with separate unit token | 1 | PASS (1/1) | PASS (1/1) |  |
 | 🟢 | timestamp + interval | 3 | PASS (3/3) | PASS (3/3) |  |
 | 🟢 | timestamp - interval | 2 | PASS (2/2) | PASS (2/2) |  |
 | 🟢 | date - date | 1 | PASS (1/1) | PASS (1/1) |  |
@@ -534,6 +536,8 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 | ⚪ | interval * scalar | 1 | UNTESTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-interval_multiply_scalar-TDS) |
 | ⚪ | interval / scalar | 1 | UNTESTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-interval_divide_scalar-TDS) |
 | 🟡 | compound interval literal | 2 | PARTIAL (1/2) | PARTIAL (1/2) | [RESULT_MISMATCH](#fail-interval_compound_literal-TDS) |
+| 🔴 | ranged interval literal YEAR TO MONTH | 1 | FAIL (0/1) | FAIL (0/1) | [RESULT_MISMATCH](#fail-interval_range_year_to_month-TDS) |
+| 🟢 | ranged interval literal DAY TO MINUTE | 1 | PASS (1/1) | PASS (1/1) |  |
 | 🟢 | interval in WHERE | 2 | PASS (1/2) | PASS (1/2) | [FUNCTION_NOT_SUPPORTED](#fail-interval_in_where_ts-TDS) |
 | 🟡 | EXTRACT from interval | 2 | PARTIAL (1/2) | ERROR (0/2) | [MISC](#fail-interval_extract_epoch-TDS) |
 | 🟢 | aggregate on date+interval | 1 | PASS (1/1) | PASS (1/1) |  |
@@ -9118,7 +9122,7 @@ SELECT p.name, COALESCE((SELECT SUM(o.amount) FROM func('e2e::rel_orders') o WHE
 
 <a id="result-mismatch"></a>
 
-### RESULT_MISMATCH (15 tests)
+### RESULT_MISMATCH (16 tests)
 
 #### <a id="fail-subquery_quant_all_empty_null_value-Relation"></a>`subquery_quant_all_empty_null_value`
 
@@ -9447,6 +9451,31 @@ SELECT d + INTERVAL '1 year 2 months 3 days' AS result FROM func('e2e::tds_dates
 **Legend SQL (Relation):**
 ```sql
 SELECT d + INTERVAL '1 year 2 months 3 days' AS result FROM func('e2e::rel_dates') WHERE d IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> null
+
+
+<br>
+
+#### <a id="fail-interval_range_year_to_month-TDS"></a><a id="fail-interval_range_year_to_month-Relation"></a>`interval_range_year_to_month`
+
+🔴 **Failed in both TDS and Relation**
+
+**Input SQL:**
+```sql
+SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM dates WHERE d IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL (TDS):**
+```sql
+SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM func('e2e::tds_dates') WHERE d IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL (Relation):**
+```sql
+SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM func('e2e::rel_dates') WHERE d IS NOT NULL ORDER BY 1
 ```
 
 **Error:**

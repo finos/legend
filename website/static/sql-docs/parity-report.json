@@ -1,20 +1,20 @@
 {
   "summary" : {
     "tds" : {
-      "pass" : 925,
-      "fail" : 41,
+      "pass" : 928,
+      "fail" : 42,
       "error" : 1227,
       "skip" : 62,
       "bug" : 88,
-      "total" : 2343
+      "total" : 2347
     },
     "relation" : {
-      "pass" : 1113,
-      "fail" : 45,
+      "pass" : 1116,
+      "fail" : 46,
       "error" : 1035,
       "skip" : 62,
       "bug" : 88,
-      "total" : 2343
+      "total" : 2347
     }
   },
   "failures" : [ {
@@ -25153,6 +25153,28 @@
     "error" : null,
     "diffs" : [ "Row 3, column 'result': expected '2021-05-02 00:00:00.0' but got '2021-05-01 00:00:00.0'" ]
   }, {
+    "id" : "interval_range_year_to_month",
+    "category" : "structural/interval_arithmetic",
+    "path" : "TDS",
+    "state" : "FAIL",
+    "sql" : "SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM dates WHERE d IS NOT NULL ORDER BY 1",
+    "rewrittenSql" : "SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM func('e2e::tds_dates') WHERE d IS NOT NULL ORDER BY 1",
+    "generatedSql" : "select ((\"root\".d + (INTERVAL '1 YEARS' * 1)) + (INTERVAL '1 MONTHS' * 2)) as \"result\" from public.dates as \"root\" where \"root\".d is not null order by \"result\"",
+    "generatedLambda" : "|e2e::DateRow.all()->meta::pure::tds::project(\n  [\n    meta::pure::tds::col(\n      x: e2e::DateRow[1]|$x.id,\n      'id'\n    ),\n    meta::pure::tds::col(\n      x: e2e::DateRow[1]|$x.d,\n      'd'\n    ),\n    meta::pure::tds::col(\n      x: e2e::DateRow[1]|$x.ts,\n      'ts'\n    ),\n    meta::pure::tds::col(\n      x: e2e::DateRow[1]|$x.tsz,\n      'tsz'\n    )\n  ]\n)->meta::pure::tds::filter(\n  row: meta::pure::tds::TDSRow[1]|$row.getStrictDate('d')->meta::pure::functions::collection::isNotEmpty()\n)->meta::pure::tds::project(\n  meta::pure::tds::col(\n      row: meta::pure::tds::TDSRow[1]|$row.getStrictDate('d')->meta::pure::functions::date::adjust(\n        1,\n        meta::pure::functions::date::DurationUnit.YEARS\n      )->meta::pure::functions::date::adjust(\n        2,\n        meta::pure::functions::date::DurationUnit.MONTHS\n      ),\n      'result'\n    )\n)->meta::pure::tds::sort(\n  meta::pure::tds::asc('result')\n)",
+    "error" : null,
+    "diffs" : [ "Row 3, column 'result': expected '2021-04-29 00:00:00.0' but got '2021-04-28 00:00:00.0'" ]
+  }, {
+    "id" : "interval_range_year_to_month",
+    "category" : "structural/interval_arithmetic",
+    "path" : "Relation",
+    "state" : "FAIL",
+    "sql" : "SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM dates WHERE d IS NOT NULL ORDER BY 1",
+    "rewrittenSql" : "SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM func('e2e::rel_dates') WHERE d IS NOT NULL ORDER BY 1",
+    "generatedSql" : "select ((\"root\".d + (INTERVAL '1 YEARS' * 1)) + (INTERVAL '1 MONTHS' * 2)) as \"result\" from public.dates as \"root\" where \"root\".d is not null order by \"result\"",
+    "generatedLambda" : "|e2e::DateRow.all()->meta::pure::functions::relation::project(\n  ~[\n     id: x: e2e::DateRow[1]|$x.id,\n     d: x: e2e::DateRow[1]|$x.d,\n     ts: x: e2e::DateRow[1]|$x.ts,\n     tsz: x: e2e::DateRow[1]|$x.tsz\n   ]\n)->meta::pure::functions::relation::filter(\n  x: (id:Integer[1], d:StrictDate, ts:DateTime, tsz:DateTime)[1]|$x.d->meta::pure::functions::collection::isNotEmpty()\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:Integer[1], d:StrictDate, ts:DateTime, tsz:DateTime)[1]|$x.d->meta::pure::functions::multiplicity::toOne()->meta::pure::functions::date::adjust(\n    1,\n    meta::pure::functions::date::DurationUnit.YEARS\n  )->meta::pure::functions::date::adjust(\n    2,\n    meta::pure::functions::date::DurationUnit.MONTHS\n  )\n   ]\n)->meta::pure::functions::relation::sort(\n  ~result->meta::pure::functions::relation::ascending()\n)",
+    "error" : null,
+    "diffs" : [ "Row 3, column 'result': expected '2021-04-29 00:00:00.0' but got '2021-04-28 00:00:00.0'" ]
+  }, {
     "id" : "interval_in_where_ts",
     "category" : "structural/interval_arithmetic",
     "path" : "TDS",
@@ -27946,21 +27968,21 @@
     }
   }, {
     "tds" : {
-      "pass" : 16,
-      "fail" : 1,
+      "pass" : 19,
+      "fail" : 2,
       "error" : 6,
       "skip" : 0,
       "bug" : 2,
-      "total" : 25
+      "total" : 29
     },
     "name" : "structural/interval_arithmetic",
     "relation" : {
-      "pass" : 15,
-      "fail" : 1,
+      "pass" : 18,
+      "fail" : 2,
       "error" : 7,
       "skip" : 0,
       "bug" : 2,
-      "total" : 25
+      "total" : 29
     }
   }, {
     "tds" : {
@@ -53141,6 +53163,30 @@
     "sql" : "SELECT d - INTERVAL '3 months' AS result FROM dates WHERE d IS NOT NULL ORDER BY 1"
   }, {
     "path" : "TDS",
+    "id" : "interval_date_plus_unqualified",
+    "state" : "PASS",
+    "rewrittenSql" : "SELECT d + INTERVAL '123' AS result FROM func('e2e::tds_dates') WHERE d IS NOT NULL ORDER BY 1",
+    "sql" : "SELECT d + INTERVAL '123' AS result FROM dates WHERE d IS NOT NULL ORDER BY 1"
+  }, {
+    "path" : "Relation",
+    "id" : "interval_date_plus_unqualified",
+    "state" : "PASS",
+    "rewrittenSql" : "SELECT d + INTERVAL '123' AS result FROM func('e2e::rel_dates') WHERE d IS NOT NULL ORDER BY 1",
+    "sql" : "SELECT d + INTERVAL '123' AS result FROM dates WHERE d IS NOT NULL ORDER BY 1"
+  }, {
+    "path" : "TDS",
+    "id" : "interval_date_plus_days_unit_token",
+    "state" : "PASS",
+    "rewrittenSql" : "SELECT d + INTERVAL '365' DAY AS result FROM func('e2e::tds_dates') WHERE d IS NOT NULL ORDER BY 1",
+    "sql" : "SELECT d + INTERVAL '365' DAY AS result FROM dates WHERE d IS NOT NULL ORDER BY 1"
+  }, {
+    "path" : "Relation",
+    "id" : "interval_date_plus_days_unit_token",
+    "state" : "PASS",
+    "rewrittenSql" : "SELECT d + INTERVAL '365' DAY AS result FROM func('e2e::rel_dates') WHERE d IS NOT NULL ORDER BY 1",
+    "sql" : "SELECT d + INTERVAL '365' DAY AS result FROM dates WHERE d IS NOT NULL ORDER BY 1"
+  }, {
+    "path" : "TDS",
     "id" : "interval_ts_plus_hours",
     "state" : "PASS",
     "rewrittenSql" : "SELECT ts + INTERVAL '2 hours' AS result FROM func('e2e::tds_dates') WHERE ts IS NOT NULL ORDER BY 1",
@@ -53275,6 +53321,34 @@
     "state" : "PASS",
     "rewrittenSql" : "SELECT ts + INTERVAL '1 day 2 hours 30 minutes' AS result FROM func('e2e::rel_dates') WHERE ts IS NOT NULL ORDER BY 1",
     "sql" : "SELECT ts + INTERVAL '1 day 2 hours 30 minutes' AS result FROM dates WHERE ts IS NOT NULL ORDER BY 1"
+  }, {
+    "path" : "TDS",
+    "generatedSql" : "select ((\"root\".d + (INTERVAL '1 YEARS' * 1)) + (INTERVAL '1 MONTHS' * 2)) as \"result\" from public.dates as \"root\" where \"root\".d is not null order by \"result\"",
+    "id" : "interval_range_year_to_month",
+    "state" : "FAIL",
+    "rewrittenSql" : "SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM func('e2e::tds_dates') WHERE d IS NOT NULL ORDER BY 1",
+    "sql" : "SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM dates WHERE d IS NOT NULL ORDER BY 1",
+    "generatedLambda" : "|e2e::DateRow.all()->meta::pure::tds::project(\n  [\n    meta::pure::tds::col(\n      x: e2e::DateRow[1]|$x.id,\n      'id'\n    ),\n    meta::pure::tds::col(\n      x: e2e::DateRow[1]|$x.d,\n      'd'\n    ),\n    meta::pure::tds::col(\n      x: e2e::DateRow[1]|$x.ts,\n      'ts'\n    ),\n    meta::pure::tds::col(\n      x: e2e::DateRow[1]|$x.tsz,\n      'tsz'\n    )\n  ]\n)->meta::pure::tds::filter(\n  row: meta::pure::tds::TDSRow[1]|$row.getStrictDate('d')->meta::pure::functions::collection::isNotEmpty()\n)->meta::pure::tds::project(\n  meta::pure::tds::col(\n      row: meta::pure::tds::TDSRow[1]|$row.getStrictDate('d')->meta::pure::functions::date::adjust(\n        1,\n        meta::pure::functions::date::DurationUnit.YEARS\n      )->meta::pure::functions::date::adjust(\n        2,\n        meta::pure::functions::date::DurationUnit.MONTHS\n      ),\n      'result'\n    )\n)->meta::pure::tds::sort(\n  meta::pure::tds::asc('result')\n)"
+  }, {
+    "path" : "Relation",
+    "generatedSql" : "select ((\"root\".d + (INTERVAL '1 YEARS' * 1)) + (INTERVAL '1 MONTHS' * 2)) as \"result\" from public.dates as \"root\" where \"root\".d is not null order by \"result\"",
+    "id" : "interval_range_year_to_month",
+    "state" : "FAIL",
+    "rewrittenSql" : "SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM func('e2e::rel_dates') WHERE d IS NOT NULL ORDER BY 1",
+    "sql" : "SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM dates WHERE d IS NOT NULL ORDER BY 1",
+    "generatedLambda" : "|e2e::DateRow.all()->meta::pure::functions::relation::project(\n  ~[\n     id: x: e2e::DateRow[1]|$x.id,\n     d: x: e2e::DateRow[1]|$x.d,\n     ts: x: e2e::DateRow[1]|$x.ts,\n     tsz: x: e2e::DateRow[1]|$x.tsz\n   ]\n)->meta::pure::functions::relation::filter(\n  x: (id:Integer[1], d:StrictDate, ts:DateTime, tsz:DateTime)[1]|$x.d->meta::pure::functions::collection::isNotEmpty()\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:Integer[1], d:StrictDate, ts:DateTime, tsz:DateTime)[1]|$x.d->meta::pure::functions::multiplicity::toOne()->meta::pure::functions::date::adjust(\n    1,\n    meta::pure::functions::date::DurationUnit.YEARS\n  )->meta::pure::functions::date::adjust(\n    2,\n    meta::pure::functions::date::DurationUnit.MONTHS\n  )\n   ]\n)->meta::pure::functions::relation::sort(\n  ~result->meta::pure::functions::relation::ascending()\n)"
+  }, {
+    "path" : "TDS",
+    "id" : "interval_range_day_to_minute",
+    "state" : "PASS",
+    "rewrittenSql" : "SELECT ts + INTERVAL '1 2:30' DAY TO MINUTE AS result FROM func('e2e::tds_dates') WHERE ts IS NOT NULL ORDER BY 1",
+    "sql" : "SELECT ts + INTERVAL '1 2:30' DAY TO MINUTE AS result FROM dates WHERE ts IS NOT NULL ORDER BY 1"
+  }, {
+    "path" : "Relation",
+    "id" : "interval_range_day_to_minute",
+    "state" : "PASS",
+    "rewrittenSql" : "SELECT ts + INTERVAL '1 2:30' DAY TO MINUTE AS result FROM func('e2e::rel_dates') WHERE ts IS NOT NULL ORDER BY 1",
+    "sql" : "SELECT ts + INTERVAL '1 2:30' DAY TO MINUTE AS result FROM dates WHERE ts IS NOT NULL ORDER BY 1"
   }, {
     "path" : "TDS",
     "id" : "interval_in_where_filter",

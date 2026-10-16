@@ -36,7 +36,7 @@ li { margin: 0.3em 0; }
 <h1>Failure Details — Result Set Comparisons</h1>
 <p>Full expected (Postgres) vs actual (Legend) result sets for every test where results differ.</p>
 <hr />
-<p><strong>Total result mismatches:</strong> 86</p>
+<p><strong>Total result mismatches:</strong> 88</p>
 <h2>Table of Contents</h2>
 <ul>
 <li><a href="#fail-div__num_num__from_table-TDS">div__num_num__from_table [TDS]</a></li>
@@ -125,6 +125,8 @@ li { margin: 0.3em 0; }
 <li><a href="#fail-json_extract_array_negative_index-Relation">json_extract_array_negative_index [Relation]</a></li>
 <li><a href="#fail-interval_compound_literal-TDS">interval_compound_literal [TDS]</a></li>
 <li><a href="#fail-interval_compound_literal-Relation">interval_compound_literal [Relation]</a></li>
+<li><a href="#fail-interval_range_year_to_month-TDS">interval_range_year_to_month [TDS]</a></li>
+<li><a href="#fail-interval_range_year_to_month-Relation">interval_range_year_to_month [Relation]</a></li>
 </ul>
 <hr />
 <p><a id="fail-div__num_num__from_table-TDS"></a></p>
@@ -7622,6 +7624,247 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td>2027-03-04 00:00:00.0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-interval_range_year_to_month-TDS"></a></p>
+<h3>❌ interval_range_year_to_month [TDS]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM dates WHERE d IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM func('e2e::tds_dates') WHERE d IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select ((&quot;root&quot;.d + (INTERVAL '1 YEARS' * 1)) + (INTERVAL '1 MONTHS' * 2)) as &quot;result&quot; from public.dates as &quot;root&quot; where &quot;root&quot;.d is not null order by &quot;result&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">|e2e::DateRow.all()-&gt;meta::pure::tds::project(
+  [
+    meta::pure::tds::col(
+      x: e2e::DateRow[1]|$x.id,
+      'id'
+    ),
+    meta::pure::tds::col(
+      x: e2e::DateRow[1]|$x.d,
+      'd'
+    ),
+    meta::pure::tds::col(
+      x: e2e::DateRow[1]|$x.ts,
+      'ts'
+    ),
+    meta::pure::tds::col(
+      x: e2e::DateRow[1]|$x.tsz,
+      'tsz'
+    )
+  ]
+)-&gt;meta::pure::tds::filter(
+  row: meta::pure::tds::TDSRow[1]|$row.getStrictDate('d')-&gt;meta::pure::functions::collection::isNotEmpty()
+)-&gt;meta::pure::tds::project(
+  meta::pure::tds::col(
+      row: meta::pure::tds::TDSRow[1]|$row.getStrictDate('d')-&gt;meta::pure::functions::date::adjust(
+        1,
+        meta::pure::functions::date::DurationUnit.YEARS
+      )-&gt;meta::pure::functions::date::adjust(
+        2,
+        meta::pure::functions::date::DurationUnit.MONTHS
+      ),
+      'result'
+    )
+)-&gt;meta::pure::tds::sort(
+  meta::pure::tds::asc('result')
+)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 3, column 'result': expected '2021-04-29 00:00:00.0' but got '2021-04-28 00:00:00.0'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1971-03-01 00:00:00.0</td>
+</tr>
+<tr>
+<td>2001-02-28 00:00:00.0</td>
+</tr>
+<tr>
+<td>2001-03-01 00:00:00.0</td>
+</tr>
+<tr>
+<td>2021-04-29 00:00:00.0</td>
+</tr>
+<tr>
+<td>2024-03-15 00:00:00.0</td>
+</tr>
+<tr>
+<td>2024-09-04 00:00:00.0</td>
+</tr>
+<tr>
+<td>2025-08-15 00:00:00.0</td>
+</tr>
+<tr>
+<td>2027-02-25 00:00:00.0</td>
+</tr>
+<tr>
+<td>2027-03-01 00:00:00.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1971-03-01 00:00:00.0</td>
+</tr>
+<tr>
+<td>2001-02-28 00:00:00.0</td>
+</tr>
+<tr>
+<td>2001-03-01 00:00:00.0</td>
+</tr>
+<tr>
+<td>2021-04-28 00:00:00.0</td>
+</tr>
+<tr>
+<td>2024-03-15 00:00:00.0</td>
+</tr>
+<tr>
+<td>2024-09-04 00:00:00.0</td>
+</tr>
+<tr>
+<td>2025-08-15 00:00:00.0</td>
+</tr>
+<tr>
+<td>2027-02-25 00:00:00.0</td>
+</tr>
+<tr>
+<td>2027-03-01 00:00:00.0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-interval_range_year_to_month-Relation"></a></p>
+<h3>❌ interval_range_year_to_month [Relation]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM dates WHERE d IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM func('e2e::rel_dates') WHERE d IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select ((&quot;root&quot;.d + (INTERVAL '1 YEARS' * 1)) + (INTERVAL '1 MONTHS' * 2)) as &quot;result&quot; from public.dates as &quot;root&quot; where &quot;root&quot;.d is not null order by &quot;result&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">|e2e::DateRow.all()-&gt;meta::pure::functions::relation::project(
+  ~[
+     id: x: e2e::DateRow[1]|$x.id,
+     d: x: e2e::DateRow[1]|$x.d,
+     ts: x: e2e::DateRow[1]|$x.ts,
+     tsz: x: e2e::DateRow[1]|$x.tsz
+   ]
+)-&gt;meta::pure::functions::relation::filter(
+  x: (id:Integer[1], d:StrictDate, ts:DateTime, tsz:DateTime)[1]|$x.d-&gt;meta::pure::functions::collection::isNotEmpty()
+)-&gt;meta::pure::functions::relation::project(
+  ~[
+     result: x: (id:Integer[1], d:StrictDate, ts:DateTime, tsz:DateTime)[1]|$x.d-&gt;meta::pure::functions::multiplicity::toOne()-&gt;meta::pure::functions::date::adjust(
+    1,
+    meta::pure::functions::date::DurationUnit.YEARS
+  )-&gt;meta::pure::functions::date::adjust(
+    2,
+    meta::pure::functions::date::DurationUnit.MONTHS
+  )
+   ]
+)-&gt;meta::pure::functions::relation::sort(
+  ~result-&gt;meta::pure::functions::relation::ascending()
+)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 3, column 'result': expected '2021-04-29 00:00:00.0' but got '2021-04-28 00:00:00.0'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1971-03-01 00:00:00.0</td>
+</tr>
+<tr>
+<td>2001-02-28 00:00:00.0</td>
+</tr>
+<tr>
+<td>2001-03-01 00:00:00.0</td>
+</tr>
+<tr>
+<td>2021-04-29 00:00:00.0</td>
+</tr>
+<tr>
+<td>2024-03-15 00:00:00.0</td>
+</tr>
+<tr>
+<td>2024-09-04 00:00:00.0</td>
+</tr>
+<tr>
+<td>2025-08-15 00:00:00.0</td>
+</tr>
+<tr>
+<td>2027-02-25 00:00:00.0</td>
+</tr>
+<tr>
+<td>2027-03-01 00:00:00.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1971-03-01 00:00:00.0</td>
+</tr>
+<tr>
+<td>2001-02-28 00:00:00.0</td>
+</tr>
+<tr>
+<td>2001-03-01 00:00:00.0</td>
+</tr>
+<tr>
+<td>2021-04-28 00:00:00.0</td>
+</tr>
+<tr>
+<td>2024-03-15 00:00:00.0</td>
+</tr>
+<tr>
+<td>2024-09-04 00:00:00.0</td>
+</tr>
+<tr>
+<td>2025-08-15 00:00:00.0</td>
+</tr>
+<tr>
+<td>2027-02-25 00:00:00.0</td>
+</tr>
+<tr>
+<td>2027-03-01 00:00:00.0</td>
 </tr>
 </tbody>
 </table>
