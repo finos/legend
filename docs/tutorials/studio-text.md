@@ -9,7 +9,7 @@ sidebar_label: Text
 To add a new Text element, click <kbd>+</kbd> and then select <kbd>New Text</kbd>. 
 Provide a meaningful name to your text and then choose it to be either PlainText or a Markdown.  
 
-In the [basic logical modeling](https://legend-acct.finos.org/studio/view/UAT-40953672) showcase project, README is a text element.
+In the [basic logical modeling](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-logical-modeling) showcase project, README is a text element.
 
 ### Markdown 
 Text mode supports markdown and preview functionality. More details and **video walkthrough** [here](https://github.com/finos/legend-studio/pull/1282).

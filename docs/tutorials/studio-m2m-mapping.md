@@ -44,7 +44,7 @@ Create a sample query to test if the model-to-model mapping executes correctly:
 3. Create a very simple query. Make sure to select the <kbd>Graph fetch</kbd> option for model-to-model queries. Studio does not currently support Projection queries on top of model-to-model mappings. Drag and drop the **name** property from the explorer panel into the fetch structure panel.
 4. Hit the <kbd>Save query</kbd> button.
 
-_Refer to the [create a query](../tutorials/query-builder.md/#create-a-query) section of the docs for more detailed information about the **Query Editor**_
+_Refer to the [create a query](../tutorials/query-builder.md#build-a-query) section of the docs for more detailed information about the **Query Editor**_
 
 Studio generates sample input data for your defined query. You can also modify it if you want:
 
@@ -67,7 +67,7 @@ You can promote this ad hoc execution to a test by clicking on the **beaker** ic
 
 ### Execute a Model-to-Model Mapping with Constraints
 
-Remember that we can add a [constraint](../tutorials/studio-tutorial/#constraint-1) on classes? We can also execute model-to-model mappings with constraints to check if the constraint criteria are violated.
+Remember that we can add a [constraint](../tutorials/studio-class.md#constraint) on classes? We can also execute model-to-model mappings with constraints to check if the constraint criteria are violated.
 
 Let's create a constraint on the `NewPerson` class that checks if the name value is empty `$this.name-> == ''`
 

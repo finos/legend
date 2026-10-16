@@ -6,7 +6,7 @@ sidebar_label: Profile
 
 ## Profile
 
-To create a [profile](../overview/legend-glossary.md/#profile):
+To create a [profile](../overview/legend-features.md#profile):
 
 1. Click the <kbd>+</kbd> icon.
 
@@ -14,7 +14,7 @@ To create a [profile](../overview/legend-glossary.md/#profile):
 
 ### Profile tag
 
-Use [tagged values](../overview/legend-glossary.md/#tagged-value) to add context to your data model. For example, we can add the tagged value **alias** to our `Firm` class to make it easier for others to navigate our data model.
+Use [tagged values](../overview/legend-features.md#profile) to add context to your data model. For example, we can add the tagged value **alias** to our `Firm` class to make it easier for others to navigate our data model.
 
 1. In the Profile editor, go to the <kbd>Tags</kbd> tab and click the <kbd>+</kbd> icon.
 2. Type in `alias`.
@@ -35,7 +35,7 @@ The `Firm` class now shows the additional context.
 
 ## Stereotype
 
-To create a [stereotype](../overview/legend-glossary.md/#stereotype):
+To create a [stereotype](../overview/legend-glossary.md#stereotype):
 
 ### Profile stereotype
 
@@ -61,7 +61,7 @@ The `Firm` class now shows the additional metadata information.
 
 ## Supertype
 
-To create a [supertype](../overview/legend-glossary.md/#supertype), let's create a new class called `LegalEntity`.
+To create a [supertype](../overview/legend-glossary.md#super-type), let's create a new class called `LegalEntity`.
 
 1. Moving back to the `Firm` class, go to the <kbd>Super types</kbd> tab and click the <kbd>+</kbd> icon.
 2. Select the `LegalEntity` class from the dropdown.

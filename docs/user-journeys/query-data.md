@@ -7,11 +7,11 @@ sidebar_label: Query Modelled Data
 ## Build and run queries - relational
 
 ### Features
-- [Query Builder](../overview/legend-glossary/#query-builder)
-- [Data Spaces](../overview/legend-glossary/#dataspace)
+- [Query Builder](../overview/legend-features.md#query-builder)
+- [Data Spaces](../overview/legend-features.md#dataspace)
 
 ### Showcase projects
-- [Query showcase project](../showcases/showcase-projects.md/#query)
+- [Query showcase project](../showcases/showcase-projects.md)
 
 ### Tutorials
 - [Build and run queries](../tutorials/query-builder.md)

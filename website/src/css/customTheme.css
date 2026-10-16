@@ -5,7 +5,6 @@
 @import url("../../static/css/variables.css");
 @import url("../../static/css/function.css");
 @import url("../../static/css/wip-page.css");
-@import url("../../static/css/releases.css");
 
 :root {
   --ifm-color-primary-lightest: #ffffff;

@@ -11,7 +11,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | `docs/` + `website/` | The Docusaurus documentation site published at https://legend.finos.org |
 | `showcases/` | Minimal Pure code snippets, compile-tested and indexed for the Studio showcase explorer |
 | `installers/` | Ways to stand up Legend (omnibus, docker-compose, helm-ocp, cdk, maven) — prototyping, not production |
-| `releases/` | One `<YYYY-MM-DD>/manifest.json` per Omnibus Docker release, rendered at `/releases` |
+| `releases/` | One `<YYYY-MM-DD>/manifest.json` per Omnibus Docker release |
 | `scripts/` + `.github/workflows/` | Release automation, index generation, link checking |
 
 ## Commands
@@ -67,8 +67,7 @@ npm run check:showcases-index    # regenerate website/static/showcases/data.json
 - Markdown content lives in `docs/`, **not** in `website/` (`docs.path` is `../docs`). Frontmatter is `id` / `title` / `sidebar_label`.
 - `website/sidebars.json` is the nav. **A new doc page is invisible on the site until its `id` is added there.**
 - `website/pureHighlighter.js` registers the `legend` (Pure) syntax highlighting language.
-- The `/releases` route is produced by an inline Docusaurus plugin in `website/docusaurus.config.js` that reads every `releases/*/manifest.json` and feeds it to `website/src/components/releases.js`.
-- Broken links are `warn`, not `throw` — a bad link will not fail the build; the link-check script is the real gate.
+- Broken links and anchors are `throw`: a bad link fails `npm run build`, in CI and at publish. Link to another page by its file (`../overview/legend-features.md#workspace`); `page.md/#anchor`, with a slash after `.md`, doesn't resolve. This covers the user guides checked out from finos/legend-studio too, so a broken link merged there stops the daily publish until it's fixed. The link-check script additionally checks the in-app help registry.
 
 ## Showcase conventions
 

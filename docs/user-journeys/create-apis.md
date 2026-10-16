@@ -9,11 +9,11 @@ sidebar_label: Create Data Model APIs
 Define a data service querying your data model and define tests to ensure it does not break.
 
 ### Features
-- [Service](../overview/legend-glossary.md/#service)
-- [Service Editor](../overview/legend-glossary.md/#service-editor)
-- [Connection](../overview/legend-glossary.md/#connection)
-- [Mapping Editor](../overview/legend-glossary.md/#mapping-editor)
-- [Runtime](../overview/legend-glossary.md/#runtime)
+- [Service](../overview/legend-features.md#service)
+- [Service Editor](../overview/legend-features.md#service-editor)
+- [Connection](../overview/legend-features.md#connection)
+- [Mapping Editor](../overview/legend-features.md#mapping-editor)
+- [Runtime](../overview/legend-features.md#runtime)
 
 ### Showcase projects
 See features in action in [showcase projects](../showcases/showcase-projects.md).

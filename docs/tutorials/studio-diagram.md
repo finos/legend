@@ -14,7 +14,7 @@ To create a new Diagram:
 1. Click <kbd>+</kbd> and then select <kbd>New Diagram</kbd>.
 2. Provide a meaningful name to your diagram and start adding new elements to the diagram.   
 
-In the [Logical Modeling (Basic) showcase project](../showcases/showcase-projects.md/#logical-modeling-basic), TradeAccountDiagram is the diagram which shows the model.
+In the [Logical Modeling (Basic) showcase project](../showcases/showcase-projects.md), TradeAccountDiagram is the diagram which shows the model.
 
 ![Product Account Trade Model Diagram](../assets/trade-account-diagram.png)
 To get started, click the <kbd>+</kbd> icon to open the **New Element** drop down menu on the left-hand side and select <kbd>Add a new diagram</kbd>.

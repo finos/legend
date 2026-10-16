@@ -10,7 +10,7 @@ Intuitively find and query data models relevant to your use case.
 Recommend a way to access your data and share helpful information about your data with consumers by defining a Data space.
 
 ### Features
-- [Data space](../overview/legend-features.md/#dataspace)
+- [Data space](../overview/legend-features.md#dataspace)
 
 ### Showcase projects
 See features in action in [showcase projects](../showcases/showcase-projects.md).

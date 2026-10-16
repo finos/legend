@@ -7,7 +7,7 @@ sidebar_label: Rely on High Quality Data by Design
 # Ensure Data Quality of Models
 
 ### Features
-- [Constraints](../overview/legend-features.md/#constraint)
+- [Constraints](../overview/legend-features.md#constraint)
 
 ### Showcase projects
 See features in action in [showcase projects](../showcases/showcase-projects.md).

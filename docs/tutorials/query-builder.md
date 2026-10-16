@@ -5,7 +5,7 @@ sidebar_label: Query Builder
 ---
 
 ## Build a Query
-You can build a query directly in Alloy Studio using its drag-and-drop environment, Query Builder. To create a query, right-click any class with mapped data and drag-and-drop the fields you want to the central panel. To execute the query, click `play`. 
+You can build a query directly in Legend Studio using its drag-and-drop environment, Query Builder. To create a query, right-click any class with mapped data and drag-and-drop the fields you want to the central panel. To execute the query, click `play`. 
 
 ### Convert query attributes to Derivations
 Further define the expected results of a query by writing functions.
