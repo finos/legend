@@ -15,7 +15,7 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,500,700,900|Source+Code+Pro:400,500,700,900&display=swap">
 <script src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/assets/css/styles.0b5191df.css">
-<script src="/assets/js/runtime~main.32239cff.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.73fca899.js" defer="defer"></script>
 <script src="/assets/js/main.5f02f3e0.js" defer="defer"></script>
 </head>
 <body>
@@ -28,18 +28,18 @@ explores its fields across the column, and turns fields into columns of their ow
 <p>JSON columns work on Snowflake, Databricks, Postgres and DuckDB. The pictures below use the examples <strong>Orders from JSON</strong>
 and <strong>Order lines from JSON</strong>, on sample orders.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-json-cell">A JSON cell<a href="#a-json-cell" class="hash-link" aria-label="Direct link to A JSON cell" title="Direct link to A JSON cell" translate="no">​</a></h2>
-<p><a href="/assets/files/cell-menu-e96ef66c9eb670d0a3f46a3e02ab831b.png" target="_blank" class=""><img decoding="async" loading="lazy" alt="A JSON cell&amp;#39;s menu, its parts numbered" src="/assets/images/cell-menu-e96ef66c9eb670d0a3f46a3e02ab831b.png" width="954" height="832" class="img_ev3q"></a></p>
+<p><a href="/assets/files/cell-menu-bd2ea703ba982ba1e64c9df63ea956c1.png" target="_blank" class=""><img decoding="async" loading="lazy" alt="A JSON cell&amp;#39;s menu, its parts numbered" src="/assets/images/cell-menu-bd2ea703ba982ba1e64c9df63ea956c1.png" width="928" height="822" class="img_ev3q"></a></p>
 <ol>
 <li class=""><strong>A JSON cell</strong> reads on one line, without JSON&#x27;s quotes.</li>
 <li class=""><strong>Open JSON</strong>: the cell&#x27;s document as a tree.</li>
 <li class=""><strong>Explore JSON…</strong>: the column&#x27;s fields, read from its values (below).</li>
 </ol>
-<p><a href="/assets/files/open-json-528fa67de3092218b31db42c1ff8f80c.png" target="_blank" class=""><img decoding="async" loading="lazy" alt="A JSON document as a tree" src="/assets/images/open-json-528fa67de3092218b31db42c1ff8f80c.png" width="1472" height="684" class="img_ev3q"></a></p>
+<p><a href="/assets/files/open-json-43dfe9c88b688a3ea851e971c75180e7.png" target="_blank" class=""><img decoding="async" loading="lazy" alt="A JSON document as a tree" src="/assets/images/open-json-43dfe9c88b688a3ea851e971c75180e7.png" width="1472" height="684" class="img_ev3q"></a></p>
 <p>Open JSON shows the document as a tree, each object or array opened or closed with its arrow. <strong>Copy JSON</strong> copies it.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="explore-json">Explore JSON<a href="#explore-json" class="hash-link" aria-label="Direct link to Explore JSON" title="Direct link to Explore JSON" translate="no">​</a></h2>
 <p>Explore JSON reads the column&#x27;s first values, without running the whole cube, lists the fields they hold with their
 types, and offers the columns each field can become.</p>
-<p><a href="/assets/files/explore-json-34d7130fe4e523d83c69d79bab6de3cc.png" target="_blank" class=""><img decoding="async" loading="lazy" alt="Explore JSON, its parts numbered" src="/assets/images/explore-json-34d7130fe4e523d83c69d79bab6de3cc.png" width="1952" height="1248" class="img_ev3q"></a></p>
+<p><a href="/assets/files/explore-json-e4261df9be7e73627563d7cbf05b7400.png" target="_blank" class=""><img decoding="async" loading="lazy" alt="Explore JSON, its parts numbered" src="/assets/images/explore-json-e4261df9be7e73627563d7cbf05b7400.png" width="1952" height="1248" class="img_ev3q"></a></p>
 <ol>
 <li class=""><strong>How much was read</strong>: here every value, so the fields, their types and shares cover the whole column. When only
 the first values were read, <strong>Read every row</strong> reads the rest.</li>
@@ -52,14 +52,14 @@ the first values were read, <strong>Read every row</strong> reads the rest.</li>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="parse-as-json">Parse as JSON<a href="#parse-as-json" class="hash-link" aria-label="Direct link to Parse as JSON" title="Direct link to Parse as JSON" translate="no">​</a></h2>
 <p>A text column holding JSON documents becomes a JSON column with <strong>Parse as JSON</strong>, in its cell&#x27;s menu: it adds an Extend
 step with a new JSON column parsed from the text.</p>
-<p><a href="/assets/files/parse-json-e40a76da26683dc72f5ad7d181f9fd5c.png" target="_blank" class=""><img decoding="async" loading="lazy" alt="A text cell&amp;#39;s menu with Parse as JSON" src="/assets/images/parse-json-e40a76da26683dc72f5ad7d181f9fd5c.png" width="888" height="784" class="img_ev3q"></a></p>
+<p><a href="/assets/files/parse-json-c1508ad4ec80bf9b250dd7e314b89daf.png" target="_blank" class=""><img decoding="async" loading="lazy" alt="A text cell&amp;#39;s menu with Parse as JSON" src="/assets/images/parse-json-c1508ad4ec80bf9b250dd7e314b89daf.png" width="866" height="822" class="img_ev3q"></a></p>
 <ol>
 <li class=""><strong>Parse as JSON</strong>.</li>
 </ol>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-json-columns-fields-in-an-expression">A JSON column&#x27;s fields in an expression<a href="#a-json-columns-fields-in-an-expression" class="hash-link" aria-label="Direct link to A JSON column&#x27;s fields in an expression" title="Direct link to A JSON column&#x27;s fields in an expression" translate="no">​</a></h2>
 <p>In the <a class="" href="/cube/steps/extend">Extend Columns</a> and <a class="" href="/cube/steps/expressionFilter">Filter by Expression</a> editors, a JSON
 column&#x27;s <strong>{}</strong> opens its fields, read just before the step: no need to run the cube first.</p>
-<p><a href="/assets/files/extend-fields-1747fc2b35369f36ce6f706197b6c43d.png" target="_blank" class=""><img decoding="async" loading="lazy" alt="A JSON column&amp;#39;s fields in the Extend editor, their parts numbered" src="/assets/images/extend-fields-1747fc2b35369f36ce6f706197b6c43d.png" width="1040" height="918" class="img_ev3q"></a></p>
+<p><a href="/assets/files/extend-fields-fc71d3abc96e2a2de67f5398ff2f3560.png" target="_blank" class=""><img decoding="async" loading="lazy" alt="A JSON column&amp;#39;s fields in the Extend editor, their parts numbered" src="/assets/images/extend-fields-fc71d3abc96e2a2de67f5398ff2f3560.png" width="1040" height="918" class="img_ev3q"></a></p>
 <ol>
 <li class=""><strong>{}</strong> opens or closes the column&#x27;s fields.</li>
 <li class=""><strong>Read again</strong>, e.g. after a change before the step.</li>
