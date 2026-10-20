@@ -15,7 +15,7 @@ This tutorial demonstrates the uses of the GraphQL protocol in Legend.
     * Depot 
     * GraphiQL client
   
-* [Legend Studio Project](../showcases/showcase-projects.md/#graphql)
+* [Legend Studio Project](../showcases/showcase-projects.md)
 
 ## Setup 
 

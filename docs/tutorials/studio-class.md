@@ -6,7 +6,7 @@ sidebar_label: Class
 
 ## Class
 
-To create a [class](../overview/legend-glossary.md/#class):
+To create a [class](../overview/legend-glossary.md#class):
 
 1. Right-click any package on the left side of the panel, or click the `+` near the name of your project.
 2. Under `Class view`, you'll see a list of class forms as well as a diagram view of your class. You can add tags, stereotypes, properties, constraints, qualified properties, and super types to your model.
@@ -20,11 +20,11 @@ To create a [class](../overview/legend-glossary.md/#class):
 
 ![create class](../assets/create-class.gif)
 
-In the [basic logical modeling](../showcases/showcase-projects.md/#logical-modeling-basic), Account, Product, and Trade are classes.
+In the [basic logical modeling](../showcases/showcase-projects.md), Account, Product, and Trade are classes.
 
 ## Property
 
-Class properties define attributes of a business concept. To create a [property](../overview/legend-glossary.md/#property):
+Class properties define attributes of a business concept. To create a [property](../overview/legend-glossary.md#property):
 
 ### Property - primitive data type
 
@@ -50,7 +50,7 @@ Create a relationship between the **Person** and **Firm** classes.
 
 ### Derived property
 
-To create a [derived property](../overview/legend-glossary.md/#derived-property):
+To create a [derived property](../overview/legend-glossary.md#derived-property):
 
 1. Select the `Person` class.
 2. Go to the <kbd>Derived properties</kbd> tab and click the <kbd>+</kbd> icon.
@@ -83,7 +83,7 @@ _COMING SOON_
 
 ## Constraint
 
-To add a [constraint](../overview/legend-glossary.md/#constraint):
+To add a [constraint](../overview/legend-glossary.md#constraint):
 
 1. Select the `Person` class.
 2. Go to the <kbd>Constraints</kbd> tab and click the <kbd>+</kbd> icon.

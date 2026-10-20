@@ -38,11 +38,11 @@ External Format allows you to define a formal schema (eg : XSD, Json Schema) of 
 
 **Step 3:** Create a new service
 
-1. When working with external formats you need to use [internalize](../overview/legend-glossary.md/#internalize) instead of all queries. Internalize can be chained with **checked()**, **graphFetch()**, **graphFetchChecked()** depending on the requirements. See [reference documentation](https://github.com/finos/legend-engine/blob/master/docs/queries/queries.md#checked-graphfetch-graphfetchchecked-graphfetchunexpanded-graphfetchcheckedunexpanded) for details.
+1. When working with external formats you need to use [internalize](../overview/legend-glossary.md#internalize) instead of all queries. Internalize can be chained with **checked()**, **graphFetch()**, **graphFetchChecked()** depending on the requirements. See [reference documentation](https://github.com/finos/legend-engine/blob/master/docs/queries/queries.md#checked-graphfetch-graphfetchchecked-graphfetchunexpanded-graphfetchcheckedunexpanded) for details.
 
-2. When defining a service with [internalize](../overview/legend-glossary.md/#internalize), you don't need a mapping or runtime. You will only need to define a query (currently supported via [Text Mode](../overview/legend-features.md/#text-mode) only).
+2. When defining a service with [internalize](../overview/legend-glossary.md#internalize), you don't need a mapping or runtime. You will only need to define a query (currently supported via [Text Mode](../overview/legend-features.md#text-mode) only).
 
-3. Define your service with query using [internalize](../overview/legend-glossary.md/#internalize). You can find examples in the [External Format showcase project](../showcases/showcase-projects.md/#user-journey-5-connect-to-data-source), under the 'flatdata' package. 
+3. Define your service with query using [internalize](../overview/legend-glossary.md#internalize). You can find examples in the [External Format showcase project](../showcases/showcase-projects.md), under the 'flatdata' package. 
     
      - Example data: ``String[1]| Person ->internalize(PersonBinding, $data)->serialize(#Person{firstName,lastName}}#);``
         - This query accepts input as a parameter named data. Query uses internalize function to deserialize this data into Person instances which are then serialized using the serialize function. 

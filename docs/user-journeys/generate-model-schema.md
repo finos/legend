@@ -7,8 +7,8 @@ sidebar_label: Generate Model Schema
 ## Generate model schema}  
 
 ### Features
-- [File generation](../overview/legend-features.md/#file-generation)
-- [Generation Specification](../overview/legend-features.md/#generation-specification)
+- [File generation](../overview/legend-features.md#file-generation)
+- [Generation Specification](../overview/legend-features.md#generation-specification)
 
 ### Showcase projects
 See features in action in [showcase projects](../showcases/showcase-projects.md).

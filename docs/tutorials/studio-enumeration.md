@@ -8,7 +8,7 @@ sidebar_label: Enumeration
 
 An enumeration is a set of pre-defined values. It has a concept similar to enums in programming languages.  
 
-To create an [enumeration](../overview/data-modeling-concepts.md/#enumeration):
+To create an [enumeration](../overview/data-modeling-concepts.md#enumeration):
 
 1. Click the <kbd>+</kbd> icon on the left-hand side and select <kbd>New Enumeration</kbd>, and provide a meaningful name to your Enumeration.
 2. Let's create an enumeration called **CompanyType** with the values **LLC** and **Corporation**.
@@ -18,7 +18,7 @@ To create an [enumeration](../overview/data-modeling-concepts.md/#enumeration):
 ![Select property type and cardinality](../assets/add-enum.gif)
 
 
-In the [basic logical modeling](../showcases/showcase-projects.md/#logical-modeling-basic) showcase project, ProductSynonymType is an enumeration. 
+In the [basic logical modeling](../showcases/showcase-projects.md) showcase project, ProductSynonymType is an enumeration. 
 
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)
