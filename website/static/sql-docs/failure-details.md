@@ -4,7 +4,7 @@ Full expected (Postgres) vs actual (Legend) result sets for every test where res
 
 ---
 
-**Total result mismatches:** 88
+**Total result mismatches:** 80
 
 ## Table of Contents
 
@@ -26,7 +26,6 @@ Full expected (Postgres) vs actual (Legend) result sets for every test where res
 - [regexp_count__start_position__ignored_by_legend \[Relation\]](#fail-regexp_count__start_position__ignored_by_legend-Relation)
 - [string_to_array__txt_txt__from_table \[TDS\]](#fail-string_to_array__txt_txt__from_table-TDS)
 - [string_to_array__txt_txt__from_table \[Relation\]](#fail-string_to_array__txt_txt__from_table-Relation)
-- [json_extract_path__from_column \[Relation\]](#fail-json_extract_path__from_column-Relation)
 - [array_position__anycompatiblearray_anycompatible__from_table \[Relation\]](#fail-array_position__anycompatiblearray_anycompatible__from_table-Relation)
 - [max__anyarray__no_generator \[TDS\]](#fail-max__anyarray__no_generator-TDS)
 - [max__anyarray__no_generator \[Relation\]](#fail-max__anyarray__no_generator-Relation)
@@ -54,12 +53,6 @@ Full expected (Postgres) vs actual (Legend) result sets for every test where res
 - [and__false_null \[Relation\]](#fail-and__false_null-Relation)
 - [or__true_null \[TDS\]](#fail-or__true_null-TDS)
 - [or__true_null \[Relation\]](#fail-or__true_null-Relation)
-- [json_arrow_get_field \[Relation\]](#fail-json_arrow_get_field-Relation)
-- [jsonb_arrow_get_field \[Relation\]](#fail-jsonb_arrow_get_field-Relation)
-- [json_arrow_get_index \[Relation\]](#fail-json_arrow_get_index-Relation)
-- [jsonb_arrow_get_index \[Relation\]](#fail-jsonb_arrow_get_index-Relation)
-- [json_hash_arrow_path \[Relation\]](#fail-json_hash_arrow_path-Relation)
-- [jsonb_hash_arrow_path \[Relation\]](#fail-jsonb_hash_arrow_path-Relation)
 - [array_gt \[TDS\]](#fail-array_gt-TDS)
 - [anycompatible_concat_scalar_array \[TDS\]](#fail-anycompatible_concat_scalar_array-TDS)
 - [anycompatible_concat_array_scalar \[TDS\]](#fail-anycompatible_concat_array_scalar-TDS)
@@ -90,8 +83,7 @@ Full expected (Postgres) vs actual (Legend) result sets for every test where res
 - [schema_information_tables \[Relation\]](#fail-schema_information_tables-Relation)
 - [schema_information_columns \[TDS\]](#fail-schema_information_columns-TDS)
 - [schema_information_columns \[Relation\]](#fail-schema_information_columns-Relation)
-- [json_extract_array_index \[Relation\]](#fail-json_extract_array_index-Relation)
-- [json_extract_array_negative_index \[Relation\]](#fail-json_extract_array_negative_index-Relation)
+- [json_path_extract \[Relation\]](#fail-json_path_extract-Relation)
 - [interval_compound_literal \[TDS\]](#fail-interval_compound_literal-TDS)
 - [interval_compound_literal \[Relation\]](#fail-interval_compound_literal-Relation)
 - [interval_range_year_to_month \[TDS\]](#fail-interval_range_year_to_month-TDS)
@@ -115,7 +107,7 @@ SELECT DIV(numeric_val, 3.0) AS result FROM func('e2e::tds_numbers') WHERE numer
 
 **SQL (Generated, executed against DB):**
 ```sql
-select ((1.0 * "root".numeric_val) / 3.0) as "result" from public.numbers as "root" where ("root".numeric_val is not null and "root".numeric_val is distinct from 0) order by "result"
+select ((1.0 * "root".numeric_val) / 3.0) as "result" from public.numbers as "root" where ("root".numeric_val is not null and ("root".numeric_val is distinct from 0)) order by "result"
 ```
 
 **Lambda (Pure expression):**
@@ -213,7 +205,7 @@ SELECT DIV(numeric_val, 3.0) AS result FROM func('e2e::rel_numbers') WHERE numer
 
 **SQL (Generated, executed against DB):**
 ```sql
-select ((1.0 * "root".numeric_val) / 3.0) as "result" from public.numbers as "root" where ("root".numeric_val is not null and "root".numeric_val is distinct from 0) order by "result"
+select ((1.0 * "root".numeric_val) / 3.0) as "result" from public.numbers as "root" where ("root".numeric_val is not null and ("root".numeric_val is distinct from 0)) order by "result"
 ```
 
 **Lambda (Pure expression):**
@@ -1463,53 +1455,6 @@ select string_to_array("root".val, Text' ') as "result" from public.strings as "
 
 ---
 
-<a id="fail-json_extract_path__from_column-Relation"></a>
-
-### ❌ json_extract_path__from_column [Relation]
-
-**SQL (Postgres):**
-```sql
-SELECT JSON_EXTRACT_PATH(json_val, 'a', 'b', 'c') AS result FROM json_data WHERE id = 2
-```
-
-**SQL (Legend, rewritten):**
-```sql
-SELECT JSON_EXTRACT_PATH(json_val, 'a', 'b', 'c') AS result FROM func('e2e::rel_json_data') WHERE id = 2
-```
-
-**SQL (Generated, executed against DB):**
-```sql
-select jsonb_extract_path(cast(jsonb_extract_path(cast(jsonb_extract_path(cast("json_data_0".json_val as jsonb), Text'a') as jsonb), Text'b') as jsonb), Text'c') as "result" from public.json_data as "json_data_0" where "json_data_0".id = 2
-```
-
-**Lambda (Pure expression):**
-```json
-|#>{e2e::TestDB.public.json_data}#->meta::pure::functions::relation::filter(
-  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 2
-)->meta::pure::functions::relation::project(
-  ~[
-     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.json_val->meta::pure::functions::variant::navigation::get('a')->meta::pure::functions::variant::navigation::get('b')->meta::pure::functions::variant::navigation::get('c')
-   ]
-)
-```
-
-**Differences:**
-- Row 0, column 'result': expected '"nested"' but got '"\"nested\""'
-
-**Expected (Postgres):**
-
-| result |
-| --- |
-| "nested" |
-
-**Actual (Legend):**
-
-| result |
-| --- |
-| "\"nested\"" |
-
----
-
 <a id="fail-array_position__anycompatiblearray_anycompatible__from_table-Relation"></a>
 
 ### ❌ array_position__anycompatiblearray_anycompatible__from_table [Relation]
@@ -2738,7 +2683,7 @@ SELECT id, int_val <> 42 AS result FROM func('e2e::tds_numbers') WHERE id = 5
 
 **SQL (Generated, executed against DB):**
 ```sql
-select "root".id as "id", "root".int_val is distinct from 42 as "result" from public.numbers as "root" where "root".id = 5
+select "root".id as "id", ("root".int_val is distinct from 42) as "result" from public.numbers as "root" where "root".id = 5
 ```
 
 **Lambda (Pure expression):**
@@ -2819,7 +2764,7 @@ SELECT id, int_val <> 42 AS result FROM func('e2e::rel_numbers') WHERE id = 5
 
 **SQL (Generated, executed against DB):**
 ```sql
-select "root".id as "id", "root".int_val is distinct from 42 as "result" from public.numbers as "root" where "root".id = 5
+select "root".id as "id", ("root".int_val is distinct from 42) as "result" from public.numbers as "root" where "root".id = 5
 ```
 
 **Lambda (Pure expression):**
@@ -2990,7 +2935,7 @@ SELECT id, name FROM func('e2e::tds_persons') WHERE age <> 30 ORDER BY id
 
 **SQL (Generated, executed against DB):**
 ```sql
-select "root".id as "id", "root".name as "name" from public.persons as "root" where "root".age is distinct from 30 order by "id"
+select "root".id as "id", "root".name as "name" from public.persons as "root" where ("root".age is distinct from 30) order by "id"
 ```
 
 **Lambda (Pure expression):**
@@ -3086,7 +3031,7 @@ SELECT id, name FROM func('e2e::rel_persons') WHERE age <> 30 ORDER BY id
 
 **SQL (Generated, executed against DB):**
 ```sql
-select "root".id as "id", "root".name as "name" from public.persons as "root" where "root".age is distinct from 30 order by "id"
+select "root".id as "id", "root".name as "name" from public.persons as "root" where ("root".age is distinct from 30) order by "id"
 ```
 
 **Lambda (Pure expression):**
@@ -3414,288 +3359,6 @@ select null as "result" from public.persons as "root" where "root".id = 1
 | result |
 | --- |
 | _NULL_ |
-
----
-
-<a id="fail-json_arrow_get_field-Relation"></a>
-
-### ❌ json_arrow_get_field [Relation]
-
-**SQL (Postgres):**
-```sql
-SELECT json_val -> 'a' AS result FROM json_data WHERE id = 1
-```
-
-**SQL (Legend, rewritten):**
-```sql
-SELECT json_val -> 'a' AS result FROM func('e2e::rel_json_data') WHERE id = 1
-```
-
-**SQL (Generated, executed against DB):**
-```sql
-select jsonb_extract_path(cast("json_data_0".json_val as jsonb), Text'a') as "result" from public.json_data as "json_data_0" where "json_data_0".id = 1
-```
-
-**Lambda (Pure expression):**
-```json
-|#>{e2e::TestDB.public.json_data}#->meta::pure::functions::relation::filter(
-  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 1
-)->meta::pure::functions::relation::project(
-  ~[
-     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.json_val->meta::pure::functions::variant::navigation::get('a')
-   ]
-)
-```
-
-**Differences:**
-- Row 0, column 'result': expected '1' but got '"1"'
-
-**Expected (Postgres):**
-
-| result |
-| --- |
-| 1 |
-
-**Actual (Legend):**
-
-| result |
-| --- |
-| "1" |
-
----
-
-<a id="fail-jsonb_arrow_get_field-Relation"></a>
-
-### ❌ jsonb_arrow_get_field [Relation]
-
-**SQL (Postgres):**
-```sql
-SELECT jsonb_val -> 'b' AS result FROM json_data WHERE id = 1
-```
-
-**SQL (Legend, rewritten):**
-```sql
-SELECT jsonb_val -> 'b' AS result FROM func('e2e::rel_json_data') WHERE id = 1
-```
-
-**SQL (Generated, executed against DB):**
-```sql
-select jsonb_extract_path(cast("json_data_0".jsonb_val as jsonb), Text'b') as "result" from public.json_data as "json_data_0" where "json_data_0".id = 1
-```
-
-**Lambda (Pure expression):**
-```json
-|#>{e2e::TestDB.public.json_data}#->meta::pure::functions::relation::filter(
-  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 1
-)->meta::pure::functions::relation::project(
-  ~[
-     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.jsonb_val->meta::pure::functions::variant::navigation::get('b')
-   ]
-)
-```
-
-**Differences:**
-- Row 0, column 'result': expected '"hello"' but got '"\"hello\""'
-
-**Expected (Postgres):**
-
-| result |
-| --- |
-| "hello" |
-
-**Actual (Legend):**
-
-| result |
-| --- |
-| "\"hello\"" |
-
----
-
-<a id="fail-json_arrow_get_index-Relation"></a>
-
-### ❌ json_arrow_get_index [Relation]
-
-**SQL (Postgres):**
-```sql
-SELECT json_arr -> 0 AS result FROM json_data WHERE id = 1
-```
-
-**SQL (Legend, rewritten):**
-```sql
-SELECT json_arr -> 0 AS result FROM func('e2e::rel_json_data') WHERE id = 1
-```
-
-**SQL (Generated, executed against DB):**
-```sql
-select (cast("json_data_0".json_arr as jsonb)->0) as "result" from public.json_data as "json_data_0" where "json_data_0".id = 1
-```
-
-**Lambda (Pure expression):**
-```json
-|#>{e2e::TestDB.public.json_data}#->meta::pure::functions::relation::filter(
-  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 1
-)->meta::pure::functions::relation::project(
-  ~[
-     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.json_arr->meta::pure::functions::variant::navigation::get(0)
-   ]
-)
-```
-
-**Differences:**
-- Row 0, column 'result': expected '1' but got '"1"'
-
-**Expected (Postgres):**
-
-| result |
-| --- |
-| 1 |
-
-**Actual (Legend):**
-
-| result |
-| --- |
-| "1" |
-
----
-
-<a id="fail-jsonb_arrow_get_index-Relation"></a>
-
-### ❌ jsonb_arrow_get_index [Relation]
-
-**SQL (Postgres):**
-```sql
-SELECT jsonb_arr -> 1 AS result FROM json_data WHERE id = 1
-```
-
-**SQL (Legend, rewritten):**
-```sql
-SELECT jsonb_arr -> 1 AS result FROM func('e2e::rel_json_data') WHERE id = 1
-```
-
-**SQL (Generated, executed against DB):**
-```sql
-select (cast("json_data_0".jsonb_arr as jsonb)->1) as "result" from public.json_data as "json_data_0" where "json_data_0".id = 1
-```
-
-**Lambda (Pure expression):**
-```json
-|#>{e2e::TestDB.public.json_data}#->meta::pure::functions::relation::filter(
-  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 1
-)->meta::pure::functions::relation::project(
-  ~[
-     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.jsonb_arr->meta::pure::functions::variant::navigation::get(1)
-   ]
-)
-```
-
-**Differences:**
-- Row 0, column 'result': expected '2' but got '"2"'
-
-**Expected (Postgres):**
-
-| result |
-| --- |
-| 2 |
-
-**Actual (Legend):**
-
-| result |
-| --- |
-| "2" |
-
----
-
-<a id="fail-json_hash_arrow_path-Relation"></a>
-
-### ❌ json_hash_arrow_path [Relation]
-
-**SQL (Postgres):**
-```sql
-SELECT json_val #> '{a,b,c}' AS result FROM json_data WHERE id = 2
-```
-
-**SQL (Legend, rewritten):**
-```sql
-SELECT json_val #> '{a,b,c}' AS result FROM func('e2e::rel_json_data') WHERE id = 2
-```
-
-**SQL (Generated, executed against DB):**
-```sql
-select jsonb_extract_path(cast(jsonb_extract_path(cast(jsonb_extract_path(cast("json_data_0".json_val as jsonb), Text'a') as jsonb), Text'b') as jsonb), Text'c') as "result" from public.json_data as "json_data_0" where "json_data_0".id = 2
-```
-
-**Lambda (Pure expression):**
-```json
-|#>{e2e::TestDB.public.json_data}#->meta::pure::functions::relation::filter(
-  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 2
-)->meta::pure::functions::relation::project(
-  ~[
-     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.json_val->meta::pure::functions::variant::navigation::get('a')->meta::pure::functions::variant::navigation::get('b')->meta::pure::functions::variant::navigation::get('c')
-   ]
-)
-```
-
-**Differences:**
-- Row 0, column 'result': expected '"nested"' but got '"\"nested\""'
-
-**Expected (Postgres):**
-
-| result |
-| --- |
-| "nested" |
-
-**Actual (Legend):**
-
-| result |
-| --- |
-| "\"nested\"" |
-
----
-
-<a id="fail-jsonb_hash_arrow_path-Relation"></a>
-
-### ❌ jsonb_hash_arrow_path [Relation]
-
-**SQL (Postgres):**
-```sql
-SELECT jsonb_val #> '{a,b,c}' AS result FROM json_data WHERE id = 2
-```
-
-**SQL (Legend, rewritten):**
-```sql
-SELECT jsonb_val #> '{a,b,c}' AS result FROM func('e2e::rel_json_data') WHERE id = 2
-```
-
-**SQL (Generated, executed against DB):**
-```sql
-select jsonb_extract_path(cast(jsonb_extract_path(cast(jsonb_extract_path(cast("json_data_0".jsonb_val as jsonb), Text'a') as jsonb), Text'b') as jsonb), Text'c') as "result" from public.json_data as "json_data_0" where "json_data_0".id = 2
-```
-
-**Lambda (Pure expression):**
-```json
-|#>{e2e::TestDB.public.json_data}#->meta::pure::functions::relation::filter(
-  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 2
-)->meta::pure::functions::relation::project(
-  ~[
-     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.jsonb_val->meta::pure::functions::variant::navigation::get('a')->meta::pure::functions::variant::navigation::get('b')->meta::pure::functions::variant::navigation::get('c')
-   ]
-)
-```
-
-**Differences:**
-- Row 0, column 'result': expected '"nested"' but got '"\"nested\""'
-
-**Expected (Postgres):**
-
-| result |
-| --- |
-| "nested" |
-
-**Actual (Legend):**
-
-| result |
-| --- |
-| "\"nested\"" |
 
 ---
 
@@ -5973,23 +5636,23 @@ SELECT column_name FROM information_schema.columns WHERE table_schema = 'public'
 
 ---
 
-<a id="fail-json_extract_array_index-Relation"></a>
+<a id="fail-json_path_extract-Relation"></a>
 
-### ❌ json_extract_array_index [Relation]
+### ❌ json_path_extract [Relation]
 
 **SQL (Postgres):**
 ```sql
-SELECT '[10,20,30]'::jsonb -> 1 AS result FROM persons WHERE id = 1
+SELECT '{"a":{"b":{"c":42}}}'::jsonb #> '{a,b}' AS result FROM persons WHERE id = 1
 ```
 
 **SQL (Legend, rewritten):**
 ```sql
-SELECT '[10,20,30]'::jsonb -> 1 AS result FROM func('e2e::rel_persons') WHERE id = 1
+SELECT '{"a":{"b":{"c":42}}}'::jsonb #> '{a,b}' AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
 
 **SQL (Generated, executed against DB):**
 ```sql
-select (cast(cast(Text'[10,20,30]' as JSONB) as jsonb)->1) as "result" from public.persons as "root" where "root".id = 1
+select jsonb_extract_path(cast(jsonb_extract_path(cast(cast(Text'{"a":{"b":{"c":42}}}' as JSONB) as jsonb), Text'a') as jsonb), Text'b') as "result" from public.persons as "root" where "root".id = 1
 ```
 
 **Lambda (Pure expression):**
@@ -6008,84 +5671,25 @@ select (cast(cast(Text'[10,20,30]' as JSONB) as jsonb)->1) as "result" from publ
   x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|$x.id == 1
 )->meta::pure::functions::relation::project(
   ~[
-     result: x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|meta::pure::functions::variant::convert::fromJson('[10,20,30]')->meta::pure::functions::variant::navigation::get(1)
+     result: x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|meta::pure::functions::variant::convert::fromJson('{"a":{"b":{"c":42}}}')->meta::pure::functions::variant::navigation::get('a')->meta::pure::functions::variant::navigation::get('b')
    ]
 )
 ```
 
 **Differences:**
-- Row 0, column 'result': expected '20' but got '"20"'
+- Row 0, column 'result': expected '{"c": 42}' but got '{"c":42}'
 
 **Expected (Postgres):**
 
 | result |
 | --- |
-| 20 |
+| {"c": 42} |
 
 **Actual (Legend):**
 
 | result |
 | --- |
-| "20" |
-
----
-
-<a id="fail-json_extract_array_negative_index-Relation"></a>
-
-### ❌ json_extract_array_negative_index [Relation]
-
-**SQL (Postgres):**
-```sql
-SELECT '[10,20,30]'::jsonb -> -1 AS result FROM persons WHERE id = 1
-```
-
-**SQL (Legend, rewritten):**
-```sql
-SELECT '[10,20,30]'::jsonb -> -1 AS result FROM func('e2e::rel_persons') WHERE id = 1
-```
-
-**SQL (Generated, executed against DB):**
-```sql
-select (cast(cast(Text'[10,20,30]' as JSONB) as jsonb)->-1) as "result" from public.persons as "root" where "root".id = 1
-```
-
-**Lambda (Pure expression):**
-```json
-|e2e::Person.all()->meta::pure::functions::relation::project(
-  ~[
-     id: x: e2e::Person[1]|$x.id,
-     name: x: e2e::Person[1]|$x.name,
-     age: x: e2e::Person[1]|$x.age,
-     salary: x: e2e::Person[1]|$x.salary,
-     hire_date: x: e2e::Person[1]|$x.hireDate,
-     active: x: e2e::Person[1]|$x.active,
-     dept_id: x: e2e::Person[1]|$x.deptId
-   ]
-)->meta::pure::functions::relation::filter(
-  x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|$x.id == 1
-)->meta::pure::functions::relation::project(
-  ~[
-     result: x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|meta::pure::functions::variant::convert::fromJson('[10,20,30]')->meta::pure::functions::variant::navigation::get(
-    -1
-  )
-   ]
-)
-```
-
-**Differences:**
-- Row 0, column 'result': expected '30' but got '"30"'
-
-**Expected (Postgres):**
-
-| result |
-| --- |
-| 30 |
-
-**Actual (Legend):**
-
-| result |
-| --- |
-| "30" |
+| {"c":42} |
 
 ---
 

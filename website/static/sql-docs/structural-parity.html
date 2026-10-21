@@ -62,17 +62,17 @@ li { margin: 0.3em 0; }
 <tr>
 <td>✅ PASS</td>
 <td>357 (78.1%)</td>
-<td>507 (78.4%)</td>
+<td>519 (80.2%)</td>
 </tr>
 <tr>
 <td>❌ FAIL</td>
 <td>12</td>
-<td>14</td>
+<td>13</td>
 </tr>
 <tr>
 <td>💥 ERROR</td>
 <td>88</td>
-<td>126</td>
+<td>115</td>
 </tr>
 <tr>
 <td>❓ SKIP</td>
@@ -82,7 +82,7 @@ li { margin: 0.3em 0; }
 <tr>
 <td><strong>Pass rate</strong></td>
 <td><strong>78.1%</strong></td>
-<td><strong>78.4%</strong></td>
+<td><strong>80.2%</strong></td>
 </tr>
 </tbody>
 </table>
@@ -109,7 +109,7 @@ li { margin: 0.3em 0; }
 <td><a href="#misc">MISC</a></td>
 <td>Other/uncategorized error</td>
 <td>37</td>
-<td>81</td>
+<td>70</td>
 </tr>
 <tr>
 <td><a href="#unsupported-syntax">UNSUPPORTED_SYNTAX</a></td>
@@ -133,7 +133,7 @@ li { margin: 0.3em 0; }
 <td><a href="#result-mismatch">RESULT_MISMATCH</a></td>
 <td>Query executes but results differ from Postgres</td>
 <td>12</td>
-<td>14</td>
+<td>13</td>
 </tr>
 <tr>
 <td><a href="#function-no-sql-translation">FUNCTION_NO_SQL_TRANSLATION</a></td>
@@ -434,10 +434,10 @@ li { margin: 0.3em 0; }
 <td>0</td>
 <td>30</td>
 <td>0</td>
-<td>7</td>
+<td>19</td>
 <td>0</td>
-<td>2</td>
-<td>29</td>
+<td>1</td>
+<td>18</td>
 <td>0</td>
 </tr>
 <tr>
@@ -3148,52 +3148,52 @@ li { margin: 0.3em 0; }
 </thead>
 <tbody>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td>JSON field extract (-&gt;)</td>
 <td>1</td>
 <td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
+<td>PASS (1/1)</td>
 <td><a href="#fail-json_extract_field-TDS">MISC</a></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td>JSON nested field extract (-&gt;)(-&gt;)</td>
 <td>1</td>
 <td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
+<td>PASS (1/1)</td>
 <td><a href="#fail-json_extract_field_nested-TDS">MISC</a></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td>JSON array index extract (-&gt; int)</td>
 <td>1</td>
 <td>ERROR (0/1)</td>
-<td>FAIL (0/1)</td>
-<td><a href="#fail-json_extract_array_index-TDS">MISC</a>, <a href="#fail-json_extract_array_index-Relation">RESULT_MISMATCH</a></td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-json_extract_array_index-TDS">MISC</a></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td>JSON array negative index extract (-&gt; -1)</td>
 <td>1</td>
 <td>ERROR (0/1)</td>
-<td>FAIL (0/1)</td>
-<td><a href="#fail-json_extract_array_negative_index-TDS">MISC</a>, <a href="#fail-json_extract_array_negative_index-Relation">RESULT_MISMATCH</a></td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-json_extract_array_negative_index-TDS">MISC</a></td>
 </tr>
 <tr>
-<td>🟡</td>
+<td>🟢</td>
 <td>JSON field extract as text (-&gt;&gt;)</td>
 <td>1</td>
 <td>PASS (1/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-json_extract_text_field-Relation">MISC</a></td>
+<td>PASS (1/1)</td>
+<td></td>
 </tr>
 <tr>
-<td>🟡</td>
+<td>🟢</td>
 <td>JSON field extract number as text (-&gt;&gt;)</td>
 <td>1</td>
 <td>PASS (1/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-json_extract_text_number-Relation">MISC</a></td>
+<td>PASS (1/1)</td>
+<td></td>
 </tr>
 <tr>
 <td>🟢</td>
@@ -3204,52 +3204,52 @@ li { margin: 0.3em 0; }
 <td></td>
 </tr>
 <tr>
-<td>🟡</td>
+<td>🟢</td>
 <td>JSON extract text missing key returns NULL (-&gt;&gt;)</td>
 <td>1</td>
 <td>PASS (1/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-json_extract_text_null_key-Relation">MISC</a></td>
+<td>PASS (1/1)</td>
+<td></td>
 </tr>
 <tr>
 <td>🔴</td>
 <td>JSON path extract (#&gt;)</td>
 <td>1</td>
 <td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-json_path_extract-TDS">MISC</a></td>
+<td>FAIL (0/1)</td>
+<td><a href="#fail-json_path_extract-TDS">MISC</a>, <a href="#fail-json_path_extract-Relation">RESULT_MISMATCH</a></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td>JSON path extract into array (#&gt;)</td>
 <td>1</td>
 <td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
+<td>PASS (1/1)</td>
 <td><a href="#fail-json_path_extract_array-TDS">MISC</a></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td>JSON deep path extract (#&gt;)</td>
 <td>1</td>
 <td>ERROR (0/1)</td>
-<td>ERROR (0/1)</td>
+<td>PASS (1/1)</td>
 <td><a href="#fail-json_path_extract_deep-TDS">MISC</a></td>
 </tr>
 <tr>
-<td>🟡</td>
+<td>🟢</td>
 <td>JSON path extract as text (#&gt;&gt;)</td>
 <td>1</td>
 <td>PASS (1/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-json_path_extract_text-Relation">MISC</a></td>
+<td>PASS (1/1)</td>
+<td></td>
 </tr>
 <tr>
-<td>🟡</td>
+<td>🟢</td>
 <td>JSON path extract number as text (#&gt;&gt;)</td>
 <td>1</td>
 <td>PASS (1/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-json_path_extract_text_number-Relation">MISC</a></td>
+<td>PASS (1/1)</td>
+<td></td>
 </tr>
 <tr>
 <td>🔴</td>
@@ -3452,12 +3452,12 @@ li { margin: 0.3em 0; }
 <td><a href="#fail-jsonb_path_match_false-TDS">TYPE_ERROR</a></td>
 </tr>
 <tr>
-<td>🟡</td>
+<td>🟢</td>
 <td>JSON extract then text (-&gt; then -&gt;&gt;)</td>
 <td>1</td>
 <td>PASS (1/1)</td>
-<td>ERROR (0/1)</td>
-<td><a href="#fail-json_extract_then_text-Relation">MISC</a></td>
+<td>PASS (1/1)</td>
+<td></td>
 </tr>
 <tr>
 <td>🟢</td>
@@ -6302,7 +6302,7 @@ li { margin: 0.3em 0; }
 <p>The column 'offset_Relation_1__T_1__Integer_1__T_$0_1$_' can't be found (&quot;dept_id&quot;,&quot;cnt&quot;)</p>
 </blockquote>
 <p><a id="misc"></a></p>
-<h3>MISC (95 tests)</h3>
+<h3>MISC (89 tests)</h3>
 <h4><a id="fail-union_multiple_mixed-Relation"></a><code>union_multiple_mixed</code></h4>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -6731,7 +6731,7 @@ li { margin: 0.3em 0; }
 <p>Unhandled value type: meta::pure::tds::SortInformation</p>
 </blockquote>
 <br>
-<h4><a id="fail-json_extract_field-TDS"></a><a id="fail-json_extract_field-Relation"></a><code>json_extract_field</code></h4>
+<h4><a id="fail-json_extract_field-TDS"></a><code>json_extract_field</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT '{&quot;a&quot;:1,&quot;b&quot;:2}'::jsonb -&gt; 'a' AS result FROM persons WHERE id = 1
@@ -6743,19 +6743,8 @@ li { margin: 0.3em 0; }
 <blockquote>
 <p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery_deprecated.pure line:282 column:90), &quot;Match failure: 1 instanceOf class org.finos.legend.pure.runtime.java.extension.external.variant.VariantInstanceImpl&quot;</p>
 </blockquote>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:1,&quot;b&quot;:2}'::jsonb -&gt; 'a' AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:1,&quot;b&quot;:2}'::jsonb -&gt; 'a' AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Error mapping not found for class Map cache:''</p>
-</blockquote>
 <br>
-<h4><a id="fail-json_extract_field_nested-TDS"></a><a id="fail-json_extract_field_nested-Relation"></a><code>json_extract_field_nested</code></h4>
+<h4><a id="fail-json_extract_field_nested-TDS"></a><code>json_extract_field_nested</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT '{&quot;a&quot;:{&quot;b&quot;:3}}'::jsonb -&gt; 'a' -&gt; 'b' AS result FROM persons WHERE id = 1
@@ -6766,17 +6755,6 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery_deprecated.pure line:282 column:90), &quot;Match failure: 3 instanceOf class org.finos.legend.pure.runtime.java.extension.external.variant.VariantInstanceImpl&quot;</p>
-</blockquote>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:{&quot;b&quot;:3}}'::jsonb -&gt; 'a' -&gt; 'b' AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:{&quot;b&quot;:3}}'::jsonb -&gt; 'a' -&gt; 'b' AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Error mapping not found for class Map cache:''</p>
 </blockquote>
 <br>
 <h4><a id="fail-json_extract_array_index-TDS"></a><code>json_extract_array_index</code></h4>
@@ -6805,46 +6783,7 @@ li { margin: 0.3em 0; }
 <p>Execution error at ??, &quot;The system is trying to get an element at offset -1 where the collection is of size 3&quot;</p>
 </blockquote>
 <br>
-<h4><a id="fail-json_extract_text_field-Relation"></a><code>json_extract_text_field</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:&quot;hello&quot;,&quot;b&quot;:2}'::jsonb -&gt;&gt; 'a' AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:&quot;hello&quot;,&quot;b&quot;:2}'::jsonb -&gt;&gt; 'a' AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Error mapping not found for class Map cache:''</p>
-</blockquote>
-<br>
-<h4><a id="fail-json_extract_text_number-Relation"></a><code>json_extract_text_number</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:1,&quot;b&quot;:2}'::jsonb -&gt;&gt; 'a' AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:1,&quot;b&quot;:2}'::jsonb -&gt;&gt; 'a' AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Error mapping not found for class Map cache:''</p>
-</blockquote>
-<br>
-<h4><a id="fail-json_extract_text_null_key-Relation"></a><code>json_extract_text_null_key</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:1}'::jsonb -&gt;&gt; 'missing' AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:1}'::jsonb -&gt;&gt; 'missing' AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Error mapping not found for class Map cache:''</p>
-</blockquote>
-<br>
-<h4><a id="fail-json_path_extract-TDS"></a><a id="fail-json_path_extract-Relation"></a><code>json_path_extract</code></h4>
+<h4><a id="fail-json_path_extract-TDS"></a><code>json_path_extract</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT '{&quot;a&quot;:{&quot;b&quot;:{&quot;c&quot;:42}}}'::jsonb #&gt; '{a,b}' AS result FROM persons WHERE id = 1
@@ -6856,19 +6795,8 @@ li { margin: 0.3em 0; }
 <blockquote>
 <p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery_deprecated.pure line:282 column:90), &quot;Match failure: {&quot;c&quot;:42} instanceOf class org.finos.legend.pure.runtime.java.extension.external.variant.VariantInstanceImpl&quot;</p>
 </blockquote>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:{&quot;b&quot;:{&quot;c&quot;:42}}}'::jsonb #&gt; '{a,b}' AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:{&quot;b&quot;:{&quot;c&quot;:42}}}'::jsonb #&gt; '{a,b}' AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Error mapping not found for class Map cache:''</p>
-</blockquote>
 <br>
-<h4><a id="fail-json_path_extract_array-TDS"></a><a id="fail-json_path_extract_array-Relation"></a><code>json_path_extract_array</code></h4>
+<h4><a id="fail-json_path_extract_array-TDS"></a><code>json_path_extract_array</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT '{&quot;a&quot;:[1,2,3]}'::jsonb #&gt; '{a,1}' AS result FROM persons WHERE id = 1
@@ -6880,19 +6808,8 @@ li { margin: 0.3em 0; }
 <blockquote>
 <p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery_deprecated.pure line:282 column:90), &quot;Match failure: 2 instanceOf class org.finos.legend.pure.runtime.java.extension.external.variant.VariantInstanceImpl&quot;</p>
 </blockquote>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:[1,2,3]}'::jsonb #&gt; '{a,1}' AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:[1,2,3]}'::jsonb #&gt; '{a,1}' AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Error mapping not found for class Map cache:''</p>
-</blockquote>
 <br>
-<h4><a id="fail-json_path_extract_deep-TDS"></a><a id="fail-json_path_extract_deep-Relation"></a><code>json_path_extract_deep</code></h4>
+<h4><a id="fail-json_path_extract_deep-TDS"></a><code>json_path_extract_deep</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
 <pre><code class="language-sql">SELECT '{&quot;a&quot;:{&quot;b&quot;:{&quot;c&quot;:&quot;deep&quot;}}}'::jsonb #&gt; '{a,b,c}' AS result FROM persons WHERE id = 1
@@ -6903,43 +6820,6 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery_deprecated.pure line:282 column:90), &quot;Match failure: &quot;deep&quot; instanceOf class org.finos.legend.pure.runtime.java.extension.external.variant.VariantInstanceImpl&quot;</p>
-</blockquote>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:{&quot;b&quot;:{&quot;c&quot;:&quot;deep&quot;}}}'::jsonb #&gt; '{a,b,c}' AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:{&quot;b&quot;:{&quot;c&quot;:&quot;deep&quot;}}}'::jsonb #&gt; '{a,b,c}' AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Error mapping not found for class Map cache:''</p>
-</blockquote>
-<br>
-<h4><a id="fail-json_path_extract_text-Relation"></a><code>json_path_extract_text</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:{&quot;b&quot;:&quot;hello&quot;}}'::jsonb #&gt;&gt; '{a,b}' AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:{&quot;b&quot;:&quot;hello&quot;}}'::jsonb #&gt;&gt; '{a,b}' AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Error mapping not found for class Map cache:''</p>
-</blockquote>
-<br>
-<h4><a id="fail-json_path_extract_text_number-Relation"></a><code>json_path_extract_text_number</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:{&quot;b&quot;:42}}'::jsonb #&gt;&gt; '{a,b}' AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:{&quot;b&quot;:42}}'::jsonb #&gt;&gt; '{a,b}' AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Error mapping not found for class Map cache:''</p>
 </blockquote>
 <br>
 <h4><a id="fail-jsonb_contains_right-TDS"></a><a id="fail-jsonb_contains_right-Relation"></a><code>jsonb_contains_right</code></h4>
@@ -7068,19 +6948,6 @@ li { margin: 0.3em 0; }
 <p><strong>Error:</strong></p>
 <blockquote>
 <p>json operation right side must be integer or string</p>
-</blockquote>
-<br>
-<h4><a id="fail-json_extract_then_text-Relation"></a><code>json_extract_then_text</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:{&quot;b&quot;:&quot;value&quot;}}'::jsonb -&gt; 'a' -&gt;&gt; 'b' AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT '{&quot;a&quot;:{&quot;b&quot;:&quot;value&quot;}}'::jsonb -&gt; 'a' -&gt;&gt; 'b' AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>Error mapping not found for class Map cache:''</p>
 </blockquote>
 <br>
 <h4><a id="fail-jsonb_contains_in_where-TDS"></a><a id="fail-jsonb_contains_in_where-Relation"></a><code>jsonb_contains_in_where</code></h4>
@@ -10921,7 +10788,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:3182 column:77), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:3217 column:77), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-cte_in_join-TDS"></a><code>cte_in_join</code></h4>
@@ -10934,7 +10801,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7858 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7892 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-cte_in_join_dept-TDS"></a><code>cte_in_join_dept</code></h4>
@@ -10947,7 +10814,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7858 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7892 column:36), &quot;Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-cast_numeric_to_int-TDS"></a><a id="fail-cast_numeric_to_int-Relation"></a><code>cast_numeric_to_int</code></h4>
@@ -10989,7 +10856,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7367 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7401 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-lateral_unnest_string_to_array-Relation"></a><code>lateral_unnest_string_to_array</code></h4>
@@ -11002,7 +10869,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7367 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
+<p>Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7401 column:21), &quot;Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-lateral_unnest_string_to_array_correlated-Relation"></a><code>lateral_unnest_string_to_array_correlated</code></h4>
@@ -11481,7 +11348,7 @@ li { margin: 0.3em 0; }
 <p>No function matches the given name &quot;func&quot;</p>
 </blockquote>
 <p><a id="result-mismatch"></a></p>
-<h3>RESULT_MISMATCH (16 tests)</h3>
+<h3>RESULT_MISMATCH (15 tests)</h3>
 <h4><a id="fail-subquery_quant_all_empty_null_value-Relation"></a><code>subquery_quant_all_empty_null_value</code></h4>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -11656,26 +11523,13 @@ li { margin: 0.3em 0; }
 <p>null</p>
 </blockquote>
 <br>
-<h4><a id="fail-json_extract_array_index-Relation"></a><code>json_extract_array_index</code></h4>
+<h4><a id="fail-json_path_extract-Relation"></a><code>json_path_extract</code></h4>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT '[10,20,30]'::jsonb -&gt; 1 AS result FROM persons WHERE id = 1
+<pre><code class="language-sql">SELECT '{&quot;a&quot;:{&quot;b&quot;:{&quot;c&quot;:42}}}'::jsonb #&gt; '{a,b}' AS result FROM persons WHERE id = 1
 </code></pre>
 <p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT '[10,20,30]'::jsonb -&gt; 1 AS result FROM func('e2e::rel_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>null</p>
-</blockquote>
-<br>
-<h4><a id="fail-json_extract_array_negative_index-Relation"></a><code>json_extract_array_negative_index</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT '[10,20,30]'::jsonb -&gt; -1 AS result FROM persons WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT '[10,20,30]'::jsonb -&gt; -1 AS result FROM func('e2e::rel_persons') WHERE id = 1
+<pre><code class="language-sql">SELECT '{&quot;a&quot;:{&quot;b&quot;:{&quot;c&quot;:42}}}'::jsonb #&gt; '{a,b}' AS result FROM func('e2e::rel_persons') WHERE id = 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>

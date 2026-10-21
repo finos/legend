@@ -6,10 +6,10 @@
 |--------|-----|----------|
 | Total signatures | 660 | 660 |
 | Unique function names | 346 | 346 |
-| **Supported functions (PASS/PARTIAL)** | **122 (35.3%)** | **123 (35.5%)** |
+| **Supported functions (PASS/PARTIAL)** | **122 (35.3%)** | **124 (35.8%)** |
 | Total tests | 882 | 882 |
-| PASS | 320 | 330 |
-| FAIL | 9 | 10 |
+| PASS | 320 | 331 |
+| FAIL | 9 | 9 |
 | ERROR | 87 | 76 |
 | SKIP | 0 | 0 |
 | UNSUPPORTED | 348 | 348 |
@@ -21,7 +21,7 @@
 | Category | Description | TDS | Relation |
 |----------|-------------|-----|----------|
 | [FUNCTION_NOT_SUPPORTED](#function-not-supported) | Function name not recognized by Legend SQL | 160 | 194 |
-| [RESULT_MISMATCH](#result-mismatch) | Query executes but results differ from Postgres | 9 | 11 |
+| [RESULT_MISMATCH](#result-mismatch) | Query executes but results differ from Postgres | 9 | 10 |
 | [MISC](#misc) | Other/uncategorized error | 32 | 35 |
 | [UNSUPPORTED_SYNTAX](#unsupported-syntax) | SQL construct recognized but not yet implemented | 65 | 49 |
 | [TYPE_ERROR](#type-error) | Type mismatch or cast error | 84 | 44 |
@@ -40,7 +40,7 @@
 | [Data Type Formatting (9.8)](https://www.postgresql.org/docs/16/functions-formatting.html) / [details](#data-type-formatting-(9.8)) | 10 | 1 | 0 | 0 | 0 | 3 | 1 | 0 | 0 | 0 | 3 |
 | [Date/Time Functions and Operators (9.9)](https://www.postgresql.org/docs/16/functions-datetime.html) / [details](#date/time-functions-and-operators-(9.9)) | 41 | 10 | 0 | 0 | 0 | 9 | 10 | 0 | 0 | 0 | 9 |
 | [Conditional Expressions (9.18)](https://www.postgresql.org/docs/16/functions-conditional.html) / [details](#conditional-expressions-(9.18)) | 7 | 2 | 1 | 0 | 0 | 0 | 2 | 1 | 0 | 0 | 0 |
-| [JSON Functions and Operators (9.16)](https://www.postgresql.org/docs/16/functions-json.html) / [details](#json-functions-and-operators-(9.16)) | 47 | 0 | 0 | 0 | 0 | 2 | 1 | 0 | 1 | 0 | 0 |
+| [JSON Functions and Operators (9.16)](https://www.postgresql.org/docs/16/functions-json.html) / [details](#json-functions-and-operators-(9.16)) | 47 | 0 | 0 | 0 | 0 | 2 | 2 | 0 | 0 | 0 | 0 |
 | [Array Functions and Operators (9.19)](https://www.postgresql.org/docs/16/functions-array.html) / [details](#array-functions-and-operators-(9.19)) | 21 | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 |
 | [Aggregate Functions (9.21)](https://www.postgresql.org/docs/16/functions-aggregate.html) / [details](#aggregate-functions-(9.21)) | 157 | 67 | 6 | 0 | 0 | 9 | 67 | 6 | 0 | 0 | 9 |
 | [Window Functions (9.22)](https://www.postgresql.org/docs/16/functions-window.html) / [details](#window-functions-(9.22)) | 15 | 3 | 0 | 0 | 0 | 0 | 3 | 0 | 0 | 0 | 0 |
@@ -399,7 +399,7 @@ Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-jso
 | ⚪ | `json_build_object` | `json_build_object(VARIADIC "any") → json` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_build_object__variadic__from_column-TDS), [UNSUPPORTED_SYNTAX](#fail-json_build_object__variadic__from_column-Relation) | Unsupported feature |
 | ⚪ | `json_each` | `json_each(from_json json, OUT key text, OUT value json) → SETOF record` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-json_each__from_column-TDS) | Function not supported |
 | ⚪ | `json_each_text` | `json_each_text(from_json json, OUT key text, OUT value text) → SETOF record` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-json_each_text__from_column-TDS) | Function not supported |
-| 🔴 | `json_extract_path` | `json_extract_path(from_json json, VARIADIC path_elems text[]) → json` | UNTESTED | FAIL (0/1) | [TYPE_ERROR](#fail-json_extract_path__from_column-TDS), [RESULT_MISMATCH](#fail-json_extract_path__from_column-Relation) |  |
+| 🟡 | `json_extract_path` | `json_extract_path(from_json json, VARIADIC path_elems text[]) → json` | UNTESTED | PASS (1/1) | [TYPE_ERROR](#fail-json_extract_path__from_column-TDS) |  |
 | 🟡 | `json_extract_path_text` | `json_extract_path_text(from_json json, VARIADIC path_elems text[]) → text` | UNTESTED | PASS (1/1) | [TYPE_ERROR](#fail-json_extract_path_text__from_column-TDS) |  |
 | ⚪ | `json_object` | `json_object(text[]) → json` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_object__text_array-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_object__text_array-Relation) | Function not supported |
 | ⚪ | `json_object` | `json_object(text[], text[]) → json` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_object__keys_values-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_object__keys_values-Relation) | Function not supported |
@@ -7424,7 +7424,7 @@ SELECT JSONB_PATH_QUERY_FIRST(jsonb_arr, '$[*]') AS result FROM func('e2e::rel_j
 
 <a id="result-mismatch"></a>
 
-### RESULT_MISMATCH (13 tests)
+### RESULT_MISMATCH (12 tests)
 
 #### <a id="fail-div__num_num__from_table-TDS"></a><a id="fail-div__num_num__from_table-Relation"></a>`div__num_num__from_table`
 
@@ -7643,26 +7643,6 @@ SELECT REGEXP_SUBSTR(val, '[a-z]+', 5, 2) AS result FROM func('e2e::tds_strings'
 **Legend SQL (Relation):**
 ```sql
 SELECT REGEXP_SUBSTR(val, '[a-z]+', 5, 2) AS result FROM func('e2e::rel_strings') WHERE id = 10
-```
-
-**Error:**
-> null
-
-
-<br>
-
-#### <a id="fail-json_extract_path__from_column-Relation"></a>`json_extract_path__from_column`
-
-📗 **Relation Path**
-
-**Input SQL:**
-```sql
-SELECT JSON_EXTRACT_PATH(json_val, 'a', 'b', 'c') AS result FROM json_data WHERE id = 2
-```
-
-**Legend SQL:**
-```sql
-SELECT JSON_EXTRACT_PATH(json_val, 'a', 'b', 'c') AS result FROM func('e2e::rel_json_data') WHERE id = 2
 ```
 
 **Error:**
@@ -8751,7 +8731,7 @@ SELECT STRING_AGG(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
 
 **Error:**
-> Error mapping not found for class Nil cache:''
+> Execution error at ??, "Unused format args. [4] arguments provided to expression "string_agg(%s, %s)""
 
 
 <br>
@@ -8776,7 +8756,7 @@ SELECT SUM(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
 
 **Error:**
-> Error mapping not found for class Nil cache:''
+> ERROR: function sum(unknown) is not unique\n  Hint: Could not choose a best candidate function. You might need to add explicit type casts.\n  Position: 71
 
 
 <br>
