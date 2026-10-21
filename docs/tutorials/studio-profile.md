@@ -6,7 +6,7 @@ sidebar_label: Profile
 
 ## Profile
 
-To create a [profile](../overview/legend-features.md#profile):
+To create a [profile](../overview/legend-glossary.md#profile):
 
 1. Click the <kbd>+</kbd> icon.
 
@@ -14,7 +14,7 @@ To create a [profile](../overview/legend-features.md#profile):
 
 ### Profile tag
 
-Use [tagged values](../overview/legend-features.md#profile) to add context to your data model. For example, we can add the tagged value **alias** to our `Firm` class to make it easier for others to navigate our data model.
+Use [tagged values](../overview/legend-glossary.md#profile) to add context to your data model. For example, we can add the tagged value **alias** to our `Firm` class to make it easier for others to navigate our data model.
 
 1. In the Profile editor, go to the <kbd>Tags</kbd> tab and click the <kbd>+</kbd> icon.
 2. Type in `alias`.
@@ -72,7 +72,6 @@ To create a [supertype](../overview/legend-glossary.md#super-type), let's create
 
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)
-- [Legend Features](../overview/legend-features.md)
 - [Legend Glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)

@@ -10,11 +10,11 @@ Discover, access and re-use existing models, classes, mappings, runtimes, functi
 Connect your model to another model to de-duplicate modeling efforts and use recommended datasets and models. Transform, re-use and refine data models. Re-use classes, mappings, and runtimes that make sense for your data model.
 
 ### Features
-- [Model to Model (M2M) Mapping](../overview/legend-features.md#model-to-model-mapping)
-- [Mapping Editor](../overview/legend-features.md#mapping-editor)
-- [Functions](../overview/legend-features.md#function-editor)
-- [File Generation](../overview/legend-features.md#file-generation)
-- [Generation Specification](../overview/legend-features.md#generation-specification)
+- [Model to Model (M2M) Mapping](../overview/legend-glossary.md#model-to-model-mapping)
+- [Mapping Editor](../overview/legend-glossary.md#mapping)
+- [Functions](../overview/legend-glossary.md#function)
+- [File Generation](../overview/legend-glossary.md#file-generation)
+- [Generation Specification](../overview/legend-glossary.md#generation-specification)
 
 ### Showcase projects 
 See features in action in [showcase projects](../showcases/showcase-projects.md).
@@ -42,7 +42,7 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 Re-use transformation logic as part of your mappings or services by defining customized functions.
 
 ### Features
-- [Functions](../overview/legend-glossary.md#functions)
+- [Functions](../overview/legend-glossary.md#function)
 
 ### Showcase projects
 See features in action in [showcase projects](../showcases/showcase-projects.md).
@@ -77,7 +77,6 @@ _Coming soon_
 
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)
-- [Legend features](../overview/legend-features.md)
 - [Legend glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)

@@ -4,7 +4,7 @@ title: Service Store
 sidebar_label: Service Store
 ---
 
-This tutorial demonstrates the use of the [Service Store](../overview/legend-features.md#service-store) feature.
+This tutorial demonstrates the use of the [Service Store](../overview/legend-glossary.md#service-store) feature.
 
 ### Requirements 
 
@@ -13,7 +13,7 @@ This tutorial demonstrates the use of the [Service Store](../overview/legend-fea
     * Engine 
     * SDLC
 
-* Familiarity with the following [Legend concepts](../overview/legend-features.md):
+* Familiarity with the following [Legend concepts](../overview/legend-glossary.md):
    * Data modeling with classes, associations 
    * Data modeling with stores, mappings, connections and runtimes 
    * Data modeling with Legend services 
@@ -245,7 +245,6 @@ Legend Engine source code is in the Maven modules named ```legend-engine-xt-serv
 
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)
-- [Legend Features](../overview/legend-features.md)
 - [Legend Glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)
