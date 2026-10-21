@@ -9,9 +9,9 @@
       "total" : 2347
     },
     "relation" : {
-      "pass" : 1116,
-      "fail" : 46,
-      "error" : 1035,
+      "pass" : 1135,
+      "fail" : 38,
+      "error" : 1024,
       "skip" : 62,
       "bug" : 88,
       "total" : 2347
@@ -90,7 +90,7 @@
     "state" : "FAIL",
     "sql" : "SELECT DIV(numeric_val, 3.0) AS result FROM numbers WHERE numeric_val IS NOT NULL AND numeric_val <> 0 ORDER BY 1",
     "rewrittenSql" : "SELECT DIV(numeric_val, 3.0) AS result FROM func('e2e::tds_numbers') WHERE numeric_val IS NOT NULL AND numeric_val <> 0 ORDER BY 1",
-    "generatedSql" : "select ((1.0 * \"root\".numeric_val) / 3.0) as \"result\" from public.numbers as \"root\" where (\"root\".numeric_val is not null and \"root\".numeric_val is distinct from 0) order by \"result\"",
+    "generatedSql" : "select ((1.0 * \"root\".numeric_val) / 3.0) as \"result\" from public.numbers as \"root\" where (\"root\".numeric_val is not null and (\"root\".numeric_val is distinct from 0)) order by \"result\"",
     "generatedLambda" : "|e2e::NumberRow.all()->meta::pure::tds::project(\n  [\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.id,\n      'id'\n    ),\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.intVal,\n      'int_val'\n    ),\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.floatVal,\n      'float_val'\n    ),\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.numericVal,\n      'numeric_val'\n    ),\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.smallVal,\n      'small_val'\n    ),\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.bigVal,\n      'big_val'\n    )\n  ]\n)->meta::pure::tds::filter(\n  row: meta::pure::tds::TDSRow[1]|$row.getFloat('numeric_val')->meta::pure::functions::collection::isNotEmpty() &&\n    $row.getFloat('numeric_val') != 0\n)->meta::pure::tds::project(\n  meta::pure::tds::col(\n      row: meta::pure::tds::TDSRow[1]|$row.getFloat('numeric_val') / 3.0,\n      'result'\n    )\n)->meta::pure::tds::sort(\n  meta::pure::tds::asc('result')\n)",
     "error" : null,
     "diffs" : [ "Row 0, column 'result': expected '-33333' but got '-33333.33333'", "Row 1, column 'result': expected '0' but got '-0.3333333333333333'", "Row 2, column 'result': expected '0' but got '-3.3333333333333333E-6'", "Row 3, column 'result': expected '0' but got '3.3333333333333333E-6'", "Row 4, column 'result': expected '111' but got '111.11111'", "Row 5, column 'result': expected '4115' but got '4115.2263'", "Row 6, column 'result': expected '16666' but got '16666.70781666667'" ]
@@ -101,7 +101,7 @@
     "state" : "FAIL",
     "sql" : "SELECT DIV(numeric_val, 3.0) AS result FROM numbers WHERE numeric_val IS NOT NULL AND numeric_val <> 0 ORDER BY 1",
     "rewrittenSql" : "SELECT DIV(numeric_val, 3.0) AS result FROM func('e2e::rel_numbers') WHERE numeric_val IS NOT NULL AND numeric_val <> 0 ORDER BY 1",
-    "generatedSql" : "select ((1.0 * \"root\".numeric_val) / 3.0) as \"result\" from public.numbers as \"root\" where (\"root\".numeric_val is not null and \"root\".numeric_val is distinct from 0) order by \"result\"",
+    "generatedSql" : "select ((1.0 * \"root\".numeric_val) / 3.0) as \"result\" from public.numbers as \"root\" where (\"root\".numeric_val is not null and (\"root\".numeric_val is distinct from 0)) order by \"result\"",
     "generatedLambda" : "|e2e::NumberRow.all()->meta::pure::functions::relation::project(\n  ~[\n     id: x: e2e::NumberRow[1]|$x.id,\n     int_val: x: e2e::NumberRow[1]|$x.intVal,\n     float_val: x: e2e::NumberRow[1]|$x.floatVal,\n     numeric_val: x: e2e::NumberRow[1]|$x.numericVal,\n     small_val: x: e2e::NumberRow[1]|$x.smallVal,\n     big_val: x: e2e::NumberRow[1]|$x.bigVal\n   ]\n)->meta::pure::functions::relation::filter(\n  x: (id:Integer[1], int_val:Integer, float_val:Float, numeric_val:Float, small_val:Integer, big_val:Integer)[1]|$x.numeric_val->meta::pure::functions::collection::isNotEmpty() &&\n    $x.numeric_val != 0\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:Integer[1], int_val:Integer, float_val:Float, numeric_val:Float, small_val:Integer, big_val:Integer)[1]|$x.numeric_val->meta::pure::functions::multiplicity::toOne() / 3.0\n   ]\n)->meta::pure::functions::relation::sort(\n  ~result->meta::pure::functions::relation::ascending()\n)",
     "error" : null,
     "diffs" : [ "Row 0, column 'result': expected '-33333' but got '-33333.33333'", "Row 1, column 'result': expected '0' but got '-0.3333333333333333'", "Row 2, column 'result': expected '0' but got '-3.3333333333333333E-6'", "Row 3, column 'result': expected '0' but got '3.3333333333333333E-6'", "Row 4, column 'result': expected '111' but got '111.11111'", "Row 5, column 'result': expected '4115' but got '4115.2263'", "Row 6, column 'result': expected '16666' but got '16666.70781666667'" ]
@@ -5672,17 +5672,6 @@
     "error" : "Execution error at (resource:/core_relational/relational/functions/tableToTDS.pure line:48 column:108), \"Cast exception: Class cannot be cast to DataType\"",
     "diffs" : null
   }, {
-    "id" : "json_extract_path__from_column",
-    "category" : "functions/json_functions",
-    "path" : "Relation",
-    "state" : "FAIL",
-    "sql" : "SELECT JSON_EXTRACT_PATH(json_val, 'a', 'b', 'c') AS result FROM json_data WHERE id = 2",
-    "rewrittenSql" : "SELECT JSON_EXTRACT_PATH(json_val, 'a', 'b', 'c') AS result FROM func('e2e::rel_json_data') WHERE id = 2",
-    "generatedSql" : "select jsonb_extract_path(cast(jsonb_extract_path(cast(jsonb_extract_path(cast(\"json_data_0\".json_val as jsonb), Text'a') as jsonb), Text'b') as jsonb), Text'c') as \"result\" from public.json_data as \"json_data_0\" where \"json_data_0\".id = 2",
-    "generatedLambda" : "|#>{e2e::TestDB.public.json_data}#->meta::pure::functions::relation::filter(\n  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 2\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.json_val->meta::pure::functions::variant::navigation::get('a')->meta::pure::functions::variant::navigation::get('b')->meta::pure::functions::variant::navigation::get('c')\n   ]\n)",
-    "error" : null,
-    "diffs" : [ "Row 0, column 'result': expected '\"nested\"' but got '\"\\\"nested\\\"\"'" ]
-  }, {
     "id" : "json_extract_path_text__from_column",
     "category" : "functions/json_functions",
     "path" : "TDS",
@@ -9486,7 +9475,7 @@
     "rewrittenSql" : "SELECT STRING_AGG(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Error mapping not found for class Nil cache:''",
+    "error" : "Execution error at ??, \"Unused format args. [4] arguments provided to expression \"string_agg(%s, %s)\"\"",
     "diffs" : null
   }, {
     "id" : "string_agg_bytea_bytea_cov",
@@ -9497,7 +9486,7 @@
     "rewrittenSql" : "SELECT STRING_AGG(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Error mapping not found for class Nil cache:''",
+    "error" : "Execution error at ??, \"Unused format args. [4] arguments provided to expression \"string_agg(%s, %s)\"\"",
     "diffs" : null
   }, {
     "id" : "sum_money_cov",
@@ -9508,7 +9497,7 @@
     "rewrittenSql" : "SELECT SUM(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Error mapping not found for class Nil cache:''",
+    "error" : "ERROR: function sum(unknown) is not unique\\n  Hint: Could not choose a best candidate function. You might need to add explicit type casts.\\n  Position: 71",
     "diffs" : null
   }, {
     "id" : "sum_money_cov",
@@ -9519,7 +9508,7 @@
     "rewrittenSql" : "SELECT SUM(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Error mapping not found for class Nil cache:''",
+    "error" : "ERROR: function sum(unknown) is not unique\\n  Hint: Could not choose a best candidate function. You might need to add explicit type casts.\\n  Position: 71",
     "diffs" : null
   }, {
     "id" : "xmlagg_xml_cov",
@@ -11277,7 +11266,7 @@
     "state" : "FAIL",
     "sql" : "SELECT id, int_val <> 42 AS result FROM numbers WHERE id = 5",
     "rewrittenSql" : "SELECT id, int_val <> 42 AS result FROM func('e2e::tds_numbers') WHERE id = 5",
-    "generatedSql" : "select \"root\".id as \"id\", \"root\".int_val is distinct from 42 as \"result\" from public.numbers as \"root\" where \"root\".id = 5",
+    "generatedSql" : "select \"root\".id as \"id\", (\"root\".int_val is distinct from 42) as \"result\" from public.numbers as \"root\" where \"root\".id = 5",
     "generatedLambda" : "|e2e::NumberRow.all()->meta::pure::tds::project(\n  [\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.id,\n      'id'\n    ),\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.intVal,\n      'int_val'\n    ),\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.floatVal,\n      'float_val'\n    ),\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.numericVal,\n      'numeric_val'\n    ),\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.smallVal,\n      'small_val'\n    ),\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.bigVal,\n      'big_val'\n    )\n  ]\n)->meta::pure::tds::filter(\n  row: meta::pure::tds::TDSRow[1]|$row.getInteger('id') == 5\n)->meta::pure::tds::project(\n  [\n    meta::pure::tds::col(\n      row: meta::pure::tds::TDSRow[1]|$row.getInteger('id'),\n      'id'\n    ),\n    meta::pure::tds::col(\n      row: meta::pure::tds::TDSRow[1]|$row.getInteger('int_val') != 42,\n      'result'\n    )\n  ]\n)",
     "error" : null,
     "diffs" : [ "Row 0, column 'result': expected 'null' but got 'true'" ]
@@ -11288,7 +11277,7 @@
     "state" : "FAIL",
     "sql" : "SELECT id, int_val <> 42 AS result FROM numbers WHERE id = 5",
     "rewrittenSql" : "SELECT id, int_val <> 42 AS result FROM func('e2e::rel_numbers') WHERE id = 5",
-    "generatedSql" : "select \"root\".id as \"id\", \"root\".int_val is distinct from 42 as \"result\" from public.numbers as \"root\" where \"root\".id = 5",
+    "generatedSql" : "select \"root\".id as \"id\", (\"root\".int_val is distinct from 42) as \"result\" from public.numbers as \"root\" where \"root\".id = 5",
     "generatedLambda" : "|e2e::NumberRow.all()->meta::pure::functions::relation::project(\n  ~[\n     id: x: e2e::NumberRow[1]|$x.id,\n     int_val: x: e2e::NumberRow[1]|$x.intVal,\n     float_val: x: e2e::NumberRow[1]|$x.floatVal,\n     numeric_val: x: e2e::NumberRow[1]|$x.numericVal,\n     small_val: x: e2e::NumberRow[1]|$x.smallVal,\n     big_val: x: e2e::NumberRow[1]|$x.bigVal\n   ]\n)->meta::pure::functions::relation::filter(\n  x: (id:Integer[1], int_val:Integer, float_val:Float, numeric_val:Float, small_val:Integer, big_val:Integer)[1]|$x.id == 5\n)->meta::pure::functions::relation::project(\n  ~[\n     id: x: (id:Integer[1], int_val:Integer, float_val:Float, numeric_val:Float, small_val:Integer, big_val:Integer)[1]|$x.id,\n     result: x: (id:Integer[1], int_val:Integer, float_val:Float, numeric_val:Float, small_val:Integer, big_val:Integer)[1]|$x.int_val != 42\n   ]\n)",
     "error" : null,
     "diffs" : [ "Row 0, column 'result': expected 'null' but got 'true'" ]
@@ -11365,7 +11354,7 @@
     "state" : "FAIL",
     "sql" : "SELECT id, name FROM persons WHERE age <> 30 ORDER BY id",
     "rewrittenSql" : "SELECT id, name FROM func('e2e::tds_persons') WHERE age <> 30 ORDER BY id",
-    "generatedSql" : "select \"root\".id as \"id\", \"root\".name as \"name\" from public.persons as \"root\" where \"root\".age is distinct from 30 order by \"id\"",
+    "generatedSql" : "select \"root\".id as \"id\", \"root\".name as \"name\" from public.persons as \"root\" where (\"root\".age is distinct from 30) order by \"id\"",
     "generatedLambda" : "|e2e::Person.all()->meta::pure::tds::project(\n  [\n    meta::pure::tds::col(\n      x: e2e::Person[1]|$x.id,\n      'id'\n    ),\n    meta::pure::tds::col(\n      x: e2e::Person[1]|$x.name,\n      'name'\n    ),\n    meta::pure::tds::col(\n      x: e2e::Person[1]|$x.age,\n      'age'\n    ),\n    meta::pure::tds::col(\n      x: e2e::Person[1]|$x.salary,\n      'salary'\n    ),\n    meta::pure::tds::col(\n      x: e2e::Person[1]|$x.hireDate,\n      'hire_date'\n    ),\n    meta::pure::tds::col(\n      x: e2e::Person[1]|$x.active,\n      'active'\n    ),\n    meta::pure::tds::col(\n      x: e2e::Person[1]|$x.deptId,\n      'dept_id'\n    )\n  ]\n)->meta::pure::tds::filter(\n  row: meta::pure::tds::TDSRow[1]|$row.getInteger('age') != 30\n)->meta::pure::tds::restrict(\n  [\n    'id',\n    'name'\n  ]\n)->meta::pure::tds::sort(\n  meta::pure::tds::asc('id')\n)",
     "error" : null,
     "diffs" : [ "Row count mismatch: expected 8 but got 9" ]
@@ -11376,7 +11365,7 @@
     "state" : "FAIL",
     "sql" : "SELECT id, name FROM persons WHERE age <> 30 ORDER BY id",
     "rewrittenSql" : "SELECT id, name FROM func('e2e::rel_persons') WHERE age <> 30 ORDER BY id",
-    "generatedSql" : "select \"root\".id as \"id\", \"root\".name as \"name\" from public.persons as \"root\" where \"root\".age is distinct from 30 order by \"id\"",
+    "generatedSql" : "select \"root\".id as \"id\", \"root\".name as \"name\" from public.persons as \"root\" where (\"root\".age is distinct from 30) order by \"id\"",
     "generatedLambda" : "|e2e::Person.all()->meta::pure::functions::relation::project(\n  ~[\n     id: x: e2e::Person[1]|$x.id,\n     name: x: e2e::Person[1]|$x.name,\n     age: x: e2e::Person[1]|$x.age,\n     salary: x: e2e::Person[1]|$x.salary,\n     hire_date: x: e2e::Person[1]|$x.hireDate,\n     active: x: e2e::Person[1]|$x.active,\n     dept_id: x: e2e::Person[1]|$x.deptId\n   ]\n)->meta::pure::functions::relation::filter(\n  x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|$x.age != 30\n)->meta::pure::functions::relation::select(\n  ~[\n     id,\n     name\n   ]\n)->meta::pure::functions::relation::sort(\n  ~id->meta::pure::functions::relation::ascending()\n)",
     "error" : null,
     "diffs" : [ "Row count mismatch: expected 8 but got 9" ]
@@ -11612,17 +11601,6 @@
     "error" : "Execution error at (resource:/core_relational/relational/functions/tableToTDS.pure line:48 column:108), \"Cast exception: Class cannot be cast to DataType\"",
     "diffs" : null
   }, {
-    "id" : "json_arrow_get_field",
-    "category" : "operators/json_operators",
-    "path" : "Relation",
-    "state" : "FAIL",
-    "sql" : "SELECT json_val -> 'a' AS result FROM json_data WHERE id = 1",
-    "rewrittenSql" : "SELECT json_val -> 'a' AS result FROM func('e2e::rel_json_data') WHERE id = 1",
-    "generatedSql" : "select jsonb_extract_path(cast(\"json_data_0\".json_val as jsonb), Text'a') as \"result\" from public.json_data as \"json_data_0\" where \"json_data_0\".id = 1",
-    "generatedLambda" : "|#>{e2e::TestDB.public.json_data}#->meta::pure::functions::relation::filter(\n  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 1\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.json_val->meta::pure::functions::variant::navigation::get('a')\n   ]\n)",
-    "error" : null,
-    "diffs" : [ "Row 0, column 'result': expected '1' but got '\"1\"'" ]
-  }, {
     "id" : "jsonb_arrow_get_field",
     "category" : "operators/json_operators",
     "path" : "TDS",
@@ -11633,17 +11611,6 @@
     "generatedLambda" : null,
     "error" : "Execution error at (resource:/core_relational/relational/functions/tableToTDS.pure line:48 column:108), \"Cast exception: Class cannot be cast to DataType\"",
     "diffs" : null
-  }, {
-    "id" : "jsonb_arrow_get_field",
-    "category" : "operators/json_operators",
-    "path" : "Relation",
-    "state" : "FAIL",
-    "sql" : "SELECT jsonb_val -> 'b' AS result FROM json_data WHERE id = 1",
-    "rewrittenSql" : "SELECT jsonb_val -> 'b' AS result FROM func('e2e::rel_json_data') WHERE id = 1",
-    "generatedSql" : "select jsonb_extract_path(cast(\"json_data_0\".jsonb_val as jsonb), Text'b') as \"result\" from public.json_data as \"json_data_0\" where \"json_data_0\".id = 1",
-    "generatedLambda" : "|#>{e2e::TestDB.public.json_data}#->meta::pure::functions::relation::filter(\n  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 1\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.jsonb_val->meta::pure::functions::variant::navigation::get('b')\n   ]\n)",
-    "error" : null,
-    "diffs" : [ "Row 0, column 'result': expected '\"hello\"' but got '\"\\\"hello\\\"\"'" ]
   }, {
     "id" : "json_arrow_get_index",
     "category" : "operators/json_operators",
@@ -11656,17 +11623,6 @@
     "error" : "Execution error at (resource:/core_relational/relational/functions/tableToTDS.pure line:48 column:108), \"Cast exception: Class cannot be cast to DataType\"",
     "diffs" : null
   }, {
-    "id" : "json_arrow_get_index",
-    "category" : "operators/json_operators",
-    "path" : "Relation",
-    "state" : "FAIL",
-    "sql" : "SELECT json_arr -> 0 AS result FROM json_data WHERE id = 1",
-    "rewrittenSql" : "SELECT json_arr -> 0 AS result FROM func('e2e::rel_json_data') WHERE id = 1",
-    "generatedSql" : "select (cast(\"json_data_0\".json_arr as jsonb)->0) as \"result\" from public.json_data as \"json_data_0\" where \"json_data_0\".id = 1",
-    "generatedLambda" : "|#>{e2e::TestDB.public.json_data}#->meta::pure::functions::relation::filter(\n  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 1\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.json_arr->meta::pure::functions::variant::navigation::get(0)\n   ]\n)",
-    "error" : null,
-    "diffs" : [ "Row 0, column 'result': expected '1' but got '\"1\"'" ]
-  }, {
     "id" : "jsonb_arrow_get_index",
     "category" : "operators/json_operators",
     "path" : "TDS",
@@ -11677,17 +11633,6 @@
     "generatedLambda" : null,
     "error" : "Execution error at (resource:/core_relational/relational/functions/tableToTDS.pure line:48 column:108), \"Cast exception: Class cannot be cast to DataType\"",
     "diffs" : null
-  }, {
-    "id" : "jsonb_arrow_get_index",
-    "category" : "operators/json_operators",
-    "path" : "Relation",
-    "state" : "FAIL",
-    "sql" : "SELECT jsonb_arr -> 1 AS result FROM json_data WHERE id = 1",
-    "rewrittenSql" : "SELECT jsonb_arr -> 1 AS result FROM func('e2e::rel_json_data') WHERE id = 1",
-    "generatedSql" : "select (cast(\"json_data_0\".jsonb_arr as jsonb)->1) as \"result\" from public.json_data as \"json_data_0\" where \"json_data_0\".id = 1",
-    "generatedLambda" : "|#>{e2e::TestDB.public.json_data}#->meta::pure::functions::relation::filter(\n  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 1\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.jsonb_arr->meta::pure::functions::variant::navigation::get(1)\n   ]\n)",
-    "error" : null,
-    "diffs" : [ "Row 0, column 'result': expected '2' but got '\"2\"'" ]
   }, {
     "id" : "json_arrow_text_get_field",
     "category" : "operators/json_operators",
@@ -11744,17 +11689,6 @@
     "error" : "Execution error at (resource:/core_relational/relational/functions/tableToTDS.pure line:48 column:108), \"Cast exception: Class cannot be cast to DataType\"",
     "diffs" : null
   }, {
-    "id" : "json_hash_arrow_path",
-    "category" : "operators/json_operators",
-    "path" : "Relation",
-    "state" : "FAIL",
-    "sql" : "SELECT json_val #> '{a,b,c}' AS result FROM json_data WHERE id = 2",
-    "rewrittenSql" : "SELECT json_val #> '{a,b,c}' AS result FROM func('e2e::rel_json_data') WHERE id = 2",
-    "generatedSql" : "select jsonb_extract_path(cast(jsonb_extract_path(cast(jsonb_extract_path(cast(\"json_data_0\".json_val as jsonb), Text'a') as jsonb), Text'b') as jsonb), Text'c') as \"result\" from public.json_data as \"json_data_0\" where \"json_data_0\".id = 2",
-    "generatedLambda" : "|#>{e2e::TestDB.public.json_data}#->meta::pure::functions::relation::filter(\n  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 2\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.json_val->meta::pure::functions::variant::navigation::get('a')->meta::pure::functions::variant::navigation::get('b')->meta::pure::functions::variant::navigation::get('c')\n   ]\n)",
-    "error" : null,
-    "diffs" : [ "Row 0, column 'result': expected '\"nested\"' but got '\"\\\"nested\\\"\"'" ]
-  }, {
     "id" : "jsonb_hash_arrow_path",
     "category" : "operators/json_operators",
     "path" : "TDS",
@@ -11765,17 +11699,6 @@
     "generatedLambda" : null,
     "error" : "Execution error at (resource:/core_relational/relational/functions/tableToTDS.pure line:48 column:108), \"Cast exception: Class cannot be cast to DataType\"",
     "diffs" : null
-  }, {
-    "id" : "jsonb_hash_arrow_path",
-    "category" : "operators/json_operators",
-    "path" : "Relation",
-    "state" : "FAIL",
-    "sql" : "SELECT jsonb_val #> '{a,b,c}' AS result FROM json_data WHERE id = 2",
-    "rewrittenSql" : "SELECT jsonb_val #> '{a,b,c}' AS result FROM func('e2e::rel_json_data') WHERE id = 2",
-    "generatedSql" : "select jsonb_extract_path(cast(jsonb_extract_path(cast(jsonb_extract_path(cast(\"json_data_0\".jsonb_val as jsonb), Text'a') as jsonb), Text'b') as jsonb), Text'c') as \"result\" from public.json_data as \"json_data_0\" where \"json_data_0\".id = 2",
-    "generatedLambda" : "|#>{e2e::TestDB.public.json_data}#->meta::pure::functions::relation::filter(\n  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 2\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.jsonb_val->meta::pure::functions::variant::navigation::get('a')->meta::pure::functions::variant::navigation::get('b')->meta::pure::functions::variant::navigation::get('c')\n   ]\n)",
-    "error" : null,
-    "diffs" : [ "Row 0, column 'result': expected '\"nested\"' but got '\"\\\"nested\\\"\"'" ]
   }, {
     "id" : "json_hash_arrow_text_path",
     "category" : "operators/json_operators",
@@ -12214,7 +12137,7 @@
     "rewrittenSql" : "SELECT jsonb_val <> '{\"a\":1}' AS result FROM func('e2e::rel_json_data') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "ERROR: operator does not exist: jsonb = text\\n  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.\\n  Position: 95",
+    "error" : "ERROR: operator does not exist: jsonb = text\\n  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.\\n  Position: 96",
     "diffs" : null
   }, {
     "id" : "jsonb_lt",
@@ -22268,7 +22191,7 @@
     "rewrittenSql" : "SELECT dept_id FROM func('e2e::tds_persons') UNION SELECT NULL ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:3182 column:77), \"Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor\"",
+    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:3217 column:77), \"Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor\"",
     "diffs" : null
   }, {
     "id" : "union_dedup_null",
@@ -22939,7 +22862,7 @@
     "rewrittenSql" : "WITH order_totals AS (SELECT person_id, SUM(amount) AS total_orders FROM func('e2e::tds_orders') GROUP BY person_id) SELECT p.name, COALESCE(o.total_orders, 0) AS total FROM func('e2e::tds_persons') p LEFT JOIN order_totals o ON p.id = o.person_id ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7858 column:36), \"Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery\"",
+    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7892 column:36), \"Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery\"",
     "diffs" : null
   }, {
     "id" : "cte_in_join",
@@ -22961,7 +22884,7 @@
     "rewrittenSql" : "WITH dept_avg AS (SELECT dept_id, AVG(salary) AS avg_sal FROM func('e2e::tds_persons') WHERE salary IS NOT NULL GROUP BY dept_id) SELECT d.name, COALESCE(da.avg_sal, 0) AS avg_salary FROM func('e2e::tds_departments') d LEFT JOIN dept_avg da ON d.id = da.dept_id ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7858 column:36), \"Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery\"",
+    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7892 column:36), \"Cast exception: SelectSQLQuery cannot be cast to TdsSelectSqlQuery\"",
     "diffs" : null
   }, {
     "id" : "cte_in_join_dept",
@@ -23687,7 +23610,7 @@
     "rewrittenSql" : "SELECT p.name, COUNT(*) AS cnt FROM func('e2e::rel_persons') p CROSS JOIN LATERAL UNNEST(ARRAY[1, 2, 3]) AS u(val) WHERE p.id <= 2 GROUP BY p.name ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7367 column:21), \"Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor\"",
+    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7401 column:21), \"Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor\"",
     "diffs" : null
   }, {
     "id" : "lateral_unnest_aggregate_sum",
@@ -23929,7 +23852,7 @@
     "rewrittenSql" : "SELECT p.name, u.val FROM func('e2e::rel_persons') p CROSS JOIN LATERAL UNNEST(STRING_TO_ARRAY('a,b,c', ',')) AS u(val) WHERE p.id = 1 ORDER BY 2",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7367 column:21), \"Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor\"",
+    "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:7401 column:21), \"Cast exception: ClassInstanceHolder cannot be cast to SelectWithCursor\"",
     "diffs" : null
   }, {
     "id" : "lateral_unnest_string_to_array_correlated",
@@ -24229,17 +24152,6 @@
     "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery_deprecated.pure line:282 column:90), \"Match failure: 1 instanceOf class org.finos.legend.pure.runtime.java.extension.external.variant.VariantInstanceImpl\"",
     "diffs" : null
   }, {
-    "id" : "json_extract_field",
-    "category" : "structural/json_operators",
-    "path" : "Relation",
-    "state" : "ERROR",
-    "sql" : "SELECT '{\"a\":1,\"b\":2}'::jsonb -> 'a' AS result FROM persons WHERE id = 1",
-    "rewrittenSql" : "SELECT '{\"a\":1,\"b\":2}'::jsonb -> 'a' AS result FROM func('e2e::rel_persons') WHERE id = 1",
-    "generatedSql" : null,
-    "generatedLambda" : null,
-    "error" : "Error mapping not found for class Map cache:''",
-    "diffs" : null
-  }, {
     "id" : "json_extract_field_nested",
     "category" : "structural/json_operators",
     "path" : "TDS",
@@ -24249,17 +24161,6 @@
     "generatedSql" : null,
     "generatedLambda" : null,
     "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery_deprecated.pure line:282 column:90), \"Match failure: 3 instanceOf class org.finos.legend.pure.runtime.java.extension.external.variant.VariantInstanceImpl\"",
-    "diffs" : null
-  }, {
-    "id" : "json_extract_field_nested",
-    "category" : "structural/json_operators",
-    "path" : "Relation",
-    "state" : "ERROR",
-    "sql" : "SELECT '{\"a\":{\"b\":3}}'::jsonb -> 'a' -> 'b' AS result FROM persons WHERE id = 1",
-    "rewrittenSql" : "SELECT '{\"a\":{\"b\":3}}'::jsonb -> 'a' -> 'b' AS result FROM func('e2e::rel_persons') WHERE id = 1",
-    "generatedSql" : null,
-    "generatedLambda" : null,
-    "error" : "Error mapping not found for class Map cache:''",
     "diffs" : null
   }, {
     "id" : "json_extract_array_index",
@@ -24273,17 +24174,6 @@
     "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery_deprecated.pure line:282 column:90), \"Match failure: 20 instanceOf class org.finos.legend.pure.runtime.java.extension.external.variant.VariantInstanceImpl\"",
     "diffs" : null
   }, {
-    "id" : "json_extract_array_index",
-    "category" : "structural/json_operators",
-    "path" : "Relation",
-    "state" : "FAIL",
-    "sql" : "SELECT '[10,20,30]'::jsonb -> 1 AS result FROM persons WHERE id = 1",
-    "rewrittenSql" : "SELECT '[10,20,30]'::jsonb -> 1 AS result FROM func('e2e::rel_persons') WHERE id = 1",
-    "generatedSql" : "select (cast(cast(Text'[10,20,30]' as JSONB) as jsonb)->1) as \"result\" from public.persons as \"root\" where \"root\".id = 1",
-    "generatedLambda" : "|e2e::Person.all()->meta::pure::functions::relation::project(\n  ~[\n     id: x: e2e::Person[1]|$x.id,\n     name: x: e2e::Person[1]|$x.name,\n     age: x: e2e::Person[1]|$x.age,\n     salary: x: e2e::Person[1]|$x.salary,\n     hire_date: x: e2e::Person[1]|$x.hireDate,\n     active: x: e2e::Person[1]|$x.active,\n     dept_id: x: e2e::Person[1]|$x.deptId\n   ]\n)->meta::pure::functions::relation::filter(\n  x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|$x.id == 1\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|meta::pure::functions::variant::convert::fromJson('[10,20,30]')->meta::pure::functions::variant::navigation::get(1)\n   ]\n)",
-    "error" : null,
-    "diffs" : [ "Row 0, column 'result': expected '20' but got '\"20\"'" ]
-  }, {
     "id" : "json_extract_array_negative_index",
     "category" : "structural/json_operators",
     "path" : "TDS",
@@ -24293,50 +24183,6 @@
     "generatedSql" : null,
     "generatedLambda" : null,
     "error" : "Execution error at ??, \"The system is trying to get an element at offset -1 where the collection is of size 3\"",
-    "diffs" : null
-  }, {
-    "id" : "json_extract_array_negative_index",
-    "category" : "structural/json_operators",
-    "path" : "Relation",
-    "state" : "FAIL",
-    "sql" : "SELECT '[10,20,30]'::jsonb -> -1 AS result FROM persons WHERE id = 1",
-    "rewrittenSql" : "SELECT '[10,20,30]'::jsonb -> -1 AS result FROM func('e2e::rel_persons') WHERE id = 1",
-    "generatedSql" : "select (cast(cast(Text'[10,20,30]' as JSONB) as jsonb)->-1) as \"result\" from public.persons as \"root\" where \"root\".id = 1",
-    "generatedLambda" : "|e2e::Person.all()->meta::pure::functions::relation::project(\n  ~[\n     id: x: e2e::Person[1]|$x.id,\n     name: x: e2e::Person[1]|$x.name,\n     age: x: e2e::Person[1]|$x.age,\n     salary: x: e2e::Person[1]|$x.salary,\n     hire_date: x: e2e::Person[1]|$x.hireDate,\n     active: x: e2e::Person[1]|$x.active,\n     dept_id: x: e2e::Person[1]|$x.deptId\n   ]\n)->meta::pure::functions::relation::filter(\n  x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|$x.id == 1\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|meta::pure::functions::variant::convert::fromJson('[10,20,30]')->meta::pure::functions::variant::navigation::get(\n    -1\n  )\n   ]\n)",
-    "error" : null,
-    "diffs" : [ "Row 0, column 'result': expected '30' but got '\"30\"'" ]
-  }, {
-    "id" : "json_extract_text_field",
-    "category" : "structural/json_operators",
-    "path" : "Relation",
-    "state" : "ERROR",
-    "sql" : "SELECT '{\"a\":\"hello\",\"b\":2}'::jsonb ->> 'a' AS result FROM persons WHERE id = 1",
-    "rewrittenSql" : "SELECT '{\"a\":\"hello\",\"b\":2}'::jsonb ->> 'a' AS result FROM func('e2e::rel_persons') WHERE id = 1",
-    "generatedSql" : null,
-    "generatedLambda" : null,
-    "error" : "Error mapping not found for class Map cache:''",
-    "diffs" : null
-  }, {
-    "id" : "json_extract_text_number",
-    "category" : "structural/json_operators",
-    "path" : "Relation",
-    "state" : "ERROR",
-    "sql" : "SELECT '{\"a\":1,\"b\":2}'::jsonb ->> 'a' AS result FROM persons WHERE id = 1",
-    "rewrittenSql" : "SELECT '{\"a\":1,\"b\":2}'::jsonb ->> 'a' AS result FROM func('e2e::rel_persons') WHERE id = 1",
-    "generatedSql" : null,
-    "generatedLambda" : null,
-    "error" : "Error mapping not found for class Map cache:''",
-    "diffs" : null
-  }, {
-    "id" : "json_extract_text_null_key",
-    "category" : "structural/json_operators",
-    "path" : "Relation",
-    "state" : "ERROR",
-    "sql" : "SELECT '{\"a\":1}'::jsonb ->> 'missing' AS result FROM persons WHERE id = 1",
-    "rewrittenSql" : "SELECT '{\"a\":1}'::jsonb ->> 'missing' AS result FROM func('e2e::rel_persons') WHERE id = 1",
-    "generatedSql" : null,
-    "generatedLambda" : null,
-    "error" : "Error mapping not found for class Map cache:''",
     "diffs" : null
   }, {
     "id" : "json_path_extract",
@@ -24353,13 +24199,13 @@
     "id" : "json_path_extract",
     "category" : "structural/json_operators",
     "path" : "Relation",
-    "state" : "ERROR",
+    "state" : "FAIL",
     "sql" : "SELECT '{\"a\":{\"b\":{\"c\":42}}}'::jsonb #> '{a,b}' AS result FROM persons WHERE id = 1",
     "rewrittenSql" : "SELECT '{\"a\":{\"b\":{\"c\":42}}}'::jsonb #> '{a,b}' AS result FROM func('e2e::rel_persons') WHERE id = 1",
-    "generatedSql" : null,
-    "generatedLambda" : null,
-    "error" : "Error mapping not found for class Map cache:''",
-    "diffs" : null
+    "generatedSql" : "select jsonb_extract_path(cast(jsonb_extract_path(cast(cast(Text'{\"a\":{\"b\":{\"c\":42}}}' as JSONB) as jsonb), Text'a') as jsonb), Text'b') as \"result\" from public.persons as \"root\" where \"root\".id = 1",
+    "generatedLambda" : "|e2e::Person.all()->meta::pure::functions::relation::project(\n  ~[\n     id: x: e2e::Person[1]|$x.id,\n     name: x: e2e::Person[1]|$x.name,\n     age: x: e2e::Person[1]|$x.age,\n     salary: x: e2e::Person[1]|$x.salary,\n     hire_date: x: e2e::Person[1]|$x.hireDate,\n     active: x: e2e::Person[1]|$x.active,\n     dept_id: x: e2e::Person[1]|$x.deptId\n   ]\n)->meta::pure::functions::relation::filter(\n  x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|$x.id == 1\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|meta::pure::functions::variant::convert::fromJson('{\"a\":{\"b\":{\"c\":42}}}')->meta::pure::functions::variant::navigation::get('a')->meta::pure::functions::variant::navigation::get('b')\n   ]\n)",
+    "error" : null,
+    "diffs" : [ "Row 0, column 'result': expected '{\"c\": 42}' but got '{\"c\":42}'" ]
   }, {
     "id" : "json_path_extract_array",
     "category" : "structural/json_operators",
@@ -24372,17 +24218,6 @@
     "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery_deprecated.pure line:282 column:90), \"Match failure: 2 instanceOf class org.finos.legend.pure.runtime.java.extension.external.variant.VariantInstanceImpl\"",
     "diffs" : null
   }, {
-    "id" : "json_path_extract_array",
-    "category" : "structural/json_operators",
-    "path" : "Relation",
-    "state" : "ERROR",
-    "sql" : "SELECT '{\"a\":[1,2,3]}'::jsonb #> '{a,1}' AS result FROM persons WHERE id = 1",
-    "rewrittenSql" : "SELECT '{\"a\":[1,2,3]}'::jsonb #> '{a,1}' AS result FROM func('e2e::rel_persons') WHERE id = 1",
-    "generatedSql" : null,
-    "generatedLambda" : null,
-    "error" : "Error mapping not found for class Map cache:''",
-    "diffs" : null
-  }, {
     "id" : "json_path_extract_deep",
     "category" : "structural/json_operators",
     "path" : "TDS",
@@ -24392,39 +24227,6 @@
     "generatedSql" : null,
     "generatedLambda" : null,
     "error" : "Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery_deprecated.pure line:282 column:90), \"Match failure: \"deep\" instanceOf class org.finos.legend.pure.runtime.java.extension.external.variant.VariantInstanceImpl\"",
-    "diffs" : null
-  }, {
-    "id" : "json_path_extract_deep",
-    "category" : "structural/json_operators",
-    "path" : "Relation",
-    "state" : "ERROR",
-    "sql" : "SELECT '{\"a\":{\"b\":{\"c\":\"deep\"}}}'::jsonb #> '{a,b,c}' AS result FROM persons WHERE id = 1",
-    "rewrittenSql" : "SELECT '{\"a\":{\"b\":{\"c\":\"deep\"}}}'::jsonb #> '{a,b,c}' AS result FROM func('e2e::rel_persons') WHERE id = 1",
-    "generatedSql" : null,
-    "generatedLambda" : null,
-    "error" : "Error mapping not found for class Map cache:''",
-    "diffs" : null
-  }, {
-    "id" : "json_path_extract_text",
-    "category" : "structural/json_operators",
-    "path" : "Relation",
-    "state" : "ERROR",
-    "sql" : "SELECT '{\"a\":{\"b\":\"hello\"}}'::jsonb #>> '{a,b}' AS result FROM persons WHERE id = 1",
-    "rewrittenSql" : "SELECT '{\"a\":{\"b\":\"hello\"}}'::jsonb #>> '{a,b}' AS result FROM func('e2e::rel_persons') WHERE id = 1",
-    "generatedSql" : null,
-    "generatedLambda" : null,
-    "error" : "Error mapping not found for class Map cache:''",
-    "diffs" : null
-  }, {
-    "id" : "json_path_extract_text_number",
-    "category" : "structural/json_operators",
-    "path" : "Relation",
-    "state" : "ERROR",
-    "sql" : "SELECT '{\"a\":{\"b\":42}}'::jsonb #>> '{a,b}' AS result FROM persons WHERE id = 1",
-    "rewrittenSql" : "SELECT '{\"a\":{\"b\":42}}'::jsonb #>> '{a,b}' AS result FROM func('e2e::rel_persons') WHERE id = 1",
-    "generatedSql" : null,
-    "generatedLambda" : null,
-    "error" : "Error mapping not found for class Map cache:''",
     "diffs" : null
   }, {
     "id" : "jsonb_contains_right",
@@ -24975,17 +24777,6 @@
     "generatedSql" : null,
     "generatedLambda" : null,
     "error" : "No value found for JSONB_PATH_PREDICATE_CHECK",
-    "diffs" : null
-  }, {
-    "id" : "json_extract_then_text",
-    "category" : "structural/json_operators",
-    "path" : "Relation",
-    "state" : "ERROR",
-    "sql" : "SELECT '{\"a\":{\"b\":\"value\"}}'::jsonb -> 'a' ->> 'b' AS result FROM persons WHERE id = 1",
-    "rewrittenSql" : "SELECT '{\"a\":{\"b\":\"value\"}}'::jsonb -> 'a' ->> 'b' AS result FROM func('e2e::rel_persons') WHERE id = 1",
-    "generatedSql" : null,
-    "generatedLambda" : null,
-    "error" : "Error mapping not found for class Map cache:''",
     "diffs" : null
   }, {
     "id" : "jsonb_contains_in_where",
@@ -28229,8 +28020,8 @@
     },
     "name" : "operators/json_operators",
     "relation" : {
-      "pass" : 10,
-      "fail" : 6,
+      "pass" : 16,
+      "fail" : 0,
       "error" : 21,
       "skip" : 0,
       "bug" : 0,
@@ -28769,9 +28560,9 @@
     },
     "name" : "structural/json_operators",
     "relation" : {
-      "pass" : 7,
-      "fail" : 2,
-      "error" : 37,
+      "pass" : 19,
+      "fail" : 1,
+      "error" : 26,
       "skip" : 0,
       "bug" : 0,
       "total" : 46
@@ -28949,8 +28740,8 @@
     },
     "name" : "functions/json_functions",
     "relation" : {
-      "pass" : 1,
-      "fail" : 1,
+      "pass" : 2,
+      "fail" : 0,
       "error" : 53,
       "skip" : 0,
       "bug" : 1,
@@ -29715,7 +29506,7 @@
     "sql" : "SELECT DEGREES(float_val) AS result FROM numbers WHERE float_val IS NOT NULL ORDER BY 1"
   }, {
     "path" : "TDS",
-    "generatedSql" : "select ((1.0 * \"root\".numeric_val) / 3.0) as \"result\" from public.numbers as \"root\" where (\"root\".numeric_val is not null and \"root\".numeric_val is distinct from 0) order by \"result\"",
+    "generatedSql" : "select ((1.0 * \"root\".numeric_val) / 3.0) as \"result\" from public.numbers as \"root\" where (\"root\".numeric_val is not null and (\"root\".numeric_val is distinct from 0)) order by \"result\"",
     "id" : "div__num_num__from_table",
     "state" : "FAIL",
     "rewrittenSql" : "SELECT DIV(numeric_val, 3.0) AS result FROM func('e2e::tds_numbers') WHERE numeric_val IS NOT NULL AND numeric_val <> 0 ORDER BY 1",
@@ -29723,7 +29514,7 @@
     "generatedLambda" : "|e2e::NumberRow.all()->meta::pure::tds::project(\n  [\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.id,\n      'id'\n    ),\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.intVal,\n      'int_val'\n    ),\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.floatVal,\n      'float_val'\n    ),\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.numericVal,\n      'numeric_val'\n    ),\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.smallVal,\n      'small_val'\n    ),\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.bigVal,\n      'big_val'\n    )\n  ]\n)->meta::pure::tds::filter(\n  row: meta::pure::tds::TDSRow[1]|$row.getFloat('numeric_val')->meta::pure::functions::collection::isNotEmpty() &&\n    $row.getFloat('numeric_val') != 0\n)->meta::pure::tds::project(\n  meta::pure::tds::col(\n      row: meta::pure::tds::TDSRow[1]|$row.getFloat('numeric_val') / 3.0,\n      'result'\n    )\n)->meta::pure::tds::sort(\n  meta::pure::tds::asc('result')\n)"
   }, {
     "path" : "Relation",
-    "generatedSql" : "select ((1.0 * \"root\".numeric_val) / 3.0) as \"result\" from public.numbers as \"root\" where (\"root\".numeric_val is not null and \"root\".numeric_val is distinct from 0) order by \"result\"",
+    "generatedSql" : "select ((1.0 * \"root\".numeric_val) / 3.0) as \"result\" from public.numbers as \"root\" where (\"root\".numeric_val is not null and (\"root\".numeric_val is distinct from 0)) order by \"result\"",
     "id" : "div__num_num__from_table",
     "state" : "FAIL",
     "rewrittenSql" : "SELECT DIV(numeric_val, 3.0) AS result FROM func('e2e::rel_numbers') WHERE numeric_val IS NOT NULL AND numeric_val <> 0 ORDER BY 1",
@@ -35477,12 +35268,10 @@
     "sql" : "SELECT JSON_EXTRACT_PATH(json_val, 'a', 'b', 'c') AS result FROM json_data WHERE id = 2"
   }, {
     "path" : "Relation",
-    "generatedSql" : "select jsonb_extract_path(cast(jsonb_extract_path(cast(jsonb_extract_path(cast(\"json_data_0\".json_val as jsonb), Text'a') as jsonb), Text'b') as jsonb), Text'c') as \"result\" from public.json_data as \"json_data_0\" where \"json_data_0\".id = 2",
     "id" : "json_extract_path__from_column",
-    "state" : "FAIL",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT JSON_EXTRACT_PATH(json_val, 'a', 'b', 'c') AS result FROM func('e2e::rel_json_data') WHERE id = 2",
-    "sql" : "SELECT JSON_EXTRACT_PATH(json_val, 'a', 'b', 'c') AS result FROM json_data WHERE id = 2",
-    "generatedLambda" : "|#>{e2e::TestDB.public.json_data}#->meta::pure::functions::relation::filter(\n  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 2\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.json_val->meta::pure::functions::variant::navigation::get('a')->meta::pure::functions::variant::navigation::get('b')->meta::pure::functions::variant::navigation::get('c')\n   ]\n)"
+    "sql" : "SELECT JSON_EXTRACT_PATH(json_val, 'a', 'b', 'c') AS result FROM json_data WHERE id = 2"
   }, {
     "path" : "TDS",
     "id" : "json_extract_path_text__from_column",
@@ -41093,7 +40882,7 @@
     "sql" : "SELECT id, int_val <> 999 AS result FROM numbers WHERE id = 1"
   }, {
     "path" : "TDS",
-    "generatedSql" : "select \"root\".id as \"id\", \"root\".int_val is distinct from 42 as \"result\" from public.numbers as \"root\" where \"root\".id = 5",
+    "generatedSql" : "select \"root\".id as \"id\", (\"root\".int_val is distinct from 42) as \"result\" from public.numbers as \"root\" where \"root\".id = 5",
     "id" : "neq__int__null",
     "state" : "FAIL",
     "rewrittenSql" : "SELECT id, int_val <> 42 AS result FROM func('e2e::tds_numbers') WHERE id = 5",
@@ -41101,7 +40890,7 @@
     "generatedLambda" : "|e2e::NumberRow.all()->meta::pure::tds::project(\n  [\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.id,\n      'id'\n    ),\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.intVal,\n      'int_val'\n    ),\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.floatVal,\n      'float_val'\n    ),\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.numericVal,\n      'numeric_val'\n    ),\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.smallVal,\n      'small_val'\n    ),\n    meta::pure::tds::col(\n      x: e2e::NumberRow[1]|$x.bigVal,\n      'big_val'\n    )\n  ]\n)->meta::pure::tds::filter(\n  row: meta::pure::tds::TDSRow[1]|$row.getInteger('id') == 5\n)->meta::pure::tds::project(\n  [\n    meta::pure::tds::col(\n      row: meta::pure::tds::TDSRow[1]|$row.getInteger('id'),\n      'id'\n    ),\n    meta::pure::tds::col(\n      row: meta::pure::tds::TDSRow[1]|$row.getInteger('int_val') != 42,\n      'result'\n    )\n  ]\n)"
   }, {
     "path" : "Relation",
-    "generatedSql" : "select \"root\".id as \"id\", \"root\".int_val is distinct from 42 as \"result\" from public.numbers as \"root\" where \"root\".id = 5",
+    "generatedSql" : "select \"root\".id as \"id\", (\"root\".int_val is distinct from 42) as \"result\" from public.numbers as \"root\" where \"root\".id = 5",
     "id" : "neq__int__null",
     "state" : "FAIL",
     "rewrittenSql" : "SELECT id, int_val <> 42 AS result FROM func('e2e::rel_numbers') WHERE id = 5",
@@ -41545,7 +41334,7 @@
     "sql" : "SELECT id, name FROM persons WHERE age = 30 ORDER BY id"
   }, {
     "path" : "TDS",
-    "generatedSql" : "select \"root\".id as \"id\", \"root\".name as \"name\" from public.persons as \"root\" where \"root\".age is distinct from 30 order by \"id\"",
+    "generatedSql" : "select \"root\".id as \"id\", \"root\".name as \"name\" from public.persons as \"root\" where (\"root\".age is distinct from 30) order by \"id\"",
     "id" : "neq__filter__int",
     "state" : "FAIL",
     "rewrittenSql" : "SELECT id, name FROM func('e2e::tds_persons') WHERE age <> 30 ORDER BY id",
@@ -41553,7 +41342,7 @@
     "generatedLambda" : "|e2e::Person.all()->meta::pure::tds::project(\n  [\n    meta::pure::tds::col(\n      x: e2e::Person[1]|$x.id,\n      'id'\n    ),\n    meta::pure::tds::col(\n      x: e2e::Person[1]|$x.name,\n      'name'\n    ),\n    meta::pure::tds::col(\n      x: e2e::Person[1]|$x.age,\n      'age'\n    ),\n    meta::pure::tds::col(\n      x: e2e::Person[1]|$x.salary,\n      'salary'\n    ),\n    meta::pure::tds::col(\n      x: e2e::Person[1]|$x.hireDate,\n      'hire_date'\n    ),\n    meta::pure::tds::col(\n      x: e2e::Person[1]|$x.active,\n      'active'\n    ),\n    meta::pure::tds::col(\n      x: e2e::Person[1]|$x.deptId,\n      'dept_id'\n    )\n  ]\n)->meta::pure::tds::filter(\n  row: meta::pure::tds::TDSRow[1]|$row.getInteger('age') != 30\n)->meta::pure::tds::restrict(\n  [\n    'id',\n    'name'\n  ]\n)->meta::pure::tds::sort(\n  meta::pure::tds::asc('id')\n)"
   }, {
     "path" : "Relation",
-    "generatedSql" : "select \"root\".id as \"id\", \"root\".name as \"name\" from public.persons as \"root\" where \"root\".age is distinct from 30 order by \"id\"",
+    "generatedSql" : "select \"root\".id as \"id\", \"root\".name as \"name\" from public.persons as \"root\" where (\"root\".age is distinct from 30) order by \"id\"",
     "id" : "neq__filter__int",
     "state" : "FAIL",
     "rewrittenSql" : "SELECT id, name FROM func('e2e::rel_persons') WHERE age <> 30 ORDER BY id",
@@ -42277,12 +42066,10 @@
     "sql" : "SELECT json_val -> 'a' AS result FROM json_data WHERE id = 1"
   }, {
     "path" : "Relation",
-    "generatedSql" : "select jsonb_extract_path(cast(\"json_data_0\".json_val as jsonb), Text'a') as \"result\" from public.json_data as \"json_data_0\" where \"json_data_0\".id = 1",
     "id" : "json_arrow_get_field",
-    "state" : "FAIL",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT json_val -> 'a' AS result FROM func('e2e::rel_json_data') WHERE id = 1",
-    "sql" : "SELECT json_val -> 'a' AS result FROM json_data WHERE id = 1",
-    "generatedLambda" : "|#>{e2e::TestDB.public.json_data}#->meta::pure::functions::relation::filter(\n  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 1\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.json_val->meta::pure::functions::variant::navigation::get('a')\n   ]\n)"
+    "sql" : "SELECT json_val -> 'a' AS result FROM json_data WHERE id = 1"
   }, {
     "path" : "TDS",
     "id" : "jsonb_arrow_get_field",
@@ -42291,12 +42078,10 @@
     "sql" : "SELECT jsonb_val -> 'b' AS result FROM json_data WHERE id = 1"
   }, {
     "path" : "Relation",
-    "generatedSql" : "select jsonb_extract_path(cast(\"json_data_0\".jsonb_val as jsonb), Text'b') as \"result\" from public.json_data as \"json_data_0\" where \"json_data_0\".id = 1",
     "id" : "jsonb_arrow_get_field",
-    "state" : "FAIL",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT jsonb_val -> 'b' AS result FROM func('e2e::rel_json_data') WHERE id = 1",
-    "sql" : "SELECT jsonb_val -> 'b' AS result FROM json_data WHERE id = 1",
-    "generatedLambda" : "|#>{e2e::TestDB.public.json_data}#->meta::pure::functions::relation::filter(\n  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 1\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.jsonb_val->meta::pure::functions::variant::navigation::get('b')\n   ]\n)"
+    "sql" : "SELECT jsonb_val -> 'b' AS result FROM json_data WHERE id = 1"
   }, {
     "path" : "TDS",
     "id" : "json_arrow_get_index",
@@ -42305,12 +42090,10 @@
     "sql" : "SELECT json_arr -> 0 AS result FROM json_data WHERE id = 1"
   }, {
     "path" : "Relation",
-    "generatedSql" : "select (cast(\"json_data_0\".json_arr as jsonb)->0) as \"result\" from public.json_data as \"json_data_0\" where \"json_data_0\".id = 1",
     "id" : "json_arrow_get_index",
-    "state" : "FAIL",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT json_arr -> 0 AS result FROM func('e2e::rel_json_data') WHERE id = 1",
-    "sql" : "SELECT json_arr -> 0 AS result FROM json_data WHERE id = 1",
-    "generatedLambda" : "|#>{e2e::TestDB.public.json_data}#->meta::pure::functions::relation::filter(\n  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 1\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.json_arr->meta::pure::functions::variant::navigation::get(0)\n   ]\n)"
+    "sql" : "SELECT json_arr -> 0 AS result FROM json_data WHERE id = 1"
   }, {
     "path" : "TDS",
     "id" : "jsonb_arrow_get_index",
@@ -42319,12 +42102,10 @@
     "sql" : "SELECT jsonb_arr -> 1 AS result FROM json_data WHERE id = 1"
   }, {
     "path" : "Relation",
-    "generatedSql" : "select (cast(\"json_data_0\".jsonb_arr as jsonb)->1) as \"result\" from public.json_data as \"json_data_0\" where \"json_data_0\".id = 1",
     "id" : "jsonb_arrow_get_index",
-    "state" : "FAIL",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT jsonb_arr -> 1 AS result FROM func('e2e::rel_json_data') WHERE id = 1",
-    "sql" : "SELECT jsonb_arr -> 1 AS result FROM json_data WHERE id = 1",
-    "generatedLambda" : "|#>{e2e::TestDB.public.json_data}#->meta::pure::functions::relation::filter(\n  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 1\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.jsonb_arr->meta::pure::functions::variant::navigation::get(1)\n   ]\n)"
+    "sql" : "SELECT jsonb_arr -> 1 AS result FROM json_data WHERE id = 1"
   }, {
     "path" : "TDS",
     "id" : "json_arrow_text_get_field",
@@ -42381,12 +42162,10 @@
     "sql" : "SELECT json_val #> '{a,b,c}' AS result FROM json_data WHERE id = 2"
   }, {
     "path" : "Relation",
-    "generatedSql" : "select jsonb_extract_path(cast(jsonb_extract_path(cast(jsonb_extract_path(cast(\"json_data_0\".json_val as jsonb), Text'a') as jsonb), Text'b') as jsonb), Text'c') as \"result\" from public.json_data as \"json_data_0\" where \"json_data_0\".id = 2",
     "id" : "json_hash_arrow_path",
-    "state" : "FAIL",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT json_val #> '{a,b,c}' AS result FROM func('e2e::rel_json_data') WHERE id = 2",
-    "sql" : "SELECT json_val #> '{a,b,c}' AS result FROM json_data WHERE id = 2",
-    "generatedLambda" : "|#>{e2e::TestDB.public.json_data}#->meta::pure::functions::relation::filter(\n  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 2\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.json_val->meta::pure::functions::variant::navigation::get('a')->meta::pure::functions::variant::navigation::get('b')->meta::pure::functions::variant::navigation::get('c')\n   ]\n)"
+    "sql" : "SELECT json_val #> '{a,b,c}' AS result FROM json_data WHERE id = 2"
   }, {
     "path" : "TDS",
     "id" : "jsonb_hash_arrow_path",
@@ -42395,12 +42174,10 @@
     "sql" : "SELECT jsonb_val #> '{a,b,c}' AS result FROM json_data WHERE id = 2"
   }, {
     "path" : "Relation",
-    "generatedSql" : "select jsonb_extract_path(cast(jsonb_extract_path(cast(jsonb_extract_path(cast(\"json_data_0\".jsonb_val as jsonb), Text'a') as jsonb), Text'b') as jsonb), Text'c') as \"result\" from public.json_data as \"json_data_0\" where \"json_data_0\".id = 2",
     "id" : "jsonb_hash_arrow_path",
-    "state" : "FAIL",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT jsonb_val #> '{a,b,c}' AS result FROM func('e2e::rel_json_data') WHERE id = 2",
-    "sql" : "SELECT jsonb_val #> '{a,b,c}' AS result FROM json_data WHERE id = 2",
-    "generatedLambda" : "|#>{e2e::TestDB.public.json_data}#->meta::pure::functions::relation::filter(\n  x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.id == 2\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:meta::pure::precisePrimitives::Int[1], json_val:meta::pure::metamodel::variant::Variant, jsonb_val:meta::pure::metamodel::variant::Variant, json_arr:meta::pure::metamodel::variant::Variant, jsonb_arr:meta::pure::metamodel::variant::Variant)[1]|$x.jsonb_val->meta::pure::functions::variant::navigation::get('a')->meta::pure::functions::variant::navigation::get('b')->meta::pure::functions::variant::navigation::get('c')\n   ]\n)"
+    "sql" : "SELECT jsonb_val #> '{a,b,c}' AS result FROM json_data WHERE id = 2"
   }, {
     "path" : "TDS",
     "id" : "json_hash_arrow_text_path",
@@ -52554,7 +52331,7 @@
   }, {
     "path" : "Relation",
     "id" : "json_extract_field",
-    "state" : "ERROR",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT '{\"a\":1,\"b\":2}'::jsonb -> 'a' AS result FROM func('e2e::rel_persons') WHERE id = 1",
     "sql" : "SELECT '{\"a\":1,\"b\":2}'::jsonb -> 'a' AS result FROM persons WHERE id = 1"
   }, {
@@ -52566,7 +52343,7 @@
   }, {
     "path" : "Relation",
     "id" : "json_extract_field_nested",
-    "state" : "ERROR",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT '{\"a\":{\"b\":3}}'::jsonb -> 'a' -> 'b' AS result FROM func('e2e::rel_persons') WHERE id = 1",
     "sql" : "SELECT '{\"a\":{\"b\":3}}'::jsonb -> 'a' -> 'b' AS result FROM persons WHERE id = 1"
   }, {
@@ -52577,12 +52354,10 @@
     "sql" : "SELECT '[10,20,30]'::jsonb -> 1 AS result FROM persons WHERE id = 1"
   }, {
     "path" : "Relation",
-    "generatedSql" : "select (cast(cast(Text'[10,20,30]' as JSONB) as jsonb)->1) as \"result\" from public.persons as \"root\" where \"root\".id = 1",
     "id" : "json_extract_array_index",
-    "state" : "FAIL",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT '[10,20,30]'::jsonb -> 1 AS result FROM func('e2e::rel_persons') WHERE id = 1",
-    "sql" : "SELECT '[10,20,30]'::jsonb -> 1 AS result FROM persons WHERE id = 1",
-    "generatedLambda" : "|e2e::Person.all()->meta::pure::functions::relation::project(\n  ~[\n     id: x: e2e::Person[1]|$x.id,\n     name: x: e2e::Person[1]|$x.name,\n     age: x: e2e::Person[1]|$x.age,\n     salary: x: e2e::Person[1]|$x.salary,\n     hire_date: x: e2e::Person[1]|$x.hireDate,\n     active: x: e2e::Person[1]|$x.active,\n     dept_id: x: e2e::Person[1]|$x.deptId\n   ]\n)->meta::pure::functions::relation::filter(\n  x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|$x.id == 1\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|meta::pure::functions::variant::convert::fromJson('[10,20,30]')->meta::pure::functions::variant::navigation::get(1)\n   ]\n)"
+    "sql" : "SELECT '[10,20,30]'::jsonb -> 1 AS result FROM persons WHERE id = 1"
   }, {
     "path" : "TDS",
     "id" : "json_extract_array_negative_index",
@@ -52591,12 +52366,10 @@
     "sql" : "SELECT '[10,20,30]'::jsonb -> -1 AS result FROM persons WHERE id = 1"
   }, {
     "path" : "Relation",
-    "generatedSql" : "select (cast(cast(Text'[10,20,30]' as JSONB) as jsonb)->-1) as \"result\" from public.persons as \"root\" where \"root\".id = 1",
     "id" : "json_extract_array_negative_index",
-    "state" : "FAIL",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT '[10,20,30]'::jsonb -> -1 AS result FROM func('e2e::rel_persons') WHERE id = 1",
-    "sql" : "SELECT '[10,20,30]'::jsonb -> -1 AS result FROM persons WHERE id = 1",
-    "generatedLambda" : "|e2e::Person.all()->meta::pure::functions::relation::project(\n  ~[\n     id: x: e2e::Person[1]|$x.id,\n     name: x: e2e::Person[1]|$x.name,\n     age: x: e2e::Person[1]|$x.age,\n     salary: x: e2e::Person[1]|$x.salary,\n     hire_date: x: e2e::Person[1]|$x.hireDate,\n     active: x: e2e::Person[1]|$x.active,\n     dept_id: x: e2e::Person[1]|$x.deptId\n   ]\n)->meta::pure::functions::relation::filter(\n  x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|$x.id == 1\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|meta::pure::functions::variant::convert::fromJson('[10,20,30]')->meta::pure::functions::variant::navigation::get(\n    -1\n  )\n   ]\n)"
+    "sql" : "SELECT '[10,20,30]'::jsonb -> -1 AS result FROM persons WHERE id = 1"
   }, {
     "path" : "TDS",
     "id" : "json_extract_text_field",
@@ -52606,7 +52379,7 @@
   }, {
     "path" : "Relation",
     "id" : "json_extract_text_field",
-    "state" : "ERROR",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT '{\"a\":\"hello\",\"b\":2}'::jsonb ->> 'a' AS result FROM func('e2e::rel_persons') WHERE id = 1",
     "sql" : "SELECT '{\"a\":\"hello\",\"b\":2}'::jsonb ->> 'a' AS result FROM persons WHERE id = 1"
   }, {
@@ -52618,7 +52391,7 @@
   }, {
     "path" : "Relation",
     "id" : "json_extract_text_number",
-    "state" : "ERROR",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT '{\"a\":1,\"b\":2}'::jsonb ->> 'a' AS result FROM func('e2e::rel_persons') WHERE id = 1",
     "sql" : "SELECT '{\"a\":1,\"b\":2}'::jsonb ->> 'a' AS result FROM persons WHERE id = 1"
   }, {
@@ -52642,7 +52415,7 @@
   }, {
     "path" : "Relation",
     "id" : "json_extract_text_null_key",
-    "state" : "ERROR",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT '{\"a\":1}'::jsonb ->> 'missing' AS result FROM func('e2e::rel_persons') WHERE id = 1",
     "sql" : "SELECT '{\"a\":1}'::jsonb ->> 'missing' AS result FROM persons WHERE id = 1"
   }, {
@@ -52653,10 +52426,12 @@
     "sql" : "SELECT '{\"a\":{\"b\":{\"c\":42}}}'::jsonb #> '{a,b}' AS result FROM persons WHERE id = 1"
   }, {
     "path" : "Relation",
+    "generatedSql" : "select jsonb_extract_path(cast(jsonb_extract_path(cast(cast(Text'{\"a\":{\"b\":{\"c\":42}}}' as JSONB) as jsonb), Text'a') as jsonb), Text'b') as \"result\" from public.persons as \"root\" where \"root\".id = 1",
     "id" : "json_path_extract",
-    "state" : "ERROR",
+    "state" : "FAIL",
     "rewrittenSql" : "SELECT '{\"a\":{\"b\":{\"c\":42}}}'::jsonb #> '{a,b}' AS result FROM func('e2e::rel_persons') WHERE id = 1",
-    "sql" : "SELECT '{\"a\":{\"b\":{\"c\":42}}}'::jsonb #> '{a,b}' AS result FROM persons WHERE id = 1"
+    "sql" : "SELECT '{\"a\":{\"b\":{\"c\":42}}}'::jsonb #> '{a,b}' AS result FROM persons WHERE id = 1",
+    "generatedLambda" : "|e2e::Person.all()->meta::pure::functions::relation::project(\n  ~[\n     id: x: e2e::Person[1]|$x.id,\n     name: x: e2e::Person[1]|$x.name,\n     age: x: e2e::Person[1]|$x.age,\n     salary: x: e2e::Person[1]|$x.salary,\n     hire_date: x: e2e::Person[1]|$x.hireDate,\n     active: x: e2e::Person[1]|$x.active,\n     dept_id: x: e2e::Person[1]|$x.deptId\n   ]\n)->meta::pure::functions::relation::filter(\n  x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|$x.id == 1\n)->meta::pure::functions::relation::project(\n  ~[\n     result: x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|meta::pure::functions::variant::convert::fromJson('{\"a\":{\"b\":{\"c\":42}}}')->meta::pure::functions::variant::navigation::get('a')->meta::pure::functions::variant::navigation::get('b')\n   ]\n)"
   }, {
     "path" : "TDS",
     "id" : "json_path_extract_array",
@@ -52666,7 +52441,7 @@
   }, {
     "path" : "Relation",
     "id" : "json_path_extract_array",
-    "state" : "ERROR",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT '{\"a\":[1,2,3]}'::jsonb #> '{a,1}' AS result FROM func('e2e::rel_persons') WHERE id = 1",
     "sql" : "SELECT '{\"a\":[1,2,3]}'::jsonb #> '{a,1}' AS result FROM persons WHERE id = 1"
   }, {
@@ -52678,7 +52453,7 @@
   }, {
     "path" : "Relation",
     "id" : "json_path_extract_deep",
-    "state" : "ERROR",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT '{\"a\":{\"b\":{\"c\":\"deep\"}}}'::jsonb #> '{a,b,c}' AS result FROM func('e2e::rel_persons') WHERE id = 1",
     "sql" : "SELECT '{\"a\":{\"b\":{\"c\":\"deep\"}}}'::jsonb #> '{a,b,c}' AS result FROM persons WHERE id = 1"
   }, {
@@ -52690,7 +52465,7 @@
   }, {
     "path" : "Relation",
     "id" : "json_path_extract_text",
-    "state" : "ERROR",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT '{\"a\":{\"b\":\"hello\"}}'::jsonb #>> '{a,b}' AS result FROM func('e2e::rel_persons') WHERE id = 1",
     "sql" : "SELECT '{\"a\":{\"b\":\"hello\"}}'::jsonb #>> '{a,b}' AS result FROM persons WHERE id = 1"
   }, {
@@ -52702,7 +52477,7 @@
   }, {
     "path" : "Relation",
     "id" : "json_path_extract_text_number",
-    "state" : "ERROR",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT '{\"a\":{\"b\":42}}'::jsonb #>> '{a,b}' AS result FROM func('e2e::rel_persons') WHERE id = 1",
     "sql" : "SELECT '{\"a\":{\"b\":42}}'::jsonb #>> '{a,b}' AS result FROM persons WHERE id = 1"
   }, {
@@ -53014,7 +52789,7 @@
   }, {
     "path" : "Relation",
     "id" : "json_extract_then_text",
-    "state" : "ERROR",
+    "state" : "PASS",
     "rewrittenSql" : "SELECT '{\"a\":{\"b\":\"value\"}}'::jsonb -> 'a' ->> 'b' AS result FROM func('e2e::rel_persons') WHERE id = 1",
     "sql" : "SELECT '{\"a\":{\"b\":\"value\"}}'::jsonb -> 'a' ->> 'b' AS result FROM persons WHERE id = 1"
   }, {

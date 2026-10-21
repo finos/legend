@@ -9,16 +9,16 @@ See [full details](function-coverage.md) for per-function results.
 |--------|-----|----------|
 | Total signatures | 660 | 660 |
 | Unique function names | 346 | 346 |
-| **Supported functions (PASS/PARTIAL)** | **123 (35.5%)** | **133 (38.4%)** |
+| **Supported functions (PASS/PARTIAL)** | **123 (35.5%)** | **134 (38.7%)** |
 | Total tests | 882 | 882 |
 | ⚪ UNSUPPORTED | 62 | 62 |
-| ✅ PASS | 209 | 226 |
+| ✅ PASS | 209 | 227 |
 | ⚠️ PARTIAL | 31 | 32 |
-| ❌ FAIL | 8 | 8 |
+| ❌ FAIL | 8 | 7 |
 | 💥 ERROR | 0 | 0 |
 | ❓ UNTESTED | 350 | 332 |
-| **Full pass rate** | **34.9%** | **37.8%** |
-| **Pass + partial rate** | **40.1%** | **43.1%** |
+| **Full pass rate** | **34.9%** | **38.0%** |
+| **Pass + partial rate** | **40.1%** | **43.3%** |
 
 _Percentages exclude unsupported functions from the denominator._
 
@@ -42,7 +42,6 @@ _Percentages exclude unsupported functions from the denominator._
 - [regexp_substr__nth_occurrence_last__ignored_by_legend \[Relation\]](failure-details.md#fail-regexp_substr__nth_occurrence_last__ignored_by_legend-Relation)
 - [regexp_substr__start_and_nth__ignored_by_legend \[TDS\]](failure-details.md#fail-regexp_substr__start_and_nth__ignored_by_legend-TDS)
 - [regexp_substr__start_and_nth__ignored_by_legend \[Relation\]](failure-details.md#fail-regexp_substr__start_and_nth__ignored_by_legend-Relation)
-- [json_extract_path__from_column \[Relation\]](failure-details.md#fail-json_extract_path__from_column-Relation)
 - [array_position__anycompatiblearray_anycompatible__from_table \[Relation\]](failure-details.md#fail-array_position__anycompatiblearray_anycompatible__from_table-Relation)
 - [max__anyarray__no_generator \[TDS\]](failure-details.md#fail-max__anyarray__no_generator-TDS)
 - [max__anyarray__no_generator \[Relation\]](failure-details.md#fail-max__anyarray__no_generator-Relation)
@@ -60,12 +59,12 @@ See [full details](operator-coverage.md) for per-operator results.
 |--------|-----|----------|
 | Total operators | 548 | 548 |
 | ⚪ UNSUPPORTED | 0 | 0 |
-| ✅ PASS | 71 | 76 |
-| ⚠️ PARTIAL | 7 | 10 |
-| ❌ FAIL | 7 | 5 |
+| ✅ PASS | 71 | 82 |
+| ⚠️ PARTIAL | 7 | 8 |
+| ❌ FAIL | 7 | 1 |
 | 💥 ERROR | 0 | 0 |
 | ❓ UNTESTED | 463 | 457 |
-| **Full pass rate** | **13.0%** | **13.9%** |
+| **Full pass rate** | **13.0%** | **15.0%** |
 
 ---
 
@@ -79,13 +78,13 @@ See [full details](structural-parity.md) for per-feature results.
 | Total features | 621 | 621 |
 | Total tests | 700 | 700 |
 | ⚪ UNSUPPORTED | 222 | 48 |
-| ✅ PASS | 308 | 442 |
+| ✅ PASS | 308 | 454 |
 | ⚠️ PARTIAL | 3 | 3 |
-| ❌ FAIL | 11 | 12 |
-| 💥 ERROR | 77 | 116 |
+| ❌ FAIL | 11 | 11 |
+| 💥 ERROR | 77 | 105 |
 | ❓ UNTESTED | 0 | 0 |
-| **Full pass rate** | **77.2%** | **77.1%** |
-| **Pass + partial rate** | **77.9%** | **77.7%** |
+| **Full pass rate** | **77.2%** | **79.2%** |
+| **Pass + partial rate** | **77.9%** | **79.8%** |
 
 _Percentages exclude unsupported features from the denominator._
 
@@ -111,8 +110,7 @@ _Percentages exclude unsupported features from the denominator._
 - [schema_information_tables \[Relation\]](failure-details.md#fail-schema_information_tables-Relation)
 - [schema_information_columns \[TDS\]](failure-details.md#fail-schema_information_columns-TDS)
 - [schema_information_columns \[Relation\]](failure-details.md#fail-schema_information_columns-Relation)
-- [json_extract_array_index \[Relation\]](failure-details.md#fail-json_extract_array_index-Relation)
-- [json_extract_array_negative_index \[Relation\]](failure-details.md#fail-json_extract_array_negative_index-Relation)
+- [json_path_extract \[Relation\]](failure-details.md#fail-json_path_extract-Relation)
 - [interval_compound_literal \[TDS\]](failure-details.md#fail-interval_compound_literal-TDS)
 - [interval_compound_literal \[Relation\]](failure-details.md#fail-interval_compound_literal-Relation)
 - [interval_range_year_to_month \[TDS\]](failure-details.md#fail-interval_range_year_to_month-TDS)
@@ -179,6 +177,6 @@ Combined pass rate across function coverage and structural parity.
 | Path | Pass | Tested | Pass Rate |
 |------|------|--------|-----------|
 | TDS | 621 | 1625 | **38.2%** |
-| Relation | 780 | 1799 | **43.4%** |
-| **Combined** | **1401** | **3344** | **41.9%** |
+| Relation | 799 | 1799 | **44.4%** |
+| **Combined** | **1420** | **3344** | **42.5%** |
 

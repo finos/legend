@@ -57,7 +57,7 @@ li { margin: 0.3em 0; }
 <tr>
 <td><strong>Supported functions (PASS/PARTIAL)</strong></td>
 <td><strong>122 (35.3%)</strong></td>
-<td><strong>123 (35.5%)</strong></td>
+<td><strong>124 (35.8%)</strong></td>
 </tr>
 <tr>
 <td>Total tests</td>
@@ -67,12 +67,12 @@ li { margin: 0.3em 0; }
 <tr>
 <td>PASS</td>
 <td>320</td>
-<td>330</td>
+<td>331</td>
 </tr>
 <tr>
 <td>FAIL</td>
 <td>9</td>
-<td>10</td>
+<td>9</td>
 </tr>
 <tr>
 <td>ERROR</td>
@@ -113,7 +113,7 @@ li { margin: 0.3em 0; }
 <td><a href="#result-mismatch">RESULT_MISMATCH</a></td>
 <td>Query executes but results differ from Postgres</td>
 <td>9</td>
-<td>11</td>
+<td>10</td>
 </tr>
 <tr>
 <td><a href="#misc">MISC</a></td>
@@ -267,9 +267,9 @@ li { margin: 0.3em 0; }
 <td>0</td>
 <td>0</td>
 <td>2</td>
-<td>1</td>
+<td>2</td>
 <td>0</td>
-<td>1</td>
+<td>0</td>
 <td>0</td>
 <td>0</td>
 </tr>
@@ -3020,12 +3020,12 @@ li { margin: 0.3em 0; }
 <td>Function not supported</td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td><code>json_extract_path</code></td>
 <td><code>json_extract_path(from_json json, VARIADIC path_elems text[]) → json</code></td>
 <td>UNTESTED</td>
-<td>FAIL (0/1)</td>
-<td><a href="#fail-json_extract_path__from_column-TDS">TYPE_ERROR</a>, <a href="#fail-json_extract_path__from_column-Relation">RESULT_MISMATCH</a></td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-json_extract_path__from_column-TDS">TYPE_ERROR</a></td>
 <td></td>
 </tr>
 <tr>
@@ -12094,7 +12094,7 @@ Functions with at least one working overload (e.g., <code>length(text)</code>) a
 <p>No function matches the given name &quot;JSONB_PATH_QUERY_FIRST&quot;</p>
 </blockquote>
 <p><a id="result-mismatch"></a></p>
-<h3>RESULT_MISMATCH (13 tests)</h3>
+<h3>RESULT_MISMATCH (12 tests)</h3>
 <h4><a id="fail-div__num_num__from_table-TDS"></a><a id="fail-div__num_num__from_table-Relation"></a><code>div__num_num__from_table</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -12233,19 +12233,6 @@ Functions with at least one working overload (e.g., <code>length(text)</code>) a
 </code></pre>
 <p><strong>Legend SQL (Relation):</strong></p>
 <pre><code class="language-sql">SELECT REGEXP_SUBSTR(val, '[a-z]+', 5, 2) AS result FROM func('e2e::rel_strings') WHERE id = 10
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>null</p>
-</blockquote>
-<br>
-<h4><a id="fail-json_extract_path__from_column-Relation"></a><code>json_extract_path__from_column</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT JSON_EXTRACT_PATH(json_val, 'a', 'b', 'c') AS result FROM json_data WHERE id = 2
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT JSON_EXTRACT_PATH(json_val, 'a', 'b', 'c') AS result FROM func('e2e::rel_json_data') WHERE id = 2
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
@@ -12959,7 +12946,7 @@ world', '^nothere$', 1, 1, 'm') AS noMatch FROM func('e2e::tds_strings') WHERE i
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Error mapping not found for class Nil cache:''</p>
+<p>Execution error at ??, &quot;Unused format args. [4] arguments provided to expression &quot;string_agg(%s, %s)&quot;&quot;</p>
 </blockquote>
 <br>
 <h4><a id="fail-sum_money_cov-TDS"></a><a id="fail-sum_money_cov-Relation"></a><code>sum_money_cov</code></h4>
@@ -12975,7 +12962,7 @@ world', '^nothere$', 1, 1, 'm') AS noMatch FROM func('e2e::tds_strings') WHERE i
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Error mapping not found for class Nil cache:''</p>
+<p>ERROR: function sum(unknown) is not unique\n  Hint: Could not choose a best candidate function. You might need to add explicit type casts.\n  Position: 71</p>
 </blockquote>
 <br>
 <h4><a id="fail-last_value__anyelement__from_table-Relation"></a><code>last_value__anyelement__from_table</code></h4>

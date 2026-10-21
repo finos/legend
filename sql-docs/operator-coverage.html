@@ -62,9 +62,9 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td>Relation</td>
-<td>76</td>
-<td>10</td>
-<td>5</td>
+<td>82</td>
+<td>8</td>
+<td>1</td>
 <td>0</td>
 <td>348</td>
 <td>109</td>
@@ -88,7 +88,7 @@ li { margin: 0.3em 0; }
 <td><a href="#result-mismatch">RESULT_MISMATCH</a></td>
 <td>Query executes but results differ from Postgres</td>
 <td>13</td>
-<td>14</td>
+<td>8</td>
 </tr>
 <tr>
 <td><a href="#type-error">TYPE_ERROR</a></td>
@@ -220,9 +220,9 @@ li { margin: 0.3em 0; }
 <td>1</td>
 <td>0</td>
 <td>13</td>
-<td>2</td>
+<td>4</td>
 <td>0</td>
-<td>2</td>
+<td>0</td>
 <td>0</td>
 <td>14</td>
 </tr>
@@ -248,9 +248,9 @@ li { margin: 0.3em 0; }
 <td>0</td>
 <td>0</td>
 <td>18</td>
-<td>4</td>
-<td>2</td>
-<td>2</td>
+<td>8</td>
+<td>0</td>
+<td>0</td>
 <td>0</td>
 <td>10</td>
 </tr>
@@ -1422,21 +1422,21 @@ li { margin: 0.3em 0; }
 <td></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td><code>#&gt;</code></td>
 <td><code>#&gt;(json, anyarray) → json</code></td>
 <td>UNTESTED</td>
-<td>FAIL (0/1)</td>
-<td><a href="#fail-json_hash_arrow_path-TDS">TYPE_ERROR</a>, <a href="#fail-json_hash_arrow_path-Relation">RESULT_MISMATCH</a></td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-json_hash_arrow_path-TDS">TYPE_ERROR</a></td>
 <td></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td><code>#&gt;</code></td>
 <td><code>#&gt;(jsonb, anyarray) → jsonb</code></td>
 <td>UNTESTED</td>
-<td>FAIL (0/1)</td>
-<td><a href="#fail-jsonb_hash_arrow_path-TDS">TYPE_ERROR</a>, <a href="#fail-jsonb_hash_arrow_path-Relation">RESULT_MISMATCH</a></td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-jsonb_hash_arrow_path-TDS">TYPE_ERROR</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2131,12 +2131,12 @@ li { margin: 0.3em 0; }
 <td>Unsupported feature</td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td><code>-&gt;</code></td>
 <td><code>-&gt;(json, int4) → json</code></td>
 <td>UNTESTED</td>
-<td>FAIL (0/1)</td>
-<td><a href="#fail-json_arrow_get_index-TDS">TYPE_ERROR</a>, <a href="#fail-json_arrow_get_index-Relation">RESULT_MISMATCH</a></td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-json_arrow_get_index-TDS">TYPE_ERROR</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2144,17 +2144,17 @@ li { margin: 0.3em 0; }
 <td><code>-&gt;</code></td>
 <td><code>-&gt;(json, text) → json</code></td>
 <td>UNTESTED</td>
-<td>PARTIAL (1/2)</td>
-<td><a href="#fail-json_arrow_get_field-TDS">TYPE_ERROR</a>, <a href="#fail-json_arrow_get_field-Relation">RESULT_MISMATCH</a></td>
+<td>PASS (2/2)</td>
+<td><a href="#fail-json_arrow_get_field-TDS">TYPE_ERROR</a></td>
 <td></td>
 </tr>
 <tr>
-<td>🔴</td>
+<td>🟡</td>
 <td><code>-&gt;</code></td>
 <td><code>-&gt;(jsonb, int4) → jsonb</code></td>
 <td>UNTESTED</td>
-<td>FAIL (0/1)</td>
-<td><a href="#fail-jsonb_arrow_get_index-TDS">TYPE_ERROR</a>, <a href="#fail-jsonb_arrow_get_index-Relation">RESULT_MISMATCH</a></td>
+<td>PASS (1/1)</td>
+<td><a href="#fail-jsonb_arrow_get_index-TDS">TYPE_ERROR</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2162,8 +2162,8 @@ li { margin: 0.3em 0; }
 <td><code>-&gt;</code></td>
 <td><code>-&gt;(jsonb, text) → jsonb</code></td>
 <td>UNTESTED</td>
-<td>PARTIAL (1/2)</td>
-<td><a href="#fail-jsonb_arrow_get_field-TDS">TYPE_ERROR</a>, <a href="#fail-jsonb_arrow_get_field-Relation">RESULT_MISMATCH</a></td>
+<td>PASS (2/2)</td>
+<td><a href="#fail-jsonb_arrow_get_field-TDS">TYPE_ERROR</a></td>
 <td></td>
 </tr>
 <tr>
@@ -5451,7 +5451,7 @@ li { margin: 0.3em 0; }
 <hr />
 <h2>Error Details</h2>
 <p><a id="result-mismatch"></a></p>
-<h3>RESULT_MISMATCH (24 tests)</h3>
+<h3>RESULT_MISMATCH (18 tests)</h3>
 <h4><a id="fail-and__false_null-TDS"></a><a id="fail-and__false_null-Relation"></a><code>and__false_null</code></h4>
 <p>🔴 <strong>Failed in both TDS and Relation</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -5632,32 +5632,6 @@ li { margin: 0.3em 0; }
 <p>null</p>
 </blockquote>
 <br>
-<h4><a id="fail-json_hash_arrow_path-Relation"></a><code>json_hash_arrow_path</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT json_val #&gt; '{a,b,c}' AS result FROM json_data WHERE id = 2
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT json_val #&gt; '{a,b,c}' AS result FROM func('e2e::rel_json_data') WHERE id = 2
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>null</p>
-</blockquote>
-<br>
-<h4><a id="fail-jsonb_hash_arrow_path-Relation"></a><code>jsonb_hash_arrow_path</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val #&gt; '{a,b,c}' AS result FROM json_data WHERE id = 2
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val #&gt; '{a,b,c}' AS result FROM func('e2e::rel_json_data') WHERE id = 2
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>null</p>
-</blockquote>
-<br>
 <h4><a id="fail-array_gt-TDS"></a><code>array_gt</code></h4>
 <p>📘 <strong>TDS Path</strong></p>
 <p><strong>Input SQL:</strong></p>
@@ -5665,58 +5639,6 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Legend SQL:</strong></p>
 <pre><code class="language-sql">SELECT ARRAY[1, 3] &gt; ARRAY[1, 2] AS result FROM func('e2e::tds_persons') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>null</p>
-</blockquote>
-<br>
-<h4><a id="fail-json_arrow_get_index-Relation"></a><code>json_arrow_get_index</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT json_arr -&gt; 0 AS result FROM json_data WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT json_arr -&gt; 0 AS result FROM func('e2e::rel_json_data') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>null</p>
-</blockquote>
-<br>
-<h4><a id="fail-json_arrow_get_field-Relation"></a><code>json_arrow_get_field</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT json_val -&gt; 'a' AS result FROM json_data WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT json_val -&gt; 'a' AS result FROM func('e2e::rel_json_data') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>null</p>
-</blockquote>
-<br>
-<h4><a id="fail-jsonb_arrow_get_index-Relation"></a><code>jsonb_arrow_get_index</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_arr -&gt; 1 AS result FROM json_data WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_arr -&gt; 1 AS result FROM func('e2e::rel_json_data') WHERE id = 1
-</code></pre>
-<p><strong>Error:</strong></p>
-<blockquote>
-<p>null</p>
-</blockquote>
-<br>
-<h4><a id="fail-jsonb_arrow_get_field-Relation"></a><code>jsonb_arrow_get_field</code></h4>
-<p>📗 <strong>Relation Path</strong></p>
-<p><strong>Input SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val -&gt; 'b' AS result FROM json_data WHERE id = 1
-</code></pre>
-<p><strong>Legend SQL:</strong></p>
-<pre><code class="language-sql">SELECT jsonb_val -&gt; 'b' AS result FROM func('e2e::rel_json_data') WHERE id = 1
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
@@ -10052,7 +9974,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>ERROR: operator does not exist: jsonb = text\n  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.\n  Position: 95</p>
+<p>ERROR: operator does not exist: jsonb = text\n  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.\n  Position: 96</p>
 </blockquote>
 <br>
 <h4><a id="fail-jsonb_contained_by_column-Relation"></a><code>jsonb_contained_by_column</code></h4>

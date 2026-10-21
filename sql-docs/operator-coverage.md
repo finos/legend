@@ -7,7 +7,7 @@ Reference: [PostgreSQL 16 Functions and Operators](https://www.postgresql.org/do
 | Path | PASS | PARTIAL | FAIL | ERROR | UNTESTED | UNSUPPORTED | Total |
 |---|---|---|---|---|---|---|---|
 | TDS | 71 | 7 | 7 | 0 | 354 | 109 | 548 |
-| Relation | 76 | 10 | 5 | 0 | 348 | 109 | 548 |
+| Relation | 82 | 8 | 1 | 0 | 348 | 109 | 548 |
 
 ---
 
@@ -15,7 +15,7 @@ Reference: [PostgreSQL 16 Functions and Operators](https://www.postgresql.org/do
 
 | Category | Description | TDS | Relation |
 |----------|-------------|-----|----------|
-| [RESULT_MISMATCH](#result-mismatch) | Query executes but results differ from Postgres | 13 | 14 |
+| [RESULT_MISMATCH](#result-mismatch) | Query executes but results differ from Postgres | 13 | 8 |
 | [TYPE_ERROR](#type-error) | Type mismatch or cast error | 207 | 178 |
 | [UNSUPPORTED_SYNTAX](#unsupported-syntax) | SQL construct recognized but not yet implemented | 39 | 46 |
 | [MISC](#misc) | Other/uncategorized error | 18 | 34 |
@@ -33,9 +33,9 @@ Reference: [PostgreSQL 16 Functions and Operators](https://www.postgresql.org/do
 | [Mathematical Operators (9.3)](#mathematical-operators-93) | 26 | 7 | 2 | 1 | 0 | 8 | 7 | 2 | 1 | 0 | 8 |
 | [String Operators (9.4)](#string-operators-94) | 37 | 10 | 0 | 1 | 0 | 18 | 11 | 0 | 0 | 0 | 18 |
 | [Bit String Operators (9.6)](#bit-string-operators-96) | 19 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
-| [Array Operators (9.19)](#array-operators-919) | 20 | 4 | 0 | 1 | 0 | 13 | 2 | 0 | 2 | 0 | 14 |
+| [Array Operators (9.19)](#array-operators-919) | 20 | 4 | 0 | 1 | 0 | 13 | 4 | 0 | 0 | 0 | 14 |
 | [Range/Multirange Operators (9.19)](#rangemultirange-operators-919) | 54 | 0 | 0 | 0 | 0 | 16 | 0 | 0 | 0 | 0 | 16 |
-| [JSON/JSONB Operators (9.16)](#jsonjsonb-operators-916) | 22 | 0 | 0 | 0 | 0 | 18 | 4 | 2 | 2 | 0 | 10 |
+| [JSON/JSONB Operators (9.16)](#jsonjsonb-operators-916) | 22 | 0 | 0 | 0 | 0 | 18 | 8 | 0 | 0 | 0 | 10 |
 | [Network Address Operators (9.12)](#network-address-operators-912) | 36 | 0 | 0 | 0 | 0 | 36 | 0 | 0 | 0 | 0 | 36 |
 | [Geometric Operators (9.11)](#geometric-operators-911) | 157 | 0 | 0 | 0 | 0 | 155 | 0 | 0 | 0 | 0 | 155 |
 | [Full Text Search Operators (9.13)](#full-text-search-operators-913) | 24 | 0 | 0 | 0 | 0 | 5 | 0 | 0 | 0 | 0 | 5 |
@@ -196,8 +196,8 @@ Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-arr
 | | Operator | Signature | TDS | Relation | Error Category | Notes |
 |--|---|---|---|---|---|---|
 | ⚪ | `#-` | `#-(jsonb, anyarray) → jsonb` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-jsonb_delete_path_column-TDS) |  |
-| 🔴 | `#>` | `#>(json, anyarray) → json` | UNTESTED | FAIL (0/1) | [TYPE_ERROR](#fail-json_hash_arrow_path-TDS), [RESULT_MISMATCH](#fail-json_hash_arrow_path-Relation) |  |
-| 🔴 | `#>` | `#>(jsonb, anyarray) → jsonb` | UNTESTED | FAIL (0/1) | [TYPE_ERROR](#fail-jsonb_hash_arrow_path-TDS), [RESULT_MISMATCH](#fail-jsonb_hash_arrow_path-Relation) |  |
+| 🟡 | `#>` | `#>(json, anyarray) → json` | UNTESTED | PASS (1/1) | [TYPE_ERROR](#fail-json_hash_arrow_path-TDS) |  |
+| 🟡 | `#>` | `#>(jsonb, anyarray) → jsonb` | UNTESTED | PASS (1/1) | [TYPE_ERROR](#fail-jsonb_hash_arrow_path-TDS) |  |
 | 🟡 | `#>>` | `#>>(json, anyarray) → text` | UNTESTED | PASS (1/1) | [TYPE_ERROR](#fail-json_hash_arrow_text_path-TDS) |  |
 | 🟡 | `#>>` | `#>>(jsonb, anyarray) → text` | UNTESTED | PASS (1/1) | [TYPE_ERROR](#fail-jsonb_hash_arrow_text_path-TDS) |  |
 | ⚪ | `&&` | `&&(anyarray, anyarray) → bool` | UNTESTED | UNTESTED | [PARSE_ERROR](#fail-array_overlap-TDS) |  |
@@ -285,10 +285,10 @@ Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-jso
 |--|---|---|---|---|---|---|
 | ⚪ | `-` | `-(jsonb, int4) → jsonb` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_delete_index-TDS), [UNSUPPORTED_SYNTAX](#fail-jsonb_delete_index-Relation) | Unsupported feature |
 | ⚪ | `-` | `-(jsonb, text) → jsonb` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_delete_key_column-TDS), [UNSUPPORTED_SYNTAX](#fail-jsonb_delete_key_column-Relation) | Unsupported feature |
-| 🔴 | `->` | `->(json, int4) → json` | UNTESTED | FAIL (0/1) | [TYPE_ERROR](#fail-json_arrow_get_index-TDS), [RESULT_MISMATCH](#fail-json_arrow_get_index-Relation) |  |
-| 🟡 | `->` | `->(json, text) → json` | UNTESTED | PARTIAL (1/2) | [TYPE_ERROR](#fail-json_arrow_get_field-TDS), [RESULT_MISMATCH](#fail-json_arrow_get_field-Relation) |  |
-| 🔴 | `->` | `->(jsonb, int4) → jsonb` | UNTESTED | FAIL (0/1) | [TYPE_ERROR](#fail-jsonb_arrow_get_index-TDS), [RESULT_MISMATCH](#fail-jsonb_arrow_get_index-Relation) |  |
-| 🟡 | `->` | `->(jsonb, text) → jsonb` | UNTESTED | PARTIAL (1/2) | [TYPE_ERROR](#fail-jsonb_arrow_get_field-TDS), [RESULT_MISMATCH](#fail-jsonb_arrow_get_field-Relation) |  |
+| 🟡 | `->` | `->(json, int4) → json` | UNTESTED | PASS (1/1) | [TYPE_ERROR](#fail-json_arrow_get_index-TDS) |  |
+| 🟡 | `->` | `->(json, text) → json` | UNTESTED | PASS (2/2) | [TYPE_ERROR](#fail-json_arrow_get_field-TDS) |  |
+| 🟡 | `->` | `->(jsonb, int4) → jsonb` | UNTESTED | PASS (1/1) | [TYPE_ERROR](#fail-jsonb_arrow_get_index-TDS) |  |
+| 🟡 | `->` | `->(jsonb, text) → jsonb` | UNTESTED | PASS (2/2) | [TYPE_ERROR](#fail-jsonb_arrow_get_field-TDS) |  |
 | 🟡 | `->>` | `->>(json, int4) → text` | UNTESTED | PASS (1/1) | [TYPE_ERROR](#fail-json_arrow_text_get_index-TDS) |  |
 | 🟡 | `->>` | `->>(json, text) → text` | UNTESTED | PASS (1/1) | [TYPE_ERROR](#fail-json_arrow_text_get_field-TDS) |  |
 | 🟡 | `->>` | `->>(jsonb, int4) → text` | UNTESTED | PASS (1/1) | [TYPE_ERROR](#fail-jsonb_arrow_text_get_index-TDS) |  |
@@ -679,7 +679,7 @@ Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/textsearch.ht
 
 <a id="result-mismatch"></a>
 
-### RESULT_MISMATCH (24 tests)
+### RESULT_MISMATCH (18 tests)
 
 #### <a id="fail-and__false_null-TDS"></a><a id="fail-and__false_null-Relation"></a>`and__false_null`
 
@@ -961,46 +961,6 @@ SELECT val || '-' || nullable_val AS result FROM func('e2e::tds_strings') ORDER 
 
 <br>
 
-#### <a id="fail-json_hash_arrow_path-Relation"></a>`json_hash_arrow_path`
-
-📗 **Relation Path**
-
-**Input SQL:**
-```sql
-SELECT json_val #> '{a,b,c}' AS result FROM json_data WHERE id = 2
-```
-
-**Legend SQL:**
-```sql
-SELECT json_val #> '{a,b,c}' AS result FROM func('e2e::rel_json_data') WHERE id = 2
-```
-
-**Error:**
-> null
-
-
-<br>
-
-#### <a id="fail-jsonb_hash_arrow_path-Relation"></a>`jsonb_hash_arrow_path`
-
-📗 **Relation Path**
-
-**Input SQL:**
-```sql
-SELECT jsonb_val #> '{a,b,c}' AS result FROM json_data WHERE id = 2
-```
-
-**Legend SQL:**
-```sql
-SELECT jsonb_val #> '{a,b,c}' AS result FROM func('e2e::rel_json_data') WHERE id = 2
-```
-
-**Error:**
-> null
-
-
-<br>
-
 #### <a id="fail-array_gt-TDS"></a>`array_gt`
 
 📘 **TDS Path**
@@ -1013,86 +973,6 @@ SELECT ARRAY[1,3] > ARRAY[1,2] AS result FROM persons WHERE id = 1
 **Legend SQL:**
 ```sql
 SELECT ARRAY[1, 3] > ARRAY[1, 2] AS result FROM func('e2e::tds_persons') WHERE id = 1
-```
-
-**Error:**
-> null
-
-
-<br>
-
-#### <a id="fail-json_arrow_get_index-Relation"></a>`json_arrow_get_index`
-
-📗 **Relation Path**
-
-**Input SQL:**
-```sql
-SELECT json_arr -> 0 AS result FROM json_data WHERE id = 1
-```
-
-**Legend SQL:**
-```sql
-SELECT json_arr -> 0 AS result FROM func('e2e::rel_json_data') WHERE id = 1
-```
-
-**Error:**
-> null
-
-
-<br>
-
-#### <a id="fail-json_arrow_get_field-Relation"></a>`json_arrow_get_field`
-
-📗 **Relation Path**
-
-**Input SQL:**
-```sql
-SELECT json_val -> 'a' AS result FROM json_data WHERE id = 1
-```
-
-**Legend SQL:**
-```sql
-SELECT json_val -> 'a' AS result FROM func('e2e::rel_json_data') WHERE id = 1
-```
-
-**Error:**
-> null
-
-
-<br>
-
-#### <a id="fail-jsonb_arrow_get_index-Relation"></a>`jsonb_arrow_get_index`
-
-📗 **Relation Path**
-
-**Input SQL:**
-```sql
-SELECT jsonb_arr -> 1 AS result FROM json_data WHERE id = 1
-```
-
-**Legend SQL:**
-```sql
-SELECT jsonb_arr -> 1 AS result FROM func('e2e::rel_json_data') WHERE id = 1
-```
-
-**Error:**
-> null
-
-
-<br>
-
-#### <a id="fail-jsonb_arrow_get_field-Relation"></a>`jsonb_arrow_get_field`
-
-📗 **Relation Path**
-
-**Input SQL:**
-```sql
-SELECT jsonb_val -> 'b' AS result FROM json_data WHERE id = 1
-```
-
-**Legend SQL:**
-```sql
-SELECT jsonb_val -> 'b' AS result FROM func('e2e::rel_json_data') WHERE id = 1
 ```
 
 **Error:**
@@ -7837,7 +7717,7 @@ SELECT jsonb_val <> '{"a":1}' AS result FROM func('e2e::rel_json_data') WHERE id
 ```
 
 **Error:**
-> ERROR: operator does not exist: jsonb = text\n  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.\n  Position: 95
+> ERROR: operator does not exist: jsonb = text\n  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.\n  Position: 96
 
 
 <br>
