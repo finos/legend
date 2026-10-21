@@ -14,7 +14,7 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,500,700,900|Source+Code+Pro:400,500,700,900&display=swap">
 <script src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/assets/css/styles.ad6a18f0.css">
-<script src="/assets/js/runtime~main.2d2c9238.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.bf8d1b08.js" defer="defer"></script>
 <script src="/assets/js/main.4b1a0939.js" defer="defer"></script>
 </head>
 <body>
@@ -30,11 +30,12 @@
 <li class=""><strong>Its expression</strong>, a lambda of one row: <code>x | $x.amount-&gt;toOne() * $x.price-&gt;toOne()</code>. It is checked once you stop typing: the engine checks and types it. Its border turns green when it is ready, red with a problem, and its type shows below it. F10 checks the expressions at once. Apply needs them checked.</li>
 <li class=""><strong>Move</strong> a column <strong>up</strong> or <strong>down</strong>: a column can use the ones above it.</li>
 <li class=""><strong>Add column</strong>.</li>
-<li class=""><strong>Input columns</strong>: click one to write it in the expression last used.</li>
+<li class=""><strong>Input columns</strong>: click one to write it in the expression last used, at its cursor, or at its end before you click into it.</li>
 </ol>
 <p>Good to know:</p>
 <ul>
 <li class="">As you type, <code>$x.</code> lists the columns the expression can read, the input&#x27;s and the new ones above it, with their types, and <code>$x.COLUMN-&gt;</code> the functions of the column&#x27;s type. Where the engine completes Pure code, its completions follow.</li>
+<li class="">Where the engine documents its functions, <code>$x.COLUMN-&gt;</code> lists every function of the column&#x27;s type, each with its signature; Ctrl+Space shows what the one selected does. Point at a function&#x27;s name to read its documentation; while you write a call&#x27;s arguments, its signatures show, the argument you are writing in bold.</li>
 <li class="">An optional column needs <code>-&gt;toOne()</code> before arithmetic; every new column is optional.</li>
 <li class="">A JSON (Variant) column&#x27;s <code>{}</code> opens its fields: a field clicked is written into the expression, and <strong>+ column</strong> adds it as a new column. See <a class="" href="/cube/json">JSON columns</a>.</li>
 </ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/finos/legend-studio/edit/master/docs/user-guide/cube/steps/extend.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages navigation"><a class="pagination-nav__link pagination-nav__link--prev" href="/cube/steps/partition"><div class="pagination-nav__sublabel"></div><div class="pagination-nav__label">Apply Window Functions</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/cube/steps/explode"><div class="pagination-nav__sublabel"></div><div class="pagination-nav__label">Explode Array</div></a></nav></div></div></div></div></main></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.finos.org" class="nav-home"><img src="https://legend.finos.org/img/finos_wordmark.svg" alt="FINOS"></a></section><section class="finos finosBanner"><a href="https://www.finos.org"><img id="finosicon" src="https://legend.finos.org/img/finos_wordmark.svg" height="75px" alt="FINOS" title="FINOS"></a></section><section class="privacy finosBanner"><a href="https://www.finos.org/privacy-policy" target="_blank">Privacy Policy</a></section></footer></div>
