@@ -4,37 +4,42 @@ title: What is Legend?
 sidebar_label: What is Legend?
 ---
 
-Legend is a data platform that provides a single place to access data via APIs or self-service queries, with built-in governance!
+Legend is an open-source data platform. You describe your data once, as a model, and connect that model to where the data lives. Then you query, share and publish the data in the model's terms instead of the stores'. Legend was built at Goldman Sachs and contributed to [FINOS](https://www.finos.org) in October 2020.
 
-Build a graph of information by **describing and connecting** data in Legend data models. They foster a common data vocabulary and help everyone understand the data better. Being able to navigate the entire graph of information using terms that make sense and are agreed upon, makes it so much easier to **find meaningful data**.
+## How Legend works
 
-Legend data models connect to all type of data. Once you found the data you were looking for, **query** away with a simple click of a button! With Legend you can access data self-service, understand it and experiment with it.
+1. **Model the data.** A model names the business concepts, such as a trade, a firm or a person, with their properties and how they relate to each other. It also states the rules the data must follow. Models are written in the [Legend language](../reference/legend-language.md), so they are code: kept in a project, reviewed, versioned and tested.
+2. **Connect the model to the data.** A mapping ties the model to a store: a relational database such as Snowflake, Databricks, BigQuery or Postgres, files in formats such as JSON, XML or CSV, or HTTP services. A runtime says which connection to use for each store.
+3. **Query the data.** Queries are written against the model. The engine compiles each query into an execution plan, runs it against the stores, for example as SQL, and returns the results in the model's terms. Tabular data can also be queried directly with the [Relation API](../reference/legend-relation.md) or with [Legend SQL](../reference/legend-sql.md).
+4. **Share the data.** A query can become a service, which other applications call as an API. A function can be activated to run elsewhere, for example as a Snowflake app. A data product publishes data for others to find and request access to.
 
-**Transform** the shape of data by projecting the graph of information into a flat structure to unlock additional query methods. When ready, leverage Legend APIs to reliably and systematically **share** data with other applications. It's also easy to build customized user interfaces with those APIs increasing both developer productivity and time to market of your data products.
+Because the model, the mappings and the tests live together, everyone who uses the data sees the same definitions, and a change is reviewed and tested before anyone depends on it.
 
-Data powered by Legend ensures **data quality by design**. Automated lineage captures how data is transformed along the way. You know where your data is coming from, starting with the raw data source all the way up to the productized data service or user query.
-All data models in Legend are 100% codified (and SDLC-backed!) in the Legend language, which can express structural and non-structural quality criteria for additional validations.
+## Applications
 
-Legend can elevate all sort of data-driven processes, such as creating client, financial or regulatory reports, building applications or powering data analytics and predications.
+| Application | What it's for |
+| --- | --- |
+| **Legend Studio** | Edit a project: its models, mappings, connections, services, data products and tests. Review changes, then release a version. |
+| **Legend Query** | Build and save queries with a drag-and-drop query builder, starting from a data space, a data product or a service. |
+| **Legend DataCube** | Explore query results in a grid: filter, sort, group, pivot and add columns. |
+| **Legend Analytics** | Build a query as a chain of steps on a canvas, with [Legend Cube](/guides/cube). |
+| **Legend Marketplace** | Find data products and request access to them. |
+| **Legend REPL** | Run Legend language expressions from a terminal, and see their results in DataCube. |
+| **Legend Pure IDE** | Write and run Legend language code against the Pure runtime. It is used to develop the language itself. |
 
-## Legend Products
+## Servers
 
-### Studio
+| Server | What it does |
+| --- | --- |
+| **Legend Engine** | Compiles models, generates execution plans and runs them against stores. It also runs services and activates functions. |
+| **Legend SDLC** | Keeps each project in a GitLab repository, with workspaces, reviews and released versions. |
+| **Legend Depot** | Stores released versions of projects, so that projects can depend on each other and applications can query them. |
 
-Legend Studio is a data model editor that allows you to describe, connect, and visualize your data.
+The code for all of them is on GitHub: [legend-studio](https://github.com/finos/legend-studio) for the applications, and [legend-engine](https://github.com/finos/legend-engine), [legend-sdlc](https://github.com/finos/legend-sdlc), [legend-depot](https://github.com/finos/legend-depot) and [legend-pure](https://github.com/finos/legend-pure) for the servers and the language.
 
-### Query
+## Where to go next
 
-Legend Query enables users to access modelled data in Legend, using a hosted graphical, drag-and-drop, self-service user interface. 
-
-### Services
-
-Legend Services can be used to share high quality data reliably with other applications via APIs. Any self-service query can be promoted to a production-quality Legend service, fully backed by SDLC.
-
-### Engine
-
-Legend Engine is the execution engine for Legend.
-
-### SDLC
-
-The Legend SDLC Server provides a rich REST API allowing users to safely manage metadata. Most SDLCs are file- and text-centric, but the Legend SDLC is model-centric. That is, users interact with model entities rather than with files and folders.
+- [Get Started](../getting-started/introduction-to-legend.md) to try Legend or install it.
+- The [Glossary](./legend-glossary.md) for the terms used across Legend.
+- [Showcase projects](../showcases/showcase-projects.md), small working examples of each feature.
+- The [Studio](../tutorials/studio-workspace.md) and [Query](../tutorials/query-builder.md) tutorials, and the [Legend Cube](/guides/cube) guide.

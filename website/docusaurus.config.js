@@ -5,26 +5,48 @@ const pureHighlighter = require("../website/pureHighlighter");
 // User guides kept with their application's code, in finos/legend-studio's
 // docs/user-guide, which the website's workflows check out into
 // website/external/legend-studio before they build. Each guide is a docs
-// section of its own, its sidebar made from its folder. One that isn't there
-// (e.g. a local build without the checkout) is left out.
+// section of its own at /guides/<id>, its sidebar made from its folder. One
+// that isn't there (e.g. a local build without the checkout) is left out.
 const LEGEND_STUDIO_USER_GUIDES = path.resolve(
   __dirname,
   "external/legend-studio/docs/user-guide"
 );
-const USER_GUIDES = [
+const ALL_USER_GUIDES = [
   { id: "cube", label: "Legend Cube", folder: "cube" },
-]
-  .map((guide) => ({
-    ...guide,
-    path: path.resolve(LEGEND_STUDIO_USER_GUIDES, guide.folder),
-  }))
-  .filter((guide) => {
-    const found = fs.existsSync(guide.path);
-    if (!found) {
-      console.warn(`User guide "${guide.label}" not found at ${guide.path}: left out`);
-    }
-    return found;
-  });
+].map((guide) => ({
+  ...guide,
+  path: path.resolve(LEGEND_STUDIO_USER_GUIDES, guide.folder),
+  routeBasePath: `guides/${guide.id}`,
+}));
+const USER_GUIDES = ALL_USER_GUIDES.filter((guide) => {
+  const found = fs.existsSync(guide.path);
+  if (!found) {
+    console.warn(`User guide "${guide.label}" not found at ${guide.path}: left out`);
+  }
+  return found;
+});
+// The docs link to the guides, so without all of them a broken link can't be
+// told from a missing guide: such a build only warns
+const BROKEN_LINKS =
+  USER_GUIDES.length === ALL_USER_GUIDES.length ? "throw" : "warn";
+
+// Addresses that pages had before they moved or were folded into another
+const REDIRECTS = [
+  ["/docs/overview/legend-features", "/docs/overview/legend-glossary"],
+  ["/docs/overview/data-modeling-concepts", "/docs/overview/legend-glossary"],
+  ["/docs/overview/architecture", "/docs/overview/legend-overview"],
+  ["/docs/overview/use-cases", "/docs/overview/legend-overview"],
+  ["/docs/tour", "/docs/overview/legend-overview"],
+  ["/docs/sdlc/project-structure", "/docs/tutorials/studio-sdlc"],
+  ["/docs/tutorials/studio-tutorial", "/docs/tutorials/studio-workspace"],
+  ["/docs/tutorials/logicalmodeling-tutorial", "/docs/tutorials/studio-class"],
+  ["/docs/tutorials/relationalmapping-tutorial", "/docs/tutorials/studio-relational-mapping"],
+  ["/docs/tutorials/serviceexecution-tutorial", "/docs/tutorials/services-service"],
+  ["/docs/tutorials/servicestore-tutorial", "/docs/tutorials/studio-servicestore"],
+  ["/docs/tutorials/graphql-tutorial", "/docs/reference/query-protocol"],
+  ["/docs/tutorials/query-graphql", "/docs/reference/query-protocol"],
+  ["/docs/tutorials/query-tutorial", "/docs/tutorials/query-builder"],
+].map(([from, to]) => ({ from, to }));
 
 module.exports = {
   title: "Legend",
@@ -52,13 +74,13 @@ module.exports = {
     },
   },
   // a broken link or anchor fails the build, so it never reaches the site
-  onBrokenLinks: "throw",
-  onBrokenAnchors: "throw",
+  onBrokenLinks: BROKEN_LINKS,
+  onBrokenAnchors: BROKEN_LINKS,
   onDuplicateRoutes: process.env.NODE_ENV === "production" ? "throw" : "warn",
   markdown: {
     format: 'detect',
     hooks: {
-      onBrokenMarkdownLinks: "throw",
+      onBrokenMarkdownLinks: BROKEN_LINKS,
     },
   },
   presets: [
@@ -88,12 +110,29 @@ module.exports = {
       {
         id: guide.id,
         path: guide.path,
-        routeBasePath: guide.id,
+        routeBasePath: guide.routeBasePath,
         // a page's own file in finos/legend-studio
         editUrl: ({ docPath }) =>
           `https://github.com/finos/legend-studio/edit/master/docs/user-guide/${guide.folder}/${docPath}`,
       },
     ]),
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: REDIRECTS,
+        // the guides were at /<id> before /guides/<id>
+        createRedirects: (existingPath) => {
+          const guide = USER_GUIDES.find(
+            ({ routeBasePath }) =>
+              existingPath === `/${routeBasePath}` ||
+              existingPath.startsWith(`/${routeBasePath}/`)
+          );
+          return guide
+            ? existingPath.replace(`/${guide.routeBasePath}`, `/${guide.id}`)
+            : undefined;
+        },
+      },
+    ],
   ],
   themeConfig: {
     // prism: {
@@ -122,11 +161,19 @@ module.exports = {
           label: "Docs",
           position: "right",
         },
-        ...USER_GUIDES.map((guide) => ({
-          to: guide.id,
-          label: guide.label,
-          position: "right",
-        })),
+        ...(USER_GUIDES.length
+          ? [
+              {
+                type: "dropdown",
+                label: "Guides",
+                position: "right",
+                items: USER_GUIDES.map((guide) => ({
+                  to: guide.routeBasePath,
+                  label: guide.label,
+                })),
+              },
+            ]
+          : []),
       ],
     },
 
