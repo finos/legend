@@ -2,11 +2,11 @@
 {
     "git.branch": "master",
     "git.build.time": "2026-09-02T19:39:51+0000",
-    "git.build.version": "4.152.1-SNAPSHOT",
+    "git.build.version": "5.0.1-SNAPSHOT",
     "git.closest.tag.name": "",
-    "git.commit.id": "097fe4cf41dcf65c0a5edc5fdc460c9a12015b35",
-    "git.commit.id.abbrev": "097fe4c",
-    "git.commit.time": "2026-10-21T19:55:29+0000",
+    "git.commit.id": "014a7af46b89b23dd10187910307cfdd6f7d0d7b",
+    "git.commit.id.abbrev": "014a7af",
+    "git.commit.time": "2026-10-24T00:55:02+0000",
     "git.tags": "",
     "git.total.commit.count": "1"
 }
