@@ -40,7 +40,7 @@ External Format allows you to define a formal schema (eg : XSD, Json Schema) of 
 
 1. When working with external formats you need to use [internalize](../overview/legend-glossary.md#internalize) instead of all queries. Internalize can be chained with **checked()**, **graphFetch()**, **graphFetchChecked()** depending on the requirements. See [reference documentation](https://github.com/finos/legend-engine/blob/master/docs/queries/queries.md#checked-graphfetch-graphfetchchecked-graphfetchunexpanded-graphfetchcheckedunexpanded) for details.
 
-2. When defining a service with [internalize](../overview/legend-glossary.md#internalize), you don't need a mapping or runtime. You will only need to define a query (currently supported via [Text Mode](../overview/legend-features.md#text-mode) only).
+2. When defining a service with [internalize](../overview/legend-glossary.md#internalize), you don't need a mapping or runtime. You will only need to define a query (currently supported via [Text Mode](../overview/legend-glossary.md#text-mode) only).
 
 3. Define your service with query using [internalize](../overview/legend-glossary.md#internalize). You can find examples in the [External Format showcase project](../showcases/showcase-projects.md), under the 'flatdata' package. 
     
@@ -57,7 +57,7 @@ External Format allows you to define a formal schema (eg : XSD, Json Schema) of 
 
 1. Create your target model
 
-2. Create an [M2M mapping](../overview/legend-features#model-to-model-mapping) between your target model and source model (auto-generated model from schema)
+2. Create an [M2M mapping](../overview/legend-glossary.md#model-to-model-mapping) between your target model and source model (auto-generated model from schema)
 
 3. Create a service chaining deserialization and M2M transform:
     - Query data: ``String[1]|TargetPerson.all()->graphFetch(#{TargetPerson{fullName}}#)->from(M2MMapping, Person->getRuntimeWithModelQueryConnection(PersonBinding, $data))->serialize(#{TargetPerson{fullName}}#);``
@@ -75,7 +75,6 @@ _Tutorial coming soon._
 
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)
-- [Legend Features](../overview/legend-features.md)
 - [Legend Glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)

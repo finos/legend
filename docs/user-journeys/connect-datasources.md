@@ -7,10 +7,10 @@ sidebar_label: Connect to Data Sources
 ## Connect your data model to relational data store
 
 ### Features
-- [Mapping](../overview/legend-features.md#relational-mapping)
-- [Mapping Editor](../overview/legend-features.md#mapping-editor)
-- [Runtime](../overview/legend-features.md#runtime)
-- [Connection](../overview/legend-features.md#connection)
+- [Mapping](../overview/legend-glossary.md#relational-mapping)
+- [Mapping Editor](../overview/legend-glossary.md#mapping)
+- [Runtime](../overview/legend-glossary.md#runtime)
+- [Connection](../overview/legend-glossary.md#connection)
 - [Relational Database](../overview/legend-glossary.md#relational-database)
 
 ### Showcase projects
@@ -23,12 +23,12 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 ## Connect your data model to a semi-structured file
 
 ### Features
-- [Mapping](../overview/legend-features.md#relational-mapping)
-- [Mapping Editor](../overview/legend-features.md#mapping-editor)
-- [Runtime](../overview/legend-features.md#runtime)
-- [Connection](../overview/legend-features.md#connection)
-- [Flat-Data Schema](../overview/legend-features.md#flat-data-schema)
-- [Flat-Data Store](../overview/legend-features.md#flat-data-store)
+- [Mapping](../overview/legend-glossary.md#relational-mapping)
+- [Mapping Editor](../overview/legend-glossary.md#mapping)
+- [Runtime](../overview/legend-glossary.md#runtime)
+- [Connection](../overview/legend-glossary.md#connection)
+- [Flat-Data Schema](../overview/legend-glossary.md#flat-data-schema)
+- [Flat-Data Store](../overview/legend-glossary.md#flat-data-schema)
 
 ### Showcase projects
 See features in action in [showcase projects](../showcases/showcase-projects.md).
@@ -41,11 +41,11 @@ _Coming soon_
 ## Connect your data model to an API (Service store)
 
 ### Features
-- [Mapping](../overview/legend-features.md#relational-mapping)
-- [Mapping Editor](../overview/legend-features.md#mapping-editor)
-- [Runtime](../overview/legend-features.md#runtime)
-- [Connection](../overview/legend-features.md#connection)
-- [Service store](../overview/legend-features.md#service-store)
+- [Mapping](../overview/legend-glossary.md#relational-mapping)
+- [Mapping Editor](../overview/legend-glossary.md#mapping)
+- [Runtime](../overview/legend-glossary.md#runtime)
+- [Connection](../overview/legend-glossary.md#connection)
+- [Service store](../overview/legend-glossary.md#service-store)
 
 ### Showcase projects
 See features in action in [showcase projects](../showcases/showcase-projects.md).
@@ -81,7 +81,7 @@ _Coming soon_
 ## Import a database schema and model it in Studio (External Format & Bindings)
 
 ### Features
-- [Binding](../overview/legend-features.md#binding)
+- [Binding](../overview/legend-glossary.md#binding)
 
 ### Showcase projects
 See features in action in [showcase projects](../showcases/showcase-projects.md).
@@ -91,7 +91,6 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)
-- [Legend features](../overview/legend-features.md)
 - [Legend glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)

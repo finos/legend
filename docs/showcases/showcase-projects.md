@@ -68,7 +68,6 @@ For step by step tutorials, see [Legend tutorials](../tutorials/studio-workspace
 ## More
 
 - [Legend User Journeys](../user-journeys/build-data-model.md)
-- [Legend Features](../overview/legend-features.md)
 - [Legend Glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)
