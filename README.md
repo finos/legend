@@ -34,7 +34,7 @@ Find installation instructions [here](https://legend.finos.org/docs/getting-star
 
 - [Legend Documentation Site](https://legend.finos.org/)
 - [Legend Getting Started Guide](https://legend.finos.org/docs/getting-started/introduction-to-legend)
-- [Legend Studio User Guide](https://github.com/finos/legend-studio)
+- [Legend Studio User Guide](https://legend.finos.org/guides/studio)
 - [Legend Language](https://legend.finos.org/docs/reference/legend-language)
 
 _The [documentation site](https://legend.finos.org) is built using Docusaurus based on the markdown files in the [`docs`](/docs/) folder._
