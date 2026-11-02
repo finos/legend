@@ -200,15 +200,15 @@
     },
     "question.how-to-define-a-class": {
       "title": "How do I define a class?",
-      "url": "https://legend.finos.org/docs/tutorials/studio-class#class"
+      "url": "https://legend.finos.org/guides/studio/modeling#classes"
     },
     "question.how-to-define-a-class-property": {
       "title": "How do I define a class property?",
-      "url": "https://legend.finos.org/docs/tutorials/studio-class#property---primitive-data-type"
+      "url": "https://legend.finos.org/guides/studio/modeling#classes"
     },
     "question.how-to-define-a-class-derivation": {
       "title": "How do I define a class derivation (derived property)?",
-      "url": "https://legend.finos.org/docs/tutorials/studio-class#derived-property"
+      "url": "https://legend.finos.org/guides/studio/modeling#derived-properties-and-constraints"
     },
     "question.how-to-write-a-class-derivation-lambda": {
       "related": [
@@ -220,7 +220,7 @@
     },
     "question.how-to-define-a-class-constraint": {
       "title": "How do I put constraint on a class?",
-      "url": "https://legend.finos.org/docs/tutorials/studio-class#constraint"
+      "url": "https://legend.finos.org/guides/studio/modeling#derived-properties-and-constraints"
     },
     "question.how-to-write-a-class-constraint-lambda": {
       "related": [
@@ -232,7 +232,7 @@
     },
     "question.how-to-specify-a-class-supertype": {
       "title": "How do I specify a supertype of a class?",
-      "url": "https://legend.finos.org/docs/tutorials/studio-profile#supertype"
+      "url": "https://legend.finos.org/guides/studio/modeling#classes"
     },
     "question.how-to-create-a-service": {
       "title": "How do I create a Service?",

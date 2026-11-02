@@ -40,7 +40,7 @@ To run the latest Legend, build it from source. The [Installation Guide](./insta
 ## Learn Legend
 
 - **Showcase projects** are small, working examples of each feature. Browse them in Legend Studio's Showcase Explorer, from its start screen, or on the [Showcase projects](../showcases/showcase-projects.md) page.
-- **Tutorials** walk through [Legend Studio](../tutorials/studio-workspace.md) and [Legend Query](../tutorials/query-builder.md) step by step.
+- **Tutorials** walk through [Legend Query](../tutorials/query-builder.md) step by step, and the Legend Studio features its guide doesn't cover yet, such as [service stores](../tutorials/studio-servicestore.md) and [persistence](../tutorials/studio-persistence.md).
 - **Guides** explain each application's screens: the [Legend Studio](/guides/studio) and [Legend Cube](/guides/cube) guides.
 - **Reference** pages describe the [Legend language](../reference/legend-language.md), the [Relation API](../reference/legend-relation.md), [Legend SQL](../reference/legend-sql.md) and every [function](../reference/released-functions.md).
 - The [Glossary](../overview/legend-glossary.md) defines the terms used across Legend.

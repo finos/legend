@@ -13,7 +13,7 @@ Some legacy showcase projects are hosted on the [Legend hosted instance](https:/
 
 Get started with the [Legend showcase guided tour](https://gitlab.com/finosfoundation/legend/showcase/legend-showcase-project-guided-tour). 
 
-For step by step tutorials, see [Legend tutorials](../tutorials/studio-workspace.md).
+For step by step tutorials, see [Legend tutorials](/guides/studio/start-screen#create-a-workspace).
 
 ## Showcase projects
 
@@ -70,5 +70,5 @@ For step by step tutorials, see [Legend tutorials](../tutorials/studio-workspace
 - [Legend User Journeys](../user-journeys/build-data-model.md)
 - [Legend Glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language.md)
-- [Studio tutorials](../tutorials/studio-workspace.md)
+- [Legend Studio guide](/guides/studio)
 - [Query tutorials](../tutorials/query-builder.md)
