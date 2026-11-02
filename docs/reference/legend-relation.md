@@ -1493,7 +1493,7 @@ variant arrays.
 
 Going the other way — a relation as the *source* of a mapped class — is a Mapping feature rather than a
 query one: a class can be mapped to a relation-returning function with `~func`. See
-[Relational mapping](../tutorials/studio-relational-mapping.md).
+[Relational mapping](/guides/studio/connect).
 
 ## Function index
 

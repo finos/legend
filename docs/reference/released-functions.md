@@ -63,6 +63,6 @@ to document a function you have contributed.
 - [Showcase projects](../showcases/showcase-projects.md)
 - [Legend glossary](../overview/legend-glossary.md)
 - [User journeys](../user-journeys/build-data-model.md)
-- [Studio tutorials](../tutorials/studio-workspace.md)
+- [Legend Studio guide](/guides/studio)
 - [Query tutorials](../tutorials/query-builder.md)
 - [Contribute to Legend](../community/contribute-to-legend.md)
