@@ -42,4 +42,4 @@ The code for all of them is on GitHub: [legend-studio](https://github.com/finos/
 - [Get Started](../getting-started/introduction-to-legend.md) to try Legend or install it.
 - The [Glossary](./legend-glossary.md) for the terms used across Legend.
 - [Showcase projects](../showcases/showcase-projects.md), small working examples of each feature.
-- The [Legend Studio](/guides/studio), [Legend Query](/guides/query) and [Legend Cube](/guides/cube) guides, and the [Studio](../tutorials/studio-workspace.md) and [Query](../tutorials/query-builder.md) tutorials.
+- The [Legend Studio](/guides/studio), [Legend Query](/guides/query) and [Legend Cube](/guides/cube) guides, and the [Query](../tutorials/query-builder.md) tutorials.
