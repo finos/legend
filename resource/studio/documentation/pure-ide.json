@@ -77,15 +77,15 @@
     },
     "question.how-to-define-a-class": {
       "title": "How do I define a class?",
-      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#define-a-new-class"
+      "url": "https://legend.finos.org/docs/tutorials/studio-class#class"
     },
     "question.how-to-define-a-class-property": {
       "title": "How do I define a class property?",
-      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#add-a-property-primitive-data-type"
+      "url": "https://legend.finos.org/docs/tutorials/studio-class#property---primitive-data-type"
     },
     "question.how-to-define-a-class-derivation": {
       "title": "How do I define a class derivation (derived property)?",
-      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#add-a-derived-property"
+      "url": "https://legend.finos.org/docs/tutorials/studio-class#derived-property"
     },
     "question.how-to-write-a-class-derivation-lambda": {
       "related": [
@@ -97,7 +97,7 @@
     },
     "question.how-to-define-a-class-constraint": {
       "title": "How do I put constraint on a class?",
-      "url": "https://legend.finos.org/docs/tutorials/studio-tutorial#add-a-constraint"
+      "url": "https://legend.finos.org/docs/tutorials/studio-class#constraint"
     },
     "question.how-to-write-a-class-constraint-lambda": {
       "related": [
