@@ -13,11 +13,11 @@ Data models also improve data quality by re-using agreed-upon concepts across te
 Create a data model to describe business concepts and how they relate to each other in a data model. 
 
 ### Features
-- [Workspace](../overview/legend-features.md#workspace)
-- [Class Editor](../overview/legend-features.md#class-editor)
+- [Workspace](../overview/legend-glossary.md#workspace)
+- [Class Editor](../overview/legend-glossary.md#class)
 - [Enumeration](../overview/legend-glossary.md#enumeration)
-- [Profile](../overview/legend-features.md#profile)
-- [Association](../overview/legend-features.md#association)
+- [Profile](../overview/legend-glossary.md#profile)
+- [Association](../overview/legend-glossary.md#association)
 
 ### Showcase projects
 
@@ -95,8 +95,8 @@ _Coming soon_
 ## Test classes & mappings
 
 ### Features
-- [Text mode](../overview/legend-features.md#text-mode)
-- [Mapping editor](../overview/legend-features.md#mapping-editor)
+- [Text mode](../overview/legend-glossary.md#text-mode)
+- [Mapping editor](../overview/legend-glossary.md#mapping)
 
 ### Tutorials
 - [Tests tutorial](../tutorials/studio-tests.md)
@@ -104,13 +104,12 @@ _Coming soon_
 ## Troubleshoot issues in data model (Text mode)
 
 ### Features
-- [Text mode](../overview/legend-features.md#text-mode)
+- [Text mode](../overview/legend-glossary.md#text-mode)
 
 ### Tutorials
 - [Troubleshoot issues with your data model ,query or service](../tutorials/studio-sdlc.md#troubleshoot-issues-with-your-data-model-query-or-service)
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)
-- [Legend features](../overview/legend-features.md)
 - [Legend glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)

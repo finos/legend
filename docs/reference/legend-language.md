@@ -238,7 +238,6 @@ Mapping MyModelToModelMapping
 
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)
-- [Legend features](../overview/legend-features.md)
 - [Legend glossary](../overview/legend-glossary.md)
 - [User journeys](../user-journeys/build-data-model.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)

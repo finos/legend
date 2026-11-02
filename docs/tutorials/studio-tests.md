@@ -46,7 +46,6 @@ You can run all saved tests across your Studio project at the same time in the n
 
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)
-- [Legend Features](../overview/legend-features.md)
 - [Legend Glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)

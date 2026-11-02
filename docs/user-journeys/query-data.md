@@ -7,8 +7,8 @@ sidebar_label: Query Modelled Data
 ## Build and run queries - relational
 
 ### Features
-- [Query Builder](../overview/legend-features.md#query-builder)
-- [Data Spaces](../overview/legend-features.md#dataspace)
+- [Query Builder](../overview/legend-glossary.md#query-builder)
+- [Data Spaces](../overview/legend-glossary.md#data-space)
 
 ### Showcase projects
 - [Query showcase project](../showcases/showcase-projects.md)
@@ -111,7 +111,6 @@ _Coming soon_
 
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)
-- [Legend features](../overview/legend-features.md)
 - [Legend glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)

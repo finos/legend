@@ -211,42 +211,61 @@ function Features() {
             <li>
               <p>
                 <strong class="home-page__highlight">Studio</strong> -- Our data
-                modelling Editor, which you can leverage to describe and connect
-                data to build your graph of information. Visualize those data
-                models in diagrams to facilitate the dialog between business and
-                development teams. Connect data models to data to unlock query
-                capabilities.
+                modelling editor. Describe and connect data, test it, and review
+                and release it as a versioned project.
               </p>
             </li>
             <li>
               <p>
-                <strong class="home-page__highlight">Query</strong> -- Our query
-                User Interface to access modelled data. Browse and navigate the
-                graph of information and then ask informed questions to the
-                data. No SQL needed, 100% drag & drop, 100% simple!
+                <strong class="home-page__highlight">Query</strong> -- Query
+                modelled data with a drag-and-drop query builder. No SQL needed.
               </p>
             </li>
             <li>
               <p>
-                <strong class="home-page__highlight">Services</strong> -- Our
-                solution to reliably and programmatically share high quality data
-                with other applications. Any query designed in{" "}
-                <strong class="home-page__highlight">Query</strong> can be
-                promoted to a production-ready Legend API with a simple click of
-                a button.
+                <strong class="home-page__highlight">Services</strong> -- Share
+                data reliably with other applications through APIs. Any query
+                can become a service.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong class="home-page__highlight">DataCube</strong> --
+                Explore query results in a grid: filter, group, pivot and add
+                columns.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong class="home-page__highlight">Analytics</strong> -- Build
+                a query as a chain of steps on a canvas, with Legend Cube.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong class="home-page__highlight">Marketplace</strong> --
+                Find data products and request access to them.
               </p>
             </li>
           </ul>
           <p>
             The Legend platform is backed by a powerful{" "}
             <strong class="home-page__highlight">Execution Engine</strong>,
-            which enables the usage of data models in numerous data-driven
-            business flows, and a robust{" "}
+            which runs queries and services against your data, a robust{" "}
             <strong class="home-page__highlight">
               Change Management (SDLC)
             </strong>{" "}
             process, which ensures the safe collaboration on and stability of
-            the Legend platform.
+            data models, and a{" "}
+            <strong class="home-page__highlight">Depot</strong>, which stores
+            released models for others to build on. See{" "}
+            <a
+              class="home-page__highlight"
+              href="docs/overview/legend-overview#applications"
+            >
+              all of Legend's applications
+            </a>
+            .
           </p>
         </div>
         <div class="home-page__content__tools-panel">

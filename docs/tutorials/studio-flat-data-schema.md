@@ -6,7 +6,7 @@ sidebar_label: Flat Data Schema
 
 ## Create a Flat Data Schema
 
-To create a [Flat Data Schema](../overview/legend-features.md#flat-data-schema)
+To create a [Flat Data Schema](../overview/legend-glossary.md#flat-data-schema)
 
 1. Click the **+** on the left-hand side and select **New SchemaSet**.
 2. Enter a name for the SchemaSet
@@ -338,7 +338,6 @@ section data: DelimitedWithoutHeadings
 
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)
-- [Legend Features](../overview/legend-features.md)
 - [Legend Glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)

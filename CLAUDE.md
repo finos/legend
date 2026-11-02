@@ -67,7 +67,9 @@ npm run check:showcases-index    # regenerate website/static/showcases/data.json
 - Markdown content lives in `docs/`, **not** in `website/` (`docs.path` is `../docs`). Frontmatter is `id` / `title` / `sidebar_label`.
 - `website/sidebars.json` is the nav. **A new doc page is invisible on the site until its `id` is added there.**
 - `website/pureHighlighter.js` registers the `legend` (Pure) syntax highlighting language.
-- Broken links and anchors are `throw`: a bad link fails `npm run build`, in CI and at publish. Link to another page by its file (`../overview/legend-features.md#workspace`); `page.md/#anchor`, with a slash after `.md`, doesn't resolve. This covers the user guides checked out from finos/legend-studio too, so a broken link merged there stops the daily publish until it's fixed. The link-check script additionally checks the in-app help registry.
+- Broken links and anchors are `throw`: a bad link fails `npm run build`, in CI and at publish. A build without the user guides checked out (see below) only warns, since its links into the guides can't resolve. Link to another page by its file (`../overview/legend-glossary.md#workspace`); `page.md/#anchor`, with a slash after `.md`, doesn't resolve. This covers the user guides checked out from finos/legend-studio too, so a broken link merged there stops the daily publish until it's fixed. The link-check script additionally checks the in-app help registry.
+- Application user guides live with their code in finos/legend-studio's `docs/user-guide`. The workflows check that folder out into `website/external/legend-studio`, and `USER_GUIDES` in `website/docusaurus.config.js` builds each one as its own docs section at `/guides/<id>`, listed under the navbar's Guides menu. Link to a guide by its address (`/guides/cube`).
+- When a page moves or is deleted, add its old address to `REDIRECTS` in `website/docusaurus.config.js` (`@docusaurus/plugin-client-redirects`). The in-app help registry and other sites link to these addresses, and the redirect keeps the `#anchor`.
 
 ## Showcase conventions
 

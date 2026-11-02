@@ -13,6 +13,7 @@
   "dependencies": {
     "@docsearch/js": "^3.6.1",
     "@docusaurus/core": "^3.6.1",
+    "@docusaurus/plugin-client-redirects": "^3.6.1",
     "@docusaurus/plugin-google-gtag": "^3.6.1",
     "@docusaurus/preset-classic": "^3.6.1",
     "@docusaurus/theme-search-algolia": "^3.6.1",

@@ -61,7 +61,6 @@ to document a function you have contributed.
 - [Relation Functions](legend-relation.md) — a guide to the relation (data frame) API
 - [Legend language](legend-language.md)
 - [Showcase projects](../showcases/showcase-projects.md)
-- [Legend features](../overview/legend-features.md)
 - [Legend glossary](../overview/legend-glossary.md)
 - [User journeys](../user-journeys/build-data-model.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)

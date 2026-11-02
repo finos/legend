@@ -4,52 +4,52 @@ title: Get Started
 sidebar_label: Get Started
 ---
 
-## Showcase Projects
-
-See Legend features in action in [Legend showcase projects](../showcases/showcase-projects.md)
-
-## Introductory Videos
-
-Watch the introductory Studio & Query sessions hosted by Beeke-Marie Nelke for the FINOS Open Source community:
-
-- [Legend 101](https://www.youtube.com/watch?v=Mruhx5hnLzQ). Learn the basics of data modeling in Legend Studio.
-- [Legend New Feature Deep Dive](https://www.youtube.com/watch?v=7lJoik3r38k). Learn how to create mappings and query your data.
-
-We highly recommend reviewing the [Legend talks and conferences](../community/legend-media.md) recordings.
-
-## Tutorials
-
-Review the step by step tutorials for [Studio](../tutorials/studio-workspace) and [Query](../tutorials/query-builder.md).
+New to Legend? Read [What is Legend?](../overview/legend-overview.md) first, then pick a way to try it below.
 
 ## Start Using Legend Today
 
-There are multiple ways to get started with Legend: getting access to the Studio hosted instance, using Legend Omnibus to get the Legend environment up and running locally, or installing Legend.
-
 ### Studio hosted instance
 
-This is the easiest way to get started with Legend as it does not involve any installation steps.
+FINOS hosts a shared instance of Legend, which needs no installation. It runs an older version of Legend than the latest release, so some features in these docs may be missing there.
 
-FINOS hosts a free instance of Legend to be used for shared modeling efforts.
+Instructions to sign up are on the [FINOS website](https://www.finos.org/legend).
 
-Instructions to sign up and use this instance are available on the [FINOS website](https://www.finos.org/legend).
-
-**Note: This is a shared instance which might not be appropriate for proprietary data models.**
+**Note:** this is a shared instance. Every project on it can be read by the public, so don't use it for proprietary data models.
 
 ### Using Legend Omnibus
 
-This is a quick way to get the Legend environment up and running locally. Make sure you have [Docker](https://docs.docker.com/engine/install/) installed. Run the following command in the terminal:
+Legend Omnibus runs Legend Studio, its servers and their dependencies on your machine with Docker. Make sure you have [Docker](https://docs.docker.com/engine/install/) installed, then run:
 
 ```sh
 curl https://legend.finos.org/omnibus/start.sh | bash
 
-# Or run the full Omnibus (with embedded Gitlab) which might take a little longer to start up
+# Or run the full Omnibus, with an embedded GitLab, which takes longer to start
 curl https://legend.finos.org/omnibus/start.full.sh | bash
 ```
 
-> For Windows user, please use [Git Bash](https://git-scm.com/downloads) or [WSL](https://docs.docker.com/desktop/wsl/) to run the above command.
+When it's ready, Legend Studio is at http://localhost:6900/studio.
 
-See the [Omnibus Guide](https://github.com/finos/legend/tree/master/installers/omnibus) for more details.
+> On Windows, use [Git Bash](https://git-scm.com/downloads) or [WSL](https://docs.docker.com/desktop/features/wsl/) to run the commands above.
 
-### Setup your own Legend environment
+The Omnibus images were last published in January 2025, and the full image in December 2023, so they run an older version of Legend than the latest release. See the [Omnibus guide](https://github.com/finos/legend/tree/master/installers/omnibus) for other ways to run it, such as with your own gitlab.com account.
 
-This is the recommended way to setup Legend for local development. See the [Installation Guide](../getting-started/installation-guide.md) for details.
+### Run Legend from source
+
+To run the latest Legend, build it from source. The [Installation Guide](./installation-guide.md) explains how to run the servers. The applications run from [finos/legend-studio](https://github.com/finos/legend-studio): its README explains how to start each one locally.
+
+## Learn Legend
+
+- **Showcase projects** are small, working examples of each feature. Browse them in Legend Studio's Showcase Explorer, from its start screen, or on the [Showcase projects](../showcases/showcase-projects.md) page.
+- **Tutorials** walk through [Legend Studio](../tutorials/studio-workspace.md) and [Legend Query](../tutorials/query-builder.md) step by step.
+- **Guides** explain each application's screens. Start with the [Legend Cube](/guides/cube) guide.
+- **Reference** pages describe the [Legend language](../reference/legend-language.md), the [Relation API](../reference/legend-relation.md), [Legend SQL](../reference/legend-sql.md) and every [function](../reference/released-functions.md).
+- The [Glossary](../overview/legend-glossary.md) defines the terms used across Legend.
+
+## Introductory videos
+
+These sessions for the FINOS community, hosted by Beeke-Marie Nelke, introduce Legend Studio and Legend Query:
+
+- [Legend 101](https://www.youtube.com/watch?v=Mruhx5hnLzQ): the basics of data modeling in Legend Studio.
+- [Legend New Feature Deep Dive](https://www.youtube.com/watch?v=7lJoik3r38k): how to create mappings and query your data.
+
+More recordings are on the [Legend media](../community/legend-media.md) page.

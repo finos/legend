@@ -6,7 +6,7 @@ sidebar_label: Services
 
 ## Create a Service 
 
-Build services on top of data queries to consume modeled data systematically. To create a service select <kbd>New Service</kbd> from the drop down menu to launch the [Service Editor](../overview/legend-features.md#service-editor)
+Build services on top of data queries to consume modeled data systematically. To create a service select <kbd>New Service</kbd> from the drop down menu to launch the [Service Editor](../overview/legend-glossary.md#service)
 
 ### General Tab
 
@@ -16,7 +16,7 @@ In the <kbd>General</kbd> tab of the Service Editor, users can specify metadata 
 
 ### Execution Tab
 
-In the execution tab, users can create and edit their service query. By hitting the pencil icon button, users can edit the query using the [Query Builder](../overview/legend-features.md#query-builder). Users can make changes to the query either in the user-friendly form mode or in text mode. 
+In the execution tab, users can create and edit their service query. By hitting the pencil icon button, users can edit the query using the [Query Builder](../overview/legend-glossary.md#query-builder). Users can make changes to the query either in the user-friendly form mode or in text mode. 
 
 Additonally the bottom panel lets you define your execution context which represents the mapping and runtime used when executing your query.
 
@@ -178,7 +178,6 @@ _Coming soon._
 
 ## More
 - [Showcase projects](../showcases/showcase-projects.md)
-- [Legend Features](../overview/legend-features.md)
 - [Legend Glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Studio tutorials](../tutorials/studio-workspace.md)
