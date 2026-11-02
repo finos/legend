@@ -12,6 +12,7 @@ const LEGEND_STUDIO_USER_GUIDES = path.resolve(
   "external/legend-studio/docs/user-guide"
 );
 const ALL_USER_GUIDES = [
+  { id: "studio", label: "Legend Studio", folder: "studio" },
   { id: "cube", label: "Legend Cube", folder: "cube" },
 ].map((guide) => ({
   ...guide,

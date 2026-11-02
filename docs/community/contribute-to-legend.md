@@ -143,7 +143,7 @@ npm run start
 
 A broken link or anchor fails `npm run build`, so run it before you open a pull request.
 
-The guides to Legend's applications, such as [Legend Cube](https://legend.finos.org/cube), are written next to the applications' code, in [finos/legend-studio's `docs/user-guide`](https://github.com/finos/legend-studio/tree/master/docs/user-guide). The site's build checks that folder out into `website/external/legend-studio`; propose changes to those guides in finos/legend-studio.
+The guides to Legend's applications, such as [Legend Studio](/guides/studio) and [Legend Cube](/guides/cube), are written next to the applications' code, in [finos/legend-studio's `docs/user-guide`](https://github.com/finos/legend-studio/tree/master/docs/user-guide). The site's build checks that folder out into `website/external/legend-studio`; propose changes to those guides in finos/legend-studio.
 #### **Step 2. Create a showcase project**
 
 ##### Before you start
