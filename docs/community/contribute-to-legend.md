@@ -12,7 +12,7 @@ There are many ways to contribute to Legend and many of them don't involve writi
 
 ### 2. Contribute to existing models
 Start using Legend Studio to provide feedback, [and contribute to, existing models](contribute-to-legend.md#contribute-to-models). 
-Request access to the modeling instance at https://www.finos.org/legend and go [through our Getting started guide](../tutorials/studio-workspace.md). If you encounter an issue, let us know by [opening an issue](https://github.com/finos/legend/issues/new/choose).
+Request access to the modeling instance at https://www.finos.org/legend and go [through our Getting started guide](/guides/studio/start-screen#create-a-workspace). If you encounter an issue, let us know by [opening an issue](https://github.com/finos/legend/issues/new/choose).
 
 ### 3. Contribute documentation
 [Help build out the documentation](contribute-to-legend.md#contribute-documentation). 
@@ -105,7 +105,7 @@ Consider browsing through issues labeled as "good first issue" in the respective
 
 FINOS hosts a shared version of Legend Studio in the public cloud, which is available to prototype collaborative data modeling, at . If you'd like to access the existing models, **request access to the modeling instance** at [finos.org/legend](https://www.finos.org/legend).
 
-Once you've requested access to the modeling instance, you can get started and [create a model](../tutorials/studio-workspace.md).
+Once you've requested access to the modeling instance, you can get started and [create a model](/guides/studio/start-screen#create-a-workspace).
 
 **Important Note:** The shared instance of [Legend Studio](https://legend.finos.org/studio) should only be used for public modeling initiatives. Every Studio project maps to a GitLab project in which the data model code could be reviewed by the general public.
 
@@ -167,7 +167,7 @@ Legend documentation is showcase project-first. If you would like to add step-by
 | Documentation type you're contributing | Example | Description | Best practices  |
 | - | - | - | - | 
 | **Glossary**| _[Glossary](../overview/legend-glossary.md)_| The Glossary defines each Legend term in a sentence or two, and links to its tutorial or reference page | If you are documenting a new feature, add an entry for it to the Glossary, in alphabetical order.
-| **Tutorials** | _["Workspace"](../tutorials/studio-workspace.md) tutorial_ |  Tutorials are Legend feature-specific and describe the "How": the steps that a user needs to take in order to **use** a Legend feature  |  Create a new (Heading 2) entry within the corresponding feature file (e.g. [Workspace](../tutorials/studio-workspace.md))  Describe the sequence of steps that a user needs to take in order to use the feature   Link to/update the corresponding **[glossary entry](../overview/legend-glossary.md)** (e.g. [association](../overview/legend-glossary.md#association)), **tutorials** (e.g. [association](../tutorials/studio-association.md)), **[showcase projects](../showcases/showcase-projects.md)** and **[reference documentation](../reference/legend-language.md)** |
+| **Tutorials** | _["Workspace"](/guides/studio/start-screen#create-a-workspace) tutorial_ |  Tutorials are Legend feature-specific and describe the "How": the steps that a user needs to take in order to **use** a Legend feature  |  Create a new (Heading 2) entry within the corresponding feature file (e.g. [Workspace](/guides/studio/start-screen#create-a-workspace))  Describe the sequence of steps that a user needs to take in order to use the feature   Link to/update the corresponding **[glossary entry](../overview/legend-glossary.md)** (e.g. [association](../overview/legend-glossary.md#association)), **tutorials** (e.g. [association](/guides/studio/modeling#associations)), **[showcase projects](../showcases/showcase-projects.md)** and **[reference documentation](../reference/legend-language.md)** |
 | **Application guides** | _[Legend Cube](/guides/cube) guide_ | A guide explains an application's screens, page by page | Guides are written next to the application's code, in [finos/legend-studio's `docs/user-guide`](https://github.com/finos/legend-studio/tree/master/docs/user-guide). Propose changes there. |
 | **Reference documentation**| _[Legend language](../reference/legend-language.md) reference documentation_ |  Reference documentation is technical and developer-oriented, and includes API calls and other information that users need in order to **work with/develop** Legend components  | Contact the Legend team via [GitHub issues](https://github.com/finos/legend/issues/new/choose) or the [Legend mailing list](mailto:legend@finos.org) if you have questions about contributing reference documentation.|
 
