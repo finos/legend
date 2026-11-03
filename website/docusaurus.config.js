@@ -13,6 +13,7 @@ const LEGEND_STUDIO_USER_GUIDES = path.resolve(
 );
 const ALL_USER_GUIDES = [
   { id: "studio", label: "Legend Studio", folder: "studio" },
+  { id: "query", label: "Legend Query", folder: "query" },
   { id: "cube", label: "Legend Cube", folder: "cube" },
 ].map((guide) => ({
   ...guide,
