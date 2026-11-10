@@ -248,4 +248,4 @@ Legend Engine source code is in the Maven modules named ```legend-engine-xt-serv
 - [Legend Glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Legend Studio guide](/guides/studio)
-- [Query tutorials](../tutorials/query-builder.md)
+- [Legend Query guide](/guides/query)

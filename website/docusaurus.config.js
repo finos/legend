@@ -62,6 +62,14 @@ const REDIRECTS = [
   ["/docs/tutorials/services-connection", "/guides/studio/connect#a-connection"],
   ["/docs/tutorials/services-runtime", "/guides/studio/connect#a-runtime"],
   ["/docs/tutorials/studio-mapping-test", "/guides/studio/tests#a-mappings-tests"],
+  // Query tutorials the Legend Query guide replaced
+  ["/docs/tutorials/query-dataspace", "/guides/query/data-space#pick-a-data-space"],
+  ["/docs/tutorials/query-execution-context", "/guides/query/data-space#pick-a-data-space"],
+  ["/docs/tutorials/query-explorer", "/guides/query/query-editor"],
+  ["/docs/tutorials/query-export", "/guides/query/query-editor#results"],
+  ["/docs/tutorials/query-fetch-structure", "/guides/query/query-editor"],
+  ["/docs/tutorials/query-filter", "/guides/query/query-editor"],
+  ["/docs/tutorials/query-parameter", "/guides/query/query-editor#parameters-and-constants"],
 ].map(([from, to]) => ({ from, to }));
 
 module.exports = {

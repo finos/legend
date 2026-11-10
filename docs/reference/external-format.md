@@ -31,6 +31,6 @@ _Coming soon._
 - [Legend glossary](../overview/legend-glossary.md)
 - [User journeys](../user-journeys/build-data-model.md)
 - [Legend Studio guide](/guides/studio)
-- [Query tutorials](../tutorials/query-builder.md)
+- [Legend Query guide](/guides/query)
 - [Contribute to Legend](../community/contribute-to-legend.md)
 

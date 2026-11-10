@@ -47,14 +47,12 @@
       "tutorials/studio-sdlc"
     ],
     "Query Tutorials": [
-      "tutorials/query-builder",
-      "tutorials/query-dataspace",
-      "tutorials/query-execution-context",
-      "tutorials/query-explorer",
-      "tutorials/query-parameter",
-      "tutorials/query-fetch-structure",
-      "tutorials/query-filter",
-      "tutorials/query-export"
+      {
+        "type": "link",
+        "label": "Legend Query guide",
+        "href": "/guides/query"
+      },
+      "tutorials/query-builder"
     ],
     "Reference Docs": [
       "reference/legend-language",

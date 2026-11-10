@@ -195,4 +195,4 @@ More details and **video walkthrough** [here](https://github.com/finos/legend-st
 - [Legend Glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Legend Studio guide](/guides/studio)
-- [Query tutorials](../tutorials/query-builder.md)
+- [Legend Query guide](/guides/query)

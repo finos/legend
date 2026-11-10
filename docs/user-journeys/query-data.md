@@ -61,7 +61,7 @@ _Coming soon_
 See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
-- [Run queries with parameters](../tutorials/query-parameter.md)
+- [Run queries with parameters](/guides/query/query-editor#parameters-and-constants)
 
 ## Apply operations/transformations/calculations to datasets in Query
 
@@ -74,7 +74,7 @@ _Coming soon_
 See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
-- [Filter queries](../tutorials/query-filter.md) 
+- [Filter queries](/guides/query/query-editor) 
 
 <!-- 
 ## Productionize ad-hoc queries
@@ -114,4 +114,4 @@ _Coming soon_
 - [Legend glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language.md)
 - [Legend Studio guide](/guides/studio)
-- [Query tutorials](../tutorials/query-builder.md)
+- [Legend Query guide](/guides/query)
