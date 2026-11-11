@@ -6,7 +6,7 @@ This file lists the maintainers of this repository.
 
 | GitHub Username | Name | Organization | Email (optional) |
 |----------------|------|--------------|------------------|
-| @AFine-gs | *please add name* | Goldman Sachs |  |
+| @AFine-gs | Adam Fine | Goldman Sachs |  |
 | @MauricioUyaguari | Mauricio Uyaguari | Goldman Sachs | lmauricio12@gmail.com |
 | @Yasirmod17 | Mohammed Ibrahim | Goldman Sachs |  |
 | @agitana | Aitana Myohl | Goldman Sachs |  |
