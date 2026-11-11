@@ -10,7 +10,7 @@ The terms used across Legend, in alphabetical order. Each entry links to a tutor
 
 An association links two classes, such as a firm and its employees, and adds a property to each side of the link. Each end has a multiplicity, so a link can be one to one, one to many or many to many.
 
-See [Create an association](../tutorials/studio-association.md).
+See [Create an association](/guides/studio/modeling#associations).
 
 ## Binding
 
@@ -22,13 +22,13 @@ See [Create a binding](../tutorials/studio-binding.md) and the [external format 
 
 A class is a business concept, such as a trade or a firm. It has properties, and can have derived properties, constraints and super types.
 
-See [Create a class](../tutorials/studio-class.md).
+See [Create a class](/guides/studio/modeling#classes).
 
 ## Connection
 
 A connection tells Legend Engine how to reach a store: for a database, its type, where it is and how to authenticate.
 
-See [Create a connection](../tutorials/studio-relational-mapping.md#create-a-connection).
+See [Create a connection](/guides/studio/connect#a-connection).
 
 ## Constant
 
@@ -38,7 +38,7 @@ A constant is a named value in a query that stays the same every time the query 
 
 A constraint is a rule that a class's data must follow, written as an expression, for example that a trade's quantity is positive. Data that breaks a constraint is reported when it is read or validated.
 
-See [Add a constraint](../tutorials/studio-class.md#constraint).
+See [Add a constraint](/guides/studio/modeling#derived-properties-and-constraints).
 
 ## Data product
 
@@ -62,19 +62,19 @@ A property's type is a class, an enumeration or a primitive type. The primitive 
 
 A derived property is computed from other properties by an expression, for example a person's full name from their first and last names.
 
-See [Add a derived property](../tutorials/studio-class.md#derived-property).
+See [Add a derived property](/guides/studio/modeling#derived-properties-and-constraints).
 
 ## Diagram
 
 A diagram draws classes and the links between them. Diagrams are not generated from the model: you draw each one to show the part of the model it is about.
 
-See [Create a diagram](../tutorials/studio-diagram.md).
+See [Create a diagram](/guides/studio/modeling#diagrams).
 
 ## Enumeration
 
 An enumeration is a type with a fixed list of values, such as the sides of a trade.
 
-See [Create an enumeration](../tutorials/studio-enumeration.md).
+See [Create an enumeration](/guides/studio/modeling#enumerations).
 
 ## Externalize
 
@@ -116,7 +116,7 @@ A graph fetch query returns objects, as a tree serialized as JSON, rather than a
 
 A group workspace is a workspace that several people share. Their changes are visible to each other without being committed to the project first.
 
-See [Create a group workspace](../tutorials/studio-workspace.md#group-workspace).
+See [Create a group workspace](/guides/studio/start-screen#create-a-workspace).
 
 ## Internalize
 
@@ -136,7 +136,7 @@ See [Create a model-to-model mapping](../tutorials/studio-m2m-mapping.md).
 
 A relational mapping fills classes from the tables of a relational database.
 
-See [Create a relational mapping](../tutorials/studio-relational-mapping.md).
+See [Create a relational mapping](/guides/studio/connect).
 
 ## Measure
 
@@ -154,7 +154,7 @@ An OLAP, or window, column computes a value over a group of rows, such as a runn
 
 A package groups elements, like a folder, and gives each its full name: the class `Firm` in the package `model::domain` is `model::domain::Firm`.
 
-See [Create a package](../tutorials/studio-package.md).
+See [Create a package](/guides/studio/modeling#create-an-element).
 
 ## Persistence
 
@@ -164,7 +164,7 @@ A persistence describes how the results of a service are written to a target, su
 
 A profile declares stereotypes and tags, which add information about the model to its elements.
 
-See [Create a profile](../tutorials/studio-profile.md).
+See [Create a profile](/guides/studio/modeling#profiles).
 
 ## Project dependencies
 
@@ -176,7 +176,7 @@ See [Define project dependencies](../tutorials/studio-project-dependencies.md).
 
 A property is an attribute of a class, such as a trade's date. It has a type and a multiplicity, which says how many values it holds, for example exactly one, or zero or more.
 
-See [Add a property](../tutorials/studio-class.md#property---primitive-data-type).
+See [Add a property](/guides/studio/modeling#classes).
 
 ## Query builder
 
@@ -198,13 +198,13 @@ See the [Relation API reference](../reference/legend-relation.md).
 
 A database element describes a relational store: its schemas, tables, views and columns, and the joins and filters between them. Relational mappings refer to it.
 
-See [Create a relational database schema](../tutorials/studio-relational-mapping.md#create-a-relational-database-schema).
+See [Create a relational database schema](/guides/studio/connect#a-database).
 
 ## Runtime
 
 A runtime says which connection to use for each store that a mapping reads from. A query or a service runs with a mapping and a runtime.
 
-See [Create a runtime](../tutorials/studio-relational-mapping.md#create-a-runtime).
+See [Create a runtime](/guides/studio/connect#a-runtime).
 
 ## Schema set
 
@@ -226,19 +226,19 @@ See the [service store tutorial](../tutorials/studio-servicestore.md) and legend
 
 A stereotype is a label, declared in a profile, that you put on an element, such as marking a class as temporal.
 
-See [Create a stereotype](../tutorials/studio-profile.md#stereotype).
+See [Create a stereotype](/guides/studio/modeling#profiles).
 
 ## Super type
 
 A class's super type is a more general class it extends, such as a legal entity for a firm. The class has the super type's properties too.
 
-See [Add a super type](../tutorials/studio-profile.md#supertype).
+See [Add a super type](/guides/studio/modeling#classes).
 
 ## Tagged value
 
 A tagged value is a value for a tag declared in a profile, such as a description or an alias for a class or a property.
 
-See [Add a tagged value](../tutorials/studio-profile.md#profile).
+See [Add a tagged value](/guides/studio/modeling#profiles).
 
 ## Test
 
@@ -256,7 +256,7 @@ See [Create a text element](../tutorials/studio-text.md).
 
 Text mode shows the whole workspace as Legend language text instead of form editors. Press `F8` to open or close it, and `F9` to compile.
 
-See [Text mode](../tutorials/studio-workspace.md#text-mode).
+See [Text mode](/guides/studio/editor#text-mode).
 
 ## Watermark
 
@@ -266,4 +266,4 @@ A watermark is a value attached to a query with the `forWatermark` function. Add
 
 A workspace is where you change a project: a copy of it, kept as a branch of the project's GitLab repository. Once the changes are reviewed and approved, they're committed to the project.
 
-See [Create a workspace](../tutorials/studio-workspace.md).
+See [Create a workspace](/guides/studio/start-screen#create-a-workspace).

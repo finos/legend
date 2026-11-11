@@ -27,6 +27,6 @@ _Coming soon._
 - [Showcase projects](../showcases/showcase-projects.md)
 - [Legend glossary](../overview/legend-glossary.md)
 - [User journeys](../user-journeys/build-data-model.md)
-- [Studio tutorials](../tutorials/studio-workspace.md)
-- [Query tutorials](../tutorials/query-builder.md)
+- [Legend Studio guide](/guides/studio)
+- [Legend Query guide](/guides/query)
 - [Contribute to Legend](../community/contribute-to-legend.md)

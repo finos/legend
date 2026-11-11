@@ -17,7 +17,7 @@ sidebar_label: Connect to Data Sources
 See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
-- [Relational mapping](../tutorials/studio-relational-mapping.md)  
+- [Relational mapping](/guides/studio/connect)  
 - [Relational test data](../tutorials/studio-tests.md#relational)
 
 ## Connect your data model to a semi-structured file
@@ -93,5 +93,5 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 - [Showcase projects](../showcases/showcase-projects.md)
 - [Legend glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language.md)
-- [Studio tutorials](../tutorials/studio-workspace.md)
-- [Query tutorials](../tutorials/query-builder.md)
+- [Legend Studio guide](/guides/studio)
+- [Legend Query guide](/guides/query)

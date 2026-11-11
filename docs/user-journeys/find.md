@@ -17,7 +17,7 @@ See features in action in [showcase projects](../showcases/showcase-projects.md)
 
 ### Tutorials
 - [Find models](../tutorials/studio-find-models.md)
-- [Define Data Space](../tutorials/query-dataspace.md)
+- [Define Data Space](/guides/query/data-space#pick-a-data-space)
 
 <!-- 
 ## Find an existing project to make edits to the data model
@@ -46,5 +46,5 @@ _Coming soon_
 - [Showcase projects](../showcases/showcase-projects.md)
 - [Legend glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language.md)
-- [Studio tutorials](../tutorials/studio-workspace.md)
-- [Query tutorials](../tutorials/query-builder.md)
+- [Legend Studio guide](/guides/studio)
+- [Legend Query guide](/guides/query)

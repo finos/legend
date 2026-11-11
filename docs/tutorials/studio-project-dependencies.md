@@ -16,5 +16,5 @@ _Tutorial coming soon._
 - [Showcase projects](../showcases/showcase-projects.md)
 - [Legend Glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language.md)
-- [Studio tutorials](../tutorials/studio-workspace.md)
-- [Query tutorials](../tutorials/query-builder.md)
+- [Legend Studio guide](/guides/studio)
+- [Legend Query guide](/guides/query)

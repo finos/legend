@@ -20,5 +20,5 @@ _Coming soon_
 - ["Consuming Legend Data Models & Services Using BI, Python/ML & other Tools"](https://www.youtube.com/watch?v=rm-mAohz6NQ) - Presentation by Andrew Ormerod and John Pentelow of Goldman Sachs at the 2022 [FINOS OSFF conference](../community/legend-media.md#finos-osff)
 - [Legend glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language.md)
-- [Studio tutorials](../tutorials/studio-workspace.md)
-- [Query tutorials](../tutorials/query-builder.md)
+- [Legend Studio guide](/guides/studio)
+- [Legend Query guide](/guides/query)
