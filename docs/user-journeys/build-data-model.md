@@ -24,12 +24,12 @@ Create a data model to describe business concepts and how they relate to each ot
 See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
-- [Create a workspace](../tutorials/studio-workspace.md)
-- [Create a package](../tutorials/studio-package.md)
-- [Create a class](../tutorials/studio-class.md)  
-- [Create a profile](../tutorials/studio-profile.md)  
-- [Create an association](../tutorials/studio-association.md) 
-- [Create an enumeration](../tutorials/studio-enumeration.md)  
+- [Create a workspace](/guides/studio/start-screen#create-a-workspace)
+- [Create a package](/guides/studio/modeling#create-an-element)
+- [Create a class](/guides/studio/modeling#classes)  
+- [Create a profile](/guides/studio/modeling#profiles)  
+- [Create an association](/guides/studio/modeling#associations) 
+- [Create an enumeration](/guides/studio/modeling#enumerations)  
 
 ## Visualize your data model in a diagram
 
@@ -43,7 +43,7 @@ Diagrams allow you to create a data model drag & drop style.
 See features in action in [showcase projects](../showcases/showcase-projects.md).
 
 ### Tutorials
-- [Create a diagram](../tutorials/studio-diagram.md)
+- [Create a diagram](/guides/studio/modeling#diagrams)
 
 ## Create a project where your data model is stored
 
@@ -112,5 +112,5 @@ _Coming soon_
 - [Showcase projects](../showcases/showcase-projects.md)
 - [Legend glossary](../overview/legend-glossary.md)
 - [Reference documentation](../reference/legend-language.md)
-- [Studio tutorials](../tutorials/studio-workspace.md)
+- [Legend Studio guide](/guides/studio)
 - [Query tutorials](../tutorials/query-builder.md)

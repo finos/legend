@@ -66,21 +66,21 @@
         "value": "A `Class` specifies a data model's structure, inheritance, and constraints"
       },
       "title": "What is a class element?",
-      "url": "https://legend.finos.org/docs/tutorials/studio-class"
+      "url": "https://legend.finos.org/guides/studio/modeling#classes"
     },
     "grammar.profile": {
       "markdownText": {
         "value": "A `Profile` provides a generic extension mechanism for customizing existing data models; some of its uses include documentating and classifying data models"
       },
       "title": "What is a profile element?",
-      "url": "https://legend.finos.org/docs/tutorials/studio-profile"
+      "url": "https://legend.finos.org/guides/studio/modeling#profiles"
     },
     "grammar.enumeration": {
       "markdownText": {
         "value": "An `Enumeration` specifies the complete list of value that a given type may acquire"
       },
       "title": "What is an enumeration element?",
-      "url": "https://legend.finos.org/docs/tutorials/studio-enumeration"
+      "url": "https://legend.finos.org/guides/studio/modeling#enumerations"
     },
     "grammar.measure": {
       "markdownText": {
@@ -93,7 +93,7 @@
         "value": "An `Association` specifies a linking between between 2 data models"
       },
       "title": "What is an association element?",
-      "url": "https://legend.finos.org/docs/tutorials/studio-association"
+      "url": "https://legend.finos.org/guides/studio/modeling#associations"
     },
     "grammar.function": {
       "markdownText": {
@@ -204,15 +204,15 @@
     },
     "question.how-to-define-a-class": {
       "title": "How do I define a class?",
-      "url": "https://legend.finos.org/docs/tutorials/studio-class#class"
+      "url": "https://legend.finos.org/guides/studio/modeling#classes"
     },
     "question.how-to-define-a-class-property": {
       "title": "How do I define a class property?",
-      "url": "https://legend.finos.org/docs/tutorials/studio-class#property---primitive-data-type"
+      "url": "https://legend.finos.org/guides/studio/modeling#classes"
     },
     "question.how-to-define-a-class-derivation": {
       "title": "How do I define a class derivation (derived property)?",
-      "url": "https://legend.finos.org/docs/tutorials/studio-class#derived-property"
+      "url": "https://legend.finos.org/guides/studio/modeling#derived-properties-and-constraints"
     },
     "question.how-to-write-a-class-derivation-lambda": {
       "related": [
@@ -224,7 +224,7 @@
     },
     "question.how-to-define-a-class-constraint": {
       "title": "How do I put constraint on a class?",
-      "url": "https://legend.finos.org/docs/tutorials/studio-class#constraint"
+      "url": "https://legend.finos.org/guides/studio/modeling#derived-properties-and-constraints"
     },
     "question.how-to-write-a-class-constraint-lambda": {
       "related": [
@@ -236,7 +236,7 @@
     },
     "question.how-to-specify-a-class-supertype": {
       "title": "How do I specify a supertype of a class?",
-      "url": "https://legend.finos.org/docs/tutorials/studio-profile#supertype"
+      "url": "https://legend.finos.org/guides/studio/modeling#classes"
     },
     "question.how-to-write-a-service-test": {
       "title": "How do I specify a service test?",
@@ -244,7 +244,7 @@
     },
     "question.how-to-write-a-mapping-test": {
       "title": "How do I specify a mapping test?",
-      "url": "https://legend.finos.org/docs/tutorials/studio-mapping-test"
+      "url": "https://legend.finos.org/guides/studio/tests#a-mappings-tests"
     },
     "question.how-to-define-flat-data-schema-set": {
       "title": "How do I define a flat data schema set (i.e csv)?",
@@ -309,7 +309,7 @@
       "markdownText": {
         "value": "`Diagram DSL`  (corresponding to `###Diagram` section in `Pure`) concerns with visualizing data models and their relationship"
       },
-      "url": "https://legend.finos.org/docs/tutorials/studio-diagram",
+      "url": "https://legend.finos.org/guides/studio/modeling#diagrams",
       "title": "What is Diagram DSL about?"
     },
     "dsl-diagram.concept.element.diagram": {
