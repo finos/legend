@@ -330,6 +330,20 @@
       },
       "title": "What is a data-space element?"
     },
+    "dsl-ingest.concept.element.ingest-definition": {
+      "markdownText": {
+        "value": "An `Ingest definition` brings data into the Lakehouse: its data sets are the tables producers send files to, and its materialized views are tables the Lakehouse computes from them, each with a function"
+      },
+      "title": "What is an ingest definition?",
+      "url": "https://legend.finos.org/guides/studio/ingest-definition"
+    },
+    "dsl-ingest.concept.element.materialized-view": {
+      "markdownText": {
+        "value": "A materialized view of an ingest definition is built and changed in Legend Cube: the step that runs becomes the view"
+      },
+      "title": "How do I build a materialized view?",
+      "url": "https://legend.finos.org/guides/studio/ingest-definition#building-a-view-in-legend-cube"
+    },
     "dsl-persistence.grammar.parser": {
       "markdownText": {
         "value": "`Persistence DSL` (corresponding to `###Persistence` section in `Pure`) provides specifications for persisting the result of a service invocation into a target data store"
