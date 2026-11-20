@@ -4,14 +4,14 @@
 
 | Metric | TDS | Relation |
 |--------|-----|----------|
-| Total features | 621 | 621 |
-| Total tests | 700 | 700 |
+| Total features | 625 | 625 |
+| Total tests | 704 | 704 |
 | ⚪ UNSUPPORTED | 243 | 53 |
-| ✅ PASS | 357 (78.1%) | 519 (80.2%) |
+| ✅ PASS | 361 (78.3%) | 523 (80.3%) |
 | ❌ FAIL | 12 | 13 |
 | 💥 ERROR | 88 | 115 |
 | ❓ SKIP | 0 | 0 |
-| **Pass rate** | **78.1%** | **80.2%** |
+| **Pass rate** | **78.3%** | **80.3%** |
 
 _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 
@@ -44,7 +44,7 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 | [group_by](#group_by) | 12 | 17 | 12 | 0 | 0 | 0 | 0 | 12 | 0 | 0 | 0 | 0 |
 | [distinct](#distinct) | 11 | 14 | 10 | 0 | 0 | 1 | 0 | 10 | 0 | 0 | 1 | 0 |
 | [null_semantics](#null_semantics) | 17 | 17 | 13 | 0 | 3 | 0 | 0 | 15 | 0 | 1 | 0 | 0 |
-| [type_casting](#type_casting) | 12 | 12 | 10 | 0 | 0 | 2 | 0 | 11 | 0 | 0 | 1 | 0 |
+| [type_casting](#type_casting) | 16 | 16 | 14 | 0 | 0 | 2 | 0 | 15 | 0 | 0 | 1 | 0 |
 | [case_expressions](#case_expressions) | 15 | 15 | 15 | 0 | 0 | 0 | 0 | 15 | 0 | 0 | 0 | 0 |
 | [where_predicates](#where_predicates) | 20 | 20 | 12 | 0 | 2 | 0 | 0 | 17 | 0 | 3 | 0 | 0 |
 | [aliases](#aliases) | 15 | 15 | 14 | 0 | 0 | 1 | 0 | 14 | 0 | 0 | 1 | 0 |
@@ -285,6 +285,10 @@ _Percentages exclude UNSUPPORTED and SKIP from the denominator._
 | 🟢 | CAST in expression | 1 | PASS (1/1) | PASS (1/1) |  |
 | 🟢 | CAST date to text | 1 | PASS (1/1) | PASS (1/1) |  |
 | 🟢 | CAST in ORDER BY | 1 | PASS (1/1) | PASS (1/1) |  |
+| 🟢 | CAST timestamp column to date compared with date literal | 1 | PASS (1/1) | PASS (1/1) |  |
+| 🟢 | CAST timestamp column to date compared with timestamp literal cast to date | 1 | PASS (1/1) | PASS (1/1) |  |
+| 🟢 | CAST timestamp literal to date compared with date column | 1 | PASS (1/1) | PASS (1/1) |  |
+| 🟢 | CAST timestamp column to date in projection | 1 | PASS (1/1) | PASS (1/1) |  |
 
 <a id="case_expressions"></a>
 
@@ -1666,7 +1670,7 @@ SELECT s.n, s.s FROM (SELECT name, salary FROM func('e2e::tds_persons')) s(n, s)
 ```
 
 **Error:**
-> Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4271 column:28), "Cannot cast a collection of size 0 to multiplicity [1]"
+> Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4287 column:28), "Cannot cast a collection of size 0 to multiplicity [1]"
 
 📗 **Relation Path**
 

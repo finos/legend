@@ -46,13 +46,13 @@ li { margin: 0.3em 0; }
 <tbody>
 <tr>
 <td>Total features</td>
-<td>621</td>
-<td>621</td>
+<td>625</td>
+<td>625</td>
 </tr>
 <tr>
 <td>Total tests</td>
-<td>700</td>
-<td>700</td>
+<td>704</td>
+<td>704</td>
 </tr>
 <tr>
 <td>⚪ UNSUPPORTED</td>
@@ -61,8 +61,8 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td>✅ PASS</td>
-<td>357 (78.1%)</td>
-<td>519 (80.2%)</td>
+<td>361 (78.3%)</td>
+<td>523 (80.3%)</td>
 </tr>
 <tr>
 <td>❌ FAIL</td>
@@ -81,8 +81,8 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><strong>Pass rate</strong></td>
-<td><strong>78.1%</strong></td>
-<td><strong>80.2%</strong></td>
+<td><strong>78.3%</strong></td>
+<td><strong>80.3%</strong></td>
 </tr>
 </tbody>
 </table>
@@ -292,14 +292,14 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td><a href="#type_casting">type_casting</a></td>
-<td>12</td>
-<td>12</td>
-<td>10</td>
+<td>16</td>
+<td>16</td>
+<td>14</td>
 <td>0</td>
 <td>0</td>
 <td>2</td>
 <td>0</td>
-<td>11</td>
+<td>15</td>
 <td>0</td>
 <td>0</td>
 <td>1</td>
@@ -2006,6 +2006,38 @@ li { margin: 0.3em 0; }
 <tr>
 <td>🟢</td>
 <td>CAST in ORDER BY</td>
+<td>1</td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
+</tr>
+<tr>
+<td>🟢</td>
+<td>CAST timestamp column to date compared with date literal</td>
+<td>1</td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
+</tr>
+<tr>
+<td>🟢</td>
+<td>CAST timestamp column to date compared with timestamp literal cast to date</td>
+<td>1</td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
+</tr>
+<tr>
+<td>🟢</td>
+<td>CAST timestamp literal to date compared with date column</td>
+<td>1</td>
+<td>PASS (1/1)</td>
+<td>PASS (1/1)</td>
+<td></td>
+</tr>
+<tr>
+<td>🟢</td>
+<td>CAST timestamp column to date in projection</td>
 <td>1</td>
 <td>PASS (1/1)</td>
 <td>PASS (1/1)</td>
@@ -6623,7 +6655,7 @@ li { margin: 0.3em 0; }
 </code></pre>
 <p><strong>Error:</strong></p>
 <blockquote>
-<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4271 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
+<p>Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4287 column:28), &quot;Cannot cast a collection of size 0 to multiplicity [1]&quot;</p>
 </blockquote>
 <p>📗 <strong>Relation Path</strong></p>
 <p><strong>Input SQL:</strong></p>
