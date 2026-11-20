@@ -7897,7 +7897,7 @@ SELECT INTERVAL '1 day' + INTERVAL '2 hours' AS result FROM func('e2e::rel_dates
 ```
 
 **Error:**
-> Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5289 column:13), "Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper"
+> Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5305 column:13), "Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper"
 
 
 <br>
@@ -7997,7 +7997,7 @@ SELECT INTERVAL '1 day' - INTERVAL '2 hours' AS result FROM func('e2e::rel_dates
 ```
 
 **Error:**
-> Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5289 column:13), "Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper"
+> Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5305 column:13), "Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper"
 
 
 <br>

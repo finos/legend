@@ -1,20 +1,20 @@
 {
   "summary" : {
     "tds" : {
-      "pass" : 928,
+      "pass" : 932,
       "fail" : 42,
       "error" : 1227,
       "skip" : 62,
       "bug" : 88,
-      "total" : 2347
+      "total" : 2351
     },
     "relation" : {
-      "pass" : 1135,
+      "pass" : 1139,
       "fail" : 38,
       "error" : 1024,
       "skip" : 62,
       "bug" : 88,
-      "total" : 2347
+      "total" : 2351
     }
   },
   "failures" : [ {
@@ -12302,7 +12302,7 @@
     "rewrittenSql" : "SELECT INTERVAL '1 day' + INTERVAL '2 hours' AS result FROM func('e2e::tds_dates') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5289 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5305 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
     "diffs" : null
   }, {
     "id" : "op_add__interval_plus_interval",
@@ -12313,7 +12313,7 @@
     "rewrittenSql" : "SELECT INTERVAL '1 day' + INTERVAL '2 hours' AS result FROM func('e2e::rel_dates') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5289 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5305 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
     "diffs" : null
   }, {
     "id" : "op_add__interval_plus_time",
@@ -12522,7 +12522,7 @@
     "rewrittenSql" : "SELECT INTERVAL '1 day' - INTERVAL '2 hours' AS result FROM func('e2e::tds_dates') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5289 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5305 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
     "diffs" : null
   }, {
     "id" : "op_sub__interval_minus_interval",
@@ -12533,7 +12533,7 @@
     "rewrittenSql" : "SELECT INTERVAL '1 day' - INTERVAL '2 hours' AS result FROM func('e2e::rel_dates') WHERE id = 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5289 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:5305 column:13), \"Match failure: IntervalLiteralWrapperObject instanceOf IntervalLiteralWrapper\"",
     "diffs" : null
   }, {
     "id" : "op_sub__pg_lsn_minus_pg_lsn",
@@ -23225,7 +23225,7 @@
     "rewrittenSql" : "SELECT s.n, s.s FROM (SELECT name, salary FROM func('e2e::tds_persons')) s(n, s) WHERE s.s IS NOT NULL ORDER BY 1",
     "generatedSql" : null,
     "generatedLambda" : null,
-    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4271 column:28), \"Cannot cast a collection of size 0 to multiplicity [1]\"",
+    "error" : "Execution error at (resource:/core_external_query_sql/binding/fromPure/fromPure.pure line:4287 column:28), \"Cannot cast a collection of size 0 to multiplicity [1]\"",
     "diffs" : null
   }, {
     "id" : "alias_subquery_column_list",
@@ -27885,21 +27885,21 @@
     }
   }, {
     "tds" : {
-      "pass" : 10,
+      "pass" : 14,
       "fail" : 0,
       "error" : 1,
       "skip" : 0,
       "bug" : 1,
-      "total" : 12
+      "total" : 16
     },
     "name" : "structural/type_casting",
     "relation" : {
-      "pass" : 11,
+      "pass" : 15,
       "fail" : 0,
       "error" : 0,
       "skip" : 0,
       "bug" : 1,
-      "total" : 12
+      "total" : 16
     }
   }, {
     "tds" : {
@@ -50820,6 +50820,54 @@
     "state" : "PASS",
     "rewrittenSql" : "SELECT name, salary FROM func('e2e::rel_persons') WHERE salary IS NOT NULL ORDER BY CAST(salary AS INTEGER) DESC",
     "sql" : "SELECT name, salary FROM persons WHERE salary IS NOT NULL ORDER BY CAST(salary AS INTEGER) DESC"
+  }, {
+    "path" : "TDS",
+    "id" : "cast_timestamp_col_to_date_eq_date_literal",
+    "state" : "PASS",
+    "rewrittenSql" : "SELECT id FROM func('e2e::tds_dates') WHERE CAST(ts AS DATE) = CAST('2023-01-15' AS DATE) ORDER BY 1",
+    "sql" : "SELECT id FROM dates WHERE CAST(ts AS DATE) = CAST('2023-01-15' AS DATE) ORDER BY 1"
+  }, {
+    "path" : "Relation",
+    "id" : "cast_timestamp_col_to_date_eq_date_literal",
+    "state" : "PASS",
+    "rewrittenSql" : "SELECT id FROM func('e2e::rel_dates') WHERE CAST(ts AS DATE) = CAST('2023-01-15' AS DATE) ORDER BY 1",
+    "sql" : "SELECT id FROM dates WHERE CAST(ts AS DATE) = CAST('2023-01-15' AS DATE) ORDER BY 1"
+  }, {
+    "path" : "TDS",
+    "id" : "cast_timestamp_col_to_date_eq_timestamp_literal",
+    "state" : "PASS",
+    "rewrittenSql" : "SELECT id FROM func('e2e::tds_dates') WHERE CAST(ts AS DATE) = CAST('2024-06-15 17:45:00' AS DATE) ORDER BY 1",
+    "sql" : "SELECT id FROM dates WHERE CAST(ts AS DATE) = CAST('2024-06-15 17:45:00' AS DATE) ORDER BY 1"
+  }, {
+    "path" : "Relation",
+    "id" : "cast_timestamp_col_to_date_eq_timestamp_literal",
+    "state" : "PASS",
+    "rewrittenSql" : "SELECT id FROM func('e2e::rel_dates') WHERE CAST(ts AS DATE) = CAST('2024-06-15 17:45:00' AS DATE) ORDER BY 1",
+    "sql" : "SELECT id FROM dates WHERE CAST(ts AS DATE) = CAST('2024-06-15 17:45:00' AS DATE) ORDER BY 1"
+  }, {
+    "path" : "TDS",
+    "id" : "cast_date_col_eq_timestamp_literal_cast_to_date",
+    "state" : "PASS",
+    "rewrittenSql" : "SELECT id FROM func('e2e::tds_dates') WHERE CAST(d AS DATE) = CAST('2000-01-01 12:00:00' AS DATE) ORDER BY 1",
+    "sql" : "SELECT id FROM dates WHERE CAST(d AS DATE) = CAST('2000-01-01 12:00:00' AS DATE) ORDER BY 1"
+  }, {
+    "path" : "Relation",
+    "id" : "cast_date_col_eq_timestamp_literal_cast_to_date",
+    "state" : "PASS",
+    "rewrittenSql" : "SELECT id FROM func('e2e::rel_dates') WHERE CAST(d AS DATE) = CAST('2000-01-01 12:00:00' AS DATE) ORDER BY 1",
+    "sql" : "SELECT id FROM dates WHERE CAST(d AS DATE) = CAST('2000-01-01 12:00:00' AS DATE) ORDER BY 1"
+  }, {
+    "path" : "TDS",
+    "id" : "cast_timestamp_col_to_date_projection",
+    "state" : "PASS",
+    "rewrittenSql" : "SELECT id, CAST(ts AS DATE) AS result FROM func('e2e::tds_dates') WHERE ts IS NOT NULL ORDER BY 1",
+    "sql" : "SELECT id, CAST(ts AS DATE) AS result FROM dates WHERE ts IS NOT NULL ORDER BY 1"
+  }, {
+    "path" : "Relation",
+    "id" : "cast_timestamp_col_to_date_projection",
+    "state" : "PASS",
+    "rewrittenSql" : "SELECT id, CAST(ts AS DATE) AS result FROM func('e2e::rel_dates') WHERE ts IS NOT NULL ORDER BY 1",
+    "sql" : "SELECT id, CAST(ts AS DATE) AS result FROM dates WHERE ts IS NOT NULL ORDER BY 1"
   }, {
     "path" : "TDS",
     "id" : "case_simple_basic",
