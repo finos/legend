@@ -5,20 +5,20 @@
 Coverage of Postgres built-in functions in Legend SQL.
 See [full details](function-coverage.md) for per-function results.
 
-| Metric | TDS | Relation |
-|--------|-----|----------|
-| Total signatures | 660 | 660 |
-| Unique function names | 346 | 346 |
-| **Supported functions (PASS/PARTIAL)** | **123 (35.5%)** | **134 (38.7%)** |
-| Total tests | 882 | 882 |
-| ⚪ UNSUPPORTED | 62 | 62 |
-| ✅ PASS | 209 | 227 |
-| ⚠️ PARTIAL | 31 | 32 |
-| ❌ FAIL | 8 | 7 |
-| 💥 ERROR | 0 | 0 |
-| ❓ UNTESTED | 350 | 332 |
-| **Full pass rate** | **34.9%** | **38.0%** |
-| **Pass + partial rate** | **40.1%** | **43.3%** |
+| Metric | TDS | Relation | Grammar |
+|--------|-----|----------|---------|
+| Total signatures | 660 | 660 | 660 |
+| Unique function names | 346 | 346 | 346 |
+| **Supported functions (PASS/PARTIAL)** | **123 (35.5%)** | **134 (38.7%)** | **135 (39.0%)** |
+| Total tests | 882 | 882 | 882 |
+| ⚪ UNSUPPORTED | 62 | 62 | 62 |
+| ✅ PASS | 209 | 227 | 228 |
+| ⚠️ PARTIAL | 31 | 32 | 48 |
+| ❌ FAIL | 8 | 7 | 5 |
+| 💥 ERROR | 0 | 0 | 0 |
+| ❓ UNTESTED | 350 | 332 | 317 |
+| **Full pass rate** | **34.9%** | **38.0%** | **38.1%** |
+| **Pass + partial rate** | **40.1%** | **43.3%** | **46.2%** |
 
 _Percentages exclude unsupported functions from the denominator._
 
@@ -26,27 +26,39 @@ _Percentages exclude unsupported functions from the denominator._
 
 - [div__num_num__from_table \[TDS\]](failure-details.md#fail-div__num_num__from_table-TDS)
 - [div__num_num__from_table \[Relation\]](failure-details.md#fail-div__num_num__from_table-Relation)
+- [div__num_num__from_table \[Grammar\]](failure-details.md#fail-div__num_num__from_table-Grammar)
 - [concat_ws__txt_variadic__from_table \[TDS\]](failure-details.md#fail-concat_ws__txt_variadic__from_table-TDS)
 - [concat_ws__txt_variadic__from_table \[Relation\]](failure-details.md#fail-concat_ws__txt_variadic__from_table-Relation)
+- [concat_ws__txt_variadic__from_table \[Grammar\]](failure-details.md#fail-concat_ws__txt_variadic__from_table-Grammar)
 - [initcap__txt__from_table \[TDS\]](failure-details.md#fail-initcap__txt__from_table-TDS)
 - [initcap__txt__from_table \[Relation\]](failure-details.md#fail-initcap__txt__from_table-Relation)
+- [initcap__txt__from_table \[Grammar\]](failure-details.md#fail-initcap__txt__from_table-Grammar)
 - [string_to_array__txt_txt__from_table \[TDS\]](failure-details.md#fail-string_to_array__txt_txt__from_table-TDS)
 - [string_to_array__txt_txt__from_table \[Relation\]](failure-details.md#fail-string_to_array__txt_txt__from_table-Relation)
+- [string_to_array__txt_txt__from_table \[Grammar\]](failure-details.md#fail-string_to_array__txt_txt__from_table-Grammar)
 - [regexp_count__start_position__ignored_by_legend \[TDS\]](failure-details.md#fail-regexp_count__start_position__ignored_by_legend-TDS)
 - [regexp_count__start_position__ignored_by_legend \[Relation\]](failure-details.md#fail-regexp_count__start_position__ignored_by_legend-Relation)
+- [regexp_count__start_position__ignored_by_legend \[Grammar\]](failure-details.md#fail-regexp_count__start_position__ignored_by_legend-Grammar)
 - [regexp_substr__start_position__ignored_by_legend \[TDS\]](failure-details.md#fail-regexp_substr__start_position__ignored_by_legend-TDS)
 - [regexp_substr__start_position__ignored_by_legend \[Relation\]](failure-details.md#fail-regexp_substr__start_position__ignored_by_legend-Relation)
+- [regexp_substr__start_position__ignored_by_legend \[Grammar\]](failure-details.md#fail-regexp_substr__start_position__ignored_by_legend-Grammar)
 - [regexp_substr__nth_occurrence__ignored_by_legend \[TDS\]](failure-details.md#fail-regexp_substr__nth_occurrence__ignored_by_legend-TDS)
 - [regexp_substr__nth_occurrence__ignored_by_legend \[Relation\]](failure-details.md#fail-regexp_substr__nth_occurrence__ignored_by_legend-Relation)
+- [regexp_substr__nth_occurrence__ignored_by_legend \[Grammar\]](failure-details.md#fail-regexp_substr__nth_occurrence__ignored_by_legend-Grammar)
 - [regexp_substr__nth_occurrence_last__ignored_by_legend \[TDS\]](failure-details.md#fail-regexp_substr__nth_occurrence_last__ignored_by_legend-TDS)
 - [regexp_substr__nth_occurrence_last__ignored_by_legend \[Relation\]](failure-details.md#fail-regexp_substr__nth_occurrence_last__ignored_by_legend-Relation)
+- [regexp_substr__nth_occurrence_last__ignored_by_legend \[Grammar\]](failure-details.md#fail-regexp_substr__nth_occurrence_last__ignored_by_legend-Grammar)
 - [regexp_substr__start_and_nth__ignored_by_legend \[TDS\]](failure-details.md#fail-regexp_substr__start_and_nth__ignored_by_legend-TDS)
 - [regexp_substr__start_and_nth__ignored_by_legend \[Relation\]](failure-details.md#fail-regexp_substr__start_and_nth__ignored_by_legend-Relation)
+- [regexp_substr__start_and_nth__ignored_by_legend \[Grammar\]](failure-details.md#fail-regexp_substr__start_and_nth__ignored_by_legend-Grammar)
 - [array_position__anycompatiblearray_anycompatible__from_table \[Relation\]](failure-details.md#fail-array_position__anycompatiblearray_anycompatible__from_table-Relation)
+- [array_position__anycompatiblearray_anycompatible__from_table \[Grammar\]](failure-details.md#fail-array_position__anycompatiblearray_anycompatible__from_table-Grammar)
 - [max__anyarray__no_generator \[TDS\]](failure-details.md#fail-max__anyarray__no_generator-TDS)
 - [max__anyarray__no_generator \[Relation\]](failure-details.md#fail-max__anyarray__no_generator-Relation)
+- [max__anyarray__no_generator \[Grammar\]](failure-details.md#fail-max__anyarray__no_generator-Grammar)
 - [min__anyarray__no_generator \[TDS\]](failure-details.md#fail-min__anyarray__no_generator-TDS)
 - [min__anyarray__no_generator \[Relation\]](failure-details.md#fail-min__anyarray__no_generator-Relation)
+- [min__anyarray__no_generator \[Grammar\]](failure-details.md#fail-min__anyarray__no_generator-Grammar)
 
 ---
 
@@ -55,16 +67,16 @@ _Percentages exclude unsupported functions from the denominator._
 Coverage of Postgres built-in operators in Legend SQL.
 See [full details](operator-coverage.md) for per-operator results.
 
-| Metric | TDS | Relation |
-|--------|-----|----------|
-| Total operators | 548 | 548 |
-| ⚪ UNSUPPORTED | 0 | 0 |
-| ✅ PASS | 71 | 82 |
-| ⚠️ PARTIAL | 7 | 8 |
-| ❌ FAIL | 7 | 1 |
-| 💥 ERROR | 0 | 0 |
-| ❓ UNTESTED | 463 | 457 |
-| **Full pass rate** | **13.0%** | **15.0%** |
+| Metric | TDS | Relation | Grammar |
+|--------|-----|----------|---------|
+| Total operators | 548 | 548 | 548 |
+| ⚪ UNSUPPORTED | 0 | 0 | 0 |
+| ✅ PASS | 71 | 82 | 81 |
+| ⚠️ PARTIAL | 7 | 8 | 8 |
+| ❌ FAIL | 7 | 1 | 2 |
+| 💥 ERROR | 0 | 0 | 0 |
+| ❓ UNTESTED | 463 | 457 | 457 |
+| **Full pass rate** | **13.0%** | **15.0%** | **14.8%** |
 
 ---
 
@@ -73,48 +85,69 @@ See [full details](operator-coverage.md) for per-operator results.
 Coverage of SQL structural features (joins, subqueries, aggregations, etc.).
 See [full details](structural-parity.md) for per-feature results.
 
-| Metric | TDS | Relation |
-|--------|-----|----------|
-| Total features | 625 | 625 |
-| Total tests | 704 | 704 |
-| ⚪ UNSUPPORTED | 222 | 48 |
-| ✅ PASS | 312 | 458 |
-| ⚠️ PARTIAL | 3 | 3 |
-| ❌ FAIL | 11 | 11 |
-| 💥 ERROR | 77 | 105 |
-| ❓ UNTESTED | 0 | 0 |
-| **Full pass rate** | **77.4%** | **79.4%** |
-| **Pass + partial rate** | **78.2%** | **79.9%** |
+| Metric | TDS | Relation | Grammar |
+|--------|-----|----------|---------|
+| Total features | 625 | 625 | 625 |
+| Total tests | 704 | 704 | 704 |
+| ⚪ UNSUPPORTED | 222 | 48 | 29 |
+| ✅ PASS | 312 | 458 | 456 |
+| ⚠️ PARTIAL | 3 | 3 | 4 |
+| ❌ FAIL | 11 | 11 | 17 |
+| 💥 ERROR | 77 | 105 | 119 |
+| ❓ UNTESTED | 0 | 0 | 0 |
+| **Full pass rate** | **77.4%** | **79.4%** | **76.5%** |
+| **Pass + partial rate** | **78.2%** | **79.9%** | **77.2%** |
 
 _Percentages exclude unsupported features from the denominator._
 
 **Failed tests:**
 
+- [join_right_basic \[Grammar\]](failure-details.md#fail-join_right_basic-Grammar)
+- [join_right_unmatched \[Grammar\]](failure-details.md#fail-join_right_unmatched-Grammar)
+- [subquery_derived_join \[Grammar\]](failure-details.md#fail-subquery_derived_join-Grammar)
 - [subquery_quant_all_empty_null_value \[Relation\]](failure-details.md#fail-subquery_quant_all_empty_null_value-Relation)
+- [subquery_quant_all_empty_null_value \[Grammar\]](failure-details.md#fail-subquery_quant_all_empty_null_value-Grammar)
 - [null_equals_null \[TDS\]](failure-details.md#fail-null_equals_null-TDS)
+- [null_equals_null \[Grammar\]](failure-details.md#fail-null_equals_null-Grammar)
 - [null_not_equals \[TDS\]](failure-details.md#fail-null_not_equals-TDS)
+- [null_not_equals \[Grammar\]](failure-details.md#fail-null_not_equals-Grammar)
+- [null_is_distinct_from \[Grammar\]](failure-details.md#fail-null_is_distinct_from-Grammar)
 - [null_concat \[TDS\]](failure-details.md#fail-null_concat-TDS)
 - [null_concat \[Relation\]](failure-details.md#fail-null_concat-Relation)
+- [null_concat \[Grammar\]](failure-details.md#fail-null_concat-Grammar)
+- [case_simple_null_compare \[Grammar\]](failure-details.md#fail-case_simple_null_compare-Grammar)
 - [where_not_between \[TDS\]](failure-details.md#fail-where_not_between-TDS)
 - [where_not_between \[Relation\]](failure-details.md#fail-where_not_between-Relation)
+- [where_not_between \[Grammar\]](failure-details.md#fail-where_not_between-Grammar)
 - [where_not_in_list \[TDS\]](failure-details.md#fail-where_not_in_list-TDS)
 - [where_not_in_list \[Relation\]](failure-details.md#fail-where_not_in_list-Relation)
+- [where_not_in_list \[Grammar\]](failure-details.md#fail-where_not_in_list-Grammar)
 - [where_not_compound \[Relation\]](failure-details.md#fail-where_not_compound-Relation)
+- [where_not_compound \[Grammar\]](failure-details.md#fail-where_not_compound-Grammar)
 - [bool_null_and_false \[TDS\]](failure-details.md#fail-bool_null_and_false-TDS)
 - [bool_null_and_false \[Relation\]](failure-details.md#fail-bool_null_and_false-Relation)
+- [bool_null_and_false \[Grammar\]](failure-details.md#fail-bool_null_and_false-Grammar)
 - [bool_null_or_true \[TDS\]](failure-details.md#fail-bool_null_or_true-TDS)
 - [bool_null_or_true \[Relation\]](failure-details.md#fail-bool_null_or_true-Relation)
+- [bool_null_or_true \[Grammar\]](failure-details.md#fail-bool_null_or_true-Grammar)
 - [star_multiple_tables \[TDS\]](failure-details.md#fail-star_multiple_tables-TDS)
 - [star_multiple_tables \[Relation\]](failure-details.md#fail-star_multiple_tables-Relation)
+- [star_multiple_tables \[Grammar\]](failure-details.md#fail-star_multiple_tables-Grammar)
 - [schema_information_tables \[TDS\]](failure-details.md#fail-schema_information_tables-TDS)
 - [schema_information_tables \[Relation\]](failure-details.md#fail-schema_information_tables-Relation)
+- [schema_information_tables \[Grammar\]](failure-details.md#fail-schema_information_tables-Grammar)
 - [schema_information_columns \[TDS\]](failure-details.md#fail-schema_information_columns-TDS)
 - [schema_information_columns \[Relation\]](failure-details.md#fail-schema_information_columns-Relation)
+- [schema_information_columns \[Grammar\]](failure-details.md#fail-schema_information_columns-Grammar)
 - [json_path_extract \[Relation\]](failure-details.md#fail-json_path_extract-Relation)
+- [json_path_extract \[Grammar\]](failure-details.md#fail-json_path_extract-Grammar)
 - [interval_compound_literal \[TDS\]](failure-details.md#fail-interval_compound_literal-TDS)
 - [interval_compound_literal \[Relation\]](failure-details.md#fail-interval_compound_literal-Relation)
+- [interval_compound_literal \[Grammar\]](failure-details.md#fail-interval_compound_literal-Grammar)
 - [interval_range_year_to_month \[TDS\]](failure-details.md#fail-interval_range_year_to_month-TDS)
 - [interval_range_year_to_month \[Relation\]](failure-details.md#fail-interval_range_year_to_month-Relation)
+- [interval_range_year_to_month \[Grammar\]](failure-details.md#fail-interval_range_year_to_month-Grammar)
+- [colres_e2_window_argument_renamed_column_self_join \[Grammar\]](failure-details.md#fail-colres_e2_window_argument_renamed_column_self_join-Grammar)
 
 ---
 
@@ -123,11 +156,11 @@ _Percentages exclude unsupported features from the denominator._
 Coverage of `to_char` template patterns and `EXTRACT`/`date_part` field keywords.
 See [full details](format-token-coverage.md) for per-token results.
 
-| Metric | TDS | Relation |
-|--------|-----|----------|
-| Total tokens | 80 | 80 |
-| ✅ PASS | 33 | 36 |
-| **Pass rate** | **41.3%** | **45.0%** |
+| Metric | TDS | Relation | Grammar |
+|--------|-----|----------|---------|
+| Total tokens | 80 | 80 | 80 |
+| ✅ PASS | 33 | 36 | 36 |
+| **Pass rate** | **41.3%** | **45.0%** | **45.0%** |
 
 ---
 
@@ -178,5 +211,6 @@ Combined pass rate across function coverage and structural parity.
 |------|------|--------|-----------|
 | TDS | 625 | 1629 | **38.4%** |
 | Relation | 803 | 1803 | **44.5%** |
-| **Combined** | **1428** | **3352** | **42.6%** |
+| Grammar | 801 | 1822 | **44.0%** |
+| **Combined** | **2229** | **5094** | **43.8%** |
 

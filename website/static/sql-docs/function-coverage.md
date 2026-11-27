@@ -2,54 +2,55 @@
 
 ## Summary
 
-| Metric | TDS | Relation |
-|--------|-----|----------|
-| Total signatures | 660 | 660 |
-| Unique function names | 346 | 346 |
-| **Supported functions (PASS/PARTIAL)** | **122 (35.3%)** | **124 (35.8%)** |
-| Total tests | 882 | 882 |
-| PASS | 320 | 331 |
-| FAIL | 9 | 9 |
-| ERROR | 87 | 76 |
-| SKIP | 0 | 0 |
-| UNSUPPORTED | 348 | 348 |
+| Metric | TDS | Relation | Grammar |
+|--------|-----|----------|---------|
+| Total signatures | 660 | 660 | 660 |
+| Unique function names | 346 | 346 | 346 |
+| **Supported functions (PASS/PARTIAL)** | **122 (35.3%)** | **124 (35.8%)** | **132 (38.2%)** |
+| Total tests | 882 | 882 | 882 |
+| PASS | 320 | 331 | 363 |
+| FAIL | 9 | 9 | 12 |
+| ERROR | 87 | 76 | 105 |
+| SKIP | 0 | 0 | 0 |
+| UNSUPPORTED | 348 | 348 | 305 |
 
 ---
 
 ## Error Categories
 
-| Category | Description | TDS | Relation |
-|----------|-------------|-----|----------|
-| [FUNCTION_NOT_SUPPORTED](#function-not-supported) | Function name not recognized by Legend SQL | 160 | 194 |
-| [RESULT_MISMATCH](#result-mismatch) | Query executes but results differ from Postgres | 9 | 10 |
-| [MISC](#misc) | Other/uncategorized error | 32 | 35 |
-| [UNSUPPORTED_SYNTAX](#unsupported-syntax) | SQL construct recognized but not yet implemented | 65 | 49 |
-| [TYPE_ERROR](#type-error) | Type mismatch or cast error | 84 | 44 |
-| [PARSE_ERROR](#parse-error) | SQL syntax not parseable by Legend SQL parser | 11 | 11 |
+| Category | Description | TDS | Relation | Grammar |
+|----------|-------------|-----|----------|---------|
+| [FUNCTION_NOT_SUPPORTED](#function-not-supported) | Function name not recognized by Legend SQL | 160 | 194 | 193 |
+| [RESULT_MISMATCH](#result-mismatch) | Query executes but results differ from Postgres | 9 | 10 | 10 |
+| [MISC](#misc) | Other/uncategorized error | 32 | 35 | 44 |
+| [UNSUPPORTED_SYNTAX](#unsupported-syntax) | SQL construct recognized but not yet implemented | 65 | 49 | 39 |
+| [TYPE_ERROR](#type-error) | Type mismatch or cast error | 84 | 44 | 44 |
+| [PARSE_ERROR](#parse-error) | SQL syntax not parseable by Legend SQL parser | 11 | 11 | 11 |
+| [ALIAS_NOT_FOUND](#alias-not-found) | Column or alias reference cannot be resolved | 0 | 0 | 1 |
 
 ---
 
 ## Category Summary
 
-| Category | Total | TDS PASS | TDS PARTIAL | TDS FAIL | TDS ERROR | TDS UNTESTED | Rel PASS | Rel PARTIAL | Rel FAIL | Rel ERROR | Rel UNTESTED |
-|----------|-------|----------|-------------|----------|-----------|--------------|----------|-------------|----------|-----------|-------------|
-| [Mathematical Functions and Operators (9.3)](https://www.postgresql.org/docs/16/functions-math.html) / [details](#mathematical-functions-and-operators-(9.3)) | 72 | 45 | 0 | 1 | 0 | 6 | 45 | 0 | 1 | 0 | 6 |
-| [String Functions and Operators (9.4)](https://www.postgresql.org/docs/16/functions-string.html) / [details](#string-functions-and-operators-(9.4)) | 106 | 35 | 2 | 3 | 0 | 4 | 34 | 2 | 3 | 0 | 5 |
-| [Binary String Functions (9.5)](https://www.postgresql.org/docs/16/functions-binarystring.html) / [details](#binary-string-functions-(9.5)) | 9 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
-| [Pattern Matching (9.7)](https://www.postgresql.org/docs/16/functions-matching.html) / [details](#pattern-matching-(9.7)) | 19 | 5 | 2 | 2 | 0 | 9 | 8 | 3 | 0 | 0 | 7 |
-| [Data Type Formatting (9.8)](https://www.postgresql.org/docs/16/functions-formatting.html) / [details](#data-type-formatting-(9.8)) | 10 | 1 | 0 | 0 | 0 | 3 | 1 | 0 | 0 | 0 | 3 |
-| [Date/Time Functions and Operators (9.9)](https://www.postgresql.org/docs/16/functions-datetime.html) / [details](#date/time-functions-and-operators-(9.9)) | 41 | 10 | 0 | 0 | 0 | 9 | 10 | 0 | 0 | 0 | 9 |
-| [Conditional Expressions (9.18)](https://www.postgresql.org/docs/16/functions-conditional.html) / [details](#conditional-expressions-(9.18)) | 7 | 2 | 1 | 0 | 0 | 0 | 2 | 1 | 0 | 0 | 0 |
-| [JSON Functions and Operators (9.16)](https://www.postgresql.org/docs/16/functions-json.html) / [details](#json-functions-and-operators-(9.16)) | 47 | 0 | 0 | 0 | 0 | 2 | 2 | 0 | 0 | 0 | 0 |
-| [Array Functions and Operators (9.19)](https://www.postgresql.org/docs/16/functions-array.html) / [details](#array-functions-and-operators-(9.19)) | 21 | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 |
-| [Aggregate Functions (9.21)](https://www.postgresql.org/docs/16/functions-aggregate.html) / [details](#aggregate-functions-(9.21)) | 157 | 67 | 6 | 0 | 0 | 9 | 67 | 6 | 0 | 0 | 9 |
-| [Window Functions (9.22)](https://www.postgresql.org/docs/16/functions-window.html) / [details](#window-functions-(9.22)) | 15 | 3 | 0 | 0 | 0 | 0 | 3 | 0 | 0 | 0 | 0 |
-| [Network Address Functions (9.12)](https://www.postgresql.org/docs/16/functions-net.html) / [details](#network-address-functions-(9.12)) | 21 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| [System Information Functions (9.26)](https://www.postgresql.org/docs/16/functions-info.html) / [details](#system-information-functions-(9.26)) | 41 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| [Sequence Manipulation Functions (9.17)](https://www.postgresql.org/docs/16/functions-sequence.html) / [details](#sequence-manipulation-functions-(9.17)) | 5 | 0 | 0 | 0 | 0 | 5 | 0 | 0 | 0 | 0 | 5 |
-| [Set Returning Functions (9.25)](https://www.postgresql.org/docs/16/functions-srf.html) / [details](#set-returning-functions-(9.25)) | 11 | 0 | 0 | 0 | 0 | 3 | 0 | 0 | 0 | 0 | 3 |
-| [Cryptographic Functions (pgcrypto)](https://www.postgresql.org/docs/16/pgcrypto.html) / [details](#cryptographic-functions-(pgcrypto)) | 22 | 0 | 0 | 0 | 0 | 22 | 0 | 0 | 0 | 0 | 22 |
-| [Other Functions](#other-functions) | 56 | 40 | 0 | 0 | 0 | 13 | 40 | 0 | 0 | 0 | 13 |
+| Category | Total | TDS PASS | TDS PARTIAL | TDS FAIL | TDS ERROR | TDS UNTESTED | Rel PASS | Rel PARTIAL | Rel FAIL | Rel ERROR | Rel UNTESTED | Grammar PASS | Grammar PARTIAL | Grammar FAIL | Grammar ERROR | Grammar UNTESTED |
+|----------|-------|----------|-------------|----------|-----------|--------------|----------|-------------|----------|-----------|-------------|--------------|-----------------|--------------|---------------|------------------|
+| [Mathematical Functions and Operators (9.3)](https://www.postgresql.org/docs/16/functions-math.html) / [details](#mathematical-functions-and-operators-(9.3)) | 72 | 45 | 0 | 1 | 0 | 6 | 45 | 0 | 1 | 0 | 6 | 45 | 0 | 1 | 0 | 6 |
+| [String Functions and Operators (9.4)](https://www.postgresql.org/docs/16/functions-string.html) / [details](#string-functions-and-operators-(9.4)) | 106 | 35 | 2 | 3 | 0 | 4 | 34 | 2 | 3 | 0 | 5 | 34 | 3 | 3 | 0 | 3 |
+| [Binary String Functions (9.5)](https://www.postgresql.org/docs/16/functions-binarystring.html) / [details](#binary-string-functions-(9.5)) | 9 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
+| [Pattern Matching (9.7)](https://www.postgresql.org/docs/16/functions-matching.html) / [details](#pattern-matching-(9.7)) | 19 | 5 | 2 | 2 | 0 | 9 | 8 | 3 | 0 | 0 | 7 | 8 | 3 | 0 | 0 | 7 |
+| [Data Type Formatting (9.8)](https://www.postgresql.org/docs/16/functions-formatting.html) / [details](#data-type-formatting-(9.8)) | 10 | 1 | 0 | 0 | 0 | 3 | 1 | 0 | 0 | 0 | 3 | 1 | 0 | 0 | 0 | 3 |
+| [Date/Time Functions and Operators (9.9)](https://www.postgresql.org/docs/16/functions-datetime.html) / [details](#date/time-functions-and-operators-(9.9)) | 41 | 10 | 0 | 0 | 0 | 9 | 10 | 0 | 0 | 0 | 9 | 10 | 0 | 0 | 0 | 9 |
+| [Conditional Expressions (9.18)](https://www.postgresql.org/docs/16/functions-conditional.html) / [details](#conditional-expressions-(9.18)) | 7 | 2 | 1 | 0 | 0 | 0 | 2 | 1 | 0 | 0 | 0 | 2 | 0 | 0 | 0 | 0 |
+| [JSON Functions and Operators (9.16)](https://www.postgresql.org/docs/16/functions-json.html) / [details](#json-functions-and-operators-(9.16)) | 47 | 0 | 0 | 0 | 0 | 2 | 2 | 0 | 0 | 0 | 0 | 3 | 0 | 0 | 0 | 5 |
+| [Array Functions and Operators (9.19)](https://www.postgresql.org/docs/16/functions-array.html) / [details](#array-functions-and-operators-(9.19)) | 21 | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 0 |
+| [Aggregate Functions (9.21)](https://www.postgresql.org/docs/16/functions-aggregate.html) / [details](#aggregate-functions-(9.21)) | 157 | 67 | 6 | 0 | 0 | 9 | 67 | 6 | 0 | 0 | 9 | 69 | 21 | 0 | 0 | 11 |
+| [Window Functions (9.22)](https://www.postgresql.org/docs/16/functions-window.html) / [details](#window-functions-(9.22)) | 15 | 3 | 0 | 0 | 0 | 0 | 3 | 0 | 0 | 0 | 0 | 14 | 0 | 0 | 0 | 1 |
+| [Network Address Functions (9.12)](https://www.postgresql.org/docs/16/functions-net.html) / [details](#network-address-functions-(9.12)) | 21 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| [System Information Functions (9.26)](https://www.postgresql.org/docs/16/functions-info.html) / [details](#system-information-functions-(9.26)) | 41 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| [Sequence Manipulation Functions (9.17)](https://www.postgresql.org/docs/16/functions-sequence.html) / [details](#sequence-manipulation-functions-(9.17)) | 5 | 0 | 0 | 0 | 0 | 5 | 0 | 0 | 0 | 0 | 5 | 0 | 0 | 0 | 0 | 5 |
+| [Set Returning Functions (9.25)](https://www.postgresql.org/docs/16/functions-srf.html) / [details](#set-returning-functions-(9.25)) | 11 | 0 | 0 | 0 | 0 | 3 | 0 | 0 | 0 | 0 | 3 | 0 | 1 | 0 | 0 | 8 |
+| [Cryptographic Functions (pgcrypto)](https://www.postgresql.org/docs/16/pgcrypto.html) / [details](#cryptographic-functions-(pgcrypto)) | 22 | 0 | 0 | 0 | 0 | 22 | 0 | 0 | 0 | 0 | 22 | 0 | 0 | 0 | 0 | 22 |
+| [Other Functions](#other-functions) | 56 | 40 | 0 | 0 | 0 | 13 | 40 | 0 | 0 | 0 | 13 | 41 | 0 | 0 | 0 | 13 |
 
 ---
 
@@ -59,80 +60,80 @@
 
 Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-math.html)
 
-| | Function | Signature | TDS | Relation | Error Category | Notes |
-|--|----------|-----------|-----|----------|----------------|-------|
-| 🟢 | `abs` | `abs(bigint) → bigint` | PASS (3/3) | PASS (3/3) |  |  |
-| 🟢 | `abs` | `abs(double precision) → double precision` | PASS (3/3) | PASS (3/3) |  |  |
-| 🟢 | `abs` | `abs(integer) → integer` | PASS (3/3) | PASS (3/3) |  |  |
-| 🟢 | `abs` | `abs(numeric) → numeric` | PASS (3/3) | PASS (3/3) |  |  |
-| 🟢 | `abs` | `abs(real) → real` | PASS (3/3) | PASS (3/3) |  |  |
-| 🟢 | `abs` | `abs(smallint) → smallint` | PASS (3/3) | PASS (3/3) |  |  |
-| 🟢 | `acos` | `acos(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `acosh` | `acosh(double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-acosh__dp__from_table-TDS) | Function not supported |
-| 🟢 | `asin` | `asin(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `asinh` | `asinh(double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-asinh__dp__from_table-TDS) | Function not supported |
-| 🟢 | `atan` | `atan(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `atan2` | `atan2(double precision, double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `atanh` | `atanh(double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-atanh__dp__from_table-TDS) | Function not supported |
-| 🟢 | `cbrt` | `cbrt(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `ceil` | `ceil(double precision) → double precision` | PASS (3/3) | PASS (3/3) |  |  |
-| 🟢 | `ceil` | `ceil(numeric) → numeric` | PASS (3/3) | PASS (3/3) |  |  |
-| 🟢 | `ceiling` | `ceiling(double precision) → double precision` | PASS (3/3) | PASS (3/3) |  |  |
-| 🟢 | `ceiling` | `ceiling(numeric) → numeric` | PASS (3/3) | PASS (3/3) |  |  |
-| 🟢 | `cos` | `cos(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `cosh` | `cosh(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `degrees` | `degrees(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🔴 | `div` | `div(numeric, numeric) → numeric` | FAIL (0/1) | FAIL (0/1) | [RESULT_MISMATCH](#fail-div__num_num__from_table-TDS) |  |
-| ⚪ | `exp` | `exp(double precision) → double precision` | UNTESTED | UNTESTED | [MISC](#fail-exp__dp__from_table-TDS) |  |
-| ⚪ | `exp` | `exp(numeric) → numeric` | UNTESTED | UNTESTED | [MISC](#fail-exp__num__from_table-TDS) |  |
-| ⚪ | `factorial` | `factorial(bigint) → numeric` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-factorial__big__from_table-TDS) | Function not supported |
-| 🟢 | `floor` | `floor(double precision) → double precision` | PASS (3/3) | PASS (3/3) |  |  |
-| 🟢 | `floor` | `floor(numeric) → numeric` | PASS (3/3) | PASS (3/3) |  |  |
-| ⚪ | `gcd` | `gcd(bigint, bigint) → bigint` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-gcd__big_big__from_table-TDS) | Function not supported |
-| ⚪ | `gcd` | `gcd(integer, integer) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-gcd__int_int__from_table-TDS) | Function not supported |
-| ⚪ | `gcd` | `gcd(numeric, numeric) → numeric` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-gcd__num_num__from_table-TDS) | Function not supported |
-| ⚪ | `lcm` | `lcm(bigint, bigint) → bigint` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-lcm__big_big__from_table-TDS) | Function not supported |
-| ⚪ | `lcm` | `lcm(integer, integer) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-lcm__int_int__from_table-TDS) | Function not supported |
-| ⚪ | `lcm` | `lcm(numeric, numeric) → numeric` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-lcm__num_num__from_table-TDS) | Function not supported |
-| 🟢 | `ln` | `ln(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `ln` | `ln(numeric) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `log` | `log(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `log` | `log(numeric) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `log` | `log(numeric, numeric) → numeric` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-log__num_num__from_table-TDS) | Unsupported feature |
-| 🟢 | `log10` | `log10(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `log10` | `log10(numeric) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `min_scale` | `min_scale(numeric) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-min_scale__num__from_table-TDS) | Function not supported |
-| 🟢 | `mod` | `mod(bigint, bigint) → bigint` | PASS (2/2) | PASS (2/2) |  |  |
-| 🟢 | `mod` | `mod(integer, integer) → integer` | PASS (2/2) | PASS (2/2) |  |  |
-| 🟢 | `mod` | `mod(numeric, numeric) → numeric` | PASS (2/2) | PASS (2/2) |  |  |
-| 🟢 | `mod` | `mod(smallint, smallint) → smallint` | PASS (2/2) | PASS (2/2) |  |  |
-| 🟢 | `pi` | `pi() → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `power` | `power(double precision, double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `power` | `power(numeric, numeric) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `radians` | `radians(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `random` | `random() → double precision` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-random__basic-TDS) | Function not supported |
-| 🟢 | `round` | `round(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `round` | `round(numeric) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `round` | `round(numeric, integer) → numeric` | PASS (2/2) | PASS (2/2) |  |  |
-| ⚪ | `scale` | `scale(numeric) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-scale__num__from_table-TDS) | Function not supported |
-| ⚪ | `setseed` | `setseed(double precision) → void` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-setseed__dp__basic-TDS) | Function not supported |
-| 🟢 | `sign` | `sign(double precision) → double precision` | PASS (2/2) | PASS (2/2) |  |  |
-| 🟢 | `sign` | `sign(numeric) → numeric` | PASS (2/2) | PASS (2/2) |  |  |
-| 🟢 | `sin` | `sin(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `sinh` | `sinh(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `sqrt` | `sqrt(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `sqrt` | `sqrt(numeric) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `tan` | `tan(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `tanh` | `tanh(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `trim_scale` | `trim_scale(numeric) → numeric` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-trim_scale__num__from_table-TDS) | Function not supported |
-| ⚪ | `trunc` | `trunc(double precision) → double precision` | UNTESTED | UNTESTED | [MISC](#fail-trunc__dp__from_table-TDS) |  |
-| ⚪ | `trunc` | `trunc(macaddr) → macaddr` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-trunc__macaddr__unsupported_type-TDS), [MISC](#fail-trunc_macaddr_cov-TDS) |  |
-| ⚪ | `trunc` | `trunc(macaddr8) → macaddr8` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-trunc__macaddr8__unsupported_type-TDS), [MISC](#fail-trunc_macaddr8_cov-TDS) |  |
-| ⚪ | `trunc` | `trunc(numeric) → numeric` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-trunc__num__from_table-TDS) |  |
-| ⚪ | `trunc` | `trunc(numeric, integer) → numeric` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-trunc__num_int__from_table-TDS) | Unsupported feature |
-| ⚪ | `width_bucket` | `width_bucket(anycompatible, anycompatiblearray) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-width_bucket__anycompatible_anycompatiblearray__unsupported_type-TDS) | Function not supported |
-| ⚪ | `width_bucket` | `width_bucket(double precision, double precision, double precision, integer) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-width_bucket__dp_dp_dp_int__from_table-TDS) | Function not supported |
-| ⚪ | `width_bucket` | `width_bucket(numeric, numeric, numeric, integer) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-width_bucket__num_num_num_int__from_table-TDS) | Function not supported |
+| | Function | Signature | TDS | Relation | Grammar | Error Category | Notes |
+|--|----------|-----------|-----|----------|---------|----------------|-------|
+| 🟢 | `abs` | `abs(bigint) → bigint` | PASS (3/3) | PASS (3/3) | PASS (3/3) |  |  |
+| 🟢 | `abs` | `abs(double precision) → double precision` | PASS (3/3) | PASS (3/3) | PASS (3/3) |  |  |
+| 🟢 | `abs` | `abs(integer) → integer` | PASS (3/3) | PASS (3/3) | PASS (3/3) |  |  |
+| 🟢 | `abs` | `abs(numeric) → numeric` | PASS (3/3) | PASS (3/3) | PASS (3/3) |  |  |
+| 🟢 | `abs` | `abs(real) → real` | PASS (3/3) | PASS (3/3) | PASS (3/3) |  |  |
+| 🟢 | `abs` | `abs(smallint) → smallint` | PASS (3/3) | PASS (3/3) | PASS (3/3) |  |  |
+| 🟢 | `acos` | `acos(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `acosh` | `acosh(double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-acosh__dp__from_table-TDS) | Function not supported |
+| 🟢 | `asin` | `asin(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `asinh` | `asinh(double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-asinh__dp__from_table-TDS) | Function not supported |
+| 🟢 | `atan` | `atan(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `atan2` | `atan2(double precision, double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `atanh` | `atanh(double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-atanh__dp__from_table-TDS) | Function not supported |
+| 🟢 | `cbrt` | `cbrt(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `ceil` | `ceil(double precision) → double precision` | PASS (3/3) | PASS (3/3) | PASS (3/3) |  |  |
+| 🟢 | `ceil` | `ceil(numeric) → numeric` | PASS (3/3) | PASS (3/3) | PASS (3/3) |  |  |
+| 🟢 | `ceiling` | `ceiling(double precision) → double precision` | PASS (3/3) | PASS (3/3) | PASS (3/3) |  |  |
+| 🟢 | `ceiling` | `ceiling(numeric) → numeric` | PASS (3/3) | PASS (3/3) | PASS (3/3) |  |  |
+| 🟢 | `cos` | `cos(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `cosh` | `cosh(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `degrees` | `degrees(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🔴 | `div` | `div(numeric, numeric) → numeric` | FAIL (0/1) | FAIL (0/1) | FAIL (0/1) | [RESULT_MISMATCH](#fail-div__num_num__from_table-TDS) |  |
+| ⚪ | `exp` | `exp(double precision) → double precision` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-exp__dp__from_table-TDS) |  |
+| ⚪ | `exp` | `exp(numeric) → numeric` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-exp__num__from_table-TDS) |  |
+| ⚪ | `factorial` | `factorial(bigint) → numeric` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-factorial__big__from_table-TDS) | Function not supported |
+| 🟢 | `floor` | `floor(double precision) → double precision` | PASS (3/3) | PASS (3/3) | PASS (3/3) |  |  |
+| 🟢 | `floor` | `floor(numeric) → numeric` | PASS (3/3) | PASS (3/3) | PASS (3/3) |  |  |
+| ⚪ | `gcd` | `gcd(bigint, bigint) → bigint` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-gcd__big_big__from_table-TDS) | Function not supported |
+| ⚪ | `gcd` | `gcd(integer, integer) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-gcd__int_int__from_table-TDS) | Function not supported |
+| ⚪ | `gcd` | `gcd(numeric, numeric) → numeric` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-gcd__num_num__from_table-TDS) | Function not supported |
+| ⚪ | `lcm` | `lcm(bigint, bigint) → bigint` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-lcm__big_big__from_table-TDS) | Function not supported |
+| ⚪ | `lcm` | `lcm(integer, integer) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-lcm__int_int__from_table-TDS) | Function not supported |
+| ⚪ | `lcm` | `lcm(numeric, numeric) → numeric` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-lcm__num_num__from_table-TDS) | Function not supported |
+| 🟢 | `ln` | `ln(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `ln` | `ln(numeric) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `log` | `log(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `log` | `log(numeric) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `log` | `log(numeric, numeric) → numeric` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-log__num_num__from_table-TDS) | Unsupported feature |
+| 🟢 | `log10` | `log10(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `log10` | `log10(numeric) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `min_scale` | `min_scale(numeric) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-min_scale__num__from_table-TDS) | Function not supported |
+| 🟢 | `mod` | `mod(bigint, bigint) → bigint` | PASS (2/2) | PASS (2/2) | PASS (2/2) |  |  |
+| 🟢 | `mod` | `mod(integer, integer) → integer` | PASS (2/2) | PASS (2/2) | PASS (2/2) |  |  |
+| 🟢 | `mod` | `mod(numeric, numeric) → numeric` | PASS (2/2) | PASS (2/2) | PASS (2/2) |  |  |
+| 🟢 | `mod` | `mod(smallint, smallint) → smallint` | PASS (2/2) | PASS (2/2) | PASS (2/2) |  |  |
+| 🟢 | `pi` | `pi() → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `power` | `power(double precision, double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `power` | `power(numeric, numeric) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `radians` | `radians(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `random` | `random() → double precision` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-random__basic-TDS) | Function not supported |
+| 🟢 | `round` | `round(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `round` | `round(numeric) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `round` | `round(numeric, integer) → numeric` | PASS (2/2) | PASS (2/2) | PASS (2/2) |  |  |
+| ⚪ | `scale` | `scale(numeric) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-scale__num__from_table-TDS) | Function not supported |
+| ⚪ | `setseed` | `setseed(double precision) → void` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-setseed__dp__basic-TDS) | Function not supported |
+| 🟢 | `sign` | `sign(double precision) → double precision` | PASS (2/2) | PASS (2/2) | PASS (2/2) |  |  |
+| 🟢 | `sign` | `sign(numeric) → numeric` | PASS (2/2) | PASS (2/2) | PASS (2/2) |  |  |
+| 🟢 | `sin` | `sin(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `sinh` | `sinh(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `sqrt` | `sqrt(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `sqrt` | `sqrt(numeric) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `tan` | `tan(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `tanh` | `tanh(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `trim_scale` | `trim_scale(numeric) → numeric` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-trim_scale__num__from_table-TDS) | Function not supported |
+| ⚪ | `trunc` | `trunc(double precision) → double precision` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-trunc__dp__from_table-TDS) |  |
+| ⚪ | `trunc` | `trunc(macaddr) → macaddr` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-trunc__macaddr__unsupported_type-TDS), [MISC](#fail-trunc_macaddr_cov-TDS) |  |
+| ⚪ | `trunc` | `trunc(macaddr8) → macaddr8` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-trunc__macaddr8__unsupported_type-TDS), [MISC](#fail-trunc_macaddr8_cov-TDS) |  |
+| ⚪ | `trunc` | `trunc(numeric) → numeric` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-trunc__num__from_table-TDS) |  |
+| ⚪ | `trunc` | `trunc(numeric, integer) → numeric` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-trunc__num_int__from_table-TDS) | Unsupported feature |
+| ⚪ | `width_bucket` | `width_bucket(anycompatible, anycompatiblearray) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-width_bucket__anycompatible_anycompatiblearray__unsupported_type-TDS) | Function not supported |
+| ⚪ | `width_bucket` | `width_bucket(double precision, double precision, double precision, integer) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-width_bucket__dp_dp_dp_int__from_table-TDS) | Function not supported |
+| ⚪ | `width_bucket` | `width_bucket(numeric, numeric, numeric, integer) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-width_bucket__num_num_num_int__from_table-TDS) | Function not supported |
 
 <a id="string-functions-and-operators-(9.4)"></a>
 
@@ -140,114 +141,114 @@ Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-mat
 
 Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-string.html)
 
-| | Function | Signature | TDS | Relation | Error Category | Notes |
-|--|----------|-----------|-----|----------|----------------|-------|
-| ⚪ | `array_to_string` | `array_to_string(anyarray, text) → text` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_to_string__anyarray_txt__no_generator-TDS) | Function not supported |
-| ⚪ | `array_to_string` | `array_to_string(anyarray, text, text) → text` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_to_string__anyarray_txt_txt__from_table-TDS) | Function not supported |
-| 🟢 | `ascii` | `ascii(text) → integer` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `bit_length` | `bit_length(bit) → integer` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-bit_length__bit__unsupported_type-TDS), [FUNCTION_NOT_SUPPORTED](#fail-bit_length_bit_cov-TDS) | Function not supported |
-| ⚪ | `bit_length` | `bit_length(bytea) → integer` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-bit_length__bytea__unsupported_type-TDS), [FUNCTION_NOT_SUPPORTED](#fail-bit_length_bytea_cov-TDS) | Function not supported |
-| ⚪ | `bit_length` | `bit_length(text) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_length__txt__from_table-TDS) | Function not supported |
-| ⚪ | `btrim` | `btrim(bytea, bytea) → bytea` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-btrim__bytea_bytea__unsupported_type-TDS) | Unsupported feature |
-| 🟢 | `btrim` | `btrim(text) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `btrim` | `btrim(text, text) → text` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-btrim__txt_txt__from_table-TDS) | Unsupported feature |
-| ⚪ | `char_length` | `char_length(character) → integer` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-char_length__char__unsupported_type-TDS) | Unsupported feature |
-| 🟢 | `char_length` | `char_length(text) → integer` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `character_length` | `character_length(character) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-character_length__char__unsupported_type-TDS) | Function not supported |
-| ⚪ | `character_length` | `character_length(text) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-character_length__txt__from_table-TDS) | Function not supported |
-| 🟢 | `chr` | `chr(integer) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `concat` | `concat(VARIADIC "any") → text` | PASS (8/8) | PASS (8/8) |  |  |
-| 🔴 | `concat_ws` | `concat_ws(text, VARIADIC "any") → text` | FAIL (0/1) | FAIL (0/1) | [RESULT_MISMATCH](#fail-concat_ws__txt_variadic__from_table-TDS) |  |
-| ⚪ | `decode` | `decode(text, text) → bytea` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-decode__txt_txt__unsupported_type-TDS), [MISC](#fail-decode_text_text_cov-TDS) |  |
-| ⚪ | `encode` | `encode(bytea, text) → text` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-encode__bytea_txt__unsupported_type-TDS), [MISC](#fail-encode_bytea_text_cov-TDS) | Unsupported feature |
-| ⚪ | `format` | `format(text) → text` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-format__txt__from_table-TDS) | Function not supported |
-| ⚪ | `format` | `format(text, VARIADIC "any") → text` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-format__txt_variadic__from_table-TDS) | Function not supported |
-| 🔴 | `initcap` | `initcap(text) → text` | FAIL (0/1) | FAIL (0/1) | [RESULT_MISMATCH](#fail-initcap__txt__from_table-TDS) |  |
-| ⚪ | `is_normalized` | `is_normalized(text, text DEFAULT 'NFC'::text) → boolean` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-is_normalized__txt_txtNFCtxt__from_table-TDS) | Function not supported |
-| 🟢 | `left` | `left(text, integer) → text` | PASS (2/2) | PASS (2/2) |  |  |
-| ⚪ | `length` | `length(bit) → integer` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-length__bit__unsupported_type-TDS) | Unsupported feature |
-| ⚪ | `length` | `length(bytea) → integer` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-length__bytea__unsupported_type-TDS) | Unsupported feature |
-| ⚪ | `length` | `length(bytea, name) → integer` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-length__bytea_name__unsupported_type-TDS) | Unsupported feature |
-| ⚪ | `length` | `length(character) → integer` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-length__char__unsupported_type-TDS) | Unsupported feature |
-| 🟡 | `length` | `length(lseg) → double precision` | PARTIAL (1/2) | PARTIAL (1/2) | [TYPE_ERROR](#fail-length__lseg__unsupported_type-TDS) |  |
-| 🟡 | `length` | `length(path) → double precision` | PARTIAL (1/2) | PARTIAL (1/2) | [TYPE_ERROR](#fail-length__path__unsupported_type-TDS) |  |
-| 🟢 | `length` | `length(text) → integer` | PASS (2/2) | PASS (2/2) |  |  |
-| ⚪ | `length` | `length(tsvector) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-length__tsvector__unsupported_type-TDS) | Function not supported |
-| ⚪ | `lower` | `lower(anymultirange) → anyelement` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-lower__anymultirange__unsupported_type-TDS) | Function not supported |
-| ⚪ | `lower` | `lower(anyrange) → anyelement` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-lower__anyrange__unsupported_type-TDS) | Function not supported |
-| 🟢 | `lower` | `lower(text) → text` | PASS (2/2) | PASS (2/2) |  |  |
-| 🟢 | `lpad` | `lpad(text, integer) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `lpad` | `lpad(text, integer, text) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `ltrim` | `ltrim(bytea, bytea) → bytea` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-ltrim__bytea_bytea__unsupported_type-TDS) | Unsupported feature |
-| 🟢 | `ltrim` | `ltrim(text) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `ltrim` | `ltrim(text, text) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `md5` | `md5(bytea) → text` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-md5__bytea__unsupported_type-TDS) | Unsupported feature |
-| 🟢 | `md5` | `md5(text) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `normalize` | `normalize(text, text DEFAULT 'NFC'::text) → text` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-normalize__txt_txtNFCtxt__from_table-TDS) | Function not supported |
-| ⚪ | `octet_length` | `octet_length(bit) → integer` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-octet_length__bit__unsupported_type-TDS), [FUNCTION_NOT_SUPPORTED](#fail-octet_length_bit_cov-TDS) | Function not supported |
-| ⚪ | `octet_length` | `octet_length(bytea) → integer` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-octet_length__bytea__unsupported_type-TDS), [FUNCTION_NOT_SUPPORTED](#fail-octet_length_bytea_cov-TDS) | Function not supported |
-| ⚪ | `octet_length` | `octet_length(character) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-octet_length__char__unsupported_type-TDS) | Function not supported |
-| ⚪ | `octet_length` | `octet_length(text) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-octet_length__txt__from_table-TDS) | Function not supported |
-| ⚪ | `overlay` | `overlay(bit, bit, integer) → bit` | UNSUPPORTED | UNSUPPORTED | [PARSE_ERROR](#fail-overlay__bit_bit_int__unsupported_type-TDS), [FUNCTION_NOT_SUPPORTED](#fail-overlay_bit_bit_integer_cov-TDS) | Function not supported |
-| ⚪ | `overlay` | `overlay(bit, bit, integer, integer) → bit` | UNSUPPORTED | UNSUPPORTED | [PARSE_ERROR](#fail-overlay__bit_bit_int_int__unsupported_type-TDS), [FUNCTION_NOT_SUPPORTED](#fail-overlay_bit_bit_integer_integer_cov-TDS) | Function not supported |
-| ⚪ | `overlay` | `overlay(bytea, bytea, integer) → bytea` | UNSUPPORTED | UNSUPPORTED | [PARSE_ERROR](#fail-overlay__bytea_bytea_int__unsupported_type-TDS), [FUNCTION_NOT_SUPPORTED](#fail-overlay_bytea_bytea_integer_cov-TDS) | Function not supported |
-| ⚪ | `overlay` | `overlay(bytea, bytea, integer, integer) → bytea` | UNSUPPORTED | UNSUPPORTED | [PARSE_ERROR](#fail-overlay__bytea_bytea_int_int__unsupported_type-TDS), [FUNCTION_NOT_SUPPORTED](#fail-overlay_bytea_bytea_integer_integer_cov-TDS) | Function not supported |
-| ⚪ | `overlay` | `overlay(text, text, integer) → text` | UNTESTED | UNTESTED | [PARSE_ERROR](#fail-overlay__txt_txt_int__special_syntax-TDS) |  |
-| ⚪ | `overlay` | `overlay(text, text, integer, integer) → text` | UNSUPPORTED | UNSUPPORTED | [PARSE_ERROR](#fail-overlay__txt_txt_int_int__special_syntax-TDS), [FUNCTION_NOT_SUPPORTED](#fail-overlay__txt_txt_int_int__func_syntax-TDS) | Function not supported |
-| ⚪ | `position` | `position(bit, bit) → integer` | UNSUPPORTED | UNSUPPORTED | [PARSE_ERROR](#fail-position__bit_bit__unsupported_type-TDS), [FUNCTION_NOT_SUPPORTED](#fail-position_bit_bit_cov-TDS) | Function not supported |
-| ⚪ | `position` | `position(bytea, bytea) → integer` | UNSUPPORTED | UNSUPPORTED | [PARSE_ERROR](#fail-position__bytea_bytea__unsupported_type-TDS), [FUNCTION_NOT_SUPPORTED](#fail-position_bytea_bytea_cov-TDS) | Function not supported |
-| ⚪ | `position` | `position(text, text) → integer` | UNTESTED | UNTESTED | [PARSE_ERROR](#fail-position__txt_txt__from_table-TDS) |  |
-| ⚪ | `quote_ident` | `quote_ident(text) → text` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-quote_ident__txt__from_table-TDS) | Function not supported |
-| ⚪ | `quote_literal` | `quote_literal(anyelement) → text` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-quote_literal__anyelement__unsupported_type-TDS) | Function not supported |
-| ⚪ | `quote_literal` | `quote_literal(text) → text` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-quote_literal__txt__from_table-TDS) | Function not supported |
-| ⚪ | `quote_nullable` | `quote_nullable(anyelement) → text` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-quote_nullable__anyelement__unsupported_type-TDS) | Function not supported |
-| ⚪ | `quote_nullable` | `quote_nullable(text) → text` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-quote_nullable__txt__from_table-TDS) | Function not supported |
-| ⚪ | `regexp_match` | `regexp_match(text, text) → text[]` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regexp_match__txt_txt__from_table-TDS) | Function not supported |
-| ⚪ | `regexp_match` | `regexp_match(text, text, text) → text[]` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regexp_match__txt_txt_txt__from_table-TDS) | Function not supported |
-| ⚪ | `regexp_matches` | `regexp_matches(text, text) → SETOF text[]` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regexp_matches__txt_txt__from_table-TDS) | Function not supported |
-| ⚪ | `regexp_matches` | `regexp_matches(text, text, text) → SETOF text[]` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regexp_matches__txt_txt_txt__from_table-TDS) | Function not supported |
-| 🟢 | `regexp_replace` | `regexp_replace(text, text, text) → text` | PASS (2/2) | PASS (2/2) |  |  |
-| 🟢 | `regexp_replace` | `regexp_replace(text, text, text, integer) → text` | PASS (2/2) | PASS (2/2) |  |  |
-| 🟢 | `regexp_replace` | `regexp_replace(text, text, text, integer, integer) → text` | PASS (2/2) | PASS (2/2) |  |  |
-| 🟢 | `regexp_replace` | `regexp_replace(text, text, text, integer, integer, text) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `regexp_replace` | `regexp_replace(text, text, text, text) → text` | PASS (15/15) | PASS (15/15) |  |  |
-| ⚪ | `regexp_split_to_array` | `regexp_split_to_array(text, text) → text[]` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regexp_split_to_array__txt_txt__from_table-TDS) | Function not supported |
-| ⚪ | `regexp_split_to_array` | `regexp_split_to_array(text, text, text) → text[]` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regexp_split_to_array__txt_txt_txt__from_table-TDS) | Function not supported |
-| ⚪ | `regexp_split_to_table` | `regexp_split_to_table(text, text) → SETOF text` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regexp_split_to_table__txt_txt__from_table-TDS) | Function not supported |
-| ⚪ | `regexp_split_to_table` | `regexp_split_to_table(text, text, text) → SETOF text` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regexp_split_to_table__txt_txt_txt__from_table-TDS) | Function not supported |
-| 🟢 | `repeat` | `repeat(text, integer) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `replace` | `replace(text, text, text) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `reverse` | `reverse(text) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `right` | `right(text, integer) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `rpad` | `rpad(text, integer) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `rpad` | `rpad(text, integer, text) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `rtrim` | `rtrim(bytea, bytea) → bytea` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-rtrim__bytea_bytea__unsupported_type-TDS) | Unsupported feature |
-| 🟢 | `rtrim` | `rtrim(text) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `rtrim` | `rtrim(text, text) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `split_part` | `split_part(text, text, integer) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `starts_with` | `starts_with(text, text) → boolean` | PASS (1/1) | PASS (1/1) |  |  |
-| 🔴 | `string_to_array` | `string_to_array(text, text) → text[]` | FAIL (0/1) | FAIL (0/1) | [RESULT_MISMATCH](#fail-string_to_array__txt_txt__from_table-TDS) |  |
-| ⚪ | `string_to_array` | `string_to_array(text, text, text) → text[]` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-string_to_array__txt_txt_txt__from_table-TDS) | Unsupported feature |
-| 🟢 | `strpos` | `strpos(text, text) → integer` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `substr` | `substr(bytea, integer) → bytea` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-substr__bytea_int__unsupported_type-TDS), [MISC](#fail-substr_bytea_integer_cov-TDS) | Unsupported feature |
-| ⚪ | `substr` | `substr(bytea, integer, integer) → bytea` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-substr__bytea_int_int__unsupported_type-TDS), [MISC](#fail-substr_bytea_integer_integer_cov-TDS) | Unsupported feature |
-| 🟢 | `substr` | `substr(text, integer) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `substr` | `substr(text, integer, integer) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `substring` | `substring(bit, integer) → bit` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-substring__bit_int__unsupported_type-TDS), [MISC](#fail-substring_bit_integer_cov-TDS) | Unsupported feature |
-| ⚪ | `substring` | `substring(bit, integer, integer) → bit` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-substring__bit_int_int__unsupported_type-TDS), [MISC](#fail-substring_bit_integer_integer_cov-TDS) | Unsupported feature |
-| ⚪ | `substring` | `substring(bytea, integer) → bytea` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-substring__bytea_int__unsupported_type-TDS), [MISC](#fail-substring_bytea_integer_cov-TDS) | Unsupported feature |
-| ⚪ | `substring` | `substring(bytea, integer, integer) → bytea` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-substring__bytea_int_int__unsupported_type-TDS), [MISC](#fail-substring_bytea_integer_integer_cov-TDS) | Unsupported feature |
-| 🟢 | `substring` | `substring(text, integer) → text` | PASS (2/2) | PASS (2/2) |  |  |
-| 🟢 | `substring` | `substring(text, integer, integer) → text` | PASS (2/2) | PASS (2/2) |  |  |
-| 🟡 | `substring` | `substring(text, text) → text` | PASS (1/1) | UNTESTED | [MISC](#fail-substring__txt_txt__from_table-Relation) |  |
-| ⚪ | `substring` | `substring(text, text, text) → text` | UNTESTED | UNTESTED | [PARSE_ERROR](#fail-substring__txt_txt_txt__from_table-TDS), [MISC](#fail-substring_text_text_text_cov-TDS) |  |
-| ⚪ | `to_hex` | `to_hex(bigint) → text` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-to_hex__big__from_table-TDS) | Function not supported |
-| ⚪ | `to_hex` | `to_hex(integer) → text` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-to_hex__int__from_table-TDS) | Function not supported |
-| ⚪ | `translate` | `translate(text, text, text) → text` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-translate__txt_txt_txt__from_table-TDS) | Function not supported |
-| ⚪ | `unistr` | `unistr(text) → text` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-unistr__txt__from_table-TDS) | Function not supported |
-| ⚪ | `upper` | `upper(anymultirange) → anyelement` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-upper__anymultirange__unsupported_type-TDS) | Function not supported |
-| ⚪ | `upper` | `upper(anyrange) → anyelement` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-upper__anyrange__unsupported_type-TDS) | Function not supported |
-| 🟢 | `upper` | `upper(text) → text` | PASS (2/2) | PASS (2/2) |  |  |
+| | Function | Signature | TDS | Relation | Grammar | Error Category | Notes |
+|--|----------|-----------|-----|----------|---------|----------------|-------|
+| ⚪ | `array_to_string` | `array_to_string(anyarray, text) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_to_string__anyarray_txt__no_generator-TDS) | Function not supported |
+| ⚪ | `array_to_string` | `array_to_string(anyarray, text, text) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_to_string__anyarray_txt_txt__from_table-TDS) | Function not supported |
+| 🟢 | `ascii` | `ascii(text) → integer` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `bit_length` | `bit_length(bit) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-bit_length__bit__unsupported_type-TDS), [FUNCTION_NOT_SUPPORTED](#fail-bit_length_bit_cov-TDS) | Function not supported |
+| ⚪ | `bit_length` | `bit_length(bytea) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-bit_length__bytea__unsupported_type-TDS), [FUNCTION_NOT_SUPPORTED](#fail-bit_length_bytea_cov-TDS) | Function not supported |
+| ⚪ | `bit_length` | `bit_length(text) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_length__txt__from_table-TDS) | Function not supported |
+| ⚪ | `btrim` | `btrim(bytea, bytea) → bytea` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-btrim__bytea_bytea__unsupported_type-TDS) | Unsupported feature |
+| 🟢 | `btrim` | `btrim(text) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `btrim` | `btrim(text, text) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-btrim__txt_txt__from_table-TDS) | Unsupported feature |
+| ⚪ | `char_length` | `char_length(character) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-char_length__char__unsupported_type-TDS) | Unsupported feature |
+| 🟢 | `char_length` | `char_length(text) → integer` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `character_length` | `character_length(character) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-character_length__char__unsupported_type-TDS) | Function not supported |
+| ⚪ | `character_length` | `character_length(text) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-character_length__txt__from_table-TDS) | Function not supported |
+| 🟢 | `chr` | `chr(integer) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `concat` | `concat(VARIADIC "any") → text` | PASS (8/8) | PASS (8/8) | PASS (8/8) |  |  |
+| 🔴 | `concat_ws` | `concat_ws(text, VARIADIC "any") → text` | FAIL (0/1) | FAIL (0/1) | FAIL (0/1) | [RESULT_MISMATCH](#fail-concat_ws__txt_variadic__from_table-TDS) |  |
+| ⚪ | `decode` | `decode(text, text) → bytea` | UNTESTED | UNTESTED | UNSUPPORTED | [TYPE_ERROR](#fail-decode__txt_txt__unsupported_type-TDS), [MISC](#fail-decode_text_text_cov-TDS), [FUNCTION_NOT_SUPPORTED](#fail-decode_text_text_cov-Grammar) | Grammar: function not supported |
+| ⚪ | `encode` | `encode(bytea, text) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-encode__bytea_txt__unsupported_type-TDS), [MISC](#fail-encode_bytea_text_cov-TDS), [FUNCTION_NOT_SUPPORTED](#fail-encode_bytea_text_cov-Grammar) | Unsupported feature |
+| ⚪ | `format` | `format(text) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-format__txt__from_table-TDS) | Function not supported |
+| ⚪ | `format` | `format(text, VARIADIC "any") → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-format__txt_variadic__from_table-TDS) | Function not supported |
+| 🔴 | `initcap` | `initcap(text) → text` | FAIL (0/1) | FAIL (0/1) | FAIL (0/1) | [RESULT_MISMATCH](#fail-initcap__txt__from_table-TDS) |  |
+| ⚪ | `is_normalized` | `is_normalized(text, text DEFAULT 'NFC'::text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-is_normalized__txt_txtNFCtxt__from_table-TDS) | Function not supported |
+| 🟢 | `left` | `left(text, integer) → text` | PASS (2/2) | PASS (2/2) | PASS (2/2) |  |  |
+| ⚪ | `length` | `length(bit) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-length__bit__unsupported_type-TDS) | Unsupported feature |
+| ⚪ | `length` | `length(bytea) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-length__bytea__unsupported_type-TDS) | Unsupported feature |
+| 🟡 | `length` | `length(bytea, name) → integer` | UNSUPPORTED | UNSUPPORTED | PARTIAL (1/2) | [UNSUPPORTED_SYNTAX](#fail-length__bytea_name__unsupported_type-TDS), [MISC](#fail-length__bytea_name__unsupported_type-Grammar) | Unsupported feature |
+| ⚪ | `length` | `length(character) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-length__char__unsupported_type-TDS) | Unsupported feature |
+| 🟡 | `length` | `length(lseg) → double precision` | PARTIAL (1/2) | PARTIAL (1/2) | PARTIAL (1/2) | [TYPE_ERROR](#fail-length__lseg__unsupported_type-TDS) |  |
+| 🟡 | `length` | `length(path) → double precision` | PARTIAL (1/2) | PARTIAL (1/2) | PARTIAL (1/2) | [TYPE_ERROR](#fail-length__path__unsupported_type-TDS) |  |
+| 🟢 | `length` | `length(text) → integer` | PASS (2/2) | PASS (2/2) | PASS (2/2) |  |  |
+| ⚪ | `length` | `length(tsvector) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-length__tsvector__unsupported_type-TDS) | Function not supported |
+| ⚪ | `lower` | `lower(anymultirange) → anyelement` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-lower__anymultirange__unsupported_type-TDS) | Function not supported |
+| ⚪ | `lower` | `lower(anyrange) → anyelement` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-lower__anyrange__unsupported_type-TDS) | Function not supported |
+| 🟢 | `lower` | `lower(text) → text` | PASS (2/2) | PASS (2/2) | PASS (2/2) |  |  |
+| 🟢 | `lpad` | `lpad(text, integer) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `lpad` | `lpad(text, integer, text) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `ltrim` | `ltrim(bytea, bytea) → bytea` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-ltrim__bytea_bytea__unsupported_type-TDS) | Unsupported feature |
+| 🟢 | `ltrim` | `ltrim(text) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `ltrim` | `ltrim(text, text) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `md5` | `md5(bytea) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-md5__bytea__unsupported_type-TDS) | Unsupported feature |
+| 🟢 | `md5` | `md5(text) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `normalize` | `normalize(text, text DEFAULT 'NFC'::text) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-normalize__txt_txtNFCtxt__from_table-TDS) | Function not supported |
+| ⚪ | `octet_length` | `octet_length(bit) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-octet_length__bit__unsupported_type-TDS), [FUNCTION_NOT_SUPPORTED](#fail-octet_length_bit_cov-TDS) | Function not supported |
+| ⚪ | `octet_length` | `octet_length(bytea) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-octet_length__bytea__unsupported_type-TDS), [FUNCTION_NOT_SUPPORTED](#fail-octet_length_bytea_cov-TDS) | Function not supported |
+| ⚪ | `octet_length` | `octet_length(character) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-octet_length__char__unsupported_type-TDS) | Function not supported |
+| ⚪ | `octet_length` | `octet_length(text) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-octet_length__txt__from_table-TDS) | Function not supported |
+| ⚪ | `overlay` | `overlay(bit, bit, integer) → bit` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [PARSE_ERROR](#fail-overlay__bit_bit_int__unsupported_type-TDS), [FUNCTION_NOT_SUPPORTED](#fail-overlay_bit_bit_integer_cov-TDS) | Function not supported |
+| ⚪ | `overlay` | `overlay(bit, bit, integer, integer) → bit` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [PARSE_ERROR](#fail-overlay__bit_bit_int_int__unsupported_type-TDS), [FUNCTION_NOT_SUPPORTED](#fail-overlay_bit_bit_integer_integer_cov-TDS) | Function not supported |
+| ⚪ | `overlay` | `overlay(bytea, bytea, integer) → bytea` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [PARSE_ERROR](#fail-overlay__bytea_bytea_int__unsupported_type-TDS), [FUNCTION_NOT_SUPPORTED](#fail-overlay_bytea_bytea_integer_cov-TDS) | Function not supported |
+| ⚪ | `overlay` | `overlay(bytea, bytea, integer, integer) → bytea` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [PARSE_ERROR](#fail-overlay__bytea_bytea_int_int__unsupported_type-TDS), [FUNCTION_NOT_SUPPORTED](#fail-overlay_bytea_bytea_integer_integer_cov-TDS) | Function not supported |
+| ⚪ | `overlay` | `overlay(text, text, integer) → text` | UNTESTED | UNTESTED | UNTESTED | [PARSE_ERROR](#fail-overlay__txt_txt_int__special_syntax-TDS) |  |
+| ⚪ | `overlay` | `overlay(text, text, integer, integer) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [PARSE_ERROR](#fail-overlay__txt_txt_int_int__special_syntax-TDS), [FUNCTION_NOT_SUPPORTED](#fail-overlay__txt_txt_int_int__func_syntax-TDS) | Function not supported |
+| ⚪ | `position` | `position(bit, bit) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [PARSE_ERROR](#fail-position__bit_bit__unsupported_type-TDS), [FUNCTION_NOT_SUPPORTED](#fail-position_bit_bit_cov-TDS) | Function not supported |
+| ⚪ | `position` | `position(bytea, bytea) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [PARSE_ERROR](#fail-position__bytea_bytea__unsupported_type-TDS), [FUNCTION_NOT_SUPPORTED](#fail-position_bytea_bytea_cov-TDS) | Function not supported |
+| ⚪ | `position` | `position(text, text) → integer` | UNTESTED | UNTESTED | UNTESTED | [PARSE_ERROR](#fail-position__txt_txt__from_table-TDS) |  |
+| ⚪ | `quote_ident` | `quote_ident(text) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-quote_ident__txt__from_table-TDS) | Function not supported |
+| ⚪ | `quote_literal` | `quote_literal(anyelement) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-quote_literal__anyelement__unsupported_type-TDS) | Function not supported |
+| ⚪ | `quote_literal` | `quote_literal(text) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-quote_literal__txt__from_table-TDS) | Function not supported |
+| ⚪ | `quote_nullable` | `quote_nullable(anyelement) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-quote_nullable__anyelement__unsupported_type-TDS) | Function not supported |
+| ⚪ | `quote_nullable` | `quote_nullable(text) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-quote_nullable__txt__from_table-TDS) | Function not supported |
+| ⚪ | `regexp_match` | `regexp_match(text, text) → text[]` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regexp_match__txt_txt__from_table-TDS) | Function not supported |
+| ⚪ | `regexp_match` | `regexp_match(text, text, text) → text[]` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regexp_match__txt_txt_txt__from_table-TDS) | Function not supported |
+| ⚪ | `regexp_matches` | `regexp_matches(text, text) → SETOF text[]` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regexp_matches__txt_txt__from_table-TDS) | Function not supported |
+| ⚪ | `regexp_matches` | `regexp_matches(text, text, text) → SETOF text[]` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regexp_matches__txt_txt_txt__from_table-TDS) | Function not supported |
+| 🟢 | `regexp_replace` | `regexp_replace(text, text, text) → text` | PASS (2/2) | PASS (2/2) | PASS (2/2) |  |  |
+| 🟢 | `regexp_replace` | `regexp_replace(text, text, text, integer) → text` | PASS (2/2) | PASS (2/2) | PASS (2/2) |  |  |
+| 🟢 | `regexp_replace` | `regexp_replace(text, text, text, integer, integer) → text` | PASS (2/2) | PASS (2/2) | PASS (2/2) |  |  |
+| 🟢 | `regexp_replace` | `regexp_replace(text, text, text, integer, integer, text) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `regexp_replace` | `regexp_replace(text, text, text, text) → text` | PASS (15/15) | PASS (15/15) | PASS (15/15) |  |  |
+| ⚪ | `regexp_split_to_array` | `regexp_split_to_array(text, text) → text[]` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regexp_split_to_array__txt_txt__from_table-TDS) | Function not supported |
+| ⚪ | `regexp_split_to_array` | `regexp_split_to_array(text, text, text) → text[]` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regexp_split_to_array__txt_txt_txt__from_table-TDS) | Function not supported |
+| ⚪ | `regexp_split_to_table` | `regexp_split_to_table(text, text) → SETOF text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regexp_split_to_table__txt_txt__from_table-TDS) | Function not supported |
+| ⚪ | `regexp_split_to_table` | `regexp_split_to_table(text, text, text) → SETOF text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regexp_split_to_table__txt_txt_txt__from_table-TDS) | Function not supported |
+| 🟢 | `repeat` | `repeat(text, integer) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `replace` | `replace(text, text, text) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `reverse` | `reverse(text) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `right` | `right(text, integer) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `rpad` | `rpad(text, integer) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `rpad` | `rpad(text, integer, text) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `rtrim` | `rtrim(bytea, bytea) → bytea` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-rtrim__bytea_bytea__unsupported_type-TDS) | Unsupported feature |
+| 🟢 | `rtrim` | `rtrim(text) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `rtrim` | `rtrim(text, text) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `split_part` | `split_part(text, text, integer) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `starts_with` | `starts_with(text, text) → boolean` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🔴 | `string_to_array` | `string_to_array(text, text) → text[]` | FAIL (0/1) | FAIL (0/1) | FAIL (0/1) | [RESULT_MISMATCH](#fail-string_to_array__txt_txt__from_table-TDS) |  |
+| ⚪ | `string_to_array` | `string_to_array(text, text, text) → text[]` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-string_to_array__txt_txt_txt__from_table-TDS) | Unsupported feature |
+| 🟢 | `strpos` | `strpos(text, text) → integer` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `substr` | `substr(bytea, integer) → bytea` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-substr__bytea_int__unsupported_type-TDS), [MISC](#fail-substr_bytea_integer_cov-TDS), [FUNCTION_NOT_SUPPORTED](#fail-substr_bytea_integer_cov-Grammar) | Unsupported feature |
+| ⚪ | `substr` | `substr(bytea, integer, integer) → bytea` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-substr__bytea_int_int__unsupported_type-TDS), [MISC](#fail-substr_bytea_integer_integer_cov-TDS), [FUNCTION_NOT_SUPPORTED](#fail-substr_bytea_integer_integer_cov-Grammar) | Unsupported feature |
+| 🟢 | `substr` | `substr(text, integer) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `substr` | `substr(text, integer, integer) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `substring` | `substring(bit, integer) → bit` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-substring__bit_int__unsupported_type-TDS), [MISC](#fail-substring_bit_integer_cov-TDS), [FUNCTION_NOT_SUPPORTED](#fail-substring_bit_integer_cov-Grammar) | Unsupported feature |
+| ⚪ | `substring` | `substring(bit, integer, integer) → bit` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-substring__bit_int_int__unsupported_type-TDS), [MISC](#fail-substring_bit_integer_integer_cov-TDS), [FUNCTION_NOT_SUPPORTED](#fail-substring_bit_integer_integer_cov-Grammar) | Unsupported feature |
+| ⚪ | `substring` | `substring(bytea, integer) → bytea` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-substring__bytea_int__unsupported_type-TDS), [MISC](#fail-substring_bytea_integer_cov-TDS), [FUNCTION_NOT_SUPPORTED](#fail-substring_bytea_integer_cov-Grammar) | Unsupported feature |
+| ⚪ | `substring` | `substring(bytea, integer, integer) → bytea` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-substring__bytea_int_int__unsupported_type-TDS), [MISC](#fail-substring_bytea_integer_integer_cov-TDS), [FUNCTION_NOT_SUPPORTED](#fail-substring_bytea_integer_integer_cov-Grammar) | Unsupported feature |
+| 🟢 | `substring` | `substring(text, integer) → text` | PASS (2/2) | PASS (2/2) | PASS (2/2) |  |  |
+| 🟢 | `substring` | `substring(text, integer, integer) → text` | PASS (2/2) | PASS (2/2) | PASS (2/2) |  |  |
+| 🟡 | `substring` | `substring(text, text) → text` | PASS (1/1) | UNTESTED | UNTESTED | [MISC](#fail-substring__txt_txt__from_table-Relation) |  |
+| ⚪ | `substring` | `substring(text, text, text) → text` | UNTESTED | UNTESTED | UNSUPPORTED | [PARSE_ERROR](#fail-substring__txt_txt_txt__from_table-TDS), [MISC](#fail-substring_text_text_text_cov-TDS), [FUNCTION_NOT_SUPPORTED](#fail-substring_text_text_text_cov-Grammar) | Grammar: function not supported |
+| ⚪ | `to_hex` | `to_hex(bigint) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-to_hex__big__from_table-TDS) | Function not supported |
+| ⚪ | `to_hex` | `to_hex(integer) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-to_hex__int__from_table-TDS) | Function not supported |
+| ⚪ | `translate` | `translate(text, text, text) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-translate__txt_txt_txt__from_table-TDS) | Function not supported |
+| ⚪ | `unistr` | `unistr(text) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-unistr__txt__from_table-TDS) | Function not supported |
+| ⚪ | `upper` | `upper(anymultirange) → anyelement` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-upper__anymultirange__unsupported_type-TDS) | Function not supported |
+| ⚪ | `upper` | `upper(anyrange) → anyelement` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-upper__anyrange__unsupported_type-TDS) | Function not supported |
+| 🟢 | `upper` | `upper(text) → text` | PASS (2/2) | PASS (2/2) | PASS (2/2) |  |  |
 
 <a id="binary-string-functions-(9.5)"></a>
 
@@ -255,17 +256,17 @@ Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-str
 
 Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-binarystring.html)
 
-| | Function | Signature | TDS | Relation | Error Category | Notes |
-|--|----------|-----------|-----|----------|----------------|-------|
-| ⚪ | `convert` | `convert(bytea, name, name) → bytea` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-convert__bytea_name_name-TDS) | Function not supported |
-| ⚪ | `convert_from` | `convert_from(bytea, name) → text` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-convert_from__bytea_name-TDS) | Function not supported |
-| ⚪ | `convert_to` | `convert_to(text, name) → bytea` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-convert_to__txt_name-TDS) | Function not supported |
-| ⚪ | `get_byte` | `get_byte(bytea, integer) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-get_byte__bytea_int-TDS) | Function not supported |
-| ⚪ | `set_byte` | `set_byte(bytea, integer, integer) → bytea` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-set_byte__bytea_int_int-TDS) | Function not supported |
-| ⚪ | `sha224` | `sha224(bytea) → bytea` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-sha224__bytea-TDS) | Function not supported |
-| ⚪ | `sha256` | `sha256(bytea) → bytea` | UNTESTED | UNTESTED | [MISC](#fail-sha256__bytea-TDS) |  |
-| ⚪ | `sha384` | `sha384(bytea) → bytea` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-sha384__bytea-TDS) | Function not supported |
-| ⚪ | `sha512` | `sha512(bytea) → bytea` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-sha512__bytea-TDS) | Function not supported |
+| | Function | Signature | TDS | Relation | Grammar | Error Category | Notes |
+|--|----------|-----------|-----|----------|---------|----------------|-------|
+| ⚪ | `convert` | `convert(bytea, name, name) → bytea` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-convert__bytea_name_name-TDS) | Function not supported |
+| ⚪ | `convert_from` | `convert_from(bytea, name) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-convert_from__bytea_name-TDS) | Function not supported |
+| ⚪ | `convert_to` | `convert_to(text, name) → bytea` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-convert_to__txt_name-TDS) | Function not supported |
+| ⚪ | `get_byte` | `get_byte(bytea, integer) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-get_byte__bytea_int-TDS) | Function not supported |
+| ⚪ | `set_byte` | `set_byte(bytea, integer, integer) → bytea` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-set_byte__bytea_int_int-TDS) | Function not supported |
+| ⚪ | `sha224` | `sha224(bytea) → bytea` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-sha224__bytea-TDS) | Function not supported |
+| ⚪ | `sha256` | `sha256(bytea) → bytea` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-sha256__bytea-TDS) |  |
+| ⚪ | `sha384` | `sha384(bytea) → bytea` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-sha384__bytea-TDS) | Function not supported |
+| ⚪ | `sha512` | `sha512(bytea) → bytea` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-sha512__bytea-TDS) | Function not supported |
 
 <a id="pattern-matching-(9.7)"></a>
 
@@ -273,27 +274,27 @@ Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-bin
 
 Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-matching.html)
 
-| | Function | Signature | TDS | Relation | Error Category | Notes |
-|--|----------|-----------|-----|----------|----------------|-------|
-| ⚪ | `like` | `like(bytea, bytea) → boolean` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `like` | `like(name, text) → boolean` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `like` | `like(text, text) → boolean` | UNTESTED | UNTESTED |  |  |
-| 🟢 | `regexp_count` | `regexp_count(text, text) → integer` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟡 | `regexp_count` | `regexp_count(text, text, integer) → integer` | PARTIAL (1/2) | PARTIAL (1/2) | [RESULT_MISMATCH](#fail-regexp_count__start_position__ignored_by_legend-TDS) |  |
-| 🟢 | `regexp_count` | `regexp_count(text, text, integer, text) → integer` | PASS (11/11) | PASS (11/11) |  |  |
-| 🟢 | `regexp_instr` | `regexp_instr(text, text) → integer` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `regexp_instr` | `regexp_instr(text, text, integer) → integer` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-regexp_instr__constant__extra_args_error-TDS) | Unsupported feature |
-| ⚪ | `regexp_instr` | `regexp_instr(text, text, integer, integer) → integer` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `regexp_instr` | `regexp_instr(text, text, integer, integer, integer) → integer` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `regexp_instr` | `regexp_instr(text, text, integer, integer, integer, text) → integer` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `regexp_instr` | `regexp_instr(text, text, integer, integer, integer, text, integer) → integer` | UNTESTED | UNTESTED |  |  |
-| 🟢 | `regexp_like` | `regexp_like(text, text) → boolean` | PASS (2/2) | PASS (2/2) |  |  |
-| 🟢 | `regexp_like` | `regexp_like(text, text, text) → boolean` | PASS (12/12) | PASS (12/12) |  |  |
-| 🟡 | `regexp_substr` | `regexp_substr(text, text) → text` | UNTESTED | PASS (1/1) | [MISC](#fail-regexp_substr__constant__no_flags-TDS) |  |
-| 🟡 | `regexp_substr` | `regexp_substr(text, text, integer) → text` | FAIL (0/2) | PARTIAL (1/2) | [RESULT_MISMATCH](#fail-regexp_substr__start_position__ignored_by_legend-TDS), [MISC](#fail-regexp_substr__constant__start_pos-TDS) |  |
-| 🟡 | `regexp_substr` | `regexp_substr(text, text, integer, integer) → text` | FAIL (0/4) | PARTIAL (1/4) | [RESULT_MISMATCH](#fail-regexp_substr__nth_occurrence__ignored_by_legend-TDS), [MISC](#fail-regexp_substr__constant__start_pos_occurrence-TDS) |  |
-| 🟡 | `regexp_substr` | `regexp_substr(text, text, integer, integer, text) → text` | PARTIAL (5/11) | PASS (11/11) | [MISC](#fail-regexp_substr__constant__flag_in-TDS) |  |
-| 🟡 | `regexp_substr` | `regexp_substr(text, text, integer, integer, text, integer) → text` | UNTESTED | PASS (1/1) | [MISC](#fail-regexp_substr__constant__subexpr-TDS) |  |
+| | Function | Signature | TDS | Relation | Grammar | Error Category | Notes |
+|--|----------|-----------|-----|----------|---------|----------------|-------|
+| ⚪ | `like` | `like(bytea, bytea) → boolean` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `like` | `like(name, text) → boolean` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `like` | `like(text, text) → boolean` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| 🟢 | `regexp_count` | `regexp_count(text, text) → integer` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟡 | `regexp_count` | `regexp_count(text, text, integer) → integer` | PARTIAL (1/2) | PARTIAL (1/2) | PARTIAL (1/2) | [RESULT_MISMATCH](#fail-regexp_count__start_position__ignored_by_legend-TDS) |  |
+| 🟢 | `regexp_count` | `regexp_count(text, text, integer, text) → integer` | PASS (11/11) | PASS (11/11) | PASS (11/11) |  |  |
+| 🟢 | `regexp_instr` | `regexp_instr(text, text) → integer` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `regexp_instr` | `regexp_instr(text, text, integer) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-regexp_instr__constant__extra_args_error-TDS) | Unsupported feature |
+| ⚪ | `regexp_instr` | `regexp_instr(text, text, integer, integer) → integer` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `regexp_instr` | `regexp_instr(text, text, integer, integer, integer) → integer` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `regexp_instr` | `regexp_instr(text, text, integer, integer, integer, text) → integer` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `regexp_instr` | `regexp_instr(text, text, integer, integer, integer, text, integer) → integer` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| 🟢 | `regexp_like` | `regexp_like(text, text) → boolean` | PASS (2/2) | PASS (2/2) | PASS (2/2) |  |  |
+| 🟢 | `regexp_like` | `regexp_like(text, text, text) → boolean` | PASS (12/12) | PASS (12/12) | PASS (12/12) |  |  |
+| 🟡 | `regexp_substr` | `regexp_substr(text, text) → text` | UNTESTED | PASS (1/1) | PASS (1/1) | [MISC](#fail-regexp_substr__constant__no_flags-TDS) |  |
+| 🟡 | `regexp_substr` | `regexp_substr(text, text, integer) → text` | FAIL (0/2) | PARTIAL (1/2) | PARTIAL (1/2) | [RESULT_MISMATCH](#fail-regexp_substr__start_position__ignored_by_legend-TDS), [MISC](#fail-regexp_substr__constant__start_pos-TDS) |  |
+| 🟡 | `regexp_substr` | `regexp_substr(text, text, integer, integer) → text` | FAIL (0/4) | PARTIAL (1/4) | PARTIAL (1/4) | [RESULT_MISMATCH](#fail-regexp_substr__nth_occurrence__ignored_by_legend-TDS), [MISC](#fail-regexp_substr__constant__start_pos_occurrence-TDS) |  |
+| 🟡 | `regexp_substr` | `regexp_substr(text, text, integer, integer, text) → text` | PARTIAL (5/11) | PASS (11/11) | PASS (11/11) | [MISC](#fail-regexp_substr__constant__flag_in-TDS) |  |
+| 🟡 | `regexp_substr` | `regexp_substr(text, text, integer, integer, text, integer) → text` | UNTESTED | PASS (1/1) | PASS (1/1) | [MISC](#fail-regexp_substr__constant__subexpr-TDS) |  |
 
 <a id="data-type-formatting-(9.8)"></a>
 
@@ -301,18 +302,18 @@ Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-mat
 
 Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-formatting.html)
 
-| | Function | Signature | TDS | Relation | Error Category | Notes |
-|--|----------|-----------|-----|----------|----------------|-------|
-| ⚪ | `to_char` | `to_char(bigint, text) → text` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-to_char__big_txt__from_table-TDS) | Unsupported feature |
-| ⚪ | `to_char` | `to_char(double precision, text) → text` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-to_char__dp_txt__from_table-TDS) | Unsupported feature |
-| ⚪ | `to_char` | `to_char(integer, text) → text` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-to_char__int_txt__from_table-TDS) | Unsupported feature |
-| ⚪ | `to_char` | `to_char(interval, text) → text` | UNTESTED | UNTESTED | [MISC](#fail-to_char__intv_txt__from_table-TDS) |  |
-| ⚪ | `to_char` | `to_char(numeric, text) → text` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-to_char__num_txt__from_table-TDS) | Unsupported feature |
-| ⚪ | `to_char` | `to_char(real, text) → text` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-to_char__real_txt__from_table-TDS) |  |
-| ⚪ | `to_char` | `to_char(timestamp with time zone, text) → text` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-to_char__tstz_txt__from_table-TDS) |  |
-| 🟢 | `to_char` | `to_char(timestamp without time zone, text) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `to_date` | `to_date(text, text) → date` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-to_date__txt_txt__from_table-TDS) | Function not supported |
-| ⚪ | `to_number` | `to_number(text, text) → numeric` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-to_number__txt_txt__from_table-TDS) | Function not supported |
+| | Function | Signature | TDS | Relation | Grammar | Error Category | Notes |
+|--|----------|-----------|-----|----------|---------|----------------|-------|
+| ⚪ | `to_char` | `to_char(bigint, text) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-to_char__big_txt__from_table-TDS) | Unsupported feature |
+| ⚪ | `to_char` | `to_char(double precision, text) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-to_char__dp_txt__from_table-TDS) | Unsupported feature |
+| ⚪ | `to_char` | `to_char(integer, text) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-to_char__int_txt__from_table-TDS) | Unsupported feature |
+| ⚪ | `to_char` | `to_char(interval, text) → text` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-to_char__intv_txt__from_table-TDS) |  |
+| ⚪ | `to_char` | `to_char(numeric, text) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-to_char__num_txt__from_table-TDS) | Unsupported feature |
+| ⚪ | `to_char` | `to_char(real, text) → text` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-to_char__real_txt__from_table-TDS) |  |
+| ⚪ | `to_char` | `to_char(timestamp with time zone, text) → text` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-to_char__tstz_txt__from_table-TDS) |  |
+| 🟢 | `to_char` | `to_char(timestamp without time zone, text) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `to_date` | `to_date(text, text) → date` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-to_date__txt_txt__from_table-TDS) | Function not supported |
+| ⚪ | `to_number` | `to_number(text, text) → numeric` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-to_number__txt_txt__from_table-TDS) | Function not supported |
 
 <a id="date/time-functions-and-operators-(9.9)"></a>
 
@@ -320,49 +321,49 @@ Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-for
 
 Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-datetime.html)
 
-| | Function | Signature | TDS | Relation | Error Category | Notes |
-|--|----------|-----------|-----|----------|----------------|-------|
-| ⚪ | `age` | `age(timestamp with time zone) → interval` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-age__tstz__from_table-TDS) | Function not supported |
-| ⚪ | `age` | `age(timestamp with time zone, timestamp with time zone) → interval` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-age__tstz_tstz__from_table-TDS) | Function not supported |
-| ⚪ | `age` | `age(timestamp without time zone) → interval` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-age__ts__from_table-TDS) | Function not supported |
-| ⚪ | `age` | `age(timestamp without time zone, timestamp without time zone) → interval` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-age__ts_ts__from_table-TDS) | Function not supported |
-| ⚪ | `age` | `age(xid) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-age__xid__unsupported_type-TDS) | Function not supported |
-| ⚪ | `clock_timestamp` | `clock_timestamp() → timestamp with time zone` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-clock_timestamp__basic-TDS) | Function not supported |
-| 🟢 | `date_part` | `date_part(text, date) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `date_part` | `date_part(text, interval) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `date_part` | `date_part(text, time with time zone) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `date_part` | `date_part(text, time without time zone) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `date_part` | `date_part(text, timestamp with time zone) → double precision` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-date_part__txt_tstz__from_table-TDS) |  |
-| 🟢 | `date_part` | `date_part(text, timestamp without time zone) → double precision` | PASS (2/2) | PASS (2/2) |  |  |
-| ⚪ | `date_trunc` | `date_trunc(text, interval) → interval` | UNTESTED | UNTESTED | [MISC](#fail-date_trunc__txt_intv__from_table-TDS) |  |
-| ⚪ | `date_trunc` | `date_trunc(text, timestamp with time zone) → timestamp with time zone` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-date_trunc__txt_tstz__from_table-TDS) |  |
-| ⚪ | `date_trunc` | `date_trunc(text, timestamp with time zone, text) → timestamp with time zone` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-date_trunc__txt_tstz_txt__from_table-TDS) |  |
-| 🟢 | `date_trunc` | `date_trunc(text, timestamp without time zone) → timestamp without time zone` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `extract` | `extract(text, date) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `extract` | `extract(text, interval) → numeric` | UNTESTED | UNTESTED | [MISC](#fail-extract__txt_intv__from_table-TDS) |  |
-| ⚪ | `extract` | `extract(text, time with time zone) → numeric` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-extract__txt_timetz__from_table-TDS) |  |
-| ⚪ | `extract` | `extract(text, time without time zone) → numeric` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-extract__txt_time__from_table-TDS) |  |
-| ⚪ | `extract` | `extract(text, timestamp with time zone) → numeric` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-extract__txt_tstz__from_table-TDS) |  |
-| 🟢 | `extract` | `extract(text, timestamp without time zone) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `isfinite` | `isfinite(date) → boolean` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-isfinite__date__from_table-TDS) | Function not supported |
-| ⚪ | `isfinite` | `isfinite(interval) → boolean` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-isfinite__intv__from_table-TDS) | Function not supported |
-| ⚪ | `isfinite` | `isfinite(timestamp with time zone) → boolean` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-isfinite__tstz__from_table-TDS) | Function not supported |
-| ⚪ | `isfinite` | `isfinite(timestamp without time zone) → boolean` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-isfinite__ts__from_table-TDS) | Function not supported |
-| ⚪ | `justify_days` | `justify_days(interval) → interval` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-justify_days__intv__from_table-TDS) | Function not supported |
-| ⚪ | `justify_hours` | `justify_hours(interval) → interval` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-justify_hours__intv__from_table-TDS) | Function not supported |
-| ⚪ | `justify_interval` | `justify_interval(interval) → interval` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-justify_interval__intv__from_table-TDS) | Function not supported |
-| 🟢 | `make_date` | `make_date(year integer, month integer, day integer) → date` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `make_interval` | `make_interval(years integer DEFAULT 0, months integer DEFAULT 0, weeks integer DEFAULT 0, days integer DEFAULT 0, hours integer DEFAULT 0, mins integer DEFAULT 0, secs double precision DEFAULT 0.0) → interval` | UNTESTED | UNTESTED | [PARSE_ERROR](#fail-make_interval__sint0_sint0_int0_sint0_sint0_sint0_sdp0.0__from_table-TDS) |  |
-| ⚪ | `make_time` | `make_time(hour integer, min integer, sec double precision) → time without time zone` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-make_time__int_int_dp__from_table-TDS) | Function not supported |
-| 🟢 | `make_timestamp` | `make_timestamp(year integer, month integer, mday integer, hour integer, min integer, sec double precision) → timestamp without time zone` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `make_timestamptz` | `make_timestamptz(year integer, month integer, mday integer, hour integer, min integer, sec double precision) → timestamp with time zone` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-make_timestamptz__int_int_t_int_int_dp__from_table-TDS) | Function not supported |
-| ⚪ | `make_timestamptz` | `make_timestamptz(year integer, month integer, mday integer, hour integer, min integer, sec double precision, timezone text) → timestamp with time zone` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-make_timestamptz__int_int_t_int_int_dp_timezonetxt__from_table-TDS) | Function not supported |
-| ⚪ | `now` | `now() → timestamp with time zone` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-now__basic-TDS) | Function not supported |
-| ⚪ | `statement_timestamp` | `statement_timestamp() → timestamp with time zone` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-statement_timestamp__basic-TDS) | Function not supported |
-| ⚪ | `timeofday` | `timeofday() → text` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-timeofday__basic-TDS) | Function not supported |
-| ⚪ | `to_timestamp` | `to_timestamp(double precision) → timestamp with time zone` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-to_timestamp__dp__from_table-TDS) | Function not supported |
-| ⚪ | `to_timestamp` | `to_timestamp(text, text) → timestamp with time zone` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-to_timestamp__txt_txt__no_generator-TDS) | Function not supported |
-| ⚪ | `transaction_timestamp` | `transaction_timestamp() → timestamp with time zone` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-transaction_timestamp__basic-TDS) | Function not supported |
+| | Function | Signature | TDS | Relation | Grammar | Error Category | Notes |
+|--|----------|-----------|-----|----------|---------|----------------|-------|
+| ⚪ | `age` | `age(timestamp with time zone) → interval` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-age__tstz__from_table-TDS) | Function not supported |
+| ⚪ | `age` | `age(timestamp with time zone, timestamp with time zone) → interval` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-age__tstz_tstz__from_table-TDS) | Function not supported |
+| ⚪ | `age` | `age(timestamp without time zone) → interval` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-age__ts__from_table-TDS) | Function not supported |
+| ⚪ | `age` | `age(timestamp without time zone, timestamp without time zone) → interval` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-age__ts_ts__from_table-TDS) | Function not supported |
+| ⚪ | `age` | `age(xid) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-age__xid__unsupported_type-TDS) | Function not supported |
+| ⚪ | `clock_timestamp` | `clock_timestamp() → timestamp with time zone` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-clock_timestamp__basic-TDS) | Function not supported |
+| 🟢 | `date_part` | `date_part(text, date) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `date_part` | `date_part(text, interval) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `date_part` | `date_part(text, time with time zone) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `date_part` | `date_part(text, time without time zone) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `date_part` | `date_part(text, timestamp with time zone) → double precision` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-date_part__txt_tstz__from_table-TDS) |  |
+| 🟢 | `date_part` | `date_part(text, timestamp without time zone) → double precision` | PASS (2/2) | PASS (2/2) | PASS (2/2) |  |  |
+| ⚪ | `date_trunc` | `date_trunc(text, interval) → interval` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-date_trunc__txt_intv__from_table-TDS) |  |
+| ⚪ | `date_trunc` | `date_trunc(text, timestamp with time zone) → timestamp with time zone` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-date_trunc__txt_tstz__from_table-TDS) |  |
+| ⚪ | `date_trunc` | `date_trunc(text, timestamp with time zone, text) → timestamp with time zone` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-date_trunc__txt_tstz_txt__from_table-TDS) |  |
+| 🟢 | `date_trunc` | `date_trunc(text, timestamp without time zone) → timestamp without time zone` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `extract` | `extract(text, date) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `extract` | `extract(text, interval) → numeric` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-extract__txt_intv__from_table-TDS) |  |
+| ⚪ | `extract` | `extract(text, time with time zone) → numeric` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-extract__txt_timetz__from_table-TDS) |  |
+| ⚪ | `extract` | `extract(text, time without time zone) → numeric` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-extract__txt_time__from_table-TDS) |  |
+| ⚪ | `extract` | `extract(text, timestamp with time zone) → numeric` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-extract__txt_tstz__from_table-TDS) |  |
+| 🟢 | `extract` | `extract(text, timestamp without time zone) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `isfinite` | `isfinite(date) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-isfinite__date__from_table-TDS) | Function not supported |
+| ⚪ | `isfinite` | `isfinite(interval) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-isfinite__intv__from_table-TDS) | Function not supported |
+| ⚪ | `isfinite` | `isfinite(timestamp with time zone) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-isfinite__tstz__from_table-TDS) | Function not supported |
+| ⚪ | `isfinite` | `isfinite(timestamp without time zone) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-isfinite__ts__from_table-TDS) | Function not supported |
+| ⚪ | `justify_days` | `justify_days(interval) → interval` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-justify_days__intv__from_table-TDS) | Function not supported |
+| ⚪ | `justify_hours` | `justify_hours(interval) → interval` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-justify_hours__intv__from_table-TDS) | Function not supported |
+| ⚪ | `justify_interval` | `justify_interval(interval) → interval` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-justify_interval__intv__from_table-TDS) | Function not supported |
+| 🟢 | `make_date` | `make_date(year integer, month integer, day integer) → date` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `make_interval` | `make_interval(years integer DEFAULT 0, months integer DEFAULT 0, weeks integer DEFAULT 0, days integer DEFAULT 0, hours integer DEFAULT 0, mins integer DEFAULT 0, secs double precision DEFAULT 0.0) → interval` | UNTESTED | UNTESTED | UNTESTED | [PARSE_ERROR](#fail-make_interval__sint0_sint0_int0_sint0_sint0_sint0_sdp0.0__from_table-TDS) |  |
+| ⚪ | `make_time` | `make_time(hour integer, min integer, sec double precision) → time without time zone` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-make_time__int_int_dp__from_table-TDS) | Function not supported |
+| 🟢 | `make_timestamp` | `make_timestamp(year integer, month integer, mday integer, hour integer, min integer, sec double precision) → timestamp without time zone` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `make_timestamptz` | `make_timestamptz(year integer, month integer, mday integer, hour integer, min integer, sec double precision) → timestamp with time zone` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-make_timestamptz__int_int_t_int_int_dp__from_table-TDS) | Function not supported |
+| ⚪ | `make_timestamptz` | `make_timestamptz(year integer, month integer, mday integer, hour integer, min integer, sec double precision, timezone text) → timestamp with time zone` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-make_timestamptz__int_int_t_int_int_dp_timezonetxt__from_table-TDS) | Function not supported |
+| ⚪ | `now` | `now() → timestamp with time zone` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-now__basic-TDS) | Function not supported |
+| ⚪ | `statement_timestamp` | `statement_timestamp() → timestamp with time zone` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-statement_timestamp__basic-TDS) | Function not supported |
+| ⚪ | `timeofday` | `timeofday() → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-timeofday__basic-TDS) | Function not supported |
+| ⚪ | `to_timestamp` | `to_timestamp(double precision) → timestamp with time zone` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-to_timestamp__dp__from_table-TDS) | Function not supported |
+| ⚪ | `to_timestamp` | `to_timestamp(text, text) → timestamp with time zone` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-to_timestamp__txt_txt__no_generator-TDS) | Function not supported |
+| ⚪ | `transaction_timestamp` | `transaction_timestamp() → timestamp with time zone` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-transaction_timestamp__basic-TDS) | Function not supported |
 
 <a id="conditional-expressions-(9.18)"></a>
 
@@ -370,15 +371,15 @@ Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-dat
 
 Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-conditional.html)
 
-| | Function | Signature | TDS | Relation | Error Category | Notes |
-|--|----------|-----------|-----|----------|----------------|-------|
-| ⚪ | `num_nonnulls` | `num_nonnulls(VARIADIC "any") → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-num_nonnulls__variadic__from_table-TDS) | Function not supported |
-| ⚪ | `num_nulls` | `num_nulls(VARIADIC "any") → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-num_nulls__variadic__from_table-TDS) | Function not supported |
-| ⚪ | `nullif` | `nullif(varchar, varchar) → varchar` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-nullif__varchar__equal-TDS) | Function not supported |
-| 🟢 | `least` | `least(VARIADIC "any") → "any"` | PASS (3/3) | PASS (3/3) |  |  |
-| 🟡 | `coalesce` | `coalesce(VARIADIC "any") → "any"` | PARTIAL (6/7) | PARTIAL (6/7) | [MISC](#fail-coalesce__all_null-TDS) |  |
-| 🟢 | `greatest` | `greatest(VARIADIC "any") → "any"` | PASS (3/3) | PASS (3/3) |  |  |
-| ⚪ | `nullif` | `nullif(integer, integer) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-nullif__int__equal-TDS) | Function not supported |
+| | Function | Signature | TDS | Relation | Grammar | Error Category | Notes |
+|--|----------|-----------|-----|----------|---------|----------------|-------|
+| ⚪ | `num_nonnulls` | `num_nonnulls(VARIADIC "any") → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-num_nonnulls__variadic__from_table-TDS) | Function not supported |
+| ⚪ | `num_nulls` | `num_nulls(VARIADIC "any") → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-num_nulls__variadic__from_table-TDS) | Function not supported |
+| ⚪ | `nullif` | `nullif(varchar, varchar) → varchar` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-nullif__varchar__equal-TDS) | Function not supported |
+| 🟢 | `least` | `least(VARIADIC "any") → "any"` | PASS (3/3) | PASS (3/3) | PASS (3/3) |  |  |
+| 🟡 | `coalesce` | `coalesce(VARIADIC "any") → "any"` | PARTIAL (6/7) | PARTIAL (6/7) | UNSUPPORTED | [MISC](#fail-coalesce__all_null-TDS), [UNSUPPORTED_SYNTAX](#fail-coalesce__all_null-Grammar) | Grammar: unsupported feature |
+| 🟢 | `greatest` | `greatest(VARIADIC "any") → "any"` | PASS (3/3) | PASS (3/3) | PASS (3/3) |  |  |
+| ⚪ | `nullif` | `nullif(integer, integer) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-nullif__int__equal-TDS) | Function not supported |
 
 <a id="json-functions-and-operators-(9.16)"></a>
 
@@ -386,55 +387,55 @@ Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-con
 
 Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-json.html)
 
-| | Function | Signature | TDS | Relation | Error Category | Notes |
-|--|----------|-----------|-----|----------|----------------|-------|
-| ⚪ | `array_to_json` | `array_to_json(anyarray) → json` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_to_json__unsupported_type-TDS) | Function not supported |
-| ⚪ | `array_to_json` | `array_to_json(anyarray, boolean) → json` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_to_json__bool__unsupported_type-TDS) | Function not supported |
-| ⚪ | `json_array_elements` | `json_array_elements(from_json json, OUT value json) → SETOF json` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_array_elements__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_array_elements__from_column-Relation) | Function not supported |
-| ⚪ | `json_array_elements_text` | `json_array_elements_text(from_json json, OUT value text) → SETOF text` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_array_elements_text__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_array_elements_text__from_column-Relation) | Function not supported |
-| ⚪ | `json_array_length` | `json_array_length(json) → integer` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_array_length__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_array_length__from_column-Relation) | Function not supported |
-| ⚪ | `json_build_array` | `json_build_array() → json` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_build_array__empty-TDS), [UNSUPPORTED_SYNTAX](#fail-json_build_array__empty-Relation) | Unsupported feature |
-| ⚪ | `json_build_array` | `json_build_array(VARIADIC "any") → json` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_build_array__variadic__from_column-TDS), [UNSUPPORTED_SYNTAX](#fail-json_build_array__variadic__from_column-Relation) | Unsupported feature |
-| ⚪ | `json_build_object` | `json_build_object() → json` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_build_object__empty-TDS), [UNSUPPORTED_SYNTAX](#fail-json_build_object__empty-Relation) | Unsupported feature |
-| ⚪ | `json_build_object` | `json_build_object(VARIADIC "any") → json` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_build_object__variadic__from_column-TDS), [UNSUPPORTED_SYNTAX](#fail-json_build_object__variadic__from_column-Relation) | Unsupported feature |
-| ⚪ | `json_each` | `json_each(from_json json, OUT key text, OUT value json) → SETOF record` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-json_each__from_column-TDS) | Function not supported |
-| ⚪ | `json_each_text` | `json_each_text(from_json json, OUT key text, OUT value text) → SETOF record` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-json_each_text__from_column-TDS) | Function not supported |
-| 🟡 | `json_extract_path` | `json_extract_path(from_json json, VARIADIC path_elems text[]) → json` | UNTESTED | PASS (1/1) | [TYPE_ERROR](#fail-json_extract_path__from_column-TDS) |  |
-| 🟡 | `json_extract_path_text` | `json_extract_path_text(from_json json, VARIADIC path_elems text[]) → text` | UNTESTED | PASS (1/1) | [TYPE_ERROR](#fail-json_extract_path_text__from_column-TDS) |  |
-| ⚪ | `json_object` | `json_object(text[]) → json` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_object__text_array-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_object__text_array-Relation) | Function not supported |
-| ⚪ | `json_object` | `json_object(text[], text[]) → json` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_object__keys_values-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_object__keys_values-Relation) | Function not supported |
-| ⚪ | `json_object_keys` | `json_object_keys(json) → SETOF text` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_object_keys__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_object_keys__from_column-Relation) | Function not supported |
-| ⚪ | `json_strip_nulls` | `json_strip_nulls(json) → json` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_strip_nulls__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_strip_nulls__from_column-Relation) | Function not supported |
-| ⚪ | `json_typeof` | `json_typeof(json) → text` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_typeof__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_typeof__from_column-Relation) | Function not supported |
-| ⚪ | `jsonb_array_elements` | `jsonb_array_elements(from_json jsonb, OUT value jsonb) → SETOF jsonb` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_array_elements__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_array_elements__from_column-Relation) | Function not supported |
-| ⚪ | `jsonb_array_elements_text` | `jsonb_array_elements_text(from_json jsonb, OUT value text) → SETOF text` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_array_elements_text__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_array_elements_text__from_column-Relation) | Function not supported |
-| ⚪ | `jsonb_array_length` | `jsonb_array_length(jsonb) → integer` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_array_length__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_array_length__from_column-Relation) | Function not supported |
-| ⚪ | `jsonb_build_array` | `jsonb_build_array() → jsonb` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_build_array__empty-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_build_array__empty-Relation) | Function not supported |
-| ⚪ | `jsonb_build_array` | `jsonb_build_array(VARIADIC "any") → jsonb` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_build_array__variadic__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_build_array__variadic__from_column-Relation) | Function not supported |
-| ⚪ | `jsonb_build_object` | `jsonb_build_object() → jsonb` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_build_object__empty-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_build_object__empty-Relation) | Function not supported |
-| ⚪ | `jsonb_build_object` | `jsonb_build_object(VARIADIC "any") → jsonb` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_build_object__variadic__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_build_object__variadic__from_column-Relation) | Function not supported |
-| ⚪ | `jsonb_each` | `jsonb_each(from_json jsonb, OUT key text, OUT value jsonb) → SETOF record` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-jsonb_each__from_column-TDS) | Function not supported |
-| ⚪ | `jsonb_each_text` | `jsonb_each_text(from_json jsonb, OUT key text, OUT value text) → SETOF record` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-jsonb_each_text__from_column-TDS) | Function not supported |
-| ⚪ | `jsonb_extract_path` | `jsonb_extract_path(from_json jsonb, VARIADIC path_elems text[]) → jsonb` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_extract_path__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_extract_path__from_column-Relation) | Function not supported |
-| ⚪ | `jsonb_extract_path_text` | `jsonb_extract_path_text(from_json jsonb, VARIADIC path_elems text[]) → text` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_extract_path_text__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_extract_path_text__from_column-Relation) | Function not supported |
-| ⚪ | `jsonb_insert` | `jsonb_insert(jsonb_in jsonb, path text[], replacement jsonb, insert_after boolean DEFAULT false) → jsonb` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_insert__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_insert__from_column-Relation) | Function not supported |
-| ⚪ | `jsonb_object` | `jsonb_object(text[]) → jsonb` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_object__text_array-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_object__text_array-Relation) | Function not supported |
-| ⚪ | `jsonb_object` | `jsonb_object(text[], text[]) → jsonb` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_object__keys_values-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_object__keys_values-Relation) | Function not supported |
-| ⚪ | `jsonb_object_keys` | `jsonb_object_keys(jsonb) → SETOF text` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_object_keys__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_object_keys__from_column-Relation) | Function not supported |
-| ⚪ | `jsonb_path_exists` | `jsonb_path_exists(target jsonb, path jsonpath, vars jsonb DEFAULT '{}'::jsonb, silent boolean DEFAULT false) → boolean` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_path_exists__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_path_exists__from_column-Relation) | Function not supported |
-| ⚪ | `jsonb_path_match` | `jsonb_path_match(target jsonb, path jsonpath, vars jsonb DEFAULT '{}'::jsonb, silent boolean DEFAULT false) → boolean` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_path_match__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_path_match__from_column-Relation) | Function not supported |
-| ⚪ | `jsonb_path_query` | `jsonb_path_query(target jsonb, path jsonpath, vars jsonb DEFAULT '{}'::jsonb, silent boolean DEFAULT false) → SETOF jsonb` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_path_query__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_path_query__from_column-Relation) | Function not supported |
-| ⚪ | `jsonb_path_query_array` | `jsonb_path_query_array(target jsonb, path jsonpath, vars jsonb DEFAULT '{}'::jsonb, silent boolean DEFAULT false) → jsonb` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_path_query_array__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_path_query_array__from_column-Relation) | Function not supported |
-| ⚪ | `jsonb_pretty` | `jsonb_pretty(jsonb) → text` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_pretty__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_pretty__from_column-Relation) | Function not supported |
-| ⚪ | `jsonb_set` | `jsonb_set(jsonb_in jsonb, path text[], replacement jsonb, create_if_missing boolean DEFAULT true) → jsonb` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_set__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_set__from_column-Relation) | Function not supported |
-| ⚪ | `jsonb_strip_nulls` | `jsonb_strip_nulls(jsonb) → jsonb` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_strip_nulls__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_strip_nulls__from_column-Relation) | Function not supported |
-| ⚪ | `jsonb_typeof` | `jsonb_typeof(jsonb) → text` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_typeof__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_typeof__from_column-Relation) | Function not supported |
-| ⚪ | `row_to_json` | `row_to_json(record) → json` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-row_to_json__unsupported_type-TDS) | Function not supported |
-| ⚪ | `row_to_json` | `row_to_json(record, boolean) → json` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-row_to_json__bool__unsupported_type-TDS) | Function not supported |
-| ⚪ | `to_json` | `to_json(anyelement) → json` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-to_json__from_column-TDS) | Function not supported |
-| ⚪ | `to_jsonb` | `to_jsonb(anyelement) → jsonb` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-to_jsonb__from_column-TDS) | Function not supported |
-| ⚪ | `jsonb_object_agg` | `jsonb_object_agg(key "any", value "any") → jsonb` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_object_agg__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_object_agg__from_column-Relation) | Function not supported |
-| ⚪ | `json_object_agg` | `json_object_agg(key "any", value "any") → json` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_object_agg__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_object_agg__from_column-Relation) | Function not supported |
+| | Function | Signature | TDS | Relation | Grammar | Error Category | Notes |
+|--|----------|-----------|-----|----------|---------|----------------|-------|
+| ⚪ | `array_to_json` | `array_to_json(anyarray) → json` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_to_json__unsupported_type-TDS) | Function not supported |
+| ⚪ | `array_to_json` | `array_to_json(anyarray, boolean) → json` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_to_json__bool__unsupported_type-TDS) | Function not supported |
+| ⚪ | `json_array_elements` | `json_array_elements(from_json json, OUT value json) → SETOF json` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_array_elements__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_array_elements__from_column-Relation) | Function not supported |
+| ⚪ | `json_array_elements_text` | `json_array_elements_text(from_json json, OUT value text) → SETOF text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_array_elements_text__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_array_elements_text__from_column-Relation) | Function not supported |
+| ⚪ | `json_array_length` | `json_array_length(json) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_array_length__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_array_length__from_column-Relation) | Function not supported |
+| 🟡 | `json_build_array` | `json_build_array() → json` | UNSUPPORTED | UNSUPPORTED | PASS (1/1) | [TYPE_ERROR](#fail-json_build_array__empty-TDS), [UNSUPPORTED_SYNTAX](#fail-json_build_array__empty-Relation) | Unsupported feature |
+| ⚪ | `json_build_array` | `json_build_array(VARIADIC "any") → json` | UNSUPPORTED | UNSUPPORTED | UNTESTED | [TYPE_ERROR](#fail-json_build_array__variadic__from_column-TDS), [UNSUPPORTED_SYNTAX](#fail-json_build_array__variadic__from_column-Relation), [MISC](#fail-json_build_array__variadic__from_column-Grammar) | Unsupported feature |
+| ⚪ | `json_build_object` | `json_build_object() → json` | UNSUPPORTED | UNSUPPORTED | UNTESTED | [TYPE_ERROR](#fail-json_build_object__empty-TDS), [UNSUPPORTED_SYNTAX](#fail-json_build_object__empty-Relation), [MISC](#fail-json_build_object__empty-Grammar) | Unsupported feature |
+| ⚪ | `json_build_object` | `json_build_object(VARIADIC "any") → json` | UNSUPPORTED | UNSUPPORTED | UNTESTED | [TYPE_ERROR](#fail-json_build_object__variadic__from_column-TDS), [UNSUPPORTED_SYNTAX](#fail-json_build_object__variadic__from_column-Relation), [ALIAS_NOT_FOUND](#fail-json_build_object__variadic__from_column-Grammar) | Unsupported feature |
+| ⚪ | `json_each` | `json_each(from_json json, OUT key text, OUT value json) → SETOF record` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-json_each__from_column-TDS) | Function not supported |
+| ⚪ | `json_each_text` | `json_each_text(from_json json, OUT key text, OUT value text) → SETOF record` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-json_each_text__from_column-TDS) | Function not supported |
+| 🟡 | `json_extract_path` | `json_extract_path(from_json json, VARIADIC path_elems text[]) → json` | UNTESTED | PASS (1/1) | PASS (1/1) | [TYPE_ERROR](#fail-json_extract_path__from_column-TDS) |  |
+| 🟡 | `json_extract_path_text` | `json_extract_path_text(from_json json, VARIADIC path_elems text[]) → text` | UNTESTED | PASS (1/1) | PASS (1/1) | [TYPE_ERROR](#fail-json_extract_path_text__from_column-TDS) |  |
+| ⚪ | `json_object` | `json_object(text[]) → json` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_object__text_array-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_object__text_array-Relation) | Function not supported |
+| ⚪ | `json_object` | `json_object(text[], text[]) → json` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_object__keys_values-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_object__keys_values-Relation) | Function not supported |
+| ⚪ | `json_object_keys` | `json_object_keys(json) → SETOF text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_object_keys__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_object_keys__from_column-Relation) | Function not supported |
+| ⚪ | `json_strip_nulls` | `json_strip_nulls(json) → json` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_strip_nulls__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_strip_nulls__from_column-Relation) | Function not supported |
+| ⚪ | `json_typeof` | `json_typeof(json) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_typeof__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_typeof__from_column-Relation) | Function not supported |
+| ⚪ | `jsonb_array_elements` | `jsonb_array_elements(from_json jsonb, OUT value jsonb) → SETOF jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_array_elements__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_array_elements__from_column-Relation) | Function not supported |
+| ⚪ | `jsonb_array_elements_text` | `jsonb_array_elements_text(from_json jsonb, OUT value text) → SETOF text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_array_elements_text__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_array_elements_text__from_column-Relation) | Function not supported |
+| ⚪ | `jsonb_array_length` | `jsonb_array_length(jsonb) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_array_length__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_array_length__from_column-Relation) | Function not supported |
+| ⚪ | `jsonb_build_array` | `jsonb_build_array() → jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_build_array__empty-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_build_array__empty-Relation) | Function not supported |
+| ⚪ | `jsonb_build_array` | `jsonb_build_array(VARIADIC "any") → jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_build_array__variadic__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_build_array__variadic__from_column-Relation) | Function not supported |
+| ⚪ | `jsonb_build_object` | `jsonb_build_object() → jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_build_object__empty-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_build_object__empty-Relation) | Function not supported |
+| ⚪ | `jsonb_build_object` | `jsonb_build_object(VARIADIC "any") → jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_build_object__variadic__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_build_object__variadic__from_column-Relation) | Function not supported |
+| ⚪ | `jsonb_each` | `jsonb_each(from_json jsonb, OUT key text, OUT value jsonb) → SETOF record` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-jsonb_each__from_column-TDS) | Function not supported |
+| ⚪ | `jsonb_each_text` | `jsonb_each_text(from_json jsonb, OUT key text, OUT value text) → SETOF record` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-jsonb_each_text__from_column-TDS) | Function not supported |
+| ⚪ | `jsonb_extract_path` | `jsonb_extract_path(from_json jsonb, VARIADIC path_elems text[]) → jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_extract_path__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_extract_path__from_column-Relation) | Function not supported |
+| ⚪ | `jsonb_extract_path_text` | `jsonb_extract_path_text(from_json jsonb, VARIADIC path_elems text[]) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_extract_path_text__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_extract_path_text__from_column-Relation) | Function not supported |
+| ⚪ | `jsonb_insert` | `jsonb_insert(jsonb_in jsonb, path text[], replacement jsonb, insert_after boolean DEFAULT false) → jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_insert__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_insert__from_column-Relation) | Function not supported |
+| ⚪ | `jsonb_object` | `jsonb_object(text[]) → jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_object__text_array-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_object__text_array-Relation) | Function not supported |
+| ⚪ | `jsonb_object` | `jsonb_object(text[], text[]) → jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_object__keys_values-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_object__keys_values-Relation) | Function not supported |
+| ⚪ | `jsonb_object_keys` | `jsonb_object_keys(jsonb) → SETOF text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_object_keys__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_object_keys__from_column-Relation) | Function not supported |
+| ⚪ | `jsonb_path_exists` | `jsonb_path_exists(target jsonb, path jsonpath, vars jsonb DEFAULT '{}'::jsonb, silent boolean DEFAULT false) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_path_exists__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_path_exists__from_column-Relation) | Function not supported |
+| ⚪ | `jsonb_path_match` | `jsonb_path_match(target jsonb, path jsonpath, vars jsonb DEFAULT '{}'::jsonb, silent boolean DEFAULT false) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_path_match__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_path_match__from_column-Relation) | Function not supported |
+| ⚪ | `jsonb_path_query` | `jsonb_path_query(target jsonb, path jsonpath, vars jsonb DEFAULT '{}'::jsonb, silent boolean DEFAULT false) → SETOF jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_path_query__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_path_query__from_column-Relation) | Function not supported |
+| ⚪ | `jsonb_path_query_array` | `jsonb_path_query_array(target jsonb, path jsonpath, vars jsonb DEFAULT '{}'::jsonb, silent boolean DEFAULT false) → jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_path_query_array__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_path_query_array__from_column-Relation) | Function not supported |
+| ⚪ | `jsonb_pretty` | `jsonb_pretty(jsonb) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_pretty__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_pretty__from_column-Relation) | Function not supported |
+| ⚪ | `jsonb_set` | `jsonb_set(jsonb_in jsonb, path text[], replacement jsonb, create_if_missing boolean DEFAULT true) → jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_set__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_set__from_column-Relation) | Function not supported |
+| ⚪ | `jsonb_strip_nulls` | `jsonb_strip_nulls(jsonb) → jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_strip_nulls__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_strip_nulls__from_column-Relation) | Function not supported |
+| ⚪ | `jsonb_typeof` | `jsonb_typeof(jsonb) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_typeof__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_typeof__from_column-Relation) | Function not supported |
+| ⚪ | `row_to_json` | `row_to_json(record) → json` | UNSUPPORTED | UNSUPPORTED | UNTESTED | [FUNCTION_NOT_SUPPORTED](#fail-row_to_json__unsupported_type-TDS), [MISC](#fail-row_to_json__unsupported_type-Grammar) | Function not supported |
+| ⚪ | `row_to_json` | `row_to_json(record, boolean) → json` | UNSUPPORTED | UNSUPPORTED | UNTESTED | [FUNCTION_NOT_SUPPORTED](#fail-row_to_json__bool__unsupported_type-TDS), [MISC](#fail-row_to_json__bool__unsupported_type-Grammar) | Function not supported |
+| ⚪ | `to_json` | `to_json(anyelement) → json` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-to_json__from_column-TDS) | Function not supported |
+| ⚪ | `to_jsonb` | `to_jsonb(anyelement) → jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-to_jsonb__from_column-TDS) | Function not supported |
+| ⚪ | `jsonb_object_agg` | `jsonb_object_agg(key "any", value "any") → jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_object_agg__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_object_agg__from_column-Relation) | Function not supported |
+| ⚪ | `json_object_agg` | `json_object_agg(key "any", value "any") → json` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_object_agg__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_object_agg__from_column-Relation) | Function not supported |
 
 <a id="array-functions-and-operators-(9.19)"></a>
 
@@ -442,29 +443,29 @@ Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-jso
 
 Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-array.html)
 
-| | Function | Signature | TDS | Relation | Error Category | Notes |
-|--|----------|-----------|-----|----------|----------------|-------|
-| ⚪ | `array_append` | `array_append(anycompatiblearray, anycompatible) → anycompatiblearray` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_append__anycompatiblearray_anycompatible__from_table-TDS) | Function not supported |
-| ⚪ | `array_cat` | `array_cat(anycompatiblearray, anycompatiblearray) → anycompatiblearray` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_cat__anycompatiblearray_anycompatiblearray__from_table-TDS) | Function not supported |
-| ⚪ | `array_dims` | `array_dims(anyarray) → text` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_dims__anyarray__from_table-TDS) | Function not supported |
-| ⚪ | `array_fill` | `array_fill(anyelement, integer[]) → anyarray` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_fill__anyelement_int[]__from_table-TDS) | Function not supported |
-| ⚪ | `array_fill` | `array_fill(anyelement, integer[], integer[]) → anyarray` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_fill__anyelement_int[]_int[]__from_table-TDS) | Function not supported |
-| 🟢 | `array_length` | `array_length(anyarray, integer) → integer` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `array_lower` | `array_lower(anyarray, integer) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_lower__anyarray_int__from_table-TDS) | Function not supported |
-| ⚪ | `array_ndims` | `array_ndims(anyarray) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_ndims__anyarray__from_table-TDS) | Function not supported |
-| ⚪ | `array_position` | `array_position(anycompatiblearray, anycompatible) → integer` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-array_position__anycompatiblearray_anycompatible__from_table-TDS), [RESULT_MISMATCH](#fail-array_position__anycompatiblearray_anycompatible__from_table-Relation) | Unsupported feature |
-| ⚪ | `array_position` | `array_position(anycompatiblearray, anycompatible, integer) → integer` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-array_position__anycompatiblearray_anycompatible_int__with_start-TDS) | Unsupported feature |
-| ⚪ | `array_positions` | `array_positions(anycompatiblearray, anycompatible) → integer[]` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_positions__anycompatiblearray_anycompatible__from_table-TDS) | Function not supported |
-| ⚪ | `array_prepend` | `array_prepend(anycompatible, anycompatiblearray) → anycompatiblearray` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_prepend__anycompatible_anycompatiblearray__from_table-TDS) | Function not supported |
-| ⚪ | `array_remove` | `array_remove(anycompatiblearray, anycompatible) → anycompatiblearray` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_remove__anycompatiblearray_anycompatible__from_table-TDS) | Function not supported |
-| ⚪ | `array_replace` | `array_replace(anycompatiblearray, anycompatible, anycompatible) → anycompatiblearray` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_replace__anycompatiblearray_anycompatible_anycompatible__from_table-TDS) | Function not supported |
-| ⚪ | `array_sample` | `array_sample(anyarray, integer) → anyarray` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_sample__anyarray_int__from_table-TDS) | Function not supported |
-| ⚪ | `array_shuffle` | `array_shuffle(anyarray) → anyarray` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_shuffle__anyarray__from_table-TDS) | Function not supported |
-| ⚪ | `array_upper` | `array_upper(anyarray, integer) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_upper__anyarray_int__from_table-TDS) | Function not supported |
-| ⚪ | `cardinality` | `cardinality(anyarray) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-cardinality__anyarray__from_table-TDS) | Function not supported |
-| ⚪ | `unnest` | `unnest(anyarray) → SETOF anyelement` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-unnest__anyarray__from_table-TDS) | Function not supported |
-| ⚪ | `unnest` | `unnest(anymultirange) → SETOF anyrange` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-unnest__anymultirange__unsupported_type-TDS) | Function not supported |
-| ⚪ | `unnest` | `unnest(tsvector tsvector, OUT lexeme text, OUT positions smallint[], OUT weights text[]) → SETOF record` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-unnest__tsvectortsvector_OUTlexemetxt_OUTpositionssmall[]_OUTweightstxt[]__unsupported_type-TDS) | Function not supported |
+| | Function | Signature | TDS | Relation | Grammar | Error Category | Notes |
+|--|----------|-----------|-----|----------|---------|----------------|-------|
+| ⚪ | `array_append` | `array_append(anycompatiblearray, anycompatible) → anycompatiblearray` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_append__anycompatiblearray_anycompatible__from_table-TDS) | Function not supported |
+| ⚪ | `array_cat` | `array_cat(anycompatiblearray, anycompatiblearray) → anycompatiblearray` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_cat__anycompatiblearray_anycompatiblearray__from_table-TDS) | Function not supported |
+| ⚪ | `array_dims` | `array_dims(anyarray) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_dims__anyarray__from_table-TDS) | Function not supported |
+| ⚪ | `array_fill` | `array_fill(anyelement, integer[]) → anyarray` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_fill__anyelement_int[]__from_table-TDS) | Function not supported |
+| ⚪ | `array_fill` | `array_fill(anyelement, integer[], integer[]) → anyarray` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_fill__anyelement_int[]_int[]__from_table-TDS) | Function not supported |
+| 🟢 | `array_length` | `array_length(anyarray, integer) → integer` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `array_lower` | `array_lower(anyarray, integer) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_lower__anyarray_int__from_table-TDS) | Function not supported |
+| ⚪ | `array_ndims` | `array_ndims(anyarray) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_ndims__anyarray__from_table-TDS) | Function not supported |
+| 🔴 | `array_position` | `array_position(anycompatiblearray, anycompatible) → integer` | UNSUPPORTED | UNSUPPORTED | FAIL (0/1) | [UNSUPPORTED_SYNTAX](#fail-array_position__anycompatiblearray_anycompatible__from_table-TDS), [RESULT_MISMATCH](#fail-array_position__anycompatiblearray_anycompatible__from_table-Relation) | Unsupported feature |
+| ⚪ | `array_position` | `array_position(anycompatiblearray, anycompatible, integer) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-array_position__anycompatiblearray_anycompatible_int__with_start-TDS) | Unsupported feature |
+| ⚪ | `array_positions` | `array_positions(anycompatiblearray, anycompatible) → integer[]` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_positions__anycompatiblearray_anycompatible__from_table-TDS) | Function not supported |
+| ⚪ | `array_prepend` | `array_prepend(anycompatible, anycompatiblearray) → anycompatiblearray` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_prepend__anycompatible_anycompatiblearray__from_table-TDS) | Function not supported |
+| ⚪ | `array_remove` | `array_remove(anycompatiblearray, anycompatible) → anycompatiblearray` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_remove__anycompatiblearray_anycompatible__from_table-TDS) | Function not supported |
+| ⚪ | `array_replace` | `array_replace(anycompatiblearray, anycompatible, anycompatible) → anycompatiblearray` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_replace__anycompatiblearray_anycompatible_anycompatible__from_table-TDS) | Function not supported |
+| ⚪ | `array_sample` | `array_sample(anyarray, integer) → anyarray` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_sample__anyarray_int__from_table-TDS) | Function not supported |
+| ⚪ | `array_shuffle` | `array_shuffle(anyarray) → anyarray` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_shuffle__anyarray__from_table-TDS) | Function not supported |
+| ⚪ | `array_upper` | `array_upper(anyarray, integer) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_upper__anyarray_int__from_table-TDS) | Function not supported |
+| ⚪ | `cardinality` | `cardinality(anyarray) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-cardinality__anyarray__from_table-TDS) | Function not supported |
+| ⚪ | `unnest` | `unnest(anyarray) → SETOF anyelement` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-unnest__anyarray__from_table-TDS) | Function not supported |
+| ⚪ | `unnest` | `unnest(anymultirange) → SETOF anyrange` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-unnest__anymultirange__unsupported_type-TDS) | Function not supported |
+| ⚪ | `unnest` | `unnest(tsvector tsvector, OUT lexeme text, OUT positions smallint[], OUT weights text[]) → SETOF record` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-unnest__tsvectortsvector_OUTlexemetxt_OUTpositionssmall[]_OUTweightstxt[]__unsupported_type-TDS) | Function not supported |
 
 <a id="aggregate-functions-(9.21)"></a>
 
@@ -472,165 +473,165 @@ Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-arr
 
 Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-aggregate.html)
 
-| | Function | Signature | TDS | Relation | Error Category | Notes |
-|--|----------|-----------|-----|----------|----------------|-------|
-| ⚪ | `any_value` | `any_value(anyelement) → anyelement` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-any_value__anyelement__from_table-TDS) | Function not supported |
-| ⚪ | `array_agg` | `array_agg(anyarray) → anyarray` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_agg__anyarray__no_generator-TDS) | Function not supported |
-| ⚪ | `array_agg` | `array_agg(anynonarray) → anyarray` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_agg__anynonarray__from_table-TDS) | Function not supported |
-| 🟢 | `avg` | `avg(bigint) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `avg` | `avg(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `avg` | `avg(integer) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `avg` | `avg(interval) → interval` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-avg__intv__from_table-TDS) | Unsupported feature |
-| 🟢 | `avg` | `avg(numeric) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `avg` | `avg(real) → double precision` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-avg__real__from_table-TDS) |  |
-| 🟢 | `avg` | `avg(smallint) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `bit_and` | `bit_and(bigint) → bigint` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_and__big__from_table-TDS) | Function not supported |
-| ⚪ | `bit_and` | `bit_and(bit) → bit` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_and__bit__no_generator-TDS) | Function not supported |
-| ⚪ | `bit_and` | `bit_and(integer) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_and__int__from_table-TDS) | Function not supported |
-| ⚪ | `bit_and` | `bit_and(smallint) → smallint` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_and__small__from_table-TDS) | Function not supported |
-| ⚪ | `bit_or` | `bit_or(bigint) → bigint` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_or__big__from_table-TDS) | Function not supported |
-| ⚪ | `bit_or` | `bit_or(bit) → bit` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_or__bit__no_generator-TDS) | Function not supported |
-| ⚪ | `bit_or` | `bit_or(integer) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_or__int__from_table-TDS) | Function not supported |
-| ⚪ | `bit_or` | `bit_or(smallint) → smallint` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_or__small__from_table-TDS) | Function not supported |
-| ⚪ | `bit_xor` | `bit_xor(bigint) → bigint` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_xor__big__from_table-TDS) | Function not supported |
-| ⚪ | `bit_xor` | `bit_xor(bit) → bit` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_xor__bit__no_generator-TDS) | Function not supported |
-| ⚪ | `bit_xor` | `bit_xor(integer) → integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_xor__int__from_table-TDS) | Function not supported |
-| ⚪ | `bit_xor` | `bit_xor(smallint) → smallint` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_xor__small__from_table-TDS) | Function not supported |
-| 🟢 | `bool_and` | `bool_and(boolean) → boolean` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `bool_or` | `bool_or(boolean) → boolean` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `corr` | `corr(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-corr__dp_dp__from_table-TDS) | Function not supported |
-| 🟢 | `count` | `count() → bigint` | PASS (2/2) | PASS (2/2) |  |  |
-| 🟢 | `count` | `count("any") → bigint` | PASS (2/2) | PASS (2/2) |  |  |
-| ⚪ | `covar_pop` | `covar_pop(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-covar_pop__dp_dp__from_table-TDS) | Function not supported |
-| ⚪ | `covar_samp` | `covar_samp(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-covar_samp__dp_dp__from_table-TDS) | Function not supported |
-| ⚪ | `cume_dist` | `cume_dist(VARIADIC "any" ORDER BY VARIADIC "any") → double precision` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-cume_dist__variadicORDERBYvariadic__no_generator-TDS), [MISC](#fail-cume_dist__variadicORDERBYvariadic__no_generator-Relation) | Unsupported feature |
-| ⚪ | `dense_rank` | `dense_rank(VARIADIC "any" ORDER BY VARIADIC "any") → bigint` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-dense_rank__variadicORDERBYvariadic__no_generator-TDS), [MISC](#fail-dense_rank__variadicORDERBYvariadic__no_generator-Relation) | Unsupported feature |
-| 🟢 | `every` | `every(boolean) → boolean` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `json_agg` | `json_agg(anyelement) → json` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_agg__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_agg__from_column-Relation) | Function not supported |
-| ⚪ | `json_agg_strict` | `json_agg_strict(anyelement) → json` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-json_agg_strict__anyelement__from_table-TDS) | Function not supported |
-| ⚪ | `json_object_agg` | `json_object_agg("any", "any") → json` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-json_object_agg__any_any__from_table-TDS) | Function not supported |
-| ⚪ | `json_object_agg_strict` | `json_object_agg_strict("any", "any") → json` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-json_object_agg_strict__any_any__from_table-TDS) | Function not supported |
-| ⚪ | `json_object_agg_unique` | `json_object_agg_unique("any", "any") → json` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-json_object_agg_unique__any_any__from_table-TDS) | Function not supported |
-| ⚪ | `json_object_agg_unique_strict` | `json_object_agg_unique_strict("any", "any") → json` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-json_object_agg_unique_strict__any_any__from_table-TDS) | Function not supported |
-| ⚪ | `jsonb_agg` | `jsonb_agg(anyelement) → jsonb` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_agg__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_agg__from_column-Relation) | Function not supported |
-| ⚪ | `jsonb_agg_strict` | `jsonb_agg_strict(anyelement) → jsonb` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-jsonb_agg_strict__anyelement__from_table-TDS) | Function not supported |
-| ⚪ | `jsonb_object_agg` | `jsonb_object_agg("any", "any") → jsonb` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-jsonb_object_agg__any_any__from_table-TDS) | Function not supported |
-| ⚪ | `jsonb_object_agg_strict` | `jsonb_object_agg_strict("any", "any") → jsonb` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-jsonb_object_agg_strict__any_any__from_table-TDS) | Function not supported |
-| ⚪ | `jsonb_object_agg_unique` | `jsonb_object_agg_unique("any", "any") → jsonb` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-jsonb_object_agg_unique__any_any__from_table-TDS) | Function not supported |
-| ⚪ | `jsonb_object_agg_unique_strict` | `jsonb_object_agg_unique_strict("any", "any") → jsonb` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-jsonb_object_agg_unique_strict__any_any__from_table-TDS) | Function not supported |
-| ⚪ | `max` | `max(anyarray) → anyarray` | UNSUPPORTED | UNSUPPORTED | [RESULT_MISMATCH](#fail-max__anyarray__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-max_anyarray_cov-TDS) | Unsupported feature |
-| ⚪ | `max` | `max(anyenum) → anyenum` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-max__anyenum__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-max_anyenum_cov-TDS) | Unsupported feature |
-| 🟢 | `max` | `max(bigint) → bigint` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `max` | `max(character) → character` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-max__char__no_generator-TDS) | Unsupported feature |
-| 🟢 | `max` | `max(date) → date` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `max` | `max(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `max` | `max(inet) → inet` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-max__inet__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-max_inet_cov-TDS) | Unsupported feature |
-| 🟢 | `max` | `max(integer) → integer` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `max` | `max(interval) → interval` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-max__intv__from_table-TDS) | Unsupported feature |
-| ⚪ | `max` | `max(money) → money` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-max__money__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-max_money_cov-TDS) | Unsupported feature |
-| 🟢 | `max` | `max(numeric) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `max` | `max(oid) → oid` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-max__oid__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-max_oid_cov-TDS) | Unsupported feature |
-| ⚪ | `max` | `max(pg_lsn) → pg_lsn` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-max__pg_lsn__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-max_pg_lsn_cov-TDS) | Unsupported feature |
-| ⚪ | `max` | `max(real) → real` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-max__real__from_table-TDS) |  |
-| 🟢 | `max` | `max(smallint) → smallint` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `max` | `max(text) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `max` | `max(tid) → tid` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-max__tid__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-max_tid_cov-TDS) | Unsupported feature |
-| 🟡 | `max` | `max(time with time zone) → time with time zone` | PARTIAL (1/2) | PARTIAL (1/2) | [TYPE_ERROR](#fail-max__timetz__no_generator-TDS) |  |
-| 🟡 | `max` | `max(time without time zone) → time without time zone` | PARTIAL (1/2) | PARTIAL (1/2) | [TYPE_ERROR](#fail-max__time__no_generator-TDS) |  |
-| ⚪ | `max` | `max(timestamp with time zone) → timestamp with time zone` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-max__tstz__from_table-TDS) |  |
-| 🟢 | `max` | `max(timestamp without time zone) → timestamp without time zone` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `max` | `max(xid8) → xid8` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-max__xid8__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-max_xid8_cov-TDS) | Unsupported feature |
-| ⚪ | `min` | `min(anyarray) → anyarray` | UNSUPPORTED | UNSUPPORTED | [RESULT_MISMATCH](#fail-min__anyarray__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-min_anyarray_cov-TDS) | Unsupported feature |
-| ⚪ | `min` | `min(anyenum) → anyenum` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-min__anyenum__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-min_anyenum_cov-TDS) | Unsupported feature |
-| 🟢 | `min` | `min(bigint) → bigint` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `min` | `min(character) → character` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-min__char__no_generator-TDS) | Unsupported feature |
-| 🟢 | `min` | `min(date) → date` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `min` | `min(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `min` | `min(inet) → inet` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-min__inet__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-min_inet_cov-TDS) | Unsupported feature |
-| 🟢 | `min` | `min(integer) → integer` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `min` | `min(interval) → interval` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-min__intv__from_table-TDS) | Unsupported feature |
-| ⚪ | `min` | `min(money) → money` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-min__money__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-min_money_cov-TDS) | Unsupported feature |
-| 🟢 | `min` | `min(numeric) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `min` | `min(oid) → oid` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-min__oid__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-min_oid_cov-TDS) | Unsupported feature |
-| ⚪ | `min` | `min(pg_lsn) → pg_lsn` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-min__pg_lsn__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-min_pg_lsn_cov-TDS) | Unsupported feature |
-| ⚪ | `min` | `min(real) → real` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-min__real__from_table-TDS) |  |
-| 🟢 | `min` | `min(smallint) → smallint` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `min` | `min(text) → text` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `min` | `min(tid) → tid` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-min__tid__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-min_tid_cov-TDS) | Unsupported feature |
-| 🟡 | `min` | `min(time with time zone) → time with time zone` | PARTIAL (1/2) | PARTIAL (1/2) | [TYPE_ERROR](#fail-min__timetz__no_generator-TDS) |  |
-| 🟡 | `min` | `min(time without time zone) → time without time zone` | PARTIAL (1/2) | PARTIAL (1/2) | [TYPE_ERROR](#fail-min__time__no_generator-TDS) |  |
-| ⚪ | `min` | `min(timestamp with time zone) → timestamp with time zone` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-min__tstz__from_table-TDS) |  |
-| 🟢 | `min` | `min(timestamp without time zone) → timestamp without time zone` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `min` | `min(xid8) → xid8` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-min__xid8__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-min_xid8_cov-TDS) | Unsupported feature |
-| ⚪ | `mode` | `mode(ORDER BY anyelement) → anyelement` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-mode__ORDERBYanyelement__from_table-TDS) | Function not supported |
-| ⚪ | `percent_rank` | `percent_rank(VARIADIC "any" ORDER BY VARIADIC "any") → double precision` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-percent_rank__variadicORDERBYvariadic__no_generator-TDS), [MISC](#fail-percent_rank__variadicORDERBYvariadic__no_generator-Relation) | Unsupported feature |
-| 🟢 | `percentile_cont` | `percentile_cont(double precision ORDER BY double precision) → double precision` | PASS (2/2) | PASS (2/2) |  |  |
-| ⚪ | `percentile_cont` | `percentile_cont(double precision ORDER BY interval) → interval` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-percentile_cont__dpORDERBYintv__no_generator-TDS) | Unsupported feature |
-| 🟡 | `percentile_cont` | `percentile_cont(double precision[] ORDER BY double precision) → double precision[]` | PARTIAL (1/2) | PARTIAL (1/2) | [MISC](#fail-percentile_cont__dp[]ORDERBYdp__no_generator-TDS) |  |
-| ⚪ | `percentile_cont` | `percentile_cont(double precision[] ORDER BY interval) → interval[]` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-percentile_cont__dp[]ORDERBYintv__no_generator-TDS) | Unsupported feature |
-| 🟡 | `percentile_disc` | `percentile_disc(double precision ORDER BY anyelement) → anyelement` | PARTIAL (1/2) | PARTIAL (1/2) | [MISC](#fail-percentile_disc_double_precision_ORDER_BY_anye_cov-TDS) |  |
-| ⚪ | `percentile_disc` | `percentile_disc(double precision[] ORDER BY anyelement) → anyarray` | UNTESTED | UNTESTED | [MISC](#fail-percentile_disc__dp[]ORDERBYanyelement__no_generator-TDS) |  |
-| ⚪ | `range_agg` | `range_agg(anymultirange) → anymultirange` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-range_agg__anymultirange__no_generator-TDS) | Function not supported |
-| ⚪ | `range_agg` | `range_agg(anyrange) → anymultirange` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-range_agg__anyrange__no_generator-TDS) | Function not supported |
-| ⚪ | `range_intersect_agg` | `range_intersect_agg(anymultirange) → anymultirange` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-range_intersect_agg__anymultirange__no_generator-TDS) | Function not supported |
-| ⚪ | `range_intersect_agg` | `range_intersect_agg(anyrange) → anyrange` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-range_intersect_agg__anyrange__no_generator-TDS) | Function not supported |
-| ⚪ | `rank` | `rank(VARIADIC "any" ORDER BY VARIADIC "any") → bigint` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-rank__variadicORDERBYvariadic__no_generator-TDS), [MISC](#fail-rank__variadicORDERBYvariadic__no_generator-Relation) | Unsupported feature |
-| ⚪ | `regr_avgx` | `regr_avgx(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regr_avgx__dp_dp__from_table-TDS) | Function not supported |
-| ⚪ | `regr_avgy` | `regr_avgy(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regr_avgy__dp_dp__from_table-TDS) | Function not supported |
-| ⚪ | `regr_count` | `regr_count(double precision, double precision) → bigint` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regr_count__dp_dp__from_table-TDS) | Function not supported |
-| ⚪ | `regr_intercept` | `regr_intercept(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regr_intercept__dp_dp__from_table-TDS) | Function not supported |
-| ⚪ | `regr_r2` | `regr_r2(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regr_r2__dp_dp__from_table-TDS) | Function not supported |
-| ⚪ | `regr_slope` | `regr_slope(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regr_slope__dp_dp__from_table-TDS) | Function not supported |
-| ⚪ | `regr_sxx` | `regr_sxx(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regr_sxx__dp_dp__from_table-TDS) | Function not supported |
-| ⚪ | `regr_sxy` | `regr_sxy(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regr_sxy__dp_dp__from_table-TDS) | Function not supported |
-| ⚪ | `regr_syy` | `regr_syy(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regr_syy__dp_dp__from_table-TDS) | Function not supported |
-| 🟢 | `stddev` | `stddev(bigint) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `stddev` | `stddev(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `stddev` | `stddev(integer) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `stddev` | `stddev(numeric) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `stddev` | `stddev(real) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `stddev` | `stddev(smallint) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `stddev_pop` | `stddev_pop(bigint) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `stddev_pop` | `stddev_pop(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `stddev_pop` | `stddev_pop(integer) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `stddev_pop` | `stddev_pop(numeric) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `stddev_pop` | `stddev_pop(real) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `stddev_pop` | `stddev_pop(smallint) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `stddev_samp` | `stddev_samp(bigint) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `stddev_samp` | `stddev_samp(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `stddev_samp` | `stddev_samp(integer) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `stddev_samp` | `stddev_samp(numeric) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `stddev_samp` | `stddev_samp(real) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `stddev_samp` | `stddev_samp(smallint) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `string_agg` | `string_agg(bytea, bytea) → bytea` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-string_agg__bytea_bytea__no_generator-TDS), [MISC](#fail-string_agg_bytea_bytea_cov-TDS) |  |
-| ⚪ | `string_agg` | `string_agg(text, text) → text` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-string_agg__txt_txt__from_table-TDS) | Unsupported feature |
-| ⚪ | `sum` | `sum(bigint) → numeric` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-sum__big__group_by_filtered-TDS) | Unsupported feature |
-| 🟢 | `sum` | `sum(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `sum` | `sum(integer) → bigint` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `sum` | `sum(interval) → interval` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-sum__intv__from_table-TDS) | Unsupported feature |
-| ⚪ | `sum` | `sum(money) → money` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-sum__money__no_generator-TDS), [MISC](#fail-sum_money_cov-TDS) |  |
-| 🟢 | `sum` | `sum(numeric) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `sum` | `sum(real) → real` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-sum__real__from_table-TDS) |  |
-| 🟢 | `sum` | `sum(smallint) → bigint` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `var_pop` | `var_pop(bigint) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `var_pop` | `var_pop(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `var_pop` | `var_pop(integer) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `var_pop` | `var_pop(numeric) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `var_pop` | `var_pop(real) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `var_pop` | `var_pop(smallint) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `var_samp` | `var_samp(bigint) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `var_samp` | `var_samp(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `var_samp` | `var_samp(integer) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `var_samp` | `var_samp(numeric) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `var_samp` | `var_samp(real) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `var_samp` | `var_samp(smallint) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `variance` | `variance(bigint) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `variance` | `variance(double precision) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `variance` | `variance(integer) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `variance` | `variance(numeric) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `variance` | `variance(real) → double precision` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `variance` | `variance(smallint) → numeric` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `xmlagg` | `xmlagg(xml) → xml` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-xmlagg__xml__no_generator-TDS) | Function not supported |
+| | Function | Signature | TDS | Relation | Grammar | Error Category | Notes |
+|--|----------|-----------|-----|----------|---------|----------------|-------|
+| ⚪ | `any_value` | `any_value(anyelement) → anyelement` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-any_value__anyelement__from_table-TDS) | Function not supported |
+| ⚪ | `array_agg` | `array_agg(anyarray) → anyarray` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_agg__anyarray__no_generator-TDS) | Function not supported |
+| ⚪ | `array_agg` | `array_agg(anynonarray) → anyarray` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-array_agg__anynonarray__from_table-TDS) | Function not supported |
+| 🟢 | `avg` | `avg(bigint) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `avg` | `avg(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `avg` | `avg(integer) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `avg` | `avg(interval) → interval` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-avg__intv__from_table-TDS) | Unsupported feature |
+| 🟢 | `avg` | `avg(numeric) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `avg` | `avg(real) → double precision` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-avg__real__from_table-TDS) |  |
+| 🟢 | `avg` | `avg(smallint) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `bit_and` | `bit_and(bigint) → bigint` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_and__big__from_table-TDS) | Function not supported |
+| ⚪ | `bit_and` | `bit_and(bit) → bit` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_and__bit__no_generator-TDS) | Function not supported |
+| ⚪ | `bit_and` | `bit_and(integer) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_and__int__from_table-TDS) | Function not supported |
+| ⚪ | `bit_and` | `bit_and(smallint) → smallint` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_and__small__from_table-TDS) | Function not supported |
+| ⚪ | `bit_or` | `bit_or(bigint) → bigint` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_or__big__from_table-TDS) | Function not supported |
+| ⚪ | `bit_or` | `bit_or(bit) → bit` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_or__bit__no_generator-TDS) | Function not supported |
+| ⚪ | `bit_or` | `bit_or(integer) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_or__int__from_table-TDS) | Function not supported |
+| ⚪ | `bit_or` | `bit_or(smallint) → smallint` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_or__small__from_table-TDS) | Function not supported |
+| ⚪ | `bit_xor` | `bit_xor(bigint) → bigint` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_xor__big__from_table-TDS) | Function not supported |
+| ⚪ | `bit_xor` | `bit_xor(bit) → bit` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_xor__bit__no_generator-TDS) | Function not supported |
+| ⚪ | `bit_xor` | `bit_xor(integer) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_xor__int__from_table-TDS) | Function not supported |
+| ⚪ | `bit_xor` | `bit_xor(smallint) → smallint` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-bit_xor__small__from_table-TDS) | Function not supported |
+| 🟢 | `bool_and` | `bool_and(boolean) → boolean` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `bool_or` | `bool_or(boolean) → boolean` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `corr` | `corr(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-corr__dp_dp__from_table-TDS) | Function not supported |
+| 🟢 | `count` | `count() → bigint` | PASS (2/2) | PASS (2/2) | PASS (2/2) |  |  |
+| 🟢 | `count` | `count("any") → bigint` | PASS (2/2) | PASS (2/2) | PASS (2/2) |  |  |
+| ⚪ | `covar_pop` | `covar_pop(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-covar_pop__dp_dp__from_table-TDS) | Function not supported |
+| ⚪ | `covar_samp` | `covar_samp(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-covar_samp__dp_dp__from_table-TDS) | Function not supported |
+| ⚪ | `cume_dist` | `cume_dist(VARIADIC "any" ORDER BY VARIADIC "any") → double precision` | UNSUPPORTED | UNSUPPORTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-cume_dist__variadicORDERBYvariadic__no_generator-TDS), [MISC](#fail-cume_dist__variadicORDERBYvariadic__no_generator-Relation) | Unsupported feature |
+| ⚪ | `dense_rank` | `dense_rank(VARIADIC "any" ORDER BY VARIADIC "any") → bigint` | UNSUPPORTED | UNSUPPORTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-dense_rank__variadicORDERBYvariadic__no_generator-TDS), [MISC](#fail-dense_rank__variadicORDERBYvariadic__no_generator-Relation) | Unsupported feature |
+| 🟢 | `every` | `every(boolean) → boolean` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `json_agg` | `json_agg(anyelement) → json` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-json_agg__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-json_agg__from_column-Relation) | Function not supported |
+| ⚪ | `json_agg_strict` | `json_agg_strict(anyelement) → json` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-json_agg_strict__anyelement__from_table-TDS) | Function not supported |
+| ⚪ | `json_object_agg` | `json_object_agg("any", "any") → json` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-json_object_agg__any_any__from_table-TDS) | Function not supported |
+| ⚪ | `json_object_agg_strict` | `json_object_agg_strict("any", "any") → json` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-json_object_agg_strict__any_any__from_table-TDS) | Function not supported |
+| ⚪ | `json_object_agg_unique` | `json_object_agg_unique("any", "any") → json` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-json_object_agg_unique__any_any__from_table-TDS) | Function not supported |
+| ⚪ | `json_object_agg_unique_strict` | `json_object_agg_unique_strict("any", "any") → json` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-json_object_agg_unique_strict__any_any__from_table-TDS) | Function not supported |
+| ⚪ | `jsonb_agg` | `jsonb_agg(anyelement) → jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_agg__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_agg__from_column-Relation) | Function not supported |
+| ⚪ | `jsonb_agg_strict` | `jsonb_agg_strict(anyelement) → jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-jsonb_agg_strict__anyelement__from_table-TDS) | Function not supported |
+| ⚪ | `jsonb_object_agg` | `jsonb_object_agg("any", "any") → jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-jsonb_object_agg__any_any__from_table-TDS) | Function not supported |
+| ⚪ | `jsonb_object_agg_strict` | `jsonb_object_agg_strict("any", "any") → jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-jsonb_object_agg_strict__any_any__from_table-TDS) | Function not supported |
+| ⚪ | `jsonb_object_agg_unique` | `jsonb_object_agg_unique("any", "any") → jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-jsonb_object_agg_unique__any_any__from_table-TDS) | Function not supported |
+| ⚪ | `jsonb_object_agg_unique_strict` | `jsonb_object_agg_unique_strict("any", "any") → jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-jsonb_object_agg_unique_strict__any_any__from_table-TDS) | Function not supported |
+| 🟡 | `max` | `max(anyarray) → anyarray` | UNSUPPORTED | UNSUPPORTED | PARTIAL (1/2) | [RESULT_MISMATCH](#fail-max__anyarray__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-max_anyarray_cov-TDS) | Unsupported feature |
+| 🟡 | `max` | `max(anyenum) → anyenum` | UNSUPPORTED | UNSUPPORTED | PARTIAL (1/2) | [TYPE_ERROR](#fail-max__anyenum__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-max_anyenum_cov-TDS) | Unsupported feature |
+| 🟢 | `max` | `max(bigint) → bigint` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `max` | `max(character) → character` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-max__char__no_generator-TDS) | Unsupported feature |
+| 🟢 | `max` | `max(date) → date` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `max` | `max(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟡 | `max` | `max(inet) → inet` | UNSUPPORTED | UNSUPPORTED | PARTIAL (1/2) | [TYPE_ERROR](#fail-max__inet__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-max_inet_cov-TDS) | Unsupported feature |
+| 🟢 | `max` | `max(integer) → integer` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `max` | `max(interval) → interval` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-max__intv__from_table-TDS) | Unsupported feature |
+| 🟡 | `max` | `max(money) → money` | UNSUPPORTED | UNSUPPORTED | PARTIAL (1/2) | [TYPE_ERROR](#fail-max__money__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-max_money_cov-TDS) | Unsupported feature |
+| 🟢 | `max` | `max(numeric) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟡 | `max` | `max(oid) → oid` | UNSUPPORTED | UNSUPPORTED | PARTIAL (1/2) | [TYPE_ERROR](#fail-max__oid__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-max_oid_cov-TDS) | Unsupported feature |
+| 🟡 | `max` | `max(pg_lsn) → pg_lsn` | UNSUPPORTED | UNSUPPORTED | PARTIAL (1/2) | [TYPE_ERROR](#fail-max__pg_lsn__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-max_pg_lsn_cov-TDS) | Unsupported feature |
+| ⚪ | `max` | `max(real) → real` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-max__real__from_table-TDS) |  |
+| 🟢 | `max` | `max(smallint) → smallint` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `max` | `max(text) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟡 | `max` | `max(tid) → tid` | UNSUPPORTED | UNSUPPORTED | PARTIAL (1/2) | [TYPE_ERROR](#fail-max__tid__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-max_tid_cov-TDS) | Unsupported feature |
+| 🟡 | `max` | `max(time with time zone) → time with time zone` | PARTIAL (1/2) | PARTIAL (1/2) | PARTIAL (1/2) | [TYPE_ERROR](#fail-max__timetz__no_generator-TDS) |  |
+| 🟡 | `max` | `max(time without time zone) → time without time zone` | PARTIAL (1/2) | PARTIAL (1/2) | PARTIAL (1/2) | [TYPE_ERROR](#fail-max__time__no_generator-TDS) |  |
+| ⚪ | `max` | `max(timestamp with time zone) → timestamp with time zone` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-max__tstz__from_table-TDS) |  |
+| 🟢 | `max` | `max(timestamp without time zone) → timestamp without time zone` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟡 | `max` | `max(xid8) → xid8` | UNSUPPORTED | UNSUPPORTED | PARTIAL (1/2) | [TYPE_ERROR](#fail-max__xid8__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-max_xid8_cov-TDS) | Unsupported feature |
+| 🟡 | `min` | `min(anyarray) → anyarray` | UNSUPPORTED | UNSUPPORTED | PARTIAL (1/2) | [RESULT_MISMATCH](#fail-min__anyarray__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-min_anyarray_cov-TDS) | Unsupported feature |
+| 🟡 | `min` | `min(anyenum) → anyenum` | UNSUPPORTED | UNSUPPORTED | PARTIAL (1/2) | [TYPE_ERROR](#fail-min__anyenum__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-min_anyenum_cov-TDS) | Unsupported feature |
+| 🟢 | `min` | `min(bigint) → bigint` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `min` | `min(character) → character` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-min__char__no_generator-TDS) | Unsupported feature |
+| 🟢 | `min` | `min(date) → date` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `min` | `min(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟡 | `min` | `min(inet) → inet` | UNSUPPORTED | UNSUPPORTED | PARTIAL (1/2) | [TYPE_ERROR](#fail-min__inet__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-min_inet_cov-TDS) | Unsupported feature |
+| 🟢 | `min` | `min(integer) → integer` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `min` | `min(interval) → interval` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-min__intv__from_table-TDS) | Unsupported feature |
+| 🟡 | `min` | `min(money) → money` | UNSUPPORTED | UNSUPPORTED | PARTIAL (1/2) | [TYPE_ERROR](#fail-min__money__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-min_money_cov-TDS) | Unsupported feature |
+| 🟢 | `min` | `min(numeric) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟡 | `min` | `min(oid) → oid` | UNSUPPORTED | UNSUPPORTED | PARTIAL (1/2) | [TYPE_ERROR](#fail-min__oid__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-min_oid_cov-TDS) | Unsupported feature |
+| 🟡 | `min` | `min(pg_lsn) → pg_lsn` | UNSUPPORTED | UNSUPPORTED | PARTIAL (1/2) | [TYPE_ERROR](#fail-min__pg_lsn__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-min_pg_lsn_cov-TDS) | Unsupported feature |
+| ⚪ | `min` | `min(real) → real` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-min__real__from_table-TDS) |  |
+| 🟢 | `min` | `min(smallint) → smallint` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `min` | `min(text) → text` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟡 | `min` | `min(tid) → tid` | UNSUPPORTED | UNSUPPORTED | PARTIAL (1/2) | [TYPE_ERROR](#fail-min__tid__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-min_tid_cov-TDS) | Unsupported feature |
+| 🟡 | `min` | `min(time with time zone) → time with time zone` | PARTIAL (1/2) | PARTIAL (1/2) | PARTIAL (1/2) | [TYPE_ERROR](#fail-min__timetz__no_generator-TDS) |  |
+| 🟡 | `min` | `min(time without time zone) → time without time zone` | PARTIAL (1/2) | PARTIAL (1/2) | PARTIAL (1/2) | [TYPE_ERROR](#fail-min__time__no_generator-TDS) |  |
+| ⚪ | `min` | `min(timestamp with time zone) → timestamp with time zone` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-min__tstz__from_table-TDS) |  |
+| 🟢 | `min` | `min(timestamp without time zone) → timestamp without time zone` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟡 | `min` | `min(xid8) → xid8` | UNSUPPORTED | UNSUPPORTED | PARTIAL (1/2) | [TYPE_ERROR](#fail-min__xid8__no_generator-TDS), [UNSUPPORTED_SYNTAX](#fail-min_xid8_cov-TDS) | Unsupported feature |
+| ⚪ | `mode` | `mode(ORDER BY anyelement) → anyelement` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-mode__ORDERBYanyelement__from_table-TDS) | Function not supported |
+| ⚪ | `percent_rank` | `percent_rank(VARIADIC "any" ORDER BY VARIADIC "any") → double precision` | UNSUPPORTED | UNSUPPORTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-percent_rank__variadicORDERBYvariadic__no_generator-TDS), [MISC](#fail-percent_rank__variadicORDERBYvariadic__no_generator-Relation) | Unsupported feature |
+| 🟢 | `percentile_cont` | `percentile_cont(double precision ORDER BY double precision) → double precision` | PASS (2/2) | PASS (2/2) | PASS (2/2) |  |  |
+| ⚪ | `percentile_cont` | `percentile_cont(double precision ORDER BY interval) → interval` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-percentile_cont__dpORDERBYintv__no_generator-TDS) | Unsupported feature |
+| 🟡 | `percentile_cont` | `percentile_cont(double precision[] ORDER BY double precision) → double precision[]` | PARTIAL (1/2) | PARTIAL (1/2) | PARTIAL (1/2) | [MISC](#fail-percentile_cont__dp[]ORDERBYdp__no_generator-TDS) |  |
+| ⚪ | `percentile_cont` | `percentile_cont(double precision[] ORDER BY interval) → interval[]` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-percentile_cont__dp[]ORDERBYintv__no_generator-TDS) | Unsupported feature |
+| 🟡 | `percentile_disc` | `percentile_disc(double precision ORDER BY anyelement) → anyelement` | PARTIAL (1/2) | PARTIAL (1/2) | UNSUPPORTED | [MISC](#fail-percentile_disc_double_precision_ORDER_BY_anye_cov-TDS), [FUNCTION_NOT_SUPPORTED](#fail-percentile_disc_double_precision_ORDER_BY_anye_cov-Grammar) | Grammar: function not supported |
+| ⚪ | `percentile_disc` | `percentile_disc(double precision[] ORDER BY anyelement) → anyarray` | UNTESTED | UNTESTED | UNSUPPORTED | [MISC](#fail-percentile_disc__dp[]ORDERBYanyelement__no_generator-TDS), [FUNCTION_NOT_SUPPORTED](#fail-percentile_disc_double_precision_ORDER_BY_an_cov-Grammar) | Grammar: function not supported |
+| ⚪ | `range_agg` | `range_agg(anymultirange) → anymultirange` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-range_agg__anymultirange__no_generator-TDS) | Function not supported |
+| ⚪ | `range_agg` | `range_agg(anyrange) → anymultirange` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-range_agg__anyrange__no_generator-TDS) | Function not supported |
+| ⚪ | `range_intersect_agg` | `range_intersect_agg(anymultirange) → anymultirange` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-range_intersect_agg__anymultirange__no_generator-TDS) | Function not supported |
+| ⚪ | `range_intersect_agg` | `range_intersect_agg(anyrange) → anyrange` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-range_intersect_agg__anyrange__no_generator-TDS) | Function not supported |
+| ⚪ | `rank` | `rank(VARIADIC "any" ORDER BY VARIADIC "any") → bigint` | UNSUPPORTED | UNSUPPORTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-rank__variadicORDERBYvariadic__no_generator-TDS), [MISC](#fail-rank__variadicORDERBYvariadic__no_generator-Relation) | Unsupported feature |
+| ⚪ | `regr_avgx` | `regr_avgx(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regr_avgx__dp_dp__from_table-TDS) | Function not supported |
+| ⚪ | `regr_avgy` | `regr_avgy(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regr_avgy__dp_dp__from_table-TDS) | Function not supported |
+| ⚪ | `regr_count` | `regr_count(double precision, double precision) → bigint` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regr_count__dp_dp__from_table-TDS) | Function not supported |
+| ⚪ | `regr_intercept` | `regr_intercept(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regr_intercept__dp_dp__from_table-TDS) | Function not supported |
+| ⚪ | `regr_r2` | `regr_r2(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regr_r2__dp_dp__from_table-TDS) | Function not supported |
+| ⚪ | `regr_slope` | `regr_slope(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regr_slope__dp_dp__from_table-TDS) | Function not supported |
+| ⚪ | `regr_sxx` | `regr_sxx(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regr_sxx__dp_dp__from_table-TDS) | Function not supported |
+| ⚪ | `regr_sxy` | `regr_sxy(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regr_sxy__dp_dp__from_table-TDS) | Function not supported |
+| ⚪ | `regr_syy` | `regr_syy(double precision, double precision) → double precision` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-regr_syy__dp_dp__from_table-TDS) | Function not supported |
+| 🟢 | `stddev` | `stddev(bigint) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `stddev` | `stddev(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `stddev` | `stddev(integer) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `stddev` | `stddev(numeric) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `stddev` | `stddev(real) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `stddev` | `stddev(smallint) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `stddev_pop` | `stddev_pop(bigint) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `stddev_pop` | `stddev_pop(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `stddev_pop` | `stddev_pop(integer) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `stddev_pop` | `stddev_pop(numeric) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `stddev_pop` | `stddev_pop(real) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `stddev_pop` | `stddev_pop(smallint) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `stddev_samp` | `stddev_samp(bigint) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `stddev_samp` | `stddev_samp(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `stddev_samp` | `stddev_samp(integer) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `stddev_samp` | `stddev_samp(numeric) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `stddev_samp` | `stddev_samp(real) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `stddev_samp` | `stddev_samp(smallint) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `string_agg` | `string_agg(bytea, bytea) → bytea` | UNTESTED | UNTESTED | UNSUPPORTED | [TYPE_ERROR](#fail-string_agg__bytea_bytea__no_generator-TDS), [MISC](#fail-string_agg_bytea_bytea_cov-TDS), [FUNCTION_NOT_SUPPORTED](#fail-string_agg_bytea_bytea_cov-Grammar) | Grammar: function not supported |
+| 🟡 | `string_agg` | `string_agg(text, text) → text` | UNSUPPORTED | UNSUPPORTED | PASS (5/5) | [UNSUPPORTED_SYNTAX](#fail-string_agg__txt_txt__from_table-TDS) | Unsupported feature |
+| 🟡 | `sum` | `sum(bigint) → numeric` | UNSUPPORTED | UNSUPPORTED | PASS (3/3) | [UNSUPPORTED_SYNTAX](#fail-sum__big__group_by_filtered-TDS) | Unsupported feature |
+| 🟢 | `sum` | `sum(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `sum` | `sum(integer) → bigint` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `sum` | `sum(interval) → interval` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-sum__intv__from_table-TDS) | Unsupported feature |
+| ⚪ | `sum` | `sum(money) → money` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-sum__money__no_generator-TDS), [MISC](#fail-sum_money_cov-TDS) |  |
+| 🟢 | `sum` | `sum(numeric) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `sum` | `sum(real) → real` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-sum__real__from_table-TDS) |  |
+| 🟢 | `sum` | `sum(smallint) → bigint` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `var_pop` | `var_pop(bigint) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `var_pop` | `var_pop(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `var_pop` | `var_pop(integer) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `var_pop` | `var_pop(numeric) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `var_pop` | `var_pop(real) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `var_pop` | `var_pop(smallint) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `var_samp` | `var_samp(bigint) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `var_samp` | `var_samp(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `var_samp` | `var_samp(integer) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `var_samp` | `var_samp(numeric) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `var_samp` | `var_samp(real) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `var_samp` | `var_samp(smallint) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `variance` | `variance(bigint) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `variance` | `variance(double precision) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `variance` | `variance(integer) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `variance` | `variance(numeric) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `variance` | `variance(real) → double precision` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `variance` | `variance(smallint) → numeric` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `xmlagg` | `xmlagg(xml) → xml` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-xmlagg__xml__no_generator-TDS) | Function not supported |
 
 <a id="window-functions-(9.22)"></a>
 
@@ -638,23 +639,23 @@ Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-agg
 
 Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-window.html)
 
-| | Function | Signature | TDS | Relation | Error Category | Notes |
-|--|----------|-----------|-----|----------|----------------|-------|
-| ⚪ | `cume_dist` | `cume_dist() → double precision` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-cume_dist__from_table-TDS) | Unsupported feature |
-| 🟢 | `dense_rank` | `dense_rank() → bigint` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `first_value` | `first_value(anyelement) → anyelement` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-first_value__anyelement__from_table-TDS) | Unsupported feature |
-| ⚪ | `lag` | `lag(anycompatible, integer, anycompatible) → anycompatible` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-lag__anycompatible_int_anycompatible__from_table-TDS) | Unsupported feature |
-| ⚪ | `lag` | `lag(anyelement) → anyelement` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-lag__anyelement__from_table-TDS) | Unsupported feature |
-| ⚪ | `lag` | `lag(anyelement, integer) → anyelement` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-lag__anyelement_int__from_table-TDS) | Unsupported feature |
-| ⚪ | `last_value` | `last_value(anyelement) → anyelement` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-last_value__anyelement__from_table-TDS), [MISC](#fail-last_value__anyelement__from_table-Relation) | Unsupported feature |
-| ⚪ | `lead` | `lead(anycompatible, integer, anycompatible) → anycompatible` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-lead__anycompatible_int_anycompatible__from_table-TDS) | Unsupported feature |
-| ⚪ | `lead` | `lead(anyelement) → anyelement` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-lead__anyelement__from_table-TDS) | Unsupported feature |
-| ⚪ | `lead` | `lead(anyelement, integer) → anyelement` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-lead__anyelement_int__from_table-TDS) | Unsupported feature |
-| ⚪ | `nth_value` | `nth_value(anyelement, integer) → anyelement` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-nth_value__anyelement_int__from_table-TDS) | Unsupported feature |
-| ⚪ | `ntile` | `ntile(integer) → integer` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-ntile__int__from_table-TDS) | Unsupported feature |
-| ⚪ | `percent_rank` | `percent_rank() → double precision` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-percent_rank__from_table-TDS) | Unsupported feature |
-| 🟢 | `rank` | `rank() → bigint` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `row_number` | `row_number() → bigint` | PASS (1/1) | PASS (1/1) |  |  |
+| | Function | Signature | TDS | Relation | Grammar | Error Category | Notes |
+|--|----------|-----------|-----|----------|---------|----------------|-------|
+| 🟡 | `cume_dist` | `cume_dist() → double precision` | UNSUPPORTED | UNSUPPORTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-cume_dist__from_table-TDS) | Unsupported feature |
+| 🟢 | `dense_rank` | `dense_rank() → bigint` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟡 | `first_value` | `first_value(anyelement) → anyelement` | UNSUPPORTED | UNSUPPORTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-first_value__anyelement__from_table-TDS) | Unsupported feature |
+| 🟡 | `lag` | `lag(anycompatible, integer, anycompatible) → anycompatible` | UNSUPPORTED | UNSUPPORTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-lag__anycompatible_int_anycompatible__from_table-TDS) | Unsupported feature |
+| 🟡 | `lag` | `lag(anyelement) → anyelement` | UNSUPPORTED | UNSUPPORTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-lag__anyelement__from_table-TDS) | Unsupported feature |
+| 🟡 | `lag` | `lag(anyelement, integer) → anyelement` | UNSUPPORTED | UNSUPPORTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-lag__anyelement_int__from_table-TDS) | Unsupported feature |
+| ⚪ | `last_value` | `last_value(anyelement) → anyelement` | UNSUPPORTED | UNSUPPORTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-last_value__anyelement__from_table-TDS), [MISC](#fail-last_value__anyelement__from_table-Relation) | Unsupported feature |
+| 🟡 | `lead` | `lead(anycompatible, integer, anycompatible) → anycompatible` | UNSUPPORTED | UNSUPPORTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-lead__anycompatible_int_anycompatible__from_table-TDS) | Unsupported feature |
+| 🟡 | `lead` | `lead(anyelement) → anyelement` | UNSUPPORTED | UNSUPPORTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-lead__anyelement__from_table-TDS) | Unsupported feature |
+| 🟡 | `lead` | `lead(anyelement, integer) → anyelement` | UNSUPPORTED | UNSUPPORTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-lead__anyelement_int__from_table-TDS) | Unsupported feature |
+| 🟡 | `nth_value` | `nth_value(anyelement, integer) → anyelement` | UNSUPPORTED | UNSUPPORTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-nth_value__anyelement_int__from_table-TDS) | Unsupported feature |
+| 🟡 | `ntile` | `ntile(integer) → integer` | UNSUPPORTED | UNSUPPORTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-ntile__int__from_table-TDS) | Unsupported feature |
+| 🟡 | `percent_rank` | `percent_rank() → double precision` | UNSUPPORTED | UNSUPPORTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-percent_rank__from_table-TDS) | Unsupported feature |
+| 🟢 | `rank` | `rank() → bigint` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `row_number` | `row_number() → bigint` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
 
 <a id="network-address-functions-(9.12)"></a>
 
@@ -662,29 +663,29 @@ Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-win
 
 Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-net.html)
 
-| | Function | Signature | TDS | Relation | Error Category | Notes |
-|--|----------|-----------|-----|----------|----------------|-------|
-| ⚪ | `abbrev` | `abbrev(cidr) → text` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `abbrev` | `abbrev(inet) → text` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `broadcast` | `broadcast(inet) → inet` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `family` | `family(inet) → integer` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `host` | `host(inet) → text` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `hostmask` | `hostmask(inet) → inet` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `inet_client_addr` | `inet_client_addr() → inet` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `inet_client_port` | `inet_client_port() → integer` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `inet_server_addr` | `inet_server_addr() → inet` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `inet_server_port` | `inet_server_port() → integer` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `masklen` | `masklen(inet) → integer` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `netmask` | `netmask(inet) → inet` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `network` | `network(inet) → cidr` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `set_masklen` | `set_masklen(cidr, integer) → cidr` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `set_masklen` | `set_masklen(inet, integer) → inet` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `text` | `text("char") → text` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `text` | `text(boolean) → text` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `text` | `text(character) → text` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `text` | `text(inet) → text` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `text` | `text(name) → text` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `text` | `text(xml) → text` | UNSUPPORTED | UNSUPPORTED |  |  |
+| | Function | Signature | TDS | Relation | Grammar | Error Category | Notes |
+|--|----------|-----------|-----|----------|---------|----------------|-------|
+| ⚪ | `abbrev` | `abbrev(cidr) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `abbrev` | `abbrev(inet) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `broadcast` | `broadcast(inet) → inet` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `family` | `family(inet) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `host` | `host(inet) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `hostmask` | `hostmask(inet) → inet` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `inet_client_addr` | `inet_client_addr() → inet` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `inet_client_port` | `inet_client_port() → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `inet_server_addr` | `inet_server_addr() → inet` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `inet_server_port` | `inet_server_port() → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `masklen` | `masklen(inet) → integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `netmask` | `netmask(inet) → inet` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `network` | `network(inet) → cidr` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `set_masklen` | `set_masklen(cidr, integer) → cidr` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `set_masklen` | `set_masklen(inet, integer) → inet` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `text` | `text("char") → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `text` | `text(boolean) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `text` | `text(character) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `text` | `text(inet) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `text` | `text(name) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `text` | `text(xml) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
 
 <a id="system-information-functions-(9.26)"></a>
 
@@ -692,49 +693,49 @@ Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-net
 
 Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-info.html)
 
-| | Function | Signature | TDS | Relation | Error Category | Notes |
-|--|----------|-----------|-----|----------|----------------|-------|
-| ⚪ | `col_description` | `col_description(oid, integer) → text` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `current_database` | `current_database() → name` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `current_query` | `current_query() → text` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `current_schema` | `current_schema() → name` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `current_schemas` | `current_schemas(boolean) → name[]` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `current_user` | `current_user() → name` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_column_privilege` | `has_column_privilege(name, oid, smallint, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_column_privilege` | `has_column_privilege(name, oid, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_column_privilege` | `has_column_privilege(name, text, smallint, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_column_privilege` | `has_column_privilege(name, text, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_column_privilege` | `has_column_privilege(oid, oid, smallint, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_column_privilege` | `has_column_privilege(oid, oid, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_column_privilege` | `has_column_privilege(oid, smallint, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_column_privilege` | `has_column_privilege(oid, text, smallint, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_column_privilege` | `has_column_privilege(oid, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_column_privilege` | `has_column_privilege(oid, text, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_column_privilege` | `has_column_privilege(text, smallint, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_column_privilege` | `has_column_privilege(text, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_database_privilege` | `has_database_privilege(name, oid, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_database_privilege` | `has_database_privilege(name, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_database_privilege` | `has_database_privilege(oid, oid, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_database_privilege` | `has_database_privilege(oid, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_database_privilege` | `has_database_privilege(oid, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_database_privilege` | `has_database_privilege(text, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_schema_privilege` | `has_schema_privilege(name, oid, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_schema_privilege` | `has_schema_privilege(name, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_schema_privilege` | `has_schema_privilege(oid, oid, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_schema_privilege` | `has_schema_privilege(oid, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_schema_privilege` | `has_schema_privilege(oid, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_schema_privilege` | `has_schema_privilege(text, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_table_privilege` | `has_table_privilege(name, oid, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_table_privilege` | `has_table_privilege(name, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_table_privilege` | `has_table_privilege(oid, oid, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_table_privilege` | `has_table_privilege(oid, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_table_privilege` | `has_table_privilege(oid, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `has_table_privilege` | `has_table_privilege(text, text) → boolean` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `obj_description` | `obj_description(oid) → text` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `obj_description` | `obj_description(oid, name) → text` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `session_user` | `session_user() → name` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `shobj_description` | `shobj_description(oid, name) → text` | UNSUPPORTED | UNSUPPORTED |  |  |
-| ⚪ | `version` | `version() → text` | UNSUPPORTED | UNSUPPORTED |  |  |
+| | Function | Signature | TDS | Relation | Grammar | Error Category | Notes |
+|--|----------|-----------|-----|----------|---------|----------------|-------|
+| ⚪ | `col_description` | `col_description(oid, integer) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `current_database` | `current_database() → name` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `current_query` | `current_query() → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `current_schema` | `current_schema() → name` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `current_schemas` | `current_schemas(boolean) → name[]` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `current_user` | `current_user() → name` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_column_privilege` | `has_column_privilege(name, oid, smallint, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_column_privilege` | `has_column_privilege(name, oid, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_column_privilege` | `has_column_privilege(name, text, smallint, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_column_privilege` | `has_column_privilege(name, text, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_column_privilege` | `has_column_privilege(oid, oid, smallint, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_column_privilege` | `has_column_privilege(oid, oid, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_column_privilege` | `has_column_privilege(oid, smallint, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_column_privilege` | `has_column_privilege(oid, text, smallint, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_column_privilege` | `has_column_privilege(oid, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_column_privilege` | `has_column_privilege(oid, text, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_column_privilege` | `has_column_privilege(text, smallint, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_column_privilege` | `has_column_privilege(text, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_database_privilege` | `has_database_privilege(name, oid, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_database_privilege` | `has_database_privilege(name, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_database_privilege` | `has_database_privilege(oid, oid, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_database_privilege` | `has_database_privilege(oid, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_database_privilege` | `has_database_privilege(oid, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_database_privilege` | `has_database_privilege(text, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_schema_privilege` | `has_schema_privilege(name, oid, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_schema_privilege` | `has_schema_privilege(name, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_schema_privilege` | `has_schema_privilege(oid, oid, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_schema_privilege` | `has_schema_privilege(oid, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_schema_privilege` | `has_schema_privilege(oid, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_schema_privilege` | `has_schema_privilege(text, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_table_privilege` | `has_table_privilege(name, oid, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_table_privilege` | `has_table_privilege(name, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_table_privilege` | `has_table_privilege(oid, oid, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_table_privilege` | `has_table_privilege(oid, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_table_privilege` | `has_table_privilege(oid, text, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `has_table_privilege` | `has_table_privilege(text, text) → boolean` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `obj_description` | `obj_description(oid) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `obj_description` | `obj_description(oid, name) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `session_user` | `session_user() → name` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `shobj_description` | `shobj_description(oid, name) → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
+| ⚪ | `version` | `version() → text` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED |  |  |
 
 <a id="sequence-manipulation-functions-(9.17)"></a>
 
@@ -742,13 +743,13 @@ Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-inf
 
 Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-sequence.html)
 
-| | Function | Signature | TDS | Relation | Error Category | Notes |
-|--|----------|-----------|-----|----------|----------------|-------|
-| ⚪ | `currval` | `currval(regclass) → bigint` | UNTESTED | UNTESTED | [MISC](#fail-currval__regclass__basic-TDS) |  |
-| ⚪ | `lastval` | `lastval() → bigint` | UNTESTED | UNTESTED | [MISC](#fail-lastval__basic-TDS) |  |
-| ⚪ | `nextval` | `nextval(regclass) → bigint` | UNTESTED | UNTESTED | [MISC](#fail-nextval__regclass__basic-TDS) |  |
-| ⚪ | `setval` | `setval(regclass, bigint) → bigint` | UNTESTED | UNTESTED | [MISC](#fail-setval__regclass_big__basic-TDS) |  |
-| ⚪ | `setval` | `setval(regclass, bigint, boolean) → bigint` | UNTESTED | UNTESTED | [MISC](#fail-setval__regclass_big_bool__basic-TDS) |  |
+| | Function | Signature | TDS | Relation | Grammar | Error Category | Notes |
+|--|----------|-----------|-----|----------|---------|----------------|-------|
+| ⚪ | `currval` | `currval(regclass) → bigint` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-currval__regclass__basic-TDS) |  |
+| ⚪ | `lastval` | `lastval() → bigint` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-lastval__basic-TDS) |  |
+| ⚪ | `nextval` | `nextval(regclass) → bigint` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-nextval__regclass__basic-TDS) |  |
+| ⚪ | `setval` | `setval(regclass, bigint) → bigint` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-setval__regclass_big__basic-TDS) |  |
+| ⚪ | `setval` | `setval(regclass, bigint, boolean) → bigint` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-setval__regclass_big_bool__basic-TDS) |  |
 
 <a id="set-returning-functions-(9.25)"></a>
 
@@ -756,19 +757,19 @@ Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-seq
 
 Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-srf.html)
 
-| | Function | Signature | TDS | Relation | Error Category | Notes |
-|--|----------|-----------|-----|----------|----------------|-------|
-| ⚪ | `generate_series` | `generate_series(bigint, bigint) → SETOF bigint` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-generate_series__big_big__from_table-TDS) | Unsupported feature |
-| ⚪ | `generate_series` | `generate_series(bigint, bigint, bigint) → SETOF bigint` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-generate_series__big_big_big__from_table-TDS) | Unsupported feature |
-| ⚪ | `generate_series` | `generate_series(integer, integer) → SETOF integer` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-generate_series__int_int__from_table-TDS) | Unsupported feature |
-| ⚪ | `generate_series` | `generate_series(integer, integer, integer) → SETOF integer` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-generate_series__int_int_int__from_table-TDS) | Unsupported feature |
-| ⚪ | `generate_series` | `generate_series(numeric, numeric) → SETOF numeric` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-generate_series__num_num__from_table-TDS) | Unsupported feature |
-| ⚪ | `generate_series` | `generate_series(numeric, numeric, numeric) → SETOF numeric` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-generate_series__num_num_num__from_table-TDS) | Unsupported feature |
-| ⚪ | `generate_series` | `generate_series(timestamp with time zone, timestamp with time zone, interval) → SETOF timestamp with time zone` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-generate_series__tstz_tstz_intv__from_table-TDS) |  |
-| ⚪ | `generate_series` | `generate_series(timestamp with time zone, timestamp with time zone, interval, text) → SETOF timestamp with time zone` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-generate_series__tstz_tstz_intv_txt__from_table-TDS) |  |
-| ⚪ | `generate_series` | `generate_series(timestamp without time zone, timestamp without time zone, interval) → SETOF timestamp without time zone` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-generate_series__ts_ts_intv__from_table-TDS) |  |
-| ⚪ | `generate_subscripts` | `generate_subscripts(anyarray, integer) → SETOF integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-generate_subscripts__anyarray_int__from_table-TDS) | Function not supported |
-| ⚪ | `generate_subscripts` | `generate_subscripts(anyarray, integer, boolean) → SETOF integer` | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-generate_subscripts__anyarray_int_bool__from_table-TDS) | Function not supported |
+| | Function | Signature | TDS | Relation | Grammar | Error Category | Notes |
+|--|----------|-----------|-----|----------|---------|----------------|-------|
+| ⚪ | `generate_series` | `generate_series(bigint, bigint) → SETOF bigint` | UNSUPPORTED | UNSUPPORTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-generate_series__big_big__from_table-TDS), [MISC](#fail-generate_series__big_big__from_table-Grammar) | Unsupported feature |
+| ⚪ | `generate_series` | `generate_series(bigint, bigint, bigint) → SETOF bigint` | UNSUPPORTED | UNSUPPORTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-generate_series__big_big_big__from_table-TDS), [MISC](#fail-generate_series__big_big_big__from_table-Grammar) | Unsupported feature |
+| 🟡 | `generate_series` | `generate_series(integer, integer) → SETOF integer` | UNSUPPORTED | UNSUPPORTED | PARTIAL (1/5) | [UNSUPPORTED_SYNTAX](#fail-generate_series__int_int__from_table-TDS), [MISC](#fail-generate_series__int_int__from_table-Grammar) | Unsupported feature |
+| ⚪ | `generate_series` | `generate_series(integer, integer, integer) → SETOF integer` | UNSUPPORTED | UNSUPPORTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-generate_series__int_int_int__from_table-TDS), [MISC](#fail-generate_series__int_int_int__from_table-Grammar) | Unsupported feature |
+| ⚪ | `generate_series` | `generate_series(numeric, numeric) → SETOF numeric` | UNSUPPORTED | UNSUPPORTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-generate_series__num_num__from_table-TDS), [MISC](#fail-generate_series__num_num__from_table-Grammar) | Unsupported feature |
+| ⚪ | `generate_series` | `generate_series(numeric, numeric, numeric) → SETOF numeric` | UNSUPPORTED | UNSUPPORTED | UNTESTED | [UNSUPPORTED_SYNTAX](#fail-generate_series__num_num_num__from_table-TDS), [MISC](#fail-generate_series__num_num_num__from_table-Grammar) | Unsupported feature |
+| ⚪ | `generate_series` | `generate_series(timestamp with time zone, timestamp with time zone, interval) → SETOF timestamp with time zone` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-generate_series__tstz_tstz_intv__from_table-TDS) |  |
+| ⚪ | `generate_series` | `generate_series(timestamp with time zone, timestamp with time zone, interval, text) → SETOF timestamp with time zone` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-generate_series__tstz_tstz_intv_txt__from_table-TDS) |  |
+| ⚪ | `generate_series` | `generate_series(timestamp without time zone, timestamp without time zone, interval) → SETOF timestamp without time zone` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-generate_series__ts_ts_intv__from_table-TDS) |  |
+| ⚪ | `generate_subscripts` | `generate_subscripts(anyarray, integer) → SETOF integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-generate_subscripts__anyarray_int__from_table-TDS) | Function not supported |
+| ⚪ | `generate_subscripts` | `generate_subscripts(anyarray, integer, boolean) → SETOF integer` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [FUNCTION_NOT_SUPPORTED](#fail-generate_subscripts__anyarray_int_bool__from_table-TDS) | Function not supported |
 
 <a id="cryptographic-functions-(pgcrypto)"></a>
 
@@ -776,93 +777,93 @@ Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/functions-srf
 
 Reference: [PostgreSQL 16 docs](https://www.postgresql.org/docs/16/pgcrypto.html)
 
-| | Function | Signature | TDS | Relation | Error Category | Notes |
-|--|----------|-----------|-----|----------|----------------|-------|
-| ⚪ | `armor` | `armor(bytea) → text` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `armor` | `armor(bytea, text[], text[]) → text` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `crypt` | `crypt(text, text) → text` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `dearmor` | `dearmor(text) → bytea` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `digest` | `digest(bytea, text) → bytea` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `digest` | `digest(text, text) → bytea` | UNTESTED | UNTESTED | [MISC](#fail-digest_sha1__bytea-TDS) |  |
-| ⚪ | `gen_random_bytes` | `gen_random_bytes(integer) → bytea` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `gen_random_uuid` | `gen_random_uuid() → uuid` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `gen_random_uuid` | `gen_random_uuid() → uuid` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `gen_salt` | `gen_salt(text) → text` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `gen_salt` | `gen_salt(text, integer) → text` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `hmac` | `hmac(bytea, bytea, text) → bytea` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `hmac` | `hmac(text, text, text) → bytea` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `pgp_pub_decrypt` | `pgp_pub_decrypt(bytea, bytea) → text` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `pgp_pub_decrypt` | `pgp_pub_decrypt(bytea, bytea, text) → text` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `pgp_pub_decrypt` | `pgp_pub_decrypt(bytea, bytea, text, text) → text` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `pgp_pub_encrypt` | `pgp_pub_encrypt(text, bytea) → bytea` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `pgp_pub_encrypt` | `pgp_pub_encrypt(text, bytea, text) → bytea` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `pgp_sym_decrypt` | `pgp_sym_decrypt(bytea, text) → text` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `pgp_sym_decrypt` | `pgp_sym_decrypt(bytea, text, text) → text` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `pgp_sym_encrypt` | `pgp_sym_encrypt(text, text) → bytea` | UNTESTED | UNTESTED |  |  |
-| ⚪ | `pgp_sym_encrypt` | `pgp_sym_encrypt(text, text, text) → bytea` | UNTESTED | UNTESTED |  |  |
+| | Function | Signature | TDS | Relation | Grammar | Error Category | Notes |
+|--|----------|-----------|-----|----------|---------|----------------|-------|
+| ⚪ | `armor` | `armor(bytea) → text` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `armor` | `armor(bytea, text[], text[]) → text` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `crypt` | `crypt(text, text) → text` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `dearmor` | `dearmor(text) → bytea` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `digest` | `digest(bytea, text) → bytea` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `digest` | `digest(text, text) → bytea` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-digest_sha1__bytea-TDS) |  |
+| ⚪ | `gen_random_bytes` | `gen_random_bytes(integer) → bytea` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `gen_random_uuid` | `gen_random_uuid() → uuid` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `gen_random_uuid` | `gen_random_uuid() → uuid` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `gen_salt` | `gen_salt(text) → text` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `gen_salt` | `gen_salt(text, integer) → text` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `hmac` | `hmac(bytea, bytea, text) → bytea` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `hmac` | `hmac(text, text, text) → bytea` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `pgp_pub_decrypt` | `pgp_pub_decrypt(bytea, bytea) → text` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `pgp_pub_decrypt` | `pgp_pub_decrypt(bytea, bytea, text) → text` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `pgp_pub_decrypt` | `pgp_pub_decrypt(bytea, bytea, text, text) → text` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `pgp_pub_encrypt` | `pgp_pub_encrypt(text, bytea) → bytea` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `pgp_pub_encrypt` | `pgp_pub_encrypt(text, bytea, text) → bytea` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `pgp_sym_decrypt` | `pgp_sym_decrypt(bytea, text) → text` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `pgp_sym_decrypt` | `pgp_sym_decrypt(bytea, text, text) → text` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `pgp_sym_encrypt` | `pgp_sym_encrypt(text, text) → bytea` | UNTESTED | UNTESTED | UNTESTED |  |  |
+| ⚪ | `pgp_sym_encrypt` | `pgp_sym_encrypt(text, text, text) → bytea` | UNTESTED | UNTESTED | UNTESTED |  |  |
 
 <a id="other-functions"></a>
 
 ## Other Functions
 
-| | Function | Signature | TDS | Relation | Error Category | Notes |
-|--|----------|-----------|-----|----------|----------------|-------|
-| 🟢 | `TIMESTAMP 'YYYY-MM-DDTHH:MI:SS'` | `TIMESTAMP 'YYYY-MM-DDTHH:MI:SS'` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `'string'::timestamptz` | `'string'::timestamptz` | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-date_literal__cast_string_to_timestamptz-TDS) |  |
-| 🟢 | `DATE 'YYYY-M-D'` | `DATE 'YYYY-M-D'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `CAST` | `CAST('string' AS date)` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `DATE 'YYYY-MM-DD'` | `DATE 'YYYY-MM-DD'` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `TIMESTAMP 'infinity'` | `TIMESTAMP 'infinity'` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-date_literal__infinity-TDS) | Unsupported feature |
-| 🟢 | `DATE 'Mon DD, YYYY'` | `DATE 'Mon DD, YYYY'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `DATE 'far future'` | `DATE 'far future'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `TIMESTAMP 'SS.S'` | `TIMESTAMP 'SS.S'` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `TIMESTAMPTZ 'dateTtime+tz'` | `TIMESTAMPTZ 'dateTtime+tz'` | UNTESTED | UNTESTED | [MISC](#fail-date_literal__datetime_t_with_tz-TDS) |  |
-| ⚪ | `DATE 'M/D/YYYY' ` | `DATE 'M/D/YYYY' (MDY)` | UNTESTED | UNTESTED | [MISC](#fail-date_literal__mdy_us_style-TDS) |  |
-| 🟢 | `DATE 'Jnnnnnnn'` | `DATE 'Jnnnnnnn'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `TIMESTAMP 'h:MI:SS PM'` | `TIMESTAMP 'h:MI:SS PM'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `TIMESTAMP 'YYYYMMDD HH:MI:SS.S'` | `TIMESTAMP 'YYYYMMDD HH:MI:SS.S'` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `TIMESTAMPTZ 'SS.MS+TZ'` | `TIMESTAMPTZ 'SS.MS+TZ'` | UNTESTED | UNTESTED | [MISC](#fail-date_literal__tz_with_subseconds-TDS) |  |
-| 🟢 | `DATE 'YYMMDD'` | `DATE 'YYMMDD'` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `DATE 'Month DD, YY BC'` | `DATE 'Month DD, YY BC'` | UNTESTED | UNTESTED | [MISC](#fail-date_literal__bc_date-TDS) |  |
-| 🟢 | `TIMESTAMP '00:00:00'` | `TIMESTAMP '00:00:00'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `TIMESTAMP '23:59:59'` | `TIMESTAMP '23:59:59'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `TIMESTAMP 'SS.SS'` | `TIMESTAMP 'SS.SS'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `DATE 'Mon-DD-YYYY'` | `DATE 'Mon-DD-YYYY'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `TIMESTAMP 'Y2K'` | `TIMESTAMP 'Y2K'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `TIMESTAMP 'YYYY-MM-DD HH:MI:SS'` | `TIMESTAMP 'YYYY-MM-DD HH:MI:SS'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `DATE 'Month DD, YYYY'` | `DATE 'Month DD, YYYY'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `DATE 'YYYYMMDD'` | `DATE 'YYYYMMDD'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `CAST` | `CAST('string' AS timestamp)` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `DATE 'leap year'` | `DATE 'leap year'` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `TIMESTAMPTZ '+00:00'` | `TIMESTAMPTZ '+00:00'` | UNTESTED | UNTESTED | [MISC](#fail-date_literal__tz_utc-TDS) |  |
-| ⚪ | `TIMESTAMPTZ '-HH:MM'` | `TIMESTAMPTZ '-HH:MM'` | UNTESTED | UNTESTED | [MISC](#fail-date_literal__tz_negative_offset-TDS) |  |
-| 🟢 | `TIMESTAMP 'epoch'` | `TIMESTAMP 'epoch'` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `jsonb_path_query_first` | `jsonb_path_query_first(target jsonb, path jsonpath, vars jsonb DEFAULT '{}'::jsonb, silent boolean DEFAULT false) → jsonb` | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_path_query_first__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_path_query_first__from_column-Relation) | Function not supported |
-| ⚪ | `DATE 'YY-MM-DD'` | `DATE 'YY-MM-DD'` | UNTESTED | UNTESTED | [MISC](#fail-date_literal__two_digit_year-TDS) |  |
-| 🟢 | `TIMESTAMP 'Month DD, YYYY HH:MI:SS'` | `TIMESTAMP 'Month DD, YYYY HH:MI:SS'` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `DATE 'M-D-YYYY'` | `DATE 'M-D-YYYY'` | UNTESTED | UNTESTED | [MISC](#fail-date_literal__mdy_dashes-TDS) |  |
-| 🟢 | `DATE 'Dy Mon DD YYYY'` | `DATE 'Dy Mon DD YYYY'` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `TIMESTAMPTZ '+HH'` | `TIMESTAMPTZ '+HH'` | UNTESTED | UNTESTED | [MISC](#fail-date_literal__tz_positive_offset-TDS) |  |
-| ⚪ | `TIMESTAMP 'M/D/YYYY HH:MI:SS'` | `TIMESTAMP 'M/D/YYYY HH:MI:SS'` | UNTESTED | UNTESTED | [MISC](#fail-date_literal__mdy_timestamp-TDS) |  |
-| ⚪ | `count` | `count(*) → bigint` | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-count__any__group_by_filtered-TDS) | Unsupported feature |
-| 🟢 | `TIMESTAMP 'HH:MI'` | `TIMESTAMP 'HH:MI'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `TIMESTAMP 'YYYY-MM-DD HH:MI:SS.MS'` | `TIMESTAMP 'YYYY-MM-DD HH:MI:SS.MS'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `DATE 'early date'` | `DATE 'early date'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `TIMESTAMP 'SS.SSSSSS'` | `TIMESTAMP 'SS.SSSSSS'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `DATE 'DD-Mon-YYYY'` | `DATE 'DD-Mon-YYYY'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `TIMESTAMP 'SS.SSSSSSSSS'` | `TIMESTAMP 'SS.SSSSSSSSS'` | PASS (1/1) | PASS (1/1) |  |  |
-| ⚪ | `DATE 'D.M.YYYY' ` | `DATE 'D.M.YYYY' (DMY)` | UNTESTED | UNTESTED | [MISC](#fail-date_literal__dmy_dots-TDS) |  |
-| ⚪ | `TIMESTAMPTZ 'PST'` | `TIMESTAMPTZ 'PST'` | UNTESTED | UNTESTED | [MISC](#fail-date_literal__tz_abbrev_stripped-TDS) |  |
-| 🟢 | `DATE 'DD Month YYYY'` | `DATE 'DD Month YYYY'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `DATE 'year boundary'` | `DATE 'year boundary'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `'string'::date` | `'string'::date` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `'string'::timestamp` | `'string'::timestamp` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `DATE 'Month DD, YYYY AD'` | `DATE 'Month DD, YYYY AD'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `TIMESTAMP '24:00:00'` | `TIMESTAMP '24:00:00'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `TIMESTAMP 'unix epoch'` | `TIMESTAMP 'unix epoch'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `DATE 'YYYY/M/D'` | `DATE 'YYYY/M/D'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `DATE 'YYYY.DDD'` | `DATE 'YYYY.DDD'` | PASS (1/1) | PASS (1/1) |  |  |
-| 🟢 | `DATE 'YYYY-Mon-DD'` | `DATE 'YYYY-Mon-DD'` | PASS (1/1) | PASS (1/1) |  |  |
+| | Function | Signature | TDS | Relation | Grammar | Error Category | Notes |
+|--|----------|-----------|-----|----------|---------|----------------|-------|
+| 🟢 | `TIMESTAMP 'YYYY-MM-DDTHH:MI:SS'` | `TIMESTAMP 'YYYY-MM-DDTHH:MI:SS'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `'string'::timestamptz` | `'string'::timestamptz` | UNTESTED | UNTESTED | UNTESTED | [TYPE_ERROR](#fail-date_literal__cast_string_to_timestamptz-TDS) |  |
+| 🟢 | `DATE 'YYYY-M-D'` | `DATE 'YYYY-M-D'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `CAST` | `CAST('string' AS date)` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `DATE 'YYYY-MM-DD'` | `DATE 'YYYY-MM-DD'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `TIMESTAMP 'infinity'` | `TIMESTAMP 'infinity'` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [UNSUPPORTED_SYNTAX](#fail-date_literal__infinity-TDS) | Unsupported feature |
+| 🟢 | `DATE 'Mon DD, YYYY'` | `DATE 'Mon DD, YYYY'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `DATE 'far future'` | `DATE 'far future'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `TIMESTAMP 'SS.S'` | `TIMESTAMP 'SS.S'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `TIMESTAMPTZ 'dateTtime+tz'` | `TIMESTAMPTZ 'dateTtime+tz'` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-date_literal__datetime_t_with_tz-TDS) |  |
+| ⚪ | `DATE 'M/D/YYYY' ` | `DATE 'M/D/YYYY' (MDY)` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-date_literal__mdy_us_style-TDS) |  |
+| 🟢 | `DATE 'Jnnnnnnn'` | `DATE 'Jnnnnnnn'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `TIMESTAMP 'h:MI:SS PM'` | `TIMESTAMP 'h:MI:SS PM'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `TIMESTAMP 'YYYYMMDD HH:MI:SS.S'` | `TIMESTAMP 'YYYYMMDD HH:MI:SS.S'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `TIMESTAMPTZ 'SS.MS+TZ'` | `TIMESTAMPTZ 'SS.MS+TZ'` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-date_literal__tz_with_subseconds-TDS) |  |
+| 🟢 | `DATE 'YYMMDD'` | `DATE 'YYMMDD'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `DATE 'Month DD, YY BC'` | `DATE 'Month DD, YY BC'` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-date_literal__bc_date-TDS) |  |
+| 🟢 | `TIMESTAMP '00:00:00'` | `TIMESTAMP '00:00:00'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `TIMESTAMP '23:59:59'` | `TIMESTAMP '23:59:59'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `TIMESTAMP 'SS.SS'` | `TIMESTAMP 'SS.SS'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `DATE 'Mon-DD-YYYY'` | `DATE 'Mon-DD-YYYY'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `TIMESTAMP 'Y2K'` | `TIMESTAMP 'Y2K'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `TIMESTAMP 'YYYY-MM-DD HH:MI:SS'` | `TIMESTAMP 'YYYY-MM-DD HH:MI:SS'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `DATE 'Month DD, YYYY'` | `DATE 'Month DD, YYYY'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `DATE 'YYYYMMDD'` | `DATE 'YYYYMMDD'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `CAST` | `CAST('string' AS timestamp)` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `DATE 'leap year'` | `DATE 'leap year'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `TIMESTAMPTZ '+00:00'` | `TIMESTAMPTZ '+00:00'` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-date_literal__tz_utc-TDS) |  |
+| ⚪ | `TIMESTAMPTZ '-HH:MM'` | `TIMESTAMPTZ '-HH:MM'` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-date_literal__tz_negative_offset-TDS) |  |
+| 🟢 | `TIMESTAMP 'epoch'` | `TIMESTAMP 'epoch'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `jsonb_path_query_first` | `jsonb_path_query_first(target jsonb, path jsonpath, vars jsonb DEFAULT '{}'::jsonb, silent boolean DEFAULT false) → jsonb` | UNSUPPORTED | UNSUPPORTED | UNSUPPORTED | [TYPE_ERROR](#fail-jsonb_path_query_first__from_column-TDS), [FUNCTION_NOT_SUPPORTED](#fail-jsonb_path_query_first__from_column-Relation) | Function not supported |
+| ⚪ | `DATE 'YY-MM-DD'` | `DATE 'YY-MM-DD'` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-date_literal__two_digit_year-TDS) |  |
+| 🟢 | `TIMESTAMP 'Month DD, YYYY HH:MI:SS'` | `TIMESTAMP 'Month DD, YYYY HH:MI:SS'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `DATE 'M-D-YYYY'` | `DATE 'M-D-YYYY'` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-date_literal__mdy_dashes-TDS) |  |
+| 🟢 | `DATE 'Dy Mon DD YYYY'` | `DATE 'Dy Mon DD YYYY'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `TIMESTAMPTZ '+HH'` | `TIMESTAMPTZ '+HH'` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-date_literal__tz_positive_offset-TDS) |  |
+| ⚪ | `TIMESTAMP 'M/D/YYYY HH:MI:SS'` | `TIMESTAMP 'M/D/YYYY HH:MI:SS'` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-date_literal__mdy_timestamp-TDS) |  |
+| 🟡 | `count` | `count(*) → bigint` | UNSUPPORTED | UNSUPPORTED | PASS (1/1) | [UNSUPPORTED_SYNTAX](#fail-count__any__group_by_filtered-TDS) | Unsupported feature |
+| 🟢 | `TIMESTAMP 'HH:MI'` | `TIMESTAMP 'HH:MI'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `TIMESTAMP 'YYYY-MM-DD HH:MI:SS.MS'` | `TIMESTAMP 'YYYY-MM-DD HH:MI:SS.MS'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `DATE 'early date'` | `DATE 'early date'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `TIMESTAMP 'SS.SSSSSS'` | `TIMESTAMP 'SS.SSSSSS'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `DATE 'DD-Mon-YYYY'` | `DATE 'DD-Mon-YYYY'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `TIMESTAMP 'SS.SSSSSSSSS'` | `TIMESTAMP 'SS.SSSSSSSSS'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| ⚪ | `DATE 'D.M.YYYY' ` | `DATE 'D.M.YYYY' (DMY)` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-date_literal__dmy_dots-TDS) |  |
+| ⚪ | `TIMESTAMPTZ 'PST'` | `TIMESTAMPTZ 'PST'` | UNTESTED | UNTESTED | UNTESTED | [MISC](#fail-date_literal__tz_abbrev_stripped-TDS) |  |
+| 🟢 | `DATE 'DD Month YYYY'` | `DATE 'DD Month YYYY'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `DATE 'year boundary'` | `DATE 'year boundary'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `'string'::date` | `'string'::date` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `'string'::timestamp` | `'string'::timestamp` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `DATE 'Month DD, YYYY AD'` | `DATE 'Month DD, YYYY AD'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `TIMESTAMP '24:00:00'` | `TIMESTAMP '24:00:00'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `TIMESTAMP 'unix epoch'` | `TIMESTAMP 'unix epoch'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `DATE 'YYYY/M/D'` | `DATE 'YYYY/M/D'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `DATE 'YYYY.DDD'` | `DATE 'YYYY.DDD'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
+| 🟢 | `DATE 'YYYY-Mon-DD'` | `DATE 'YYYY-Mon-DD'` | PASS (1/1) | PASS (1/1) | PASS (1/1) |  |  |
 
 ---
 
@@ -1382,23 +1383,33 @@ Functions with at least one working overload (e.g., `length(text)`) are excluded
 
 <a id="function-not-supported"></a>
 
-### FUNCTION_NOT_SUPPORTED (250 tests)
+### FUNCTION_NOT_SUPPORTED (262 tests)
 
-#### <a id="fail-acosh__dp__from_table-TDS"></a><a id="fail-acosh__dp__from_table-Relation"></a>`acosh__dp__from_table`
+#### <a id="fail-acosh__dp__from_table-TDS"></a><a id="fail-acosh__dp__from_table-Relation"></a><a id="fail-acosh__dp__from_table-Grammar"></a>`acosh__dp__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ACOSH(ABS(float_val) + 1) AS result FROM numbers WHERE float_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ACOSH(ABS(float_val) + 1) AS result FROM func('e2e::tds_numbers') WHERE float_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ACOSH"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ACOSH(ABS(float_val) + 1) AS result FROM numbers WHERE float_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ACOSH(ABS(float_val) + 1) AS result FROM func('e2e::rel_numbers') WHERE float_val IS NOT NULL ORDER BY 1
 ```
@@ -1406,24 +1417,49 @@ SELECT ACOSH(ABS(float_val) + 1) AS result FROM func('e2e::rel_numbers') WHERE f
 **Error:**
 > No function matches the given name "ACOSH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ACOSH(ABS(float_val) + 1) AS result FROM numbers WHERE float_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ACOSH(ABS(float_val) + 1) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE float_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ACOSH"
+
 
 <br>
 
-#### <a id="fail-asinh__dp__from_table-TDS"></a><a id="fail-asinh__dp__from_table-Relation"></a>`asinh__dp__from_table`
+#### <a id="fail-asinh__dp__from_table-TDS"></a><a id="fail-asinh__dp__from_table-Relation"></a><a id="fail-asinh__dp__from_table-Grammar"></a>`asinh__dp__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ASINH(float_val) AS result FROM numbers WHERE float_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ASINH(float_val) AS result FROM func('e2e::tds_numbers') WHERE float_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ASINH"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ASINH(float_val) AS result FROM numbers WHERE float_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ASINH(float_val) AS result FROM func('e2e::rel_numbers') WHERE float_val IS NOT NULL ORDER BY 1
 ```
@@ -1431,24 +1467,49 @@ SELECT ASINH(float_val) AS result FROM func('e2e::rel_numbers') WHERE float_val 
 **Error:**
 > No function matches the given name "ASINH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ASINH(float_val) AS result FROM numbers WHERE float_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ASINH(float_val) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE float_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ASINH"
+
 
 <br>
 
-#### <a id="fail-atanh__dp__from_table-TDS"></a><a id="fail-atanh__dp__from_table-Relation"></a>`atanh__dp__from_table`
+#### <a id="fail-atanh__dp__from_table-TDS"></a><a id="fail-atanh__dp__from_table-Relation"></a><a id="fail-atanh__dp__from_table-Grammar"></a>`atanh__dp__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ATANH(float_val / (ABS(float_val) + 1)) AS result FROM numbers WHERE float_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ATANH(float_val / (ABS(float_val) + 1)) AS result FROM func('e2e::tds_numbers') WHERE float_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ATANH"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ATANH(float_val / (ABS(float_val) + 1)) AS result FROM numbers WHERE float_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ATANH(float_val / (ABS(float_val) + 1)) AS result FROM func('e2e::rel_numbers') WHERE float_val IS NOT NULL ORDER BY 1
 ```
@@ -1456,24 +1517,49 @@ SELECT ATANH(float_val / (ABS(float_val) + 1)) AS result FROM func('e2e::rel_num
 **Error:**
 > No function matches the given name "ATANH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ATANH(float_val / (ABS(float_val) + 1)) AS result FROM numbers WHERE float_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ATANH(float_val / (ABS(float_val) + 1)) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE float_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ATANH"
+
 
 <br>
 
-#### <a id="fail-factorial__big__from_table-TDS"></a><a id="fail-factorial__big__from_table-Relation"></a>`factorial__big__from_table`
+#### <a id="fail-factorial__big__from_table-TDS"></a><a id="fail-factorial__big__from_table-Relation"></a><a id="fail-factorial__big__from_table-Grammar"></a>`factorial__big__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT FACTORIAL(small_val::bigint) AS result FROM numbers WHERE small_val IS NOT NULL AND small_val >= 0 AND small_val <= 20 ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT FACTORIAL(small_val::bigint) AS result FROM func('e2e::tds_numbers') WHERE small_val IS NOT NULL AND small_val >= 0 AND small_val <= 20 ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "FACTORIAL"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT FACTORIAL(small_val::bigint) AS result FROM numbers WHERE small_val IS NOT NULL AND small_val >= 0 AND small_val <= 20 ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT FACTORIAL(small_val::bigint) AS result FROM func('e2e::rel_numbers') WHERE small_val IS NOT NULL AND small_val >= 0 AND small_val <= 20 ORDER BY 1
 ```
@@ -1481,24 +1567,49 @@ SELECT FACTORIAL(small_val::bigint) AS result FROM func('e2e::rel_numbers') WHER
 **Error:**
 > No function matches the given name "FACTORIAL"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT FACTORIAL(small_val::bigint) AS result FROM numbers WHERE small_val IS NOT NULL AND small_val >= 0 AND small_val <= 20 ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT FACTORIAL(small_val::bigint) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE small_val IS NOT NULL AND small_val >= 0 AND small_val <= 20 ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "FACTORIAL"
+
 
 <br>
 
-#### <a id="fail-gcd__big_big__from_table-TDS"></a><a id="fail-gcd__big_big__from_table-Relation"></a>`gcd__big_big__from_table`
+#### <a id="fail-gcd__big_big__from_table-TDS"></a><a id="fail-gcd__big_big__from_table-Relation"></a><a id="fail-gcd__big_big__from_table-Grammar"></a>`gcd__big_big__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT GCD(int_val, small_val) AS result FROM numbers WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT GCD(int_val, small_val) AS result FROM func('e2e::tds_numbers') WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "GCD"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT GCD(int_val, small_val) AS result FROM numbers WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT GCD(int_val, small_val) AS result FROM func('e2e::rel_numbers') WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
 ```
@@ -1506,24 +1617,49 @@ SELECT GCD(int_val, small_val) AS result FROM func('e2e::rel_numbers') WHERE int
 **Error:**
 > No function matches the given name "GCD"
 
-
-<br>
-
-#### <a id="fail-gcd__int_int__from_table-TDS"></a><a id="fail-gcd__int_int__from_table-Relation"></a>`gcd__int_int__from_table`
-
-🔴 **Failed in both TDS and Relation**
+📙 **Grammar Path**
 
 **Input SQL:**
 ```sql
 SELECT GCD(int_val, small_val) AS result FROM numbers WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
+```sql
+SELECT GCD(int_val, small_val) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "GCD"
+
+
+<br>
+
+#### <a id="fail-gcd__int_int__from_table-TDS"></a><a id="fail-gcd__int_int__from_table-Relation"></a><a id="fail-gcd__int_int__from_table-Grammar"></a>`gcd__int_int__from_table`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT GCD(int_val, small_val) AS result FROM numbers WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT GCD(int_val, small_val) AS result FROM func('e2e::tds_numbers') WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "GCD"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT GCD(int_val, small_val) AS result FROM numbers WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT GCD(int_val, small_val) AS result FROM func('e2e::rel_numbers') WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
 ```
@@ -1531,24 +1667,49 @@ SELECT GCD(int_val, small_val) AS result FROM func('e2e::rel_numbers') WHERE int
 **Error:**
 > No function matches the given name "GCD"
 
-
-<br>
-
-#### <a id="fail-gcd__num_num__from_table-TDS"></a><a id="fail-gcd__num_num__from_table-Relation"></a>`gcd__num_num__from_table`
-
-🔴 **Failed in both TDS and Relation**
+📙 **Grammar Path**
 
 **Input SQL:**
 ```sql
 SELECT GCD(int_val, small_val) AS result FROM numbers WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
+```sql
+SELECT GCD(int_val, small_val) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "GCD"
+
+
+<br>
+
+#### <a id="fail-gcd__num_num__from_table-TDS"></a><a id="fail-gcd__num_num__from_table-Relation"></a><a id="fail-gcd__num_num__from_table-Grammar"></a>`gcd__num_num__from_table`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT GCD(int_val, small_val) AS result FROM numbers WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT GCD(int_val, small_val) AS result FROM func('e2e::tds_numbers') WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "GCD"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT GCD(int_val, small_val) AS result FROM numbers WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT GCD(int_val, small_val) AS result FROM func('e2e::rel_numbers') WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
 ```
@@ -1556,24 +1717,49 @@ SELECT GCD(int_val, small_val) AS result FROM func('e2e::rel_numbers') WHERE int
 **Error:**
 > No function matches the given name "GCD"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT GCD(int_val, small_val) AS result FROM numbers WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT GCD(int_val, small_val) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "GCD"
+
 
 <br>
 
-#### <a id="fail-lcm__big_big__from_table-TDS"></a><a id="fail-lcm__big_big__from_table-Relation"></a>`lcm__big_big__from_table`
+#### <a id="fail-lcm__big_big__from_table-TDS"></a><a id="fail-lcm__big_big__from_table-Relation"></a><a id="fail-lcm__big_big__from_table-Grammar"></a>`lcm__big_big__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT LCM(int_val, small_val) AS result FROM numbers WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT LCM(int_val, small_val) AS result FROM func('e2e::tds_numbers') WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "LCM"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT LCM(int_val, small_val) AS result FROM numbers WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT LCM(int_val, small_val) AS result FROM func('e2e::rel_numbers') WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
 ```
@@ -1581,24 +1767,49 @@ SELECT LCM(int_val, small_val) AS result FROM func('e2e::rel_numbers') WHERE int
 **Error:**
 > No function matches the given name "LCM"
 
-
-<br>
-
-#### <a id="fail-lcm__int_int__from_table-TDS"></a><a id="fail-lcm__int_int__from_table-Relation"></a>`lcm__int_int__from_table`
-
-🔴 **Failed in both TDS and Relation**
+📙 **Grammar Path**
 
 **Input SQL:**
 ```sql
 SELECT LCM(int_val, small_val) AS result FROM numbers WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
+```sql
+SELECT LCM(int_val, small_val) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> Postgres: ERROR: integer out of range | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "LCM"
+
+
+<br>
+
+#### <a id="fail-lcm__int_int__from_table-TDS"></a><a id="fail-lcm__int_int__from_table-Relation"></a><a id="fail-lcm__int_int__from_table-Grammar"></a>`lcm__int_int__from_table`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT LCM(int_val, small_val) AS result FROM numbers WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT LCM(int_val, small_val) AS result FROM func('e2e::tds_numbers') WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "LCM"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT LCM(int_val, small_val) AS result FROM numbers WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT LCM(int_val, small_val) AS result FROM func('e2e::rel_numbers') WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
 ```
@@ -1606,24 +1817,49 @@ SELECT LCM(int_val, small_val) AS result FROM func('e2e::rel_numbers') WHERE int
 **Error:**
 > No function matches the given name "LCM"
 
-
-<br>
-
-#### <a id="fail-lcm__num_num__from_table-TDS"></a><a id="fail-lcm__num_num__from_table-Relation"></a>`lcm__num_num__from_table`
-
-🔴 **Failed in both TDS and Relation**
+📙 **Grammar Path**
 
 **Input SQL:**
 ```sql
 SELECT LCM(int_val, small_val) AS result FROM numbers WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
+```sql
+SELECT LCM(int_val, small_val) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> Postgres: ERROR: integer out of range | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "LCM"
+
+
+<br>
+
+#### <a id="fail-lcm__num_num__from_table-TDS"></a><a id="fail-lcm__num_num__from_table-Relation"></a><a id="fail-lcm__num_num__from_table-Grammar"></a>`lcm__num_num__from_table`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT LCM(int_val, small_val) AS result FROM numbers WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT LCM(int_val, small_val) AS result FROM func('e2e::tds_numbers') WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "LCM"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT LCM(int_val, small_val) AS result FROM numbers WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT LCM(int_val, small_val) AS result FROM func('e2e::rel_numbers') WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
 ```
@@ -1631,24 +1867,49 @@ SELECT LCM(int_val, small_val) AS result FROM func('e2e::rel_numbers') WHERE int
 **Error:**
 > No function matches the given name "LCM"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT LCM(int_val, small_val) AS result FROM numbers WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT LCM(int_val, small_val) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE int_val IS NOT NULL AND small_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> Postgres: ERROR: integer out of range | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "LCM"
+
 
 <br>
 
-#### <a id="fail-min_scale__num__from_table-TDS"></a><a id="fail-min_scale__num__from_table-Relation"></a>`min_scale__num__from_table`
+#### <a id="fail-min_scale__num__from_table-TDS"></a><a id="fail-min_scale__num__from_table-Relation"></a><a id="fail-min_scale__num__from_table-Grammar"></a>`min_scale__num__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MIN_SCALE(numeric_val) AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MIN_SCALE(numeric_val) AS result FROM func('e2e::tds_numbers') WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "MIN_SCALE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MIN_SCALE(numeric_val) AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT MIN_SCALE(numeric_val) AS result FROM func('e2e::rel_numbers') WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
@@ -1656,24 +1917,49 @@ SELECT MIN_SCALE(numeric_val) AS result FROM func('e2e::rel_numbers') WHERE nume
 **Error:**
 > No function matches the given name "MIN_SCALE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MIN_SCALE(numeric_val) AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT MIN_SCALE(numeric_val) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "MIN_SCALE"
+
 
 <br>
 
-#### <a id="fail-random__basic-TDS"></a><a id="fail-random__basic-Relation"></a>`random__basic`
+#### <a id="fail-random__basic-TDS"></a><a id="fail-random__basic-Relation"></a><a id="fail-random__basic-Grammar"></a>`random__basic`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT CASE WHEN RANDOM() >= 0 AND RANDOM() < 1 THEN 1 ELSE 0 END AS result FROM numbers WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT CASE WHEN RANDOM() >= 0 AND RANDOM() < 1 THEN 1 ELSE 0 END AS result FROM func('e2e::tds_numbers') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "RANDOM"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT CASE WHEN RANDOM() >= 0 AND RANDOM() < 1 THEN 1 ELSE 0 END AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT CASE WHEN RANDOM() >= 0 AND RANDOM() < 1 THEN 1 ELSE 0 END AS result FROM func('e2e::rel_numbers') WHERE id = 1
 ```
@@ -1681,24 +1967,49 @@ SELECT CASE WHEN RANDOM() >= 0 AND RANDOM() < 1 THEN 1 ELSE 0 END AS result FROM
 **Error:**
 > No function matches the given name "RANDOM"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT CASE WHEN RANDOM() >= 0 AND RANDOM() < 1 THEN 1 ELSE 0 END AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT CASE WHEN RANDOM() >= 0 AND RANDOM() < 1 THEN 1 ELSE 0 END AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "RANDOM"
+
 
 <br>
 
-#### <a id="fail-random_cov-TDS"></a><a id="fail-random_cov-Relation"></a>`random_cov`
+#### <a id="fail-random_cov-TDS"></a><a id="fail-random_cov-Relation"></a><a id="fail-random_cov-Grammar"></a>`random_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT RANDOM() AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT RANDOM() AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "RANDOM"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT RANDOM() AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT RANDOM() AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -1706,24 +2017,49 @@ SELECT RANDOM() AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "RANDOM"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT RANDOM() AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT RANDOM() AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "RANDOM"
+
 
 <br>
 
-#### <a id="fail-scale__num__from_table-TDS"></a><a id="fail-scale__num__from_table-Relation"></a>`scale__num__from_table`
+#### <a id="fail-scale__num__from_table-TDS"></a><a id="fail-scale__num__from_table-Relation"></a><a id="fail-scale__num__from_table-Grammar"></a>`scale__num__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT SCALE(numeric_val) AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT SCALE(numeric_val) AS result FROM func('e2e::tds_numbers') WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "SCALE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT SCALE(numeric_val) AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT SCALE(numeric_val) AS result FROM func('e2e::rel_numbers') WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
@@ -1731,24 +2067,49 @@ SELECT SCALE(numeric_val) AS result FROM func('e2e::rel_numbers') WHERE numeric_
 **Error:**
 > No function matches the given name "SCALE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SCALE(numeric_val) AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SCALE(numeric_val) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "SCALE"
+
 
 <br>
 
-#### <a id="fail-setseed__dp__basic-TDS"></a><a id="fail-setseed__dp__basic-Relation"></a>`setseed__dp__basic`
+#### <a id="fail-setseed__dp__basic-TDS"></a><a id="fail-setseed__dp__basic-Relation"></a><a id="fail-setseed__dp__basic-Grammar"></a>`setseed__dp__basic`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT SETSEED(0.5) FROM numbers WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT SETSEED(0.5) FROM func('e2e::tds_numbers') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "SETSEED"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT SETSEED(0.5) FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT SETSEED(0.5) FROM func('e2e::rel_numbers') WHERE id = 1
 ```
@@ -1756,24 +2117,49 @@ SELECT SETSEED(0.5) FROM func('e2e::rel_numbers') WHERE id = 1
 **Error:**
 > No function matches the given name "SETSEED"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SETSEED(0.5) FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SETSEED(0.5) FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "SETSEED"
+
 
 <br>
 
-#### <a id="fail-setseed_double_precision_cov-TDS"></a><a id="fail-setseed_double_precision_cov-Relation"></a>`setseed_double_precision_cov`
+#### <a id="fail-setseed_double_precision_cov-TDS"></a><a id="fail-setseed_double_precision_cov-Relation"></a><a id="fail-setseed_double_precision_cov-Grammar"></a>`setseed_double_precision_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT SETSEED(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT SETSEED(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "SETSEED"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT SETSEED(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT SETSEED(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -1781,24 +2167,49 @@ SELECT SETSEED(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "SETSEED"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SETSEED(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SETSEED(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "SETSEED"
+
 
 <br>
 
-#### <a id="fail-trim_scale__num__from_table-TDS"></a><a id="fail-trim_scale__num__from_table-Relation"></a>`trim_scale__num__from_table`
+#### <a id="fail-trim_scale__num__from_table-TDS"></a><a id="fail-trim_scale__num__from_table-Relation"></a><a id="fail-trim_scale__num__from_table-Grammar"></a>`trim_scale__num__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TRIM_SCALE(numeric_val) AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TRIM_SCALE(numeric_val) AS result FROM func('e2e::tds_numbers') WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "TRIM_SCALE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TRIM_SCALE(numeric_val) AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TRIM_SCALE(numeric_val) AS result FROM func('e2e::rel_numbers') WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
@@ -1806,24 +2217,49 @@ SELECT TRIM_SCALE(numeric_val) AS result FROM func('e2e::rel_numbers') WHERE num
 **Error:**
 > No function matches the given name "TRIM_SCALE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TRIM_SCALE(numeric_val) AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TRIM_SCALE(numeric_val) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "TRIM_SCALE"
+
 
 <br>
 
-#### <a id="fail-width_bucket__anycompatible_anycompatiblearray__unsupported_type-TDS"></a><a id="fail-width_bucket__anycompatible_anycompatiblearray__unsupported_type-Relation"></a>`width_bucket__anycompatible_anycompatiblearray__unsupported_type`
+#### <a id="fail-width_bucket__anycompatible_anycompatiblearray__unsupported_type-TDS"></a><a id="fail-width_bucket__anycompatible_anycompatiblearray__unsupported_type-Relation"></a><a id="fail-width_bucket__anycompatible_anycompatiblearray__unsupported_type-Grammar"></a>`width_bucket__anycompatible_anycompatiblearray__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT WIDTH_BUCKET(5, ARRAY[1, 3, 5, 7, 9]) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT WIDTH_BUCKET(5, ARRAY[1, 3, 5, 7, 9]) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "WIDTH_BUCKET"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT WIDTH_BUCKET(5, ARRAY[1, 3, 5, 7, 9]) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT WIDTH_BUCKET(5, ARRAY[1, 3, 5, 7, 9]) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -1831,24 +2267,49 @@ SELECT WIDTH_BUCKET(5, ARRAY[1, 3, 5, 7, 9]) AS result FROM func('e2e::rel_perso
 **Error:**
 > No function matches the given name "WIDTH_BUCKET"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT WIDTH_BUCKET(5, ARRAY[1, 3, 5, 7, 9]) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT WIDTH_BUCKET(5, ARRAY[1, 3, 5, 7, 9]) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "WIDTH_BUCKET"
+
 
 <br>
 
-#### <a id="fail-width_bucket_anycompatible_anycompatiblear_cov-TDS"></a><a id="fail-width_bucket_anycompatible_anycompatiblear_cov-Relation"></a>`width_bucket_anycompatible_anycompatiblear_cov`
+#### <a id="fail-width_bucket_anycompatible_anycompatiblear_cov-TDS"></a><a id="fail-width_bucket_anycompatible_anycompatiblear_cov-Relation"></a><a id="fail-width_bucket_anycompatible_anycompatiblear_cov-Grammar"></a>`width_bucket_anycompatible_anycompatiblear_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT WIDTH_BUCKET(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT WIDTH_BUCKET(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "WIDTH_BUCKET"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT WIDTH_BUCKET(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT WIDTH_BUCKET(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -1856,24 +2317,51 @@ SELECT WIDTH_BUCKET(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "WIDTH_BUCKET"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT WIDTH_BUCKET(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT WIDTH_BUCKET(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function width_bucket(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "WIDTH_BUCKET"
+
 
 <br>
 
-#### <a id="fail-width_bucket__dp_dp_dp_int__from_table-TDS"></a><a id="fail-width_bucket__dp_dp_dp_int__from_table-Relation"></a>`width_bucket__dp_dp_dp_int__from_table`
+#### <a id="fail-width_bucket__dp_dp_dp_int__from_table-TDS"></a><a id="fail-width_bucket__dp_dp_dp_int__from_table-Relation"></a><a id="fail-width_bucket__dp_dp_dp_int__from_table-Grammar"></a>`width_bucket__dp_dp_dp_int__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT WIDTH_BUCKET(float_val, -10.0, 10.0, 5) AS result FROM numbers WHERE float_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT WIDTH_BUCKET(float_val, -10.0, 10.0, 5) AS result FROM func('e2e::tds_numbers') WHERE float_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "WIDTH_BUCKET"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT WIDTH_BUCKET(float_val, -10.0, 10.0, 5) AS result FROM numbers WHERE float_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT WIDTH_BUCKET(float_val, -10.0, 10.0, 5) AS result FROM func('e2e::rel_numbers') WHERE float_val IS NOT NULL ORDER BY 1
 ```
@@ -1881,24 +2369,49 @@ SELECT WIDTH_BUCKET(float_val, -10.0, 10.0, 5) AS result FROM func('e2e::rel_num
 **Error:**
 > No function matches the given name "WIDTH_BUCKET"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT WIDTH_BUCKET(float_val, -10.0, 10.0, 5) AS result FROM numbers WHERE float_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT WIDTH_BUCKET(float_val, -10.0, 10.0, 5) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE float_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "WIDTH_BUCKET"
+
 
 <br>
 
-#### <a id="fail-width_bucket__num_num_num_int__from_table-TDS"></a><a id="fail-width_bucket__num_num_num_int__from_table-Relation"></a>`width_bucket__num_num_num_int__from_table`
+#### <a id="fail-width_bucket__num_num_num_int__from_table-TDS"></a><a id="fail-width_bucket__num_num_num_int__from_table-Relation"></a><a id="fail-width_bucket__num_num_num_int__from_table-Grammar"></a>`width_bucket__num_num_num_int__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT WIDTH_BUCKET(numeric_val, -100000.0, 100000.0, 10) AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT WIDTH_BUCKET(numeric_val, -100000.0, 100000.0, 10) AS result FROM func('e2e::tds_numbers') WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "WIDTH_BUCKET"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT WIDTH_BUCKET(numeric_val, -100000.0, 100000.0, 10) AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT WIDTH_BUCKET(numeric_val, -100000.0, 100000.0, 10) AS result FROM func('e2e::rel_numbers') WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
@@ -1906,24 +2419,49 @@ SELECT WIDTH_BUCKET(numeric_val, -100000.0, 100000.0, 10) AS result FROM func('e
 **Error:**
 > No function matches the given name "WIDTH_BUCKET"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT WIDTH_BUCKET(numeric_val, -100000.0, 100000.0, 10) AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT WIDTH_BUCKET(numeric_val, -100000.0, 100000.0, 10) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "WIDTH_BUCKET"
+
 
 <br>
 
-#### <a id="fail-array_to_string__anyarray_txt__no_generator-TDS"></a><a id="fail-array_to_string__anyarray_txt__no_generator-Relation"></a>`array_to_string__anyarray_txt__no_generator`
+#### <a id="fail-array_to_string__anyarray_txt__no_generator-TDS"></a><a id="fail-array_to_string__anyarray_txt__no_generator-Relation"></a><a id="fail-array_to_string__anyarray_txt__no_generator-Grammar"></a>`array_to_string__anyarray_txt__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_TO_STRING(ARRAY['a', 'b', 'c'], ',') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_TO_STRING(ARRAY['a', 'b', 'c'], ',') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_TO_STRING"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_TO_STRING(ARRAY['a', 'b', 'c'], ',') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_TO_STRING(ARRAY['a', 'b', 'c'], ',') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -1931,24 +2469,49 @@ SELECT ARRAY_TO_STRING(ARRAY['a', 'b', 'c'], ',') AS result FROM func('e2e::rel_
 **Error:**
 > No function matches the given name "ARRAY_TO_STRING"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_TO_STRING(ARRAY['a', 'b', 'c'], ',') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_TO_STRING(ARRAY['a', 'b', 'c'], ',') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_TO_STRING"
+
 
 <br>
 
-#### <a id="fail-array_to_string_anyarray_text_cov-TDS"></a><a id="fail-array_to_string_anyarray_text_cov-Relation"></a>`array_to_string_anyarray_text_cov`
+#### <a id="fail-array_to_string_anyarray_text_cov-TDS"></a><a id="fail-array_to_string_anyarray_text_cov-Relation"></a><a id="fail-array_to_string_anyarray_text_cov-Grammar"></a>`array_to_string_anyarray_text_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_TO_STRING(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_TO_STRING(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_TO_STRING"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_TO_STRING(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_TO_STRING(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -1956,24 +2519,51 @@ SELECT ARRAY_TO_STRING(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 
 **Error:**
 > No function matches the given name "ARRAY_TO_STRING"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_TO_STRING(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_TO_STRING(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function array_to_string(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_TO_STRING"
+
 
 <br>
 
-#### <a id="fail-array_to_string__anyarray_txt_txt__from_table-TDS"></a><a id="fail-array_to_string__anyarray_txt_txt__from_table-Relation"></a>`array_to_string__anyarray_txt_txt__from_table`
+#### <a id="fail-array_to_string__anyarray_txt_txt__from_table-TDS"></a><a id="fail-array_to_string__anyarray_txt_txt__from_table-Relation"></a><a id="fail-array_to_string__anyarray_txt_txt__from_table-Grammar"></a>`array_to_string__anyarray_txt_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_TO_STRING(ARRAY[val, nullable_val], ', ') AS result FROM strings ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_TO_STRING(ARRAY[val, nullable_val], ', ') AS result FROM func('e2e::tds_strings') ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_TO_STRING"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_TO_STRING(ARRAY[val, nullable_val], ', ') AS result FROM strings ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_TO_STRING(ARRAY[val, nullable_val], ', ') AS result FROM func('e2e::rel_strings') ORDER BY 1
 ```
@@ -1981,24 +2571,49 @@ SELECT ARRAY_TO_STRING(ARRAY[val, nullable_val], ', ') AS result FROM func('e2e:
 **Error:**
 > No function matches the given name "ARRAY_TO_STRING"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_TO_STRING(ARRAY[val, nullable_val], ', ') AS result FROM strings ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_TO_STRING(ARRAY[val, nullable_val], ', ') AS result FROM func('e2e::rel_strings__Relation_1_') ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_TO_STRING"
+
 
 <br>
 
-#### <a id="fail-bit_length_bit_cov-TDS"></a><a id="fail-bit_length_bit_cov-Relation"></a>`bit_length_bit_cov`
+#### <a id="fail-bit_length_bit_cov-TDS"></a><a id="fail-bit_length_bit_cov-Relation"></a><a id="fail-bit_length_bit_cov-Grammar"></a>`bit_length_bit_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT BIT_LENGTH(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT BIT_LENGTH(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "BIT_LENGTH"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_LENGTH(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT BIT_LENGTH(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2006,24 +2621,49 @@ SELECT BIT_LENGTH(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "BIT_LENGTH"
 
-
-<br>
-
-#### <a id="fail-bit_length_bytea_cov-TDS"></a><a id="fail-bit_length_bytea_cov-Relation"></a>`bit_length_bytea_cov`
-
-🔴 **Failed in both TDS and Relation**
+📙 **Grammar Path**
 
 **Input SQL:**
 ```sql
 SELECT BIT_LENGTH(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
+```sql
+SELECT BIT_LENGTH(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "BIT_LENGTH"
+
+
+<br>
+
+#### <a id="fail-bit_length_bytea_cov-TDS"></a><a id="fail-bit_length_bytea_cov-Relation"></a><a id="fail-bit_length_bytea_cov-Grammar"></a>`bit_length_bytea_cov`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_LENGTH(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT BIT_LENGTH(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "BIT_LENGTH"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_LENGTH(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT BIT_LENGTH(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2031,24 +2671,49 @@ SELECT BIT_LENGTH(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "BIT_LENGTH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_LENGTH(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT BIT_LENGTH(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "BIT_LENGTH"
+
 
 <br>
 
-#### <a id="fail-bit_length__txt__from_table-TDS"></a><a id="fail-bit_length__txt__from_table-Relation"></a>`bit_length__txt__from_table`
+#### <a id="fail-bit_length__txt__from_table-TDS"></a><a id="fail-bit_length__txt__from_table-Relation"></a><a id="fail-bit_length__txt__from_table-Grammar"></a>`bit_length__txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT BIT_LENGTH(val) AS result FROM strings ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT BIT_LENGTH(val) AS result FROM func('e2e::tds_strings') ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "BIT_LENGTH"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_LENGTH(val) AS result FROM strings ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT BIT_LENGTH(val) AS result FROM func('e2e::rel_strings') ORDER BY 1
 ```
@@ -2056,24 +2721,49 @@ SELECT BIT_LENGTH(val) AS result FROM func('e2e::rel_strings') ORDER BY 1
 **Error:**
 > No function matches the given name "BIT_LENGTH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_LENGTH(val) AS result FROM strings ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT BIT_LENGTH(val) AS result FROM func('e2e::rel_strings__Relation_1_') ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "BIT_LENGTH"
+
 
 <br>
 
-#### <a id="fail-character_length__char__unsupported_type-TDS"></a><a id="fail-character_length__char__unsupported_type-Relation"></a>`character_length__char__unsupported_type`
+#### <a id="fail-character_length__char__unsupported_type-TDS"></a><a id="fail-character_length__char__unsupported_type-Relation"></a><a id="fail-character_length__char__unsupported_type-Grammar"></a>`character_length__char__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT CHARACTER_LENGTH('hello'::character(10)) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT CHARACTER_LENGTH('hello'::character(10)) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "CHARACTER_LENGTH"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT CHARACTER_LENGTH('hello'::character(10)) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT CHARACTER_LENGTH('hello'::character(10)) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2081,24 +2771,49 @@ SELECT CHARACTER_LENGTH('hello'::character(10)) AS result FROM func('e2e::rel_pe
 **Error:**
 > No function matches the given name "CHARACTER_LENGTH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT CHARACTER_LENGTH('hello'::character(10)) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT CHARACTER_LENGTH('hello'::character(10)) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "CHARACTER_LENGTH"
+
 
 <br>
 
-#### <a id="fail-character_length_character_cov-TDS"></a><a id="fail-character_length_character_cov-Relation"></a>`character_length_character_cov`
+#### <a id="fail-character_length_character_cov-TDS"></a><a id="fail-character_length_character_cov-Relation"></a><a id="fail-character_length_character_cov-Grammar"></a>`character_length_character_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT CHARACTER_LENGTH(name) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT CHARACTER_LENGTH(name) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "CHARACTER_LENGTH"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT CHARACTER_LENGTH(name) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT CHARACTER_LENGTH(name) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2106,24 +2821,49 @@ SELECT CHARACTER_LENGTH(name) AS result FROM func('e2e::rel_persons') WHERE id =
 **Error:**
 > No function matches the given name "CHARACTER_LENGTH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT CHARACTER_LENGTH(name) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT CHARACTER_LENGTH(name) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "CHARACTER_LENGTH"
+
 
 <br>
 
-#### <a id="fail-character_length__txt__from_table-TDS"></a><a id="fail-character_length__txt__from_table-Relation"></a>`character_length__txt__from_table`
+#### <a id="fail-character_length__txt__from_table-TDS"></a><a id="fail-character_length__txt__from_table-Relation"></a><a id="fail-character_length__txt__from_table-Grammar"></a>`character_length__txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT CHARACTER_LENGTH(val) AS result FROM strings ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT CHARACTER_LENGTH(val) AS result FROM func('e2e::tds_strings') ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "CHARACTER_LENGTH"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT CHARACTER_LENGTH(val) AS result FROM strings ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT CHARACTER_LENGTH(val) AS result FROM func('e2e::rel_strings') ORDER BY 1
 ```
@@ -2131,24 +2871,93 @@ SELECT CHARACTER_LENGTH(val) AS result FROM func('e2e::rel_strings') ORDER BY 1
 **Error:**
 > No function matches the given name "CHARACTER_LENGTH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT CHARACTER_LENGTH(val) AS result FROM strings ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT CHARACTER_LENGTH(val) AS result FROM func('e2e::rel_strings__Relation_1_') ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "CHARACTER_LENGTH"
+
 
 <br>
 
-#### <a id="fail-format__txt__from_table-TDS"></a><a id="fail-format__txt__from_table-Relation"></a>`format__txt__from_table`
+#### <a id="fail-decode_text_text_cov-Grammar"></a>`decode_text_text_cov`
 
-🔴 **Failed in both TDS and Relation**
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT DECODE(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT DECODE(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function decode(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): incorrect number of args to decode
+
+
+<br>
+
+#### <a id="fail-encode_bytea_text_cov-Grammar"></a>`encode_bytea_text_cov`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ENCODE(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ENCODE(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function encode(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): incorrect number of args to encode
+
+
+<br>
+
+#### <a id="fail-format__txt__from_table-TDS"></a><a id="fail-format__txt__from_table-Relation"></a><a id="fail-format__txt__from_table-Grammar"></a>`format__txt__from_table`
+
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT FORMAT('Hello World') AS result FROM strings WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT FORMAT('Hello World') AS result FROM func('e2e::tds_strings') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "FORMAT"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT FORMAT('Hello World') AS result FROM strings WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT FORMAT('Hello World') AS result FROM func('e2e::rel_strings') WHERE id = 1
 ```
@@ -2156,24 +2965,49 @@ SELECT FORMAT('Hello World') AS result FROM func('e2e::rel_strings') WHERE id = 
 **Error:**
 > No function matches the given name "FORMAT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT FORMAT('Hello World') AS result FROM strings WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT FORMAT('Hello World') AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "FORMAT"
+
 
 <br>
 
-#### <a id="fail-format__txt_variadic__from_table-TDS"></a><a id="fail-format__txt_variadic__from_table-Relation"></a>`format__txt_variadic__from_table`
+#### <a id="fail-format__txt_variadic__from_table-TDS"></a><a id="fail-format__txt_variadic__from_table-Relation"></a><a id="fail-format__txt_variadic__from_table-Grammar"></a>`format__txt_variadic__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT FORMAT('Hello %s, age %s', name, age) AS result FROM persons WHERE age IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT FORMAT('Hello %s, age %s', name, age) AS result FROM func('e2e::tds_persons') WHERE age IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "FORMAT"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT FORMAT('Hello %s, age %s', name, age) AS result FROM persons WHERE age IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT FORMAT('Hello %s, age %s', name, age) AS result FROM func('e2e::rel_persons') WHERE age IS NOT NULL ORDER BY 1
 ```
@@ -2181,24 +3015,49 @@ SELECT FORMAT('Hello %s, age %s', name, age) AS result FROM func('e2e::rel_perso
 **Error:**
 > No function matches the given name "FORMAT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT FORMAT('Hello %s, age %s', name, age) AS result FROM persons WHERE age IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT FORMAT('Hello %s, age %s', name, age) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE age IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "FORMAT"
+
 
 <br>
 
-#### <a id="fail-is_normalized__txt_txtNFCtxt__from_table-TDS"></a><a id="fail-is_normalized__txt_txtNFCtxt__from_table-Relation"></a>`is_normalized__txt_txtNFCtxt__from_table`
+#### <a id="fail-is_normalized__txt_txtNFCtxt__from_table-TDS"></a><a id="fail-is_normalized__txt_txtNFCtxt__from_table-Relation"></a><a id="fail-is_normalized__txt_txtNFCtxt__from_table-Grammar"></a>`is_normalized__txt_txtNFCtxt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT IS_NORMALIZED(unicode_val) AS result FROM strings WHERE unicode_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT IS_NORMALIZED(unicode_val) AS result FROM func('e2e::tds_strings') WHERE unicode_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "IS_NORMALIZED"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT IS_NORMALIZED(unicode_val) AS result FROM strings WHERE unicode_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT IS_NORMALIZED(unicode_val) AS result FROM func('e2e::rel_strings') WHERE unicode_val IS NOT NULL ORDER BY 1
 ```
@@ -2206,24 +3065,49 @@ SELECT IS_NORMALIZED(unicode_val) AS result FROM func('e2e::rel_strings') WHERE 
 **Error:**
 > No function matches the given name "IS_NORMALIZED"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT IS_NORMALIZED(unicode_val) AS result FROM strings WHERE unicode_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT IS_NORMALIZED(unicode_val) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE unicode_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "IS_NORMALIZED"
+
 
 <br>
 
-#### <a id="fail-length__tsvector__unsupported_type-TDS"></a><a id="fail-length__tsvector__unsupported_type-Relation"></a>`length__tsvector__unsupported_type`
+#### <a id="fail-length__tsvector__unsupported_type-TDS"></a><a id="fail-length__tsvector__unsupported_type-Relation"></a><a id="fail-length__tsvector__unsupported_type-Grammar"></a>`length__tsvector__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT LENGTH(to_tsvector('english', 'the quick brown fox')) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT LENGTH(to_tsvector('english', 'the quick brown fox')) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "to_tsvector"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT LENGTH(to_tsvector('english', 'the quick brown fox')) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT LENGTH(to_tsvector('english', 'the quick brown fox')) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2231,24 +3115,49 @@ SELECT LENGTH(to_tsvector('english', 'the quick brown fox')) AS result FROM func
 **Error:**
 > No function matches the given name "to_tsvector"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT LENGTH(to_tsvector('english', 'the quick brown fox')) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT LENGTH(to_tsvector('english', 'the quick brown fox')) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "to_tsvector"
+
 
 <br>
 
-#### <a id="fail-lower__anymultirange__unsupported_type-TDS"></a><a id="fail-lower__anymultirange__unsupported_type-Relation"></a>`lower__anymultirange__unsupported_type`
+#### <a id="fail-lower__anymultirange__unsupported_type-TDS"></a><a id="fail-lower__anymultirange__unsupported_type-Relation"></a><a id="fail-lower__anymultirange__unsupported_type-Grammar"></a>`lower__anymultirange__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT LOWER(int4multirange(int4range(1,5))) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT LOWER(int4multirange(int4range(1, 5))) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "int4multirange"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT LOWER(int4multirange(int4range(1,5))) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT LOWER(int4multirange(int4range(1, 5))) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2256,24 +3165,49 @@ SELECT LOWER(int4multirange(int4range(1, 5))) AS result FROM func('e2e::rel_pers
 **Error:**
 > No function matches the given name "int4multirange"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT LOWER(int4multirange(int4range(1,5))) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT LOWER(int4multirange(int4range(1, 5))) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "int4multirange"
+
 
 <br>
 
-#### <a id="fail-lower__anyrange__unsupported_type-TDS"></a><a id="fail-lower__anyrange__unsupported_type-Relation"></a>`lower__anyrange__unsupported_type`
+#### <a id="fail-lower__anyrange__unsupported_type-TDS"></a><a id="fail-lower__anyrange__unsupported_type-Relation"></a><a id="fail-lower__anyrange__unsupported_type-Grammar"></a>`lower__anyrange__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT LOWER(int4range(1,5)) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT LOWER(int4range(1, 5)) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "int4range"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT LOWER(int4range(1,5)) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT LOWER(int4range(1, 5)) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2281,24 +3215,49 @@ SELECT LOWER(int4range(1, 5)) AS result FROM func('e2e::rel_persons') WHERE id =
 **Error:**
 > No function matches the given name "int4range"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT LOWER(int4range(1,5)) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT LOWER(int4range(1, 5)) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "int4range"
+
 
 <br>
 
-#### <a id="fail-normalize__txt_txtNFCtxt__from_table-TDS"></a><a id="fail-normalize__txt_txtNFCtxt__from_table-Relation"></a>`normalize__txt_txtNFCtxt__from_table`
+#### <a id="fail-normalize__txt_txtNFCtxt__from_table-TDS"></a><a id="fail-normalize__txt_txtNFCtxt__from_table-Relation"></a><a id="fail-normalize__txt_txtNFCtxt__from_table-Grammar"></a>`normalize__txt_txtNFCtxt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT NORMALIZE(unicode_val) AS result FROM strings WHERE unicode_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT NORMALIZE(unicode_val) AS result FROM func('e2e::tds_strings') WHERE unicode_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "NORMALIZE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT NORMALIZE(unicode_val) AS result FROM strings WHERE unicode_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT NORMALIZE(unicode_val) AS result FROM func('e2e::rel_strings') WHERE unicode_val IS NOT NULL ORDER BY 1
 ```
@@ -2306,24 +3265,49 @@ SELECT NORMALIZE(unicode_val) AS result FROM func('e2e::rel_strings') WHERE unic
 **Error:**
 > No function matches the given name "NORMALIZE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT NORMALIZE(unicode_val) AS result FROM strings WHERE unicode_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT NORMALIZE(unicode_val) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE unicode_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "NORMALIZE"
+
 
 <br>
 
-#### <a id="fail-octet_length_bit_cov-TDS"></a><a id="fail-octet_length_bit_cov-Relation"></a>`octet_length_bit_cov`
+#### <a id="fail-octet_length_bit_cov-TDS"></a><a id="fail-octet_length_bit_cov-Relation"></a><a id="fail-octet_length_bit_cov-Grammar"></a>`octet_length_bit_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT OCTET_LENGTH(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT OCTET_LENGTH(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "OCTET_LENGTH"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT OCTET_LENGTH(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT OCTET_LENGTH(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2331,24 +3315,49 @@ SELECT OCTET_LENGTH(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "OCTET_LENGTH"
 
-
-<br>
-
-#### <a id="fail-octet_length_bytea_cov-TDS"></a><a id="fail-octet_length_bytea_cov-Relation"></a>`octet_length_bytea_cov`
-
-🔴 **Failed in both TDS and Relation**
+📙 **Grammar Path**
 
 **Input SQL:**
 ```sql
 SELECT OCTET_LENGTH(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
+```sql
+SELECT OCTET_LENGTH(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "OCTET_LENGTH"
+
+
+<br>
+
+#### <a id="fail-octet_length_bytea_cov-TDS"></a><a id="fail-octet_length_bytea_cov-Relation"></a><a id="fail-octet_length_bytea_cov-Grammar"></a>`octet_length_bytea_cov`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT OCTET_LENGTH(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT OCTET_LENGTH(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "OCTET_LENGTH"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT OCTET_LENGTH(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT OCTET_LENGTH(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2356,24 +3365,49 @@ SELECT OCTET_LENGTH(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "OCTET_LENGTH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT OCTET_LENGTH(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT OCTET_LENGTH(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "OCTET_LENGTH"
+
 
 <br>
 
-#### <a id="fail-octet_length__char__unsupported_type-TDS"></a><a id="fail-octet_length__char__unsupported_type-Relation"></a>`octet_length__char__unsupported_type`
+#### <a id="fail-octet_length__char__unsupported_type-TDS"></a><a id="fail-octet_length__char__unsupported_type-Relation"></a><a id="fail-octet_length__char__unsupported_type-Grammar"></a>`octet_length__char__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT OCTET_LENGTH('hello'::character(10)) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT OCTET_LENGTH('hello'::character(10)) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "OCTET_LENGTH"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT OCTET_LENGTH('hello'::character(10)) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT OCTET_LENGTH('hello'::character(10)) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2381,24 +3415,49 @@ SELECT OCTET_LENGTH('hello'::character(10)) AS result FROM func('e2e::rel_person
 **Error:**
 > No function matches the given name "OCTET_LENGTH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT OCTET_LENGTH('hello'::character(10)) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT OCTET_LENGTH('hello'::character(10)) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "OCTET_LENGTH"
+
 
 <br>
 
-#### <a id="fail-octet_length_character_cov-TDS"></a><a id="fail-octet_length_character_cov-Relation"></a>`octet_length_character_cov`
+#### <a id="fail-octet_length_character_cov-TDS"></a><a id="fail-octet_length_character_cov-Relation"></a><a id="fail-octet_length_character_cov-Grammar"></a>`octet_length_character_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT OCTET_LENGTH(name) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT OCTET_LENGTH(name) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "OCTET_LENGTH"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT OCTET_LENGTH(name) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT OCTET_LENGTH(name) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2406,24 +3465,49 @@ SELECT OCTET_LENGTH(name) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "OCTET_LENGTH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT OCTET_LENGTH(name) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT OCTET_LENGTH(name) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "OCTET_LENGTH"
+
 
 <br>
 
-#### <a id="fail-octet_length__txt__from_table-TDS"></a><a id="fail-octet_length__txt__from_table-Relation"></a>`octet_length__txt__from_table`
+#### <a id="fail-octet_length__txt__from_table-TDS"></a><a id="fail-octet_length__txt__from_table-Relation"></a><a id="fail-octet_length__txt__from_table-Grammar"></a>`octet_length__txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT OCTET_LENGTH(val) AS result FROM strings ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT OCTET_LENGTH(val) AS result FROM func('e2e::tds_strings') ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "OCTET_LENGTH"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT OCTET_LENGTH(val) AS result FROM strings ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT OCTET_LENGTH(val) AS result FROM func('e2e::rel_strings') ORDER BY 1
 ```
@@ -2431,24 +3515,49 @@ SELECT OCTET_LENGTH(val) AS result FROM func('e2e::rel_strings') ORDER BY 1
 **Error:**
 > No function matches the given name "OCTET_LENGTH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT OCTET_LENGTH(val) AS result FROM strings ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT OCTET_LENGTH(val) AS result FROM func('e2e::rel_strings__Relation_1_') ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "OCTET_LENGTH"
+
 
 <br>
 
-#### <a id="fail-overlay_bit_bit_integer_cov-TDS"></a><a id="fail-overlay_bit_bit_integer_cov-Relation"></a>`overlay_bit_bit_integer_cov`
+#### <a id="fail-overlay_bit_bit_integer_cov-TDS"></a><a id="fail-overlay_bit_bit_integer_cov-Relation"></a><a id="fail-overlay_bit_bit_integer_cov-Grammar"></a>`overlay_bit_bit_integer_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT OVERLAY(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT OVERLAY(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "OVERLAY"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT OVERLAY(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT OVERLAY(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2456,24 +3565,51 @@ SELECT OVERLAY(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "OVERLAY"
 
-
-<br>
-
-#### <a id="fail-overlay_bit_bit_integer_integer_cov-TDS"></a><a id="fail-overlay_bit_bit_integer_integer_cov-Relation"></a>`overlay_bit_bit_integer_integer_cov`
-
-🔴 **Failed in both TDS and Relation**
+📙 **Grammar Path**
 
 **Input SQL:**
 ```sql
 SELECT OVERLAY(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
+```sql
+SELECT OVERLAY(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function overlay(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "OVERLAY"
+
+
+<br>
+
+#### <a id="fail-overlay_bit_bit_integer_integer_cov-TDS"></a><a id="fail-overlay_bit_bit_integer_integer_cov-Relation"></a><a id="fail-overlay_bit_bit_integer_integer_cov-Grammar"></a>`overlay_bit_bit_integer_integer_cov`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT OVERLAY(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT OVERLAY(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "OVERLAY"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT OVERLAY(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT OVERLAY(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2481,24 +3617,51 @@ SELECT OVERLAY(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "OVERLAY"
 
-
-<br>
-
-#### <a id="fail-overlay_bytea_bytea_integer_cov-TDS"></a><a id="fail-overlay_bytea_bytea_integer_cov-Relation"></a>`overlay_bytea_bytea_integer_cov`
-
-🔴 **Failed in both TDS and Relation**
+📙 **Grammar Path**
 
 **Input SQL:**
 ```sql
 SELECT OVERLAY(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
+```sql
+SELECT OVERLAY(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function overlay(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "OVERLAY"
+
+
+<br>
+
+#### <a id="fail-overlay_bytea_bytea_integer_cov-TDS"></a><a id="fail-overlay_bytea_bytea_integer_cov-Relation"></a><a id="fail-overlay_bytea_bytea_integer_cov-Grammar"></a>`overlay_bytea_bytea_integer_cov`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT OVERLAY(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT OVERLAY(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "OVERLAY"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT OVERLAY(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT OVERLAY(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2506,24 +3669,51 @@ SELECT OVERLAY(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "OVERLAY"
 
-
-<br>
-
-#### <a id="fail-overlay_bytea_bytea_integer_integer_cov-TDS"></a><a id="fail-overlay_bytea_bytea_integer_integer_cov-Relation"></a>`overlay_bytea_bytea_integer_integer_cov`
-
-🔴 **Failed in both TDS and Relation**
+📙 **Grammar Path**
 
 **Input SQL:**
 ```sql
 SELECT OVERLAY(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
+```sql
+SELECT OVERLAY(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function overlay(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "OVERLAY"
+
+
+<br>
+
+#### <a id="fail-overlay_bytea_bytea_integer_integer_cov-TDS"></a><a id="fail-overlay_bytea_bytea_integer_integer_cov-Relation"></a><a id="fail-overlay_bytea_bytea_integer_integer_cov-Grammar"></a>`overlay_bytea_bytea_integer_integer_cov`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT OVERLAY(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT OVERLAY(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "OVERLAY"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT OVERLAY(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT OVERLAY(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2531,24 +3721,51 @@ SELECT OVERLAY(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "OVERLAY"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT OVERLAY(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT OVERLAY(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function overlay(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "OVERLAY"
+
 
 <br>
 
-#### <a id="fail-overlay__txt_txt_int_int__func_syntax-TDS"></a><a id="fail-overlay__txt_txt_int_int__func_syntax-Relation"></a>`overlay__txt_txt_int_int__func_syntax`
+#### <a id="fail-overlay__txt_txt_int_int__func_syntax-TDS"></a><a id="fail-overlay__txt_txt_int_int__func_syntax-Relation"></a><a id="fail-overlay__txt_txt_int_int__func_syntax-Grammar"></a>`overlay__txt_txt_int_int__func_syntax`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT OVERLAY(val, 'XX', 1, 2) AS result FROM strings WHERE val IS NOT NULL AND val <> '' ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT OVERLAY(val, 'XX', 1, 2) AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL AND val <> '' ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "OVERLAY"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT OVERLAY(val, 'XX', 1, 2) AS result FROM strings WHERE val IS NOT NULL AND val <> '' ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT OVERLAY(val, 'XX', 1, 2) AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL AND val <> '' ORDER BY 1
 ```
@@ -2556,24 +3773,49 @@ SELECT OVERLAY(val, 'XX', 1, 2) AS result FROM func('e2e::rel_strings') WHERE va
 **Error:**
 > No function matches the given name "OVERLAY"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT OVERLAY(val, 'XX', 1, 2) AS result FROM strings WHERE val IS NOT NULL AND val <> '' ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT OVERLAY(val, 'XX', 1, 2) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL AND val <> '' ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "OVERLAY"
+
 
 <br>
 
-#### <a id="fail-position_bit_bit_cov-TDS"></a><a id="fail-position_bit_bit_cov-Relation"></a>`position_bit_bit_cov`
+#### <a id="fail-position_bit_bit_cov-TDS"></a><a id="fail-position_bit_bit_cov-Relation"></a><a id="fail-position_bit_bit_cov-Grammar"></a>`position_bit_bit_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT POSITION(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT POSITION(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "POSITION"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT POSITION(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT POSITION(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2581,24 +3823,50 @@ SELECT POSITION(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "POSITION"
 
-
-<br>
-
-#### <a id="fail-position_bytea_bytea_cov-TDS"></a><a id="fail-position_bytea_bytea_cov-Relation"></a>`position_bytea_bytea_cov`
-
-🔴 **Failed in both TDS and Relation**
+📙 **Grammar Path**
 
 **Input SQL:**
 ```sql
 SELECT POSITION(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
+```sql
+SELECT POSITION(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: syntax error at or near ")"
+>   Position: 21 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "POSITION"
+
+
+<br>
+
+#### <a id="fail-position_bytea_bytea_cov-TDS"></a><a id="fail-position_bytea_bytea_cov-Relation"></a><a id="fail-position_bytea_bytea_cov-Grammar"></a>`position_bytea_bytea_cov`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT POSITION(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT POSITION(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "POSITION"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT POSITION(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT POSITION(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2606,24 +3874,50 @@ SELECT POSITION(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "POSITION"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT POSITION(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT POSITION(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: syntax error at or near ")"
+>   Position: 21 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "POSITION"
+
 
 <br>
 
-#### <a id="fail-quote_ident__txt__from_table-TDS"></a><a id="fail-quote_ident__txt__from_table-Relation"></a>`quote_ident__txt__from_table`
+#### <a id="fail-quote_ident__txt__from_table-TDS"></a><a id="fail-quote_ident__txt__from_table-Relation"></a><a id="fail-quote_ident__txt__from_table-Grammar"></a>`quote_ident__txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT QUOTE_IDENT(val) AS result FROM strings WHERE val IS NOT NULL AND val <> '' ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT QUOTE_IDENT(val) AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL AND val <> '' ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "QUOTE_IDENT"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT QUOTE_IDENT(val) AS result FROM strings WHERE val IS NOT NULL AND val <> '' ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT QUOTE_IDENT(val) AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL AND val <> '' ORDER BY 1
 ```
@@ -2631,24 +3925,49 @@ SELECT QUOTE_IDENT(val) AS result FROM func('e2e::rel_strings') WHERE val IS NOT
 **Error:**
 > No function matches the given name "QUOTE_IDENT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT QUOTE_IDENT(val) AS result FROM strings WHERE val IS NOT NULL AND val <> '' ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT QUOTE_IDENT(val) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL AND val <> '' ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "QUOTE_IDENT"
+
 
 <br>
 
-#### <a id="fail-quote_literal__anyelement__unsupported_type-TDS"></a><a id="fail-quote_literal__anyelement__unsupported_type-Relation"></a>`quote_literal__anyelement__unsupported_type`
+#### <a id="fail-quote_literal__anyelement__unsupported_type-TDS"></a><a id="fail-quote_literal__anyelement__unsupported_type-Relation"></a><a id="fail-quote_literal__anyelement__unsupported_type-Grammar"></a>`quote_literal__anyelement__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT QUOTE_LITERAL(age) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT QUOTE_LITERAL(age) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "QUOTE_LITERAL"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT QUOTE_LITERAL(age) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT QUOTE_LITERAL(age) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2656,24 +3975,49 @@ SELECT QUOTE_LITERAL(age) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "QUOTE_LITERAL"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT QUOTE_LITERAL(age) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT QUOTE_LITERAL(age) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "QUOTE_LITERAL"
+
 
 <br>
 
-#### <a id="fail-quote_literal_anyelement_cov-TDS"></a><a id="fail-quote_literal_anyelement_cov-Relation"></a>`quote_literal_anyelement_cov`
+#### <a id="fail-quote_literal_anyelement_cov-TDS"></a><a id="fail-quote_literal_anyelement_cov-Relation"></a><a id="fail-quote_literal_anyelement_cov-Grammar"></a>`quote_literal_anyelement_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT QUOTE_LITERAL(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT QUOTE_LITERAL(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "QUOTE_LITERAL"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT QUOTE_LITERAL(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT QUOTE_LITERAL(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2681,24 +4025,49 @@ SELECT QUOTE_LITERAL(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "QUOTE_LITERAL"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT QUOTE_LITERAL(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT QUOTE_LITERAL(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "QUOTE_LITERAL"
+
 
 <br>
 
-#### <a id="fail-quote_literal__txt__from_table-TDS"></a><a id="fail-quote_literal__txt__from_table-Relation"></a>`quote_literal__txt__from_table`
+#### <a id="fail-quote_literal__txt__from_table-TDS"></a><a id="fail-quote_literal__txt__from_table-Relation"></a><a id="fail-quote_literal__txt__from_table-Grammar"></a>`quote_literal__txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT QUOTE_LITERAL(val) AS result FROM strings WHERE val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT QUOTE_LITERAL(val) AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "QUOTE_LITERAL"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT QUOTE_LITERAL(val) AS result FROM strings WHERE val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT QUOTE_LITERAL(val) AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL ORDER BY 1
 ```
@@ -2706,24 +4075,49 @@ SELECT QUOTE_LITERAL(val) AS result FROM func('e2e::rel_strings') WHERE val IS N
 **Error:**
 > No function matches the given name "QUOTE_LITERAL"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT QUOTE_LITERAL(val) AS result FROM strings WHERE val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT QUOTE_LITERAL(val) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "QUOTE_LITERAL"
+
 
 <br>
 
-#### <a id="fail-quote_nullable__anyelement__unsupported_type-TDS"></a><a id="fail-quote_nullable__anyelement__unsupported_type-Relation"></a>`quote_nullable__anyelement__unsupported_type`
+#### <a id="fail-quote_nullable__anyelement__unsupported_type-TDS"></a><a id="fail-quote_nullable__anyelement__unsupported_type-Relation"></a><a id="fail-quote_nullable__anyelement__unsupported_type-Grammar"></a>`quote_nullable__anyelement__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT QUOTE_NULLABLE(age) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT QUOTE_NULLABLE(age) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "QUOTE_NULLABLE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT QUOTE_NULLABLE(age) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT QUOTE_NULLABLE(age) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2731,24 +4125,49 @@ SELECT QUOTE_NULLABLE(age) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "QUOTE_NULLABLE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT QUOTE_NULLABLE(age) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT QUOTE_NULLABLE(age) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "QUOTE_NULLABLE"
+
 
 <br>
 
-#### <a id="fail-quote_nullable_anyelement_cov-TDS"></a><a id="fail-quote_nullable_anyelement_cov-Relation"></a>`quote_nullable_anyelement_cov`
+#### <a id="fail-quote_nullable_anyelement_cov-TDS"></a><a id="fail-quote_nullable_anyelement_cov-Relation"></a><a id="fail-quote_nullable_anyelement_cov-Grammar"></a>`quote_nullable_anyelement_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT QUOTE_NULLABLE(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT QUOTE_NULLABLE(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "QUOTE_NULLABLE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT QUOTE_NULLABLE(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT QUOTE_NULLABLE(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2756,24 +4175,49 @@ SELECT QUOTE_NULLABLE(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "QUOTE_NULLABLE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT QUOTE_NULLABLE(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT QUOTE_NULLABLE(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "QUOTE_NULLABLE"
+
 
 <br>
 
-#### <a id="fail-quote_nullable__txt__from_table-TDS"></a><a id="fail-quote_nullable__txt__from_table-Relation"></a>`quote_nullable__txt__from_table`
+#### <a id="fail-quote_nullable__txt__from_table-TDS"></a><a id="fail-quote_nullable__txt__from_table-Relation"></a><a id="fail-quote_nullable__txt__from_table-Grammar"></a>`quote_nullable__txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT QUOTE_NULLABLE(nullable_val) AS result FROM strings ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT QUOTE_NULLABLE(nullable_val) AS result FROM func('e2e::tds_strings') ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "QUOTE_NULLABLE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT QUOTE_NULLABLE(nullable_val) AS result FROM strings ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT QUOTE_NULLABLE(nullable_val) AS result FROM func('e2e::rel_strings') ORDER BY 1
 ```
@@ -2781,24 +4225,49 @@ SELECT QUOTE_NULLABLE(nullable_val) AS result FROM func('e2e::rel_strings') ORDE
 **Error:**
 > No function matches the given name "QUOTE_NULLABLE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT QUOTE_NULLABLE(nullable_val) AS result FROM strings ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT QUOTE_NULLABLE(nullable_val) AS result FROM func('e2e::rel_strings__Relation_1_') ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "QUOTE_NULLABLE"
+
 
 <br>
 
-#### <a id="fail-regexp_match__txt_txt__from_table-TDS"></a><a id="fail-regexp_match__txt_txt__from_table-Relation"></a>`regexp_match__txt_txt__from_table`
+#### <a id="fail-regexp_match__txt_txt__from_table-TDS"></a><a id="fail-regexp_match__txt_txt__from_table-Relation"></a><a id="fail-regexp_match__txt_txt__from_table-Grammar"></a>`regexp_match__txt_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT REGEXP_MATCH(val, '([a-z]+)') AS result FROM strings WHERE val IS NOT NULL AND val <> '' ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT REGEXP_MATCH(val, '([a-z]+)') AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL AND val <> '' ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "REGEXP_MATCH"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_MATCH(val, '([a-z]+)') AS result FROM strings WHERE val IS NOT NULL AND val <> '' ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGEXP_MATCH(val, '([a-z]+)') AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL AND val <> '' ORDER BY 1
 ```
@@ -2806,24 +4275,49 @@ SELECT REGEXP_MATCH(val, '([a-z]+)') AS result FROM func('e2e::rel_strings') WHE
 **Error:**
 > No function matches the given name "REGEXP_MATCH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_MATCH(val, '([a-z]+)') AS result FROM strings WHERE val IS NOT NULL AND val <> '' ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT REGEXP_MATCH(val, '([a-z]+)') AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL AND val <> '' ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "REGEXP_MATCH"
+
 
 <br>
 
-#### <a id="fail-regexp_match__txt_txt_txt__from_table-TDS"></a><a id="fail-regexp_match__txt_txt_txt__from_table-Relation"></a>`regexp_match__txt_txt_txt__from_table`
+#### <a id="fail-regexp_match__txt_txt_txt__from_table-TDS"></a><a id="fail-regexp_match__txt_txt_txt__from_table-Relation"></a><a id="fail-regexp_match__txt_txt_txt__from_table-Grammar"></a>`regexp_match__txt_txt_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT REGEXP_MATCH(val, '([a-z]+)', 'i') AS result FROM strings WHERE val IS NOT NULL AND val <> '' ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT REGEXP_MATCH(val, '([a-z]+)', 'i') AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL AND val <> '' ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "REGEXP_MATCH"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_MATCH(val, '([a-z]+)', 'i') AS result FROM strings WHERE val IS NOT NULL AND val <> '' ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGEXP_MATCH(val, '([a-z]+)', 'i') AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL AND val <> '' ORDER BY 1
 ```
@@ -2831,24 +4325,49 @@ SELECT REGEXP_MATCH(val, '([a-z]+)', 'i') AS result FROM func('e2e::rel_strings'
 **Error:**
 > No function matches the given name "REGEXP_MATCH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_MATCH(val, '([a-z]+)', 'i') AS result FROM strings WHERE val IS NOT NULL AND val <> '' ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT REGEXP_MATCH(val, '([a-z]+)', 'i') AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL AND val <> '' ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "REGEXP_MATCH"
+
 
 <br>
 
-#### <a id="fail-regexp_matches__txt_txt__from_table-TDS"></a><a id="fail-regexp_matches__txt_txt__from_table-Relation"></a>`regexp_matches__txt_txt__from_table`
+#### <a id="fail-regexp_matches__txt_txt__from_table-TDS"></a><a id="fail-regexp_matches__txt_txt__from_table-Relation"></a><a id="fail-regexp_matches__txt_txt__from_table-Grammar"></a>`regexp_matches__txt_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT REGEXP_MATCHES(val, '([a-z]+)', 'g') AS result FROM strings WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT REGEXP_MATCHES(val, '([a-z]+)', 'g') AS result FROM func('e2e::tds_strings') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "REGEXP_MATCHES"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_MATCHES(val, '([a-z]+)', 'g') AS result FROM strings WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGEXP_MATCHES(val, '([a-z]+)', 'g') AS result FROM func('e2e::rel_strings') WHERE id = 1
 ```
@@ -2856,24 +4375,49 @@ SELECT REGEXP_MATCHES(val, '([a-z]+)', 'g') AS result FROM func('e2e::rel_string
 **Error:**
 > No function matches the given name "REGEXP_MATCHES"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_MATCHES(val, '([a-z]+)', 'g') AS result FROM strings WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT REGEXP_MATCHES(val, '([a-z]+)', 'g') AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "REGEXP_MATCHES"
+
 
 <br>
 
-#### <a id="fail-regexp_matches_text_text_cov-TDS"></a><a id="fail-regexp_matches_text_text_cov-Relation"></a>`regexp_matches_text_text_cov`
+#### <a id="fail-regexp_matches_text_text_cov-TDS"></a><a id="fail-regexp_matches_text_text_cov-Relation"></a><a id="fail-regexp_matches_text_text_cov-Grammar"></a>`regexp_matches_text_text_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT REGEXP_MATCHES(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT REGEXP_MATCHES(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "REGEXP_MATCHES"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_MATCHES(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGEXP_MATCHES(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2881,24 +4425,51 @@ SELECT REGEXP_MATCHES(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "REGEXP_MATCHES"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_MATCHES(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT REGEXP_MATCHES(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function regexp_matches(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "REGEXP_MATCHES"
+
 
 <br>
 
-#### <a id="fail-regexp_matches__txt_txt_txt__from_table-TDS"></a><a id="fail-regexp_matches__txt_txt_txt__from_table-Relation"></a>`regexp_matches__txt_txt_txt__from_table`
+#### <a id="fail-regexp_matches__txt_txt_txt__from_table-TDS"></a><a id="fail-regexp_matches__txt_txt_txt__from_table-Relation"></a><a id="fail-regexp_matches__txt_txt_txt__from_table-Grammar"></a>`regexp_matches__txt_txt_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT REGEXP_MATCHES(val, '([a-z]+)', 'g') AS result FROM strings WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT REGEXP_MATCHES(val, '([a-z]+)', 'g') AS result FROM func('e2e::tds_strings') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "REGEXP_MATCHES"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_MATCHES(val, '([a-z]+)', 'g') AS result FROM strings WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGEXP_MATCHES(val, '([a-z]+)', 'g') AS result FROM func('e2e::rel_strings') WHERE id = 1
 ```
@@ -2906,24 +4477,49 @@ SELECT REGEXP_MATCHES(val, '([a-z]+)', 'g') AS result FROM func('e2e::rel_string
 **Error:**
 > No function matches the given name "REGEXP_MATCHES"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_MATCHES(val, '([a-z]+)', 'g') AS result FROM strings WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT REGEXP_MATCHES(val, '([a-z]+)', 'g') AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "REGEXP_MATCHES"
+
 
 <br>
 
-#### <a id="fail-regexp_matches_text_text_text_cov-TDS"></a><a id="fail-regexp_matches_text_text_text_cov-Relation"></a>`regexp_matches_text_text_text_cov`
+#### <a id="fail-regexp_matches_text_text_text_cov-TDS"></a><a id="fail-regexp_matches_text_text_text_cov-Relation"></a><a id="fail-regexp_matches_text_text_text_cov-Grammar"></a>`regexp_matches_text_text_text_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT REGEXP_MATCHES(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT REGEXP_MATCHES(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "REGEXP_MATCHES"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_MATCHES(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGEXP_MATCHES(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -2931,24 +4527,51 @@ SELECT REGEXP_MATCHES(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "REGEXP_MATCHES"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_MATCHES(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT REGEXP_MATCHES(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function regexp_matches(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "REGEXP_MATCHES"
+
 
 <br>
 
-#### <a id="fail-regexp_split_to_array__txt_txt__from_table-TDS"></a><a id="fail-regexp_split_to_array__txt_txt__from_table-Relation"></a>`regexp_split_to_array__txt_txt__from_table`
+#### <a id="fail-regexp_split_to_array__txt_txt__from_table-TDS"></a><a id="fail-regexp_split_to_array__txt_txt__from_table-Relation"></a><a id="fail-regexp_split_to_array__txt_txt__from_table-Grammar"></a>`regexp_split_to_array__txt_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT REGEXP_SPLIT_TO_ARRAY(val, '\s+') AS result FROM strings WHERE val IS NOT NULL AND val <> '' ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT REGEXP_SPLIT_TO_ARRAY(val, '\s+') AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL AND val <> '' ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "REGEXP_SPLIT_TO_ARRAY"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_SPLIT_TO_ARRAY(val, '\s+') AS result FROM strings WHERE val IS NOT NULL AND val <> '' ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGEXP_SPLIT_TO_ARRAY(val, '\s+') AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL AND val <> '' ORDER BY 1
 ```
@@ -2956,24 +4579,49 @@ SELECT REGEXP_SPLIT_TO_ARRAY(val, '\s+') AS result FROM func('e2e::rel_strings')
 **Error:**
 > No function matches the given name "REGEXP_SPLIT_TO_ARRAY"
 
-
-<br>
-
-#### <a id="fail-regexp_split_to_array__txt_txt_txt__from_table-TDS"></a><a id="fail-regexp_split_to_array__txt_txt_txt__from_table-Relation"></a>`regexp_split_to_array__txt_txt_txt__from_table`
-
-🔴 **Failed in both TDS and Relation**
+📙 **Grammar Path**
 
 **Input SQL:**
 ```sql
 SELECT REGEXP_SPLIT_TO_ARRAY(val, '\s+') AS result FROM strings WHERE val IS NOT NULL AND val <> '' ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
+```sql
+SELECT REGEXP_SPLIT_TO_ARRAY(val, '\s+') AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL AND val <> '' ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "REGEXP_SPLIT_TO_ARRAY"
+
+
+<br>
+
+#### <a id="fail-regexp_split_to_array__txt_txt_txt__from_table-TDS"></a><a id="fail-regexp_split_to_array__txt_txt_txt__from_table-Relation"></a><a id="fail-regexp_split_to_array__txt_txt_txt__from_table-Grammar"></a>`regexp_split_to_array__txt_txt_txt__from_table`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_SPLIT_TO_ARRAY(val, '\s+') AS result FROM strings WHERE val IS NOT NULL AND val <> '' ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGEXP_SPLIT_TO_ARRAY(val, '\s+') AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL AND val <> '' ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "REGEXP_SPLIT_TO_ARRAY"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_SPLIT_TO_ARRAY(val, '\s+') AS result FROM strings WHERE val IS NOT NULL AND val <> '' ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGEXP_SPLIT_TO_ARRAY(val, '\s+') AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL AND val <> '' ORDER BY 1
 ```
@@ -2981,24 +4629,49 @@ SELECT REGEXP_SPLIT_TO_ARRAY(val, '\s+') AS result FROM func('e2e::rel_strings')
 **Error:**
 > No function matches the given name "REGEXP_SPLIT_TO_ARRAY"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_SPLIT_TO_ARRAY(val, '\s+') AS result FROM strings WHERE val IS NOT NULL AND val <> '' ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT REGEXP_SPLIT_TO_ARRAY(val, '\s+') AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL AND val <> '' ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "REGEXP_SPLIT_TO_ARRAY"
+
 
 <br>
 
-#### <a id="fail-regexp_split_to_table__txt_txt__from_table-TDS"></a><a id="fail-regexp_split_to_table__txt_txt__from_table-Relation"></a>`regexp_split_to_table__txt_txt__from_table`
+#### <a id="fail-regexp_split_to_table__txt_txt__from_table-TDS"></a><a id="fail-regexp_split_to_table__txt_txt__from_table-Relation"></a><a id="fail-regexp_split_to_table__txt_txt__from_table-Grammar"></a>`regexp_split_to_table__txt_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT REGEXP_SPLIT_TO_TABLE(val, '\s+') AS result FROM strings WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT REGEXP_SPLIT_TO_TABLE(val, '\s+') AS result FROM func('e2e::tds_strings') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "REGEXP_SPLIT_TO_TABLE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_SPLIT_TO_TABLE(val, '\s+') AS result FROM strings WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGEXP_SPLIT_TO_TABLE(val, '\s+') AS result FROM func('e2e::rel_strings') WHERE id = 1
 ```
@@ -3006,24 +4679,49 @@ SELECT REGEXP_SPLIT_TO_TABLE(val, '\s+') AS result FROM func('e2e::rel_strings')
 **Error:**
 > No function matches the given name "REGEXP_SPLIT_TO_TABLE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_SPLIT_TO_TABLE(val, '\s+') AS result FROM strings WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT REGEXP_SPLIT_TO_TABLE(val, '\s+') AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "REGEXP_SPLIT_TO_TABLE"
+
 
 <br>
 
-#### <a id="fail-regexp_split_to_table_text_text_cov-TDS"></a><a id="fail-regexp_split_to_table_text_text_cov-Relation"></a>`regexp_split_to_table_text_text_cov`
+#### <a id="fail-regexp_split_to_table_text_text_cov-TDS"></a><a id="fail-regexp_split_to_table_text_text_cov-Relation"></a><a id="fail-regexp_split_to_table_text_text_cov-Grammar"></a>`regexp_split_to_table_text_text_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT REGEXP_SPLIT_TO_TABLE(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT REGEXP_SPLIT_TO_TABLE(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "REGEXP_SPLIT_TO_TABLE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_SPLIT_TO_TABLE(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGEXP_SPLIT_TO_TABLE(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -3031,24 +4729,51 @@ SELECT REGEXP_SPLIT_TO_TABLE(NULL) AS result FROM func('e2e::rel_persons') WHERE
 **Error:**
 > No function matches the given name "REGEXP_SPLIT_TO_TABLE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_SPLIT_TO_TABLE(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT REGEXP_SPLIT_TO_TABLE(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function regexp_split_to_table(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "REGEXP_SPLIT_TO_TABLE"
+
 
 <br>
 
-#### <a id="fail-regexp_split_to_table__txt_txt_txt__from_table-TDS"></a><a id="fail-regexp_split_to_table__txt_txt_txt__from_table-Relation"></a>`regexp_split_to_table__txt_txt_txt__from_table`
+#### <a id="fail-regexp_split_to_table__txt_txt_txt__from_table-TDS"></a><a id="fail-regexp_split_to_table__txt_txt_txt__from_table-Relation"></a><a id="fail-regexp_split_to_table__txt_txt_txt__from_table-Grammar"></a>`regexp_split_to_table__txt_txt_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT REGEXP_SPLIT_TO_TABLE(val, '\s+') AS result FROM strings WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT REGEXP_SPLIT_TO_TABLE(val, '\s+') AS result FROM func('e2e::tds_strings') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "REGEXP_SPLIT_TO_TABLE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_SPLIT_TO_TABLE(val, '\s+') AS result FROM strings WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGEXP_SPLIT_TO_TABLE(val, '\s+') AS result FROM func('e2e::rel_strings') WHERE id = 1
 ```
@@ -3056,24 +4781,49 @@ SELECT REGEXP_SPLIT_TO_TABLE(val, '\s+') AS result FROM func('e2e::rel_strings')
 **Error:**
 > No function matches the given name "REGEXP_SPLIT_TO_TABLE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_SPLIT_TO_TABLE(val, '\s+') AS result FROM strings WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT REGEXP_SPLIT_TO_TABLE(val, '\s+') AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "REGEXP_SPLIT_TO_TABLE"
+
 
 <br>
 
-#### <a id="fail-regexp_split_to_table_text_text_text_cov-TDS"></a><a id="fail-regexp_split_to_table_text_text_text_cov-Relation"></a>`regexp_split_to_table_text_text_text_cov`
+#### <a id="fail-regexp_split_to_table_text_text_text_cov-TDS"></a><a id="fail-regexp_split_to_table_text_text_text_cov-Relation"></a><a id="fail-regexp_split_to_table_text_text_text_cov-Grammar"></a>`regexp_split_to_table_text_text_text_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT REGEXP_SPLIT_TO_TABLE(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT REGEXP_SPLIT_TO_TABLE(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "REGEXP_SPLIT_TO_TABLE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_SPLIT_TO_TABLE(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGEXP_SPLIT_TO_TABLE(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -3081,24 +4831,205 @@ SELECT REGEXP_SPLIT_TO_TABLE(NULL) AS result FROM func('e2e::rel_persons') WHERE
 **Error:**
 > No function matches the given name "REGEXP_SPLIT_TO_TABLE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_SPLIT_TO_TABLE(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT REGEXP_SPLIT_TO_TABLE(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function regexp_split_to_table(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "REGEXP_SPLIT_TO_TABLE"
+
 
 <br>
 
-#### <a id="fail-to_hex__big__from_table-TDS"></a><a id="fail-to_hex__big__from_table-Relation"></a>`to_hex__big__from_table`
+#### <a id="fail-substr_bytea_integer_cov-Grammar"></a>`substr_bytea_integer_cov`
 
-🔴 **Failed in both TDS and Relation**
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SUBSTR(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SUBSTR(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function substr(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): invalid number of args for substring
+
+
+<br>
+
+#### <a id="fail-substr_bytea_integer_integer_cov-Grammar"></a>`substr_bytea_integer_integer_cov`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SUBSTR(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SUBSTR(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function substr(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): invalid number of args for substring
+
+
+<br>
+
+#### <a id="fail-substring_bit_integer_cov-Grammar"></a>`substring_bit_integer_cov`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SUBSTRING(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SUBSTRING(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function substring(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): invalid number of args for substring
+
+
+<br>
+
+#### <a id="fail-substring_bit_integer_integer_cov-Grammar"></a>`substring_bit_integer_integer_cov`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SUBSTRING(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SUBSTRING(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function substring(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): invalid number of args for substring
+
+
+<br>
+
+#### <a id="fail-substring_bytea_integer_cov-Grammar"></a>`substring_bytea_integer_cov`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SUBSTRING(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SUBSTRING(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function substring(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): invalid number of args for substring
+
+
+<br>
+
+#### <a id="fail-substring_bytea_integer_integer_cov-Grammar"></a>`substring_bytea_integer_integer_cov`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SUBSTRING(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SUBSTRING(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function substring(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): invalid number of args for substring
+
+
+<br>
+
+#### <a id="fail-substring_text_text_text_cov-Grammar"></a>`substring_text_text_text_cov`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SUBSTRING(name) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SUBSTRING(name) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function substring(character varying) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): invalid number of args for substring
+
+
+<br>
+
+#### <a id="fail-to_hex__big__from_table-TDS"></a><a id="fail-to_hex__big__from_table-Relation"></a><a id="fail-to_hex__big__from_table-Grammar"></a>`to_hex__big__from_table`
+
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TO_HEX(int_val) AS result FROM numbers WHERE int_val IS NOT NULL AND int_val >= 0 ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TO_HEX(int_val) AS result FROM func('e2e::tds_numbers') WHERE int_val IS NOT NULL AND int_val >= 0 ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "TO_HEX"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TO_HEX(int_val) AS result FROM numbers WHERE int_val IS NOT NULL AND int_val >= 0 ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TO_HEX(int_val) AS result FROM func('e2e::rel_numbers') WHERE int_val IS NOT NULL AND int_val >= 0 ORDER BY 1
 ```
@@ -3106,24 +5037,49 @@ SELECT TO_HEX(int_val) AS result FROM func('e2e::rel_numbers') WHERE int_val IS 
 **Error:**
 > No function matches the given name "TO_HEX"
 
-
-<br>
-
-#### <a id="fail-to_hex__int__from_table-TDS"></a><a id="fail-to_hex__int__from_table-Relation"></a>`to_hex__int__from_table`
-
-🔴 **Failed in both TDS and Relation**
+📙 **Grammar Path**
 
 **Input SQL:**
 ```sql
 SELECT TO_HEX(int_val) AS result FROM numbers WHERE int_val IS NOT NULL AND int_val >= 0 ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
+```sql
+SELECT TO_HEX(int_val) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE int_val IS NOT NULL AND int_val >= 0 ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "TO_HEX"
+
+
+<br>
+
+#### <a id="fail-to_hex__int__from_table-TDS"></a><a id="fail-to_hex__int__from_table-Relation"></a><a id="fail-to_hex__int__from_table-Grammar"></a>`to_hex__int__from_table`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT TO_HEX(int_val) AS result FROM numbers WHERE int_val IS NOT NULL AND int_val >= 0 ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TO_HEX(int_val) AS result FROM func('e2e::tds_numbers') WHERE int_val IS NOT NULL AND int_val >= 0 ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "TO_HEX"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TO_HEX(int_val) AS result FROM numbers WHERE int_val IS NOT NULL AND int_val >= 0 ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TO_HEX(int_val) AS result FROM func('e2e::rel_numbers') WHERE int_val IS NOT NULL AND int_val >= 0 ORDER BY 1
 ```
@@ -3131,24 +5087,49 @@ SELECT TO_HEX(int_val) AS result FROM func('e2e::rel_numbers') WHERE int_val IS 
 **Error:**
 > No function matches the given name "TO_HEX"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TO_HEX(int_val) AS result FROM numbers WHERE int_val IS NOT NULL AND int_val >= 0 ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TO_HEX(int_val) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE int_val IS NOT NULL AND int_val >= 0 ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "TO_HEX"
+
 
 <br>
 
-#### <a id="fail-translate__txt_txt_txt__from_table-TDS"></a><a id="fail-translate__txt_txt_txt__from_table-Relation"></a>`translate__txt_txt_txt__from_table`
+#### <a id="fail-translate__txt_txt_txt__from_table-TDS"></a><a id="fail-translate__txt_txt_txt__from_table-Relation"></a><a id="fail-translate__txt_txt_txt__from_table-Grammar"></a>`translate__txt_txt_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TRANSLATE(val, 'aeiou', 'AEIOU') AS result FROM strings ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TRANSLATE(val, 'aeiou', 'AEIOU') AS result FROM func('e2e::tds_strings') ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "TRANSLATE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TRANSLATE(val, 'aeiou', 'AEIOU') AS result FROM strings ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TRANSLATE(val, 'aeiou', 'AEIOU') AS result FROM func('e2e::rel_strings') ORDER BY 1
 ```
@@ -3156,24 +5137,49 @@ SELECT TRANSLATE(val, 'aeiou', 'AEIOU') AS result FROM func('e2e::rel_strings') 
 **Error:**
 > No function matches the given name "TRANSLATE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TRANSLATE(val, 'aeiou', 'AEIOU') AS result FROM strings ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TRANSLATE(val, 'aeiou', 'AEIOU') AS result FROM func('e2e::rel_strings__Relation_1_') ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "TRANSLATE"
+
 
 <br>
 
-#### <a id="fail-unistr__txt__from_table-TDS"></a><a id="fail-unistr__txt__from_table-Relation"></a>`unistr__txt__from_table`
+#### <a id="fail-unistr__txt__from_table-TDS"></a><a id="fail-unistr__txt__from_table-Relation"></a><a id="fail-unistr__txt__from_table-Grammar"></a>`unistr__txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT UNISTR('\0041') AS result FROM strings WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT UNISTR('\0041') AS result FROM func('e2e::tds_strings') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "UNISTR"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT UNISTR('\0041') AS result FROM strings WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT UNISTR('\0041') AS result FROM func('e2e::rel_strings') WHERE id = 1
 ```
@@ -3181,24 +5187,49 @@ SELECT UNISTR('\0041') AS result FROM func('e2e::rel_strings') WHERE id = 1
 **Error:**
 > No function matches the given name "UNISTR"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT UNISTR('\0041') AS result FROM strings WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT UNISTR('\0041') AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "UNISTR"
+
 
 <br>
 
-#### <a id="fail-upper__anymultirange__unsupported_type-TDS"></a><a id="fail-upper__anymultirange__unsupported_type-Relation"></a>`upper__anymultirange__unsupported_type`
+#### <a id="fail-upper__anymultirange__unsupported_type-TDS"></a><a id="fail-upper__anymultirange__unsupported_type-Relation"></a><a id="fail-upper__anymultirange__unsupported_type-Grammar"></a>`upper__anymultirange__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT UPPER(int4multirange(int4range(1,5))) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT UPPER(int4multirange(int4range(1, 5))) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "int4multirange"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT UPPER(int4multirange(int4range(1,5))) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT UPPER(int4multirange(int4range(1, 5))) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -3206,24 +5237,49 @@ SELECT UPPER(int4multirange(int4range(1, 5))) AS result FROM func('e2e::rel_pers
 **Error:**
 > No function matches the given name "int4multirange"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT UPPER(int4multirange(int4range(1,5))) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT UPPER(int4multirange(int4range(1, 5))) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "int4multirange"
+
 
 <br>
 
-#### <a id="fail-upper__anyrange__unsupported_type-TDS"></a><a id="fail-upper__anyrange__unsupported_type-Relation"></a>`upper__anyrange__unsupported_type`
+#### <a id="fail-upper__anyrange__unsupported_type-TDS"></a><a id="fail-upper__anyrange__unsupported_type-Relation"></a><a id="fail-upper__anyrange__unsupported_type-Grammar"></a>`upper__anyrange__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT UPPER(int4range(1,5)) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT UPPER(int4range(1, 5)) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "int4range"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT UPPER(int4range(1,5)) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT UPPER(int4range(1, 5)) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -3231,24 +5287,49 @@ SELECT UPPER(int4range(1, 5)) AS result FROM func('e2e::rel_persons') WHERE id =
 **Error:**
 > No function matches the given name "int4range"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT UPPER(int4range(1,5)) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT UPPER(int4range(1, 5)) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "int4range"
+
 
 <br>
 
-#### <a id="fail-convert__bytea_name_name-TDS"></a><a id="fail-convert__bytea_name_name-Relation"></a>`convert__bytea_name_name`
+#### <a id="fail-convert__bytea_name_name-TDS"></a><a id="fail-convert__bytea_name_name-Relation"></a><a id="fail-convert__bytea_name_name-Grammar"></a>`convert__bytea_name_name`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT CONVERT('Hello', 'UTF8', 'LATIN1') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT CONVERT('Hello', 'UTF8', 'LATIN1') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "CONVERT"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT CONVERT('Hello', 'UTF8', 'LATIN1') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT CONVERT('Hello', 'UTF8', 'LATIN1') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -3256,24 +5337,49 @@ SELECT CONVERT('Hello', 'UTF8', 'LATIN1') AS result FROM func('e2e::rel_persons'
 **Error:**
 > No function matches the given name "CONVERT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT CONVERT('Hello', 'UTF8', 'LATIN1') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT CONVERT('Hello', 'UTF8', 'LATIN1') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "CONVERT"
+
 
 <br>
 
-#### <a id="fail-convert_from__bytea_name-TDS"></a><a id="fail-convert_from__bytea_name-Relation"></a>`convert_from__bytea_name`
+#### <a id="fail-convert_from__bytea_name-TDS"></a><a id="fail-convert_from__bytea_name-Relation"></a><a id="fail-convert_from__bytea_name-Grammar"></a>`convert_from__bytea_name`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT CONVERT_FROM('Hello', 'UTF8') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT CONVERT_FROM('Hello', 'UTF8') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "CONVERT_FROM"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT CONVERT_FROM('Hello', 'UTF8') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT CONVERT_FROM('Hello', 'UTF8') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -3281,24 +5387,49 @@ SELECT CONVERT_FROM('Hello', 'UTF8') AS result FROM func('e2e::rel_persons') WHE
 **Error:**
 > No function matches the given name "CONVERT_FROM"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT CONVERT_FROM('Hello', 'UTF8') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT CONVERT_FROM('Hello', 'UTF8') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "CONVERT_FROM"
+
 
 <br>
 
-#### <a id="fail-convert_to__txt_name-TDS"></a><a id="fail-convert_to__txt_name-Relation"></a>`convert_to__txt_name`
+#### <a id="fail-convert_to__txt_name-TDS"></a><a id="fail-convert_to__txt_name-Relation"></a><a id="fail-convert_to__txt_name-Grammar"></a>`convert_to__txt_name`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT CONVERT_TO('Hello', 'UTF8') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT CONVERT_TO('Hello', 'UTF8') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "CONVERT_TO"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT CONVERT_TO('Hello', 'UTF8') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT CONVERT_TO('Hello', 'UTF8') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -3306,24 +5437,49 @@ SELECT CONVERT_TO('Hello', 'UTF8') AS result FROM func('e2e::rel_persons') WHERE
 **Error:**
 > No function matches the given name "CONVERT_TO"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT CONVERT_TO('Hello', 'UTF8') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT CONVERT_TO('Hello', 'UTF8') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "CONVERT_TO"
+
 
 <br>
 
-#### <a id="fail-get_byte__bytea_int-TDS"></a><a id="fail-get_byte__bytea_int-Relation"></a>`get_byte__bytea_int`
+#### <a id="fail-get_byte__bytea_int-TDS"></a><a id="fail-get_byte__bytea_int-Relation"></a><a id="fail-get_byte__bytea_int-Grammar"></a>`get_byte__bytea_int`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT GET_BYTE('AB', 0) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT GET_BYTE('AB', 0) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "GET_BYTE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT GET_BYTE('AB', 0) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT GET_BYTE('AB', 0) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -3331,24 +5487,49 @@ SELECT GET_BYTE('AB', 0) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "GET_BYTE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT GET_BYTE('AB', 0) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT GET_BYTE('AB', 0) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "GET_BYTE"
+
 
 <br>
 
-#### <a id="fail-set_byte__bytea_int_int-TDS"></a><a id="fail-set_byte__bytea_int_int-Relation"></a>`set_byte__bytea_int_int`
+#### <a id="fail-set_byte__bytea_int_int-TDS"></a><a id="fail-set_byte__bytea_int_int-Relation"></a><a id="fail-set_byte__bytea_int_int-Grammar"></a>`set_byte__bytea_int_int`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT SET_BYTE('AB', 0, 67) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT SET_BYTE('AB', 0, 67) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "SET_BYTE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT SET_BYTE('AB', 0, 67) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT SET_BYTE('AB', 0, 67) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -3356,24 +5537,49 @@ SELECT SET_BYTE('AB', 0, 67) AS result FROM func('e2e::rel_persons') WHERE id = 
 **Error:**
 > No function matches the given name "SET_BYTE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SET_BYTE('AB', 0, 67) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SET_BYTE('AB', 0, 67) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "SET_BYTE"
+
 
 <br>
 
-#### <a id="fail-sha224__bytea-TDS"></a><a id="fail-sha224__bytea-Relation"></a>`sha224__bytea`
+#### <a id="fail-sha224__bytea-TDS"></a><a id="fail-sha224__bytea-Relation"></a><a id="fail-sha224__bytea-Grammar"></a>`sha224__bytea`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT SHA224('Hello') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT SHA224('Hello') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "SHA224"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT SHA224('Hello') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT SHA224('Hello') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -3381,24 +5587,49 @@ SELECT SHA224('Hello') AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "SHA224"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SHA224('Hello') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SHA224('Hello') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "SHA224"
+
 
 <br>
 
-#### <a id="fail-sha384__bytea-TDS"></a><a id="fail-sha384__bytea-Relation"></a>`sha384__bytea`
+#### <a id="fail-sha384__bytea-TDS"></a><a id="fail-sha384__bytea-Relation"></a><a id="fail-sha384__bytea-Grammar"></a>`sha384__bytea`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT SHA384('Hello') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT SHA384('Hello') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "SHA384"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT SHA384('Hello') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT SHA384('Hello') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -3406,24 +5637,49 @@ SELECT SHA384('Hello') AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "SHA384"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SHA384('Hello') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SHA384('Hello') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "SHA384"
+
 
 <br>
 
-#### <a id="fail-sha512__bytea-TDS"></a><a id="fail-sha512__bytea-Relation"></a>`sha512__bytea`
+#### <a id="fail-sha512__bytea-TDS"></a><a id="fail-sha512__bytea-Relation"></a><a id="fail-sha512__bytea-Grammar"></a>`sha512__bytea`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT SHA512('Hello') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT SHA512('Hello') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "SHA512"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT SHA512('Hello') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT SHA512('Hello') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -3431,24 +5687,49 @@ SELECT SHA512('Hello') AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "SHA512"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SHA512('Hello') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SHA512('Hello') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "SHA512"
+
 
 <br>
 
-#### <a id="fail-to_date__txt_txt__from_table-TDS"></a><a id="fail-to_date__txt_txt__from_table-Relation"></a>`to_date__txt_txt__from_table`
+#### <a id="fail-to_date__txt_txt__from_table-TDS"></a><a id="fail-to_date__txt_txt__from_table-Relation"></a><a id="fail-to_date__txt_txt__from_table-Grammar"></a>`to_date__txt_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TO_DATE('2023-01-15', 'YYYY-MM-DD') AS result FROM dates WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TO_DATE('2023-01-15', 'YYYY-MM-DD') AS result FROM func('e2e::tds_dates') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "TO_DATE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TO_DATE('2023-01-15', 'YYYY-MM-DD') AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TO_DATE('2023-01-15', 'YYYY-MM-DD') AS result FROM func('e2e::rel_dates') WHERE id = 1
 ```
@@ -3456,24 +5737,49 @@ SELECT TO_DATE('2023-01-15', 'YYYY-MM-DD') AS result FROM func('e2e::rel_dates')
 **Error:**
 > No function matches the given name "TO_DATE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TO_DATE('2023-01-15', 'YYYY-MM-DD') AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TO_DATE('2023-01-15', 'YYYY-MM-DD') AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "TO_DATE"
+
 
 <br>
 
-#### <a id="fail-to_number__txt_txt__from_table-TDS"></a><a id="fail-to_number__txt_txt__from_table-Relation"></a>`to_number__txt_txt__from_table`
+#### <a id="fail-to_number__txt_txt__from_table-TDS"></a><a id="fail-to_number__txt_txt__from_table-Relation"></a><a id="fail-to_number__txt_txt__from_table-Grammar"></a>`to_number__txt_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TO_NUMBER('12,345.67', '99G999D99') AS result FROM numbers WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TO_NUMBER('12,345.67', '99G999D99') AS result FROM func('e2e::tds_numbers') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "TO_NUMBER"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TO_NUMBER('12,345.67', '99G999D99') AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TO_NUMBER('12,345.67', '99G999D99') AS result FROM func('e2e::rel_numbers') WHERE id = 1
 ```
@@ -3481,24 +5787,49 @@ SELECT TO_NUMBER('12,345.67', '99G999D99') AS result FROM func('e2e::rel_numbers
 **Error:**
 > No function matches the given name "TO_NUMBER"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TO_NUMBER('12,345.67', '99G999D99') AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TO_NUMBER('12,345.67', '99G999D99') AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "TO_NUMBER"
+
 
 <br>
 
-#### <a id="fail-age__tstz__from_table-TDS"></a><a id="fail-age__tstz__from_table-Relation"></a>`age__tstz__from_table`
+#### <a id="fail-age__tstz__from_table-TDS"></a><a id="fail-age__tstz__from_table-Relation"></a><a id="fail-age__tstz__from_table-Grammar"></a>`age__tstz__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT AGE(tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT AGE(tsz::timestamptz) AS result FROM func('e2e::tds_dates') WHERE tsz IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "AGE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT AGE(tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT AGE(tsz::timestamptz) AS result FROM func('e2e::rel_dates') WHERE tsz IS NOT NULL ORDER BY 1
 ```
@@ -3506,24 +5837,49 @@ SELECT AGE(tsz::timestamptz) AS result FROM func('e2e::rel_dates') WHERE tsz IS 
 **Error:**
 > No function matches the given name "AGE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT AGE(tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT AGE(tsz::timestamptz) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "AGE"
+
 
 <br>
 
-#### <a id="fail-age_timestamp_with_time_zone_cov-TDS"></a><a id="fail-age_timestamp_with_time_zone_cov-Relation"></a>`age_timestamp_with_time_zone_cov`
+#### <a id="fail-age_timestamp_with_time_zone_cov-TDS"></a><a id="fail-age_timestamp_with_time_zone_cov-Relation"></a><a id="fail-age_timestamp_with_time_zone_cov-Grammar"></a>`age_timestamp_with_time_zone_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT AGE(CAST('2023-01-01' AS TIMESTAMP)) IS NOT NULL AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT AGE(CAST('2023-01-01' AS TIMESTAMP)) IS NOT NULL AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "AGE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT AGE(CAST('2023-01-01' AS TIMESTAMP)) IS NOT NULL AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT AGE(CAST('2023-01-01' AS TIMESTAMP)) IS NOT NULL AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -3531,24 +5887,49 @@ SELECT AGE(CAST('2023-01-01' AS TIMESTAMP)) IS NOT NULL AS result FROM func('e2e
 **Error:**
 > No function matches the given name "AGE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT AGE(CAST('2023-01-01' AS TIMESTAMP)) IS NOT NULL AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT AGE(CAST('2023-01-01' AS TIMESTAMP)) IS NOT NULL AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "AGE"
+
 
 <br>
 
-#### <a id="fail-age__tstz_tstz__from_table-TDS"></a><a id="fail-age__tstz_tstz__from_table-Relation"></a>`age__tstz_tstz__from_table`
+#### <a id="fail-age__tstz_tstz__from_table-TDS"></a><a id="fail-age__tstz_tstz__from_table-Relation"></a><a id="fail-age__tstz_tstz__from_table-Grammar"></a>`age__tstz_tstz__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT AGE(tsz::timestamptz, '2000-01-01'::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT AGE(tsz::timestamptz, '2000-01-01'::timestamptz) AS result FROM func('e2e::tds_dates') WHERE tsz IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "AGE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT AGE(tsz::timestamptz, '2000-01-01'::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT AGE(tsz::timestamptz, '2000-01-01'::timestamptz) AS result FROM func('e2e::rel_dates') WHERE tsz IS NOT NULL ORDER BY 1
 ```
@@ -3556,24 +5937,49 @@ SELECT AGE(tsz::timestamptz, '2000-01-01'::timestamptz) AS result FROM func('e2e
 **Error:**
 > No function matches the given name "AGE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT AGE(tsz::timestamptz, '2000-01-01'::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT AGE(tsz::timestamptz, '2000-01-01'::timestamptz) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "AGE"
+
 
 <br>
 
-#### <a id="fail-age__ts__from_table-TDS"></a><a id="fail-age__ts__from_table-Relation"></a>`age__ts__from_table`
+#### <a id="fail-age__ts__from_table-TDS"></a><a id="fail-age__ts__from_table-Relation"></a><a id="fail-age__ts__from_table-Grammar"></a>`age__ts__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT AGE(ts) AS result FROM dates WHERE ts IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT AGE(ts) AS result FROM func('e2e::tds_dates') WHERE ts IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "AGE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT AGE(ts) AS result FROM dates WHERE ts IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT AGE(ts) AS result FROM func('e2e::rel_dates') WHERE ts IS NOT NULL ORDER BY 1
 ```
@@ -3581,24 +5987,49 @@ SELECT AGE(ts) AS result FROM func('e2e::rel_dates') WHERE ts IS NOT NULL ORDER 
 **Error:**
 > No function matches the given name "AGE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT AGE(ts) AS result FROM dates WHERE ts IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT AGE(ts) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE ts IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "AGE"
+
 
 <br>
 
-#### <a id="fail-age_timestamp_without_time_zone_cov-TDS"></a><a id="fail-age_timestamp_without_time_zone_cov-Relation"></a>`age_timestamp_without_time_zone_cov`
+#### <a id="fail-age_timestamp_without_time_zone_cov-TDS"></a><a id="fail-age_timestamp_without_time_zone_cov-Relation"></a><a id="fail-age_timestamp_without_time_zone_cov-Grammar"></a>`age_timestamp_without_time_zone_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT AGE(CAST('2023-01-01' AS TIMESTAMP)) IS NOT NULL AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT AGE(CAST('2023-01-01' AS TIMESTAMP)) IS NOT NULL AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "AGE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT AGE(CAST('2023-01-01' AS TIMESTAMP)) IS NOT NULL AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT AGE(CAST('2023-01-01' AS TIMESTAMP)) IS NOT NULL AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -3606,24 +6037,49 @@ SELECT AGE(CAST('2023-01-01' AS TIMESTAMP)) IS NOT NULL AS result FROM func('e2e
 **Error:**
 > No function matches the given name "AGE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT AGE(CAST('2023-01-01' AS TIMESTAMP)) IS NOT NULL AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT AGE(CAST('2023-01-01' AS TIMESTAMP)) IS NOT NULL AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "AGE"
+
 
 <br>
 
-#### <a id="fail-age__ts_ts__from_table-TDS"></a><a id="fail-age__ts_ts__from_table-Relation"></a>`age__ts_ts__from_table`
+#### <a id="fail-age__ts_ts__from_table-TDS"></a><a id="fail-age__ts_ts__from_table-Relation"></a><a id="fail-age__ts_ts__from_table-Grammar"></a>`age__ts_ts__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT AGE(ts, '2000-01-01'::timestamp) AS result FROM dates WHERE ts IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT AGE(ts, '2000-01-01'::timestamp) AS result FROM func('e2e::tds_dates') WHERE ts IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "AGE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT AGE(ts, '2000-01-01'::timestamp) AS result FROM dates WHERE ts IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT AGE(ts, '2000-01-01'::timestamp) AS result FROM func('e2e::rel_dates') WHERE ts IS NOT NULL ORDER BY 1
 ```
@@ -3631,24 +6087,49 @@ SELECT AGE(ts, '2000-01-01'::timestamp) AS result FROM func('e2e::rel_dates') WH
 **Error:**
 > No function matches the given name "AGE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT AGE(ts, '2000-01-01'::timestamp) AS result FROM dates WHERE ts IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT AGE(ts, '2000-01-01'::timestamp) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE ts IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "AGE"
+
 
 <br>
 
-#### <a id="fail-age__xid__unsupported_type-TDS"></a><a id="fail-age__xid__unsupported_type-Relation"></a>`age__xid__unsupported_type`
+#### <a id="fail-age__xid__unsupported_type-TDS"></a><a id="fail-age__xid__unsupported_type-Relation"></a><a id="fail-age__xid__unsupported_type-Grammar"></a>`age__xid__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT AGE('100'::xid) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT AGE('100'::xid) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "AGE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT AGE('100'::xid) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT AGE('100'::xid) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -3656,24 +6137,49 @@ SELECT AGE('100'::xid) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "AGE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT AGE('100'::xid) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT AGE('100'::xid) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "AGE"
+
 
 <br>
 
-#### <a id="fail-age_xid_cov-TDS"></a><a id="fail-age_xid_cov-Relation"></a>`age_xid_cov`
+#### <a id="fail-age_xid_cov-TDS"></a><a id="fail-age_xid_cov-Relation"></a><a id="fail-age_xid_cov-Grammar"></a>`age_xid_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT AGE(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT AGE(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "AGE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT AGE(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT AGE(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -3681,24 +6187,51 @@ SELECT AGE(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "AGE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT AGE(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT AGE(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function age(unknown) is not unique
+>   Hint: Could not choose a best candidate function. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "AGE"
+
 
 <br>
 
-#### <a id="fail-clock_timestamp__basic-TDS"></a><a id="fail-clock_timestamp__basic-Relation"></a>`clock_timestamp__basic`
+#### <a id="fail-clock_timestamp__basic-TDS"></a><a id="fail-clock_timestamp__basic-Relation"></a><a id="fail-clock_timestamp__basic-Grammar"></a>`clock_timestamp__basic`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT CASE WHEN CLOCK_TIMESTAMP() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM dates WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT CASE WHEN CLOCK_TIMESTAMP() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM func('e2e::tds_dates') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "CLOCK_TIMESTAMP"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT CASE WHEN CLOCK_TIMESTAMP() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT CASE WHEN CLOCK_TIMESTAMP() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM func('e2e::rel_dates') WHERE id = 1
 ```
@@ -3706,24 +6239,49 @@ SELECT CASE WHEN CLOCK_TIMESTAMP() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END
 **Error:**
 > No function matches the given name "CLOCK_TIMESTAMP"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT CASE WHEN CLOCK_TIMESTAMP() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT CASE WHEN CLOCK_TIMESTAMP() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "CLOCK_TIMESTAMP"
+
 
 <br>
 
-#### <a id="fail-clock_timestamp_cov-TDS"></a><a id="fail-clock_timestamp_cov-Relation"></a>`clock_timestamp_cov`
+#### <a id="fail-clock_timestamp_cov-TDS"></a><a id="fail-clock_timestamp_cov-Relation"></a><a id="fail-clock_timestamp_cov-Grammar"></a>`clock_timestamp_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT CLOCK_TIMESTAMP() IS NOT NULL AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT CLOCK_TIMESTAMP() IS NOT NULL AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "CLOCK_TIMESTAMP"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT CLOCK_TIMESTAMP() IS NOT NULL AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT CLOCK_TIMESTAMP() IS NOT NULL AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -3731,24 +6289,49 @@ SELECT CLOCK_TIMESTAMP() IS NOT NULL AS result FROM func('e2e::rel_persons') WHE
 **Error:**
 > No function matches the given name "CLOCK_TIMESTAMP"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT CLOCK_TIMESTAMP() IS NOT NULL AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT CLOCK_TIMESTAMP() IS NOT NULL AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "CLOCK_TIMESTAMP"
+
 
 <br>
 
-#### <a id="fail-isfinite__date__from_table-TDS"></a><a id="fail-isfinite__date__from_table-Relation"></a>`isfinite__date__from_table`
+#### <a id="fail-isfinite__date__from_table-TDS"></a><a id="fail-isfinite__date__from_table-Relation"></a><a id="fail-isfinite__date__from_table-Grammar"></a>`isfinite__date__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ISFINITE(d) AS result FROM dates WHERE d IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ISFINITE(d) AS result FROM func('e2e::tds_dates') WHERE d IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ISFINITE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ISFINITE(d) AS result FROM dates WHERE d IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ISFINITE(d) AS result FROM func('e2e::rel_dates') WHERE d IS NOT NULL ORDER BY 1
 ```
@@ -3756,24 +6339,49 @@ SELECT ISFINITE(d) AS result FROM func('e2e::rel_dates') WHERE d IS NOT NULL ORD
 **Error:**
 > No function matches the given name "ISFINITE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ISFINITE(d) AS result FROM dates WHERE d IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ISFINITE(d) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE d IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ISFINITE"
+
 
 <br>
 
-#### <a id="fail-isfinite__intv__from_table-TDS"></a><a id="fail-isfinite__intv__from_table-Relation"></a>`isfinite__intv__from_table`
+#### <a id="fail-isfinite__intv__from_table-TDS"></a><a id="fail-isfinite__intv__from_table-Relation"></a><a id="fail-isfinite__intv__from_table-Grammar"></a>`isfinite__intv__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ISFINITE(INTERVAL '1 day') AS result FROM dates WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ISFINITE(INTERVAL '1 day') AS result FROM func('e2e::tds_dates') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ISFINITE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ISFINITE(INTERVAL '1 day') AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ISFINITE(INTERVAL '1 day') AS result FROM func('e2e::rel_dates') WHERE id = 1
 ```
@@ -3781,24 +6389,49 @@ SELECT ISFINITE(INTERVAL '1 day') AS result FROM func('e2e::rel_dates') WHERE id
 **Error:**
 > No function matches the given name "ISFINITE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ISFINITE(INTERVAL '1 day') AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ISFINITE(INTERVAL '1 day') AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ISFINITE"
+
 
 <br>
 
-#### <a id="fail-isfinite__tstz__from_table-TDS"></a><a id="fail-isfinite__tstz__from_table-Relation"></a>`isfinite__tstz__from_table`
+#### <a id="fail-isfinite__tstz__from_table-TDS"></a><a id="fail-isfinite__tstz__from_table-Relation"></a><a id="fail-isfinite__tstz__from_table-Grammar"></a>`isfinite__tstz__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ISFINITE(tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ISFINITE(tsz::timestamptz) AS result FROM func('e2e::tds_dates') WHERE tsz IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ISFINITE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ISFINITE(tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ISFINITE(tsz::timestamptz) AS result FROM func('e2e::rel_dates') WHERE tsz IS NOT NULL ORDER BY 1
 ```
@@ -3806,24 +6439,49 @@ SELECT ISFINITE(tsz::timestamptz) AS result FROM func('e2e::rel_dates') WHERE ts
 **Error:**
 > No function matches the given name "ISFINITE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ISFINITE(tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ISFINITE(tsz::timestamptz) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ISFINITE"
+
 
 <br>
 
-#### <a id="fail-isfinite__ts__from_table-TDS"></a><a id="fail-isfinite__ts__from_table-Relation"></a>`isfinite__ts__from_table`
+#### <a id="fail-isfinite__ts__from_table-TDS"></a><a id="fail-isfinite__ts__from_table-Relation"></a><a id="fail-isfinite__ts__from_table-Grammar"></a>`isfinite__ts__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ISFINITE(ts) AS result FROM dates WHERE ts IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ISFINITE(ts) AS result FROM func('e2e::tds_dates') WHERE ts IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ISFINITE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ISFINITE(ts) AS result FROM dates WHERE ts IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ISFINITE(ts) AS result FROM func('e2e::rel_dates') WHERE ts IS NOT NULL ORDER BY 1
 ```
@@ -3831,24 +6489,49 @@ SELECT ISFINITE(ts) AS result FROM func('e2e::rel_dates') WHERE ts IS NOT NULL O
 **Error:**
 > No function matches the given name "ISFINITE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ISFINITE(ts) AS result FROM dates WHERE ts IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ISFINITE(ts) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE ts IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ISFINITE"
+
 
 <br>
 
-#### <a id="fail-justify_days__intv__from_table-TDS"></a><a id="fail-justify_days__intv__from_table-Relation"></a>`justify_days__intv__from_table`
+#### <a id="fail-justify_days__intv__from_table-TDS"></a><a id="fail-justify_days__intv__from_table-Relation"></a><a id="fail-justify_days__intv__from_table-Grammar"></a>`justify_days__intv__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT JUSTIFY_DAYS(INTERVAL '35 days 25 hours') AS result FROM dates WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT JUSTIFY_DAYS(INTERVAL '35 days 25 hours') AS result FROM func('e2e::tds_dates') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "JUSTIFY_DAYS"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT JUSTIFY_DAYS(INTERVAL '35 days 25 hours') AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT JUSTIFY_DAYS(INTERVAL '35 days 25 hours') AS result FROM func('e2e::rel_dates') WHERE id = 1
 ```
@@ -3856,24 +6539,49 @@ SELECT JUSTIFY_DAYS(INTERVAL '35 days 25 hours') AS result FROM func('e2e::rel_d
 **Error:**
 > No function matches the given name "JUSTIFY_DAYS"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JUSTIFY_DAYS(INTERVAL '35 days 25 hours') AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JUSTIFY_DAYS(INTERVAL '35 days 25 hours') AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JUSTIFY_DAYS"
+
 
 <br>
 
-#### <a id="fail-justify_hours__intv__from_table-TDS"></a><a id="fail-justify_hours__intv__from_table-Relation"></a>`justify_hours__intv__from_table`
+#### <a id="fail-justify_hours__intv__from_table-TDS"></a><a id="fail-justify_hours__intv__from_table-Relation"></a><a id="fail-justify_hours__intv__from_table-Grammar"></a>`justify_hours__intv__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT JUSTIFY_HOURS(INTERVAL '35 days 25 hours') AS result FROM dates WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT JUSTIFY_HOURS(INTERVAL '35 days 25 hours') AS result FROM func('e2e::tds_dates') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "JUSTIFY_HOURS"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT JUSTIFY_HOURS(INTERVAL '35 days 25 hours') AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT JUSTIFY_HOURS(INTERVAL '35 days 25 hours') AS result FROM func('e2e::rel_dates') WHERE id = 1
 ```
@@ -3881,24 +6589,49 @@ SELECT JUSTIFY_HOURS(INTERVAL '35 days 25 hours') AS result FROM func('e2e::rel_
 **Error:**
 > No function matches the given name "JUSTIFY_HOURS"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JUSTIFY_HOURS(INTERVAL '35 days 25 hours') AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JUSTIFY_HOURS(INTERVAL '35 days 25 hours') AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JUSTIFY_HOURS"
+
 
 <br>
 
-#### <a id="fail-justify_interval__intv__from_table-TDS"></a><a id="fail-justify_interval__intv__from_table-Relation"></a>`justify_interval__intv__from_table`
+#### <a id="fail-justify_interval__intv__from_table-TDS"></a><a id="fail-justify_interval__intv__from_table-Relation"></a><a id="fail-justify_interval__intv__from_table-Grammar"></a>`justify_interval__intv__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT JUSTIFY_INTERVAL(INTERVAL '35 days 25 hours') AS result FROM dates WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT JUSTIFY_INTERVAL(INTERVAL '35 days 25 hours') AS result FROM func('e2e::tds_dates') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "JUSTIFY_INTERVAL"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT JUSTIFY_INTERVAL(INTERVAL '35 days 25 hours') AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT JUSTIFY_INTERVAL(INTERVAL '35 days 25 hours') AS result FROM func('e2e::rel_dates') WHERE id = 1
 ```
@@ -3906,24 +6639,49 @@ SELECT JUSTIFY_INTERVAL(INTERVAL '35 days 25 hours') AS result FROM func('e2e::r
 **Error:**
 > No function matches the given name "JUSTIFY_INTERVAL"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JUSTIFY_INTERVAL(INTERVAL '35 days 25 hours') AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JUSTIFY_INTERVAL(INTERVAL '35 days 25 hours') AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JUSTIFY_INTERVAL"
+
 
 <br>
 
-#### <a id="fail-make_time__int_int_dp__from_table-TDS"></a><a id="fail-make_time__int_int_dp__from_table-Relation"></a>`make_time__int_int_dp__from_table`
+#### <a id="fail-make_time__int_int_dp__from_table-TDS"></a><a id="fail-make_time__int_int_dp__from_table-Relation"></a><a id="fail-make_time__int_int_dp__from_table-Grammar"></a>`make_time__int_int_dp__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MAKE_TIME(10, 30, 0.0) AS result FROM dates WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MAKE_TIME(10, 30, 0.0) AS result FROM func('e2e::tds_dates') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "MAKE_TIME"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MAKE_TIME(10, 30, 0.0) AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT MAKE_TIME(10, 30, 0.0) AS result FROM func('e2e::rel_dates') WHERE id = 1
 ```
@@ -3931,24 +6689,49 @@ SELECT MAKE_TIME(10, 30, 0.0) AS result FROM func('e2e::rel_dates') WHERE id = 1
 **Error:**
 > No function matches the given name "MAKE_TIME"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MAKE_TIME(10, 30, 0.0) AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT MAKE_TIME(10, 30, 0.0) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "MAKE_TIME"
+
 
 <br>
 
-#### <a id="fail-make_timestamptz__int_int_t_int_int_dp__from_table-TDS"></a><a id="fail-make_timestamptz__int_int_t_int_int_dp__from_table-Relation"></a>`make_timestamptz__int_int_t_int_int_dp__from_table`
+#### <a id="fail-make_timestamptz__int_int_t_int_int_dp__from_table-TDS"></a><a id="fail-make_timestamptz__int_int_t_int_int_dp__from_table-Relation"></a><a id="fail-make_timestamptz__int_int_t_int_int_dp__from_table-Grammar"></a>`make_timestamptz__int_int_t_int_int_dp__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MAKE_TIMESTAMPTZ(2023, 6, 15, 10, 30, 0.0) AS result FROM dates WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MAKE_TIMESTAMPTZ(2023, 6, 15, 10, 30, 0.0) AS result FROM func('e2e::tds_dates') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "MAKE_TIMESTAMPTZ"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MAKE_TIMESTAMPTZ(2023, 6, 15, 10, 30, 0.0) AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT MAKE_TIMESTAMPTZ(2023, 6, 15, 10, 30, 0.0) AS result FROM func('e2e::rel_dates') WHERE id = 1
 ```
@@ -3956,24 +6739,49 @@ SELECT MAKE_TIMESTAMPTZ(2023, 6, 15, 10, 30, 0.0) AS result FROM func('e2e::rel_
 **Error:**
 > No function matches the given name "MAKE_TIMESTAMPTZ"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MAKE_TIMESTAMPTZ(2023, 6, 15, 10, 30, 0.0) AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT MAKE_TIMESTAMPTZ(2023, 6, 15, 10, 30, 0.0) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "MAKE_TIMESTAMPTZ"
+
 
 <br>
 
-#### <a id="fail-make_timestamptz__int_int_t_int_int_dp_timezonetxt__from_table-TDS"></a><a id="fail-make_timestamptz__int_int_t_int_int_dp_timezonetxt__from_table-Relation"></a>`make_timestamptz__int_int_t_int_int_dp_timezonetxt__from_table`
+#### <a id="fail-make_timestamptz__int_int_t_int_int_dp_timezonetxt__from_table-TDS"></a><a id="fail-make_timestamptz__int_int_t_int_int_dp_timezonetxt__from_table-Relation"></a><a id="fail-make_timestamptz__int_int_t_int_int_dp_timezonetxt__from_table-Grammar"></a>`make_timestamptz__int_int_t_int_int_dp_timezonetxt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MAKE_TIMESTAMPTZ(2023, 6, 15, 10, 30, 0.0, 'UTC') AS result FROM dates WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MAKE_TIMESTAMPTZ(2023, 6, 15, 10, 30, 0.0, 'UTC') AS result FROM func('e2e::tds_dates') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "MAKE_TIMESTAMPTZ"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MAKE_TIMESTAMPTZ(2023, 6, 15, 10, 30, 0.0, 'UTC') AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT MAKE_TIMESTAMPTZ(2023, 6, 15, 10, 30, 0.0, 'UTC') AS result FROM func('e2e::rel_dates') WHERE id = 1
 ```
@@ -3981,24 +6789,49 @@ SELECT MAKE_TIMESTAMPTZ(2023, 6, 15, 10, 30, 0.0, 'UTC') AS result FROM func('e2
 **Error:**
 > No function matches the given name "MAKE_TIMESTAMPTZ"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MAKE_TIMESTAMPTZ(2023, 6, 15, 10, 30, 0.0, 'UTC') AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT MAKE_TIMESTAMPTZ(2023, 6, 15, 10, 30, 0.0, 'UTC') AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "MAKE_TIMESTAMPTZ"
+
 
 <br>
 
-#### <a id="fail-now__basic-TDS"></a><a id="fail-now__basic-Relation"></a>`now__basic`
+#### <a id="fail-now__basic-TDS"></a><a id="fail-now__basic-Relation"></a><a id="fail-now__basic-Grammar"></a>`now__basic`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT CASE WHEN NOW() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM dates WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT CASE WHEN NOW() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM func('e2e::tds_dates') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "NOW"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT CASE WHEN NOW() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT CASE WHEN NOW() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM func('e2e::rel_dates') WHERE id = 1
 ```
@@ -4006,24 +6839,49 @@ SELECT CASE WHEN NOW() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result F
 **Error:**
 > No function matches the given name "NOW"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT CASE WHEN NOW() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT CASE WHEN NOW() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "NOW"
+
 
 <br>
 
-#### <a id="fail-now_cov-TDS"></a><a id="fail-now_cov-Relation"></a>`now_cov`
+#### <a id="fail-now_cov-TDS"></a><a id="fail-now_cov-Relation"></a><a id="fail-now_cov-Grammar"></a>`now_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT NOW() IS NOT NULL AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT NOW() IS NOT NULL AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "NOW"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT NOW() IS NOT NULL AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT NOW() IS NOT NULL AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -4031,24 +6889,49 @@ SELECT NOW() IS NOT NULL AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "NOW"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT NOW() IS NOT NULL AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT NOW() IS NOT NULL AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "NOW"
+
 
 <br>
 
-#### <a id="fail-statement_timestamp__basic-TDS"></a><a id="fail-statement_timestamp__basic-Relation"></a>`statement_timestamp__basic`
+#### <a id="fail-statement_timestamp__basic-TDS"></a><a id="fail-statement_timestamp__basic-Relation"></a><a id="fail-statement_timestamp__basic-Grammar"></a>`statement_timestamp__basic`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT CASE WHEN STATEMENT_TIMESTAMP() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM dates WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT CASE WHEN STATEMENT_TIMESTAMP() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM func('e2e::tds_dates') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "STATEMENT_TIMESTAMP"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT CASE WHEN STATEMENT_TIMESTAMP() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT CASE WHEN STATEMENT_TIMESTAMP() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM func('e2e::rel_dates') WHERE id = 1
 ```
@@ -4056,24 +6939,49 @@ SELECT CASE WHEN STATEMENT_TIMESTAMP() > '2020-01-01'::timestamptz THEN 1 ELSE 0
 **Error:**
 > No function matches the given name "STATEMENT_TIMESTAMP"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT CASE WHEN STATEMENT_TIMESTAMP() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT CASE WHEN STATEMENT_TIMESTAMP() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "STATEMENT_TIMESTAMP"
+
 
 <br>
 
-#### <a id="fail-statement_timestamp_cov-TDS"></a><a id="fail-statement_timestamp_cov-Relation"></a>`statement_timestamp_cov`
+#### <a id="fail-statement_timestamp_cov-TDS"></a><a id="fail-statement_timestamp_cov-Relation"></a><a id="fail-statement_timestamp_cov-Grammar"></a>`statement_timestamp_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT STATEMENT_TIMESTAMP() IS NOT NULL AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT STATEMENT_TIMESTAMP() IS NOT NULL AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "STATEMENT_TIMESTAMP"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT STATEMENT_TIMESTAMP() IS NOT NULL AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT STATEMENT_TIMESTAMP() IS NOT NULL AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -4081,24 +6989,49 @@ SELECT STATEMENT_TIMESTAMP() IS NOT NULL AS result FROM func('e2e::rel_persons')
 **Error:**
 > No function matches the given name "STATEMENT_TIMESTAMP"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT STATEMENT_TIMESTAMP() IS NOT NULL AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT STATEMENT_TIMESTAMP() IS NOT NULL AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "STATEMENT_TIMESTAMP"
+
 
 <br>
 
-#### <a id="fail-timeofday__basic-TDS"></a><a id="fail-timeofday__basic-Relation"></a>`timeofday__basic`
+#### <a id="fail-timeofday__basic-TDS"></a><a id="fail-timeofday__basic-Relation"></a><a id="fail-timeofday__basic-Grammar"></a>`timeofday__basic`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT CASE WHEN LENGTH(TIMEOFDAY()) > 0 THEN 1 ELSE 0 END AS result FROM dates WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT CASE WHEN LENGTH(TIMEOFDAY()) > 0 THEN 1 ELSE 0 END AS result FROM func('e2e::tds_dates') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "TIMEOFDAY"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT CASE WHEN LENGTH(TIMEOFDAY()) > 0 THEN 1 ELSE 0 END AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT CASE WHEN LENGTH(TIMEOFDAY()) > 0 THEN 1 ELSE 0 END AS result FROM func('e2e::rel_dates') WHERE id = 1
 ```
@@ -4106,24 +7039,49 @@ SELECT CASE WHEN LENGTH(TIMEOFDAY()) > 0 THEN 1 ELSE 0 END AS result FROM func('
 **Error:**
 > No function matches the given name "TIMEOFDAY"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT CASE WHEN LENGTH(TIMEOFDAY()) > 0 THEN 1 ELSE 0 END AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT CASE WHEN LENGTH(TIMEOFDAY()) > 0 THEN 1 ELSE 0 END AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "TIMEOFDAY"
+
 
 <br>
 
-#### <a id="fail-timeofday_cov-TDS"></a><a id="fail-timeofday_cov-Relation"></a>`timeofday_cov`
+#### <a id="fail-timeofday_cov-TDS"></a><a id="fail-timeofday_cov-Relation"></a><a id="fail-timeofday_cov-Grammar"></a>`timeofday_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TIMEOFDAY() IS NOT NULL AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TIMEOFDAY() IS NOT NULL AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "TIMEOFDAY"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TIMEOFDAY() IS NOT NULL AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TIMEOFDAY() IS NOT NULL AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -4131,24 +7089,49 @@ SELECT TIMEOFDAY() IS NOT NULL AS result FROM func('e2e::rel_persons') WHERE id 
 **Error:**
 > No function matches the given name "TIMEOFDAY"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TIMEOFDAY() IS NOT NULL AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TIMEOFDAY() IS NOT NULL AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "TIMEOFDAY"
+
 
 <br>
 
-#### <a id="fail-to_timestamp__dp__from_table-TDS"></a><a id="fail-to_timestamp__dp__from_table-Relation"></a>`to_timestamp__dp__from_table`
+#### <a id="fail-to_timestamp__dp__from_table-TDS"></a><a id="fail-to_timestamp__dp__from_table-Relation"></a><a id="fail-to_timestamp__dp__from_table-Grammar"></a>`to_timestamp__dp__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TO_TIMESTAMP(0) AS result FROM dates WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TO_TIMESTAMP(0) AS result FROM func('e2e::tds_dates') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "TO_TIMESTAMP"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TO_TIMESTAMP(0) AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TO_TIMESTAMP(0) AS result FROM func('e2e::rel_dates') WHERE id = 1
 ```
@@ -4156,24 +7139,49 @@ SELECT TO_TIMESTAMP(0) AS result FROM func('e2e::rel_dates') WHERE id = 1
 **Error:**
 > No function matches the given name "TO_TIMESTAMP"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TO_TIMESTAMP(0) AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TO_TIMESTAMP(0) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "TO_TIMESTAMP"
+
 
 <br>
 
-#### <a id="fail-to_timestamp__txt_txt__no_generator-TDS"></a><a id="fail-to_timestamp__txt_txt__no_generator-Relation"></a>`to_timestamp__txt_txt__no_generator`
+#### <a id="fail-to_timestamp__txt_txt__no_generator-TDS"></a><a id="fail-to_timestamp__txt_txt__no_generator-Relation"></a><a id="fail-to_timestamp__txt_txt__no_generator-Grammar"></a>`to_timestamp__txt_txt__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TO_TIMESTAMP('2024-01-15', 'YYYY-MM-DD') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TO_TIMESTAMP('2024-01-15', 'YYYY-MM-DD') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "TO_TIMESTAMP"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TO_TIMESTAMP('2024-01-15', 'YYYY-MM-DD') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TO_TIMESTAMP('2024-01-15', 'YYYY-MM-DD') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -4181,24 +7189,49 @@ SELECT TO_TIMESTAMP('2024-01-15', 'YYYY-MM-DD') AS result FROM func('e2e::rel_pe
 **Error:**
 > No function matches the given name "TO_TIMESTAMP"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TO_TIMESTAMP('2024-01-15', 'YYYY-MM-DD') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TO_TIMESTAMP('2024-01-15', 'YYYY-MM-DD') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "TO_TIMESTAMP"
+
 
 <br>
 
-#### <a id="fail-to_timestamp_text_text_cov-TDS"></a><a id="fail-to_timestamp_text_text_cov-Relation"></a>`to_timestamp_text_text_cov`
+#### <a id="fail-to_timestamp_text_text_cov-TDS"></a><a id="fail-to_timestamp_text_text_cov-Relation"></a><a id="fail-to_timestamp_text_text_cov-Grammar"></a>`to_timestamp_text_text_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TO_TIMESTAMP('2023-01-15', 'YYYY-MM-DD') IS NOT NULL AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TO_TIMESTAMP('2023-01-15', 'YYYY-MM-DD') IS NOT NULL AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "TO_TIMESTAMP"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TO_TIMESTAMP('2023-01-15', 'YYYY-MM-DD') IS NOT NULL AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TO_TIMESTAMP('2023-01-15', 'YYYY-MM-DD') IS NOT NULL AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -4206,24 +7239,49 @@ SELECT TO_TIMESTAMP('2023-01-15', 'YYYY-MM-DD') IS NOT NULL AS result FROM func(
 **Error:**
 > No function matches the given name "TO_TIMESTAMP"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TO_TIMESTAMP('2023-01-15', 'YYYY-MM-DD') IS NOT NULL AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TO_TIMESTAMP('2023-01-15', 'YYYY-MM-DD') IS NOT NULL AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "TO_TIMESTAMP"
+
 
 <br>
 
-#### <a id="fail-transaction_timestamp__basic-TDS"></a><a id="fail-transaction_timestamp__basic-Relation"></a>`transaction_timestamp__basic`
+#### <a id="fail-transaction_timestamp__basic-TDS"></a><a id="fail-transaction_timestamp__basic-Relation"></a><a id="fail-transaction_timestamp__basic-Grammar"></a>`transaction_timestamp__basic`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT CASE WHEN TRANSACTION_TIMESTAMP() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM dates WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT CASE WHEN TRANSACTION_TIMESTAMP() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM func('e2e::tds_dates') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "TRANSACTION_TIMESTAMP"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT CASE WHEN TRANSACTION_TIMESTAMP() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT CASE WHEN TRANSACTION_TIMESTAMP() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM func('e2e::rel_dates') WHERE id = 1
 ```
@@ -4231,24 +7289,49 @@ SELECT CASE WHEN TRANSACTION_TIMESTAMP() > '2020-01-01'::timestamptz THEN 1 ELSE
 **Error:**
 > No function matches the given name "TRANSACTION_TIMESTAMP"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT CASE WHEN TRANSACTION_TIMESTAMP() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT CASE WHEN TRANSACTION_TIMESTAMP() > '2020-01-01'::timestamptz THEN 1 ELSE 0 END AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "TRANSACTION_TIMESTAMP"
+
 
 <br>
 
-#### <a id="fail-transaction_timestamp_cov-TDS"></a><a id="fail-transaction_timestamp_cov-Relation"></a>`transaction_timestamp_cov`
+#### <a id="fail-transaction_timestamp_cov-TDS"></a><a id="fail-transaction_timestamp_cov-Relation"></a><a id="fail-transaction_timestamp_cov-Grammar"></a>`transaction_timestamp_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TRANSACTION_TIMESTAMP() IS NOT NULL AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TRANSACTION_TIMESTAMP() IS NOT NULL AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "TRANSACTION_TIMESTAMP"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TRANSACTION_TIMESTAMP() IS NOT NULL AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TRANSACTION_TIMESTAMP() IS NOT NULL AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -4256,24 +7339,49 @@ SELECT TRANSACTION_TIMESTAMP() IS NOT NULL AS result FROM func('e2e::rel_persons
 **Error:**
 > No function matches the given name "TRANSACTION_TIMESTAMP"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TRANSACTION_TIMESTAMP() IS NOT NULL AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TRANSACTION_TIMESTAMP() IS NOT NULL AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "TRANSACTION_TIMESTAMP"
+
 
 <br>
 
-#### <a id="fail-num_nonnulls__variadic__from_table-TDS"></a><a id="fail-num_nonnulls__variadic__from_table-Relation"></a>`num_nonnulls__variadic__from_table`
+#### <a id="fail-num_nonnulls__variadic__from_table-TDS"></a><a id="fail-num_nonnulls__variadic__from_table-Relation"></a><a id="fail-num_nonnulls__variadic__from_table-Grammar"></a>`num_nonnulls__variadic__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT NUM_NONNULLS(int_val, float_val, numeric_val) AS result FROM numbers ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT NUM_NONNULLS(int_val, float_val, numeric_val) AS result FROM func('e2e::tds_numbers') ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "NUM_NONNULLS"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT NUM_NONNULLS(int_val, float_val, numeric_val) AS result FROM numbers ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT NUM_NONNULLS(int_val, float_val, numeric_val) AS result FROM func('e2e::rel_numbers') ORDER BY 1
 ```
@@ -4281,24 +7389,49 @@ SELECT NUM_NONNULLS(int_val, float_val, numeric_val) AS result FROM func('e2e::r
 **Error:**
 > No function matches the given name "NUM_NONNULLS"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT NUM_NONNULLS(int_val, float_val, numeric_val) AS result FROM numbers ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT NUM_NONNULLS(int_val, float_val, numeric_val) AS result FROM func('e2e::rel_numbers__Relation_1_') ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "NUM_NONNULLS"
+
 
 <br>
 
-#### <a id="fail-num_nulls__variadic__from_table-TDS"></a><a id="fail-num_nulls__variadic__from_table-Relation"></a>`num_nulls__variadic__from_table`
+#### <a id="fail-num_nulls__variadic__from_table-TDS"></a><a id="fail-num_nulls__variadic__from_table-Relation"></a><a id="fail-num_nulls__variadic__from_table-Grammar"></a>`num_nulls__variadic__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT NUM_NULLS(int_val, float_val, numeric_val) AS result FROM numbers ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT NUM_NULLS(int_val, float_val, numeric_val) AS result FROM func('e2e::tds_numbers') ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "NUM_NULLS"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT NUM_NULLS(int_val, float_val, numeric_val) AS result FROM numbers ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT NUM_NULLS(int_val, float_val, numeric_val) AS result FROM func('e2e::rel_numbers') ORDER BY 1
 ```
@@ -4306,24 +7439,49 @@ SELECT NUM_NULLS(int_val, float_val, numeric_val) AS result FROM func('e2e::rel_
 **Error:**
 > No function matches the given name "NUM_NULLS"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT NUM_NULLS(int_val, float_val, numeric_val) AS result FROM numbers ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT NUM_NULLS(int_val, float_val, numeric_val) AS result FROM func('e2e::rel_numbers__Relation_1_') ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "NUM_NULLS"
+
 
 <br>
 
-#### <a id="fail-nullif__varchar__equal-TDS"></a><a id="fail-nullif__varchar__equal-Relation"></a>`nullif__varchar__equal`
+#### <a id="fail-nullif__varchar__equal-TDS"></a><a id="fail-nullif__varchar__equal-Relation"></a><a id="fail-nullif__varchar__equal-Grammar"></a>`nullif__varchar__equal`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT NULLIF(name, 'Alice') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT NULLIF(name, 'Alice') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "NULLIF"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT NULLIF(name, 'Alice') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT NULLIF(name, 'Alice') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -4331,24 +7489,49 @@ SELECT NULLIF(name, 'Alice') AS result FROM func('e2e::rel_persons') WHERE id = 
 **Error:**
 > No function matches the given name "NULLIF"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT NULLIF(name, 'Alice') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT NULLIF(name, 'Alice') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "NULLIF"
+
 
 <br>
 
-#### <a id="fail-nullif__varchar__not_equal-TDS"></a><a id="fail-nullif__varchar__not_equal-Relation"></a>`nullif__varchar__not_equal`
+#### <a id="fail-nullif__varchar__not_equal-TDS"></a><a id="fail-nullif__varchar__not_equal-Relation"></a><a id="fail-nullif__varchar__not_equal-Grammar"></a>`nullif__varchar__not_equal`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT NULLIF(name, 'Nobody') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT NULLIF(name, 'Nobody') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "NULLIF"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT NULLIF(name, 'Nobody') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT NULLIF(name, 'Nobody') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -4356,24 +7539,49 @@ SELECT NULLIF(name, 'Nobody') AS result FROM func('e2e::rel_persons') WHERE id =
 **Error:**
 > No function matches the given name "NULLIF"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT NULLIF(name, 'Nobody') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT NULLIF(name, 'Nobody') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "NULLIF"
+
 
 <br>
 
-#### <a id="fail-nullif__int__equal-TDS"></a><a id="fail-nullif__int__equal-Relation"></a>`nullif__int__equal`
+#### <a id="fail-nullif__int__equal-TDS"></a><a id="fail-nullif__int__equal-Relation"></a><a id="fail-nullif__int__equal-Grammar"></a>`nullif__int__equal`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT NULLIF(int_val, 42) AS result FROM numbers WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT NULLIF(int_val, 42) AS result FROM func('e2e::tds_numbers') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "NULLIF"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT NULLIF(int_val, 42) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT NULLIF(int_val, 42) AS result FROM func('e2e::rel_numbers') WHERE id = 1
 ```
@@ -4381,24 +7589,49 @@ SELECT NULLIF(int_val, 42) AS result FROM func('e2e::rel_numbers') WHERE id = 1
 **Error:**
 > No function matches the given name "NULLIF"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT NULLIF(int_val, 42) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT NULLIF(int_val, 42) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "NULLIF"
+
 
 <br>
 
-#### <a id="fail-nullif__int__not_equal-TDS"></a><a id="fail-nullif__int__not_equal-Relation"></a>`nullif__int__not_equal`
+#### <a id="fail-nullif__int__not_equal-TDS"></a><a id="fail-nullif__int__not_equal-Relation"></a><a id="fail-nullif__int__not_equal-Grammar"></a>`nullif__int__not_equal`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT NULLIF(int_val, 999) AS result FROM numbers WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT NULLIF(int_val, 999) AS result FROM func('e2e::tds_numbers') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "NULLIF"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT NULLIF(int_val, 999) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT NULLIF(int_val, 999) AS result FROM func('e2e::rel_numbers') WHERE id = 1
 ```
@@ -4406,24 +7639,49 @@ SELECT NULLIF(int_val, 999) AS result FROM func('e2e::rel_numbers') WHERE id = 1
 **Error:**
 > No function matches the given name "NULLIF"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT NULLIF(int_val, 999) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT NULLIF(int_val, 999) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "NULLIF"
+
 
 <br>
 
-#### <a id="fail-array_to_json__unsupported_type-TDS"></a><a id="fail-array_to_json__unsupported_type-Relation"></a>`array_to_json__unsupported_type`
+#### <a id="fail-array_to_json__unsupported_type-TDS"></a><a id="fail-array_to_json__unsupported_type-Relation"></a><a id="fail-array_to_json__unsupported_type-Grammar"></a>`array_to_json__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_TO_JSON(ARRAY[1, 2, 3]) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_TO_JSON(ARRAY[1, 2, 3]) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_TO_JSON"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_TO_JSON(ARRAY[1, 2, 3]) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_TO_JSON(ARRAY[1, 2, 3]) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -4431,24 +7689,49 @@ SELECT ARRAY_TO_JSON(ARRAY[1, 2, 3]) AS result FROM func('e2e::rel_persons') WHE
 **Error:**
 > No function matches the given name "ARRAY_TO_JSON"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_TO_JSON(ARRAY[1, 2, 3]) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_TO_JSON(ARRAY[1, 2, 3]) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_TO_JSON"
+
 
 <br>
 
-#### <a id="fail-array_to_json__bool__unsupported_type-TDS"></a><a id="fail-array_to_json__bool__unsupported_type-Relation"></a>`array_to_json__bool__unsupported_type`
+#### <a id="fail-array_to_json__bool__unsupported_type-TDS"></a><a id="fail-array_to_json__bool__unsupported_type-Relation"></a><a id="fail-array_to_json__bool__unsupported_type-Grammar"></a>`array_to_json__bool__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_TO_JSON(ARRAY[1, 2, 3], true) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_TO_JSON(ARRAY[1, 2, 3], true) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_TO_JSON"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_TO_JSON(ARRAY[1, 2, 3], true) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_TO_JSON(ARRAY[1, 2, 3], true) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -4456,10 +7739,25 @@ SELECT ARRAY_TO_JSON(ARRAY[1, 2, 3], true) AS result FROM func('e2e::rel_persons
 **Error:**
 > No function matches the given name "ARRAY_TO_JSON"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_TO_JSON(ARRAY[1, 2, 3], true) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_TO_JSON(ARRAY[1, 2, 3], true) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_TO_JSON"
+
 
 <br>
 
-#### <a id="fail-json_array_elements__from_column-Relation"></a>`json_array_elements__from_column`
+#### <a id="fail-json_array_elements__from_column-Relation"></a><a id="fail-json_array_elements__from_column-Grammar"></a>`json_array_elements__from_column`
 
 📗 **Relation Path**
 
@@ -4476,10 +7774,25 @@ SELECT JSON_ARRAY_ELEMENTS(json_arr) AS result FROM func('e2e::rel_json_data') W
 **Error:**
 > No function matches the given name "JSON_ARRAY_ELEMENTS"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_ARRAY_ELEMENTS(json_arr) AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSON_ARRAY_ELEMENTS(json_arr) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSON_ARRAY_ELEMENTS"
+
 
 <br>
 
-#### <a id="fail-json_array_elements_text__from_column-Relation"></a>`json_array_elements_text__from_column`
+#### <a id="fail-json_array_elements_text__from_column-Relation"></a><a id="fail-json_array_elements_text__from_column-Grammar"></a>`json_array_elements_text__from_column`
 
 📗 **Relation Path**
 
@@ -4496,10 +7809,25 @@ SELECT JSON_ARRAY_ELEMENTS_TEXT(json_arr) AS result FROM func('e2e::rel_json_dat
 **Error:**
 > No function matches the given name "JSON_ARRAY_ELEMENTS_TEXT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_ARRAY_ELEMENTS_TEXT(json_arr) AS result FROM json_data WHERE id = 3
+```
+
+**Legend SQL:**
+```sql
+SELECT JSON_ARRAY_ELEMENTS_TEXT(json_arr) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 3
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSON_ARRAY_ELEMENTS_TEXT"
+
 
 <br>
 
-#### <a id="fail-json_array_length__from_column-Relation"></a>`json_array_length__from_column`
+#### <a id="fail-json_array_length__from_column-Relation"></a><a id="fail-json_array_length__from_column-Grammar"></a>`json_array_length__from_column`
 
 📗 **Relation Path**
 
@@ -4516,10 +7844,25 @@ SELECT JSON_ARRAY_LENGTH(json_arr) AS result FROM func('e2e::rel_json_data') WHE
 **Error:**
 > No function matches the given name "JSON_ARRAY_LENGTH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_ARRAY_LENGTH(json_arr) AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSON_ARRAY_LENGTH(json_arr) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSON_ARRAY_LENGTH"
+
 
 <br>
 
-#### <a id="fail-json_array_length__null-Relation"></a>`json_array_length__null`
+#### <a id="fail-json_array_length__null-Relation"></a><a id="fail-json_array_length__null-Grammar"></a>`json_array_length__null`
 
 📗 **Relation Path**
 
@@ -4536,24 +7879,49 @@ SELECT JSON_ARRAY_LENGTH(json_arr) AS result FROM func('e2e::rel_json_data') WHE
 **Error:**
 > No function matches the given name "JSON_ARRAY_LENGTH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_ARRAY_LENGTH(json_arr) AS result FROM json_data WHERE id = 5
+```
+
+**Legend SQL:**
+```sql
+SELECT JSON_ARRAY_LENGTH(json_arr) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 5
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSON_ARRAY_LENGTH"
+
 
 <br>
 
-#### <a id="fail-json_each__from_column-TDS"></a><a id="fail-json_each__from_column-Relation"></a>`json_each__from_column`
+#### <a id="fail-json_each__from_column-TDS"></a><a id="fail-json_each__from_column-Relation"></a><a id="fail-json_each__from_column-Grammar"></a>`json_each__from_column`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT key, value FROM JSON_EACH((SELECT json_val FROM json_data WHERE id = 1)) ORDER BY key
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT key, value FROM JSON_EACH((SELECT json_val FROM func('e2e::tds_json_data') WHERE id = 1)) ORDER BY key
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "JSON_EACH"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT key, value FROM JSON_EACH((SELECT json_val FROM json_data WHERE id = 1)) ORDER BY key
+```
+
+**Legend SQL:**
 ```sql
 SELECT key, value FROM JSON_EACH((SELECT json_val FROM func('e2e::rel_json_data') WHERE id = 1)) ORDER BY key
 ```
@@ -4561,24 +7929,49 @@ SELECT key, value FROM JSON_EACH((SELECT json_val FROM func('e2e::rel_json_data'
 **Error:**
 > No function matches the given name "JSON_EACH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT key, value FROM JSON_EACH((SELECT json_val FROM json_data WHERE id = 1)) ORDER BY key
+```
+
+**Legend SQL:**
+```sql
+SELECT key, value FROM JSON_EACH((SELECT json_val FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1)) ORDER BY key
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSON_EACH"
+
 
 <br>
 
-#### <a id="fail-json_each_text__from_column-TDS"></a><a id="fail-json_each_text__from_column-Relation"></a>`json_each_text__from_column`
+#### <a id="fail-json_each_text__from_column-TDS"></a><a id="fail-json_each_text__from_column-Relation"></a><a id="fail-json_each_text__from_column-Grammar"></a>`json_each_text__from_column`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT key, value FROM JSON_EACH_TEXT((SELECT json_val FROM json_data WHERE id = 1)) ORDER BY key
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT key, value FROM JSON_EACH_TEXT((SELECT json_val FROM func('e2e::tds_json_data') WHERE id = 1)) ORDER BY key
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "JSON_EACH_TEXT"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT key, value FROM JSON_EACH_TEXT((SELECT json_val FROM json_data WHERE id = 1)) ORDER BY key
+```
+
+**Legend SQL:**
 ```sql
 SELECT key, value FROM JSON_EACH_TEXT((SELECT json_val FROM func('e2e::rel_json_data') WHERE id = 1)) ORDER BY key
 ```
@@ -4586,10 +7979,25 @@ SELECT key, value FROM JSON_EACH_TEXT((SELECT json_val FROM func('e2e::rel_json_
 **Error:**
 > No function matches the given name "JSON_EACH_TEXT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT key, value FROM JSON_EACH_TEXT((SELECT json_val FROM json_data WHERE id = 1)) ORDER BY key
+```
+
+**Legend SQL:**
+```sql
+SELECT key, value FROM JSON_EACH_TEXT((SELECT json_val FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1)) ORDER BY key
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSON_EACH_TEXT"
+
 
 <br>
 
-#### <a id="fail-json_object__text_array-Relation"></a>`json_object__text_array`
+#### <a id="fail-json_object__text_array-Relation"></a><a id="fail-json_object__text_array-Grammar"></a>`json_object__text_array`
 
 📗 **Relation Path**
 
@@ -4606,10 +8014,25 @@ SELECT JSON_OBJECT(ARRAY['a', '1', 'b', '2']) AS result FROM func('e2e::rel_json
 **Error:**
 > No function matches the given name "JSON_OBJECT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_OBJECT(ARRAY['a', '1', 'b', '2']) AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSON_OBJECT(ARRAY['a', '1', 'b', '2']) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSON_OBJECT"
+
 
 <br>
 
-#### <a id="fail-json_object__keys_values-Relation"></a>`json_object__keys_values`
+#### <a id="fail-json_object__keys_values-Relation"></a><a id="fail-json_object__keys_values-Grammar"></a>`json_object__keys_values`
 
 📗 **Relation Path**
 
@@ -4626,10 +8049,25 @@ SELECT JSON_OBJECT(ARRAY['a', 'b'], ARRAY['1', '2']) AS result FROM func('e2e::r
 **Error:**
 > No function matches the given name "JSON_OBJECT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_OBJECT(ARRAY['a','b'], ARRAY['1','2']) AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSON_OBJECT(ARRAY['a', 'b'], ARRAY['1', '2']) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSON_OBJECT"
+
 
 <br>
 
-#### <a id="fail-json_object_keys__from_column-Relation"></a>`json_object_keys__from_column`
+#### <a id="fail-json_object_keys__from_column-Relation"></a><a id="fail-json_object_keys__from_column-Grammar"></a>`json_object_keys__from_column`
 
 📗 **Relation Path**
 
@@ -4646,10 +8084,25 @@ SELECT JSON_OBJECT_KEYS(json_val) AS result FROM func('e2e::rel_json_data') WHER
 **Error:**
 > No function matches the given name "JSON_OBJECT_KEYS"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_OBJECT_KEYS(json_val) AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSON_OBJECT_KEYS(json_val) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSON_OBJECT_KEYS"
+
 
 <br>
 
-#### <a id="fail-json_strip_nulls__from_column-Relation"></a>`json_strip_nulls__from_column`
+#### <a id="fail-json_strip_nulls__from_column-Relation"></a><a id="fail-json_strip_nulls__from_column-Grammar"></a>`json_strip_nulls__from_column`
 
 📗 **Relation Path**
 
@@ -4666,10 +8119,25 @@ SELECT JSON_STRIP_NULLS(json_val) AS result FROM func('e2e::rel_json_data') WHER
 **Error:**
 > No function matches the given name "JSON_STRIP_NULLS"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_STRIP_NULLS(json_val) AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSON_STRIP_NULLS(json_val) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSON_STRIP_NULLS"
+
 
 <br>
 
-#### <a id="fail-json_typeof__from_column-Relation"></a>`json_typeof__from_column`
+#### <a id="fail-json_typeof__from_column-Relation"></a><a id="fail-json_typeof__from_column-Grammar"></a>`json_typeof__from_column`
 
 📗 **Relation Path**
 
@@ -4686,10 +8154,25 @@ SELECT JSON_TYPEOF(json_val) AS result FROM func('e2e::rel_json_data') WHERE id 
 **Error:**
 > No function matches the given name "JSON_TYPEOF"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_TYPEOF(json_val) AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSON_TYPEOF(json_val) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSON_TYPEOF"
+
 
 <br>
 
-#### <a id="fail-json_typeof__array_column-Relation"></a>`json_typeof__array_column`
+#### <a id="fail-json_typeof__array_column-Relation"></a><a id="fail-json_typeof__array_column-Grammar"></a>`json_typeof__array_column`
 
 📗 **Relation Path**
 
@@ -4706,10 +8189,25 @@ SELECT JSON_TYPEOF(json_arr) AS result FROM func('e2e::rel_json_data') WHERE id 
 **Error:**
 > No function matches the given name "JSON_TYPEOF"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_TYPEOF(json_arr) AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSON_TYPEOF(json_arr) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSON_TYPEOF"
+
 
 <br>
 
-#### <a id="fail-jsonb_array_elements__from_column-Relation"></a>`jsonb_array_elements__from_column`
+#### <a id="fail-jsonb_array_elements__from_column-Relation"></a><a id="fail-jsonb_array_elements__from_column-Grammar"></a>`jsonb_array_elements__from_column`
 
 📗 **Relation Path**
 
@@ -4726,10 +8224,25 @@ SELECT JSONB_ARRAY_ELEMENTS(jsonb_arr) AS result FROM func('e2e::rel_json_data')
 **Error:**
 > No function matches the given name "JSONB_ARRAY_ELEMENTS"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_ARRAY_ELEMENTS(jsonb_arr) AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_ARRAY_ELEMENTS(jsonb_arr) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_ARRAY_ELEMENTS"
+
 
 <br>
 
-#### <a id="fail-jsonb_array_elements_text__from_column-Relation"></a>`jsonb_array_elements_text__from_column`
+#### <a id="fail-jsonb_array_elements_text__from_column-Relation"></a><a id="fail-jsonb_array_elements_text__from_column-Grammar"></a>`jsonb_array_elements_text__from_column`
 
 📗 **Relation Path**
 
@@ -4746,10 +8259,25 @@ SELECT JSONB_ARRAY_ELEMENTS_TEXT(jsonb_arr) AS result FROM func('e2e::rel_json_d
 **Error:**
 > No function matches the given name "JSONB_ARRAY_ELEMENTS_TEXT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_ARRAY_ELEMENTS_TEXT(jsonb_arr) AS result FROM json_data WHERE id = 3
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_ARRAY_ELEMENTS_TEXT(jsonb_arr) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 3
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_ARRAY_ELEMENTS_TEXT"
+
 
 <br>
 
-#### <a id="fail-jsonb_array_length__from_column-Relation"></a>`jsonb_array_length__from_column`
+#### <a id="fail-jsonb_array_length__from_column-Relation"></a><a id="fail-jsonb_array_length__from_column-Grammar"></a>`jsonb_array_length__from_column`
 
 📗 **Relation Path**
 
@@ -4766,10 +8294,25 @@ SELECT JSONB_ARRAY_LENGTH(jsonb_arr) AS result FROM func('e2e::rel_json_data') W
 **Error:**
 > No function matches the given name "JSONB_ARRAY_LENGTH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_ARRAY_LENGTH(jsonb_arr) AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_ARRAY_LENGTH(jsonb_arr) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_ARRAY_LENGTH"
+
 
 <br>
 
-#### <a id="fail-jsonb_array_length__null-Relation"></a>`jsonb_array_length__null`
+#### <a id="fail-jsonb_array_length__null-Relation"></a><a id="fail-jsonb_array_length__null-Grammar"></a>`jsonb_array_length__null`
 
 📗 **Relation Path**
 
@@ -4786,10 +8329,25 @@ SELECT JSONB_ARRAY_LENGTH(jsonb_arr) AS result FROM func('e2e::rel_json_data') W
 **Error:**
 > No function matches the given name "JSONB_ARRAY_LENGTH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_ARRAY_LENGTH(jsonb_arr) AS result FROM json_data WHERE id = 5
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_ARRAY_LENGTH(jsonb_arr) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 5
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_ARRAY_LENGTH"
+
 
 <br>
 
-#### <a id="fail-jsonb_build_array__empty-Relation"></a>`jsonb_build_array__empty`
+#### <a id="fail-jsonb_build_array__empty-Relation"></a><a id="fail-jsonb_build_array__empty-Grammar"></a>`jsonb_build_array__empty`
 
 📗 **Relation Path**
 
@@ -4806,10 +8364,25 @@ SELECT JSONB_BUILD_ARRAY() AS result FROM func('e2e::rel_json_data') WHERE id = 
 **Error:**
 > No function matches the given name "JSONB_BUILD_ARRAY"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_BUILD_ARRAY() AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_BUILD_ARRAY() AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_BUILD_ARRAY"
+
 
 <br>
 
-#### <a id="fail-jsonb_build_array__variadic__from_column-Relation"></a>`jsonb_build_array__variadic__from_column`
+#### <a id="fail-jsonb_build_array__variadic__from_column-Relation"></a><a id="fail-jsonb_build_array__variadic__from_column-Grammar"></a>`jsonb_build_array__variadic__from_column`
 
 📗 **Relation Path**
 
@@ -4826,10 +8399,25 @@ SELECT JSONB_BUILD_ARRAY(id, jsonb_val ->> 'b') AS result FROM func('e2e::rel_js
 **Error:**
 > No function matches the given name "JSONB_BUILD_ARRAY"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_BUILD_ARRAY(id, jsonb_val ->> 'b') AS result FROM json_data WHERE id <= 3 ORDER BY id
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_BUILD_ARRAY(id, jsonb_val ->> 'b') AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id <= 3 ORDER BY id
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_BUILD_ARRAY"
+
 
 <br>
 
-#### <a id="fail-jsonb_build_object__empty-Relation"></a>`jsonb_build_object__empty`
+#### <a id="fail-jsonb_build_object__empty-Relation"></a><a id="fail-jsonb_build_object__empty-Grammar"></a>`jsonb_build_object__empty`
 
 📗 **Relation Path**
 
@@ -4846,10 +8434,25 @@ SELECT JSONB_BUILD_OBJECT() AS result FROM func('e2e::rel_json_data') WHERE id =
 **Error:**
 > No function matches the given name "JSONB_BUILD_OBJECT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_BUILD_OBJECT() AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_BUILD_OBJECT() AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_BUILD_OBJECT"
+
 
 <br>
 
-#### <a id="fail-jsonb_build_object__variadic__from_column-Relation"></a>`jsonb_build_object__variadic__from_column`
+#### <a id="fail-jsonb_build_object__variadic__from_column-Relation"></a><a id="fail-jsonb_build_object__variadic__from_column-Grammar"></a>`jsonb_build_object__variadic__from_column`
 
 📗 **Relation Path**
 
@@ -4866,24 +8469,49 @@ SELECT JSONB_BUILD_OBJECT('id', id, 'val', jsonb_val ->> 'b') AS result FROM fun
 **Error:**
 > No function matches the given name "JSONB_BUILD_OBJECT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_BUILD_OBJECT('id', id, 'val', jsonb_val ->> 'b') AS result FROM json_data WHERE id <= 3 ORDER BY id
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_BUILD_OBJECT('id', id, 'val', jsonb_val ->> 'b') AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id <= 3 ORDER BY id
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_BUILD_OBJECT"
+
 
 <br>
 
-#### <a id="fail-jsonb_each__from_column-TDS"></a><a id="fail-jsonb_each__from_column-Relation"></a>`jsonb_each__from_column`
+#### <a id="fail-jsonb_each__from_column-TDS"></a><a id="fail-jsonb_each__from_column-Relation"></a><a id="fail-jsonb_each__from_column-Grammar"></a>`jsonb_each__from_column`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT key, value FROM JSONB_EACH((SELECT jsonb_val FROM json_data WHERE id = 1)) ORDER BY key
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT key, value FROM JSONB_EACH((SELECT jsonb_val FROM func('e2e::tds_json_data') WHERE id = 1)) ORDER BY key
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "JSONB_EACH"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT key, value FROM JSONB_EACH((SELECT jsonb_val FROM json_data WHERE id = 1)) ORDER BY key
+```
+
+**Legend SQL:**
 ```sql
 SELECT key, value FROM JSONB_EACH((SELECT jsonb_val FROM func('e2e::rel_json_data') WHERE id = 1)) ORDER BY key
 ```
@@ -4891,24 +8519,49 @@ SELECT key, value FROM JSONB_EACH((SELECT jsonb_val FROM func('e2e::rel_json_dat
 **Error:**
 > No function matches the given name "JSONB_EACH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT key, value FROM JSONB_EACH((SELECT jsonb_val FROM json_data WHERE id = 1)) ORDER BY key
+```
+
+**Legend SQL:**
+```sql
+SELECT key, value FROM JSONB_EACH((SELECT jsonb_val FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1)) ORDER BY key
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_EACH"
+
 
 <br>
 
-#### <a id="fail-jsonb_each_text__from_column-TDS"></a><a id="fail-jsonb_each_text__from_column-Relation"></a>`jsonb_each_text__from_column`
+#### <a id="fail-jsonb_each_text__from_column-TDS"></a><a id="fail-jsonb_each_text__from_column-Relation"></a><a id="fail-jsonb_each_text__from_column-Grammar"></a>`jsonb_each_text__from_column`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT key, value FROM JSONB_EACH_TEXT((SELECT jsonb_val FROM json_data WHERE id = 1)) ORDER BY key
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT key, value FROM JSONB_EACH_TEXT((SELECT jsonb_val FROM func('e2e::tds_json_data') WHERE id = 1)) ORDER BY key
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "JSONB_EACH_TEXT"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT key, value FROM JSONB_EACH_TEXT((SELECT jsonb_val FROM json_data WHERE id = 1)) ORDER BY key
+```
+
+**Legend SQL:**
 ```sql
 SELECT key, value FROM JSONB_EACH_TEXT((SELECT jsonb_val FROM func('e2e::rel_json_data') WHERE id = 1)) ORDER BY key
 ```
@@ -4916,10 +8569,25 @@ SELECT key, value FROM JSONB_EACH_TEXT((SELECT jsonb_val FROM func('e2e::rel_jso
 **Error:**
 > No function matches the given name "JSONB_EACH_TEXT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT key, value FROM JSONB_EACH_TEXT((SELECT jsonb_val FROM json_data WHERE id = 1)) ORDER BY key
+```
+
+**Legend SQL:**
+```sql
+SELECT key, value FROM JSONB_EACH_TEXT((SELECT jsonb_val FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1)) ORDER BY key
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_EACH_TEXT"
+
 
 <br>
 
-#### <a id="fail-jsonb_extract_path__from_column-Relation"></a>`jsonb_extract_path__from_column`
+#### <a id="fail-jsonb_extract_path__from_column-Relation"></a><a id="fail-jsonb_extract_path__from_column-Grammar"></a>`jsonb_extract_path__from_column`
 
 📗 **Relation Path**
 
@@ -4936,10 +8604,25 @@ SELECT JSONB_EXTRACT_PATH(jsonb_val, 'a', 'b', 'c') AS result FROM func('e2e::re
 **Error:**
 > No function matches the given name "JSONB_EXTRACT_PATH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_EXTRACT_PATH(jsonb_val, 'a', 'b', 'c') AS result FROM json_data WHERE id = 2
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_EXTRACT_PATH(jsonb_val, 'a', 'b', 'c') AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 2
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_EXTRACT_PATH"
+
 
 <br>
 
-#### <a id="fail-jsonb_extract_path_text__from_column-Relation"></a>`jsonb_extract_path_text__from_column`
+#### <a id="fail-jsonb_extract_path_text__from_column-Relation"></a><a id="fail-jsonb_extract_path_text__from_column-Grammar"></a>`jsonb_extract_path_text__from_column`
 
 📗 **Relation Path**
 
@@ -4956,10 +8639,25 @@ SELECT JSONB_EXTRACT_PATH_TEXT(jsonb_val, 'a', 'b', 'c') AS result FROM func('e2
 **Error:**
 > No function matches the given name "JSONB_EXTRACT_PATH_TEXT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_EXTRACT_PATH_TEXT(jsonb_val, 'a', 'b', 'c') AS result FROM json_data WHERE id = 2
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_EXTRACT_PATH_TEXT(jsonb_val, 'a', 'b', 'c') AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 2
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_EXTRACT_PATH_TEXT"
+
 
 <br>
 
-#### <a id="fail-jsonb_insert__from_column-Relation"></a>`jsonb_insert__from_column`
+#### <a id="fail-jsonb_insert__from_column-Relation"></a><a id="fail-jsonb_insert__from_column-Grammar"></a>`jsonb_insert__from_column`
 
 📗 **Relation Path**
 
@@ -4976,10 +8674,25 @@ SELECT JSONB_INSERT(jsonb_val, '{d}', '"inserted"') AS result FROM func('e2e::re
 **Error:**
 > No function matches the given name "JSONB_INSERT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_INSERT(jsonb_val, '{d}', '"inserted"') AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_INSERT(jsonb_val, '{d}', '"inserted"') AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_INSERT"
+
 
 <br>
 
-#### <a id="fail-jsonb_insert__after_true-Relation"></a>`jsonb_insert__after_true`
+#### <a id="fail-jsonb_insert__after_true-Relation"></a><a id="fail-jsonb_insert__after_true-Grammar"></a>`jsonb_insert__after_true`
 
 📗 **Relation Path**
 
@@ -4996,10 +8709,25 @@ SELECT JSONB_INSERT(jsonb_arr, '{1}', '99', true) AS result FROM func('e2e::rel_
 **Error:**
 > No function matches the given name "JSONB_INSERT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_INSERT(jsonb_arr, '{1}', '99', true) AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_INSERT(jsonb_arr, '{1}', '99', true) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_INSERT"
+
 
 <br>
 
-#### <a id="fail-jsonb_object__text_array-Relation"></a>`jsonb_object__text_array`
+#### <a id="fail-jsonb_object__text_array-Relation"></a><a id="fail-jsonb_object__text_array-Grammar"></a>`jsonb_object__text_array`
 
 📗 **Relation Path**
 
@@ -5016,10 +8744,25 @@ SELECT JSONB_OBJECT(ARRAY['a', '1', 'b', '2']) AS result FROM func('e2e::rel_jso
 **Error:**
 > No function matches the given name "JSONB_OBJECT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_OBJECT(ARRAY['a', '1', 'b', '2']) AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_OBJECT(ARRAY['a', '1', 'b', '2']) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_OBJECT"
+
 
 <br>
 
-#### <a id="fail-jsonb_object__keys_values-Relation"></a>`jsonb_object__keys_values`
+#### <a id="fail-jsonb_object__keys_values-Relation"></a><a id="fail-jsonb_object__keys_values-Grammar"></a>`jsonb_object__keys_values`
 
 📗 **Relation Path**
 
@@ -5036,10 +8779,25 @@ SELECT JSONB_OBJECT(ARRAY['a', 'b'], ARRAY['1', '2']) AS result FROM func('e2e::
 **Error:**
 > No function matches the given name "JSONB_OBJECT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_OBJECT(ARRAY['a','b'], ARRAY['1','2']) AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_OBJECT(ARRAY['a', 'b'], ARRAY['1', '2']) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_OBJECT"
+
 
 <br>
 
-#### <a id="fail-jsonb_object_keys__from_column-Relation"></a>`jsonb_object_keys__from_column`
+#### <a id="fail-jsonb_object_keys__from_column-Relation"></a><a id="fail-jsonb_object_keys__from_column-Grammar"></a>`jsonb_object_keys__from_column`
 
 📗 **Relation Path**
 
@@ -5056,10 +8814,25 @@ SELECT JSONB_OBJECT_KEYS(jsonb_val) AS result FROM func('e2e::rel_json_data') WH
 **Error:**
 > No function matches the given name "JSONB_OBJECT_KEYS"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_OBJECT_KEYS(jsonb_val) AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_OBJECT_KEYS(jsonb_val) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_OBJECT_KEYS"
+
 
 <br>
 
-#### <a id="fail-jsonb_path_exists__from_column-Relation"></a>`jsonb_path_exists__from_column`
+#### <a id="fail-jsonb_path_exists__from_column-Relation"></a><a id="fail-jsonb_path_exists__from_column-Grammar"></a>`jsonb_path_exists__from_column`
 
 📗 **Relation Path**
 
@@ -5076,10 +8849,25 @@ SELECT JSONB_PATH_EXISTS(jsonb_val, '$.a') AS result FROM func('e2e::rel_json_da
 **Error:**
 > No function matches the given name "JSONB_PATH_EXISTS"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_PATH_EXISTS(jsonb_val, '$.a') AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_PATH_EXISTS(jsonb_val, '$.a') AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_PATH_EXISTS"
+
 
 <br>
 
-#### <a id="fail-jsonb_path_exists__with_vars-Relation"></a>`jsonb_path_exists__with_vars`
+#### <a id="fail-jsonb_path_exists__with_vars-Relation"></a><a id="fail-jsonb_path_exists__with_vars-Grammar"></a>`jsonb_path_exists__with_vars`
 
 📗 **Relation Path**
 
@@ -5096,10 +8884,25 @@ SELECT JSONB_PATH_EXISTS(jsonb_val, '$.a ? (@ > $x)', '{"x":0}') AS result FROM 
 **Error:**
 > No function matches the given name "JSONB_PATH_EXISTS"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_PATH_EXISTS(jsonb_val, '$.a ? (@ > $x)', '{"x":0}') AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_PATH_EXISTS(jsonb_val, '$.a ? (@ > $x)', '{"x":0}') AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_PATH_EXISTS"
+
 
 <br>
 
-#### <a id="fail-jsonb_path_match__from_column-Relation"></a>`jsonb_path_match__from_column`
+#### <a id="fail-jsonb_path_match__from_column-Relation"></a><a id="fail-jsonb_path_match__from_column-Grammar"></a>`jsonb_path_match__from_column`
 
 📗 **Relation Path**
 
@@ -5116,10 +8919,25 @@ SELECT JSONB_PATH_MATCH(jsonb_val, '$.a == 1') AS result FROM func('e2e::rel_jso
 **Error:**
 > No function matches the given name "JSONB_PATH_MATCH"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_PATH_MATCH(jsonb_val, '$.a == 1') AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_PATH_MATCH(jsonb_val, '$.a == 1') AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_PATH_MATCH"
+
 
 <br>
 
-#### <a id="fail-jsonb_path_query__from_column-Relation"></a>`jsonb_path_query__from_column`
+#### <a id="fail-jsonb_path_query__from_column-Relation"></a><a id="fail-jsonb_path_query__from_column-Grammar"></a>`jsonb_path_query__from_column`
 
 📗 **Relation Path**
 
@@ -5136,10 +8954,25 @@ SELECT JSONB_PATH_QUERY(jsonb_val, '$.a') AS result FROM func('e2e::rel_json_dat
 **Error:**
 > No function matches the given name "JSONB_PATH_QUERY"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_PATH_QUERY(jsonb_val, '$.a') AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_PATH_QUERY(jsonb_val, '$.a') AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_PATH_QUERY"
+
 
 <br>
 
-#### <a id="fail-jsonb_path_query_array__from_column-Relation"></a>`jsonb_path_query_array__from_column`
+#### <a id="fail-jsonb_path_query_array__from_column-Relation"></a><a id="fail-jsonb_path_query_array__from_column-Grammar"></a>`jsonb_path_query_array__from_column`
 
 📗 **Relation Path**
 
@@ -5156,10 +8989,25 @@ SELECT JSONB_PATH_QUERY_ARRAY(jsonb_arr, '$[*]') AS result FROM func('e2e::rel_j
 **Error:**
 > No function matches the given name "JSONB_PATH_QUERY_ARRAY"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_PATH_QUERY_ARRAY(jsonb_arr, '$[*]') AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_PATH_QUERY_ARRAY(jsonb_arr, '$[*]') AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_PATH_QUERY_ARRAY"
+
 
 <br>
 
-#### <a id="fail-jsonb_pretty__from_column-Relation"></a>`jsonb_pretty__from_column`
+#### <a id="fail-jsonb_pretty__from_column-Relation"></a><a id="fail-jsonb_pretty__from_column-Grammar"></a>`jsonb_pretty__from_column`
 
 📗 **Relation Path**
 
@@ -5176,10 +9024,25 @@ SELECT JSONB_PRETTY(jsonb_val) AS result FROM func('e2e::rel_json_data') WHERE i
 **Error:**
 > No function matches the given name "JSONB_PRETTY"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_PRETTY(jsonb_val) AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_PRETTY(jsonb_val) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_PRETTY"
+
 
 <br>
 
-#### <a id="fail-jsonb_set__from_column-Relation"></a>`jsonb_set__from_column`
+#### <a id="fail-jsonb_set__from_column-Relation"></a><a id="fail-jsonb_set__from_column-Grammar"></a>`jsonb_set__from_column`
 
 📗 **Relation Path**
 
@@ -5196,10 +9059,25 @@ SELECT JSONB_SET(jsonb_val, '{a}', '99') AS result FROM func('e2e::rel_json_data
 **Error:**
 > No function matches the given name "JSONB_SET"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_SET(jsonb_val, '{a}', '99') AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_SET(jsonb_val, '{a}', '99') AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_SET"
+
 
 <br>
 
-#### <a id="fail-jsonb_set__create_missing_false-Relation"></a>`jsonb_set__create_missing_false`
+#### <a id="fail-jsonb_set__create_missing_false-Relation"></a><a id="fail-jsonb_set__create_missing_false-Grammar"></a>`jsonb_set__create_missing_false`
 
 📗 **Relation Path**
 
@@ -5216,10 +9094,25 @@ SELECT JSONB_SET(jsonb_val, '{z}', '"new"', false) AS result FROM func('e2e::rel
 **Error:**
 > No function matches the given name "JSONB_SET"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_SET(jsonb_val, '{z}', '"new"', false) AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_SET(jsonb_val, '{z}', '"new"', false) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_SET"
+
 
 <br>
 
-#### <a id="fail-jsonb_strip_nulls__from_column-Relation"></a>`jsonb_strip_nulls__from_column`
+#### <a id="fail-jsonb_strip_nulls__from_column-Relation"></a><a id="fail-jsonb_strip_nulls__from_column-Grammar"></a>`jsonb_strip_nulls__from_column`
 
 📗 **Relation Path**
 
@@ -5236,10 +9129,25 @@ SELECT JSONB_STRIP_NULLS(jsonb_val) AS result FROM func('e2e::rel_json_data') WH
 **Error:**
 > No function matches the given name "JSONB_STRIP_NULLS"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_STRIP_NULLS(jsonb_val) AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_STRIP_NULLS(jsonb_val) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_STRIP_NULLS"
+
 
 <br>
 
-#### <a id="fail-jsonb_typeof__from_column-Relation"></a>`jsonb_typeof__from_column`
+#### <a id="fail-jsonb_typeof__from_column-Relation"></a><a id="fail-jsonb_typeof__from_column-Grammar"></a>`jsonb_typeof__from_column`
 
 📗 **Relation Path**
 
@@ -5255,6 +9163,21 @@ SELECT JSONB_TYPEOF(jsonb_val) AS result FROM func('e2e::rel_json_data') WHERE i
 
 **Error:**
 > No function matches the given name "JSONB_TYPEOF"
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_TYPEOF(jsonb_val) AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_TYPEOF(jsonb_val) AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_TYPEOF"
 
 
 <br>
@@ -5309,21 +9232,31 @@ SELECT ROW_TO_JSON(persons, true) AS result FROM func('e2e::rel_persons') WHERE 
 
 <br>
 
-#### <a id="fail-to_json__from_column-TDS"></a><a id="fail-to_json__from_column-Relation"></a>`to_json__from_column`
+#### <a id="fail-to_json__from_column-TDS"></a><a id="fail-to_json__from_column-Relation"></a><a id="fail-to_json__from_column-Grammar"></a>`to_json__from_column`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TO_JSON(val) AS result FROM strings WHERE val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TO_JSON(val) AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "TO_JSON"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TO_JSON(val) AS result FROM strings WHERE val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TO_JSON(val) AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL ORDER BY 1
 ```
@@ -5331,24 +9264,51 @@ SELECT TO_JSON(val) AS result FROM func('e2e::rel_strings') WHERE val IS NOT NUL
 **Error:**
 > No function matches the given name "TO_JSON"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TO_JSON(val) AS result FROM strings WHERE val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TO_JSON(val) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> Postgres: ERROR: could not identify an ordering operator for type json
+>   Hint: Use an explicit ordering operator or modify the query.
+>   Position: 75 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "TO_JSON"
+
 
 <br>
 
-#### <a id="fail-to_jsonb__from_column-TDS"></a><a id="fail-to_jsonb__from_column-Relation"></a>`to_jsonb__from_column`
+#### <a id="fail-to_jsonb__from_column-TDS"></a><a id="fail-to_jsonb__from_column-Relation"></a><a id="fail-to_jsonb__from_column-Grammar"></a>`to_jsonb__from_column`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TO_JSONB(val) AS result FROM strings WHERE val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TO_JSONB(val) AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "TO_JSONB"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TO_JSONB(val) AS result FROM strings WHERE val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TO_JSONB(val) AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL ORDER BY 1
 ```
@@ -5356,10 +9316,25 @@ SELECT TO_JSONB(val) AS result FROM func('e2e::rel_strings') WHERE val IS NOT NU
 **Error:**
 > No function matches the given name "TO_JSONB"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TO_JSONB(val) AS result FROM strings WHERE val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TO_JSONB(val) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "TO_JSONB"
+
 
 <br>
 
-#### <a id="fail-jsonb_object_agg__from_column-Relation"></a>`jsonb_object_agg__from_column`
+#### <a id="fail-jsonb_object_agg__from_column-Relation"></a><a id="fail-jsonb_object_agg__from_column-Grammar"></a>`jsonb_object_agg__from_column`
 
 📗 **Relation Path**
 
@@ -5376,10 +9351,25 @@ SELECT JSONB_OBJECT_AGG(id, jsonb_val ->> 'b') AS result FROM func('e2e::rel_jso
 **Error:**
 > No function matches the given name "JSONB_OBJECT_AGG"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_OBJECT_AGG(id, jsonb_val ->> 'b') AS result FROM json_data WHERE jsonb_val IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_OBJECT_AGG(id, jsonb_val ->> 'b') AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE jsonb_val IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_OBJECT_AGG"
+
 
 <br>
 
-#### <a id="fail-json_object_agg__from_column-Relation"></a>`json_object_agg__from_column`
+#### <a id="fail-json_object_agg__from_column-Relation"></a><a id="fail-json_object_agg__from_column-Grammar"></a>`json_object_agg__from_column`
 
 📗 **Relation Path**
 
@@ -5396,24 +9386,49 @@ SELECT JSON_OBJECT_AGG(id, json_val ->> 'b') AS result FROM func('e2e::rel_json_
 **Error:**
 > No function matches the given name "JSON_OBJECT_AGG"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_OBJECT_AGG(id, json_val ->> 'b') AS result FROM json_data WHERE json_val IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT JSON_OBJECT_AGG(id, json_val ->> 'b') AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE json_val IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSON_OBJECT_AGG"
+
 
 <br>
 
-#### <a id="fail-array_append__anycompatiblearray_anycompatible__from_table-TDS"></a><a id="fail-array_append__anycompatiblearray_anycompatible__from_table-Relation"></a>`array_append__anycompatiblearray_anycompatible__from_table`
+#### <a id="fail-array_append__anycompatiblearray_anycompatible__from_table-TDS"></a><a id="fail-array_append__anycompatiblearray_anycompatible__from_table-Relation"></a><a id="fail-array_append__anycompatiblearray_anycompatible__from_table-Grammar"></a>`array_append__anycompatiblearray_anycompatible__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_APPEND(ARRAY[1,2,3], int_val) AS result FROM numbers WHERE int_val IS NOT NULL AND id <= 3 ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_APPEND(ARRAY[1, 2, 3], int_val) AS result FROM func('e2e::tds_numbers') WHERE int_val IS NOT NULL AND id <= 3 ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_APPEND"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_APPEND(ARRAY[1,2,3], int_val) AS result FROM numbers WHERE int_val IS NOT NULL AND id <= 3 ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_APPEND(ARRAY[1, 2, 3], int_val) AS result FROM func('e2e::rel_numbers') WHERE int_val IS NOT NULL AND id <= 3 ORDER BY 1
 ```
@@ -5421,24 +9436,49 @@ SELECT ARRAY_APPEND(ARRAY[1, 2, 3], int_val) AS result FROM func('e2e::rel_numbe
 **Error:**
 > No function matches the given name "ARRAY_APPEND"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_APPEND(ARRAY[1,2,3], int_val) AS result FROM numbers WHERE int_val IS NOT NULL AND id <= 3 ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_APPEND(ARRAY[1, 2, 3], int_val) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE int_val IS NOT NULL AND id <= 3 ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_APPEND"
+
 
 <br>
 
-#### <a id="fail-array_cat__anycompatiblearray_anycompatiblearray__from_table-TDS"></a><a id="fail-array_cat__anycompatiblearray_anycompatiblearray__from_table-Relation"></a>`array_cat__anycompatiblearray_anycompatiblearray__from_table`
+#### <a id="fail-array_cat__anycompatiblearray_anycompatiblearray__from_table-TDS"></a><a id="fail-array_cat__anycompatiblearray_anycompatiblearray__from_table-Relation"></a><a id="fail-array_cat__anycompatiblearray_anycompatiblearray__from_table-Grammar"></a>`array_cat__anycompatiblearray_anycompatiblearray__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_CAT(ARRAY[1,2], ARRAY[3,4]) AS result FROM numbers WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_CAT(ARRAY[1, 2], ARRAY[3, 4]) AS result FROM func('e2e::tds_numbers') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_CAT"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_CAT(ARRAY[1,2], ARRAY[3,4]) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_CAT(ARRAY[1, 2], ARRAY[3, 4]) AS result FROM func('e2e::rel_numbers') WHERE id = 1
 ```
@@ -5446,24 +9486,49 @@ SELECT ARRAY_CAT(ARRAY[1, 2], ARRAY[3, 4]) AS result FROM func('e2e::rel_numbers
 **Error:**
 > No function matches the given name "ARRAY_CAT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_CAT(ARRAY[1,2], ARRAY[3,4]) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_CAT(ARRAY[1, 2], ARRAY[3, 4]) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_CAT"
+
 
 <br>
 
-#### <a id="fail-array_dims__anyarray__from_table-TDS"></a><a id="fail-array_dims__anyarray__from_table-Relation"></a>`array_dims__anyarray__from_table`
+#### <a id="fail-array_dims__anyarray__from_table-TDS"></a><a id="fail-array_dims__anyarray__from_table-Relation"></a><a id="fail-array_dims__anyarray__from_table-Grammar"></a>`array_dims__anyarray__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_DIMS(ARRAY[[1,2],[3,4]]) AS result FROM numbers WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_DIMS(ARRAY[[1, 2], [3, 4]]) AS result FROM func('e2e::tds_numbers') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_DIMS"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_DIMS(ARRAY[[1,2],[3,4]]) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_DIMS(ARRAY[[1, 2], [3, 4]]) AS result FROM func('e2e::rel_numbers') WHERE id = 1
 ```
@@ -5471,24 +9536,49 @@ SELECT ARRAY_DIMS(ARRAY[[1, 2], [3, 4]]) AS result FROM func('e2e::rel_numbers')
 **Error:**
 > No function matches the given name "ARRAY_DIMS"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_DIMS(ARRAY[[1,2],[3,4]]) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_DIMS(ARRAY[[1, 2], [3, 4]]) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_DIMS"
+
 
 <br>
 
-#### <a id="fail-array_fill__anyelement_int[]__from_table-TDS"></a><a id="fail-array_fill__anyelement_int[]__from_table-Relation"></a>`array_fill__anyelement_int[]__from_table`
+#### <a id="fail-array_fill__anyelement_int[]__from_table-TDS"></a><a id="fail-array_fill__anyelement_int[]__from_table-Relation"></a><a id="fail-array_fill__anyelement_int[]__from_table-Grammar"></a>`array_fill__anyelement_int[]__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_FILL(0, ARRAY[3]) AS result FROM numbers WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_FILL(0, ARRAY[3]) AS result FROM func('e2e::tds_numbers') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_FILL"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_FILL(0, ARRAY[3]) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_FILL(0, ARRAY[3]) AS result FROM func('e2e::rel_numbers') WHERE id = 1
 ```
@@ -5496,24 +9586,49 @@ SELECT ARRAY_FILL(0, ARRAY[3]) AS result FROM func('e2e::rel_numbers') WHERE id 
 **Error:**
 > No function matches the given name "ARRAY_FILL"
 
-
-<br>
-
-#### <a id="fail-array_fill__anyelement_int[]_int[]__from_table-TDS"></a><a id="fail-array_fill__anyelement_int[]_int[]__from_table-Relation"></a>`array_fill__anyelement_int[]_int[]__from_table`
-
-🔴 **Failed in both TDS and Relation**
+📙 **Grammar Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_FILL(0, ARRAY[3]) AS result FROM numbers WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
+```sql
+SELECT ARRAY_FILL(0, ARRAY[3]) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_FILL"
+
+
+<br>
+
+#### <a id="fail-array_fill__anyelement_int[]_int[]__from_table-TDS"></a><a id="fail-array_fill__anyelement_int[]_int[]__from_table-Relation"></a><a id="fail-array_fill__anyelement_int[]_int[]__from_table-Grammar"></a>`array_fill__anyelement_int[]_int[]__from_table`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_FILL(0, ARRAY[3]) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_FILL(0, ARRAY[3]) AS result FROM func('e2e::tds_numbers') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_FILL"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_FILL(0, ARRAY[3]) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_FILL(0, ARRAY[3]) AS result FROM func('e2e::rel_numbers') WHERE id = 1
 ```
@@ -5521,24 +9636,49 @@ SELECT ARRAY_FILL(0, ARRAY[3]) AS result FROM func('e2e::rel_numbers') WHERE id 
 **Error:**
 > No function matches the given name "ARRAY_FILL"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_FILL(0, ARRAY[3]) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_FILL(0, ARRAY[3]) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_FILL"
+
 
 <br>
 
-#### <a id="fail-array_lower__anyarray_int__from_table-TDS"></a><a id="fail-array_lower__anyarray_int__from_table-Relation"></a>`array_lower__anyarray_int__from_table`
+#### <a id="fail-array_lower__anyarray_int__from_table-TDS"></a><a id="fail-array_lower__anyarray_int__from_table-Relation"></a><a id="fail-array_lower__anyarray_int__from_table-Grammar"></a>`array_lower__anyarray_int__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_LOWER(ARRAY[10,20,30], 1) AS result FROM numbers WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_LOWER(ARRAY[10, 20, 30], 1) AS result FROM func('e2e::tds_numbers') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_LOWER"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_LOWER(ARRAY[10,20,30], 1) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_LOWER(ARRAY[10, 20, 30], 1) AS result FROM func('e2e::rel_numbers') WHERE id = 1
 ```
@@ -5546,24 +9686,49 @@ SELECT ARRAY_LOWER(ARRAY[10, 20, 30], 1) AS result FROM func('e2e::rel_numbers')
 **Error:**
 > No function matches the given name "ARRAY_LOWER"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_LOWER(ARRAY[10,20,30], 1) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_LOWER(ARRAY[10, 20, 30], 1) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_LOWER"
+
 
 <br>
 
-#### <a id="fail-array_ndims__anyarray__from_table-TDS"></a><a id="fail-array_ndims__anyarray__from_table-Relation"></a>`array_ndims__anyarray__from_table`
+#### <a id="fail-array_ndims__anyarray__from_table-TDS"></a><a id="fail-array_ndims__anyarray__from_table-Relation"></a><a id="fail-array_ndims__anyarray__from_table-Grammar"></a>`array_ndims__anyarray__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_NDIMS(ARRAY[[1,2],[3,4]]) AS result FROM numbers WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_NDIMS(ARRAY[[1, 2], [3, 4]]) AS result FROM func('e2e::tds_numbers') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_NDIMS"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_NDIMS(ARRAY[[1,2],[3,4]]) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_NDIMS(ARRAY[[1, 2], [3, 4]]) AS result FROM func('e2e::rel_numbers') WHERE id = 1
 ```
@@ -5571,24 +9736,49 @@ SELECT ARRAY_NDIMS(ARRAY[[1, 2], [3, 4]]) AS result FROM func('e2e::rel_numbers'
 **Error:**
 > No function matches the given name "ARRAY_NDIMS"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_NDIMS(ARRAY[[1,2],[3,4]]) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_NDIMS(ARRAY[[1, 2], [3, 4]]) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_NDIMS"
+
 
 <br>
 
-#### <a id="fail-array_positions__anycompatiblearray_anycompatible__from_table-TDS"></a><a id="fail-array_positions__anycompatiblearray_anycompatible__from_table-Relation"></a>`array_positions__anycompatiblearray_anycompatible__from_table`
+#### <a id="fail-array_positions__anycompatiblearray_anycompatible__from_table-TDS"></a><a id="fail-array_positions__anycompatiblearray_anycompatible__from_table-Relation"></a><a id="fail-array_positions__anycompatiblearray_anycompatible__from_table-Grammar"></a>`array_positions__anycompatiblearray_anycompatible__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_POSITIONS(ARRAY[1,2,3,2,1], 2) AS result FROM numbers WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_POSITIONS(ARRAY[1, 2, 3, 2, 1], 2) AS result FROM func('e2e::tds_numbers') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_POSITIONS"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_POSITIONS(ARRAY[1,2,3,2,1], 2) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_POSITIONS(ARRAY[1, 2, 3, 2, 1], 2) AS result FROM func('e2e::rel_numbers') WHERE id = 1
 ```
@@ -5596,24 +9786,49 @@ SELECT ARRAY_POSITIONS(ARRAY[1, 2, 3, 2, 1], 2) AS result FROM func('e2e::rel_nu
 **Error:**
 > No function matches the given name "ARRAY_POSITIONS"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_POSITIONS(ARRAY[1,2,3,2,1], 2) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_POSITIONS(ARRAY[1, 2, 3, 2, 1], 2) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_POSITIONS"
+
 
 <br>
 
-#### <a id="fail-array_prepend__anycompatible_anycompatiblearray__from_table-TDS"></a><a id="fail-array_prepend__anycompatible_anycompatiblearray__from_table-Relation"></a>`array_prepend__anycompatible_anycompatiblearray__from_table`
+#### <a id="fail-array_prepend__anycompatible_anycompatiblearray__from_table-TDS"></a><a id="fail-array_prepend__anycompatible_anycompatiblearray__from_table-Relation"></a><a id="fail-array_prepend__anycompatible_anycompatiblearray__from_table-Grammar"></a>`array_prepend__anycompatible_anycompatiblearray__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_PREPEND(0, ARRAY[1,2,3]) AS result FROM numbers WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_PREPEND(0, ARRAY[1, 2, 3]) AS result FROM func('e2e::tds_numbers') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_PREPEND"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_PREPEND(0, ARRAY[1,2,3]) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_PREPEND(0, ARRAY[1, 2, 3]) AS result FROM func('e2e::rel_numbers') WHERE id = 1
 ```
@@ -5621,24 +9836,49 @@ SELECT ARRAY_PREPEND(0, ARRAY[1, 2, 3]) AS result FROM func('e2e::rel_numbers') 
 **Error:**
 > No function matches the given name "ARRAY_PREPEND"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_PREPEND(0, ARRAY[1,2,3]) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_PREPEND(0, ARRAY[1, 2, 3]) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_PREPEND"
+
 
 <br>
 
-#### <a id="fail-array_remove__anycompatiblearray_anycompatible__from_table-TDS"></a><a id="fail-array_remove__anycompatiblearray_anycompatible__from_table-Relation"></a>`array_remove__anycompatiblearray_anycompatible__from_table`
+#### <a id="fail-array_remove__anycompatiblearray_anycompatible__from_table-TDS"></a><a id="fail-array_remove__anycompatiblearray_anycompatible__from_table-Relation"></a><a id="fail-array_remove__anycompatiblearray_anycompatible__from_table-Grammar"></a>`array_remove__anycompatiblearray_anycompatible__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_REMOVE(ARRAY[1,2,3,2], 2) AS result FROM numbers WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_REMOVE(ARRAY[1, 2, 3, 2], 2) AS result FROM func('e2e::tds_numbers') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_REMOVE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_REMOVE(ARRAY[1,2,3,2], 2) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_REMOVE(ARRAY[1, 2, 3, 2], 2) AS result FROM func('e2e::rel_numbers') WHERE id = 1
 ```
@@ -5646,24 +9886,49 @@ SELECT ARRAY_REMOVE(ARRAY[1, 2, 3, 2], 2) AS result FROM func('e2e::rel_numbers'
 **Error:**
 > No function matches the given name "ARRAY_REMOVE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_REMOVE(ARRAY[1,2,3,2], 2) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_REMOVE(ARRAY[1, 2, 3, 2], 2) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_REMOVE"
+
 
 <br>
 
-#### <a id="fail-array_replace__anycompatiblearray_anycompatible_anycompatible__from_table-TDS"></a><a id="fail-array_replace__anycompatiblearray_anycompatible_anycompatible__from_table-Relation"></a>`array_replace__anycompatiblearray_anycompatible_anycompatible__from_table`
+#### <a id="fail-array_replace__anycompatiblearray_anycompatible_anycompatible__from_table-TDS"></a><a id="fail-array_replace__anycompatiblearray_anycompatible_anycompatible__from_table-Relation"></a><a id="fail-array_replace__anycompatiblearray_anycompatible_anycompatible__from_table-Grammar"></a>`array_replace__anycompatiblearray_anycompatible_anycompatible__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_REPLACE(ARRAY[1,2,3,2], 2, 99) AS result FROM numbers WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_REPLACE(ARRAY[1, 2, 3, 2], 2, 99) AS result FROM func('e2e::tds_numbers') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_REPLACE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_REPLACE(ARRAY[1,2,3,2], 2, 99) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_REPLACE(ARRAY[1, 2, 3, 2], 2, 99) AS result FROM func('e2e::rel_numbers') WHERE id = 1
 ```
@@ -5671,24 +9936,49 @@ SELECT ARRAY_REPLACE(ARRAY[1, 2, 3, 2], 2, 99) AS result FROM func('e2e::rel_num
 **Error:**
 > No function matches the given name "ARRAY_REPLACE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_REPLACE(ARRAY[1,2,3,2], 2, 99) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_REPLACE(ARRAY[1, 2, 3, 2], 2, 99) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_REPLACE"
+
 
 <br>
 
-#### <a id="fail-array_sample__anyarray_int__from_table-TDS"></a><a id="fail-array_sample__anyarray_int__from_table-Relation"></a>`array_sample__anyarray_int__from_table`
+#### <a id="fail-array_sample__anyarray_int__from_table-TDS"></a><a id="fail-array_sample__anyarray_int__from_table-Relation"></a><a id="fail-array_sample__anyarray_int__from_table-Grammar"></a>`array_sample__anyarray_int__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_LENGTH(ARRAY_SAMPLE(ARRAY[1,2,3,4,5], 3), 1) AS result FROM numbers WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_LENGTH(ARRAY_SAMPLE(ARRAY[1, 2, 3, 4, 5], 3), 1) AS result FROM func('e2e::tds_numbers') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_SAMPLE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_LENGTH(ARRAY_SAMPLE(ARRAY[1,2,3,4,5], 3), 1) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_LENGTH(ARRAY_SAMPLE(ARRAY[1, 2, 3, 4, 5], 3), 1) AS result FROM func('e2e::rel_numbers') WHERE id = 1
 ```
@@ -5696,24 +9986,49 @@ SELECT ARRAY_LENGTH(ARRAY_SAMPLE(ARRAY[1, 2, 3, 4, 5], 3), 1) AS result FROM fun
 **Error:**
 > No function matches the given name "ARRAY_SAMPLE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_LENGTH(ARRAY_SAMPLE(ARRAY[1,2,3,4,5], 3), 1) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_LENGTH(ARRAY_SAMPLE(ARRAY[1, 2, 3, 4, 5], 3), 1) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_SAMPLE"
+
 
 <br>
 
-#### <a id="fail-array_sample_anyarray_integer_cov-TDS"></a><a id="fail-array_sample_anyarray_integer_cov-Relation"></a>`array_sample_anyarray_integer_cov`
+#### <a id="fail-array_sample_anyarray_integer_cov-TDS"></a><a id="fail-array_sample_anyarray_integer_cov-Relation"></a><a id="fail-array_sample_anyarray_integer_cov-Grammar"></a>`array_sample_anyarray_integer_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_SAMPLE(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_SAMPLE(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_SAMPLE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_SAMPLE(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_SAMPLE(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -5721,24 +10036,51 @@ SELECT ARRAY_SAMPLE(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "ARRAY_SAMPLE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_SAMPLE(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_SAMPLE(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function array_sample(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_SAMPLE"
+
 
 <br>
 
-#### <a id="fail-array_shuffle__anyarray__from_table-TDS"></a><a id="fail-array_shuffle__anyarray__from_table-Relation"></a>`array_shuffle__anyarray__from_table`
+#### <a id="fail-array_shuffle__anyarray__from_table-TDS"></a><a id="fail-array_shuffle__anyarray__from_table-Relation"></a><a id="fail-array_shuffle__anyarray__from_table-Grammar"></a>`array_shuffle__anyarray__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_LENGTH(ARRAY_SHUFFLE(ARRAY[1,2,3,4,5], 3), 1) AS result FROM numbers WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_LENGTH(ARRAY_SHUFFLE(ARRAY[1, 2, 3, 4, 5], 3), 1) AS result FROM func('e2e::tds_numbers') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_SHUFFLE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_LENGTH(ARRAY_SHUFFLE(ARRAY[1,2,3,4,5], 3), 1) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_LENGTH(ARRAY_SHUFFLE(ARRAY[1, 2, 3, 4, 5], 3), 1) AS result FROM func('e2e::rel_numbers') WHERE id = 1
 ```
@@ -5746,24 +10088,51 @@ SELECT ARRAY_LENGTH(ARRAY_SHUFFLE(ARRAY[1, 2, 3, 4, 5], 3), 1) AS result FROM fu
 **Error:**
 > No function matches the given name "ARRAY_SHUFFLE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_LENGTH(ARRAY_SHUFFLE(ARRAY[1,2,3,4,5], 3), 1) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_LENGTH(ARRAY_SHUFFLE(ARRAY[1, 2, 3, 4, 5], 3), 1) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function array_shuffle(integer[], integer) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 21 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_SHUFFLE"
+
 
 <br>
 
-#### <a id="fail-array_shuffle_anyarray_cov-TDS"></a><a id="fail-array_shuffle_anyarray_cov-Relation"></a>`array_shuffle_anyarray_cov`
+#### <a id="fail-array_shuffle_anyarray_cov-TDS"></a><a id="fail-array_shuffle_anyarray_cov-Relation"></a><a id="fail-array_shuffle_anyarray_cov-Grammar"></a>`array_shuffle_anyarray_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_SHUFFLE(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_SHUFFLE(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_SHUFFLE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_SHUFFLE(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_SHUFFLE(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -5771,24 +10140,49 @@ SELECT ARRAY_SHUFFLE(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "ARRAY_SHUFFLE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_SHUFFLE(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_SHUFFLE(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: could not determine polymorphic type because input has type unknown | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_SHUFFLE"
+
 
 <br>
 
-#### <a id="fail-array_upper__anyarray_int__from_table-TDS"></a><a id="fail-array_upper__anyarray_int__from_table-Relation"></a>`array_upper__anyarray_int__from_table`
+#### <a id="fail-array_upper__anyarray_int__from_table-TDS"></a><a id="fail-array_upper__anyarray_int__from_table-Relation"></a><a id="fail-array_upper__anyarray_int__from_table-Grammar"></a>`array_upper__anyarray_int__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_UPPER(ARRAY[10,20,30], 1) AS result FROM numbers WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_UPPER(ARRAY[10, 20, 30], 1) AS result FROM func('e2e::tds_numbers') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_UPPER"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_UPPER(ARRAY[10,20,30], 1) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_UPPER(ARRAY[10, 20, 30], 1) AS result FROM func('e2e::rel_numbers') WHERE id = 1
 ```
@@ -5796,24 +10190,49 @@ SELECT ARRAY_UPPER(ARRAY[10, 20, 30], 1) AS result FROM func('e2e::rel_numbers')
 **Error:**
 > No function matches the given name "ARRAY_UPPER"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_UPPER(ARRAY[10,20,30], 1) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_UPPER(ARRAY[10, 20, 30], 1) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_UPPER"
+
 
 <br>
 
-#### <a id="fail-cardinality__anyarray__from_table-TDS"></a><a id="fail-cardinality__anyarray__from_table-Relation"></a>`cardinality__anyarray__from_table`
+#### <a id="fail-cardinality__anyarray__from_table-TDS"></a><a id="fail-cardinality__anyarray__from_table-Relation"></a><a id="fail-cardinality__anyarray__from_table-Grammar"></a>`cardinality__anyarray__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT CARDINALITY(ARRAY[1,2,3]) AS result FROM numbers WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT CARDINALITY(ARRAY[1, 2, 3]) AS result FROM func('e2e::tds_numbers') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "CARDINALITY"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT CARDINALITY(ARRAY[1,2,3]) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT CARDINALITY(ARRAY[1, 2, 3]) AS result FROM func('e2e::rel_numbers') WHERE id = 1
 ```
@@ -5821,24 +10240,49 @@ SELECT CARDINALITY(ARRAY[1, 2, 3]) AS result FROM func('e2e::rel_numbers') WHERE
 **Error:**
 > No function matches the given name "CARDINALITY"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT CARDINALITY(ARRAY[1,2,3]) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT CARDINALITY(ARRAY[1, 2, 3]) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "CARDINALITY"
+
 
 <br>
 
-#### <a id="fail-unnest__anyarray__from_table-TDS"></a><a id="fail-unnest__anyarray__from_table-Relation"></a>`unnest__anyarray__from_table`
+#### <a id="fail-unnest__anyarray__from_table-TDS"></a><a id="fail-unnest__anyarray__from_table-Relation"></a><a id="fail-unnest__anyarray__from_table-Grammar"></a>`unnest__anyarray__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT UNNEST(ARRAY[1,2,3]) AS result FROM dates WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT UNNEST(ARRAY[1, 2, 3]) AS result FROM func('e2e::tds_dates') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "UNNEST"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT UNNEST(ARRAY[1,2,3]) AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT UNNEST(ARRAY[1, 2, 3]) AS result FROM func('e2e::rel_dates') WHERE id = 1
 ```
@@ -5846,24 +10290,49 @@ SELECT UNNEST(ARRAY[1, 2, 3]) AS result FROM func('e2e::rel_dates') WHERE id = 1
 **Error:**
 > No function matches the given name "UNNEST"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT UNNEST(ARRAY[1,2,3]) AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT UNNEST(ARRAY[1, 2, 3]) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "UNNEST"
+
 
 <br>
 
-#### <a id="fail-unnest_anyarray_cov-TDS"></a><a id="fail-unnest_anyarray_cov-Relation"></a>`unnest_anyarray_cov`
+#### <a id="fail-unnest_anyarray_cov-TDS"></a><a id="fail-unnest_anyarray_cov-Relation"></a><a id="fail-unnest_anyarray_cov-Grammar"></a>`unnest_anyarray_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT UNNEST(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT UNNEST(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "UNNEST"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT UNNEST(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT UNNEST(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -5871,24 +10340,51 @@ SELECT UNNEST(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "UNNEST"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT UNNEST(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT UNNEST(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function unnest(unknown) is not unique
+>   Hint: Could not choose a best candidate function. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "UNNEST"
+
 
 <br>
 
-#### <a id="fail-unnest__anymultirange__unsupported_type-TDS"></a><a id="fail-unnest__anymultirange__unsupported_type-Relation"></a>`unnest__anymultirange__unsupported_type`
+#### <a id="fail-unnest__anymultirange__unsupported_type-TDS"></a><a id="fail-unnest__anymultirange__unsupported_type-Relation"></a><a id="fail-unnest__anymultirange__unsupported_type-Grammar"></a>`unnest__anymultirange__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT UNNEST(int4multirange(int4range(1,5))) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT UNNEST(int4multirange(int4range(1, 5))) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "UNNEST"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT UNNEST(int4multirange(int4range(1,5))) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT UNNEST(int4multirange(int4range(1, 5))) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -5896,24 +10392,49 @@ SELECT UNNEST(int4multirange(int4range(1, 5))) AS result FROM func('e2e::rel_per
 **Error:**
 > No function matches the given name "UNNEST"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT UNNEST(int4multirange(int4range(1,5))) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT UNNEST(int4multirange(int4range(1, 5))) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "UNNEST"
+
 
 <br>
 
-#### <a id="fail-unnest_anymultirange_cov-TDS"></a><a id="fail-unnest_anymultirange_cov-Relation"></a>`unnest_anymultirange_cov`
+#### <a id="fail-unnest_anymultirange_cov-TDS"></a><a id="fail-unnest_anymultirange_cov-Relation"></a><a id="fail-unnest_anymultirange_cov-Grammar"></a>`unnest_anymultirange_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT UNNEST(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT UNNEST(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "UNNEST"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT UNNEST(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT UNNEST(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -5921,24 +10442,51 @@ SELECT UNNEST(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "UNNEST"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT UNNEST(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT UNNEST(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function unnest(unknown) is not unique
+>   Hint: Could not choose a best candidate function. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "UNNEST"
+
 
 <br>
 
-#### <a id="fail-unnest__tsvectortsvector_OUTlexemetxt_OUTpositionssmall[]_OUTweightstxt[]__unsupported_type-TDS"></a><a id="fail-unnest__tsvectortsvector_OUTlexemetxt_OUTpositionssmall[]_OUTweightstxt[]__unsupported_type-Relation"></a>`unnest__tsvectortsvector_OUTlexemetxt_OUTpositionssmall[]_OUTweightstxt[]__unsupported_type`
+#### <a id="fail-unnest__tsvectortsvector_OUTlexemetxt_OUTpositionssmall[]_OUTweightstxt[]__unsupported_type-TDS"></a><a id="fail-unnest__tsvectortsvector_OUTlexemetxt_OUTpositionssmall[]_OUTweightstxt[]__unsupported_type-Relation"></a><a id="fail-unnest__tsvectortsvector_OUTlexemetxt_OUTpositionssmall[]_OUTweightstxt[]__unsupported_type-Grammar"></a>`unnest__tsvectortsvector_OUTlexemetxt_OUTpositionssmall[]_OUTweightstxt[]__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT UNNEST(to_tsvector('english', 'the quick brown fox')) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT UNNEST(to_tsvector('english', 'the quick brown fox')) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "UNNEST"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT UNNEST(to_tsvector('english', 'the quick brown fox')) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT UNNEST(to_tsvector('english', 'the quick brown fox')) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -5946,24 +10494,49 @@ SELECT UNNEST(to_tsvector('english', 'the quick brown fox')) AS result FROM func
 **Error:**
 > No function matches the given name "UNNEST"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT UNNEST(to_tsvector('english', 'the quick brown fox')) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT UNNEST(to_tsvector('english', 'the quick brown fox')) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "UNNEST"
+
 
 <br>
 
-#### <a id="fail-unnest_tsvector_tsvector_OUT_lexeme_cov-TDS"></a><a id="fail-unnest_tsvector_tsvector_OUT_lexeme_cov-Relation"></a>`unnest_tsvector_tsvector_OUT_lexeme_cov`
+#### <a id="fail-unnest_tsvector_tsvector_OUT_lexeme_cov-TDS"></a><a id="fail-unnest_tsvector_tsvector_OUT_lexeme_cov-Relation"></a><a id="fail-unnest_tsvector_tsvector_OUT_lexeme_cov-Grammar"></a>`unnest_tsvector_tsvector_OUT_lexeme_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT UNNEST(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT UNNEST(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "UNNEST"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT UNNEST(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT UNNEST(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -5971,24 +10544,51 @@ SELECT UNNEST(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "UNNEST"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT UNNEST(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT UNNEST(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function unnest(unknown) is not unique
+>   Hint: Could not choose a best candidate function. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "UNNEST"
+
 
 <br>
 
-#### <a id="fail-any_value__anyelement__from_table-TDS"></a><a id="fail-any_value__anyelement__from_table-Relation"></a>`any_value__anyelement__from_table`
+#### <a id="fail-any_value__anyelement__from_table-TDS"></a><a id="fail-any_value__anyelement__from_table-Relation"></a><a id="fail-any_value__anyelement__from_table-Grammar"></a>`any_value__anyelement__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ANY_VALUE(name) AS result FROM persons WHERE dept_id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ANY_VALUE(name) AS result FROM func('e2e::tds_persons') WHERE dept_id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ANY_VALUE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ANY_VALUE(name) AS result FROM persons WHERE dept_id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ANY_VALUE(name) AS result FROM func('e2e::rel_persons') WHERE dept_id = 1
 ```
@@ -5996,24 +10596,49 @@ SELECT ANY_VALUE(name) AS result FROM func('e2e::rel_persons') WHERE dept_id = 1
 **Error:**
 > No function matches the given name "ANY_VALUE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ANY_VALUE(name) AS result FROM persons WHERE dept_id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ANY_VALUE(name) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE dept_id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ANY_VALUE"
+
 
 <br>
 
-#### <a id="fail-array_agg__anyarray__no_generator-TDS"></a><a id="fail-array_agg__anyarray__no_generator-Relation"></a>`array_agg__anyarray__no_generator`
+#### <a id="fail-array_agg__anyarray__no_generator-TDS"></a><a id="fail-array_agg__anyarray__no_generator-Relation"></a><a id="fail-array_agg__anyarray__no_generator-Grammar"></a>`array_agg__anyarray__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_AGG(ARRAY[id]) AS result FROM persons WHERE id IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_AGG(ARRAY[id]) AS result FROM func('e2e::tds_persons') WHERE id IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_AGG"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_AGG(ARRAY[id]) AS result FROM persons WHERE id IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_AGG(ARRAY[id]) AS result FROM func('e2e::rel_persons') WHERE id IS NOT NULL
 ```
@@ -6021,24 +10646,49 @@ SELECT ARRAY_AGG(ARRAY[id]) AS result FROM func('e2e::rel_persons') WHERE id IS 
 **Error:**
 > No function matches the given name "ARRAY_AGG"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_AGG(ARRAY[id]) AS result FROM persons WHERE id IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_AGG(ARRAY[id]) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_AGG"
+
 
 <br>
 
-#### <a id="fail-array_agg_anyarray_cov-TDS"></a><a id="fail-array_agg_anyarray_cov-Relation"></a>`array_agg_anyarray_cov`
+#### <a id="fail-array_agg_anyarray_cov-TDS"></a><a id="fail-array_agg_anyarray_cov-Relation"></a><a id="fail-array_agg_anyarray_cov-Grammar"></a>`array_agg_anyarray_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_AGG(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_AGG(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_AGG"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_AGG(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_AGG(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -6046,24 +10696,51 @@ SELECT ARRAY_AGG(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "ARRAY_AGG"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_AGG(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_AGG(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function array_agg(unknown) is not unique
+>   Hint: Could not choose a best candidate function. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_AGG"
+
 
 <br>
 
-#### <a id="fail-array_agg__anynonarray__from_table-TDS"></a><a id="fail-array_agg__anynonarray__from_table-Relation"></a>`array_agg__anynonarray__from_table`
+#### <a id="fail-array_agg__anynonarray__from_table-TDS"></a><a id="fail-array_agg__anynonarray__from_table-Relation"></a><a id="fail-array_agg__anynonarray__from_table-Grammar"></a>`array_agg__anynonarray__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_AGG(name ORDER BY name) AS result FROM persons WHERE name IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ARRAY_AGG(name ORDER BY name) AS result FROM func('e2e::tds_persons') WHERE name IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "ARRAY_AGG"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_AGG(name ORDER BY name) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT ARRAY_AGG(name ORDER BY name) AS result FROM func('e2e::rel_persons') WHERE name IS NOT NULL
 ```
@@ -6071,24 +10748,49 @@ SELECT ARRAY_AGG(name ORDER BY name) AS result FROM func('e2e::rel_persons') WHE
 **Error:**
 > No function matches the given name "ARRAY_AGG"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_AGG(name ORDER BY name) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_AGG(name ORDER BY name) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE name IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "ARRAY_AGG"
+
 
 <br>
 
-#### <a id="fail-bit_and__big__from_table-TDS"></a><a id="fail-bit_and__big__from_table-Relation"></a>`bit_and__big__from_table`
+#### <a id="fail-bit_and__big__from_table-TDS"></a><a id="fail-bit_and__big__from_table-Relation"></a><a id="fail-bit_and__big__from_table-Grammar"></a>`bit_and__big__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT BIT_AND(big_val) AS result FROM numbers WHERE big_val IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT BIT_AND(big_val) AS result FROM func('e2e::tds_numbers') WHERE big_val IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "BIT_AND"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_AND(big_val) AS result FROM numbers WHERE big_val IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT BIT_AND(big_val) AS result FROM func('e2e::rel_numbers') WHERE big_val IS NOT NULL
 ```
@@ -6096,24 +10798,49 @@ SELECT BIT_AND(big_val) AS result FROM func('e2e::rel_numbers') WHERE big_val IS
 **Error:**
 > No function matches the given name "BIT_AND"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_AND(big_val) AS result FROM numbers WHERE big_val IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT BIT_AND(big_val) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE big_val IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "BIT_AND"
+
 
 <br>
 
-#### <a id="fail-bit_and__bit__no_generator-TDS"></a><a id="fail-bit_and__bit__no_generator-Relation"></a>`bit_and__bit__no_generator`
+#### <a id="fail-bit_and__bit__no_generator-TDS"></a><a id="fail-bit_and__bit__no_generator-Relation"></a><a id="fail-bit_and__bit__no_generator-Grammar"></a>`bit_and__bit__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT BIT_AND(int_val::bit(32)) AS result FROM numbers WHERE int_val IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT BIT_AND(int_val::bit(32)) AS result FROM func('e2e::tds_numbers') WHERE int_val IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "BIT_AND"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_AND(int_val::bit(32)) AS result FROM numbers WHERE int_val IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT BIT_AND(int_val::bit(32)) AS result FROM func('e2e::rel_numbers') WHERE int_val IS NOT NULL
 ```
@@ -6121,24 +10848,49 @@ SELECT BIT_AND(int_val::bit(32)) AS result FROM func('e2e::rel_numbers') WHERE i
 **Error:**
 > No function matches the given name "BIT_AND"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_AND(int_val::bit(32)) AS result FROM numbers WHERE int_val IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT BIT_AND(int_val::bit(32)) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE int_val IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "BIT_AND"
+
 
 <br>
 
-#### <a id="fail-bit_and_bit_cov-TDS"></a><a id="fail-bit_and_bit_cov-Relation"></a>`bit_and_bit_cov`
+#### <a id="fail-bit_and_bit_cov-TDS"></a><a id="fail-bit_and_bit_cov-Relation"></a><a id="fail-bit_and_bit_cov-Grammar"></a>`bit_and_bit_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT BIT_AND(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT BIT_AND(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "BIT_AND"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_AND(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT BIT_AND(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -6146,24 +10898,51 @@ SELECT BIT_AND(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "BIT_AND"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_AND(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT BIT_AND(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function bit_and(unknown) is not unique
+>   Hint: Could not choose a best candidate function. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "BIT_AND"
+
 
 <br>
 
-#### <a id="fail-bit_and__int__from_table-TDS"></a><a id="fail-bit_and__int__from_table-Relation"></a>`bit_and__int__from_table`
+#### <a id="fail-bit_and__int__from_table-TDS"></a><a id="fail-bit_and__int__from_table-Relation"></a><a id="fail-bit_and__int__from_table-Grammar"></a>`bit_and__int__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT BIT_AND(int_val) AS result FROM numbers WHERE int_val IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT BIT_AND(int_val) AS result FROM func('e2e::tds_numbers') WHERE int_val IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "BIT_AND"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_AND(int_val) AS result FROM numbers WHERE int_val IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT BIT_AND(int_val) AS result FROM func('e2e::rel_numbers') WHERE int_val IS NOT NULL
 ```
@@ -6171,24 +10950,49 @@ SELECT BIT_AND(int_val) AS result FROM func('e2e::rel_numbers') WHERE int_val IS
 **Error:**
 > No function matches the given name "BIT_AND"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_AND(int_val) AS result FROM numbers WHERE int_val IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT BIT_AND(int_val) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE int_val IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "BIT_AND"
+
 
 <br>
 
-#### <a id="fail-bit_and__small__from_table-TDS"></a><a id="fail-bit_and__small__from_table-Relation"></a>`bit_and__small__from_table`
+#### <a id="fail-bit_and__small__from_table-TDS"></a><a id="fail-bit_and__small__from_table-Relation"></a><a id="fail-bit_and__small__from_table-Grammar"></a>`bit_and__small__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT BIT_AND(small_val::smallint) AS result FROM numbers WHERE small_val IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT BIT_AND(small_val::smallint) AS result FROM func('e2e::tds_numbers') WHERE small_val IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "BIT_AND"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_AND(small_val::smallint) AS result FROM numbers WHERE small_val IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT BIT_AND(small_val::smallint) AS result FROM func('e2e::rel_numbers') WHERE small_val IS NOT NULL
 ```
@@ -6196,24 +11000,49 @@ SELECT BIT_AND(small_val::smallint) AS result FROM func('e2e::rel_numbers') WHER
 **Error:**
 > No function matches the given name "BIT_AND"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_AND(small_val::smallint) AS result FROM numbers WHERE small_val IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT BIT_AND(small_val::smallint) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE small_val IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "BIT_AND"
+
 
 <br>
 
-#### <a id="fail-bit_or__big__from_table-TDS"></a><a id="fail-bit_or__big__from_table-Relation"></a>`bit_or__big__from_table`
+#### <a id="fail-bit_or__big__from_table-TDS"></a><a id="fail-bit_or__big__from_table-Relation"></a><a id="fail-bit_or__big__from_table-Grammar"></a>`bit_or__big__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT BIT_OR(big_val) AS result FROM numbers WHERE big_val IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT BIT_OR(big_val) AS result FROM func('e2e::tds_numbers') WHERE big_val IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "BIT_OR"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_OR(big_val) AS result FROM numbers WHERE big_val IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT BIT_OR(big_val) AS result FROM func('e2e::rel_numbers') WHERE big_val IS NOT NULL
 ```
@@ -6221,24 +11050,49 @@ SELECT BIT_OR(big_val) AS result FROM func('e2e::rel_numbers') WHERE big_val IS 
 **Error:**
 > No function matches the given name "BIT_OR"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_OR(big_val) AS result FROM numbers WHERE big_val IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT BIT_OR(big_val) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE big_val IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "BIT_OR"
+
 
 <br>
 
-#### <a id="fail-bit_or__bit__no_generator-TDS"></a><a id="fail-bit_or__bit__no_generator-Relation"></a>`bit_or__bit__no_generator`
+#### <a id="fail-bit_or__bit__no_generator-TDS"></a><a id="fail-bit_or__bit__no_generator-Relation"></a><a id="fail-bit_or__bit__no_generator-Grammar"></a>`bit_or__bit__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT BIT_OR(int_val::bit(32)) AS result FROM numbers WHERE int_val IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT BIT_OR(int_val::bit(32)) AS result FROM func('e2e::tds_numbers') WHERE int_val IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "BIT_OR"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_OR(int_val::bit(32)) AS result FROM numbers WHERE int_val IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT BIT_OR(int_val::bit(32)) AS result FROM func('e2e::rel_numbers') WHERE int_val IS NOT NULL
 ```
@@ -6246,24 +11100,49 @@ SELECT BIT_OR(int_val::bit(32)) AS result FROM func('e2e::rel_numbers') WHERE in
 **Error:**
 > No function matches the given name "BIT_OR"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_OR(int_val::bit(32)) AS result FROM numbers WHERE int_val IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT BIT_OR(int_val::bit(32)) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE int_val IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "BIT_OR"
+
 
 <br>
 
-#### <a id="fail-bit_or_bit_cov-TDS"></a><a id="fail-bit_or_bit_cov-Relation"></a>`bit_or_bit_cov`
+#### <a id="fail-bit_or_bit_cov-TDS"></a><a id="fail-bit_or_bit_cov-Relation"></a><a id="fail-bit_or_bit_cov-Grammar"></a>`bit_or_bit_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT BIT_OR(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT BIT_OR(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "BIT_OR"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_OR(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT BIT_OR(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -6271,24 +11150,51 @@ SELECT BIT_OR(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "BIT_OR"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_OR(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT BIT_OR(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function bit_or(unknown) is not unique
+>   Hint: Could not choose a best candidate function. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "BIT_OR"
+
 
 <br>
 
-#### <a id="fail-bit_or__int__from_table-TDS"></a><a id="fail-bit_or__int__from_table-Relation"></a>`bit_or__int__from_table`
+#### <a id="fail-bit_or__int__from_table-TDS"></a><a id="fail-bit_or__int__from_table-Relation"></a><a id="fail-bit_or__int__from_table-Grammar"></a>`bit_or__int__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT BIT_OR(int_val) AS result FROM numbers WHERE int_val IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT BIT_OR(int_val) AS result FROM func('e2e::tds_numbers') WHERE int_val IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "BIT_OR"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_OR(int_val) AS result FROM numbers WHERE int_val IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT BIT_OR(int_val) AS result FROM func('e2e::rel_numbers') WHERE int_val IS NOT NULL
 ```
@@ -6296,24 +11202,49 @@ SELECT BIT_OR(int_val) AS result FROM func('e2e::rel_numbers') WHERE int_val IS 
 **Error:**
 > No function matches the given name "BIT_OR"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_OR(int_val) AS result FROM numbers WHERE int_val IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT BIT_OR(int_val) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE int_val IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "BIT_OR"
+
 
 <br>
 
-#### <a id="fail-bit_or__small__from_table-TDS"></a><a id="fail-bit_or__small__from_table-Relation"></a>`bit_or__small__from_table`
+#### <a id="fail-bit_or__small__from_table-TDS"></a><a id="fail-bit_or__small__from_table-Relation"></a><a id="fail-bit_or__small__from_table-Grammar"></a>`bit_or__small__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT BIT_OR(small_val::smallint) AS result FROM numbers WHERE small_val IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT BIT_OR(small_val::smallint) AS result FROM func('e2e::tds_numbers') WHERE small_val IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "BIT_OR"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_OR(small_val::smallint) AS result FROM numbers WHERE small_val IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT BIT_OR(small_val::smallint) AS result FROM func('e2e::rel_numbers') WHERE small_val IS NOT NULL
 ```
@@ -6321,24 +11252,49 @@ SELECT BIT_OR(small_val::smallint) AS result FROM func('e2e::rel_numbers') WHERE
 **Error:**
 > No function matches the given name "BIT_OR"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_OR(small_val::smallint) AS result FROM numbers WHERE small_val IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT BIT_OR(small_val::smallint) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE small_val IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "BIT_OR"
+
 
 <br>
 
-#### <a id="fail-bit_xor__big__from_table-TDS"></a><a id="fail-bit_xor__big__from_table-Relation"></a>`bit_xor__big__from_table`
+#### <a id="fail-bit_xor__big__from_table-TDS"></a><a id="fail-bit_xor__big__from_table-Relation"></a><a id="fail-bit_xor__big__from_table-Grammar"></a>`bit_xor__big__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT BIT_XOR(big_val) AS result FROM numbers WHERE big_val IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT BIT_XOR(big_val) AS result FROM func('e2e::tds_numbers') WHERE big_val IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "BIT_XOR"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_XOR(big_val) AS result FROM numbers WHERE big_val IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT BIT_XOR(big_val) AS result FROM func('e2e::rel_numbers') WHERE big_val IS NOT NULL
 ```
@@ -6346,24 +11302,49 @@ SELECT BIT_XOR(big_val) AS result FROM func('e2e::rel_numbers') WHERE big_val IS
 **Error:**
 > No function matches the given name "BIT_XOR"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_XOR(big_val) AS result FROM numbers WHERE big_val IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT BIT_XOR(big_val) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE big_val IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "BIT_XOR"
+
 
 <br>
 
-#### <a id="fail-bit_xor__bit__no_generator-TDS"></a><a id="fail-bit_xor__bit__no_generator-Relation"></a>`bit_xor__bit__no_generator`
+#### <a id="fail-bit_xor__bit__no_generator-TDS"></a><a id="fail-bit_xor__bit__no_generator-Relation"></a><a id="fail-bit_xor__bit__no_generator-Grammar"></a>`bit_xor__bit__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT BIT_XOR(int_val::bit(32)) AS result FROM numbers WHERE int_val IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT BIT_XOR(int_val::bit(32)) AS result FROM func('e2e::tds_numbers') WHERE int_val IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "BIT_XOR"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_XOR(int_val::bit(32)) AS result FROM numbers WHERE int_val IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT BIT_XOR(int_val::bit(32)) AS result FROM func('e2e::rel_numbers') WHERE int_val IS NOT NULL
 ```
@@ -6371,24 +11352,49 @@ SELECT BIT_XOR(int_val::bit(32)) AS result FROM func('e2e::rel_numbers') WHERE i
 **Error:**
 > No function matches the given name "BIT_XOR"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_XOR(int_val::bit(32)) AS result FROM numbers WHERE int_val IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT BIT_XOR(int_val::bit(32)) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE int_val IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "BIT_XOR"
+
 
 <br>
 
-#### <a id="fail-bit_xor_bit_cov-TDS"></a><a id="fail-bit_xor_bit_cov-Relation"></a>`bit_xor_bit_cov`
+#### <a id="fail-bit_xor_bit_cov-TDS"></a><a id="fail-bit_xor_bit_cov-Relation"></a><a id="fail-bit_xor_bit_cov-Grammar"></a>`bit_xor_bit_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT BIT_XOR(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT BIT_XOR(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "BIT_XOR"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_XOR(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT BIT_XOR(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -6396,24 +11402,51 @@ SELECT BIT_XOR(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "BIT_XOR"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_XOR(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT BIT_XOR(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function bit_xor(unknown) is not unique
+>   Hint: Could not choose a best candidate function. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "BIT_XOR"
+
 
 <br>
 
-#### <a id="fail-bit_xor__int__from_table-TDS"></a><a id="fail-bit_xor__int__from_table-Relation"></a>`bit_xor__int__from_table`
+#### <a id="fail-bit_xor__int__from_table-TDS"></a><a id="fail-bit_xor__int__from_table-Relation"></a><a id="fail-bit_xor__int__from_table-Grammar"></a>`bit_xor__int__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT BIT_XOR(int_val) AS result FROM numbers WHERE int_val IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT BIT_XOR(int_val) AS result FROM func('e2e::tds_numbers') WHERE int_val IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "BIT_XOR"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_XOR(int_val) AS result FROM numbers WHERE int_val IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT BIT_XOR(int_val) AS result FROM func('e2e::rel_numbers') WHERE int_val IS NOT NULL
 ```
@@ -6421,24 +11454,49 @@ SELECT BIT_XOR(int_val) AS result FROM func('e2e::rel_numbers') WHERE int_val IS
 **Error:**
 > No function matches the given name "BIT_XOR"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_XOR(int_val) AS result FROM numbers WHERE int_val IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT BIT_XOR(int_val) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE int_val IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "BIT_XOR"
+
 
 <br>
 
-#### <a id="fail-bit_xor__small__from_table-TDS"></a><a id="fail-bit_xor__small__from_table-Relation"></a>`bit_xor__small__from_table`
+#### <a id="fail-bit_xor__small__from_table-TDS"></a><a id="fail-bit_xor__small__from_table-Relation"></a><a id="fail-bit_xor__small__from_table-Grammar"></a>`bit_xor__small__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT BIT_XOR(small_val::smallint) AS result FROM numbers WHERE small_val IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT BIT_XOR(small_val::smallint) AS result FROM func('e2e::tds_numbers') WHERE small_val IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "BIT_XOR"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_XOR(small_val::smallint) AS result FROM numbers WHERE small_val IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT BIT_XOR(small_val::smallint) AS result FROM func('e2e::rel_numbers') WHERE small_val IS NOT NULL
 ```
@@ -6446,24 +11504,49 @@ SELECT BIT_XOR(small_val::smallint) AS result FROM func('e2e::rel_numbers') WHER
 **Error:**
 > No function matches the given name "BIT_XOR"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_XOR(small_val::smallint) AS result FROM numbers WHERE small_val IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT BIT_XOR(small_val::smallint) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE small_val IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "BIT_XOR"
+
 
 <br>
 
-#### <a id="fail-corr__dp_dp__from_table-TDS"></a><a id="fail-corr__dp_dp__from_table-Relation"></a>`corr__dp_dp__from_table`
+#### <a id="fail-corr__dp_dp__from_table-TDS"></a><a id="fail-corr__dp_dp__from_table-Relation"></a><a id="fail-corr__dp_dp__from_table-Grammar"></a>`corr__dp_dp__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT CORR(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT CORR(salary, age) AS result FROM func('e2e::tds_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "CORR"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT CORR(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT CORR(salary, age) AS result FROM func('e2e::rel_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
@@ -6471,24 +11554,49 @@ SELECT CORR(salary, age) AS result FROM func('e2e::rel_persons') WHERE salary IS
 **Error:**
 > No function matches the given name "CORR"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT CORR(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT CORR(salary, age) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "CORR"
+
 
 <br>
 
-#### <a id="fail-covar_pop__dp_dp__from_table-TDS"></a><a id="fail-covar_pop__dp_dp__from_table-Relation"></a>`covar_pop__dp_dp__from_table`
+#### <a id="fail-covar_pop__dp_dp__from_table-TDS"></a><a id="fail-covar_pop__dp_dp__from_table-Relation"></a><a id="fail-covar_pop__dp_dp__from_table-Grammar"></a>`covar_pop__dp_dp__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT COVAR_POP(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT COVAR_POP(salary, age) AS result FROM func('e2e::tds_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "COVAR_POP"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT COVAR_POP(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT COVAR_POP(salary, age) AS result FROM func('e2e::rel_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
@@ -6496,24 +11604,49 @@ SELECT COVAR_POP(salary, age) AS result FROM func('e2e::rel_persons') WHERE sala
 **Error:**
 > No function matches the given name "COVAR_POP"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT COVAR_POP(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT COVAR_POP(salary, age) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "COVAR_POP"
+
 
 <br>
 
-#### <a id="fail-covar_samp__dp_dp__from_table-TDS"></a><a id="fail-covar_samp__dp_dp__from_table-Relation"></a>`covar_samp__dp_dp__from_table`
+#### <a id="fail-covar_samp__dp_dp__from_table-TDS"></a><a id="fail-covar_samp__dp_dp__from_table-Relation"></a><a id="fail-covar_samp__dp_dp__from_table-Grammar"></a>`covar_samp__dp_dp__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT COVAR_SAMP(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT COVAR_SAMP(salary, age) AS result FROM func('e2e::tds_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "COVAR_SAMP"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT COVAR_SAMP(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT COVAR_SAMP(salary, age) AS result FROM func('e2e::rel_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
@@ -6521,10 +11654,25 @@ SELECT COVAR_SAMP(salary, age) AS result FROM func('e2e::rel_persons') WHERE sal
 **Error:**
 > No function matches the given name "COVAR_SAMP"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT COVAR_SAMP(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT COVAR_SAMP(salary, age) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "COVAR_SAMP"
+
 
 <br>
 
-#### <a id="fail-json_agg__from_column-Relation"></a>`json_agg__from_column`
+#### <a id="fail-json_agg__from_column-Relation"></a><a id="fail-json_agg__from_column-Grammar"></a>`json_agg__from_column`
 
 📗 **Relation Path**
 
@@ -6541,24 +11689,49 @@ SELECT JSON_AGG(json_val ->> 'b') AS result FROM func('e2e::rel_json_data') WHER
 **Error:**
 > No function matches the given name "JSON_AGG"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_AGG(json_val ->> 'b') AS result FROM json_data WHERE json_val IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT JSON_AGG(json_val ->> 'b') AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE json_val IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSON_AGG"
+
 
 <br>
 
-#### <a id="fail-json_agg__anyelement__from_table-TDS"></a><a id="fail-json_agg__anyelement__from_table-Relation"></a>`json_agg__anyelement__from_table`
+#### <a id="fail-json_agg__anyelement__from_table-TDS"></a><a id="fail-json_agg__anyelement__from_table-Relation"></a><a id="fail-json_agg__anyelement__from_table-Grammar"></a>`json_agg__anyelement__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT JSON_AGG(val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT JSON_AGG(val) AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "JSON_AGG"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_AGG(val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
 ```sql
 SELECT JSON_AGG(val) AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL AND id <= 3
 ```
@@ -6566,24 +11739,49 @@ SELECT JSON_AGG(val) AS result FROM func('e2e::rel_strings') WHERE val IS NOT NU
 **Error:**
 > No function matches the given name "JSON_AGG"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_AGG(val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
+```sql
+SELECT JSON_AGG(val) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL AND id <= 3
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSON_AGG"
+
 
 <br>
 
-#### <a id="fail-json_agg_strict__anyelement__from_table-TDS"></a><a id="fail-json_agg_strict__anyelement__from_table-Relation"></a>`json_agg_strict__anyelement__from_table`
+#### <a id="fail-json_agg_strict__anyelement__from_table-TDS"></a><a id="fail-json_agg_strict__anyelement__from_table-Relation"></a><a id="fail-json_agg_strict__anyelement__from_table-Grammar"></a>`json_agg_strict__anyelement__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT JSON_AGG_STRICT(val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT JSON_AGG_STRICT(val) AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "JSON_AGG_STRICT"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_AGG_STRICT(val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
 ```sql
 SELECT JSON_AGG_STRICT(val) AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL AND id <= 3
 ```
@@ -6591,24 +11789,49 @@ SELECT JSON_AGG_STRICT(val) AS result FROM func('e2e::rel_strings') WHERE val IS
 **Error:**
 > No function matches the given name "JSON_AGG_STRICT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_AGG_STRICT(val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
+```sql
+SELECT JSON_AGG_STRICT(val) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL AND id <= 3
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSON_AGG_STRICT"
+
 
 <br>
 
-#### <a id="fail-json_object_agg__any_any__from_table-TDS"></a><a id="fail-json_object_agg__any_any__from_table-Relation"></a>`json_object_agg__any_any__from_table`
+#### <a id="fail-json_object_agg__any_any__from_table-TDS"></a><a id="fail-json_object_agg__any_any__from_table-Relation"></a><a id="fail-json_object_agg__any_any__from_table-Grammar"></a>`json_object_agg__any_any__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT JSON_OBJECT_AGG(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT JSON_OBJECT_AGG(id::text, val) AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "JSON_OBJECT_AGG"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_OBJECT_AGG(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
 ```sql
 SELECT JSON_OBJECT_AGG(id::text, val) AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL AND id <= 3
 ```
@@ -6616,24 +11839,49 @@ SELECT JSON_OBJECT_AGG(id::text, val) AS result FROM func('e2e::rel_strings') WH
 **Error:**
 > No function matches the given name "JSON_OBJECT_AGG"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_OBJECT_AGG(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
+```sql
+SELECT JSON_OBJECT_AGG(id::text, val) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL AND id <= 3
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSON_OBJECT_AGG"
+
 
 <br>
 
-#### <a id="fail-json_object_agg_strict__any_any__from_table-TDS"></a><a id="fail-json_object_agg_strict__any_any__from_table-Relation"></a>`json_object_agg_strict__any_any__from_table`
+#### <a id="fail-json_object_agg_strict__any_any__from_table-TDS"></a><a id="fail-json_object_agg_strict__any_any__from_table-Relation"></a><a id="fail-json_object_agg_strict__any_any__from_table-Grammar"></a>`json_object_agg_strict__any_any__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT JSON_OBJECT_AGG_STRICT(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT JSON_OBJECT_AGG_STRICT(id::text, val) AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "JSON_OBJECT_AGG_STRICT"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_OBJECT_AGG_STRICT(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
 ```sql
 SELECT JSON_OBJECT_AGG_STRICT(id::text, val) AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL AND id <= 3
 ```
@@ -6641,24 +11889,49 @@ SELECT JSON_OBJECT_AGG_STRICT(id::text, val) AS result FROM func('e2e::rel_strin
 **Error:**
 > No function matches the given name "JSON_OBJECT_AGG_STRICT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_OBJECT_AGG_STRICT(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
+```sql
+SELECT JSON_OBJECT_AGG_STRICT(id::text, val) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL AND id <= 3
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSON_OBJECT_AGG_STRICT"
+
 
 <br>
 
-#### <a id="fail-json_object_agg_unique__any_any__from_table-TDS"></a><a id="fail-json_object_agg_unique__any_any__from_table-Relation"></a>`json_object_agg_unique__any_any__from_table`
+#### <a id="fail-json_object_agg_unique__any_any__from_table-TDS"></a><a id="fail-json_object_agg_unique__any_any__from_table-Relation"></a><a id="fail-json_object_agg_unique__any_any__from_table-Grammar"></a>`json_object_agg_unique__any_any__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT JSON_OBJECT_AGG_UNIQUE(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT JSON_OBJECT_AGG_UNIQUE(id::text, val) AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "JSON_OBJECT_AGG_UNIQUE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_OBJECT_AGG_UNIQUE(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
 ```sql
 SELECT JSON_OBJECT_AGG_UNIQUE(id::text, val) AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL AND id <= 3
 ```
@@ -6666,24 +11939,49 @@ SELECT JSON_OBJECT_AGG_UNIQUE(id::text, val) AS result FROM func('e2e::rel_strin
 **Error:**
 > No function matches the given name "JSON_OBJECT_AGG_UNIQUE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_OBJECT_AGG_UNIQUE(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
+```sql
+SELECT JSON_OBJECT_AGG_UNIQUE(id::text, val) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL AND id <= 3
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSON_OBJECT_AGG_UNIQUE"
+
 
 <br>
 
-#### <a id="fail-json_object_agg_unique_strict__any_any__from_table-TDS"></a><a id="fail-json_object_agg_unique_strict__any_any__from_table-Relation"></a>`json_object_agg_unique_strict__any_any__from_table`
+#### <a id="fail-json_object_agg_unique_strict__any_any__from_table-TDS"></a><a id="fail-json_object_agg_unique_strict__any_any__from_table-Relation"></a><a id="fail-json_object_agg_unique_strict__any_any__from_table-Grammar"></a>`json_object_agg_unique_strict__any_any__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT JSON_OBJECT_AGG_UNIQUE_STRICT(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT JSON_OBJECT_AGG_UNIQUE_STRICT(id::text, val) AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "JSON_OBJECT_AGG_UNIQUE_STRICT"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_OBJECT_AGG_UNIQUE_STRICT(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
 ```sql
 SELECT JSON_OBJECT_AGG_UNIQUE_STRICT(id::text, val) AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL AND id <= 3
 ```
@@ -6691,10 +11989,25 @@ SELECT JSON_OBJECT_AGG_UNIQUE_STRICT(id::text, val) AS result FROM func('e2e::re
 **Error:**
 > No function matches the given name "JSON_OBJECT_AGG_UNIQUE_STRICT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_OBJECT_AGG_UNIQUE_STRICT(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
+```sql
+SELECT JSON_OBJECT_AGG_UNIQUE_STRICT(id::text, val) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL AND id <= 3
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSON_OBJECT_AGG_UNIQUE_STRICT"
+
 
 <br>
 
-#### <a id="fail-jsonb_agg__from_column-Relation"></a>`jsonb_agg__from_column`
+#### <a id="fail-jsonb_agg__from_column-Relation"></a><a id="fail-jsonb_agg__from_column-Grammar"></a>`jsonb_agg__from_column`
 
 📗 **Relation Path**
 
@@ -6711,24 +12024,49 @@ SELECT JSONB_AGG(jsonb_val ->> 'b') AS result FROM func('e2e::rel_json_data') WH
 **Error:**
 > No function matches the given name "JSONB_AGG"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_AGG(jsonb_val ->> 'b') AS result FROM json_data WHERE jsonb_val IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_AGG(jsonb_val ->> 'b') AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE jsonb_val IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_AGG"
+
 
 <br>
 
-#### <a id="fail-jsonb_agg__anyelement__from_table-TDS"></a><a id="fail-jsonb_agg__anyelement__from_table-Relation"></a>`jsonb_agg__anyelement__from_table`
+#### <a id="fail-jsonb_agg__anyelement__from_table-TDS"></a><a id="fail-jsonb_agg__anyelement__from_table-Relation"></a><a id="fail-jsonb_agg__anyelement__from_table-Grammar"></a>`jsonb_agg__anyelement__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT JSONB_AGG(val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT JSONB_AGG(val) AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "JSONB_AGG"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_AGG(val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
 ```sql
 SELECT JSONB_AGG(val) AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL AND id <= 3
 ```
@@ -6736,24 +12074,49 @@ SELECT JSONB_AGG(val) AS result FROM func('e2e::rel_strings') WHERE val IS NOT N
 **Error:**
 > No function matches the given name "JSONB_AGG"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_AGG(val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_AGG(val) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL AND id <= 3
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_AGG"
+
 
 <br>
 
-#### <a id="fail-jsonb_agg_strict__anyelement__from_table-TDS"></a><a id="fail-jsonb_agg_strict__anyelement__from_table-Relation"></a>`jsonb_agg_strict__anyelement__from_table`
+#### <a id="fail-jsonb_agg_strict__anyelement__from_table-TDS"></a><a id="fail-jsonb_agg_strict__anyelement__from_table-Relation"></a><a id="fail-jsonb_agg_strict__anyelement__from_table-Grammar"></a>`jsonb_agg_strict__anyelement__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT JSONB_AGG_STRICT(val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT JSONB_AGG_STRICT(val) AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "JSONB_AGG_STRICT"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_AGG_STRICT(val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
 ```sql
 SELECT JSONB_AGG_STRICT(val) AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL AND id <= 3
 ```
@@ -6761,24 +12124,49 @@ SELECT JSONB_AGG_STRICT(val) AS result FROM func('e2e::rel_strings') WHERE val I
 **Error:**
 > No function matches the given name "JSONB_AGG_STRICT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_AGG_STRICT(val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_AGG_STRICT(val) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL AND id <= 3
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_AGG_STRICT"
+
 
 <br>
 
-#### <a id="fail-jsonb_object_agg__any_any__from_table-TDS"></a><a id="fail-jsonb_object_agg__any_any__from_table-Relation"></a>`jsonb_object_agg__any_any__from_table`
+#### <a id="fail-jsonb_object_agg__any_any__from_table-TDS"></a><a id="fail-jsonb_object_agg__any_any__from_table-Relation"></a><a id="fail-jsonb_object_agg__any_any__from_table-Grammar"></a>`jsonb_object_agg__any_any__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT JSONB_OBJECT_AGG(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT JSONB_OBJECT_AGG(id::text, val) AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "JSONB_OBJECT_AGG"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_OBJECT_AGG(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
 ```sql
 SELECT JSONB_OBJECT_AGG(id::text, val) AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL AND id <= 3
 ```
@@ -6786,24 +12174,49 @@ SELECT JSONB_OBJECT_AGG(id::text, val) AS result FROM func('e2e::rel_strings') W
 **Error:**
 > No function matches the given name "JSONB_OBJECT_AGG"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_OBJECT_AGG(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_OBJECT_AGG(id::text, val) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL AND id <= 3
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_OBJECT_AGG"
+
 
 <br>
 
-#### <a id="fail-jsonb_object_agg_strict__any_any__from_table-TDS"></a><a id="fail-jsonb_object_agg_strict__any_any__from_table-Relation"></a>`jsonb_object_agg_strict__any_any__from_table`
+#### <a id="fail-jsonb_object_agg_strict__any_any__from_table-TDS"></a><a id="fail-jsonb_object_agg_strict__any_any__from_table-Relation"></a><a id="fail-jsonb_object_agg_strict__any_any__from_table-Grammar"></a>`jsonb_object_agg_strict__any_any__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT JSONB_OBJECT_AGG_STRICT(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT JSONB_OBJECT_AGG_STRICT(id::text, val) AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "JSONB_OBJECT_AGG_STRICT"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_OBJECT_AGG_STRICT(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
 ```sql
 SELECT JSONB_OBJECT_AGG_STRICT(id::text, val) AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL AND id <= 3
 ```
@@ -6811,24 +12224,49 @@ SELECT JSONB_OBJECT_AGG_STRICT(id::text, val) AS result FROM func('e2e::rel_stri
 **Error:**
 > No function matches the given name "JSONB_OBJECT_AGG_STRICT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_OBJECT_AGG_STRICT(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_OBJECT_AGG_STRICT(id::text, val) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL AND id <= 3
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_OBJECT_AGG_STRICT"
+
 
 <br>
 
-#### <a id="fail-jsonb_object_agg_unique__any_any__from_table-TDS"></a><a id="fail-jsonb_object_agg_unique__any_any__from_table-Relation"></a>`jsonb_object_agg_unique__any_any__from_table`
+#### <a id="fail-jsonb_object_agg_unique__any_any__from_table-TDS"></a><a id="fail-jsonb_object_agg_unique__any_any__from_table-Relation"></a><a id="fail-jsonb_object_agg_unique__any_any__from_table-Grammar"></a>`jsonb_object_agg_unique__any_any__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT JSONB_OBJECT_AGG_UNIQUE(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT JSONB_OBJECT_AGG_UNIQUE(id::text, val) AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "JSONB_OBJECT_AGG_UNIQUE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_OBJECT_AGG_UNIQUE(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
 ```sql
 SELECT JSONB_OBJECT_AGG_UNIQUE(id::text, val) AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL AND id <= 3
 ```
@@ -6836,24 +12274,49 @@ SELECT JSONB_OBJECT_AGG_UNIQUE(id::text, val) AS result FROM func('e2e::rel_stri
 **Error:**
 > No function matches the given name "JSONB_OBJECT_AGG_UNIQUE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_OBJECT_AGG_UNIQUE(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_OBJECT_AGG_UNIQUE(id::text, val) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL AND id <= 3
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_OBJECT_AGG_UNIQUE"
+
 
 <br>
 
-#### <a id="fail-jsonb_object_agg_unique_strict__any_any__from_table-TDS"></a><a id="fail-jsonb_object_agg_unique_strict__any_any__from_table-Relation"></a>`jsonb_object_agg_unique_strict__any_any__from_table`
+#### <a id="fail-jsonb_object_agg_unique_strict__any_any__from_table-TDS"></a><a id="fail-jsonb_object_agg_unique_strict__any_any__from_table-Relation"></a><a id="fail-jsonb_object_agg_unique_strict__any_any__from_table-Grammar"></a>`jsonb_object_agg_unique_strict__any_any__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT JSONB_OBJECT_AGG_UNIQUE_STRICT(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT JSONB_OBJECT_AGG_UNIQUE_STRICT(id::text, val) AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL AND id <= 3
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "JSONB_OBJECT_AGG_UNIQUE_STRICT"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_OBJECT_AGG_UNIQUE_STRICT(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
 ```sql
 SELECT JSONB_OBJECT_AGG_UNIQUE_STRICT(id::text, val) AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL AND id <= 3
 ```
@@ -6861,24 +12324,49 @@ SELECT JSONB_OBJECT_AGG_UNIQUE_STRICT(id::text, val) AS result FROM func('e2e::r
 **Error:**
 > No function matches the given name "JSONB_OBJECT_AGG_UNIQUE_STRICT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_OBJECT_AGG_UNIQUE_STRICT(id::text, val) AS result FROM strings WHERE val IS NOT NULL AND id <= 3
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_OBJECT_AGG_UNIQUE_STRICT(id::text, val) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL AND id <= 3
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_OBJECT_AGG_UNIQUE_STRICT"
+
 
 <br>
 
-#### <a id="fail-mode__ORDERBYanyelement__from_table-TDS"></a><a id="fail-mode__ORDERBYanyelement__from_table-Relation"></a>`mode__ORDERBYanyelement__from_table`
+#### <a id="fail-mode__ORDERBYanyelement__from_table-TDS"></a><a id="fail-mode__ORDERBYanyelement__from_table-Relation"></a><a id="fail-mode__ORDERBYanyelement__from_table-Grammar"></a>`mode__ORDERBYanyelement__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MODE() WITHIN GROUP (ORDER BY dept_id) AS result FROM persons WHERE dept_id IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MODE() WITHIN GROUP (ORDER BY dept_id) AS result FROM func('e2e::tds_persons') WHERE dept_id IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "MODE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MODE() WITHIN GROUP (ORDER BY dept_id) AS result FROM persons WHERE dept_id IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MODE() WITHIN GROUP (ORDER BY dept_id) AS result FROM func('e2e::rel_persons') WHERE dept_id IS NOT NULL
 ```
@@ -6886,24 +12374,93 @@ SELECT MODE() WITHIN GROUP (ORDER BY dept_id) AS result FROM func('e2e::rel_pers
 **Error:**
 > No function matches the given name "MODE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MODE() WITHIN GROUP (ORDER BY dept_id) AS result FROM persons WHERE dept_id IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MODE() WITHIN GROUP (ORDER BY dept_id) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE dept_id IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "MODE"
+
 
 <br>
 
-#### <a id="fail-range_agg__anymultirange__no_generator-TDS"></a><a id="fail-range_agg__anymultirange__no_generator-Relation"></a>`range_agg__anymultirange__no_generator`
+#### <a id="fail-percentile_disc_double_precision_ORDER_BY_anye_cov-Grammar"></a>`percentile_disc_double_precision_ORDER_BY_anye_cov`
 
-🔴 **Failed in both TDS and Relation**
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT PERCENTILE_DISC(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT PERCENTILE_DISC(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function percentile_disc(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): percentile must be within group
+
+
+<br>
+
+#### <a id="fail-percentile_disc_double_precision_ORDER_BY_an_cov-Grammar"></a>`percentile_disc_double_precision_ORDER_BY_an_cov`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT PERCENTILE_DISC(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT PERCENTILE_DISC(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function percentile_disc(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): percentile must be within group
+
+
+<br>
+
+#### <a id="fail-range_agg__anymultirange__no_generator-TDS"></a><a id="fail-range_agg__anymultirange__no_generator-Relation"></a><a id="fail-range_agg__anymultirange__no_generator-Grammar"></a>`range_agg__anymultirange__no_generator`
+
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT RANGE_AGG(int4multirange(int4range(id, id + 10))) AS result FROM persons WHERE id IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT RANGE_AGG(int4multirange(int4range(id, id + 10))) AS result FROM func('e2e::tds_persons') WHERE id IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "RANGE_AGG"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT RANGE_AGG(int4multirange(int4range(id, id + 10))) AS result FROM persons WHERE id IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT RANGE_AGG(int4multirange(int4range(id, id + 10))) AS result FROM func('e2e::rel_persons') WHERE id IS NOT NULL
 ```
@@ -6911,24 +12468,49 @@ SELECT RANGE_AGG(int4multirange(int4range(id, id + 10))) AS result FROM func('e2
 **Error:**
 > No function matches the given name "RANGE_AGG"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT RANGE_AGG(int4multirange(int4range(id, id + 10))) AS result FROM persons WHERE id IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT RANGE_AGG(int4multirange(int4range(id, id + 10))) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "RANGE_AGG"
+
 
 <br>
 
-#### <a id="fail-range_agg_anymultirange_cov-TDS"></a><a id="fail-range_agg_anymultirange_cov-Relation"></a>`range_agg_anymultirange_cov`
+#### <a id="fail-range_agg_anymultirange_cov-TDS"></a><a id="fail-range_agg_anymultirange_cov-Relation"></a><a id="fail-range_agg_anymultirange_cov-Grammar"></a>`range_agg_anymultirange_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT RANGE_AGG(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT RANGE_AGG(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "RANGE_AGG"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT RANGE_AGG(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT RANGE_AGG(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -6936,24 +12518,51 @@ SELECT RANGE_AGG(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "RANGE_AGG"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT RANGE_AGG(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT RANGE_AGG(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function range_agg(unknown) is not unique
+>   Hint: Could not choose a best candidate function. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "RANGE_AGG"
+
 
 <br>
 
-#### <a id="fail-range_agg__anyrange__no_generator-TDS"></a><a id="fail-range_agg__anyrange__no_generator-Relation"></a>`range_agg__anyrange__no_generator`
+#### <a id="fail-range_agg__anyrange__no_generator-TDS"></a><a id="fail-range_agg__anyrange__no_generator-Relation"></a><a id="fail-range_agg__anyrange__no_generator-Grammar"></a>`range_agg__anyrange__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT RANGE_AGG(int4range(id, id + 10)) AS result FROM persons WHERE id IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT RANGE_AGG(int4range(id, id + 10)) AS result FROM func('e2e::tds_persons') WHERE id IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "RANGE_AGG"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT RANGE_AGG(int4range(id, id + 10)) AS result FROM persons WHERE id IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT RANGE_AGG(int4range(id, id + 10)) AS result FROM func('e2e::rel_persons') WHERE id IS NOT NULL
 ```
@@ -6961,24 +12570,49 @@ SELECT RANGE_AGG(int4range(id, id + 10)) AS result FROM func('e2e::rel_persons')
 **Error:**
 > No function matches the given name "RANGE_AGG"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT RANGE_AGG(int4range(id, id + 10)) AS result FROM persons WHERE id IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT RANGE_AGG(int4range(id, id + 10)) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "RANGE_AGG"
+
 
 <br>
 
-#### <a id="fail-range_agg_anyrange_cov-TDS"></a><a id="fail-range_agg_anyrange_cov-Relation"></a>`range_agg_anyrange_cov`
+#### <a id="fail-range_agg_anyrange_cov-TDS"></a><a id="fail-range_agg_anyrange_cov-Relation"></a><a id="fail-range_agg_anyrange_cov-Grammar"></a>`range_agg_anyrange_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT RANGE_AGG(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT RANGE_AGG(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "RANGE_AGG"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT RANGE_AGG(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT RANGE_AGG(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -6986,24 +12620,51 @@ SELECT RANGE_AGG(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "RANGE_AGG"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT RANGE_AGG(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT RANGE_AGG(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function range_agg(unknown) is not unique
+>   Hint: Could not choose a best candidate function. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "RANGE_AGG"
+
 
 <br>
 
-#### <a id="fail-range_intersect_agg__anymultirange__no_generator-TDS"></a><a id="fail-range_intersect_agg__anymultirange__no_generator-Relation"></a>`range_intersect_agg__anymultirange__no_generator`
+#### <a id="fail-range_intersect_agg__anymultirange__no_generator-TDS"></a><a id="fail-range_intersect_agg__anymultirange__no_generator-Relation"></a><a id="fail-range_intersect_agg__anymultirange__no_generator-Grammar"></a>`range_intersect_agg__anymultirange__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT RANGE_INTERSECT_AGG(int4multirange(int4range(id, id + 10))) AS result FROM persons WHERE id IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT RANGE_INTERSECT_AGG(int4multirange(int4range(id, id + 10))) AS result FROM func('e2e::tds_persons') WHERE id IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "RANGE_INTERSECT_AGG"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT RANGE_INTERSECT_AGG(int4multirange(int4range(id, id + 10))) AS result FROM persons WHERE id IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT RANGE_INTERSECT_AGG(int4multirange(int4range(id, id + 10))) AS result FROM func('e2e::rel_persons') WHERE id IS NOT NULL
 ```
@@ -7011,24 +12672,49 @@ SELECT RANGE_INTERSECT_AGG(int4multirange(int4range(id, id + 10))) AS result FRO
 **Error:**
 > No function matches the given name "RANGE_INTERSECT_AGG"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT RANGE_INTERSECT_AGG(int4multirange(int4range(id, id + 10))) AS result FROM persons WHERE id IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT RANGE_INTERSECT_AGG(int4multirange(int4range(id, id + 10))) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "RANGE_INTERSECT_AGG"
+
 
 <br>
 
-#### <a id="fail-range_intersect_agg_anymultirange_cov-TDS"></a><a id="fail-range_intersect_agg_anymultirange_cov-Relation"></a>`range_intersect_agg_anymultirange_cov`
+#### <a id="fail-range_intersect_agg_anymultirange_cov-TDS"></a><a id="fail-range_intersect_agg_anymultirange_cov-Relation"></a><a id="fail-range_intersect_agg_anymultirange_cov-Grammar"></a>`range_intersect_agg_anymultirange_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT RANGE_INTERSECT_AGG(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT RANGE_INTERSECT_AGG(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "RANGE_INTERSECT_AGG"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT RANGE_INTERSECT_AGG(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT RANGE_INTERSECT_AGG(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -7036,24 +12722,51 @@ SELECT RANGE_INTERSECT_AGG(NULL) AS result FROM func('e2e::rel_persons') WHERE i
 **Error:**
 > No function matches the given name "RANGE_INTERSECT_AGG"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT RANGE_INTERSECT_AGG(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT RANGE_INTERSECT_AGG(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function range_intersect_agg(unknown) is not unique
+>   Hint: Could not choose a best candidate function. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "RANGE_INTERSECT_AGG"
+
 
 <br>
 
-#### <a id="fail-range_intersect_agg__anyrange__no_generator-TDS"></a><a id="fail-range_intersect_agg__anyrange__no_generator-Relation"></a>`range_intersect_agg__anyrange__no_generator`
+#### <a id="fail-range_intersect_agg__anyrange__no_generator-TDS"></a><a id="fail-range_intersect_agg__anyrange__no_generator-Relation"></a><a id="fail-range_intersect_agg__anyrange__no_generator-Grammar"></a>`range_intersect_agg__anyrange__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT RANGE_INTERSECT_AGG(int4range(id, id + 10)) AS result FROM persons WHERE id IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT RANGE_INTERSECT_AGG(int4range(id, id + 10)) AS result FROM func('e2e::tds_persons') WHERE id IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "RANGE_INTERSECT_AGG"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT RANGE_INTERSECT_AGG(int4range(id, id + 10)) AS result FROM persons WHERE id IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT RANGE_INTERSECT_AGG(int4range(id, id + 10)) AS result FROM func('e2e::rel_persons') WHERE id IS NOT NULL
 ```
@@ -7061,24 +12774,49 @@ SELECT RANGE_INTERSECT_AGG(int4range(id, id + 10)) AS result FROM func('e2e::rel
 **Error:**
 > No function matches the given name "RANGE_INTERSECT_AGG"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT RANGE_INTERSECT_AGG(int4range(id, id + 10)) AS result FROM persons WHERE id IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT RANGE_INTERSECT_AGG(int4range(id, id + 10)) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "RANGE_INTERSECT_AGG"
+
 
 <br>
 
-#### <a id="fail-range_intersect_agg_anyrange_cov-TDS"></a><a id="fail-range_intersect_agg_anyrange_cov-Relation"></a>`range_intersect_agg_anyrange_cov`
+#### <a id="fail-range_intersect_agg_anyrange_cov-TDS"></a><a id="fail-range_intersect_agg_anyrange_cov-Relation"></a><a id="fail-range_intersect_agg_anyrange_cov-Grammar"></a>`range_intersect_agg_anyrange_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT RANGE_INTERSECT_AGG(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT RANGE_INTERSECT_AGG(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "RANGE_INTERSECT_AGG"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT RANGE_INTERSECT_AGG(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT RANGE_INTERSECT_AGG(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -7086,24 +12824,51 @@ SELECT RANGE_INTERSECT_AGG(NULL) AS result FROM func('e2e::rel_persons') WHERE i
 **Error:**
 > No function matches the given name "RANGE_INTERSECT_AGG"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT RANGE_INTERSECT_AGG(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT RANGE_INTERSECT_AGG(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function range_intersect_agg(unknown) is not unique
+>   Hint: Could not choose a best candidate function. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "RANGE_INTERSECT_AGG"
+
 
 <br>
 
-#### <a id="fail-regr_avgx__dp_dp__from_table-TDS"></a><a id="fail-regr_avgx__dp_dp__from_table-Relation"></a>`regr_avgx__dp_dp__from_table`
+#### <a id="fail-regr_avgx__dp_dp__from_table-TDS"></a><a id="fail-regr_avgx__dp_dp__from_table-Relation"></a><a id="fail-regr_avgx__dp_dp__from_table-Grammar"></a>`regr_avgx__dp_dp__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT REGR_AVGX(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT REGR_AVGX(salary, age) AS result FROM func('e2e::tds_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "REGR_AVGX"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGR_AVGX(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGR_AVGX(salary, age) AS result FROM func('e2e::rel_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
@@ -7111,24 +12876,49 @@ SELECT REGR_AVGX(salary, age) AS result FROM func('e2e::rel_persons') WHERE sala
 **Error:**
 > No function matches the given name "REGR_AVGX"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT REGR_AVGX(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT REGR_AVGX(salary, age) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "REGR_AVGX"
+
 
 <br>
 
-#### <a id="fail-regr_avgy__dp_dp__from_table-TDS"></a><a id="fail-regr_avgy__dp_dp__from_table-Relation"></a>`regr_avgy__dp_dp__from_table`
+#### <a id="fail-regr_avgy__dp_dp__from_table-TDS"></a><a id="fail-regr_avgy__dp_dp__from_table-Relation"></a><a id="fail-regr_avgy__dp_dp__from_table-Grammar"></a>`regr_avgy__dp_dp__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT REGR_AVGY(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT REGR_AVGY(salary, age) AS result FROM func('e2e::tds_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "REGR_AVGY"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGR_AVGY(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGR_AVGY(salary, age) AS result FROM func('e2e::rel_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
@@ -7136,24 +12926,49 @@ SELECT REGR_AVGY(salary, age) AS result FROM func('e2e::rel_persons') WHERE sala
 **Error:**
 > No function matches the given name "REGR_AVGY"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT REGR_AVGY(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT REGR_AVGY(salary, age) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "REGR_AVGY"
+
 
 <br>
 
-#### <a id="fail-regr_count__dp_dp__from_table-TDS"></a><a id="fail-regr_count__dp_dp__from_table-Relation"></a>`regr_count__dp_dp__from_table`
+#### <a id="fail-regr_count__dp_dp__from_table-TDS"></a><a id="fail-regr_count__dp_dp__from_table-Relation"></a><a id="fail-regr_count__dp_dp__from_table-Grammar"></a>`regr_count__dp_dp__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT REGR_COUNT(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT REGR_COUNT(salary, age) AS result FROM func('e2e::tds_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "REGR_COUNT"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGR_COUNT(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGR_COUNT(salary, age) AS result FROM func('e2e::rel_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
@@ -7161,24 +12976,49 @@ SELECT REGR_COUNT(salary, age) AS result FROM func('e2e::rel_persons') WHERE sal
 **Error:**
 > No function matches the given name "REGR_COUNT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT REGR_COUNT(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT REGR_COUNT(salary, age) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "REGR_COUNT"
+
 
 <br>
 
-#### <a id="fail-regr_intercept__dp_dp__from_table-TDS"></a><a id="fail-regr_intercept__dp_dp__from_table-Relation"></a>`regr_intercept__dp_dp__from_table`
+#### <a id="fail-regr_intercept__dp_dp__from_table-TDS"></a><a id="fail-regr_intercept__dp_dp__from_table-Relation"></a><a id="fail-regr_intercept__dp_dp__from_table-Grammar"></a>`regr_intercept__dp_dp__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT REGR_INTERCEPT(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT REGR_INTERCEPT(salary, age) AS result FROM func('e2e::tds_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "REGR_INTERCEPT"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGR_INTERCEPT(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGR_INTERCEPT(salary, age) AS result FROM func('e2e::rel_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
@@ -7186,24 +13026,49 @@ SELECT REGR_INTERCEPT(salary, age) AS result FROM func('e2e::rel_persons') WHERE
 **Error:**
 > No function matches the given name "REGR_INTERCEPT"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT REGR_INTERCEPT(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT REGR_INTERCEPT(salary, age) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "REGR_INTERCEPT"
+
 
 <br>
 
-#### <a id="fail-regr_r2__dp_dp__from_table-TDS"></a><a id="fail-regr_r2__dp_dp__from_table-Relation"></a>`regr_r2__dp_dp__from_table`
+#### <a id="fail-regr_r2__dp_dp__from_table-TDS"></a><a id="fail-regr_r2__dp_dp__from_table-Relation"></a><a id="fail-regr_r2__dp_dp__from_table-Grammar"></a>`regr_r2__dp_dp__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT REGR_R2(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT REGR_R2(salary, age) AS result FROM func('e2e::tds_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "REGR_R2"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGR_R2(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGR_R2(salary, age) AS result FROM func('e2e::rel_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
@@ -7211,24 +13076,49 @@ SELECT REGR_R2(salary, age) AS result FROM func('e2e::rel_persons') WHERE salary
 **Error:**
 > No function matches the given name "REGR_R2"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT REGR_R2(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT REGR_R2(salary, age) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "REGR_R2"
+
 
 <br>
 
-#### <a id="fail-regr_slope__dp_dp__from_table-TDS"></a><a id="fail-regr_slope__dp_dp__from_table-Relation"></a>`regr_slope__dp_dp__from_table`
+#### <a id="fail-regr_slope__dp_dp__from_table-TDS"></a><a id="fail-regr_slope__dp_dp__from_table-Relation"></a><a id="fail-regr_slope__dp_dp__from_table-Grammar"></a>`regr_slope__dp_dp__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT REGR_SLOPE(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT REGR_SLOPE(salary, age) AS result FROM func('e2e::tds_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "REGR_SLOPE"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGR_SLOPE(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGR_SLOPE(salary, age) AS result FROM func('e2e::rel_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
@@ -7236,24 +13126,49 @@ SELECT REGR_SLOPE(salary, age) AS result FROM func('e2e::rel_persons') WHERE sal
 **Error:**
 > No function matches the given name "REGR_SLOPE"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT REGR_SLOPE(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT REGR_SLOPE(salary, age) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "REGR_SLOPE"
+
 
 <br>
 
-#### <a id="fail-regr_sxx__dp_dp__from_table-TDS"></a><a id="fail-regr_sxx__dp_dp__from_table-Relation"></a>`regr_sxx__dp_dp__from_table`
+#### <a id="fail-regr_sxx__dp_dp__from_table-TDS"></a><a id="fail-regr_sxx__dp_dp__from_table-Relation"></a><a id="fail-regr_sxx__dp_dp__from_table-Grammar"></a>`regr_sxx__dp_dp__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT REGR_SXX(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT REGR_SXX(salary, age) AS result FROM func('e2e::tds_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "REGR_SXX"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGR_SXX(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGR_SXX(salary, age) AS result FROM func('e2e::rel_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
@@ -7261,24 +13176,49 @@ SELECT REGR_SXX(salary, age) AS result FROM func('e2e::rel_persons') WHERE salar
 **Error:**
 > No function matches the given name "REGR_SXX"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT REGR_SXX(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT REGR_SXX(salary, age) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "REGR_SXX"
+
 
 <br>
 
-#### <a id="fail-regr_sxy__dp_dp__from_table-TDS"></a><a id="fail-regr_sxy__dp_dp__from_table-Relation"></a>`regr_sxy__dp_dp__from_table`
+#### <a id="fail-regr_sxy__dp_dp__from_table-TDS"></a><a id="fail-regr_sxy__dp_dp__from_table-Relation"></a><a id="fail-regr_sxy__dp_dp__from_table-Grammar"></a>`regr_sxy__dp_dp__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT REGR_SXY(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT REGR_SXY(salary, age) AS result FROM func('e2e::tds_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "REGR_SXY"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGR_SXY(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGR_SXY(salary, age) AS result FROM func('e2e::rel_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
@@ -7286,24 +13226,49 @@ SELECT REGR_SXY(salary, age) AS result FROM func('e2e::rel_persons') WHERE salar
 **Error:**
 > No function matches the given name "REGR_SXY"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT REGR_SXY(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT REGR_SXY(salary, age) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "REGR_SXY"
+
 
 <br>
 
-#### <a id="fail-regr_syy__dp_dp__from_table-TDS"></a><a id="fail-regr_syy__dp_dp__from_table-Relation"></a>`regr_syy__dp_dp__from_table`
+#### <a id="fail-regr_syy__dp_dp__from_table-TDS"></a><a id="fail-regr_syy__dp_dp__from_table-Relation"></a><a id="fail-regr_syy__dp_dp__from_table-Grammar"></a>`regr_syy__dp_dp__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT REGR_SYY(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT REGR_SYY(salary, age) AS result FROM func('e2e::tds_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "REGR_SYY"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGR_SYY(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGR_SYY(salary, age) AS result FROM func('e2e::rel_persons') WHERE salary IS NOT NULL AND age IS NOT NULL
 ```
@@ -7311,24 +13276,71 @@ SELECT REGR_SYY(salary, age) AS result FROM func('e2e::rel_persons') WHERE salar
 **Error:**
 > No function matches the given name "REGR_SYY"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT REGR_SYY(salary, age) AS result FROM persons WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT REGR_SYY(salary, age) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE salary IS NOT NULL AND age IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "REGR_SYY"
+
 
 <br>
 
-#### <a id="fail-xmlagg__xml__no_generator-TDS"></a><a id="fail-xmlagg__xml__no_generator-Relation"></a>`xmlagg__xml__no_generator`
+#### <a id="fail-string_agg_bytea_bytea_cov-Grammar"></a>`string_agg_bytea_bytea_cov`
 
-🔴 **Failed in both TDS and Relation**
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT STRING_AGG(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT STRING_AGG(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function string_agg(unknown) does not exist
+>   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/execution/execute, status=500): PureExecutionException: Execution error at ??, "Unused format args. [4] arguments provided to expression "string_agg(%s, %s)""
+
+
+<br>
+
+#### <a id="fail-xmlagg__xml__no_generator-TDS"></a><a id="fail-xmlagg__xml__no_generator-Relation"></a><a id="fail-xmlagg__xml__no_generator-Grammar"></a>`xmlagg__xml__no_generator`
+
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT XMLAGG(name::xml) AS result FROM persons WHERE name IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT XMLAGG(name::xml) AS result FROM func('e2e::tds_persons') WHERE name IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "XMLAGG"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT XMLAGG(name::xml) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT XMLAGG(name::xml) AS result FROM func('e2e::rel_persons') WHERE name IS NOT NULL
 ```
@@ -7336,24 +13348,49 @@ SELECT XMLAGG(name::xml) AS result FROM func('e2e::rel_persons') WHERE name IS N
 **Error:**
 > No function matches the given name "XMLAGG"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT XMLAGG(name::xml) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT XMLAGG(name::xml) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE name IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "XMLAGG"
+
 
 <br>
 
-#### <a id="fail-xmlagg_xml_cov-TDS"></a><a id="fail-xmlagg_xml_cov-Relation"></a>`xmlagg_xml_cov`
+#### <a id="fail-xmlagg_xml_cov-TDS"></a><a id="fail-xmlagg_xml_cov-Relation"></a><a id="fail-xmlagg_xml_cov-Grammar"></a>`xmlagg_xml_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT XMLAGG(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT XMLAGG(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No function matches the given name "XMLAGG"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT XMLAGG(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT XMLAGG(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -7361,12 +13398,27 @@ SELECT XMLAGG(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > No function matches the given name "XMLAGG"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT XMLAGG(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT XMLAGG(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "XMLAGG"
+
 
 <br>
 
-#### <a id="fail-generate_subscripts__anyarray_int__from_table-TDS"></a><a id="fail-generate_subscripts__anyarray_int__from_table-Relation"></a>`generate_subscripts__anyarray_int__from_table`
+#### <a id="fail-generate_subscripts__anyarray_int__from_table-TDS"></a><a id="fail-generate_subscripts__anyarray_int__from_table-Relation"></a><a id="fail-generate_subscripts__anyarray_int__from_table-Grammar"></a>`generate_subscripts__anyarray_int__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
@@ -7381,12 +13433,42 @@ SELECT g.val AS result FROM GENERATE_SUBSCRIPTS(ARRAY[10, 20, 30], 1) AS g(val) 
 **Error:**
 > No function matches the given name "GENERATE_SUBSCRIPTS"
 
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SUBSCRIPTS(ARRAY[10, 20, 30], 1) AS g(val) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SUBSCRIPTS(ARRAY[10, 20, 30], 1) AS g(val) ORDER BY 1
+```
+
+**Error:**
+> No function matches the given name "GENERATE_SUBSCRIPTS"
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SUBSCRIPTS(ARRAY[10, 20, 30], 1) AS g(val) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SUBSCRIPTS(ARRAY[10, 20, 30], 1) AS g(val) ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "GENERATE_SUBSCRIPTS"
+
 
 <br>
 
-#### <a id="fail-generate_subscripts__anyarray_int_bool__from_table-TDS"></a><a id="fail-generate_subscripts__anyarray_int_bool__from_table-Relation"></a>`generate_subscripts__anyarray_int_bool__from_table`
+#### <a id="fail-generate_subscripts__anyarray_int_bool__from_table-TDS"></a><a id="fail-generate_subscripts__anyarray_int_bool__from_table-Relation"></a><a id="fail-generate_subscripts__anyarray_int_bool__from_table-Grammar"></a>`generate_subscripts__anyarray_int_bool__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
@@ -7401,10 +13483,40 @@ SELECT g.val AS result FROM GENERATE_SUBSCRIPTS(ARRAY[10, 20, 30], 1, false) AS 
 **Error:**
 > No function matches the given name "GENERATE_SUBSCRIPTS"
 
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SUBSCRIPTS(ARRAY[10, 20, 30], 1, false) AS g(val) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SUBSCRIPTS(ARRAY[10, 20, 30], 1, false) AS g(val) ORDER BY 1
+```
+
+**Error:**
+> No function matches the given name "GENERATE_SUBSCRIPTS"
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SUBSCRIPTS(ARRAY[10, 20, 30], 1, false) AS g(val) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SUBSCRIPTS(ARRAY[10, 20, 30], 1, false) AS g(val) ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "GENERATE_SUBSCRIPTS"
+
 
 <br>
 
-#### <a id="fail-jsonb_path_query_first__from_column-Relation"></a>`jsonb_path_query_first__from_column`
+#### <a id="fail-jsonb_path_query_first__from_column-Relation"></a><a id="fail-jsonb_path_query_first__from_column-Grammar"></a>`jsonb_path_query_first__from_column`
 
 📗 **Relation Path**
 
@@ -7421,14 +13533,29 @@ SELECT JSONB_PATH_QUERY_FIRST(jsonb_arr, '$[*]') AS result FROM func('e2e::rel_j
 **Error:**
 > No function matches the given name "JSONB_PATH_QUERY_FIRST"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSONB_PATH_QUERY_FIRST(jsonb_arr, '$[*]') AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSONB_PATH_QUERY_FIRST(jsonb_arr, '$[*]') AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No function matches the given name "JSONB_PATH_QUERY_FIRST"
+
 
 <a id="result-mismatch"></a>
 
 ### RESULT_MISMATCH (12 tests)
 
-#### <a id="fail-div__num_num__from_table-TDS"></a><a id="fail-div__num_num__from_table-Relation"></a>`div__num_num__from_table`
+#### <a id="fail-div__num_num__from_table-TDS"></a><a id="fail-div__num_num__from_table-Relation"></a><a id="fail-div__num_num__from_table-Grammar"></a>`div__num_num__from_table`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -7445,15 +13572,20 @@ SELECT DIV(numeric_val, 3.0) AS result FROM func('e2e::tds_numbers') WHERE numer
 SELECT DIV(numeric_val, 3.0) AS result FROM func('e2e::rel_numbers') WHERE numeric_val IS NOT NULL AND numeric_val <> 0 ORDER BY 1
 ```
 
+**Legend SQL (Grammar):**
+```sql
+SELECT DIV(numeric_val, 3.0) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE numeric_val IS NOT NULL AND numeric_val <> 0 ORDER BY 1
+```
+
 **Error:**
 > null
 
 
 <br>
 
-#### <a id="fail-concat_ws__txt_variadic__from_table-TDS"></a><a id="fail-concat_ws__txt_variadic__from_table-Relation"></a>`concat_ws__txt_variadic__from_table`
+#### <a id="fail-concat_ws__txt_variadic__from_table-TDS"></a><a id="fail-concat_ws__txt_variadic__from_table-Relation"></a><a id="fail-concat_ws__txt_variadic__from_table-Grammar"></a>`concat_ws__txt_variadic__from_table`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -7470,15 +13602,20 @@ SELECT CONCAT_WS(', ', val, nullable_val) AS result FROM func('e2e::tds_strings'
 SELECT CONCAT_WS(', ', val, nullable_val) AS result FROM func('e2e::rel_strings') ORDER BY 1
 ```
 
+**Legend SQL (Grammar):**
+```sql
+SELECT CONCAT_WS(', ', val, nullable_val) AS result FROM func('e2e::rel_strings__Relation_1_') ORDER BY 1
+```
+
 **Error:**
 > null
 
 
 <br>
 
-#### <a id="fail-initcap__txt__from_table-TDS"></a><a id="fail-initcap__txt__from_table-Relation"></a>`initcap__txt__from_table`
+#### <a id="fail-initcap__txt__from_table-TDS"></a><a id="fail-initcap__txt__from_table-Relation"></a><a id="fail-initcap__txt__from_table-Grammar"></a>`initcap__txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -7495,15 +13632,20 @@ SELECT INITCAP(val) AS result FROM func('e2e::tds_strings') ORDER BY 1
 SELECT INITCAP(val) AS result FROM func('e2e::rel_strings') ORDER BY 1
 ```
 
+**Legend SQL (Grammar):**
+```sql
+SELECT INITCAP(val) AS result FROM func('e2e::rel_strings__Relation_1_') ORDER BY 1
+```
+
 **Error:**
 > null
 
 
 <br>
 
-#### <a id="fail-string_to_array__txt_txt__from_table-TDS"></a><a id="fail-string_to_array__txt_txt__from_table-Relation"></a>`string_to_array__txt_txt__from_table`
+#### <a id="fail-string_to_array__txt_txt__from_table-TDS"></a><a id="fail-string_to_array__txt_txt__from_table-Relation"></a><a id="fail-string_to_array__txt_txt__from_table-Grammar"></a>`string_to_array__txt_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -7520,15 +13662,20 @@ SELECT STRING_TO_ARRAY(val, ' ') AS result FROM func('e2e::tds_strings') WHERE v
 SELECT STRING_TO_ARRAY(val, ' ') AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL ORDER BY 1
 ```
 
+**Legend SQL (Grammar):**
+```sql
+SELECT STRING_TO_ARRAY(val, ' ') AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL ORDER BY 1
+```
+
 **Error:**
 > null
 
 
 <br>
 
-#### <a id="fail-regexp_count__start_position__ignored_by_legend-TDS"></a><a id="fail-regexp_count__start_position__ignored_by_legend-Relation"></a>`regexp_count__start_position__ignored_by_legend`
+#### <a id="fail-regexp_count__start_position__ignored_by_legend-TDS"></a><a id="fail-regexp_count__start_position__ignored_by_legend-Relation"></a><a id="fail-regexp_count__start_position__ignored_by_legend-Grammar"></a>`regexp_count__start_position__ignored_by_legend`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -7545,15 +13692,20 @@ SELECT REGEXP_COUNT(val, '[a-z]', 5) AS result FROM func('e2e::tds_strings') WHE
 SELECT REGEXP_COUNT(val, '[a-z]', 5) AS result FROM func('e2e::rel_strings') WHERE id = 10
 ```
 
+**Legend SQL (Grammar):**
+```sql
+SELECT REGEXP_COUNT(val, '[a-z]', 5) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 10
+```
+
 **Error:**
 > null
 
 
 <br>
 
-#### <a id="fail-regexp_substr__start_position__ignored_by_legend-TDS"></a><a id="fail-regexp_substr__start_position__ignored_by_legend-Relation"></a>`regexp_substr__start_position__ignored_by_legend`
+#### <a id="fail-regexp_substr__start_position__ignored_by_legend-TDS"></a><a id="fail-regexp_substr__start_position__ignored_by_legend-Relation"></a><a id="fail-regexp_substr__start_position__ignored_by_legend-Grammar"></a>`regexp_substr__start_position__ignored_by_legend`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -7570,15 +13722,20 @@ SELECT REGEXP_SUBSTR(val, '[a-z]+', 5) AS result FROM func('e2e::tds_strings') W
 SELECT REGEXP_SUBSTR(val, '[a-z]+', 5) AS result FROM func('e2e::rel_strings') WHERE id = 10
 ```
 
+**Legend SQL (Grammar):**
+```sql
+SELECT REGEXP_SUBSTR(val, '[a-z]+', 5) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 10
+```
+
 **Error:**
 > null
 
 
 <br>
 
-#### <a id="fail-regexp_substr__nth_occurrence__ignored_by_legend-TDS"></a><a id="fail-regexp_substr__nth_occurrence__ignored_by_legend-Relation"></a>`regexp_substr__nth_occurrence__ignored_by_legend`
+#### <a id="fail-regexp_substr__nth_occurrence__ignored_by_legend-TDS"></a><a id="fail-regexp_substr__nth_occurrence__ignored_by_legend-Relation"></a><a id="fail-regexp_substr__nth_occurrence__ignored_by_legend-Grammar"></a>`regexp_substr__nth_occurrence__ignored_by_legend`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -7595,15 +13752,20 @@ SELECT REGEXP_SUBSTR(val, '[a-z]+', 1, 2) AS result FROM func('e2e::tds_strings'
 SELECT REGEXP_SUBSTR(val, '[a-z]+', 1, 2) AS result FROM func('e2e::rel_strings') WHERE id = 10
 ```
 
+**Legend SQL (Grammar):**
+```sql
+SELECT REGEXP_SUBSTR(val, '[a-z]+', 1, 2) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 10
+```
+
 **Error:**
 > null
 
 
 <br>
 
-#### <a id="fail-regexp_substr__nth_occurrence_last__ignored_by_legend-TDS"></a><a id="fail-regexp_substr__nth_occurrence_last__ignored_by_legend-Relation"></a>`regexp_substr__nth_occurrence_last__ignored_by_legend`
+#### <a id="fail-regexp_substr__nth_occurrence_last__ignored_by_legend-TDS"></a><a id="fail-regexp_substr__nth_occurrence_last__ignored_by_legend-Relation"></a><a id="fail-regexp_substr__nth_occurrence_last__ignored_by_legend-Grammar"></a>`regexp_substr__nth_occurrence_last__ignored_by_legend`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -7620,15 +13782,20 @@ SELECT REGEXP_SUBSTR(val, '[a-z]+', 1, 4) AS result FROM func('e2e::tds_strings'
 SELECT REGEXP_SUBSTR(val, '[a-z]+', 1, 4) AS result FROM func('e2e::rel_strings') WHERE id = 10
 ```
 
+**Legend SQL (Grammar):**
+```sql
+SELECT REGEXP_SUBSTR(val, '[a-z]+', 1, 4) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 10
+```
+
 **Error:**
 > null
 
 
 <br>
 
-#### <a id="fail-regexp_substr__start_and_nth__ignored_by_legend-TDS"></a><a id="fail-regexp_substr__start_and_nth__ignored_by_legend-Relation"></a>`regexp_substr__start_and_nth__ignored_by_legend`
+#### <a id="fail-regexp_substr__start_and_nth__ignored_by_legend-TDS"></a><a id="fail-regexp_substr__start_and_nth__ignored_by_legend-Relation"></a><a id="fail-regexp_substr__start_and_nth__ignored_by_legend-Grammar"></a>`regexp_substr__start_and_nth__ignored_by_legend`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -7645,24 +13812,34 @@ SELECT REGEXP_SUBSTR(val, '[a-z]+', 5, 2) AS result FROM func('e2e::tds_strings'
 SELECT REGEXP_SUBSTR(val, '[a-z]+', 5, 2) AS result FROM func('e2e::rel_strings') WHERE id = 10
 ```
 
+**Legend SQL (Grammar):**
+```sql
+SELECT REGEXP_SUBSTR(val, '[a-z]+', 5, 2) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 10
+```
+
 **Error:**
 > null
 
 
 <br>
 
-#### <a id="fail-array_position__anycompatiblearray_anycompatible__from_table-Relation"></a>`array_position__anycompatiblearray_anycompatible__from_table`
+#### <a id="fail-array_position__anycompatiblearray_anycompatible__from_table-Relation"></a><a id="fail-array_position__anycompatiblearray_anycompatible__from_table-Grammar"></a>`array_position__anycompatiblearray_anycompatible__from_table`
 
-📗 **Relation Path**
+🔴 **Failed in both Relation and Grammar**
 
 **Input SQL:**
 ```sql
 SELECT ARRAY_POSITION(ARRAY[1,2,3], 2) AS result FROM numbers WHERE id = 1
 ```
 
-**Legend SQL:**
+**Legend SQL (Relation):**
 ```sql
 SELECT ARRAY_POSITION(ARRAY[1, 2, 3], 2) AS result FROM func('e2e::rel_numbers') WHERE id = 1
+```
+
+**Legend SQL (Grammar):**
+```sql
+SELECT ARRAY_POSITION(ARRAY[1, 2, 3], 2) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
 ```
 
 **Error:**
@@ -7671,9 +13848,9 @@ SELECT ARRAY_POSITION(ARRAY[1, 2, 3], 2) AS result FROM func('e2e::rel_numbers')
 
 <br>
 
-#### <a id="fail-max__anyarray__no_generator-TDS"></a><a id="fail-max__anyarray__no_generator-Relation"></a>`max__anyarray__no_generator`
+#### <a id="fail-max__anyarray__no_generator-TDS"></a><a id="fail-max__anyarray__no_generator-Relation"></a><a id="fail-max__anyarray__no_generator-Grammar"></a>`max__anyarray__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -7690,15 +13867,20 @@ SELECT MAX(ARRAY[id]) AS result FROM func('e2e::tds_persons') WHERE id IS NOT NU
 SELECT MAX(ARRAY[id]) AS result FROM func('e2e::rel_persons') WHERE id IS NOT NULL
 ```
 
+**Legend SQL (Grammar):**
+```sql
+SELECT MAX(ARRAY[id]) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id IS NOT NULL
+```
+
 **Error:**
 > null
 
 
 <br>
 
-#### <a id="fail-min__anyarray__no_generator-TDS"></a><a id="fail-min__anyarray__no_generator-Relation"></a>`min__anyarray__no_generator`
+#### <a id="fail-min__anyarray__no_generator-TDS"></a><a id="fail-min__anyarray__no_generator-Relation"></a><a id="fail-min__anyarray__no_generator-Grammar"></a>`min__anyarray__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -7715,37 +13897,22 @@ SELECT MIN(ARRAY[id]) AS result FROM func('e2e::tds_persons') WHERE id IS NOT NU
 SELECT MIN(ARRAY[id]) AS result FROM func('e2e::rel_persons') WHERE id IS NOT NULL
 ```
 
+**Legend SQL (Grammar):**
+```sql
+SELECT MIN(ARRAY[id]) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id IS NOT NULL
+```
+
 **Error:**
 > null
 
 
 <a id="misc"></a>
 
-### MISC (68 tests)
+### MISC (83 tests)
 
-#### <a id="fail-exp__dp__from_table-TDS"></a><a id="fail-exp__dp__from_table-Relation"></a>`exp__dp__from_table`
+#### <a id="fail-exp__dp__from_table-TDS"></a><a id="fail-exp__dp__from_table-Relation"></a><a id="fail-exp__dp__from_table-Grammar"></a>`exp__dp__from_table`
 
-🔴 **Failed in both TDS and Relation**
-
-**Input SQL:**
-```sql
-SELECT EXP(small_val::double precision) AS result FROM numbers WHERE small_val IS NOT NULL AND small_val BETWEEN -10 AND 10 ORDER BY 1
-```
-
-**Legend SQL:**
-```sql
-null
-```
-
-**Error:**
-> Rewrite failed: 
-
-
-<br>
-
-#### <a id="fail-exp__num__from_table-TDS"></a><a id="fail-exp__num__from_table-Relation"></a>`exp__num__from_table`
-
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -7763,9 +13930,29 @@ null
 
 <br>
 
-#### <a id="fail-trunc__dp__from_table-TDS"></a><a id="fail-trunc__dp__from_table-Relation"></a>`trunc__dp__from_table`
+#### <a id="fail-exp__num__from_table-TDS"></a><a id="fail-exp__num__from_table-Relation"></a><a id="fail-exp__num__from_table-Grammar"></a>`exp__num__from_table`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
+
+**Input SQL:**
+```sql
+SELECT EXP(small_val::double precision) AS result FROM numbers WHERE small_val IS NOT NULL AND small_val BETWEEN -10 AND 10 ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+null
+```
+
+**Error:**
+> Rewrite failed: 
+
+
+<br>
+
+#### <a id="fail-trunc__dp__from_table-TDS"></a><a id="fail-trunc__dp__from_table-Relation"></a><a id="fail-trunc__dp__from_table-Grammar"></a>`trunc__dp__from_table`
+
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -7783,9 +13970,9 @@ null
 
 <br>
 
-#### <a id="fail-trunc_macaddr_cov-TDS"></a><a id="fail-trunc_macaddr_cov-Relation"></a>`trunc_macaddr_cov`
+#### <a id="fail-trunc_macaddr_cov-TDS"></a><a id="fail-trunc_macaddr_cov-Relation"></a><a id="fail-trunc_macaddr_cov-Grammar"></a>`trunc_macaddr_cov`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -7800,6 +13987,11 @@ SELECT TRUNC(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 **Legend SQL (Relation):**
 ```sql
 SELECT TRUNC(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
+```
+
+**Legend SQL (Grammar):**
+```sql
+SELECT TRUNC(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
 ```
 
 **Error:**
@@ -7810,9 +14002,9 @@ SELECT TRUNC(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 
 <br>
 
-#### <a id="fail-trunc_macaddr8_cov-TDS"></a><a id="fail-trunc_macaddr8_cov-Relation"></a>`trunc_macaddr8_cov`
+#### <a id="fail-trunc_macaddr8_cov-TDS"></a><a id="fail-trunc_macaddr8_cov-Relation"></a><a id="fail-trunc_macaddr8_cov-Grammar"></a>`trunc_macaddr8_cov`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -7827,6 +14019,11 @@ SELECT TRUNC(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 **Legend SQL (Relation):**
 ```sql
 SELECT TRUNC(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
+```
+
+**Legend SQL (Grammar):**
+```sql
+SELECT TRUNC(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
 ```
 
 **Error:**
@@ -7883,6 +14080,26 @@ SELECT ENCODE(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 
 **Error:**
 > incorrect number of args to encode
+
+
+<br>
+
+#### <a id="fail-length__bytea_name__unsupported_type-Grammar"></a>`length__bytea_name__unsupported_type`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT LENGTH(E'\\xDEADBEEF'::bytea, 'UTF8') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT LENGTH(E'\\xDEADBEEF'::bytea, 'UTF8') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: invalid byte sequence for encoding "UTF8": 0xbe | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported Operation: Escaped Chars String Literal
 
 
 <br>
@@ -8037,7 +14254,7 @@ SELECT SUBSTRING(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 
 <br>
 
-#### <a id="fail-substring__txt_txt__from_table-Relation"></a>`substring__txt_txt__from_table`
+#### <a id="fail-substring__txt_txt__from_table-Relation"></a><a id="fail-substring__txt_txt__from_table-Grammar"></a>`substring__txt_txt__from_table`
 
 📗 **Relation Path**
 
@@ -8053,6 +14270,25 @@ SELECT SUBSTRING(val FROM '[a-z]+') AS result FROM func('e2e::rel_strings') WHER
 
 **Error:**
 > Can't find a match for function 'meta::pure::functions::string::substring(String[1],String[1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tsubstring(String[1],Integer[1]):String[1]\nFunctions that can match if number of parameters are changed:\n\t\tsubstring(String[1],Integer[1],Integer[1]):String[1]\n
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SUBSTRING(val FROM '[a-z]+') AS result FROM strings WHERE val ~ '[a-z]' ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SUBSTRING(val FROM '[a-z]+') AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val ~ '[a-z]' ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Can't find a match for function 'meta::pure::functions::string::substring(String[1],String[1])'.
+> Functions that can match if parameter types or multiplicities are changed:
+> 		substring(String[1],Integer[1]):String[1]
+> Functions that can match if number of parameters are changed:
+> 		substring(String[1],Integer[1],Integer[1]):String[1]
 
 
 <br>
@@ -8082,27 +14318,52 @@ SELECT SUBSTRING(name) AS result FROM func('e2e::rel_persons') WHERE id = 1
 
 <br>
 
-#### <a id="fail-sha256__bytea-TDS"></a><a id="fail-sha256__bytea-Relation"></a>`sha256__bytea`
+#### <a id="fail-sha256__bytea-TDS"></a><a id="fail-sha256__bytea-Relation"></a><a id="fail-sha256__bytea-Grammar"></a>`sha256__bytea`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT SHA256('Hello') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT SHA256('Hello') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> SHA256 function must be wrapped with encode(func, 'hex')
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT SHA256('Hello') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT SHA256('Hello') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
 
 **Error:**
 > SHA256 function must be wrapped with encode(func, 'hex')
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SHA256('Hello') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SHA256('Hello') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): SHA256 function must be wrapped with encode(func, 'hex')
 
 
 <br>
@@ -8321,21 +14582,31 @@ SELECT REGEXP_SUBSTR('abc123def', '([a-z]+)([0-9]+)', 1, 1, 'i', 0) AS matches, 
 
 <br>
 
-#### <a id="fail-to_char__intv_txt__from_table-TDS"></a><a id="fail-to_char__intv_txt__from_table-Relation"></a>`to_char__intv_txt__from_table`
+#### <a id="fail-to_char__intv_txt__from_table-TDS"></a><a id="fail-to_char__intv_txt__from_table-Relation"></a><a id="fail-to_char__intv_txt__from_table-Grammar"></a>`to_char__intv_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TO_CHAR(INTERVAL '1 year 2 months 3 days', 'YYYY MM DD') AS result FROM dates WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TO_CHAR(INTERVAL '1 year 2 months 3 days', 'YYYY MM DD') AS result FROM func('e2e::tds_dates') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> interval literal only supported in certain contexts
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TO_CHAR(INTERVAL '1 year 2 months 3 days', 'YYYY MM DD') AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TO_CHAR(INTERVAL '1 year 2 months 3 days', 'YYYY MM DD') AS result FROM func('e2e::rel_dates') WHERE id = 1
 ```
@@ -8343,24 +14614,49 @@ SELECT TO_CHAR(INTERVAL '1 year 2 months 3 days', 'YYYY MM DD') AS result FROM f
 **Error:**
 > interval literal only supported in certain contexts
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TO_CHAR(INTERVAL '1 year 2 months 3 days', 'YYYY MM DD') AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TO_CHAR(INTERVAL '1 year 2 months 3 days', 'YYYY MM DD') AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): interval literal only supported in certain contexts
+
 
 <br>
 
-#### <a id="fail-date_trunc__txt_intv__from_table-TDS"></a><a id="fail-date_trunc__txt_intv__from_table-Relation"></a>`date_trunc__txt_intv__from_table`
+#### <a id="fail-date_trunc__txt_intv__from_table-TDS"></a><a id="fail-date_trunc__txt_intv__from_table-Relation"></a><a id="fail-date_trunc__txt_intv__from_table-Grammar"></a>`date_trunc__txt_intv__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT DATE_TRUNC('hour', INTERVAL '3 hours 15 minutes') AS result FROM dates WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT DATE_TRUNC('hour', INTERVAL '3 hours 15 minutes') AS result FROM func('e2e::tds_dates') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> interval literal only supported in certain contexts
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT DATE_TRUNC('hour', INTERVAL '3 hours 15 minutes') AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT DATE_TRUNC('hour', INTERVAL '3 hours 15 minutes') AS result FROM func('e2e::rel_dates') WHERE id = 1
 ```
@@ -8368,30 +14664,70 @@ SELECT DATE_TRUNC('hour', INTERVAL '3 hours 15 minutes') AS result FROM func('e2
 **Error:**
 > interval literal only supported in certain contexts
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT DATE_TRUNC('hour', INTERVAL '3 hours 15 minutes') AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT DATE_TRUNC('hour', INTERVAL '3 hours 15 minutes') AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): interval literal only supported in certain contexts
+
 
 <br>
 
-#### <a id="fail-extract__txt_intv__from_table-TDS"></a><a id="fail-extract__txt_intv__from_table-Relation"></a>`extract__txt_intv__from_table`
+#### <a id="fail-extract__txt_intv__from_table-TDS"></a><a id="fail-extract__txt_intv__from_table-Relation"></a><a id="fail-extract__txt_intv__from_table-Grammar"></a>`extract__txt_intv__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT EXTRACT(HOUR FROM INTERVAL '3 hours 15 minutes') AS result FROM dates WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT EXTRACT(HOUR FROM INTERVAL '3 hours 15 minutes') AS result FROM func('e2e::tds_dates') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> interval literal only supported in certain contexts
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT EXTRACT(HOUR FROM INTERVAL '3 hours 15 minutes') AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT EXTRACT(HOUR FROM INTERVAL '3 hours 15 minutes') AS result FROM func('e2e::rel_dates') WHERE id = 1
 ```
 
 **Error:**
 > interval literal only supported in certain contexts
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT EXTRACT(HOUR FROM INTERVAL '3 hours 15 minutes') AS result FROM dates WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT EXTRACT(HOUR FROM INTERVAL '3 hours 15 minutes') AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): interval literal only supported in certain contexts
 
 
 <br>
@@ -8431,7 +14767,87 @@ SELECT COALESCE(NULL, NULL, NULL) AS result FROM func('e2e::rel_persons') WHERE 
 
 <br>
 
-#### <a id="fail-cume_dist__variadicORDERBYvariadic__no_generator-Relation"></a>`cume_dist__variadicORDERBYvariadic__no_generator`
+#### <a id="fail-json_build_array__variadic__from_column-Grammar"></a>`json_build_array__variadic__from_column`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_BUILD_ARRAY(id, json_val ->> 'b') AS result FROM json_data WHERE id <= 3 ORDER BY id
+```
+
+**Legend SQL:**
+```sql
+SELECT JSON_BUILD_ARRAY(id, json_val ->> 'b') AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id <= 3 ORDER BY id
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Collection element must have a multiplicity [1] - Context:[build Lambda, new lambda, Applying meta::pure::functions::relation::sort, Applying meta::pure::functions::relation::project, new lambda, Applying meta::pure::functions::collection::list], multiplicity:[0..1]
+
+
+<br>
+
+#### <a id="fail-json_build_object__empty-Grammar"></a>`json_build_object__empty`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_BUILD_OBJECT() AS result FROM json_data WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT JSON_BUILD_OBJECT() AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/execution/execute, status=500): PureExecutionException: Execution error at (resource:/core_relational/relational/pureToSQLQuery/pureToSQLQuery.pure line:11588 column:65), "The system is trying to get an element at offset 0 where the collection is of size 0"
+
+
+<br>
+
+#### <a id="fail-row_to_json__unsupported_type-Grammar"></a>`row_to_json__unsupported_type`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ROW_TO_JSON(persons) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ROW_TO_JSON(persons) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): unknown columns referenced in query [persons]
+
+
+<br>
+
+#### <a id="fail-row_to_json__bool__unsupported_type-Grammar"></a>`row_to_json__bool__unsupported_type`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ROW_TO_JSON(persons, true) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ROW_TO_JSON(persons, true) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): unknown columns referenced in query [persons]
+
+
+<br>
+
+#### <a id="fail-cume_dist__variadicORDERBYvariadic__no_generator-Relation"></a><a id="fail-cume_dist__variadicORDERBYvariadic__no_generator-Grammar"></a>`cume_dist__variadicORDERBYvariadic__no_generator`
 
 📗 **Relation Path**
 
@@ -8448,10 +14864,25 @@ SELECT CUME_DIST(30) WITHIN GROUP (ORDER BY age) AS result FROM func('e2e::rel_p
 **Error:**
 > incorrect number of args for cume_dist
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT CUME_DIST(30) WITHIN GROUP (ORDER BY age) AS result FROM persons WHERE age IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT CUME_DIST(30) WITHIN GROUP (ORDER BY age) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE age IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): incorrect number of args for cume_dist
+
 
 <br>
 
-#### <a id="fail-cume_dist_VARIADIC_any_ORDER_BY_VARIAD_cov-Relation"></a>`cume_dist_VARIADIC_any_ORDER_BY_VARIAD_cov`
+#### <a id="fail-cume_dist_VARIADIC_any_ORDER_BY_VARIAD_cov-Relation"></a><a id="fail-cume_dist_VARIADIC_any_ORDER_BY_VARIAD_cov-Grammar"></a>`cume_dist_VARIADIC_any_ORDER_BY_VARIAD_cov`
 
 📗 **Relation Path**
 
@@ -8468,10 +14899,26 @@ SELECT CUME_DIST(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > incorrect number of args for cume_dist
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT CUME_DIST(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT CUME_DIST(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: WITHIN GROUP is required for ordered-set aggregate cume_dist
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): incorrect number of args for cume_dist
+
 
 <br>
 
-#### <a id="fail-dense_rank__variadicORDERBYvariadic__no_generator-Relation"></a>`dense_rank__variadicORDERBYvariadic__no_generator`
+#### <a id="fail-dense_rank__variadicORDERBYvariadic__no_generator-Relation"></a><a id="fail-dense_rank__variadicORDERBYvariadic__no_generator-Grammar"></a>`dense_rank__variadicORDERBYvariadic__no_generator`
 
 📗 **Relation Path**
 
@@ -8488,10 +14935,25 @@ SELECT DENSE_RANK(30) WITHIN GROUP (ORDER BY age) AS result FROM func('e2e::rel_
 **Error:**
 > Can't find variable class for variable 'p' in the graph
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT DENSE_RANK(30) WITHIN GROUP (ORDER BY age) AS result FROM persons WHERE age IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT DENSE_RANK(30) WITHIN GROUP (ORDER BY age) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE age IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Can't find variable class for variable 'p' in the graph
+
 
 <br>
 
-#### <a id="fail-dense_rank_VARIADIC_any_ORDER_BY_VARIAD_cov-Relation"></a>`dense_rank_VARIADIC_any_ORDER_BY_VARIAD_cov`
+#### <a id="fail-dense_rank_VARIADIC_any_ORDER_BY_VARIAD_cov-Relation"></a><a id="fail-dense_rank_VARIADIC_any_ORDER_BY_VARIAD_cov-Grammar"></a>`dense_rank_VARIADIC_any_ORDER_BY_VARIAD_cov`
 
 📗 **Relation Path**
 
@@ -8508,10 +14970,26 @@ SELECT DENSE_RANK(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > Can't find variable class for variable 'p' in the graph
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT DENSE_RANK(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT DENSE_RANK(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: WITHIN GROUP is required for ordered-set aggregate dense_rank
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Can't find variable class for variable 'p' in the graph
+
 
 <br>
 
-#### <a id="fail-percent_rank__variadicORDERBYvariadic__no_generator-Relation"></a>`percent_rank__variadicORDERBYvariadic__no_generator`
+#### <a id="fail-percent_rank__variadicORDERBYvariadic__no_generator-Relation"></a><a id="fail-percent_rank__variadicORDERBYvariadic__no_generator-Grammar"></a>`percent_rank__variadicORDERBYvariadic__no_generator`
 
 📗 **Relation Path**
 
@@ -8528,10 +15006,25 @@ SELECT PERCENT_RANK(30) WITHIN GROUP (ORDER BY age) AS result FROM func('e2e::re
 **Error:**
 > incorrect number of args for percent_rank
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT PERCENT_RANK(30) WITHIN GROUP (ORDER BY age) AS result FROM persons WHERE age IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT PERCENT_RANK(30) WITHIN GROUP (ORDER BY age) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE age IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): incorrect number of args for percent_rank
+
 
 <br>
 
-#### <a id="fail-percent_rank_VARIADIC_any_ORDER_BY_VARIAD_cov-Relation"></a>`percent_rank_VARIADIC_any_ORDER_BY_VARIAD_cov`
+#### <a id="fail-percent_rank_VARIADIC_any_ORDER_BY_VARIAD_cov-Relation"></a><a id="fail-percent_rank_VARIADIC_any_ORDER_BY_VARIAD_cov-Grammar"></a>`percent_rank_VARIADIC_any_ORDER_BY_VARIAD_cov`
 
 📗 **Relation Path**
 
@@ -8548,10 +15041,26 @@ SELECT PERCENT_RANK(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > incorrect number of args for percent_rank
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT PERCENT_RANK(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT PERCENT_RANK(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: WITHIN GROUP is required for ordered-set aggregate percent_rank
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): incorrect number of args for percent_rank
+
 
 <br>
 
-#### <a id="fail-percentile_cont__dp[]ORDERBYdp__no_generator-TDS"></a><a id="fail-percentile_cont__dp[]ORDERBYdp__no_generator-Relation"></a>`percentile_cont__dp[]ORDERBYdp__no_generator`
+#### <a id="fail-percentile_cont__dp[]ORDERBYdp__no_generator-TDS"></a><a id="fail-percentile_cont__dp[]ORDERBYdp__no_generator-Relation"></a><a id="fail-percentile_cont__dp[]ORDERBYdp__no_generator-Grammar"></a>`percentile_cont__dp[]ORDERBYdp__no_generator`
 
 📘 **TDS Path**
 
@@ -8583,6 +15092,25 @@ SELECT PERCENTILE_CONT(ARRAY[0.25, 0.5, 0.75]) WITHIN GROUP (ORDER BY salary) AS
 **Error:**
 > Can't find a match for function 'meta::pure::functions::math::percentile(Float[*],Float[3])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tpercentile(Number[*],Float[1]):Number[0..1]\nFunctions that can match if number of parameters are changed:\n\t\tpercentile(Number[*],Float[1],Boolean[1],Boolean[1]):Number[0..1]\n
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT PERCENTILE_CONT(ARRAY[0.25, 0.5, 0.75]) WITHIN GROUP (ORDER BY salary) AS result FROM persons WHERE salary IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT PERCENTILE_CONT(ARRAY[0.25, 0.5, 0.75]) WITHIN GROUP (ORDER BY salary) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE salary IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Can't find a match for function 'meta::pure::functions::math::percentile(Float[*],Float[3])'.
+> Functions that can match if parameter types or multiplicities are changed:
+> 		percentile(Number[*],Float[1]):Number[0..1]
+> Functions that can match if number of parameters are changed:
+> 		percentile(Number[*],Float[1],Boolean[1],Boolean[1]):Number[0..1]
+
 
 <br>
 
@@ -8611,7 +15139,7 @@ SELECT PERCENTILE_DISC(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 
 
 <br>
 
-#### <a id="fail-percentile_disc__dp[]ORDERBYanyelement__no_generator-TDS"></a><a id="fail-percentile_disc__dp[]ORDERBYanyelement__no_generator-Relation"></a>`percentile_disc__dp[]ORDERBYanyelement__no_generator`
+#### <a id="fail-percentile_disc__dp[]ORDERBYanyelement__no_generator-TDS"></a><a id="fail-percentile_disc__dp[]ORDERBYanyelement__no_generator-Relation"></a><a id="fail-percentile_disc__dp[]ORDERBYanyelement__no_generator-Grammar"></a>`percentile_disc__dp[]ORDERBYanyelement__no_generator`
 
 📘 **TDS Path**
 
@@ -8643,6 +15171,25 @@ SELECT PERCENTILE_DISC(ARRAY[0.25, 0.5, 0.75]) WITHIN GROUP (ORDER BY salary) AS
 **Error:**
 > Can't find a match for function 'meta::pure::functions::math::percentile(Float[*],Float[3],Boolean[1],Boolean[1])'.\nFunctions that can match if parameter types or multiplicities are changed:\n\t\tpercentile(Number[*],Float[1],Boolean[1],Boolean[1]):Number[0..1]\nFunctions that can match if number of parameters are changed:\n\t\tpercentile(Number[*],Float[1]):Number[0..1]\n
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT PERCENTILE_DISC(ARRAY[0.25, 0.5, 0.75]) WITHIN GROUP (ORDER BY salary) AS result FROM persons WHERE salary IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT PERCENTILE_DISC(ARRAY[0.25, 0.5, 0.75]) WITHIN GROUP (ORDER BY salary) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE salary IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Can't find a match for function 'meta::pure::functions::math::percentile(Float[*],Float[3],Boolean[1],Boolean[1])'.
+> Functions that can match if parameter types or multiplicities are changed:
+> 		percentile(Number[*],Float[1],Boolean[1],Boolean[1]):Number[0..1]
+> Functions that can match if number of parameters are changed:
+> 		percentile(Number[*],Float[1]):Number[0..1]
+
 
 <br>
 
@@ -8671,7 +15218,7 @@ SELECT PERCENTILE_DISC(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 
 
 <br>
 
-#### <a id="fail-rank__variadicORDERBYvariadic__no_generator-Relation"></a>`rank__variadicORDERBYvariadic__no_generator`
+#### <a id="fail-rank__variadicORDERBYvariadic__no_generator-Relation"></a><a id="fail-rank__variadicORDERBYvariadic__no_generator-Grammar"></a>`rank__variadicORDERBYvariadic__no_generator`
 
 📗 **Relation Path**
 
@@ -8688,10 +15235,25 @@ SELECT RANK(30) WITHIN GROUP (ORDER BY age) AS result FROM func('e2e::rel_person
 **Error:**
 > Can't find variable class for variable 'p' in the graph
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT RANK(30) WITHIN GROUP (ORDER BY age) AS result FROM persons WHERE age IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT RANK(30) WITHIN GROUP (ORDER BY age) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE age IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Can't find variable class for variable 'p' in the graph
+
 
 <br>
 
-#### <a id="fail-rank_VARIADIC_any_ORDER_BY_VARIAD_cov-Relation"></a>`rank_VARIADIC_any_ORDER_BY_VARIAD_cov`
+#### <a id="fail-rank_VARIADIC_any_ORDER_BY_VARIAD_cov-Relation"></a><a id="fail-rank_VARIADIC_any_ORDER_BY_VARIAD_cov-Grammar"></a>`rank_VARIADIC_any_ORDER_BY_VARIAD_cov`
 
 📗 **Relation Path**
 
@@ -8707,6 +15269,22 @@ SELECT RANK(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 
 **Error:**
 > Can't find variable class for variable 'p' in the graph
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT RANK(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT RANK(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: WITHIN GROUP is required for ordered-set aggregate rank
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Can't find variable class for variable 'p' in the graph
 
 
 <br>
@@ -8736,21 +15314,31 @@ SELECT STRING_AGG(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 
 <br>
 
-#### <a id="fail-sum_money_cov-TDS"></a><a id="fail-sum_money_cov-Relation"></a>`sum_money_cov`
+#### <a id="fail-sum_money_cov-TDS"></a><a id="fail-sum_money_cov-Relation"></a><a id="fail-sum_money_cov-Grammar"></a>`sum_money_cov`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT SUM(NULL) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT SUM(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> ERROR: function sum(unknown) is not unique\n  Hint: Could not choose a best candidate function. You might need to add explicit type casts.\n  Position: 71
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT SUM(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT SUM(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -8758,10 +15346,29 @@ SELECT SUM(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > ERROR: function sum(unknown) is not unique\n  Hint: Could not choose a best candidate function. You might need to add explicit type casts.\n  Position: 71
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SUM(NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SUM(NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> Postgres: ERROR: function sum(unknown) is not unique
+>   Hint: Could not choose a best candidate function. You might need to add explicit type casts.
+>   Position: 8 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/execution/execute, status=500): PSQLException: ERROR: function sum(unknown) is not unique
+>   Hint: Could not choose a best candidate function. You might need to add explicit type casts.
+>   Position: 117
+
 
 <br>
 
-#### <a id="fail-last_value__anyelement__from_table-Relation"></a>`last_value__anyelement__from_table`
+#### <a id="fail-last_value__anyelement__from_table-Relation"></a><a id="fail-last_value__anyelement__from_table-Grammar"></a>`last_value__anyelement__from_table`
 
 📗 **Relation Path**
 
@@ -8778,12 +15385,27 @@ SELECT name, LAST_VALUE(name) OVER (ORDER BY name ROWS BETWEEN UNBOUNDED PRECEDI
 **Error:**
 > Cannot invoke "Object.getClass()" because "resO" is null
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT name, LAST_VALUE(name) OVER (ORDER BY name ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS result FROM persons WHERE name IS NOT NULL ORDER BY name
+```
+
+**Legend SQL:**
+```sql
+SELECT name, LAST_VALUE(name) OVER (ORDER BY name ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE name IS NOT NULL ORDER BY name
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Cannot invoke "Object.getClass()" because "resO" is null
+
 
 <br>
 
-#### <a id="fail-currval__regclass__basic-TDS"></a><a id="fail-currval__regclass__basic-Relation"></a>`currval__regclass__basic`
+#### <a id="fail-currval__regclass__basic-TDS"></a><a id="fail-currval__regclass__basic-Relation"></a><a id="fail-currval__regclass__basic-Grammar"></a>`currval__regclass__basic`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -8802,9 +15424,9 @@ SELECT CURRVAL('test_seq') AS result FROM (SELECT NEXTVAL('test_seq')) AS init
 
 <br>
 
-#### <a id="fail-lastval__basic-TDS"></a><a id="fail-lastval__basic-Relation"></a>`lastval__basic`
+#### <a id="fail-lastval__basic-TDS"></a><a id="fail-lastval__basic-Relation"></a><a id="fail-lastval__basic-Grammar"></a>`lastval__basic`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -8823,9 +15445,9 @@ SELECT LASTVAL() AS result FROM (SELECT NEXTVAL('test_seq')) AS init
 
 <br>
 
-#### <a id="fail-nextval__regclass__basic-TDS"></a><a id="fail-nextval__regclass__basic-Relation"></a>`nextval__regclass__basic`
+#### <a id="fail-nextval__regclass__basic-TDS"></a><a id="fail-nextval__regclass__basic-Relation"></a><a id="fail-nextval__regclass__basic-Grammar"></a>`nextval__regclass__basic`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -8844,9 +15466,9 @@ SELECT NEXTVAL('test_seq') AS result
 
 <br>
 
-#### <a id="fail-setval__regclass_big__basic-TDS"></a><a id="fail-setval__regclass_big__basic-Relation"></a>`setval__regclass_big__basic`
+#### <a id="fail-setval__regclass_big__basic-TDS"></a><a id="fail-setval__regclass_big__basic-Relation"></a><a id="fail-setval__regclass_big__basic-Grammar"></a>`setval__regclass_big__basic`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -8865,9 +15487,9 @@ SELECT SETVAL('test_seq', 42) AS result
 
 <br>
 
-#### <a id="fail-setval__regclass_big_bool__basic-TDS"></a><a id="fail-setval__regclass_big_bool__basic-Relation"></a>`setval__regclass_big_bool__basic`
+#### <a id="fail-setval__regclass_big_bool__basic-TDS"></a><a id="fail-setval__regclass_big_bool__basic-Relation"></a><a id="fail-setval__regclass_big_bool__basic-Grammar"></a>`setval__regclass_big_bool__basic`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -8886,21 +15508,231 @@ SELECT SETVAL('test_seq', 100, true) AS result
 
 <br>
 
-#### <a id="fail-digest_sha1__bytea-TDS"></a><a id="fail-digest_sha1__bytea-Relation"></a>`digest_sha1__bytea`
+#### <a id="fail-generate_series__big_big__from_table-Grammar"></a>`generate_series__big_big__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES(1::bigint, 5::bigint) AS g(val) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES(1::bigint, 5::bigint) AS g(val) ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/execution/execute, status=500): PureAssertFailException: Assert failure at (resource:/core_external_language_java/generation/expressionGeneration.pure line:321 column:10), "eval_Function_1__V_m_ is prohibited!"
+
+
+<br>
+
+#### <a id="fail-generate_series__big_big_big__from_table-Grammar"></a>`generate_series__big_big_big__from_table`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES(1::bigint, 10::bigint, 2::bigint) AS g(val) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES(1::bigint, 10::bigint, 2::bigint) AS g(val) ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/execution/execute, status=500): PureAssertFailException: Assert failure at (resource:/core_external_language_java/generation/expressionGeneration.pure line:321 column:10), "eval_Function_1__V_m_ is prohibited!"
+
+
+<br>
+
+#### <a id="fail-generate_series__int_int__from_table-Grammar"></a>`generate_series__int_int__from_table`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES(1, 5) AS g(val) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES(1, 5) AS g(val) ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/execution/execute, status=500): PureAssertFailException: Assert failure at (resource:/core_external_language_java/generation/expressionGeneration.pure line:321 column:10), "eval_Function_1__V_m_ is prohibited!"
+
+
+<br>
+
+#### <a id="fail-generate_series_empty_result-Grammar"></a>`generate_series_empty_result`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES(5, 1) AS g(val) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES(5, 1) AS g(val) ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/execution/execute, status=500): PureAssertFailException: Assert failure at (resource:/core_external_language_java/generation/expressionGeneration.pure line:321 column:10), "eval_Function_1__V_m_ is prohibited!"
+
+
+<br>
+
+#### <a id="fail-generate_series_single_value-Grammar"></a>`generate_series_single_value`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES(1, 1) AS g(val) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES(1, 1) AS g(val) ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/execution/execute, status=500): PureAssertFailException: Assert failure at (resource:/core_external_language_java/generation/expressionGeneration.pure line:321 column:10), "eval_Function_1__V_m_ is prohibited!"
+
+
+<br>
+
+#### <a id="fail-generate_series_in_from-Grammar"></a>`generate_series_in_from`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT g.result FROM GENERATE_SERIES(1, 3) AS g(result) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT g.result FROM GENERATE_SERIES(1, 3) AS g(result) ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/execution/execute, status=500): PureAssertFailException: Assert failure at (resource:/core_external_language_java/generation/expressionGeneration.pure line:321 column:10), "eval_Function_1__V_m_ is prohibited!"
+
+
+<br>
+
+#### <a id="fail-generate_series__int_int_int__from_table-Grammar"></a>`generate_series__int_int_int__from_table`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES(0, 20, 5) AS g(val) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES(0, 20, 5) AS g(val) ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/execution/execute, status=500): PureAssertFailException: Assert failure at (resource:/core_external_language_java/generation/expressionGeneration.pure line:321 column:10), "eval_Function_1__V_m_ is prohibited!"
+
+
+<br>
+
+#### <a id="fail-generate_series_negative_step-Grammar"></a>`generate_series_negative_step`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES(5, 1, -1) AS g(val) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES(5, 1, -1) AS g(val) ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/execution/execute, status=500): PureAssertFailException: Assert failure at (resource:/core_external_language_java/generation/expressionGeneration.pure line:321 column:10), "eval_Function_1__V_m_ is prohibited!"
+
+
+<br>
+
+#### <a id="fail-generate_series__num_num__from_table-Grammar"></a>`generate_series__num_num__from_table`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES(1::numeric, 5::numeric) AS g(val) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES(1::numeric, 5::numeric) AS g(val) ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): generate_series is only supported for integer arguments
+
+
+<br>
+
+#### <a id="fail-generate_series__num_num_num__from_table-Grammar"></a>`generate_series__num_num_num__from_table`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES(0::numeric, 2::numeric, 0.5::numeric) AS g(val) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES(0::numeric, 2::numeric, 0.5::numeric) AS g(val) ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): generate_series is only supported for integer arguments
+
+
+<br>
+
+#### <a id="fail-digest_sha1__bytea-TDS"></a><a id="fail-digest_sha1__bytea-Relation"></a><a id="fail-digest_sha1__bytea-Grammar"></a>`digest_sha1__bytea`
+
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT digest('Hello, World!', 'sha1') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT digest('Hello, World!', 'sha1') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> SHA1 function must be wrapped with encode(func, 'hex')
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT digest('Hello, World!', 'sha1') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT digest('Hello, World!', 'sha1') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -8908,24 +15740,49 @@ SELECT digest('Hello, World!', 'sha1') AS result FROM func('e2e::rel_persons') W
 **Error:**
 > SHA1 function must be wrapped with encode(func, 'hex')
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT digest('Hello, World!', 'sha1') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT digest('Hello, World!', 'sha1') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): SHA1 function must be wrapped with encode(func, 'hex')
+
 
 <br>
 
-#### <a id="fail-digest_sha256__bytea-TDS"></a><a id="fail-digest_sha256__bytea-Relation"></a>`digest_sha256__bytea`
+#### <a id="fail-digest_sha256__bytea-TDS"></a><a id="fail-digest_sha256__bytea-Relation"></a><a id="fail-digest_sha256__bytea-Grammar"></a>`digest_sha256__bytea`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT digest('Hello, World!', 'sha256') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT digest('Hello, World!', 'sha256') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> SHA256 function must be wrapped with encode(func, 'hex')
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT digest('Hello, World!', 'sha256') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT digest('Hello, World!', 'sha256') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -8933,24 +15790,49 @@ SELECT digest('Hello, World!', 'sha256') AS result FROM func('e2e::rel_persons')
 **Error:**
 > SHA256 function must be wrapped with encode(func, 'hex')
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT digest('Hello, World!', 'sha256') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT digest('Hello, World!', 'sha256') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): SHA256 function must be wrapped with encode(func, 'hex')
+
 
 <br>
 
-#### <a id="fail-digest_md5__bytea-TDS"></a><a id="fail-digest_md5__bytea-Relation"></a>`digest_md5__bytea`
+#### <a id="fail-digest_md5__bytea-TDS"></a><a id="fail-digest_md5__bytea-Relation"></a><a id="fail-digest_md5__bytea-Grammar"></a>`digest_md5__bytea`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT digest('Hello, World!', 'md5') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT digest('Hello, World!', 'md5') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> MD5 function must be wrapped with encode(func, 'hex')
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT digest('Hello, World!', 'md5') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT digest('Hello, World!', 'md5') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -8958,24 +15840,49 @@ SELECT digest('Hello, World!', 'md5') AS result FROM func('e2e::rel_persons') WH
 **Error:**
 > MD5 function must be wrapped with encode(func, 'hex')
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT digest('Hello, World!', 'md5') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT digest('Hello, World!', 'md5') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): MD5 function must be wrapped with encode(func, 'hex')
+
 
 <br>
 
-#### <a id="fail-digest_sha1_column__bytea-TDS"></a><a id="fail-digest_sha1_column__bytea-Relation"></a>`digest_sha1_column__bytea`
+#### <a id="fail-digest_sha1_column__bytea-TDS"></a><a id="fail-digest_sha1_column__bytea-Relation"></a><a id="fail-digest_sha1_column__bytea-Grammar"></a>`digest_sha1_column__bytea`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT digest(name, 'sha1') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT digest(name, 'sha1') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> SHA1 function must be wrapped with encode(func, 'hex')
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT digest(name, 'sha1') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT digest(name, 'sha1') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -8983,24 +15890,49 @@ SELECT digest(name, 'sha1') AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > SHA1 function must be wrapped with encode(func, 'hex')
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT digest(name, 'sha1') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT digest(name, 'sha1') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): SHA1 function must be wrapped with encode(func, 'hex')
+
 
 <br>
 
-#### <a id="fail-digest_sha256_column__bytea-TDS"></a><a id="fail-digest_sha256_column__bytea-Relation"></a>`digest_sha256_column__bytea`
+#### <a id="fail-digest_sha256_column__bytea-TDS"></a><a id="fail-digest_sha256_column__bytea-Relation"></a><a id="fail-digest_sha256_column__bytea-Grammar"></a>`digest_sha256_column__bytea`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT digest(name, 'sha256') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT digest(name, 'sha256') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> SHA256 function must be wrapped with encode(func, 'hex')
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT digest(name, 'sha256') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT digest(name, 'sha256') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -9008,24 +15940,49 @@ SELECT digest(name, 'sha256') AS result FROM func('e2e::rel_persons') WHERE id =
 **Error:**
 > SHA256 function must be wrapped with encode(func, 'hex')
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT digest(name, 'sha256') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT digest(name, 'sha256') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): SHA256 function must be wrapped with encode(func, 'hex')
+
 
 <br>
 
-#### <a id="fail-digest_md5_column__bytea-TDS"></a><a id="fail-digest_md5_column__bytea-Relation"></a>`digest_md5_column__bytea`
+#### <a id="fail-digest_md5_column__bytea-TDS"></a><a id="fail-digest_md5_column__bytea-Relation"></a><a id="fail-digest_md5_column__bytea-Grammar"></a>`digest_md5_column__bytea`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT digest(name, 'md5') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT digest(name, 'md5') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> MD5 function must be wrapped with encode(func, 'hex')
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT digest(name, 'md5') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT digest(name, 'md5') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -9033,12 +15990,27 @@ SELECT digest(name, 'md5') AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > MD5 function must be wrapped with encode(func, 'hex')
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT digest(name, 'md5') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT digest(name, 'md5') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): MD5 function must be wrapped with encode(func, 'hex')
+
 
 <br>
 
-#### <a id="fail-date_literal__datetime_t_with_tz-TDS"></a><a id="fail-date_literal__datetime_t_with_tz-Relation"></a>`date_literal__datetime_t_with_tz`
+#### <a id="fail-date_literal__datetime_t_with_tz-TDS"></a><a id="fail-date_literal__datetime_t_with_tz-Relation"></a><a id="fail-date_literal__datetime_t_with_tz-Grammar"></a>`date_literal__datetime_t_with_tz`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -9056,21 +16028,31 @@ null
 
 <br>
 
-#### <a id="fail-date_literal__mdy_us_style-TDS"></a><a id="fail-date_literal__mdy_us_style-Relation"></a>`date_literal__mdy_us_style`
+#### <a id="fail-date_literal__mdy_us_style-TDS"></a><a id="fail-date_literal__mdy_us_style-Relation"></a><a id="fail-date_literal__mdy_us_style-Grammar"></a>`date_literal__mdy_us_style`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT DATE '1/8/1999' AS result FROM dates LIMIT 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT DATE '1/8/1999' AS result FROM func('e2e::tds_dates') LIMIT 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Execution error at ??, "Failed to parse date string: 1/8/1999"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT DATE '1/8/1999' AS result FROM dates LIMIT 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT DATE '1/8/1999' AS result FROM func('e2e::rel_dates') LIMIT 1
 ```
@@ -9078,12 +16060,27 @@ SELECT DATE '1/8/1999' AS result FROM func('e2e::rel_dates') LIMIT 1
 **Error:**
 > Execution error at ??, "Failed to parse date string: 1/8/1999"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT DATE '1/8/1999' AS result FROM dates LIMIT 1
+```
+
+**Legend SQL:**
+```sql
+SELECT DATE '1/8/1999' AS result FROM func('e2e::rel_dates__Relation_1_') LIMIT 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Execution error at ??, "Failed to parse date string: 1/8/1999"
+
 
 <br>
 
-#### <a id="fail-date_literal__tz_with_subseconds-TDS"></a><a id="fail-date_literal__tz_with_subseconds-Relation"></a>`date_literal__tz_with_subseconds`
+#### <a id="fail-date_literal__tz_with_subseconds-TDS"></a><a id="fail-date_literal__tz_with_subseconds-Relation"></a><a id="fail-date_literal__tz_with_subseconds-Grammar"></a>`date_literal__tz_with_subseconds`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -9101,21 +16098,31 @@ null
 
 <br>
 
-#### <a id="fail-date_literal__bc_date-TDS"></a><a id="fail-date_literal__bc_date-Relation"></a>`date_literal__bc_date`
+#### <a id="fail-date_literal__bc_date-TDS"></a><a id="fail-date_literal__bc_date-Relation"></a><a id="fail-date_literal__bc_date-Grammar"></a>`date_literal__bc_date`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT DATE 'January 8, 99 BC' AS result FROM dates LIMIT 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT DATE 'January 8, 99 BC' AS result FROM func('e2e::tds_dates') LIMIT 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> ERROR: time zone displacement out of range: "-98-01-08"\n  Position: 75
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT DATE 'January 8, 99 BC' AS result FROM dates LIMIT 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT DATE 'January 8, 99 BC' AS result FROM func('e2e::rel_dates') LIMIT 1
 ```
@@ -9123,12 +16130,28 @@ SELECT DATE 'January 8, 99 BC' AS result FROM func('e2e::rel_dates') LIMIT 1
 **Error:**
 > ERROR: time zone displacement out of range: "-98-01-08"\n  Position: 75
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT DATE 'January 8, 99 BC' AS result FROM dates LIMIT 1
+```
+
+**Legend SQL:**
+```sql
+SELECT DATE 'January 8, 99 BC' AS result FROM func('e2e::rel_dates__Relation_1_') LIMIT 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/execution/execute, status=500): PSQLException: ERROR: time zone displacement out of range: "-98-01-08"
+>   Position: 75
+
 
 <br>
 
-#### <a id="fail-date_literal__tz_utc-TDS"></a><a id="fail-date_literal__tz_utc-Relation"></a>`date_literal__tz_utc`
+#### <a id="fail-date_literal__tz_utc-TDS"></a><a id="fail-date_literal__tz_utc-Relation"></a><a id="fail-date_literal__tz_utc-Grammar"></a>`date_literal__tz_utc`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -9146,9 +16169,9 @@ null
 
 <br>
 
-#### <a id="fail-date_literal__tz_negative_offset-TDS"></a><a id="fail-date_literal__tz_negative_offset-Relation"></a>`date_literal__tz_negative_offset`
+#### <a id="fail-date_literal__tz_negative_offset-TDS"></a><a id="fail-date_literal__tz_negative_offset-Relation"></a><a id="fail-date_literal__tz_negative_offset-Grammar"></a>`date_literal__tz_negative_offset`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -9166,9 +16189,9 @@ null
 
 <br>
 
-#### <a id="fail-date_literal__two_digit_year-TDS"></a><a id="fail-date_literal__two_digit_year-Relation"></a>`date_literal__two_digit_year`
+#### <a id="fail-date_literal__two_digit_year-TDS"></a><a id="fail-date_literal__two_digit_year-Relation"></a><a id="fail-date_literal__two_digit_year-Grammar"></a>`date_literal__two_digit_year`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -9185,6 +16208,11 @@ SELECT DATE '99-01-08' AS result FROM func('e2e::tds_dates') LIMIT 1
 SELECT DATE '99-01-08' AS result FROM func('e2e::rel_dates') LIMIT 1
 ```
 
+**Legend SQL (Grammar):**
+```sql
+SELECT DATE '99-01-08' AS result FROM func('e2e::rel_dates__Relation_1_') LIMIT 1
+```
+
 **Error:**
 > Postgres rejected reference SQL but Legend executed it successfully. Fix the reference SQL or the Legend parser/planner. Postgres error: ERROR: date/time field value out of range: "99-01-08"
 >   Hint: Perhaps you need a different "datestyle" setting.
@@ -9193,21 +16221,31 @@ SELECT DATE '99-01-08' AS result FROM func('e2e::rel_dates') LIMIT 1
 
 <br>
 
-#### <a id="fail-date_literal__mdy_dashes-TDS"></a><a id="fail-date_literal__mdy_dashes-Relation"></a>`date_literal__mdy_dashes`
+#### <a id="fail-date_literal__mdy_dashes-TDS"></a><a id="fail-date_literal__mdy_dashes-Relation"></a><a id="fail-date_literal__mdy_dashes-Grammar"></a>`date_literal__mdy_dashes`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT DATE '1-8-1999' AS result FROM dates LIMIT 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT DATE '1-8-1999' AS result FROM func('e2e::tds_dates') LIMIT 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Execution error at ??, "Failed to parse date string: 1-8-1999"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT DATE '1-8-1999' AS result FROM dates LIMIT 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT DATE '1-8-1999' AS result FROM func('e2e::rel_dates') LIMIT 1
 ```
@@ -9215,12 +16253,27 @@ SELECT DATE '1-8-1999' AS result FROM func('e2e::rel_dates') LIMIT 1
 **Error:**
 > Execution error at ??, "Failed to parse date string: 1-8-1999"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT DATE '1-8-1999' AS result FROM dates LIMIT 1
+```
+
+**Legend SQL:**
+```sql
+SELECT DATE '1-8-1999' AS result FROM func('e2e::rel_dates__Relation_1_') LIMIT 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Execution error at ??, "Failed to parse date string: 1-8-1999"
+
 
 <br>
 
-#### <a id="fail-date_literal__tz_positive_offset-TDS"></a><a id="fail-date_literal__tz_positive_offset-Relation"></a>`date_literal__tz_positive_offset`
+#### <a id="fail-date_literal__tz_positive_offset-TDS"></a><a id="fail-date_literal__tz_positive_offset-Relation"></a><a id="fail-date_literal__tz_positive_offset-Grammar"></a>`date_literal__tz_positive_offset`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -9238,21 +16291,31 @@ null
 
 <br>
 
-#### <a id="fail-date_literal__mdy_timestamp-TDS"></a><a id="fail-date_literal__mdy_timestamp-Relation"></a>`date_literal__mdy_timestamp`
+#### <a id="fail-date_literal__mdy_timestamp-TDS"></a><a id="fail-date_literal__mdy_timestamp-Relation"></a><a id="fail-date_literal__mdy_timestamp-Grammar"></a>`date_literal__mdy_timestamp`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TIMESTAMP '1/8/1999 04:05:06' AS result FROM dates LIMIT 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TIMESTAMP '1/8/1999 04:05:06' AS result FROM func('e2e::tds_dates') LIMIT 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Execution error at ??, "Failed to parse date string: 1/8/1999 04:05:06"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TIMESTAMP '1/8/1999 04:05:06' AS result FROM dates LIMIT 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TIMESTAMP '1/8/1999 04:05:06' AS result FROM func('e2e::rel_dates') LIMIT 1
 ```
@@ -9260,24 +16323,49 @@ SELECT TIMESTAMP '1/8/1999 04:05:06' AS result FROM func('e2e::rel_dates') LIMIT
 **Error:**
 > Execution error at ??, "Failed to parse date string: 1/8/1999 04:05:06"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TIMESTAMP '1/8/1999 04:05:06' AS result FROM dates LIMIT 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TIMESTAMP '1/8/1999 04:05:06' AS result FROM func('e2e::rel_dates__Relation_1_') LIMIT 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Execution error at ??, "Failed to parse date string: 1/8/1999 04:05:06"
+
 
 <br>
 
-#### <a id="fail-date_literal__dmy_dots-TDS"></a><a id="fail-date_literal__dmy_dots-Relation"></a>`date_literal__dmy_dots`
+#### <a id="fail-date_literal__dmy_dots-TDS"></a><a id="fail-date_literal__dmy_dots-Relation"></a><a id="fail-date_literal__dmy_dots-Grammar"></a>`date_literal__dmy_dots`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT DATE '31.1.1999' AS result FROM dates LIMIT 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT DATE '31.1.1999' AS result FROM func('e2e::tds_dates') LIMIT 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Execution error at ??, "Failed to parse date string: 31.1.1999"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT DATE '31.1.1999' AS result FROM dates LIMIT 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT DATE '31.1.1999' AS result FROM func('e2e::rel_dates') LIMIT 1
 ```
@@ -9285,12 +16373,29 @@ SELECT DATE '31.1.1999' AS result FROM func('e2e::rel_dates') LIMIT 1
 **Error:**
 > Execution error at ??, "Failed to parse date string: 31.1.1999"
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT DATE '31.1.1999' AS result FROM dates LIMIT 1
+```
+
+**Legend SQL:**
+```sql
+SELECT DATE '31.1.1999' AS result FROM func('e2e::rel_dates__Relation_1_') LIMIT 1
+```
+
+**Error:**
+> Postgres: ERROR: date/time field value out of range: "31.1.1999"
+>   Hint: Perhaps you need a different "datestyle" setting.
+>   Position: 13 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Execution error at ??, "Failed to parse date string: 31.1.1999"
+
 
 <br>
 
-#### <a id="fail-date_literal__tz_abbrev_stripped-TDS"></a><a id="fail-date_literal__tz_abbrev_stripped-Relation"></a>`date_literal__tz_abbrev_stripped`
+#### <a id="fail-date_literal__tz_abbrev_stripped-TDS"></a><a id="fail-date_literal__tz_abbrev_stripped-Relation"></a><a id="fail-date_literal__tz_abbrev_stripped-Grammar"></a>`date_literal__tz_abbrev_stripped`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -9308,23 +16413,33 @@ null
 
 <a id="unsupported-syntax"></a>
 
-### UNSUPPORTED_SYNTAX (99 tests)
+### UNSUPPORTED_SYNTAX (100 tests)
 
-#### <a id="fail-log__num_num__from_table-TDS"></a><a id="fail-log__num_num__from_table-Relation"></a>`log__num_num__from_table`
+#### <a id="fail-log__num_num__from_table-TDS"></a><a id="fail-log__num_num__from_table-Relation"></a><a id="fail-log__num_num__from_table-Grammar"></a>`log__num_num__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT LOG(10::numeric, ABS(numeric_val) + 1) AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT LOG(10::numeric, ABS(numeric_val) + 1) AS result FROM func('e2e::tds_numbers') WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported: only base 10 supported for log function
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT LOG(10::numeric, ABS(numeric_val) + 1) AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT LOG(10::numeric, ABS(numeric_val) + 1) AS result FROM func('e2e::rel_numbers') WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
@@ -9332,24 +16447,49 @@ SELECT LOG(10::numeric, ABS(numeric_val) + 1) AS result FROM func('e2e::rel_numb
 **Error:**
 > Unsupported: only base 10 supported for log function
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT LOG(10::numeric, ABS(numeric_val) + 1) AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT LOG(10::numeric, ABS(numeric_val) + 1) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported: only base 10 supported for log function
+
 
 <br>
 
-#### <a id="fail-trunc__num_int__from_table-TDS"></a><a id="fail-trunc__num_int__from_table-Relation"></a>`trunc__num_int__from_table`
+#### <a id="fail-trunc__num_int__from_table-TDS"></a><a id="fail-trunc__num_int__from_table-Relation"></a><a id="fail-trunc__num_int__from_table-Grammar"></a>`trunc__num_int__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TRUNC(numeric_val, 2) AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TRUNC(numeric_val, 2) AS result FROM func('e2e::tds_numbers') WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported: trunc with defined decimal places is not currently supported
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TRUNC(numeric_val, 2) AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TRUNC(numeric_val, 2) AS result FROM func('e2e::rel_numbers') WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
@@ -9357,24 +16497,49 @@ SELECT TRUNC(numeric_val, 2) AS result FROM func('e2e::rel_numbers') WHERE numer
 **Error:**
 > Unsupported: trunc with defined decimal places is not currently supported
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TRUNC(numeric_val, 2) AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TRUNC(numeric_val, 2) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported: trunc with defined decimal places is not currently supported
+
 
 <br>
 
-#### <a id="fail-bit_length__bit__unsupported_type-TDS"></a><a id="fail-bit_length__bit__unsupported_type-Relation"></a>`bit_length__bit__unsupported_type`
+#### <a id="fail-bit_length__bit__unsupported_type-TDS"></a><a id="fail-bit_length__bit__unsupported_type-Relation"></a><a id="fail-bit_length__bit__unsupported_type-Grammar"></a>`bit_length__bit__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT BIT_LENGTH(B'1010') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT BIT_LENGTH(B'1010') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported Operation: Bit String
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_LENGTH(B'1010') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT BIT_LENGTH(B'1010') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -9382,24 +16547,49 @@ SELECT BIT_LENGTH(B'1010') AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > Unsupported Operation: Bit String
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_LENGTH(B'1010') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT BIT_LENGTH(B'1010') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported Operation: Bit String
+
 
 <br>
 
-#### <a id="fail-bit_length__bytea__unsupported_type-TDS"></a><a id="fail-bit_length__bytea__unsupported_type-Relation"></a>`bit_length__bytea__unsupported_type`
+#### <a id="fail-bit_length__bytea__unsupported_type-TDS"></a><a id="fail-bit_length__bytea__unsupported_type-Relation"></a><a id="fail-bit_length__bytea__unsupported_type-Grammar"></a>`bit_length__bytea__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT BIT_LENGTH(E'\\xDEADBEEF'::bytea) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT BIT_LENGTH(E'\\xDEADBEEF'::bytea) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported Operation: Escaped Chars String Literal
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_LENGTH(E'\\xDEADBEEF'::bytea) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT BIT_LENGTH(E'\\xDEADBEEF'::bytea) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -9407,24 +16597,49 @@ SELECT BIT_LENGTH(E'\\xDEADBEEF'::bytea) AS result FROM func('e2e::rel_persons')
 **Error:**
 > Unsupported Operation: Escaped Chars String Literal
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT BIT_LENGTH(E'\\xDEADBEEF'::bytea) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT BIT_LENGTH(E'\\xDEADBEEF'::bytea) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported Operation: Escaped Chars String Literal
+
 
 <br>
 
-#### <a id="fail-btrim__bytea_bytea__unsupported_type-TDS"></a><a id="fail-btrim__bytea_bytea__unsupported_type-Relation"></a>`btrim__bytea_bytea__unsupported_type`
+#### <a id="fail-btrim__bytea_bytea__unsupported_type-TDS"></a><a id="fail-btrim__bytea_bytea__unsupported_type-Relation"></a><a id="fail-btrim__bytea_bytea__unsupported_type-Grammar"></a>`btrim__bytea_bytea__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT BTRIM(E'\\x00DEADBEEF00'::bytea, E'\\x00'::bytea) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT BTRIM(E'\\x00DEADBEEF00'::bytea, E'\\x00'::bytea) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported Operation: Escaped Chars String Literal
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BTRIM(E'\\x00DEADBEEF00'::bytea, E'\\x00'::bytea) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT BTRIM(E'\\x00DEADBEEF00'::bytea, E'\\x00'::bytea) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -9432,24 +16647,49 @@ SELECT BTRIM(E'\\x00DEADBEEF00'::bytea, E'\\x00'::bytea) AS result FROM func('e2
 **Error:**
 > Unsupported Operation: Escaped Chars String Literal
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT BTRIM(E'\\x00DEADBEEF00'::bytea, E'\\x00'::bytea) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT BTRIM(E'\\x00DEADBEEF00'::bytea, E'\\x00'::bytea) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported Operation: Escaped Chars String Literal
+
 
 <br>
 
-#### <a id="fail-btrim__txt_txt__from_table-TDS"></a><a id="fail-btrim__txt_txt__from_table-Relation"></a>`btrim__txt_txt__from_table`
+#### <a id="fail-btrim__txt_txt__from_table-TDS"></a><a id="fail-btrim__txt_txt__from_table-Relation"></a><a id="fail-btrim__txt_txt__from_table-Grammar"></a>`btrim__txt_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT BTRIM(val, 'hx') AS result FROM strings ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT BTRIM(val, 'hx') AS result FROM func('e2e::tds_strings') ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> only empty string trim is currently supported
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT BTRIM(val, 'hx') AS result FROM strings ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT BTRIM(val, 'hx') AS result FROM func('e2e::rel_strings') ORDER BY 1
 ```
@@ -9457,24 +16697,49 @@ SELECT BTRIM(val, 'hx') AS result FROM func('e2e::rel_strings') ORDER BY 1
 **Error:**
 > only empty string trim is currently supported
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT BTRIM(val, 'hx') AS result FROM strings ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT BTRIM(val, 'hx') AS result FROM func('e2e::rel_strings__Relation_1_') ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): only empty string trim is currently supported
+
 
 <br>
 
-#### <a id="fail-char_length__char__unsupported_type-TDS"></a><a id="fail-char_length__char__unsupported_type-Relation"></a>`char_length__char__unsupported_type`
+#### <a id="fail-char_length__char__unsupported_type-TDS"></a><a id="fail-char_length__char__unsupported_type-Relation"></a><a id="fail-char_length__char__unsupported_type-Grammar"></a>`char_length__char__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT CHAR_LENGTH('hello'::character(10)) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT CHAR_LENGTH('hello'::character(10)) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> parameters not currently supported for this cast type
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT CHAR_LENGTH('hello'::character(10)) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT CHAR_LENGTH('hello'::character(10)) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -9482,24 +16747,49 @@ SELECT CHAR_LENGTH('hello'::character(10)) AS result FROM func('e2e::rel_persons
 **Error:**
 > parameters not currently supported for this cast type
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT CHAR_LENGTH('hello'::character(10)) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT CHAR_LENGTH('hello'::character(10)) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): parameters not currently supported for this cast type
+
 
 <br>
 
-#### <a id="fail-encode__bytea_txt__unsupported_type-TDS"></a><a id="fail-encode__bytea_txt__unsupported_type-Relation"></a>`encode__bytea_txt__unsupported_type`
+#### <a id="fail-encode__bytea_txt__unsupported_type-TDS"></a><a id="fail-encode__bytea_txt__unsupported_type-Relation"></a><a id="fail-encode__bytea_txt__unsupported_type-Grammar"></a>`encode__bytea_txt__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT ENCODE(E'\\xDEADBEEF'::bytea, 'hex') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT ENCODE(E'\\xDEADBEEF'::bytea, 'hex') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported Operation: Escaped Chars String Literal
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT ENCODE(E'\\xDEADBEEF'::bytea, 'hex') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT ENCODE(E'\\xDEADBEEF'::bytea, 'hex') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -9507,24 +16797,49 @@ SELECT ENCODE(E'\\xDEADBEEF'::bytea, 'hex') AS result FROM func('e2e::rel_person
 **Error:**
 > Unsupported Operation: Escaped Chars String Literal
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ENCODE(E'\\xDEADBEEF'::bytea, 'hex') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ENCODE(E'\\xDEADBEEF'::bytea, 'hex') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported Operation: Escaped Chars String Literal
+
 
 <br>
 
-#### <a id="fail-length__bit__unsupported_type-TDS"></a><a id="fail-length__bit__unsupported_type-Relation"></a>`length__bit__unsupported_type`
+#### <a id="fail-length__bit__unsupported_type-TDS"></a><a id="fail-length__bit__unsupported_type-Relation"></a><a id="fail-length__bit__unsupported_type-Grammar"></a>`length__bit__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT LENGTH(B'1010') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT LENGTH(B'1010') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported Operation: Bit String
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT LENGTH(B'1010') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT LENGTH(B'1010') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -9532,30 +16847,70 @@ SELECT LENGTH(B'1010') AS result FROM func('e2e::rel_persons') WHERE id = 1
 **Error:**
 > Unsupported Operation: Bit String
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT LENGTH(B'1010') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT LENGTH(B'1010') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported Operation: Bit String
+
 
 <br>
 
-#### <a id="fail-length__bytea__unsupported_type-TDS"></a><a id="fail-length__bytea__unsupported_type-Relation"></a>`length__bytea__unsupported_type`
+#### <a id="fail-length__bytea__unsupported_type-TDS"></a><a id="fail-length__bytea__unsupported_type-Relation"></a><a id="fail-length__bytea__unsupported_type-Grammar"></a>`length__bytea__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT LENGTH(E'\\xDEADBEEF'::bytea) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT LENGTH(E'\\xDEADBEEF'::bytea) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported Operation: Escaped Chars String Literal
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT LENGTH(E'\\xDEADBEEF'::bytea) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT LENGTH(E'\\xDEADBEEF'::bytea) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
 
 **Error:**
 > Unsupported Operation: Escaped Chars String Literal
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT LENGTH(E'\\xDEADBEEF'::bytea) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT LENGTH(E'\\xDEADBEEF'::bytea) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported Operation: Escaped Chars String Literal
 
 
 <br>
@@ -9585,21 +16940,31 @@ SELECT LENGTH(E'\\xDEADBEEF'::bytea, 'UTF8') AS result FROM func('e2e::rel_perso
 
 <br>
 
-#### <a id="fail-length__char__unsupported_type-TDS"></a><a id="fail-length__char__unsupported_type-Relation"></a>`length__char__unsupported_type`
+#### <a id="fail-length__char__unsupported_type-TDS"></a><a id="fail-length__char__unsupported_type-Relation"></a><a id="fail-length__char__unsupported_type-Grammar"></a>`length__char__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT LENGTH('hello'::character(10)) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT LENGTH('hello'::character(10)) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> parameters not currently supported for this cast type
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT LENGTH('hello'::character(10)) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT LENGTH('hello'::character(10)) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -9607,24 +16972,49 @@ SELECT LENGTH('hello'::character(10)) AS result FROM func('e2e::rel_persons') WH
 **Error:**
 > parameters not currently supported for this cast type
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT LENGTH('hello'::character(10)) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT LENGTH('hello'::character(10)) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): parameters not currently supported for this cast type
+
 
 <br>
 
-#### <a id="fail-ltrim__bytea_bytea__unsupported_type-TDS"></a><a id="fail-ltrim__bytea_bytea__unsupported_type-Relation"></a>`ltrim__bytea_bytea__unsupported_type`
+#### <a id="fail-ltrim__bytea_bytea__unsupported_type-TDS"></a><a id="fail-ltrim__bytea_bytea__unsupported_type-Relation"></a><a id="fail-ltrim__bytea_bytea__unsupported_type-Grammar"></a>`ltrim__bytea_bytea__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT LTRIM(E'\\x00DEADBEEF00'::bytea, E'\\x00'::bytea) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT LTRIM(E'\\x00DEADBEEF00'::bytea, E'\\x00'::bytea) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported Operation: Escaped Chars String Literal
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT LTRIM(E'\\x00DEADBEEF00'::bytea, E'\\x00'::bytea) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT LTRIM(E'\\x00DEADBEEF00'::bytea, E'\\x00'::bytea) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -9632,24 +17022,49 @@ SELECT LTRIM(E'\\x00DEADBEEF00'::bytea, E'\\x00'::bytea) AS result FROM func('e2
 **Error:**
 > Unsupported Operation: Escaped Chars String Literal
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT LTRIM(E'\\x00DEADBEEF00'::bytea, E'\\x00'::bytea) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT LTRIM(E'\\x00DEADBEEF00'::bytea, E'\\x00'::bytea) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported Operation: Escaped Chars String Literal
+
 
 <br>
 
-#### <a id="fail-md5__bytea__unsupported_type-TDS"></a><a id="fail-md5__bytea__unsupported_type-Relation"></a>`md5__bytea__unsupported_type`
+#### <a id="fail-md5__bytea__unsupported_type-TDS"></a><a id="fail-md5__bytea__unsupported_type-Relation"></a><a id="fail-md5__bytea__unsupported_type-Grammar"></a>`md5__bytea__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MD5(E'\\xDEADBEEF'::bytea) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MD5(E'\\xDEADBEEF'::bytea) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported Operation: Escaped Chars String Literal
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MD5(E'\\xDEADBEEF'::bytea) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT MD5(E'\\xDEADBEEF'::bytea) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -9657,24 +17072,49 @@ SELECT MD5(E'\\xDEADBEEF'::bytea) AS result FROM func('e2e::rel_persons') WHERE 
 **Error:**
 > Unsupported Operation: Escaped Chars String Literal
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MD5(E'\\xDEADBEEF'::bytea) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT MD5(E'\\xDEADBEEF'::bytea) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported Operation: Escaped Chars String Literal
+
 
 <br>
 
-#### <a id="fail-octet_length__bit__unsupported_type-TDS"></a><a id="fail-octet_length__bit__unsupported_type-Relation"></a>`octet_length__bit__unsupported_type`
+#### <a id="fail-octet_length__bit__unsupported_type-TDS"></a><a id="fail-octet_length__bit__unsupported_type-Relation"></a><a id="fail-octet_length__bit__unsupported_type-Grammar"></a>`octet_length__bit__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT OCTET_LENGTH(B'1010') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT OCTET_LENGTH(B'1010') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported Operation: Bit String
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT OCTET_LENGTH(B'1010') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT OCTET_LENGTH(B'1010') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -9682,24 +17122,49 @@ SELECT OCTET_LENGTH(B'1010') AS result FROM func('e2e::rel_persons') WHERE id = 
 **Error:**
 > Unsupported Operation: Bit String
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT OCTET_LENGTH(B'1010') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT OCTET_LENGTH(B'1010') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported Operation: Bit String
+
 
 <br>
 
-#### <a id="fail-octet_length__bytea__unsupported_type-TDS"></a><a id="fail-octet_length__bytea__unsupported_type-Relation"></a>`octet_length__bytea__unsupported_type`
+#### <a id="fail-octet_length__bytea__unsupported_type-TDS"></a><a id="fail-octet_length__bytea__unsupported_type-Relation"></a><a id="fail-octet_length__bytea__unsupported_type-Grammar"></a>`octet_length__bytea__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT OCTET_LENGTH(E'\\xDEADBEEF'::bytea) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT OCTET_LENGTH(E'\\xDEADBEEF'::bytea) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported Operation: Escaped Chars String Literal
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT OCTET_LENGTH(E'\\xDEADBEEF'::bytea) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT OCTET_LENGTH(E'\\xDEADBEEF'::bytea) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -9707,24 +17172,49 @@ SELECT OCTET_LENGTH(E'\\xDEADBEEF'::bytea) AS result FROM func('e2e::rel_persons
 **Error:**
 > Unsupported Operation: Escaped Chars String Literal
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT OCTET_LENGTH(E'\\xDEADBEEF'::bytea) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT OCTET_LENGTH(E'\\xDEADBEEF'::bytea) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported Operation: Escaped Chars String Literal
+
 
 <br>
 
-#### <a id="fail-rtrim__bytea_bytea__unsupported_type-TDS"></a><a id="fail-rtrim__bytea_bytea__unsupported_type-Relation"></a>`rtrim__bytea_bytea__unsupported_type`
+#### <a id="fail-rtrim__bytea_bytea__unsupported_type-TDS"></a><a id="fail-rtrim__bytea_bytea__unsupported_type-Relation"></a><a id="fail-rtrim__bytea_bytea__unsupported_type-Grammar"></a>`rtrim__bytea_bytea__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT RTRIM(E'\\x00DEADBEEF00'::bytea, E'\\x00'::bytea) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT RTRIM(E'\\x00DEADBEEF00'::bytea, E'\\x00'::bytea) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported Operation: Escaped Chars String Literal
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT RTRIM(E'\\x00DEADBEEF00'::bytea, E'\\x00'::bytea) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT RTRIM(E'\\x00DEADBEEF00'::bytea, E'\\x00'::bytea) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -9732,24 +17222,49 @@ SELECT RTRIM(E'\\x00DEADBEEF00'::bytea, E'\\x00'::bytea) AS result FROM func('e2
 **Error:**
 > Unsupported Operation: Escaped Chars String Literal
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT RTRIM(E'\\x00DEADBEEF00'::bytea, E'\\x00'::bytea) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT RTRIM(E'\\x00DEADBEEF00'::bytea, E'\\x00'::bytea) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported Operation: Escaped Chars String Literal
+
 
 <br>
 
-#### <a id="fail-string_to_array__txt_txt_txt__from_table-TDS"></a><a id="fail-string_to_array__txt_txt_txt__from_table-Relation"></a>`string_to_array__txt_txt_txt__from_table`
+#### <a id="fail-string_to_array__txt_txt_txt__from_table-TDS"></a><a id="fail-string_to_array__txt_txt_txt__from_table-Relation"></a><a id="fail-string_to_array__txt_txt_txt__from_table-Grammar"></a>`string_to_array__txt_txt_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT STRING_TO_ARRAY(val, ' ', '') AS result FROM strings WHERE val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT STRING_TO_ARRAY(val, ' ', '') AS result FROM func('e2e::tds_strings') WHERE val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported: only string_to_array with arg 2 supported
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT STRING_TO_ARRAY(val, ' ', '') AS result FROM strings WHERE val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT STRING_TO_ARRAY(val, ' ', '') AS result FROM func('e2e::rel_strings') WHERE val IS NOT NULL ORDER BY 1
 ```
@@ -9757,24 +17272,49 @@ SELECT STRING_TO_ARRAY(val, ' ', '') AS result FROM func('e2e::rel_strings') WHE
 **Error:**
 > Unsupported: only string_to_array with arg 2 supported
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT STRING_TO_ARRAY(val, ' ', '') AS result FROM strings WHERE val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT STRING_TO_ARRAY(val, ' ', '') AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported: only string_to_array with arg 2 supported
+
 
 <br>
 
-#### <a id="fail-substr__bytea_int__unsupported_type-TDS"></a><a id="fail-substr__bytea_int__unsupported_type-Relation"></a>`substr__bytea_int__unsupported_type`
+#### <a id="fail-substr__bytea_int__unsupported_type-TDS"></a><a id="fail-substr__bytea_int__unsupported_type-Relation"></a><a id="fail-substr__bytea_int__unsupported_type-Grammar"></a>`substr__bytea_int__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT SUBSTR(E'\\xDEADBEEF'::bytea, 2) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT SUBSTR(E'\\xDEADBEEF'::bytea, 2) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported Operation: Escaped Chars String Literal
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT SUBSTR(E'\\xDEADBEEF'::bytea, 2) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT SUBSTR(E'\\xDEADBEEF'::bytea, 2) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -9782,24 +17322,49 @@ SELECT SUBSTR(E'\\xDEADBEEF'::bytea, 2) AS result FROM func('e2e::rel_persons') 
 **Error:**
 > Unsupported Operation: Escaped Chars String Literal
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SUBSTR(E'\\xDEADBEEF'::bytea, 2) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SUBSTR(E'\\xDEADBEEF'::bytea, 2) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported Operation: Escaped Chars String Literal
+
 
 <br>
 
-#### <a id="fail-substr__bytea_int_int__unsupported_type-TDS"></a><a id="fail-substr__bytea_int_int__unsupported_type-Relation"></a>`substr__bytea_int_int__unsupported_type`
+#### <a id="fail-substr__bytea_int_int__unsupported_type-TDS"></a><a id="fail-substr__bytea_int_int__unsupported_type-Relation"></a><a id="fail-substr__bytea_int_int__unsupported_type-Grammar"></a>`substr__bytea_int_int__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT SUBSTR(E'\\xDEADBEEF'::bytea, 2, 2) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT SUBSTR(E'\\xDEADBEEF'::bytea, 2, 2) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported Operation: Escaped Chars String Literal
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT SUBSTR(E'\\xDEADBEEF'::bytea, 2, 2) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT SUBSTR(E'\\xDEADBEEF'::bytea, 2, 2) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -9807,24 +17372,49 @@ SELECT SUBSTR(E'\\xDEADBEEF'::bytea, 2, 2) AS result FROM func('e2e::rel_persons
 **Error:**
 > Unsupported Operation: Escaped Chars String Literal
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SUBSTR(E'\\xDEADBEEF'::bytea, 2, 2) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SUBSTR(E'\\xDEADBEEF'::bytea, 2, 2) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported Operation: Escaped Chars String Literal
+
 
 <br>
 
-#### <a id="fail-substring__bit_int__unsupported_type-TDS"></a><a id="fail-substring__bit_int__unsupported_type-Relation"></a>`substring__bit_int__unsupported_type`
+#### <a id="fail-substring__bit_int__unsupported_type-TDS"></a><a id="fail-substring__bit_int__unsupported_type-Relation"></a><a id="fail-substring__bit_int__unsupported_type-Grammar"></a>`substring__bit_int__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT SUBSTRING(B'1010101010', 3) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT SUBSTRING(B'1010101010', 3) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported Operation: Bit String
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT SUBSTRING(B'1010101010', 3) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT SUBSTRING(B'1010101010', 3) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -9832,24 +17422,49 @@ SELECT SUBSTRING(B'1010101010', 3) AS result FROM func('e2e::rel_persons') WHERE
 **Error:**
 > Unsupported Operation: Bit String
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SUBSTRING(B'1010101010', 3) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SUBSTRING(B'1010101010', 3) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported Operation: Bit String
+
 
 <br>
 
-#### <a id="fail-substring__bit_int_int__unsupported_type-TDS"></a><a id="fail-substring__bit_int_int__unsupported_type-Relation"></a>`substring__bit_int_int__unsupported_type`
+#### <a id="fail-substring__bit_int_int__unsupported_type-TDS"></a><a id="fail-substring__bit_int_int__unsupported_type-Relation"></a><a id="fail-substring__bit_int_int__unsupported_type-Grammar"></a>`substring__bit_int_int__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT SUBSTRING(B'1010101010', 3, 2) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT SUBSTRING(B'1010101010', 3, 2) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported Operation: Bit String
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT SUBSTRING(B'1010101010', 3, 2) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT SUBSTRING(B'1010101010', 3, 2) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -9857,24 +17472,49 @@ SELECT SUBSTRING(B'1010101010', 3, 2) AS result FROM func('e2e::rel_persons') WH
 **Error:**
 > Unsupported Operation: Bit String
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SUBSTRING(B'1010101010', 3, 2) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SUBSTRING(B'1010101010', 3, 2) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported Operation: Bit String
+
 
 <br>
 
-#### <a id="fail-substring__bytea_int__unsupported_type-TDS"></a><a id="fail-substring__bytea_int__unsupported_type-Relation"></a>`substring__bytea_int__unsupported_type`
+#### <a id="fail-substring__bytea_int__unsupported_type-TDS"></a><a id="fail-substring__bytea_int__unsupported_type-Relation"></a><a id="fail-substring__bytea_int__unsupported_type-Grammar"></a>`substring__bytea_int__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT SUBSTRING(E'\\xDEADBEEF'::bytea, 2) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT SUBSTRING(E'\\xDEADBEEF'::bytea, 2) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported Operation: Escaped Chars String Literal
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT SUBSTRING(E'\\xDEADBEEF'::bytea, 2) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT SUBSTRING(E'\\xDEADBEEF'::bytea, 2) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -9882,24 +17522,49 @@ SELECT SUBSTRING(E'\\xDEADBEEF'::bytea, 2) AS result FROM func('e2e::rel_persons
 **Error:**
 > Unsupported Operation: Escaped Chars String Literal
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SUBSTRING(E'\\xDEADBEEF'::bytea, 2) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SUBSTRING(E'\\xDEADBEEF'::bytea, 2) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported Operation: Escaped Chars String Literal
+
 
 <br>
 
-#### <a id="fail-substring__bytea_int_int__unsupported_type-TDS"></a><a id="fail-substring__bytea_int_int__unsupported_type-Relation"></a>`substring__bytea_int_int__unsupported_type`
+#### <a id="fail-substring__bytea_int_int__unsupported_type-TDS"></a><a id="fail-substring__bytea_int_int__unsupported_type-Relation"></a><a id="fail-substring__bytea_int_int__unsupported_type-Grammar"></a>`substring__bytea_int_int__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT SUBSTRING(E'\\xDEADBEEF'::bytea, 2, 2) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT SUBSTRING(E'\\xDEADBEEF'::bytea, 2, 2) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported Operation: Escaped Chars String Literal
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT SUBSTRING(E'\\xDEADBEEF'::bytea, 2, 2) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT SUBSTRING(E'\\xDEADBEEF'::bytea, 2, 2) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -9907,24 +17572,49 @@ SELECT SUBSTRING(E'\\xDEADBEEF'::bytea, 2, 2) AS result FROM func('e2e::rel_pers
 **Error:**
 > Unsupported Operation: Escaped Chars String Literal
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SUBSTRING(E'\\xDEADBEEF'::bytea, 2, 2) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT SUBSTRING(E'\\xDEADBEEF'::bytea, 2, 2) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported Operation: Escaped Chars String Literal
+
 
 <br>
 
-#### <a id="fail-regexp_instr__constant__extra_args_error-TDS"></a><a id="fail-regexp_instr__constant__extra_args_error-Relation"></a>`regexp_instr__constant__extra_args_error`
+#### <a id="fail-regexp_instr__constant__extra_args_error-TDS"></a><a id="fail-regexp_instr__constant__extra_args_error-Relation"></a><a id="fail-regexp_instr__constant__extra_args_error-Grammar"></a>`regexp_instr__constant__extra_args_error`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT REGEXP_INSTR('abc123', '[0-9]', 1) AS result FROM strings WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT REGEXP_INSTR('abc123', '[0-9]', 1) AS result FROM func('e2e::tds_strings') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> regexp_instr with a start position, occurrence or flags is not supported
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_INSTR('abc123', '[0-9]', 1) AS result FROM strings WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT REGEXP_INSTR('abc123', '[0-9]', 1) AS result FROM func('e2e::rel_strings') WHERE id = 1
 ```
@@ -9932,24 +17622,49 @@ SELECT REGEXP_INSTR('abc123', '[0-9]', 1) AS result FROM func('e2e::rel_strings'
 **Error:**
 > regexp_instr with a start position, occurrence or flags is not supported
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT REGEXP_INSTR('abc123', '[0-9]', 1) AS result FROM strings WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT REGEXP_INSTR('abc123', '[0-9]', 1) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): regexp_instr with a start position, occurrence or flags is not supported
+
 
 <br>
 
-#### <a id="fail-to_char__big_txt__from_table-TDS"></a><a id="fail-to_char__big_txt__from_table-Relation"></a>`to_char__big_txt__from_table`
+#### <a id="fail-to_char__big_txt__from_table-TDS"></a><a id="fail-to_char__big_txt__from_table-Relation"></a><a id="fail-to_char__big_txt__from_table-Grammar"></a>`to_char__big_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TO_CHAR(big_val, '9999999999') AS result FROM numbers WHERE big_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TO_CHAR(big_val, '9999999999') AS result FROM func('e2e::tds_numbers') WHERE big_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported: to_char currently only supported for date inputs
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TO_CHAR(big_val, '9999999999') AS result FROM numbers WHERE big_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TO_CHAR(big_val, '9999999999') AS result FROM func('e2e::rel_numbers') WHERE big_val IS NOT NULL ORDER BY 1
 ```
@@ -9957,24 +17672,49 @@ SELECT TO_CHAR(big_val, '9999999999') AS result FROM func('e2e::rel_numbers') WH
 **Error:**
 > Unsupported: to_char currently only supported for date inputs
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TO_CHAR(big_val, '9999999999') AS result FROM numbers WHERE big_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TO_CHAR(big_val, '9999999999') AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE big_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported: to_char currently only supported for date inputs
+
 
 <br>
 
-#### <a id="fail-to_char__dp_txt__from_table-TDS"></a><a id="fail-to_char__dp_txt__from_table-Relation"></a>`to_char__dp_txt__from_table`
+#### <a id="fail-to_char__dp_txt__from_table-TDS"></a><a id="fail-to_char__dp_txt__from_table-Relation"></a><a id="fail-to_char__dp_txt__from_table-Grammar"></a>`to_char__dp_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TO_CHAR(float_val, '999.99') AS result FROM numbers WHERE float_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TO_CHAR(float_val, '999.99') AS result FROM func('e2e::tds_numbers') WHERE float_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported: to_char currently only supported for date inputs
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TO_CHAR(float_val, '999.99') AS result FROM numbers WHERE float_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TO_CHAR(float_val, '999.99') AS result FROM func('e2e::rel_numbers') WHERE float_val IS NOT NULL ORDER BY 1
 ```
@@ -9982,24 +17722,49 @@ SELECT TO_CHAR(float_val, '999.99') AS result FROM func('e2e::rel_numbers') WHER
 **Error:**
 > Unsupported: to_char currently only supported for date inputs
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TO_CHAR(float_val, '999.99') AS result FROM numbers WHERE float_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TO_CHAR(float_val, '999.99') AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE float_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported: to_char currently only supported for date inputs
+
 
 <br>
 
-#### <a id="fail-to_char__int_txt__from_table-TDS"></a><a id="fail-to_char__int_txt__from_table-Relation"></a>`to_char__int_txt__from_table`
+#### <a id="fail-to_char__int_txt__from_table-TDS"></a><a id="fail-to_char__int_txt__from_table-Relation"></a><a id="fail-to_char__int_txt__from_table-Grammar"></a>`to_char__int_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TO_CHAR(int_val, '999999') AS result FROM numbers WHERE int_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TO_CHAR(int_val, '999999') AS result FROM func('e2e::tds_numbers') WHERE int_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported: to_char currently only supported for date inputs
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TO_CHAR(int_val, '999999') AS result FROM numbers WHERE int_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TO_CHAR(int_val, '999999') AS result FROM func('e2e::rel_numbers') WHERE int_val IS NOT NULL ORDER BY 1
 ```
@@ -10007,30 +17772,90 @@ SELECT TO_CHAR(int_val, '999999') AS result FROM func('e2e::rel_numbers') WHERE 
 **Error:**
 > Unsupported: to_char currently only supported for date inputs
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TO_CHAR(int_val, '999999') AS result FROM numbers WHERE int_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TO_CHAR(int_val, '999999') AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE int_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported: to_char currently only supported for date inputs
+
 
 <br>
 
-#### <a id="fail-to_char__num_txt__from_table-TDS"></a><a id="fail-to_char__num_txt__from_table-Relation"></a>`to_char__num_txt__from_table`
+#### <a id="fail-to_char__num_txt__from_table-TDS"></a><a id="fail-to_char__num_txt__from_table-Relation"></a><a id="fail-to_char__num_txt__from_table-Grammar"></a>`to_char__num_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TO_CHAR(numeric_val, '999999.99') AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TO_CHAR(numeric_val, '999999.99') AS result FROM func('e2e::tds_numbers') WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Unsupported: to_char currently only supported for date inputs
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TO_CHAR(numeric_val, '999999.99') AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TO_CHAR(numeric_val, '999999.99') AS result FROM func('e2e::rel_numbers') WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
 
 **Error:**
 > Unsupported: to_char currently only supported for date inputs
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TO_CHAR(numeric_val, '999999.99') AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TO_CHAR(numeric_val, '999999.99') AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported: to_char currently only supported for date inputs
+
+
+<br>
+
+#### <a id="fail-coalesce__all_null-Grammar"></a>`coalesce__all_null`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT COALESCE(NULL, NULL, NULL) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT COALESCE(NULL, NULL, NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/execution/execute, status=500): PureAssertFailException: Assert failure at (resource:/platform/pure/essential/tests/assert.pure line:26 column:5), "The type meta::pure::metamodel::type::Nil is not supported yet!"
 
 
 <br>
@@ -10135,7 +17960,7 @@ SELECT ARRAY_POSITION(ARRAY[1, 2, 3], 2) AS result FROM func('e2e::tds_numbers')
 
 <br>
 
-#### <a id="fail-array_position__anycompatiblearray_anycompatible_int__with_start-TDS"></a><a id="fail-array_position__anycompatiblearray_anycompatible_int__with_start-Relation"></a>`array_position__anycompatiblearray_anycompatible_int__with_start`
+#### <a id="fail-array_position__anycompatiblearray_anycompatible_int__with_start-TDS"></a><a id="fail-array_position__anycompatiblearray_anycompatible_int__with_start-Relation"></a><a id="fail-array_position__anycompatiblearray_anycompatible_int__with_start-Grammar"></a>`array_position__anycompatiblearray_anycompatible_int__with_start`
 
 📘 **TDS Path**
 
@@ -10167,30 +17992,70 @@ SELECT ARRAY_POSITION(ARRAY[1, 2, 3, 2], 2, 2) AS result FROM func('e2e::rel_num
 **Error:**
 > Unsupported: only two arg array_position supported
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT ARRAY_POSITION(ARRAY[1,2,3,2], 2, 2) AS result FROM numbers WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT ARRAY_POSITION(ARRAY[1, 2, 3, 2], 2, 2) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Unsupported: only two arg array_position supported
+
 
 <br>
 
-#### <a id="fail-avg__intv__from_table-TDS"></a><a id="fail-avg__intv__from_table-Relation"></a>`avg__intv__from_table`
+#### <a id="fail-avg__intv__from_table-TDS"></a><a id="fail-avg__intv__from_table-Relation"></a><a id="fail-avg__intv__from_table-Grammar"></a>`avg__intv__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT AVG(INTERVAL '1 day' * id) AS result FROM numbers WHERE id <= 3
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT AVG(INTERVAL '1 day' * id) AS result FROM func('e2e::tds_numbers') WHERE id <= 3
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> date arithmetic expression not currently supported
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT AVG(INTERVAL '1 day' * id) AS result FROM numbers WHERE id <= 3
+```
+
+**Legend SQL:**
 ```sql
 SELECT AVG(INTERVAL '1 day' * id) AS result FROM func('e2e::rel_numbers') WHERE id <= 3
 ```
 
 **Error:**
 > date arithmetic expression not currently supported
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT AVG(INTERVAL '1 day' * id) AS result FROM numbers WHERE id <= 3
+```
+
+**Legend SQL:**
+```sql
+SELECT AVG(INTERVAL '1 day' * id) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id <= 3
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): date arithmetic expression not currently supported
 
 
 <br>
@@ -10325,27 +18190,52 @@ SELECT MAX(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 
 <br>
 
-#### <a id="fail-max__char__no_generator-TDS"></a><a id="fail-max__char__no_generator-Relation"></a>`max__char__no_generator`
+#### <a id="fail-max__char__no_generator-TDS"></a><a id="fail-max__char__no_generator-Relation"></a><a id="fail-max__char__no_generator-Grammar"></a>`max__char__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MAX(name::char(10)) AS result FROM persons WHERE name IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MAX(name::char(10)) AS result FROM func('e2e::tds_persons') WHERE name IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> parameters not currently supported for this cast type
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(name::char(10)) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MAX(name::char(10)) AS result FROM func('e2e::rel_persons') WHERE name IS NOT NULL
 ```
 
 **Error:**
 > parameters not currently supported for this cast type
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(name::char(10)) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MAX(name::char(10)) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE name IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): parameters not currently supported for this cast type
 
 
 <br>
@@ -10375,27 +18265,52 @@ SELECT MAX(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 
 <br>
 
-#### <a id="fail-max__intv__from_table-TDS"></a><a id="fail-max__intv__from_table-Relation"></a>`max__intv__from_table`
+#### <a id="fail-max__intv__from_table-TDS"></a><a id="fail-max__intv__from_table-Relation"></a><a id="fail-max__intv__from_table-Grammar"></a>`max__intv__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MAX(INTERVAL '1 day' * id) AS result FROM numbers WHERE id <= 5
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MAX(INTERVAL '1 day' * id) AS result FROM func('e2e::tds_numbers') WHERE id <= 5
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> date arithmetic expression not currently supported
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(INTERVAL '1 day' * id) AS result FROM numbers WHERE id <= 5
+```
+
+**Legend SQL:**
 ```sql
 SELECT MAX(INTERVAL '1 day' * id) AS result FROM func('e2e::rel_numbers') WHERE id <= 5
 ```
 
 **Error:**
 > date arithmetic expression not currently supported
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(INTERVAL '1 day' * id) AS result FROM numbers WHERE id <= 5
+```
+
+**Legend SQL:**
+```sql
+SELECT MAX(INTERVAL '1 day' * id) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id <= 5
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): date arithmetic expression not currently supported
 
 
 <br>
@@ -10575,27 +18490,52 @@ SELECT MIN(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 
 <br>
 
-#### <a id="fail-min__char__no_generator-TDS"></a><a id="fail-min__char__no_generator-Relation"></a>`min__char__no_generator`
+#### <a id="fail-min__char__no_generator-TDS"></a><a id="fail-min__char__no_generator-Relation"></a><a id="fail-min__char__no_generator-Grammar"></a>`min__char__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MIN(name::char(10)) AS result FROM persons WHERE name IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MIN(name::char(10)) AS result FROM func('e2e::tds_persons') WHERE name IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> parameters not currently supported for this cast type
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(name::char(10)) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MIN(name::char(10)) AS result FROM func('e2e::rel_persons') WHERE name IS NOT NULL
 ```
 
 **Error:**
 > parameters not currently supported for this cast type
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(name::char(10)) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MIN(name::char(10)) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE name IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): parameters not currently supported for this cast type
 
 
 <br>
@@ -10625,27 +18565,52 @@ SELECT MIN(NULL) AS result FROM func('e2e::rel_persons') WHERE id = 1
 
 <br>
 
-#### <a id="fail-min__intv__from_table-TDS"></a><a id="fail-min__intv__from_table-Relation"></a>`min__intv__from_table`
+#### <a id="fail-min__intv__from_table-TDS"></a><a id="fail-min__intv__from_table-Relation"></a><a id="fail-min__intv__from_table-Grammar"></a>`min__intv__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MIN(INTERVAL '1 day' * id) AS result FROM numbers WHERE id <= 5
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MIN(INTERVAL '1 day' * id) AS result FROM func('e2e::tds_numbers') WHERE id <= 5
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> date arithmetic expression not currently supported
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(INTERVAL '1 day' * id) AS result FROM numbers WHERE id <= 5
+```
+
+**Legend SQL:**
 ```sql
 SELECT MIN(INTERVAL '1 day' * id) AS result FROM func('e2e::rel_numbers') WHERE id <= 5
 ```
 
 **Error:**
 > date arithmetic expression not currently supported
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(INTERVAL '1 day' * id) AS result FROM numbers WHERE id <= 5
+```
+
+**Legend SQL:**
+```sql
+SELECT MIN(INTERVAL '1 day' * id) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id <= 5
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): date arithmetic expression not currently supported
 
 
 <br>
@@ -10815,21 +18780,31 @@ SELECT PERCENT_RANK(NULL) AS result FROM func('e2e::tds_persons') WHERE id = 1
 
 <br>
 
-#### <a id="fail-percentile_cont__dpORDERBYintv__no_generator-TDS"></a><a id="fail-percentile_cont__dpORDERBYintv__no_generator-Relation"></a>`percentile_cont__dpORDERBYintv__no_generator`
+#### <a id="fail-percentile_cont__dpORDERBYintv__no_generator-TDS"></a><a id="fail-percentile_cont__dpORDERBYintv__no_generator-Relation"></a><a id="fail-percentile_cont__dpORDERBYintv__no_generator-Grammar"></a>`percentile_cont__dpORDERBYintv__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY INTERVAL '1 day' * id) AS result FROM numbers WHERE id <= 5
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY INTERVAL '1 day' * id) AS result FROM func('e2e::tds_numbers') WHERE id <= 5
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> date arithmetic expression not currently supported
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY INTERVAL '1 day' * id) AS result FROM numbers WHERE id <= 5
+```
+
+**Legend SQL:**
 ```sql
 SELECT PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY INTERVAL '1 day' * id) AS result FROM func('e2e::rel_numbers') WHERE id <= 5
 ```
@@ -10837,30 +18812,70 @@ SELECT PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY INTERVAL '1 day' * id) AS res
 **Error:**
 > date arithmetic expression not currently supported
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY INTERVAL '1 day' * id) AS result FROM numbers WHERE id <= 5
+```
+
+**Legend SQL:**
+```sql
+SELECT PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY INTERVAL '1 day' * id) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id <= 5
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): date arithmetic expression not currently supported
+
 
 <br>
 
-#### <a id="fail-percentile_cont__dp[]ORDERBYintv__no_generator-TDS"></a><a id="fail-percentile_cont__dp[]ORDERBYintv__no_generator-Relation"></a>`percentile_cont__dp[]ORDERBYintv__no_generator`
+#### <a id="fail-percentile_cont__dp[]ORDERBYintv__no_generator-TDS"></a><a id="fail-percentile_cont__dp[]ORDERBYintv__no_generator-Relation"></a><a id="fail-percentile_cont__dp[]ORDERBYintv__no_generator-Grammar"></a>`percentile_cont__dp[]ORDERBYintv__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT PERCENTILE_CONT(ARRAY[0.25, 0.5, 0.75]) WITHIN GROUP (ORDER BY INTERVAL '1 day' * id) AS result FROM numbers WHERE id <= 5
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT PERCENTILE_CONT(ARRAY[0.25, 0.5, 0.75]) WITHIN GROUP (ORDER BY INTERVAL '1 day' * id) AS result FROM func('e2e::tds_numbers') WHERE id <= 5
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> date arithmetic expression not currently supported
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT PERCENTILE_CONT(ARRAY[0.25, 0.5, 0.75]) WITHIN GROUP (ORDER BY INTERVAL '1 day' * id) AS result FROM numbers WHERE id <= 5
+```
+
+**Legend SQL:**
 ```sql
 SELECT PERCENTILE_CONT(ARRAY[0.25, 0.5, 0.75]) WITHIN GROUP (ORDER BY INTERVAL '1 day' * id) AS result FROM func('e2e::rel_numbers') WHERE id <= 5
 ```
 
 **Error:**
 > date arithmetic expression not currently supported
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT PERCENTILE_CONT(ARRAY[0.25, 0.5, 0.75]) WITHIN GROUP (ORDER BY INTERVAL '1 day' * id) AS result FROM numbers WHERE id <= 5
+```
+
+**Legend SQL:**
+```sql
+SELECT PERCENTILE_CONT(ARRAY[0.25, 0.5, 0.75]) WITHIN GROUP (ORDER BY INTERVAL '1 day' * id) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id <= 5
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): date arithmetic expression not currently supported
 
 
 <br>
@@ -11045,27 +19060,52 @@ SELECT dept_id, SUM(salary) FILTER (WHERE active) AS filtered, SUM(salary) AS to
 
 <br>
 
-#### <a id="fail-sum__intv__from_table-TDS"></a><a id="fail-sum__intv__from_table-Relation"></a>`sum__intv__from_table`
+#### <a id="fail-sum__intv__from_table-TDS"></a><a id="fail-sum__intv__from_table-Relation"></a><a id="fail-sum__intv__from_table-Grammar"></a>`sum__intv__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT SUM(INTERVAL '1 day' * id) AS result FROM numbers WHERE id <= 3
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT SUM(INTERVAL '1 day' * id) AS result FROM func('e2e::tds_numbers') WHERE id <= 3
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> date arithmetic expression not currently supported
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT SUM(INTERVAL '1 day' * id) AS result FROM numbers WHERE id <= 3
+```
+
+**Legend SQL:**
 ```sql
 SELECT SUM(INTERVAL '1 day' * id) AS result FROM func('e2e::rel_numbers') WHERE id <= 3
 ```
 
 **Error:**
 > date arithmetic expression not currently supported
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SUM(INTERVAL '1 day' * id) AS result FROM numbers WHERE id <= 3
+```
+
+**Legend SQL:**
+```sql
+SELECT SUM(INTERVAL '1 day' * id) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id <= 3
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): date arithmetic expression not currently supported
 
 
 <br>
@@ -11530,27 +19570,52 @@ SELECT g.val AS result FROM GENERATE_SERIES(0::numeric, 2::numeric, 0.5::numeric
 
 <br>
 
-#### <a id="fail-date_literal__infinity-TDS"></a><a id="fail-date_literal__infinity-Relation"></a>`date_literal__infinity`
+#### <a id="fail-date_literal__infinity-TDS"></a><a id="fail-date_literal__infinity-Relation"></a><a id="fail-date_literal__infinity-Grammar"></a>`date_literal__infinity`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TIMESTAMP 'infinity' AS result FROM dates LIMIT 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TIMESTAMP 'infinity' AS result FROM func('e2e::tds_dates') LIMIT 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> Execution error at ??, "Infinity dates are not supported in Pure"
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TIMESTAMP 'infinity' AS result FROM dates LIMIT 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TIMESTAMP 'infinity' AS result FROM func('e2e::rel_dates') LIMIT 1
 ```
 
 **Error:**
 > Execution error at ??, "Infinity dates are not supported in Pure"
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TIMESTAMP 'infinity' AS result FROM dates LIMIT 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TIMESTAMP 'infinity' AS result FROM func('e2e::rel_dates__Relation_1_') LIMIT 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): Execution error at ??, "Infinity dates are not supported in Pure"
 
 
 <br>
@@ -11577,21 +19642,31 @@ SELECT dept_id, COUNT(*) FILTER (WHERE active) AS result FROM func('e2e::tds_per
 
 ### TYPE_ERROR (90 tests)
 
-#### <a id="fail-trunc__macaddr__unsupported_type-TDS"></a><a id="fail-trunc__macaddr__unsupported_type-Relation"></a>`trunc__macaddr__unsupported_type`
+#### <a id="fail-trunc__macaddr__unsupported_type-TDS"></a><a id="fail-trunc__macaddr__unsupported_type-Relation"></a><a id="fail-trunc__macaddr__unsupported_type-Grammar"></a>`trunc__macaddr__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TRUNC('08:00:2b:01:02:03'::macaddr) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TRUNC('08:00:2b:01:02:03'::macaddr) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for MACADDR
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TRUNC('08:00:2b:01:02:03'::macaddr) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TRUNC('08:00:2b:01:02:03'::macaddr) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -11599,24 +19674,49 @@ SELECT TRUNC('08:00:2b:01:02:03'::macaddr) AS result FROM func('e2e::rel_persons
 **Error:**
 > No value found for MACADDR
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TRUNC('08:00:2b:01:02:03'::macaddr) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TRUNC('08:00:2b:01:02:03'::macaddr) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for MACADDR
+
 
 <br>
 
-#### <a id="fail-trunc__macaddr8__unsupported_type-TDS"></a><a id="fail-trunc__macaddr8__unsupported_type-Relation"></a>`trunc__macaddr8__unsupported_type`
+#### <a id="fail-trunc__macaddr8__unsupported_type-TDS"></a><a id="fail-trunc__macaddr8__unsupported_type-Relation"></a><a id="fail-trunc__macaddr8__unsupported_type-Grammar"></a>`trunc__macaddr8__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TRUNC('08:00:2b:01:02:03:04:05'::macaddr8) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TRUNC('08:00:2b:01:02:03:04:05'::macaddr8) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for MACADDR8
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TRUNC('08:00:2b:01:02:03:04:05'::macaddr8) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TRUNC('08:00:2b:01:02:03:04:05'::macaddr8) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -11624,24 +19724,49 @@ SELECT TRUNC('08:00:2b:01:02:03:04:05'::macaddr8) AS result FROM func('e2e::rel_
 **Error:**
 > No value found for MACADDR8
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TRUNC('08:00:2b:01:02:03:04:05'::macaddr8) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TRUNC('08:00:2b:01:02:03:04:05'::macaddr8) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for MACADDR8
+
 
 <br>
 
-#### <a id="fail-trunc__num__from_table-TDS"></a><a id="fail-trunc__num__from_table-Relation"></a>`trunc__num__from_table`
+#### <a id="fail-trunc__num__from_table-TDS"></a><a id="fail-trunc__num__from_table-Relation"></a><a id="fail-trunc__num__from_table-Grammar"></a>`trunc__num__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TRUNC(numeric_val) AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TRUNC(numeric_val) AS result FROM func('e2e::tds_numbers') WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> ERROR: integer out of range
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TRUNC(numeric_val) AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TRUNC(numeric_val) AS result FROM func('e2e::rel_numbers') WHERE numeric_val IS NOT NULL ORDER BY 1
 ```
@@ -11649,24 +19774,49 @@ SELECT TRUNC(numeric_val) AS result FROM func('e2e::rel_numbers') WHERE numeric_
 **Error:**
 > ERROR: integer out of range
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TRUNC(numeric_val) AS result FROM numbers WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TRUNC(numeric_val) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE numeric_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/execution/execute, status=500): PSQLException: ERROR: integer out of range
+
 
 <br>
 
-#### <a id="fail-decode__txt_txt__unsupported_type-TDS"></a><a id="fail-decode__txt_txt__unsupported_type-Relation"></a>`decode__txt_txt__unsupported_type`
+#### <a id="fail-decode__txt_txt__unsupported_type-TDS"></a><a id="fail-decode__txt_txt__unsupported_type-Relation"></a><a id="fail-decode__txt_txt__unsupported_type-Grammar"></a>`decode__txt_txt__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT DECODE('deadbeef', 'hex') AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT DECODE('deadbeef', 'hex') AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for hex, expected one of [base64]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT DECODE('deadbeef', 'hex') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT DECODE('deadbeef', 'hex') AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -11674,24 +19824,49 @@ SELECT DECODE('deadbeef', 'hex') AS result FROM func('e2e::rel_persons') WHERE i
 **Error:**
 > No value found for hex, expected one of [base64]
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT DECODE('deadbeef', 'hex') AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT DECODE('deadbeef', 'hex') AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for hex, expected one of [base64]
+
 
 <br>
 
-#### <a id="fail-length__lseg__unsupported_type-TDS"></a><a id="fail-length__lseg__unsupported_type-Relation"></a>`length__lseg__unsupported_type`
+#### <a id="fail-length__lseg__unsupported_type-TDS"></a><a id="fail-length__lseg__unsupported_type-Relation"></a><a id="fail-length__lseg__unsupported_type-Grammar"></a>`length__lseg__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT LENGTH('[(0,0),(3,4)]'::lseg) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT LENGTH('[(0,0),(3,4)]'::lseg) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for LSEG
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT LENGTH('[(0,0),(3,4)]'::lseg) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT LENGTH('[(0,0),(3,4)]'::lseg) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -11699,24 +19874,49 @@ SELECT LENGTH('[(0,0),(3,4)]'::lseg) AS result FROM func('e2e::rel_persons') WHE
 **Error:**
 > No value found for LSEG
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT LENGTH('[(0,0),(3,4)]'::lseg) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT LENGTH('[(0,0),(3,4)]'::lseg) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for LSEG
+
 
 <br>
 
-#### <a id="fail-length__path__unsupported_type-TDS"></a><a id="fail-length__path__unsupported_type-Relation"></a>`length__path__unsupported_type`
+#### <a id="fail-length__path__unsupported_type-TDS"></a><a id="fail-length__path__unsupported_type-Relation"></a><a id="fail-length__path__unsupported_type-Grammar"></a>`length__path__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT LENGTH('((0,0),(1,1),(2,0))'::path) AS result FROM persons WHERE id = 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT LENGTH('((0,0),(1,1),(2,0))'::path) AS result FROM func('e2e::tds_persons') WHERE id = 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for PATH
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT LENGTH('((0,0),(1,1),(2,0))'::path) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT LENGTH('((0,0),(1,1),(2,0))'::path) AS result FROM func('e2e::rel_persons') WHERE id = 1
 ```
@@ -11724,24 +19924,49 @@ SELECT LENGTH('((0,0),(1,1),(2,0))'::path) AS result FROM func('e2e::rel_persons
 **Error:**
 > No value found for PATH
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT LENGTH('((0,0),(1,1),(2,0))'::path) AS result FROM persons WHERE id = 1
+```
+
+**Legend SQL:**
+```sql
+SELECT LENGTH('((0,0),(1,1),(2,0))'::path) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for PATH
+
 
 <br>
 
-#### <a id="fail-to_char__real_txt__from_table-TDS"></a><a id="fail-to_char__real_txt__from_table-Relation"></a>`to_char__real_txt__from_table`
+#### <a id="fail-to_char__real_txt__from_table-TDS"></a><a id="fail-to_char__real_txt__from_table-Relation"></a><a id="fail-to_char__real_txt__from_table-Grammar"></a>`to_char__real_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TO_CHAR(float_val::real, '999.99') AS result FROM numbers WHERE float_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TO_CHAR(float_val::real, '999.99') AS result FROM func('e2e::tds_numbers') WHERE float_val IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for REAL, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TO_CHAR(float_val::real, '999.99') AS result FROM numbers WHERE float_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TO_CHAR(float_val::real, '999.99') AS result FROM func('e2e::rel_numbers') WHERE float_val IS NOT NULL ORDER BY 1
 ```
@@ -11749,24 +19974,49 @@ SELECT TO_CHAR(float_val::real, '999.99') AS result FROM func('e2e::rel_numbers'
 **Error:**
 > No value found for REAL, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TO_CHAR(float_val::real, '999.99') AS result FROM numbers WHERE float_val IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TO_CHAR(float_val::real, '999.99') AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE float_val IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for REAL, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
 
 <br>
 
-#### <a id="fail-to_char__tstz_txt__from_table-TDS"></a><a id="fail-to_char__tstz_txt__from_table-Relation"></a>`to_char__tstz_txt__from_table`
+#### <a id="fail-to_char__tstz_txt__from_table-TDS"></a><a id="fail-to_char__tstz_txt__from_table-Relation"></a><a id="fail-to_char__tstz_txt__from_table-Grammar"></a>`to_char__tstz_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT TO_CHAR(tsz::timestamptz, 'YYYY-MM-DD HH24:MI:SS TZ') AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT TO_CHAR(tsz::timestamptz, 'YYYY-MM-DD HH24:MI:SS TZ') AS result FROM func('e2e::tds_dates') WHERE tsz IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT TO_CHAR(tsz::timestamptz, 'YYYY-MM-DD HH24:MI:SS TZ') AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT TO_CHAR(tsz::timestamptz, 'YYYY-MM-DD HH24:MI:SS TZ') AS result FROM func('e2e::rel_dates') WHERE tsz IS NOT NULL ORDER BY 1
 ```
@@ -11774,24 +20024,49 @@ SELECT TO_CHAR(tsz::timestamptz, 'YYYY-MM-DD HH24:MI:SS TZ') AS result FROM func
 **Error:**
 > No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT TO_CHAR(tsz::timestamptz, 'YYYY-MM-DD HH24:MI:SS TZ') AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT TO_CHAR(tsz::timestamptz, 'YYYY-MM-DD HH24:MI:SS TZ') AS result FROM func('e2e::rel_dates__Relation_1_') WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
 
 <br>
 
-#### <a id="fail-date_part__txt_tstz__from_table-TDS"></a><a id="fail-date_part__txt_tstz__from_table-Relation"></a>`date_part__txt_tstz__from_table`
+#### <a id="fail-date_part__txt_tstz__from_table-TDS"></a><a id="fail-date_part__txt_tstz__from_table-Relation"></a><a id="fail-date_part__txt_tstz__from_table-Grammar"></a>`date_part__txt_tstz__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT DATE_PART('year', tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT DATE_PART('year', tsz::timestamptz) AS result FROM func('e2e::tds_dates') WHERE tsz IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT DATE_PART('year', tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT DATE_PART('year', tsz::timestamptz) AS result FROM func('e2e::rel_dates') WHERE tsz IS NOT NULL ORDER BY 1
 ```
@@ -11799,24 +20074,49 @@ SELECT DATE_PART('year', tsz::timestamptz) AS result FROM func('e2e::rel_dates')
 **Error:**
 > No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT DATE_PART('year', tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT DATE_PART('year', tsz::timestamptz) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
 
 <br>
 
-#### <a id="fail-date_trunc__txt_tstz__from_table-TDS"></a><a id="fail-date_trunc__txt_tstz__from_table-Relation"></a>`date_trunc__txt_tstz__from_table`
+#### <a id="fail-date_trunc__txt_tstz__from_table-TDS"></a><a id="fail-date_trunc__txt_tstz__from_table-Relation"></a><a id="fail-date_trunc__txt_tstz__from_table-Grammar"></a>`date_trunc__txt_tstz__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT DATE_TRUNC('month', tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT DATE_TRUNC('month', tsz::timestamptz) AS result FROM func('e2e::tds_dates') WHERE tsz IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT DATE_TRUNC('month', tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT DATE_TRUNC('month', tsz::timestamptz) AS result FROM func('e2e::rel_dates') WHERE tsz IS NOT NULL ORDER BY 1
 ```
@@ -11824,24 +20124,49 @@ SELECT DATE_TRUNC('month', tsz::timestamptz) AS result FROM func('e2e::rel_dates
 **Error:**
 > No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
-
-<br>
-
-#### <a id="fail-date_trunc__txt_tstz_txt__from_table-TDS"></a><a id="fail-date_trunc__txt_tstz_txt__from_table-Relation"></a>`date_trunc__txt_tstz_txt__from_table`
-
-🔴 **Failed in both TDS and Relation**
+📙 **Grammar Path**
 
 **Input SQL:**
 ```sql
 SELECT DATE_TRUNC('month', tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
+```sql
+SELECT DATE_TRUNC('month', tsz::timestamptz) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+
+<br>
+
+#### <a id="fail-date_trunc__txt_tstz_txt__from_table-TDS"></a><a id="fail-date_trunc__txt_tstz_txt__from_table-Relation"></a><a id="fail-date_trunc__txt_tstz_txt__from_table-Grammar"></a>`date_trunc__txt_tstz_txt__from_table`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT DATE_TRUNC('month', tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT DATE_TRUNC('month', tsz::timestamptz) AS result FROM func('e2e::tds_dates') WHERE tsz IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT DATE_TRUNC('month', tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT DATE_TRUNC('month', tsz::timestamptz) AS result FROM func('e2e::rel_dates') WHERE tsz IS NOT NULL ORDER BY 1
 ```
@@ -11849,24 +20174,49 @@ SELECT DATE_TRUNC('month', tsz::timestamptz) AS result FROM func('e2e::rel_dates
 **Error:**
 > No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT DATE_TRUNC('month', tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT DATE_TRUNC('month', tsz::timestamptz) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
 
 <br>
 
-#### <a id="fail-extract__txt_timetz__from_table-TDS"></a><a id="fail-extract__txt_timetz__from_table-Relation"></a>`extract__txt_timetz__from_table`
+#### <a id="fail-extract__txt_timetz__from_table-TDS"></a><a id="fail-extract__txt_timetz__from_table-Relation"></a><a id="fail-extract__txt_timetz__from_table-Grammar"></a>`extract__txt_timetz__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT EXTRACT(YEAR FROM tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT EXTRACT(YEAR FROM tsz::timestamptz) AS result FROM func('e2e::tds_dates') WHERE tsz IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT EXTRACT(YEAR FROM tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT EXTRACT(YEAR FROM tsz::timestamptz) AS result FROM func('e2e::rel_dates') WHERE tsz IS NOT NULL ORDER BY 1
 ```
@@ -11874,24 +20224,49 @@ SELECT EXTRACT(YEAR FROM tsz::timestamptz) AS result FROM func('e2e::rel_dates')
 **Error:**
 > No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
-
-<br>
-
-#### <a id="fail-extract__txt_time__from_table-TDS"></a><a id="fail-extract__txt_time__from_table-Relation"></a>`extract__txt_time__from_table`
-
-🔴 **Failed in both TDS and Relation**
+📙 **Grammar Path**
 
 **Input SQL:**
 ```sql
 SELECT EXTRACT(YEAR FROM tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
+```sql
+SELECT EXTRACT(YEAR FROM tsz::timestamptz) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+
+<br>
+
+#### <a id="fail-extract__txt_time__from_table-TDS"></a><a id="fail-extract__txt_time__from_table-Relation"></a><a id="fail-extract__txt_time__from_table-Grammar"></a>`extract__txt_time__from_table`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT EXTRACT(YEAR FROM tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT EXTRACT(YEAR FROM tsz::timestamptz) AS result FROM func('e2e::tds_dates') WHERE tsz IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT EXTRACT(YEAR FROM tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT EXTRACT(YEAR FROM tsz::timestamptz) AS result FROM func('e2e::rel_dates') WHERE tsz IS NOT NULL ORDER BY 1
 ```
@@ -11899,30 +20274,70 @@ SELECT EXTRACT(YEAR FROM tsz::timestamptz) AS result FROM func('e2e::rel_dates')
 **Error:**
 > No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
-
-<br>
-
-#### <a id="fail-extract__txt_tstz__from_table-TDS"></a><a id="fail-extract__txt_tstz__from_table-Relation"></a>`extract__txt_tstz__from_table`
-
-🔴 **Failed in both TDS and Relation**
+📙 **Grammar Path**
 
 **Input SQL:**
 ```sql
 SELECT EXTRACT(YEAR FROM tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
+```sql
+SELECT EXTRACT(YEAR FROM tsz::timestamptz) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+
+<br>
+
+#### <a id="fail-extract__txt_tstz__from_table-TDS"></a><a id="fail-extract__txt_tstz__from_table-Relation"></a><a id="fail-extract__txt_tstz__from_table-Grammar"></a>`extract__txt_tstz__from_table`
+
+📘 **TDS Path**
+
+**Input SQL:**
+```sql
+SELECT EXTRACT(YEAR FROM tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT EXTRACT(YEAR FROM tsz::timestamptz) AS result FROM func('e2e::tds_dates') WHERE tsz IS NOT NULL ORDER BY 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT EXTRACT(YEAR FROM tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT EXTRACT(YEAR FROM tsz::timestamptz) AS result FROM func('e2e::rel_dates') WHERE tsz IS NOT NULL ORDER BY 1
 ```
 
 **Error:**
 > No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT EXTRACT(YEAR FROM tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT EXTRACT(YEAR FROM tsz::timestamptz) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE tsz IS NOT NULL ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
 
 <br>
@@ -12787,27 +21202,52 @@ SELECT JSON_OBJECT_AGG(id, json_val ->> 'b') AS result FROM func('e2e::tds_json_
 
 <br>
 
-#### <a id="fail-avg__real__from_table-TDS"></a><a id="fail-avg__real__from_table-Relation"></a>`avg__real__from_table`
+#### <a id="fail-avg__real__from_table-TDS"></a><a id="fail-avg__real__from_table-Relation"></a><a id="fail-avg__real__from_table-Grammar"></a>`avg__real__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT AVG(float_val::real) AS result FROM numbers WHERE float_val IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT AVG(float_val::real) AS result FROM func('e2e::tds_numbers') WHERE float_val IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for REAL, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT AVG(float_val::real) AS result FROM numbers WHERE float_val IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT AVG(float_val::real) AS result FROM func('e2e::rel_numbers') WHERE float_val IS NOT NULL
 ```
 
 **Error:**
 > No value found for REAL, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT AVG(float_val::real) AS result FROM numbers WHERE float_val IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT AVG(float_val::real) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE float_val IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for REAL, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
 
 <br>
@@ -12852,21 +21292,31 @@ SELECT JSONB_AGG(jsonb_val ->> 'b') AS result FROM func('e2e::tds_json_data') WH
 
 <br>
 
-#### <a id="fail-max__anyenum__no_generator-TDS"></a><a id="fail-max__anyenum__no_generator-Relation"></a>`max__anyenum__no_generator`
+#### <a id="fail-max__anyenum__no_generator-TDS"></a><a id="fail-max__anyenum__no_generator-Relation"></a><a id="fail-max__anyenum__no_generator-Grammar"></a>`max__anyenum__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MAX(name::mood) AS result FROM persons WHERE name IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MAX(name::mood) AS result FROM func('e2e::tds_persons') WHERE name IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for MOOD
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(name::mood) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MAX(name::mood) AS result FROM func('e2e::rel_persons') WHERE name IS NOT NULL
 ```
@@ -12874,24 +21324,50 @@ SELECT MAX(name::mood) AS result FROM func('e2e::rel_persons') WHERE name IS NOT
 **Error:**
 > No value found for MOOD
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(name::mood) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MAX(name::mood) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE name IS NOT NULL
+```
+
+**Error:**
+> Postgres: ERROR: type "mood" does not exist
+>   Position: 18 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for MOOD
+
 
 <br>
 
-#### <a id="fail-max__inet__no_generator-TDS"></a><a id="fail-max__inet__no_generator-Relation"></a>`max__inet__no_generator`
+#### <a id="fail-max__inet__no_generator-TDS"></a><a id="fail-max__inet__no_generator-Relation"></a><a id="fail-max__inet__no_generator-Grammar"></a>`max__inet__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MAX(name::inet) AS result FROM persons WHERE name IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MAX(name::inet) AS result FROM func('e2e::tds_persons') WHERE name IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for INET
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(name::inet) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MAX(name::inet) AS result FROM func('e2e::rel_persons') WHERE name IS NOT NULL
 ```
@@ -12899,24 +21375,49 @@ SELECT MAX(name::inet) AS result FROM func('e2e::rel_persons') WHERE name IS NOT
 **Error:**
 > No value found for INET
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(name::inet) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MAX(name::inet) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE name IS NOT NULL
+```
+
+**Error:**
+> Postgres: ERROR: invalid input syntax for type inet: "Alice" | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for INET
+
 
 <br>
 
-#### <a id="fail-max__money__no_generator-TDS"></a><a id="fail-max__money__no_generator-Relation"></a>`max__money__no_generator`
+#### <a id="fail-max__money__no_generator-TDS"></a><a id="fail-max__money__no_generator-Relation"></a><a id="fail-max__money__no_generator-Grammar"></a>`max__money__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MAX(salary::money) AS result FROM persons WHERE salary IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MAX(salary::money) AS result FROM func('e2e::tds_persons') WHERE salary IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for MONEY, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(salary::money) AS result FROM persons WHERE salary IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MAX(salary::money) AS result FROM func('e2e::rel_persons') WHERE salary IS NOT NULL
 ```
@@ -12924,24 +21425,49 @@ SELECT MAX(salary::money) AS result FROM func('e2e::rel_persons') WHERE salary I
 **Error:**
 > No value found for MONEY, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(salary::money) AS result FROM persons WHERE salary IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MAX(salary::money) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE salary IS NOT NULL
+```
+
+**Error:**
+> Postgres: Bad value for type double : 120,000.00 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for MONEY, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
 
 <br>
 
-#### <a id="fail-max__oid__no_generator-TDS"></a><a id="fail-max__oid__no_generator-Relation"></a>`max__oid__no_generator`
+#### <a id="fail-max__oid__no_generator-TDS"></a><a id="fail-max__oid__no_generator-Relation"></a><a id="fail-max__oid__no_generator-Grammar"></a>`max__oid__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MAX(id::oid) AS result FROM persons WHERE id IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MAX(id::oid) AS result FROM func('e2e::tds_persons') WHERE id IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for OID, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(id::oid) AS result FROM persons WHERE id IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MAX(id::oid) AS result FROM func('e2e::rel_persons') WHERE id IS NOT NULL
 ```
@@ -12949,24 +21475,49 @@ SELECT MAX(id::oid) AS result FROM func('e2e::rel_persons') WHERE id IS NOT NULL
 **Error:**
 > No value found for OID, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(id::oid) AS result FROM persons WHERE id IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MAX(id::oid) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for OID, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
 
 <br>
 
-#### <a id="fail-max__pg_lsn__no_generator-TDS"></a><a id="fail-max__pg_lsn__no_generator-Relation"></a>`max__pg_lsn__no_generator`
+#### <a id="fail-max__pg_lsn__no_generator-TDS"></a><a id="fail-max__pg_lsn__no_generator-Relation"></a><a id="fail-max__pg_lsn__no_generator-Grammar"></a>`max__pg_lsn__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MAX(name::pg_lsn) AS result FROM persons WHERE name IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MAX(name::pg_lsn) AS result FROM func('e2e::tds_persons') WHERE name IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for PG_LSN
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(name::pg_lsn) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MAX(name::pg_lsn) AS result FROM func('e2e::rel_persons') WHERE name IS NOT NULL
 ```
@@ -12974,24 +21525,49 @@ SELECT MAX(name::pg_lsn) AS result FROM func('e2e::rel_persons') WHERE name IS N
 **Error:**
 > No value found for PG_LSN
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(name::pg_lsn) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MAX(name::pg_lsn) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE name IS NOT NULL
+```
+
+**Error:**
+> Postgres: ERROR: invalid input syntax for type pg_lsn: "Alice" | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for PG_LSN
+
 
 <br>
 
-#### <a id="fail-max__real__from_table-TDS"></a><a id="fail-max__real__from_table-Relation"></a>`max__real__from_table`
+#### <a id="fail-max__real__from_table-TDS"></a><a id="fail-max__real__from_table-Relation"></a><a id="fail-max__real__from_table-Grammar"></a>`max__real__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MAX(float_val::real) AS result FROM numbers WHERE float_val IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MAX(float_val::real) AS result FROM func('e2e::tds_numbers') WHERE float_val IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for REAL, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(float_val::real) AS result FROM numbers WHERE float_val IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MAX(float_val::real) AS result FROM func('e2e::rel_numbers') WHERE float_val IS NOT NULL
 ```
@@ -12999,24 +21575,49 @@ SELECT MAX(float_val::real) AS result FROM func('e2e::rel_numbers') WHERE float_
 **Error:**
 > No value found for REAL, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(float_val::real) AS result FROM numbers WHERE float_val IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MAX(float_val::real) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE float_val IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for REAL, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
 
 <br>
 
-#### <a id="fail-max__tid__no_generator-TDS"></a><a id="fail-max__tid__no_generator-Relation"></a>`max__tid__no_generator`
+#### <a id="fail-max__tid__no_generator-TDS"></a><a id="fail-max__tid__no_generator-Relation"></a><a id="fail-max__tid__no_generator-Grammar"></a>`max__tid__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MAX(name::tid) AS result FROM persons WHERE name IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MAX(name::tid) AS result FROM func('e2e::tds_persons') WHERE name IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for TID
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(name::tid) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MAX(name::tid) AS result FROM func('e2e::rel_persons') WHERE name IS NOT NULL
 ```
@@ -13024,24 +21625,49 @@ SELECT MAX(name::tid) AS result FROM func('e2e::rel_persons') WHERE name IS NOT 
 **Error:**
 > No value found for TID
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(name::tid) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MAX(name::tid) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE name IS NOT NULL
+```
+
+**Error:**
+> Postgres: ERROR: invalid input syntax for type tid: "Alice" | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for TID
+
 
 <br>
 
-#### <a id="fail-max__timetz__no_generator-TDS"></a><a id="fail-max__timetz__no_generator-Relation"></a>`max__timetz__no_generator`
+#### <a id="fail-max__timetz__no_generator-TDS"></a><a id="fail-max__timetz__no_generator-Relation"></a><a id="fail-max__timetz__no_generator-Grammar"></a>`max__timetz__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MAX(ts::timetz) AS result FROM dates WHERE ts IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MAX(ts::timetz) AS result FROM func('e2e::tds_dates') WHERE ts IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for TIMETZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(ts::timetz) AS result FROM dates WHERE ts IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MAX(ts::timetz) AS result FROM func('e2e::rel_dates') WHERE ts IS NOT NULL
 ```
@@ -13049,24 +21675,50 @@ SELECT MAX(ts::timetz) AS result FROM func('e2e::rel_dates') WHERE ts IS NOT NUL
 **Error:**
 > No value found for TIMETZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(ts::timetz) AS result FROM dates WHERE ts IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MAX(ts::timetz) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE ts IS NOT NULL
+```
+
+**Error:**
+> Postgres: ERROR: cannot cast type timestamp without time zone to time with time zone
+>   Position: 14 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for TIMETZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
 
 <br>
 
-#### <a id="fail-max__time__no_generator-TDS"></a><a id="fail-max__time__no_generator-Relation"></a>`max__time__no_generator`
+#### <a id="fail-max__time__no_generator-TDS"></a><a id="fail-max__time__no_generator-Relation"></a><a id="fail-max__time__no_generator-Grammar"></a>`max__time__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MAX(ts::time) AS result FROM dates WHERE ts IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MAX(ts::time) AS result FROM func('e2e::tds_dates') WHERE ts IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for TIME, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(ts::time) AS result FROM dates WHERE ts IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MAX(ts::time) AS result FROM func('e2e::rel_dates') WHERE ts IS NOT NULL
 ```
@@ -13074,24 +21726,49 @@ SELECT MAX(ts::time) AS result FROM func('e2e::rel_dates') WHERE ts IS NOT NULL
 **Error:**
 > No value found for TIME, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(ts::time) AS result FROM dates WHERE ts IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MAX(ts::time) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE ts IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for TIME, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
 
 <br>
 
-#### <a id="fail-max__tstz__from_table-TDS"></a><a id="fail-max__tstz__from_table-Relation"></a>`max__tstz__from_table`
+#### <a id="fail-max__tstz__from_table-TDS"></a><a id="fail-max__tstz__from_table-Relation"></a><a id="fail-max__tstz__from_table-Grammar"></a>`max__tstz__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MAX(tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MAX(tsz::timestamptz) AS result FROM func('e2e::tds_dates') WHERE tsz IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MAX(tsz::timestamptz) AS result FROM func('e2e::rel_dates') WHERE tsz IS NOT NULL
 ```
@@ -13099,24 +21776,49 @@ SELECT MAX(tsz::timestamptz) AS result FROM func('e2e::rel_dates') WHERE tsz IS 
 **Error:**
 > No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MAX(tsz::timestamptz) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE tsz IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
 
 <br>
 
-#### <a id="fail-max__xid8__no_generator-TDS"></a><a id="fail-max__xid8__no_generator-Relation"></a>`max__xid8__no_generator`
+#### <a id="fail-max__xid8__no_generator-TDS"></a><a id="fail-max__xid8__no_generator-Relation"></a><a id="fail-max__xid8__no_generator-Grammar"></a>`max__xid8__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MAX(id::xid8) AS result FROM persons WHERE id IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MAX(id::xid8) AS result FROM func('e2e::tds_persons') WHERE id IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for XID8, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(id::xid8) AS result FROM persons WHERE id IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MAX(id::xid8) AS result FROM func('e2e::rel_persons') WHERE id IS NOT NULL
 ```
@@ -13124,24 +21826,50 @@ SELECT MAX(id::xid8) AS result FROM func('e2e::rel_persons') WHERE id IS NOT NUL
 **Error:**
 > No value found for XID8, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MAX(id::xid8) AS result FROM persons WHERE id IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MAX(id::xid8) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id IS NOT NULL
+```
+
+**Error:**
+> Postgres: ERROR: cannot cast type integer to xid8
+>   Position: 14 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for XID8, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
 
 <br>
 
-#### <a id="fail-min__anyenum__no_generator-TDS"></a><a id="fail-min__anyenum__no_generator-Relation"></a>`min__anyenum__no_generator`
+#### <a id="fail-min__anyenum__no_generator-TDS"></a><a id="fail-min__anyenum__no_generator-Relation"></a><a id="fail-min__anyenum__no_generator-Grammar"></a>`min__anyenum__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MIN(name::mood) AS result FROM persons WHERE name IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MIN(name::mood) AS result FROM func('e2e::tds_persons') WHERE name IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for MOOD
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(name::mood) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MIN(name::mood) AS result FROM func('e2e::rel_persons') WHERE name IS NOT NULL
 ```
@@ -13149,24 +21877,50 @@ SELECT MIN(name::mood) AS result FROM func('e2e::rel_persons') WHERE name IS NOT
 **Error:**
 > No value found for MOOD
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(name::mood) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MIN(name::mood) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE name IS NOT NULL
+```
+
+**Error:**
+> Postgres: ERROR: type "mood" does not exist
+>   Position: 18 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for MOOD
+
 
 <br>
 
-#### <a id="fail-min__inet__no_generator-TDS"></a><a id="fail-min__inet__no_generator-Relation"></a>`min__inet__no_generator`
+#### <a id="fail-min__inet__no_generator-TDS"></a><a id="fail-min__inet__no_generator-Relation"></a><a id="fail-min__inet__no_generator-Grammar"></a>`min__inet__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MIN(name::inet) AS result FROM persons WHERE name IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MIN(name::inet) AS result FROM func('e2e::tds_persons') WHERE name IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for INET
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(name::inet) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MIN(name::inet) AS result FROM func('e2e::rel_persons') WHERE name IS NOT NULL
 ```
@@ -13174,24 +21928,49 @@ SELECT MIN(name::inet) AS result FROM func('e2e::rel_persons') WHERE name IS NOT
 **Error:**
 > No value found for INET
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(name::inet) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MIN(name::inet) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE name IS NOT NULL
+```
+
+**Error:**
+> Postgres: ERROR: invalid input syntax for type inet: "Alice" | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for INET
+
 
 <br>
 
-#### <a id="fail-min__money__no_generator-TDS"></a><a id="fail-min__money__no_generator-Relation"></a>`min__money__no_generator`
+#### <a id="fail-min__money__no_generator-TDS"></a><a id="fail-min__money__no_generator-Relation"></a><a id="fail-min__money__no_generator-Grammar"></a>`min__money__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MIN(salary::money) AS result FROM persons WHERE salary IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MIN(salary::money) AS result FROM func('e2e::tds_persons') WHERE salary IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for MONEY, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(salary::money) AS result FROM persons WHERE salary IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MIN(salary::money) AS result FROM func('e2e::rel_persons') WHERE salary IS NOT NULL
 ```
@@ -13199,24 +21978,49 @@ SELECT MIN(salary::money) AS result FROM func('e2e::rel_persons') WHERE salary I
 **Error:**
 > No value found for MONEY, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(salary::money) AS result FROM persons WHERE salary IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MIN(salary::money) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE salary IS NOT NULL
+```
+
+**Error:**
+> Postgres: Bad value for type double : 45,000.00 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for MONEY, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
 
 <br>
 
-#### <a id="fail-min__oid__no_generator-TDS"></a><a id="fail-min__oid__no_generator-Relation"></a>`min__oid__no_generator`
+#### <a id="fail-min__oid__no_generator-TDS"></a><a id="fail-min__oid__no_generator-Relation"></a><a id="fail-min__oid__no_generator-Grammar"></a>`min__oid__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MIN(id::oid) AS result FROM persons WHERE id IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MIN(id::oid) AS result FROM func('e2e::tds_persons') WHERE id IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for OID, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(id::oid) AS result FROM persons WHERE id IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MIN(id::oid) AS result FROM func('e2e::rel_persons') WHERE id IS NOT NULL
 ```
@@ -13224,24 +22028,49 @@ SELECT MIN(id::oid) AS result FROM func('e2e::rel_persons') WHERE id IS NOT NULL
 **Error:**
 > No value found for OID, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(id::oid) AS result FROM persons WHERE id IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MIN(id::oid) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for OID, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
 
 <br>
 
-#### <a id="fail-min__pg_lsn__no_generator-TDS"></a><a id="fail-min__pg_lsn__no_generator-Relation"></a>`min__pg_lsn__no_generator`
+#### <a id="fail-min__pg_lsn__no_generator-TDS"></a><a id="fail-min__pg_lsn__no_generator-Relation"></a><a id="fail-min__pg_lsn__no_generator-Grammar"></a>`min__pg_lsn__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MIN(name::pg_lsn) AS result FROM persons WHERE name IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MIN(name::pg_lsn) AS result FROM func('e2e::tds_persons') WHERE name IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for PG_LSN
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(name::pg_lsn) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MIN(name::pg_lsn) AS result FROM func('e2e::rel_persons') WHERE name IS NOT NULL
 ```
@@ -13249,24 +22078,49 @@ SELECT MIN(name::pg_lsn) AS result FROM func('e2e::rel_persons') WHERE name IS N
 **Error:**
 > No value found for PG_LSN
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(name::pg_lsn) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MIN(name::pg_lsn) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE name IS NOT NULL
+```
+
+**Error:**
+> Postgres: ERROR: invalid input syntax for type pg_lsn: "Alice" | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for PG_LSN
+
 
 <br>
 
-#### <a id="fail-min__real__from_table-TDS"></a><a id="fail-min__real__from_table-Relation"></a>`min__real__from_table`
+#### <a id="fail-min__real__from_table-TDS"></a><a id="fail-min__real__from_table-Relation"></a><a id="fail-min__real__from_table-Grammar"></a>`min__real__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MIN(float_val::real) AS result FROM numbers WHERE float_val IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MIN(float_val::real) AS result FROM func('e2e::tds_numbers') WHERE float_val IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for REAL, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(float_val::real) AS result FROM numbers WHERE float_val IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MIN(float_val::real) AS result FROM func('e2e::rel_numbers') WHERE float_val IS NOT NULL
 ```
@@ -13274,24 +22128,49 @@ SELECT MIN(float_val::real) AS result FROM func('e2e::rel_numbers') WHERE float_
 **Error:**
 > No value found for REAL, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(float_val::real) AS result FROM numbers WHERE float_val IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MIN(float_val::real) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE float_val IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for REAL, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
 
 <br>
 
-#### <a id="fail-min__tid__no_generator-TDS"></a><a id="fail-min__tid__no_generator-Relation"></a>`min__tid__no_generator`
+#### <a id="fail-min__tid__no_generator-TDS"></a><a id="fail-min__tid__no_generator-Relation"></a><a id="fail-min__tid__no_generator-Grammar"></a>`min__tid__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MIN(name::tid) AS result FROM persons WHERE name IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MIN(name::tid) AS result FROM func('e2e::tds_persons') WHERE name IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for TID
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(name::tid) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MIN(name::tid) AS result FROM func('e2e::rel_persons') WHERE name IS NOT NULL
 ```
@@ -13299,24 +22178,49 @@ SELECT MIN(name::tid) AS result FROM func('e2e::rel_persons') WHERE name IS NOT 
 **Error:**
 > No value found for TID
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(name::tid) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MIN(name::tid) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE name IS NOT NULL
+```
+
+**Error:**
+> Postgres: ERROR: invalid input syntax for type tid: "Alice" | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for TID
+
 
 <br>
 
-#### <a id="fail-min__timetz__no_generator-TDS"></a><a id="fail-min__timetz__no_generator-Relation"></a>`min__timetz__no_generator`
+#### <a id="fail-min__timetz__no_generator-TDS"></a><a id="fail-min__timetz__no_generator-Relation"></a><a id="fail-min__timetz__no_generator-Grammar"></a>`min__timetz__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MIN(ts::timetz) AS result FROM dates WHERE ts IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MIN(ts::timetz) AS result FROM func('e2e::tds_dates') WHERE ts IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for TIMETZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(ts::timetz) AS result FROM dates WHERE ts IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MIN(ts::timetz) AS result FROM func('e2e::rel_dates') WHERE ts IS NOT NULL
 ```
@@ -13324,24 +22228,50 @@ SELECT MIN(ts::timetz) AS result FROM func('e2e::rel_dates') WHERE ts IS NOT NUL
 **Error:**
 > No value found for TIMETZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(ts::timetz) AS result FROM dates WHERE ts IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MIN(ts::timetz) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE ts IS NOT NULL
+```
+
+**Error:**
+> Postgres: ERROR: cannot cast type timestamp without time zone to time with time zone
+>   Position: 14 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for TIMETZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
 
 <br>
 
-#### <a id="fail-min__time__no_generator-TDS"></a><a id="fail-min__time__no_generator-Relation"></a>`min__time__no_generator`
+#### <a id="fail-min__time__no_generator-TDS"></a><a id="fail-min__time__no_generator-Relation"></a><a id="fail-min__time__no_generator-Grammar"></a>`min__time__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MIN(ts::time) AS result FROM dates WHERE ts IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MIN(ts::time) AS result FROM func('e2e::tds_dates') WHERE ts IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for TIME, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(ts::time) AS result FROM dates WHERE ts IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MIN(ts::time) AS result FROM func('e2e::rel_dates') WHERE ts IS NOT NULL
 ```
@@ -13349,24 +22279,49 @@ SELECT MIN(ts::time) AS result FROM func('e2e::rel_dates') WHERE ts IS NOT NULL
 **Error:**
 > No value found for TIME, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(ts::time) AS result FROM dates WHERE ts IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MIN(ts::time) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE ts IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for TIME, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
 
 <br>
 
-#### <a id="fail-min__tstz__from_table-TDS"></a><a id="fail-min__tstz__from_table-Relation"></a>`min__tstz__from_table`
+#### <a id="fail-min__tstz__from_table-TDS"></a><a id="fail-min__tstz__from_table-Relation"></a><a id="fail-min__tstz__from_table-Grammar"></a>`min__tstz__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MIN(tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MIN(tsz::timestamptz) AS result FROM func('e2e::tds_dates') WHERE tsz IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MIN(tsz::timestamptz) AS result FROM func('e2e::rel_dates') WHERE tsz IS NOT NULL
 ```
@@ -13374,24 +22329,49 @@ SELECT MIN(tsz::timestamptz) AS result FROM func('e2e::rel_dates') WHERE tsz IS 
 **Error:**
 > No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(tsz::timestamptz) AS result FROM dates WHERE tsz IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MIN(tsz::timestamptz) AS result FROM func('e2e::rel_dates__Relation_1_') WHERE tsz IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for TIMESTAMPTZ, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
 
 <br>
 
-#### <a id="fail-min__xid8__no_generator-TDS"></a><a id="fail-min__xid8__no_generator-Relation"></a>`min__xid8__no_generator`
+#### <a id="fail-min__xid8__no_generator-TDS"></a><a id="fail-min__xid8__no_generator-Relation"></a><a id="fail-min__xid8__no_generator-Grammar"></a>`min__xid8__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT MIN(id::xid8) AS result FROM persons WHERE id IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT MIN(id::xid8) AS result FROM func('e2e::tds_persons') WHERE id IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for XID8, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(id::xid8) AS result FROM persons WHERE id IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT MIN(id::xid8) AS result FROM func('e2e::rel_persons') WHERE id IS NOT NULL
 ```
@@ -13399,24 +22379,50 @@ SELECT MIN(id::xid8) AS result FROM func('e2e::rel_persons') WHERE id IS NOT NUL
 **Error:**
 > No value found for XID8, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT MIN(id::xid8) AS result FROM persons WHERE id IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT MIN(id::xid8) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id IS NOT NULL
+```
+
+**Error:**
+> Postgres: ERROR: cannot cast type integer to xid8
+>   Position: 14 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for XID8, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
 
 <br>
 
-#### <a id="fail-string_agg__bytea_bytea__no_generator-TDS"></a><a id="fail-string_agg__bytea_bytea__no_generator-Relation"></a>`string_agg__bytea_bytea__no_generator`
+#### <a id="fail-string_agg__bytea_bytea__no_generator-TDS"></a><a id="fail-string_agg__bytea_bytea__no_generator-Relation"></a><a id="fail-string_agg__bytea_bytea__no_generator-Grammar"></a>`string_agg__bytea_bytea__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT STRING_AGG(name::bytea, ','::bytea) AS result FROM persons WHERE name IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT STRING_AGG(name::bytea, ','::bytea) AS result FROM func('e2e::tds_persons') WHERE name IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for BYTEA
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT STRING_AGG(name::bytea, ','::bytea) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT STRING_AGG(name::bytea, ','::bytea) AS result FROM func('e2e::rel_persons') WHERE name IS NOT NULL
 ```
@@ -13424,24 +22430,49 @@ SELECT STRING_AGG(name::bytea, ','::bytea) AS result FROM func('e2e::rel_persons
 **Error:**
 > No value found for BYTEA
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT STRING_AGG(name::bytea, ','::bytea) AS result FROM persons WHERE name IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT STRING_AGG(name::bytea, ','::bytea) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE name IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for BYTEA
+
 
 <br>
 
-#### <a id="fail-sum__money__no_generator-TDS"></a><a id="fail-sum__money__no_generator-Relation"></a>`sum__money__no_generator`
+#### <a id="fail-sum__money__no_generator-TDS"></a><a id="fail-sum__money__no_generator-Relation"></a><a id="fail-sum__money__no_generator-Grammar"></a>`sum__money__no_generator`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT SUM(salary::money) AS result FROM persons WHERE salary IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT SUM(salary::money) AS result FROM func('e2e::tds_persons') WHERE salary IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for MONEY, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT SUM(salary::money) AS result FROM persons WHERE salary IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT SUM(salary::money) AS result FROM func('e2e::rel_persons') WHERE salary IS NOT NULL
 ```
@@ -13449,24 +22480,49 @@ SELECT SUM(salary::money) AS result FROM func('e2e::rel_persons') WHERE salary I
 **Error:**
 > No value found for MONEY, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SUM(salary::money) AS result FROM persons WHERE salary IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT SUM(salary::money) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE salary IS NOT NULL
+```
+
+**Error:**
+> Postgres: Bad value for type double : 650,001.50 | Legend: ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for MONEY, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
 
 <br>
 
-#### <a id="fail-sum__real__from_table-TDS"></a><a id="fail-sum__real__from_table-Relation"></a>`sum__real__from_table`
+#### <a id="fail-sum__real__from_table-TDS"></a><a id="fail-sum__real__from_table-Relation"></a><a id="fail-sum__real__from_table-Grammar"></a>`sum__real__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT SUM(float_val::real) AS result FROM numbers WHERE float_val IS NOT NULL
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT SUM(float_val::real) AS result FROM func('e2e::tds_numbers') WHERE float_val IS NOT NULL
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for REAL, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT SUM(float_val::real) AS result FROM numbers WHERE float_val IS NOT NULL
+```
+
+**Legend SQL:**
 ```sql
 SELECT SUM(float_val::real) AS result FROM func('e2e::rel_numbers') WHERE float_val IS NOT NULL
 ```
@@ -13474,12 +22530,27 @@ SELECT SUM(float_val::real) AS result FROM func('e2e::rel_numbers') WHERE float_
 **Error:**
 > No value found for REAL, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
 
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT SUM(float_val::real) AS result FROM numbers WHERE float_val IS NOT NULL
+```
+
+**Legend SQL:**
+```sql
+SELECT SUM(float_val::real) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE float_val IS NOT NULL
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for REAL, expected one of [BIGINT,BOOLEAN,DATE,DECIMAL,DOUBLE PRECISION,FLOAT8,INTEGER,JSON,NUMERIC,SMALLINT,TEXT,TIMESTAMP,VARCHAR]
+
 
 <br>
 
-#### <a id="fail-generate_series__tstz_tstz_intv__from_table-TDS"></a><a id="fail-generate_series__tstz_tstz_intv__from_table-Relation"></a>`generate_series__tstz_tstz_intv__from_table`
+#### <a id="fail-generate_series__tstz_tstz_intv__from_table-TDS"></a><a id="fail-generate_series__tstz_tstz_intv__from_table-Relation"></a><a id="fail-generate_series__tstz_tstz_intv__from_table-Grammar"></a>`generate_series__tstz_tstz_intv__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
@@ -13494,12 +22565,42 @@ SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-
 **Error:**
 > No value found for TIMESTAMPTZ
 
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-05'::timestamptz, '1 day'::interval) AS g(val) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-05'::timestamptz, '1 day'::interval) AS g(val) ORDER BY 1
+```
+
+**Error:**
+> No value found for TIMESTAMPTZ
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-05'::timestamptz, '1 day'::interval) AS g(val) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-05'::timestamptz, '1 day'::interval) AS g(val) ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for TIMESTAMPTZ
+
 
 <br>
 
-#### <a id="fail-generate_series__tstz_tstz_intv_txt__from_table-TDS"></a><a id="fail-generate_series__tstz_tstz_intv_txt__from_table-Relation"></a>`generate_series__tstz_tstz_intv_txt__from_table`
+#### <a id="fail-generate_series__tstz_tstz_intv_txt__from_table-TDS"></a><a id="fail-generate_series__tstz_tstz_intv_txt__from_table-Relation"></a><a id="fail-generate_series__tstz_tstz_intv_txt__from_table-Grammar"></a>`generate_series__tstz_tstz_intv_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
@@ -13514,12 +22615,42 @@ SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-
 **Error:**
 > No value found for TIMESTAMPTZ
 
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-05'::timestamptz, '1 day'::interval, 'UTC') AS g(val) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-05'::timestamptz, '1 day'::interval, 'UTC') AS g(val) ORDER BY 1
+```
+
+**Error:**
+> No value found for TIMESTAMPTZ
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-05'::timestamptz, '1 day'::interval, 'UTC') AS g(val) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamptz, '2023-01-05'::timestamptz, '1 day'::interval, 'UTC') AS g(val) ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for TIMESTAMPTZ
+
 
 <br>
 
-#### <a id="fail-generate_series__ts_ts_intv__from_table-TDS"></a><a id="fail-generate_series__ts_ts_intv__from_table-Relation"></a>`generate_series__ts_ts_intv__from_table`
+#### <a id="fail-generate_series__ts_ts_intv__from_table-TDS"></a><a id="fail-generate_series__ts_ts_intv__from_table-Relation"></a><a id="fail-generate_series__ts_ts_intv__from_table-Grammar"></a>`generate_series__ts_ts_intv__from_table`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
@@ -13534,30 +22665,85 @@ SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamp, '2023-01-05
 **Error:**
 > No value found for INTERVAL
 
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamp, '2023-01-05'::timestamp, '1 day'::interval) AS g(val) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamp, '2023-01-05'::timestamp, '1 day'::interval) AS g(val) ORDER BY 1
+```
+
+**Error:**
+> No value found for INTERVAL
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamp, '2023-01-05'::timestamp, '1 day'::interval) AS g(val) ORDER BY 1
+```
+
+**Legend SQL:**
+```sql
+SELECT g.val AS result FROM GENERATE_SERIES('2023-01-01'::timestamp, '2023-01-05'::timestamp, '1 day'::interval) AS g(val) ORDER BY 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for INTERVAL
+
 
 <br>
 
-#### <a id="fail-date_literal__cast_string_to_timestamptz-TDS"></a><a id="fail-date_literal__cast_string_to_timestamptz-Relation"></a>`date_literal__cast_string_to_timestamptz`
+#### <a id="fail-date_literal__cast_string_to_timestamptz-TDS"></a><a id="fail-date_literal__cast_string_to_timestamptz-Relation"></a><a id="fail-date_literal__cast_string_to_timestamptz-Grammar"></a>`date_literal__cast_string_to_timestamptz`
 
-🔴 **Failed in both TDS and Relation**
+📘 **TDS Path**
 
 **Input SQL:**
 ```sql
 SELECT '1999-01-08 04:05:06+02:00'::timestamptz AS result FROM dates LIMIT 1
 ```
 
-**Legend SQL (TDS):**
+**Legend SQL:**
 ```sql
 SELECT '1999-01-08 04:05:06+02:00'::timestamptz AS result FROM func('e2e::tds_dates') LIMIT 1
 ```
 
-**Legend SQL (Relation):**
+**Error:**
+> No value found for TIMESTAMPTZ
+
+📗 **Relation Path**
+
+**Input SQL:**
+```sql
+SELECT '1999-01-08 04:05:06+02:00'::timestamptz AS result FROM dates LIMIT 1
+```
+
+**Legend SQL:**
 ```sql
 SELECT '1999-01-08 04:05:06+02:00'::timestamptz AS result FROM func('e2e::rel_dates') LIMIT 1
 ```
 
 **Error:**
 > No value found for TIMESTAMPTZ
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT '1999-01-08 04:05:06+02:00'::timestamptz AS result FROM dates LIMIT 1
+```
+
+**Legend SQL:**
+```sql
+SELECT '1999-01-08 04:05:06+02:00'::timestamptz AS result FROM func('e2e::rel_dates__Relation_1_') LIMIT 1
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): No value found for TIMESTAMPTZ
 
 
 <br>
@@ -13584,9 +22770,9 @@ SELECT JSONB_PATH_QUERY_FIRST(jsonb_arr, '$[*]') AS result FROM func('e2e::tds_j
 
 ### PARSE_ERROR (11 tests)
 
-#### <a id="fail-overlay__bit_bit_int__unsupported_type-TDS"></a><a id="fail-overlay__bit_bit_int__unsupported_type-Relation"></a>`overlay__bit_bit_int__unsupported_type`
+#### <a id="fail-overlay__bit_bit_int__unsupported_type-TDS"></a><a id="fail-overlay__bit_bit_int__unsupported_type-Relation"></a><a id="fail-overlay__bit_bit_int__unsupported_type-Grammar"></a>`overlay__bit_bit_int__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -13604,9 +22790,9 @@ null
 
 <br>
 
-#### <a id="fail-overlay__bit_bit_int_int__unsupported_type-TDS"></a><a id="fail-overlay__bit_bit_int_int__unsupported_type-Relation"></a>`overlay__bit_bit_int_int__unsupported_type`
+#### <a id="fail-overlay__bit_bit_int_int__unsupported_type-TDS"></a><a id="fail-overlay__bit_bit_int_int__unsupported_type-Relation"></a><a id="fail-overlay__bit_bit_int_int__unsupported_type-Grammar"></a>`overlay__bit_bit_int_int__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -13624,9 +22810,9 @@ null
 
 <br>
 
-#### <a id="fail-overlay__bytea_bytea_int__unsupported_type-TDS"></a><a id="fail-overlay__bytea_bytea_int__unsupported_type-Relation"></a>`overlay__bytea_bytea_int__unsupported_type`
+#### <a id="fail-overlay__bytea_bytea_int__unsupported_type-TDS"></a><a id="fail-overlay__bytea_bytea_int__unsupported_type-Relation"></a><a id="fail-overlay__bytea_bytea_int__unsupported_type-Grammar"></a>`overlay__bytea_bytea_int__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -13644,9 +22830,9 @@ null
 
 <br>
 
-#### <a id="fail-overlay__bytea_bytea_int_int__unsupported_type-TDS"></a><a id="fail-overlay__bytea_bytea_int_int__unsupported_type-Relation"></a>`overlay__bytea_bytea_int_int__unsupported_type`
+#### <a id="fail-overlay__bytea_bytea_int_int__unsupported_type-TDS"></a><a id="fail-overlay__bytea_bytea_int_int__unsupported_type-Relation"></a><a id="fail-overlay__bytea_bytea_int_int__unsupported_type-Grammar"></a>`overlay__bytea_bytea_int_int__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -13664,9 +22850,9 @@ null
 
 <br>
 
-#### <a id="fail-overlay__txt_txt_int__special_syntax-TDS"></a><a id="fail-overlay__txt_txt_int__special_syntax-Relation"></a>`overlay__txt_txt_int__special_syntax`
+#### <a id="fail-overlay__txt_txt_int__special_syntax-TDS"></a><a id="fail-overlay__txt_txt_int__special_syntax-Relation"></a><a id="fail-overlay__txt_txt_int__special_syntax-Grammar"></a>`overlay__txt_txt_int__special_syntax`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -13684,9 +22870,9 @@ null
 
 <br>
 
-#### <a id="fail-overlay__txt_txt_int_int__special_syntax-TDS"></a><a id="fail-overlay__txt_txt_int_int__special_syntax-Relation"></a>`overlay__txt_txt_int_int__special_syntax`
+#### <a id="fail-overlay__txt_txt_int_int__special_syntax-TDS"></a><a id="fail-overlay__txt_txt_int_int__special_syntax-Relation"></a><a id="fail-overlay__txt_txt_int_int__special_syntax-Grammar"></a>`overlay__txt_txt_int_int__special_syntax`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -13704,9 +22890,9 @@ null
 
 <br>
 
-#### <a id="fail-position__bit_bit__unsupported_type-TDS"></a><a id="fail-position__bit_bit__unsupported_type-Relation"></a>`position__bit_bit__unsupported_type`
+#### <a id="fail-position__bit_bit__unsupported_type-TDS"></a><a id="fail-position__bit_bit__unsupported_type-Relation"></a><a id="fail-position__bit_bit__unsupported_type-Grammar"></a>`position__bit_bit__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -13724,9 +22910,9 @@ null
 
 <br>
 
-#### <a id="fail-position__bytea_bytea__unsupported_type-TDS"></a><a id="fail-position__bytea_bytea__unsupported_type-Relation"></a>`position__bytea_bytea__unsupported_type`
+#### <a id="fail-position__bytea_bytea__unsupported_type-TDS"></a><a id="fail-position__bytea_bytea__unsupported_type-Relation"></a><a id="fail-position__bytea_bytea__unsupported_type-Grammar"></a>`position__bytea_bytea__unsupported_type`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -13744,9 +22930,9 @@ null
 
 <br>
 
-#### <a id="fail-position__txt_txt__from_table-TDS"></a><a id="fail-position__txt_txt__from_table-Relation"></a>`position__txt_txt__from_table`
+#### <a id="fail-position__txt_txt__from_table-TDS"></a><a id="fail-position__txt_txt__from_table-Relation"></a><a id="fail-position__txt_txt__from_table-Grammar"></a>`position__txt_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -13764,9 +22950,9 @@ null
 
 <br>
 
-#### <a id="fail-substring__txt_txt_txt__from_table-TDS"></a><a id="fail-substring__txt_txt_txt__from_table-Relation"></a>`substring__txt_txt_txt__from_table`
+#### <a id="fail-substring__txt_txt_txt__from_table-TDS"></a><a id="fail-substring__txt_txt_txt__from_table-Relation"></a><a id="fail-substring__txt_txt_txt__from_table-Grammar"></a>`substring__txt_txt_txt__from_table`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -13784,9 +22970,9 @@ null
 
 <br>
 
-#### <a id="fail-make_interval__sint0_sint0_int0_sint0_sint0_sint0_sdp0.0__from_table-TDS"></a><a id="fail-make_interval__sint0_sint0_int0_sint0_sint0_sint0_sdp0.0__from_table-Relation"></a>`make_interval__sint0_sint0_int0_sint0_sint0_sint0_sdp0.0__from_table`
+#### <a id="fail-make_interval__sint0_sint0_int0_sint0_sint0_sint0_sdp0.0__from_table-TDS"></a><a id="fail-make_interval__sint0_sint0_int0_sint0_sint0_sint0_sdp0.0__from_table-Relation"></a><a id="fail-make_interval__sint0_sint0_int0_sint0_sint0_sint0_sdp0.0__from_table-Grammar"></a>`make_interval__sint0_sint0_int0_sint0_sint0_sint0_sdp0.0__from_table`
 
-🔴 **Failed in both TDS and Relation**
+🔴 **Failed in all of TDS, Relation and Grammar**
 
 **Input SQL:**
 ```sql
@@ -13800,5 +22986,27 @@ null
 
 **Error:**
 > Rewrite failed: no viable alternative at input '=>'
+
+
+<a id="alias-not-found"></a>
+
+### ALIAS_NOT_FOUND (1 tests)
+
+#### <a id="fail-json_build_object__variadic__from_column-Grammar"></a>`json_build_object__variadic__from_column`
+
+📙 **Grammar Path**
+
+**Input SQL:**
+```sql
+SELECT JSON_BUILD_OBJECT('id', id, 'val', json_val ->> 'b') AS result FROM json_data WHERE id <= 3 ORDER BY id
+```
+
+**Legend SQL:**
+```sql
+SELECT JSON_BUILD_OBJECT('id', id, 'val', json_val ->> 'b') AS result FROM func('e2e::rel_json_data__Relation_1_') WHERE id <= 3 ORDER BY id
+```
+
+**Error:**
+> ERROR: java.lang.RuntimeException: java.lang.RuntimeException: Error calling the engine (url=pure/v1/compilation/lambdaRelationType, status=400): The column 'id' can't be found in the relation (result:Map<String, Any>[1])
 
 
