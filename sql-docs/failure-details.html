@@ -36,89 +36,136 @@ li { margin: 0.3em 0; }
 <h1>Failure Details — Result Set Comparisons</h1>
 <p>Full expected (Postgres) vs actual (Legend) result sets for every test where results differ.</p>
 <hr />
-<p><strong>Total result mismatches:</strong> 80</p>
+<p><strong>Total result mismatches:</strong> 127</p>
 <h2>Table of Contents</h2>
 <ul>
 <li><a href="#fail-div__num_num__from_table-TDS">div__num_num__from_table [TDS]</a></li>
 <li><a href="#fail-div__num_num__from_table-Relation">div__num_num__from_table [Relation]</a></li>
+<li><a href="#fail-div__num_num__from_table-Grammar">div__num_num__from_table [Grammar]</a></li>
 <li><a href="#fail-concat_ws__txt_variadic__from_table-TDS">concat_ws__txt_variadic__from_table [TDS]</a></li>
 <li><a href="#fail-concat_ws__txt_variadic__from_table-Relation">concat_ws__txt_variadic__from_table [Relation]</a></li>
+<li><a href="#fail-concat_ws__txt_variadic__from_table-Grammar">concat_ws__txt_variadic__from_table [Grammar]</a></li>
 <li><a href="#fail-initcap__txt__from_table-TDS">initcap__txt__from_table [TDS]</a></li>
 <li><a href="#fail-initcap__txt__from_table-Relation">initcap__txt__from_table [Relation]</a></li>
+<li><a href="#fail-initcap__txt__from_table-Grammar">initcap__txt__from_table [Grammar]</a></li>
 <li><a href="#fail-regexp_substr__nth_occurrence__ignored_by_legend-TDS">regexp_substr__nth_occurrence__ignored_by_legend [TDS]</a></li>
 <li><a href="#fail-regexp_substr__nth_occurrence__ignored_by_legend-Relation">regexp_substr__nth_occurrence__ignored_by_legend [Relation]</a></li>
+<li><a href="#fail-regexp_substr__nth_occurrence__ignored_by_legend-Grammar">regexp_substr__nth_occurrence__ignored_by_legend [Grammar]</a></li>
 <li><a href="#fail-regexp_substr__nth_occurrence_last__ignored_by_legend-TDS">regexp_substr__nth_occurrence_last__ignored_by_legend [TDS]</a></li>
 <li><a href="#fail-regexp_substr__nth_occurrence_last__ignored_by_legend-Relation">regexp_substr__nth_occurrence_last__ignored_by_legend [Relation]</a></li>
+<li><a href="#fail-regexp_substr__nth_occurrence_last__ignored_by_legend-Grammar">regexp_substr__nth_occurrence_last__ignored_by_legend [Grammar]</a></li>
 <li><a href="#fail-regexp_substr__start_position__ignored_by_legend-TDS">regexp_substr__start_position__ignored_by_legend [TDS]</a></li>
 <li><a href="#fail-regexp_substr__start_position__ignored_by_legend-Relation">regexp_substr__start_position__ignored_by_legend [Relation]</a></li>
+<li><a href="#fail-regexp_substr__start_position__ignored_by_legend-Grammar">regexp_substr__start_position__ignored_by_legend [Grammar]</a></li>
 <li><a href="#fail-regexp_substr__start_and_nth__ignored_by_legend-TDS">regexp_substr__start_and_nth__ignored_by_legend [TDS]</a></li>
 <li><a href="#fail-regexp_substr__start_and_nth__ignored_by_legend-Relation">regexp_substr__start_and_nth__ignored_by_legend [Relation]</a></li>
+<li><a href="#fail-regexp_substr__start_and_nth__ignored_by_legend-Grammar">regexp_substr__start_and_nth__ignored_by_legend [Grammar]</a></li>
 <li><a href="#fail-regexp_count__start_position__ignored_by_legend-TDS">regexp_count__start_position__ignored_by_legend [TDS]</a></li>
 <li><a href="#fail-regexp_count__start_position__ignored_by_legend-Relation">regexp_count__start_position__ignored_by_legend [Relation]</a></li>
+<li><a href="#fail-regexp_count__start_position__ignored_by_legend-Grammar">regexp_count__start_position__ignored_by_legend [Grammar]</a></li>
 <li><a href="#fail-string_to_array__txt_txt__from_table-TDS">string_to_array__txt_txt__from_table [TDS]</a></li>
 <li><a href="#fail-string_to_array__txt_txt__from_table-Relation">string_to_array__txt_txt__from_table [Relation]</a></li>
+<li><a href="#fail-string_to_array__txt_txt__from_table-Grammar">string_to_array__txt_txt__from_table [Grammar]</a></li>
 <li><a href="#fail-array_position__anycompatiblearray_anycompatible__from_table-Relation">array_position__anycompatiblearray_anycompatible__from_table [Relation]</a></li>
+<li><a href="#fail-array_position__anycompatiblearray_anycompatible__from_table-Grammar">array_position__anycompatiblearray_anycompatible__from_table [Grammar]</a></li>
 <li><a href="#fail-max__anyarray__no_generator-TDS">max__anyarray__no_generator [TDS]</a></li>
 <li><a href="#fail-max__anyarray__no_generator-Relation">max__anyarray__no_generator [Relation]</a></li>
+<li><a href="#fail-max__anyarray__no_generator-Grammar">max__anyarray__no_generator [Grammar]</a></li>
 <li><a href="#fail-min__anyarray__no_generator-TDS">min__anyarray__no_generator [TDS]</a></li>
 <li><a href="#fail-min__anyarray__no_generator-Relation">min__anyarray__no_generator [Relation]</a></li>
+<li><a href="#fail-min__anyarray__no_generator-Grammar">min__anyarray__no_generator [Grammar]</a></li>
 <li><a href="#fail-op_div__int__truncates_toward_zero-TDS">op_div__int__truncates_toward_zero [TDS]</a></li>
 <li><a href="#fail-op_div__int__truncates_toward_zero-Relation">op_div__int__truncates_toward_zero [Relation]</a></li>
+<li><a href="#fail-op_div__int__truncates_toward_zero-Grammar">op_div__int__truncates_toward_zero [Grammar]</a></li>
 <li><a href="#fail-op_div__negative__truncates_toward_zero-TDS">op_div__negative__truncates_toward_zero [TDS]</a></li>
 <li><a href="#fail-op_div__negative__truncates_toward_zero-Relation">op_div__negative__truncates_toward_zero [Relation]</a></li>
+<li><a href="#fail-op_div__negative__truncates_toward_zero-Grammar">op_div__negative__truncates_toward_zero [Grammar]</a></li>
 <li><a href="#fail-op_mod__negative__basic-TDS">op_mod__negative__basic [TDS]</a></li>
 <li><a href="#fail-op_mod__negative__basic-Relation">op_mod__negative__basic [Relation]</a></li>
+<li><a href="#fail-op_mod__negative__basic-Grammar">op_mod__negative__basic [Grammar]</a></li>
 <li><a href="#fail-op_mod__numeric__basic-TDS">op_mod__numeric__basic [TDS]</a></li>
 <li><a href="#fail-op_sub__date_minus_int_days-TDS">op_sub__date_minus_int_days [TDS]</a></li>
 <li><a href="#fail-op_sub__date_minus_int_days-Relation">op_sub__date_minus_int_days [Relation]</a></li>
+<li><a href="#fail-op_sub__date_minus_int_days-Grammar">op_sub__date_minus_int_days [Grammar]</a></li>
 <li><a href="#fail-concat_op__txt_txt__from_table-TDS">concat_op__txt_txt__from_table [TDS]</a></li>
 <li><a href="#fail-concat_op__mixed_types__null_handling-TDS">concat_op__mixed_types__null_handling [TDS]</a></li>
 <li><a href="#fail-eq__null_null-TDS">eq__null_null [TDS]</a></li>
+<li><a href="#fail-eq__null_null-Grammar">eq__null_null [Grammar]</a></li>
 <li><a href="#fail-neq__int__null-TDS">neq__int__null [TDS]</a></li>
 <li><a href="#fail-neq__int__null-Relation">neq__int__null [Relation]</a></li>
+<li><a href="#fail-neq__int__null-Grammar">neq__int__null [Grammar]</a></li>
 <li><a href="#fail-lt__int__null-Relation">lt__int__null [Relation]</a></li>
+<li><a href="#fail-lt__int__null-Grammar">lt__int__null [Grammar]</a></li>
 <li><a href="#fail-gt__int__null-Relation">gt__int__null [Relation]</a></li>
+<li><a href="#fail-gt__int__null-Grammar">gt__int__null [Grammar]</a></li>
 <li><a href="#fail-neq__filter__int-TDS">neq__filter__int [TDS]</a></li>
 <li><a href="#fail-neq__filter__int-Relation">neq__filter__int [Relation]</a></li>
+<li><a href="#fail-neq__filter__int-Grammar">neq__filter__int [Grammar]</a></li>
 <li><a href="#fail-and__false_null-TDS">and__false_null [TDS]</a></li>
 <li><a href="#fail-and__false_null-Relation">and__false_null [Relation]</a></li>
+<li><a href="#fail-and__false_null-Grammar">and__false_null [Grammar]</a></li>
 <li><a href="#fail-or__true_null-TDS">or__true_null [TDS]</a></li>
 <li><a href="#fail-or__true_null-Relation">or__true_null [Relation]</a></li>
+<li><a href="#fail-or__true_null-Grammar">or__true_null [Grammar]</a></li>
 <li><a href="#fail-array_gt-TDS">array_gt [TDS]</a></li>
 <li><a href="#fail-anycompatible_concat_scalar_array-TDS">anycompatible_concat_scalar_array [TDS]</a></li>
 <li><a href="#fail-anycompatible_concat_array_scalar-TDS">anycompatible_concat_array_scalar [TDS]</a></li>
 <li><a href="#fail-anycompatible_concat_array_array-TDS">anycompatible_concat_array_array [TDS]</a></li>
 <li><a href="#fail-between__int__null-TDS">between__int__null [TDS]</a></li>
 <li><a href="#fail-between__int__null-Relation">between__int__null [Relation]</a></li>
+<li><a href="#fail-between__int__null-Grammar">between__int__null [Grammar]</a></li>
 <li><a href="#fail-is_distinct_from__int__one_null-Relation">is_distinct_from__int__one_null [Relation]</a></li>
+<li><a href="#fail-is_distinct_from__int__one_null-Grammar">is_distinct_from__int__one_null [Grammar]</a></li>
 <li><a href="#fail-to_char_token__YYY-TDS">to_char_token__YYY [TDS]</a></li>
 <li><a href="#fail-to_char_token__D-TDS">to_char_token__D [TDS]</a></li>
 <li><a href="#fail-to_char_token__D-Relation">to_char_token__D [Relation]</a></li>
+<li><a href="#fail-to_char_token__D-Grammar">to_char_token__D [Grammar]</a></li>
+<li><a href="#fail-join_right_basic-Grammar">join_right_basic [Grammar]</a></li>
+<li><a href="#fail-join_right_unmatched-Grammar">join_right_unmatched [Grammar]</a></li>
+<li><a href="#fail-subquery_derived_join-Grammar">subquery_derived_join [Grammar]</a></li>
 <li><a href="#fail-subquery_quant_all_empty_null_value-Relation">subquery_quant_all_empty_null_value [Relation]</a></li>
+<li><a href="#fail-subquery_quant_all_empty_null_value-Grammar">subquery_quant_all_empty_null_value [Grammar]</a></li>
 <li><a href="#fail-null_equals_null-TDS">null_equals_null [TDS]</a></li>
+<li><a href="#fail-null_equals_null-Grammar">null_equals_null [Grammar]</a></li>
 <li><a href="#fail-null_not_equals-TDS">null_not_equals [TDS]</a></li>
+<li><a href="#fail-null_not_equals-Grammar">null_not_equals [Grammar]</a></li>
+<li><a href="#fail-null_is_distinct_from-Grammar">null_is_distinct_from [Grammar]</a></li>
 <li><a href="#fail-null_concat-TDS">null_concat [TDS]</a></li>
 <li><a href="#fail-null_concat-Relation">null_concat [Relation]</a></li>
+<li><a href="#fail-null_concat-Grammar">null_concat [Grammar]</a></li>
+<li><a href="#fail-case_simple_null_compare-Grammar">case_simple_null_compare [Grammar]</a></li>
 <li><a href="#fail-where_not_between-TDS">where_not_between [TDS]</a></li>
 <li><a href="#fail-where_not_between-Relation">where_not_between [Relation]</a></li>
+<li><a href="#fail-where_not_between-Grammar">where_not_between [Grammar]</a></li>
 <li><a href="#fail-where_not_in_list-TDS">where_not_in_list [TDS]</a></li>
 <li><a href="#fail-where_not_in_list-Relation">where_not_in_list [Relation]</a></li>
+<li><a href="#fail-where_not_in_list-Grammar">where_not_in_list [Grammar]</a></li>
 <li><a href="#fail-where_not_compound-Relation">where_not_compound [Relation]</a></li>
+<li><a href="#fail-where_not_compound-Grammar">where_not_compound [Grammar]</a></li>
 <li><a href="#fail-bool_null_and_false-TDS">bool_null_and_false [TDS]</a></li>
 <li><a href="#fail-bool_null_and_false-Relation">bool_null_and_false [Relation]</a></li>
+<li><a href="#fail-bool_null_and_false-Grammar">bool_null_and_false [Grammar]</a></li>
 <li><a href="#fail-bool_null_or_true-TDS">bool_null_or_true [TDS]</a></li>
 <li><a href="#fail-bool_null_or_true-Relation">bool_null_or_true [Relation]</a></li>
+<li><a href="#fail-bool_null_or_true-Grammar">bool_null_or_true [Grammar]</a></li>
 <li><a href="#fail-star_multiple_tables-TDS">star_multiple_tables [TDS]</a></li>
 <li><a href="#fail-star_multiple_tables-Relation">star_multiple_tables [Relation]</a></li>
+<li><a href="#fail-star_multiple_tables-Grammar">star_multiple_tables [Grammar]</a></li>
 <li><a href="#fail-schema_information_tables-TDS">schema_information_tables [TDS]</a></li>
 <li><a href="#fail-schema_information_tables-Relation">schema_information_tables [Relation]</a></li>
+<li><a href="#fail-schema_information_tables-Grammar">schema_information_tables [Grammar]</a></li>
 <li><a href="#fail-schema_information_columns-TDS">schema_information_columns [TDS]</a></li>
 <li><a href="#fail-schema_information_columns-Relation">schema_information_columns [Relation]</a></li>
+<li><a href="#fail-schema_information_columns-Grammar">schema_information_columns [Grammar]</a></li>
 <li><a href="#fail-json_path_extract-Relation">json_path_extract [Relation]</a></li>
+<li><a href="#fail-json_path_extract-Grammar">json_path_extract [Grammar]</a></li>
 <li><a href="#fail-interval_compound_literal-TDS">interval_compound_literal [TDS]</a></li>
 <li><a href="#fail-interval_compound_literal-Relation">interval_compound_literal [Relation]</a></li>
+<li><a href="#fail-interval_compound_literal-Grammar">interval_compound_literal [Grammar]</a></li>
 <li><a href="#fail-interval_range_year_to_month-TDS">interval_range_year_to_month [TDS]</a></li>
 <li><a href="#fail-interval_range_year_to_month-Relation">interval_range_year_to_month [Relation]</a></li>
+<li><a href="#fail-interval_range_year_to_month-Grammar">interval_range_year_to_month [Grammar]</a></li>
+<li><a href="#fail-colres_e2_window_argument_renamed_column_self_join-Grammar">colres_e2_window_argument_renamed_column_self_join [Grammar]</a></li>
 </ul>
 <hr />
 <p><a id="fail-div__num_num__from_table-TDS"></a></p>
@@ -282,6 +329,99 @@ li { margin: 0.3em 0; }
 )-&gt;meta::pure::functions::relation::sort(
   ~result-&gt;meta::pure::functions::relation::ascending()
 )
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected '-33333' but got '-33333.33333'</li>
+<li>Row 1, column 'result': expected '0' but got '-0.3333333333333333'</li>
+<li>Row 2, column 'result': expected '0' but got '-3.3333333333333333E-6'</li>
+<li>Row 3, column 'result': expected '0' but got '3.3333333333333333E-6'</li>
+<li>Row 4, column 'result': expected '111' but got '111.11111'</li>
+<li>Row 5, column 'result': expected '4115' but got '4115.2263'</li>
+<li>Row 6, column 'result': expected '16666' but got '16666.70781666667'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-33333</td>
+</tr>
+<tr>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+</tr>
+<tr>
+<td>111</td>
+</tr>
+<tr>
+<td>4115</td>
+</tr>
+<tr>
+<td>16666</td>
+</tr>
+<tr>
+<td>33333333333333</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-33333.33333</td>
+</tr>
+<tr>
+<td>-0.3333333333333333</td>
+</tr>
+<tr>
+<td>-3.3333333333333333E-6</td>
+</tr>
+<tr>
+<td>3.3333333333333333E-6</td>
+</tr>
+<tr>
+<td>111.11111</td>
+</tr>
+<tr>
+<td>4115.2263</td>
+</tr>
+<tr>
+<td>16666.70781666667</td>
+</tr>
+<tr>
+<td>3.3333333333333332E13</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-div__num_num__from_table-Grammar"></a></p>
+<h3>❌ div__num_num__from_table [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT DIV(numeric_val, 3.0) AS result FROM numbers WHERE numeric_val IS NOT NULL AND numeric_val &lt;&gt; 0 ORDER BY 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT DIV(numeric_val, 3.0) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE numeric_val IS NOT NULL AND numeric_val &lt;&gt; 0 ORDER BY 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select ((1.0 * &quot;root&quot;.numeric_val) / 3.0) as &quot;result&quot; from public.numbers as &quot;root&quot; where (&quot;root&quot;.numeric_val is not null and (&quot;root&quot;.numeric_val is distinct from 0)) order by &quot;result&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT DIV(numeric_val, 3.0) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE numeric_val IS NOT NULL AND numeric_val &lt;&gt; 0 ORDER BY 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
@@ -621,6 +761,107 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-concat_ws__txt_variadic__from_table-Grammar"></a></p>
+<h3>❌ concat_ws__txt_variadic__from_table [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT CONCAT_WS(', ', val, nullable_val) AS result FROM strings ORDER BY 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT CONCAT_WS(', ', val, nullable_val) AS result FROM func('e2e::rel_strings__Relation_1_') ORDER BY 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select concat(&quot;root&quot;.val,Text', ',&quot;root&quot;.nullable_val) as &quot;result&quot; from public.strings as &quot;root&quot; order by &quot;result&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT CONCAT_WS(', ', val, nullable_val) AS result FROM func('e2e::rel_strings__Relation_1_') ORDER BY 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected '' but got '  spaces  , has spaces'</li>
+<li>Row 1, column 'result': expected '  spaces  , has spaces' but got ', '</li>
+<li>Row 2, column 'result': expected 'MiXeD CaSe' but got 'MiXeD CaSe, '</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>spaces  , has spaces</td>
+</tr>
+<tr>
+<td>MiXeD CaSe</td>
+</tr>
+<tr>
+<td>UPPERCASE, lowercase</td>
+</tr>
+<tr>
+<td>WORLD, test</td>
+</tr>
+<tr>
+<td>abcdefghij, ABCDEFGHIJ</td>
+</tr>
+<tr>
+<td>hello, world</td>
+</tr>
+<tr>
+<td>repeat, repeat</td>
+</tr>
+<tr>
+<td>special!@#$%, 12345</td>
+</tr>
+<tr>
+<td>the quick brown fox, jumps over</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>spaces  , has spaces</td>
+</tr>
+<tr>
+<td>,</td>
+</tr>
+<tr>
+<td>MiXeD CaSe,</td>
+</tr>
+<tr>
+<td>UPPERCASE, lowercase</td>
+</tr>
+<tr>
+<td>WORLD, test</td>
+</tr>
+<tr>
+<td>abcdefghij, ABCDEFGHIJ</td>
+</tr>
+<tr>
+<td>hello, world</td>
+</tr>
+<tr>
+<td>repeat, repeat</td>
+</tr>
+<tr>
+<td>special!@#$%, 12345</td>
+</tr>
+<tr>
+<td>the quick brown fox, jumps over</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-initcap__txt__from_table-TDS"></a></p>
 <h3>❌ initcap__txt__from_table [TDS]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -871,6 +1112,109 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-initcap__txt__from_table-Grammar"></a></p>
+<h3>❌ initcap__txt__from_table [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT INITCAP(val) AS result FROM strings ORDER BY 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT INITCAP(val) AS result FROM func('e2e::rel_strings__Relation_1_') ORDER BY 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select case when char_length(&quot;root&quot;.val) = 0 then &quot;root&quot;.val else concat(upper(left(&quot;root&quot;.val,1)), substring(&quot;root&quot;.val, 2)) end as &quot;result&quot; from public.strings as &quot;root&quot; order by &quot;result&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT INITCAP(val) AS result FROM func('e2e::rel_strings__Relation_1_') ORDER BY 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 1, column 'result': expected '  Spaces  ' but got '  spaces  '</li>
+<li>Row 4, column 'result': expected 'Mixed Case' but got 'MiXeD CaSe'</li>
+<li>Row 7, column 'result': expected 'The Quick Brown Fox' but got 'The quick brown fox'</li>
+<li>Row 8, column 'result': expected 'Uppercase' but got 'UPPERCASE'</li>
+<li>Row 9, column 'result': expected 'World' but got 'WORLD'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>Spaces</td>
+</tr>
+<tr>
+<td>Abcdefghij</td>
+</tr>
+<tr>
+<td>Hello</td>
+</tr>
+<tr>
+<td>Mixed Case</td>
+</tr>
+<tr>
+<td>Repeat</td>
+</tr>
+<tr>
+<td>Special!@#$%</td>
+</tr>
+<tr>
+<td>The Quick Brown Fox</td>
+</tr>
+<tr>
+<td>Uppercase</td>
+</tr>
+<tr>
+<td>World</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>spaces</td>
+</tr>
+<tr>
+<td>Abcdefghij</td>
+</tr>
+<tr>
+<td>Hello</td>
+</tr>
+<tr>
+<td>MiXeD CaSe</td>
+</tr>
+<tr>
+<td>Repeat</td>
+</tr>
+<tr>
+<td>Special!@#$%</td>
+</tr>
+<tr>
+<td>The quick brown fox</td>
+</tr>
+<tr>
+<td>UPPERCASE</td>
+</tr>
+<tr>
+<td>WORLD</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-regexp_substr__nth_occurrence__ignored_by_legend-TDS"></a></p>
 <h3>❌ regexp_substr__nth_occurrence__ignored_by_legend [TDS]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -979,6 +1323,51 @@ li { margin: 0.3em 0; }
   )-&gt;meta::pure::functions::multiplicity::toOne()
    ]
 )
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected 'quick' but got 'the'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>quick</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>the</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-regexp_substr__nth_occurrence__ignored_by_legend-Grammar"></a></p>
+<h3>❌ regexp_substr__nth_occurrence__ignored_by_legend [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT REGEXP_SUBSTR(val, '[a-z]+', 1, 2) AS result FROM strings WHERE id = 10
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT REGEXP_SUBSTR(val, '[a-z]+', 1, 2) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 10
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select regexp_substr(&quot;root&quot;.val, Text'[a-z]+', 1, 1, 'p', 0) as &quot;result&quot; from public.strings as &quot;root&quot; where &quot;root&quot;.id = 10
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT REGEXP_SUBSTR(val, '[a-z]+', 1, 2) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 10}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
@@ -1151,6 +1540,51 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-regexp_substr__nth_occurrence_last__ignored_by_legend-Grammar"></a></p>
+<h3>❌ regexp_substr__nth_occurrence_last__ignored_by_legend [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT REGEXP_SUBSTR(val, '[a-z]+', 1, 4) AS result FROM strings WHERE id = 10
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT REGEXP_SUBSTR(val, '[a-z]+', 1, 4) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 10
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select regexp_substr(&quot;root&quot;.val, Text'[a-z]+', 1, 1, 'p', 0) as &quot;result&quot; from public.strings as &quot;root&quot; where &quot;root&quot;.id = 10
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT REGEXP_SUBSTR(val, '[a-z]+', 1, 4) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 10}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected 'fox' but got 'the'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fox</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>the</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-regexp_substr__start_position__ignored_by_legend-TDS"></a></p>
 <h3>❌ regexp_substr__start_position__ignored_by_legend [TDS]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -1259,6 +1693,51 @@ li { margin: 0.3em 0; }
   )-&gt;meta::pure::functions::multiplicity::toOne()
    ]
 )
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected 'quick' but got 'the'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>quick</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>the</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-regexp_substr__start_position__ignored_by_legend-Grammar"></a></p>
+<h3>❌ regexp_substr__start_position__ignored_by_legend [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT REGEXP_SUBSTR(val, '[a-z]+', 5) AS result FROM strings WHERE id = 10
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT REGEXP_SUBSTR(val, '[a-z]+', 5) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 10
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select regexp_substr(&quot;root&quot;.val, Text'[a-z]+', 1, 1, 'p', 0) as &quot;result&quot; from public.strings as &quot;root&quot; where &quot;root&quot;.id = 10
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT REGEXP_SUBSTR(val, '[a-z]+', 5) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 10}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
@@ -1431,6 +1910,51 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-regexp_substr__start_and_nth__ignored_by_legend-Grammar"></a></p>
+<h3>❌ regexp_substr__start_and_nth__ignored_by_legend [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT REGEXP_SUBSTR(val, '[a-z]+', 5, 2) AS result FROM strings WHERE id = 10
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT REGEXP_SUBSTR(val, '[a-z]+', 5, 2) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 10
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select regexp_substr(&quot;root&quot;.val, Text'[a-z]+', 1, 1, 'p', 0) as &quot;result&quot; from public.strings as &quot;root&quot; where &quot;root&quot;.id = 10
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT REGEXP_SUBSTR(val, '[a-z]+', 5, 2) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 10}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected 'brown' but got 'the'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>brown</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>the</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-regexp_count__start_position__ignored_by_legend-TDS"></a></p>
 <h3>❌ regexp_count__start_position__ignored_by_legend [TDS]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -1533,6 +2057,51 @@ li { margin: 0.3em 0; }
      result: x: (id:Integer[1], val:String, nullable_val:String, unicode_val:String, empty_val:String)[1]|$x.val-&gt;meta::pure::functions::multiplicity::toOne()-&gt;meta::pure::functions::string::regexpCount('[a-z]')
    ]
 )
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected '13' but got '16'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>13</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-regexp_count__start_position__ignored_by_legend-Grammar"></a></p>
+<h3>❌ regexp_count__start_position__ignored_by_legend [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT REGEXP_COUNT(val, '[a-z]', 5) AS result FROM strings WHERE id = 10
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT REGEXP_COUNT(val, '[a-z]', 5) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 10
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select regexp_count(&quot;root&quot;.val, Text'[a-z]', 1, 'p') as &quot;result&quot; from public.strings as &quot;root&quot; where &quot;root&quot;.id = 10
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT REGEXP_COUNT(val, '[a-z]', 5) AS result FROM func('e2e::rel_strings__Relation_1_') WHERE id = 10}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
@@ -1829,6 +2398,114 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-string_to_array__txt_txt__from_table-Grammar"></a></p>
+<h3>❌ string_to_array__txt_txt__from_table [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT STRING_TO_ARRAY(val, ' ') AS result FROM strings WHERE val IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT STRING_TO_ARRAY(val, ' ') AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select string_to_array(&quot;root&quot;.val, Text' ') as &quot;result&quot; from public.strings as &quot;root&quot; where &quot;root&quot;.val is not null order by &quot;result&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT STRING_TO_ARRAY(val, ' ') AS result FROM func('e2e::rel_strings__Relation_1_') WHERE val IS NOT NULL ORDER BY 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected '{}' but got '[]'</li>
+<li>Row 1, column 'result': expected '{&quot;&quot;,&quot;&quot;,spaces,&quot;&quot;,&quot;&quot;}' but got '[&quot;&quot;,&quot;&quot;,&quot;spaces&quot;,&quot;&quot;,&quot;&quot;]'</li>
+<li>Row 2, column 'result': expected '{MiXeD,CaSe}' but got '[&quot;MiXeD&quot;,&quot;CaSe&quot;]'</li>
+<li>Row 3, column 'result': expected '{UPPERCASE}' but got '[&quot;UPPERCASE&quot;]'</li>
+<li>Row 4, column 'result': expected '{WORLD}' but got '[&quot;WORLD&quot;]'</li>
+<li>Row 5, column 'result': expected '{abcdefghij}' but got '[&quot;abcdefghij&quot;]'</li>
+<li>Row 6, column 'result': expected '{hello}' but got '[&quot;hello&quot;]'</li>
+<li>Row 7, column 'result': expected '{repeat}' but got '[&quot;repeat&quot;]'</li>
+<li>Row 8, column 'result': expected '{special!@#$%}' but got '[&quot;special!@#$%&quot;]'</li>
+<li>Row 9, column 'result': expected '{the,quick,brown,fox}' but got '[&quot;the&quot;,&quot;quick&quot;,&quot;brown&quot;,&quot;fox&quot;]'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{}</td>
+</tr>
+<tr>
+<td>{&quot;&quot;,&quot;&quot;,spaces,&quot;&quot;,&quot;&quot;}</td>
+</tr>
+<tr>
+<td>{MiXeD,CaSe}</td>
+</tr>
+<tr>
+<td>{UPPERCASE}</td>
+</tr>
+<tr>
+<td>{WORLD}</td>
+</tr>
+<tr>
+<td>{abcdefghij}</td>
+</tr>
+<tr>
+<td>{hello}</td>
+</tr>
+<tr>
+<td>{repeat}</td>
+</tr>
+<tr>
+<td>{special!@#$%}</td>
+</tr>
+<tr>
+<td>{the,quick,brown,fox}</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[]</td>
+</tr>
+<tr>
+<td>[&quot;&quot;,&quot;&quot;,&quot;spaces&quot;,&quot;&quot;,&quot;&quot;]</td>
+</tr>
+<tr>
+<td>[&quot;MiXeD&quot;,&quot;CaSe&quot;]</td>
+</tr>
+<tr>
+<td>[&quot;UPPERCASE&quot;]</td>
+</tr>
+<tr>
+<td>[&quot;WORLD&quot;]</td>
+</tr>
+<tr>
+<td>[&quot;abcdefghij&quot;]</td>
+</tr>
+<tr>
+<td>[&quot;hello&quot;]</td>
+</tr>
+<tr>
+<td>[&quot;repeat&quot;]</td>
+</tr>
+<tr>
+<td>[&quot;special!@#$%&quot;]</td>
+</tr>
+<tr>
+<td>[&quot;the&quot;,&quot;quick&quot;,&quot;brown&quot;,&quot;fox&quot;]</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-array_position__anycompatiblearray_anycompatible__from_table-Relation"></a></p>
 <h3>❌ array_position__anycompatiblearray_anycompatible__from_table [Relation]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -1861,6 +2538,51 @@ li { margin: 0.3em 0; }
   ]-&gt;meta::pure::functions::collection::indexOf(2)
    ]
 )
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected '2' but got '1'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-array_position__anycompatiblearray_anycompatible__from_table-Grammar"></a></p>
+<h3>❌ array_position__anycompatiblearray_anycompatible__from_table [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT ARRAY_POSITION(ARRAY[1,2,3], 2) AS result FROM numbers WHERE id = 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT ARRAY_POSITION(ARRAY[1, 2, 3], 2) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select (coalesce((select min(t.o) from jsonb_array_elements(cast(cast(jsonb_build_array(1,2,3) as JSONB) as jsonb)) with ordinality t(v, o) where t.v = to_jsonb(2)), 0) - 1) as &quot;result&quot; from public.numbers as &quot;root&quot; where &quot;root&quot;.id = 1
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT ARRAY_POSITION(ARRAY[1, 2, 3], 2) AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
@@ -2038,6 +2760,51 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-max__anyarray__no_generator-Grammar"></a></p>
+<h3>❌ max__anyarray__no_generator [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT MAX(ARRAY[id]) AS result FROM persons WHERE id IS NOT NULL
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT MAX(ARRAY[id]) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id IS NOT NULL
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select &quot;subselect&quot;.&quot;result&quot; as &quot;result&quot; from (select max(&quot;root&quot;.id) as &quot;result&quot; from public.persons as &quot;root&quot; where &quot;root&quot;.id is not null) as &quot;subselect&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT MAX(ARRAY[id]) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id IS NOT NULL}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected '{10}' but got '10'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{10}</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-min__anyarray__no_generator-TDS"></a></p>
 <h3>❌ min__anyarray__no_generator [TDS]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -2151,6 +2918,51 @@ li { margin: 0.3em 0; }
      result: x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|$x.id:y: Integer[*]|$y-&gt;meta::pure::functions::math::min()
    ]
 )
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected '{1}' but got '1'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{1}</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-min__anyarray__no_generator-Grammar"></a></p>
+<h3>❌ min__anyarray__no_generator [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT MIN(ARRAY[id]) AS result FROM persons WHERE id IS NOT NULL
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT MIN(ARRAY[id]) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id IS NOT NULL
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select &quot;subselect&quot;.&quot;result&quot; as &quot;result&quot; from (select min(&quot;root&quot;.id) as &quot;result&quot; from public.persons as &quot;root&quot; where &quot;root&quot;.id is not null) as &quot;subselect&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT MIN(ARRAY[id]) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id IS NOT NULL}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
@@ -2301,6 +3113,55 @@ li { margin: 0.3em 0; }
      result: x: (id:Integer[1], int_val:Integer, float_val:Float, numeric_val:Float, small_val:Integer, big_val:Integer)[1]|$x.int_val-&gt;meta::pure::functions::multiplicity::toOne() / 5
    ]
 )
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected '1' but got '1.4'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>1.4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-op_div__int__truncates_toward_zero-Grammar"></a></p>
+<h3>❌ op_div__int__truncates_toward_zero [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val / 5 AS result FROM numbers WHERE id = 9
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val / 5 AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 9
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select &quot;root&quot;.id as &quot;id&quot;, ((1.0 * &quot;root&quot;.int_val) / 5) as &quot;result&quot; from public.numbers as &quot;root&quot; where &quot;root&quot;.id = 9
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT id, int_val / 5 AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 9}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
@@ -2491,6 +3352,55 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-op_div__negative__truncates_toward_zero-Grammar"></a></p>
+<h3>❌ op_div__negative__truncates_toward_zero [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val / 3 AS result FROM numbers WHERE id = 2
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val / 3 AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 2
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select &quot;root&quot;.id as &quot;id&quot;, ((1.0 * &quot;root&quot;.int_val) / 3) as &quot;result&quot; from public.numbers as &quot;root&quot; where &quot;root&quot;.id = 2
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT id, int_val / 3 AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 2}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected '-3' but got '-3.3333333333333335'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>-3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>-3.3333333333333335</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-op_mod__negative__basic-TDS"></a></p>
 <h3>❌ op_mod__negative__basic [TDS]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -2609,6 +3519,55 @@ li { margin: 0.3em 0; }
      result: x: (id:Integer[1], int_val:Integer, float_val:Float, numeric_val:Float, small_val:Integer, big_val:Integer)[1]|$x.int_val-&gt;meta::pure::functions::multiplicity::toOne()-&gt;meta::pure::functions::math::mod(3)
    ]
 )
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected '-1' but got '2'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-op_mod__negative__basic-Grammar"></a></p>
+<h3>❌ op_mod__negative__basic [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val % 3 AS result FROM numbers WHERE id = 2
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val % 3 AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 2
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select &quot;root&quot;.id as &quot;id&quot;, mod(mod(&quot;root&quot;.int_val, 3) + 3, 3) as &quot;result&quot; from public.numbers as &quot;root&quot; where &quot;root&quot;.id = 2
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT id, int_val % 3 AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 2}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
@@ -2837,6 +3796,51 @@ li { margin: 0.3em 0; }
   )
    ]
 )
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected '2023-01-10' but got '2023-01-20 00:00:00.0'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2023-01-10</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2023-01-20 00:00:00.0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-op_sub__date_minus_int_days-Grammar"></a></p>
+<h3>❌ op_sub__date_minus_int_days [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT d - 5 AS result FROM dates WHERE id = 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT d - 5 AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select (&quot;root&quot;.d + (INTERVAL '1 DAYS' * 5)) as &quot;result&quot; from public.dates as &quot;root&quot; where &quot;root&quot;.id = 1
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT d - 5 AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
@@ -3173,6 +4177,51 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-eq__null_null-Grammar"></a></p>
+<h3>❌ eq__null_null [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT NULL = NULL AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT NULL = NULL AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select 1 = 1 as &quot;result&quot; from public.persons as &quot;root&quot; where &quot;root&quot;.id = 1
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT NULL = NULL AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected 'null' but got 'true'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>NULL</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-neq__int__null-TDS"></a></p>
 <h3>❌ neq__int__null [TDS]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -3327,6 +4376,55 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-neq__int__null-Grammar"></a></p>
+<h3>❌ neq__int__null [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val &lt;&gt; 42 AS result FROM numbers WHERE id = 5
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val &lt;&gt; 42 AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 5
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select &quot;root&quot;.id as &quot;id&quot;, (&quot;root&quot;.int_val is distinct from 42) as &quot;result&quot; from public.numbers as &quot;root&quot; where &quot;root&quot;.id = 5
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT id, int_val &lt;&gt; 42 AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 5}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected 'null' but got 'true'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td><em>NULL</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-lt__int__null-Relation"></a></p>
 <h3>❌ lt__int__null [Relation]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -3392,6 +4490,55 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-lt__int__null-Grammar"></a></p>
+<h3>❌ lt__int__null [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val &lt; 100 AS result FROM numbers WHERE id = 5
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val &lt; 100 AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 5
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select &quot;root&quot;.id as &quot;id&quot;, (&quot;root&quot;.int_val is not null and &quot;root&quot;.int_val &lt; 100) as &quot;result&quot; from public.numbers as &quot;root&quot; where &quot;root&quot;.id = 5
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT id, int_val &lt; 100 AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 5}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected 'null' but got 'false'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td><em>NULL</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-gt__int__null-Relation"></a></p>
 <h3>❌ gt__int__null [Relation]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -3421,6 +4568,55 @@ li { margin: 0.3em 0; }
      result: x: (id:Integer[1], int_val:Integer, float_val:Float, numeric_val:Float, small_val:Integer, big_val:Integer)[1]|$x.int_val &gt; 10
    ]
 )
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected 'null' but got 'false'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td><em>NULL</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-gt__int__null-Grammar"></a></p>
+<h3>❌ gt__int__null [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val &gt; 10 AS result FROM numbers WHERE id = 5
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val &gt; 10 AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 5
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select &quot;root&quot;.id as &quot;id&quot;, (&quot;root&quot;.int_val is not null and &quot;root&quot;.int_val &gt; 10) as &quot;result&quot; from public.numbers as &quot;root&quot; where &quot;root&quot;.id = 5
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT id, int_val &gt; 10 AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 5}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
@@ -3734,6 +4930,115 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-neq__filter__int-Grammar"></a></p>
+<h3>❌ neq__filter__int [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT id, name FROM persons WHERE age &lt;&gt; 30 ORDER BY id
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT id, name FROM func('e2e::rel_persons__Relation_1_') WHERE age &lt;&gt; 30 ORDER BY id
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select &quot;root&quot;.id as &quot;id&quot;, &quot;root&quot;.name as &quot;name&quot; from public.persons as &quot;root&quot; where (&quot;root&quot;.age is distinct from 30) order by &quot;id&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT id, name FROM func('e2e::rel_persons__Relation_1_') WHERE age &lt;&gt; 30 ORDER BY id}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row count mismatch: expected 8 but got 9</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>Bob</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Charlie</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Diana</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Eve</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Frank</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Hank</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Ivy</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Jack</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>Bob</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Charlie</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Diana</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Eve</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Frank</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Grace</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Hank</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Ivy</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Jack</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-and__false_null-TDS"></a></p>
 <h3>❌ and__false_null [TDS]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -3878,6 +5183,51 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-and__false_null-Grammar"></a></p>
+<h3>❌ and__false_null [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT (false AND CAST(NULL AS BOOLEAN)) AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT (false AND CAST(NULL AS BOOLEAN)) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select null as &quot;result&quot; from public.persons as &quot;root&quot; where &quot;root&quot;.id = 1
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT (false AND CAST(NULL AS BOOLEAN)) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected 'false' but got 'null'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>NULL</em></td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-or__true_null-TDS"></a></p>
 <h3>❌ or__true_null [TDS]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -3990,6 +5340,51 @@ li { margin: 0.3em 0; }
      result: x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|[]-&gt;meta::pure::functions::lang::cast(@Boolean)
    ]
 )
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected 'true' but got 'null'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>NULL</em></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-or__true_null-Grammar"></a></p>
+<h3>❌ or__true_null [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT (true OR CAST(NULL AS BOOLEAN)) AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT (true OR CAST(NULL AS BOOLEAN)) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select null as &quot;result&quot; from public.persons as &quot;root&quot; where &quot;root&quot;.id = 1
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT (true OR CAST(NULL AS BOOLEAN)) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
@@ -4535,6 +5930,55 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-between__int__null-Grammar"></a></p>
+<h3>❌ between__int__null [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val BETWEEN 0 AND 100 AS result FROM numbers WHERE id = 5
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val BETWEEN 0 AND 100 AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 5
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select &quot;root&quot;.id as &quot;id&quot;, (((&quot;root&quot;.int_val is not null and 0 is not null) and &quot;root&quot;.int_val &gt;= 0) and ((&quot;root&quot;.int_val is not null and 100 is not null) and &quot;root&quot;.int_val &lt;= 100)) as &quot;result&quot; from public.numbers as &quot;root&quot; where &quot;root&quot;.id = 5
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT id, int_val BETWEEN 0 AND 100 AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 5}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected 'null' but got 'false'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td><em>NULL</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-is_distinct_from__int__one_null-Relation"></a></p>
 <h3>❌ is_distinct_from__int__one_null [Relation]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -4566,6 +6010,55 @@ li { margin: 0.3em 0; }
     ($x.int_val == 42))
    ]
 )
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected 'true' but got 'null'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td><em>NULL</em></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-is_distinct_from__int__one_null-Grammar"></a></p>
+<h3>❌ is_distinct_from__int__one_null [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val IS DISTINCT FROM 42 AS result FROM numbers WHERE id = 5
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT id, int_val IS DISTINCT FROM 42 AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 5
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select &quot;root&quot;.id as &quot;id&quot;, not ((&quot;root&quot;.int_val is null and 42 is null) or &quot;root&quot;.int_val = 42) as &quot;result&quot; from public.numbers as &quot;root&quot; where &quot;root&quot;.id = 5
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT id, int_val IS DISTINCT FROM 42 AS result FROM func('e2e::rel_numbers__Relation_1_') WHERE id = 5}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
@@ -4805,6 +6298,517 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-to_char_token__D-Grammar"></a></p>
+<h3>❌ to_char_token__D [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT to_char(TIMESTAMP '2024-06-15 13:45:22', 'D') AS result FROM dates WHERE id = 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT to_char(TIMESTAMP '2024-06-15 13:45:22', 'D') AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select cast(date_part('dow', Timestamp'2024-06-15 13:45:22') as varchar) as &quot;result&quot; from public.dates as &quot;root&quot; where &quot;root&quot;.id = 1
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT to_char(TIMESTAMP '2024-06-15 13:45:22', 'D') AS result FROM func('e2e::rel_dates__Relation_1_') WHERE id = 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected '7' but got '6'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-join_right_basic-Grammar"></a></p>
+<h3>❌ join_right_basic [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT p.name, d.name AS dept_name FROM persons p RIGHT JOIN departments d ON p.dept_id = d.id ORDER BY 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT p.name, d.name AS dept_name FROM func('e2e::rel_persons__Relation_1_') p RIGHT JOIN func('e2e::rel_departments__Relation_1_') d ON p.dept_id = d.id ORDER BY 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select &quot;persons_0&quot;.&quot;name_p&quot; as &quot;name&quot;, &quot;persons_0&quot;.&quot;name_d&quot; as &quot;dept_name&quot; from (select * from (select &quot;persons_2&quot;.&quot;id&quot; as &quot;id_p&quot;, &quot;persons_2&quot;.&quot;name&quot; as &quot;name_p&quot;, &quot;persons_2&quot;.&quot;age&quot; as &quot;age_p&quot;, &quot;persons_2&quot;.&quot;salary&quot; as &quot;salary_p&quot;, &quot;persons_2&quot;.&quot;hire_date&quot; as &quot;hire_date_p&quot;, &quot;persons_2&quot;.&quot;active&quot; as &quot;active_p&quot;, &quot;persons_2&quot;.&quot;dept_id&quot; as &quot;dept_id_p&quot; from (select &quot;root&quot;.id as &quot;id&quot;, &quot;root&quot;.name as &quot;name&quot;, &quot;root&quot;.age as &quot;age&quot;, &quot;root&quot;.salary as &quot;salary&quot;, &quot;root&quot;.hire_date as &quot;hire_date&quot;, &quot;root&quot;.active as &quot;active&quot;, &quot;root&quot;.dept_id as &quot;dept_id&quot; from public.persons as &quot;root&quot;) as &quot;persons_2&quot;) as &quot;persons_1&quot; right outer join (select &quot;root&quot;.id as &quot;id_d&quot;, &quot;root&quot;.name as &quot;name_d&quot;, &quot;root&quot;.budget as &quot;budget_d&quot;, &quot;root&quot;.created_at as &quot;created_at_d&quot; from public.departments as &quot;root&quot;) as &quot;departments_0&quot; on ((&quot;persons_1&quot;.&quot;dept_id_p&quot; is not distinct from &quot;departments_0&quot;.&quot;id_d&quot;))) as &quot;persons_0&quot; order by &quot;name&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT p.name, d.name AS dept_name FROM func('e2e::rel_persons__Relation_1_') p RIGHT JOIN func('e2e::rel_departments__Relation_1_') d ON p.dept_id = d.id ORDER BY 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 9, column 'dept_name': expected 'Finance' but got 'HR'</li>
+<li>Row 10, column 'dept_name': expected 'Legal' but got 'Finance'</li>
+<li>Row 11, column 'dept_name': expected 'Support' but got 'Legal'</li>
+<li>Row 12, column 'dept_name': expected 'Research' but got 'Support'</li>
+<li>Row 13, column 'dept_name': expected 'Operations' but got 'Research'</li>
+<li>Row 14, column 'dept_name': expected 'Design' but got 'Operations'</li>
+<li>Row 15, column 'dept_name': expected 'HR' but got 'Design'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>dept_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alice</td>
+<td>Engineering</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>Engineering</td>
+</tr>
+<tr>
+<td>Charlie</td>
+<td>Marketing</td>
+</tr>
+<tr>
+<td>Diana</td>
+<td>Marketing</td>
+</tr>
+<tr>
+<td>Eve</td>
+<td>Sales</td>
+</tr>
+<tr>
+<td>Frank</td>
+<td>Sales</td>
+</tr>
+<tr>
+<td>Hank</td>
+<td>Engineering</td>
+</tr>
+<tr>
+<td>Ivy</td>
+<td>Marketing</td>
+</tr>
+<tr>
+<td>Jack</td>
+<td>Sales</td>
+</tr>
+<tr>
+<td><em>NULL</em></td>
+<td>Finance</td>
+</tr>
+<tr>
+<td><em>NULL</em></td>
+<td>Legal</td>
+</tr>
+<tr>
+<td><em>NULL</em></td>
+<td>Support</td>
+</tr>
+<tr>
+<td><em>NULL</em></td>
+<td>Research</td>
+</tr>
+<tr>
+<td><em>NULL</em></td>
+<td>Operations</td>
+</tr>
+<tr>
+<td><em>NULL</em></td>
+<td>Design</td>
+</tr>
+<tr>
+<td><em>NULL</em></td>
+<td>HR</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>dept_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alice</td>
+<td>Engineering</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>Engineering</td>
+</tr>
+<tr>
+<td>Charlie</td>
+<td>Marketing</td>
+</tr>
+<tr>
+<td>Diana</td>
+<td>Marketing</td>
+</tr>
+<tr>
+<td>Eve</td>
+<td>Sales</td>
+</tr>
+<tr>
+<td>Frank</td>
+<td>Sales</td>
+</tr>
+<tr>
+<td>Hank</td>
+<td>Engineering</td>
+</tr>
+<tr>
+<td>Ivy</td>
+<td>Marketing</td>
+</tr>
+<tr>
+<td>Jack</td>
+<td>Sales</td>
+</tr>
+<tr>
+<td><em>NULL</em></td>
+<td>HR</td>
+</tr>
+<tr>
+<td><em>NULL</em></td>
+<td>Finance</td>
+</tr>
+<tr>
+<td><em>NULL</em></td>
+<td>Legal</td>
+</tr>
+<tr>
+<td><em>NULL</em></td>
+<td>Support</td>
+</tr>
+<tr>
+<td><em>NULL</em></td>
+<td>Research</td>
+</tr>
+<tr>
+<td><em>NULL</em></td>
+<td>Operations</td>
+</tr>
+<tr>
+<td><em>NULL</em></td>
+<td>Design</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-join_right_unmatched-Grammar"></a></p>
+<h3>❌ join_right_unmatched [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT COALESCE(p.name, 'N/A') AS person, d.name AS dept_name FROM persons p RIGHT JOIN departments d ON p.dept_id = d.id ORDER BY 2
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT COALESCE(p.name, 'N/A') AS person, d.name AS dept_name FROM func('e2e::rel_persons__Relation_1_') p RIGHT JOIN func('e2e::rel_departments__Relation_1_') d ON p.dept_id = d.id ORDER BY 2
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select coalesce(&quot;persons_0&quot;.&quot;name_p&quot;, Text'N/A', null) as &quot;person&quot;, &quot;persons_0&quot;.&quot;name_d&quot; as &quot;dept_name&quot; from (select * from (select &quot;persons_2&quot;.&quot;id&quot; as &quot;id_p&quot;, &quot;persons_2&quot;.&quot;name&quot; as &quot;name_p&quot;, &quot;persons_2&quot;.&quot;age&quot; as &quot;age_p&quot;, &quot;persons_2&quot;.&quot;salary&quot; as &quot;salary_p&quot;, &quot;persons_2&quot;.&quot;hire_date&quot; as &quot;hire_date_p&quot;, &quot;persons_2&quot;.&quot;active&quot; as &quot;active_p&quot;, &quot;persons_2&quot;.&quot;dept_id&quot; as &quot;dept_id_p&quot; from (select &quot;root&quot;.id as &quot;id&quot;, &quot;root&quot;.name as &quot;name&quot;, &quot;root&quot;.age as &quot;age&quot;, &quot;root&quot;.salary as &quot;salary&quot;, &quot;root&quot;.hire_date as &quot;hire_date&quot;, &quot;root&quot;.active as &quot;active&quot;, &quot;root&quot;.dept_id as &quot;dept_id&quot; from public.persons as &quot;root&quot;) as &quot;persons_2&quot;) as &quot;persons_1&quot; right outer join (select &quot;root&quot;.id as &quot;id_d&quot;, &quot;root&quot;.name as &quot;name_d&quot;, &quot;root&quot;.budget as &quot;budget_d&quot;, &quot;root&quot;.created_at as &quot;created_at_d&quot; from public.departments as &quot;root&quot;) as &quot;departments_0&quot; on ((&quot;persons_1&quot;.&quot;dept_id_p&quot; is not distinct from &quot;departments_0&quot;.&quot;id_d&quot;))) as &quot;persons_0&quot; order by &quot;dept_name&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT COALESCE(p.name, 'N/A') AS person, d.name AS dept_name FROM func('e2e::rel_persons__Relation_1_') p RIGHT JOIN func('e2e::rel_departments__Relation_1_') d ON p.dept_id = d.id ORDER BY 2}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 2, column 'person': expected 'Alice' but got 'Hank'</li>
+<li>Row 3, column 'person': expected 'Hank' but got 'Alice'</li>
+<li>Row 7, column 'person': expected 'Ivy' but got 'Charlie'</li>
+<li>Row 8, column 'person': expected 'Charlie' but got 'Ivy'</li>
+<li>Row 13, column 'person': expected 'Jack' but got 'Eve'</li>
+<li>Row 14, column 'person': expected 'Eve' but got 'Jack'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>person</th>
+<th>dept_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N/A</td>
+<td>Design</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>Engineering</td>
+</tr>
+<tr>
+<td>Alice</td>
+<td>Engineering</td>
+</tr>
+<tr>
+<td>Hank</td>
+<td>Engineering</td>
+</tr>
+<tr>
+<td>N/A</td>
+<td>Finance</td>
+</tr>
+<tr>
+<td>N/A</td>
+<td>HR</td>
+</tr>
+<tr>
+<td>N/A</td>
+<td>Legal</td>
+</tr>
+<tr>
+<td>Ivy</td>
+<td>Marketing</td>
+</tr>
+<tr>
+<td>Charlie</td>
+<td>Marketing</td>
+</tr>
+<tr>
+<td>Diana</td>
+<td>Marketing</td>
+</tr>
+<tr>
+<td>N/A</td>
+<td>Operations</td>
+</tr>
+<tr>
+<td>N/A</td>
+<td>Research</td>
+</tr>
+<tr>
+<td>Frank</td>
+<td>Sales</td>
+</tr>
+<tr>
+<td>Jack</td>
+<td>Sales</td>
+</tr>
+<tr>
+<td>Eve</td>
+<td>Sales</td>
+</tr>
+<tr>
+<td>N/A</td>
+<td>Support</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>person</th>
+<th>dept_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N/A</td>
+<td>Design</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>Engineering</td>
+</tr>
+<tr>
+<td>Hank</td>
+<td>Engineering</td>
+</tr>
+<tr>
+<td>Alice</td>
+<td>Engineering</td>
+</tr>
+<tr>
+<td>N/A</td>
+<td>Finance</td>
+</tr>
+<tr>
+<td>N/A</td>
+<td>HR</td>
+</tr>
+<tr>
+<td>N/A</td>
+<td>Legal</td>
+</tr>
+<tr>
+<td>Charlie</td>
+<td>Marketing</td>
+</tr>
+<tr>
+<td>Ivy</td>
+<td>Marketing</td>
+</tr>
+<tr>
+<td>Diana</td>
+<td>Marketing</td>
+</tr>
+<tr>
+<td>N/A</td>
+<td>Operations</td>
+</tr>
+<tr>
+<td>N/A</td>
+<td>Research</td>
+</tr>
+<tr>
+<td>Frank</td>
+<td>Sales</td>
+</tr>
+<tr>
+<td>Eve</td>
+<td>Sales</td>
+</tr>
+<tr>
+<td>Jack</td>
+<td>Sales</td>
+</tr>
+<tr>
+<td>N/A</td>
+<td>Support</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-subquery_derived_join-Grammar"></a></p>
+<h3>❌ subquery_derived_join [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT p.name, sub.avg_salary FROM persons p INNER JOIN (SELECT dept_id, AVG(salary) AS avg_salary FROM persons WHERE salary IS NOT NULL GROUP BY dept_id) sub ON p.dept_id = sub.dept_id ORDER BY 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT p.name, sub.avg_salary FROM func('e2e::rel_persons__Relation_1_') p INNER JOIN (SELECT dept_id, AVG(salary) AS avg_salary FROM func('e2e::rel_persons__Relation_1_') WHERE salary IS NOT NULL GROUP BY dept_id) sub ON p.dept_id = sub.dept_id ORDER BY 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select &quot;persons_0&quot;.&quot;name_p&quot; as &quot;name&quot;, &quot;persons_0&quot;.&quot;avg_salary_sub&quot; as &quot;avg_salary&quot; from (select &quot;persons_1&quot;.&quot;name_p&quot; as &quot;name_p&quot;, &quot;persons_1&quot;.&quot;avg_salary_sub&quot; as &quot;avg_salary_sub&quot; from (select * from (select &quot;persons_3&quot;.&quot;id&quot; as &quot;id_p&quot;, &quot;persons_3&quot;.&quot;name&quot; as &quot;name_p&quot;, &quot;persons_3&quot;.&quot;age&quot; as &quot;age_p&quot;, &quot;persons_3&quot;.&quot;salary&quot; as &quot;salary_p&quot;, &quot;persons_3&quot;.&quot;hire_date&quot; as &quot;hire_date_p&quot;, &quot;persons_3&quot;.&quot;active&quot; as &quot;active_p&quot;, &quot;persons_3&quot;.&quot;dept_id&quot; as &quot;dept_id_p&quot; from (select &quot;root&quot;.id as &quot;id&quot;, &quot;root&quot;.name as &quot;name&quot;, &quot;root&quot;.age as &quot;age&quot;, &quot;root&quot;.salary as &quot;salary&quot;, &quot;root&quot;.hire_date as &quot;hire_date&quot;, &quot;root&quot;.active as &quot;active&quot;, &quot;root&quot;.dept_id as &quot;dept_id&quot; from public.persons as &quot;root&quot;) as &quot;persons_3&quot;) as &quot;persons_2&quot; inner join (select &quot;persons_6&quot;.&quot;dept_id&quot; as &quot;dept_id_sub&quot;, &quot;persons_6&quot;.&quot;avg_salary&quot; as &quot;avg_salary_sub&quot; from (select &quot;root&quot;.dept_id as &quot;dept_id&quot;, avg(1.0 * &quot;root&quot;.salary) as &quot;avg_salary&quot; from public.persons as &quot;root&quot; where &quot;root&quot;.salary is not null group by 1) as &quot;persons_6&quot;) as &quot;persons_5&quot; on ((&quot;persons_2&quot;.&quot;dept_id_p&quot; is not distinct from &quot;persons_5&quot;.&quot;dept_id_sub&quot;))) as &quot;persons_1&quot; order by &quot;name_p&quot;) as &quot;persons_0&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT p.name, sub.avg_salary FROM func('e2e::rel_persons__Relation_1_') p INNER JOIN (SELECT dept_id, AVG(salary) AS avg_salary FROM func('e2e::rel_persons__Relation_1_') WHERE salary IS NOT NULL GROUP BY dept_id) sub ON p.dept_id = sub.dept_id ORDER BY 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row count mismatch: expected 9 but got 10</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>avg_salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alice</td>
+<td>55000.250000000000</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>55000.250000000000</td>
+</tr>
+<tr>
+<td>Charlie</td>
+<td>66667.000000000000</td>
+</tr>
+<tr>
+<td>Diana</td>
+<td>66667.000000000000</td>
+</tr>
+<tr>
+<td>Eve</td>
+<td>90000.000000000000</td>
+</tr>
+<tr>
+<td>Frank</td>
+<td>90000.000000000000</td>
+</tr>
+<tr>
+<td>Hank</td>
+<td>55000.250000000000</td>
+</tr>
+<tr>
+<td>Ivy</td>
+<td>66667.000000000000</td>
+</tr>
+<tr>
+<td>Jack</td>
+<td>90000.000000000000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>avg_salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alice</td>
+<td>55000.25</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>55000.25</td>
+</tr>
+<tr>
+<td>Charlie</td>
+<td>66667.0</td>
+</tr>
+<tr>
+<td>Diana</td>
+<td>66667.0</td>
+</tr>
+<tr>
+<td>Eve</td>
+<td>90000.0</td>
+</tr>
+<tr>
+<td>Frank</td>
+<td>90000.0</td>
+</tr>
+<tr>
+<td>Grace</td>
+<td>70000.0</td>
+</tr>
+<tr>
+<td>Hank</td>
+<td>55000.25</td>
+</tr>
+<tr>
+<td>Ivy</td>
+<td>66667.0</td>
+</tr>
+<tr>
+<td>Jack</td>
+<td>90000.0</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-subquery_quant_all_empty_null_value-Relation"></a></p>
 <h3>❌ subquery_quant_all_empty_null_value [Relation]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -4873,6 +6877,102 @@ li { margin: 0.3em 0; }
 )-&gt;meta::pure::functions::relation::sort(
   ~name-&gt;meta::pure::functions::relation::ascending()
 )
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row count mismatch: expected 10 but got 9</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alice</td>
+</tr>
+<tr>
+<td>Bob</td>
+</tr>
+<tr>
+<td>Charlie</td>
+</tr>
+<tr>
+<td>Diana</td>
+</tr>
+<tr>
+<td>Eve</td>
+</tr>
+<tr>
+<td>Frank</td>
+</tr>
+<tr>
+<td>Grace</td>
+</tr>
+<tr>
+<td>Hank</td>
+</tr>
+<tr>
+<td>Ivy</td>
+</tr>
+<tr>
+<td>Jack</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alice</td>
+</tr>
+<tr>
+<td>Bob</td>
+</tr>
+<tr>
+<td>Charlie</td>
+</tr>
+<tr>
+<td>Diana</td>
+</tr>
+<tr>
+<td>Eve</td>
+</tr>
+<tr>
+<td>Frank</td>
+</tr>
+<tr>
+<td>Hank</td>
+</tr>
+<tr>
+<td>Ivy</td>
+</tr>
+<tr>
+<td>Jack</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-subquery_quant_all_empty_null_value-Grammar"></a></p>
+<h3>❌ subquery_quant_all_empty_null_value [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT p.name FROM persons p WHERE p.age &gt; ALL (SELECT p2.age FROM persons p2 WHERE p2.id &gt; 100) ORDER BY 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT p.name FROM func('e2e::rel_persons__Relation_1_') p WHERE p.age &gt; ALL(SELECT p2.age FROM func('e2e::rel_persons__Relation_1_') p2 WHERE p2.id &gt; 100) ORDER BY 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select &quot;root&quot;.name as &quot;name&quot; from public.persons as &quot;root&quot; where ((&quot;root&quot;.age is not null and &quot;root&quot;.age &gt; all (select &quot;persons_1&quot;.age as &quot;age&quot; from public.persons as &quot;persons_1&quot; where &quot;persons_1&quot;.age is not null and (&quot;persons_1&quot;.id is not null and &quot;persons_1&quot;.id &gt; 100))) and not exists(select 1 from public.persons as &quot;persons_2&quot; where (&quot;persons_2&quot;.id is not null and &quot;persons_2&quot;.id &gt; 100) and &quot;persons_2&quot;.age is null)) order by &quot;name&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT p.name FROM func('e2e::rel_persons__Relation_1_') p WHERE p.age &gt; ALL(SELECT p2.age FROM func('e2e::rel_persons__Relation_1_') p2 WHERE p2.id &gt; 100) ORDER BY 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
@@ -5040,6 +7140,51 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-null_equals_null-Grammar"></a></p>
+<h3>❌ null_equals_null [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT (NULL = NULL) AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT (NULL = NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select 1 = 1 as &quot;result&quot; from public.persons as &quot;root&quot; where &quot;root&quot;.id = 1
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT (NULL = NULL) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected 'null' but got 'true'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>NULL</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-null_not_equals-TDS"></a></p>
 <h3>❌ null_not_equals [TDS]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -5119,6 +7264,141 @@ li { margin: 0.3em 0; }
 <tbody>
 <tr>
 <td>true</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-null_not_equals-Grammar"></a></p>
+<h3>❌ null_not_equals [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT (NULL &lt;&gt; 1) AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT (NULL &lt;&gt; 1) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select not 1 is null as &quot;result&quot; from public.persons as &quot;root&quot; where &quot;root&quot;.id = 1
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT (NULL &lt;&gt; 1) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected 'null' but got 'true'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>NULL</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-null_is_distinct_from-Grammar"></a></p>
+<h3>❌ null_is_distinct_from [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT name FROM persons WHERE age IS DISTINCT FROM 30 ORDER BY 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT name FROM func('e2e::rel_persons__Relation_1_') WHERE age IS DISTINCT FROM 30 ORDER BY 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select &quot;root&quot;.name as &quot;name&quot; from public.persons as &quot;root&quot; where not ((&quot;root&quot;.age is null and 30 is null) or &quot;root&quot;.age = 30) order by &quot;name&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT name FROM func('e2e::rel_persons__Relation_1_') WHERE age IS DISTINCT FROM 30 ORDER BY 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row count mismatch: expected 9 but got 8</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bob</td>
+</tr>
+<tr>
+<td>Charlie</td>
+</tr>
+<tr>
+<td>Diana</td>
+</tr>
+<tr>
+<td>Eve</td>
+</tr>
+<tr>
+<td>Frank</td>
+</tr>
+<tr>
+<td>Grace</td>
+</tr>
+<tr>
+<td>Hank</td>
+</tr>
+<tr>
+<td>Ivy</td>
+</tr>
+<tr>
+<td>Jack</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bob</td>
+</tr>
+<tr>
+<td>Charlie</td>
+</tr>
+<tr>
+<td>Diana</td>
+</tr>
+<tr>
+<td>Eve</td>
+</tr>
+<tr>
+<td>Frank</td>
+</tr>
+<tr>
+<td>Hank</td>
+</tr>
+<tr>
+<td>Ivy</td>
+</tr>
+<tr>
+<td>Jack</td>
 </tr>
 </tbody>
 </table>
@@ -5385,6 +7665,229 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-null_concat-Grammar"></a></p>
+<h3>❌ null_concat [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT name || ' age=' || CAST(age AS TEXT) AS result FROM persons ORDER BY 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT name || ' age=' || CAST(age AS TEXT) AS result FROM func('e2e::rel_persons__Relation_1_') ORDER BY 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select case when &quot;root&quot;.name is null then null else concat(&quot;root&quot;.name, Text' age=', cast(&quot;root&quot;.age as varchar)) end as &quot;result&quot; from public.persons as &quot;root&quot; order by &quot;result&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT name || ' age=' || CAST(age AS TEXT) AS result FROM func('e2e::rel_persons__Relation_1_') ORDER BY 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 6, column 'result': expected 'Hank age=50' but got 'Grace age='</li>
+<li>Row 7, column 'result': expected 'Ivy age=22' but got 'Hank age=50'</li>
+<li>Row 8, column 'result': expected 'Jack age=38' but got 'Ivy age=22'</li>
+<li>Row 9, column 'result': expected 'null' but got 'Jack age=38'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alice age=30</td>
+</tr>
+<tr>
+<td>Bob age=25</td>
+</tr>
+<tr>
+<td>Charlie age=35</td>
+</tr>
+<tr>
+<td>Diana age=28</td>
+</tr>
+<tr>
+<td>Eve age=45</td>
+</tr>
+<tr>
+<td>Frank age=32</td>
+</tr>
+<tr>
+<td>Hank age=50</td>
+</tr>
+<tr>
+<td>Ivy age=22</td>
+</tr>
+<tr>
+<td>Jack age=38</td>
+</tr>
+<tr>
+<td><em>NULL</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alice age=30</td>
+</tr>
+<tr>
+<td>Bob age=25</td>
+</tr>
+<tr>
+<td>Charlie age=35</td>
+</tr>
+<tr>
+<td>Diana age=28</td>
+</tr>
+<tr>
+<td>Eve age=45</td>
+</tr>
+<tr>
+<td>Frank age=32</td>
+</tr>
+<tr>
+<td>Grace age=</td>
+</tr>
+<tr>
+<td>Hank age=50</td>
+</tr>
+<tr>
+<td>Ivy age=22</td>
+</tr>
+<tr>
+<td>Jack age=38</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-case_simple_null_compare-Grammar"></a></p>
+<h3>❌ case_simple_null_compare [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT name, CASE age WHEN NULL THEN 'null' ELSE 'not null' END AS result FROM persons ORDER BY 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT name, CASE age WHEN NULL THEN 'null' ELSE 'not null' END AS result FROM func('e2e::rel_persons__Relation_1_') ORDER BY 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select &quot;root&quot;.name as &quot;name&quot;, case when &quot;root&quot;.age is null then Text'null' else Text'not null' end as &quot;result&quot; from public.persons as &quot;root&quot; order by &quot;name&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT name, CASE age WHEN NULL THEN 'null' ELSE 'not null' END AS result FROM func('e2e::rel_persons__Relation_1_') ORDER BY 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 6, column 'result': expected 'not null' but got 'null'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alice</td>
+<td>not null</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>not null</td>
+</tr>
+<tr>
+<td>Charlie</td>
+<td>not null</td>
+</tr>
+<tr>
+<td>Diana</td>
+<td>not null</td>
+</tr>
+<tr>
+<td>Eve</td>
+<td>not null</td>
+</tr>
+<tr>
+<td>Frank</td>
+<td>not null</td>
+</tr>
+<tr>
+<td>Grace</td>
+<td>not null</td>
+</tr>
+<tr>
+<td>Hank</td>
+<td>not null</td>
+</tr>
+<tr>
+<td>Ivy</td>
+<td>not null</td>
+</tr>
+<tr>
+<td>Jack</td>
+<td>not null</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alice</td>
+<td>not null</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>not null</td>
+</tr>
+<tr>
+<td>Charlie</td>
+<td>not null</td>
+</tr>
+<tr>
+<td>Diana</td>
+<td>not null</td>
+</tr>
+<tr>
+<td>Eve</td>
+<td>not null</td>
+</tr>
+<tr>
+<td>Frank</td>
+<td>not null</td>
+</tr>
+<tr>
+<td>Grace</td>
+<td>null</td>
+</tr>
+<tr>
+<td>Hank</td>
+<td>not null</td>
+</tr>
+<tr>
+<td>Ivy</td>
+<td>not null</td>
+</tr>
+<tr>
+<td>Jack</td>
+<td>not null</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-where_not_between-TDS"></a></p>
 <h3>❌ where_not_between [TDS]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -5556,6 +8059,99 @@ li { margin: 0.3em 0; }
 )-&gt;meta::pure::functions::relation::sort(
   ~name-&gt;meta::pure::functions::relation::ascending()
 )
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row count mismatch: expected 6 but got 7</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bob</td>
+<td>60000.50</td>
+</tr>
+<tr>
+<td>Charlie</td>
+<td>75000.75</td>
+</tr>
+<tr>
+<td>Diana</td>
+<td>80000.25</td>
+</tr>
+<tr>
+<td>Eve</td>
+<td>95000.00</td>
+</tr>
+<tr>
+<td>Grace</td>
+<td>70000.00</td>
+</tr>
+<tr>
+<td>Jack</td>
+<td>120000.00</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bob</td>
+<td>60000.5</td>
+</tr>
+<tr>
+<td>Charlie</td>
+<td>75000.75</td>
+</tr>
+<tr>
+<td>Diana</td>
+<td>80000.25</td>
+</tr>
+<tr>
+<td>Eve</td>
+<td>95000.0</td>
+</tr>
+<tr>
+<td>Grace</td>
+<td>70000.0</td>
+</tr>
+<tr>
+<td>Hank</td>
+<td><em>NULL</em></td>
+</tr>
+<tr>
+<td>Jack</td>
+<td>120000.0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-where_not_between-Grammar"></a></p>
+<h3>❌ where_not_between [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT name, salary FROM persons WHERE salary NOT BETWEEN 40000 AND 60000 ORDER BY 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT name, salary FROM func('e2e::rel_persons__Relation_1_') WHERE salary NOT BETWEEN 40000 AND 60000 ORDER BY 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select &quot;root&quot;.name as &quot;name&quot;, &quot;root&quot;.salary as &quot;salary&quot; from public.persons as &quot;root&quot; where not (((&quot;root&quot;.salary is not null and 40000 is not null) and &quot;root&quot;.salary &gt;= 40000) and ((&quot;root&quot;.salary is not null and 60000 is not null) and &quot;root&quot;.salary &lt;= 60000)) order by &quot;name&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT name, salary FROM func('e2e::rel_persons__Relation_1_') WHERE salary NOT BETWEEN 40000 AND 60000 ORDER BY 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
@@ -5843,6 +8439,75 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-where_not_in_list-Grammar"></a></p>
+<h3>❌ where_not_in_list [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT name, dept_id FROM persons WHERE dept_id NOT IN (1, 2) ORDER BY 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT name, dept_id FROM func('e2e::rel_persons__Relation_1_') WHERE dept_id NOT IN (1, 2) ORDER BY 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select &quot;root&quot;.name as &quot;name&quot;, &quot;root&quot;.dept_id as &quot;dept_id&quot; from public.persons as &quot;root&quot; where (&quot;root&quot;.dept_id not in (1, 2) OR &quot;root&quot;.dept_id is null) order by &quot;name&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT name, dept_id FROM func('e2e::rel_persons__Relation_1_') WHERE dept_id NOT IN (1, 2) ORDER BY 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row count mismatch: expected 3 but got 4</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>dept_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Eve</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Frank</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Jack</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>dept_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Eve</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Frank</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Grace</td>
+<td><em>NULL</em></td>
+</tr>
+<tr>
+<td>Jack</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-where_not_compound-Relation"></a></p>
 <h3>❌ where_not_compound [Relation]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -5875,6 +8540,90 @@ li { margin: 0.3em 0; }
 )-&gt;meta::pure::functions::relation::sort(
   ~name-&gt;meta::pure::functions::relation::ascending()
 )
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row count mismatch: expected 7 but got 8</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alice</td>
+</tr>
+<tr>
+<td>Charlie</td>
+</tr>
+<tr>
+<td>Diana</td>
+</tr>
+<tr>
+<td>Eve</td>
+</tr>
+<tr>
+<td>Frank</td>
+</tr>
+<tr>
+<td>Ivy</td>
+</tr>
+<tr>
+<td>Jack</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alice</td>
+</tr>
+<tr>
+<td>Charlie</td>
+</tr>
+<tr>
+<td>Diana</td>
+</tr>
+<tr>
+<td>Eve</td>
+</tr>
+<tr>
+<td>Frank</td>
+</tr>
+<tr>
+<td>Hank</td>
+</tr>
+<tr>
+<td>Ivy</td>
+</tr>
+<tr>
+<td>Jack</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-where_not_compound-Grammar"></a></p>
+<h3>❌ where_not_compound [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT name FROM persons WHERE NOT (dept_id = 1 AND salary &gt; 50000) ORDER BY 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT name FROM func('e2e::rel_persons__Relation_1_') WHERE NOT (dept_id = 1 AND salary &gt; 50000) ORDER BY 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select &quot;root&quot;.name as &quot;name&quot; from public.persons as &quot;root&quot; where not (&quot;root&quot;.dept_id = 1 and (&quot;root&quot;.salary is not null and &quot;root&quot;.salary &gt; 50000)) order by &quot;name&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT name FROM func('e2e::rel_persons__Relation_1_') WHERE NOT (dept_id = 1 AND salary &gt; 50000) ORDER BY 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
@@ -6090,6 +8839,51 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-bool_null_and_false-Grammar"></a></p>
+<h3>❌ bool_null_and_false [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT (NULL AND FALSE) AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT (NULL AND FALSE) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select null as &quot;result&quot; from public.persons as &quot;root&quot; where &quot;root&quot;.id = 1
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT (NULL AND FALSE) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected 'false' but got 'null'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>NULL</em></td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-bool_null_or_true-TDS"></a></p>
 <h3>❌ bool_null_or_true [TDS]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -6234,6 +9028,51 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-bool_null_or_true-Grammar"></a></p>
+<h3>❌ bool_null_or_true [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT (NULL OR TRUE) AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT (NULL OR TRUE) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select null as &quot;result&quot; from public.persons as &quot;root&quot; where &quot;root&quot;.id = 1
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT (NULL OR TRUE) AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected 'true' but got 'null'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>NULL</em></td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-star_multiple_tables-TDS"></a></p>
 <h3>❌ star_multiple_tables [TDS]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -6243,7 +9082,7 @@ li { margin: 0.3em 0; }
 <pre><code class="language-sql">SELECT p.*, d.* FROM func('e2e::tds_persons') p JOIN func('e2e::tds_departments') d ON p.dept_id = d.id WHERE p.id &lt;= 3 ORDER BY p.id
 </code></pre>
 <p><strong>SQL (Generated, executed against DB):</strong></p>
-<pre><code class="language-sql">select &quot;persons_0&quot;.&quot;id_p&quot; as &quot;id&quot;, &quot;persons_0&quot;.&quot;name_p&quot; as &quot;name&quot;, &quot;persons_0&quot;.&quot;age_p&quot; as &quot;age&quot;, &quot;persons_0&quot;.&quot;salary_p&quot; as &quot;salary&quot;, &quot;persons_0&quot;.&quot;hire_date_p&quot; as &quot;hire_date&quot;, &quot;persons_0&quot;.&quot;active_p&quot; as &quot;active&quot;, &quot;persons_0&quot;.&quot;dept_id_p&quot; as &quot;dept_id&quot;, &quot;persons_0&quot;.&quot;budget_d&quot; as &quot;budget&quot;, &quot;persons_0&quot;.&quot;created_at_d&quot; as &quot;created_at&quot; from (select &quot;persons_1&quot;.&quot;id_p&quot; as &quot;id_p&quot;, &quot;persons_1&quot;.&quot;name_p&quot; as &quot;name_p&quot;, &quot;persons_1&quot;.&quot;age_p&quot; as &quot;age_p&quot;, &quot;persons_1&quot;.&quot;salary_p&quot; as &quot;salary_p&quot;, &quot;persons_1&quot;.&quot;hire_date_p&quot; as &quot;hire_date_p&quot;, &quot;persons_1&quot;.&quot;active_p&quot; as &quot;active_p&quot;, &quot;persons_1&quot;.&quot;dept_id_p&quot; as &quot;dept_id_p&quot;, &quot;persons_1&quot;.&quot;budget_d&quot; as &quot;budget_d&quot;, &quot;persons_1&quot;.&quot;created_at_d&quot; as &quot;created_at_d&quot; from (select * from (select &quot;persons_3&quot;.&quot;id&quot; as &quot;id_p&quot;, &quot;persons_3&quot;.&quot;name&quot; as &quot;name_p&quot;, &quot;persons_3&quot;.&quot;age&quot; as &quot;age_p&quot;, &quot;persons_3&quot;.&quot;salary&quot; as &quot;salary_p&quot;, &quot;persons_3&quot;.&quot;hire_date&quot; as &quot;hire_date_p&quot;, &quot;persons_3&quot;.&quot;active&quot; as &quot;active_p&quot;, &quot;persons_3&quot;.&quot;dept_id&quot; as &quot;dept_id_p&quot; from (select &quot;root&quot;.id as &quot;id&quot;, &quot;root&quot;.name as &quot;name&quot;, &quot;root&quot;.age as &quot;age&quot;, &quot;root&quot;.salary as &quot;salary&quot;, &quot;root&quot;.hire_date as &quot;hire_date&quot;, &quot;root&quot;.active as &quot;active&quot;, &quot;root&quot;.dept_id as &quot;dept_id&quot; from public.persons as &quot;root&quot;) as &quot;persons_3&quot;) as &quot;persons_2&quot; inner join (select &quot;departments_1&quot;.&quot;id&quot; as &quot;id_d&quot;, &quot;departments_1&quot;.&quot;name&quot; as &quot;name_d&quot;, &quot;departments_1&quot;.&quot;budget&quot; as &quot;budget_d&quot;, &quot;departments_1&quot;.&quot;created_at&quot; as &quot;created_at_d&quot; from (select &quot;root&quot;.id as &quot;id&quot;, &quot;root&quot;.name as &quot;name&quot;, &quot;root&quot;.budget as &quot;budget&quot;, &quot;root&quot;.created_at as &quot;created_at&quot; from public.departments as &quot;root&quot;) as &quot;departments_1&quot;) as &quot;departments_0&quot; on (&quot;persons_2&quot;.&quot;dept_id_p&quot; = &quot;departments_0&quot;.&quot;id_d&quot;)) as &quot;persons_1&quot; where &quot;persons_1&quot;.&quot;id_p&quot; &lt;= 3 order by &quot;id_p&quot;) as &quot;persons_0&quot;
+<pre><code class="language-sql">select &quot;persons_0&quot;.&quot;id_p&quot; as &quot;id&quot;, &quot;persons_0&quot;.&quot;name_p&quot; as &quot;name&quot;, &quot;persons_0&quot;.&quot;age_p&quot; as &quot;age&quot;, &quot;persons_0&quot;.&quot;salary_p&quot; as &quot;salary&quot;, &quot;persons_0&quot;.&quot;hire_date_p&quot; as &quot;hire_date&quot;, &quot;persons_0&quot;.&quot;active_p&quot; as &quot;active&quot;, &quot;persons_0&quot;.&quot;dept_id_p&quot; as &quot;dept_id&quot;, &quot;persons_0&quot;.&quot;budget_d&quot; as &quot;budget&quot;, &quot;persons_0&quot;.&quot;created_at_d&quot; as &quot;created_at&quot; from (select &quot;persons_1&quot;.&quot;id_p&quot; as &quot;id_p&quot;, &quot;persons_1&quot;.&quot;name_p&quot; as &quot;name_p&quot;, &quot;persons_1&quot;.&quot;age_p&quot; as &quot;age_p&quot;, &quot;persons_1&quot;.&quot;salary_p&quot; as &quot;salary_p&quot;, &quot;persons_1&quot;.&quot;hire_date_p&quot; as &quot;hire_date_p&quot;, &quot;persons_1&quot;.&quot;active_p&quot; as &quot;active_p&quot;, &quot;persons_1&quot;.&quot;dept_id_p&quot; as &quot;dept_id_p&quot;, &quot;persons_1&quot;.&quot;budget_d&quot; as &quot;budget_d&quot;, &quot;persons_1&quot;.&quot;created_at_d&quot; as &quot;created_at_d&quot; from (select * from (select &quot;persons_3&quot;.&quot;id&quot; as &quot;id_p&quot;, &quot;persons_3&quot;.&quot;name&quot; as &quot;name_p&quot;, &quot;persons_3&quot;.&quot;age&quot; as &quot;age_p&quot;, &quot;persons_3&quot;.&quot;salary&quot; as &quot;salary_p&quot;, &quot;persons_3&quot;.&quot;hire_date&quot; as &quot;hire_date_p&quot;, &quot;persons_3&quot;.&quot;active&quot; as &quot;active_p&quot;, &quot;persons_3&quot;.&quot;dept_id&quot; as &quot;dept_id_p&quot; from (select &quot;root&quot;.id as &quot;id&quot;, &quot;root&quot;.name as &quot;name&quot;, &quot;root&quot;.age as &quot;age&quot;, &quot;root&quot;.salary as &quot;salary&quot;, &quot;root&quot;.hire_date as &quot;hire_date&quot;, &quot;root&quot;.active as &quot;active&quot;, &quot;root&quot;.dept_id as &quot;dept_id&quot; from public.persons as &quot;root&quot;) as &quot;persons_3&quot;) as &quot;persons_2&quot; inner join (select &quot;root&quot;.id as &quot;id_d&quot;, &quot;root&quot;.name as &quot;name_d&quot;, &quot;root&quot;.budget as &quot;budget_d&quot;, &quot;root&quot;.created_at as &quot;created_at_d&quot; from public.departments as &quot;root&quot;) as &quot;departments_0&quot; on (&quot;persons_2&quot;.&quot;dept_id_p&quot; = &quot;departments_0&quot;.&quot;id_d&quot;)) as &quot;persons_1&quot; where &quot;persons_1&quot;.&quot;id_p&quot; &lt;= 3 order by &quot;id_p&quot;) as &quot;persons_0&quot;
 </code></pre>
 <p><strong>Lambda (Pure expression):</strong></p>
 <pre><code class="language-json">|e2e::Person.all()-&gt;meta::pure::tds::project(
@@ -6472,7 +9311,7 @@ li { margin: 0.3em 0; }
 <pre><code class="language-sql">SELECT p.*, d.* FROM func('e2e::rel_persons') p JOIN func('e2e::rel_departments') d ON p.dept_id = d.id WHERE p.id &lt;= 3 ORDER BY p.id
 </code></pre>
 <p><strong>SQL (Generated, executed against DB):</strong></p>
-<pre><code class="language-sql">select &quot;persons_0&quot;.&quot;id_p&quot; as &quot;id&quot;, &quot;persons_0&quot;.&quot;name_p&quot; as &quot;name&quot;, &quot;persons_0&quot;.&quot;age_p&quot; as &quot;age&quot;, &quot;persons_0&quot;.&quot;salary_p&quot; as &quot;salary&quot;, &quot;persons_0&quot;.&quot;hire_date_p&quot; as &quot;hire_date&quot;, &quot;persons_0&quot;.&quot;active_p&quot; as &quot;active&quot;, &quot;persons_0&quot;.&quot;dept_id_p&quot; as &quot;dept_id&quot;, &quot;persons_0&quot;.&quot;budget_d&quot; as &quot;budget&quot;, &quot;persons_0&quot;.&quot;created_at_d&quot; as &quot;created_at&quot; from (select &quot;persons_1&quot;.&quot;id_p&quot; as &quot;id_p&quot;, &quot;persons_1&quot;.&quot;name_p&quot; as &quot;name_p&quot;, &quot;persons_1&quot;.&quot;age_p&quot; as &quot;age_p&quot;, &quot;persons_1&quot;.&quot;salary_p&quot; as &quot;salary_p&quot;, &quot;persons_1&quot;.&quot;hire_date_p&quot; as &quot;hire_date_p&quot;, &quot;persons_1&quot;.&quot;active_p&quot; as &quot;active_p&quot;, &quot;persons_1&quot;.&quot;dept_id_p&quot; as &quot;dept_id_p&quot;, &quot;persons_1&quot;.&quot;budget_d&quot; as &quot;budget_d&quot;, &quot;persons_1&quot;.&quot;created_at_d&quot; as &quot;created_at_d&quot; from (select * from (select &quot;persons_3&quot;.&quot;id&quot; as &quot;id_p&quot;, &quot;persons_3&quot;.&quot;name&quot; as &quot;name_p&quot;, &quot;persons_3&quot;.&quot;age&quot; as &quot;age_p&quot;, &quot;persons_3&quot;.&quot;salary&quot; as &quot;salary_p&quot;, &quot;persons_3&quot;.&quot;hire_date&quot; as &quot;hire_date_p&quot;, &quot;persons_3&quot;.&quot;active&quot; as &quot;active_p&quot;, &quot;persons_3&quot;.&quot;dept_id&quot; as &quot;dept_id_p&quot; from (select &quot;root&quot;.id as &quot;id&quot;, &quot;root&quot;.name as &quot;name&quot;, &quot;root&quot;.age as &quot;age&quot;, &quot;root&quot;.salary as &quot;salary&quot;, &quot;root&quot;.hire_date as &quot;hire_date&quot;, &quot;root&quot;.active as &quot;active&quot;, &quot;root&quot;.dept_id as &quot;dept_id&quot; from public.persons as &quot;root&quot;) as &quot;persons_3&quot;) as &quot;persons_2&quot; inner join (select &quot;departments_1&quot;.&quot;id&quot; as &quot;id_d&quot;, &quot;departments_1&quot;.&quot;name&quot; as &quot;name_d&quot;, &quot;departments_1&quot;.&quot;budget&quot; as &quot;budget_d&quot;, &quot;departments_1&quot;.&quot;created_at&quot; as &quot;created_at_d&quot; from (select &quot;root&quot;.id as &quot;id&quot;, &quot;root&quot;.name as &quot;name&quot;, &quot;root&quot;.budget as &quot;budget&quot;, &quot;root&quot;.created_at as &quot;created_at&quot; from public.departments as &quot;root&quot;) as &quot;departments_1&quot;) as &quot;departments_0&quot; on (&quot;persons_2&quot;.&quot;dept_id_p&quot; = &quot;departments_0&quot;.&quot;id_d&quot;)) as &quot;persons_1&quot; where &quot;persons_1&quot;.&quot;id_p&quot; &lt;= 3 order by &quot;id_p&quot;) as &quot;persons_0&quot;
+<pre><code class="language-sql">select &quot;persons_0&quot;.&quot;id_p&quot; as &quot;id&quot;, &quot;persons_0&quot;.&quot;name_p&quot; as &quot;name&quot;, &quot;persons_0&quot;.&quot;age_p&quot; as &quot;age&quot;, &quot;persons_0&quot;.&quot;salary_p&quot; as &quot;salary&quot;, &quot;persons_0&quot;.&quot;hire_date_p&quot; as &quot;hire_date&quot;, &quot;persons_0&quot;.&quot;active_p&quot; as &quot;active&quot;, &quot;persons_0&quot;.&quot;dept_id_p&quot; as &quot;dept_id&quot;, &quot;persons_0&quot;.&quot;budget_d&quot; as &quot;budget&quot;, &quot;persons_0&quot;.&quot;created_at_d&quot; as &quot;created_at&quot; from (select &quot;persons_1&quot;.&quot;id_p&quot; as &quot;id_p&quot;, &quot;persons_1&quot;.&quot;name_p&quot; as &quot;name_p&quot;, &quot;persons_1&quot;.&quot;age_p&quot; as &quot;age_p&quot;, &quot;persons_1&quot;.&quot;salary_p&quot; as &quot;salary_p&quot;, &quot;persons_1&quot;.&quot;hire_date_p&quot; as &quot;hire_date_p&quot;, &quot;persons_1&quot;.&quot;active_p&quot; as &quot;active_p&quot;, &quot;persons_1&quot;.&quot;dept_id_p&quot; as &quot;dept_id_p&quot;, &quot;persons_1&quot;.&quot;budget_d&quot; as &quot;budget_d&quot;, &quot;persons_1&quot;.&quot;created_at_d&quot; as &quot;created_at_d&quot; from (select * from (select &quot;persons_3&quot;.&quot;id&quot; as &quot;id_p&quot;, &quot;persons_3&quot;.&quot;name&quot; as &quot;name_p&quot;, &quot;persons_3&quot;.&quot;age&quot; as &quot;age_p&quot;, &quot;persons_3&quot;.&quot;salary&quot; as &quot;salary_p&quot;, &quot;persons_3&quot;.&quot;hire_date&quot; as &quot;hire_date_p&quot;, &quot;persons_3&quot;.&quot;active&quot; as &quot;active_p&quot;, &quot;persons_3&quot;.&quot;dept_id&quot; as &quot;dept_id_p&quot; from (select &quot;root&quot;.id as &quot;id&quot;, &quot;root&quot;.name as &quot;name&quot;, &quot;root&quot;.age as &quot;age&quot;, &quot;root&quot;.salary as &quot;salary&quot;, &quot;root&quot;.hire_date as &quot;hire_date&quot;, &quot;root&quot;.active as &quot;active&quot;, &quot;root&quot;.dept_id as &quot;dept_id&quot; from public.persons as &quot;root&quot;) as &quot;persons_3&quot;) as &quot;persons_2&quot; inner join (select &quot;root&quot;.id as &quot;id_d&quot;, &quot;root&quot;.name as &quot;name_d&quot;, &quot;root&quot;.budget as &quot;budget_d&quot;, &quot;root&quot;.created_at as &quot;created_at_d&quot; from public.departments as &quot;root&quot;) as &quot;departments_0&quot; on (&quot;persons_2&quot;.&quot;dept_id_p&quot; = &quot;departments_0&quot;.&quot;id_d&quot;)) as &quot;persons_1&quot; where &quot;persons_1&quot;.&quot;id_p&quot; &lt;= 3 order by &quot;id_p&quot;) as &quot;persons_0&quot;
 </code></pre>
 <p><strong>Lambda (Pure expression):</strong></p>
 <pre><code class="language-json">|e2e::Person.all()-&gt;meta::pure::functions::relation::project(
@@ -6690,6 +9529,135 @@ li { margin: 0.3em 0; }
 </tbody>
 </table>
 <hr />
+<p><a id="fail-star_multiple_tables-Grammar"></a></p>
+<h3>❌ star_multiple_tables [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT p.*, d.* FROM persons p JOIN departments d ON p.dept_id = d.id WHERE p.id &lt;= 3 ORDER BY p.id
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT p.*, d.* FROM func('e2e::rel_persons__Relation_1_') p JOIN func('e2e::rel_departments__Relation_1_') d ON p.dept_id = d.id WHERE p.id &lt;= 3 ORDER BY p.id
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select &quot;persons_0&quot;.&quot;id_p&quot; as &quot;id&quot;, &quot;persons_0&quot;.&quot;name_p&quot; as &quot;name&quot;, &quot;persons_0&quot;.&quot;age_p&quot; as &quot;age&quot;, &quot;persons_0&quot;.&quot;salary_p&quot; as &quot;salary&quot;, &quot;persons_0&quot;.&quot;hire_date_p&quot; as &quot;hire_date&quot;, &quot;persons_0&quot;.&quot;active_p&quot; as &quot;active&quot;, &quot;persons_0&quot;.&quot;dept_id_p&quot; as &quot;dept_id&quot;, &quot;persons_0&quot;.&quot;budget_d&quot; as &quot;budget&quot;, &quot;persons_0&quot;.&quot;created_at_d&quot; as &quot;created_at&quot; from (select &quot;persons_1&quot;.&quot;id_p&quot; as &quot;id_p&quot;, &quot;persons_1&quot;.&quot;name_p&quot; as &quot;name_p&quot;, &quot;persons_1&quot;.&quot;age_p&quot; as &quot;age_p&quot;, &quot;persons_1&quot;.&quot;salary_p&quot; as &quot;salary_p&quot;, &quot;persons_1&quot;.&quot;hire_date_p&quot; as &quot;hire_date_p&quot;, &quot;persons_1&quot;.&quot;active_p&quot; as &quot;active_p&quot;, &quot;persons_1&quot;.&quot;dept_id_p&quot; as &quot;dept_id_p&quot;, &quot;persons_1&quot;.&quot;budget_d&quot; as &quot;budget_d&quot;, &quot;persons_1&quot;.&quot;created_at_d&quot; as &quot;created_at_d&quot; from (select * from (select &quot;persons_3&quot;.&quot;id&quot; as &quot;id_p&quot;, &quot;persons_3&quot;.&quot;name&quot; as &quot;name_p&quot;, &quot;persons_3&quot;.&quot;age&quot; as &quot;age_p&quot;, &quot;persons_3&quot;.&quot;salary&quot; as &quot;salary_p&quot;, &quot;persons_3&quot;.&quot;hire_date&quot; as &quot;hire_date_p&quot;, &quot;persons_3&quot;.&quot;active&quot; as &quot;active_p&quot;, &quot;persons_3&quot;.&quot;dept_id&quot; as &quot;dept_id_p&quot; from (select &quot;root&quot;.id as &quot;id&quot;, &quot;root&quot;.name as &quot;name&quot;, &quot;root&quot;.age as &quot;age&quot;, &quot;root&quot;.salary as &quot;salary&quot;, &quot;root&quot;.hire_date as &quot;hire_date&quot;, &quot;root&quot;.active as &quot;active&quot;, &quot;root&quot;.dept_id as &quot;dept_id&quot; from public.persons as &quot;root&quot;) as &quot;persons_3&quot;) as &quot;persons_2&quot; inner join (select &quot;root&quot;.id as &quot;id_d&quot;, &quot;root&quot;.name as &quot;name_d&quot;, &quot;root&quot;.budget as &quot;budget_d&quot;, &quot;root&quot;.created_at as &quot;created_at_d&quot; from public.departments as &quot;root&quot;) as &quot;departments_0&quot; on ((&quot;persons_2&quot;.&quot;dept_id_p&quot; is not distinct from &quot;departments_0&quot;.&quot;id_d&quot;))) as &quot;persons_1&quot; where (&quot;persons_1&quot;.&quot;id_p&quot; is not null and &quot;persons_1&quot;.&quot;id_p&quot; &lt;= 3) order by &quot;id_p&quot;) as &quot;persons_0&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT p.*, d.* FROM func('e2e::rel_persons__Relation_1_') p JOIN func('e2e::rel_departments__Relation_1_') d ON p.dept_id = d.id WHERE p.id &lt;= 3 ORDER BY p.id}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Column count mismatch: expected 11 but got 9</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>age</th>
+<th>salary</th>
+<th>hire_date</th>
+<th>active</th>
+<th>dept_id</th>
+<th>id</th>
+<th>name</th>
+<th>budget</th>
+<th>created_at</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Alice</td>
+<td>30</td>
+<td>50000.00</td>
+<td>2020-01-15</td>
+<td>true</td>
+<td>1</td>
+<td>1</td>
+<td>Engineering</td>
+<td>1000000.00</td>
+<td>2015-01-01 09:00:00.0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Bob</td>
+<td>25</td>
+<td>60000.50</td>
+<td>2021-03-20</td>
+<td>true</td>
+<td>1</td>
+<td>1</td>
+<td>Engineering</td>
+<td>1000000.00</td>
+<td>2015-01-01 09:00:00.0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Charlie</td>
+<td>35</td>
+<td>75000.75</td>
+<td>2019-06-10</td>
+<td>false</td>
+<td>2</td>
+<td>2</td>
+<td>Marketing</td>
+<td>500000.00</td>
+<td>2016-06-15 10:30:00.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>age</th>
+<th>salary</th>
+<th>hire_date</th>
+<th>active</th>
+<th>dept_id</th>
+<th>budget</th>
+<th>created_at</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Alice</td>
+<td>30</td>
+<td>50000.0</td>
+<td>2020-01-15 00:00:00.0</td>
+<td>true</td>
+<td>1</td>
+<td>1000000.0</td>
+<td>2015-01-01 09:00:00.0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Bob</td>
+<td>25</td>
+<td>60000.5</td>
+<td>2021-03-20 00:00:00.0</td>
+<td>true</td>
+<td>1</td>
+<td>1000000.0</td>
+<td>2015-01-01 09:00:00.0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Charlie</td>
+<td>35</td>
+<td>75000.75</td>
+<td>2019-06-10 00:00:00.0</td>
+<td>false</td>
+<td>2</td>
+<td>500000.0</td>
+<td>2016-06-15 10:30:00.0</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <p><a id="fail-schema_information_tables-TDS"></a></p>
 <h3>❌ schema_information_tables [TDS]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -6746,6 +9714,61 @@ li { margin: 0.3em 0; }
 <h3>❌ schema_information_tables [Relation]</h3>
 <p><strong>SQL (Postgres):</strong></p>
 <pre><code class="language-sql">SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY 1
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row count mismatch: expected 8 but got 0</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>table_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dates</td>
+</tr>
+<tr>
+<td>departments</td>
+</tr>
+<tr>
+<td>empty_table</td>
+</tr>
+<tr>
+<td>json_data</td>
+</tr>
+<tr>
+<td>numbers</td>
+</tr>
+<tr>
+<td>orders</td>
+</tr>
+<tr>
+<td>persons</td>
+</tr>
+<tr>
+<td>strings</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>table_name</th>
+</tr>
+</thead>
+</table>
+<hr />
+<p><a id="fail-schema_information_tables-Grammar"></a></p>
+<h3>❌ schema_information_tables [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY 1
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
@@ -6892,6 +9915,58 @@ li { margin: 0.3em 0; }
 </thead>
 </table>
 <hr />
+<p><a id="fail-schema_information_columns-Grammar"></a></p>
+<h3>❌ schema_information_columns [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT column_name FROM information_schema.columns WHERE table_schema = 'public' AND table_name = 'persons' ORDER BY 1
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT column_name FROM information_schema.columns WHERE table_schema = 'public' AND table_name = 'persons' ORDER BY 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row count mismatch: expected 7 but got 0</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>column_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>active</td>
+</tr>
+<tr>
+<td>age</td>
+</tr>
+<tr>
+<td>dept_id</td>
+</tr>
+<tr>
+<td>hire_date</td>
+</tr>
+<tr>
+<td>id</td>
+</tr>
+<tr>
+<td>name</td>
+</tr>
+<tr>
+<td>salary</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>column_name</th>
+</tr>
+</thead>
+</table>
+<hr />
 <p><a id="fail-json_path_extract-Relation"></a></p>
 <h3>❌ json_path_extract [Relation]</h3>
 <p><strong>SQL (Postgres):</strong></p>
@@ -6921,6 +9996,51 @@ li { margin: 0.3em 0; }
      result: x: (id:Integer[1], name:String, age:Integer, salary:Float, hire_date:StrictDate, active:Boolean, dept_id:Integer)[1]|meta::pure::functions::variant::convert::fromJson('{&quot;a&quot;:{&quot;b&quot;:{&quot;c&quot;:42}}}')-&gt;meta::pure::functions::variant::navigation::get('a')-&gt;meta::pure::functions::variant::navigation::get('b')
    ]
 )
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'result': expected '{&quot;c&quot;: 42}' but got '{&quot;c&quot;:42}'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{&quot;c&quot;: 42}</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{&quot;c&quot;:42}</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-json_path_extract-Grammar"></a></p>
+<h3>❌ json_path_extract [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT '{&quot;a&quot;:{&quot;b&quot;:{&quot;c&quot;:42}}}'::jsonb #&gt; '{a,b}' AS result FROM persons WHERE id = 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT '{&quot;a&quot;:{&quot;b&quot;:{&quot;c&quot;:42}}}'::jsonb #&gt; '{a,b}' AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select jsonb_extract_path(cast(jsonb_extract_path(cast(cast(Text'{&quot;a&quot;:{&quot;b&quot;:{&quot;c&quot;:42}}}' as JSONB) as jsonb), Text'a') as jsonb), Text'b') as &quot;result&quot; from public.persons as &quot;root&quot; where &quot;root&quot;.id = 1
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT '{&quot;a&quot;:{&quot;b&quot;:{&quot;c&quot;:42}}}'::jsonb #&gt; '{a,b}' AS result FROM func('e2e::rel_persons__Relation_1_') WHERE id = 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
@@ -7120,6 +10240,99 @@ li { margin: 0.3em 0; }
 )-&gt;meta::pure::functions::relation::sort(
   ~result-&gt;meta::pure::functions::relation::ascending()
 )
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 3, column 'result': expected '2021-05-02 00:00:00.0' but got '2021-05-01 00:00:00.0'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1971-03-04 00:00:00.0</td>
+</tr>
+<tr>
+<td>2001-03-03 00:00:00.0</td>
+</tr>
+<tr>
+<td>2001-03-04 00:00:00.0</td>
+</tr>
+<tr>
+<td>2021-05-02 00:00:00.0</td>
+</tr>
+<tr>
+<td>2024-03-18 00:00:00.0</td>
+</tr>
+<tr>
+<td>2024-09-07 00:00:00.0</td>
+</tr>
+<tr>
+<td>2025-08-18 00:00:00.0</td>
+</tr>
+<tr>
+<td>2027-02-28 00:00:00.0</td>
+</tr>
+<tr>
+<td>2027-03-04 00:00:00.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1971-03-04 00:00:00.0</td>
+</tr>
+<tr>
+<td>2001-03-03 00:00:00.0</td>
+</tr>
+<tr>
+<td>2001-03-04 00:00:00.0</td>
+</tr>
+<tr>
+<td>2021-05-01 00:00:00.0</td>
+</tr>
+<tr>
+<td>2024-03-18 00:00:00.0</td>
+</tr>
+<tr>
+<td>2024-09-07 00:00:00.0</td>
+</tr>
+<tr>
+<td>2025-08-18 00:00:00.0</td>
+</tr>
+<tr>
+<td>2027-02-28 00:00:00.0</td>
+</tr>
+<tr>
+<td>2027-03-04 00:00:00.0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-interval_compound_literal-Grammar"></a></p>
+<h3>❌ interval_compound_literal [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT d + INTERVAL '1 year 2 months 3 days' AS result FROM dates WHERE d IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT d + INTERVAL '1 year 2 months 3 days' AS result FROM func('e2e::rel_dates__Relation_1_') WHERE d IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select (((&quot;root&quot;.d + (INTERVAL '1 YEARS' * 1)) + (INTERVAL '1 MONTHS' * 2)) + (INTERVAL '1 DAYS' * 3)) as &quot;result&quot; from public.dates as &quot;root&quot; where &quot;root&quot;.d is not null order by &quot;result&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT d + INTERVAL '1 year 2 months 3 days' AS result FROM func('e2e::rel_dates__Relation_1_') WHERE d IS NOT NULL ORDER BY 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
 </code></pre>
 <p><strong>Differences:</strong></p>
 <ul>
@@ -7437,6 +10650,217 @@ li { margin: 0.3em 0; }
 </tr>
 <tr>
 <td>2027-03-01 00:00:00.0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-interval_range_year_to_month-Grammar"></a></p>
+<h3>❌ interval_range_year_to_month [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM dates WHERE d IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM func('e2e::rel_dates__Relation_1_') WHERE d IS NOT NULL ORDER BY 1
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select ((&quot;root&quot;.d + (INTERVAL '1 YEARS' * 1)) + (INTERVAL '1 MONTHS' * 2)) as &quot;result&quot; from public.dates as &quot;root&quot; where &quot;root&quot;.d is not null order by &quot;result&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT d + INTERVAL '1-2' YEAR TO MONTH AS result FROM func('e2e::rel_dates__Relation_1_') WHERE d IS NOT NULL ORDER BY 1}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 3, column 'result': expected '2021-04-29 00:00:00.0' but got '2021-04-28 00:00:00.0'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1971-03-01 00:00:00.0</td>
+</tr>
+<tr>
+<td>2001-02-28 00:00:00.0</td>
+</tr>
+<tr>
+<td>2001-03-01 00:00:00.0</td>
+</tr>
+<tr>
+<td>2021-04-29 00:00:00.0</td>
+</tr>
+<tr>
+<td>2024-03-15 00:00:00.0</td>
+</tr>
+<tr>
+<td>2024-09-04 00:00:00.0</td>
+</tr>
+<tr>
+<td>2025-08-15 00:00:00.0</td>
+</tr>
+<tr>
+<td>2027-02-25 00:00:00.0</td>
+</tr>
+<tr>
+<td>2027-03-01 00:00:00.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1971-03-01 00:00:00.0</td>
+</tr>
+<tr>
+<td>2001-02-28 00:00:00.0</td>
+</tr>
+<tr>
+<td>2001-03-01 00:00:00.0</td>
+</tr>
+<tr>
+<td>2021-04-28 00:00:00.0</td>
+</tr>
+<tr>
+<td>2024-03-15 00:00:00.0</td>
+</tr>
+<tr>
+<td>2024-09-04 00:00:00.0</td>
+</tr>
+<tr>
+<td>2025-08-15 00:00:00.0</td>
+</tr>
+<tr>
+<td>2027-02-25 00:00:00.0</td>
+</tr>
+<tr>
+<td>2027-03-01 00:00:00.0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a id="fail-colres_e2_window_argument_renamed_column_self_join-Grammar"></a></p>
+<h3>❌ colres_e2_window_argument_renamed_column_self_join [Grammar]</h3>
+<p><strong>SQL (Postgres):</strong></p>
+<pre><code class="language-sql">SELECT b.salary AS salary, LAG(b.salary) OVER (ORDER BY a.id) AS prev_salary FROM persons a INNER JOIN persons b ON a.dept_id = b.dept_id AND a.id &lt; b.id ORDER BY 1, 2
+</code></pre>
+<p><strong>SQL (Legend, rewritten):</strong></p>
+<pre><code class="language-sql">SELECT b.salary AS salary, LAG(b.salary) OVER (ORDER BY a.id) AS prev_salary FROM func('e2e::rel_persons__Relation_1_') a INNER JOIN func('e2e::rel_persons__Relation_1_') b ON a.dept_id = b.dept_id AND a.id &lt; b.id ORDER BY 1, 2
+</code></pre>
+<p><strong>SQL (Generated, executed against DB):</strong></p>
+<pre><code class="language-sql">select &quot;subselect&quot;.&quot;salary&quot; as &quot;salary&quot;, &quot;subselect&quot;.&quot;prev_salary&quot; as &quot;prev_salary&quot; from (select &quot;persons_2&quot;.&quot;salary_b&quot; as &quot;salary&quot;, lag(&quot;persons_2&quot;.&quot;salary_b&quot;, 1) OVER (Order By &quot;persons_2&quot;.&quot;id_a&quot; asc) as &quot;prev_salary&quot; from (select * from (select &quot;persons_4&quot;.&quot;id&quot; as &quot;id_a&quot;, &quot;persons_4&quot;.&quot;name&quot; as &quot;name_a&quot;, &quot;persons_4&quot;.&quot;age&quot; as &quot;age_a&quot;, &quot;persons_4&quot;.&quot;salary&quot; as &quot;salary_a&quot;, &quot;persons_4&quot;.&quot;hire_date&quot; as &quot;hire_date_a&quot;, &quot;persons_4&quot;.&quot;active&quot; as &quot;active_a&quot;, &quot;persons_4&quot;.&quot;dept_id&quot; as &quot;dept_id_a&quot; from (select &quot;root&quot;.id as &quot;id&quot;, &quot;root&quot;.name as &quot;name&quot;, &quot;root&quot;.age as &quot;age&quot;, &quot;root&quot;.salary as &quot;salary&quot;, &quot;root&quot;.hire_date as &quot;hire_date&quot;, &quot;root&quot;.active as &quot;active&quot;, &quot;root&quot;.dept_id as &quot;dept_id&quot; from public.persons as &quot;root&quot;) as &quot;persons_4&quot;) as &quot;persons_3&quot; inner join (select &quot;persons_7&quot;.&quot;id&quot; as &quot;id_b&quot;, &quot;persons_7&quot;.&quot;name&quot; as &quot;name_b&quot;, &quot;persons_7&quot;.&quot;age&quot; as &quot;age_b&quot;, &quot;persons_7&quot;.&quot;salary&quot; as &quot;salary_b&quot;, &quot;persons_7&quot;.&quot;hire_date&quot; as &quot;hire_date_b&quot;, &quot;persons_7&quot;.&quot;active&quot; as &quot;active_b&quot;, &quot;persons_7&quot;.&quot;dept_id&quot; as &quot;dept_id_b&quot; from (select &quot;root&quot;.id as &quot;id&quot;, &quot;root&quot;.name as &quot;name&quot;, &quot;root&quot;.age as &quot;age&quot;, &quot;root&quot;.salary as &quot;salary&quot;, &quot;root&quot;.hire_date as &quot;hire_date&quot;, &quot;root&quot;.active as &quot;active&quot;, &quot;root&quot;.dept_id as &quot;dept_id&quot; from public.persons as &quot;root&quot; where &quot;root&quot;.id is not null) as &quot;persons_7&quot; where &quot;persons_7&quot;.&quot;id&quot; is not null) as &quot;persons_6&quot; on (((&quot;persons_3&quot;.&quot;dept_id_a&quot; is not distinct from &quot;persons_6&quot;.&quot;dept_id_b&quot;) and ((&quot;persons_3&quot;.&quot;id_a&quot; is not null and &quot;persons_6&quot;.&quot;id_b&quot; is not null) and &quot;persons_3&quot;.&quot;id_a&quot; &lt; &quot;persons_6&quot;.&quot;id_b&quot;)))) as &quot;persons_2&quot;) as &quot;subselect&quot; order by &quot;salary&quot;,&quot;prev_salary&quot;
+</code></pre>
+<p><strong>Lambda (Pure expression):</strong></p>
+<pre><code class="language-json">#SQL{SELECT b.salary AS salary, LAG(b.salary) OVER (ORDER BY a.id) AS prev_salary FROM func('e2e::rel_persons__Relation_1_') a INNER JOIN func('e2e::rel_persons__Relation_1_') b ON a.dept_id = b.dept_id AND a.id &lt; b.id ORDER BY 1, 2}#-&gt;from(e2e::TestMapping, e2e::TestRuntime)
+</code></pre>
+<p><strong>Differences:</strong></p>
+<ul>
+<li>Row 0, column 'prev_salary': expected '80000.25' but got '45000.0'</li>
+<li>Row 1, column 'prev_salary': expected 'null' but got '80000.25'</li>
+<li>Row 2, column 'prev_salary': expected '120000.00' but got '45000.0'</li>
+<li>Row 4, column 'prev_salary': expected '45000.00' but got 'null'</li>
+<li>Row 5, column 'prev_salary': expected '45000.00' but got '55000.0'</li>
+<li>Row 6, column 'prev_salary': expected '55000.00' but got '120000.0'</li>
+</ul>
+<p><strong>Expected (Postgres):</strong></p>
+<table>
+<thead>
+<tr>
+<th>salary</th>
+<th>prev_salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>45000.00</td>
+<td>80000.25</td>
+</tr>
+<tr>
+<td>45000.00</td>
+<td><em>NULL</em></td>
+</tr>
+<tr>
+<td>55000.00</td>
+<td>120000.00</td>
+</tr>
+<tr>
+<td>60000.50</td>
+<td><em>NULL</em></td>
+</tr>
+<tr>
+<td>80000.25</td>
+<td>45000.00</td>
+</tr>
+<tr>
+<td>120000.00</td>
+<td>45000.00</td>
+</tr>
+<tr>
+<td>120000.00</td>
+<td>55000.00</td>
+</tr>
+<tr>
+<td><em>NULL</em></td>
+<td>60000.50</td>
+</tr>
+<tr>
+<td><em>NULL</em></td>
+<td><em>NULL</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actual (Legend):</strong></p>
+<table>
+<thead>
+<tr>
+<th>salary</th>
+<th>prev_salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>45000.0</td>
+<td>45000.0</td>
+</tr>
+<tr>
+<td>45000.0</td>
+<td>80000.25</td>
+</tr>
+<tr>
+<td>55000.0</td>
+<td>45000.0</td>
+</tr>
+<tr>
+<td>60000.5</td>
+<td><em>NULL</em></td>
+</tr>
+<tr>
+<td>80000.25</td>
+<td><em>NULL</em></td>
+</tr>
+<tr>
+<td>120000.0</td>
+<td>55000.0</td>
+</tr>
+<tr>
+<td>120000.0</td>
+<td>120000.0</td>
+</tr>
+<tr>
+<td><em>NULL</em></td>
+<td>60000.5</td>
+</tr>
+<tr>
+<td><em>NULL</em></td>
+<td><em>NULL</em></td>
 </tr>
 </tbody>
 </table>
